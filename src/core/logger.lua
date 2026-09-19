@@ -1,0 +1,4 @@
+local appName, app = ...;
+
+local logger = {};
+

@@ -1,0 +1,9 @@
+## Interface: 16001
+## Title: ForeverLoot
+## Notes: Tracks your loot forever.
+## Author: Karl-HeinzSchneider
+## Version: 0.1.0
+## SavedVariables: ForeverLootDB
+## X-License: MIT
+
+ForeverLoot.lua
