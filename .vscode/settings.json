@@ -62,5 +62,6 @@
     "AddonCompartmentFrame",
     "INFO",
     "NONE"
-  ]
+  ],
+  "Lua.diagnostics.disable": ["assign-type-mismatch"]
 }

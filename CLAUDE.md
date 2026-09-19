@@ -4,10 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-ForeverLoot is a World of Warcraft addon written in Lua. The repository is currently a skeleton:
-`ForeverLoot.toc`, `ForeverLoot.lua`, and every directory are empty placeholders. Nothing below
-describes existing behavior; it describes the layout the project has committed to and the
-constraints of the WoW addon runtime.
+ForeverLoot is a World of Warcraft addon (Classic client, `## Interface: 16001`) written in Lua
+on top of Ace3. It is early: the core skeleton (logger, AceAddon object, AceDB) exists; loot
+tracking itself does not yet.
 
 ## No build, lint, or test tooling (yet)
 
@@ -22,9 +21,18 @@ If tooling (e.g. luacheck, a packager) is added later, document the commands her
   (`## Interface`, `## Title`, `## SavedVariables`, …) and the ordered list of files to load.
   **Every new Lua/XML file must be listed here, in dependency order, or it will not load.**
   Libraries under `lib/` load before `src/`; `locales/` load before code that uses strings.
-- `ForeverLoot.lua` — root entry file at the repo top level.
-- `src/` — addon code.
-- `lib/` — third-party libraries vendored into the addon (loaded first via the TOC).
+- `embeds.xml` — loads every vendored library in dependency order (LibStub → CallbackHandler →
+  Ace* → LibDataBroker/LibDBIcon). Listed first in the TOC.
+- `src/core/logger.lua` — `app.logger`. Leveled, colored chat logging; `log("x")` is `log:info("x")`.
+- `src/core/db.lua` — `app.dbDefaults`, the AceDB-3.0 defaults. `profile` = user settings,
+  `char` = per-character data (loot history), `global` = account-wide. Change the schema here.
+- `src/core/ace.lua` — `app.addon`, the AceAddon-3.0 object (mixins: AceConsole, AceEvent).
+  `OnInitialize` creates `app.db` from `ForeverLootDB`, wires profile-change callbacks to
+  `OnProfileRefresh`, and registers `/fl` + `/foreverloot`. Register game events in `OnEnable`.
+- `src/types.lua` — LuaLS annotations only (not in the TOC). `lib/` is excluded from the language
+  server, so the Ace/AceDB methods the addon uses are declared by hand here.
+- `ForeverLoot.lua` — root entry file, loaded last.
+- `lib/` — vendored Ace3, LibStub, CallbackHandler, LibDBIcon. Excluded from LuaLS and StyLua.
 - `locales/` — localization string tables.
 - `db/` — data tables (static data shipped with the addon).
 - `assets/` — textures, icons, sounds referenced from code.

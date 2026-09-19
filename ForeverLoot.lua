@@ -3,4 +3,4 @@ local _, app = ...
 
 local log = app.logger
 
-log("uwu")
+log:debug("Files loaded")

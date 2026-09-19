@@ -2,5 +2,5 @@
   "runtime.version": "Lua 5.1",
   "workspace.checkThirdParty": false,
   "workspace.ignoreDir": ["lib"],
-  "diagnostics.globals": ["ForeverLootDB"]
+  "diagnostics.globals": ["ForeverLootDB", "LibStub"]
 }
