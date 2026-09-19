@@ -50,8 +50,11 @@ function ForeverLootListRowMixin:Init(view, node)
     end
 end
 
-function ForeverLootListRowMixin:OnClick()
-    if self.node.children then
+---@param button string
+function ForeverLootListRowMixin:OnClick(button)
+    if button == "RightButton" then
+        self.view:Back()
+    elseif self.node.children then
         self.view:Push(self.node)
     else
         -- No item logic yet; just prove the click arrives.
@@ -178,6 +181,20 @@ end
 
 function ForeverLootViewMixin:OnShow()
     self:Refresh()
+end
+
+-- Wheel up = previous page, wheel down = next page (PagingControls handles the clamping).
+---@param delta number
+function ForeverLootViewMixin:OnMouseWheel(delta)
+    self.PagingControls:OnMouseWheel(delta)
+end
+
+-- Right-click on empty page space goes one level back, like closing a folder.
+---@param button string
+function ForeverLootViewMixin:OnMouseUp(button)
+    if button == "RightButton" then
+        self:Back()
+    end
 end
 
 -- Minimized shows only LeftPage stretched across the view (with the "halved" book art, which

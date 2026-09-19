@@ -1,7 +1,7 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
 
 	<!-- One row in a page: [icon] Name ............ [>] (arrow only for folders) -->
-	<Button name="ForeverLootListRowTemplate" mixin="ForeverLootListRowMixin" virtual="true">
+	<Button name="ForeverLootListRowTemplate" mixin="ForeverLootListRowMixin" registerForClicks="LeftButtonUp, RightButtonUp" virtual="true">
 		<Size x="200" y="40"/>
 		<Layers>
 			<Layer level="ARTWORK">
@@ -116,8 +116,9 @@
 		</Layers>
 	</Frame>
 
-	<!-- A view: breadcrumb bar on top, two book pages below, page controls bottom-right. -->
-	<Frame name="ForeverLootViewTemplate" mixin="ForeverLootViewMixin" virtual="true">
+	<!-- A view: breadcrumb bar on top, two book pages below, page controls bottom-right.
+	     Mouse wheel turns pages; right-click anywhere goes one level back. -->
+	<Frame name="ForeverLootViewTemplate" mixin="ForeverLootViewMixin" enableMouse="true" virtual="true">
 		<KeyValues>
 			<!-- Spacing from the spellbook's PagedSpellsFrame: xPadding 15, yPadding 10. -->
 			<KeyValue key="rowHeight" value="40" type="number"/>
@@ -174,6 +175,8 @@
 		<Scripts>
 			<OnLoad method="OnLoad"/>
 			<OnShow method="OnShow"/>
+			<OnMouseWheel method="OnMouseWheel"/>
+			<OnMouseUp method="OnMouseUp"/>
 		</Scripts>
 	</Frame>
 </Ui>
