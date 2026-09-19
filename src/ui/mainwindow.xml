@@ -7,10 +7,10 @@
 		parent="UIParent" toplevel="true" enableMouse="true" movable="true" clampedToScreen="true" hidden="true">
 		<KeyValues>
 			<!-- Minimized = one book page (default), maximized = the full two-page spread. -->
-			<KeyValue key="minimizedWidth" value="608" type="number"/>
+			<KeyValue key="minimizedWidth" value="604" type="number"/>
 			<KeyValue key="maximizedWidth" value="1200" type="number"/>
 		</KeyValues>
-		<Size x="608" y="680"/>
+		<Size x="604" y="680"/>
 		<Anchors>
 			<Anchor point="CENTER"/>
 		</Anchors>
@@ -32,10 +32,11 @@
 				</Anchors>
 			</Frame>
 			<!-- Views are created from ForeverLootViewTemplate and fill this area. -->
+			<!-- Starts right under the title bar so the page art covers the rock background. -->
 			<Frame parentKey="ViewContainer">
 				<Anchors>
-					<Anchor point="TOPLEFT" x="8" y="-64"/>
-					<Anchor point="BOTTOMRIGHT" x="-8" y="8"/>
+					<Anchor point="TOPLEFT" x="4" y="-24"/>
+					<Anchor point="BOTTOMRIGHT" x="-4" y="4"/>
 				</Anchors>
 			</Frame>
 		</Frames>

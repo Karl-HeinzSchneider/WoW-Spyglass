@@ -81,7 +81,8 @@
 	<Frame name="ForeverLootViewTemplate" mixin="ForeverLootViewMixin" virtual="true">
 		<KeyValues>
 			<KeyValue key="rowHeight" value="40" type="number"/>
-			<KeyValue key="pageInsetTop" value="50" type="number"/>
+			<!-- Rows start below the breadcrumb bar, which overlays the top of the page art. -->
+			<KeyValue key="pageInsetTop" value="56" type="number"/>
 			<KeyValue key="pageInsetBottom" value="60" type="number"/>
 			<KeyValue key="pageInsetLeft" value="60" type="number"/>
 			<KeyValue key="pageInsetRight" value="50" type="number"/>
@@ -90,7 +91,7 @@
 			<Button parentKey="BackButton">
 				<Size x="24" y="24"/>
 				<Anchors>
-					<Anchor point="TOPLEFT" x="14" y="-10"/>
+					<Anchor point="TOPLEFT" x="56" y="-14"/>
 				</Anchors>
 				<NormalTexture atlas="common-icon-backarrow"/>
 				<HighlightTexture atlas="common-icon-backarrow" alphaMode="ADD"/>
@@ -105,15 +106,16 @@
 					<Anchor point="LEFT" relativeKey="$parent.BackButton" relativePoint="RIGHT" x="10" y="0"/>
 				</Anchors>
 			</Frame>
+			<!-- Pages fill the view; the breadcrumb bar above is drawn over the page art. -->
 			<Frame parentKey="LeftPage" inherits="ForeverLootPageTemplate">
 				<Anchors>
-					<Anchor point="TOPLEFT" x="0" y="-44"/>
+					<Anchor point="TOPLEFT" x="0" y="0"/>
 					<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOM" x="0" y="0"/>
 				</Anchors>
 			</Frame>
 			<Frame parentKey="RightPage" inherits="ForeverLootPageTemplate">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativePoint="TOP" x="0" y="-44"/>
+					<Anchor point="TOPLEFT" relativePoint="TOP" x="0" y="0"/>
 					<Anchor point="BOTTOMRIGHT" x="0" y="0"/>
 				</Anchors>
 			</Frame>

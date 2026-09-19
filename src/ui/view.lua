@@ -152,7 +152,7 @@ end
 function ForeverLootViewMixin:ApplyPageLayout()
     local left = self.LeftPage
     left:ClearAllPoints()
-    left:SetPoint("TOPLEFT", self, "TOPLEFT", 0, -44)
+    left:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
     if self.isMinimized then
         left:SetPoint("BOTTOMRIGHT", self, "BOTTOMRIGHT", 0, 0)
         left.Background:SetAtlas(pageAtlas("Right"))
