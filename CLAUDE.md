@@ -39,6 +39,18 @@ If tooling (e.g. luacheck, a packager) is added later, document the commands her
 - `db/` — data tables (static data shipped with the addon).
 - `assets/` — textures, icons, sounds referenced from code.
 
+## Optional: Blizzard's own UI source for reference
+
+A developer may place Blizzard's interface code at `BlizzardInterfaceCode/` in the repo root,
+typically as a symlink to the folder the game client exports (`/run ExportInterfaceFiles("code")`
+in-game writes it next to the WoW install). It is gitignored and excluded from LuaLS/StyLua.
+
+If the folder exists, Claude should **read it, never edit it**, to look up how Blizzard's
+FrameXML/AddOns implement things: the exact signatures and return values of API functions,
+event payloads, frame templates, and global strings. Prefer it over guessing from memory,
+since the Classic client's API differs from retail. Never list anything from it in the TOC
+or copy files out of it into `src/`.
+
 ## WoW addon constraints to keep in mind
 
 - The runtime is Lua 5.1 with Blizzard's restricted API. No `require`, `io`, `os`, or
