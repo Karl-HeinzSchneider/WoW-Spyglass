@@ -29,8 +29,10 @@ If tooling (e.g. luacheck, a packager) is added later, document the commands her
 - `src/core/ace.lua` — `app.addon`, the AceAddon-3.0 object (mixins: AceConsole, AceEvent).
   `OnInitialize` creates `app.db` from `ForeverLootDB`, wires profile-change callbacks to
   `OnProfileRefresh`, and registers `/fl` + `/foreverloot`. Register game events in `OnEnable`.
-- `src/types.lua` — LuaLS annotations only (not in the TOC). `lib/` is excluded from the language
-  server, so the Ace/AceDB methods the addon uses are declared by hand here.
+- `src/types.lua` — LuaLS annotations only (not in the TOC). Declares the `ForeverLoot` namespace
+  class and `ForeverLoot.DB`. Ace3 types (`AceAddon`, `AceDBObject-3.0`, `AceDB.Schema`, …) come
+  from the `ketho.wow-api` VS Code extension, not from `lib/` (which is excluded from LuaLS) —
+  inherit from them rather than redeclaring the API.
 - `ForeverLoot.lua` — root entry file, loaded last.
 - `lib/` — vendored Ace3, LibStub, CallbackHandler, LibDBIcon. Excluded from LuaLS and StyLua.
 - `locales/` — localization string tables.

@@ -11,23 +11,9 @@
 ---@field dbDefaults ForeverLoot.DBDefaults
 ---@field db ForeverLoot.DB
 
--- The AceDB object. Profile/char/global mirror the shape of app.dbDefaults.
----@class ForeverLoot.DB
+-- The AceDB object, with profile/char/global narrowed to the shape of app.dbDefaults.
+-- Ace3 API types (AceAddon, AceDBObject-3.0, ...) come from the ketho.wow-api extension.
+---@class ForeverLoot.DB : AceDBObject-3.0
 ---@field profile ForeverLoot.DB.Profile
 ---@field char ForeverLoot.DB.Char
 ---@field global ForeverLoot.DB.Global
----@field RegisterCallback fun(target: table, event: string, method: string|function)
----@field GetCurrentProfile fun(self: ForeverLoot.DB): string
----@field SetProfile fun(self: ForeverLoot.DB, name: string)
----@field ResetProfile fun(self: ForeverLoot.DB)
-
--- Subset of the AceAddon-3.0 / AceConsole-3.0 / AceEvent-3.0 API the addon uses.
--- lib/ is excluded from the language server, so these are declared by hand.
----@class ForeverLoot.Addon
----@field db ForeverLoot.DB
----@field Print fun(self: ForeverLoot.Addon, ...: any)
----@field GetArgs fun(self: ForeverLoot.Addon, input: string, numArgs?: integer, startPos?: integer): ...
----@field RegisterChatCommand fun(self: ForeverLoot.Addon, command: string, handler: string|function, persist?: boolean)
----@field RegisterEvent fun(self: ForeverLoot.Addon, event: string, handler?: string|function, ...: any)
----@field UnregisterEvent fun(self: ForeverLoot.Addon, event: string)
----@field UnregisterAllEvents fun(self: ForeverLoot.Addon)

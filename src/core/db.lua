@@ -25,7 +25,7 @@ local global = {
     dbVersion = 1,
 }
 
----@class ForeverLoot.DBDefaults
+---@class ForeverLoot.DBDefaults : AceDB.Schema
 app.dbDefaults = {
     profile = profile,
     char = char,
