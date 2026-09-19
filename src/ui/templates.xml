@@ -38,6 +38,39 @@
 		</Scripts>
 	</Button>
 
+	<!-- Section header inside a page; modeled on Blizzard_PlayerSpells' SpellBookHeaderTemplate. -->
+	<Frame name="ForeverLootPageHeaderTemplate" mixin="ForeverLootPageHeaderMixin" virtual="true">
+		<Size x="300" y="51"/>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="Backplate" atlas="spellbook-list-backplate" alpha="0.65">
+					<Size x="416" y="106"/>
+					<Anchors>
+						<Anchor point="LEFT" x="-85" y="10"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<FontString parentKey="Text" inherits="SystemFont_Huge2" justifyH="LEFT" wordwrap="false">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="-8" y="0"/>
+						<Anchor point="TOPRIGHT" x="-60" y="0"/>
+					</Anchors>
+				</FontString>
+				<Texture parentKey="Border" atlas="spellbook-divider">
+					<Size y="11"/>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" x="-32" y="0"/>
+						<Anchor point="BOTTOMRIGHT" x="-60" y="0"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad method="OnLoad"/>
+		</Scripts>
+	</Frame>
+
 	<!-- One segment of the breadcrumb trail. Width follows the text (set in Init). -->
 	<Button name="ForeverLootBreadcrumbButtonTemplate" mixin="ForeverLootBreadcrumbButtonMixin" virtual="true">
 		<Size x="50" y="24"/>
@@ -67,8 +100,15 @@
 		</Layers>
 	</Frame>
 
-	<!-- One book page. The atlas is chosen in Lua (camelot vs mainline art). -->
+	<!-- One book page. The atlas is chosen in Lua (camelot vs mainline art).
+	     Insets (set per instance) define the content slot, like PagedSpellsView1/2Template. -->
 	<Frame name="ForeverLootPageTemplate" virtual="true">
+		<KeyValues>
+			<KeyValue key="insetLeft" value="85" type="number"/>
+			<KeyValue key="insetRight" value="41" type="number"/>
+			<KeyValue key="insetTop" value="95" type="number"/>
+			<KeyValue key="insetBottom" value="72" type="number"/>
+		</KeyValues>
 		<Layers>
 			<Layer level="BACKGROUND">
 				<Texture parentKey="Background" setAllPoints="true"/>
@@ -79,19 +119,18 @@
 	<!-- A view: breadcrumb bar on top, two book pages below, page controls bottom-right. -->
 	<Frame name="ForeverLootViewTemplate" mixin="ForeverLootViewMixin" virtual="true">
 		<KeyValues>
+			<!-- Spacing from the spellbook's PagedSpellsFrame: xPadding 15, yPadding 10. -->
 			<KeyValue key="rowHeight" value="40" type="number"/>
-			<KeyValue key="columnGap" value="12" type="number"/>
-			<!-- Rows start below the breadcrumb bar, which overlays the top of the page art. -->
-			<KeyValue key="pageInsetTop" value="56" type="number"/>
-			<KeyValue key="pageInsetBottom" value="60" type="number"/>
-			<KeyValue key="pageInsetLeft" value="60" type="number"/>
-			<KeyValue key="pageInsetRight" value="50" type="number"/>
+			<KeyValue key="headerHeight" value="51" type="number"/>
+			<KeyValue key="headerGap" value="10" type="number"/>
+			<KeyValue key="columnGap" value="15" type="number"/>
 		</KeyValues>
 		<Frames>
 			<Button parentKey="BackButton">
 				<Size x="24" y="24"/>
+				<!-- Where the spellbook puts its category tabs. -->
 				<Anchors>
-					<Anchor point="TOPLEFT" x="56" y="-14"/>
+					<Anchor point="TOPLEFT" x="70" y="-26"/>
 				</Anchors>
 				<NormalTexture atlas="common-icon-backarrow"/>
 				<HighlightTexture atlas="common-icon-backarrow" alphaMode="ADD"/>
@@ -106,7 +145,10 @@
 					<Anchor point="LEFT" relativeKey="$parent.BackButton" relativePoint="RIGHT" x="10" y="0"/>
 				</Anchors>
 			</Frame>
-			<!-- Pages fill the view; the breadcrumb bar above is drawn over the page art. -->
+			<!-- Pages fill the view; the breadcrumb bar above is drawn over the page art.
+			     Content slots: 680x590 at (85,-95) on the left page and TOPRIGHT (-50,-95) on the
+			     right page, i.e. PagedSpellsView1/2Template. The bottom inset is larger than
+			     Blizzard's 17 to keep rows off the paging controls / page-curl corner. -->
 			<Frame parentKey="LeftPage" inherits="ForeverLootPageTemplate">
 				<Anchors>
 					<Anchor point="TOPLEFT" x="0" y="0"/>
@@ -114,6 +156,10 @@
 				</Anchors>
 			</Frame>
 			<Frame parentKey="RightPage" inherits="ForeverLootPageTemplate">
+				<KeyValues>
+					<KeyValue key="insetLeft" value="76" type="number"/>
+					<KeyValue key="insetRight" value="50" type="number"/>
+				</KeyValues>
 				<Anchors>
 					<Anchor point="TOPLEFT" relativePoint="TOP" x="0" y="0"/>
 					<Anchor point="BOTTOMRIGHT" x="0" y="0"/>
@@ -121,7 +167,7 @@
 			</Frame>
 			<Frame parentKey="PagingControls" inherits="PagingControlsHorizontalTemplate">
 				<Anchors>
-					<Anchor point="BOTTOMRIGHT" x="-60" y="18"/>
+					<Anchor point="BOTTOMRIGHT" x="-75" y="40"/>
 				</Anchors>
 			</Frame>
 		</Frames>

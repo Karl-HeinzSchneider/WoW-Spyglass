@@ -22,6 +22,7 @@ local log = app.logger
 ---@field quality? Enum.ItemQuality  # placeholder items
 ---@field moduleID? string  # set on the root's module nodes
 ---@field columns? integer  # how many columns this folder's children are laid out in (1 or 2); default 1
+---@field header? string  # a section header inside a list (not selectable); see ForeverLoot.Header
 
 ---@class ForeverLoot.ModuleDef
 ---@field id string  # unique key, e.g. "raids"; other addons should prefix theirs ("myaddon-raids")
@@ -67,6 +68,13 @@ function api.Folder(name, icon, children, opts)
         node.description = opts.description
     end
     return node
+end
+
+-- A section header inside a folder's children, e.g. to split a loot table into "Weapons" / "Armor".
+---@param text string
+---@return ForeverLoot.Node
+function api.Header(text)
+    return { header = text }
 end
 
 -- A real item, resolved from the game's item database when displayed (not implemented yet).

@@ -5,11 +5,14 @@
 		inherits="PortraitFrameTemplate, TabSystemOwnerTemplate"
 		parent="UIParent" toplevel="true" enableMouse="true" movable="true" clampedToScreen="true" hidden="true">
 		<KeyValues>
-			<!-- Minimized = one book page (default), maximized = the full two-page spread. -->
-			<KeyValue key="minimizedWidth" value="604" type="number"/>
-			<KeyValue key="maximizedWidth" value="1200" type="number"/>
+			<!-- Geometry copied from PlayerSpellsFrame (camelot): window 1618x720 / 809 minimized,
+			     book art 1612x702 / 806 minimized, anchored 14px below the top and 4px above the bottom. -->
+			<KeyValue key="minimizedWidth" value="809" type="number"/>
+			<KeyValue key="maximizedWidth" value="1618" type="number"/>
+			<KeyValue key="bookMinimizedWidth" value="806" type="number"/>
+			<KeyValue key="bookMaximizedWidth" value="1612" type="number"/>
 		</KeyValues>
-		<Size x="604" y="680"/>
+		<Size x="809" y="720"/>
 		<Anchors>
 			<Anchor point="CENTER"/>
 		</Anchors>
@@ -31,11 +34,13 @@
 				</Anchors>
 			</Frame>
 			<!-- Views are created from ForeverLootViewTemplate and fill this area. -->
-			<!-- Starts right under the title bar so the page art covers the rock background. -->
+			<!-- The "book": same placement as SpellBookFrame inside PlayerSpellsFrame. Width is set
+			     in Lua (bookMinimizedWidth / bookMaximizedWidth). -->
 			<Frame parentKey="ViewContainer">
+				<Size x="806" y="702"/>
 				<Anchors>
-					<Anchor point="TOPLEFT" x="4" y="-24"/>
-					<Anchor point="BOTTOMRIGHT" x="-4" y="4"/>
+					<Anchor point="TOPLEFT" x="0" y="-14"/>
+					<Anchor point="BOTTOMLEFT" x="0" y="4"/>
 				</Anchors>
 			</Frame>
 		</Frames>

@@ -58,9 +58,14 @@ Folders may also set `columns = 1 | 2` to control how their children are laid ou
 full-width column (the default) or two columns per page. This is decided by the collection,
 not by a user setting, so choose it per list (e.g. `columns = 2` for a boss's loot table).
 
+Inside a folder's `children`, a `{ header = "Weapons" }` node renders as a section header
+(spellbook-style title with a divider) instead of a selectable row. The current folder's own
+name is always shown as the first header of its list.
+
 Constructors (optional sugar):
 
 - `ForeverLoot.Folder(name, icon, children, opts?)` — `opts = { columns = 2, description = "..." }`
+- `ForeverLoot.Header(text)` — section header inside a list
 - `ForeverLoot.Item(itemID)`
 - `ForeverLoot.PlaceholderItem(name, quality, icon)` — hard-coded display data, for prototyping
 - `ForeverLoot.PlaceholderItems(prefix, count)` — generates `count` placeholder items

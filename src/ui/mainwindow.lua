@@ -24,6 +24,8 @@ local NEW_TAB_LABEL = "+"
 ---@field MaximizeMinimizeButton ForeverLoot.MaxMinButton
 ---@field minimizedWidth number
 ---@field maximizedWidth number
+---@field bookMinimizedWidth number
+---@field bookMaximizedWidth number
 ---@field isMinimized boolean
 ---@field views ForeverLoot.View[]
 ---@field viewPool ForeverLoot.FramePool
@@ -95,6 +97,7 @@ end
 function ForeverLootMainWindowMixin:SetMinimized(minimized)
     self.isMinimized = minimized
     self:SetWidth(minimized and self.minimizedWidth or self.maximizedWidth)
+    self.ViewContainer:SetWidth(minimized and self.bookMinimizedWidth or self.bookMaximizedWidth)
 
     for _, view in ipairs(self.views) do
         view:SetMinimized(minimized)

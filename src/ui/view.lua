@@ -60,6 +60,28 @@ function ForeverLootListRowMixin:OnClick()
 end
 
 ----------------------------------------------------------------------------------------------------
+-- Page header (section title with backplate and divider, like the spellbook)
+----------------------------------------------------------------------------------------------------
+
+---@class ForeverLoot.PageHeader : Frame
+---@field Backplate Texture
+---@field Text FontString
+---@field Border Texture
+ForeverLootPageHeaderMixin = {}
+app.ui.PageHeaderMixin = ForeverLootPageHeaderMixin
+
+function ForeverLootPageHeaderMixin:OnLoad()
+    -- SPELLBOOK_FONT_COLOR is engine-defined; fall back to the same dark brown if it's missing.
+    local color = SPELLBOOK_FONT_COLOR or CreateColor(0.25, 0.16, 0.06)
+    self.Text:SetTextColor(color:GetRGB())
+end
+
+---@param text string
+function ForeverLootPageHeaderMixin:Init(text)
+    self.Text:SetText(text)
+end
+
+----------------------------------------------------------------------------------------------------
 -- Breadcrumb button
 ----------------------------------------------------------------------------------------------------
 
@@ -102,11 +124,10 @@ end
 ---@field crumbPool ForeverLoot.FramePool
 ---@field separatorPool ForeverLoot.FramePool
 ---@field rowHeight number
+---@field headerHeight number
+---@field headerGap number
 ---@field columnGap number
----@field pageInsetTop number
----@field pageInsetBottom number
----@field pageInsetLeft number
----@field pageInsetRight number
+---@field pages ForeverLoot.PlacedElement[][]  # layout result for the current node
 ---@field path ForeverLoot.Node[]
 ---@field onNavigate? fun(view: ForeverLoot.View)
 ---@field isMinimized boolean  # one page (true) or the two-page spread (false)
@@ -116,6 +137,24 @@ app.ui.ViewMixin = ForeverLootViewMixin
 ---@class ForeverLoot.Page : Frame
 ---@field Background Texture
 ---@field rowPool ForeverLoot.FramePool
+---@field headerPool ForeverLoot.FramePool
+---@field insetLeft number
+---@field insetRight number
+---@field insetTop number
+---@field insetBottom number
+
+-- What a page displays. `kind` picks the template; new element kinds plug in here.
+---@class ForeverLoot.Element
+---@field kind "header"|"row"
+---@field text? string  # header
+---@field node? ForeverLoot.Node  # row
+
+---@class ForeverLoot.PlacedElement
+---@field element ForeverLoot.Element
+---@field x number
+---@field y number
+---@field width number
+---@field height number
 
 function ForeverLootViewMixin:OnLoad()
     self.path = {}
@@ -123,8 +162,11 @@ function ForeverLootViewMixin:OnLoad()
 
     self.RightPage.Background:SetAtlas(pageAtlas("Right"))
     self:ApplyPageLayout()
-    self.LeftPage.rowPool = CreateFramePool("Button", self.LeftPage, "ForeverLootListRowTemplate") --[[@as ForeverLoot.FramePool]]
-    self.RightPage.rowPool = CreateFramePool("Button", self.RightPage, "ForeverLootListRowTemplate") --[[@as ForeverLoot.FramePool]]
+    for _, page in ipairs({ self.LeftPage, self.RightPage }) do
+        page.rowPool = CreateFramePool("Button", page, "ForeverLootListRowTemplate") --[[@as ForeverLoot.FramePool]]
+        page.headerPool = CreateFramePool("Frame", page, "ForeverLootPageHeaderTemplate") --[[@as ForeverLoot.FramePool]]
+    end
+    self.pages = {}
 
     self.crumbPool = CreateFramePool("Button", self.Breadcrumbs, "ForeverLootBreadcrumbButtonTemplate") --[[@as ForeverLoot.FramePool]]
     self.separatorPool = CreateFramePool("Frame", self.Breadcrumbs, "ForeverLootBreadcrumbSeparatorTemplate") --[[@as ForeverLoot.FramePool]]
@@ -222,12 +264,6 @@ function ForeverLootViewMixin:OnPageChanged()
     self:Refresh()
 end
 
----@return integer
-function ForeverLootViewMixin:GetRowsPerPage()
-    local usable = self.LeftPage:GetHeight() - self.pageInsetTop - self.pageInsetBottom
-    return math.max(1, math.floor(usable / self.rowHeight))
-end
-
 -- Columns per page for the current list. Defined by the collection itself (`node.columns`);
 -- one full-width column when unset.
 ---@param node ForeverLoot.Node?
@@ -239,53 +275,137 @@ end
 
 function ForeverLootViewMixin:Refresh()
     local node = self:GetCurrentNode()
-    local entries = node and node.children or {}
+    self.pages = self:LayoutPages(self:BuildElements(node), self:GetColumns(node))
 
-    local columns = self:GetColumns(node)
-    local slotsPerPage = self:GetRowsPerPage() * columns
-    local slotsPerSpread = slotsPerPage * self:GetPagesShown()
-    local maxPages = math.max(1, math.ceil(#entries / slotsPerSpread))
+    local pagesShown = self:GetPagesShown()
+    local maxPages = math.max(1, math.ceil(#self.pages / pagesShown))
     self.PagingControls:SetMaxPages(maxPages)
-    local first = (self.PagingControls:GetCurrentPage() - 1) * slotsPerSpread + 1
+    local first = (self.PagingControls:GetCurrentPage() - 1) * pagesShown + 1
 
-    self:FillPage(self.LeftPage, entries, first, slotsPerPage, columns)
-    self:FillPage(self.RightPage, entries, first + slotsPerPage, self.isMinimized and 0 or slotsPerPage, columns)
+    self:RenderPage(self.LeftPage, self.pages[first])
+    self:RenderPage(self.RightPage, not self.isMinimized and self.pages[first + 1] or nil)
     self.PagingControls:SetShown(maxPages > 1)
 
     self:RefreshBreadcrumbs()
     self.BackButton:SetEnabled(#self.path > 1)
 end
 
--- Lays out up to `count` entries in `columns` columns, filling each column top to bottom
--- before moving right, so a list still reads like a list.
----@param page ForeverLoot.Page
----@param entries ForeverLoot.Node[]
----@param first integer
----@param count integer
----@param columns integer
-function ForeverLootViewMixin:FillPage(page, entries, first, count, columns)
-    page.rowPool:ReleaseAll()
-    local usableWidth = page:GetWidth() - self.pageInsetLeft - self.pageInsetRight
-    local columnWidth = (usableWidth - self.columnGap * (columns - 1)) / columns
-    local rowsPerColumn = math.max(1, math.ceil(count / columns))
-    for i = 0, count - 1 do
-        local entry = entries[first + i]
-        if not entry then
-            break
+-- Turns the current node into the flat list of things to draw: a title header, then its
+-- children, where `header` nodes become section headers and everything else a row.
+---@param node ForeverLoot.Node?
+---@return ForeverLoot.Element[]
+function ForeverLootViewMixin:BuildElements(node)
+    local elements = {}
+    if not node then
+        return elements
+    end
+    elements[#elements + 1] = { kind = "header", text = node.name }
+    for _, child in ipairs(node.children or {}) do
+        if child.header then
+            elements[#elements + 1] = { kind = "header", text = child.header }
+        else
+            elements[#elements + 1] = { kind = "row", node = child }
         end
-        local column = math.floor(i / rowsPerColumn)
-        local rowIndex = i % rowsPerColumn
-        local row = page.rowPool:Acquire() --[[@as ForeverLoot.ListRow]]
-        row:SetSize(columnWidth, self.rowHeight)
-        row:SetPoint(
-            "TOPLEFT",
-            page,
-            "TOPLEFT",
-            self.pageInsetLeft + column * (columnWidth + self.columnGap),
-            -(self.pageInsetTop + rowIndex * self.rowHeight)
-        )
-        row:Init(self, entry)
-        row:Show()
+    end
+    return elements
+end
+
+-- The page frame that will display page number `index` (1-based) in the current mode.
+---@param index integer
+---@return ForeverLoot.Page
+function ForeverLootViewMixin:GetPageSlot(index)
+    if self.isMinimized or index % 2 == 1 then
+        return self.LeftPage
+    end
+    return self.RightPage
+end
+
+-- Usable content size of a page frame, inside its insets.
+---@param page ForeverLoot.Page
+---@return number width, number height
+local function contentSize(page)
+    return page:GetWidth() - page.insetLeft - page.insetRight, page:GetHeight() - page.insetTop - page.insetBottom
+end
+
+-- Flows elements top-to-bottom into as many pages as needed. Headers span the full width and
+-- start a new line; rows fill `columns` columns left to right. A header never ends a page.
+-- Left and right pages may have different insets, so each page is measured individually.
+---@param elements ForeverLoot.Element[]
+---@param columns integer
+---@return ForeverLoot.PlacedElement[][]
+function ForeverLootViewMixin:LayoutPages(elements, columns)
+    local pages = {}
+    local page, y, column = {}, 0, 0
+    local pageWidth, pageHeight, columnWidth
+
+    local function measure()
+        pageWidth, pageHeight = contentSize(self:GetPageSlot(#pages + 1))
+        columnWidth = (pageWidth - self.columnGap * (columns - 1)) / columns
+    end
+
+    local function newPage()
+        if #page > 0 then
+            pages[#pages + 1] = page
+        end
+        page, y, column = {}, 0, 0
+        measure()
+    end
+    measure()
+
+    local function newLine()
+        if column > 0 then
+            y = y + self.rowHeight
+            column = 0
+        end
+    end
+
+    local function place(element, x, width, height)
+        page[#page + 1] = { element = element, x = x, y = y, width = width, height = height }
+    end
+
+    for _, element in ipairs(elements) do
+        if element.kind == "header" then
+            newLine()
+            local needed = self.headerHeight + self.headerGap + self.rowHeight
+            if y > 0 and y + needed > pageHeight then
+                newPage()
+            end
+            place(element, 0, pageWidth, self.headerHeight)
+            y = y + self.headerHeight + self.headerGap
+        else
+            if column == 0 and y + self.rowHeight > pageHeight then
+                newPage()
+            end
+            place(element, column * (columnWidth + self.columnGap), columnWidth, self.rowHeight)
+            column = column + 1
+            if column >= columns then
+                newLine()
+            end
+        end
+    end
+    newLine()
+    newPage()
+    return pages
+end
+
+---@param page ForeverLoot.Page
+---@param placed ForeverLoot.PlacedElement[]?
+function ForeverLootViewMixin:RenderPage(page, placed)
+    page.rowPool:ReleaseAll()
+    page.headerPool:ReleaseAll()
+    for _, item in ipairs(placed or {}) do
+        local element = item.element
+        local frame
+        if element.kind == "header" then
+            frame = page.headerPool:Acquire() --[[@as ForeverLoot.PageHeader]]
+            frame:Init(element.text or "")
+        else
+            frame = page.rowPool:Acquire() --[[@as ForeverLoot.ListRow]]
+            frame:Init(self, element.node)
+        end
+        frame:SetSize(item.width, item.height)
+        frame:SetPoint("TOPLEFT", page, "TOPLEFT", page.insetLeft + item.x, -(page.insetTop + item.y))
+        frame:Show()
     end
 end
 
