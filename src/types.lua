@@ -11,12 +11,12 @@
 ---@field dbDefaults ForeverLoot.DBDefaults
 ---@field db ForeverLoot.DB
 ---@field minimapButton ForeverLoot.MinimapButton
+---@field api ForeverLoot.API  # also the global `ForeverLoot`
 ---@field ui ForeverLoot.UI
 
 -- UI namespace. Mixins are globals (XML requires it) but also exposed here.
 ---@class ForeverLoot.UI
 ---@field mainWindow ForeverLoot.MainWindow  # set in ForeverLootMainWindowMixin:OnLoad
----@field mockTree ForeverLoot.Node  # TEMPORARY placeholder data
 ---@field MainWindowMixin ForeverLoot.MainWindow
 ---@field ViewMixin ForeverLoot.View
 ---@field ListRowMixin ForeverLoot.ListRow

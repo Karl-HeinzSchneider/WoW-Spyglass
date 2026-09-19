@@ -63,6 +63,21 @@ function ForeverLootMainWindowMixin:OnLoad()
     self:SetMinimized(true)
     self:OpenView()
     app.ui.mainWindow = self
+
+    app.api.RegisterCallback(self, "OnModulesChanged", "OnModulesChanged")
+end
+
+-- A module was registered/unregistered: swap in the new root. Views sitting at the root are
+-- refreshed; views deeper in a tree keep browsing the nodes they already hold.
+function ForeverLootMainWindowMixin:OnModulesChanged()
+    local root = app.api:GetRootNode()
+    for _, view in ipairs(self.views) do
+        if #view.path <= 1 then
+            view:SetRoot(root)
+        else
+            view.path[1] = root
+        end
+    end
 end
 
 function ForeverLootMainWindowMixin:OnShow()
@@ -137,7 +152,7 @@ function ForeverLootMainWindowMixin:OpenView()
     view.onNavigate = function(v)
         self:UpdateTabTitle(v)
     end
-    view:SetRoot(app.ui.mockTree)
+    view:SetRoot(app.api:GetRootNode())
     self.views[#self.views + 1] = view
 
     self:RebuildTabs()

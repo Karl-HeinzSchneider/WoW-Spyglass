@@ -35,8 +35,9 @@ function ForeverLootListRowMixin:Init(view, node)
     self.view = view
     self.node = node
 
-    self.Icon:SetTexture(node.icon)
-    self.Name:SetText(node.name)
+    -- Real items (itemID) aren't resolved yet; show a stand-in so the tree is still browsable.
+    self.Icon:SetTexture(node.icon or "Interface\\Icons\\INV_Misc_QuestionMark")
+    self.Name:SetText(node.name or (node.itemID and ("Item #" .. node.itemID)) or "?")
 
     local isFolder = node.children ~= nil
     self.Arrow:SetShown(isFolder)
@@ -54,7 +55,7 @@ function ForeverLootListRowMixin:OnClick()
         self.view:Push(self.node)
     else
         -- No item logic yet; just prove the click arrives.
-        log:chat("Clicked %s", self.node.name)
+        log:chat("Clicked %s", self.node.name or tostring(self.node.itemID))
     end
 end
 
