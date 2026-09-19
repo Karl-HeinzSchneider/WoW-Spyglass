@@ -8,6 +8,11 @@
   "diagnostics.globals": [
     "ForeverLootDB",
     "LibStub",
-    "PortraitFrameTemplateMixin"
+    "PortraitFrameTemplateMixin",
+    "HandleModifiedItemClick",
+    "OTHER",
+    "SPELLS",
+    "RETRIEVING_ITEM_INFO",
+    "ITEM_LEVEL"
   ]
 }

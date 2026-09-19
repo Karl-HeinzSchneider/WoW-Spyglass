@@ -21,6 +21,7 @@
 ---@field ViewMixin ForeverLoot.View
 ---@field ListRowMixin ForeverLoot.ListRow
 ---@field PageHeaderMixin ForeverLoot.PageHeader
+---@field GroupLabelMixin ForeverLoot.GroupLabel
 ---@field BreadcrumbButtonMixin ForeverLoot.BreadcrumbButton
 
 -- Return type of CreateFramePool. The FrameXML annotations keep the pool mixins private,

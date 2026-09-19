@@ -23,6 +23,13 @@
 						<Anchor point="RIGHT" relativeKey="$parent.Arrow" relativePoint="LEFT" x="-4" y="0"/>
 					</Anchors>
 				</FontString>
+				<!-- Optional second line (description / item level); when shown, Name moves up. -->
+				<FontString parentKey="Sub" inherits="GameFontHighlightSmall" justifyH="LEFT" wordwrap="false" hidden="true">
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" relativeKey="$parent.Icon" relativePoint="BOTTOMRIGHT" x="8" y="2"/>
+						<Anchor point="RIGHT" relativeKey="$parent.Arrow" relativePoint="LEFT" x="-4" y="0"/>
+					</Anchors>
+				</FontString>
 			</Layer>
 			<Layer level="HIGHLIGHT">
 				<Texture file="Interface\QuestFrame\UI-QuestTitleHighlight" alphaMode="ADD">
@@ -35,8 +42,36 @@
 		</Layers>
 		<Scripts>
 			<OnClick method="OnClick"/>
+			<OnEnter method="OnEnter"/>
+			<OnLeave method="OnLeave"/>
 		</Scripts>
 	</Button>
+
+	<!-- Group label: a row-sized text line with a thin divider, used to cluster entries
+	     without the weight of a full page header. -->
+	<Frame name="ForeverLootGroupLabelTemplate" mixin="ForeverLootGroupLabelMixin" virtual="true">
+		<Size x="200" y="40"/>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString parentKey="Text" inherits="GameFontNormalMed2" justifyH="LEFT" wordwrap="false">
+					<Anchors>
+						<Anchor point="LEFT" x="6" y="2"/>
+						<Anchor point="RIGHT" x="-6" y="2"/>
+					</Anchors>
+				</FontString>
+				<Texture parentKey="Line" atlas="spellbook-divider">
+					<Size y="8"/>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" x="-20" y="2"/>
+						<Anchor point="BOTTOMRIGHT" x="-20" y="2"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad method="OnLoad"/>
+		</Scripts>
+	</Frame>
 
 	<!-- Section header inside a page; modeled on Blizzard_PlayerSpells' SpellBookHeaderTemplate. -->
 	<Frame name="ForeverLootPageHeaderTemplate" mixin="ForeverLootPageHeaderMixin" virtual="true">
@@ -177,6 +212,7 @@
 			<OnShow method="OnShow"/>
 			<OnMouseWheel method="OnMouseWheel"/>
 			<OnMouseUp method="OnMouseUp"/>
+			<OnEvent method="OnEvent"/>
 		</Scripts>
 	</Frame>
 </Ui>

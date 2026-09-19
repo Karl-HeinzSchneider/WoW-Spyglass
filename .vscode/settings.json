@@ -64,11 +64,14 @@
     "INFO",
     "NONE",
     "ITEM_QUALITY_COLORS",
-    "CreateFramePool"
+    "CreateFramePool",
+    "OTHER",
+    "SPELLS",
+    "HandleModifiedItemClick",
+    "RETRIEVING_ITEM_INFO",
+    "ITEM_LEVEL"
   ],
-  "Lua.diagnostics.disable": [
-    "assign-type-mismatch"
-  ],
+  "Lua.diagnostics.disable": ["assign-type-mismatch"],
   "wowAPI.luals.frameXML": true,
   "xml.fileAssociations": [
     {

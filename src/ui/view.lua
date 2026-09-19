@@ -17,32 +17,42 @@ local function pageAtlas(side)
 end
 
 ----------------------------------------------------------------------------------------------------
--- List row
+-- List row: one template for folders, items, spells and custom entries
 ----------------------------------------------------------------------------------------------------
+
+local FALLBACK_ICON = "Interface\\Icons\\INV_Misc_QuestionMark"
 
 ---@class ForeverLoot.ListRow : Button
 ---@field Icon Texture
 ---@field Name FontString
+---@field Sub FontString
 ---@field Arrow Texture
 ---@field node ForeverLoot.Node
 ---@field view ForeverLoot.View
+---@field link? string  # item/spell link for chat linking
 ForeverLootListRowMixin = {}
 app.ui.ListRowMixin = ForeverLootListRowMixin
 
----@param view ForeverLoot.View
----@param node ForeverLoot.Node
-function ForeverLootListRowMixin:Init(view, node)
-    self.view = view
-    self.node = node
+---@param name string
+---@param icon string|number|nil
+---@param sub string?
+---@param quality Enum.ItemQuality?
+function ForeverLootListRowMixin:SetDisplay(name, icon, sub, quality)
+    self.Icon:SetTexture(icon or FALLBACK_ICON)
+    self.Name:SetText(name)
+    self.Sub:SetText(sub or "")
+    self.Sub:SetShown(sub ~= nil and sub ~= "")
 
-    -- Real items (itemID) aren't resolved yet; show a stand-in so the tree is still browsable.
-    self.Icon:SetTexture(node.icon or "Interface\\Icons\\INV_Misc_QuestionMark")
-    self.Name:SetText(node.name or (node.itemID and ("Item #" .. node.itemID)) or "?")
+    -- With a second line the name sits in the upper half, otherwise it is vertically centered.
+    self.Name:ClearAllPoints()
+    if sub and sub ~= "" then
+        self.Name:SetPoint("TOPLEFT", self.Icon, "TOPRIGHT", 8, -2)
+    else
+        self.Name:SetPoint("LEFT", self.Icon, "RIGHT", 8, 0)
+    end
+    self.Name:SetPoint("RIGHT", self.Arrow, "LEFT", -4, 0)
 
-    local isFolder = node.children ~= nil
-    self.Arrow:SetShown(isFolder)
-
-    local color = not isFolder and node.quality and ITEM_QUALITY_COLORS[node.quality]
+    local color = quality and ITEM_QUALITY_COLORS[quality]
     if color then
         self.Name:SetTextColor(color.r, color.g, color.b)
     else
@@ -50,16 +60,101 @@ function ForeverLootListRowMixin:Init(view, node)
     end
 end
 
+---@param view ForeverLoot.View
+---@param node ForeverLoot.Node
+function ForeverLootListRowMixin:Init(view, node)
+    self.view = view
+    self.node = node
+    self.link = nil
+    self.Arrow:SetShown(node.children ~= nil)
+
+    if node.itemID then
+        local name, link, quality, itemLevel, _, _, _, _, _, icon = C_Item.GetItemInfo(node.itemID)
+        if name then
+            self.link = link
+            self:SetDisplay(name, icon, itemLevel and (ITEM_LEVEL or "Item Level %d"):format(itemLevel) or nil, quality)
+        else
+            -- Not cached yet: show a stand-in and redraw when GET_ITEM_INFO_RECEIVED arrives.
+            local _, _, _, _, instantIcon = C_Item.GetItemInfoInstant(node.itemID)
+            self:SetDisplay("Item #" .. node.itemID, instantIcon, RETRIEVING_ITEM_INFO or "Loading...", nil)
+            view:RequestItem(node.itemID)
+        end
+    elseif node.spellID then
+        local info = C_Spell.GetSpellInfo(node.spellID)
+        if info then
+            self.link = C_Spell.GetSpellLink(node.spellID)
+            self:SetDisplay(info.name, info.iconID, node.description, nil)
+        else
+            self:SetDisplay("Spell #" .. node.spellID, nil, nil, nil)
+        end
+    else
+        self:SetDisplay(node.name or "?", node.icon, node.description, node.quality)
+    end
+end
+
 ---@param button string
 function ForeverLootListRowMixin:OnClick(button)
+    local node = self.node
     if button == "RightButton" then
         self.view:Back()
-    elseif self.node.children then
-        self.view:Push(self.node)
+    elseif node.children then
+        self.view:Push(node)
+    elseif node.onClick then
+        node.onClick(node, button)
+    elseif self.link then
+        -- Shift-click links to chat, ctrl-click previews in the dressing room, etc.
+        HandleModifiedItemClick(self.link)
     else
-        -- No item logic yet; just prove the click arrives.
-        log:chat("Clicked %s", self.node.name or tostring(self.node.itemID))
+        log:debug("Clicked %s", node.name or tostring(node.itemID or node.spellID))
     end
+end
+
+function ForeverLootListRowMixin:OnEnter()
+    local node = self.node
+    GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+    if node.itemID then
+        GameTooltip:SetItemByID(node.itemID)
+    elseif node.spellID then
+        GameTooltip:SetSpellByID(node.spellID)
+    elseif node.children then
+        GameTooltip:AddLine(node.name or "")
+        if node.description then
+            GameTooltip:AddLine(node.description, 1, 1, 1, true)
+        end
+    else
+        GameTooltip:AddLine(node.name or "")
+        if node.description then
+            GameTooltip:AddLine(node.description, 1, 1, 1, true)
+        end
+        for _, line in ipairs(node.tooltip or {}) do
+            GameTooltip:AddLine(line, 1, 1, 1, true)
+        end
+    end
+    GameTooltip:Show()
+end
+
+function ForeverLootListRowMixin:OnLeave()
+    GameTooltip:Hide()
+end
+
+----------------------------------------------------------------------------------------------------
+-- Group label (row-sized, lighter than a page header)
+----------------------------------------------------------------------------------------------------
+
+---@class ForeverLoot.GroupLabel : Frame
+---@field Text FontString
+---@field Line Texture
+ForeverLootGroupLabelMixin = {}
+app.ui.GroupLabelMixin = ForeverLootGroupLabelMixin
+
+function ForeverLootGroupLabelMixin:OnLoad()
+    local color = SPELLBOOK_FONT_COLOR or CreateColor(0.25, 0.16, 0.06)
+    self.Text:SetTextColor(color:GetRGB())
+end
+
+---@param text string
+function ForeverLootGroupLabelMixin:Init(text)
+    self.Text:SetText(text)
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -134,6 +229,7 @@ end
 ---@field path ForeverLoot.Node[]
 ---@field onNavigate? fun(view: ForeverLoot.View)
 ---@field isMinimized boolean  # one page (true) or the two-page spread (false)
+---@field pendingItems table<integer, boolean>  # itemIDs whose info hasn't arrived yet
 ForeverLootViewMixin = {}
 app.ui.ViewMixin = ForeverLootViewMixin
 
@@ -141,15 +237,17 @@ app.ui.ViewMixin = ForeverLootViewMixin
 ---@field Background Texture
 ---@field rowPool ForeverLoot.FramePool
 ---@field headerPool ForeverLoot.FramePool
+---@field groupPool ForeverLoot.FramePool
 ---@field insetLeft number
 ---@field insetRight number
 ---@field insetTop number
 ---@field insetBottom number
 
--- What a page displays. `kind` picks the template; new element kinds plug in here.
+-- What a page displays. `kind` picks the template; new element kinds plug in here
+-- (BuildElements, LayoutPages, RenderPage).
 ---@class ForeverLoot.Element
----@field kind "header"|"row"
----@field text? string  # header
+---@field kind "header"|"group"|"row"
+---@field text? string  # header, group
 ---@field node? ForeverLoot.Node  # row
 
 ---@class ForeverLoot.PlacedElement
@@ -168,8 +266,11 @@ function ForeverLootViewMixin:OnLoad()
     for _, page in ipairs({ self.LeftPage, self.RightPage }) do
         page.rowPool = CreateFramePool("Button", page, "ForeverLootListRowTemplate") --[[@as ForeverLoot.FramePool]]
         page.headerPool = CreateFramePool("Frame", page, "ForeverLootPageHeaderTemplate") --[[@as ForeverLoot.FramePool]]
+        page.groupPool = CreateFramePool("Frame", page, "ForeverLootGroupLabelTemplate") --[[@as ForeverLoot.FramePool]]
     end
     self.pages = {}
+    self.pendingItems = {}
+    self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
 
     self.crumbPool = CreateFramePool("Button", self.Breadcrumbs, "ForeverLootBreadcrumbButtonTemplate") --[[@as ForeverLoot.FramePool]]
     self.separatorPool = CreateFramePool("Frame", self.Breadcrumbs, "ForeverLootBreadcrumbSeparatorTemplate") --[[@as ForeverLoot.FramePool]]
@@ -194,6 +295,26 @@ end
 function ForeverLootViewMixin:OnMouseUp(button)
     if button == "RightButton" then
         self:Back()
+    end
+end
+
+-- Item data arrives asynchronously; redraw once something we're showing has loaded.
+---@param event string
+---@param itemID integer
+function ForeverLootViewMixin:OnEvent(event, itemID)
+    if event == "GET_ITEM_INFO_RECEIVED" and self.pendingItems[itemID] then
+        self.pendingItems[itemID] = nil
+        if self:IsShown() then
+            self:Refresh()
+        end
+    end
+end
+
+---@param itemID integer
+function ForeverLootViewMixin:RequestItem(itemID)
+    if not self.pendingItems[itemID] then
+        self.pendingItems[itemID] = true
+        C_Item.RequestLoadItemDataByID(itemID)
     end
 end
 
@@ -308,7 +429,9 @@ function ForeverLootViewMixin:Refresh()
 end
 
 -- Turns the current node into the flat list of things to draw: a title header, then its
--- children, where `header` nodes become section headers and everything else a row.
+-- children. `header` nodes become section headers, `group` nodes become group labels (followed
+-- by their `items`), everything else a row. If the folder has `groupBy`, runs of plain entries
+-- are bucketed into auto groups; explicit headers/groups are kept as written.
 ---@param node ForeverLoot.Node?
 ---@return ForeverLoot.Element[]
 function ForeverLootViewMixin:BuildElements(node)
@@ -317,13 +440,46 @@ function ForeverLootViewMixin:BuildElements(node)
         return elements
     end
     elements[#elements + 1] = { kind = "header", text = node.name }
-    for _, child in ipairs(node.children or {}) do
-        if child.header then
-            elements[#elements + 1] = { kind = "header", text = child.header }
-        else
-            elements[#elements + 1] = { kind = "row", node = child }
+
+    local groupBy = node.groupBy
+    local keyFn = type(groupBy) == "function" and groupBy or nil
+    local pending = {}
+
+    local function addRows(entries)
+        for _, entry in ipairs(entries) do
+            elements[#elements + 1] = { kind = "row", node = entry }
         end
     end
+
+    -- Emit the plain entries collected so far, auto-grouped if the folder asks for it.
+    local function flush()
+        if #pending == 0 then
+            return
+        end
+        if groupBy then
+            for _, group in ipairs(app.api.GroupEntries(pending, keyFn)) do
+                elements[#elements + 1] = { kind = "group", text = group.label }
+                addRows(group.entries)
+            end
+        else
+            addRows(pending)
+        end
+        pending = {}
+    end
+
+    for _, child in ipairs(node.children or {}) do
+        if child.header then
+            flush()
+            elements[#elements + 1] = { kind = "header", text = child.header }
+        elseif child.group then
+            flush()
+            elements[#elements + 1] = { kind = "group", text = child.group }
+            addRows(child.items or {})
+        else
+            pending[#pending + 1] = child
+        end
+    end
+    flush()
     return elements
 end
 
@@ -389,6 +545,14 @@ function ForeverLootViewMixin:LayoutPages(elements, columns)
             end
             place(element, 0, pageWidth, self.headerHeight)
             y = y + self.headerHeight + self.headerGap
+        elseif element.kind == "group" then
+            -- Row-sized, full width, on its own line, and never orphaned at a page bottom.
+            newLine()
+            if y > 0 and y + self.rowHeight * 2 > pageHeight then
+                newPage()
+            end
+            place(element, 0, pageWidth, self.rowHeight)
+            y = y + self.rowHeight
         else
             if column == 0 and y + self.rowHeight > pageHeight then
                 newPage()
@@ -410,11 +574,15 @@ end
 function ForeverLootViewMixin:RenderPage(page, placed)
     page.rowPool:ReleaseAll()
     page.headerPool:ReleaseAll()
+    page.groupPool:ReleaseAll()
     for _, item in ipairs(placed or {}) do
         local element = item.element
         local frame
         if element.kind == "header" then
             frame = page.headerPool:Acquire() --[[@as ForeverLoot.PageHeader]]
+            frame:Init(element.text or "")
+        elseif element.kind == "group" then
+            frame = page.groupPool:Acquire() --[[@as ForeverLoot.GroupLabel]]
             frame:Init(element.text or "")
         else
             frame = page.rowPool:Acquire() --[[@as ForeverLoot.ListRow]]

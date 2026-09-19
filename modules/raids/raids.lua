@@ -1,7 +1,8 @@
 -- Built-in module: Raids. Registers through the same public API third-party addons use.
 -- Data is PLACEHOLDER until real loot tables exist; use ForeverLoot.Item(itemID) for real items.
 local FL = ForeverLoot
-local Folder, Header, placeholderItems = FL.Folder, FL.Header, FL.PlaceholderItems
+local Folder, Header, Group, Item, Spell, Custom, placeholderItems =
+    FL.Folder, FL.Header, FL.Group, FL.Item, FL.Spell, FL.Custom, FL.PlaceholderItems
 
 -- Loot table split into sections, to exercise page headers inside a list.
 local function sectionedLoot(prefix)
@@ -33,15 +34,40 @@ FL:RegisterModule({
     children = {
         Folder("Molten Core", ICON_RAID, {
             Folder("Lucifron", ICON_BOSS, placeholderItems("Lucifron", 9), LOOT),
-            Folder("Magmadar", ICON_BOSS, placeholderItems("Magmadar", 12), LOOT),
+            -- Auto-grouped: placeholder entries bucket by `category`, real items by equipment slot.
+            Folder("Magmadar", ICON_BOSS, placeholderItems("Magmadar", 12), { columns = 2, groupBy = "auto" }),
             Folder("Ragnaros", ICON_BOSS, sectionedLoot("Ragnaros"), LOOT),
         }),
         Folder("Blackwing Lair", ICON_RAID, {
             Folder("Razorgore", ICON_BOSS, placeholderItems("Razorgore", 8), LOOT),
-            Folder("Nefarian", ICON_BOSS, placeholderItems("Nefarian", 18), LOOT),
+            -- Explicit groups: label + the entries that belong to it.
+            Folder("Nefarian", ICON_BOSS, {
+                Group("Tier 2 Tokens", placeholderItems("Nefarian Token", 4)),
+                Group("Weapons", placeholderItems("Nefarian Weapon", 3)),
+                Group("Misc", placeholderItems("Nefarian Misc", 5)),
+            }, LOOT),
         }),
         Folder("Onyxia's Lair", ICON_RAID, {
-            Folder("Onyxia", ICON_BOSS, placeholderItems("Onyxia", 14), LOOT),
+            -- Real items and spells resolve from game data; Custom shows any icon/title/description.
+            Folder("Onyxia", ICON_BOSS, {
+                Group("Real items"),
+                Item(18422), -- Head of Onyxia (Horde)
+                Item(18423), -- Head of Onyxia (Alliance)
+                Item(17068), -- Deathbringer
+                Item(18705), -- Mature Black Dragon Sinew
+                Group("Spells"),
+                Spell(22888), -- Rallying Cry of the Dragonslayer
+                Group("Other"),
+                Custom({
+                    name = "Onyxia's Lair attunement",
+                    icon = "Interface\\Icons\\INV_Misc_Key_13",
+                    description = "Drakefire Amulet quest chain",
+                    tooltip = { "Starts at Warlord Goretooth / Haleh.", "Required to enter the lair." },
+                    onClick = function(node)
+                        FL.Log("Clicked %s", node.name)
+                    end,
+                }),
+            }, LOOT),
         }),
     },
 })

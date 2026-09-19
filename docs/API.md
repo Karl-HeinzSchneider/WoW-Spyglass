@@ -46,31 +46,63 @@ if the definition is invalid; it never throws.
 
 ## Nodes
 
-A node is a plain table. Folders have `children`; leaves are items.
+A node is a plain table; the fields set decide what it displays as:
 
 ```lua
-{ name = "Boss", icon = "Interface\\Icons\\...", children = { ... } }  -- folder
-{ itemID = 17070 }                                                    -- item (real)
-{ name = "Some Sword", quality = 4, icon = "Interface\\Icons\\..." }  -- item (placeholder)
+{ name = "Boss", icon = "...", children = { ... } }         -- folder (navigable)
+{ itemID = 17070 }                                          -- item: name/icon/quality/ilvl from the game, item tooltip, shift-click links
+{ spellID = 22888 }                                         -- spell: name/icon from the game, spell tooltip
+{ name = "Title", icon = "...", description = "Second line", -- custom entry
+  quality = 4, category = "Misc", tooltip = { "line", ... },
+  onClick = function(node, button) end }
 ```
+
+Items and spells resolve lazily; an item whose data isn't cached yet shows "Item #id" and
+redraws when the data arrives.
 
 Folders may also set `columns = 1 | 2` to control how their children are laid out: one
 full-width column (the default) or two columns per page. This is decided by the collection,
 not by a user setting, so choose it per list (e.g. `columns = 2` for a boss's loot table).
 
-Inside a folder's `children`, a `{ header = "Weapons" }` node renders as a section header
-(spellbook-style title with a divider) instead of a selectable row. The current folder's own
-name is always shown as the first header of its list.
+### Headers and groups
+
+Inside a folder's `children`:
+
+- `{ header = "Weapons" }` renders as a big section header (spellbook-style title with a
+  divider). The current folder's own name is always shown as the first header of its list.
+- `{ group = "Tier 2", items = { ... } }` renders as a row-sized group label followed by
+  `items`. Without `items` it just marks where a group starts in the surrounding list.
+
+### Automatic grouping
+
+Set `groupBy` on a folder to cluster its plain entries under group labels automatically.
+Explicit headers/groups in the same list are kept as written; only the entries between them
+are grouped.
+
+- `groupBy = "auto"` uses `ForeverLoot.DefaultGroupKey`: items by equipment slot (weapons
+  together) in canonical slot order, spells under "Spells", folders under "Collections",
+  custom entries by their `category`.
+- `groupBy = function(node) return key, label end` for your own logic (return `nil` to leave
+  an entry ungrouped under "Other"). Groups with unknown keys keep first-seen order.
+
+Inside each group, entries are sorted by `ForeverLoot.DefaultEntryRank`: armor by type
+(plate > mail > leather > cloth > shields > misc), weapons by weapon type; everything else keeps
+its written order.
+
+`ForeverLoot.GroupEntries(entries, keyFn?, rankFn?)` exposes the same bucketing and sorting for
+your own use; pass `rankFn` to change the in-group order.
 
 Constructors (optional sugar):
 
-- `ForeverLoot.Folder(name, icon, children, opts?)` — `opts = { columns = 2, description = "..." }`
+- `ForeverLoot.Folder(name, icon, children, opts?)` — `opts = { columns = 2, description = "...", groupBy = "auto" }`
 - `ForeverLoot.Header(text)` — section header inside a list
+- `ForeverLoot.Group(text, items?)` — group label, optionally with its entries
 - `ForeverLoot.Item(itemID)`
+- `ForeverLoot.Spell(spellID)`
+- `ForeverLoot.Custom({ name, icon, description, quality, category, tooltip, onClick })`
+- `ForeverLoot.Log(fmt, ...)` — prefixed chat message
 - `ForeverLoot.PlaceholderItem(name, quality, icon)` — hard-coded display data, for prototyping
 - `ForeverLoot.PlaceholderItems(prefix, count)` — generates `count` placeholder items
-
-Item display from `itemID` is not implemented yet; such nodes currently show `Item #<id>`.
 
 ## Other calls
 
