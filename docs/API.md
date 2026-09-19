@@ -54,9 +54,13 @@ A node is a plain table. Folders have `children`; leaves are items.
 { name = "Some Sword", quality = 4, icon = "Interface\\Icons\\..." }  -- item (placeholder)
 ```
 
+Folders may also set `columns = 1 | 2` to control how their children are laid out: one
+full-width column (the default) or two columns per page. This is decided by the collection,
+not by a user setting, so choose it per list (e.g. `columns = 2` for a boss's loot table).
+
 Constructors (optional sugar):
 
-- `ForeverLoot.Folder(name, icon, children)`
+- `ForeverLoot.Folder(name, icon, children, opts?)` — `opts = { columns = 2, description = "..." }`
 - `ForeverLoot.Item(itemID)`
 - `ForeverLoot.PlaceholderItem(name, quality, icon)` — hard-coded display data, for prototyping
 - `ForeverLoot.PlaceholderItems(prefix, count)` — generates `count` placeholder items

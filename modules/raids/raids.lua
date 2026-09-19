@@ -4,6 +4,7 @@ local FL = ForeverLoot
 local Folder, placeholderItems = FL.Folder, FL.PlaceholderItems
 
 local ICON_RAID = "Interface\\Icons\\Achievement_Boss_Ragnaros"
+local LOOT = { columns = 2 } -- boss loot tables are shown in two columns
 local ICON_BOSS = "Interface\\Icons\\Ability_Creature_Cursed_02"
 
 FL:RegisterModule({
@@ -14,16 +15,16 @@ FL:RegisterModule({
     description = "Loot tables for raid instances.",
     children = {
         Folder("Molten Core", ICON_RAID, {
-            Folder("Lucifron", ICON_BOSS, placeholderItems("Lucifron", 9)),
-            Folder("Magmadar", ICON_BOSS, placeholderItems("Magmadar", 12)),
-            Folder("Ragnaros", ICON_BOSS, placeholderItems("Ragnaros", 21)),
+            Folder("Lucifron", ICON_BOSS, placeholderItems("Lucifron", 9), LOOT),
+            Folder("Magmadar", ICON_BOSS, placeholderItems("Magmadar", 12), LOOT),
+            Folder("Ragnaros", ICON_BOSS, placeholderItems("Ragnaros", 21), LOOT),
         }),
         Folder("Blackwing Lair", ICON_RAID, {
-            Folder("Razorgore", ICON_BOSS, placeholderItems("Razorgore", 8)),
-            Folder("Nefarian", ICON_BOSS, placeholderItems("Nefarian", 18)),
+            Folder("Razorgore", ICON_BOSS, placeholderItems("Razorgore", 8), LOOT),
+            Folder("Nefarian", ICON_BOSS, placeholderItems("Nefarian", 18), LOOT),
         }),
         Folder("Onyxia's Lair", ICON_RAID, {
-            Folder("Onyxia", ICON_BOSS, placeholderItems("Onyxia", 14)),
+            Folder("Onyxia", ICON_BOSS, placeholderItems("Onyxia", 14), LOOT),
         }),
     },
 })

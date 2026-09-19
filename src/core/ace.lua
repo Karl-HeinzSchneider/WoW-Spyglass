@@ -39,6 +39,9 @@ end
 -- Re-apply everything that depends on profile settings. Modules opt in by defining OnProfileRefresh.
 function addon:OnProfileRefresh()
     log:setLevel(self.db.profile.logLevel)
+    if app.ui and app.ui.mainWindow then
+        app.ui.mainWindow:RefreshViews()
+    end
     for _, module in self:IterateModules() do
         if module.OnProfileRefresh then
             module:OnProfileRefresh()

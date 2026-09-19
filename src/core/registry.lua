@@ -21,6 +21,7 @@ local log = app.logger
 ---@field itemID? integer  # real items (display resolution not implemented yet)
 ---@field quality? Enum.ItemQuality  # placeholder items
 ---@field moduleID? string  # set on the root's module nodes
+---@field columns? integer  # how many columns this folder's children are laid out in (1 or 2); default 1
 
 ---@class ForeverLoot.ModuleDef
 ---@field id string  # unique key, e.g. "raids"; other addons should prefix theirs ("myaddon-raids")
@@ -50,12 +51,22 @@ ForeverLoot = api
 -- Node constructors (optional sugar for module authors)
 ----------------------------------------------------------------------------------------------------
 
+---@class ForeverLoot.FolderOptions
+---@field columns? integer  # 1 = full-width rows, 2 = two columns per page
+---@field description? string
+
 ---@param name string
 ---@param icon string|number
 ---@param children ForeverLoot.Node[]
+---@param opts? ForeverLoot.FolderOptions
 ---@return ForeverLoot.Node
-function api.Folder(name, icon, children)
-    return { name = name, icon = icon, children = children }
+function api.Folder(name, icon, children, opts)
+    local node = { name = name, icon = icon, children = children }
+    if opts then
+        node.columns = opts.columns
+        node.description = opts.description
+    end
+    return node
 end
 
 -- A real item, resolved from the game's item database when displayed (not implemented yet).

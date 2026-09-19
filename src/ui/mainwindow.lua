@@ -251,3 +251,10 @@ end
 function ForeverLootMainWindowMixin:Toggle()
     self:SetShown(not self:IsShown())
 end
+
+-- Redraw every open view (layout settings changed, profile switched, ...).
+function ForeverLootMainWindowMixin:RefreshViews()
+    for _, view in ipairs(self.views) do
+        view:Refresh()
+    end
+end

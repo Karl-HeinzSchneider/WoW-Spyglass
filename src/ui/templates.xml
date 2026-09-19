@@ -80,6 +80,7 @@
 	<Frame name="ForeverLootViewTemplate" mixin="ForeverLootViewMixin" virtual="true">
 		<KeyValues>
 			<KeyValue key="rowHeight" value="40" type="number"/>
+			<KeyValue key="columnGap" value="12" type="number"/>
 			<!-- Rows start below the breadcrumb bar, which overlays the top of the page art. -->
 			<KeyValue key="pageInsetTop" value="56" type="number"/>
 			<KeyValue key="pageInsetBottom" value="60" type="number"/>

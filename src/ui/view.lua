@@ -102,6 +102,7 @@ end
 ---@field crumbPool ForeverLoot.FramePool
 ---@field separatorPool ForeverLoot.FramePool
 ---@field rowHeight number
+---@field columnGap number
 ---@field pageInsetTop number
 ---@field pageInsetBottom number
 ---@field pageInsetLeft number
@@ -227,39 +228,62 @@ function ForeverLootViewMixin:GetRowsPerPage()
     return math.max(1, math.floor(usable / self.rowHeight))
 end
 
+-- Columns per page for the current list. Defined by the collection itself (`node.columns`);
+-- one full-width column when unset.
+---@param node ForeverLoot.Node?
+---@return integer
+function ForeverLootViewMixin:GetColumns(node)
+    local columns = node and node.columns or 1
+    return math.max(1, math.min(2, columns))
+end
+
 function ForeverLootViewMixin:Refresh()
     local node = self:GetCurrentNode()
     local entries = node and node.children or {}
 
-    local rowsPerPage = self:GetRowsPerPage()
-    local rowsPerSpread = rowsPerPage * self:GetPagesShown()
-    local maxPages = math.max(1, math.ceil(#entries / rowsPerSpread))
+    local columns = self:GetColumns(node)
+    local slotsPerPage = self:GetRowsPerPage() * columns
+    local slotsPerSpread = slotsPerPage * self:GetPagesShown()
+    local maxPages = math.max(1, math.ceil(#entries / slotsPerSpread))
     self.PagingControls:SetMaxPages(maxPages)
-    local first = (self.PagingControls:GetCurrentPage() - 1) * rowsPerSpread + 1
+    local first = (self.PagingControls:GetCurrentPage() - 1) * slotsPerSpread + 1
 
-    self:FillPage(self.LeftPage, entries, first, rowsPerPage)
-    self:FillPage(self.RightPage, entries, first + rowsPerPage, self.isMinimized and 0 or rowsPerPage)
+    self:FillPage(self.LeftPage, entries, first, slotsPerPage, columns)
+    self:FillPage(self.RightPage, entries, first + slotsPerPage, self.isMinimized and 0 or slotsPerPage, columns)
     self.PagingControls:SetShown(maxPages > 1)
 
     self:RefreshBreadcrumbs()
     self.BackButton:SetEnabled(#self.path > 1)
 end
 
+-- Lays out up to `count` entries in `columns` columns, filling each column top to bottom
+-- before moving right, so a list still reads like a list.
 ---@param page ForeverLoot.Page
 ---@param entries ForeverLoot.Node[]
 ---@param first integer
 ---@param count integer
-function ForeverLootViewMixin:FillPage(page, entries, first, count)
+---@param columns integer
+function ForeverLootViewMixin:FillPage(page, entries, first, count, columns)
     page.rowPool:ReleaseAll()
-    local width = page:GetWidth() - self.pageInsetLeft - self.pageInsetRight
+    local usableWidth = page:GetWidth() - self.pageInsetLeft - self.pageInsetRight
+    local columnWidth = (usableWidth - self.columnGap * (columns - 1)) / columns
+    local rowsPerColumn = math.max(1, math.ceil(count / columns))
     for i = 0, count - 1 do
         local entry = entries[first + i]
         if not entry then
             break
         end
+        local column = math.floor(i / rowsPerColumn)
+        local rowIndex = i % rowsPerColumn
         local row = page.rowPool:Acquire() --[[@as ForeverLoot.ListRow]]
-        row:SetSize(width, self.rowHeight)
-        row:SetPoint("TOPLEFT", page, "TOPLEFT", self.pageInsetLeft, -(self.pageInsetTop + i * self.rowHeight))
+        row:SetSize(columnWidth, self.rowHeight)
+        row:SetPoint(
+            "TOPLEFT",
+            page,
+            "TOPLEFT",
+            self.pageInsetLeft + column * (columnWidth + self.columnGap),
+            -(self.pageInsetTop + rowIndex * self.rowHeight)
+        )
         row:Init(self, entry)
         row:Show()
     end
