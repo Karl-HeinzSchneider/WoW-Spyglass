@@ -1,4 +1,4 @@
-<Ui>
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
 	<!-- One folder per built-in module. Each registers itself through the public ForeverLoot API. -->
 	<Include file="raids\raids.xml" />
 	<Include file="dungeons\dungeons.xml" />

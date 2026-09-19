@@ -66,6 +66,14 @@
     "ITEM_QUALITY_COLORS",
     "CreateFramePool"
   ],
-  "Lua.diagnostics.disable": ["assign-type-mismatch"],
-  "wowAPI.luals.frameXML": true
+  "Lua.diagnostics.disable": [
+    "assign-type-mismatch"
+  ],
+  "wowAPI.luals.frameXML": true,
+  "xml.fileAssociations": [
+    {
+      "pattern": "**/*.xml",
+      "systemId": "${workspaceFolder}/BlizzardInterfaceCode/Interface/AddOns/Blizzard_SharedXML/UI.xsd"
+    }
+  ]
 }

@@ -60,6 +60,15 @@ If tooling (e.g. luacheck, a packager) is added later, document the commands her
 - `db/` — data tables (static data shipped with the addon).
 - `assets/` — textures, icons, sounds referenced from code.
 
+## XML files
+
+Every XML file starts with `<Ui xmlns="http://www.blizzard.com/wow/ui/">` and **no**
+`xsi:schemaLocation` — the client ignores that hint and a wrong path makes the VS Code XML
+extension report errors. Schema validation instead comes from `xml.fileAssociations` in
+`.vscode/settings.json`, which maps `**/*.xml` to `BlizzardInterfaceCode/.../Blizzard_SharedXML/UI.xsd`
+(so it only works when the optional `BlizzardInterfaceCode/` symlink exists). To validate from
+the command line: `python -c "from lxml import etree; ..."` against that XSD, as in this session.
+
 ## Optional: Blizzard's own UI source for reference
 
 A developer may place Blizzard's interface code at `BlizzardInterfaceCode/` in the repo root,
