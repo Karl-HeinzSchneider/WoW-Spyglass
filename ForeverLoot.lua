@@ -1,3 +1,3 @@
-local appName, app = ...;
+local appName, app = ...
 
-print('uwu')
+print("uwu")

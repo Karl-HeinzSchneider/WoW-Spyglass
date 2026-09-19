@@ -1,4 +1,3 @@
-local appName, app = ...;
+local appName, app = ...
 
-local logger = {};
-
+local logger = {}
