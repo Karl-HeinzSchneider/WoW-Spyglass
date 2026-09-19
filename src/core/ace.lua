@@ -36,9 +36,14 @@ function addon:OnDisable()
     log:debug("Disabled")
 end
 
--- Re-apply everything that depends on profile settings.
+-- Re-apply everything that depends on profile settings. Modules opt in by defining OnProfileRefresh.
 function addon:OnProfileRefresh()
     log:setLevel(self.db.profile.logLevel)
+    for _, module in self:IterateModules() do
+        if module.OnProfileRefresh then
+            module:OnProfileRefresh()
+        end
+    end
 end
 
 ---@param input string

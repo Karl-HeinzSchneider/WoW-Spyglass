@@ -10,6 +10,7 @@
 ---@field addon ForeverLoot.Addon
 ---@field dbDefaults ForeverLoot.DBDefaults
 ---@field db ForeverLoot.DB
+---@field minimapButton ForeverLoot.MinimapButton
 
 -- The AceDB object, with profile/char/global narrowed to the shape of app.dbDefaults.
 -- Ace3 API types (AceAddon, AceDBObject-3.0, ...) come from the ketho.wow-api extension.
