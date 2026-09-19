@@ -11,6 +11,33 @@
 ---@field dbDefaults ForeverLoot.DBDefaults
 ---@field db ForeverLoot.DB
 ---@field minimapButton ForeverLoot.MinimapButton
+---@field api ForeverLoot.API  # also the global `ForeverLoot`
+---@field ui ForeverLoot.UI
+
+-- UI namespace. Mixins are globals (XML requires it) but also exposed here.
+---@class ForeverLoot.UI
+---@field mainWindow ForeverLoot.MainWindow  # set in ForeverLootMainWindowMixin:OnLoad
+---@field MainWindowMixin ForeverLoot.MainWindow
+---@field ViewMixin ForeverLoot.View
+---@field ListRowMixin ForeverLoot.ListRow
+---@field PageHeaderMixin ForeverLoot.PageHeader
+---@field GroupLabelMixin ForeverLoot.GroupLabel
+---@field BreadcrumbButtonMixin ForeverLoot.BreadcrumbButton
+
+-- Return type of CreateFramePool. The FrameXML annotations keep the pool mixins private,
+-- so the methods we use are declared here.
+---@class ForeverLoot.FramePool
+---@field Acquire fun(self: ForeverLoot.FramePool): Frame
+---@field Release fun(self: ForeverLoot.FramePool, frame: Frame)
+---@field ReleaseAll fun(self: ForeverLoot.FramePool)
+---@field EnumerateActive fun(self: ForeverLoot.FramePool): fun(): Frame
+
+-- A HorizontalLayoutFrame / VerticalLayoutFrame instance.
+---@class ForeverLoot.LayoutFrame : Frame, LayoutMixin
+
+-- Any child placed in a layout frame needs a layoutIndex.
+---@class ForeverLoot.LayoutChild : Frame
+---@field layoutIndex integer
 
 -- The AceDB object, with profile/char/global narrowed to the shape of app.dbDefaults.
 -- Ace3 API types (AceAddon, AceDBObject-3.0, ...) come from the ketho.wow-api extension.

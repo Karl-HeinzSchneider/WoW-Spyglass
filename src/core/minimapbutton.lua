@@ -25,7 +25,7 @@ function module:OnInitialize()
         end,
         OnTooltipShow = function(tooltip)
             tooltip:AddLine(appName)
-            tooltip:AddLine("Left-click: test message", 1, 1, 1)
+            tooltip:AddLine("Left-click: toggle window", 1, 1, 1)
         end,
     }
     self.ldb = LibStub("LibDataBroker-1.1"):NewDataObject(appName, launcher) --[[@as LibDataBroker.QuickLauncher]]
@@ -45,5 +45,9 @@ end
 
 ---@param button string "LeftButton", "RightButton", ...
 function module:OnClick(button)
-    log:chat("Minimap button clicked (%s)", button)
+    if button == "LeftButton" then
+        app.ui.mainWindow:Toggle()
+    else
+        log:debug("Minimap button clicked (%s)", button)
+    end
 end

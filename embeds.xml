@@ -1,4 +1,4 @@
-<Ui>
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
 	<!-- Order matters: LibStub first, then CallbackHandler, then everything that depends on them. -->
 	<Script file="lib\LibStub\LibStub.lua" />
 	<Include file="lib\CallbackHandler-1.0\CallbackHandler-1.0.xml" />

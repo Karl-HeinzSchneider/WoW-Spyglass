@@ -39,6 +39,9 @@ end
 -- Re-apply everything that depends on profile settings. Modules opt in by defining OnProfileRefresh.
 function addon:OnProfileRefresh()
     log:setLevel(self.db.profile.logLevel)
+    if app.ui and app.ui.mainWindow then
+        app.ui.mainWindow:RefreshViews()
+    end
     for _, module in self:IterateModules() do
         if module.OnProfileRefresh then
             module:OnProfileRefresh()
@@ -51,7 +54,9 @@ function addon:OnSlashCommand(input)
     local cmd, rest = self:GetArgs(input, 2)
     cmd = cmd and cmd:lower() or ""
 
-    if cmd == "loglevel" then
+    if cmd == "" or cmd == "show" then
+        app.ui.mainWindow:Toggle()
+    elseif cmd == "loglevel" then
         if rest and log:setLevel(rest) then
             self.db.profile.logLevel = log:getLevelName()
             log:chat("Log level set to %s", self.db.profile.logLevel)
@@ -62,6 +67,6 @@ function addon:OnSlashCommand(input)
         self.db:ResetProfile()
         log:chat("Profile reset")
     else
-        log:chat("Commands: /fl loglevel <level>, /fl reset")
+        log:chat("Commands: /fl, /fl loglevel <level>, /fl reset")
     end
 end

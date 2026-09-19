@@ -25,7 +25,8 @@
     "utf8": "disable"
   },
   "Lua.workspace.library": [
-    "~\\.vscode\\extensions\\ketho.wow-api-0.22.3\\Annotations\\Core"
+    "~\\.vscode\\extensions\\ketho.wow-api-0.22.3\\Annotations\\Core",
+    "~\\.vscode\\extensions\\ketho.wow-api-0.22.3\\Annotations\\FrameXML"
   ],
   "Lua.diagnostics.globals": [
     "DEFAULT_CHAT_FRAME",
@@ -61,7 +62,21 @@
     "Minimap",
     "AddonCompartmentFrame",
     "INFO",
-    "NONE"
+    "NONE",
+    "ITEM_QUALITY_COLORS",
+    "CreateFramePool",
+    "OTHER",
+    "SPELLS",
+    "HandleModifiedItemClick",
+    "RETRIEVING_ITEM_INFO",
+    "ITEM_LEVEL"
   ],
-  "Lua.diagnostics.disable": ["assign-type-mismatch"]
+  "Lua.diagnostics.disable": ["assign-type-mismatch"],
+  "wowAPI.luals.frameXML": true,
+  "xml.fileAssociations": [
+    {
+      "pattern": "**/*.xml",
+      "systemId": "${workspaceFolder}/BlizzardInterfaceCode/Interface/AddOns/Blizzard_SharedXML/UI.xsd"
+    }
+  ]
 }

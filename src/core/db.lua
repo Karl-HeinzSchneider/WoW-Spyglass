@@ -11,6 +11,13 @@ local profile = {
     minimap = {
         hide = false,
     },
+    -- Main window anchor relative to UIParent; written on drag stop.
+    window = {
+        point = "CENTER",
+        x = 0,
+        y = 0,
+        minimized = true, -- one book page; false = two-page spread
+    },
 }
 
 -- Data tied to one character; loot history lives here.
