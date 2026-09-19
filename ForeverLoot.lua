@@ -1,3 +1,6 @@
-local appName, app = ...
+---@type string, ForeverLoot
+local _, app = ...
 
-print("uwu")
+local log = app.logger
+
+log("uwu")

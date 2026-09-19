@@ -6,4 +6,5 @@
 ## SavedVariables: ForeverLootDB
 ## X-License: MIT
 
+src\core\logger.lua
 ForeverLoot.lua

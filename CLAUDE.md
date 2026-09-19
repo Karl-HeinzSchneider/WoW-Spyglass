@@ -34,6 +34,13 @@ If tooling (e.g. luacheck, a packager) is added later, document the commands her
 - The runtime is Lua 5.1 with Blizzard's restricted API. No `require`, `io`, `os`, or
   `loadstring` of external files; all code must be listed in the TOC.
 - Addons share a single global namespace. Keep the addon's state in the private table passed
-  to each file (`local addonName, ns = ...`) rather than globals.
+  to each file rather than globals. Every file starts with:
+  ```lua
+  ---@type string, ForeverLoot
+  local appName, app = ...
+  ```
+  (Use `local _, app = ...` when the name is unused, or LuaLS flags it.) The `---@type` line is
+  what gives the Lua language server completion on `app.*`; without it `...` is untyped. `src/types.lua` declares the `ForeverLoot` class — when a file adds a member
+  to `app`, add a matching `---@field` there. That file is annotations only and is not in the TOC.
 - Persistent state lives only in tables declared via `## SavedVariables` in the TOC; they are
   populated after `ADDON_LOADED` fires, not at file-load time.

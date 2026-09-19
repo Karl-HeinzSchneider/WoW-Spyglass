@@ -59,6 +59,8 @@
     "NUM_CHAT_WINDOWS",
     "ChatEdit_GetActiveWindow",
     "Minimap",
-    "AddonCompartmentFrame"
+    "AddonCompartmentFrame",
+    "INFO",
+    "NONE"
   ]
 }
