@@ -33,6 +33,19 @@ If tooling (e.g. luacheck, a packager) is added later, document the commands her
   class and `ForeverLoot.DB`. Ace3 types (`AceAddon`, `AceDBObject-3.0`, `AceDB.Schema`, …) come
   from the `ketho.wow-api` VS Code extension, not from `lib/` (which is excluded from LuaLS) —
   inherit from them rather than redeclaring the API.
+- `src/ui/` — the main window, Blizzard-style **XML layout + Lua mixin** so the exported Blizzard
+  code (see below) maps 1:1. XML `mixin=`/`name=` attributes need globals, so mixins and the window
+  frame are globals prefixed `ForeverLoot…` (also on `app.ui.*`); this is the only sanctioned
+  exception to the no-globals rule. Lua mixin files must be listed in the TOC *before* the XML that
+  references them, and `templates.xml` before `mainwindow.xml`.
+  - `mainwindow.lua/.xml` — `ForeverLootMainWindow`: `PortraitFrameTemplate` + `TabSystemOwnerTemplate`
+    (modeled on `PlayerSpellsFrame`). Browser-style tabs: one per open *view*, plus a `+` tab;
+    right-click closes. The Blizzard tab strip can only append/clear, so `RebuildTabs()` redoes the
+    whole strip. Draggable; position saved to `profile.window`. `/fl` and the minimap button toggle it.
+  - `view.lua` + `templates.xml` — a view is a breadcrumb bar + two spellbook-art pages of rows with
+    Blizzard `PagingControls`. Navigation is a `path` stack over `ForeverLoot.Node` trees
+    (`Push`/`PopTo`/`Back` → `Refresh`).
+  - `mockdata.lua` — TEMPORARY placeholder node tree until the real data layer exists.
 - `ForeverLoot.lua` — root entry file, loaded last.
 - `lib/` — vendored Ace3, LibStub, CallbackHandler, LibDBIcon. Excluded from LuaLS and StyLua.
 - `locales/` — localization string tables.
