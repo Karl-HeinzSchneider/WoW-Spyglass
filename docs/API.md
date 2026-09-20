@@ -29,6 +29,21 @@ FL:RegisterModule({
 })
 ```
 
+## Adding to an existing module
+
+You don't have to create a module to contribute content. `ForeverLoot:AddToModule(id, node)`
+appends a folder (or any node) to a registered module, e.g. a new dungeon inside the built-in
+`"dungeons"` module:
+
+```lua
+local dungeon = ForeverLoot.Folder("Gnomeregan", "Interface\\Icons\\...", { ...bosses... })
+dungeon.order = 29 -- level; built-in modules sort their children by `order`, then name
+ForeverLoot:AddToModule("dungeons", dungeon)
+```
+
+Built-in module ids: `"raids"`, `"dungeons"`. ForeverLoot's own content uses exactly this call —
+one file per instance under `modules/<module>/`.
+
 ## `ForeverLoot:RegisterModule(def) -> boolean`
 
 Registers (or, if `def.id` already exists, replaces) a module. Returns `false` and logs an error
@@ -43,6 +58,8 @@ if the definition is invalid; it never throws.
 | `description` | string | no | Free text for tooltips. |
 | `children` | Node[] | one of | The module's top-level entries. |
 | `getChildren` | fun(def) -> Node[] | one of | Lazy alternative; called once, the first time the tree is built. Errors are caught and logged. |
+| `sortChildren` | boolean \| fun(a, b) | no | `true` sorts children by node `order` (default 100), then `name`; a function is used as the comparator and receives the full nodes (metadata included). Applies to `AddToModule` entries too. |
+| `expansionID`, `seasonID`, `tags`, `meta` | various | no | Metadata; see below. |
 
 ## Nodes
 
@@ -63,6 +80,34 @@ redraws when the data arrives.
 Folders may also set `columns = 1 | 2` to control how their children are laid out: one
 full-width column (the default) or two columns per page. This is decided by the collection,
 not by a user setting, so choose it per list (e.g. `columns = 2` for a boss's loot table).
+
+### Metadata
+
+Modules and nodes accept optional metadata that ForeverLoot stores but does not interpret;
+it is there for your sort functions, filters and other addons:
+
+| Field | Type | Notes |
+|---|---|---|
+| `order` | number | Sort key used by `sortChildren = true`. Use fractions for ties, e.g. `60.1`, `60.2`. |
+| `expansionID` | integer | e.g. `LE_EXPANSION_CLASSIC` |
+| `seasonID` | integer | |
+| `instanceID` | integer | journal / map instance id |
+| `minLevel`, `maxLevel` | integer | |
+| `tags` | string[] | |
+| `meta` | table | anything else |
+
+`Folder(name, icon, children, opts)` copies every key of `opts` onto the node, so layout
+options and metadata go in the same table; `Custom(def)` copies every field of `def`.
+
+```lua
+local dungeon = ForeverLoot.Folder("Gnomeregan", icon, bosses, {
+    order = 29, minLevel = 24, maxLevel = 34, expansionID = 0, instanceID = 90, tags = { "tech" },
+})
+ForeverLoot:RegisterModule({
+    id = "myaddon-season", name = "Season 3", icon = icon, seasonID = 3, children = {},
+    sortChildren = function(a, b) return (a.minLevel or 0) < (b.minLevel or 0) end,
+})
+```
 
 ### Headers and groups
 
@@ -106,6 +151,7 @@ Constructors (optional sugar):
 
 ## Other calls
 
+- `ForeverLoot:AddToModule(id, node) -> boolean` — append an entry to a registered module
 - `ForeverLoot:UnregisterModule(id) -> boolean`
 - `ForeverLoot:GetModule(id) -> def?`
 - `ForeverLoot:GetModules() -> def[]` — sorted by `order`, then `name`

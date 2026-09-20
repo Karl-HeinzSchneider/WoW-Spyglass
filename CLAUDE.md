@@ -32,8 +32,12 @@ If tooling (e.g. luacheck, a packager) is added later, document the commands her
   CallbackHandler-1.0 (`OnModuleRegistered/Unregistered/OnModulesChanged`). Defines the
   `ForeverLoot.Node` and `ForeverLoot.ModuleDef` types. Changing the API means updating `docs/API.md`.
 - `modules/<name>/` — one folder per built-in content module (`raids`, `dungeons`, …), each with a
-  `<name>.xml` loader listed in `modules/modules.xml`. They register through the same public API a
-  third-party addon would use, so never give them private hooks. Current data is placeholder.
+  `<name>.xml` loader listed in `modules/modules.xml`. `<name>.lua` only registers the module
+  (metadata, `children = {}`, `sortChildren = true`); **each instance is its own file** (e.g.
+  `dungeons/deadmines.lua`) that builds a folder with all of its bosses and calls
+  `ForeverLoot:AddToModule("<name>", folder)`. The XML lists the module file first. Modules use
+  only the public API a third-party addon would use, so never give them private hooks. Current
+  data is placeholder.
 - `src/core/ace.lua` — `app.addon`, the AceAddon-3.0 object (mixins: AceConsole, AceEvent).
   `OnInitialize` creates `app.db` from `ForeverLootDB`, wires profile-change callbacks to
   `OnProfileRefresh`, and registers `/fl` + `/foreverloot`. Register game events in `OnEnable`.

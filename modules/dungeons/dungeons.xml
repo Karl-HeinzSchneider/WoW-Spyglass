@@ -1,3 +1,6 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<!-- The module file first (registers "dungeons"), then one file per dungeon. -->
 	<Script file="dungeons.lua" />
+	<Script file="deadmines.lua" />
+	<Script file="scarlet_monastery.lua" />
 </Ui>

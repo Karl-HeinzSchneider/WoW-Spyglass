@@ -1,3 +1,7 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<!-- The module file first (registers "raids"), then one file per raid instance. -->
 	<Script file="raids.lua" />
+	<Script file="molten_core.lua" />
+	<Script file="blackwing_lair.lua" />
+	<Script file="onyxias_lair.lua" />
 </Ui>

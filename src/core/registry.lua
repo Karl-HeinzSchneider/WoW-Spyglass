@@ -31,7 +31,16 @@ local log = app.logger
 ---@field moduleID? string  # set on the root's module nodes
 ---@field columns? integer  # folders: 1 or 2 columns for this list; default 1
 ---@field groupBy? "auto"|fun(node: ForeverLoot.Node): string?, string?  # folders: auto-group ungrouped entries; see api.DefaultGroupKey
+---@field order? number  # sort key when the owning module sorts its children
 ---@field header? string  # section header marker; see ForeverLoot.Header
+--- Optional metadata, free for modules and custom sort functions to use:
+---@field expansionID? integer  # e.g. LE_EXPANSION_CLASSIC
+---@field seasonID? integer
+---@field instanceID? integer  # journal/map instance id
+---@field minLevel? integer
+---@field maxLevel? integer
+---@field tags? string[]
+---@field meta? table<string, any>  # anything else
 ---@field group? string  # group label marker; `items` optionally holds the grouped entries
 ---@field items? ForeverLoot.Node[]
 
@@ -41,8 +50,14 @@ local log = app.logger
 ---@field icon string|number  # texture path or fileID
 ---@field order? number  # sort position in the root list; lower first, default 100
 ---@field description? string  # shown in tooltips
----@field children? ForeverLoot.Node[]  # the module's top-level entries
+---@field children? ForeverLoot.Node[]  # the module's top-level entries (may be empty and filled via AddToModule)
 ---@field getChildren? fun(def: ForeverLoot.ModuleDef): ForeverLoot.Node[]  # lazy alternative to `children`, called once
+---@field sortChildren? boolean|fun(a: ForeverLoot.Node, b: ForeverLoot.Node): boolean  # true = by node `order`, then name; a function gets the full nodes incl. metadata
+--- Optional metadata, same meaning as on nodes:
+---@field expansionID? integer
+---@field seasonID? integer
+---@field tags? string[]
+---@field meta? table<string, any>
 
 ---@class ForeverLoot.API
 ---@field RegisterCallback fun(target: table, event: string, method: string|function, ...)
@@ -70,10 +85,19 @@ ForeverLoot = api
 -- Node constructors (optional sugar for module authors)
 ----------------------------------------------------------------------------------------------------
 
+-- Anything in here is copied onto the folder node: layout options and metadata alike.
 ---@class ForeverLoot.FolderOptions
 ---@field columns? integer  # 1 = full-width rows, 2 = two columns per page
 ---@field description? string
 ---@field groupBy? "auto"|fun(node: ForeverLoot.Node): string?, string?  # cluster entries under group labels
+---@field order? number
+---@field expansionID? integer
+---@field seasonID? integer
+---@field instanceID? integer
+---@field minLevel? integer
+---@field maxLevel? integer
+---@field tags? string[]
+---@field meta? table<string, any>
 
 ---@param name string
 ---@param icon string|number
@@ -82,10 +106,10 @@ ForeverLoot = api
 ---@return ForeverLoot.Node
 function api.Folder(name, icon, children, opts)
     local node = { name = name, icon = icon, children = children }
-    if opts then
-        node.columns = opts.columns
-        node.description = opts.description
-        node.groupBy = opts.groupBy
+    for key, value in pairs(opts or {}) do
+        if key ~= "name" and key ~= "icon" and key ~= "children" then
+            node[key] = value
+        end
     end
     return node
 end
@@ -106,19 +130,16 @@ function api.Spell(spellID)
     return { spellID = spellID }
 end
 
--- Anything else: an icon, a title, an optional description line, tooltip lines and a click handler.
----@param def { name: string, icon?: string|number, description?: string, quality?: Enum.ItemQuality, category?: string, tooltip?: string[], onClick?: fun(node: ForeverLoot.Node, button: string) }
+-- Anything else: an icon, a title, an optional description line, tooltip lines and a click
+-- handler. Every field is copied, so metadata (expansionID, tags, meta, ...) comes along.
+---@param def { name: string, icon?: string|number, description?: string, quality?: Enum.ItemQuality, category?: string, tooltip?: string[], onClick?: fun(node: ForeverLoot.Node, button: string), [string]: any }
 ---@return ForeverLoot.Node
 function api.Custom(def)
-    return {
-        name = def.name,
-        icon = def.icon,
-        description = def.description,
-        quality = def.quality,
-        category = def.category,
-        tooltip = def.tooltip,
-        onClick = def.onClick,
-    }
+    local node = {}
+    for key, value in pairs(def) do
+        node[key] = value
+    end
+    return node
 end
 
 -- A section header inside a folder's children, e.g. to split a loot table into "Weapons" / "Armor".
@@ -177,11 +198,29 @@ end
 
 -- Canonical order for equipment-slot groups; everything else follows in order of appearance.
 local SLOT_ORDER = {
-    "INVTYPE_HEAD", "INVTYPE_NECK", "INVTYPE_SHOULDER", "INVTYPE_CLOAK", "INVTYPE_CHEST", "INVTYPE_ROBE",
-    "INVTYPE_WRIST", "INVTYPE_HAND", "INVTYPE_WAIST", "INVTYPE_LEGS", "INVTYPE_FEET",
-    "INVTYPE_FINGER", "INVTYPE_TRINKET", "WEAPON", "INVTYPE_SHIELD", "INVTYPE_HOLDABLE",
-    "INVTYPE_RANGED", "INVTYPE_RANGEDRIGHT", "INVTYPE_THROWN", "INVTYPE_RELIC",
-    "INVTYPE_BODY", "INVTYPE_TABARD", "INVTYPE_BAG",
+    "INVTYPE_HEAD",
+    "INVTYPE_NECK",
+    "INVTYPE_SHOULDER",
+    "INVTYPE_CLOAK",
+    "INVTYPE_CHEST",
+    "INVTYPE_ROBE",
+    "INVTYPE_WRIST",
+    "INVTYPE_HAND",
+    "INVTYPE_WAIST",
+    "INVTYPE_LEGS",
+    "INVTYPE_FEET",
+    "INVTYPE_FINGER",
+    "INVTYPE_TRINKET",
+    "WEAPON",
+    "INVTYPE_SHIELD",
+    "INVTYPE_HOLDABLE",
+    "INVTYPE_RANGED",
+    "INVTYPE_RANGEDRIGHT",
+    "INVTYPE_THROWN",
+    "INVTYPE_RELIC",
+    "INVTYPE_BODY",
+    "INVTYPE_TABARD",
+    "INVTYPE_BAG",
 }
 local slotRank = {}
 for i, slot in ipairs(SLOT_ORDER) do
@@ -299,6 +338,24 @@ local cachedRoot = nil
 
 local DEFAULT_ORDER = 100
 
+---@param def ForeverLoot.ModuleDef
+---@return ForeverLoot.Node[]
+local function resolveChildren(def)
+    if def.children == nil and def.getChildren then
+        local ok, result = pcall(def.getChildren, def)
+        if ok and type(result) == "table" then
+            def.children = result
+        else
+            log:error("Module %s: getChildren failed: %s", def.id, tostring(result))
+            def.children = {}
+        end
+    end
+    if def.children == nil then
+        def.children = {}
+    end
+    return def.children
+end
+
 ---@param def any
 ---@return boolean ok, string? err
 local function validate(def)
@@ -326,6 +383,9 @@ local function validate(def)
     if def.children == nil and def.getChildren == nil then
         return false, "one of `children` or `getChildren` is required"
     end
+    if def.sortChildren ~= nil and type(def.sortChildren) ~= "boolean" and type(def.sortChildren) ~= "function" then
+        return false, "field `sortChildren` must be a boolean or a comparator function"
+    end
     return true
 end
 
@@ -345,6 +405,29 @@ function api:RegisterModule(def)
 
     log:debug("Module %s: %s", replaced and "replaced" or "registered", def.id)
     self.callbacks:Fire("OnModuleRegistered", def.id, replaced)
+    self.callbacks:Fire("OnModulesChanged")
+    return true
+end
+
+-- Appends an entry to an already registered module, e.g. one dungeon per file, or a third-party
+-- addon adding an instance to the built-in "dungeons" module. The module's `sortChildren`
+-- decides the final order; otherwise entries appear in the order they were added.
+---@param id string
+---@param node ForeverLoot.Node
+---@return boolean ok
+function api:AddToModule(id, node)
+    local def = modules[id]
+    if not def then
+        log:error("AddToModule: no module with id %q (register it first)", tostring(id))
+        return false
+    end
+    if type(node) ~= "table" then
+        log:error("AddToModule(%s): node must be a table", id)
+        return false
+    end
+    local children = resolveChildren(def)
+    children[#children + 1] = node
+    cachedRoot = nil
     self.callbacks:Fire("OnModulesChanged")
     return true
 end
@@ -385,19 +468,34 @@ function api:GetModules()
     return list
 end
 
+---@param a ForeverLoot.Node
+---@param b ForeverLoot.Node
+---@return boolean
+local function byOrderThenName(a, b)
+    local oa, ob = a.order or DEFAULT_ORDER, b.order or DEFAULT_ORDER
+    if oa ~= ob then
+        return oa < ob
+    end
+    return (a.name or "") < (b.name or "")
+end
+
 ---@param def ForeverLoot.ModuleDef
 ---@return ForeverLoot.Node[]
-local function resolveChildren(def)
-    if def.children == nil and def.getChildren then
-        local ok, result = pcall(def.getChildren, def)
-        if ok and type(result) == "table" then
-            def.children = result
-        else
-            log:error("Module %s: getChildren failed: %s", def.id, tostring(result))
-            def.children = {}
-        end
+local function sortedChildren(def)
+    local children = def.children or {}
+    if not def.sortChildren then
+        return children
     end
-    return def.children or {}
+    local copy = {}
+    for i, child in ipairs(children) do
+        copy[i] = child
+    end
+    local comparator = byOrderThenName
+    if type(def.sortChildren) == "function" then
+        comparator = def.sortChildren
+    end
+    table.sort(copy, comparator)
+    return copy
 end
 
 -- The virtual root node the main window browses: one child per registered module.
@@ -413,7 +511,7 @@ function api:GetRootNode()
             name = def.name,
             icon = def.icon,
             description = def.description,
-            children = resolveChildren(def),
+            children = (resolveChildren(def) and sortedChildren(def)),
             moduleID = def.id,
         }
     end
