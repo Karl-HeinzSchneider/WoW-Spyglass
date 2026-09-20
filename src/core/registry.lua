@@ -490,9 +490,10 @@ local function sortedChildren(def)
     for i, child in ipairs(children) do
         copy[i] = child
     end
-    local comparator = byOrderThenName
-    if type(def.sortChildren) == "function" then
-        comparator = def.sortChildren
+    -- Narrow on a local: LuaLS doesn't refine `def.sortChildren` (boolean|function) via type().
+    local comparator = def.sortChildren
+    if type(comparator) ~= "function" then
+        comparator = byOrderThenName
     end
     table.sort(copy, comparator)
     return copy
