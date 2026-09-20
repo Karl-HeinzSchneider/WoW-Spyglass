@@ -1,6 +1,7 @@
--- Built-in module: Raids. Everything comes from the item database (db/generated): one folder
--- per instance of type "raid", a folder per boss, the recorded drops inside.
--- Levels, icons and loot are curated in .contribute/raids/*.json.
+-- Built-in module: Raids. Each instance is listed explicitly below (one `InstanceFolder` per
+-- line) so only raids with curated loot show up; uncomment a line once its drops are in
+-- .contribute/raids/*.json. Bosses and levels come from the item database (db/generated).
+-- The list order is the display order.
 local FL = ForeverLoot
 
 FL:RegisterModule({
@@ -10,14 +11,19 @@ FL:RegisterModule({
     order = 10,
     description = "Loot tables for raid instances.",
     getChildren = function()
-        return FL.InstanceFolders("raid")
-    end,
-    -- By level (instances without a curated level range go last), then name.
-    sortChildren = function(a, b)
-        local la, lb = a.minLevel or 999, b.minLevel or 999
-        if la ~= lb then
-            return la < lb
-        end
-        return (a.name or "") < (b.name or "")
+        return {
+            FL.InstanceFolder(249), -- Onyxia's Lair
+            -- FL.InstanceFolder(409), -- Molten Core
+            -- FL.InstanceFolder(469), -- Blackwing Lair
+            -- FL.InstanceFolder(309), -- Zul'Gurub
+            -- FL.InstanceFolder(509), -- Ruins of Ahn'Qiraj
+            -- FL.InstanceFolder(531), -- Ahn'Qiraj Temple
+            -- FL.InstanceFolder(533), -- Naxxramas
+            -- FL.InstanceFolder(2789), -- The Tainted Scar
+            -- FL.InstanceFolder(2791), -- Storm Cliffs
+            -- FL.InstanceFolder(2804), -- The Crystal Vale
+            -- FL.InstanceFolder(2832), -- Nightmare Grove
+            -- FL.InstanceFolder(2856), -- Scarlet Enclave
+        }
     end,
 })
