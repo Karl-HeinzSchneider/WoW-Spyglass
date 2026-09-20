@@ -3689,5 +3689,5281 @@
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
+  },
+  "242018": {
+    "names": {
+      "enUS": "Plaguelands Bleeding Heart"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 133941,
+    "sellPrice": 0,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "242224": {
+    "names": {
+      "enUS": "Basket of Hearts"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 237268,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "242266": {
+    "names": {
+      "enUS": "World of Wardcraft"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133733,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "242267": {
+    "names": {
+      "enUS": "From Arcanist to Archmage"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133737,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "242268": {
+    "names": {
+      "enUS": "If You Give a Crusader an Enchant"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133742,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "242269": {
+    "names": {
+      "enUS": "Brilliance of the Grand Sorcerer"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 132882,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "242270": {
+    "names": {
+      "enUS": "Brilliance of the Grand Arcanist"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 132875,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "242271": {
+    "names": {
+      "enUS": "Brilliance of the Grand Crusader"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 237014,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "242361": {
+    "names": {
+      "enUS": "Formula: Enchant 2H Weapon - Grand Inquisitor"
+    },
+    "quality": 3,
+    "itemLevel": 80,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 7500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "242362": {
+    "names": {
+      "enUS": "Brilliance of the Grand Inquisitor"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 237015,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "242363": {
+    "names": {
+      "enUS": "Who, What, Where, When, and Die! Five Keys to a Good Inquisition"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133738,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "242709": {
+    "names": {
+      "enUS": "Character Bank Tab Bag (DNT)"
+    },
+    "quality": 1,
+    "itemLevel": 30,
+    "reqLevel": 0,
+    "classID": 1,
+    "subclassID": 0,
+    "slot": "INVTYPE_BAG",
+    "bind": 1,
+    "icon": 132764,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "242710": {
+    "names": {
+      "enUS": "Monster Weapon [DNT]"
+    },
+    "quality": 0,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 2,
+    "subclassID": 7,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 0,
+    "icon": 135325,
+    "sellPrice": 2,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 0.75
+    }
+  },
+  "243065": {
+    "names": {
+      "enUS": "Broken Wand"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 135645,
+    "sellPrice": 17,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "243177": {
+    "names": {
+      "enUS": "Ingenious Toy"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 13,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 237290,
+    "sellPrice": 17000,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "243203": {
+    "names": {
+      "enUS": "Humongous Crystal"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 50,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133244,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "243266": {
+    "names": {
+      "enUS": "Fel-Tainted Giblets"
+    },
+    "quality": 1,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 4639592,
+    "sellPrice": 0,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "243299": {
+    "names": {
+      "enUS": "Big Bag o' Gold"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133642,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "245675": {
+    "names": {
+      "enUS": "Gordok Inner Door Key"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 13,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134238,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "245983": {
+    "names": {
+      "enUS": "Ursine Heirloom"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 611424,
+    "sellPrice": 0,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "246055": {
+    "names": {
+      "enUS": "Inquisition Grips"
+    },
+    "quality": 4,
+    "itemLevel": 98,
+    "reqLevel": 60,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_HAND",
+    "bind": 1,
+    "icon": 132985,
+    "sellPrice": 51099,
+    "stackCount": 1,
+    "setID": 1963,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 14,
+      "EXPERTISE_RATING": 10,
+      "HASTE_RATING": 20,
+      "INTELLECT": 38,
+      "RESISTANCE0_NAME": 681,
+      "STAMINA": 13
+    }
+  },
+  "246056": {
+    "names": {
+      "enUS": "Inquisition Armbraces"
+    },
+    "quality": 4,
+    "itemLevel": 98,
+    "reqLevel": 60,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_WRIST",
+    "bind": 1,
+    "icon": 132614,
+    "sellPrice": 50719,
+    "stackCount": 1,
+    "setID": 1963,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "EXPERTISE_RATING": 10,
+      "HIT_RATING": 30,
+      "INTELLECT": 29,
+      "RESISTANCE0_NAME": 477,
+      "STAMINA": 13
+    }
+  },
+  "246057": {
+    "names": {
+      "enUS": "Inquisition Stompers"
+    },
+    "quality": 4,
+    "itemLevel": 98,
+    "reqLevel": 60,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_FEET",
+    "bind": 1,
+    "icon": 132587,
+    "sellPrice": 70562,
+    "stackCount": 1,
+    "setID": 1963,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 14,
+      "HASTE_RATING": 20,
+      "HIT_RATING": 10,
+      "INTELLECT": 37,
+      "RESISTANCE0_NAME": 749,
+      "STAMINA": 14
+    }
+  },
+  "246058": {
+    "names": {
+      "enUS": "Inquisition Plate Pants"
+    },
+    "quality": 4,
+    "itemLevel": 98,
+    "reqLevel": 60,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_LEGS",
+    "bind": 1,
+    "icon": 134703,
+    "sellPrice": 102583,
+    "stackCount": 1,
+    "setID": 1963,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 28,
+      "HASTE_RATING": 20,
+      "HIT_RATING": 10,
+      "INTELLECT": 50,
+      "RESISTANCE0_NAME": 954,
+      "STAMINA": 23
+    }
+  },
+  "246059": {
+    "names": {
+      "enUS": "Inquisition Cord"
+    },
+    "quality": 4,
+    "itemLevel": 98,
+    "reqLevel": 60,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_WAIST",
+    "bind": 1,
+    "icon": 132516,
+    "sellPrice": 52055,
+    "stackCount": 1,
+    "setID": 1963,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 28,
+      "EXPERTISE_RATING": 10,
+      "INTELLECT": 36,
+      "RESISTANCE0_NAME": 613,
+      "STAMINA": 18
+    }
+  },
+  "246060": {
+    "names": {
+      "enUS": "Inquisition Cuirass"
+    },
+    "quality": 4,
+    "itemLevel": 98,
+    "reqLevel": 60,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_CHEST",
+    "bind": 1,
+    "icon": 132757,
+    "sellPrice": 123767,
+    "stackCount": 1,
+    "setID": 1963,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 28,
+      "EXPERTISE_RATING": 10,
+      "HASTE_RATING": 20,
+      "HIT_RATING": 30,
+      "INTELLECT": 51,
+      "RESISTANCE0_NAME": 1090,
+      "STAMINA": 10
+    }
+  },
+  "246061": {
+    "names": {
+      "enUS": "Inquisition Epaulets"
+    },
+    "quality": 4,
+    "itemLevel": 98,
+    "reqLevel": 60,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_SHOULDER",
+    "bind": 1,
+    "icon": 135087,
+    "sellPrice": 70300,
+    "stackCount": 1,
+    "setID": 1963,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 14,
+      "EXPERTISE_RATING": 10,
+      "HIT_RATING": 10,
+      "INTELLECT": 36,
+      "RESISTANCE0_NAME": 818,
+      "STAMINA": 15
+    }
+  },
+  "246062": {
+    "names": {
+      "enUS": "Inquisition Faceguard"
+    },
+    "quality": 4,
+    "itemLevel": 98,
+    "reqLevel": 60,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_HEAD",
+    "bind": 1,
+    "icon": 133194,
+    "sellPrice": 77225,
+    "stackCount": 1,
+    "setID": 1963,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 28,
+      "EXPERTISE_RATING": 10,
+      "HASTE_RATING": 20,
+      "INTELLECT": 51,
+      "RESISTANCE0_NAME": 886,
+      "STAMINA": 19
+    }
+  },
+  "246164": {
+    "names": {
+      "enUS": "Skullthumper"
+    },
+    "quality": 2,
+    "itemLevel": 13,
+    "reqLevel": 0,
+    "classID": 2,
+    "subclassID": 4,
+    "slot": "INVTYPE_WEAPONMAINHAND",
+    "bind": 1,
+    "icon": 133476,
+    "sellPrice": 326,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 7
+    }
+  },
+  "246165": {
+    "names": {
+      "enUS": "Driftwood Smasher"
+    },
+    "quality": 2,
+    "itemLevel": 13,
+    "reqLevel": 0,
+    "classID": 2,
+    "subclassID": 5,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 1,
+    "icon": 133052,
+    "sellPrice": 592,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 8.94,
+      "STAMINA": 2
+    }
+  },
+  "246213": {
+    "names": {
+      "enUS": "Sturdy Lumber"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 135437,
+    "sellPrice": 0,
+    "stackCount": 15,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "246265": {
+    "names": {
+      "enUS": "Salvaged Wooden Tower Shield"
+    },
+    "quality": 2,
+    "itemLevel": 14,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 6,
+    "slot": "INVTYPE_SHIELD",
+    "bind": 1,
+    "icon": 134957,
+    "sellPrice": 373,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 311
+    }
+  },
+  "246377": {
+    "names": {
+      "enUS": "Monster - Sword, 1h - Kirin Tor"
+    },
+    "quality": 0,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 2,
+    "subclassID": 7,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 0,
+    "icon": 135274,
+    "sellPrice": 2,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 0.75
+    }
+  },
+  "246680": {
+    "names": {
+      "enUS": "Mana-Siphoning Wand"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 135463,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "246683": {
+    "names": {
+      "enUS": "Treasure Trowel 3000"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 5768267,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "246684": {
+    "names": {
+      "enUS": "Highborne Treasure Fragment"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 441146,
+    "sellPrice": 0,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "246721": {
+    "names": {
+      "enUS": "Seal of the Warrior"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 236266,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "246722": {
+    "names": {
+      "enUS": "Seal of the Ranger"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 537444,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "246725": {
+    "names": {
+      "enUS": "Seal of the Warden"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 2200994,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "246770": {
+    "names": {
+      "enUS": "Sin'dorei Tome of Summoning"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 133738,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "246778": {
+    "names": {
+      "enUS": "Sin'dorei Tome of Summoning"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 133738,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "246780": {
+    "names": {
+      "enUS": "Heart of Vek'zol"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 514018,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "246885": {
+    "names": {
+      "enUS": "Soft Cow Doll"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 136072,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "246888": {
+    "names": {
+      "enUS": "Humongous Crystal"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 50,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133244,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "246938": {
+    "names": {
+      "enUS": "Tear of Mennar"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 1377394,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "246948": {
+    "names": {
+      "enUS": "Distilled Firewater"
+    },
+    "quality": 1,
+    "itemLevel": 45,
+    "reqLevel": 45,
+    "classID": 0,
+    "subclassID": 2,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134872,
+    "sellPrice": 200,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247000": {
+    "names": {
+      "enUS": "Fel-Tainted Rock"
+    },
+    "quality": 1,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134464,
+    "sellPrice": 0,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247001": {
+    "names": {
+      "enUS": "Fel-Tainted Branch"
+    },
+    "quality": 1,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 132106,
+    "sellPrice": 0,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247238": {
+    "names": {
+      "enUS": "Mana-Siphoning Wand"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 135463,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247239": {
+    "names": {
+      "enUS": "Lesser Discolored Healing Potion"
+    },
+    "quality": 1,
+    "itemLevel": 13,
+    "reqLevel": 3,
+    "classID": 0,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134816,
+    "sellPrice": 25,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247240": {
+    "names": {
+      "enUS": "Discolored Healing Potion"
+    },
+    "quality": 1,
+    "itemLevel": 22,
+    "reqLevel": 12,
+    "classID": 0,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134817,
+    "sellPrice": 75,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247241": {
+    "names": {
+      "enUS": "Greater Discolored Healing Potion"
+    },
+    "quality": 1,
+    "itemLevel": 31,
+    "reqLevel": 21,
+    "classID": 0,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134818,
+    "sellPrice": 125,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247242": {
+    "names": {
+      "enUS": "Superior Discolored Healing Potion"
+    },
+    "quality": 1,
+    "itemLevel": 45,
+    "reqLevel": 35,
+    "classID": 0,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134819,
+    "sellPrice": 250,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247684": {
+    "names": {
+      "enUS": "Forgotten Ashes"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 135231,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247754": {
+    "names": {
+      "enUS": "Minor Arcane Elixir"
+    },
+    "quality": 1,
+    "itemLevel": 5,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 2,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134728,
+    "sellPrice": 25,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247755": {
+    "names": {
+      "enUS": "Elixir of Minor Force"
+    },
+    "quality": 1,
+    "itemLevel": 5,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 2,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134857,
+    "sellPrice": 25,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247786": {
+    "names": {
+      "enUS": "Mote of Magic"
+    },
+    "quality": 1,
+    "itemLevel": 5,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 12,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 132841,
+    "sellPrice": 1,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "247789": {
+    "names": {
+      "enUS": "Novice's Practice Wand"
+    },
+    "quality": 1,
+    "itemLevel": 6,
+    "reqLevel": 1,
+    "classID": 2,
+    "subclassID": 19,
+    "slot": "INVTYPE_RANGEDRIGHT",
+    "bind": 2,
+    "icon": 135645,
+    "sellPrice": 1,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 4
+    }
+  },
+  "247805": {
+    "names": {
+      "enUS": "Stolen Enchanting Supplies"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 1003590,
+    "sellPrice": 0,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247813": {
+    "names": {
+      "enUS": "Waterlogged Saw"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134427,
+    "sellPrice": 0,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247815": {
+    "names": {
+      "enUS": "Crude Fruit Pulp"
+    },
+    "quality": 1,
+    "itemLevel": 5,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 4554327,
+    "sellPrice": 1,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "247816": {
+    "names": {
+      "enUS": "Mining Tools"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134708,
+    "sellPrice": 0,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247817": {
+    "names": {
+      "enUS": "Waterlogged Axe"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 135422,
+    "sellPrice": 0,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247818": {
+    "names": {
+      "enUS": "Waterlogged Toolbox"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247824": {
+    "names": {
+      "enUS": "Thunder Applejack"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 132793,
+    "sellPrice": 12,
+    "stackCount": 10,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247826": {
+    "names": {
+      "enUS": "Croaky's Head"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 7,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134169,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247834": {
+    "names": {
+      "enUS": "Nibbled-On Book"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133736,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247839": {
+    "names": {
+      "enUS": "Stolen Book"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 133741,
+    "sellPrice": 0,
+    "stackCount": 8,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247840": {
+    "names": {
+      "enUS": "Mining for Dummies"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 4625105,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247841": {
+    "names": {
+      "enUS": "Wild Harvest"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 4624731,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247846": {
+    "names": {
+      "enUS": "Pelt Collecting for Beginners"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 4625106,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247857": {
+    "names": {
+      "enUS": "Nibbled-On Book"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 133736,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247862": {
+    "names": {
+      "enUS": "Elmpaw's Head"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 7,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 132183,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247876": {
+    "names": {
+      "enUS": "[DNT] Minimus Tentaculus"
+    },
+    "quality": 1,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134437,
+    "sellPrice": 2500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247877": {
+    "names": {
+      "enUS": "Rough Wolf Pelt"
+    },
+    "quality": 1,
+    "itemLevel": 10,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 4559256,
+    "sellPrice": 0,
+    "stackCount": 10,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247883": {
+    "names": {
+      "enUS": "Crude Wax Effigy"
+    },
+    "quality": 2,
+    "itemLevel": 10,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 12,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134448,
+    "sellPrice": 18,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247884": {
+    "names": {
+      "enUS": "Luminous Residue"
+    },
+    "quality": 1,
+    "itemLevel": 5,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 12,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 1500915,
+    "sellPrice": 5,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247885": {
+    "names": {
+      "enUS": "Useless Goop"
+    },
+    "quality": 0,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 1500940,
+    "sellPrice": 15,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247886": {
+    "names": {
+      "enUS": "Sack of \"Picture\" Books"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 133639,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247889": {
+    "names": {
+      "enUS": "Untainted Soil"
+    },
+    "quality": 1,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 133849,
+    "sellPrice": 0,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247892": {
+    "names": {
+      "enUS": "Verdant Leaves"
+    },
+    "quality": 1,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 614747,
+    "sellPrice": 0,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247963": {
+    "names": {
+      "enUS": "Herbal Soil Poultice"
+    },
+    "quality": 1,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 237425,
+    "sellPrice": 0,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "247970": {
+    "names": {
+      "enUS": "Kobold Tracking Kit"
+    },
+    "quality": 1,
+    "itemLevel": 5,
+    "reqLevel": 1,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 132995,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248001": {
+    "names": {
+      "enUS": "Lost Book"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 133735,
+    "sellPrice": 0,
+    "stackCount": 6,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248002": {
+    "names": {
+      "enUS": "Picture Book: Fun with Elementals"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 133740,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248003": {
+    "names": {
+      "enUS": "Geomancy for Curious Young Wizards"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 133739,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248004": {
+    "names": {
+      "enUS": "Arcane Explainer: Magical Stuff in Simple Words"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 133742,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248005": {
+    "names": {
+      "enUS": "Northshire Hammer"
+    },
+    "quality": 2,
+    "itemLevel": 12,
+    "reqLevel": 0,
+    "classID": 2,
+    "subclassID": 5,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 1,
+    "icon": 133053,
+    "sellPrice": 466,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 8.33,
+      "STRENGTH": 2
+    }
+  },
+  "248006": {
+    "names": {
+      "enUS": "Militia Sword"
+    },
+    "quality": 2,
+    "itemLevel": 12,
+    "reqLevel": 0,
+    "classID": 2,
+    "subclassID": 7,
+    "slot": "INVTYPE_WEAPONMAINHAND",
+    "bind": 1,
+    "icon": 132321,
+    "sellPrice": 326,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 6.4,
+      "STAMINA": 1
+    }
+  },
+  "248007": {
+    "names": {
+      "enUS": "Militia Shortblade"
+    },
+    "quality": 2,
+    "itemLevel": 12,
+    "reqLevel": 0,
+    "classID": 2,
+    "subclassID": 15,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 1,
+    "icon": 135651,
+    "sellPrice": 468,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 1,
+      "DAMAGE_PER_SECOND": 6.5
+    }
+  },
+  "248008": {
+    "names": {
+      "enUS": "Apprentice's Spellstaff"
+    },
+    "quality": 2,
+    "itemLevel": 12,
+    "reqLevel": 0,
+    "classID": 2,
+    "subclassID": 10,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 1,
+    "icon": 135155,
+    "sellPrice": 601,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 6.36,
+      "INTELLECT": 2,
+      "SPELL_POWER": 4
+    }
+  },
+  "248206": {
+    "names": {
+      "enUS": "Sealed Craftsman's Writ"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 10,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134328,
+    "sellPrice": 0,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248549": {
+    "names": {
+      "enUS": "Waylaid Crate"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 10,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 132765,
+    "sellPrice": 0,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248584": {
+    "names": {
+      "enUS": "Monster - Sword, 2h - Kirin Tor"
+    },
+    "quality": 0,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 2,
+    "subclassID": 7,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 0,
+    "icon": 135274,
+    "sellPrice": 2,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 0.75
+    }
+  },
+  "248613": {
+    "names": {
+      "enUS": "Lightning in a Bottle"
+    },
+    "quality": 1,
+    "itemLevel": 25,
+    "reqLevel": 15,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134811,
+    "sellPrice": 25,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248682": {
+    "names": {
+      "enUS": "Waylaid Crate: Apprentice Herbs"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 10,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248683": {
+    "names": {
+      "enUS": "Waylaid Crate: Apprentice Ore"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 10,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248684": {
+    "names": {
+      "enUS": "Waylaid Crate: Apprentice Textiles"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 10,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248685": {
+    "names": {
+      "enUS": "Waylaid Crate: Apprentice Curiosities"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 10,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248686": {
+    "names": {
+      "enUS": "Waylaid Crate: Journeyman Herbs"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 10,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248687": {
+    "names": {
+      "enUS": "Waylaid Crate: Journeyman Ore"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 10,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248688": {
+    "names": {
+      "enUS": "Waylaid Crate: Journeyman Textiles"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 10,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248689": {
+    "names": {
+      "enUS": "Waylaid Crate: Journeyman Curiosities"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 10,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248690": {
+    "names": {
+      "enUS": "Waylaid Crate: Earthly Expert Herbs"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 20,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248691": {
+    "names": {
+      "enUS": "Waylaid Crate: Flowering Expert Herbs"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 20,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248692": {
+    "names": {
+      "enUS": "Waylaid Crate: Expert Ore"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 20,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248693": {
+    "names": {
+      "enUS": "Waylaid Crate: Expert Textiles"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 20,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248694": {
+    "names": {
+      "enUS": "Waylaid Crate: Expert Curiosities"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 20,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248695": {
+    "names": {
+      "enUS": "Waylaid Crate: Earthly Artisan Herbs"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 35,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248696": {
+    "names": {
+      "enUS": "Waylaid Crate: Flowering Artisan Herbs"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 35,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248697": {
+    "names": {
+      "enUS": "Waylaid Crate: Artisan Ore"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 35,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248698": {
+    "names": {
+      "enUS": "Waylaid Crate: Artisan Textiles"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 35,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248699": {
+    "names": {
+      "enUS": "Waylaid Crate: Artisan Curiosities"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 35,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248702": {
+    "names": {
+      "enUS": "Waylaid Crate: Apprentice Fabrics"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 10,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248703": {
+    "names": {
+      "enUS": "Waylaid Crate: Apprentice Ingots"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 10,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248704": {
+    "names": {
+      "enUS": "Waylaid Crate: Apprentice Parts"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 10,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248705": {
+    "names": {
+      "enUS": "Waylaid Crate: Journeyman Fabrics"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 10,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248706": {
+    "names": {
+      "enUS": "Waylaid Crate: Journeyman Ingots"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 10,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248707": {
+    "names": {
+      "enUS": "Waylaid Crate: Journeyman Parts"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 10,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248708": {
+    "names": {
+      "enUS": "Waylaid Crate: Expert Fabrics"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 20,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248709": {
+    "names": {
+      "enUS": "Waylaid Crate: Expert Ingots"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 20,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248710": {
+    "names": {
+      "enUS": "Waylaid Crate: Expert Parts"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 20,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248711": {
+    "names": {
+      "enUS": "Waylaid Crate: Artisan Fabrics"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 35,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248712": {
+    "names": {
+      "enUS": "Waylaid Crate: Artisan Ingots"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 35,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248713": {
+    "names": {
+      "enUS": "Waylaid Crate: Artisan Parts"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 35,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 236994,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248765": {
+    "names": {
+      "enUS": "Sealed Apprentice Crate"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 236995,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248766": {
+    "names": {
+      "enUS": "Sealed Journeyman Crate"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 236995,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248767": {
+    "names": {
+      "enUS": "Sealed Expert Crate"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 236995,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248768": {
+    "names": {
+      "enUS": "Sealed Artisan Crate"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 236995,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248769": {
+    "names": {
+      "enUS": "Sealed Elite Crate"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 236995,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248770": {
+    "names": {
+      "enUS": "Sealed Apprentice Crate"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 236996,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248771": {
+    "names": {
+      "enUS": "Sealed Journeyman Crate"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 236996,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248772": {
+    "names": {
+      "enUS": "Sealed Expert Crate"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 236996,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248773": {
+    "names": {
+      "enUS": "Sealed Artisan Crate"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 236996,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248774": {
+    "names": {
+      "enUS": "Sealed Elite Crate"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 236996,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248775": {
+    "names": {
+      "enUS": "Sealed Apprentice Crate"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 132763,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248776": {
+    "names": {
+      "enUS": "Sealed Journeyman Crate"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 132763,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248777": {
+    "names": {
+      "enUS": "Sealed Expert Crate"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 132763,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248778": {
+    "names": {
+      "enUS": "Sealed Artisan Crate"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 132763,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248779": {
+    "names": {
+      "enUS": "Sealed Elite Crate"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 132763,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248815": {
+    "names": {
+      "enUS": "Heavy Thorium Ore"
+    },
+    "quality": 1,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 7,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 3608331,
+    "sellPrice": 375,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248819": {
+    "names": {
+      "enUS": "Fel Crystal"
+    },
+    "quality": 2,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 11,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 463889,
+    "sellPrice": 3000,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248820": {
+    "names": {
+      "enUS": "Torbernite"
+    },
+    "quality": 2,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 11,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 237222,
+    "sellPrice": 15000,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248821": {
+    "names": {
+      "enUS": "Demonsage"
+    },
+    "quality": 1,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 9,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 458175,
+    "sellPrice": 225,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248822": {
+    "names": {
+      "enUS": "Death Lotus"
+    },
+    "quality": 2,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 9,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 5976935,
+    "sellPrice": 1500,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248823": {
+    "names": {
+      "enUS": "Marefoil"
+    },
+    "quality": 1,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 9,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 348547,
+    "sellPrice": 150,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248824": {
+    "names": {
+      "enUS": "Fel Hide"
+    },
+    "quality": 1,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 6,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134262,
+    "sellPrice": 750,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248825": {
+    "names": {
+      "enUS": "Fel Leather"
+    },
+    "quality": 1,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 6,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134259,
+    "sellPrice": 750,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "248930": {
+    "names": {
+      "enUS": "Quinn's Potion"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134720,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "248975": {
+    "names": {
+      "enUS": "Seed of the Ancients"
+    },
+    "quality": 1,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 5976945,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249144": {
+    "names": {
+      "enUS": "Twisted Nether Wand"
+    },
+    "quality": 2,
+    "itemLevel": 42,
+    "reqLevel": 37,
+    "classID": 2,
+    "subclassID": 19,
+    "slot": "INVTYPE_RANGEDRIGHT",
+    "bind": 2,
+    "icon": 135465,
+    "sellPrice": 5263,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 34,
+      "SPELL_POWER": 6
+    }
+  },
+  "249232": {
+    "names": {
+      "enUS": "Lesser Eternal Wand"
+    },
+    "quality": 2,
+    "itemLevel": 54,
+    "reqLevel": 49,
+    "classID": 2,
+    "subclassID": 19,
+    "slot": "INVTYPE_RANGEDRIGHT",
+    "bind": 2,
+    "icon": 135467,
+    "sellPrice": 5263,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 45.75,
+      "SPELL_POWER": 8
+    }
+  },
+  "249234": {
+    "names": {
+      "enUS": "Dreambough Wand"
+    },
+    "quality": 2,
+    "itemLevel": 48,
+    "reqLevel": 43,
+    "classID": 2,
+    "subclassID": 19,
+    "slot": "INVTYPE_RANGEDRIGHT",
+    "bind": 2,
+    "icon": 135466,
+    "sellPrice": 5263,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 39.17,
+      "SPELL_POWER": 7
+    }
+  },
+  "249237": {
+    "names": {
+      "enUS": "Greater Eternal Wand"
+    },
+    "quality": 2,
+    "itemLevel": 60,
+    "reqLevel": 55,
+    "classID": 2,
+    "subclassID": 19,
+    "slot": "INVTYPE_RANGEDRIGHT",
+    "bind": 2,
+    "icon": 135475,
+    "sellPrice": 5263,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 53.33,
+      "SPELL_POWER": 9
+    }
+  },
+  "249274": {
+    "names": {
+      "enUS": "Stranglevine"
+    },
+    "quality": 2,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 9,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 1387617,
+    "sellPrice": 250,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "249385": {
+    "names": {
+      "enUS": "Brilliant Wand"
+    },
+    "quality": 3,
+    "itemLevel": 60,
+    "reqLevel": 55,
+    "classID": 2,
+    "subclassID": 19,
+    "slot": "INVTYPE_RANGEDRIGHT",
+    "bind": 1,
+    "icon": 135469,
+    "sellPrice": 5263,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 59.58,
+      "INTELLECT": 7,
+      "SPELL_POWER": 9
+    }
+  },
+  "249390": {
+    "names": {
+      "enUS": "Seals of the Sin'dorei"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 4638528,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249391": {
+    "names": {
+      "enUS": "Pyrite"
+    },
+    "quality": 2,
+    "itemLevel": 25,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 7,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 961627,
+    "sellPrice": 100,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "249392": {
+    "names": {
+      "enUS": "Glimmering Staff"
+    },
+    "quality": 3,
+    "itemLevel": 30,
+    "reqLevel": 25,
+    "classID": 2,
+    "subclassID": 10,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 1,
+    "icon": 135156,
+    "sellPrice": 601,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 18.41,
+      "INTELLECT": 11,
+      "SPELL_POWER": 34,
+      "STAMINA": 11
+    }
+  },
+  "249393": {
+    "names": {
+      "enUS": "Soulstaff"
+    },
+    "quality": 3,
+    "itemLevel": 30,
+    "reqLevel": 25,
+    "classID": 2,
+    "subclassID": 10,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 1,
+    "icon": 135168,
+    "sellPrice": 601,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 18.33,
+      "SPELL_POWER": 34,
+      "SPIRIT": 11,
+      "STAMINA": 11
+    }
+  },
+  "249394": {
+    "names": {
+      "enUS": "Orb of Mystic Insight"
+    },
+    "quality": 3,
+    "itemLevel": 30,
+    "reqLevel": 25,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_HOLDABLE",
+    "bind": 1,
+    "icon": 1769010,
+    "sellPrice": 2156,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 6,
+      "SPELL_POWER": 7
+    }
+  },
+  "249395": {
+    "names": {
+      "enUS": "Orb of Souls"
+    },
+    "quality": 3,
+    "itemLevel": 30,
+    "reqLevel": 25,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_HOLDABLE",
+    "bind": 1,
+    "icon": 134336,
+    "sellPrice": 2156,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "SPELL_DAMAGE_DONE": 4,
+      "SPELL_HEALING_DONE": 13,
+      "SPIRIT": 6
+    }
+  },
+  "249396": {
+    "names": {
+      "enUS": "Mystic Mushroom"
+    },
+    "quality": 3,
+    "itemLevel": 25,
+    "reqLevel": 20,
+    "classID": 4,
+    "subclassID": 8,
+    "slot": "INVTYPE_RELIC",
+    "bind": 1,
+    "icon": 134532,
+    "sellPrice": 1012,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249397": {
+    "names": {
+      "enUS": "Tenets of the Silver Hand"
+    },
+    "quality": 3,
+    "itemLevel": 25,
+    "reqLevel": 20,
+    "classID": 4,
+    "subclassID": 7,
+    "slot": "INVTYPE_RELIC",
+    "bind": 1,
+    "icon": 133745,
+    "sellPrice": 1012,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249398": {
+    "names": {
+      "enUS": "Polished Driftwood Icon"
+    },
+    "quality": 3,
+    "itemLevel": 25,
+    "reqLevel": 20,
+    "classID": 4,
+    "subclassID": 9,
+    "slot": "INVTYPE_RELIC",
+    "bind": 1,
+    "icon": 310733,
+    "sellPrice": 1012,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249399": {
+    "names": {
+      "enUS": "Frilled Lichen"
+    },
+    "quality": 2,
+    "itemLevel": 25,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 9,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 133963,
+    "sellPrice": 30,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "249409": {
+    "names": {
+      "enUS": "Cerulean Dye"
+    },
+    "quality": 2,
+    "itemLevel": 25,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 11,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 1021860,
+    "sellPrice": 125,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "249410": {
+    "names": {
+      "enUS": "Sulfuric Acid"
+    },
+    "quality": 2,
+    "itemLevel": 25,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 11,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 136240,
+    "sellPrice": 125,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "249424": {
+    "names": {
+      "enUS": "Rosecap"
+    },
+    "quality": 2,
+    "itemLevel": 45,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 9,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134222,
+    "sellPrice": 95,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "249425": {
+    "names": {
+      "enUS": "Bauxite"
+    },
+    "quality": 2,
+    "itemLevel": 45,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 7,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 876372,
+    "sellPrice": 250,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "249426": {
+    "names": {
+      "enUS": "Pitchblende"
+    },
+    "quality": 2,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 7,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 3749975,
+    "sellPrice": 375,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "249427": {
+    "names": {
+      "enUS": "Pristine Leather"
+    },
+    "quality": 2,
+    "itemLevel": 25,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 6,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 348551,
+    "sellPrice": 125,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "249428": {
+    "names": {
+      "enUS": "Pristine Hide"
+    },
+    "quality": 2,
+    "itemLevel": 45,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 6,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 3586020,
+    "sellPrice": 250,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "249429": {
+    "names": {
+      "enUS": "Pristine Scale"
+    },
+    "quality": 2,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 6,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134311,
+    "sellPrice": 375,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "249430": {
+    "names": {
+      "enUS": "Magenta Dye"
+    },
+    "quality": 2,
+    "itemLevel": 45,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 11,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 237071,
+    "sellPrice": 250,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "249431": {
+    "names": {
+      "enUS": "Viridian Dye"
+    },
+    "quality": 2,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 11,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 237062,
+    "sellPrice": 375,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "249432": {
+    "names": {
+      "enUS": "Sandpaper"
+    },
+    "quality": 2,
+    "itemLevel": 45,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 237132,
+    "sellPrice": 250,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "249441": {
+    "names": {
+      "enUS": "Talons of Wrath"
+    },
+    "quality": 3,
+    "itemLevel": 45,
+    "reqLevel": 40,
+    "classID": 4,
+    "subclassID": 8,
+    "slot": "INVTYPE_RELIC",
+    "bind": 1,
+    "icon": 136063,
+    "sellPrice": 5833,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249442": {
+    "names": {
+      "enUS": "Libram of Invocation"
+    },
+    "quality": 3,
+    "itemLevel": 45,
+    "reqLevel": 40,
+    "classID": 4,
+    "subclassID": 7,
+    "slot": "INVTYPE_RELIC",
+    "bind": 1,
+    "icon": 134916,
+    "sellPrice": 5833,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249443": {
+    "names": {
+      "enUS": "Totem of Ancestral Protection"
+    },
+    "quality": 3,
+    "itemLevel": 45,
+    "reqLevel": 40,
+    "classID": 4,
+    "subclassID": 9,
+    "slot": "INVTYPE_RELIC",
+    "bind": 1,
+    "icon": 134919,
+    "sellPrice": 11880,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249453": {
+    "names": {
+      "enUS": "Radiant Staff"
+    },
+    "quality": 3,
+    "itemLevel": 50,
+    "reqLevel": 45,
+    "classID": 2,
+    "subclassID": 10,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 1,
+    "icon": 135150,
+    "sellPrice": 33605,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 32.29,
+      "INTELLECT": 19,
+      "SPELL_POWER": 56,
+      "STAMINA": 19
+    }
+  },
+  "249454": {
+    "names": {
+      "enUS": "Dreamstaff"
+    },
+    "quality": 3,
+    "itemLevel": 50,
+    "reqLevel": 45,
+    "classID": 2,
+    "subclassID": 10,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 1,
+    "icon": 135151,
+    "sellPrice": 33731,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 32.29,
+      "SPELL_DAMAGE_DONE": 35,
+      "SPELL_HEALING_DONE": 105,
+      "SPIRIT": 19,
+      "STAMINA": 19
+    }
+  },
+  "249455": {
+    "names": {
+      "enUS": "Truesilver Conduit"
+    },
+    "quality": 3,
+    "itemLevel": 50,
+    "reqLevel": 45,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_HOLDABLE",
+    "bind": 1,
+    "icon": 134922,
+    "sellPrice": 10835,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 8,
+      "SPELL_POWER": 10,
+      "STAMINA": 8
+    }
+  },
+  "249456": {
+    "names": {
+      "enUS": "Twisting Essence Jar"
+    },
+    "quality": 3,
+    "itemLevel": 50,
+    "reqLevel": 45,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_HOLDABLE",
+    "bind": 1,
+    "icon": 4638472,
+    "sellPrice": 10877,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "SPELL_DAMAGE_DONE": 6,
+      "SPELL_HEALING_DONE": 19,
+      "SPIRIT": 8,
+      "STAMINA": 8
+    }
+  },
+  "249469": {
+    "names": {
+      "enUS": "Frozen Heart of the Mountain"
+    },
+    "quality": 3,
+    "itemLevel": 55,
+    "reqLevel": 50,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_TRINKET",
+    "bind": 1,
+    "icon": 134131,
+    "sellPrice": 1500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "FIRE_RESISTANCE": 7,
+      "FROST_RESISTANCE": 7,
+      "HIT_RATING": 9,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE2_NAME": 7,
+      "RESISTANCE3_NAME": 7,
+      "RESISTANCE4_NAME": 7,
+      "RESISTANCE5_NAME": 7,
+      "SHADOW_RESISTANCE": 7
+    }
+  },
+  "249470": {
+    "names": {
+      "enUS": "Molten Heart of the Mountain"
+    },
+    "quality": 3,
+    "itemLevel": 55,
+    "reqLevel": 50,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_TRINKET",
+    "bind": 1,
+    "icon": 134128,
+    "sellPrice": 1500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "FIRE_RESISTANCE": 7,
+      "FROST_RESISTANCE": 7,
+      "NATURE_RESISTANCE": 7,
+      "PHYSICAL_DAMAGE_DONE": 2,
+      "RESISTANCE2_NAME": 7,
+      "RESISTANCE3_NAME": 7,
+      "RESISTANCE4_NAME": 7,
+      "RESISTANCE5_NAME": 7,
+      "SHADOW_RESISTANCE": 7
+    }
+  },
+  "249473": {
+    "names": {
+      "enUS": "Dormant Heart of the Mountain"
+    },
+    "quality": 3,
+    "itemLevel": 55,
+    "reqLevel": 50,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_TRINKET",
+    "bind": 1,
+    "icon": 134094,
+    "sellPrice": 1500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "FIRE_RESISTANCE": 7,
+      "FROST_RESISTANCE": 7,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE2_NAME": 7,
+      "RESISTANCE3_NAME": 7,
+      "RESISTANCE4_NAME": 7,
+      "RESISTANCE5_NAME": 7,
+      "SHADOW_RESISTANCE": 7
+    }
+  },
+  "249474": {
+    "names": {
+      "enUS": "Formula: Enchant Bracer - Minor Intellect"
+    },
+    "quality": 2,
+    "itemLevel": 14,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 2000,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249475": {
+    "names": {
+      "enUS": "Formula: Enchant Bracer - Minor Healing Power"
+    },
+    "quality": 2,
+    "itemLevel": 18,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 2000,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249476": {
+    "names": {
+      "enUS": "Formula: Mystic Mushroom"
+    },
+    "quality": 3,
+    "itemLevel": 26,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 650,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249477": {
+    "names": {
+      "enUS": "Formula: Tenets of the Silver Hand"
+    },
+    "quality": 3,
+    "itemLevel": 26,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 650,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249478": {
+    "names": {
+      "enUS": "Formula: Polished Driftwood Icon"
+    },
+    "quality": 3,
+    "itemLevel": 26,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 650,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249479": {
+    "names": {
+      "enUS": "Formula: Enchant Weapon - Insight"
+    },
+    "quality": 2,
+    "itemLevel": 28,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 700,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249480": {
+    "names": {
+      "enUS": "Formula: Enchant Weapon - Recovery"
+    },
+    "quality": 2,
+    "itemLevel": 28,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 700,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249481": {
+    "names": {
+      "enUS": "Formula: Enchant Weapon - Revelation"
+    },
+    "quality": 2,
+    "itemLevel": 28,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 700,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249482": {
+    "names": {
+      "enUS": "Formula: Glimmering Staff"
+    },
+    "quality": 3,
+    "itemLevel": 28,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 700,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249483": {
+    "names": {
+      "enUS": "Formula: Soulstaff"
+    },
+    "quality": 3,
+    "itemLevel": 28,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 700,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249484": {
+    "names": {
+      "enUS": "Formula: Orb of Mystic Insight"
+    },
+    "quality": 3,
+    "itemLevel": 28,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 700,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249485": {
+    "names": {
+      "enUS": "Formula: Orb of Souls"
+    },
+    "quality": 3,
+    "itemLevel": 28,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 700,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249486": {
+    "names": {
+      "enUS": "Formula: Enchant Bracer - Lesser Agility"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 2000,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249487": {
+    "names": {
+      "enUS": "Formula: Twisted Nether Wand"
+    },
+    "quality": 2,
+    "itemLevel": 37,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 2000,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249488": {
+    "names": {
+      "enUS": "Formula: Enchant Bracer - Agility"
+    },
+    "quality": 2,
+    "itemLevel": 38,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 2000,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249489": {
+    "names": {
+      "enUS": "Formula: Enchant Bracer - Lesser Healing Power"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 2000,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249493": {
+    "names": {
+      "enUS": "Formula: Talons of Wrath"
+    },
+    "quality": 3,
+    "itemLevel": 42,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1050,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249494": {
+    "names": {
+      "enUS": "Formula: Libram of Invocation"
+    },
+    "quality": 3,
+    "itemLevel": 42,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1050,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249495": {
+    "names": {
+      "enUS": "Formula: Totem of Ancestral Protection"
+    },
+    "quality": 3,
+    "itemLevel": 42,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1050,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249496": {
+    "names": {
+      "enUS": "Formula: Enchant Necklace - Strength"
+    },
+    "quality": 2,
+    "itemLevel": 42,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1050,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249502": {
+    "names": {
+      "enUS": "Formula: Enchant Necklace - Spell Power"
+    },
+    "quality": 2,
+    "itemLevel": 42,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1050,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249503": {
+    "names": {
+      "enUS": "Formula: Enchant Necklace - Healing Power"
+    },
+    "quality": 2,
+    "itemLevel": 42,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1050,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249504": {
+    "names": {
+      "enUS": "Formula: Enchant Necklace - Agility"
+    },
+    "quality": 2,
+    "itemLevel": 42,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1050,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249505": {
+    "names": {
+      "enUS": "Formula: Enchant Necklace - Deflection"
+    },
+    "quality": 2,
+    "itemLevel": 42,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1050,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249506": {
+    "names": {
+      "enUS": "Formula: Radiant Staff"
+    },
+    "quality": 3,
+    "itemLevel": 44,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1100,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249507": {
+    "names": {
+      "enUS": "Formula: Dreamstaff"
+    },
+    "quality": 3,
+    "itemLevel": 44,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1100,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249508": {
+    "names": {
+      "enUS": "Formula: Truesilver Conduit"
+    },
+    "quality": 3,
+    "itemLevel": 44,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1100,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249509": {
+    "names": {
+      "enUS": "Formula: Twisting Essence Jar"
+    },
+    "quality": 3,
+    "itemLevel": 44,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1100,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249510": {
+    "names": {
+      "enUS": "Formula: Enchant Chest - Absorption"
+    },
+    "quality": 2,
+    "itemLevel": 44,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1100,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249511": {
+    "names": {
+      "enUS": "Formula: Enchant 2H Weapon - Lesser Agility"
+    },
+    "quality": 2,
+    "itemLevel": 42,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 2000,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249512": {
+    "names": {
+      "enUS": "Formula: Dreambough Wand"
+    },
+    "quality": 2,
+    "itemLevel": 43,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 2000,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249513": {
+    "names": {
+      "enUS": "Formula: Enchant 2H Weapon - Lesser Strength"
+    },
+    "quality": 2,
+    "itemLevel": 44,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 2000,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249514": {
+    "names": {
+      "enUS": "Formula: Enchant Bracer - Greater Agility"
+    },
+    "quality": 2,
+    "itemLevel": 48,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 2000,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249515": {
+    "names": {
+      "enUS": "Formula: Lesser Eternal Wand"
+    },
+    "quality": 2,
+    "itemLevel": 49,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 2000,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249516": {
+    "names": {
+      "enUS": "Formula: Enchant Gloves - Advanced Skinning"
+    },
+    "quality": 2,
+    "itemLevel": 50,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 2000,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249522": {
+    "names": {
+      "enUS": "Formula: Greater Eternal Wand"
+    },
+    "quality": 2,
+    "itemLevel": 55,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 2000,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249523": {
+    "names": {
+      "enUS": "Formula: Enchant 2H Weapon - Strength"
+    },
+    "quality": 2,
+    "itemLevel": 58,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 2000,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249524": {
+    "names": {
+      "enUS": "Formula: Enchant Bracer - Superior Agility"
+    },
+    "quality": 2,
+    "itemLevel": 59,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 2000,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249525": {
+    "names": {
+      "enUS": "Formula: Enchant 2H Weapon - Mighty Spell Power"
+    },
+    "quality": 2,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249526": {
+    "names": {
+      "enUS": "Formula: Enchant 2H Weapon - Mighty Healing Power"
+    },
+    "quality": 2,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249529": {
+    "names": {
+      "enUS": "Formula: Idol of the Dream"
+    },
+    "quality": 3,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249530": {
+    "names": {
+      "enUS": "Formula: Libram of Holy Alacrity"
+    },
+    "quality": 3,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249532": {
+    "names": {
+      "enUS": "Formula: Totem of Thunder"
+    },
+    "quality": 3,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249534": {
+    "names": {
+      "enUS": "Formula: Enchant Gloves - Arcane Power"
+    },
+    "quality": 2,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249535": {
+    "names": {
+      "enUS": "Formula: Enchant Gloves - Natural Power"
+    },
+    "quality": 2,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249536": {
+    "names": {
+      "enUS": "Formula: Enchant Gloves - Holy Power"
+    },
+    "quality": 2,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249537": {
+    "names": {
+      "enUS": "Formula: Brilliant Wand"
+    },
+    "quality": 3,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1375,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249538": {
+    "names": {
+      "enUS": "Formula: Enchant Bracer - Superior Intellect"
+    },
+    "quality": 2,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249539": {
+    "names": {
+      "enUS": "Formula: Enchant Bracer - Superior Deflection"
+    },
+    "quality": 2,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134327,
+    "sellPrice": 1500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249692": {
+    "names": {
+      "enUS": "Head of Varrox Bleakhoof"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 840942,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249693": {
+    "names": {
+      "enUS": "Totem of Ursol"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 4905324,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249694": {
+    "names": {
+      "enUS": "Totem of Ursoc"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 4901295,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249695": {
+    "names": {
+      "enUS": "Fel-Tainted Flesh"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134039,
+    "sellPrice": 200,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249696": {
+    "names": {
+      "enUS": "Tusks of the Unbroken"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 1029749,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249697": {
+    "names": {
+      "enUS": "Claws of the Great Bear"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134296,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249698": {
+    "names": {
+      "enUS": "Feathered Charm Necklace"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 47,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 1535080,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249726": {
+    "names": {
+      "enUS": "Azerothium Bar"
+    },
+    "quality": 2,
+    "itemLevel": 55,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 7,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 612100,
+    "sellPrice": 5000,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "249791": {
+    "names": {
+      "enUS": "Shiny Green Apple"
+    },
+    "quality": 1,
+    "itemLevel": 5,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 133977,
+    "sellPrice": 10,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "249792": {
+    "names": {
+      "enUS": "Sweetsour Grapes"
+    },
+    "quality": 1,
+    "itemLevel": 15,
+    "reqLevel": 5,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134014,
+    "sellPrice": 15,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "249793": {
+    "names": {
+      "enUS": "Wayward Pomegranate"
+    },
+    "quality": 1,
+    "itemLevel": 25,
+    "reqLevel": 15,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 133999,
+    "sellPrice": 30,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "249794": {
+    "names": {
+      "enUS": "Tel'Abim Plantains"
+    },
+    "quality": 1,
+    "itemLevel": 35,
+    "reqLevel": 25,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 133979,
+    "sellPrice": 55,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "249795": {
+    "names": {
+      "enUS": "Flame Papaya"
+    },
+    "quality": 1,
+    "itemLevel": 45,
+    "reqLevel": 35,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 133997,
+    "sellPrice": 90,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "249796": {
+    "names": {
+      "enUS": "Hyjal Berries"
+    },
+    "quality": 1,
+    "itemLevel": 55,
+    "reqLevel": 45,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 133996,
+    "sellPrice": 150,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "249802": {
+    "names": {
+      "enUS": "Grainy Fruit Pulp"
+    },
+    "quality": 1,
+    "itemLevel": 5,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 4554326,
+    "sellPrice": 1,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "249803": {
+    "names": {
+      "enUS": "Tangy Fruit Pulp"
+    },
+    "quality": 1,
+    "itemLevel": 5,
+    "reqLevel": 0,
+    "classID": 7,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 4554324,
+    "sellPrice": 1,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
+  "249865": {
+    "names": {
+      "enUS": "Peace Tea"
+    },
+    "quality": 1,
+    "itemLevel": 5,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 132802,
+    "sellPrice": 1,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249866": {
+    "names": {
+      "enUS": "Royal Tea"
+    },
+    "quality": 1,
+    "itemLevel": 15,
+    "reqLevel": 5,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 132802,
+    "sellPrice": 1,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249867": {
+    "names": {
+      "enUS": "Root Tea"
+    },
+    "quality": 1,
+    "itemLevel": 25,
+    "reqLevel": 15,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 132802,
+    "sellPrice": 1,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249868": {
+    "names": {
+      "enUS": "Triage Tea"
+    },
+    "quality": 1,
+    "itemLevel": 35,
+    "reqLevel": 25,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 132802,
+    "sellPrice": 1,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249869": {
+    "names": {
+      "enUS": "Sunny Tea"
+    },
+    "quality": 1,
+    "itemLevel": 45,
+    "reqLevel": 35,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 132802,
+    "sellPrice": 1,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249870": {
+    "names": {
+      "enUS": "Sage's Tea"
+    },
+    "quality": 1,
+    "itemLevel": 55,
+    "reqLevel": 45,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 132802,
+    "sellPrice": 1,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249871": {
+    "names": {
+      "enUS": "Venomous Smoothie"
+    },
+    "quality": 1,
+    "itemLevel": 5,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 132808,
+    "sellPrice": 1,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249872": {
+    "names": {
+      "enUS": "Slimy Smoothie"
+    },
+    "quality": 1,
+    "itemLevel": 15,
+    "reqLevel": 5,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 4621577,
+    "sellPrice": 1,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249873": {
+    "names": {
+      "enUS": "Mrrggl Smrrthle"
+    },
+    "quality": 1,
+    "itemLevel": 25,
+    "reqLevel": 15,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 4621583,
+    "sellPrice": 1,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249874": {
+    "names": {
+      "enUS": "Calcified Smoothie"
+    },
+    "quality": 1,
+    "itemLevel": 35,
+    "reqLevel": 25,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 4621575,
+    "sellPrice": 1,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249875": {
+    "names": {
+      "enUS": "Spicy Smoothie"
+    },
+    "quality": 1,
+    "itemLevel": 45,
+    "reqLevel": 35,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 4621586,
+    "sellPrice": 1,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249876": {
+    "names": {
+      "enUS": "Wicked Smoothie"
+    },
+    "quality": 1,
+    "itemLevel": 55,
+    "reqLevel": 45,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 4621578,
+    "sellPrice": 1,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249879": {
+    "names": {
+      "enUS": "Recipe: Peace Tea"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 9,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 1875,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249880": {
+    "names": {
+      "enUS": "Recipe: Royal Tea"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 9,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 1875,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249881": {
+    "names": {
+      "enUS": "Recipe: Root Tea"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 9,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 1875,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249882": {
+    "names": {
+      "enUS": "Recipe: Triage Tea"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 9,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 1875,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249883": {
+    "names": {
+      "enUS": "Recipe: Sunny Tea"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 9,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 1875,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249884": {
+    "names": {
+      "enUS": "Recipe: Sage's Tea"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 9,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 1875,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249885": {
+    "names": {
+      "enUS": "Recipe: Venomous Smoothie"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 9,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 125,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249886": {
+    "names": {
+      "enUS": "Recipe: Slimy Smoothie"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 9,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249887": {
+    "names": {
+      "enUS": "Recipe: Mrrggl Smrrthle"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 9,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 625,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249888": {
+    "names": {
+      "enUS": "Recipe: Calcified Smoothie"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 9,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 900,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249889": {
+    "names": {
+      "enUS": "Recipe: Spicy Smoothie"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 9,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 1000,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249890": {
+    "names": {
+      "enUS": "Recipe: Wicked Smoothie"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 9,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 1250,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249895": {
+    "names": {
+      "enUS": "Frosty Lashling Bud"
+    },
+    "quality": 1,
+    "itemLevel": 50,
+    "reqLevel": 0,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 3,
+    "icon": 4554350,
+    "sellPrice": 1250,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249896": {
+    "names": {
+      "enUS": "Viridian Lashling Bud"
+    },
+    "quality": 1,
+    "itemLevel": 50,
+    "reqLevel": 0,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 3,
+    "icon": 4554351,
+    "sellPrice": 1250,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249897": {
+    "names": {
+      "enUS": "Flowery Lashling Bud"
+    },
+    "quality": 1,
+    "itemLevel": 50,
+    "reqLevel": 0,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 3,
+    "icon": 4554353,
+    "sellPrice": 1250,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249898": {
+    "names": {
+      "enUS": "Wilted Lashling Bud"
+    },
+    "quality": 1,
+    "itemLevel": 50,
+    "reqLevel": 0,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 3,
+    "icon": 4554352,
+    "sellPrice": 1250,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249900": {
+    "names": {
+      "enUS": "Regurgitated Seed Pod"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 656439,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "249905": {
+    "names": {
+      "enUS": "Scribbled I.O.U."
+    },
+    "quality": 0,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134331,
+    "sellPrice": 300,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
   }
 }
