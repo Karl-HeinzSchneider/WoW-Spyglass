@@ -1,0 +1,146 @@
+{
+  "134110": {
+    "names": {
+      "enUS": "Hidden Helm"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_HEAD",
+    "bind": 0,
+    "icon": 1360261,
+    "sellPrice": 2,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "134111": {
+    "names": {
+      "enUS": "Hidden Cloak"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_CLOAK",
+    "bind": 0,
+    "icon": 133766,
+    "sellPrice": 2,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "134112": {
+    "names": {
+      "enUS": "Hidden Shoulder"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_SHOULDER",
+    "bind": 0,
+    "icon": 133772,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "135510": {
+    "names": {
+      "enUS": "Transmog UI Trim Head Item"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_HEAD",
+    "bind": 2,
+    "icon": 133195,
+    "sellPrice": 1,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "135522": {
+    "names": {
+      "enUS": "Transmog UI Chest Item"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_CHEST",
+    "bind": 2,
+    "icon": 133807,
+    "sellPrice": 1,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "135548": {
+    "names": {
+      "enUS": "Transmog UI Legs Item"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_LEGS",
+    "bind": 2,
+    "icon": 133810,
+    "sellPrice": 1,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "135549": {
+    "names": {
+      "enUS": "Transmog UI Hand Item"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_HAND",
+    "bind": 2,
+    "icon": 133808,
+    "sellPrice": 1,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "135550": {
+    "names": {
+      "enUS": "Transmog UI Feet Item"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_FEET",
+    "bind": 2,
+    "icon": 133805,
+    "sellPrice": 1,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  }
+}

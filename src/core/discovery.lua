@@ -28,7 +28,7 @@ local ITEM = Data.ITEM
 -- A loot window or roll this long after a successful encounter end counts as that boss's loot.
 local KILL_WINDOW = 300
 -- /fl scan: item requests per tick and the tick length (~50 ids per second).
-local SCAN_BATCH, SCAN_INTERVAL = 25, 0.5
+local SCAN_BATCH, SCAN_INTERVAL = 25, 0.25
 -- Newly recorded items after which a scan stops, so /fl export stays a handy size. The default;
 -- `/fl scan limit <n|off>` overrides it (off when the SavedVariables file is imported instead).
 local SCAN_LIMIT = 1000
@@ -548,7 +548,11 @@ function module:ScanCommand(a, b, c)
             return
         end
         limit = self:ScanLimit()
-        log:chat("Scans stop after %s (default %d).", limit and (limit .. " new items") or "no number of items", SCAN_LIMIT)
+        log:chat(
+            "Scans stop after %s (default %d).",
+            limit and (limit .. " new items") or "no number of items",
+            SCAN_LIMIT
+        )
     elseif a == "resume" then
         if progress.next then
             self:StartScan(progress.next, progress.to)
@@ -588,7 +592,9 @@ function module:ScanCommand(a, b, c)
             )
         end
     else
-        log:chat("Usage: /fl scan <from> [to], /fl scan <from> <to> force, /fl scan resume, /fl scan stop, /fl scan limit <n|off>")
+        log:chat(
+            "Usage: /fl scan <from> [to], /fl scan <from> <to> force, /fl scan resume, /fl scan stop, /fl scan limit <n|off>"
+        )
     end
 end
 
@@ -621,6 +627,10 @@ end
 ---@param what? string
 function module:ExportCommand(what)
     local export, count = self:ExportTable(what == "all")
-    log:chat("%d item record(s) in this export%s", count, what == "all" and "" or "; /fl export all repeats earlier ones")
+    log:chat(
+        "%d item record(s) in this export%s",
+        count,
+        what == "all" and "" or "; /fl export all repeats earlier ones"
+    )
     app.ui.exportFrame:ShowText(app.json.encode(export))
 end
