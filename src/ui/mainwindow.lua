@@ -66,6 +66,15 @@ function ForeverLootMainWindowMixin:OnLoad()
     app.ui.mainWindow = self
 
     app.api.RegisterCallback(self, "OnModulesChanged", "OnModulesChanged")
+    app.api.RegisterCallback(self, "OnDataChanged", "OnDataChanged")
+    app.api.RegisterCallback(self, "OnFiltersChanged", "OnDataChanged")
+end
+
+-- Item DB or filter set changed (a late-loading addon added data): redraw what's visible.
+function ForeverLootMainWindowMixin:OnDataChanged()
+    if self:IsShown() then
+        self:RefreshViews()
+    end
 end
 
 -- A module was registered/unregistered: swap in the new root. Views sitting at the root are

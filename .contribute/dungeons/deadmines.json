@@ -1,0 +1,43 @@
+{
+  "map": 36,
+  "name": "Deadmines",
+  "minLevel": 15,
+  "maxLevel": 21,
+  "encounters": [
+    {
+      "id": 2741,
+      "name": "Rhahk'Zor",
+      "loot": []
+    },
+    {
+      "id": 2742,
+      "name": "Sneed",
+      "loot": []
+    },
+    {
+      "id": 2743,
+      "name": "Gilnid",
+      "loot": []
+    },
+    {
+      "id": 2744,
+      "name": "Captain Greenskin",
+      "loot": []
+    },
+    {
+      "id": 2745,
+      "name": "Mr. Smite",
+      "loot": []
+    },
+    {
+      "id": 2746,
+      "name": "Cookie",
+      "loot": []
+    },
+    {
+      "id": 2747,
+      "name": "Edwin VanCleef",
+      "loot": []
+    }
+  ]
+}

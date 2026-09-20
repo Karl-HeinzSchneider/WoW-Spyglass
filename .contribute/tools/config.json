@@ -1,0 +1,6 @@
+{
+  "build": "1.60.1.69913",
+  "locales": ["enUS", "deDE"],
+  "excludeMaps": [13],
+  "itemsPerFile": 2500
+}

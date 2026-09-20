@@ -2,6 +2,8 @@
 local _, app = ...
 
 local log = app.logger
+local Data = app.data
+local ITEM = Data.ITEM
 
 -- XML `mixin=` attributes need globals; these are the only globals the addon defines besides the
 -- window frame itself. They are also reachable via app.ui.* for code that has the namespace.
@@ -31,6 +33,33 @@ end
 -- Quality colors are kept only where they still read on parchment; poor/common items use the
 -- dark text color instead of grey/white.
 local MIN_COLORED_QUALITY = 2 -- Enum.ItemQuality.Good (uncommon)
+
+-- Delay between the last keystroke in the search box and running the query.
+local SEARCH_DEBOUNCE = 0.25
+
+-- One node per DB item, shared by every query result so lists don't re-allocate 20k tables.
+---@type table<integer, ForeverLoot.Node>
+local itemNodes = {}
+
+---@param itemID integer
+---@return ForeverLoot.Node
+local function nodeForItem(itemID)
+    local node = itemNodes[itemID]
+    if not node then
+        node = { itemID = itemID }
+        itemNodes[itemID] = node
+    end
+    return node
+end
+
+---@param chance number  # 0..1
+---@return string
+local function formatChance(chance)
+    if chance >= 0.1 then
+        return ("%d%%"):format(chance * 100 + 0.5)
+    end
+    return ("%.1f%%"):format(chance * 100)
+end
 
 ---@class ForeverLoot.ListRow : Button
 ---@field Icon Texture
@@ -80,19 +109,10 @@ function ForeverLootListRowMixin:Init(view, node)
     self.view = view
     self.node = node
     self.link = nil
-    self.Arrow:SetShown(node.children ~= nil)
+    self.Arrow:SetShown(app.api.IsFolder(node))
 
     if node.itemID then
-        local name, link, quality, itemLevel, _, _, _, _, _, icon = C_Item.GetItemInfo(node.itemID)
-        if name then
-            self.link = link
-            self:SetDisplay(name, icon, itemLevel and (ITEM_LEVEL or "Item Level %d"):format(itemLevel) or nil, quality)
-        else
-            -- Not cached yet: show a stand-in and redraw when GET_ITEM_INFO_RECEIVED arrives.
-            local _, _, _, _, instantIcon = C_Item.GetItemInfoInstant(node.itemID)
-            self:SetDisplay("Item #" .. node.itemID, instantIcon, RETRIEVING_ITEM_INFO or "Loading...", nil)
-            view:RequestItem(node.itemID)
-        end
+        self:InitItem(view, node)
     elseif node.spellID then
         local info = C_Spell.GetSpellInfo(node.spellID)
         if info then
@@ -106,18 +126,53 @@ function ForeverLootListRowMixin:Init(view, node)
     end
 end
 
+-- Items: the shipped DB answers immediately (name, quality, item level); the client's item
+-- cache, when it has the item, wins because it is exact and provides the link. Uncached items
+-- are requested so the link/tooltip arrive; GET_ITEM_INFO_RECEIVED re-renders the page.
+---@param view ForeverLoot.View
+---@param node ForeverLoot.Node
+function ForeverLootListRowMixin:InitItem(view, node)
+    local itemID = node.itemID --[[@as integer]]
+    local name, link, quality, itemLevel, _, _, _, _, _, icon = C_Item.GetItemInfo(itemID)
+    if name then
+        self.link = link
+    else
+        view:RequestItem(itemID)
+        local row = Data:GetItem(itemID)
+        if row then
+            name = Data:GetItemName(itemID)
+            quality, itemLevel = row[ITEM.QUALITY], row[ITEM.ILVL]
+        end
+        icon = select(5, C_Item.GetItemInfoInstant(itemID))
+    end
+
+    if not name then
+        self:SetDisplay("Item #" .. itemID, icon, RETRIEVING_ITEM_INFO or "Loading...", nil)
+        return
+    end
+    local sub = itemLevel and (ITEM_LEVEL or "Item Level %d"):format(itemLevel) or nil
+    if node.chance then
+        sub = (sub and sub .. "  -  " or "") .. formatChance(node.chance)
+    end
+    self:SetDisplay(name, icon, sub, quality)
+end
+
 ---@param button string
 function ForeverLootListRowMixin:OnClick(button)
     local node = self.node
     if button == "RightButton" then
         self.view:Back()
-    elseif node.children then
+    elseif app.api.IsFolder(node) then
         self.view:Push(node)
     elseif node.onClick then
         node.onClick(node, button)
     elseif self.link then
         -- Shift-click links to chat, ctrl-click previews in the dressing room, etc.
         HandleModifiedItemClick(self.link)
+    elseif node.itemID then
+        -- DB item the client hasn't cached yet: ask for it, the next click will have the link.
+        self.view:RequestItem(node.itemID)
+        log:chat(RETRIEVING_ITEM_INFO or "Retrieving item information...")
     else
         log:debug("Clicked %s", node.name or tostring(node.itemID or node.spellID))
     end
@@ -130,7 +185,7 @@ function ForeverLootListRowMixin:OnEnter()
         GameTooltip:SetItemByID(node.itemID)
     elseif node.spellID then
         GameTooltip:SetSpellByID(node.spellID)
-    elseif node.children then
+    elseif app.api.IsFolder(node) then
         GameTooltip:AddLine(node.name or "")
         if node.description then
             GameTooltip:AddLine(node.description, 1, 1, 1, true)
@@ -219,8 +274,38 @@ function ForeverLootBreadcrumbButtonMixin:OnClick()
 end
 
 ----------------------------------------------------------------------------------------------------
+-- Search box (query toolbar)
+----------------------------------------------------------------------------------------------------
+
+---@class ForeverLoot.SearchBox : EditBox
+---@field Instructions FontString
+---@field clearButton Button
+---@field debounce? FunctionContainer  # C_Timer handle
+ForeverLootSearchBoxMixin = {}
+app.ui.SearchBoxMixin = ForeverLootSearchBoxMixin
+
+-- Runs after SearchBoxTemplate_OnTextChanged (prepend). Typing is debounced; programmatic
+-- SetText (userInput = false) never triggers a query.
+---@param userInput boolean
+function ForeverLootSearchBoxMixin:OnTextChanged(userInput)
+    if not userInput then
+        return
+    end
+    if self.debounce then
+        self.debounce:Cancel()
+    end
+    self.debounce = C_Timer.NewTimer(SEARCH_DEBOUNCE, function()
+        self.debounce = nil
+        local view = self:GetParent() --[[@as ForeverLoot.View]]
+        view:SetSearch(self:GetText())
+    end)
+end
+
+----------------------------------------------------------------------------------------------------
 -- View: breadcrumb + two pages of rows
 ----------------------------------------------------------------------------------------------------
+
+---@class ForeverLoot.FilterDropdown : Frame, WowStyle1FilterDropdownMixin
 
 ---@class ForeverLoot.PagingControls : Frame, PagingControlsMixin
 
@@ -230,6 +315,11 @@ end
 ---@field LeftPage ForeverLoot.Page
 ---@field RightPage ForeverLoot.Page
 ---@field PagingControls ForeverLoot.PagingControls
+---@field SearchBox ForeverLoot.SearchBox
+---@field FilterDropdown ForeverLoot.FilterDropdown
+---@field ResultCount FontString
+---@field queries table<ForeverLoot.Node, ForeverLoot.Query>  # filter state per query node, for this tab
+---@field resultCount integer  # size of the last query result
 ---@field crumbPool ForeverLoot.FramePool
 ---@field separatorPool ForeverLoot.FramePool
 ---@field rowHeight number
@@ -281,7 +371,19 @@ function ForeverLootViewMixin:OnLoad()
     end
     self.pages = {}
     self.pendingItems = {}
+    self.queries = {}
+    self.resultCount = 0
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
+
+    self.ResultCount:SetTextColor(parchmentColor():GetRGB())
+    -- The template's clear button sets the text programmatically (userInput = false), so the
+    -- debounce never sees it; clear the query directly.
+    self.SearchBox.clearButton:HookScript("OnClick", function()
+        self:SetSearch("")
+    end)
+    self.FilterDropdown:SetupMenu(function(_, rootDescription)
+        self:BuildFilterMenu(rootDescription)
+    end)
 
     self.crumbPool = CreateFramePool("Button", self.Breadcrumbs, "ForeverLootBreadcrumbButtonTemplate") --[[@as ForeverLoot.FramePool]]
     self.separatorPool = CreateFramePool("Frame", self.Breadcrumbs, "ForeverLootBreadcrumbSeparatorTemplate") --[[@as ForeverLoot.FramePool]]
@@ -316,7 +418,7 @@ function ForeverLootViewMixin:OnEvent(event, itemID)
     if event == "GET_ITEM_INFO_RECEIVED" and self.pendingItems[itemID] then
         self.pendingItems[itemID] = nil
         if self:IsShown() then
-            self:Refresh()
+            self:Render()
         end
     end
 end
@@ -408,9 +510,233 @@ function ForeverLootViewMixin:Navigate()
     end
 end
 
--- PagingControls calls this on its parent when the page changes.
+-- PagingControls calls this on its parent when the page changes. The layout is unchanged,
+-- so only the visible pages are redrawn.
 function ForeverLootViewMixin:OnPageChanged()
+    self:Render()
+end
+
+----------------------------------------------------------------------------------------------------
+-- Children: static, dynamic and query folders
+----------------------------------------------------------------------------------------------------
+
+-- The entries to list for a folder node. Query folders run the view's query over the item DB.
+---@param node ForeverLoot.Node
+---@return ForeverLoot.Node[]
+function ForeverLootViewMixin:GetChildren(node)
+    if node.query then
+        return self:GetQueryChildren(node)
+    end
+    if node.getChildren then
+        local ok, result = pcall(node.getChildren, node, self)
+        if ok and type(result) == "table" then
+            return result
+        end
+        log:error("%s: getChildren failed: %s", tostring(node.name), tostring(result))
+        return {}
+    end
+    return node.children or {}
+end
+
+-- The query state of a query folder, created on first use and kept while this tab lives.
+---@param node ForeverLoot.Node
+---@return ForeverLoot.Query
+function ForeverLootViewMixin:GetQuery(node)
+    local q = self.queries[node]
+    if not q then
+        q = app.query.New()
+        self.queries[node] = q
+    end
+    return q
+end
+
+---@param node ForeverLoot.Node
+---@return ForeverLoot.Node[]
+function ForeverLootViewMixin:GetQueryChildren(node)
+    local ids = app.query.Run(self:GetQuery(node))
+    self.resultCount = #ids
+    local children = {}
+    for i, itemID in ipairs(ids) do
+        children[i] = nodeForItem(itemID)
+    end
+    return children
+end
+
+-- The current node's query, or nil when it isn't a query folder.
+---@return ForeverLoot.Query?, ForeverLoot.Node?
+function ForeverLootViewMixin:GetCurrentQuery()
+    local node = self:GetCurrentNode()
+    if node and node.query then
+        return self:GetQuery(node), node
+    end
+    return nil, node
+end
+
+-- Search/filter changed: back to page 1 and re-run.
+function ForeverLootViewMixin:OnQueryChanged()
+    self.PagingControls:SetCurrentPage(1)
     self:Refresh()
+end
+
+---@param text string
+function ForeverLootViewMixin:SetSearch(text)
+    local q = self:GetCurrentQuery()
+    if q and q.search ~= text then
+        q.search = text
+        self:OnQueryChanged()
+    end
+end
+
+---@param q ForeverLoot.Query
+---@param filterID string
+---@param value string|number
+---@return boolean
+local function hasFilterValue(q, filterID, value)
+    local values = q.filters[filterID]
+    if type(values) ~= "table" then
+        return values == value
+    end
+    for _, v in ipairs(values) do
+        if v == value then
+            return true
+        end
+    end
+    return false
+end
+
+-- "multi" filters: add/remove one value.
+---@param q ForeverLoot.Query
+---@param filterID string
+---@param value string|number
+function ForeverLootViewMixin:ToggleFilterValue(q, filterID, value)
+    local values = q.filters[filterID]
+    if type(values) ~= "table" then
+        values = {}
+        q.filters[filterID] = values
+    end
+    for i, v in ipairs(values) do
+        if v == value then
+            table.remove(values, i)
+            self:OnQueryChanged()
+            return
+        end
+    end
+    values[#values + 1] = value
+    self:OnQueryChanged()
+end
+
+-- "single" filters: set one value (nil = any).
+---@param q ForeverLoot.Query
+---@param filterID string
+---@param value string|number|nil
+function ForeverLootViewMixin:SetFilterValue(q, filterID, value)
+    if q.filters[filterID] ~= value then
+        q.filters[filterID] = value
+        self:OnQueryChanged()
+    end
+end
+
+---@param q ForeverLoot.Query
+---@param sort ForeverLoot.QuerySort
+function ForeverLootViewMixin:SetSort(q, sort)
+    if q.sort ~= sort then
+        q.sort = sort
+        self:OnQueryChanged()
+    end
+end
+
+-- Clears filters and sort but keeps the search text (that's what the search box's X is for).
+---@param q ForeverLoot.Query
+function ForeverLootViewMixin:ResetFilters(q)
+    wipe(q.filters)
+    q.sort = "name"
+    self:OnQueryChanged()
+end
+
+local SORT_OPTIONS = {
+    { value = "name", label = NAME or "Name" },
+    { value = "ilvl", label = ITEM_LEVEL_ABBR or "Item Level" },
+    { value = "quality", label = QUALITY or "Quality" },
+    { value = "id", label = "ID" },
+}
+local SCROLL_AFTER = 20 -- options; longer submenus scroll
+
+-- Generator for FilterDropdown (Blizzard_Menu): one submenu per registered filter, sort, reset.
+-- Handlers return MenuResponse.Refresh so the menu stays open and re-checks its boxes.
+---@param root RootMenuDescriptionProxy
+function ForeverLootViewMixin:BuildFilterMenu(root)
+    local q = self:GetCurrentQuery()
+    if not q then
+        root:CreateTitle("No item list")
+        return
+    end
+
+    for _, def in ipairs(app.filters:GetAll()) do
+        local submenu = root:CreateButton(def.name)
+        local options = app.filters:GetOptions(def.id)
+        if def.kind == "multi" then
+            for _, option in ipairs(options) do
+                submenu:CreateCheckbox(option.label, function()
+                    return hasFilterValue(q, def.id, option.value)
+                end, function()
+                    self:ToggleFilterValue(q, def.id, option.value)
+                    return MenuResponse.Refresh
+                end)
+            end
+        else
+            submenu:CreateRadio(ALL or "Any", function()
+                return q.filters[def.id] == nil
+            end, function()
+                self:SetFilterValue(q, def.id, nil)
+                return MenuResponse.Refresh
+            end)
+            for _, option in ipairs(options) do
+                submenu:CreateRadio(option.label, function()
+                    return q.filters[def.id] == option.value
+                end, function()
+                    self:SetFilterValue(q, def.id, option.value)
+                    return MenuResponse.Refresh
+                end)
+            end
+        end
+        if #options > SCROLL_AFTER then
+            submenu:SetScrollMode(20 * SCROLL_AFTER)
+        end
+    end
+
+    root:CreateDivider()
+    local sortMenu = root:CreateButton("Sort by")
+    for _, option in ipairs(SORT_OPTIONS) do
+        sortMenu:CreateRadio(option.label, function()
+            return (q.sort or "name") == option.value
+        end, function()
+            self:SetSort(q, option.value)
+            return MenuResponse.Refresh
+        end)
+    end
+
+    root:CreateDivider()
+    root:CreateButton(RESET or "Reset", function()
+        self:ResetFilters(q)
+        return MenuResponse.Refresh
+    end)
+end
+
+-- Shows the search box / filter button on query folders and syncs them with the query.
+function ForeverLootViewMixin:UpdateToolbar()
+    local q = self:GetCurrentQuery()
+    local shown = q ~= nil
+    self.SearchBox:SetShown(shown)
+    self.FilterDropdown:SetShown(shown)
+    self.ResultCount:SetShown(shown)
+    if not q then
+        return
+    end
+    -- Sync the box to the query unless the user is typing (the debounce hasn't fired yet).
+    if not self.SearchBox:HasFocus() and self.SearchBox:GetText() ~= q.search then
+        self.SearchBox:SetText(q.search or "") -- userInput = false: no query re-run
+    end
+    self.ResultCount:SetText(("%d items"):format(self.resultCount))
 end
 
 -- Columns per page for the current list. Defined by the collection itself (`node.columns`);
@@ -422,20 +748,30 @@ function ForeverLootViewMixin:GetColumns(node)
     return math.max(1, math.min(2, columns))
 end
 
+-- Full redraw: rebuild the element list and page layout for the current node, then render.
+-- Called on navigation, query changes, page-size changes and profile refreshes; page flips
+-- and item-info arrivals only need Render().
 function ForeverLootViewMixin:Refresh()
     local node = self:GetCurrentNode()
     self.pages = self:LayoutPages(self:BuildElements(node), self:GetColumns(node))
 
-    local pagesShown = self:GetPagesShown()
-    local maxPages = math.max(1, math.ceil(#self.pages / pagesShown))
+    local maxPages = math.max(1, math.ceil(#self.pages / self:GetPagesShown()))
+    -- SetMaxPages may clamp the current page, which calls OnPageChanged -> Render.
     self.PagingControls:SetMaxPages(maxPages)
-    local first = (self.PagingControls:GetCurrentPage() - 1) * pagesShown + 1
-
-    self:RenderPage(self.LeftPage, self.pages[first])
-    self:RenderPage(self.RightPage, not self.isMinimized and self.pages[first + 1] or nil)
     self.PagingControls:SetShown(maxPages > 1)
 
+    self:Render()
+end
+
+-- Draws the pages for the current page index plus the chrome around them.
+function ForeverLootViewMixin:Render()
+    local pagesShown = self:GetPagesShown()
+    local first = (self.PagingControls:GetCurrentPage() - 1) * pagesShown + 1
+    self:RenderPage(self.LeftPage, self.pages[first])
+    self:RenderPage(self.RightPage, not self.isMinimized and self.pages[first + 1] or nil)
+
     self:RefreshBreadcrumbs()
+    self:UpdateToolbar()
     self.BackButton:SetEnabled(#self.path > 1)
 end
 
@@ -478,7 +814,7 @@ function ForeverLootViewMixin:BuildElements(node)
         pending = {}
     end
 
-    for _, child in ipairs(node.children or {}) do
+    for _, child in ipairs(self:GetChildren(node)) do
         if child.header then
             flush()
             elements[#elements + 1] = { kind = "header", text = child.header }

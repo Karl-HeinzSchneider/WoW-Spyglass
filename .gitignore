@@ -1,2 +1,6 @@
+lib/
+# Optional symlinks to the exported Blizzard UI (no trailing slash: git sees symlinks as files)
 BlizzardInterfaceCode
 BlizzardInterfaceArt
+.contribute/tools/node_modules/
+.contribute/tools/.cache/

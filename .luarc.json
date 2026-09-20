@@ -4,7 +4,9 @@
   "workspace.ignoreDir": [
     "lib",
     "BlizzardInterfaceCode",
-    "BlizzardInterfaceArt"
+    "BlizzardInterfaceArt",
+    "db/generated",
+    ".contribute"
   ],
   "diagnostics.globals": [
     "ForeverLootDB",
@@ -14,6 +16,11 @@
     "OTHER",
     "SPELLS",
     "RETRIEVING_ITEM_INFO",
-    "ITEM_LEVEL"
+    "ITEM_LEVEL",
+    "NAME",
+    "ITEM_LEVEL_ABBR",
+    "QUALITY",
+    "ALL",
+    "RESET"
   ]
 }

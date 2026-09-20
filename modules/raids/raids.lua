@@ -1,14 +1,23 @@
--- Built-in module: Raids. Only metadata lives here; each raid instance is its own file in this
--- folder and adds itself with ForeverLoot:AddToModule("raids", ...). Third-party addons can do
--- the same to add raids to this module.
+-- Built-in module: Raids. Everything comes from the item database (db/generated): one folder
+-- per instance of type "raid", a folder per boss, the recorded drops inside.
+-- Levels, icons and loot are curated in .contribute/raids/*.json.
 local FL = ForeverLoot
 
 FL:RegisterModule({
     id = "raids",
     name = "Raids",
-    icon = "Interface\\Icons\\Achievement_Boss_Ragnaros",
+    icon = "Interface\\Icons\\Achievement_Dungeon_ClassicRaider",
     order = 10,
     description = "Loot tables for raid instances.",
-    children = {},
-    sortChildren = true, -- by each instance's `order`, then name; independent of file load order
+    getChildren = function()
+        return FL.InstanceFolders("raid")
+    end,
+    -- By level (instances without a curated level range go last), then name.
+    sortChildren = function(a, b)
+        local la, lb = a.minLevel or 999, b.minLevel or 999
+        if la ~= lb then
+            return la < lb
+        end
+        return (a.name or "") < (b.name or "")
+    end,
 })

@@ -1,0 +1,12 @@
+{
+  "map": 249,
+  "name": "Onyxia's Lair",
+  "minLevel": 60,
+  "encounters": [
+    {
+      "id": 1084,
+      "name": "Onyxia",
+      "loot": []
+    }
+  ]
+}

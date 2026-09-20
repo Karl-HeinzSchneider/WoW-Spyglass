@@ -14,6 +14,13 @@ src\core\registry.lua
 src\core\ace.lua
 src\core\minimapbutton.lua
 
+# Item database: API first, then the generated data (db\generated is written by .contribute\tools).
+src\data\data.lua
+src\data\filters.lua
+src\data\query.lua
+src\data\nodes.lua
+db\generated\generated.xml
+
 modules\modules.xml
 
 src\ui\view.lua
