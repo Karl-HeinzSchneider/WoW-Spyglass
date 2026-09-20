@@ -1,5 +1,6 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
 
+
 	<!-- One row in a page: [icon] Name ............ [>] (arrow only for folders) -->
 	<Button name="ForeverLootListRowTemplate" mixin="ForeverLootListRowMixin" registerForClicks="LeftButtonUp, RightButtonUp" virtual="true">
 		<Size x="200" y="40"/>
@@ -17,14 +18,15 @@
 						<Anchor point="RIGHT" x="-10" y="0"/>
 					</Anchors>
 				</Texture>
-				<FontString parentKey="Name" inherits="GameFontNormal" justifyH="LEFT" wordwrap="false">
+				<!-- Same fonts as SpellBookItemTemplate's Name / SubName; colors set in Lua. -->
+				<FontString parentKey="Name" inherits="SystemFont_Large" justifyH="LEFT" wordwrap="false">
 					<Anchors>
 						<Anchor point="LEFT" relativeKey="$parent.Icon" relativePoint="RIGHT" x="8" y="0"/>
 						<Anchor point="RIGHT" relativeKey="$parent.Arrow" relativePoint="LEFT" x="-4" y="0"/>
 					</Anchors>
 				</FontString>
 				<!-- Optional second line (description / item level); when shown, Name moves up. -->
-				<FontString parentKey="Sub" inherits="GameFontHighlightSmall" justifyH="LEFT" wordwrap="false" hidden="true">
+				<FontString parentKey="Sub" inherits="SystemFont_Med1" justifyH="LEFT" wordwrap="false" hidden="true">
 					<Anchors>
 						<Anchor point="BOTTOMLEFT" relativeKey="$parent.Icon" relativePoint="BOTTOMRIGHT" x="8" y="2"/>
 						<Anchor point="RIGHT" relativeKey="$parent.Arrow" relativePoint="LEFT" x="-4" y="0"/>
@@ -41,6 +43,7 @@
 			</Layer>
 		</Layers>
 		<Scripts>
+			<OnLoad method="OnLoad"/>
 			<OnClick method="OnClick"/>
 			<OnEnter method="OnEnter"/>
 			<OnLeave method="OnLeave"/>
@@ -114,6 +117,7 @@
 				<Anchor point="CENTER"/>
 			</Anchors>
 		</ButtonText>
+		<!-- The bar sits above the page header area, where the standard yellow reads fine. -->
 		<NormalFont style="GameFontNormal"/>
 		<HighlightFont style="GameFontHighlight"/>
 		<DisabledFont style="GameFontHighlight"/>

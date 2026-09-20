@@ -69,7 +69,8 @@
     "SPELLS",
     "HandleModifiedItemClick",
     "RETRIEVING_ITEM_INFO",
-    "ITEM_LEVEL"
+    "ITEM_LEVEL",
+    "SPELLBOOK_FONT_COLOR"
   ],
   "Lua.diagnostics.disable": ["assign-type-mismatch"],
   "wowAPI.luals.frameXML": true,

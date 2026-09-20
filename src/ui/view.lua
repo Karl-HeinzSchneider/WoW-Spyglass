@@ -22,6 +22,16 @@ end
 
 local FALLBACK_ICON = "Interface\\Icons\\INV_Misc_QuestionMark"
 
+-- Text color on the parchment pages. SPELLBOOK_FONT_COLOR is engine-defined; the fallback is
+-- the same dark brown.
+local function parchmentColor()
+    return SPELLBOOK_FONT_COLOR or CreateColor(0.25, 0.16, 0.06)
+end
+
+-- Quality colors are kept only where they still read on parchment; poor/common items use the
+-- dark text color instead of grey/white.
+local MIN_COLORED_QUALITY = 2 -- Enum.ItemQuality.Good (uncommon)
+
 ---@class ForeverLoot.ListRow : Button
 ---@field Icon Texture
 ---@field Name FontString
@@ -32,6 +42,10 @@ local FALLBACK_ICON = "Interface\\Icons\\INV_Misc_QuestionMark"
 ---@field link? string  # item/spell link for chat linking
 ForeverLootListRowMixin = {}
 app.ui.ListRowMixin = ForeverLootListRowMixin
+
+function ForeverLootListRowMixin:OnLoad()
+    self.Sub:SetTextColor(parchmentColor():GetRGB())
+end
 
 ---@param name string
 ---@param icon string|number|nil
@@ -52,11 +66,11 @@ function ForeverLootListRowMixin:SetDisplay(name, icon, sub, quality)
     end
     self.Name:SetPoint("RIGHT", self.Arrow, "LEFT", -4, 0)
 
-    local color = quality and ITEM_QUALITY_COLORS[quality]
+    local color = quality and quality >= MIN_COLORED_QUALITY and ITEM_QUALITY_COLORS[quality]
     if color then
         self.Name:SetTextColor(color.r, color.g, color.b)
     else
-        self.Name:SetTextColor(NORMAL_FONT_COLOR:GetRGB())
+        self.Name:SetTextColor(parchmentColor():GetRGB())
     end
 end
 
@@ -148,8 +162,7 @@ ForeverLootGroupLabelMixin = {}
 app.ui.GroupLabelMixin = ForeverLootGroupLabelMixin
 
 function ForeverLootGroupLabelMixin:OnLoad()
-    local color = SPELLBOOK_FONT_COLOR or CreateColor(0.25, 0.16, 0.06)
-    self.Text:SetTextColor(color:GetRGB())
+    self.Text:SetTextColor(parchmentColor():GetRGB())
 end
 
 ---@param text string
@@ -169,9 +182,7 @@ ForeverLootPageHeaderMixin = {}
 app.ui.PageHeaderMixin = ForeverLootPageHeaderMixin
 
 function ForeverLootPageHeaderMixin:OnLoad()
-    -- SPELLBOOK_FONT_COLOR is engine-defined; fall back to the same dark brown if it's missing.
-    local color = SPELLBOOK_FONT_COLOR or CreateColor(0.25, 0.16, 0.06)
-    self.Text:SetTextColor(color:GetRGB())
+    self.Text:SetTextColor(parchmentColor():GetRGB())
 end
 
 ---@param text string
