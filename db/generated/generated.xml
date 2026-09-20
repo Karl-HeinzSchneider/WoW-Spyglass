@@ -7,6 +7,7 @@
 	<Script file="items\items_005.lua" />
 	<Script file="items\items_006.lua" />
 	<Script file="items\items_007.lua" />
+	<Script file="items\items_008.lua" />
 	<Script file="instances.lua" />
 	<Script file="locales\enUS\items.lua" />
 	<Script file="locales\enUS\instances.lua" />
