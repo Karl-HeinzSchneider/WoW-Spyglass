@@ -1,0 +1,48 @@
+{
+  "map": 349,
+  "name": "Maraudon",
+  "minLevel": 42,
+  "maxLevel": 52,
+  "encounters": [
+    {
+      "id": 422,
+      "name": "Noxxion",
+      "loot": []
+    },
+    {
+      "id": 423,
+      "name": "Razorlash",
+      "loot": []
+    },
+    {
+      "id": 427,
+      "name": "Tinkerer Gizlock",
+      "loot": []
+    },
+    {
+      "id": 424,
+      "name": "Lord Vyletongue",
+      "loot": []
+    },
+    {
+      "id": 425,
+      "name": "Celebras the Cursed",
+      "loot": []
+    },
+    {
+      "id": 426,
+      "name": "Landslide",
+      "loot": []
+    },
+    {
+      "id": 428,
+      "name": "Rotgrip",
+      "loot": []
+    },
+    {
+      "id": 429,
+      "name": "Princess Theradras",
+      "loot": []
+    }
+  ]
+}

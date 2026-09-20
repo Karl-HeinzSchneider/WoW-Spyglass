@@ -1,0 +1,108 @@
+{
+  "map": 2999,
+  "name": "Ruins of Lordaeron",
+  "minLevel": 15,
+  "maxLevel": 20,
+  "encounters": [
+    {
+      "id": 3353,
+      "name": "Witherfang",
+      "loot": [
+        {
+          "item": 271201,
+          "name": "Atrophic Girdle"
+        },
+        {
+          "item": 271202,
+          "name": "Witherbite Bracers"
+        },
+        {
+          "item": 271203,
+          "name": "Segmented Spider Leg"
+        }
+      ]
+    },
+    {
+      "id": 3357,
+      "name": "The Abandoned",
+      "loot": [
+        {
+          "item": 271207,
+          "name": "Wispcloth Leggings"
+        },
+        {
+          "item": 271208,
+          "name": "Grip of Fear"
+        },
+        {
+          "item": 271216,
+          "name": "Scepter of the Abandoned"
+        }
+      ]
+    },
+    {
+      "id": 3355,
+      "name": "The Butcher",
+      "loot": []
+    },
+    {
+      "id": 3354,
+      "name": "Rath'mael",
+      "loot": [
+        {
+          "item": 271213,
+          "name": "Mirror of Rath'mael"
+        },
+        {
+          "item": 271214,
+          "name": "Frostbane Treads"
+        },
+        {
+          "item": 271215,
+          "name": "Coldspire Staff"
+        }
+      ]
+    },
+    {
+      "id": 3408,
+      "name": "Lordaeron Captain",
+      "loot": []
+    },
+    {
+      "id": 3411,
+      "name": "Viktor the Vile",
+      "loot": [
+        {
+          "item": 271211,
+          "name": "Vilewalkers"
+        },
+        {
+          "item": 271212,
+          "name": "Bloodied Chestwraps"
+        },
+        {
+          "item": 271218,
+          "name": "Vileblood Scimitar"
+        }
+      ]
+    },
+    {
+      "id": 3412,
+      "name": "Bjork",
+      "loot": [
+        {
+          "item": 271209,
+          "name": "Bonerust Leggings"
+        },
+        {
+          "item": 271210,
+          "name": "Tuskwrap Belt"
+        },
+        {
+          "item": 271217,
+          "name": "Corpse Chopper"
+        }
+      ]
+    }
+  ]
+}

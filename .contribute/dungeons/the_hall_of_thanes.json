@@ -1,0 +1,80 @@
+{
+  "map": 3065,
+  "name": "The Hall of Thanes",
+  "minLevel": 13,
+  "maxLevel": 18,
+  "encounters": [
+    {
+      "id": 3493,
+      "name": "Faldrim Anvilmar",
+      "loot": [
+        {
+          "item": 270227,
+          "name": "Ephemeral Choker"
+        },
+        {
+          "item": 271096,
+          "name": "Aetherwisp Bracers"
+        },
+        {
+          "item": 271097,
+          "name": "Spiritwraith Drape"
+        }
+      ]
+    },
+    {
+      "id": 3495,
+      "name": "Infurnus",
+      "loot": [
+        {
+          "item": 270230,
+          "name": "Kindlegem Girdle"
+        },
+        {
+          "item": 270231,
+          "name": "Flamefist Grips"
+        },
+        {
+          "item": 271095,
+          "name": "Fang of Magmatus"
+        }
+      ]
+    },
+    {
+      "id": 3494,
+      "name": "Plunder",
+      "loot": [
+        {
+          "item": 270228,
+          "name": "Golemheart Stave"
+        },
+        {
+          "item": 270229,
+          "name": "Treads of the Protector Golem"
+        },
+        {
+          "item": 271098,
+          "name": "Golemguard Chest"
+        }
+      ]
+    },
+    {
+      "id": 3496,
+      "name": "Durgen Dirgehammer",
+      "loot": [
+        {
+          "item": 270256,
+          "name": "Durgen's Crescent Axe"
+        },
+        {
+          "item": 270260,
+          "name": "Direhammer Leggings"
+        },
+        {
+          "item": 270261,
+          "name": "Robes of the Disgraced Thane"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "map": 43,
+  "name": "Wailing Caverns",
+  "minLevel": 17,
+  "maxLevel": 27,
+  "encounters": [
+    {
+      "id": 585,
+      "name": "Lady Anacondra",
+      "loot": [
+        {
+          "item": 5404,
+          "name": "Serpent's Shoulders"
+        },
+        {
+          "item": 273088,
+          "name": "Snake Eye Kaleidoscope"
+        },
+        {
+          "item": 10412,
+          "name": "Belt of the Fang"
+        }
+      ]
+    },
+    {
+      "id": 586,
+      "name": "Lord Cobrahn",
+      "loot": [
+        {
+          "item": 6460,
+          "name": "Cobrahn's Grasp"
+        },
+        {
+          "item": 6465,
+          "name": "Robe of the Moccasin"
+        },
+        {
+          "item": 10410,
+          "name": "Leggings of the Fang"
+        }
+      ]
+    },
+    {
+      "id": 587,
+      "name": "Kresh",
+      "loot": [
+        {
+          "item": 13245,
+          "name": "Kresh's Back"
+        },
+        {
+          "item": 273084,
+          "name": "Cloak of Hermitic Bliss"
+        },
+        {
+          "item": 6447,
+          "name": "Worn Turtle Shell Shield"
+        }
+      ]
+    },
+    {
+      "id": 588,
+      "name": "Lord Pythas",
+      "loot": [
+        {
+          "item": 6472,
+          "name": "Stinging Viper"
+        },
+        {
+          "item": 6473,
+          "name": "Armor of the Fang"
+        },
+        {
+          "item": 273089,
+          "name": "Slither Cord"
+        }
+      ]
+    },
+    {
+      "id": 589,
+      "name": "Skum",
+      "loot": [
+        {
+          "item": 6449,
+          "name": "Glowing Lizardscale Cloak"
+        },
+        {
+          "item": 273137,
+          "name": "Skum's Bucket"
+        },
+        {
+          "item": 6448,
+          "name": "Tail Spike"
+        }
+      ]
+    },
+    {
+      "id": 590,
+      "name": "Lord Serpentis",
+      "loot": [
+        {
+          "item": 6469,
+          "name": "Venomstrike"
+        },
+        {
+          "item": 5970,
+          "name": "Serpent Gloves"
+        },
+        {
+          "item": 6459,
+          "name": "Savage Trodders"
+        },
+        {
+          "item": 10411,
+          "name": "Footpads of the Fang"
+        }
+      ]
+    },
+    {
+      "id": 591,
+      "name": "Verdan the Everliving",
+      "loot": [
+        {
+          "item": 6630,
+          "name": "Seedcloud Buckler"
+        },
+        {
+          "item": 6631,
+          "name": "Living Root"
+        },
+        {
+          "item": 6629,
+          "name": "Sporid Cape"
+        }
+      ]
+    },
+    {
+      "id": 592,
+      "name": "Mutanus the Devourer",
+      "loot": [
+        {
+          "item": 6461,
+          "name": "Slime-encrusted Pads"
+        },
+        {
+          "item": 6463,
+          "name": "Deep Fathom Ring"
+        },
+        {
+          "item": 6627,
+          "name": "Mutant Scale Breastplate"
+        }
+      ]
+    }
+  ]
+}

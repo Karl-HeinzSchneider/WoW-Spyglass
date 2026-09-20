@@ -1,0 +1,48 @@
+{
+  "map": 70,
+  "name": "Uldaman",
+  "minLevel": 42,
+  "maxLevel": 52,
+  "encounters": [
+    {
+      "id": 547,
+      "name": "Revelosh",
+      "loot": []
+    },
+    {
+      "id": 548,
+      "name": "The Lost Dwarves",
+      "loot": []
+    },
+    {
+      "id": 549,
+      "name": "Ironaya",
+      "loot": []
+    },
+    {
+      "id": 1887,
+      "name": "Obsidian Sentinel",
+      "loot": []
+    },
+    {
+      "id": 551,
+      "name": "Ancient Stone Keeper",
+      "loot": []
+    },
+    {
+      "id": 552,
+      "name": "Galgann Firehammer",
+      "loot": []
+    },
+    {
+      "id": 553,
+      "name": "Grimlok",
+      "loot": []
+    },
+    {
+      "id": 554,
+      "name": "Archaedas",
+      "loot": []
+    }
+  ]
+}

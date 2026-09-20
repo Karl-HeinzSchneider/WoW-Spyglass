@@ -1,0 +1,38 @@
+{
+  "map": 47,
+  "name": "Razorfen Kraul",
+  "minLevel": 32,
+  "maxLevel": 42,
+  "encounters": [
+    {
+      "id": 2773,
+      "name": "Roogug",
+      "loot": []
+    },
+    {
+      "id": 2774,
+      "name": "Aggem Thorncurse",
+      "loot": []
+    },
+    {
+      "id": 2775,
+      "name": "Death Speaker Jargba",
+      "loot": []
+    },
+    {
+      "id": 2776,
+      "name": "Overlord Ramtusk",
+      "loot": []
+    },
+    {
+      "id": 2777,
+      "name": "Agathelos the Raging",
+      "loot": []
+    },
+    {
+      "id": 2778,
+      "name": "Charlga Razorflank",
+      "loot": []
+    }
+  ]
+}

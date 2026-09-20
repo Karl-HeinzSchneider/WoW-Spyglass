@@ -1,0 +1,38 @@
+{
+  "map": 129,
+  "name": "Razorfen Downs",
+  "minLevel": 37,
+  "maxLevel": 47,
+  "encounters": [
+    {
+      "id": 2780,
+      "name": "Tuten'kash",
+      "loot": []
+    },
+    {
+      "id": 2781,
+      "name": "Plaguemaw the Rotting",
+      "loot": []
+    },
+    {
+      "id": 2782,
+      "name": "Mordresh Fire Eye",
+      "loot": []
+    },
+    {
+      "id": 2783,
+      "name": "Ragglesnout",
+      "loot": []
+    },
+    {
+      "id": 2784,
+      "name": "Glutton",
+      "loot": []
+    },
+    {
+      "id": 2785,
+      "name": "Amnennar the Coldbringer",
+      "loot": []
+    }
+  ]
+}

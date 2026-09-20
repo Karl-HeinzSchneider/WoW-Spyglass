@@ -1,0 +1,179 @@
+{
+  "map": 48,
+  "name": "Blackfathom Deeps",
+  "minLevel": 22,
+  "maxLevel": 32,
+  "encounters": [
+    {
+      "id": 2916,
+      "name": "Ghamoo-ra",
+      "loot": [
+        {
+          "item": 6907,
+          "name": "Tortoise Armor"
+        },
+        {
+          "item": 6908,
+          "name": "Ghamoo-ra's Bind"
+        }
+      ]
+    },
+    {
+      "id": 2915,
+      "name": "Lady Sarevess",
+      "loot": [
+        {
+          "item": 888,
+          "name": "Naga Battle Gloves"
+        },
+        {
+          "item": 3078,
+          "name": "Naga Heartpiercer"
+        },
+        {
+          "item": 11121,
+          "name": "Darkwater Talwar"
+        }
+      ]
+    },
+    {
+      "id": 2914,
+      "name": "Geilhast",
+      "loot": []
+    },
+    {
+      "id": 2913,
+      "name": "Lorgus Jett",
+      "loot": []
+    },
+    {
+      "id": 2912,
+      "name": "Old Serra'kis",
+      "loot": [
+        {
+          "item": 6901,
+          "name": "Glowing Thresher Cape"
+        },
+        {
+          "item": 6904,
+          "name": "Bite of Serra'kis"
+        },
+        {
+          "item": 6902,
+          "name": "Bands of Serra'kis"
+        }
+      ]
+    },
+    {
+      "id": 2911,
+      "name": "Twilight Lord Kelris",
+      "loot": [
+        {
+          "item": 1155,
+          "name": "Rod of the Sleepwalker"
+        },
+        {
+          "item": 6903,
+          "name": "Gaze Dreamer Pants"
+        }
+      ]
+    },
+    {
+      "id": 2694,
+      "name": "Baron Aquanis",
+      "loot": []
+    },
+    {
+      "id": 2761,
+      "name": "Ghamoo-ra",
+      "loot": []
+    },
+    {
+      "id": 2910,
+      "name": "Aku'mai",
+      "loot": [
+        {
+          "item": 6909,
+          "name": "Strike of the Hydra"
+        },
+        {
+          "item": 6911,
+          "name": "Moss Cinch"
+        },
+        {
+          "item": 6910,
+          "name": "Leech Pants"
+        }
+      ]
+    },
+    {
+      "id": 2697,
+      "name": "Ghamoo-ra",
+      "loot": []
+    },
+    {
+      "id": 2762,
+      "name": "Lady Sarevess",
+      "loot": []
+    },
+    {
+      "id": 2699,
+      "name": "Lady Sarevess",
+      "loot": []
+    },
+    {
+      "id": 2763,
+      "name": "Geilhast",
+      "loot": []
+    },
+    {
+      "id": 2704,
+      "name": "Gelihast",
+      "loot": [
+        {
+          "item": 6906,
+          "name": "Algae Fists"
+        },
+        {
+          "item": 6905,
+          "name": "Reef Axe"
+        }
+      ]
+    },
+    {
+      "id": 2764,
+      "name": "Lorgus Jett",
+      "loot": []
+    },
+    {
+      "id": 2710,
+      "name": "Lorgus Jett",
+      "loot": []
+    },
+    {
+      "id": 2765,
+      "name": "Old Serra'kis",
+      "loot": []
+    },
+    {
+      "id": 2766,
+      "name": "Twilight Lord Kelris",
+      "loot": []
+    },
+    {
+      "id": 2767,
+      "name": "Aku'mai",
+      "loot": []
+    },
+    {
+      "id": 2825,
+      "name": "Twilight Lord Kelris",
+      "loot": []
+    },
+    {
+      "id": 2891,
+      "name": "Aku'mai",
+      "loot": []
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "map": 229,
+  "name": "Blackrock Spire",
+  "minLevel": 55,
+  "maxLevel": 60,
+  "encounters": [
+    {
+      "id": 267,
+      "name": "Highlord Omokk",
+      "loot": [
+        {
+          "item": 16670,
+          "name": "Boots of Elements"
+        }
+      ]
+    },
+    {
+      "id": 268,
+      "name": "Shadow Hunter Vosh'gajin",
+      "loot": [
+        {
+          "item": 16712,
+          "name": "Shadowcraft Gloves"
+        }
+      ]
+    },
+    {
+      "id": 269,
+      "name": "War Master Voone",
+      "loot": [
+        {
+          "item": 16676,
+          "name": "Beaststalker's Gloves"
+        }
+      ]
+    },
+    {
+      "id": 270,
+      "name": "Mother Smolderweb",
+      "loot": [
+        {
+          "item": 16715,
+          "name": "Wildheart Boots"
+        }
+      ]
+    },
+    {
+      "id": 271,
+      "name": "Urok Doomhowl",
+      "loot": []
+    },
+    {
+      "id": 272,
+      "name": "Quartermaster Zigris",
+      "loot": []
+    },
+    {
+      "id": 274,
+      "name": "Halycon",
+      "loot": []
+    },
+    {
+      "id": 273,
+      "name": "Gizrul the Slavener",
+      "loot": [
+        {
+          "item": 16718,
+          "name": "Wildheart Spaulders"
+        }
+      ]
+    },
+    {
+      "id": 275,
+      "name": "Overlord Wyrmthalak",
+      "loot": [
+        {
+          "item": 13164,
+          "name": "Heart of the Scale"
+        },
+        {
+          "item": 16679,
+          "name": "Beaststalker's Mantle"
+        }
+      ]
+    },
+    {
+      "id": 3062,
+      "name": "Pyroguard Emberseer",
+      "loot": [
+        {
+          "item": 16672,
+          "name": "Gauntlets of Elements"
+        }
+      ]
+    },
+    {
+      "id": 3063,
+      "name": "Warchief Rend Blackhand",
+      "loot": [
+        {
+          "item": 16733,
+          "name": "Spaulders of Valor"
+        },
+        {
+          "item": 16669,
+          "name": "Pauldrons of Elements"
+        }
+      ]
+    },
+    {
+      "id": 3068,
+      "name": "The Beast",
+      "loot": [
+        {
+          "item": 16729,
+          "name": "Lightforge Spaulders"
+        }
+      ]
+    },
+    {
+      "id": 3069,
+      "name": "General Drakkisath",
+      "loot": [
+        {
+          "item": 16666,
+          "name": "Vest of Elements"
+        },
+        {
+          "item": 16674,
+          "name": "Beaststalker's Tunic"
+        },
+        {
+          "item": 16688,
+          "name": "Magister's Robes"
+        },
+        {
+          "item": 16690,
+          "name": "Devout Robe"
+        },
+        {
+          "item": 16700,
+          "name": "Dreadmist Robe"
+        },
+        {
+          "item": 16706,
+          "name": "Wildheart Vest"
+        },
+        {
+          "item": 16721,
+          "name": "Shadowcraft Tunic"
+        },
+        {
+          "item": 16726,
+          "name": "Lightforge Breastplate"
+        },
+        {
+          "item": 16730,
+          "name": "Breastplate of Valor"
+        }
+      ]
+    },
+    {
+      "id": 3070,
+      "name": "Lord Valthalak",
+      "loot": []
+    }
+  ]
+}

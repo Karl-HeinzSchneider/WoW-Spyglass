@@ -1,0 +1,43 @@
+{
+  "map": 34,
+  "name": "Stormwind Stockade",
+  "minLevel": 22,
+  "maxLevel": 32,
+  "encounters": [
+    {
+      "id": 2756,
+      "name": "Targorr the Dread",
+      "loot": [
+        {
+          "item": 273804,
+          "name": "Executioner Mantle"
+        }
+      ]
+    },
+    {
+      "id": 2757,
+      "name": "Kam Deepfury",
+      "loot": [
+        {
+          "item": 2280,
+          "name": "Kam's Walking Stick"
+        }
+      ]
+    },
+    {
+      "id": 2758,
+      "name": "Hamhock",
+      "loot": []
+    },
+    {
+      "id": 2759,
+      "name": "Dextren Ward",
+      "loot": []
+    },
+    {
+      "id": 2760,
+      "name": "Bazil Thredd",
+      "loot": []
+    }
+  ]
+}

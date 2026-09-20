@@ -7,37 +7,136 @@
     {
       "id": 2741,
       "name": "Rhahk'Zor",
-      "loot": []
+      "loot": [
+        {
+          "item": 872,
+          "name": "Rockslicer"
+        },
+        {
+          "item": 273289,
+          "name": "Ogre Loincloth"
+        },
+        {
+          "item": 5187,
+          "name": "Rhahk'Zor's Hammer"
+        }
+      ]
     },
     {
       "id": 2742,
       "name": "Sneed",
-      "loot": []
+      "loot": [
+        {
+          "item": 5194,
+          "name": "Taskmaster Axe"
+        },
+        {
+          "item": 5195,
+          "name": "Gold-flecked Gloves"
+        },
+        {
+          "item": 273293,
+          "name": "Bandsaw Wristbands"
+        }
+      ]
     },
     {
       "id": 2743,
       "name": "Gilnid",
-      "loot": []
+      "loot": [
+        {
+          "item": 273297,
+          "name": "Goblin Hammer"
+        },
+        {
+          "item": 1156,
+          "name": "Lavishly Jeweled Ring"
+        },
+        {
+          "item": 5199,
+          "name": "Smelting Pants"
+        }
+      ]
     },
     {
       "id": 2744,
       "name": "Captain Greenskin",
-      "loot": []
+      "loot": [
+        {
+          "item": 5200,
+          "name": "Impaling Harpoon"
+        },
+        {
+          "item": 5201,
+          "name": "Emberstone Staff"
+        },
+        {
+          "item": 10403,
+          "name": "Blackened Defias Belt"
+        }
+      ]
     },
     {
       "id": 2745,
       "name": "Mr. Smite",
-      "loot": []
+      "loot": [
+        {
+          "item": 7230,
+          "name": "Smite's Mighty Hammer"
+        },
+        {
+          "item": 5192,
+          "name": "Thief's Blade"
+        },
+        {
+          "item": 284715,
+          "name": "First Mate Band"
+        },
+        {
+          "item": 5196,
+          "name": "Smite's Reaver"
+        }
+      ]
     },
     {
       "id": 2746,
       "name": "Cookie",
-      "loot": []
+      "loot": [
+        {
+          "item": 273298,
+          "name": "Lookie's Spyglass"
+        },
+        {
+          "item": 5198,
+          "name": "Cookie's Stirring Rod"
+        },
+        {
+          "item": 5197,
+          "name": "Cookie's Tenderizer"
+        }
+      ]
     },
     {
       "id": 2747,
       "name": "Edwin VanCleef",
-      "loot": []
+      "loot": [
+        {
+          "item": 5191,
+          "name": "Cruel Barb"
+        },
+        {
+          "item": 5193,
+          "name": "Cape of the Brotherhood"
+        },
+        {
+          "item": 5202,
+          "name": "Corsair's Overshirt"
+        },
+        {
+          "item": 10399,
+          "name": "Blackened Defias Armor"
+        }
+      ]
     }
   ]
 }

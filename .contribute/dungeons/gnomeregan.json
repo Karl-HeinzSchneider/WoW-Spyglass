@@ -1,0 +1,73 @@
+{
+  "map": 90,
+  "name": "Gnomeregan",
+  "minLevel": 26,
+  "maxLevel": 36,
+  "encounters": [
+    {
+      "id": 2768,
+      "name": "Grubbis",
+      "loot": []
+    },
+    {
+      "id": 2769,
+      "name": "Viscous Fallout",
+      "loot": [
+        {
+          "item": 9453,
+          "name": "Toxic Revenger"
+        }
+      ]
+    },
+    {
+      "id": 2770,
+      "name": "Electrocutioner 6000",
+      "loot": []
+    },
+    {
+      "id": 2771,
+      "name": "Crowd Pummeler 9-60",
+      "loot": [
+        {
+          "item": 9449,
+          "name": "Manual Crowd Pummeler"
+        }
+      ]
+    },
+    {
+      "id": 2772,
+      "name": "Mekgineer Thermaplugg",
+      "loot": []
+    },
+    {
+      "id": 2925,
+      "name": "Grubbis",
+      "loot": []
+    },
+    {
+      "id": 2928,
+      "name": "Viscous Fallout",
+      "loot": []
+    },
+    {
+      "id": 2899,
+      "name": "Crowd Pummeler 9-60",
+      "loot": []
+    },
+    {
+      "id": 2927,
+      "name": "Electrocutioner 6000",
+      "loot": []
+    },
+    {
+      "id": 2935,
+      "name": "Mechanical Menagerie",
+      "loot": []
+    },
+    {
+      "id": 2940,
+      "name": "Mekgineer Thermaplugg",
+      "loot": []
+    }
+  ]
+}

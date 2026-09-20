@@ -1,0 +1,48 @@
+{
+  "map": 189,
+  "name": "Scarlet Monastery",
+  "minLevel": 32,
+  "maxLevel": 42,
+  "encounters": [
+    {
+      "id": 444,
+      "name": "Interrogator Vishas",
+      "loot": []
+    },
+    {
+      "id": 2779,
+      "name": "Bloodmage Thalnos",
+      "loot": []
+    },
+    {
+      "id": 446,
+      "name": "Houndmaster Loksey",
+      "loot": []
+    },
+    {
+      "id": 447,
+      "name": "Arcanist Doan",
+      "loot": []
+    },
+    {
+      "id": 448,
+      "name": "Herod",
+      "loot": []
+    },
+    {
+      "id": 449,
+      "name": "High Inquisitor Fairbanks",
+      "loot": []
+    },
+    {
+      "id": 450,
+      "name": "High Inquisitor Whitemane",
+      "loot": [
+        {
+          "item": 7726,
+          "name": "Aegis of the Scarlet Commander"
+        }
+      ]
+    }
+  ]
+}

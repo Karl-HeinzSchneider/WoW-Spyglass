@@ -1,0 +1,113 @@
+{
+  "map": 230,
+  "name": "Blackrock Depths",
+  "minLevel": 52,
+  "maxLevel": 60,
+  "encounters": [
+    {
+      "id": 227,
+      "name": "High Interrogator Gerstahn",
+      "loot": []
+    },
+    {
+      "id": 228,
+      "name": "Lord Roccor",
+      "loot": []
+    },
+    {
+      "id": 229,
+      "name": "Houndmaster Grebmar",
+      "loot": []
+    },
+    {
+      "id": 230,
+      "name": "Ring of Law",
+      "loot": []
+    },
+    {
+      "id": 231,
+      "name": "Pyromancer Loregrain",
+      "loot": []
+    },
+    {
+      "id": 232,
+      "name": "Lord Incendius",
+      "loot": []
+    },
+    {
+      "id": 233,
+      "name": "Warder Stilgiss",
+      "loot": []
+    },
+    {
+      "id": 234,
+      "name": "Fineous Darkvire",
+      "loot": []
+    },
+    {
+      "id": 235,
+      "name": "Bael'Gar",
+      "loot": []
+    },
+    {
+      "id": 236,
+      "name": "General Angerforge",
+      "loot": []
+    },
+    {
+      "id": 237,
+      "name": "Golem Lord Argelmach",
+      "loot": []
+    },
+    {
+      "id": 238,
+      "name": "Hurley Blackbreath",
+      "loot": []
+    },
+    {
+      "id": 239,
+      "name": "Phalanx",
+      "loot": []
+    },
+    {
+      "id": 240,
+      "name": "Ribbly Screwspigot",
+      "loot": []
+    },
+    {
+      "id": 241,
+      "name": "Plugger Spazzring",
+      "loot": []
+    },
+    {
+      "id": 2791,
+      "name": "The Vault",
+      "loot": []
+    },
+    {
+      "id": 242,
+      "name": "Ambassador Flamelash",
+      "loot": []
+    },
+    {
+      "id": 243,
+      "name": "The Seven",
+      "loot": []
+    },
+    {
+      "id": 244,
+      "name": "Magmus",
+      "loot": []
+    },
+    {
+      "id": 2789,
+      "name": "Princess Moira Bronzebeard",
+      "loot": []
+    },
+    {
+      "id": 2790,
+      "name": "Emperor Dagran Thaurissan",
+      "loot": []
+    }
+  ]
+}

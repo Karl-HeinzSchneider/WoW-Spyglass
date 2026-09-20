@@ -1,0 +1,175 @@
+{
+  "map": 329,
+  "name": "Stratholme",
+  "minLevel": 48,
+  "maxLevel": 58,
+  "encounters": [
+    {
+      "id": 473,
+      "name": "Hearthsinger Forresten",
+      "loot": [
+        {
+          "item": 16682,
+          "name": "Magister's Boots"
+        }
+      ]
+    },
+    {
+      "id": 474,
+      "name": "Timmy the Cruel",
+      "loot": []
+    },
+    {
+      "id": 476,
+      "name": "Malor the Zealous",
+      "loot": []
+    },
+    {
+      "id": 475,
+      "name": "Cannon Master Willey",
+      "loot": [
+        {
+          "item": 16708,
+          "name": "Shadowcraft Spaulders"
+        }
+      ]
+    },
+    {
+      "id": 477,
+      "name": "Archivist Galford",
+      "loot": [
+        {
+          "item": 16692,
+          "name": "Devout Gloves"
+        }
+      ]
+    },
+    {
+      "id": 478,
+      "name": "Balnazzar",
+      "loot": []
+    },
+    {
+      "id": 472,
+      "name": "The Unforgiven",
+      "loot": []
+    },
+    {
+      "id": 479,
+      "name": "Baroness Anastari",
+      "loot": [
+        {
+          "item": 16704,
+          "name": "Dreadmist Sandals"
+        }
+      ]
+    },
+    {
+      "id": 480,
+      "name": "Nerub'enkan",
+      "loot": [
+        {
+          "item": 16675,
+          "name": "Beaststalker's Boots"
+        }
+      ]
+    },
+    {
+      "id": 481,
+      "name": "Maleki the Pallid",
+      "loot": [
+        {
+          "item": 16691,
+          "name": "Devout Sandals"
+        }
+      ]
+    },
+    {
+      "id": 482,
+      "name": "Magistrate Barthilas",
+      "loot": []
+    },
+    {
+      "id": 483,
+      "name": "Ramstein the Gorger",
+      "loot": [
+        {
+          "item": 16737,
+          "name": "Gauntlets of Valor"
+        }
+      ]
+    },
+    {
+      "id": 484,
+      "name": "Baron Rivendare",
+      "loot": [
+        {
+          "item": 16668,
+          "name": "Kilt of Elements"
+        },
+        {
+          "item": 16678,
+          "name": "Beaststalker's Pants"
+        },
+        {
+          "item": 16687,
+          "name": "Magister's Leggings"
+        },
+        {
+          "item": 16694,
+          "name": "Devout Skirt"
+        },
+        {
+          "item": 16699,
+          "name": "Dreadmist Leggings"
+        },
+        {
+          "item": 16709,
+          "name": "Shadowcraft Pants"
+        },
+        {
+          "item": 16719,
+          "name": "Wildheart Kilt"
+        },
+        {
+          "item": 16728,
+          "name": "Lightforge Legplates"
+        },
+        {
+          "item": 16732,
+          "name": "Legplates of Valor"
+        }
+      ]
+    },
+    {
+      "id": 2795,
+      "name": "Black Guard Swordsmith",
+      "loot": []
+    },
+    {
+      "id": 2796,
+      "name": "Crimson Hammersmith",
+      "loot": []
+    },
+    {
+      "id": 2797,
+      "name": "Ezra Grimm",
+      "loot": []
+    },
+    {
+      "id": 2798,
+      "name": "Postmaster Malown",
+      "loot": []
+    },
+    {
+      "id": 2799,
+      "name": "Skul",
+      "loot": []
+    },
+    {
+      "id": 2800,
+      "name": "Stonespine",
+      "loot": []
+    }
+  ]
+}

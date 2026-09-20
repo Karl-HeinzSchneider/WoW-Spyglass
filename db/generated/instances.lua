@@ -5,6 +5,8 @@ local Data = ForeverLoot.Data
 Data:AddInstance(33, {
     type = "dungeon",
     expansionID = 0,
+    minLevel = 22,
+    maxLevel = 30,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     bosses = { 2748, 2749, 2750, 2751, 2752, 2753, 2754, 2755 },
 })
@@ -21,6 +23,8 @@ Data:AddBoss(2755, { instanceID = 33, order = 7000 }) -- Archmage Arugal
 Data:AddInstance(34, {
     type = "dungeon",
     expansionID = 0,
+    minLevel = 22,
+    maxLevel = 32,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     bosses = { 2756, 2757, 2758, 2759, 2760 },
 })
@@ -51,6 +55,8 @@ Data:AddBoss(2747, { instanceID = 36, order = 6000 }) -- Edwin VanCleef
 Data:AddInstance(43, {
     type = "dungeon",
     expansionID = 0,
+    minLevel = 17,
+    maxLevel = 27,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     bosses = { 585, 586, 587, 588, 589, 590, 591, 592 },
 })
@@ -67,6 +73,8 @@ Data:AddBoss(592, { instanceID = 43, order = 7000 }) -- Mutanus the Devourer
 Data:AddInstance(47, {
     type = "dungeon",
     expansionID = 0,
+    minLevel = 32,
+    maxLevel = 42,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     bosses = { 2773, 2774, 2775, 2776, 2777, 2778 },
 })
@@ -81,6 +89,8 @@ Data:AddBoss(2778, { instanceID = 47, order = 5000 }) -- Charlga Razorflank
 Data:AddInstance(48, {
     type = "dungeon",
     expansionID = 0,
+    minLevel = 22,
+    maxLevel = 32,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     bosses = { 2916, 2915, 2914, 2913, 2912, 2911, 2694, 2761, 2910, 2697, 2762, 2699, 2763, 2704, 2764, 2710, 2765, 2766, 2767, 2825, 2891 },
 })
@@ -110,6 +120,8 @@ Data:AddBoss(2891, { instanceID = 48, order = 8000 }) -- Aku'mai
 Data:AddInstance(70, {
     type = "dungeon",
     expansionID = 0,
+    minLevel = 42,
+    maxLevel = 52,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     bosses = { 547, 548, 549, 1887, 551, 552, 553, 554 },
 })
@@ -126,6 +138,8 @@ Data:AddBoss(554, { instanceID = 70, order = 7000 }) -- Archaedas
 Data:AddInstance(90, {
     type = "dungeon",
     expansionID = 0,
+    minLevel = 26,
+    maxLevel = 36,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     bosses = { 2768, 2769, 2770, 2771, 2772, 2925, 2928, 2899, 2927, 2935, 2940 },
 })
@@ -145,6 +159,8 @@ Data:AddBoss(2940, { instanceID = 90, order = 8000 }) -- Mekgineer Thermaplugg
 Data:AddInstance(109, {
     type = "dungeon",
     expansionID = 0,
+    minLevel = 50,
+    maxLevel = 60,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     bosses = { 492, 2952, 3582, 488, 486, 2953, 3583, 487, 2954, 3584, 2955, 3585, 2956, 3586, 490, 2957, 3587, 491, 2958, 3588, 2959, 3589, 493, 2814 },
 })
@@ -177,6 +193,8 @@ Data:AddBoss(2814, { instanceID = 109, order = 9000 }) -- Atal'alarion
 Data:AddInstance(129, {
     type = "dungeon",
     expansionID = 0,
+    minLevel = 37,
+    maxLevel = 47,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     bosses = { 2780, 2781, 2782, 2783, 2784, 2785 },
 })
@@ -191,6 +209,8 @@ Data:AddBoss(2785, { instanceID = 129, order = 5000 }) -- Amnennar the Coldbring
 Data:AddInstance(189, {
     type = "dungeon",
     expansionID = 0,
+    minLevel = 32,
+    maxLevel = 42,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     bosses = { 444, 2779, 446, 447, 448, 449, 450 },
 })
@@ -206,6 +226,8 @@ Data:AddBoss(450, { instanceID = 189, order = 6000 }) -- High Inquisitor Whitema
 Data:AddInstance(209, {
     type = "dungeon",
     expansionID = 0,
+    minLevel = 46,
+    maxLevel = 56,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     bosses = { 593, 594, 595, 596, 597, 598, 599, 600 },
 })
@@ -222,6 +244,8 @@ Data:AddBoss(600, { instanceID = 209, order = 7000 }) -- Chief Ukorz Sandscalp
 Data:AddInstance(229, {
     type = "dungeon",
     expansionID = 0,
+    minLevel = 55,
+    maxLevel = 60,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     bosses = { 267, 268, 269, 270, 271, 272, 274, 273, 275, 3062, 3063, 3068, 3069, 3070 },
 })
@@ -244,6 +268,8 @@ Data:AddBoss(3070, { instanceID = 229, order = 13000 }) -- Lord Valthalak
 Data:AddInstance(230, {
     type = "dungeon",
     expansionID = 0,
+    minLevel = 52,
+    maxLevel = 60,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     bosses = { 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 2791, 242, 243, 244, 2789, 2790 },
 })
@@ -283,6 +309,8 @@ Data:AddBoss(1084, { instanceID = 249, order = 0 }) -- Onyxia
 Data:AddInstance(289, {
     type = "dungeon",
     expansionID = 0,
+    minLevel = 55,
+    maxLevel = 60,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     bosses = { 2805, 2804, 2811, 2809, 2813, 3055, 2810, 2803, 2802, 2808, 2812, 2807, 2806, 2801 },
 })
@@ -323,6 +351,8 @@ Data:AddBoss(793, { instanceID = 309, order = 9000 }) -- Hakkar
 Data:AddInstance(329, {
     type = "dungeon",
     expansionID = 0,
+    minLevel = 48,
+    maxLevel = 58,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     bosses = { 473, 474, 476, 475, 477, 478, 472, 479, 480, 481, 482, 483, 484, 2795, 2796, 2797, 2798, 2799, 2800 },
 })
@@ -350,6 +380,8 @@ Data:AddBoss(2800, { instanceID = 329, order = 18000 }) -- Stonespine
 Data:AddInstance(349, {
     type = "dungeon",
     expansionID = 0,
+    minLevel = 42,
+    maxLevel = 52,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     bosses = { 422, 423, 427, 424, 425, 426, 428, 429 },
 })
@@ -366,6 +398,8 @@ Data:AddBoss(429, { instanceID = 349, order = 7000 }) -- Princess Theradras
 Data:AddInstance(389, {
     type = "dungeon",
     expansionID = 0,
+    minLevel = 15,
+    maxLevel = 25,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     bosses = { 2732, 2733, 2734, 2735 },
 })
@@ -397,6 +431,8 @@ Data:AddBoss(3018, { instanceID = 409, order = 10000 }) -- The Molten Core
 Data:AddInstance(429, {
     type = "dungeon",
     expansionID = 0,
+    minLevel = 55,
+    maxLevel = 60,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     bosses = { 343, 344, 345, 2792, 346, 350, 347, 348, 349, 361, 362, 363, 364, 365, 366, 367, 368, 2793, 2794 },
 })
@@ -630,6 +666,8 @@ Data:AddBoss(3482, { instanceID = 2998, order = 2000 }) -- Relic Guardian
 Data:AddInstance(2999, {
     type = "dungeon",
     expansionID = 0,
+    minLevel = 15,
+    maxLevel = 20,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     bosses = { 3353, 3357, 3355, 3354, 3408, 3411, 3412 },
 })
@@ -655,6 +693,8 @@ Data:AddBoss(3371, { instanceID = 3002, order = 1000 }) -- Crushfist Bloodbreake
 Data:AddInstance(3065, {
     type = "dungeon",
     expansionID = 0,
+    minLevel = 13,
+    maxLevel = 18,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     bosses = { 3493, 3495, 3494, 3496 },
 })

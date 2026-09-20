@@ -1,0 +1,144 @@
+{
+  "map": 33,
+  "name": "Shadowfang Keep",
+  "minLevel": 22,
+  "maxLevel": 30,
+  "encounters": [
+    {
+      "id": 2748,
+      "name": "Rethilgore",
+      "loot": [
+        {
+          "item": 5254,
+          "name": "Rugged Spaulders"
+        },
+        {
+          "item": 273456,
+          "name": "Cell Keeper's Claws"
+        },
+        {
+          "item": 273457,
+          "name": "Sorcerer Collar"
+        }
+      ]
+    },
+    {
+      "id": 2749,
+      "name": "Razorclaw the Butcher",
+      "loot": [
+        {
+          "item": 1292,
+          "name": "Butcher's Cleaver"
+        },
+        {
+          "item": 6226,
+          "name": "Bloody Apron"
+        },
+        {
+          "item": 6633,
+          "name": "Butcher's Slicer"
+        }
+      ]
+    },
+    {
+      "id": 2750,
+      "name": "Baron Silverlaine",
+      "loot": [
+        {
+          "item": 6321,
+          "name": "Silverlaine's Family Seal"
+        },
+        {
+          "item": 6323,
+          "name": "Baron's Scepter"
+        },
+        {
+          "item": 273637,
+          "name": "Blade of Silverlaine"
+        }
+      ]
+    },
+    {
+      "id": 2751,
+      "name": "Commander Springvale",
+      "loot": [
+        {
+          "item": 3191,
+          "name": "Arced War Axe"
+        },
+        {
+          "item": 6320,
+          "name": "Commander's Crest"
+        },
+        {
+          "item": 273643,
+          "name": "Worgenbane Talisman"
+        }
+      ]
+    },
+    {
+      "id": 2752,
+      "name": "Odo the Blindwatcher",
+      "loot": [
+        {
+          "item": 6318,
+          "name": "Odo's Ley Staff"
+        },
+        {
+          "item": 6319,
+          "name": "Girdle of the Blindwatcher"
+        },
+        {
+          "item": 273645,
+          "name": "Blindwatcher's Sight"
+        }
+      ]
+    },
+    {
+      "id": 2753,
+      "name": "Fenrus the Devourer",
+      "loot": [
+        {
+          "item": 3230,
+          "name": "Black Wolf Bracers"
+        },
+        {
+          "item": 6340,
+          "name": "Fenrus' Hide"
+        }
+      ]
+    },
+    {
+      "id": 2754,
+      "name": "Wolf Master Nandos",
+      "loot": [
+        {
+          "item": 3748,
+          "name": "Feline Mantle"
+        },
+        {
+          "item": 6314,
+          "name": "Wolfmaster Cape"
+        }
+      ]
+    },
+    {
+      "id": 2755,
+      "name": "Archmage Arugal",
+      "loot": [
+        {
+          "item": 6220,
+          "name": "Meteor Shard"
+        },
+        {
+          "item": 6324,
+          "name": "Robes of Arugal"
+        },
+        {
+          "item": 6392,
+          "name": "Belt of Arugal"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "map": 209,
+  "name": "Zul'Farrak",
+  "minLevel": 46,
+  "maxLevel": 56,
+  "encounters": [
+    {
+      "id": 593,
+      "name": "Hydromancer Velratha",
+      "loot": []
+    },
+    {
+      "id": 594,
+      "name": "Gahz'rilla",
+      "loot": []
+    },
+    {
+      "id": 595,
+      "name": "Antu'sul",
+      "loot": []
+    },
+    {
+      "id": 596,
+      "name": "Theka the Martyr",
+      "loot": []
+    },
+    {
+      "id": 597,
+      "name": "Witch Doctor Zum'rah",
+      "loot": []
+    },
+    {
+      "id": 598,
+      "name": "Nekrum Gutchewer",
+      "loot": []
+    },
+    {
+      "id": 599,
+      "name": "Shadowpriest Sezz'ziz",
+      "loot": []
+    },
+    {
+      "id": 600,
+      "name": "Chief Ukorz Sandscalp",
+      "loot": []
+    }
+  ]
+}

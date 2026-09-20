@@ -12,16 +12,16 @@ FL:RegisterModule({
     description = "Loot tables for 5-man dungeons.",
     getChildren = function()
         return {
-            -- FL.InstanceFolder(389), -- Ragefire Chasm
-            -- FL.InstanceFolder(43), -- Wailing Caverns
+            FL.InstanceFolder(389), -- Ragefire Chasm
+            FL.InstanceFolder(43), -- Wailing Caverns
             FL.InstanceFolder(36), -- Deadmines
-            -- FL.InstanceFolder(33), -- Shadowfang Keep
-            -- FL.InstanceFolder(48), -- Blackfathom Deeps
-            -- FL.InstanceFolder(34), -- Stormwind Stockade
-            -- FL.InstanceFolder(90), -- Gnomeregan
-            -- FL.InstanceFolder(47), -- Razorfen Kraul
-            -- FL.InstanceFolder(189), -- Scarlet Monastery
-            -- FL.InstanceFolder(129), -- Razorfen Downs
+            FL.InstanceFolder(33), -- Shadowfang Keep
+            FL.InstanceFolder(48), -- Blackfathom Deeps
+            FL.InstanceFolder(34), -- Stormwind Stockade
+            FL.InstanceFolder(90), -- Gnomeregan
+            FL.InstanceFolder(47), -- Razorfen Kraul
+            FL.InstanceFolder(189), -- Scarlet Monastery
+            FL.InstanceFolder(129), -- Razorfen Downs
             -- FL.InstanceFolder(70), -- Uldaman
             -- FL.InstanceFolder(209), -- Zul'Farrak
             -- FL.InstanceFolder(349), -- Maraudon

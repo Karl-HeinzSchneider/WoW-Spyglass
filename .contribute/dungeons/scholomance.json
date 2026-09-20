@@ -1,0 +1,135 @@
+{
+  "map": 289,
+  "name": "Scholomance",
+  "minLevel": 55,
+  "maxLevel": 60,
+  "encounters": [
+    {
+      "id": 2805,
+      "name": "Kirtonos",
+      "loot": [
+        {
+          "item": 16734,
+          "name": "Boots of Valor"
+        }
+      ]
+    },
+    {
+      "id": 2804,
+      "name": "Jandice Barov",
+      "loot": [
+        {
+          "item": 16701,
+          "name": "Dreadmist Mantle"
+        }
+      ]
+    },
+    {
+      "id": 2811,
+      "name": "Rattlegore",
+      "loot": [
+        {
+          "item": 16711,
+          "name": "Shadowcraft Boots"
+        }
+      ]
+    },
+    {
+      "id": 2809,
+      "name": "Marduk Blackpool",
+      "loot": []
+    },
+    {
+      "id": 2813,
+      "name": "Vectus",
+      "loot": []
+    },
+    {
+      "id": 3055,
+      "name": "Kormok",
+      "loot": []
+    },
+    {
+      "id": 2810,
+      "name": "Ras Frostwhisperer",
+      "loot": [
+        {
+          "item": 16689,
+          "name": "Magister's Mantle"
+        }
+      ]
+    },
+    {
+      "id": 2803,
+      "name": "Instructor Malicia",
+      "loot": []
+    },
+    {
+      "id": 2802,
+      "name": "Doctor Theolen Krastinov",
+      "loot": []
+    },
+    {
+      "id": 2808,
+      "name": "Lorekeeper Polkelt",
+      "loot": []
+    },
+    {
+      "id": 2812,
+      "name": "The Ravenian",
+      "loot": []
+    },
+    {
+      "id": 2807,
+      "name": "Lord Alexei Barov",
+      "loot": []
+    },
+    {
+      "id": 2806,
+      "name": "Lady Illucia Barov",
+      "loot": []
+    },
+    {
+      "id": 2801,
+      "name": "Darkmaster Gandling",
+      "loot": [
+        {
+          "item": 16667,
+          "name": "Coif of Elements"
+        },
+        {
+          "item": 16677,
+          "name": "Beaststalker's Cap"
+        },
+        {
+          "item": 16686,
+          "name": "Magister's Crown"
+        },
+        {
+          "item": 16693,
+          "name": "Devout Crown"
+        },
+        {
+          "item": 16698,
+          "name": "Dreadmist Mask"
+        },
+        {
+          "item": 16707,
+          "name": "Shadowcraft Cap"
+        },
+        {
+          "item": 16720,
+          "name": "Wildheart Cowl"
+        },
+        {
+          "item": 16727,
+          "name": "Lightforge Helm"
+        },
+        {
+          "item": 16731,
+          "name": "Helm of Valor"
+        }
+      ]
+    }
+  ]
+}
