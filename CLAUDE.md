@@ -14,12 +14,22 @@ WoW addons are plain Lua files loaded directly by the game client; there is no b
 the code itself. To try changes, copy or symlink the repo into
 `World of Warcraft/_classic_beta_/Interface/AddOns/ForeverLoot/` and run `/reload` in-game.
 
-The one generated part is the item database. `.contribute/tools/` (TypeScript, `npm install`
-once, Node 20+) downloads the game's DB2 tables from wago.tools for the build pinned in
-`config.json` and merges them with the curated files in `.contribute/dungeons|raids/*.json`:
-`npm run fix` (validate ids, fill names, add missing bosses), `npm run gen` (write
-`db/generated/`), `npm run gen -- --check` (staleness, for CI). Never edit `db/generated/` by
-hand. Contributor docs in `.contribute/README.md`.
+The one generated part is the database. `.contribute/tools/` (TypeScript, `npm install` once,
+Node 20+) builds `db/generated/` from three inputs: the **item scans** in
+`.contribute/items/items_<n>.json` (recorded in-game by `/fl scan`, one file per 10 000 ids,
+machine-written by `npm run import`), the **curated drops** in `.contribute/dungeons|raids/*.json`,
+and wago.tools' `Map` + `DungeonEncounter` tables (instances, bosses, their names) for the build
+pinned in `config.json`. Commands: `npm run fix` (validate ids, fill names, add missing bosses),
+`npm run gen` (write `db/generated/`), `npm run gen -- --check` (staleness, for CI),
+`npm run import -- <file>` (merge what the addon recorded in-game — a SavedVariables
+`ForeverLoot.lua` or a `/fl export` JSON — into the scans and the curated files). Never edit
+`db/generated/` by hand. Contributor docs in `.contribute/README.md`.
+
+WoW Forever's items are server-side: the wago.tools item tables are incomplete and wrong for
+this client and ids from Classic/wowhead don't match, so **the in-game scan is the only item
+source**. Only scanned items exist in the DB; a curated loot row may reference an unscanned id
+(warning, not error). Item rows carry everything `GetItemInfo`/`GetItemStats` return (see
+`Data.ITEM`).
 
 Static checks used so far (no test runner in the repo): `luac -p` on every Lua file, lxml
 validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-language-server
@@ -35,7 +45,17 @@ validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-la
   Ace* → LibDataBroker/LibDBIcon). Listed first in the TOC.
 - `src/core/logger.lua` — `app.logger`. Leveled, colored chat logging; `log("x")` is `log:info("x")`.
 - `src/core/db.lua` — `app.dbDefaults`, the AceDB-3.0 defaults. `profile` = user settings,
-  `char` = per-character data (loot history), `global` = account-wide. Change the schema here.
+  `char` = per-character data (loot history), `global` = account-wide (`global.discovered`: items
+  and boss drops recorded in-game, the shape `npm run import` reads). Change the schema here.
+- `src/core/discovery.lua` — `app.discovery`, AceAddon module. `/fl scan <from> [to]` /
+  `resume` / `<from> <to> force` / `stop` requests ids via `RequestLoadItemDataByID` and records
+  every existing item in full (`GetItemInfo` + `GetItemStats`, stat keys shortened) into
+  `global.discovered.items`, 500 new per run, progress in `global.scan`. Also records items the
+  DB lacks from `LOOT_OPENED`/`START_LOOT_ROLL` and boss drops (attributed to the last successful
+  `ENCOUNTER_END`, checked against the looted creature when `GetLootSourceInfo` exists). Everything
+  is merged into `Data` at once and on login; a record identical to the shipped row is pruned then.
+  Listed in the TOC after the generated data because it takes `app.data` at load time.
+- `src/core/json.lua` — `app.json.encode`, the minimal JSON encoder behind `/fl export`.
 - `src/core/registry.lua` — `app.api`, also the **public global `ForeverLoot`** (contract in
   `docs/API.md`). `RegisterModule(def)` validates and stores module definitions; `GetRootNode()`
   builds the virtual tree the window browses (one node per module, sorted by `order`). Events via
@@ -57,9 +77,13 @@ validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-la
   LuaLS and StyLua. Boss ids are `DungeonEncounter` ids, instance ids are `Map` ids.
 - `.contribute/` — everything people edit and send as pull requests: `dungeons/*.json` and
   `raids/*.json` (one instance each: map id, level range, icon, drops with chance; names are
-  informational and rewritten by `npm run fix`) and `tools/` (the generator; `node_modules/` and
-  `.cache/` are gitignored). Item ids from Classic/wowhead do **not** apply — WoW Forever has its
-  own itemization, so drops must be recorded in this client.
+  informational and rewritten by `npm run fix`; a row with only a `name` gets its id filled in
+  when unambiguous), `items/items_<n>.json` (the scanned item dump: `ScannedItem` in
+  `tools/src/items.ts`, names per locale; written by `npm run import`, not by hand) and `tools/`
+  (the generator; `node_modules/` and `.cache/` are gitignored; `src/savedvars.ts` parses
+  SavedVariables Lua, `src/discovered.ts` + `src/import.ts` merge recorded data). Item ids from
+  Classic/wowhead do **not** apply — WoW Forever has its own itemization, so items and drops must
+  be recorded in this client.
 - `modules/<name>/` — one folder per built-in content module (`items`, `raids`, `dungeons`), each
   with a `<name>.xml` loader listed in `modules/modules.xml`. `items` is a `query = true` module
   (the item DB with the view's search box and filter dropdown); `raids`/`dungeons` build their
@@ -95,6 +119,8 @@ validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-la
     state (`view.queries`); query folders show the `SearchBox` (debounced) and `FilterDropdown`
     (Blizzard_Menu `WowStyle1FilterDropdownTemplate`, menu generated from the filter registry).
   - The window's root comes from `app.api:GetRootNode()`; it listens to `OnModulesChanged`.
+  - `exportframe.lua/.xml` — `ForeverLootExportFrame` (`BasicFrameTemplateWithInset` +
+    `InputScrollFrameTemplate`), the `/fl export` text box; `app.ui.exportFrame:ShowText(text)`.
 - `ForeverLoot.lua` — root entry file, loaded last.
 - `lib/` — vendored Ace3, LibStub, CallbackHandler, LibDBIcon. Excluded from LuaLS and StyLua.
 - `locales/` — localization string tables.

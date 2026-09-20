@@ -129,6 +129,8 @@ end
 -- Items: the shipped DB answers immediately (name, quality, item level); the client's item
 -- cache, when it has the item, wins because it is exact and provides the link. Uncached items
 -- are requested so the link/tooltip arrive; GET_ITEM_INFO_RECEIVED re-renders the page.
+-- Server-side items are unknown to GetItemInfoInstant until fetched, so their icon comes
+-- from the row.
 ---@param view ForeverLoot.View
 ---@param node ForeverLoot.Node
 function ForeverLootListRowMixin:InitItem(view, node)
@@ -143,7 +145,7 @@ function ForeverLootListRowMixin:InitItem(view, node)
             name = Data:GetItemName(itemID)
             quality, itemLevel = row[ITEM.QUALITY], row[ITEM.ILVL]
         end
-        icon = select(5, C_Item.GetItemInfoInstant(itemID))
+        icon = select(5, C_Item.GetItemInfoInstant(itemID)) or (row and row[ITEM.ICON])
     end
 
     if not name then

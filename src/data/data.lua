@@ -7,7 +7,8 @@ local log = app.logger
 -- Public as `ForeverLoot.Data`; the generated files under db/ fill it through the Add* calls,
 -- and third-party addons may do the same. Contract in docs/API.md.
 --
---   Data.items[itemID]      = { quality, itemLevel, reqLevel, classID, subclassID, equipLoc, bindType }
+--   Data.items[itemID]      = { quality, itemLevel, reqLevel, classID, subclassID, equipLoc, bindType,
+--                               icon, stats, sellPrice, stackCount, setID, expansionID, craftingReagent }
 --   Data.instances[id]      = { type = "dungeon", bosses = { bossID, ... }, minLevel = 15, ... }
 --   Data.bosses[bossID]     = { instanceID = 36, order = 6000 }   -- bossID = DungeonEncounter id
 --   Data.bossLoot[bossID]   = { { itemID, chance }, ... }
@@ -25,9 +26,19 @@ local ITEM = {
     SUBCLASS = 5,
     SLOT = 6, -- equip location string, e.g. "INVTYPE_HEAD"; "" for non-equippable
     BIND = 7, -- Enum.ItemBind (0 none, 1 on pickup, 2 on equip, 3 on use, 4 quest)
+    ICON = 8, -- fileDataID; the client can't look it up for items it hasn't fetched yet
+    -- { INTELLECT = 4, SPELL_POWER = 18, ... }: C_Item.GetItemStats keys without the ITEM_MOD_
+    -- prefix and _SHORT suffix (see Data.StatLabel), values rounded to 2 decimals; nil = none.
+    STATS = 9,
+    SELL_PRICE = 10, -- copper
+    STACK = 11,
+    SET = 12, -- item set id, 0 = none
+    EXPANSION = 13,
+    REAGENT = 14, -- boolean, crafting reagent
 }
 
----@alias ForeverLoot.ItemRow { [1]: integer, [2]: integer, [3]: integer, [4]: integer, [5]: integer, [6]: string, [7]: integer }
+---@alias ForeverLoot.ItemStats table<string, number>
+---@alias ForeverLoot.ItemRow { [1]: integer, [2]: integer, [3]: integer, [4]: integer, [5]: integer, [6]: string, [7]: integer, [8]: integer, [9]: ForeverLoot.ItemStats?, [10]: integer, [11]: integer, [12]: integer, [13]: integer, [14]: boolean }
 
 ---@class ForeverLoot.Instance
 ---@field type "raid"|"dungeon"|string
@@ -98,7 +109,8 @@ end
 -- Adding data
 ----------------------------------------------------------------------------------------------------
 
--- Adds or replaces item rows: `{ [itemID] = { quality, ilvl, reqLevel, classID, subclassID, slot, bind } }`.
+-- Adds or replaces item rows: `{ [itemID] = { quality, ilvl, reqLevel, classID, subclassID, slot, bind, icon, stats, ... } }`
+-- (positions in Data.ITEM).
 ---@param rows table<integer, ForeverLoot.ItemRow>
 function Data:AddItems(rows)
     local items = self.items
@@ -261,6 +273,22 @@ end
 function Data:GetItemField(itemID, field)
     local row = self.items[itemID]
     return row and row[field]
+end
+
+-- The item's stats, e.g. `{ INTELLECT = 4, SPELL_POWER = 18 }`; nil when it has none.
+---@param itemID integer
+---@return ForeverLoot.ItemStats?
+function Data:GetItemStats(itemID)
+    local row = self.items[itemID]
+    return row and row[ITEM.STATS]
+end
+
+-- Display name of a stat key, from the game's ITEM_MOD_*_SHORT strings ("Intellect").
+---@param key string  # e.g. "INTELLECT"
+---@return string
+function Data.StatLabel(key)
+    local label = _G["ITEM_MOD_" .. key .. "_SHORT"]
+    return type(label) == "string" and label or key
 end
 
 -- All item ids, ascending; cached until the data changes.

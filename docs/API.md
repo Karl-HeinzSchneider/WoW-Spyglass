@@ -173,14 +173,18 @@ Constructors (optional sugar):
 
 ## Item database
 
-`ForeverLoot.Data` holds every item in the client and where it drops. ForeverLoot ships its
-data as generated files (`db/generated/`, built by `.contribute/tools` from wago.tools exports
-and the curated JSON in `.contribute/`); other addons may add to it with the same calls.
+`ForeverLoot.Data` holds every scanned item and where it drops. ForeverLoot ships its data as
+generated files (`db/generated/`, built by `.contribute/tools` from in-game item scans, the
+curated drop JSON in `.contribute/` and wago.tools' instance/encounter tables); other addons may
+add to it with the same calls. The addon itself adds whatever it scans or sees dropping in-game
+(`global.discovered`, see `src/core/discovery.lua`), so `Data.items` can grow at runtime.
 Instance ids are `Map` ids, boss ids are `DungeonEncounter` ids. Tables are integer-keyed:
 
 ```lua
 local Data = ForeverLoot.Data
-Data.items[5188]     -- { quality, itemLevel, reqLevel, classID, subclassID, equipLoc, bind }; indices in Data.ITEM
+Data.items[5188]     -- { quality, itemLevel, reqLevel, classID, subclassID, equipLoc, bind, icon (fileDataID),
+                     --   stats, sellPrice, stackCount, setID, expansionID, craftingReagent }; indices in Data.ITEM
+                     -- stats = { INTELLECT = 4, SPELL_POWER = 18 } (GetItemStats keys without ITEM_MOD_/_SHORT) or nil
 Data.instances[36]   -- { type = "dungeon", bosses = { 2741, ... }, minLevel = 15, maxLevel = 21, expansionID = 0, icon = "..." }
 Data.bosses[2747]    -- { instanceID = 36, order = 6000 }
 Data.bossLoot[2747]  -- { { 5188, 0.9 }, { 5191 }, ... }   -- { itemID, chance 0..1 or nil }
@@ -189,7 +193,7 @@ Data.names.enUS      -- { items = { [5188] = "Filled Vessel" }, bosses = {...}, 
 
 Adding data (any call may be repeated; every one invalidates the caches and fires `OnDataChanged`):
 
-- `Data:AddItems({ [itemID] = { quality, ilvl, reqLevel, classID, subclassID, equipLoc, bind }, ... })`
+- `Data:AddItems({ [itemID] = { quality, ilvl, reqLevel, classID, subclassID, equipLoc, bind, icon, stats, ... }, ... })`
 - `Data:AddInstance(id, def)`, `Data:AddBoss(id, def)` (appends to its instance's `bosses` if missing),
   `Data:AddBossLoot(bossID, { { itemID, chance }, ... })`
 - `Data:AddNames(locale, "items" | "bosses" | "instances", { [id] = name })` — enUS is the fallback
@@ -199,6 +203,7 @@ Reading:
 - `Data:GetItem(id) -> row?`, `Data:GetItemField(id, Data.ITEM.ILVL)`, `Data:GetItemIDs()` (sorted, cached),
   `Data:GetItemCount()`, `for id, row in Data:EachItem() do`
 - `Data:GetItemName(id) -> name, known` — client locale, then enUS, then `C_Item.GetItemInfo`, then `"Item #id"`
+- `Data:GetItemStats(id) -> { INTELLECT = 4, ... }?`, `Data.StatLabel("INTELLECT") -> "Intellect"` (the game's `ITEM_MOD_*_SHORT`)
 - `Data:GetItemSources(id) -> { { kind = "boss", id = bossID, chance = 0.18 }, ... }` — inverted index, built lazily
 - `Data:GetInstance(id)`, `Data:GetInstanceIDs()` (by level, then name), `Data:GetBoss(id)`, `Data:GetBossLoot(bossID)`,
   `Data:GetInstanceName(id)`, `Data:GetBossName(id)`

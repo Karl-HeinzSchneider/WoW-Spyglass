@@ -15,6 +15,9 @@ export const CURATED_DIRS = {
   raid: resolve(CONTRIBUTE_DIR, "raids"),
 } as const;
 
+/** The item database's source: in-game scans, one JSON file per id range (see items.ts). */
+export const SCANNED_ITEMS_DIR = resolve(CONTRIBUTE_DIR, "items");
+
 export const FALLBACK_LOCALE = "enUS";
 
 export interface Config {

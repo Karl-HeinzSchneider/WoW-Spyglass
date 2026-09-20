@@ -2,22 +2,40 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, wri
 import { dirname, relative, resolve } from "node:path";
 import { type Config, FALLBACK_LOCALE, OUTPUT_DIR, ROOT } from "./config.js";
 import { type CuratedFile } from "./curated.js";
+import { type ScannedItem } from "./items.js";
 import { header, luaFields, luaString, luaValue } from "./lua.js";
-import { type Item, type Reference, nameOf } from "./reference.js";
+import { type Reference, nameOf } from "./reference.js";
 
 const DEFAULT_ICONS = {
   dungeon: "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
   raid: "Interface\\Icons\\Achievement_Dungeon_ClassicRaider",
 };
 
-/** Item row layout; must match Data.ITEM in src/data/data.lua. */
-function itemRow(item: Item): unknown[] {
-  return [item.quality, item.itemLevel, item.reqLevel, item.classID, item.subclassID, item.slot, item.bind];
+const ITEM_LAYOUT = "quality, itemLevel, reqLevel, classID, subclassID, slot, bind, icon, stats, sellPrice, stackCount, setID, expansionID, craftingReagent";
+
+/** Item row layout; must match Data.ITEM in src/data/data.lua (stats is nil when the item has none). */
+function itemRow(item: ScannedItem): unknown[] {
+  return [
+    item.quality,
+    item.itemLevel,
+    item.reqLevel,
+    item.classID,
+    item.subclassID,
+    item.slot,
+    item.bind,
+    item.icon,
+    item.stats && Object.keys(item.stats).length > 0 ? item.stats : null,
+    item.sellPrice,
+    item.stackCount,
+    item.setID ?? 0,
+    item.expansionID,
+    item.craftingReagent,
+  ];
 }
 
-function emitItems(ids: number[], ref: Reference, build: string): string {
-  const out = [header(`wago.tools ItemSparse+Item, build ${build}`), "local Data = ForeverLoot.Data\n\n"];
-  out.push("-- { quality, itemLevel, reqLevel, classID, subclassID, slot, bind }; see Data.ITEM.\n");
+function emitItems(ids: number[], ref: Reference): string {
+  const out = [header(".contribute/items (in-game scans)"), "local Data = ForeverLoot.Data\n\n"];
+  out.push(`-- { ${ITEM_LAYOUT} }; see Data.ITEM.\n`);
   out.push("Data:AddItems({\n");
   for (const id of ids) out.push(`    [${id}] = ${luaValue(itemRow(ref.items.get(id)!))},\n`);
   out.push("})\n");
@@ -62,6 +80,7 @@ function emitLoot(file: CuratedFile, ref: Reference): string {
     if (!enc.loot?.length) continue;
     out.push(`\nData:AddBossLoot(${enc.id}, { -- ${nameOf(ref, "encounters", enc.id)}\n`);
     for (const row of enc.loot) {
+      if (row.item === undefined) continue; // name-only row that `npm run fix` hasn't resolved yet
       const chance = row.chance !== undefined ? `, ${luaValue(row.chance)}` : "";
       out.push(`    { ${row.item}${chance} }, -- ${nameOf(ref, "items", row.item)}\n`);
     }
@@ -70,8 +89,8 @@ function emitLoot(file: CuratedFile, ref: Reference): string {
   return out.join("");
 }
 
-function emitNames(locale: string, kind: "items" | "bosses" | "instances", table: Map<number, string>, build: string): string {
-  const out = [header(`wago.tools build ${build}, locale ${locale}`)];
+function emitNames(locale: string, kind: "items" | "bosses" | "instances", table: Map<number, string>, source: string): string {
+  const out = [header(`${source}, locale ${locale}`)];
   if (locale !== FALLBACK_LOCALE) out.push(`if GetLocale() ~= "${locale}" then\n    return\nend\n`);
   out.push("local Data = ForeverLoot.Data\n\n");
   out.push(`Data:AddNames("${locale}", "${kind}", {\n`);
@@ -99,7 +118,7 @@ export function build(ref: Reference, curated: CuratedFile[], config: Config): M
   const itemIDs = [...ref.items.keys()].sort((a, b) => a - b);
   const chunks: number[][] = [];
   for (let i = 0; i < itemIDs.length; i += config.itemsPerFile) chunks.push(itemIDs.slice(i, i + config.itemsPerFile));
-  chunks.forEach((chunk, i) => add(`items/items_${String(i + 1).padStart(3, "0")}.lua`, emitItems(chunk, ref, ref.build)));
+  chunks.forEach((chunk, i) => add(`items/items_${String(i + 1).padStart(3, "0")}.lua`, emitItems(chunk, ref)));
 
   const byMap = new Map(curated.map((f) => [f.data.map, f]));
   add("instances.lua", emitInstances(ref, byMap));
@@ -108,11 +127,14 @@ export function build(ref: Reference, curated: CuratedFile[], config: Config): M
     if (file.data.encounters.some((e) => e.loot?.length)) add(`loot/${file.slug}.lua`, emitLoot(file, ref));
   }
 
+  // Item names exist for the locales that were scanned; instance/boss names for the configured ones.
+  for (const locale of ref.itemLocales) {
+    add(`locales/${locale}/items.lua`, emitNames(locale, "items", ref.names.get(locale)!.items, ".contribute/items (in-game scans)"));
+  }
   for (const locale of config.locales) {
     const names = ref.names.get(locale)!;
-    add(`locales/${locale}/items.lua`, emitNames(locale, "items", names.items, ref.build));
-    add(`locales/${locale}/instances.lua`, emitNames(locale, "instances", names.instances, ref.build));
-    add(`locales/${locale}/bosses.lua`, emitNames(locale, "bosses", names.encounters, ref.build));
+    add(`locales/${locale}/instances.lua`, emitNames(locale, "instances", names.instances, `wago.tools build ${ref.build}`));
+    add(`locales/${locale}/bosses.lua`, emitNames(locale, "bosses", names.encounters, `wago.tools build ${ref.build}`));
   }
 
   files.set("generated.xml", emitXml(order));
@@ -143,7 +165,8 @@ export function write(files: Map<string, string>, check: boolean): number {
   }
   for (const [rel, content] of files) {
     const path = resolve(OUTPUT_DIR, rel);
-    if (existsSync(path) && readFileSync(path, "utf-8") === content) continue;
+    // A checkout with core.autocrlf has CRLF on disk; that is not a content change.
+    if (existsSync(path) && readFileSync(path, "utf-8").replace(/\r\n/g, "\n") === content) continue;
     changed++;
     if (check) console.log(`outdated: db/generated/${rel}`);
     else {

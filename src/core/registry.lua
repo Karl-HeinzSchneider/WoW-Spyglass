@@ -267,6 +267,15 @@ function api.DefaultGroupKey(node)
     if node.itemID then
         -- GetItemInfoInstant needs no server round-trip, so grouping is stable on first draw.
         local _, itemType, _, equipLoc, _, classID = C_Item.GetItemInfoInstant(node.itemID)
+        if not classID then
+            -- Server-side item the client hasn't fetched yet: the DB row knows class and slot.
+            local row = app.data and app.data:GetItem(node.itemID)
+            if row then
+                local ITEM = app.data.ITEM
+                classID, equipLoc = row[ITEM.CLASS], row[ITEM.SLOT]
+                itemType = C_Item.GetItemClassInfo(classID)
+            end
+        end
         if classID == ITEM_CLASS_WEAPON then
             return "WEAPON", itemType
         elseif equipLoc and equipLoc ~= "" then
@@ -290,6 +299,12 @@ end
 function api.DefaultEntryRank(node)
     if node.itemID then
         local _, _, _, _, _, classID, subclassID = C_Item.GetItemInfoInstant(node.itemID)
+        if not classID then
+            local row = app.data and app.data:GetItem(node.itemID)
+            if row then
+                classID, subclassID = row[app.data.ITEM.CLASS], row[app.data.ITEM.SUBCLASS]
+            end
+        end
         if classID == ITEM_CLASS_ARMOR then
             return ARMOR_RANK[subclassID] or 10
         elseif classID == ITEM_CLASS_WEAPON then

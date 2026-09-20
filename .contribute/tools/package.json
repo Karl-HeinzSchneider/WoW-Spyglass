@@ -11,6 +11,7 @@
     "gen": "tsx src/cli.ts generate",
     "check": "tsx src/cli.ts check",
     "fix": "tsx src/cli.ts check --fix",
+    "import": "tsx src/cli.ts import",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

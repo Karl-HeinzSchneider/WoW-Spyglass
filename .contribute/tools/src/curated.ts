@@ -1,6 +1,6 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { basename, resolve } from "node:path";
-import { CURATED_DIRS } from "./config.js";
+import { CURATED_DIRS, FALLBACK_LOCALE } from "./config.js";
 import { type InstanceType, type Reference, nameOf } from "./reference.js";
 
 /**
@@ -27,8 +27,8 @@ export interface CuratedEncounter {
 }
 
 export interface CuratedLoot {
-  /** Item id */
-  item: number;
+  /** Item id; may be left out when `name` identifies exactly one client item (`fix` fills it in). */
+  item?: number;
   name?: string;
   /** Drop chance 0..1; omit when unknown. */
   chance?: number;
@@ -66,14 +66,30 @@ export interface Problem {
   message: string;
   /** Fixable problems are corrected by `check --fix`; the rest need a human. */
   fixable: boolean;
+  /** Warnings are printed but don't fail the run or stop generation. */
+  warning?: boolean;
+}
+
+/** enUS item name (case-insensitive) -> ids, built on first use for rows that only give a name. */
+function itemsByName(ref: Reference): Map<string, number[]> {
+  const index = new Map<string, number[]>();
+  for (const [id, name] of ref.names.get(FALLBACK_LOCALE)!.items) {
+    const key = name.toLowerCase();
+    const list = index.get(key);
+    if (list) list.push(id);
+    else index.set(key, [id]);
+  }
+  return index;
 }
 
 /** Validates ids against the reference data; with `fix`, rewrites names and adds missing encounters. */
 export function validate(files: CuratedFile[], ref: Reference, fix: boolean): Problem[] {
   const problems: Problem[] = [];
   const seenMaps = new Map<number, string>();
+  let byName: Map<string, number[]> | undefined;
   const report = (file: CuratedFile, message: string, fixable = false) =>
     problems.push({ file: file.path, message, fixable });
+  const warn = (file: CuratedFile, message: string) => problems.push({ file: file.path, message, fixable: false, warning: true });
 
   for (const file of files) {
     const d = file.data;
@@ -134,18 +150,37 @@ export function validate(files: CuratedFile[], ref: Reference, fix: boolean): Pr
       }
       const seenItems = new Set<number>();
       for (const row of enc.loot) {
-        if (!Number.isInteger(row.item)) {
-          report(file, `encounter ${enc.id}: loot row without an \`item\``);
-          continue;
+        if (row.item === undefined && typeof row.name === "string" && row.name !== "") {
+          // Name-only row: resolve it when exactly one item carries that name.
+          byName ??= itemsByName(ref);
+          const ids = byName.get(row.name.toLowerCase()) ?? [];
+          if (ids.length === 1) {
+            report(file, `encounter ${enc.id}: "${row.name}" -> item ${ids[0]}`, true);
+            if (fix) row.item = ids[0];
+            else continue;
+          } else if (ids.length === 0) {
+            report(file, `encounter ${enc.id}: no item is named "${row.name}"; give its \`item\` id`);
+            continue;
+          } else {
+            report(file, `encounter ${enc.id}: "${row.name}" is ambiguous (items ${ids.join(", ")}); give its \`item\` id`);
+            continue;
+          }
         }
-        if (!ref.items.has(row.item)) {
-          report(file, `encounter ${enc.id}: item ${row.item} does not exist in build ${ref.build}`);
+        if (row.item === undefined || !Number.isInteger(row.item)) {
+          report(file, `encounter ${enc.id}: loot row without an \`item\``);
           continue;
         }
         if (seenItems.has(row.item)) report(file, `encounter ${enc.id}: item ${row.item} listed twice`);
         seenItems.add(row.item);
         if (row.chance !== undefined && !(row.chance >= 0 && row.chance <= 1)) {
           report(file, `encounter ${enc.id}: item ${row.item} chance must be between 0 and 1`);
+        }
+        // Drops are curated independently of the scans: an unscanned item still gets its loot row
+        // (the boss page shows it once the client fetches it), it is just not searchable yet, and
+        // its name stays whatever the contributor typed.
+        if (!ref.items.has(row.item)) {
+          warn(file, `encounter ${enc.id}: item ${row.item} (${row.name ?? "?"}) hasn't been scanned yet; /fl scan it in-game and import`);
+          continue;
         }
         const itemName = nameOf(ref, "items", row.item);
         if (row.name !== itemName) {

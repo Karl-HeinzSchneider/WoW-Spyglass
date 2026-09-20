@@ -10,7 +10,19 @@ export function luaValue(value: unknown): string {
   if (typeof value === "string") return luaString(value);
   if (Array.isArray(value)) return `{ ${value.map(luaValue).join(", ")} }`;
   if (value === null || value === undefined) return "nil";
+  if (typeof value === "object") {
+    // Plain object with identifier keys (the stats table): `{ INTELLECT = 4, SPELL_POWER = 18 }`, sorted.
+    const entries = Object.entries(value as Record<string, unknown>)
+      .filter(([, v]) => v !== undefined && v !== null)
+      .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
+      .map(([k, v]) => `${luaKey(k)} = ${luaValue(v)}`);
+    return entries.length > 0 ? `{ ${entries.join(", ")} }` : "{}";
+  }
   throw new TypeError(`cannot serialize ${String(value)}`);
+}
+
+function luaKey(key: string): string {
+  return /^[A-Za-z_][A-Za-z0-9_]*$/.test(key) ? key : `[${luaString(key)}]`;
 }
 
 /** `key = value,` lines for the defined fields of an object, in the given order. */

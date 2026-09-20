@@ -12,6 +12,7 @@ src\core\logger.lua
 src\core\db.lua
 src\core\registry.lua
 src\core\ace.lua
+src\core\json.lua
 src\core\minimapbutton.lua
 
 # Item database: API first, then the generated data (db\generated is written by .contribute\tools).
@@ -20,6 +21,8 @@ src\data\filters.lua
 src\data\query.lua
 src\data\nodes.lua
 db\generated\generated.xml
+# Records items and drops the database lacks; needs app.data at load time.
+src\core\discovery.lua
 
 modules\modules.xml
 
@@ -27,4 +30,6 @@ src\ui\view.lua
 src\ui\templates.xml
 src\ui\mainwindow.lua
 src\ui\mainwindow.xml
+src\ui\exportframe.lua
+src\ui\exportframe.xml
 ForeverLoot.lua

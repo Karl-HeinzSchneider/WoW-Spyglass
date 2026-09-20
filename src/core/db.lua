@@ -26,10 +26,55 @@ local char = {
     loot = {},
 }
 
+-- One item recorded in-game (scanned, or seen dropping while the shipped database lacked it):
+-- everything C_Item.GetItemInfo and C_Item.GetItemStats return. The same shape lands in
+-- .contribute/items/*.json through `npm run import`; see src/core/discovery.lua.
+---@class ForeverLoot.DiscoveredItem
+---@field name string  # in `Discovered.locale`
+---@field quality integer
+---@field itemLevel integer
+---@field reqLevel integer
+---@field classID integer
+---@field subclassID integer
+---@field slot string
+---@field bind integer
+---@field icon integer
+---@field sellPrice integer
+---@field stackCount integer
+---@field setID integer  # 0 = none
+---@field expansionID integer
+---@field craftingReagent boolean
+---@field stats? ForeverLoot.ItemStats
+
+-- What was seen dropping from one boss (DungeonEncounter id).
+---@class ForeverLoot.DiscoveredLoot
+---@field kills integer  # successful ENCOUNTER_ENDs
+---@field items table<integer, integer>  # itemID -> kills in which it dropped
+
+---@class ForeverLoot.Discovered
+---@field build? string  # client build the data was recorded on, informational
+---@field locale? string  # GetLocale() of the recording client: the language of item names
+---@field items table<integer, ForeverLoot.DiscoveredItem>
+---@field loot table<integer, ForeverLoot.DiscoveredLoot>
+
+-- Where `/fl scan` left off, so `/fl scan resume` continues after a /reload.
+---@class ForeverLoot.ScanProgress
+---@field next? integer  # first id not yet requested
+---@field to? integer  # upper bound of that scan, nil = open-ended
+
 -- Account-wide data shared by every character.
 ---@class ForeverLoot.DB.Global
 local global = {
     dbVersion = 1,
+    -- Everything recorded in-game that the shipped database may lack. Read by
+    -- `npm run import` in .contribute/tools and by `/fl export`.
+    ---@type ForeverLoot.Discovered
+    discovered = {
+        items = {},
+        loot = {},
+    },
+    ---@type ForeverLoot.ScanProgress
+    scan = {},
 }
 
 ---@class ForeverLoot.DBDefaults : AceDB.Schema
