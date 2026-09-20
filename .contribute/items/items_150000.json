@@ -1,0 +1,20 @@
+{
+  "158329": {
+    "names": {
+      "enUS": "Hidden Gloves"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_HAND",
+    "bind": 0,
+    "icon": 133808,
+    "sellPrice": 2,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  }
+}
