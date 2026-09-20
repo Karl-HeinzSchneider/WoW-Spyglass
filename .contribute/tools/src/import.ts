@@ -33,7 +33,7 @@ export function importDiscovered(d: Discovered, ref: Reference, files: CuratedFi
   let updated = 0;
   const touchedRanges = new Set<number>();
   for (const [id, item] of [...d.items].sort(([a], [b]) => a - b)) {
-    const { name, ...fields } = item;
+    const { name, id: _id, ...fields } = item; // the id is the key of the dump
     const existing = ref.items.get(id);
     const merged: ScannedItem = { ...fields, names: { ...(existing?.names ?? {}), [d.locale]: name } };
     if (existing) updated++;

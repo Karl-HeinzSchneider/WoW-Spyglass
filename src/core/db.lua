@@ -30,6 +30,7 @@ local char = {
 -- everything C_Item.GetItemInfo and C_Item.GetItemStats return. The same shape lands in
 -- .contribute/items/*.json through `npm run import`; see src/core/discovery.lua.
 ---@class ForeverLoot.DiscoveredItem
+---@field id integer  # the item id, repeated from the key so a record stands on its own
 ---@field name string  # in `Discovered.locale`
 ---@field quality integer
 ---@field itemLevel integer
@@ -48,6 +49,7 @@ local char = {
 
 -- What was seen dropping from one boss (DungeonEncounter id).
 ---@class ForeverLoot.DiscoveredLoot
+---@field id integer  # the encounter id, repeated from the key
 ---@field kills integer  # successful ENCOUNTER_ENDs
 ---@field items table<integer, integer>  # itemID -> kills in which it dropped
 

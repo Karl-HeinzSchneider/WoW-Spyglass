@@ -2,8 +2,9 @@
 local _, app = ...
 
 -- Minimal JSON encoder for `/fl export`; there is nothing to decode in-game.
--- Tables with a positive length are arrays, every other table an object whose keys are
--- written as strings in sorted order (numbers numerically), so the output is stable.
+-- Every table becomes an object whose keys are written as strings in sorted order (numbers
+-- numerically), so the output is stable. There are no arrays: a table keyed by item ids that
+-- happen to run 1..n must not turn into a list with the ids lost, so nothing is guessed.
 
 ---@class ForeverLoot.JSON
 local json = {}
@@ -46,12 +47,6 @@ local encode
 local function encodeTable(t, indent)
     local inner = indent .. "  "
     local parts = {}
-    if #t > 0 then
-        for i = 1, #t do
-            parts[i] = inner .. encode(t[i], inner)
-        end
-        return "[\n" .. table.concat(parts, ",\n") .. "\n" .. indent .. "]"
-    end
     local keys = {}
     for k in pairs(t) do
         keys[#keys + 1] = k

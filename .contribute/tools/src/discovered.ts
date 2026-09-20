@@ -18,8 +18,8 @@ export interface Discovered {
   loot: Map<number, DiscoveredLoot>;
 }
 
-/** A scanned item as recorded: one name, in `Discovered.locale`. */
-export type DiscoveredItem = Omit<ScannedItem, "names"> & { name: string };
+/** A scanned item as recorded: one name, in `Discovered.locale`, and its own id. */
+export type DiscoveredItem = Omit<ScannedItem, "names"> & { id: number; name: string };
 
 export interface DiscoveredLoot {
   kills: number;
@@ -27,12 +27,18 @@ export interface DiscoveredLoot {
   items: Map<number, number>;
 }
 
-/** A Lua table from SavedVariables or a JSON object: entries with their keys as numbers. */
+/**
+ * A Lua table from SavedVariables, a JSON object or a JSON array: entries with their ids as
+ * numbers. Records carry their own `id`, which wins over the container key, so a list (with
+ * `null` holes) imports just as well as a keyed object.
+ */
 function numericEntries(value: unknown): [number, unknown][] {
-  const raw: [unknown, unknown][] = value instanceof Map ? [...value] : value && typeof value === "object" ? Object.entries(value) : [];
+  const raw: [unknown, unknown][] = value instanceof Map ? [...value] : Array.isArray(value) ? value.map((v, i) => [i + 1, v]) : value && typeof value === "object" ? Object.entries(value) : [];
   const out: [number, unknown][] = [];
   for (const [key, entry] of raw) {
-    const id = Number(key);
+    if (entry === null || entry === undefined) continue;
+    const own = field(entry, "id");
+    const id = typeof own === "number" ? own : Number(key);
     if (Number.isInteger(id) && id > 0) out.push([id, entry]);
   }
   return out;
@@ -68,6 +74,7 @@ function normalize(root: unknown, source: string): Discovered {
     if (typeof name !== "string" || name === "") continue;
     const slot = field(entry, "slot");
     items.set(id, {
+      id,
       name,
       quality: num(field(entry, "quality"), 1),
       itemLevel: num(field(entry, "itemLevel"), 1),
@@ -89,7 +96,7 @@ function normalize(root: unknown, source: string): Discovered {
   for (const [encounterID, entry] of numericEntries(field(root, "loot"))) {
     const seen = new Map<number, number>();
     for (const [itemID, count] of numericEntries(field(entry, "items"))) {
-      const n = num(count);
+      const n = num(count); // plain counts: the container key is the only id here
       if (n > 0) seen.set(itemID, n);
     }
     loot.set(encounterID, { kills: num(field(entry, "kills")), items: seen });

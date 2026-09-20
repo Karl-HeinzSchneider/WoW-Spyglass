@@ -191,7 +191,7 @@ function module:LootEntry(encounterID)
     local loot = discovered().loot
     local entry = loot[encounterID]
     if not entry then
-        entry = { kills = 0, items = {} }
+        entry = { id = encounterID, kills = 0, items = {} }
         loot[encounterID] = entry
     end
     return entry
@@ -263,6 +263,7 @@ function module:RecordItem(itemID, force)
     end
     ---@type ForeverLoot.DiscoveredItem
     local item = {
+        id = itemID, -- the table key too, but a record must identify itself on its own
         name = name,
         quality = quality,
         itemLevel = itemLevel,
