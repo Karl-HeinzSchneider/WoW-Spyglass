@@ -5,6 +5,7 @@ is produced from it and must not be edited by hand.
 
 ```text
 .contribute/
+  inbox/                 drop SavedVariables / export files here for `npm run import` (not committed)
   items/items_<n>.json   the item database: in-game scans, one file per 10 000 ids (machine-written)
   dungeons/<name>.json   one file per dungeon: level range, icon, drops per boss (hand-curated)
   raids/<name>.json      same for raids
@@ -34,19 +35,20 @@ after 20 000 ids in a row that don't exist. Every item that exists is recorded w
 level, required level, class/subclass, slot, bind, icon, sell price, stack size, set, expansion,
 stats) and is usable in the addon right away.
 
-To get the records into the repository:
+To get the records into the repository, copy your SavedVariables file
+(`World of Warcraft/_classic_beta_/WTF/Account/<ACCOUNT>/SavedVariables/ForeverLoot.lua`, written
+on logout and `/reload`) into `inbox/` and run:
 
 ```sh
 cd .contribute/tools
-npm install                                              # once
-npm run import -- "<path to>/SavedVariables/ForeverLoot.lua"
+npm install          # once
+npm run import       # every .lua / .json in inbox/; or: npm run import -- <path to one file>
 npm run gen
 ```
 
-The SavedVariables file is `World of Warcraft/_classic_beta_/WTF/Account/<ACCOUNT>/SavedVariables/ForeverLoot.lua`,
-written on logout and `/reload`. Without a checkout of the repository, `/fl export` in-game shows
-the same data as JSON: copy it into a file and attach it to an issue, or send it to someone who
-runs `npm run import -- file.json`. Either way, commit `items/` together with the regenerated
+Without a checkout of the repository, `/fl export` in-game shows the same data as JSON: copy it
+into a file and attach it to an issue, or send it to someone who drops it into `inbox/`. Either
+way, commit `items/` together with the regenerated
 `db/generated/` files. After `/reload` the addon drops records the shipped database now states
 exactly, so `/fl scan resume` keeps going with a clean slate; records that differ from the
 shipped row (a `force` re-scan, a changed item) stay until they have been imported too.

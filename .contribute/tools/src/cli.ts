@@ -6,14 +6,15 @@
  *   npm run gen -- --check   exit 1 if db/generated/ is out of date (CI)
  *   npm run check            validate the curated loot files against the game data and the scans
  *   npm run fix              same, and rewrite names / add missing encounters
- *   npm run import -- FILE   merge what the addon recorded in-game (a SavedVariables
- *                            ForeverLoot.lua or a /fl export JSON) into .contribute/items/ and
- *                            the curated loot files
+ *   npm run import           merge what the addon recorded in-game (SavedVariables
+ *                            ForeverLoot.lua and /fl export JSON files in .contribute/inbox/)
+ *                            into .contribute/items/ and the curated loot files
+ *   npm run import -- FILE   same for one file anywhere
  */
-import { mkdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, writeFileSync } from "node:fs";
 import { parseArgs } from "node:util";
-import { dirname, relative } from "node:path";
-import { ROOT, loadConfig } from "./config.js";
+import { dirname, relative, resolve } from "node:path";
+import { INBOX_DIR, ROOT, loadConfig } from "./config.js";
 import { type CuratedFile, loadCurated, serialize, validate } from "./curated.js";
 import { loadDiscovered } from "./discovered.js";
 import { build, write } from "./generate.js";
@@ -30,10 +31,19 @@ if (!["generate", "check", "import"].includes(command)) {
   console.error(`unknown command ${command}`);
   process.exit(2);
 }
-const importPath = command === "import" ? positionals[1] : undefined;
-if (command === "import" && !importPath) {
-  console.error("usage: npm run import -- <SavedVariables ForeverLoot.lua or export .json>");
-  process.exit(2);
+// `npm run import -- <file>` imports that file; without one, every .lua/.json in .contribute/inbox/.
+const importPaths: string[] = [];
+if (command === "import") {
+  if (positionals[1]) importPaths.push(positionals[1]);
+  else if (existsSync(INBOX_DIR)) {
+    for (const entry of readdirSync(INBOX_DIR).sort()) {
+      if (/\.(lua|json)$/i.test(entry)) importPaths.push(resolve(INBOX_DIR, entry));
+    }
+  }
+  if (importPaths.length === 0) {
+    console.error(`nothing to import: put a SavedVariables ForeverLoot.lua or a /fl export .json into ${relative(ROOT, INBOX_DIR)}/, or pass a path`);
+    process.exit(2);
+  }
 }
 // `import` always fixes: it writes the curated files anyway.
 const fix = values.fix || command === "import";
@@ -46,12 +56,12 @@ console.log(
     `${ref.items.size} scanned items (${ref.itemLocales.join("/") || "no names"}); ${curated.length} curated file(s)`,
 );
 
-if (importPath) {
-  const discovered = loadDiscovered(importPath);
-  console.log(`importing ${importPath}${discovered.build ? ` (recorded on build ${discovered.build})` : ""}`);
+for (const path of importPaths) {
+  const discovered = loadDiscovered(path);
+  console.log(`importing ${relative(ROOT, path)}${discovered.build ? ` (recorded on build ${discovered.build})` : ""}`);
   for (const line of importDiscovered(discovered, ref, curated)) console.log(`  ${line}`);
-  saveScannedItems(ref.items);
 }
+if (importPaths.length > 0) saveScannedItems(ref.items);
 
 const problems = validate(curated, ref, fix);
 for (const p of problems) console.log(`${p.warning ? "warning" : p.fixable ? (fix ? "fixed" : "fixable") : "ERROR"}  ${relative(ROOT, p.file)}: ${p.message}`);

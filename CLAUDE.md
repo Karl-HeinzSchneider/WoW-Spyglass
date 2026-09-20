@@ -21,8 +21,9 @@ machine-written by `npm run import`), the **curated drops** in `.contribute/dung
 and wago.tools' `Map` + `DungeonEncounter` tables (instances, bosses, their names) for the build
 pinned in `config.json`. Commands: `npm run fix` (validate ids, fill names, add missing bosses),
 `npm run gen` (write `db/generated/`), `npm run gen -- --check` (staleness, for CI),
-`npm run import -- <file>` (merge what the addon recorded in-game — a SavedVariables
-`ForeverLoot.lua` or a `/fl export` JSON — into the scans and the curated files). Never edit
+`npm run import` (merge what the addon recorded in-game — SavedVariables `ForeverLoot.lua` /
+`/fl export` JSON files dropped into the gitignored `.contribute/inbox/`, or one file given as
+`-- <path>` — into the scans and the curated files). Never edit
 `db/generated/` by hand. Contributor docs in `.contribute/README.md`.
 
 WoW Forever's items are server-side: the wago.tools item tables are incomplete and wrong for

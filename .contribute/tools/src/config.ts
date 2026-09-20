@@ -17,6 +17,8 @@ export const CURATED_DIRS = {
 
 /** The item database's source: in-game scans, one JSON file per id range (see items.ts). */
 export const SCANNED_ITEMS_DIR = resolve(CONTRIBUTE_DIR, "items");
+/** Drop folder for `npm run import` without a path: SavedVariables .lua and /fl export .json files (gitignored). */
+export const INBOX_DIR = resolve(CONTRIBUTE_DIR, "inbox");
 
 export const FALLBACK_LOCALE = "enUS";
 
