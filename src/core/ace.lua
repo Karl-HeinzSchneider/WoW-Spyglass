@@ -67,10 +67,10 @@ function addon:OnSlashCommand(input)
         self.db:ResetProfile()
         log:chat("Profile reset")
     elseif cmd == "export" then
-        app.ui.exportFrame:ShowText(app.json.encode(app.discovery:ExportTable()))
+        app.discovery:ExportCommand(a)
     elseif cmd == "scan" then
         app.discovery:ScanCommand(a, b, c)
     else
-        log:chat("Commands: /fl, /fl export, /fl scan <from> [to], /fl scan resume, /fl loglevel <level>, /fl reset")
+        log:chat("Commands: /fl, /fl export [all], /fl scan <from> [to], /fl scan resume, /fl loglevel <level>, /fl reset")
     end
 end

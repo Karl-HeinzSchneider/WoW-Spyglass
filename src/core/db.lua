@@ -46,6 +46,7 @@ local char = {
 ---@field expansionID integer
 ---@field craftingReagent boolean
 ---@field stats? ForeverLoot.ItemStats
+---@field exported? boolean  # part of an earlier /fl export; left out of the next one
 
 -- What was seen dropping from one boss (DungeonEncounter id).
 ---@class ForeverLoot.DiscoveredLoot

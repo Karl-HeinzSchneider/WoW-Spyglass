@@ -6,7 +6,7 @@ app.ui = app.ui or {}
 -- `/fl export`: the recorded data as JSON in a text box to copy from (Ctrl+A is done for you,
 -- Ctrl+C is yours). The text goes into a file for `npm run import` or into an issue.
 
-local HINT = "Ctrl+C copies the selection. Save it as a .json file and run `npm run import -- <file>` in .contribute/tools, or attach it to an issue."
+local HINT = "Ctrl+C copies the selection. Save it as a .json file in .contribute/inbox/ and run `npm run import`, or attach it to an issue. Only records new since the last export are shown; /fl export all shows everything."
 
 ---@class ForeverLoot.ExportFrame : Frame
 ---@field TitleText FontString

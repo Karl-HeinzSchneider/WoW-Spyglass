@@ -21,7 +21,7 @@ table; the two only meet through item ids.
 ## Items: scanning
 
 ```text
-/fl scan 1              scan upward from id 1; stops after 500 new items
+/fl scan 1              scan upward from id 1; stops after 1000 new items
 /fl scan resume         continue where the last scan stopped (survives /reload)
 /fl scan 270000 280000  scan a range
 /fl scan 270000 280000 force   re-record every id in the range, known or not
@@ -29,7 +29,7 @@ table; the two only meet through item ids.
 ```
 
 The scanner requests ~50 ids per second, skips ids the shipped database already has, and stops
-after 500 newly recorded items so that exports stay small; an open-ended scan also gives up
+after 1000 newly recorded items so that exports stay small; an open-ended scan also gives up
 after 20 000 ids in a row that don't exist. Every item that exists is recorded with all of
 `C_Item.GetItemInfo` and `C_Item.GetItemStats` (name in your client's language, quality, item
 level, required level, class/subclass, slot, bind, icon, sell price, stack size, set, expansion,
@@ -47,8 +47,10 @@ npm run gen
 ```
 
 Without a checkout of the repository, `/fl export` in-game shows the same data as JSON: copy it
-into a file and attach it to an issue, or send it to someone who drops it into `inbox/`. Either
-way, commit `items/` together with the regenerated
+into a file and attach it to an issue, or send it to someone who drops it into `inbox/`. Each
+export only holds the records new since the previous one (records stay in the SavedVariables
+until the shipped database has them, so a full dump would grow with every scan); `/fl export all`
+repeats everything. Either way, commit `items/` together with the regenerated
 `db/generated/` files. After `/reload` the addon drops records the shipped database now states
 exactly, so `/fl scan resume` keeps going with a clean slate; records that differ from the
 shipped row (a `force` re-scan, a changed item) stay until they have been imported too.

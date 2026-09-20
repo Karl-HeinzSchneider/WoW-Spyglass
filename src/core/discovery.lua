@@ -30,7 +30,7 @@ local KILL_WINDOW = 300
 -- /fl scan: item requests per tick and the tick length (~50 ids per second).
 local SCAN_BATCH, SCAN_INTERVAL = 25, 0.5
 -- Newly recorded items after which a scan stops, so exports stay handy.
-local SCAN_LIMIT = 500
+local SCAN_LIMIT = 1000
 -- Consecutive ids that don't exist before an open-ended scan assumes it ran past the last item.
 local SCAN_MAX_GAP = 20000
 -- Seconds to wait for the results of the last requests before a scan reports.
@@ -234,11 +234,14 @@ function module:MergeIntoData()
     log:debug("Discovered data merged: %d item(s), %d drop(s)", count, drops)
 end
 
+-- Item records not exported yet.
 ---@return integer
 function module:RecordCount()
     local count = 0
-    for _ in pairs(discovered().items) do
-        count = count + 1
+    for _, item in pairs(discovered().items) do
+        if not item.exported then
+            count = count + 1
+        end
     end
     return count
 end
@@ -348,7 +351,8 @@ function module:ENCOUNTER_END(_, encounterID, encounterName, _, _, success, unit
             end
         end
     end
-    self.lastKill = { id = encounterID, time = GetTime(), seen = {}, creatures = creatures, hasCreatures = hasCreatures }
+    self.lastKill =
+        { id = encounterID, time = GetTime(), seen = {}, creatures = creatures, hasCreatures = hasCreatures }
     log:debug("Encounter %d (%s) killed, %d kill(s) recorded", encounterID, encounterName, entry.kills)
 end
 
@@ -414,11 +418,17 @@ end
 ---@param force? boolean
 function module:StartScan(from, to, force)
     if self.scan then
-        log:chat("A scan is already running (%d..%s, at %d); /fl scan stop first", self.scan.from, tostring(self.scan.to or "open"), self.scan.next)
+        log:chat(
+            "A scan is already running (%d..%s, at %d); /fl scan stop first",
+            self.scan.from,
+            tostring(self.scan.to or "open"),
+            self.scan.next
+        )
         return
     end
     ---@type ForeverLoot.Scan
-    local scan = { from = from, to = to, next = from, found = 0, force = force or false, gap = 0, pending = {}, done = false }
+    local scan =
+        { from = from, to = to, next = from, found = 0, force = force or false, gap = 0, pending = {}, done = false }
     self.scan = scan
     scan.ticker = C_Timer.NewTicker(SCAN_INTERVAL, function()
         self:ScanTick()
@@ -479,7 +489,13 @@ function module:FinishScan(reason)
         end
         self.scan = nil
         local resume = scan.to and scan.next > scan.to and "" or (", /fl scan resume continues at %d"):format(scan.next)
-        log:chat("Scan stopped at %d (%s): %d item(s) recorded. Export with /fl export or import the SavedVariables file%s.", scan.next - 1, reason, scan.found, resume)
+        log:chat(
+            "Scan stopped at %d (%s): %d item(s) recorded. Export with /fl export or import the SavedVariables file%s.",
+            scan.next - 1,
+            reason,
+            scan.found,
+            resume
+        )
     end)
 end
 
@@ -527,11 +543,24 @@ function module:ScanCommand(a, b, c)
     elseif not a then
         local scan = self.scan
         if scan then
-            log:chat("Scan %d..%s at %d, %d item(s) recorded so far", scan.from, tostring(scan.to or "open"), scan.next - 1, scan.found)
+            log:chat(
+                "Scan %d..%s at %d, %d item(s) recorded so far",
+                scan.from,
+                tostring(scan.to or "open"),
+                scan.next - 1,
+                scan.found
+            )
         elseif progress.next then
-            log:chat("No scan running; /fl scan resume continues at %d. %d item record(s) waiting for export.", progress.next, self:RecordCount())
+            log:chat(
+                "No scan running; /fl scan resume continues at %d. %d item record(s) waiting for export.",
+                progress.next,
+                self:RecordCount()
+            )
         else
-            log:chat("No scan running; /fl scan <from> [to] starts one. %d item record(s) waiting for export.", self:RecordCount())
+            log:chat(
+                "No scan running; /fl scan <from> [to] starts one. %d item record(s) waiting for export.",
+                self:RecordCount()
+            )
         end
     else
         log:chat("Usage: /fl scan <from> [to], /fl scan <from> <to> force, /fl scan resume, /fl scan stop")
@@ -542,9 +571,31 @@ end
 -- Export
 ----------------------------------------------------------------------------------------------------
 
--- The recorded data as one plain table, the shape .contribute/tools' `import` reads.
----@return table
-function module:ExportTable()
+-- The recorded data as one plain table, the shape .contribute/tools' `import` reads. Records
+-- stay in the SavedVariables until the shipped database has them, so each export would grow
+-- with every scan; instead an export marks its item records and the next one only holds new
+-- ones (`all` = everything again). Loot is small and always included.
+---@param all? boolean
+---@return table export, integer count  # item records in it
+function module:ExportTable(all)
     local d = discovered()
-    return { version = 1, build = d.build, locale = d.locale or GetLocale(), items = d.items, loot = d.loot }
+    local items, count = {}, 0
+    for itemID, item in pairs(d.items) do
+        if all or not item.exported then
+            items[itemID] = item
+            count = count + 1
+        end
+    end
+    for _, item in pairs(items) do
+        item.exported = true
+    end
+    return { version = 1, build = d.build, locale = d.locale or GetLocale(), items = items, loot = d.loot }, count
+end
+
+-- `/fl export [all]`: opens the window with the JSON to copy.
+---@param what? string
+function module:ExportCommand(what)
+    local export, count = self:ExportTable(what == "all")
+    log:chat("%d item record(s) in this export%s", count, what == "all" and "" or "; /fl export all repeats earlier ones")
+    app.ui.exportFrame:ShowText(app.json.encode(export))
 end

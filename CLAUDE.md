@@ -51,7 +51,7 @@ validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-la
 - `src/core/discovery.lua` — `app.discovery`, AceAddon module. `/fl scan <from> [to]` /
   `resume` / `<from> <to> force` / `stop` requests ids via `RequestLoadItemDataByID` and records
   every existing item in full (`GetItemInfo` + `GetItemStats`, stat keys shortened) into
-  `global.discovered.items`, 500 new per run, progress in `global.scan`. Also records items the
+  `global.discovered.items`, 1000 new per run, progress in `global.scan`. Also records items the
   DB lacks from `LOOT_OPENED`/`START_LOOT_ROLL` and boss drops (attributed to the last successful
   `ENCOUNTER_END`, checked against the looted creature when `GetLootSourceInfo` exists). Everything
   is merged into `Data` at once and on login; a record identical to the shipped row is pruned then.
