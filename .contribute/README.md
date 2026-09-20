@@ -26,10 +26,12 @@ table; the two only meet through item ids.
 /fl scan 270000 280000  scan a range
 /fl scan 270000 280000 force   re-record every id in the range, known or not
 /fl scan stop           /fl scan   (status)
+/fl scan limit off      no per-scan item limit (for the SavedVariables route); `limit 1000` restores it
 ```
 
 The scanner requests ~50 ids per second, skips ids the shipped database already has, and stops
-after 1000 newly recorded items so that exports stay small; an open-ended scan also gives up
+after 1000 newly recorded items so that `/fl export` stays small — when you import the
+SavedVariables file instead, `/fl scan limit off` lets a scan run on; an open-ended scan also gives up
 after 20 000 ids in a row that don't exist. Every item that exists is recorded with all of
 `C_Item.GetItemInfo` and `C_Item.GetItemStats` (name in your client's language, quality, item
 level, required level, class/subclass, slot, bind, icon, sell price, stack size, set, expansion,

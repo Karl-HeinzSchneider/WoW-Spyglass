@@ -64,6 +64,7 @@ local char = {
 ---@class ForeverLoot.ScanProgress
 ---@field next? integer  # first id not yet requested
 ---@field to? integer  # upper bound of that scan, nil = open-ended
+---@field limit? integer  # new items per scan before it stops; 0 = no limit; nil = the default
 
 -- Account-wide data shared by every character.
 ---@class ForeverLoot.DB.Global

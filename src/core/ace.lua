@@ -71,6 +71,6 @@ function addon:OnSlashCommand(input)
     elseif cmd == "scan" then
         app.discovery:ScanCommand(a, b, c)
     else
-        log:chat("Commands: /fl, /fl export [all], /fl scan <from> [to], /fl scan resume, /fl loglevel <level>, /fl reset")
+        log:chat("Commands: /fl, /fl export [all], /fl scan <from> [to], /fl scan resume, /fl scan limit <n|off>, /fl loglevel <level>, /fl reset")
     end
 end

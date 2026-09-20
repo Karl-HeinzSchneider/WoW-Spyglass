@@ -29,7 +29,8 @@ local ITEM = Data.ITEM
 local KILL_WINDOW = 300
 -- /fl scan: item requests per tick and the tick length (~50 ids per second).
 local SCAN_BATCH, SCAN_INTERVAL = 25, 0.5
--- Newly recorded items after which a scan stops, so exports stay handy.
+-- Newly recorded items after which a scan stops, so /fl export stays a handy size. The default;
+-- `/fl scan limit <n|off>` overrides it (off when the SavedVariables file is imported instead).
 local SCAN_LIMIT = 1000
 -- Consecutive ids that don't exist before an open-ended scan assumes it ran past the last item.
 local SCAN_MAX_GAP = 20000
@@ -397,7 +398,8 @@ function module:ITEM_DATA_LOAD_RESULT(_, itemID, success)
         scan.gap = 0
         if self:RecordItem(itemID, scan.force) then
             scan.found = scan.found + 1
-            if not scan.force and scan.found >= SCAN_LIMIT and not scan.done then
+            local limit = self:ScanLimit()
+            if not scan.force and limit and scan.found >= limit and not scan.done then
                 self:FinishScan(("%d new items recorded"):format(scan.found))
             end
         end
@@ -436,14 +438,25 @@ function module:StartScan(from, to, force)
     if force then
         log:chat("Re-scanning item ids %d..%d, recording every item again.", from, to)
     else
+        local limit = self:ScanLimit()
         log:chat(
-            "Scanning item ids from %d%s at %d per second; stops after %d new items. The server may throttle item queries, so keep ranges modest; /fl scan stop aborts.",
+            "Scanning item ids from %d%s at %d per second; %s. The server may throttle item queries, so keep ranges modest; /fl scan stop aborts.",
             from,
             to and (" to " .. to) or "",
             SCAN_BATCH / SCAN_INTERVAL,
-            SCAN_LIMIT
+            limit and ("stops after %d new items"):format(limit) or "no item limit"
         )
     end
+end
+
+-- New items per scan before it stops; nil = unlimited (`/fl scan limit off`).
+---@return integer?
+function module:ScanLimit()
+    local limit = app.db.global.scan.limit
+    if limit == nil then
+        return SCAN_LIMIT
+    end
+    return limit > 0 and limit or nil
 end
 
 function module:ScanTick()
@@ -490,7 +503,7 @@ function module:FinishScan(reason)
         self.scan = nil
         local resume = scan.to and scan.next > scan.to and "" or (", /fl scan resume continues at %d"):format(scan.next)
         log:chat(
-            "Scan stopped at %d (%s): %d item(s) recorded. Export with /fl export or import the SavedVariables file%s.",
+            "Scan stopped at %d (%s): %d item(s) recorded. Export with /fl export, or /reload to write the SavedVariables file%s.",
             scan.next - 1,
             reason,
             scan.found,
@@ -524,6 +537,18 @@ function module:ScanCommand(a, b, c)
     local progress = app.db.global.scan
     if a == "stop" then
         self:StopScan()
+    elseif a == "limit" then
+        local limit = tonumber(b)
+        if b == "off" or (limit and limit <= 0) then
+            progress.limit = 0
+        elseif limit then
+            progress.limit = math.floor(limit)
+        elseif b ~= nil then
+            log:chat("Usage: /fl scan limit <n>, /fl scan limit off")
+            return
+        end
+        limit = self:ScanLimit()
+        log:chat("Scans stop after %s (default %d).", limit and (limit .. " new items") or "no number of items", SCAN_LIMIT)
     elseif a == "resume" then
         if progress.next then
             self:StartScan(progress.next, progress.to)
@@ -563,7 +588,7 @@ function module:ScanCommand(a, b, c)
             )
         end
     else
-        log:chat("Usage: /fl scan <from> [to], /fl scan <from> <to> force, /fl scan resume, /fl scan stop")
+        log:chat("Usage: /fl scan <from> [to], /fl scan <from> <to> force, /fl scan resume, /fl scan stop, /fl scan limit <n|off>")
     end
 end
 

@@ -1,0 +1,56 @@
+{
+  "44803": {
+    "names": {
+      "enUS": "Spring Circlet"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_HEAD",
+    "bind": 2,
+    "icon": 254859,
+    "sellPrice": 50,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "46102": {
+    "names": {
+      "enUS": "Whistle of the Venomhide Ravasaur"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 60,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 132253,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "46362": {
+    "names": {
+      "enUS": "Venomhide Hatchling"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 132193,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  }
+}
