@@ -3,7 +3,7 @@
 Everything in this folder is meant to be edited by people; everything under `db/generated/` is
 produced from it and must not be edited by hand.
 
-```
+```text
 .contribute/
   dungeons/<name>.json   one file per dungeon: level range, icon, drops per boss
   raids/<name>.json      same for raids
@@ -34,7 +34,7 @@ produced from it and must not be edited by hand.
 
 3. Run the tools (Node 20+):
 
-```
+```sh
 cd .contribute/tools
 npm install          # once
 npm run fix          # validate ids, fill names, add missing bosses

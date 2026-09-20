@@ -144,10 +144,12 @@ Never list anything from these folders in the TOC or copy files out of them into
   `loadstring` of external files; all code must be listed in the TOC.
 - Addons share a single global namespace. Keep the addon's state in the private table passed
   to each file rather than globals. Every file starts with:
+
   ```lua
   ---@type string, ForeverLoot
   local appName, app = ...
   ```
+
   (Use `local _, app = ...` when the name is unused, or LuaLS flags it.) The `---@type` line is
   what gives the Lua language server completion on `app.*`; without it `...` is untyped. `src/types.lua` declares the `ForeverLoot` class — when a file adds a member
   to `app`, add a matching `---@field` there. That file is annotations only and is not in the TOC.
