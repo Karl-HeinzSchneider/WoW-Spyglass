@@ -126,15 +126,17 @@
 		</Scripts>
 	</Button>
 
+	<!-- Separator between crumbs: the same arrow atlas as the rows, dimmed. -->
 	<Frame name="ForeverLootBreadcrumbSeparatorTemplate" virtual="true">
-		<Size x="12" y="24"/>
+		<Size x="18" y="24"/>
 		<Layers>
 			<Layer level="ARTWORK">
-				<FontString inherits="GameFontDisable" text="&#8250;">
+				<Texture atlas="common-icon-forwardarrow" useAtlasSize="false" alpha="0.6">
+					<Size x="14" y="14"/>
 					<Anchors>
-						<Anchor point="CENTER"/>
+						<Anchor point="CENTER" x="0" y="0"/>
 					</Anchors>
-				</FontString>
+				</Texture>
 			</Layer>
 		</Layers>
 	</Frame>
