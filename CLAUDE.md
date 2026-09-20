@@ -105,8 +105,8 @@ validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-la
 Every XML file starts with `<Ui xmlns="http://www.blizzard.com/wow/ui/">` and **no**
 `xsi:schemaLocation` — the client ignores that hint and a wrong path makes the VS Code XML
 extension report errors. Schema validation instead comes from `xml.fileAssociations` in
-`.vscode/settings.json`, which maps `**/*.xml` to `BlizzardInterfaceCode/.../Blizzard_SharedXML/UI.xsd`
-(so it only works when the optional `BlizzardInterfaceCode/` symlink exists). To validate from
+`.vscode/settings.json`, which maps `**/*.xml` to `../_data/BlizzardInterfaceCode/.../Blizzard_SharedXML/UI.xsd`
+(so it only works when the optional `../_data/BlizzardInterfaceCode/` folder exists). To validate from
 the command line: `python -c "from lxml import etree; ..."` against that XSD, as in this session.
 
 ## Files with backslashes
@@ -117,16 +117,17 @@ strings) instead.
 
 ## Optional: Blizzard's own UI source and art for reference
 
-A developer may place Blizzard's exported interface files in the repo root, typically as
-symlinks to the folders the game client writes next to the WoW install:
+A developer may place Blizzard's exported interface files in `../_data/` (a sibling of the
+repo folder, i.e. `E:\Projects\_data\` here — outside the repo, so nothing needs gitignoring
+or excluding from LuaLS/StyLua), typically as symlinks to the folders the game client writes
+next to the WoW install:
 
-- `BlizzardInterfaceCode/` — from `/run ExportInterfaceFiles("code")`. Lua/XML for all of
+- `../_data/BlizzardInterfaceCode/` — from `/run ExportInterfaceFiles("code")`. Lua/XML for all of
   Blizzard's FrameXML/AddOns.
-- `BlizzardInterfaceArt/` — from `/run ExportInterfaceFiles("art")`. Every texture as `.blp`
+- `../_data/BlizzardInterfaceArt/` — from `/run ExportInterfaceFiles("art")`. Every texture as `.blp`
   under `BlizzardInterfaceArt/Interface/...` (e.g. `Interface/Icons/INV_Misc_Bag_10.blp`).
 
-Both are gitignored and excluded from LuaLS/StyLua. If they exist, Claude should **read them,
-never edit them**:
+If they exist, Claude should **read them, never edit them**:
 
 - Code: look up exact API signatures/return values, event payloads, frame templates and global
   strings. Prefer it over guessing from memory, since the Classic client's API differs from retail.

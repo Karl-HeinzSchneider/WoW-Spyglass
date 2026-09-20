@@ -93,7 +93,7 @@
   "xml.fileAssociations": [
     {
       "pattern": "**/*.xml",
-      "systemId": "${workspaceFolder}/BlizzardInterfaceCode/Interface/AddOns/Blizzard_SharedXML/UI.xsd"
+      "systemId": "${workspaceFolder}/../_data/BlizzardInterfaceCode/Interface/AddOns/Blizzard_SharedXML/UI.xsd"
     }
   ]
 }
