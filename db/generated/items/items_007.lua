@@ -2465,6 +2465,7 @@ Data:AddItems({
     [235604] = { 2, 1, 1, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 1, 134419, nil, 0, 1, 0, 0, false },
     [235605] = { 2, 1, 1, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 1, 134419, nil, 0, 1, 0, 0, false },
     [235645] = { 1, 1, 1, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 4, 134938, nil, 0, 1, 0, 0, false },
+    [235785] = { 1, 1, 0, 13, 0, "INVTYPE_NON_EQUIP_IGNORE", 4, 134378, nil, 0, 1, 0, 0, false },
     [235786] = { 2, 1, 0, 7, 11, "INVTYPE_NON_EQUIP_IGNORE", 1, 132762, nil, 0, 99, 0, 0, false },
     [235787] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 4, 135139, nil, 0, 1, 0, 0, false },
     [235788] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 4, 136116, nil, 0, 1, 0, 0, false },
@@ -2502,5 +2503,4 @@ Data:AddItems({
     [237037] = { 1, 15, 1, 15, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 133473, nil, 0, 1, 0, 0, false },
     [237041] = { 2, 60, 60, 9, 0, "INVTYPE_NON_EQUIP_IGNORE", 1, 133743, nil, 0, 1, 0, 0, false },
     [237196] = { 1, 1, 0, 13, 0, "INVTYPE_NON_EQUIP_IGNORE", 4, 132621, nil, 0, 5, 0, 0, false },
-    [237230] = { 1, 1, 0, 13, 0, "INVTYPE_NON_EQUIP_IGNORE", 4, 132762, nil, 0, 5, 0, 0, false },
 })

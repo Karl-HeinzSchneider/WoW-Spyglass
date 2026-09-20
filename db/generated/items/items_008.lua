@@ -3,6 +3,7 @@ local Data = ForeverLoot.Data
 
 -- { quality, itemLevel, reqLevel, classID, subclassID, slot, bind, icon, stats, sellPrice, stackCount, setID, expansionID, craftingReagent }; see Data.ITEM.
 Data:AddItems({
+    [237230] = { 1, 1, 0, 13, 0, "INVTYPE_NON_EQUIP_IGNORE", 4, 132762, nil, 0, 5, 0, 0, false },
     [237261] = { 0, 1, 0, 15, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 133849, nil, 101, 5, 0, 0, false },
     [237263] = { 2, 40, 0, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 1, 133666, nil, 0, 1, 0, 0, false },
     [237504] = { 2, 50, 1, 7, 11, "INVTYPE_NON_EQUIP_IGNORE", 1, 132763, nil, 0, 1, 0, 0, false },

@@ -8137,6 +8137,24 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "235785": {
+    "names": {
+      "enUS": "Deadwind Cage \"Key\""
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 13,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134378,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
   "235786": {
     "names": {
       "enUS": "Karazhan Curio"

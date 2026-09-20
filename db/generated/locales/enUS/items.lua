@@ -17464,6 +17464,7 @@ Data:AddNames("enUS", "items", {
     [235604] = "Rune of Shield of Righteousness",
     [235605] = "Rune of Shock and Awe",
     [235645] = "Legashi Firewater Recipe",
+    [235785] = "Deadwind Cage \"Key\"",
     [235786] = "Karazhan Curio",
     [235787] = "Ancient Ironwood Branch",
     [235788] = "Enthusiastic Wisp",

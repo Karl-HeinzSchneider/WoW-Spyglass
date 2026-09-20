@@ -2,7 +2,7 @@
  * Reader for WoW SavedVariables files (WTF/Account/<ACCOUNT>/SavedVariables/<Addon>.lua).
  *
  * The client writes a very regular Lua subset: `Name = { ... }` per saved global, tables with
- * `["key"] = value`, `[123] = value` or positional entries, double-quoted strings with
+ * `["key"] = value`, `[123] = value` or positional entries, double- or single-quoted strings with
  * `\"`, `\\`, `\n`, `\r`, `\t` and `\ddd` escapes, numbers, `true`/`false`/`nil`. That is all
  * this parser understands; it is not a Lua interpreter.
  */
@@ -62,7 +62,7 @@ class Parser {
     this.skipSpace();
     const c = this.text[this.pos];
     if (c === "{") return this.table();
-    if (c === '"') return this.string();
+    if (c === '"' || c === "'") return this.string();
     if (c !== undefined && (c === "-" || (c >= "0" && c <= "9"))) return this.number();
     const word = this.identifier();
     if (word === "true") return true;
@@ -78,14 +78,15 @@ class Parser {
     return Number(m[0]);
   }
 
+  /** Double- or single-quoted; the client uses single quotes for strings that contain a double quote. */
   private string(): string {
-    this.pos++; // opening quote
+    const quote = this.text[this.pos++];
     let out = "";
     for (;;) {
       const c = this.text[this.pos];
       if (c === undefined) this.fail("unterminated string");
       this.pos++;
-      if (c === '"') return out;
+      if (c === quote) return out;
       if (c !== "\\") {
         out += c;
         continue;
