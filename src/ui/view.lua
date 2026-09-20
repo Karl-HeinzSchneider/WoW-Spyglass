@@ -364,6 +364,13 @@ function ForeverLootViewMixin:OnLoad()
 
     self.RightPage.Background:SetAtlas(pageAtlas("Right"))
     self:ApplyPageLayout()
+    -- The header row shares the view's child level with the pages, and WoW interleaves draw
+    -- layers within one level: the toolbar's BACKGROUND art (search border, filter backdrop)
+    -- would end up under the page art. Lift everything on that row above the pages.
+    local headerLevel = self.LeftPage:GetFrameLevel() + 2
+    for _, frame in ipairs({ self.BackButton, self.Breadcrumbs, self.SearchBox, self.FilterDropdown }) do
+        frame:SetFrameLevel(headerLevel)
+    end
     for _, page in ipairs({ self.LeftPage, self.RightPage }) do
         page.rowPool = CreateFramePool("Button", page, "ForeverLootListRowTemplate") --[[@as ForeverLoot.FramePool]]
         page.headerPool = CreateFramePool("Frame", page, "ForeverLootPageHeaderTemplate") --[[@as ForeverLoot.FramePool]]
