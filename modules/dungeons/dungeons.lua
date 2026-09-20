@@ -22,24 +22,24 @@ FL:RegisterModule({
             FL.InstanceFolder(47), -- Razorfen Kraul
             FL.InstanceFolder(189), -- Scarlet Monastery
             FL.InstanceFolder(129), -- Razorfen Downs
-            -- FL.InstanceFolder(70), -- Uldaman
-            -- FL.InstanceFolder(209), -- Zul'Farrak
-            -- FL.InstanceFolder(349), -- Maraudon
-            -- FL.InstanceFolder(109), -- Sunken Temple
-            -- FL.InstanceFolder(230), -- Blackrock Depths
-            -- FL.InstanceFolder(229), -- Blackrock Spire
-            -- FL.InstanceFolder(429), -- Dire Maul
-            -- FL.InstanceFolder(329), -- Stratholme
-            -- FL.InstanceFolder(289), -- Scholomance
-            -- FL.InstanceFolder(2720), -- The Searing Basin
-            -- FL.InstanceFolder(2784), -- Demon Fall Canyon
-            -- FL.InstanceFolder(2875), -- Karazhan Crypts
+            FL.InstanceFolder(70), -- Uldaman
+            FL.InstanceFolder(209), -- Zul'Farrak
+            FL.InstanceFolder(349), -- Maraudon
+            FL.InstanceFolder(109), -- Sunken Temple
+            FL.InstanceFolder(230), -- Blackrock Depths
+            FL.InstanceFolder(229), -- Blackrock Spire
+            FL.InstanceFolder(429), -- Dire Maul
+            FL.InstanceFolder(329), -- Stratholme
+            FL.InstanceFolder(289), -- Scholomance
+            FL.InstanceFolder(2720), -- The Searing Basin
+            FL.InstanceFolder(2784), -- Demon Fall Canyon
+            FL.InstanceFolder(2875), -- Karazhan Crypts
             -- FL.InstanceFolder(2921), -- Naxxramas (5-man)
-            -- FL.InstanceFolder(2959), -- City of Dalaran
-            -- FL.InstanceFolder(2998), -- Excavation Site: Wetlands
-            -- FL.InstanceFolder(2999), -- Ruins of Lordaeron
-            -- FL.InstanceFolder(3002), -- Half-Pint Tavern
-            -- FL.InstanceFolder(3065), -- The Hall of Thanes
+            FL.InstanceFolder(2959), -- City of Dalaran
+            FL.InstanceFolder(2998), -- Excavation Site: Wetlands
+            FL.InstanceFolder(2999), -- Ruins of Lordaeron
+            FL.InstanceFolder(3002), -- Half-Pint Tavern
+            FL.InstanceFolder(3065), -- The Hall of Thanes
         }
     end,
 })
