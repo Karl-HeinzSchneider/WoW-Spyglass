@@ -45,6 +45,10 @@ If tooling (e.g. luacheck, a packager) is added later, document the commands her
   class and `ForeverLoot.DB`. Ace3 types (`AceAddon`, `AceDBObject-3.0`, `AceDB.Schema`, …) come
   from the `ketho.wow-api` VS Code extension, not from `lib/` (which is excluded from LuaLS) —
   inherit from them rather than redeclaring the API.
+- `src/types_blizzard.lua` — annotations only, not in the TOC. Blizzard UI mixins the UI inherits
+  from (`TabSystemOwnerMixin`, `PortraitFrameMixin`, `PagingControlsMixin`, …), limited to the
+  methods we use, because the full ones are only in Ketho's opt-in FrameXML annotations. Extend
+  a stub (verified against `BlizzardInterfaceCode`) when using a new method.
 - `src/ui/` — the main window, Blizzard-style **XML layout + Lua mixin** so the exported Blizzard
   code (see below) maps 1:1. XML `mixin=`/`name=` attributes need globals, so mixins and the window
   frame are globals prefixed `ForeverLoot…` (also on `app.ui.*`). Together with the public

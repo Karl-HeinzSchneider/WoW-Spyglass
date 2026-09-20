@@ -25,8 +25,7 @@
     "utf8": "disable"
   },
   "Lua.workspace.library": [
-    "~\\.vscode\\extensions\\ketho.wow-api-0.22.3\\Annotations\\Core",
-    "~\\.vscode\\extensions\\ketho.wow-api-0.22.3\\Annotations\\FrameXML"
+    "~\\.vscode\\extensions\\ketho.wow-api-0.22.3\\Annotations\\Core"
   ],
   "Lua.diagnostics.globals": [
     "DEFAULT_CHAT_FRAME",
@@ -72,8 +71,25 @@
     "ITEM_LEVEL",
     "SPELLBOOK_FONT_COLOR"
   ],
-  "Lua.diagnostics.disable": ["assign-type-mismatch"],
-  "wowAPI.luals.frameXML": true,
+  "Lua.diagnostics.disable": [
+    "assign-type-mismatch",
+    "ambiguity-1",
+    "cast-local-type",
+    "deprecated",
+    "duplicate-set-field",
+    "inject-field",
+    "lowercase-global",
+    "missing-fields",
+    "missing-parameter",
+    "missing-return",
+    "need-check-nil",
+    "param-type-mismatch",
+    "redundant-parameter",
+    "unbalanced-assignments",
+    "undefined-field",
+    "undefined-global"
+  ],
+  "wowAPI.luals.frameXML": false,
   "xml.fileAssociations": [
     {
       "pattern": "**/*.xml",

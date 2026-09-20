@@ -29,7 +29,6 @@ local NEW_TAB_LABEL = "+"
 ---@field isMinimized boolean
 ---@field views ForeverLoot.View[]
 ---@field viewPool ForeverLoot.FramePool
----@field RemoveAllTabs fun(self: ForeverLoot.MainWindow)  # on TabSystemOwnerMixin, missing from the annotations
 ---@field viewToTabID table<ForeverLoot.View, integer>
 ---@field newTabID integer
 ---@field internalTabTracker table  # TabSystemTrackerMixin instance created by TabSystemOwnerMixin.OnLoad
@@ -183,7 +182,10 @@ function ForeverLootMainWindowMixin:CloseView(view)
         local neighbor = self.views[math.min(index, #self.views)]
         self:SetTab(self.viewToTabID[neighbor])
     else
-        self.TabSystem:SetTabVisuallySelected(self:GetTab())
+        local current = self:GetTab()
+        if current then
+            self.TabSystem:SetTabVisuallySelected(current)
+        end
     end
 end
 
