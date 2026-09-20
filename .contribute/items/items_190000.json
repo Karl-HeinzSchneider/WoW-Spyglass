@@ -1,0 +1,761 @@
+{
+  "190179": {
+    "names": {
+      "enUS": "Avelina's Heart"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134338,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "190180": {
+    "names": {
+      "enUS": "Isaac's Heart"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134338,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "190181": {
+    "names": {
+      "enUS": "Lovers' Hearts"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134343,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "190186": {
+    "names": {
+      "enUS": "Wooden Figurine"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134902,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "190187": {
+    "names": {
+      "enUS": "Withered Scarf"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 133693,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "190232": {
+    "names": {
+      "enUS": "Withered Scarf"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 133693,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "190307": {
+    "names": {
+      "enUS": "Unlit Torch"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 135434,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "190308": {
+    "names": {
+      "enUS": "Burning Torch"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 135432,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "190309": {
+    "names": {
+      "enUS": "Wooden Figurine"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134902,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "190325": {
+    "names": {
+      "enUS": "Monster - Incubus Whip Mace1H"
+    },
+    "quality": 0,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 2,
+    "subclassID": 4,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 0,
+    "icon": 4352492,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 0.58
+    }
+  },
+  "191204": {
+    "names": {
+      "enUS": "Lesser Deathstone"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 132871,
+    "sellPrice": 0,
+    "stackCount": 999,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191249": {
+    "names": {
+      "enUS": "Greater Deathstone"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134125,
+    "sellPrice": 0,
+    "stackCount": 999,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191267": {
+    "names": {
+      "enUS": "Rune of Teleportation: Antechamber"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134421,
+    "sellPrice": 0,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191268": {
+    "names": {
+      "enUS": "Orb of Corruption"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134120,
+    "sellPrice": 0,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191272": {
+    "names": {
+      "enUS": "Rod of Necromancy"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 135474,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191280": {
+    "names": {
+      "enUS": "Fungal Spore Cluster"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134530,
+    "sellPrice": 0,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191288": {
+    "names": {
+      "enUS": "Rune of Teleportation: Frostwyrm's Lair"
+    },
+    "quality": 4,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134422,
+    "sellPrice": 0,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191292": {
+    "names": {
+      "enUS": "Ritual Dagger"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 135341,
+    "sellPrice": 0,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191312": {
+    "names": {
+      "enUS": "Failsafe Phylactery"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 60,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_TRINKET",
+    "bind": 1,
+    "icon": 135441,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191313": {
+    "names": {
+      "enUS": "Mask of Death"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 136147,
+    "sellPrice": 0,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191414": {
+    "names": {
+      "enUS": "Skeletal Artifact"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 136083,
+    "sellPrice": 0,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191458": {
+    "names": {
+      "enUS": "Shattered Phylactery"
+    },
+    "quality": 0,
+    "itemLevel": 60,
+    "reqLevel": 60,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_TRINKET",
+    "bind": 1,
+    "icon": 132997,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191459": {
+    "names": {
+      "enUS": "Rune of Fortune"
+    },
+    "quality": 4,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134418,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191477": {
+    "names": {
+      "enUS": "Skeletal Hitching Post"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 60,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133496,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191480": {
+    "names": {
+      "enUS": "Skeletal Steed"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 40,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 132264,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191481": {
+    "names": {
+      "enUS": "Tabard of Mastery"
+    },
+    "quality": 4,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_TABARD",
+    "bind": 1,
+    "icon": 135017,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191550": {
+    "names": {
+      "enUS": "Book of Deathstones: Mask of Death"
+    },
+    "quality": 1,
+    "itemLevel": 60,
+    "reqLevel": 60,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133733,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191605": {
+    "names": {
+      "enUS": "Book of Deathstones: Rune of Teleportation I"
+    },
+    "quality": 2,
+    "itemLevel": 60,
+    "reqLevel": 60,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133733,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191606": {
+    "names": {
+      "enUS": "Book of Deathstones: Orb of Corruption"
+    },
+    "quality": 2,
+    "itemLevel": 60,
+    "reqLevel": 60,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133733,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191607": {
+    "names": {
+      "enUS": "Book of Deathstones: Skeletal Artifact"
+    },
+    "quality": 3,
+    "itemLevel": 60,
+    "reqLevel": 60,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133733,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191608": {
+    "names": {
+      "enUS": "Book of Deathstones: Rod of Necromancy"
+    },
+    "quality": 3,
+    "itemLevel": 60,
+    "reqLevel": 60,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133733,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191609": {
+    "names": {
+      "enUS": "Book of Deathstones: Fungal Spore Cluster"
+    },
+    "quality": 3,
+    "itemLevel": 60,
+    "reqLevel": 60,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133733,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191610": {
+    "names": {
+      "enUS": "Book of Deathstones: Ritual Dagger"
+    },
+    "quality": 3,
+    "itemLevel": 60,
+    "reqLevel": 60,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133733,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191611": {
+    "names": {
+      "enUS": "Book of Deathstones: Failsafe Phylactery"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 60,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133733,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191612": {
+    "names": {
+      "enUS": "Book of Deathstones: Rune of Teleportation II"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 60,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133733,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191613": {
+    "names": {
+      "enUS": "Book of Deathstones: Rune of Fortune"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 60,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133733,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191614": {
+    "names": {
+      "enUS": "Book of Deathstones: Skeletal Hitching Post"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 60,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133733,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191656": {
+    "names": {
+      "enUS": "Death's Essence"
+    },
+    "quality": 4,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 136152,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191660": {
+    "names": {
+      "enUS": "Thaddius' Lightning Bolts"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134068,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191661": {
+    "names": {
+      "enUS": "Monstrous Spider Fang"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 135367,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191664": {
+    "names": {
+      "enUS": "Book of Deathstones: Thaddius' Lightning Bolts"
+    },
+    "quality": 3,
+    "itemLevel": 60,
+    "reqLevel": 60,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133733,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "191666": {
+    "names": {
+      "enUS": "Book of Deathstones: Monstrous Spider Fang"
+    },
+    "quality": 3,
+    "itemLevel": 60,
+    "reqLevel": 60,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133733,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  }
+}

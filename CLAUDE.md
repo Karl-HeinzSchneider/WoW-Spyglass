@@ -8,12 +8,33 @@ ForeverLoot is a World of Warcraft addon (Classic client, `## Interface: 16001`)
 on top of Ace3. It is early: the core skeleton (logger, AceAddon object, AceDB) exists; loot
 tracking itself does not yet.
 
-## No build, lint, or test tooling (yet)
+## Tooling
 
-There is no build step, package manager, linter, or test runner in this repo. WoW addons are
-plain Lua files loaded directly by the game client. To try changes, copy or symlink the repo
-into `World of Warcraft/_retail_/Interface/AddOns/ForeverLoot/` and run `/reload` in-game.
-If tooling (e.g. luacheck, a packager) is added later, document the commands here.
+WoW addons are plain Lua files loaded directly by the game client; there is no build step for
+the code itself. To try changes, copy or symlink the repo into
+`World of Warcraft/_classic_beta_/Interface/AddOns/ForeverLoot/` and run `/reload` in-game.
+
+The one generated part is the database. `.contribute/tools/` (TypeScript, `npm install` once,
+Node 20+) builds `db/generated/` from three inputs: the **item scans** in
+`.contribute/items/items_<n>.json` (recorded in-game by `/fl scan`, one file per 10 000 ids,
+machine-written by `npm run import`), the **curated drops** in `.contribute/dungeons|raids/*.json`,
+and wago.tools' `Map` + `DungeonEncounter` tables (instances, bosses, their names) for the build
+pinned in `config.json`. Commands: `npm run fix` (validate ids, fill names, add missing bosses),
+`npm run gen` (write `db/generated/`), `npm run gen -- --check` (staleness, for CI),
+`npm run import` (merge what the addon recorded in-game — SavedVariables `ForeverLoot.lua` /
+`/fl export` JSON files dropped into the gitignored `.contribute/inbox/`, or one file given as
+`-- <path>` — into the scans and the curated files). Never edit
+`db/generated/` by hand. Contributor docs in `.contribute/README.md`.
+
+WoW Forever's items are server-side: the wago.tools item tables are incomplete and wrong for
+this client and ids from Classic/wowhead don't match, so **the in-game scan is the only item
+source**. Only scanned items exist in the DB; a curated loot row may reference an unscanned id
+(warning, not error). Item rows carry everything `GetItemInfo`/`GetItemStats` return (see
+`Data.ITEM`).
+
+Static checks used so far (no test runner in the repo): `luac -p` on every Lua file, lxml
+validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-language-server
+--check`) and stock-Lua harnesses that load the real libraries with a WoW API stub.
 
 ## Layout
 
@@ -25,19 +46,51 @@ If tooling (e.g. luacheck, a packager) is added later, document the commands her
   Ace* → LibDataBroker/LibDBIcon). Listed first in the TOC.
 - `src/core/logger.lua` — `app.logger`. Leveled, colored chat logging; `log("x")` is `log:info("x")`.
 - `src/core/db.lua` — `app.dbDefaults`, the AceDB-3.0 defaults. `profile` = user settings,
-  `char` = per-character data (loot history), `global` = account-wide. Change the schema here.
+  `char` = per-character data (loot history), `global` = account-wide (`global.discovered`: items
+  and boss drops recorded in-game, the shape `npm run import` reads). Change the schema here.
+- `src/core/discovery.lua` — `app.discovery`, AceAddon module. `/fl scan <from> [to]` /
+  `resume` / `<from> <to> force` / `stop` requests ids via `RequestLoadItemDataByID` and records
+  every existing item in full (`GetItemInfo` + `GetItemStats`, stat keys shortened) into
+  `global.discovered.items`, 1000 new per run, progress in `global.scan`. Also records items the
+  DB lacks from `LOOT_OPENED`/`START_LOOT_ROLL` and boss drops (attributed to the last successful
+  `ENCOUNTER_END`, checked against the looted creature when `GetLootSourceInfo` exists). Everything
+  is merged into `Data` at once and on login; a record identical to the shipped row is pruned then.
+  Listed in the TOC after the generated data because it takes `app.data` at load time.
+- `src/core/json.lua` — `app.json.encode`, the minimal JSON encoder behind `/fl export`.
 - `src/core/registry.lua` — `app.api`, also the **public global `ForeverLoot`** (contract in
   `docs/API.md`). `RegisterModule(def)` validates and stores module definitions; `GetRootNode()`
   builds the virtual tree the window browses (one node per module, sorted by `order`). Events via
   CallbackHandler-1.0 (`OnModuleRegistered/Unregistered/OnModulesChanged`). Defines the
   `ForeverLoot.Node` and `ForeverLoot.ModuleDef` types. Changing the API means updating `docs/API.md`.
-- `modules/<name>/` — one folder per built-in content module (`raids`, `dungeons`, …), each with a
-  `<name>.xml` loader listed in `modules/modules.xml`. `<name>.lua` only registers the module
-  (metadata, `children = {}`, `sortChildren = true`); **each instance is its own file** (e.g.
-  `dungeons/deadmines.lua`) that builds a folder with all of its bosses and calls
-  `ForeverLoot:AddToModule("<name>", folder)`. The XML lists the module file first. Modules use
-  only the public API a third-party addon would use, so never give them private hooks. Current
-  data is placeholder.
+- `src/data/` — the item database, public as `ForeverLoot.Data/Filters/Query` (also `app.data`,
+  `app.filters`, `app.query`). `data.lua`: normalized integer-keyed tables (`items` rows are
+  positional arrays indexed by `Data.ITEM`, `instances`, `bosses`, `bossLoot`, `names[locale]`),
+  `Add*` calls that invalidate caches and fire `OnDataChanged`, lazy `GetItemSources` inverted
+  index. `filters.lua`: registry of named predicates with options (`multi`/`single`), optional
+  precomputed buckets, the built-in filters. `query.lua`: `Query.Run(q)` over a plain, serializable
+  query table (`search`, `filters`, `sort`). Nothing in here touches frames.
+  `nodes.lua`: DB-backed node constructors on the public API (`InstanceFolders(type)`,
+  `InstanceFolder(id)`, `BossFolder(id)`, `BossLootEntries(id)`) that modules build their trees from.
+- `db/generated/` — **generated** (see Tooling); the TOC lists only `db\generated\generated.xml`.
+  Every client item (`items/items_NNN.lua`), all instances with encounters plus curated
+  levels/icons (`instances.lua`), curated drops (`loot/<name>.lua`), names per locale
+  (`locales/<locale>/`, non-enUS files return early unless `GetLocale()` matches). Excluded from
+  LuaLS and StyLua. Boss ids are `DungeonEncounter` ids, instance ids are `Map` ids.
+- `.contribute/` — everything people edit and send as pull requests: `dungeons/*.json` and
+  `raids/*.json` (one instance each: map id, level range, icon, drops with chance; names are
+  informational and rewritten by `npm run fix`; a row with only a `name` gets its id filled in
+  when unambiguous), `items/items_<n>.json` (the scanned item dump: `ScannedItem` in
+  `tools/src/items.ts`, names per locale; written by `npm run import`, not by hand) and `tools/`
+  (the generator; `node_modules/` and `.cache/` are gitignored; `src/savedvars.ts` parses
+  SavedVariables Lua, `src/discovered.ts` + `src/import.ts` merge recorded data). Item ids from
+  Classic/wowhead do **not** apply — WoW Forever has its own itemization, so items and drops must
+  be recorded in this client.
+- `modules/<name>/` — one folder per built-in content module (`items`, `raids`, `dungeons`), each
+  with a `<name>.xml` loader listed in `modules/modules.xml`. `items` is a `query = true` module
+  (the item DB with the view's search box and filter dropdown); `raids`/`dungeons` build their
+  trees at runtime from the DB via `getChildren = function() return FL.InstanceFolders("raid") end`
+  and hold no data of their own. Modules use only the public API a third-party addon would use,
+  so never give them private hooks.
 - `src/core/ace.lua` — `app.addon`, the AceAddon-3.0 object (mixins: AceConsole, AceEvent).
   `OnInitialize` creates `app.db` from `ForeverLootDB`, wires profile-change callbacks to
   `OnProfileRefresh`, and registers `/fl` + `/foreverloot`. Register game events in `OnEnable`.
@@ -60,12 +113,18 @@ If tooling (e.g. luacheck, a packager) is added later, document the commands her
     whole strip. Draggable; position saved to `profile.window`. `/fl` and the minimap button toggle it.
   - `view.lua` + `templates.xml` — a view is a breadcrumb bar + two spellbook-art pages of rows with
     Blizzard `PagingControls`. Navigation is a `path` stack over `ForeverLoot.Node` trees
-    (`Push`/`PopTo`/`Back` → `Refresh`).
+    (`Push`/`PopTo`/`Back` → `Refresh`). `Refresh()` rebuilds elements + page layout (navigation,
+    query/size changes); `Render()` only redraws the visible pages (page flips, item info arriving).
+    Children come from `view:GetChildren(node)`: static `children`, dynamic `getChildren`, or a
+    `query` folder whose entries are `Query.Run` over the DB with the view's own per-node query
+    state (`view.queries`); query folders show the `SearchBox` (debounced) and `FilterDropdown`
+    (Blizzard_Menu `WowStyle1FilterDropdownTemplate`, menu generated from the filter registry).
   - The window's root comes from `app.api:GetRootNode()`; it listens to `OnModulesChanged`.
+  - `exportframe.lua/.xml` — `ForeverLootExportFrame` (`BasicFrameTemplateWithInset` +
+    `InputScrollFrameTemplate`), the `/fl export` text box; `app.ui.exportFrame:ShowText(text)`.
 - `ForeverLoot.lua` — root entry file, loaded last.
 - `lib/` — vendored Ace3, LibStub, CallbackHandler, LibDBIcon. Excluded from LuaLS and StyLua.
 - `locales/` — localization string tables.
-- `db/` — data tables (static data shipped with the addon).
 - `assets/` — textures, icons, sounds referenced from code.
 
 ## XML files
@@ -73,22 +132,29 @@ If tooling (e.g. luacheck, a packager) is added later, document the commands her
 Every XML file starts with `<Ui xmlns="http://www.blizzard.com/wow/ui/">` and **no**
 `xsi:schemaLocation` — the client ignores that hint and a wrong path makes the VS Code XML
 extension report errors. Schema validation instead comes from `xml.fileAssociations` in
-`.vscode/settings.json`, which maps `**/*.xml` to `BlizzardInterfaceCode/.../Blizzard_SharedXML/UI.xsd`
-(so it only works when the optional `BlizzardInterfaceCode/` symlink exists). To validate from
+`.vscode/settings.json`, which maps `**/*.xml` to `../_data/BlizzardInterfaceCode/.../Blizzard_SharedXML/UI.xsd`
+(so it only works when the optional `../_data/BlizzardInterfaceCode/` folder exists). To validate from
 the command line: `python -c "from lxml import etree; ..."` against that XSD, as in this session.
+
+## Files with backslashes
+
+Lua strings for texture paths need `\\`. When writing such files from a shell, heredocs and
+inline Python strip the doubled backslash; use the Write/Edit tools (or a script file with raw
+strings) instead.
 
 ## Optional: Blizzard's own UI source and art for reference
 
-A developer may place Blizzard's exported interface files in the repo root, typically as
-symlinks to the folders the game client writes next to the WoW install:
+A developer may place Blizzard's exported interface files in `../_data/` (a sibling of the
+repo folder, i.e. `E:\Projects\_data\` here — outside the repo, so nothing needs gitignoring
+or excluding from LuaLS/StyLua), typically as symlinks to the folders the game client writes
+next to the WoW install:
 
-- `BlizzardInterfaceCode/` — from `/run ExportInterfaceFiles("code")`. Lua/XML for all of
+- `../_data/BlizzardInterfaceCode/` — from `/run ExportInterfaceFiles("code")`. Lua/XML for all of
   Blizzard's FrameXML/AddOns.
-- `BlizzardInterfaceArt/` — from `/run ExportInterfaceFiles("art")`. Every texture as `.blp`
+- `../_data/BlizzardInterfaceArt/` — from `/run ExportInterfaceFiles("art")`. Every texture as `.blp`
   under `BlizzardInterfaceArt/Interface/...` (e.g. `Interface/Icons/INV_Misc_Bag_10.blp`).
 
-Both are gitignored and excluded from LuaLS/StyLua. If they exist, Claude should **read them,
-never edit them**:
+If they exist, Claude should **read them, never edit them**:
 
 - Code: look up exact API signatures/return values, event payloads, frame templates and global
   strings. Prefer it over guessing from memory, since the Classic client's API differs from retail.
@@ -105,10 +171,12 @@ Never list anything from these folders in the TOC or copy files out of them into
   `loadstring` of external files; all code must be listed in the TOC.
 - Addons share a single global namespace. Keep the addon's state in the private table passed
   to each file rather than globals. Every file starts with:
+
   ```lua
   ---@type string, ForeverLoot
   local appName, app = ...
   ```
+
   (Use `local _, app = ...` when the name is unused, or LuaLS flags it.) The `---@type` line is
   what gives the Lua language server completion on `app.*`; without it `...` is untyped. `src/types.lua` declares the `ForeverLoot` class — when a file adds a member
   to `app`, add a matching `---@field` there. That file is annotations only and is not in the TOC.

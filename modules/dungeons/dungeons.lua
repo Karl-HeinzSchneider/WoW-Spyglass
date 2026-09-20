@@ -1,19 +1,20 @@
--- Built-in module: Dungeons. Only metadata lives here; each dungeon is its own file in this
--- folder and adds itself with ForeverLoot:AddToModule("dungeons", ...). Third-party addons can
--- do the same to add dungeons to this module.
+-- Built-in module: Dungeons. Everything comes from the item database (db/generated): one
+-- folder per instance of type "dungeon", a folder per boss, the recorded drops inside.
+-- Levels, icons and loot are curated in .contribute/dungeons/*.json.
 local FL = ForeverLoot
 
 FL:RegisterModule({
     id = "dungeons",
     name = "Dungeons",
-    icon = "Interface\\Icons\\Achievement_Dungeon_Deadmines",
+    icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     order = 20,
     description = "Loot tables for 5-man dungeons.",
-    children = {},
-    expansionID = 0, -- LE_EXPANSION_CLASSIC
-    -- Custom sort: by minimum level, then name. (`true` would sort by `order`, then name.)
+    getChildren = function()
+        return FL.InstanceFolders("dungeon")
+    end,
+    -- By level (instances without a curated level range go last), then name.
     sortChildren = function(a, b)
-        local la, lb = a.minLevel or 0, b.minLevel or 0
+        local la, lb = a.minLevel or 999, b.minLevel or 999
         if la ~= lb then
             return la < lb
         end

@@ -1,0 +1,56 @@
+{
+  "142503": {
+    "names": {
+      "enUS": "Hidden Shirt"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_BODY",
+    "bind": 0,
+    "icon": 650007,
+    "sellPrice": 2,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "142504": {
+    "names": {
+      "enUS": "Hidden Tabard"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_TABARD",
+    "bind": 0,
+    "icon": 135026,
+    "sellPrice": 2,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "143539": {
+    "names": {
+      "enUS": "Hidden Belt"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_WAIST",
+    "bind": 0,
+    "icon": 132493,
+    "sellPrice": 2,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  }
+}

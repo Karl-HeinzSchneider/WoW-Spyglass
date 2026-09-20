@@ -51,13 +51,13 @@ end
 
 ---@param input string
 function addon:OnSlashCommand(input)
-    local cmd, rest = self:GetArgs(input, 2)
+    local cmd, a, b, c = self:GetArgs(input, 4)
     cmd = cmd and cmd:lower() or ""
 
     if cmd == "" or cmd == "show" then
         app.ui.mainWindow:Toggle()
     elseif cmd == "loglevel" then
-        if rest and log:setLevel(rest) then
+        if a and log:setLevel(a) then
             self.db.profile.logLevel = log:getLevelName()
             log:chat("Log level set to %s", self.db.profile.logLevel)
         else
@@ -66,7 +66,11 @@ function addon:OnSlashCommand(input)
     elseif cmd == "reset" then
         self.db:ResetProfile()
         log:chat("Profile reset")
+    elseif cmd == "export" then
+        app.discovery:ExportCommand(a)
+    elseif cmd == "scan" then
+        app.discovery:ScanCommand(a, b, c)
     else
-        log:chat("Commands: /fl, /fl loglevel <level>, /fl reset")
+        log:chat("Commands: /fl, /fl export [all], /fl scan <from> [to], /fl scan resume, /fl scan limit <n|off>, /fl loglevel <level>, /fl reset")
     end
 end

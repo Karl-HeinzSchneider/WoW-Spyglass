@@ -36,13 +36,14 @@ appends a folder (or any node) to a registered module, e.g. a new dungeon inside
 `"dungeons"` module:
 
 ```lua
-local dungeon = ForeverLoot.Folder("Gnomeregan", "Interface\\Icons\\...", { ...bosses... })
-dungeon.order = 29 -- level; built-in modules sort their children by `order`, then name
+local dungeon = ForeverLoot.Folder("Gnomeregan", "Interface\\Icons\\...", { ...bosses... }, { minLevel = 24 })
 ForeverLoot:AddToModule("dungeons", dungeon)
 ```
 
-Built-in module ids: `"raids"`, `"dungeons"`. ForeverLoot's own content uses exactly this call —
-one file per instance under `modules/<module>/`.
+Built-in module ids: `"items"`, `"raids"`, `"dungeons"`. The built-in raids/dungeons sort by
+`minLevel`, then name. If your instance is in the game's data, prefer adding its drops to the
+item database (`ForeverLoot.Data:AddBossLoot`) — it then shows up in the built-in modules and
+in the item browser's filters automatically.
 
 ## `ForeverLoot:RegisterModule(def) -> boolean`
 
@@ -59,6 +60,8 @@ if the definition is invalid; it never throws.
 | `children` | Node[] | one of | The module's top-level entries. |
 | `getChildren` | fun(def) -> Node[] | one of | Lazy alternative; called once, the first time the tree is built. Errors are caught and logged. |
 | `sortChildren` | boolean \| fun(a, b) | no | `true` sorts children by node `order` (default 100), then `name`; a function is used as the comparator and receives the full nodes (metadata included). Applies to `AddToModule` entries too. |
+| `query` | boolean | no | The module's own list is the item database, filtered by the view's search box and filter menu (see [Item database](#item-database)). `children` may be `{}`. |
+| `columns`, `groupBy` | | no | Layout of the module's own list, as on folder nodes. |
 | `expansionID`, `seasonID`, `tags`, `meta` | various | no | Metadata; see below. |
 
 ## Nodes
@@ -67,15 +70,21 @@ A node is a plain table; the fields set decide what it displays as:
 
 ```lua
 { name = "Boss", icon = "...", children = { ... } }         -- folder (navigable)
+{ name = "Live", icon = "...", getChildren = function(node, view) return { ... } end }
+                                                            -- dynamic folder: entries computed every time it is opened
+{ name = "All", icon = "...", query = true }                -- query folder: the item DB, filtered per view (search box + filter menu)
 { itemID = 17070 }                                          -- item: name/icon/quality/ilvl from the game, item tooltip, shift-click links
+{ itemID = 17070, chance = 0.18 }                           -- item with a drop chance (0..1), shown as "18%"
 { spellID = 22888 }                                         -- spell: name/icon from the game, spell tooltip
 { name = "Title", icon = "...", description = "Second line", -- custom entry
   quality = 4, category = "Misc", tooltip = { "line", ... },
   onClick = function(node, button) end }
 ```
 
-Items and spells resolve lazily; an item whose data isn't cached yet shows "Item #id" and
-redraws when the data arrives.
+Items and spells resolve lazily. An item the client hasn't cached yet is drawn from the item
+database (name, quality, item level) when it is in there, otherwise as "Item #id"; either way
+it redraws when the game's data arrives. `ForeverLoot.IsFolder(node)` tells whether a node
+opens (static, dynamic or query folder).
 
 Folders may also set `columns = 1 | 2` to control how their children are laid out: one
 full-width column (the default) or two columns per page. This is decided by the collection,
@@ -145,6 +154,9 @@ Constructors (optional sugar):
 - `ForeverLoot.Item(itemID)`
 - `ForeverLoot.Spell(spellID)`
 - `ForeverLoot.Custom({ name, icon, description, quality, category, tooltip, onClick })`
+- `ForeverLoot.InstanceFolders(type)` — folders for every DB instance of `type` (`"dungeon"` / `"raid"`)
+- `ForeverLoot.InstanceFolder(instanceID)` / `ForeverLoot.BossFolder(bossID)` / `ForeverLoot.BossLootEntries(bossID)` —
+  DB-backed folders: instance → bosses → drops with `chance`
 - `ForeverLoot.Log(fmt, ...)` — prefixed chat message
 - `ForeverLoot.PlaceholderItem(name, quality, icon)` — hard-coded display data, for prototyping
 - `ForeverLoot.PlaceholderItems(prefix, count)` — generates `count` placeholder items
@@ -159,6 +171,80 @@ Constructors (optional sugar):
   each carrying `moduleID`). Cached until the module set changes.
 - `ForeverLoot.API_VERSION` — currently `1`.
 
+## Item database
+
+`ForeverLoot.Data` holds every scanned item and where it drops. ForeverLoot ships its data as
+generated files (`db/generated/`, built by `.contribute/tools` from in-game item scans, the
+curated drop JSON in `.contribute/` and wago.tools' instance/encounter tables); other addons may
+add to it with the same calls. The addon itself adds whatever it scans or sees dropping in-game
+(`global.discovered`, see `src/core/discovery.lua`), so `Data.items` can grow at runtime.
+Instance ids are `Map` ids, boss ids are `DungeonEncounter` ids. Tables are integer-keyed:
+
+```lua
+local Data = ForeverLoot.Data
+Data.items[5188]     -- { quality, itemLevel, reqLevel, classID, subclassID, equipLoc, bind, icon (fileDataID),
+                     --   stats, sellPrice, stackCount, setID, expansionID, craftingReagent }; indices in Data.ITEM
+                     -- stats = { INTELLECT = 4, SPELL_POWER = 18 } (GetItemStats keys without ITEM_MOD_/_SHORT) or nil
+Data.instances[36]   -- { type = "dungeon", bosses = { 2741, ... }, minLevel = 15, maxLevel = 21, expansionID = 0, icon = "..." }
+Data.bosses[2747]    -- { instanceID = 36, order = 6000 }
+Data.bossLoot[2747]  -- { { 5188, 0.9 }, { 5191 }, ... }   -- { itemID, chance 0..1 or nil }
+Data.names.enUS      -- { items = { [5188] = "Filled Vessel" }, bosses = {...}, instances = {...} }
+```
+
+Adding data (any call may be repeated; every one invalidates the caches and fires `OnDataChanged`):
+
+- `Data:AddItems({ [itemID] = { quality, ilvl, reqLevel, classID, subclassID, equipLoc, bind, icon, stats, ... }, ... })`
+- `Data:AddInstance(id, def)`, `Data:AddBoss(id, def)` (appends to its instance's `bosses` if missing),
+  `Data:AddBossLoot(bossID, { { itemID, chance }, ... })`
+- `Data:AddNames(locale, "items" | "bosses" | "instances", { [id] = name })` — enUS is the fallback
+
+Reading:
+
+- `Data:GetItem(id) -> row?`, `Data:GetItemField(id, Data.ITEM.ILVL)`, `Data:GetItemIDs()` (sorted, cached),
+  `Data:GetItemCount()`, `for id, row in Data:EachItem() do`
+- `Data:GetItemName(id) -> name, known` — client locale, then enUS, then `C_Item.GetItemInfo`, then `"Item #id"`
+- `Data:GetItemStats(id) -> { INTELLECT = 4, ... }?`, `Data.StatLabel("INTELLECT") -> "Intellect"` (the game's `ITEM_MOD_*_SHORT`)
+- `Data:GetItemSources(id) -> { { kind = "boss", id = bossID, chance = 0.18 }, ... }` — inverted index, built lazily
+- `Data:GetInstance(id)`, `Data:GetInstanceIDs()` (by level, then name), `Data:GetBoss(id)`, `Data:GetBossLoot(bossID)`,
+  `Data:GetInstanceName(id)`, `Data:GetBossName(id)`
+- `Data:GetVersion()` — bumps on every change; cache against it
+
+### Filters
+
+`ForeverLoot.Filters` is the registry behind the filter menu on query folders. Register your
+own to make it appear there:
+
+```lua
+ForeverLoot.Filters:Register({
+    id = "myaddon-usable",          -- prefix with your addon name
+    name = "Usable by me",
+    order = 90,                     -- menu position, lower first (built-ins use 10..80)
+    kind = "multi",                 -- "multi" = checkboxes (values OR-ed) | "single" = radios (one value or nil)
+    options = { { value = 1, label = "Yes" } },  -- or a function returning that list (re-evaluated when the data changes)
+    match = function(itemID, row, value) return ... end,   -- row = Data.items[itemID]
+    index = function(itemID, row) return key end,          -- optional: option value(s) of the item -> precomputed buckets
+})
+```
+
+Built-in ids: `quality`, `slot`, `armorType`, `weaponType`, `itemLevel`, `reqLevel`, `instance`, `boss`.
+Other calls: `Filters:Get(id)`, `Filters:GetAll()`, `Filters:GetOptions(id)`, `Filters:GetBucket(id, value)`,
+`Filters:Unregister(id)`. Registering fires `OnFiltersChanged`.
+
+### Queries
+
+A query is plain data — no functions — so it can be saved or shared:
+
+```lua
+local ids = ForeverLoot.Query.Run({
+    search = "defias",                                       -- case-insensitive substring; all digits also matches the id
+    filters = { quality = { 3, 4 }, slot = { "INVTYPE_CHEST" }, itemLevel = "21-30" },
+    sort = "name",                                           -- "name" | "ilvl" | "quality" | "id"
+})
+```
+
+Different filters are AND-ed, the values of one filter OR-ed. `Query.New()`, `Query.Copy(q)`
+and `Query.IsEmpty(q)` are helpers. Each view (tab) keeps its own query per query folder.
+
 ## Events
 
 Backed by CallbackHandler-1.0:
@@ -167,8 +253,11 @@ Backed by CallbackHandler-1.0:
 ForeverLoot.RegisterCallback(myTable, "OnModuleRegistered", function(event, id, replaced) end)
 ForeverLoot.RegisterCallback(myTable, "OnModuleUnregistered", function(event, id) end)
 ForeverLoot.RegisterCallback(myTable, "OnModulesChanged", function(event) end)
+ForeverLoot.RegisterCallback(myTable, "OnDataChanged", function(event) end)     -- item DB changed
+ForeverLoot.RegisterCallback(myTable, "OnFiltersChanged", function(event) end)  -- filter registry changed
 ForeverLoot.UnregisterCallback(myTable, "OnModulesChanged")
 ```
 
-`OnModulesChanged` fires after either of the other two. The main window listens to it and
-refreshes any view that is sitting at the root.
+`OnModulesChanged` fires after either of the first two. The main window listens to it and
+refreshes any view that is sitting at the root; `OnDataChanged`/`OnFiltersChanged` redraw the
+open views.

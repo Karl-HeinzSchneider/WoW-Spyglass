@@ -1,0 +1,40 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+
+	<!-- /fl export: a plain dialog with one big text box (InputScrollFrameTemplate from
+	     Blizzard_SharedXML/Shared/InputBox). maxLetters 0 = unlimited. -->
+	<Frame name="ForeverLootExportFrame" mixin="ForeverLootExportFrameMixin"
+		inherits="BasicFrameTemplateWithInset"
+		parent="UIParent" toplevel="true" enableMouse="true" movable="true" clampedToScreen="true" hidden="true" frameStrata="DIALOG">
+		<Size x="600" y="440"/>
+		<Anchors>
+			<Anchor point="CENTER"/>
+		</Anchors>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString parentKey="Hint" inherits="GameFontHighlightSmall" justifyH="LEFT" justifyV="TOP">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="14" y="-30"/>
+						<Anchor point="TOPRIGHT" x="-14" y="-30"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<ScrollFrame parentKey="Scroll" inherits="InputScrollFrameTemplate">
+				<KeyValues>
+					<KeyValue key="maxLetters" value="0" type="number"/>
+					<KeyValue key="hideCharCount" value="true" type="boolean"/>
+				</KeyValues>
+				<Anchors>
+					<Anchor point="TOPLEFT" x="18" y="-64"/>
+					<Anchor point="BOTTOMRIGHT" x="-32" y="16"/>
+				</Anchors>
+			</ScrollFrame>
+		</Frames>
+		<Scripts>
+			<OnLoad method="OnLoad"/>
+			<OnDragStart method="OnDragStart"/>
+			<OnDragStop method="OnDragStop"/>
+		</Scripts>
+	</Frame>
+</Ui>

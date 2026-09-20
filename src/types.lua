@@ -11,18 +11,26 @@
 ---@field dbDefaults ForeverLoot.DBDefaults
 ---@field db ForeverLoot.DB
 ---@field minimapButton ForeverLoot.MinimapButton
+---@field discovery ForeverLoot.Discovery  # in-game recorder of items/drops the DB lacks
+---@field json ForeverLoot.JSON  # encoder for /fl export
 ---@field api ForeverLoot.API  # also the global `ForeverLoot`
+---@field data ForeverLoot.Data  # item database; also `ForeverLoot.Data`
+---@field filters ForeverLoot.Filters  # filter registry; also `ForeverLoot.Filters`
+---@field query ForeverLoot.QueryAPI  # query runner; also `ForeverLoot.Query`
 ---@field ui ForeverLoot.UI
 
 -- UI namespace. Mixins are globals (XML requires it) but also exposed here.
 ---@class ForeverLoot.UI
 ---@field mainWindow ForeverLoot.MainWindow  # set in ForeverLootMainWindowMixin:OnLoad
+---@field exportFrame ForeverLoot.ExportFrame  # set in ForeverLootExportFrameMixin:OnLoad
 ---@field MainWindowMixin ForeverLoot.MainWindow
+---@field ExportFrameMixin ForeverLoot.ExportFrame
 ---@field ViewMixin ForeverLoot.View
 ---@field ListRowMixin ForeverLoot.ListRow
 ---@field PageHeaderMixin ForeverLoot.PageHeader
 ---@field GroupLabelMixin ForeverLoot.GroupLabel
 ---@field BreadcrumbButtonMixin ForeverLoot.BreadcrumbButton
+---@field SearchBoxMixin ForeverLoot.SearchBox
 
 -- Return type of CreateFramePool. The FrameXML annotations keep the pool mixins private,
 -- so the methods we use are declared here.

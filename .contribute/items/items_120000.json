@@ -1,0 +1,38 @@
+{
+  "122270": {
+    "names": {
+      "enUS": "WoW Token"
+    },
+    "quality": 8,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": -1,
+    "subclassID": -1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 1121394,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "122284": {
+    "names": {
+      "enUS": "WoW Token"
+    },
+    "quality": 8,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": -1,
+    "subclassID": -1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 1120721,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  }
+}

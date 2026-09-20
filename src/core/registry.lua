@@ -17,12 +17,17 @@ local log = app.logger
 --   spell   : `spellID`
 --   custom  : `name` (+ `icon`, `description`, `onClick`, `tooltip`), also used by placeholders
 --   header  : `header` (big section title)      group : `group` (row-sized label, + `items`)
+--   dynamic : `getChildren` (folder whose entries are computed when opened)
+--   query   : `query` (folder listing the item DB, filtered by the view's search/filter state)
 ---@class ForeverLoot.Node
 ---@field name? string
 ---@field icon? string|number
 ---@field description? string  # second text line on custom entries; tooltip line otherwise
 ---@field children? ForeverLoot.Node[]  # folders only
+---@field getChildren? fun(node: ForeverLoot.Node, view: ForeverLoot.View): ForeverLoot.Node[]  # dynamic folders; called on every open
+---@field query? boolean  # folder showing ForeverLoot.Data items through the view's ForeverLoot.Query
 ---@field itemID? integer
+---@field chance? number  # items: drop chance 0..1, shown as a percentage
 ---@field spellID? integer
 ---@field quality? Enum.ItemQuality  # custom/placeholder entries: colors the name
 ---@field category? string  # custom/placeholder entries: bucket used by auto grouping
@@ -52,6 +57,9 @@ local log = app.logger
 ---@field description? string  # shown in tooltips
 ---@field children? ForeverLoot.Node[]  # the module's top-level entries (may be empty and filled via AddToModule)
 ---@field getChildren? fun(def: ForeverLoot.ModuleDef): ForeverLoot.Node[]  # lazy alternative to `children`, called once
+---@field query? boolean  # the module node lists the item DB (see ForeverLoot.Node.query); `children` may be empty
+---@field columns? integer  # layout of the module's own list, as on folder nodes
+---@field groupBy? "auto"|fun(node: ForeverLoot.Node): string?, string?
 ---@field sortChildren? boolean|fun(a: ForeverLoot.Node, b: ForeverLoot.Node): boolean  # true = by node `order`, then name; a function gets the full nodes incl. metadata
 --- Optional metadata, same meaning as on nodes:
 ---@field expansionID? integer
@@ -60,12 +68,22 @@ local log = app.logger
 ---@field meta? table<string, any>
 
 ---@class ForeverLoot.API
+---@field Data ForeverLoot.Data  # item database (src/data/data.lua)
+---@field Filters ForeverLoot.Filters  # filter registry (src/data/filters.lua)
+---@field Query ForeverLoot.QueryAPI  # query runner (src/data/query.lua)
 ---@field RegisterCallback fun(target: table, event: string, method: string|function, ...)
 ---@field UnregisterCallback fun(target: table, event: string)
 ---@field UnregisterAllCallbacks fun(target: table)
 ---@field callbacks CallbackHandlerRegistry
 local api = {}
 api.API_VERSION = 1
+
+-- True for anything the window can open: static, dynamic and query folders.
+---@param node ForeverLoot.Node
+---@return boolean
+function api.IsFolder(node)
+    return node.children ~= nil or node.getChildren ~= nil or node.query == true
+end
 
 -- Chat output with the ForeverLoot prefix, for module authors.
 ---@param fmt string
@@ -249,6 +267,15 @@ function api.DefaultGroupKey(node)
     if node.itemID then
         -- GetItemInfoInstant needs no server round-trip, so grouping is stable on first draw.
         local _, itemType, _, equipLoc, _, classID = C_Item.GetItemInfoInstant(node.itemID)
+        if not classID then
+            -- Server-side item the client hasn't fetched yet: the DB row knows class and slot.
+            local row = app.data and app.data:GetItem(node.itemID)
+            if row then
+                local ITEM = app.data.ITEM
+                classID, equipLoc = row[ITEM.CLASS], row[ITEM.SLOT]
+                itemType = C_Item.GetItemClassInfo(classID)
+            end
+        end
         if classID == ITEM_CLASS_WEAPON then
             return "WEAPON", itemType
         elseif equipLoc and equipLoc ~= "" then
@@ -257,7 +284,7 @@ function api.DefaultGroupKey(node)
         return itemType or "OTHER", itemType or OTHER
     elseif node.spellID then
         return "SPELLS", SPELLS or "Spells"
-    elseif node.children then
+    elseif api.IsFolder(node) then
         return "COLLECTIONS", "Collections"
     elseif node.category then
         return node.category, node.category
@@ -272,6 +299,12 @@ end
 function api.DefaultEntryRank(node)
     if node.itemID then
         local _, _, _, _, _, classID, subclassID = C_Item.GetItemInfoInstant(node.itemID)
+        if not classID then
+            local row = app.data and app.data:GetItem(node.itemID)
+            if row then
+                classID, subclassID = row[app.data.ITEM.CLASS], row[app.data.ITEM.SUBCLASS]
+            end
+        end
         if classID == ITEM_CLASS_ARMOR then
             return ARMOR_RANK[subclassID] or 10
         elseif classID == ITEM_CLASS_WEAPON then
@@ -385,6 +418,9 @@ local function validate(def)
     end
     if def.sortChildren ~= nil and type(def.sortChildren) ~= "boolean" and type(def.sortChildren) ~= "function" then
         return false, "field `sortChildren` must be a boolean or a comparator function"
+    end
+    if def.query ~= nil and type(def.query) ~= "boolean" then
+        return false, "field `query` must be a boolean"
     end
     return true
 end
@@ -513,6 +549,9 @@ function api:GetRootNode()
             icon = def.icon,
             description = def.description,
             children = (resolveChildren(def) and sortedChildren(def)),
+            query = def.query,
+            columns = def.columns,
+            groupBy = def.groupBy,
             moduleID = def.id,
         }
     end

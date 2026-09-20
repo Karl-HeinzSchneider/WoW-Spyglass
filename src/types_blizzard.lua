@@ -65,3 +65,34 @@
 ---@field NextPage fun(self: PagingControlsMixin)
 ---@field PreviousPage fun(self: PagingControlsMixin)
 ---@field OnMouseWheel fun(self: PagingControlsMixin, delta: number)
+
+-- Blizzard_Menu (11.0-style menus): DropdownButton intrinsic + the description proxies the
+-- generator receives. Only the element kinds we build are listed.
+---@class WowStyle1FilterDropdownMixin
+---@field SetupMenu fun(self: WowStyle1FilterDropdownMixin, generator: fun(dropdown: WowStyle1FilterDropdownMixin, rootDescription: RootMenuDescriptionProxy))
+---@field GenerateMenu fun(self: WowStyle1FilterDropdownMixin)
+---@field SetDefaultText fun(self: WowStyle1FilterDropdownMixin, text: string)
+
+-- Element handlers get the element's `data`; returning a MenuResponse value is optional.
+---@alias MenuHandler fun(data: any): integer?
+---@alias MenuIsSelected fun(data: any): boolean
+
+---@class MenuElementDescriptionProxy
+---@field CreateButton fun(self: MenuElementDescriptionProxy, text: string, callback?: MenuHandler, data?: any): MenuElementDescriptionProxy
+---@field CreateCheckbox fun(self: MenuElementDescriptionProxy, text: string, isSelected: MenuIsSelected, setSelected: MenuHandler, data?: any): MenuElementDescriptionProxy
+---@field CreateRadio fun(self: MenuElementDescriptionProxy, text: string, isSelected: MenuIsSelected, setSelected: MenuHandler, data?: any): MenuElementDescriptionProxy
+---@field CreateTitle fun(self: MenuElementDescriptionProxy, text: string, color?: ColorMixin): MenuElementDescriptionProxy
+---@field CreateDivider fun(self: MenuElementDescriptionProxy): MenuElementDescriptionProxy
+---@field SetScrollMode fun(self: MenuElementDescriptionProxy, maxScrollExtent: number)
+---@field SetEnabled fun(self: MenuElementDescriptionProxy, enabled: boolean|fun(): boolean)
+
+---@class RootMenuDescriptionProxy : MenuElementDescriptionProxy
+
+-- Return values for menu element handlers (MenuConstants.lua).
+---@class MenuResponse
+---@field Open integer  # stay open, unchanged
+---@field Refresh integer  # re-initialize every frame in the menu
+---@field Close integer  # close this (sub)menu
+---@field CloseAll integer
+---@type MenuResponse
+MenuResponse = {}

@@ -1,0 +1,23 @@
+{
+  "name": "foreverloot-tools",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Generates ForeverLoot's item database (db/generated) from wago.tools exports and the curated files in .contribute/",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "gen": "tsx src/cli.ts generate",
+    "check": "tsx src/cli.ts check",
+    "fix": "tsx src/cli.ts check --fix",
+    "import": "tsx src/cli.ts import",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "csv-parse": "^7.0.2",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

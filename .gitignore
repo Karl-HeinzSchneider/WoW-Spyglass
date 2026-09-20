@@ -1,2 +1,5 @@
-BlizzardInterfaceCode
-BlizzardInterfaceArt
+lib/
+.contribute/tools/node_modules/
+.contribute/tools/.cache/
+.contribute/inbox/*
+!.contribute/inbox/README.md

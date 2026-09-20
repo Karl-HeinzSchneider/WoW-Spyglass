@@ -1,0 +1,128 @@
+{
+  "33154": {
+    "names": {
+      "enUS": "Sinister Squashling"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 15,
+    "subclassID": 2,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134015,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "34085": {
+    "names": {
+      "enUS": "Red Winter Clothes"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_ROBE",
+    "bind": 2,
+    "icon": 132641,
+    "sellPrice": 1,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "34086": {
+    "names": {
+      "enUS": "Winter Boots"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_FEET",
+    "bind": 2,
+    "icon": 132557,
+    "sellPrice": 1,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "34087": {
+    "names": {
+      "enUS": "Green Winter Clothes"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_ROBE",
+    "bind": 2,
+    "icon": 132640,
+    "sellPrice": 1,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "34261": {
+    "names": {
+      "enUS": "Pattern: Green Winter Clothes"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 2,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134942,
+    "sellPrice": 1250,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "34262": {
+    "names": {
+      "enUS": "Pattern: Winter Boots"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 1250,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "34319": {
+    "names": {
+      "enUS": "Pattern: Red Winter Clothes"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 2,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134942,
+    "sellPrice": 1250,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  }
+}
