@@ -73,17 +73,27 @@ extension report errors. Schema validation instead comes from `xml.fileAssociati
 (so it only works when the optional `BlizzardInterfaceCode/` symlink exists). To validate from
 the command line: `python -c "from lxml import etree; ..."` against that XSD, as in this session.
 
-## Optional: Blizzard's own UI source for reference
+## Optional: Blizzard's own UI source and art for reference
 
-A developer may place Blizzard's interface code at `BlizzardInterfaceCode/` in the repo root,
-typically as a symlink to the folder the game client exports (`/run ExportInterfaceFiles("code")`
-in-game writes it next to the WoW install). It is gitignored and excluded from LuaLS/StyLua.
+A developer may place Blizzard's exported interface files in the repo root, typically as
+symlinks to the folders the game client writes next to the WoW install:
 
-If the folder exists, Claude should **read it, never edit it**, to look up how Blizzard's
-FrameXML/AddOns implement things: the exact signatures and return values of API functions,
-event payloads, frame templates, and global strings. Prefer it over guessing from memory,
-since the Classic client's API differs from retail. Never list anything from it in the TOC
-or copy files out of it into `src/`.
+- `BlizzardInterfaceCode/` — from `/run ExportInterfaceFiles("code")`. Lua/XML for all of
+  Blizzard's FrameXML/AddOns.
+- `BlizzardInterfaceArt/` — from `/run ExportInterfaceFiles("art")`. Every texture as `.blp`
+  under `BlizzardInterfaceArt/Interface/...` (e.g. `Interface/Icons/INV_Misc_Bag_10.blp`).
+
+Both are gitignored and excluded from LuaLS/StyLua. If they exist, Claude should **read them,
+never edit them**:
+
+- Code: look up exact API signatures/return values, event payloads, frame templates and global
+  strings. Prefer it over guessing from memory, since the Classic client's API differs from retail.
+- Art: verify that a texture path used in code exists (paths are case-insensitive in-game, so
+  match case-insensitively), and browse for suitable icons/textures by name. `.blp` files can't
+  be viewed directly; the file list is what matters. Atlas names (`atlas="..."`) are *not* in
+  this export — they're looked up from XML usages in `BlizzardInterfaceCode` instead.
+
+Never list anything from these folders in the TOC or copy files out of them into `src/`.
 
 ## WoW addon constraints to keep in mind
 

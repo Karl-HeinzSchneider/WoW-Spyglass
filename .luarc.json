@@ -3,7 +3,8 @@
   "workspace.checkThirdParty": false,
   "workspace.ignoreDir": [
     "lib",
-    "BlizzardInterfaceCode"
+    "BlizzardInterfaceCode",
+    "BlizzardInterfaceArt"
   ],
   "diagnostics.globals": [
     "ForeverLootDB",
