@@ -67,10 +67,108 @@ local function levelRangeName(node)
     return ("%s (%s)"):format(name, low or high)
 end
 
+-- Red for the slot / armor type of gear the character can't equip: the engine's color when
+-- it defines one, otherwise the tooltip's red.
+local INVALID_COLOR = INVALID_EQUIPMENT_COLOR or RED_FONT_COLOR or CreateColor(1, 0.13, 0.13)
+
+-- The game colors the "Shoulder ... Plate" line of an item tooltip red when the character's
+-- class can't use that slot / armor or weapon type. Reading that line back is exact for this
+-- client (proficiencies here need not match Classic's) and needs no table of classes, but
+-- filling a tooltip per row is too slow for long lists. The answer only depends on the item's
+-- kind (class, subclass, slot) and the character's proficiencies, so it is scanned once per
+-- kind and cached until a skill changes (new armor class at 40, a weapon skill trained).
+---@type GameTooltip?
+local scanTooltip
+
+---@type table<string, boolean> kind -> slotInvalid
+local slotInvalidByKind = {}
+---@type table<string, boolean> kind -> typeInvalid
+local typeInvalidByKind = {}
+
+local function isRed(fontString)
+    local r, g, b = fontString:GetTextColor()
+    return r > 0.9 and g < 0.3 and b < 0.3
+end
+
+-- Scans one (cached) item's tooltip for the slot line.
+---@param itemID integer
+---@param slotText string  # the localized slot name that identifies the line
+---@return boolean slotInvalid, boolean typeInvalid
+local function scanEquipErrors(itemID, slotText)
+    if not scanTooltip then
+        scanTooltip = CreateFrame("GameTooltip", "ForeverLootScanTooltip", UIParent, "GameTooltipTemplate") --[[@as GameTooltip]]
+    end
+    scanTooltip:SetOwner(UIParent, "ANCHOR_NONE")
+    scanTooltip:SetItemByID(itemID)
+    local slotInvalid, typeInvalid = false, false
+    for i = 2, scanTooltip:NumLines() do
+        local left = _G["ForeverLootScanTooltipTextLeft" .. i]
+        if left and left:GetText() == slotText then
+            local right = _G["ForeverLootScanTooltipTextRight" .. i]
+            slotInvalid, typeInvalid = isRed(left), right ~= nil and isRed(right)
+            break
+        end
+    end
+    scanTooltip:Hide()
+    return slotInvalid, typeInvalid
+end
+
+-- Whether the character can equip items of this kind; `itemID` is a cached item of that kind,
+-- used for the first (and only) scan.
+---@param itemID integer
+---@param classID integer
+---@param subclassID integer
+---@param equipSlot string
+---@param slotText string
+---@return boolean slotInvalid, boolean typeInvalid
+local function equipErrors(itemID, classID, subclassID, equipSlot, slotText)
+    local kind = classID .. ":" .. subclassID .. ":" .. equipSlot
+    local slotInvalid = slotInvalidByKind[kind]
+    if slotInvalid == nil then
+        slotInvalid, typeInvalidByKind[kind] = scanEquipErrors(itemID, slotText)
+        slotInvalidByKind[kind] = slotInvalid
+    end
+    return slotInvalid, typeInvalidByKind[kind]
+end
+
+-- Proficiencies changed: forget the answers and redraw what is open.
+local skillWatcher = CreateFrame("Frame")
+skillWatcher:RegisterEvent("SKILL_LINES_CHANGED")
+skillWatcher:SetScript("OnEvent", function()
+    wipe(slotInvalidByKind)
+    wipe(typeInvalidByKind)
+    local window = app.ui.mainWindow
+    if window and window:IsShown() then
+        window:RefreshViews()
+    end
+end)
+
+-- What the bottom line says for an item: gear shows its slot and armor/weapon type
+-- ("Shoulder" ... "Plate"); the armor class "Miscellaneous" (rings, necks, trinkets) says
+-- nothing useful and is left blank. Anything else shows its item class and, when it adds
+-- something, subclass ("Consumable" ... "Potion").
+---@param classID integer
+---@param subclassID integer
+---@param equipSlot string  # "INVTYPE_*", "" when not equippable
+---@return string slot, string type
+local function itemKindTexts(classID, subclassID, equipSlot)
+    local subclass = C_Item.GetItemSubClassInfo(classID, subclassID) or ""
+    if equipSlot ~= "" then
+        local slot = _G[equipSlot] or equipSlot
+        local isMiscArmor = classID == Enum.ItemClass.Armor and subclassID == Enum.ItemArmorSubclass.Generic
+        return slot, isMiscArmor and "" or subclass
+    end
+    local class = C_Item.GetItemClassInfo(classID) or ""
+    return class, subclass ~= class and subclass or ""
+end
+
 ---@class ForeverLoot.ListRow : Button
+---@field Backplate Texture
 ---@field Icon Texture
 ---@field Name FontString
+---@field Chance FontString
 ---@field Sub FontString
+---@field Type FontString
 ---@field Arrow Texture
 ---@field node ForeverLoot.Node
 ---@field view ForeverLoot.View
@@ -78,28 +176,46 @@ end
 ForeverLootListRowMixin = {}
 app.ui.ListRowMixin = ForeverLootListRowMixin
 
----@param name string
----@param icon string|number|nil
----@param sub string?
----@param quality Enum.ItemQuality?
-function ForeverLootListRowMixin:SetDisplay(name, icon, sub, quality)
-    self.Icon:SetTexture(icon or FALLBACK_ICON)
-    self.Name:SetText(name)
-    self.Sub:SetText(sub or "")
-    self.Sub:SetShown(sub ~= nil and sub ~= "")
+-- What a row shows; the bottom line and the chance are optional.
+---@class ForeverLoot.RowDisplay
+---@field name string
+---@field icon? string|number
+---@field quality? Enum.ItemQuality
+---@field sub? string  # bottom left: slot, item class or description
+---@field type? string  # bottom right: armor / weapon type
+---@field subInvalid? boolean  # draw `sub` red (can't equip)
+---@field typeInvalid? boolean  # draw `type` red
+---@field chance? number  # 0..1, top right
 
-    -- With a second line the name sits in the upper half, otherwise it is vertically centered.
+---@param d ForeverLoot.RowDisplay
+function ForeverLootListRowMixin:SetDisplay(d)
+    self.Icon:SetTexture(d.icon or FALLBACK_ICON)
+    self.Name:SetText(d.name)
+    -- Items in their quality color, everything else white; both read on the dark pane.
+    local color = d.quality and ITEM_QUALITY_COLORS[d.quality] or HIGHLIGHT_FONT_COLOR
+    self.Name:SetTextColor(color.r, color.g, color.b)
+
+    local hasSub = (d.sub ~= nil and d.sub ~= "") or (d.type ~= nil and d.type ~= "")
+    self.Sub:SetText(d.sub or "")
+    self.Sub:SetShown(hasSub)
+    self.Type:SetText(d.type or "")
+    self.Type:SetShown(hasSub)
+    local subColor = d.subInvalid and INVALID_COLOR or HIGHLIGHT_FONT_COLOR
+    self.Sub:SetTextColor(subColor.r, subColor.g, subColor.b)
+    local typeColor = d.typeInvalid and INVALID_COLOR or HIGHLIGHT_FONT_COLOR
+    self.Type:SetTextColor(typeColor.r, typeColor.g, typeColor.b)
+
+    self.Chance:SetText(d.chance and formatChance(d.chance) or "")
+    self.Chance:SetShown(d.chance ~= nil)
+
+    -- With a bottom line the name sits in the upper half, otherwise it is vertically centered.
     self.Name:ClearAllPoints()
-    if sub and sub ~= "" then
+    if hasSub then
         self.Name:SetPoint("TOPLEFT", self.Icon, "TOPRIGHT", 8, -2)
     else
         self.Name:SetPoint("LEFT", self.Icon, "RIGHT", 8, 0)
     end
-    self.Name:SetPoint("RIGHT", self.Arrow, "LEFT", -4, 0)
-
-    -- Items in their quality color, everything else white; both read on the dark pane.
-    local color = quality and ITEM_QUALITY_COLORS[quality] or HIGHLIGHT_FONT_COLOR
-    self.Name:SetTextColor(color.r, color.g, color.b)
+    self.Name:SetPoint("RIGHT", self.Chance, "LEFT", -4, 0)
 end
 
 ---@param view ForeverLoot.View
@@ -116,46 +232,63 @@ function ForeverLootListRowMixin:Init(view, node)
         local info = C_Spell.GetSpellInfo(node.spellID)
         if info then
             self.link = C_Spell.GetSpellLink(node.spellID)
-            self:SetDisplay(info.name, info.iconID, node.description, nil)
+            self:SetDisplay({ name = info.name, icon = info.iconID, sub = node.description })
         else
-            self:SetDisplay("Spell #" .. node.spellID, nil, nil, nil)
+            self:SetDisplay({ name = "Spell #" .. node.spellID })
         end
     else
-        self:SetDisplay(levelRangeName(node), node.icon, node.description, node.quality)
+        self:SetDisplay({
+            name = levelRangeName(node),
+            icon = node.icon,
+            sub = node.description,
+            quality = node.quality,
+        })
     end
 end
 
--- Items: the shipped DB answers immediately (name, quality, item level); the client's item
--- cache, when it has the item, wins because it is exact and provides the link. Uncached items
--- are requested so the link/tooltip arrive; GET_ITEM_INFO_RECEIVED re-renders the page.
--- Server-side items are unknown to GetItemInfoInstant until fetched, so their icon comes
--- from the row.
+-- Items: the shipped DB answers immediately (name, quality, class, slot); the client's item
+-- cache, when it has the item, wins because it is exact, provides the link and lets the
+-- tooltip say whether the character can equip it. Uncached items are requested so that
+-- arrives; GET_ITEM_INFO_RECEIVED re-renders the page. Server-side items are unknown to
+-- GetItemInfoInstant until fetched, so their icon comes from the row.
 ---@param view ForeverLoot.View
 ---@param node ForeverLoot.Node
 function ForeverLootListRowMixin:InitItem(view, node)
     local itemID = node.itemID --[[@as integer]]
-    local name, link, quality, itemLevel, _, _, _, _, _, icon = C_Item.GetItemInfo(itemID)
-    if name then
+    local name, link, quality, _, _, _, _, _, equipSlot, icon, _, classID, subclassID = C_Item.GetItemInfo(itemID)
+    local cached = name ~= nil
+    if cached then
         self.link = link
     else
         view:RequestItem(itemID)
         local row = Data:GetItem(itemID)
         if row then
             name = Data:GetItemName(itemID)
-            quality, itemLevel = row[ITEM.QUALITY], row[ITEM.ILVL]
+            quality, classID, subclassID, equipSlot = row[ITEM.QUALITY], row[ITEM.CLASS], row[ITEM.SUBCLASS], row[ITEM.SLOT]
         end
         icon = select(5, C_Item.GetItemInfoInstant(itemID)) or (row and row[ITEM.ICON])
     end
 
     if not name then
-        self:SetDisplay("Item #" .. itemID, icon, RETRIEVING_ITEM_INFO or "Loading...", nil)
+        self:SetDisplay({ name = "Item #" .. itemID, icon = icon, sub = RETRIEVING_ITEM_INFO or "Loading...", chance = node.chance })
         return
     end
-    local sub = itemLevel and (ITEM_LEVEL or "Item Level %d"):format(itemLevel) or nil
-    if node.chance then
-        sub = (sub and sub .. "  -  " or "") .. formatChance(node.chance)
+
+    local slot, kind = itemKindTexts(classID, subclassID, equipSlot or "")
+    local slotInvalid, typeInvalid = false, false
+    if cached and equipSlot ~= "" then
+        slotInvalid, typeInvalid = equipErrors(itemID, classID, subclassID, equipSlot, slot)
     end
-    self:SetDisplay(name, icon, sub, quality)
+    self:SetDisplay({
+        name = name,
+        icon = icon,
+        quality = quality,
+        sub = slot,
+        type = kind,
+        subInvalid = slotInvalid,
+        typeInvalid = typeInvalid,
+        chance = node.chance,
+    })
 end
 
 ---@param button string

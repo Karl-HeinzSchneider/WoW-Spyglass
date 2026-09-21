@@ -1,10 +1,20 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
 
-	<!-- One row in the list: [icon] Name ............ [>] (arrow only for folders).
-	     Text colors are set in Lua (white / item quality on the dark pane). -->
+	<!-- One row in the list:  [icon] Name ............... chance
+	                          Slot ........... Armor type [>]   (arrow only for folders).
+	     The bottom line and the chance are optional; text colors are set in Lua. -->
 	<Button name="ForeverLootListRowTemplate" mixin="ForeverLootListRowMixin" registerForClicks="LeftButtonUp, RightButtonUp" virtual="true">
 		<Size x="200" y="40"/>
 		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="Backplate">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="0" y="-1"/>
+						<Anchor point="BOTTOMRIGHT" x="0" y="1"/>
+					</Anchors>
+					<Color r="0" g="0" b="0" a="0.3"/>
+				</Texture>
+			</Layer>
 			<Layer level="ARTWORK">
 				<Texture parentKey="Icon">
 					<Size x="32" y="32"/>
@@ -18,17 +28,31 @@
 						<Anchor point="RIGHT" x="-10" y="0"/>
 					</Anchors>
 				</Texture>
-				<FontString parentKey="Name" inherits="GameFontHighlightMedium" justifyH="LEFT" wordwrap="false">
+				<!-- Top line: name (in quality color), drop chance right-aligned on the same line. -->
+				<FontString parentKey="Chance" inherits="GameFontNormalSmall" justifyH="RIGHT" hidden="true">
 					<Anchors>
-						<Anchor point="LEFT" relativeKey="$parent.Icon" relativePoint="RIGHT" x="8" y="0"/>
+						<Anchor point="TOP" relativeKey="$parent.Icon" relativePoint="TOP" x="0" y="-2"/>
 						<Anchor point="RIGHT" relativeKey="$parent.Arrow" relativePoint="LEFT" x="-4" y="0"/>
 					</Anchors>
 				</FontString>
-				<!-- Optional second line (description / item level); when shown, Name moves up. -->
-				<FontString parentKey="Sub" inherits="GameFontNormalSmall" justifyH="LEFT" wordwrap="false" hidden="true">
+				<FontString parentKey="Name" inherits="GameFontHighlightMedium" justifyH="LEFT" wordwrap="false">
+					<Anchors>
+						<Anchor point="LEFT" relativeKey="$parent.Icon" relativePoint="RIGHT" x="8" y="0"/>
+						<Anchor point="RIGHT" relativeKey="$parent.Chance" relativePoint="LEFT" x="-4" y="0"/>
+					</Anchors>
+				</FontString>
+				<!-- Bottom line (when shown, Name moves up): slot / description left, armor or
+				     weapon type right. Both red when the character can't equip the item. -->
+				<FontString parentKey="Type" inherits="GameFontHighlightSmall" justifyH="RIGHT" hidden="true">
+					<Anchors>
+						<Anchor point="BOTTOM" relativeKey="$parent.Icon" relativePoint="BOTTOM" x="0" y="3"/>
+						<Anchor point="RIGHT" relativeKey="$parent.Arrow" relativePoint="LEFT" x="-4" y="0"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Sub" inherits="GameFontHighlightSmall" justifyH="LEFT" wordwrap="false" hidden="true">
 					<Anchors>
 						<Anchor point="BOTTOMLEFT" relativeKey="$parent.Icon" relativePoint="BOTTOMRIGHT" x="8" y="3"/>
-						<Anchor point="RIGHT" relativeKey="$parent.Arrow" relativePoint="LEFT" x="-4" y="0"/>
+						<Anchor point="RIGHT" relativeKey="$parent.Type" relativePoint="LEFT" x="-8" y="0"/>
 					</Anchors>
 				</FontString>
 			</Layer>

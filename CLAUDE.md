@@ -118,8 +118,11 @@ validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-la
     `profile.window`. `/fl` and the minimap button toggle it.
   - `view.lua` + `templates.xml` — a view fills the left column: header row (back button +
     breadcrumbs left, search box + filter dropdown right) over a divider, then one `Content` page
-    of rows with Blizzard `PagingControls` bottom-right. Rows/headers are white or item-quality
-    colored on the dark pane; section headers use the `UI-Character-Info-Title` plate. Navigation
+    of rows with Blizzard `PagingControls` bottom-right. A row is icon, name in quality color,
+    drop chance top-right, slot bottom-left and armor/weapon type bottom-right (`itemKindTexts`),
+    both red when the character can't equip the item — read from the item tooltip's slot line via
+    the hidden `ForeverLootScanTooltip` (`scanEquipErrors`), which is exact for this client's
+    proficiencies. Section headers use the `UI-Character-Info-Title` plate. Navigation
     is a `path` stack over `ForeverLoot.Node` trees (`Push`/`PopTo`/`Back` → `Refresh`).
     `Refresh()` rebuilds elements + page layout (navigation, query/size changes); `Render()` only
     redraws the current page (page flips, item info arriving).
