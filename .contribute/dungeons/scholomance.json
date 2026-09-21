@@ -14,6 +14,7 @@
     {
       "id": 2805,
       "name": "Kirtonos",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Kirtonos the Herald",
       "loot": [
         {
           "item": 16734,
@@ -24,6 +25,7 @@
     {
       "id": 2804,
       "name": "Jandice Barov",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Jandice Barov",
       "loot": [
         {
           "item": 16701,
@@ -34,6 +36,7 @@
     {
       "id": 2811,
       "name": "Rattlegore",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Rattlegore",
       "loot": [
         {
           "item": 16711,
@@ -44,21 +47,25 @@
     {
       "id": 2809,
       "name": "Marduk Blackpool",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Marduk Blackpool",
       "loot": []
     },
     {
       "id": 2813,
       "name": "Vectus",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Vectus",
       "loot": []
     },
     {
       "id": 3055,
       "name": "Kormok",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Kormok",
       "loot": []
     },
     {
       "id": 2810,
       "name": "Ras Frostwhisperer",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Ras Frostwhisper",
       "loot": [
         {
           "item": 16689,
@@ -69,36 +76,43 @@
     {
       "id": 2803,
       "name": "Instructor Malicia",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Instructor Malicia",
       "loot": []
     },
     {
       "id": 2802,
       "name": "Doctor Theolen Krastinov",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Doctor Theolen Krastinov",
       "loot": []
     },
     {
       "id": 2808,
       "name": "Lorekeeper Polkelt",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lorekeeper Polkelt",
       "loot": []
     },
     {
       "id": 2812,
       "name": "The Ravenian",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-The Ravenian",
       "loot": []
     },
     {
       "id": 2807,
       "name": "Lord Alexei Barov",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Alexei Barov",
       "loot": []
     },
     {
       "id": 2806,
       "name": "Lady Illucia Barov",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lady Illucia Barov",
       "loot": []
     },
     {
       "id": 2801,
       "name": "Darkmaster Gandling",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Darkmaster Gandling",
       "loot": [
         {
           "item": 16667,

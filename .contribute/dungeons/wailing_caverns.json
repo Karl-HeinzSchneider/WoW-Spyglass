@@ -14,6 +14,7 @@
     {
       "id": 585,
       "name": "Lady Anacondra",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lady Anacondra",
       "loot": [
         {
           "item": 5404,
@@ -32,6 +33,7 @@
     {
       "id": 586,
       "name": "Lord Cobrahn",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Cobrahn",
       "loot": [
         {
           "item": 6460,
@@ -50,6 +52,7 @@
     {
       "id": 587,
       "name": "Kresh",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Kresh",
       "loot": [
         {
           "item": 13245,
@@ -68,6 +71,7 @@
     {
       "id": 588,
       "name": "Lord Pythas",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Pythas",
       "loot": [
         {
           "item": 6472,
@@ -86,6 +90,7 @@
     {
       "id": 589,
       "name": "Skum",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Skum",
       "loot": [
         {
           "item": 6449,
@@ -104,6 +109,7 @@
     {
       "id": 590,
       "name": "Lord Serpentis",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Serpentis",
       "loot": [
         {
           "item": 6469,
@@ -126,6 +132,7 @@
     {
       "id": 591,
       "name": "Verdan the Everliving",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Verdan the Everliving",
       "loot": [
         {
           "item": 6630,
@@ -144,6 +151,7 @@
     {
       "id": 592,
       "name": "Mutanus the Devourer",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Mutanus the Devourer",
       "loot": [
         {
           "item": 6461,

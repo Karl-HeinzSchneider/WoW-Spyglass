@@ -14,11 +14,13 @@
     {
       "id": 2732,
       "name": "Oggleflint",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Oggleflint",
       "loot": []
     },
     {
       "id": 2733,
       "name": "Taragaman the Hungerer",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Taragaman the Hungerer",
       "loot": [
         {
           "item": 14145,
@@ -37,6 +39,7 @@
     {
       "id": 2734,
       "name": "Jergosh the Invoker",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Jergosh the Invoker",
       "loot": [
         {
           "item": 14147,
@@ -55,6 +58,7 @@
     {
       "id": 2735,
       "name": "Bazzalan",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Bazzalan",
       "loot": [
         {
           "item": 273003,

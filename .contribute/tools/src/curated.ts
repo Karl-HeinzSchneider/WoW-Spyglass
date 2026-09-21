@@ -27,6 +27,13 @@ export interface CuratedEncounter {
   /** DungeonEncounter.ID */
   id: number;
   name?: string;
+  /** Picture of the boss for its card in the browser (texture path or fileID). */
+  portrait?: string | number;
+  /** Boss level and creature type ("Beast", "Undead", ...) as the game shows them; the card says "60 Beast". */
+  level?: number;
+  creatureType?: string;
+  /** Quest ids the boss is involved in (objective or starts one); the card gets a "!" and the tooltip lists them. */
+  quests?: number[];
   loot: CuratedLoot[];
 }
 
@@ -220,6 +227,10 @@ export function serialize(d: CuratedInstance): string {
     encounters: d.encounters.map((e) => ({
       id: e.id,
       name: e.name,
+      portrait: e.portrait,
+      level: e.level,
+      creatureType: e.creatureType,
+      quests: e.quests,
       loot: e.loot.map((r) => ({ item: r.item, name: r.name, chance: r.chance })),
     })),
   };

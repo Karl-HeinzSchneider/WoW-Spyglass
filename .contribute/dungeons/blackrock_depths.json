@@ -14,16 +14,19 @@
     {
       "id": 227,
       "name": "High Interrogator Gerstahn",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-High Interrogator Gerstahn",
       "loot": []
     },
     {
       "id": 228,
       "name": "Lord Roccor",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Roccor",
       "loot": []
     },
     {
       "id": 229,
       "name": "Houndmaster Grebmar",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Houndmaster Grebmar",
       "loot": []
     },
     {
@@ -34,56 +37,67 @@
     {
       "id": 231,
       "name": "Pyromancer Loregrain",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Pyromancer Loregrain",
       "loot": []
     },
     {
       "id": 232,
       "name": "Lord Incendius",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Incendius",
       "loot": []
     },
     {
       "id": 233,
       "name": "Warder Stilgiss",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Warder Stilgiss",
       "loot": []
     },
     {
       "id": 234,
       "name": "Fineous Darkvire",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Fineous Darkvire",
       "loot": []
     },
     {
       "id": 235,
       "name": "Bael'Gar",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-BaelGar",
       "loot": []
     },
     {
       "id": 236,
       "name": "General Angerforge",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-General Angerforge",
       "loot": []
     },
     {
       "id": 237,
       "name": "Golem Lord Argelmach",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Golem Lord Argelmach",
       "loot": []
     },
     {
       "id": 238,
       "name": "Hurley Blackbreath",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Hurley Blackbreath",
       "loot": []
     },
     {
       "id": 239,
       "name": "Phalanx",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Phalanx",
       "loot": []
     },
     {
       "id": 240,
       "name": "Ribbly Screwspigot",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Ribbly Screwspigot",
       "loot": []
     },
     {
       "id": 241,
       "name": "Plugger Spazzring",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Plugger Spazzring",
       "loot": []
     },
     {
@@ -94,6 +108,7 @@
     {
       "id": 242,
       "name": "Ambassador Flamelash",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Ambassador Flamelash",
       "loot": []
     },
     {
@@ -104,16 +119,19 @@
     {
       "id": 244,
       "name": "Magmus",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Magmus",
       "loot": []
     },
     {
       "id": 2789,
       "name": "Princess Moira Bronzebeard",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Princess Moira Bronzebeard",
       "loot": []
     },
     {
       "id": 2790,
       "name": "Emperor Dagran Thaurissan",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Emperor Thaurissan",
       "loot": []
     }
   ]

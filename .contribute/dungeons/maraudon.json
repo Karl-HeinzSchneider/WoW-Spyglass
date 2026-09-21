@@ -14,41 +14,49 @@
     {
       "id": 422,
       "name": "Noxxion",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Noxxion",
       "loot": []
     },
     {
       "id": 423,
       "name": "Razorlash",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Razorlash",
       "loot": []
     },
     {
       "id": 427,
       "name": "Tinkerer Gizlock",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Tinkerer Gizlock",
       "loot": []
     },
     {
       "id": 424,
       "name": "Lord Vyletongue",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Vyletongue",
       "loot": []
     },
     {
       "id": 425,
       "name": "Celebras the Cursed",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Celebras the Cursed",
       "loot": []
     },
     {
       "id": 426,
       "name": "Landslide",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Landslide",
       "loot": []
     },
     {
       "id": 428,
       "name": "Rotgrip",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Rotgrip",
       "loot": []
     },
     {
       "id": 429,
       "name": "Princess Theradras",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Princess Theradras",
       "loot": []
     }
   ]

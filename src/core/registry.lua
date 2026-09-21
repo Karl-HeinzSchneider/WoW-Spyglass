@@ -35,13 +35,15 @@ local log = app.logger
 ---@field onClick? fun(node: ForeverLoot.Node, button: string)  # custom entries
 ---@field moduleID? string  # set on the root's module nodes
 ---@field columns? integer  # folders: columns for this list; default 1 for rows, 3 for tiles
----@field display? "rows"|"tiles"  # folders: how the entries are drawn; default "rows"
+---@field display? "rows"|"tiles"|"cards"  # folders: how the entries are drawn; default "rows"
 ---@field groupBy? "auto"|fun(node: ForeverLoot.Node): string?, string?  # folders: auto-group ungrouped entries; see api.DefaultGroupKey
---- Tile fields, read when the parent folder has `display = "tiles"`:
----@field background? string|number  # wide picture filling the tile (texture path or fileID)
----@field backgroundCoords? number[]  # { left, right, top, bottom } part of `background` to show; whole texture by default
+--- Tile / card fields, read when the parent folder has `display = "tiles"` or `"cards"`:
+---@field background? string|number  # tiles: wide picture filling the tile (texture path or fileID)
+---@field backgroundCoords? number[]  # tiles: { left, right, top, bottom } part of `background` to show; whole texture by default
+---@field portrait? string|number  # cards: picture of the entry (e.g. a boss) on the left of the card; `icon` when unset
 ---@field info? string  # small text bottom-left; the level range when unset and `minLevel`/`maxLevel` are
 ---@field infoRight? string  # small text bottom-right
+---@field quests? integer[]  # cards: quest ids the entry is involved in; shows a "!" and lists their titles in the tooltip
 ---@field order? number  # sort key when the owning module sorts its children
 ---@field header? string  # section header marker; see ForeverLoot.Header
 --- Optional metadata, free for modules and custom sort functions to use:
@@ -65,7 +67,7 @@ local log = app.logger
 ---@field getChildren? fun(def: ForeverLoot.ModuleDef): ForeverLoot.Node[]  # lazy alternative to `children`, called once
 ---@field query? boolean  # the module node lists the item DB (see ForeverLoot.Node.query); `children` may be empty
 ---@field columns? integer  # layout of the module's own list, as on folder nodes
----@field display? "rows"|"tiles"
+---@field display? "rows"|"tiles"|"cards"
 ---@field groupBy? "auto"|fun(node: ForeverLoot.Node): string?, string?
 ---@field sortChildren? boolean|fun(a: ForeverLoot.Node, b: ForeverLoot.Node): boolean  # true = by node `order`, then name; a function gets the full nodes incl. metadata
 --- Optional metadata, same meaning as on nodes:
@@ -112,13 +114,15 @@ ForeverLoot = api
 
 -- Anything in here is copied onto the folder node: layout options and metadata alike.
 ---@class ForeverLoot.FolderOptions
----@field columns? integer  # columns per page: 1 (default) or 2 for rows, up to 4 (default 3) for tiles
----@field display? "rows"|"tiles"  # draw the entries as rows (default) or as picture tiles
+---@field columns? integer  # columns per page: 1 (default) or 2 for rows and cards, up to 4 (default 3) for tiles
+---@field display? "rows"|"tiles"|"cards"  # draw the entries as rows (default), picture tiles or portrait cards
 ---@field description? string
 ---@field background? string|number  # when this folder is itself listed as a tile
 ---@field backgroundCoords? number[]
+---@field portrait? string|number  # when this folder is itself listed as a card
 ---@field info? string
 ---@field infoRight? string
+---@field quests? integer[]
 ---@field groupBy? "auto"|fun(node: ForeverLoot.Node): string?, string?  # cluster entries under group labels
 ---@field order? number
 ---@field expansionID? integer
@@ -434,8 +438,8 @@ local function validate(def)
     if def.query ~= nil and type(def.query) ~= "boolean" then
         return false, "field `query` must be a boolean"
     end
-    if def.display ~= nil and def.display ~= "rows" and def.display ~= "tiles" then
-        return false, "field `display` must be \"rows\" or \"tiles\""
+    if def.display ~= nil and def.display ~= "rows" and def.display ~= "tiles" and def.display ~= "cards" then
+        return false, "field `display` must be \"rows\", \"tiles\" or \"cards\""
     end
     return true
 end

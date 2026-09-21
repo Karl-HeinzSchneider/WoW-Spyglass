@@ -50,6 +50,7 @@
     {
       "id": 2750,
       "name": "Baron Silverlaine",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Baron Silverlaine",
       "loot": [
         {
           "item": 6321,
@@ -68,6 +69,7 @@
     {
       "id": 2751,
       "name": "Commander Springvale",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Commander Springvale",
       "loot": [
         {
           "item": 3191,

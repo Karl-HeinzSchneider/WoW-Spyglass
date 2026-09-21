@@ -61,7 +61,7 @@ if the definition is invalid; it never throws.
 | `getChildren` | fun(def) -> Node[] | one of | Lazy alternative; called once, the first time the tree is built. Errors are caught and logged. |
 | `sortChildren` | boolean \| fun(a, b) | no | `true` sorts children by node `order` (default 100), then `name`; a function is used as the comparator and receives the full nodes (metadata included). Applies to `AddToModule` entries too. |
 | `query` | boolean | no | The module's own list is the item database, filtered by the view's search box and filter menu (see [Item database](#item-database)). `children` may be `{}`. |
-| `columns`, `display`, `groupBy` | | no | Layout of the module's own list, as on folder nodes (see [Tiles](#tiles)). |
+| `columns`, `display`, `groupBy` | | no | Layout of the module's own list, as on folder nodes (see [Tiles](#tiles) and [Cards](#cards)). |
 | `expansionID`, `seasonID`, `tags`, `meta` | various | no | Metadata; see below. |
 
 ## Nodes
@@ -106,6 +106,22 @@ The entry's `name` is the card's title (in `quality` color when set); clicking, 
 right-click-to-go-back work as for rows. Headers and groups inside the folder are drawn as
 usual. The built-in Raids/Dungeons modules are tile folders; `InstanceFolder` nodes carry the
 instance's picture from the database.
+
+### Cards
+
+A folder with `display = "cards"` draws its entries as portrait cards: a bevelled card with a
+picture standing on its left, the name and the two info texts beside it, two cards per line
+(`columns` = 1..2). Entries use `info` / `infoRight` as for tiles plus:
+
+| Field | Type | Notes |
+|---|---|---|
+| `portrait` | string \| number | Picture on the left of the card (path or fileID), best a bust on transparency at 2:1. Without it the entry's `icon` is shown there. |
+| `quests` | integer[] | Quest ids the entry is involved in: the card shows a quest "!" and the tooltip lists the quests' titles. |
+
+`InstanceFolder` nodes are card folders: each `BossFolder(bossID)` carries what the database
+knows about the boss — portrait, `info` as "<level> <creature type>" (e.g. "60 Beast"), `quests`,
+and `infoRight` reserved for its *drops of interest* (hidden until the planned favorites
+system decides what counts).
 
 ```lua
 ForeverLoot:RegisterModule({

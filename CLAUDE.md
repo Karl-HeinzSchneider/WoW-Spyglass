@@ -77,7 +77,7 @@ validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-la
   (`locales/<locale>/`, non-enUS files return early unless `GetLocale()` matches). Excluded from
   LuaLS and StyLua. Boss ids are `DungeonEncounter` ids, instance ids are `Map` ids.
 - `.contribute/` — everything people edit and send as pull requests: `dungeons/*.json` and
-  `raids/*.json` (one instance each: map id, level range, icon, tile picture, drops with chance; names are
+  `raids/*.json` (one instance each: map id, level range, icon, tile picture, boss portraits, drops with chance; names are
   informational and rewritten by `npm run fix`; a row with only a `name` gets its id filled in
   when unambiguous), `items/items_<n>.json` (the scanned item dump: `ScannedItem` in
   `tools/src/items.ts`, names per locale; written by `npm run import`, not by hand) and `tools/`
@@ -125,6 +125,11 @@ validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-la
     proficiencies. A folder with `display = "tiles"` (raids, dungeons) draws its entries as
     `ForeverLootTileTemplate` cards instead: `background`/`backgroundCoords` picture, name on
     top, `info` (level range by default) and `infoRight` in the bottom corners, three per line.
+    `display = "cards"` (an instance's boss list) draws `ForeverLootCardTemplate`: the same
+    bevelled list-button atlas with the entry's `portrait` (a bust on transparency) standing on
+    the left, name and info texts beside it (boss level/type, drops of interest, a quest "!"
+    for `quests`), two per line. Pictures, level/type and quests are curated data
+    (`.contribute` JSON → `instances.lua` → `InstanceFolder`/`BossFolder`).
     Section headers use the `UI-Character-Info-Title` plate. Navigation
     is a `path` stack over `ForeverLoot.Node` trees (`Push`/`PopTo`/`Back` → `Refresh`).
     `Refresh()` rebuilds elements + page layout (navigation, query/size changes); `Render()` only

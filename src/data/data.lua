@@ -54,6 +54,10 @@ local ITEM = {
 ---@field npcID? integer  # optional; not in the generated data
 ---@field instanceID integer
 ---@field order? integer  # position inside the instance
+---@field portrait? string|number  # picture of the boss for its card in the browser
+---@field level? integer
+---@field creatureType? string  # "Beast", "Undead", ... as the game shows it
+---@field quests? integer[]  # quest ids the boss is involved in
 
 ---@alias ForeverLoot.LootRow { [1]: integer, [2]: number? }  # itemID, drop chance 0..1 (nil = unknown)
 

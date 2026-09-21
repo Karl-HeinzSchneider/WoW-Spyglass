@@ -14,6 +14,7 @@
     {
       "id": 2916,
       "name": "Ghamoo-ra",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Ghamoo Ra",
       "loot": [
         {
           "item": 6907,
@@ -28,6 +29,7 @@
     {
       "id": 2915,
       "name": "Lady Sarevess",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lady Sarevess",
       "loot": [
         {
           "item": 888,
@@ -51,11 +53,13 @@
     {
       "id": 2913,
       "name": "Lorgus Jett",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lorgus Jett",
       "loot": []
     },
     {
       "id": 2912,
       "name": "Old Serra'kis",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Old Serrakis",
       "loot": [
         {
           "item": 6901,
@@ -74,6 +78,7 @@
     {
       "id": 2911,
       "name": "Twilight Lord Kelris",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Twilight Lord Kelris",
       "loot": [
         {
           "item": 1155,
@@ -88,16 +93,19 @@
     {
       "id": 2694,
       "name": "Baron Aquanis",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Baron Aquanis",
       "loot": []
     },
     {
       "id": 2761,
       "name": "Ghamoo-ra",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Ghamoo Ra",
       "loot": []
     },
     {
       "id": 2910,
       "name": "Aku'mai",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Akumai",
       "loot": [
         {
           "item": 6909,
@@ -116,16 +124,19 @@
     {
       "id": 2697,
       "name": "Ghamoo-ra",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Ghamoo Ra",
       "loot": []
     },
     {
       "id": 2762,
       "name": "Lady Sarevess",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lady Sarevess",
       "loot": []
     },
     {
       "id": 2699,
       "name": "Lady Sarevess",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lady Sarevess",
       "loot": []
     },
     {
@@ -136,6 +147,7 @@
     {
       "id": 2704,
       "name": "Gelihast",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Gelihast",
       "loot": [
         {
           "item": 6906,
@@ -150,36 +162,43 @@
     {
       "id": 2764,
       "name": "Lorgus Jett",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lorgus Jett",
       "loot": []
     },
     {
       "id": 2710,
       "name": "Lorgus Jett",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lorgus Jett",
       "loot": []
     },
     {
       "id": 2765,
       "name": "Old Serra'kis",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Old Serrakis",
       "loot": []
     },
     {
       "id": 2766,
       "name": "Twilight Lord Kelris",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Twilight Lord Kelris",
       "loot": []
     },
     {
       "id": 2767,
       "name": "Aku'mai",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Akumai",
       "loot": []
     },
     {
       "id": 2825,
       "name": "Twilight Lord Kelris",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Twilight Lord Kelris",
       "loot": []
     },
     {
       "id": 2891,
       "name": "Aku'mai",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Akumai",
       "loot": []
     }
   ]

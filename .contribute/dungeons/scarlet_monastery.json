@@ -14,36 +14,43 @@
     {
       "id": 444,
       "name": "Interrogator Vishas",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Interrogator Vishas",
       "loot": []
     },
     {
       "id": 2779,
       "name": "Bloodmage Thalnos",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Bloodmage Thalnos",
       "loot": []
     },
     {
       "id": 446,
       "name": "Houndmaster Loksey",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Houndmaster Loksey",
       "loot": []
     },
     {
       "id": 447,
       "name": "Arcanist Doan",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Arcanist Doan",
       "loot": []
     },
     {
       "id": 448,
       "name": "Herod",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Herod",
       "loot": []
     },
     {
       "id": 449,
       "name": "High Inquisitor Fairbanks",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-High Inquisitor Fairbanks",
       "loot": []
     },
     {
       "id": 450,
       "name": "High Inquisitor Whitemane",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-High Inquisitor Whitemane",
       "loot": [
         {
           "item": 7726,

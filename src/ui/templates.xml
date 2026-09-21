@@ -179,6 +179,72 @@
 		</Scripts>
 	</Button>
 
+	<!-- A card: an entry drawn as a portrait card in lists with `display = "cards"`, e.g. one boss
+	     of an instance. The same bevelled list button as the tiles; the portrait (a bust on
+	     transparency, so nothing needs cutting) stands on the left, name and the two small info
+	     texts to its right, the folder arrow at the far right. Without a portrait the entry's
+	     icon takes its place. -->
+	<Button name="ForeverLootCardTemplate" mixin="ForeverLootCardMixin" registerForClicks="LeftButtonUp, RightButtonUp" virtual="true">
+		<Size x="300" y="72"/>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="Card" atlas="common-button-list-large" setAllPoints="true"/>
+			</Layer>
+			<Layer level="ARTWORK">
+				<!-- 2:1 like the client's boss portraits; bottom-aligned so the bust stands on the card. -->
+				<Texture parentKey="Portrait">
+					<Size x="112" y="56"/>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" x="2" y="5"/>
+					</Anchors>
+				</Texture>
+				<Texture parentKey="Icon" hidden="true">
+					<Size x="36" y="36"/>
+					<Anchors>
+						<Anchor point="LEFT" x="24" y="0"/>
+					</Anchors>
+				</Texture>
+				<Texture parentKey="Arrow" atlas="common-icon-forwardarrow" useAtlasSize="false">
+					<Size x="16" y="16"/>
+					<Anchors>
+						<Anchor point="RIGHT" x="-12" y="0"/>
+					</Anchors>
+				</Texture>
+				<!-- Quest "!" in the top-right corner for entries with `quests`; the name stops short
+				     of it even while hidden so it never overlaps. -->
+				<Texture parentKey="QuestIcon" file="Interface\GossipFrame\AvailableQuestIcon" hidden="true">
+					<Size x="16" y="16"/>
+					<Anchors>
+						<Anchor point="TOPRIGHT" x="-12" y="-7"/>
+					</Anchors>
+				</Texture>
+				<FontString parentKey="Name" inherits="GameFontHighlightMedium" justifyH="LEFT" wordwrap="false">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="98" y="-14"/>
+						<Anchor point="RIGHT" relativeKey="$parent.QuestIcon" relativePoint="LEFT" x="-4" y="0"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="InfoRight" inherits="GameFontHighlightSmall" justifyH="RIGHT" wordwrap="false">
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT" relativeKey="$parent.Arrow" relativePoint="BOTTOMLEFT" x="-6" y="-12"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Info" inherits="GameFontHighlightSmall" justifyH="LEFT" wordwrap="false">
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" x="98" y="14"/>
+						<Anchor point="RIGHT" relativeKey="$parent.InfoRight" relativePoint="LEFT" x="-6" y="0"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<HighlightTexture atlas="common-button-list-large-hover" setAllPoints="true" alphaMode="ADD"/>
+		<Scripts>
+			<OnClick method="OnClick"/>
+			<OnEnter method="OnEnter"/>
+			<OnLeave method="OnLeave"/>
+		</Scripts>
+	</Button>
+
 	<!-- Group label: a row-sized gold text line with a thin divider, used to cluster entries
 	     without the weight of a full section header. -->
 	<Frame name="ForeverLootGroupLabelTemplate" mixin="ForeverLootGroupLabelMixin" virtual="true">
@@ -270,6 +336,7 @@
 		<KeyValues>
 			<KeyValue key="rowHeight" value="40" type="number"/>
 			<KeyValue key="tileHeight" value="84" type="number"/>
+			<KeyValue key="cardHeight" value="72" type="number"/>
 			<KeyValue key="headerHeight" value="40" type="number"/>
 			<KeyValue key="headerGap" value="6" type="number"/>
 			<KeyValue key="columnGap" value="12" type="number"/>
