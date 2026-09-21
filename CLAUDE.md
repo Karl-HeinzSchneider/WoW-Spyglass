@@ -180,6 +180,23 @@ If they exist, Claude should **read them, never edit them**:
 
 Never list anything from these folders in the TOC or copy files out of them into `src/`.
 
+## Textures and Blizzard frames: reuse art, remake code
+
+- **Don't create new textures unless there is no other way.** Strongly prefer the textures and
+  atlases already in the game files (browse `../_data/BlizzardInterfaceArt/` and atlas usages in
+  `BlizzardInterfaceCode`). Client art scales with the frame and needs no shipping; the client
+  also doesn't load `.png`. If something really must be drawn, ask first.
+- **Don't hard-reference a frame from retail or Classic WoW.** Don't inherit its templates,
+  call its mixins, anchor to its frames or name it as the thing being copied in comments or
+  docs. Look at it to learn how it is built, then remake the look with our own template and
+  mixin; naming it as "an example" or "a similar idea" in a comment is fine. The frame's *art*
+  (atlases, textures) may be reused freely, as above.
+- Code that exists in the Forever/"Camelot" codebase itself (`Blizzard_*/Camelot/`, and shared
+  templates it loads such as `Blizzard_SharedXML`) is fair to lean on more directly: its
+  templates and mixins are what this client ships, so inheriting from e.g.
+  `PortraitFrameBaseTemplate`, `LargeSideTabButtonTemplate` or `PagingControlsTemplate` is fine.
+  Verify the file is loaded by this client (Camelot/Mainline TOC) before depending on it.
+
 ## WoW addon constraints to keep in mind
 
 - The runtime is Lua 5.1 with Blizzard's restricted API. No `require`, `io`, `os`, or
