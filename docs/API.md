@@ -179,15 +179,18 @@ Set `groupBy` on a folder to cluster its plain entries under group labels automa
 Explicit headers/groups in the same list are kept as written; only the entries between them
 are grouped.
 
-- `groupBy = "auto"` uses `ForeverLoot.DefaultGroupKey`: items by equipment slot (weapons
-  together) in canonical slot order, spells under "Spells", folders under "Collections",
-  custom entries by their `category`.
+- `groupBy = "auto"` uses `ForeverLoot.DefaultGroupKey`: items into four groups in this order —
+  *Quest Items & Misc* (quest items and anything that isn't gear: recipes, consumables, keys, …),
+  *Armor* (head to feet, cloaks, shirts, tabards), *Weapons* (weapons, shields, off-hands, ranged,
+  relics) and *Rings, Amulets & Trinkets* — then spells under "Spells", folders under
+  "Collections", custom entries by their `category`.
 - `groupBy = function(node) return key, label end` for your own logic (return `nil` to leave
   an entry ungrouped under "Other"). Groups with unknown keys keep first-seen order.
 
-Inside each group, entries are sorted by `ForeverLoot.DefaultEntryRank`: armor by type
-(plate > mail > leather > cloth > shields > misc), weapons by weapon type; everything else keeps
-its written order.
+Inside each group, entries are sorted by `ForeverLoot.DefaultEntryRank`: first by type (armor:
+cloth, leather, mail, plate; weapons: by weapon type, shields and off-hands after them), then by
+slot (head, shoulder, chest, … / neck, finger, trinket / main hand, off hand, …); everything
+else keeps its written order.
 
 `ForeverLoot.GroupEntries(entries, keyFn?, rankFn?)` exposes the same bucketing and sorting for
 your own use; pass `rankFn` to change the in-group order.
