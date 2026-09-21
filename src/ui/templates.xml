@@ -208,10 +208,12 @@
 		<Size x="300" y="40"/>
 		<Layers>
 			<Layer level="BACKGROUND">
+				<!-- Centered; its width follows the text (plus padding, see the mixin), so a short
+				     title doesn't turn into a plate stretched across the whole list. -->
 				<Texture parentKey="Backplate" atlas="UI-Character-Info-Title">
 					<Anchors>
-						<Anchor point="TOPLEFT"/>
-						<Anchor point="BOTTOMRIGHT"/>
+						<Anchor point="TOP"/>
+						<Anchor point="BOTTOM"/>
 					</Anchors>
 				</Texture>
 			</Layer>
@@ -224,6 +226,9 @@
 				</FontString>
 			</Layer>
 		</Layers>
+		<Scripts>
+			<OnSizeChanged method="OnSizeChanged"/>
+		</Scripts>
 	</Frame>
 
 	<!-- One segment of the breadcrumb trail. Width follows the text (set in Init). -->
@@ -304,10 +309,17 @@
 					<OnTextChanged inherit="prepend" method="OnTextChanged"/>
 				</Scripts>
 			</EditBox>
+			<!-- The current folder's title: fixed above the list, on every page. -->
+			<Frame parentKey="Title" inherits="ForeverLootPageHeaderTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT" x="14" y="-52"/>
+					<Anchor point="TOPRIGHT" x="-14" y="-52"/>
+				</Anchors>
+			</Frame>
 			<!-- The list area; rows/headers are pooled children placed from its TOPLEFT. -->
 			<Frame parentKey="Content">
 				<Anchors>
-					<Anchor point="TOPLEFT" x="14" y="-52"/>
+					<Anchor point="TOPLEFT" relativeKey="$parent.Title" relativePoint="BOTTOMLEFT" x="0" y="-6"/>
 					<Anchor point="BOTTOMRIGHT" x="-14" y="42"/>
 				</Anchors>
 			</Frame>

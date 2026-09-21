@@ -448,9 +448,23 @@ end
 ForeverLootPageHeaderMixin = {}
 app.ui.PageHeaderMixin = ForeverLootPageHeaderMixin
 
+-- The plate behind the text: text width plus this much on each side, but never wider than
+-- the header itself.
+local HEADER_PLATE_PADDING = 40
+
 ---@param text string
 function ForeverLootPageHeaderMixin:Init(text)
     self.Text:SetText(text)
+    self:UpdatePlate()
+end
+
+function ForeverLootPageHeaderMixin:OnSizeChanged()
+    self:UpdatePlate()
+end
+
+function ForeverLootPageHeaderMixin:UpdatePlate()
+    local width = self.Text:GetStringWidth() + 2 * HEADER_PLATE_PADDING
+    self.Backplate:SetWidth(math.min(width, self:GetWidth()))
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -521,6 +535,7 @@ end
 ---@field BackButton Button
 ---@field Breadcrumbs ForeverLoot.LayoutFrame
 ---@field HeaderDivider Texture
+---@field Title ForeverLoot.PageHeader
 ---@field Content ForeverLoot.Page
 ---@field PagingControls ForeverLoot.PagingControls
 ---@field SearchBox ForeverLoot.SearchBox
@@ -956,6 +971,8 @@ end
 
 -- Draws the current page plus the chrome around it.
 function ForeverLootViewMixin:Render()
+    local node = self:GetCurrentNode()
+    self.Title:Init(node and node.name or "")
     self:RenderPage(self.Content, self.pages[self.PagingControls:GetCurrentPage()])
 
     self:RefreshBreadcrumbs()
@@ -963,8 +980,8 @@ function ForeverLootViewMixin:Render()
     self.BackButton:SetEnabled(#self.path > 1)
 end
 
--- Turns the current node into the flat list of things to draw: a title header, then its
--- children. `header` nodes become section headers, `group` nodes become group labels (followed
+-- Turns the current node into the flat list of things to draw: its children (the folder's
+-- own title is the fixed `Title` frame above the pages). `header` nodes become section headers, `group` nodes become group labels (followed
 -- by their `items`), everything else a row (or a tile in a `display = "tiles"` folder). If the
 -- folder has `groupBy`, runs of plain entries are bucketed into auto groups; explicit
 -- headers/groups are kept as written.
@@ -975,7 +992,6 @@ function ForeverLootViewMixin:BuildElements(node)
     if not node then
         return elements
     end
-    elements[#elements + 1] = { kind = "header", text = node.name }
 
     local groupBy = node.groupBy
     local keyFn = type(groupBy) == "function" and groupBy or nil
