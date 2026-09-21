@@ -9,7 +9,7 @@ Data:AddInstance(33, {
     maxLevel = 30,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-ShadowFangKeep",
-    backgroundCoords = { 0, 0.68, 0.05, 0.69 },
+    backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
     bosses = { 2748, 2749, 2750, 2751, 2752, 2753, 2754, 2755 },
 })
 Data:AddBoss(2748, { instanceID = 33, order = 0 }) -- Rethilgore
@@ -29,7 +29,7 @@ Data:AddInstance(34, {
     maxLevel = 32,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-TheStockade",
-    backgroundCoords = { 0, 0.68, 0.05, 0.69 },
+    backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
     bosses = { 2756, 2757, 2758, 2759, 2760 },
 })
 Data:AddBoss(2756, { instanceID = 34, order = 0 }) -- Targorr the Dread
@@ -46,7 +46,7 @@ Data:AddInstance(36, {
     maxLevel = 21,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Deadmines",
-    backgroundCoords = { 0, 0.68, 0.05, 0.69 },
+    backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
     bosses = { 2741, 2742, 2743, 2744, 2745, 2746, 2747 },
 })
 Data:AddBoss(2741, { instanceID = 36, order = 0 }) -- Rhahk'Zor
@@ -65,7 +65,7 @@ Data:AddInstance(43, {
     maxLevel = 27,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-WailingCaverns",
-    backgroundCoords = { 0, 0.68, 0.05, 0.69 },
+    backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
     bosses = { 585, 586, 587, 588, 589, 590, 591, 592 },
 })
 Data:AddBoss(585, { instanceID = 43, order = 0 }) -- Lady Anacondra
@@ -85,7 +85,7 @@ Data:AddInstance(47, {
     maxLevel = 42,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-RazorfenKraul",
-    backgroundCoords = { 0, 0.68, 0.05, 0.69 },
+    backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
     bosses = { 2773, 2774, 2775, 2776, 2777, 2778 },
 })
 Data:AddBoss(2773, { instanceID = 47, order = 0 }) -- Roogug
@@ -103,7 +103,7 @@ Data:AddInstance(48, {
     maxLevel = 32,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-BlackfathomDeeps",
-    backgroundCoords = { 0, 0.68, 0.05, 0.69 },
+    backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
     bosses = { 2916, 2915, 2914, 2913, 2912, 2911, 2694, 2761, 2910, 2697, 2762, 2699, 2763, 2704, 2764, 2710, 2765, 2766, 2767, 2825, 2891 },
 })
 Data:AddBoss(2916, { instanceID = 48, order = -6000 }) -- Ghamoo-ra
@@ -136,7 +136,7 @@ Data:AddInstance(70, {
     maxLevel = 52,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Uldaman",
-    backgroundCoords = { 0, 0.68, 0.05, 0.69 },
+    backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
     bosses = { 547, 548, 549, 1887, 551, 552, 553, 554 },
 })
 Data:AddBoss(547, { instanceID = 70, order = 0 }) -- Revelosh
@@ -156,7 +156,7 @@ Data:AddInstance(90, {
     maxLevel = 36,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Gnomeregan",
-    backgroundCoords = { 0, 0.68, 0.05, 0.69 },
+    backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
     bosses = { 2768, 2769, 2770, 2771, 2772, 2925, 2928, 2899, 2927, 2935, 2940 },
 })
 Data:AddBoss(2768, { instanceID = 90, order = 0 }) -- Grubbis
@@ -179,7 +179,7 @@ Data:AddInstance(109, {
     maxLevel = 60,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-SunkenTemple",
-    backgroundCoords = { 0, 0.68, 0.05, 0.69 },
+    backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
     bosses = { 492, 2952, 3582, 488, 486, 2953, 3583, 487, 2954, 3584, 2955, 3585, 2956, 3586, 490, 2957, 3587, 491, 2958, 3588, 2959, 3589, 493, 2814 },
 })
 Data:AddBoss(492, { instanceID = 109, order = -500 }) -- Avatar of Hakkar
@@ -215,7 +215,7 @@ Data:AddInstance(129, {
     maxLevel = 47,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-RazorfenDowns",
-    backgroundCoords = { 0, 0.68, 0.05, 0.69 },
+    backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
     bosses = { 2780, 2781, 2782, 2783, 2784, 2785 },
 })
 Data:AddBoss(2780, { instanceID = 129, order = 0 }) -- Tuten'kash
@@ -233,7 +233,7 @@ Data:AddInstance(189, {
     maxLevel = 42,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-ScarletMonastery",
-    backgroundCoords = { 0, 0.68, 0.05, 0.69 },
+    backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
     bosses = { 444, 2779, 446, 447, 448, 449, 450 },
 })
 Data:AddBoss(444, { instanceID = 189, order = 0 }) -- Interrogator Vishas
@@ -252,7 +252,7 @@ Data:AddInstance(209, {
     maxLevel = 56,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-ZulFarrak",
-    backgroundCoords = { 0, 0.68, 0.05, 0.69 },
+    backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
     bosses = { 593, 594, 595, 596, 597, 598, 599, 600 },
 })
 Data:AddBoss(593, { instanceID = 209, order = 0 }) -- Hydromancer Velratha
@@ -272,7 +272,7 @@ Data:AddInstance(229, {
     maxLevel = 60,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-BlackrockSpire",
-    backgroundCoords = { 0, 0.68, 0.05, 0.69 },
+    backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
     bosses = { 267, 268, 269, 270, 271, 272, 274, 273, 275, 3062, 3063, 3068, 3069, 3070 },
 })
 Data:AddBoss(267, { instanceID = 229, order = 0 }) -- Highlord Omokk
@@ -298,7 +298,7 @@ Data:AddInstance(230, {
     maxLevel = 60,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-BlackrockDepths",
-    backgroundCoords = { 0, 0.68, 0.05, 0.69 },
+    backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
     bosses = { 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 2791, 242, 243, 244, 2789, 2790 },
 })
 Data:AddBoss(227, { instanceID = 230, order = 0 }) -- High Interrogator Gerstahn
@@ -330,7 +330,7 @@ Data:AddInstance(249, {
     minLevel = 60,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicRaider",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Onyxia",
-    backgroundCoords = { 0, 0.68, 0.05, 0.69 },
+    backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
     bosses = { 1084 },
 })
 Data:AddBoss(1084, { instanceID = 249, order = 0 }) -- Onyxia
@@ -343,7 +343,7 @@ Data:AddInstance(289, {
     maxLevel = 60,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Scholomance",
-    backgroundCoords = { 0, 0.68, 0.05, 0.69 },
+    backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
     bosses = { 2805, 2804, 2811, 2809, 2813, 3055, 2810, 2803, 2802, 2808, 2812, 2807, 2806, 2801 },
 })
 Data:AddBoss(2805, { instanceID = 289, order = -1000 }) -- Kirtonos
@@ -387,7 +387,7 @@ Data:AddInstance(329, {
     maxLevel = 58,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Stratholme",
-    backgroundCoords = { 0, 0.68, 0.05, 0.69 },
+    backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
     bosses = { 473, 474, 476, 475, 477, 478, 472, 479, 480, 481, 482, 483, 484, 2795, 2796, 2797, 2798, 2799, 2800 },
 })
 Data:AddBoss(473, { instanceID = 329, order = 1000 }) -- Hearthsinger Forresten
@@ -418,7 +418,7 @@ Data:AddInstance(349, {
     maxLevel = 52,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Maraudon",
-    backgroundCoords = { 0, 0.68, 0.05, 0.69 },
+    backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
     bosses = { 422, 423, 427, 424, 425, 426, 428, 429 },
 })
 Data:AddBoss(422, { instanceID = 349, order = 0 }) -- Noxxion
@@ -438,7 +438,7 @@ Data:AddInstance(389, {
     maxLevel = 25,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-RagefireChasm",
-    backgroundCoords = { 0, 0.68, 0.05, 0.69 },
+    backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
     bosses = { 2732, 2733, 2734, 2735 },
 })
 Data:AddBoss(2732, { instanceID = 389, order = 0 }) -- Oggleflint
@@ -473,7 +473,7 @@ Data:AddInstance(429, {
     maxLevel = 60,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-DireMaul",
-    backgroundCoords = { 0, 0.68, 0.05, 0.69 },
+    backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
     bosses = { 343, 344, 345, 2792, 346, 350, 347, 348, 349, 361, 362, 363, 364, 365, 366, 367, 368, 2793, 2794 },
 })
 Data:AddBoss(343, { instanceID = 429, order = 0 }) -- Zevrim Thornhoof

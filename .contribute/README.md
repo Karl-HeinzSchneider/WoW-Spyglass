@@ -88,7 +88,7 @@ side). Have a look at the diff before committing.
   "maxLevel": 21,
   "icon": "Interface\\Icons\\INV_Misc_Key_13",
   "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Deadmines",
-  "backgroundCoords": [0, 0.68, 0.05, 0.69],
+  "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],
   "encounters": [
     { "id": 2747, "name": "Edwin VanCleef", "loot": [
       { "item": 5188, "name": "Filled Vessel", "chance": 0.9 },

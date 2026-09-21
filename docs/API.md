@@ -113,7 +113,7 @@ ForeverLoot:RegisterModule({
     children = {
         ForeverLoot.Folder("Deadmines", icon, entries, {
             background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Deadmines",
-            backgroundCoords = { 0, 0.68, 0.05, 0.69 }, -- the picture is in the top-left of a 256x128 texture
+            backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 }, -- the picture is in the top-left of a 256x128 texture
             minLevel = 15, maxLevel = 21, infoRight = "Westfall",
         }),
     },

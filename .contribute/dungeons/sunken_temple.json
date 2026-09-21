@@ -5,10 +5,10 @@
   "maxLevel": 60,
   "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-SunkenTemple",
   "backgroundCoords": [
-    0,
-    0.68,
-    0.05,
-    0.69
+    0.0156,
+    0.6641,
+    0.0703,
+    0.6797
   ],
   "encounters": [
     {

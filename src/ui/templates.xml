@@ -79,14 +79,28 @@
 	<Button name="ForeverLootTileTemplate" mixin="ForeverLootTileMixin" registerForClicks="LeftButtonUp, RightButtonUp" virtual="true">
 		<Size x="196" y="84"/>
 		<Layers>
-			<Layer level="BACKGROUND">
+			<!-- Textures of one layer only draw in a defined order when their sub-levels differ,
+			     so the frame, picture and boost get explicit ones (frame lowest). -->
+			<Layer level="BACKGROUND" textureSubLevel="-2">
 				<Texture parentKey="Frame" setAllPoints="true">
 					<Color r="0" g="0" b="0" a="0.8"/>
 				</Texture>
+			</Layer>
+			<Layer level="BACKGROUND" textureSubLevel="-1">
 				<Texture parentKey="Background">
 					<Anchors>
 						<Anchor point="TOPLEFT" x="1" y="-1"/>
 						<Anchor point="BOTTOMRIGHT" x="-1" y="1"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="BACKGROUND" textureSubLevel="0">
+				<!-- The same picture added on top of itself: brightens it beyond how it was
+				     painted. Its alpha (TILE_PICTURE_BOOST in view.lua) is the brightness knob. -->
+				<Texture parentKey="Boost" alphaMode="ADD">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.Background"/>
+						<Anchor point="BOTTOMRIGHT" relativeKey="$parent.Background"/>
 					</Anchors>
 				</Texture>
 			</Layer>

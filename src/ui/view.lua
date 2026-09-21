@@ -48,7 +48,11 @@ local LEVEL_LOW = QuestDifficultyColors and QuestDifficultyColors.verydifficult 
 local LEVEL_HIGH = QuestDifficultyColors and QuestDifficultyColors.standard or { r = 0.25, g = 0.75, b = 0.25 }
 
 local function colorHex(c)
-    return ("|cff%02x%02x%02x"):format(math.floor(c.r * 255 + 0.5), math.floor(c.g * 255 + 0.5), math.floor(c.b * 255 + 0.5))
+    return ("|cff%02x%02x%02x"):format(
+        math.floor(c.r * 255 + 0.5),
+        math.floor(c.g * 255 + 0.5),
+        math.floor(c.b * 255 + 0.5)
+    )
 end
 
 -- "15-21" with the colors above; nil when the node has no level range.
@@ -275,13 +279,19 @@ function ForeverLootListRowMixin:InitItem(view, node)
         local row = Data:GetItem(itemID)
         if row then
             name = Data:GetItemName(itemID)
-            quality, classID, subclassID, equipSlot = row[ITEM.QUALITY], row[ITEM.CLASS], row[ITEM.SUBCLASS], row[ITEM.SLOT]
+            quality, classID, subclassID, equipSlot =
+                row[ITEM.QUALITY], row[ITEM.CLASS], row[ITEM.SUBCLASS], row[ITEM.SLOT]
         end
         icon = select(5, C_Item.GetItemInfoInstant(itemID)) or (row and row[ITEM.ICON])
     end
 
     if not name then
-        self:SetDisplay({ name = "Item #" .. itemID, icon = icon, sub = RETRIEVING_ITEM_INFO or "Loading...", chance = node.chance })
+        self:SetDisplay({
+            name = "Item #" .. itemID,
+            icon = icon,
+            sub = RETRIEVING_ITEM_INFO or "Loading...",
+            chance = node.chance,
+        })
         return
     end
 
@@ -355,10 +365,16 @@ end
 -- Tile: a picture card for entries of a `display = "tiles"` folder
 ----------------------------------------------------------------------------------------------------
 
+-- How much brighter than painted a tile's picture is drawn: the picture is added onto itself
+-- with this alpha (0 = as painted, 0.5 = strongly lifted). The shade bands behind the texts are
+-- the two gradient alphas in ForeverLootTileTemplate.
+local TILE_PICTURE_BOOST = 0.3
+
 -- Clicking and hovering work exactly like a row, so those handlers are shared.
 ---@class ForeverLoot.Tile : Button
 ---@field Frame Texture
 ---@field Background Texture
+---@field Boost Texture
 ---@field TopShade Texture
 ---@field BottomShade Texture
 ---@field Icon Texture
@@ -390,17 +406,17 @@ function ForeverLootTileMixin:Init(view, node)
 
     local background = node.background
     self.Background:SetShown(background ~= nil)
+    self.Boost:SetShown(background ~= nil and TILE_PICTURE_BOOST > 0)
     self.TopShade:SetShown(background ~= nil)
     self.BottomShade:SetShown(background ~= nil)
     self.Icon:SetShown(background == nil)
     if background then
-        self.Background:SetTexture(background)
-        local c = node.backgroundCoords
-        if c then
-            self.Background:SetTexCoord(c[1], c[2], c[3], c[4])
-        else
-            self.Background:SetTexCoord(0, 1, 0, 1)
+        local c = node.backgroundCoords or { 0, 1, 0, 1 }
+        for _, texture in ipairs({ self.Background, self.Boost }) do
+            texture:SetTexture(background)
+            texture:SetTexCoord(c[1], c[2], c[3], c[4])
         end
+        self.Boost:SetAlpha(TILE_PICTURE_BOOST)
     else
         self.Icon:SetTexture(node.icon or FALLBACK_ICON)
     end
