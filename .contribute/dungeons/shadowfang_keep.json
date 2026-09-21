@@ -3,6 +3,13 @@
   "name": "Shadowfang Keep",
   "minLevel": 22,
   "maxLevel": 30,
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-ShadowFangKeep",
+  "backgroundCoords": [
+    0,
+    0.68,
+    0.05,
+    0.69
+  ],
   "encounters": [
     {
       "id": 2748,

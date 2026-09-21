@@ -3,6 +3,13 @@
   "name": "Stormwind Stockade",
   "minLevel": 22,
   "maxLevel": 32,
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-TheStockade",
+  "backgroundCoords": [
+    0,
+    0.68,
+    0.05,
+    0.69
+  ],
   "encounters": [
     {
       "id": 2756,

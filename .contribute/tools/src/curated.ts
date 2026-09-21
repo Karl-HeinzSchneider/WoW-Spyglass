@@ -16,6 +16,10 @@ export interface CuratedInstance {
   maxLevel?: number;
   /** Texture path shown in the browser, e.g. "Interface\\Icons\\INV_Misc_Key_13". */
   icon?: string;
+  /** Wide picture behind the instance's tile in the browser (texture path or fileID). */
+  background?: string | number;
+  /** Part of `background` to show: [left, right, top, bottom] in 0..1; the whole texture when omitted. */
+  backgroundCoords?: [number, number, number, number];
   encounters: CuratedEncounter[];
 }
 
@@ -211,6 +215,8 @@ export function serialize(d: CuratedInstance): string {
     minLevel: d.minLevel,
     maxLevel: d.maxLevel,
     icon: d.icon,
+    background: d.background,
+    backgroundCoords: d.backgroundCoords,
     encounters: d.encounters.map((e) => ({
       id: e.id,
       name: e.name,

@@ -10,6 +10,7 @@ FL:RegisterModule({
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicRaider",
     order = 10,
     description = "Loot tables for raid instances.",
+    display = "tiles",
     getChildren = function()
         return {
             FL.InstanceFolder(249), -- Onyxia's Lair

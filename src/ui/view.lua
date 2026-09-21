@@ -51,20 +51,31 @@ local function colorHex(c)
     return ("|cff%02x%02x%02x"):format(math.floor(c.r * 255 + 0.5), math.floor(c.g * 255 + 0.5), math.floor(c.b * 255 + 0.5))
 end
 
+-- "15-21" with the colors above; nil when the node has no level range.
 ---@param node ForeverLoot.Node
----@return string
-local function levelRangeName(node)
-    local name = node.name or "?"
+---@return string?
+local function levelRangeText(node)
     local lo, hi = node.minLevel, node.maxLevel
     if not lo and not hi then
-        return name
+        return nil
     end
     local low = lo and (colorHex(LEVEL_LOW) .. lo .. "|r") or nil
     local high = hi and (colorHex(LEVEL_HIGH) .. hi .. "|r") or nil
     if low and high then
-        return ("%s (%s-%s)"):format(name, low, high)
+        return low .. "-" .. high
     end
-    return ("%s (%s)"):format(name, low or high)
+    return low or high
+end
+
+---@param node ForeverLoot.Node
+---@return string
+local function levelRangeName(node)
+    local name = node.name or "?"
+    local range = levelRangeText(node)
+    if not range then
+        return name
+    end
+    return ("%s (%s)"):format(name, range)
 end
 
 -- Red for the slot / armor type of gear the character can't equip: the engine's color when
@@ -341,6 +352,61 @@ function ForeverLootListRowMixin:OnLeave()
 end
 
 ----------------------------------------------------------------------------------------------------
+-- Tile: a picture card for entries of a `display = "tiles"` folder
+----------------------------------------------------------------------------------------------------
+
+-- Clicking and hovering work exactly like a row, so those handlers are shared.
+---@class ForeverLoot.Tile : Button
+---@field Frame Texture
+---@field Background Texture
+---@field TopShade Texture
+---@field BottomShade Texture
+---@field Icon Texture
+---@field Name FontString
+---@field Info FontString
+---@field InfoRight FontString
+---@field node ForeverLoot.Node
+---@field view ForeverLoot.View
+---@field link? string
+ForeverLootTileMixin = {
+    OnClick = ForeverLootListRowMixin.OnClick,
+    OnEnter = ForeverLootListRowMixin.OnEnter,
+    OnLeave = ForeverLootListRowMixin.OnLeave,
+}
+app.ui.TileMixin = ForeverLootTileMixin
+
+---@param view ForeverLoot.View
+---@param node ForeverLoot.Node
+function ForeverLootTileMixin:Init(view, node)
+    self.view = view
+    self.node = node
+    self.link = nil
+
+    self.Name:SetText(node.name or "?")
+    local color = node.quality and ITEM_QUALITY_COLORS[node.quality] or HIGHLIGHT_FONT_COLOR
+    self.Name:SetTextColor(color.r, color.g, color.b)
+    self.Info:SetText(node.info or levelRangeText(node) or "")
+    self.InfoRight:SetText(node.infoRight or "")
+
+    local background = node.background
+    self.Background:SetShown(background ~= nil)
+    self.TopShade:SetShown(background ~= nil)
+    self.BottomShade:SetShown(background ~= nil)
+    self.Icon:SetShown(background == nil)
+    if background then
+        self.Background:SetTexture(background)
+        local c = node.backgroundCoords
+        if c then
+            self.Background:SetTexCoord(c[1], c[2], c[3], c[4])
+        else
+            self.Background:SetTexCoord(0, 1, 0, 1)
+        end
+    else
+        self.Icon:SetTexture(node.icon or FALLBACK_ICON)
+    end
+end
+
+----------------------------------------------------------------------------------------------------
 -- Group label (row-sized, lighter than a page header)
 ----------------------------------------------------------------------------------------------------
 
@@ -448,6 +514,7 @@ end
 ---@field crumbPool ForeverLoot.FramePool
 ---@field separatorPool ForeverLoot.FramePool
 ---@field rowHeight number
+---@field tileHeight number
 ---@field headerHeight number
 ---@field headerGap number
 ---@field columnGap number
@@ -458,18 +525,19 @@ end
 ForeverLootViewMixin = {}
 app.ui.ViewMixin = ForeverLootViewMixin
 
--- The list area: pooled rows/headers/group labels are placed from its top-left corner.
+-- The list area: pooled rows/tiles/headers/group labels are placed from its top-left corner.
 ---@class ForeverLoot.Page : Frame
 ---@field rowPool ForeverLoot.FramePool
+---@field tilePool ForeverLoot.FramePool
 ---@field headerPool ForeverLoot.FramePool
 ---@field groupPool ForeverLoot.FramePool
 
 -- What a page displays. `kind` picks the template; new element kinds plug in here
 -- (BuildElements, LayoutPages, RenderPage).
 ---@class ForeverLoot.Element
----@field kind "header"|"group"|"row"
+---@field kind "header"|"group"|"row"|"tile"
 ---@field text? string  # header, group
----@field node? ForeverLoot.Node  # row
+---@field node? ForeverLoot.Node  # row, tile
 
 ---@class ForeverLoot.PlacedElement
 ---@field element ForeverLoot.Element
@@ -483,6 +551,7 @@ function ForeverLootViewMixin:OnLoad()
 
     local page = self.Content
     page.rowPool = CreateFramePool("Button", page, "ForeverLootListRowTemplate") --[[@as ForeverLoot.FramePool]]
+    page.tilePool = CreateFramePool("Button", page, "ForeverLootTileTemplate") --[[@as ForeverLoot.FramePool]]
     page.headerPool = CreateFramePool("Frame", page, "ForeverLootPageHeaderTemplate") --[[@as ForeverLoot.FramePool]]
     page.groupPool = CreateFramePool("Frame", page, "ForeverLootGroupLabelTemplate") --[[@as ForeverLoot.FramePool]]
     self.pages = {}
@@ -833,12 +902,23 @@ function ForeverLootViewMixin:UpdateToolbar()
     self.ResultCount:SetText(("%d items"):format(self.resultCount))
 end
 
--- Columns for the current list. Defined by the collection itself (`node.columns`); one
--- full-width column when unset.
+-- Whether a folder draws its entries as picture tiles instead of rows.
+---@param node ForeverLoot.Node?
+---@return boolean
+local function usesTiles(node)
+    return node ~= nil and node.display == "tiles"
+end
+
+-- Columns for the current list. Defined by the collection itself (`node.columns`): rows
+-- default to one full-width column (max 2), tiles to three (max 4).
 ---@param node ForeverLoot.Node?
 ---@return integer
 function ForeverLootViewMixin:GetColumns(node)
-    local columns = node and node.columns or 1
+    local columns = node and node.columns
+    if usesTiles(node) then
+        return math.max(1, math.min(4, columns or 3))
+    end
+    columns = columns or 1
     return math.max(1, math.min(2, columns))
 end
 
@@ -868,8 +948,9 @@ end
 
 -- Turns the current node into the flat list of things to draw: a title header, then its
 -- children. `header` nodes become section headers, `group` nodes become group labels (followed
--- by their `items`), everything else a row. If the folder has `groupBy`, runs of plain entries
--- are bucketed into auto groups; explicit headers/groups are kept as written.
+-- by their `items`), everything else a row (or a tile in a `display = "tiles"` folder). If the
+-- folder has `groupBy`, runs of plain entries are bucketed into auto groups; explicit
+-- headers/groups are kept as written.
 ---@param node ForeverLoot.Node?
 ---@return ForeverLoot.Element[]
 function ForeverLootViewMixin:BuildElements(node)
@@ -881,11 +962,12 @@ function ForeverLootViewMixin:BuildElements(node)
 
     local groupBy = node.groupBy
     local keyFn = type(groupBy) == "function" and groupBy or nil
+    local entryKind = usesTiles(node) and "tile" or "row"
     local pending = {}
 
     local function addRows(entries)
         for _, entry in ipairs(entries) do
-            elements[#elements + 1] = { kind = "row", node = entry }
+            elements[#elements + 1] = { kind = entryKind, node = entry }
         end
     end
 
@@ -922,7 +1004,8 @@ function ForeverLootViewMixin:BuildElements(node)
 end
 
 -- Flows elements top-to-bottom into as many pages as needed. Headers span the full width and
--- start a new line; rows fill `columns` columns left to right. A header never ends a page.
+-- start a new line; rows and tiles fill `columns` columns left to right (tiles are taller and
+-- get a little air between lines). A header never ends a page.
 ---@param elements ForeverLoot.Element[]
 ---@param columns integer
 ---@return ForeverLoot.PlacedElement[][]
@@ -931,6 +1014,7 @@ function ForeverLootViewMixin:LayoutPages(elements, columns)
     local page, y, column = {}, 0, 0
     local pageWidth, pageHeight = self.Content:GetSize()
     local columnWidth = (pageWidth - self.columnGap * (columns - 1)) / columns
+    local lineHeight = self.rowHeight -- of the line being filled
 
     local function newPage()
         if #page > 0 then
@@ -941,7 +1025,7 @@ function ForeverLootViewMixin:LayoutPages(elements, columns)
 
     local function newLine()
         if column > 0 then
-            y = y + self.rowHeight
+            y = y + lineHeight
             column = 0
         end
     end
@@ -968,10 +1052,15 @@ function ForeverLootViewMixin:LayoutPages(elements, columns)
             place(element, 0, pageWidth, self.rowHeight)
             y = y + self.rowHeight
         else
-            if column == 0 and y + self.rowHeight > pageHeight then
-                newPage()
+            local height = element.kind == "tile" and self.tileHeight or self.rowHeight
+            local gap = element.kind == "tile" and self.columnGap or 0
+            if column == 0 then
+                if y + height > pageHeight then
+                    newPage()
+                end
+                lineHeight = height + gap
             end
-            place(element, column * (columnWidth + self.columnGap), columnWidth, self.rowHeight)
+            place(element, column * (columnWidth + self.columnGap), columnWidth, height)
             column = column + 1
             if column >= columns then
                 newLine()
@@ -987,6 +1076,7 @@ end
 ---@param placed ForeverLoot.PlacedElement[]?
 function ForeverLootViewMixin:RenderPage(page, placed)
     page.rowPool:ReleaseAll()
+    page.tilePool:ReleaseAll()
     page.headerPool:ReleaseAll()
     page.groupPool:ReleaseAll()
     for _, item in ipairs(placed or {}) do
@@ -998,6 +1088,9 @@ function ForeverLootViewMixin:RenderPage(page, placed)
         elseif element.kind == "group" then
             frame = page.groupPool:Acquire() --[[@as ForeverLoot.GroupLabel]]
             frame:Init(element.text or "")
+        elseif element.kind == "tile" then
+            frame = page.tilePool:Acquire() --[[@as ForeverLoot.Tile]]
+            frame:Init(self, element.node)
         else
             frame = page.rowPool:Acquire() --[[@as ForeverLoot.ListRow]]
             frame:Init(self, element.node)

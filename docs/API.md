@@ -61,7 +61,7 @@ if the definition is invalid; it never throws.
 | `getChildren` | fun(def) -> Node[] | one of | Lazy alternative; called once, the first time the tree is built. Errors are caught and logged. |
 | `sortChildren` | boolean \| fun(a, b) | no | `true` sorts children by node `order` (default 100), then `name`; a function is used as the comparator and receives the full nodes (metadata included). Applies to `AddToModule` entries too. |
 | `query` | boolean | no | The module's own list is the item database, filtered by the view's search box and filter menu (see [Item database](#item-database)). `children` may be `{}`. |
-| `columns`, `groupBy` | | no | Layout of the module's own list, as on folder nodes. |
+| `columns`, `display`, `groupBy` | | no | Layout of the module's own list, as on folder nodes (see [Tiles](#tiles)). |
 | `expansionID`, `seasonID`, `tags`, `meta` | various | no | Metadata; see below. |
 
 ## Nodes
@@ -89,6 +89,36 @@ opens (static, dynamic or query folder).
 Folders may also set `columns = 1 | 2` to control how their children are laid out: one
 full-width column (the default) or two columns per page. This is decided by the collection,
 not by a user setting, so choose it per list (e.g. `columns = 2` for a boss's loot table).
+
+### Tiles
+
+A folder with `display = "tiles"` draws its entries as picture cards instead of rows — three
+per line by default (`columns` = 1..4), about twice as tall as a row. Each entry may carry:
+
+| Field | Type | Notes |
+|---|---|---|
+| `background` | string \| number | Wide texture (path or fileID) filling the card. Without it the card is dark and shows the entry's `icon`. |
+| `backgroundCoords` | number[4] | `{ left, right, top, bottom }` in 0..1: the part of `background` to show. Whole texture by default. |
+| `info` | string | Small text in the bottom-left corner. Defaults to the level range (`minLevel`-`maxLevel`) when the entry has one. |
+| `infoRight` | string | Small text in the bottom-right corner. |
+
+The entry's `name` is the card's title (in `quality` color when set); clicking, tooltips and
+right-click-to-go-back work as for rows. Headers and groups inside the folder are drawn as
+usual. The built-in Raids/Dungeons modules are tile folders; `InstanceFolder` nodes carry the
+instance's picture from the database.
+
+```lua
+ForeverLoot:RegisterModule({
+    id = "myaddon-favorites", name = "Favorites", icon = icon, display = "tiles",
+    children = {
+        ForeverLoot.Folder("Deadmines", icon, entries, {
+            background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Deadmines",
+            backgroundCoords = { 0, 0.68, 0.05, 0.69 }, -- the picture is in the top-left of a 256x128 texture
+            minLevel = 15, maxLevel = 21, infoRight = "Westfall",
+        }),
+    },
+})
+```
 
 ### Metadata
 
@@ -148,7 +178,7 @@ your own use; pass `rankFn` to change the in-group order.
 
 Constructors (optional sugar):
 
-- `ForeverLoot.Folder(name, icon, children, opts?)` — `opts = { columns = 2, description = "...", groupBy = "auto" }`
+- `ForeverLoot.Folder(name, icon, children, opts?)` — `opts = { columns = 2, display = "tiles", description = "...", groupBy = "auto" }`
 - `ForeverLoot.Header(text)` — section header inside a list
 - `ForeverLoot.Group(text, items?)` — group label, optionally with its entries
 - `ForeverLoot.Item(itemID)`

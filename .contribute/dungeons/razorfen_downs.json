@@ -3,6 +3,13 @@
   "name": "Razorfen Downs",
   "minLevel": 37,
   "maxLevel": 47,
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-RazorfenDowns",
+  "backgroundCoords": [
+    0,
+    0.68,
+    0.05,
+    0.69
+  ],
   "encounters": [
     {
       "id": 2780,

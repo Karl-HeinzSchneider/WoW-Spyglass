@@ -3,6 +3,13 @@
   "name": "Blackrock Spire",
   "minLevel": 55,
   "maxLevel": 60,
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-BlackrockSpire",
+  "backgroundCoords": [
+    0,
+    0.68,
+    0.05,
+    0.69
+  ],
   "encounters": [
     {
       "id": 267,

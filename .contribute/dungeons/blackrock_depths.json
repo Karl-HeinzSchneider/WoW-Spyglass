@@ -3,6 +3,13 @@
   "name": "Blackrock Depths",
   "minLevel": 52,
   "maxLevel": 60,
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-BlackrockDepths",
+  "backgroundCoords": [
+    0,
+    0.68,
+    0.05,
+    0.69
+  ],
   "encounters": [
     {
       "id": 227,

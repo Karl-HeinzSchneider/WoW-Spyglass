@@ -47,6 +47,8 @@ local ITEM = {
 ---@field maxLevel? integer
 ---@field expansionID? integer
 ---@field icon? string|number
+---@field background? string|number  # wide picture for the instance's tile in the browser
+---@field backgroundCoords? number[]  # { left, right, top, bottom } of `background` to show
 
 ---@class ForeverLoot.Boss
 ---@field npcID? integer  # optional; not in the generated data

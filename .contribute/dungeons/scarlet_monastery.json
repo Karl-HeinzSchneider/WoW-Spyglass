@@ -3,6 +3,13 @@
   "name": "Scarlet Monastery",
   "minLevel": 32,
   "maxLevel": 42,
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-ScarletMonastery",
+  "backgroundCoords": [
+    0,
+    0.68,
+    0.05,
+    0.69
+  ],
   "encounters": [
     {
       "id": 444,

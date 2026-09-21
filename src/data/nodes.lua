@@ -40,7 +40,8 @@ function api.BossFolder(bossID)
 end
 
 -- An instance folder with one boss folder per encounter, carrying the instance's metadata
--- (`instanceID`, `minLevel`, `maxLevel`, `expansionID`) for sorting and filtering.
+-- (`instanceID`, `minLevel`, `maxLevel`, `expansionID`) for sorting and filtering and its
+-- picture for lists that draw their entries as tiles.
 ---@param instanceID integer
 ---@return ForeverLoot.Node?
 function api.InstanceFolder(instanceID)
@@ -58,6 +59,8 @@ function api.InstanceFolder(instanceID)
         maxLevel = instance.maxLevel,
         expansionID = instance.expansionID,
         order = instance.minLevel,
+        background = instance.background,
+        backgroundCoords = instance.backgroundCoords,
     })
 end
 

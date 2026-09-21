@@ -28,6 +28,7 @@
 ---@field ExportFrameMixin ForeverLoot.ExportFrame
 ---@field ViewMixin ForeverLoot.View
 ---@field ListRowMixin ForeverLoot.ListRow
+---@field TileMixin ForeverLoot.Tile
 ---@field PageHeaderMixin ForeverLoot.PageHeader
 ---@field GroupLabelMixin ForeverLoot.GroupLabel
 ---@field BreadcrumbButtonMixin ForeverLoot.BreadcrumbButton

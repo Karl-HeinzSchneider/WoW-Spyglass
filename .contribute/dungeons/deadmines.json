@@ -3,6 +3,13 @@
   "name": "Deadmines",
   "minLevel": 15,
   "maxLevel": 21,
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Deadmines",
+  "backgroundCoords": [
+    0,
+    0.68,
+    0.05,
+    0.69
+  ],
   "encounters": [
     {
       "id": 2741,

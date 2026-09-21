@@ -3,6 +3,13 @@
   "name": "Stratholme",
   "minLevel": 48,
   "maxLevel": 58,
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Stratholme",
+  "backgroundCoords": [
+    0,
+    0.68,
+    0.05,
+    0.69
+  ],
   "encounters": [
     {
       "id": 473,

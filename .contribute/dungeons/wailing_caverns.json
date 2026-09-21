@@ -3,6 +3,13 @@
   "name": "Wailing Caverns",
   "minLevel": 17,
   "maxLevel": 27,
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-WailingCaverns",
+  "backgroundCoords": [
+    0,
+    0.68,
+    0.05,
+    0.69
+  ],
   "encounters": [
     {
       "id": 585,

@@ -72,6 +72,91 @@
 		</Scripts>
 	</Button>
 
+	<!-- A tile: an entry drawn as a picture card in lists with `display = "tiles"`. The
+	     background fills the card inside a 1px dark frame, the name sits across the top and
+	     two small texts (info / infoRight) in the bottom corners, over a shade so they read on
+	     any picture. Without a background the card is dark and shows the entry's icon. -->
+	<Button name="ForeverLootTileTemplate" mixin="ForeverLootTileMixin" registerForClicks="LeftButtonUp, RightButtonUp" virtual="true">
+		<Size x="196" y="84"/>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="Frame" setAllPoints="true">
+					<Color r="0" g="0" b="0" a="0.8"/>
+				</Texture>
+				<Texture parentKey="Background">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="1" y="-1"/>
+						<Anchor point="BOTTOMRIGHT" x="-1" y="1"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="BORDER">
+				<!-- Darkens the picture towards the top and bottom edges for the texts. -->
+				<Texture parentKey="TopShade">
+					<Size y="30"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" x="1" y="-1"/>
+						<Anchor point="TOPRIGHT" x="-1" y="-1"/>
+					</Anchors>
+					<Gradient orientation="VERTICAL">
+						<MinColor r="0" g="0" b="0" a="0"/>
+						<MaxColor r="0" g="0" b="0" a="0.7"/>
+					</Gradient>
+				</Texture>
+				<Texture parentKey="BottomShade">
+					<Size y="24"/>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" x="1" y="1"/>
+						<Anchor point="BOTTOMRIGHT" x="-1" y="1"/>
+					</Anchors>
+					<Gradient orientation="VERTICAL">
+						<MinColor r="0" g="0" b="0" a="0.7"/>
+						<MaxColor r="0" g="0" b="0" a="0"/>
+					</Gradient>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<Texture parentKey="Icon" hidden="true">
+					<Size x="32" y="32"/>
+					<Anchors>
+						<Anchor point="CENTER" x="0" y="-2"/>
+					</Anchors>
+				</Texture>
+				<FontString parentKey="Name" inherits="GameFontHighlightMedium" justifyH="CENTER" wordwrap="false">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="8" y="-8"/>
+						<Anchor point="TOPRIGHT" x="-8" y="-8"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="InfoRight" inherits="GameFontHighlightSmall" justifyH="RIGHT" wordwrap="false">
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT" x="-7" y="6"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Info" inherits="GameFontHighlightSmall" justifyH="LEFT" wordwrap="false">
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" x="7" y="6"/>
+						<Anchor point="RIGHT" relativeKey="$parent.InfoRight" relativePoint="LEFT" x="-6" y="0"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+			<Layer level="HIGHLIGHT">
+				<Texture alphaMode="ADD">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="1" y="-1"/>
+						<Anchor point="BOTTOMRIGHT" x="-1" y="1"/>
+					</Anchors>
+					<Color r="1" g="1" b="1" a="0.15"/>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick method="OnClick"/>
+			<OnEnter method="OnEnter"/>
+			<OnLeave method="OnLeave"/>
+		</Scripts>
+	</Button>
+
 	<!-- Group label: a row-sized gold text line with a thin divider, used to cluster entries
 	     without the weight of a full section header. -->
 	<Frame name="ForeverLootGroupLabelTemplate" mixin="ForeverLootGroupLabelMixin" virtual="true">
@@ -157,6 +242,7 @@
 	<Frame name="ForeverLootViewTemplate" mixin="ForeverLootViewMixin" enableMouse="true" virtual="true">
 		<KeyValues>
 			<KeyValue key="rowHeight" value="40" type="number"/>
+			<KeyValue key="tileHeight" value="84" type="number"/>
 			<KeyValue key="headerHeight" value="40" type="number"/>
 			<KeyValue key="headerGap" value="6" type="number"/>
 			<KeyValue key="columnGap" value="12" type="number"/>

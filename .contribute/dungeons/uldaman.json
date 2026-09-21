@@ -3,6 +3,13 @@
   "name": "Uldaman",
   "minLevel": 42,
   "maxLevel": 52,
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Uldaman",
+  "backgroundCoords": [
+    0,
+    0.68,
+    0.05,
+    0.69
+  ],
   "encounters": [
     {
       "id": 547,

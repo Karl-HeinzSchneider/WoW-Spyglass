@@ -7,7 +7,7 @@ is produced from it and must not be edited by hand.
 .contribute/
   inbox/                 drop SavedVariables / export files here for `npm run import` (not committed)
   items/items_<n>.json   the item database: in-game scans, one file per 10 000 ids (machine-written)
-  dungeons/<name>.json   one file per dungeon: level range, icon, drops per boss (hand-curated)
+  dungeons/<name>.json   one file per dungeon: level range, icon, tile picture, drops per boss (hand-curated)
   raids/<name>.json      same for raids
   tools/                 the generator (TypeScript, npm)
 ```
@@ -87,6 +87,8 @@ side). Have a look at the diff before committing.
   "minLevel": 15,
   "maxLevel": 21,
   "icon": "Interface\\Icons\\INV_Misc_Key_13",
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Deadmines",
+  "backgroundCoords": [0, 0.68, 0.05, 0.69],
   "encounters": [
     { "id": 2747, "name": "Edwin VanCleef", "loot": [
       { "item": 5188, "name": "Filled Vessel", "chance": 0.9 },

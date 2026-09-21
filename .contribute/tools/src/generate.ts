@@ -59,8 +59,10 @@ function emitInstances(ref: Reference, curated: Map<number, CuratedFile>): strin
           minLevel: cur?.minLevel,
           maxLevel: cur?.maxLevel,
           icon: cur?.icon ?? DEFAULT_ICONS[inst.type],
+          background: cur?.background,
+          backgroundCoords: cur?.backgroundCoords,
         },
-        ["type", "expansionID", "minLevel", "maxLevel", "icon"],
+        ["type", "expansionID", "minLevel", "maxLevel", "icon", "background", "backgroundCoords"],
       ).map((l) => l + "\n"),
     );
     out.push(`    bosses = ${luaValue(inst.encounters)},\n})\n`);
