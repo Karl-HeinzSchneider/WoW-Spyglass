@@ -88,10 +88,10 @@ if (errors.length) {
 }
 const changed = write(build(ref, curated, lists, config), values.check);
 if (values.check) {
-  console.log(changed ? "ForeverLoot/db/generated is out of date" : "ForeverLoot/db/generated is up to date");
+  console.log(changed ? "generated addon data is out of date" : "generated addon data is up to date");
   process.exit(changed ? 1 : 0);
 }
-console.log(changed ? `${changed} file(s) written` : "ForeverLoot/db/generated unchanged");
+console.log(changed ? `${changed} file(s) written` : "generated addon data unchanged");
 
 function writeCurated(files: CuratedFile[], lists: ListFile[]): void {
   for (const file of files) {

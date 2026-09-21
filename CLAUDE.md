@@ -16,18 +16,18 @@ addon directory into the client, then run `/reload` in-game.
 
 The one generated part is the database. The root TypeScript tooling lives in `src/` and uses
 `package.json` (`npm install` once,
-Node 20+) builds `ForeverLoot/db/generated/` from three inputs: the **item scans** in
+Node 20+) builds `ForeverLoot/db/generated/` and `ForeverLoot_Locale/db/generated/` from three inputs: the **item scans** in
 `.contribute/data/items/items_<n>.json` (recorded in-game by `/fl scan`, one file per 10 000 ids,
 machine-written by `npm run import`), the **curated drops** in `.contribute/data/dungeons|raids/*.json`,
 the **curated item lists** in `.contribute/data/crafting|pvp|collections|reputation/*.json` (one
 file per profession / reward source / collection / faction; nothing in them comes from a game
 table), and wago.tools' `Map` + `DungeonEncounter` tables (instances, bosses, their names) for
 the build pinned in `.contribute/data/config.json`. Commands: `npm run fix` (validate ids, fill names, add missing bosses),
-`npm run gen` (write `ForeverLoot/db/generated/`), `npm run generate:check` (staleness, for CI),
+`npm run gen` (write both generated trees), `npm run generate:check` (staleness, for CI),
 `npm run import` (merge what the addon recorded in-game — SavedVariables `ForeverLoot.lua` /
 `/fl export` JSON files dropped into the gitignored `.contribute/inbox/`, or one file given as
 `-- <path>` — into the scans and the curated files). Never edit
-`ForeverLoot/db/generated/` by hand. Contributor docs in `.contribute/README.md`.
+either generated tree by hand. Contributor docs in `.contribute/README.md`.
 
 WoW Forever's items are server-side: the wago.tools item tables are incomplete and wrong for
 this client and ids from Classic/wowhead don't match, so **the in-game scan is the only item
@@ -83,12 +83,12 @@ validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-la
   fields in `meta`, grouped by the row's `group`, else the kind's default: standing for
   reputation, honor rank/standing for pvp, skill tier for crafting) that modules build their
   trees from.
-- `ForeverLoot/db/generated/` — **generated** (see Tooling); the TOC lists only `db\generated\generated.xml`.
+- `ForeverLoot/db/generated/` — **generated core data** (see Tooling); the TOC lists only `db\generated\generated.xml`.
   Every client item (`items/items_NNN.lua`), all instances with encounters plus curated
   levels/icons (`instances.lua`), curated drops (`loot/<name>.lua`), curated item lists
   (`<kind>/<slug>.lua`, one `Data:AddList` + `Data:AddListLoot` each), names per locale
-  (`locales/<locale>/`, non-enUS files return early unless `GetLocale()` matches). Excluded from
-  LuaLS and StyLua. Boss ids are `DungeonEncounter` ids, instance ids are `Map` ids.
+  (`locales/enUS/`, the standalone fallback). Excluded from LuaLS and StyLua. Boss ids are
+  `DungeonEncounter` ids, instance ids are `Map` ids.
 - `.contribute/data/` — everything people edit and send as pull requests: `dungeons/*.json` and
   `raids/*.json` (one instance each: map id, level range, icon, tile picture, boss portraits, drops with chance; names are
   informational and rewritten by `npm run fix`; a row with only a `name` gets its id filled in
@@ -161,11 +161,11 @@ validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-la
     `InputScrollFrameTemplate`), the `/fl export` text box; `app.ui.exportFrame:ShowText(text)`.
 - `ForeverLoot/ForeverLoot.lua` — root entry file, loaded last.
 - `ForeverLoot/lib/` — vendored Ace3, LibStub, CallbackHandler, LibDBIcon. Excluded from LuaLS and StyLua.
-- `ForeverLoot/locales/` — localization string tables.
 - `ForeverLoot/assets/` — textures, icons, sounds referenced from code. Prefer the client's own atlases
   (they scale with the frame); the client does not load `.png` files.
-- `ForeverLoot_Locale/` — currently an inert companion shell. Step 9 moves additional UI strings
-  and generated localized names here; the core keeps its English fallback.
+- `ForeverLoot_Locale/` — the locale companion. Its generated tree contains every non-English
+  configured/scanned name table and registers them through `ForeverLoot.Data:AddNames`; each file
+  returns immediately unless its locale matches. The core keeps generated enUS fallback names.
 - `ForeverLoot_Scraper/` — currently an inert companion shell with `ForeverLootScraperDB`. Step 10
   moves scanning, discovery, export and their commands here, including migration of old core state.
 - `src/` — root TypeScript tooling. It reads `.contribute/data/`, generates addon data, validates

@@ -4,8 +4,8 @@
 ---@field coreAPIVersion integer
 local addonName, addon = ...
 
--- Companion addons communicate with the core exclusively through its public API. Locale data
--- remains in the core until the step-9 extraction; this bootstrap establishes the load boundary.
+-- Companion addons communicate with the core exclusively through its public API. Generated
+-- locale files loaded after this bootstrap register their names through ForeverLoot.Data.
 addon.name = addonName
 addon.api = ForeverLoot
 addon.coreAPIVersion = ForeverLoot.API_VERSION

@@ -12,8 +12,8 @@ an addon distribution unit.
 | `ForeverLoot_Locale` | Additional UI translations and generated localized item, instance and boss names | none planned | `ForeverLoot` |
 | `ForeverLoot_Scraper` | Item scanning, loot observation, contribution exports and scraper commands | `ForeverLootScraperDB` | `ForeverLoot` |
 
-The locale and scraper implementations have not been extracted yet. Their addon shells establish
-the distribution, dependency and namespace boundaries without changing current behavior.
+Generated non-English names have been extracted into the locale addon. The scraper implementation
+has not been extracted yet; its shell establishes the future distribution and state boundary.
 
 ## Runtime contract
 
@@ -31,12 +31,15 @@ the distribution, dependency and namespace boundaries without changing current b
 
 ## Localization boundary
 
-The core owns locale selection, English fallback behavior, and the registration surface. The
-locale addon will own translated UI strings and non-fallback generated name tables. Locale data
-can register after the core database loads; `OnDataChanged` refreshes visible data.
+The core owns locale selection, English fallback behavior, and the registration surface. It ships
+generated `enUS` names so it remains useful without the companion. The locale addon owns every
+non-fallback generated name table and will own translated UI strings. Locale data registers after
+the core database loads; `OnDataChanged` refreshes visible data.
 
-Until extraction, all current locale files remain in `ForeverLoot/db/generated/locales/`. Moving
-them is a separate generated-output and load-order change.
+The generator routes `enUS` names to `ForeverLoot/db/generated/locales/` and every other configured
+or scanned locale to `ForeverLoot_Locale/db/generated/locales/`. Each non-English file guards
+itself with `GetLocale()`, so installing the complete locale addon has negligible runtime work on
+other clients.
 
 ## Scraper boundary
 

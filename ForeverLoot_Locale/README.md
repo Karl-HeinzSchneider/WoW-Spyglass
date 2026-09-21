@@ -1,7 +1,8 @@
 # ForeverLoot Locale
 
-This companion addon will own additional UI translations and generated localized names. It
-depends on `ForeverLoot` and may communicate with it only through the public `ForeverLoot` API.
+This companion addon owns non-English generated item, instance, and boss names. It depends on
+`ForeverLoot` and registers names through `ForeverLoot.Data:AddNames`.
 
-Locale data remains in the core addon until the locale extraction milestone. This directory is
-currently an inert addon shell that establishes its packaging and load-order boundary.
+The core retains generated `enUS` names as its standalone fallback. The generator writes every
+additional configured or scanned locale under `db/generated/locales/` in this addon. Static UI
+translations can use the same companion boundary when a UI-string registry is introduced.

@@ -235,7 +235,8 @@ Constructors (optional sugar):
 ## Item database
 
 `ForeverLoot.Data` holds every scanned item and where it drops. ForeverLoot ships its data as
-generated files (`ForeverLoot/db/generated/`, built by the root TypeScript tools from in-game item scans, the
+generated files (`ForeverLoot/db/generated/` plus non-English names in
+`ForeverLoot_Locale/db/generated/`, built by the root TypeScript tools from in-game item scans, the
 curated drop JSON in `.contribute/` and wago.tools' instance/encounter tables); other addons may
 add to it with the same calls. The addon itself adds whatever it scans or sees dropping in-game
 (`global.discovered`, see `ForeverLoot/src/core/discovery.lua`), so `Data.items` can grow at runtime.
@@ -268,7 +269,8 @@ Adding data (any call may be repeated; every one invalidates the caches and fire
 - `Data:AddInstance(id, def)`, `Data:AddBoss(id, def)` (appends to its instance's `bosses` if missing),
   `Data:AddBossLoot(bossID, { { itemID, chance }, ... })`
 - `Data:AddList(kind, id, def)`, `Data:AddListLoot(kind, id, { { itemID, standing = "Honored" }, ... })`
-- `Data:AddNames(locale, "items" | "bosses" | "instances", { [id] = name })` — enUS is the fallback
+- `Data:AddNames(locale, "items" | "bosses" | "instances", { [id] = name })` — enUS is the fallback;
+  the official locale addon registers every generated non-English name through this call
 
 Reading:
 

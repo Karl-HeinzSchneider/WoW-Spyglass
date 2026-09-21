@@ -1,6 +1,6 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { dirname, relative, resolve } from "node:path";
-import { type Config, FALLBACK_LOCALE, OUTPUT_DIR, ROOT } from "./config.js";
+import { type Config, FALLBACK_LOCALE, LOCALE_OUTPUT_DIR, OUTPUT_DIR, ROOT } from "./config.js";
 import { type CuratedFile } from "./curated.js";
 import { type ScannedItem } from "./items.js";
 import { type ListFile, ROW_FIELDS, rowsOf } from "./lists.js";
@@ -159,48 +159,67 @@ function emitXml(files: string[]): string {
   return lines.join("\n") + "\n";
 }
 
-/** Builds every output file in memory: { path relative to ForeverLoot/db/generated : content }. */
-export function build(ref: Reference, curated: CuratedFile[], lists: ListFile[], config: Config): Map<string, string> {
-  const files = new Map<string, string>();
-  const order: string[] = [];
-  const add = (path: string, content: string) => {
-    files.set(path, content);
-    order.push(path);
+export interface GeneratedFiles {
+  core: Map<string, string>;
+  locale: Map<string, string>;
+}
+
+/** Builds both generated addon trees in memory, keyed by paths relative to their generated directory. */
+export function build(ref: Reference, curated: CuratedFile[], lists: ListFile[], config: Config): GeneratedFiles {
+  const core = new Map<string, string>();
+  const locale = new Map<string, string>();
+  const coreOrder: string[] = [];
+  const localeOrder: string[] = [];
+  const addCore = (path: string, content: string) => {
+    core.set(path, content);
+    coreOrder.push(path);
+  };
+  const addLocale = (path: string, content: string) => {
+    locale.set(path, content);
+    localeOrder.push(path);
   };
 
   const itemIDs = [...ref.items.keys()].sort((a, b) => a - b);
   const chunks: number[][] = [];
   for (let i = 0; i < itemIDs.length; i += config.itemsPerFile) chunks.push(itemIDs.slice(i, i + config.itemsPerFile));
-  chunks.forEach((chunk, i) => add(`items/items_${String(i + 1).padStart(3, "0")}.lua`, emitItems(chunk, ref)));
+  chunks.forEach((chunk, i) => addCore(`items/items_${String(i + 1).padStart(3, "0")}.lua`, emitItems(chunk, ref)));
 
   const byMap = new Map(curated.map((f) => [f.data.map, f]));
-  add("instances.lua", emitInstances(ref, byMap));
+  addCore("instances.lua", emitInstances(ref, byMap));
 
   for (const file of [...curated].sort((a, b) => a.slug.localeCompare(b.slug))) {
-    if (file.data.encounters.some((e) => e.loot?.length)) add(`loot/${file.slug}.lua`, emitLoot(file, ref));
+    if (file.data.encounters.some((e) => e.loot?.length)) addCore(`loot/${file.slug}.lua`, emitLoot(file, ref));
   }
 
   // Every list file becomes a tile in its module, rows or not (an empty one asks for contributions).
   for (const file of [...lists].sort((a, b) => a.kind.localeCompare(b.kind) || a.slug.localeCompare(b.slug))) {
-    add(`${file.kind}/${file.slug}.lua`, emitList(file, ref));
+    addCore(`${file.kind}/${file.slug}.lua`, emitList(file, ref));
   }
 
-  // Item names exist for the locales that were scanned; instance/boss names for the configured ones.
+  // The core always ships the English fallback. Every additional locale is an optional companion
+  // payload, including item names when that locale has been scanned in-game.
   for (const locale of ref.itemLocales) {
+    const add = locale === FALLBACK_LOCALE ? addCore : addLocale;
     add(`locales/${locale}/items.lua`, emitNames(locale, "items", ref.names.get(locale)!.items, ".contribute/items (in-game scans)"));
   }
   for (const locale of config.locales) {
     const names = ref.names.get(locale)!;
+    const add = locale === FALLBACK_LOCALE ? addCore : addLocale;
     add(`locales/${locale}/instances.lua`, emitNames(locale, "instances", names.instances, `wago.tools build ${ref.build}`));
     add(`locales/${locale}/bosses.lua`, emitNames(locale, "bosses", names.encounters, `wago.tools build ${ref.build}`));
   }
 
-  files.set("generated.xml", emitXml(order));
-  return files;
+  core.set("generated.xml", emitXml(coreOrder));
+  locale.set("generated.xml", emitXml(localeOrder));
+  return { core, locale };
 }
 
-/** Writes the files, removes stale ones; returns the number of files that changed. */
-export function write(files: Map<string, string>, check: boolean): number {
+/** Writes both addon trees, removes stale files, and returns the number of changed files. */
+export function write(files: GeneratedFiles, check: boolean): number {
+  return writeTree(files.core, OUTPUT_DIR, "ForeverLoot/db/generated", check) + writeTree(files.locale, LOCALE_OUTPUT_DIR, "ForeverLoot_Locale/db/generated", check);
+}
+
+function writeTree(files: Map<string, string>, outputDir: string, displayDir: string, check: boolean): number {
   let changed = 0;
   const existing = new Set<string>();
   const walk = (dir: string) => {
@@ -208,29 +227,29 @@ export function write(files: Map<string, string>, check: boolean): number {
     for (const entry of readdirSync(dir)) {
       const p = resolve(dir, entry);
       if (statSync(p).isDirectory()) walk(p);
-      else existing.add(relative(OUTPUT_DIR, p).replace(/\\/g, "/"));
+      else existing.add(relative(outputDir, p).replace(/\\/g, "/"));
     }
   };
-  walk(OUTPUT_DIR);
+  walk(outputDir);
 
   for (const rel of [...existing].filter((p) => !files.has(p)).sort()) {
     changed++;
-    if (check) console.log(`stale: ForeverLoot/db/generated/${rel}`);
+    if (check) console.log(`stale: ${displayDir}/${rel}`);
     else {
-      rmSync(resolve(OUTPUT_DIR, rel));
-      console.log(`removed ForeverLoot/db/generated/${rel}`);
+      rmSync(resolve(outputDir, rel));
+      console.log(`removed ${displayDir}/${rel}`);
     }
   }
   for (const [rel, content] of files) {
-    const path = resolve(OUTPUT_DIR, rel);
+    const path = resolve(outputDir, rel);
     // A checkout with core.autocrlf has CRLF on disk; that is not a content change.
     if (existsSync(path) && readFileSync(path, "utf-8").replace(/\r\n/g, "\n") === content) continue;
     changed++;
-    if (check) console.log(`outdated: ForeverLoot/db/generated/${rel}`);
+    if (check) console.log(`outdated: ${displayDir}/${rel}`);
     else {
       mkdirSync(dirname(path), { recursive: true });
       writeFileSync(path, content, "utf-8");
-      console.log(`wrote ForeverLoot/db/generated/${rel}`);
+      console.log(`wrote ${displayDir}/${rel}`);
     }
   }
   return changed;

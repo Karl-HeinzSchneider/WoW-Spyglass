@@ -1,7 +1,8 @@
 # Contributing data
 
 Everything under `data/` is what the database is built from; everything under
-`ForeverLoot/db/generated/` is produced from it and must not be edited by hand.
+`ForeverLoot/db/generated/` and `ForeverLoot_Locale/db/generated/` is produced from it and must
+not be edited by hand.
 
 ```text
 .contribute/
@@ -57,7 +58,7 @@ into a file and attach it to an issue, or send it to someone who drops it into `
 export only holds the records new since the previous one (records stay in the SavedVariables
 until the shipped database has them, so a full dump would grow with every scan); `/fl export all`
 repeats everything. Either way, commit `.contribute/data/items/` together with the regenerated
-`ForeverLoot/db/generated/` files. After `/reload` the addon drops records the shipped database now states
+addon data. After `/reload` the addon drops records the shipped database now states
 exactly, so `/fl scan resume` keeps going with a clean slate; records that differ from the
 shipped row (a `force` re-scan, a changed item) stay until they have been imported too.
 
@@ -112,13 +113,13 @@ side). Have a look at the diff before committing.
 ```sh
 npm install          # once
 npm run fix          # validate ids, fill names, add missing bosses
-npm run gen          # write ForeverLoot/db/generated/
+npm run gen          # write the core and locale generated trees
 ```
 
-4. Commit the JSON **and** the regenerated `ForeverLoot/db/generated/` files, then open a pull request.
+4. Commit the JSON **and** both generated addon trees, then open a pull request.
 
 `npm run check:data` only validates the data; `npm run generate:check` fails when
-`ForeverLoot/db/generated/` is stale
+the generated addon data is stale
 (used in CI). Instances and encounters come from [wago.tools](https://wago.tools) (`Map`,
 `DungeonEncounter`) for the build pinned in `data/config.json`, cached in the root `.cache/`
 (delete it to re-download). Bump `build` there when the client updates; `locales` lists the
@@ -164,12 +165,13 @@ rows still gets its tile — the page then asks for contributions. Then `npm run
 
 ## What is generated from what
 
-| Output (`ForeverLoot/db/generated/`) | Source under `.contribute/data/` |
+| Output | Source under `.contribute/data/` |
 |---|---|
 | `items/items_NNN.lua` | `items/*.json`: the scanned items, `itemsPerFile` rows per file |
 | `instances.lua` | wago.tools `Map` + `DungeonEncounter` (only maps with encounters), levels/icons from the JSON |
 | `loot/<name>.lua` | the `dungeons/` and `raids/` files' `loot` rows |
 | `crafting/<name>.lua`, `pvp/…`, `collections/…`, `reputation/…` | the item lists, one file each |
-| `locales/<locale>/items.lua` | the scanned names of that locale |
-| `locales/<locale>/instances.lua`, `bosses.lua` | wago.tools name columns per configured locale |
-| `generated.xml` | loader listed in the TOC |
+| `ForeverLoot/db/generated/locales/enUS/*.lua` | English fallback names |
+| `ForeverLoot_Locale/db/generated/locales/<locale>/items.lua` | scanned names for every non-English locale |
+| `ForeverLoot_Locale/db/generated/locales/<locale>/instances.lua`, `bosses.lua` | wago.tools names for every configured non-English locale |
+| each `generated.xml` | loader listed in that addon's TOC |

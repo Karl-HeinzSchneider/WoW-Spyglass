@@ -8,6 +8,7 @@ export const CONTRIBUTE_DIR = resolve(ROOT, ".contribute");
 export const DATA_DIR = resolve(CONTRIBUTE_DIR, "data");
 export const CACHE_DIR = resolve(ROOT, ".cache");
 export const OUTPUT_DIR = resolve(ROOT, "ForeverLoot", "db", "generated");
+export const LOCALE_OUTPUT_DIR = resolve(ROOT, "ForeverLoot_Locale", "db", "generated");
 
 /** Curated input folders; the key is informational, Map.InstanceType decides the real type. */
 export const CURATED_DIRS = {

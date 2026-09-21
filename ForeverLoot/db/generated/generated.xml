@@ -31,6 +31,4 @@
 	<Script file="locales\enUS\items.lua" />
 	<Script file="locales\enUS\instances.lua" />
 	<Script file="locales\enUS\bosses.lua" />
-	<Script file="locales\deDE\instances.lua" />
-	<Script file="locales\deDE\bosses.lua" />
 </Ui>

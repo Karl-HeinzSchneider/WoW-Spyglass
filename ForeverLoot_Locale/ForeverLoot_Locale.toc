@@ -7,3 +7,4 @@
 ## X-License: MIT
 
 ForeverLoot_Locale.lua
+db\generated\generated.xml

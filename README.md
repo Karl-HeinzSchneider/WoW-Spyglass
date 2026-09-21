@@ -6,7 +6,7 @@ monorepo.
 ## Repository layout
 
 - `ForeverLoot/` — the distributable core addon.
-- `ForeverLoot_Locale/` — the locale companion boundary; extraction follows in a later milestone.
+- `ForeverLoot_Locale/` — additional generated locale data loaded through the public core API.
 - `ForeverLoot_Scraper/` — the contributor scraper boundary; extraction follows later.
 - `.contribute/data/` — canonical item scans and curated game data.
 - `.contribute/inbox/` — ignored SavedVariables and JSON exports waiting to be imported.
