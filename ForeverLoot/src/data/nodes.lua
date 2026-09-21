@@ -128,6 +128,14 @@ local STANDING_RANK = {
     Exalted = 8,
 }
 
+---@param rank number
+---@param fallback? string
+---@return string?
+local function standingLabel(rank, fallback)
+    local label = _G["FACTION_STANDING_LABEL" .. rank]
+    return type(label) == "string" and label or fallback
+end
+
 ---@param standing string?
 ---@return string? key, string? label, number rank
 local function standingGroup(standing)
@@ -135,8 +143,19 @@ local function standingGroup(standing)
     if not rank then
         return nil, nil, math.huge
     end
-    local label = _G["FACTION_STANDING_LABEL" .. rank]
-    return "STANDING" .. rank, type(label) == "string" and label or standing, rank
+    return "STANDING" .. rank, standingLabel(rank, standing), rank
+end
+
+-- Faction names/descriptions belong to the client: they are localized there, while reaction
+-- and progress belong to the current character. Curated list fields remain the fallback for
+-- clients that do not know a faction yet.
+---@param list ForeverLoot.List
+---@return table?
+local function factionData(list)
+    if type(list.factionID) ~= "number" or not C_Reputation or not C_Reputation.GetFactionDataByID then
+        return nil
+    end
+    return C_Reputation.GetFactionDataByID(list.factionID)
 end
 
 -- Profession tiers by the skill a recipe needs.
@@ -261,14 +280,28 @@ function api.ListFolder(kind, id)
     if not list then
         return nil
     end
-    return api.Folder(list.name, list.icon or ICON_LIST, api.ListEntries(kind, id), {
+    local faction = kind == "reputation" and factionData(list) or nil
+    local name = faction and type(faction.name) == "string" and faction.name ~= "" and faction.name or list.name
+    local description = faction and type(faction.description) == "string" and faction.description ~= "" and faction.description or nil
+    local standing = faction and type(faction.reaction) == "number" and standingLabel(faction.reaction) or nil
+    return api.Folder(name, list.icon or ICON_LIST, api.ListEntries(kind, id), {
         columns = 2,
         groupBy = listGroupKey(kind),
         order = list.order,
-        info = list.info,
+        info = list.info or standing,
+        description = description,
         background = list.background,
         backgroundCoords = list.backgroundCoords,
-        meta = { listKind = kind, listID = id, factionID = list.factionID, skillLineID = list.skillLineID },
+        meta = {
+            listKind = kind,
+            listID = id,
+            factionID = list.factionID,
+            skillLineID = list.skillLineID,
+            reaction = faction and faction.reaction,
+            currentStanding = faction and faction.currentStanding,
+            currentReactionThreshold = faction and faction.currentReactionThreshold,
+            nextReactionThreshold = faction and faction.nextReactionThreshold,
+        },
     })
 end
 

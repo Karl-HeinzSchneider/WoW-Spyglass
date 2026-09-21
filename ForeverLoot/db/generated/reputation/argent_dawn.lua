@@ -5,4 +5,5 @@ local Data = ForeverLoot.Data
 Data:AddList("reputation", "argent_dawn", {
     name = "Argent Dawn",
     icon = "Interface\\Icons\\Achievement_Reputation_01",
+    factionID = 529,
 })

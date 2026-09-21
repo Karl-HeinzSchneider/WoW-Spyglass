@@ -6,12 +6,12 @@ import { type Checker, type CuratedItemRow } from "./curated.js";
 /**
  * A curated item list: .contribute/data/<kind>/<name>.json, one file per profession (crafting),
  * battleground or rank set (pvp), collection type (collections) or faction (reputation). The
- * file name is the list's id, `name` is what the browser shows, and the rows are items with
- * the fields the kind knows (see ROW_FIELDS). Unlike the instance files, nothing here comes
- * from a game table, so `name` is the display name, not informational.
+ * file name is the list's id, `name` is the fallback display name, and the rows are items with
+ * the fields the kind knows (see ROW_FIELDS). Reputation names may be replaced at runtime by
+ * the localized name returned for their FactionID.
  */
 export interface CuratedList {
-  /** Display name of the list, e.g. "Blacksmithing" or "Argent Dawn". */
+  /** Display name, or the readable fallback for a reputation resolved from its FactionID. */
   name: string;
   /** Texture path shown on the tile, e.g. "Interface\\Icons\\Trade_BlackSmithing". */
   icon?: string;
@@ -29,9 +29,13 @@ export interface CuratedList {
   skillLine?: number;
   /** The rows, under the kind's key (ROWS_KEY): `recipes`, `rewards` or `items`. */
   recipes?: CuratedListRow[];
-  rewards?: CuratedListRow[];
+  /** PvP rows, or reputation rows grouped by standing. */
+  rewards?: CuratedListRow[] | ReputationRewards;
   items?: CuratedListRow[];
 }
+
+/** Reputation rewards are grouped in source; the generator adds `standing` to each Lua row. */
+export type ReputationRewards = Partial<Record<Standing, CuratedListRow[]>>;
 
 /**
  * One item of a list. Besides the item, every kind has its own optional fields (ROW_FIELDS);
@@ -48,7 +52,7 @@ export interface CuratedListRow extends CuratedItemRow {
   source?: string;
   /** pvp: required honor rank 1..14. */
   rank?: number;
-  /** pvp, reputation: required standing, "Neutral" .. "Exalted". */
+  /** PvP standing; generated reputation rows also receive this from their source group. */
   standing?: string;
   /** Faction restriction, "Alliance" or "Horde"; omitted = both. */
   side?: string;
@@ -78,11 +82,12 @@ const LIST_ID_FIELDS: Record<ListKind, (keyof CuratedList)[]> = {
   reputation: ["faction"],
 };
 
-export const STANDINGS = ["Hated", "Hostile", "Unfriendly", "Neutral", "Friendly", "Honored", "Revered", "Exalted"];
+export const STANDINGS = ["Hated", "Hostile", "Unfriendly", "Neutral", "Friendly", "Honored", "Revered", "Exalted"] as const;
+export type Standing = (typeof STANDINGS)[number];
 const SIDES = ["Alliance", "Horde"];
 
 /** What a row field must look like: a number range, a string, or one of a fixed set of strings. */
-type FieldSpec = { type: "integer"; min?: number; max?: number } | { type: "string" } | { type: "enum"; values: string[] };
+type FieldSpec = { type: "integer"; min?: number; max?: number } | { type: "string" } | { type: "enum"; values: readonly string[] };
 
 const FIELD_SPECS: Record<string, FieldSpec> = {
   group: { type: "string" },
@@ -103,7 +108,12 @@ export const ROW_FIELDS: Record<ListKind, (keyof CuratedListRow)[]> = {
 };
 
 export function rowsOf(file: ListFile): CuratedListRow[] {
-  return file.data[ROWS_KEY[file.kind]] ?? [];
+  const rows = file.data[ROWS_KEY[file.kind]];
+  if (Array.isArray(rows)) return rows;
+  if (file.kind !== "reputation" || !rows || typeof rows !== "object") return [];
+
+  const grouped = rows as ReputationRewards;
+  return STANDINGS.flatMap((standing) => (grouped[standing] ?? []).map((row) => ({ ...row, standing })));
 }
 
 export function loadLists(): ListFile[] {
@@ -153,6 +163,9 @@ export function validateLists(files: ListFile[], checker: Checker): void {
     for (const field of LIST_ID_FIELDS[file.kind]) {
       if (d[field] !== undefined && !Number.isInteger(d[field])) checker.report(file, `\`${field}\` must be an integer id`);
     }
+    if (file.kind === "reputation" && (!Number.isInteger(d.faction) || d.faction! < 1)) {
+      checker.report(file, "`faction` must be a positive FactionID");
+    }
     for (const field of ["faction", "skillLine"] as const) {
       if (d[field] !== undefined && !LIST_ID_FIELDS[file.kind].includes(field)) {
         checker.report(file, `\`${field}\` is not a field of ${file.kind} lists`);
@@ -160,12 +173,21 @@ export function validateLists(files: ListFile[], checker: Checker): void {
     }
 
     const key = ROWS_KEY[file.kind];
-    const rows = d[key];
+    let rows = d[key];
     if (rows === undefined) {
       checker.report(file, `\`${key}\` is missing`, true);
-      if (checker.fix) d[key] = [];
+      if (checker.fix) {
+        rows = file.kind === "reputation" ? {} : [];
+        if (file.kind === "reputation") d.rewards = rows as ReputationRewards;
+        else if (file.kind === "crafting") d.recipes = rows as CuratedListRow[];
+        else if (file.kind === "pvp") d.rewards = rows as CuratedListRow[];
+        else d.items = rows as CuratedListRow[];
+      }
       else continue;
-    } else if (!Array.isArray(rows)) {
+    } else if (file.kind === "reputation" && (Array.isArray(rows) || typeof rows !== "object" || rows === null)) {
+      checker.report(file, "`rewards` must be an object grouped by standing");
+      continue;
+    } else if (file.kind !== "reputation" && !Array.isArray(rows)) {
       checker.report(file, `\`${key}\` must be an array`);
       continue;
     }
@@ -174,9 +196,28 @@ export function validateLists(files: ListFile[], checker: Checker): void {
     }
 
     const seenItems = new Set<number>();
-    const allowed = new Set<string>(["item", "name", "group", ...ROW_FIELDS[file.kind]]);
-    for (const row of rowsOf(file)) {
-      const where = `${key} ${row.item ?? row.name ?? "?"}`;
+    const allowedFields = ROW_FIELDS[file.kind].filter((field) => file.kind !== "reputation" || field !== "standing");
+    const allowed = new Set<string>(["item", "name", "group", ...allowedFields]);
+    const groupedRows: { row: CuratedListRow; where: string }[] = [];
+    if (file.kind === "reputation") {
+      const grouped = rows as ReputationRewards;
+      for (const standing of Object.keys(grouped)) {
+        if (!STANDINGS.includes(standing as Standing)) {
+          checker.report(file, `rewards: unknown standing \`${standing}\``);
+          continue;
+        }
+        const group = grouped[standing as Standing];
+        if (!Array.isArray(group)) {
+          checker.report(file, `rewards.${standing} must be an array`);
+          continue;
+        }
+        for (const row of group) groupedRows.push({ row, where: `rewards.${standing} ${row.item ?? row.name ?? "?"}` });
+      }
+    } else {
+      for (const row of rowsOf(file)) groupedRows.push({ row, where: `${key} ${row.item ?? row.name ?? "?"}` });
+    }
+
+    for (const { row, where } of groupedRows) {
       for (const [field, value] of Object.entries(row)) {
         if (!allowed.has(field)) {
           checker.report(file, `${where}: unknown field \`${field}\``);
@@ -203,11 +244,21 @@ export function serializeList(file: ListFile): string {
     order: d.order,
   };
   for (const field of LIST_ID_FIELDS[file.kind]) ordered[field] = d[field];
-  ordered[ROWS_KEY[file.kind]] = rowsOf(file).map((r) => {
+  const serializeRow = (r: CuratedListRow) => {
     const row: Record<string, unknown> = { item: r.item, name: r.name };
-    for (const field of ROW_FIELDS[file.kind]) row[field] = r[field];
+    for (const field of ROW_FIELDS[file.kind]) {
+      if (file.kind !== "reputation" || field !== "standing") row[field] = r[field];
+    }
     row.group = r.group;
     return row;
-  });
+  };
+  if (file.kind === "reputation") {
+    const grouped = (d.rewards ?? {}) as ReputationRewards;
+    ordered.rewards = Object.fromEntries(
+      STANDINGS.filter((standing) => Object.hasOwn(grouped, standing)).map((standing) => [standing, (grouped[standing] ?? []).map(serializeRow)]),
+    );
+  } else {
+    ordered[ROWS_KEY[file.kind]] = rowsOf(file).map(serializeRow);
+  }
   return JSON.stringify(ordered, null, 2) + "\n";
 }

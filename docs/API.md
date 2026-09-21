@@ -279,7 +279,9 @@ Curated item lists (`Data.lists[kind][id]`) back the Crafting, PvP, Collections 
 modules: `kind` is one of `"crafting"`, `"pvp"`, `"collections"`, `"reputation"` (other addons may
 add kinds of their own and browse them with `ListFolders`), `id` is a string unique within the kind
 (the shipped ones are the `.contribute/data/<kind>/<id>.json` file names; prefix yours). A list is
-`{ name, icon?, background?, backgroundCoords?, info?, order?, factionID?, skillLineID? }`; its rows
+`{ name, icon?, background?, backgroundCoords?, info?, order?, factionID?, skillLineID? }`; reputation
+folders use `factionID` to resolve the localized name, description, current reaction and progress
+from `C_Reputation` at runtime, falling back to the generated fields. Its rows
 are `{ itemID, field = value, ... }` with the kind's fields by name (`standing`, `rank`, `skill`,
 `spell`, `source`, `side`) and an optional `group` label.
 

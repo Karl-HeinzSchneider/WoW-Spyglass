@@ -140,25 +140,33 @@ The row key differs per kind so the files read naturally:
 | `crafting/` | `recipes` | `spell` (recipe spell id), `skill` (required skill), `source` (free text: "Trainer", "Vendor: …") | skill tier (Apprentice, Journeyman, Expert, Artisan, Master) |
 | `pvp/` | `rewards` | `rank` (honor rank 1–14), `standing`, `side` (`Alliance`/`Horde`) | rank, else standing |
 | `collections/` | `items` | `source` (free text), `side` | none (by item type) |
-| `reputation/` | `rewards` | `standing` (`Neutral` … `Exalted`), `side` | standing |
+| `reputation/` | `rewards` object keyed by standing | `side` | standing |
 
 Every row may also carry a `group` label of your own, which replaces the default grouping for
 that row. Every file may carry `icon`, `background` + `backgroundCoords` (as for instances),
 `info` (small text on the tile) and `order` (tile position; by name otherwise). Reputation files
-may state the game's `faction` id and crafting files the profession's `skillLine` id; both are
-optional and only passed through for now.
+must state the game's `faction` id; the addon uses it at runtime for the localized faction name,
+description and the character's current standing. Crafting files may state the profession's
+`skillLine` id.
 
 ```json
 {
   "name": "Argent Dawn",
   "icon": "Interface\\Icons\\Achievement_Reputation_01",
   "faction": 529,
-  "rewards": [
-    { "item": 13209, "name": "Seal of the Dawn", "standing": "Friendly" },
-    { "name": "Argent Dawn Tabard", "standing": "Honored", "side": "Alliance" }
-  ]
+  "rewards": {
+    "Friendly": [
+      { "item": 13209, "name": "Seal of the Dawn" }
+    ],
+    "Honored": [
+      { "name": "Argent Dawn Tabard", "side": "Alliance" }
+    ]
+  }
 }
 ```
+
+Valid reputation group keys are `Hated`, `Hostile`, `Unfriendly`, `Neutral`, `Friendly`,
+`Honored`, `Revered` and `Exalted`. Empty and irrelevant groups may be omitted.
 
 Item rows work as for drops: give the `item` id, or a `name` that identifies exactly one scanned
 item (`npm run fix` fills the id in); unscanned items are allowed with a warning. A file with no
