@@ -99,7 +99,7 @@ validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-la
   from the `ketho.wow-api` VS Code extension, not from `lib/` (which is excluded from LuaLS) —
   inherit from them rather than redeclaring the API.
 - `src/types_blizzard.lua` — annotations only, not in the TOC. Blizzard UI mixins the UI inherits
-  from (`TabSystemOwnerMixin`, `PortraitFrameMixin`, `PagingControlsMixin`, …), limited to the
+  from (`SidePanelTabButtonMixin`, `PortraitFrameMixin`, `PagingControlsMixin`, …), limited to the
   methods we use, because the full ones are only in Ketho's opt-in FrameXML annotations. Extend
   a stub (verified against `BlizzardInterfaceCode`) when using a new method.
 - `src/ui/` — the main window, Blizzard-style **XML layout + Lua mixin** so the exported Blizzard
@@ -107,14 +107,22 @@ validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-la
   frame are globals prefixed `ForeverLoot…` (also on `app.ui.*`). Together with the public
   `ForeverLoot` API table these are the only sanctioned globals. Lua mixin files must be listed in the TOC *before* the XML that
   references them, and `templates.xml` before `mainwindow.xml`.
-  - `mainwindow.lua/.xml` — `ForeverLootMainWindow`: `PortraitFrameTemplate` + `TabSystemOwnerTemplate`
-    (modeled on `PlayerSpellsFrame`). Browser-style tabs: one per open *view*, plus a `+` tab;
-    right-click closes. The Blizzard tab strip can only append/clear, so `RebuildTabs()` redoes the
-    whole strip. Draggable; position saved to `profile.window`. `/fl` and the minimap button toggle it.
-  - `view.lua` + `templates.xml` — a view is a breadcrumb bar + two spellbook-art pages of rows with
-    Blizzard `PagingControls`. Navigation is a `path` stack over `ForeverLoot.Node` trees
-    (`Push`/`PopTo`/`Back` → `Refresh`). `Refresh()` rebuilds elements + page layout (navigation,
-    query/size changes); `Render()` only redraws the visible pages (page flips, item info arriving).
+  - `mainwindow.lua/.xml` — `ForeverLootMainWindow`, modeled on the Camelot `CharacterFrame`
+    (`Blizzard_UIPanels_Game/Camelot/CharacterFrame.xml`): `PortraitFrameBaseTemplate`, a dark
+    two-column interior (`LeftPane` = the views, `RightPane` = meta data, both using the
+    `UI-Character-Info-*-BG` atlases stretched to 900x620, split by `common-framedivider`) and
+    icon tabs down the right edge (`ForeverLootSideTabTemplate` = `LargeSideTabButtonTemplate`,
+    a *Frame*, so clicks come through `SetCustomOnMouseUpHandler`). Browser-style tabs: one per
+    open *view* (icon = deepest node with one, tooltip = title), plus a `+` tab; right-click
+    closes; `RebuildTabs()` relays the strip from a pool. Draggable; position saved to
+    `profile.window`. `/fl` and the minimap button toggle it.
+  - `view.lua` + `templates.xml` — a view fills the left column: header row (back button +
+    breadcrumbs left, search box + filter dropdown right) over a divider, then one `Content` page
+    of rows with Blizzard `PagingControls` bottom-right. Rows/headers are white or item-quality
+    colored on the dark pane; section headers use the `UI-Character-Info-Title` plate. Navigation
+    is a `path` stack over `ForeverLoot.Node` trees (`Push`/`PopTo`/`Back` → `Refresh`).
+    `Refresh()` rebuilds elements + page layout (navigation, query/size changes); `Render()` only
+    redraws the current page (page flips, item info arriving).
     Children come from `view:GetChildren(node)`: static `children`, dynamic `getChildren`, or a
     `query` folder whose entries are `Query.Run` over the DB with the view's own per-node query
     state (`view.queries`); query folders show the `SearchBox` (debounced) and `FilterDropdown`

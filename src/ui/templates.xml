@@ -1,7 +1,7 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
 
-
-	<!-- One row in a page: [icon] Name ............ [>] (arrow only for folders) -->
+	<!-- One row in the list: [icon] Name ............ [>] (arrow only for folders).
+	     Text colors are set in Lua (white / item quality on the dark pane). -->
 	<Button name="ForeverLootListRowTemplate" mixin="ForeverLootListRowMixin" registerForClicks="LeftButtonUp, RightButtonUp" virtual="true">
 		<Size x="200" y="40"/>
 		<Layers>
@@ -18,17 +18,16 @@
 						<Anchor point="RIGHT" x="-10" y="0"/>
 					</Anchors>
 				</Texture>
-				<!-- Same fonts as SpellBookItemTemplate's Name / SubName; colors set in Lua. -->
-				<FontString parentKey="Name" inherits="SystemFont_Large" justifyH="LEFT" wordwrap="false">
+				<FontString parentKey="Name" inherits="GameFontHighlightMedium" justifyH="LEFT" wordwrap="false">
 					<Anchors>
 						<Anchor point="LEFT" relativeKey="$parent.Icon" relativePoint="RIGHT" x="8" y="0"/>
 						<Anchor point="RIGHT" relativeKey="$parent.Arrow" relativePoint="LEFT" x="-4" y="0"/>
 					</Anchors>
 				</FontString>
 				<!-- Optional second line (description / item level); when shown, Name moves up. -->
-				<FontString parentKey="Sub" inherits="SystemFont_Med1" justifyH="LEFT" wordwrap="false" hidden="true">
+				<FontString parentKey="Sub" inherits="GameFontNormalSmall" justifyH="LEFT" wordwrap="false" hidden="true">
 					<Anchors>
-						<Anchor point="BOTTOMLEFT" relativeKey="$parent.Icon" relativePoint="BOTTOMRIGHT" x="8" y="2"/>
+						<Anchor point="BOTTOMLEFT" relativeKey="$parent.Icon" relativePoint="BOTTOMRIGHT" x="8" y="3"/>
 						<Anchor point="RIGHT" relativeKey="$parent.Arrow" relativePoint="LEFT" x="-4" y="0"/>
 					</Anchors>
 				</FontString>
@@ -43,70 +42,57 @@
 			</Layer>
 		</Layers>
 		<Scripts>
-			<OnLoad method="OnLoad"/>
 			<OnClick method="OnClick"/>
 			<OnEnter method="OnEnter"/>
 			<OnLeave method="OnLeave"/>
 		</Scripts>
 	</Button>
 
-	<!-- Group label: a row-sized text line with a thin divider, used to cluster entries
-	     without the weight of a full page header. -->
+	<!-- Group label: a row-sized gold text line with a thin divider, used to cluster entries
+	     without the weight of a full section header. -->
 	<Frame name="ForeverLootGroupLabelTemplate" mixin="ForeverLootGroupLabelMixin" virtual="true">
 		<Size x="200" y="40"/>
 		<Layers>
 			<Layer level="ARTWORK">
-				<FontString parentKey="Text" inherits="GameFontNormalMed2" justifyH="LEFT" wordwrap="false">
+				<FontString parentKey="Text" inherits="GameFontNormal" justifyH="LEFT" wordwrap="false">
 					<Anchors>
-						<Anchor point="LEFT" x="6" y="2"/>
-						<Anchor point="RIGHT" x="-6" y="2"/>
+						<Anchor point="LEFT" x="8" y="2"/>
+						<Anchor point="RIGHT" x="-8" y="2"/>
 					</Anchors>
 				</FontString>
-				<Texture parentKey="Line" atlas="spellbook-divider">
-					<Size y="8"/>
+				<!-- Atlas height, stretched to the row width (like Options_HorizontalDivider in AddonList). -->
+				<Texture parentKey="Line" atlas="UI-Character-Info-ScrollLine-Long" useAtlasSize="true">
 					<Anchors>
-						<Anchor point="BOTTOMLEFT" x="-20" y="2"/>
-						<Anchor point="BOTTOMRIGHT" x="-20" y="2"/>
+						<Anchor point="BOTTOMLEFT" x="0" y="2"/>
+						<Anchor point="BOTTOMRIGHT" x="0" y="2"/>
 					</Anchors>
 				</Texture>
 			</Layer>
 		</Layers>
-		<Scripts>
-			<OnLoad method="OnLoad"/>
-		</Scripts>
 	</Frame>
 
-	<!-- Section header inside a page; modeled on Blizzard_PlayerSpells' SpellBookHeaderTemplate. -->
+	<!-- Section header: the character frame's stat-category plate (CharacterStatFrameCategoryTemplate)
+	     stretched to the list width, white centered text. -->
 	<Frame name="ForeverLootPageHeaderTemplate" mixin="ForeverLootPageHeaderMixin" virtual="true">
-		<Size x="300" y="51"/>
+		<Size x="300" y="40"/>
 		<Layers>
 			<Layer level="BACKGROUND">
-				<Texture parentKey="Backplate" atlas="spellbook-list-backplate" alpha="0.65">
-					<Size x="416" y="106"/>
+				<Texture parentKey="Backplate" atlas="UI-Character-Info-Title">
 					<Anchors>
-						<Anchor point="LEFT" x="-85" y="10"/>
+						<Anchor point="TOPLEFT"/>
+						<Anchor point="BOTTOMRIGHT"/>
 					</Anchors>
 				</Texture>
 			</Layer>
 			<Layer level="ARTWORK">
-				<FontString parentKey="Text" inherits="SystemFont_Huge2" justifyH="LEFT" wordwrap="false">
+				<FontString parentKey="Text" inherits="GameFontHighlightMedium" justifyH="CENTER" wordwrap="false">
 					<Anchors>
-						<Anchor point="TOPLEFT" x="-8" y="0"/>
-						<Anchor point="TOPRIGHT" x="-60" y="0"/>
+						<Anchor point="LEFT" x="12" y="1"/>
+						<Anchor point="RIGHT" x="-12" y="1"/>
 					</Anchors>
 				</FontString>
-				<Texture parentKey="Border" atlas="spellbook-divider">
-					<Size y="11"/>
-					<Anchors>
-						<Anchor point="BOTTOMLEFT" x="-32" y="0"/>
-						<Anchor point="BOTTOMRIGHT" x="-60" y="0"/>
-					</Anchors>
-				</Texture>
 			</Layer>
 		</Layers>
-		<Scripts>
-			<OnLoad method="OnLoad"/>
-		</Scripts>
 	</Frame>
 
 	<!-- One segment of the breadcrumb trail. Width follows the text (set in Init). -->
@@ -117,7 +103,7 @@
 				<Anchor point="CENTER"/>
 			</Anchors>
 		</ButtonText>
-		<!-- The bar sits above the page header area, where the standard yellow reads fine. -->
+		<!-- Ancestors gold, hover and the current (disabled) crumb white. -->
 		<NormalFont style="GameFontNormal"/>
 		<HighlightFont style="GameFontHighlight"/>
 		<DisabledFont style="GameFontHighlight"/>
@@ -141,38 +127,21 @@
 		</Layers>
 	</Frame>
 
-	<!-- One book page. The atlas is chosen in Lua (camelot vs mainline art).
-	     Insets (set per instance) define the content slot, like PagedSpellsView1/2Template. -->
-	<Frame name="ForeverLootPageTemplate" virtual="true">
-		<KeyValues>
-			<KeyValue key="insetLeft" value="85" type="number"/>
-			<KeyValue key="insetRight" value="41" type="number"/>
-			<KeyValue key="insetTop" value="95" type="number"/>
-			<KeyValue key="insetBottom" value="72" type="number"/>
-		</KeyValues>
-		<Layers>
-			<Layer level="BACKGROUND">
-				<Texture parentKey="Background" setAllPoints="true"/>
-			</Layer>
-		</Layers>
-	</Frame>
-
-	<!-- A view: breadcrumb bar on top, two book pages below, page controls bottom-right.
-	     Mouse wheel turns pages; right-click anywhere goes one level back. -->
+	<!-- A view fills the window's left column: a header row (back button + breadcrumbs on the
+	     left, search box + filter on the right) over a divider, the list below it, page
+	     controls bottom-right. Mouse wheel turns pages; right-click anywhere goes one level back. -->
 	<Frame name="ForeverLootViewTemplate" mixin="ForeverLootViewMixin" enableMouse="true" virtual="true">
 		<KeyValues>
-			<!-- Spacing from the spellbook's PagedSpellsFrame: xPadding 15, yPadding 10. -->
 			<KeyValue key="rowHeight" value="40" type="number"/>
-			<KeyValue key="headerHeight" value="51" type="number"/>
-			<KeyValue key="headerGap" value="10" type="number"/>
-			<KeyValue key="columnGap" value="15" type="number"/>
+			<KeyValue key="headerHeight" value="40" type="number"/>
+			<KeyValue key="headerGap" value="6" type="number"/>
+			<KeyValue key="columnGap" value="12" type="number"/>
 		</KeyValues>
 		<Frames>
 			<Button parentKey="BackButton">
 				<Size x="24" y="24"/>
-				<!-- Where the spellbook puts its category tabs. -->
 				<Anchors>
-					<Anchor point="TOPLEFT" x="70" y="-26"/>
+					<Anchor point="TOPLEFT" x="14" y="-12"/>
 				</Anchors>
 				<NormalTexture atlas="common-icon-backarrow"/>
 				<HighlightTexture atlas="common-icon-backarrow" alphaMode="ADD"/>
@@ -184,43 +153,17 @@
 				</KeyValues>
 				<Size x="1" y="24"/>
 				<Anchors>
-					<Anchor point="LEFT" relativeKey="$parent.BackButton" relativePoint="RIGHT" x="10" y="0"/>
+					<Anchor point="LEFT" relativeKey="$parent.BackButton" relativePoint="RIGHT" x="8" y="0"/>
 				</Anchors>
 			</Frame>
-			<!-- Pages fill the view; the breadcrumb bar above is drawn over the page art.
-			     Content slots: 680x590 at (85,-95) on the left page and TOPRIGHT (-50,-95) on the
-			     right page, i.e. PagedSpellsView1/2Template. The bottom inset is larger than
-			     Blizzard's 17 to keep rows off the paging controls / page-curl corner. -->
-			<Frame parentKey="LeftPage" inherits="ForeverLootPageTemplate">
-				<Anchors>
-					<Anchor point="TOPLEFT" x="0" y="0"/>
-					<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOM" x="0" y="0"/>
-				</Anchors>
-			</Frame>
-			<Frame parentKey="RightPage" inherits="ForeverLootPageTemplate">
-				<KeyValues>
-					<KeyValue key="insetLeft" value="76" type="number"/>
-					<KeyValue key="insetRight" value="50" type="number"/>
-				</KeyValues>
-				<Anchors>
-					<Anchor point="TOPLEFT" relativePoint="TOP" x="0" y="0"/>
-					<Anchor point="BOTTOMRIGHT" x="0" y="0"/>
-				</Anchors>
-			</Frame>
-			<Frame parentKey="PagingControls" inherits="PagingControlsHorizontalTemplate">
-				<Anchors>
-					<Anchor point="BOTTOMRIGHT" x="-75" y="40"/>
-				</Anchors>
-			</Frame>
-			<!-- Query toolbar, only shown on item-DB folders. Placed where the spellbook keeps its
-			     SettingsDropdown + SearchBox: top right, in line with the breadcrumb bar. -->
+			<!-- Query toolbar, only shown on item-DB folders. -->
 			<DropdownButton parentKey="FilterDropdown" inherits="WowStyle1FilterDropdownTemplate" hidden="true">
 				<Anchors>
-					<Anchor point="TOPRIGHT" x="-30" y="-27"/>
+					<Anchor point="TOPRIGHT" x="-14" y="-13"/>
 				</Anchors>
 			</DropdownButton>
 			<EditBox parentKey="SearchBox" inherits="SearchBoxTemplate" mixin="ForeverLootSearchBoxMixin" letters="40" hidden="true">
-				<Size x="200" y="22"/>
+				<Size x="180" y="22"/>
 				<Anchors>
 					<Anchor point="RIGHT" relativeKey="$parent.FilterDropdown" relativePoint="LEFT" x="-8" y="0"/>
 				</Anchors>
@@ -229,9 +172,27 @@
 					<OnTextChanged inherit="prepend" method="OnTextChanged"/>
 				</Scripts>
 			</EditBox>
+			<!-- The list area; rows/headers are pooled children placed from its TOPLEFT. -->
+			<Frame parentKey="Content">
+				<Anchors>
+					<Anchor point="TOPLEFT" x="14" y="-52"/>
+					<Anchor point="BOTTOMRIGHT" x="-14" y="42"/>
+				</Anchors>
+			</Frame>
+			<Frame parentKey="PagingControls" inherits="PagingControlsHorizontalTemplate">
+				<Anchors>
+					<Anchor point="BOTTOMRIGHT" x="-14" y="6"/>
+				</Anchors>
+			</Frame>
 		</Frames>
 		<Layers>
-			<Layer level="OVERLAY">
+			<Layer level="ARTWORK">
+				<Texture parentKey="HeaderDivider" atlas="UI-Character-Info-ScrollLine-Long" useAtlasSize="true">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="14" y="-44"/>
+						<Anchor point="TOPRIGHT" x="-14" y="-44"/>
+					</Anchors>
+				</Texture>
 				<FontString parentKey="ResultCount" inherits="GameFontNormalSmall" justifyH="RIGHT" hidden="true">
 					<Anchors>
 						<Anchor point="RIGHT" relativeKey="$parent.SearchBox" relativePoint="LEFT" x="-10" y="0"/>

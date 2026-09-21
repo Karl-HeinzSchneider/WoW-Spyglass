@@ -9,30 +9,11 @@ local ITEM = Data.ITEM
 -- window frame itself. They are also reachable via app.ui.* for code that has the namespace.
 app.ui = app.ui or {}
 
--- Camelot ships the "-C60" spellbook art; fall back to the mainline atlases if it's missing.
-local function pageAtlas(side)
-    local camelot = "spellbook-Page-" .. side .. "-C60"
-    if C_Texture.GetAtlasInfo(camelot) then
-        return camelot
-    end
-    return "spellbook-background-evergreen-" .. side:lower()
-end
-
 ----------------------------------------------------------------------------------------------------
 -- List row: one template for folders, items, spells and custom entries
 ----------------------------------------------------------------------------------------------------
 
 local FALLBACK_ICON = "Interface\\Icons\\INV_Misc_QuestionMark"
-
--- Text color on the parchment pages. SPELLBOOK_FONT_COLOR is engine-defined; the fallback is
--- the same dark brown.
-local function parchmentColor()
-    return SPELLBOOK_FONT_COLOR or CreateColor(0.25, 0.16, 0.06)
-end
-
--- Quality colors are kept only where they still read on parchment; poor/common items use the
--- dark text color instead of grey/white.
-local MIN_COLORED_QUALITY = 2 -- Enum.ItemQuality.Good (uncommon)
 
 -- Delay between the last keystroke in the search box and running the query.
 local SEARCH_DEBOUNCE = 0.25
@@ -97,10 +78,6 @@ end
 ForeverLootListRowMixin = {}
 app.ui.ListRowMixin = ForeverLootListRowMixin
 
-function ForeverLootListRowMixin:OnLoad()
-    self.Sub:SetTextColor(parchmentColor():GetRGB())
-end
-
 ---@param name string
 ---@param icon string|number|nil
 ---@param sub string?
@@ -120,12 +97,9 @@ function ForeverLootListRowMixin:SetDisplay(name, icon, sub, quality)
     end
     self.Name:SetPoint("RIGHT", self.Arrow, "LEFT", -4, 0)
 
-    local color = quality and quality >= MIN_COLORED_QUALITY and ITEM_QUALITY_COLORS[quality]
-    if color then
-        self.Name:SetTextColor(color.r, color.g, color.b)
-    else
-        self.Name:SetTextColor(parchmentColor():GetRGB())
-    end
+    -- Items in their quality color, everything else white; both read on the dark pane.
+    local color = quality and ITEM_QUALITY_COLORS[quality] or HIGHLIGHT_FONT_COLOR
+    self.Name:SetTextColor(color.r, color.g, color.b)
 end
 
 ---@param view ForeverLoot.View
@@ -243,29 +217,20 @@ end
 ForeverLootGroupLabelMixin = {}
 app.ui.GroupLabelMixin = ForeverLootGroupLabelMixin
 
-function ForeverLootGroupLabelMixin:OnLoad()
-    self.Text:SetTextColor(parchmentColor():GetRGB())
-end
-
 ---@param text string
 function ForeverLootGroupLabelMixin:Init(text)
     self.Text:SetText(text)
 end
 
 ----------------------------------------------------------------------------------------------------
--- Page header (section title with backplate and divider, like the spellbook)
+-- Page header (section title on the character frame's category plate)
 ----------------------------------------------------------------------------------------------------
 
 ---@class ForeverLoot.PageHeader : Frame
 ---@field Backplate Texture
 ---@field Text FontString
----@field Border Texture
 ForeverLootPageHeaderMixin = {}
 app.ui.PageHeaderMixin = ForeverLootPageHeaderMixin
-
-function ForeverLootPageHeaderMixin:OnLoad()
-    self.Text:SetTextColor(parchmentColor():GetRGB())
-end
 
 ---@param text string
 function ForeverLootPageHeaderMixin:Init(text)
@@ -329,7 +294,7 @@ function ForeverLootSearchBoxMixin:OnTextChanged(userInput)
 end
 
 ----------------------------------------------------------------------------------------------------
--- View: breadcrumb + two pages of rows
+-- View: breadcrumb bar + one page of rows
 ----------------------------------------------------------------------------------------------------
 
 ---@class ForeverLoot.FilterDropdown : Frame, WowStyle1FilterDropdownMixin
@@ -339,8 +304,8 @@ end
 ---@class ForeverLoot.View : Frame
 ---@field BackButton Button
 ---@field Breadcrumbs ForeverLoot.LayoutFrame
----@field LeftPage ForeverLoot.Page
----@field RightPage ForeverLoot.Page
+---@field HeaderDivider Texture
+---@field Content ForeverLoot.Page
 ---@field PagingControls ForeverLoot.PagingControls
 ---@field SearchBox ForeverLoot.SearchBox
 ---@field FilterDropdown ForeverLoot.FilterDropdown
@@ -356,20 +321,15 @@ end
 ---@field pages ForeverLoot.PlacedElement[][]  # layout result for the current node
 ---@field path ForeverLoot.Node[]
 ---@field onNavigate? fun(view: ForeverLoot.View)
----@field isMinimized boolean  # one page (true) or the two-page spread (false)
 ---@field pendingItems table<integer, boolean>  # itemIDs whose info hasn't arrived yet
 ForeverLootViewMixin = {}
 app.ui.ViewMixin = ForeverLootViewMixin
 
+-- The list area: pooled rows/headers/group labels are placed from its top-left corner.
 ---@class ForeverLoot.Page : Frame
----@field Background Texture
 ---@field rowPool ForeverLoot.FramePool
 ---@field headerPool ForeverLoot.FramePool
 ---@field groupPool ForeverLoot.FramePool
----@field insetLeft number
----@field insetRight number
----@field insetTop number
----@field insetBottom number
 
 -- What a page displays. `kind` picks the template; new element kinds plug in here
 -- (BuildElements, LayoutPages, RenderPage).
@@ -387,29 +347,17 @@ app.ui.ViewMixin = ForeverLootViewMixin
 
 function ForeverLootViewMixin:OnLoad()
     self.path = {}
-    self.isMinimized = true
 
-    self.RightPage.Background:SetAtlas(pageAtlas("Right"))
-    self:ApplyPageLayout()
-    -- The header row shares the view's child level with the pages, and WoW interleaves draw
-    -- layers within one level: the toolbar's BACKGROUND art (search border, filter backdrop)
-    -- would end up under the page art. Lift everything on that row above the pages.
-    local headerLevel = self.LeftPage:GetFrameLevel() + 2
-    for _, frame in ipairs({ self.BackButton, self.Breadcrumbs, self.SearchBox, self.FilterDropdown }) do
-        frame:SetFrameLevel(headerLevel)
-    end
-    for _, page in ipairs({ self.LeftPage, self.RightPage }) do
-        page.rowPool = CreateFramePool("Button", page, "ForeverLootListRowTemplate") --[[@as ForeverLoot.FramePool]]
-        page.headerPool = CreateFramePool("Frame", page, "ForeverLootPageHeaderTemplate") --[[@as ForeverLoot.FramePool]]
-        page.groupPool = CreateFramePool("Frame", page, "ForeverLootGroupLabelTemplate") --[[@as ForeverLoot.FramePool]]
-    end
+    local page = self.Content
+    page.rowPool = CreateFramePool("Button", page, "ForeverLootListRowTemplate") --[[@as ForeverLoot.FramePool]]
+    page.headerPool = CreateFramePool("Frame", page, "ForeverLootPageHeaderTemplate") --[[@as ForeverLoot.FramePool]]
+    page.groupPool = CreateFramePool("Frame", page, "ForeverLootGroupLabelTemplate") --[[@as ForeverLoot.FramePool]]
     self.pages = {}
     self.pendingItems = {}
     self.queries = {}
     self.resultCount = 0
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
 
-    self.ResultCount:SetTextColor(parchmentColor():GetRGB())
     -- The template's clear button sets the text programmatically (userInput = false), so the
     -- debounce never sees it; clear the query directly.
     self.SearchBox.clearButton:HookScript("OnClick", function()
@@ -465,39 +413,6 @@ function ForeverLootViewMixin:RequestItem(itemID)
     end
 end
 
--- Minimized shows only LeftPage stretched across the view (with the "halved" book art, which
--- is the right-page atlas, exactly as the spellbook's BookBGHalved does). Maximized shows both.
----@param minimized boolean
-function ForeverLootViewMixin:SetMinimized(minimized)
-    if self.isMinimized == minimized then
-        return
-    end
-    self.isMinimized = minimized
-    self:ApplyPageLayout()
-    self.PagingControls:SetCurrentPage(1)
-    self:Refresh()
-end
-
-function ForeverLootViewMixin:ApplyPageLayout()
-    local left = self.LeftPage
-    left:ClearAllPoints()
-    left:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
-    if self.isMinimized then
-        left:SetPoint("BOTTOMRIGHT", self, "BOTTOMRIGHT", 0, 0)
-        left.Background:SetAtlas(pageAtlas("Right"))
-        self.RightPage:Hide()
-    else
-        left:SetPoint("BOTTOMRIGHT", self, "BOTTOM", 0, 0)
-        left.Background:SetAtlas(pageAtlas("Left"))
-        self.RightPage:Show()
-    end
-end
-
----@return integer
-function ForeverLootViewMixin:GetPagesShown()
-    return self.isMinimized and 1 or 2
-end
-
 ---@param root ForeverLoot.Node
 function ForeverLootViewMixin:SetRoot(root)
     self.path = { root }
@@ -533,6 +448,18 @@ end
 function ForeverLootViewMixin:GetTitle()
     local node = self:GetCurrentNode()
     return node and node.name or "New Tab"
+end
+
+-- The icon of the deepest node on the path that has one (the root has none), for the tab.
+---@return string|number|nil
+function ForeverLootViewMixin:GetIcon()
+    for i = #self.path, 1, -1 do
+        local icon = self.path[i].icon
+        if icon then
+            return icon
+        end
+    end
+    return nil
 end
 
 -- Called after any path change: reset paging, redraw, and let the owner update the tab label.
@@ -773,8 +700,8 @@ function ForeverLootViewMixin:UpdateToolbar()
     self.ResultCount:SetText(("%d items"):format(self.resultCount))
 end
 
--- Columns per page for the current list. Defined by the collection itself (`node.columns`);
--- one full-width column when unset.
+-- Columns for the current list. Defined by the collection itself (`node.columns`); one
+-- full-width column when unset.
 ---@param node ForeverLoot.Node?
 ---@return integer
 function ForeverLootViewMixin:GetColumns(node)
@@ -789,7 +716,7 @@ function ForeverLootViewMixin:Refresh()
     local node = self:GetCurrentNode()
     self.pages = self:LayoutPages(self:BuildElements(node), self:GetColumns(node))
 
-    local maxPages = math.max(1, math.ceil(#self.pages / self:GetPagesShown()))
+    local maxPages = math.max(1, #self.pages)
     -- SetMaxPages may clamp the current page, which calls OnPageChanged -> Render.
     self.PagingControls:SetMaxPages(maxPages)
     self.PagingControls:SetShown(maxPages > 1)
@@ -797,12 +724,9 @@ function ForeverLootViewMixin:Refresh()
     self:Render()
 end
 
--- Draws the pages for the current page index plus the chrome around them.
+-- Draws the current page plus the chrome around it.
 function ForeverLootViewMixin:Render()
-    local pagesShown = self:GetPagesShown()
-    local first = (self.PagingControls:GetCurrentPage() - 1) * pagesShown + 1
-    self:RenderPage(self.LeftPage, self.pages[first])
-    self:RenderPage(self.RightPage, not self.isMinimized and self.pages[first + 1] or nil)
+    self:RenderPage(self.Content, self.pages[self.PagingControls:GetCurrentPage()])
 
     self:RefreshBreadcrumbs()
     self:UpdateToolbar()
@@ -864,47 +788,23 @@ function ForeverLootViewMixin:BuildElements(node)
     return elements
 end
 
--- The page frame that will display page number `index` (1-based) in the current mode.
----@param index integer
----@return ForeverLoot.Page
-function ForeverLootViewMixin:GetPageSlot(index)
-    if self.isMinimized or index % 2 == 1 then
-        return self.LeftPage
-    end
-    return self.RightPage
-end
-
--- Usable content size of a page frame, inside its insets.
----@param page ForeverLoot.Page
----@return number width, number height
-local function contentSize(page)
-    return page:GetWidth() - page.insetLeft - page.insetRight, page:GetHeight() - page.insetTop - page.insetBottom
-end
-
 -- Flows elements top-to-bottom into as many pages as needed. Headers span the full width and
 -- start a new line; rows fill `columns` columns left to right. A header never ends a page.
--- Left and right pages may have different insets, so each page is measured individually.
 ---@param elements ForeverLoot.Element[]
 ---@param columns integer
 ---@return ForeverLoot.PlacedElement[][]
 function ForeverLootViewMixin:LayoutPages(elements, columns)
     local pages = {}
     local page, y, column = {}, 0, 0
-    local pageWidth, pageHeight, columnWidth
-
-    local function measure()
-        pageWidth, pageHeight = contentSize(self:GetPageSlot(#pages + 1))
-        columnWidth = (pageWidth - self.columnGap * (columns - 1)) / columns
-    end
+    local pageWidth, pageHeight = self.Content:GetSize()
+    local columnWidth = (pageWidth - self.columnGap * (columns - 1)) / columns
 
     local function newPage()
         if #page > 0 then
             pages[#pages + 1] = page
         end
         page, y, column = {}, 0, 0
-        measure()
     end
-    measure()
 
     local function newLine()
         if column > 0 then
@@ -970,7 +870,7 @@ function ForeverLootViewMixin:RenderPage(page, placed)
             frame:Init(self, element.node)
         end
         frame:SetSize(item.width, item.height)
-        frame:SetPoint("TOPLEFT", page, "TOPLEFT", page.insetLeft + item.x, -(page.insetTop + item.y))
+        frame:SetPoint("TOPLEFT", page, "TOPLEFT", item.x, -item.y)
         frame:Show()
     end
 end

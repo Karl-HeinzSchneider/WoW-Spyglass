@@ -1,48 +1,88 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
 
-	<!-- Modeled on Blizzard_PlayerSpells/Camelot/Blizzard_PlayerSpellsFrame.xml -->
-	<Frame name="ForeverLootMainWindow" mixin="ForeverLootMainWindowMixin"
-		inherits="PortraitFrameTemplate, TabSystemOwnerTemplate"
-		parent="UIParent" toplevel="true" enableMouse="true" movable="true" clampedToScreen="true" hidden="true">
+	<!-- One tab on the right edge of the window: an icon on the side-tab art, tooltip on hover.
+	     Same template the character frame's mode tabs use (CharacterFrameModeSideTabTemplate). -->
+	<Frame name="ForeverLootSideTabTemplate" inherits="LargeSideTabButtonTemplate" mixin="ForeverLootSideTabMixin" virtual="true">
 		<KeyValues>
-			<!-- Geometry from PlayerSpellsFrame (camelot), narrowed: Blizzard uses window
-			     1618x720 / 809 minimized and book art 1612x702 / 806. We keep the same 3px/6px
-			     window-to-book margins and the book anchored 14px below the top, 4px above the
-			     bottom; only the widths differ (one page = 697). Height is unchanged. -->
-			<KeyValue key="minimizedWidth" value="700" type="number"/>
-			<KeyValue key="maximizedWidth" value="1400" type="number"/>
-			<KeyValue key="bookMinimizedWidth" value="697" type="number"/>
-			<KeyValue key="bookMaximizedWidth" value="1394" type="number"/>
+			<KeyValue key="fillToInterior" value="true" type="boolean"/>
 		</KeyValues>
-		<Size x="700" y="720"/>
+		<Scripts>
+			<OnLoad method="OnLoad"/>
+		</Scripts>
+	</Frame>
+
+	<!-- Modeled on Blizzard_UIPanels_Game/Camelot/CharacterFrame.xml: the same portrait frame,
+	     a dark two-column interior (LeftPaneHost / RightPaneHost) and icon tabs down the right
+	     edge. Only the size differs: 900x620 instead of 631x484, so the pane backgrounds are
+	     stretched instead of drawn at atlas size. -->
+	<Frame name="ForeverLootMainWindow" mixin="ForeverLootMainWindowMixin" inherits="PortraitFrameBaseTemplate"
+		parent="UIParent" toplevel="true" enableMouse="true" movable="true" clampedToScreen="true" hidden="true">
+		<Size x="900" y="620"/>
 		<Anchors>
 			<Anchor point="CENTER"/>
 		</Anchors>
 		<Frames>
-			<Frame parentKey="MaximizeMinimizeButton" inherits="MaximizeMinimizeButtonFrameTemplate">
+			<Button parentKey="CloseButton" inherits="UIPanelCloseButtonDefaultAnchors"/>
+
+			<!-- Right column: meta data about what the left column shows (filled in later). -->
+			<Frame parentKey="RightPane">
+				<Size x="260"/>
 				<Anchors>
-					<Anchor point="RIGHT" relativeKey="$parent.CloseButton" relativePoint="LEFT" x="0" y="0"/>
+					<Anchor point="TOPRIGHT" x="0" y="-20"/>
+					<Anchor point="BOTTOMRIGHT" x="0" y="0"/>
 				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture atlas="UI-Character-Info-Stat-BG" setAllPoints="true"/>
+					</Layer>
+					<Layer level="ARTWORK">
+						<FontString parentKey="Title" inherits="GameFontNormalMed3" justifyH="CENTER">
+							<Anchors>
+								<Anchor point="TOP" x="0" y="-14"/>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<!-- The seam between the columns, drawn above the window border (NineSlice is 500). -->
+					<Frame parentKey="Divider" frameLevel="505">
+						<Size x="11"/>
+						<Anchors>
+							<Anchor point="TOPLEFT" x="0" y="-1"/>
+							<Anchor point="BOTTOMLEFT" x="0" y="0"/>
+						</Anchors>
+						<Layers>
+							<Layer level="OVERLAY">
+								<Texture atlas="common-framedivider" useAtlasSize="true">
+									<Anchors>
+										<Anchor point="TOPLEFT" x="-6" y="0"/>
+										<Anchor point="BOTTOMLEFT" x="-6" y="0"/>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+					</Frame>
+				</Frames>
 			</Frame>
-			<!-- Hangs off the bottom edge, exactly like PlayerSpellsFrame. -->
-			<Frame parentKey="TabSystem" inherits="TabSystemTemplate">
-				<KeyValues>
-					<KeyValue key="minTabWidth" value="100" type="number"/>
-					<KeyValue key="maxTabWidth" value="150" type="number"/>
-					<KeyValue key="tabSelectSound" value="SOUNDKIT.UI_CLASS_TALENT_TAB" type="global"/>
-				</KeyValues>
+
+			<!-- Left column: the views (ForeverLootViewTemplate) fill this. -->
+			<Frame parentKey="LeftPane">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeKey="$parent" relativePoint="BOTTOMLEFT" x="22" y="2"/>
+					<Anchor point="TOPLEFT" x="0" y="-20"/>
+					<Anchor point="BOTTOMRIGHT" relativeKey="$parent.RightPane" relativePoint="BOTTOMLEFT" x="0" y="0"/>
 				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture atlas="UI-Character-Info-General-BG" setAllPoints="true"/>
+					</Layer>
+				</Layers>
 			</Frame>
-			<!-- Views are created from ForeverLootViewTemplate and fill this area. -->
-			<!-- The "book": same placement as SpellBookFrame inside PlayerSpellsFrame. Width is set
-			     in Lua (bookMinimizedWidth / bookMaximizedWidth). -->
-			<Frame parentKey="ViewContainer">
-				<Size x="697" y="702"/>
+
+			<!-- Side tabs hang off the right edge like CharacterFrameModeTabs; laid out in Lua. -->
+			<Frame parentKey="Tabs">
+				<Size x="64" y="384"/>
 				<Anchors>
-					<Anchor point="TOPLEFT" x="0" y="-14"/>
-					<Anchor point="BOTTOMLEFT" x="0" y="4"/>
+					<Anchor point="TOPLEFT" relativePoint="TOPRIGHT" x="0" y="-30"/>
 				</Anchors>
 			</Frame>
 		</Frames>

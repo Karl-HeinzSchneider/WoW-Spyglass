@@ -24,38 +24,18 @@
 ---@field SetPortraitShown fun(self: PortraitFrameMixin, shown: boolean)
 ---@field GetPortrait fun(self: PortraitFrameMixin): Texture
 
----@class MaximizeMinimizeButtonFrameMixin
----@field SetOnMaximizedCallback fun(self: MaximizeMinimizeButtonFrameMixin, callback: fun(self: MaximizeMinimizeButtonFrameMixin))
----@field SetOnMinimizedCallback fun(self: MaximizeMinimizeButtonFrameMixin, callback: fun(self: MaximizeMinimizeButtonFrameMixin))
----@field SetMinimizedCVar fun(self: MaximizeMinimizeButtonFrameMixin, cvar: string)
----@field Maximize fun(self: MaximizeMinimizeButtonFrameMixin)
----@field Minimize fun(self: MaximizeMinimizeButtonFrameMixin)
-
----@class TabSystemButtonMixin
----@field tabText? string
----@field SetTooltipText fun(self: TabSystemButtonMixin, text: string)
----@field UpdateTabWidth fun(self: TabSystemButtonMixin)
----@field SetTabSelected fun(self: TabSystemButtonMixin, selected: boolean)
----@field GetTabID fun(self: TabSystemButtonMixin): integer
-
----@class TabSystemMixin
----@field AddTab fun(self: TabSystemMixin, tabText: string?, tabIcon?: string|number): integer
----@field RemoveAllTabs fun(self: TabSystemMixin)
----@field SetTab fun(self: TabSystemMixin, tabID: integer, isUserAction?: boolean)
----@field SetTabVisuallySelected fun(self: TabSystemMixin, tabID: integer)
----@field SetTabShown fun(self: TabSystemMixin, tabID: integer, shown: boolean)
----@field SetTabEnabled fun(self: TabSystemMixin, tabID: integer, enabled: boolean, errorReason?: string)
----@field GetTabButton fun(self: TabSystemMixin, tabID: integer): Button
-
----@class TabSystemOwnerMixin
----@field OnLoad fun(self: TabSystemOwnerMixin)
----@field SetTabSystem fun(self: TabSystemOwnerMixin, tabSystem: TabSystemMixin)
----@field AddNamedTab fun(self: TabSystemOwnerMixin, tabName: string, ...: Frame): integer
----@field AddIconTab fun(self: TabSystemOwnerMixin, tabIcon: string|number, ...: Frame): integer
----@field SetTab fun(self: TabSystemOwnerMixin, tabID: integer, isUserAction?: boolean)
----@field GetTab fun(self: TabSystemOwnerMixin): integer?
----@field GetTabButton fun(self: TabSystemOwnerMixin, tabID: integer): Button
----@field RemoveAllTabs fun(self: TabSystemOwnerMixin)
+-- LargeSideTabButtonTemplate (the icon tabs down the side of the character frame).
+---@class SidePanelTabButtonMixin
+---@field Icon Texture
+---@field SelectedTexture Texture
+---@field tooltipText? string
+---@field OnLoad fun(self: SidePanelTabButtonMixin)
+---@field SetCustomOnMouseUpHandler fun(self: SidePanelTabButtonMixin, handler: fun(tab: SidePanelTabButtonMixin, button: string, upInside: boolean))
+---@field SetFillToInterior fun(self: SidePanelTabButtonMixin, fillToInterior: boolean, extent?: number)
+---@field SetChecked fun(self: SidePanelTabButtonMixin, checked: boolean)
+---@field GetTooltipTextSetupFunction fun(self: SidePanelTabButtonMixin): (fun(tooltip: GameTooltip): boolean)?
+---@field SetTabGlowAnimationPlaying fun(self: SidePanelTabButtonMixin, playing: boolean)
+SidePanelTabButtonMixin = {} --[[@as SidePanelTabButtonMixin]]
 
 ---@class PagingControlsMixin
 ---@field GetMaxPages fun(self: PagingControlsMixin): integer
