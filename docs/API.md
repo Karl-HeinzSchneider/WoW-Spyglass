@@ -7,6 +7,10 @@ exactly the same calls, so anything the built-in modules can do, yours can too.
 Load order: list `ForeverLoot` under `## Dependencies:` (or `## OptionalDeps:` and check
 `ForeverLoot ~= nil`) in your TOC so the global exists when your files run.
 
+The official `ForeverLoot_Locale` and `ForeverLoot_Scraper` companion addons follow this same
+contract. They depend on the core and use only this public global; the core never depends on or
+reaches into either companion. See [architecture.md](architecture.md) for ownership boundaries.
+
 ```lua
 -- MyAddon/MyAddon.toc
 ## Dependencies: ForeverLoot

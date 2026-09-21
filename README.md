@@ -6,13 +6,15 @@ monorepo.
 ## Repository layout
 
 - `ForeverLoot/` — the distributable core addon.
+- `ForeverLoot_Locale/` — the locale companion boundary; extraction follows in a later milestone.
+- `ForeverLoot_Scraper/` — the contributor scraper boundary; extraction follows later.
 - `.contribute/data/` — canonical item scans and curated game data.
 - `.contribute/inbox/` — ignored SavedVariables and JSON exports waiting to be imported.
 - `src/` — the Node.js/TypeScript validation, import, generation, development and packaging tools.
 - `docs/` — public API and project documentation.
 
-Future companion addons such as `ForeverLoot_Locale/` and `ForeverLoot_Scraper/` will live next
-to `ForeverLoot/`. Root tooling discovers any direct child directory with a same-named `.toc`.
+Root tooling discovers any direct child directory with a same-named `.toc`, including both
+companion addon shells.
 
 ## Tooling
 
@@ -27,6 +29,7 @@ npm run generate
 Useful commands:
 
 - `npm run check:data` validates curated data.
+- `npm run check:addons` validates addon manifests, dependencies and core/companion boundaries.
 - `npm run generate:check` verifies that generated addon data is current.
 - `npm run import` imports every supported file in `.contribute/inbox/`.
 - `npm run fix` fills resolvable IDs/names and missing encounters.
@@ -34,4 +37,5 @@ Useful commands:
 - `npm run package:addons` creates a release ZIP under `dist/`.
 
 See [.contribute/README.md](.contribute/README.md) for the data contribution workflow and
-[docs/API.md](docs/API.md) for the addon API.
+[docs/API.md](docs/API.md) for the addon API. The ownership and integration rules between addons
+are documented in [docs/architecture.md](docs/architecture.md).

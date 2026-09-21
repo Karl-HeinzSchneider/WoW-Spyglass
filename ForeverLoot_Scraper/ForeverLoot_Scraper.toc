@@ -1,0 +1,10 @@
+## Interface: 16001
+## Title: ForeverLoot Scraper
+## Notes: Collects item and loot data for ForeverLoot contributors.
+## Author: Karl-HeinzSchneider
+## Version: 0.1.0
+## Dependencies: ForeverLoot
+## SavedVariables: ForeverLootScraperDB
+## X-License: MIT
+
+ForeverLoot_Scraper.lua

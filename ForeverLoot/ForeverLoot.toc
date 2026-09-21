@@ -15,7 +15,7 @@ src\core\ace.lua
 src\core\json.lua
 src\core\minimapbutton.lua
 
-# Item database: API first, then the generated data (db\generated is written by .contribute\tools).
+# Item database: API first, then generated data (db\generated is written by the root tools).
 src\data\data.lua
 src\data\filters.lua
 src\data\query.lua

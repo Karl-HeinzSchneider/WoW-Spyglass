@@ -41,6 +41,9 @@ validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-la
 
 ## Layout
 
+- `ForeverLoot/`, `ForeverLoot_Locale/`, `ForeverLoot_Scraper/` are separate addon distribution
+  units. The companion addons depend on the core and may use only its documented public API; never
+  share private addon tables across them. Their ownership contract is in `docs/architecture.md`.
 - `ForeverLoot/ForeverLoot.toc` — the addon manifest. The game reads it to learn the addon's metadata
   (`## Interface`, `## Title`, `## SavedVariables`, …) and the ordered list of files to load.
   **Every new Lua/XML file must be listed here, in dependency order, or it will not load.**
@@ -161,6 +164,12 @@ validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-la
 - `ForeverLoot/locales/` — localization string tables.
 - `ForeverLoot/assets/` — textures, icons, sounds referenced from code. Prefer the client's own atlases
   (they scale with the frame); the client does not load `.png` files.
+- `ForeverLoot_Locale/` — currently an inert companion shell. Step 9 moves additional UI strings
+  and generated localized names here; the core keeps its English fallback.
+- `ForeverLoot_Scraper/` — currently an inert companion shell with `ForeverLootScraperDB`. Step 10
+  moves scanning, discovery, export and their commands here, including migration of old core state.
+- `src/` — root TypeScript tooling. It reads `.contribute/data/`, generates addon data, validates
+  the monorepo, links addon directories for development and packages them for releases.
 
 ## XML files
 

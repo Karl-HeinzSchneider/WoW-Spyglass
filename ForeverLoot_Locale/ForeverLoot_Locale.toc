@@ -1,0 +1,9 @@
+## Interface: 16001
+## Title: ForeverLoot Locale
+## Notes: Additional localization data for ForeverLoot.
+## Author: Karl-HeinzSchneider
+## Version: 0.1.0
+## Dependencies: ForeverLoot
+## X-License: MIT
+
+ForeverLoot_Locale.lua
