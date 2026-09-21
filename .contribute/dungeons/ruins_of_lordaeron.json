@@ -3,6 +3,13 @@
   "name": "Ruins of Lordaeron",
   "minLevel": 15,
   "maxLevel": 20,
+  "background": 7963782,
+  "backgroundCoords": [
+    0.0445,
+    0.9552,
+    0.158,
+    0.842
+  ],
   "encounters": [
     {
       "id": 3353,
@@ -43,6 +50,7 @@
     {
       "id": 3355,
       "name": "The Butcher",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-The Butcher",
       "loot": []
     },
     {

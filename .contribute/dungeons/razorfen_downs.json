@@ -3,10 +3,18 @@
   "name": "Razorfen Downs",
   "minLevel": 37,
   "maxLevel": 47,
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-RazorfenDowns",
+  "backgroundCoords": [
+    0.0156,
+    0.6641,
+    0.0703,
+    0.6797
+  ],
   "encounters": [
     {
       "id": 2780,
       "name": "Tuten'kash",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Tutenkash",
       "loot": []
     },
     {
@@ -17,6 +25,7 @@
     {
       "id": 2782,
       "name": "Mordresh Fire Eye",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Mordresh Fire Eye",
       "loot": []
     },
     {
@@ -27,11 +36,13 @@
     {
       "id": 2784,
       "name": "Glutton",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Glutton",
       "loot": []
     },
     {
       "id": 2785,
       "name": "Amnennar the Coldbringer",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Amnennar the Coldbringer",
       "loot": []
     }
   ]

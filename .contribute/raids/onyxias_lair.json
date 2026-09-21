@@ -2,10 +2,18 @@
   "map": 249,
   "name": "Onyxia's Lair",
   "minLevel": 60,
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Onyxia",
+  "backgroundCoords": [
+    0.0156,
+    0.6641,
+    0.0703,
+    0.6797
+  ],
   "encounters": [
     {
       "id": 1084,
       "name": "Onyxia",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Onyxia",
       "loot": []
     }
   ]

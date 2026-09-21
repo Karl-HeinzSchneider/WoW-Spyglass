@@ -3,45 +3,60 @@
   "name": "Uldaman",
   "minLevel": 42,
   "maxLevel": 52,
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Uldaman",
+  "backgroundCoords": [
+    0.0156,
+    0.6641,
+    0.0703,
+    0.6797
+  ],
   "encounters": [
     {
       "id": 547,
       "name": "Revelosh",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Revelosh",
       "loot": []
     },
     {
       "id": 548,
       "name": "The Lost Dwarves",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-The Lost Dwarves",
       "loot": []
     },
     {
       "id": 549,
       "name": "Ironaya",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Ironaya",
       "loot": []
     },
     {
       "id": 1887,
       "name": "Obsidian Sentinel",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Obsidian Sentinel",
       "loot": []
     },
     {
       "id": 551,
       "name": "Ancient Stone Keeper",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Ancient Stone Keeper",
       "loot": []
     },
     {
       "id": 552,
       "name": "Galgann Firehammer",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Galgann Firehammer",
       "loot": []
     },
     {
       "id": 553,
       "name": "Grimlok",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Grimlok",
       "loot": []
     },
     {
       "id": 554,
       "name": "Archaedas",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Archaedas",
       "loot": []
     }
   ]

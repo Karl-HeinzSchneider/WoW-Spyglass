@@ -59,14 +59,24 @@ function emitInstances(ref: Reference, curated: Map<number, CuratedFile>): strin
           minLevel: cur?.minLevel,
           maxLevel: cur?.maxLevel,
           icon: cur?.icon ?? DEFAULT_ICONS[inst.type],
+          background: cur?.background,
+          backgroundCoords: cur?.backgroundCoords,
         },
-        ["type", "expansionID", "minLevel", "maxLevel", "icon"],
+        ["type", "expansionID", "minLevel", "maxLevel", "icon", "background", "backgroundCoords"],
       ).map((l) => l + "\n"),
     );
     out.push(`    bosses = ${luaValue(inst.encounters)},\n})\n`);
     for (const encID of inst.encounters) {
       const enc = ref.encounters.get(encID)!;
-      out.push(`Data:AddBoss(${encID}, { instanceID = ${id}, order = ${enc.order} }) -- ${nameOf(ref, "encounters", encID)}\n`);
+      const c = cur?.encounters.find((e) => e.id === encID);
+      const fields = luaFields(
+        { instanceID: id, order: enc.order, portrait: c?.portrait, level: c?.level, creatureType: c?.creatureType, quests: c?.quests },
+        ["instanceID", "order", "portrait", "level", "creatureType", "quests"],
+        "",
+      )
+        .join(" ")
+        .replace(/,$/, "");
+      out.push(`Data:AddBoss(${encID}, { ${fields} }) -- ${nameOf(ref, "encounters", encID)}\n`);
     }
   }
   return out.join("");

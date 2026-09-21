@@ -3,10 +3,18 @@
   "name": "Stratholme",
   "minLevel": 48,
   "maxLevel": 58,
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Stratholme",
+  "backgroundCoords": [
+    0.0156,
+    0.6641,
+    0.0703,
+    0.6797
+  ],
   "encounters": [
     {
       "id": 473,
       "name": "Hearthsinger Forresten",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Hearthsinger Forresten",
       "loot": [
         {
           "item": 16682,
@@ -17,16 +25,19 @@
     {
       "id": 474,
       "name": "Timmy the Cruel",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Timmy the Cruel",
       "loot": []
     },
     {
       "id": 476,
       "name": "Malor the Zealous",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Commander Malor",
       "loot": []
     },
     {
       "id": 475,
       "name": "Cannon Master Willey",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Willey Hopebreaker",
       "loot": [
         {
           "item": 16708,
@@ -37,6 +48,7 @@
     {
       "id": 477,
       "name": "Archivist Galford",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Instructor Galford",
       "loot": [
         {
           "item": 16692,
@@ -47,16 +59,19 @@
     {
       "id": 478,
       "name": "Balnazzar",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Balnazzar",
       "loot": []
     },
     {
       "id": 472,
       "name": "The Unforgiven",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-The Unforgiven",
       "loot": []
     },
     {
       "id": 479,
       "name": "Baroness Anastari",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Baroness Anastari",
       "loot": [
         {
           "item": 16704,
@@ -67,6 +82,7 @@
     {
       "id": 480,
       "name": "Nerub'enkan",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Nerubenkan",
       "loot": [
         {
           "item": 16675,
@@ -77,6 +93,7 @@
     {
       "id": 481,
       "name": "Maleki the Pallid",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Maleki the Pallid",
       "loot": [
         {
           "item": 16691,
@@ -87,11 +104,13 @@
     {
       "id": 482,
       "name": "Magistrate Barthilas",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Magistrate Barthilas",
       "loot": []
     },
     {
       "id": 483,
       "name": "Ramstein the Gorger",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Ramstein the Gorger",
       "loot": [
         {
           "item": 16737,
@@ -102,6 +121,7 @@
     {
       "id": 484,
       "name": "Baron Rivendare",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Aurius Rivendare",
       "loot": [
         {
           "item": 16668,
@@ -159,6 +179,7 @@
     {
       "id": 2798,
       "name": "Postmaster Malown",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-PostmasterMalown",
       "loot": []
     },
     {

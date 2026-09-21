@@ -3,6 +3,13 @@
   "name": "Shadowfang Keep",
   "minLevel": 22,
   "maxLevel": 30,
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-ShadowFangKeep",
+  "backgroundCoords": [
+    0.0156,
+    0.6641,
+    0.0703,
+    0.6797
+  ],
   "encounters": [
     {
       "id": 2748,
@@ -43,6 +50,7 @@
     {
       "id": 2750,
       "name": "Baron Silverlaine",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Baron Silverlaine",
       "loot": [
         {
           "item": 6321,
@@ -61,6 +69,7 @@
     {
       "id": 2751,
       "name": "Commander Springvale",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Commander Springvale",
       "loot": [
         {
           "item": 3191,

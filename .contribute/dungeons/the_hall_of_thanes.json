@@ -3,6 +3,13 @@
   "name": "The Hall of Thanes",
   "minLevel": 13,
   "maxLevel": 18,
+  "background": 7963781,
+  "backgroundCoords": [
+    0.0445,
+    0.9552,
+    0.158,
+    0.842
+  ],
   "encounters": [
     {
       "id": 3493,

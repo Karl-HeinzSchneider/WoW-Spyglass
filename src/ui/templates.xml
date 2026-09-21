@@ -1,10 +1,20 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
 
-
-	<!-- One row in a page: [icon] Name ............ [>] (arrow only for folders) -->
+	<!-- One row in the list:  [icon] Name ............... chance
+	                          Slot ........... Armor type [>]   (arrow only for folders).
+	     The bottom line and the chance are optional; text colors are set in Lua. -->
 	<Button name="ForeverLootListRowTemplate" mixin="ForeverLootListRowMixin" registerForClicks="LeftButtonUp, RightButtonUp" virtual="true">
 		<Size x="200" y="40"/>
 		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="Backplate">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="0" y="-1"/>
+						<Anchor point="BOTTOMRIGHT" x="0" y="1"/>
+					</Anchors>
+					<Color r="0" g="0" b="0" a="0.3"/>
+				</Texture>
+			</Layer>
 			<Layer level="ARTWORK">
 				<Texture parentKey="Icon">
 					<Size x="32" y="32"/>
@@ -18,18 +28,31 @@
 						<Anchor point="RIGHT" x="-10" y="0"/>
 					</Anchors>
 				</Texture>
-				<!-- Same fonts as SpellBookItemTemplate's Name / SubName; colors set in Lua. -->
-				<FontString parentKey="Name" inherits="SystemFont_Large" justifyH="LEFT" wordwrap="false">
+				<!-- Top line: name (in quality color), drop chance right-aligned on the same line. -->
+				<FontString parentKey="Chance" inherits="GameFontNormalSmall" justifyH="RIGHT" hidden="true">
 					<Anchors>
-						<Anchor point="LEFT" relativeKey="$parent.Icon" relativePoint="RIGHT" x="8" y="0"/>
+						<Anchor point="TOP" relativeKey="$parent.Icon" relativePoint="TOP" x="0" y="-2"/>
 						<Anchor point="RIGHT" relativeKey="$parent.Arrow" relativePoint="LEFT" x="-4" y="0"/>
 					</Anchors>
 				</FontString>
-				<!-- Optional second line (description / item level); when shown, Name moves up. -->
-				<FontString parentKey="Sub" inherits="SystemFont_Med1" justifyH="LEFT" wordwrap="false" hidden="true">
+				<FontString parentKey="Name" inherits="GameFontHighlightMedium" justifyH="LEFT" wordwrap="false">
 					<Anchors>
-						<Anchor point="BOTTOMLEFT" relativeKey="$parent.Icon" relativePoint="BOTTOMRIGHT" x="8" y="2"/>
+						<Anchor point="LEFT" relativeKey="$parent.Icon" relativePoint="RIGHT" x="8" y="0"/>
+						<Anchor point="RIGHT" relativeKey="$parent.Chance" relativePoint="LEFT" x="-4" y="0"/>
+					</Anchors>
+				</FontString>
+				<!-- Bottom line (when shown, Name moves up): slot / description left, armor or
+				     weapon type right. Both red when the character can't equip the item. -->
+				<FontString parentKey="Type" inherits="GameFontHighlightSmall" justifyH="RIGHT" hidden="true">
+					<Anchors>
+						<Anchor point="BOTTOM" relativeKey="$parent.Icon" relativePoint="BOTTOM" x="0" y="3"/>
 						<Anchor point="RIGHT" relativeKey="$parent.Arrow" relativePoint="LEFT" x="-4" y="0"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Sub" inherits="GameFontHighlightSmall" justifyH="LEFT" wordwrap="false" hidden="true">
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" relativeKey="$parent.Icon" relativePoint="BOTTOMRIGHT" x="8" y="3"/>
+						<Anchor point="RIGHT" relativeKey="$parent.Type" relativePoint="LEFT" x="-8" y="0"/>
 					</Anchors>
 				</FontString>
 			</Layer>
@@ -43,69 +66,234 @@
 			</Layer>
 		</Layers>
 		<Scripts>
-			<OnLoad method="OnLoad"/>
 			<OnClick method="OnClick"/>
 			<OnEnter method="OnEnter"/>
 			<OnLeave method="OnLeave"/>
 		</Scripts>
 	</Button>
 
-	<!-- Group label: a row-sized text line with a thin divider, used to cluster entries
-	     without the weight of a full page header. -->
+	<!-- A tile: an entry drawn as a picture card in lists with `display = "tiles"`. The card is
+	     the client's bevelled dark list button (common-button-list-large, stretched to the tile);
+	     the picture sits inside the bevel and is cut to the button's own silhouette by using the
+	     same atlas as a mask, so its corners follow the bevel. The name sits across the top and two
+	     small texts (info / infoRight) in the bottom corners, over a shade so they read on any
+	     picture. Without a background the card stays plain and shows the entry's icon. -->
+	<Button name="ForeverLootTileTemplate" mixin="ForeverLootTileMixin" registerForClicks="LeftButtonUp, RightButtonUp" virtual="true">
+		<Size x="196" y="84"/>
+		<Layers>
+			<!-- Textures of one layer only draw in a defined order when their sub-levels differ,
+			     so card, picture and boost get explicit ones (card lowest). -->
+			<Layer level="BACKGROUND" textureSubLevel="-2">
+				<Texture parentKey="Card" atlas="common-button-list-large" setAllPoints="true"/>
+			</Layer>
+			<Layer level="BACKGROUND" textureSubLevel="-1">
+				<!-- The 5px inset is the bevel that stays visible around the picture. -->
+				<Texture parentKey="Background">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="5" y="-5"/>
+						<Anchor point="BOTTOMRIGHT" x="-5" y="5"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="BACKGROUND" textureSubLevel="0">
+				<!-- The same picture added on top of itself: brightens it beyond how it was
+				     painted. Its alpha (TILE_PICTURE_BOOST in view.lua) is the brightness knob. -->
+				<Texture parentKey="Boost" alphaMode="ADD">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.Background"/>
+						<Anchor point="BOTTOMRIGHT" relativeKey="$parent.Background"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="BORDER">
+				<!-- Darkens the picture behind the texts, fading in towards the top and bottom
+				     edges. How dark the tiles look is mostly these two alphas (0 = untouched
+				     picture, 1 = black at the edge) and the bands' heights. -->
+				<Texture parentKey="TopShade">
+					<Size y="26"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.Background"/>
+						<Anchor point="TOPRIGHT" relativeKey="$parent.Background"/>
+					</Anchors>
+					<Gradient orientation="VERTICAL">
+						<MinColor r="0" g="0" b="0" a="0"/>
+						<MaxColor r="0" g="0" b="0" a="0.45"/>
+					</Gradient>
+				</Texture>
+				<Texture parentKey="BottomShade">
+					<Size y="20"/>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" relativeKey="$parent.Background"/>
+						<Anchor point="BOTTOMRIGHT" relativeKey="$parent.Background"/>
+					</Anchors>
+					<Gradient orientation="VERTICAL">
+						<MinColor r="0" g="0" b="0" a="0.45"/>
+						<MaxColor r="0" g="0" b="0" a="0"/>
+					</Gradient>
+				</Texture>
+				<!-- The card's silhouette, shrunk to the picture rect, clips the picture and shades. -->
+				<MaskTexture parentKey="Mask" atlas="common-button-list-large" hWrapMode="CLAMPTOBLACKADDITIVE" vWrapMode="CLAMPTOBLACKADDITIVE">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.Background"/>
+						<Anchor point="BOTTOMRIGHT" relativeKey="$parent.Background"/>
+					</Anchors>
+					<MaskedTextures>
+						<MaskedTexture childKey="Background"/>
+						<MaskedTexture childKey="Boost"/>
+						<MaskedTexture childKey="TopShade"/>
+						<MaskedTexture childKey="BottomShade"/>
+					</MaskedTextures>
+				</MaskTexture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<Texture parentKey="Icon" hidden="true">
+					<Size x="32" y="32"/>
+					<Anchors>
+						<Anchor point="CENTER" x="0" y="-2"/>
+					</Anchors>
+				</Texture>
+				<FontString parentKey="Name" inherits="GameFontHighlightMedium" justifyH="CENTER" wordwrap="false">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="12" y="-11"/>
+						<Anchor point="TOPRIGHT" x="-12" y="-11"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="InfoRight" inherits="GameFontHighlightSmall" justifyH="RIGHT" wordwrap="false">
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT" x="-11" y="9"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Info" inherits="GameFontHighlightSmall" justifyH="LEFT" wordwrap="false">
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" x="11" y="9"/>
+						<Anchor point="RIGHT" relativeKey="$parent.InfoRight" relativePoint="LEFT" x="-6" y="0"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<HighlightTexture atlas="common-button-list-large-hover" setAllPoints="true" alphaMode="ADD"/>
+		<Scripts>
+			<OnClick method="OnClick"/>
+			<OnEnter method="OnEnter"/>
+			<OnLeave method="OnLeave"/>
+		</Scripts>
+	</Button>
+
+	<!-- A card: an entry drawn as a portrait card in lists with `display = "cards"`, e.g. one boss
+	     of an instance. The same bevelled list button as the tiles; the portrait (a bust on
+	     transparency, so nothing needs cutting) stands on the left, name and the two small info
+	     texts to its right, the folder arrow at the far right. Without a portrait the entry's
+	     icon takes its place. -->
+	<Button name="ForeverLootCardTemplate" mixin="ForeverLootCardMixin" registerForClicks="LeftButtonUp, RightButtonUp" virtual="true">
+		<Size x="300" y="72"/>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="Card" atlas="common-button-list-large" setAllPoints="true"/>
+			</Layer>
+			<Layer level="ARTWORK">
+				<!-- 2:1 like the client's boss portraits; bottom-aligned so the bust stands on the card. -->
+				<Texture parentKey="Portrait">
+					<Size x="112" y="56"/>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" x="2" y="5"/>
+					</Anchors>
+				</Texture>
+				<Texture parentKey="Icon" hidden="true">
+					<Size x="36" y="36"/>
+					<Anchors>
+						<Anchor point="LEFT" x="24" y="0"/>
+					</Anchors>
+				</Texture>
+				<Texture parentKey="Arrow" atlas="common-icon-forwardarrow" useAtlasSize="false">
+					<Size x="16" y="16"/>
+					<Anchors>
+						<Anchor point="RIGHT" x="-12" y="0"/>
+					</Anchors>
+				</Texture>
+				<!-- Quest "!" in the top-right corner for entries with `quests`; the name stops short
+				     of it even while hidden so it never overlaps. -->
+				<Texture parentKey="QuestIcon" file="Interface\GossipFrame\AvailableQuestIcon" hidden="true">
+					<Size x="16" y="16"/>
+					<Anchors>
+						<Anchor point="TOPRIGHT" x="-12" y="-7"/>
+					</Anchors>
+				</Texture>
+				<FontString parentKey="Name" inherits="GameFontHighlightMedium" justifyH="LEFT" wordwrap="false">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="98" y="-14"/>
+						<Anchor point="RIGHT" relativeKey="$parent.QuestIcon" relativePoint="LEFT" x="-4" y="0"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="InfoRight" inherits="GameFontHighlightSmall" justifyH="RIGHT" wordwrap="false">
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT" relativeKey="$parent.Arrow" relativePoint="BOTTOMLEFT" x="-6" y="-12"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Info" inherits="GameFontHighlightSmall" justifyH="LEFT" wordwrap="false">
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" x="98" y="14"/>
+						<Anchor point="RIGHT" relativeKey="$parent.InfoRight" relativePoint="LEFT" x="-6" y="0"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<HighlightTexture atlas="common-button-list-large-hover" setAllPoints="true" alphaMode="ADD"/>
+		<Scripts>
+			<OnClick method="OnClick"/>
+			<OnEnter method="OnEnter"/>
+			<OnLeave method="OnLeave"/>
+		</Scripts>
+	</Button>
+
+	<!-- Group label: a row-sized gold text line with a thin divider, used to cluster entries
+	     without the weight of a full section header. -->
 	<Frame name="ForeverLootGroupLabelTemplate" mixin="ForeverLootGroupLabelMixin" virtual="true">
 		<Size x="200" y="40"/>
 		<Layers>
 			<Layer level="ARTWORK">
-				<FontString parentKey="Text" inherits="GameFontNormalMed2" justifyH="LEFT" wordwrap="false">
+				<FontString parentKey="Text" inherits="GameFontNormal" justifyH="LEFT" wordwrap="false">
 					<Anchors>
-						<Anchor point="LEFT" x="6" y="2"/>
-						<Anchor point="RIGHT" x="-6" y="2"/>
+						<Anchor point="LEFT" x="8" y="2"/>
+						<Anchor point="RIGHT" x="-8" y="2"/>
 					</Anchors>
 				</FontString>
-				<Texture parentKey="Line" atlas="spellbook-divider">
-					<Size y="8"/>
+				<!-- Atlas height, stretched to the row width (like Options_HorizontalDivider in AddonList). -->
+				<Texture parentKey="Line" atlas="UI-Character-Info-ScrollLine-Long" useAtlasSize="true">
 					<Anchors>
-						<Anchor point="BOTTOMLEFT" x="-20" y="2"/>
-						<Anchor point="BOTTOMRIGHT" x="-20" y="2"/>
+						<Anchor point="BOTTOMLEFT" x="0" y="2"/>
+						<Anchor point="BOTTOMRIGHT" x="0" y="2"/>
 					</Anchors>
 				</Texture>
 			</Layer>
 		</Layers>
-		<Scripts>
-			<OnLoad method="OnLoad"/>
-		</Scripts>
 	</Frame>
 
-	<!-- Section header inside a page; modeled on Blizzard_PlayerSpells' SpellBookHeaderTemplate. -->
+	<!-- Section header: the character frame's stat-category plate (CharacterStatFrameCategoryTemplate)
+	     stretched to the list width, white centered text. -->
 	<Frame name="ForeverLootPageHeaderTemplate" mixin="ForeverLootPageHeaderMixin" virtual="true">
-		<Size x="300" y="51"/>
+		<Size x="300" y="40"/>
 		<Layers>
 			<Layer level="BACKGROUND">
-				<Texture parentKey="Backplate" atlas="spellbook-list-backplate" alpha="0.65">
-					<Size x="416" y="106"/>
+				<!-- Centered; its width follows the text (plus padding, see the mixin), so a short
+				     title doesn't turn into a plate stretched across the whole list. -->
+				<Texture parentKey="Backplate" atlas="UI-Character-Info-Title">
 					<Anchors>
-						<Anchor point="LEFT" x="-85" y="10"/>
+						<Anchor point="TOP"/>
+						<Anchor point="BOTTOM"/>
 					</Anchors>
 				</Texture>
 			</Layer>
 			<Layer level="ARTWORK">
-				<FontString parentKey="Text" inherits="SystemFont_Huge2" justifyH="LEFT" wordwrap="false">
+				<FontString parentKey="Text" inherits="GameFontHighlightMedium" justifyH="CENTER" wordwrap="false">
 					<Anchors>
-						<Anchor point="TOPLEFT" x="-8" y="0"/>
-						<Anchor point="TOPRIGHT" x="-60" y="0"/>
+						<Anchor point="LEFT" x="12" y="1"/>
+						<Anchor point="RIGHT" x="-12" y="1"/>
 					</Anchors>
 				</FontString>
-				<Texture parentKey="Border" atlas="spellbook-divider">
-					<Size y="11"/>
-					<Anchors>
-						<Anchor point="BOTTOMLEFT" x="-32" y="0"/>
-						<Anchor point="BOTTOMRIGHT" x="-60" y="0"/>
-					</Anchors>
-				</Texture>
 			</Layer>
 		</Layers>
 		<Scripts>
-			<OnLoad method="OnLoad"/>
+			<OnSizeChanged method="OnSizeChanged"/>
 		</Scripts>
 	</Frame>
 
@@ -117,7 +305,7 @@
 				<Anchor point="CENTER"/>
 			</Anchors>
 		</ButtonText>
-		<!-- The bar sits above the page header area, where the standard yellow reads fine. -->
+		<!-- Ancestors gold, hover and the current (disabled) crumb white. -->
 		<NormalFont style="GameFontNormal"/>
 		<HighlightFont style="GameFontHighlight"/>
 		<DisabledFont style="GameFontHighlight"/>
@@ -141,38 +329,23 @@
 		</Layers>
 	</Frame>
 
-	<!-- One book page. The atlas is chosen in Lua (camelot vs mainline art).
-	     Insets (set per instance) define the content slot, like PagedSpellsView1/2Template. -->
-	<Frame name="ForeverLootPageTemplate" virtual="true">
-		<KeyValues>
-			<KeyValue key="insetLeft" value="85" type="number"/>
-			<KeyValue key="insetRight" value="41" type="number"/>
-			<KeyValue key="insetTop" value="95" type="number"/>
-			<KeyValue key="insetBottom" value="72" type="number"/>
-		</KeyValues>
-		<Layers>
-			<Layer level="BACKGROUND">
-				<Texture parentKey="Background" setAllPoints="true"/>
-			</Layer>
-		</Layers>
-	</Frame>
-
-	<!-- A view: breadcrumb bar on top, two book pages below, page controls bottom-right.
-	     Mouse wheel turns pages; right-click anywhere goes one level back. -->
+	<!-- A view fills the window's left column: a header row (back button + breadcrumbs on the
+	     left, search box + filter on the right) over a divider, the list below it, page
+	     controls bottom-right. Mouse wheel turns pages; right-click anywhere goes one level back. -->
 	<Frame name="ForeverLootViewTemplate" mixin="ForeverLootViewMixin" enableMouse="true" virtual="true">
 		<KeyValues>
-			<!-- Spacing from the spellbook's PagedSpellsFrame: xPadding 15, yPadding 10. -->
 			<KeyValue key="rowHeight" value="40" type="number"/>
-			<KeyValue key="headerHeight" value="51" type="number"/>
-			<KeyValue key="headerGap" value="10" type="number"/>
-			<KeyValue key="columnGap" value="15" type="number"/>
+			<KeyValue key="tileHeight" value="84" type="number"/>
+			<KeyValue key="cardHeight" value="72" type="number"/>
+			<KeyValue key="headerHeight" value="40" type="number"/>
+			<KeyValue key="headerGap" value="6" type="number"/>
+			<KeyValue key="columnGap" value="12" type="number"/>
 		</KeyValues>
 		<Frames>
 			<Button parentKey="BackButton">
 				<Size x="24" y="24"/>
-				<!-- Where the spellbook puts its category tabs. -->
 				<Anchors>
-					<Anchor point="TOPLEFT" x="70" y="-26"/>
+					<Anchor point="TOPLEFT" x="14" y="-12"/>
 				</Anchors>
 				<NormalTexture atlas="common-icon-backarrow"/>
 				<HighlightTexture atlas="common-icon-backarrow" alphaMode="ADD"/>
@@ -184,43 +357,17 @@
 				</KeyValues>
 				<Size x="1" y="24"/>
 				<Anchors>
-					<Anchor point="LEFT" relativeKey="$parent.BackButton" relativePoint="RIGHT" x="10" y="0"/>
+					<Anchor point="LEFT" relativeKey="$parent.BackButton" relativePoint="RIGHT" x="8" y="0"/>
 				</Anchors>
 			</Frame>
-			<!-- Pages fill the view; the breadcrumb bar above is drawn over the page art.
-			     Content slots: 680x590 at (85,-95) on the left page and TOPRIGHT (-50,-95) on the
-			     right page, i.e. PagedSpellsView1/2Template. The bottom inset is larger than
-			     Blizzard's 17 to keep rows off the paging controls / page-curl corner. -->
-			<Frame parentKey="LeftPage" inherits="ForeverLootPageTemplate">
-				<Anchors>
-					<Anchor point="TOPLEFT" x="0" y="0"/>
-					<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOM" x="0" y="0"/>
-				</Anchors>
-			</Frame>
-			<Frame parentKey="RightPage" inherits="ForeverLootPageTemplate">
-				<KeyValues>
-					<KeyValue key="insetLeft" value="76" type="number"/>
-					<KeyValue key="insetRight" value="50" type="number"/>
-				</KeyValues>
-				<Anchors>
-					<Anchor point="TOPLEFT" relativePoint="TOP" x="0" y="0"/>
-					<Anchor point="BOTTOMRIGHT" x="0" y="0"/>
-				</Anchors>
-			</Frame>
-			<Frame parentKey="PagingControls" inherits="PagingControlsHorizontalTemplate">
-				<Anchors>
-					<Anchor point="BOTTOMRIGHT" x="-75" y="40"/>
-				</Anchors>
-			</Frame>
-			<!-- Query toolbar, only shown on item-DB folders. Placed where the spellbook keeps its
-			     SettingsDropdown + SearchBox: top right, in line with the breadcrumb bar. -->
+			<!-- Query toolbar, only shown on item-DB folders. -->
 			<DropdownButton parentKey="FilterDropdown" inherits="WowStyle1FilterDropdownTemplate" hidden="true">
 				<Anchors>
-					<Anchor point="TOPRIGHT" x="-30" y="-27"/>
+					<Anchor point="TOPRIGHT" x="-14" y="-13"/>
 				</Anchors>
 			</DropdownButton>
 			<EditBox parentKey="SearchBox" inherits="SearchBoxTemplate" mixin="ForeverLootSearchBoxMixin" letters="40" hidden="true">
-				<Size x="200" y="22"/>
+				<Size x="180" y="22"/>
 				<Anchors>
 					<Anchor point="RIGHT" relativeKey="$parent.FilterDropdown" relativePoint="LEFT" x="-8" y="0"/>
 				</Anchors>
@@ -229,9 +376,34 @@
 					<OnTextChanged inherit="prepend" method="OnTextChanged"/>
 				</Scripts>
 			</EditBox>
+			<!-- The current folder's title: fixed above the list, on every page. -->
+			<Frame parentKey="Title" inherits="ForeverLootPageHeaderTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT" x="14" y="-52"/>
+					<Anchor point="TOPRIGHT" x="-14" y="-52"/>
+				</Anchors>
+			</Frame>
+			<!-- The list area; rows/headers are pooled children placed from its TOPLEFT. -->
+			<Frame parentKey="Content">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeKey="$parent.Title" relativePoint="BOTTOMLEFT" x="0" y="-6"/>
+					<Anchor point="BOTTOMRIGHT" x="-14" y="42"/>
+				</Anchors>
+			</Frame>
+			<Frame parentKey="PagingControls" inherits="PagingControlsHorizontalTemplate">
+				<Anchors>
+					<Anchor point="BOTTOMRIGHT" x="-14" y="6"/>
+				</Anchors>
+			</Frame>
 		</Frames>
 		<Layers>
-			<Layer level="OVERLAY">
+			<Layer level="ARTWORK">
+				<Texture parentKey="HeaderDivider" atlas="UI-Character-Info-ScrollLine-Long" useAtlasSize="true">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="14" y="-44"/>
+						<Anchor point="TOPRIGHT" x="-14" y="-44"/>
+					</Anchors>
+				</Texture>
 				<FontString parentKey="ResultCount" inherits="GameFontNormalSmall" justifyH="RIGHT" hidden="true">
 					<Anchors>
 						<Anchor point="RIGHT" relativeKey="$parent.SearchBox" relativePoint="LEFT" x="-10" y="0"/>

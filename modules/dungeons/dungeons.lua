@@ -9,6 +9,7 @@ FL:RegisterModule({
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     order = 20,
     description = "Loot tables for 5-man dungeons.",
+    display = "tiles",
     getChildren = function()
         return {
             FL.InstanceFolder(389), -- Ragefire Chasm

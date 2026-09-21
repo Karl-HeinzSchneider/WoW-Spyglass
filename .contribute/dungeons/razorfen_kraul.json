@@ -3,35 +3,48 @@
   "name": "Razorfen Kraul",
   "minLevel": 32,
   "maxLevel": 42,
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-RazorfenKraul",
+  "backgroundCoords": [
+    0.0156,
+    0.6641,
+    0.0703,
+    0.6797
+  ],
   "encounters": [
     {
       "id": 2773,
       "name": "Roogug",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Roogug",
       "loot": []
     },
     {
       "id": 2774,
       "name": "Aggem Thorncurse",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Aggem Thorncurse",
       "loot": []
     },
     {
       "id": 2775,
       "name": "Death Speaker Jargba",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Death Speaker Jargba",
       "loot": []
     },
     {
       "id": 2776,
       "name": "Overlord Ramtusk",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Overlord Ramtusk",
       "loot": []
     },
     {
       "id": 2777,
       "name": "Agathelos the Raging",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Agathelos the Raging",
       "loot": []
     },
     {
       "id": 2778,
       "name": "Charlga Razorflank",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Charlga Razorflank",
       "loot": []
     }
   ]

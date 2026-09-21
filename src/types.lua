@@ -24,9 +24,12 @@
 ---@field mainWindow ForeverLoot.MainWindow  # set in ForeverLootMainWindowMixin:OnLoad
 ---@field exportFrame ForeverLoot.ExportFrame  # set in ForeverLootExportFrameMixin:OnLoad
 ---@field MainWindowMixin ForeverLoot.MainWindow
+---@field SideTabMixin ForeverLoot.SideTab
 ---@field ExportFrameMixin ForeverLoot.ExportFrame
 ---@field ViewMixin ForeverLoot.View
 ---@field ListRowMixin ForeverLoot.ListRow
+---@field TileMixin ForeverLoot.Tile
+---@field CardMixin ForeverLoot.Card
 ---@field PageHeaderMixin ForeverLoot.PageHeader
 ---@field GroupLabelMixin ForeverLoot.GroupLabel
 ---@field BreadcrumbButtonMixin ForeverLoot.BreadcrumbButton

@@ -9,30 +9,11 @@ local ITEM = Data.ITEM
 -- window frame itself. They are also reachable via app.ui.* for code that has the namespace.
 app.ui = app.ui or {}
 
--- Camelot ships the "-C60" spellbook art; fall back to the mainline atlases if it's missing.
-local function pageAtlas(side)
-    local camelot = "spellbook-Page-" .. side .. "-C60"
-    if C_Texture.GetAtlasInfo(camelot) then
-        return camelot
-    end
-    return "spellbook-background-evergreen-" .. side:lower()
-end
-
 ----------------------------------------------------------------------------------------------------
 -- List row: one template for folders, items, spells and custom entries
 ----------------------------------------------------------------------------------------------------
 
 local FALLBACK_ICON = "Interface\\Icons\\INV_Misc_QuestionMark"
-
--- Text color on the parchment pages. SPELLBOOK_FONT_COLOR is engine-defined; the fallback is
--- the same dark brown.
-local function parchmentColor()
-    return SPELLBOOK_FONT_COLOR or CreateColor(0.25, 0.16, 0.06)
-end
-
--- Quality colors are kept only where they still read on parchment; poor/common items use the
--- dark text color instead of grey/white.
-local MIN_COLORED_QUALITY = 2 -- Enum.ItemQuality.Good (uncommon)
 
 -- Delay between the last keystroke in the search box and running the query.
 local SEARCH_DEBOUNCE = 0.25
@@ -67,29 +48,151 @@ local LEVEL_LOW = QuestDifficultyColors and QuestDifficultyColors.verydifficult 
 local LEVEL_HIGH = QuestDifficultyColors and QuestDifficultyColors.standard or { r = 0.25, g = 0.75, b = 0.25 }
 
 local function colorHex(c)
-    return ("|cff%02x%02x%02x"):format(math.floor(c.r * 255 + 0.5), math.floor(c.g * 255 + 0.5), math.floor(c.b * 255 + 0.5))
+    return ("|cff%02x%02x%02x"):format(
+        math.floor(c.r * 255 + 0.5),
+        math.floor(c.g * 255 + 0.5),
+        math.floor(c.b * 255 + 0.5)
+    )
+end
+
+-- "15-21" with the colors above; nil when the node has no level range.
+---@param node ForeverLoot.Node
+---@return string?
+local function levelRangeText(node)
+    local lo, hi = node.minLevel, node.maxLevel
+    if not lo and not hi then
+        return nil
+    end
+    local low = lo and (colorHex(LEVEL_LOW) .. lo .. "|r") or nil
+    local high = hi and (colorHex(LEVEL_HIGH) .. hi .. "|r") or nil
+    if low and high then
+        return low .. "-" .. high
+    end
+    return low or high
 end
 
 ---@param node ForeverLoot.Node
 ---@return string
 local function levelRangeName(node)
     local name = node.name or "?"
-    local lo, hi = node.minLevel, node.maxLevel
-    if not lo and not hi then
+    local range = levelRangeText(node)
+    if not range then
         return name
     end
-    local low = lo and (colorHex(LEVEL_LOW) .. lo .. "|r") or nil
-    local high = hi and (colorHex(LEVEL_HIGH) .. hi .. "|r") or nil
-    if low and high then
-        return ("%s (%s-%s)"):format(name, low, high)
+    return ("%s (%s)"):format(name, range)
+end
+
+-- Red for the slot / armor type of gear the character can't equip: the engine's color when
+-- it defines one, otherwise the tooltip's red.
+local INVALID_COLOR = INVALID_EQUIPMENT_COLOR or RED_FONT_COLOR or CreateColor(1, 0.13, 0.13)
+
+-- The game colors the "Shoulder ... Plate" line of an item tooltip red when the character's
+-- class can't use that slot / armor or weapon type. Reading that line back is exact for this
+-- client (proficiencies here need not match Classic's) and needs no table of classes, but
+-- filling a tooltip per row is too slow for long lists. The answer only depends on the item's
+-- kind (class, subclass, slot) and the character's proficiencies, so it is scanned once per
+-- kind and cached until a skill changes (new armor class at 40, a weapon skill trained).
+---@type GameTooltip?
+local scanTooltip
+
+---@type table<string, boolean> kind -> slotInvalid
+local slotInvalidByKind = {}
+---@type table<string, boolean> kind -> typeInvalid
+local typeInvalidByKind = {}
+
+local function isRed(fontString)
+    local r, g, b = fontString:GetTextColor()
+    return r > 0.9 and g < 0.3 and b < 0.3
+end
+
+-- Scans one (cached) item's tooltip for the slot line.
+---@param itemID integer
+---@param slotText string  # the localized slot name that identifies the line
+---@return boolean slotInvalid, boolean typeInvalid
+local function scanEquipErrors(itemID, slotText)
+    if not scanTooltip then
+        scanTooltip = CreateFrame("GameTooltip", "ForeverLootScanTooltip", UIParent, "GameTooltipTemplate") --[[@as GameTooltip]]
     end
-    return ("%s (%s)"):format(name, low or high)
+    scanTooltip:SetOwner(UIParent, "ANCHOR_NONE")
+    scanTooltip:SetItemByID(itemID)
+    local slotInvalid, typeInvalid = false, false
+    for i = 2, scanTooltip:NumLines() do
+        local left = _G["ForeverLootScanTooltipTextLeft" .. i]
+        if left and left:GetText() == slotText then
+            local right = _G["ForeverLootScanTooltipTextRight" .. i]
+            slotInvalid, typeInvalid = isRed(left), right ~= nil and isRed(right)
+            break
+        end
+    end
+    scanTooltip:Hide()
+    return slotInvalid, typeInvalid
+end
+
+-- Whether the character can equip items of this kind; `itemID` is a cached item of that kind,
+-- used for the first (and only) scan.
+---@param itemID integer
+---@param classID integer
+---@param subclassID integer
+---@param equipSlot string
+---@param slotText string
+---@return boolean slotInvalid, boolean typeInvalid
+local function equipErrors(itemID, classID, subclassID, equipSlot, slotText)
+    local kind = classID .. ":" .. subclassID .. ":" .. equipSlot
+    local slotInvalid = slotInvalidByKind[kind]
+    if slotInvalid == nil then
+        slotInvalid, typeInvalidByKind[kind] = scanEquipErrors(itemID, slotText)
+        slotInvalidByKind[kind] = slotInvalid
+    end
+    return slotInvalid, typeInvalidByKind[kind]
+end
+
+-- Proficiencies changed: forget the answers and redraw what is open.
+local skillWatcher = CreateFrame("Frame")
+skillWatcher:RegisterEvent("SKILL_LINES_CHANGED")
+skillWatcher:SetScript("OnEvent", function()
+    wipe(slotInvalidByKind)
+    wipe(typeInvalidByKind)
+    local window = app.ui.mainWindow
+    if window and window:IsShown() then
+        window:RefreshViews()
+    end
+end)
+
+-- What the bottom line says for an item: gear shows its slot and armor/weapon type
+-- ("Shoulder" ... "Plate"); the armor class "Miscellaneous" (rings, necks, trinkets) says
+-- nothing useful and is left blank. Anything else shows its item class and, when it adds
+-- something, subclass ("Consumable" ... "Potion").
+---@param classID integer
+---@param subclassID integer
+---@param equipSlot string  # "INVTYPE_*", "" when not equippable
+---@return string slot, string type
+local function itemKindTexts(classID, subclassID, equipSlot)
+    local subclass = C_Item.GetItemSubClassInfo(classID, subclassID) or ""
+    if equipSlot ~= "" then
+        local slot = _G[equipSlot] or equipSlot
+        local isMiscArmor = classID == Enum.ItemClass.Armor and subclassID == Enum.ItemArmorSubclass.Generic
+        return slot, isMiscArmor and "" or subclass
+    end
+    local class = C_Item.GetItemClassInfo(classID) or ""
+    return class, subclass ~= class and subclass or ""
+end
+
+-- Quest titles come from the client when it knows the quest, else the id.
+local QUEST_LABEL = "Quest: "
+---@param questID integer
+---@return string
+local function questTitle(questID)
+    local title = C_QuestLog and C_QuestLog.GetTitleForQuestID and C_QuestLog.GetTitleForQuestID(questID)
+    return title or ("#" .. questID)
 end
 
 ---@class ForeverLoot.ListRow : Button
+---@field Backplate Texture
 ---@field Icon Texture
 ---@field Name FontString
+---@field Chance FontString
 ---@field Sub FontString
+---@field Type FontString
 ---@field Arrow Texture
 ---@field node ForeverLoot.Node
 ---@field view ForeverLoot.View
@@ -97,35 +200,46 @@ end
 ForeverLootListRowMixin = {}
 app.ui.ListRowMixin = ForeverLootListRowMixin
 
-function ForeverLootListRowMixin:OnLoad()
-    self.Sub:SetTextColor(parchmentColor():GetRGB())
-end
+-- What a row shows; the bottom line and the chance are optional.
+---@class ForeverLoot.RowDisplay
+---@field name string
+---@field icon? string|number
+---@field quality? Enum.ItemQuality
+---@field sub? string  # bottom left: slot, item class or description
+---@field type? string  # bottom right: armor / weapon type
+---@field subInvalid? boolean  # draw `sub` red (can't equip)
+---@field typeInvalid? boolean  # draw `type` red
+---@field chance? number  # 0..1, top right
 
----@param name string
----@param icon string|number|nil
----@param sub string?
----@param quality Enum.ItemQuality?
-function ForeverLootListRowMixin:SetDisplay(name, icon, sub, quality)
-    self.Icon:SetTexture(icon or FALLBACK_ICON)
-    self.Name:SetText(name)
-    self.Sub:SetText(sub or "")
-    self.Sub:SetShown(sub ~= nil and sub ~= "")
+---@param d ForeverLoot.RowDisplay
+function ForeverLootListRowMixin:SetDisplay(d)
+    self.Icon:SetTexture(d.icon or FALLBACK_ICON)
+    self.Name:SetText(d.name)
+    -- Items in their quality color, everything else white; both read on the dark pane.
+    local color = d.quality and ITEM_QUALITY_COLORS[d.quality] or HIGHLIGHT_FONT_COLOR
+    self.Name:SetTextColor(color.r, color.g, color.b)
 
-    -- With a second line the name sits in the upper half, otherwise it is vertically centered.
+    local hasSub = (d.sub ~= nil and d.sub ~= "") or (d.type ~= nil and d.type ~= "")
+    self.Sub:SetText(d.sub or "")
+    self.Sub:SetShown(hasSub)
+    self.Type:SetText(d.type or "")
+    self.Type:SetShown(hasSub)
+    local subColor = d.subInvalid and INVALID_COLOR or HIGHLIGHT_FONT_COLOR
+    self.Sub:SetTextColor(subColor.r, subColor.g, subColor.b)
+    local typeColor = d.typeInvalid and INVALID_COLOR or HIGHLIGHT_FONT_COLOR
+    self.Type:SetTextColor(typeColor.r, typeColor.g, typeColor.b)
+
+    self.Chance:SetText(d.chance and formatChance(d.chance) or "")
+    self.Chance:SetShown(d.chance ~= nil)
+
+    -- With a bottom line the name sits in the upper half, otherwise it is vertically centered.
     self.Name:ClearAllPoints()
-    if sub and sub ~= "" then
+    if hasSub then
         self.Name:SetPoint("TOPLEFT", self.Icon, "TOPRIGHT", 8, -2)
     else
         self.Name:SetPoint("LEFT", self.Icon, "RIGHT", 8, 0)
     end
-    self.Name:SetPoint("RIGHT", self.Arrow, "LEFT", -4, 0)
-
-    local color = quality and quality >= MIN_COLORED_QUALITY and ITEM_QUALITY_COLORS[quality]
-    if color then
-        self.Name:SetTextColor(color.r, color.g, color.b)
-    else
-        self.Name:SetTextColor(parchmentColor():GetRGB())
-    end
+    self.Name:SetPoint("RIGHT", self.Chance, "LEFT", -4, 0)
 end
 
 ---@param view ForeverLoot.View
@@ -142,46 +256,69 @@ function ForeverLootListRowMixin:Init(view, node)
         local info = C_Spell.GetSpellInfo(node.spellID)
         if info then
             self.link = C_Spell.GetSpellLink(node.spellID)
-            self:SetDisplay(info.name, info.iconID, node.description, nil)
+            self:SetDisplay({ name = info.name, icon = info.iconID, sub = node.description })
         else
-            self:SetDisplay("Spell #" .. node.spellID, nil, nil, nil)
+            self:SetDisplay({ name = "Spell #" .. node.spellID })
         end
     else
-        self:SetDisplay(levelRangeName(node), node.icon, node.description, node.quality)
+        self:SetDisplay({
+            name = levelRangeName(node),
+            icon = node.icon,
+            sub = node.description,
+            quality = node.quality,
+        })
     end
 end
 
--- Items: the shipped DB answers immediately (name, quality, item level); the client's item
--- cache, when it has the item, wins because it is exact and provides the link. Uncached items
--- are requested so the link/tooltip arrive; GET_ITEM_INFO_RECEIVED re-renders the page.
--- Server-side items are unknown to GetItemInfoInstant until fetched, so their icon comes
--- from the row.
+-- Items: the shipped DB answers immediately (name, quality, class, slot); the client's item
+-- cache, when it has the item, wins because it is exact, provides the link and lets the
+-- tooltip say whether the character can equip it. Uncached items are requested so that
+-- arrives; GET_ITEM_INFO_RECEIVED re-renders the page. Server-side items are unknown to
+-- GetItemInfoInstant until fetched, so their icon comes from the row.
 ---@param view ForeverLoot.View
 ---@param node ForeverLoot.Node
 function ForeverLootListRowMixin:InitItem(view, node)
     local itemID = node.itemID --[[@as integer]]
-    local name, link, quality, itemLevel, _, _, _, _, _, icon = C_Item.GetItemInfo(itemID)
-    if name then
+    local name, link, quality, _, _, _, _, _, equipSlot, icon, _, classID, subclassID = C_Item.GetItemInfo(itemID)
+    local cached = name ~= nil
+    if cached then
         self.link = link
     else
         view:RequestItem(itemID)
         local row = Data:GetItem(itemID)
         if row then
             name = Data:GetItemName(itemID)
-            quality, itemLevel = row[ITEM.QUALITY], row[ITEM.ILVL]
+            quality, classID, subclassID, equipSlot =
+                row[ITEM.QUALITY], row[ITEM.CLASS], row[ITEM.SUBCLASS], row[ITEM.SLOT]
         end
         icon = select(5, C_Item.GetItemInfoInstant(itemID)) or (row and row[ITEM.ICON])
     end
 
     if not name then
-        self:SetDisplay("Item #" .. itemID, icon, RETRIEVING_ITEM_INFO or "Loading...", nil)
+        self:SetDisplay({
+            name = "Item #" .. itemID,
+            icon = icon,
+            sub = RETRIEVING_ITEM_INFO or "Loading...",
+            chance = node.chance,
+        })
         return
     end
-    local sub = itemLevel and (ITEM_LEVEL or "Item Level %d"):format(itemLevel) or nil
-    if node.chance then
-        sub = (sub and sub .. "  -  " or "") .. formatChance(node.chance)
+
+    local slot, kind = itemKindTexts(classID, subclassID, equipSlot or "")
+    local slotInvalid, typeInvalid = false, false
+    if cached and equipSlot ~= "" then
+        slotInvalid, typeInvalid = equipErrors(itemID, classID, subclassID, equipSlot, slot)
     end
-    self:SetDisplay(name, icon, sub, quality)
+    self:SetDisplay({
+        name = name,
+        icon = icon,
+        quality = quality,
+        sub = slot,
+        type = kind,
+        subInvalid = slotInvalid,
+        typeInvalid = typeInvalid,
+        chance = node.chance,
+    })
 end
 
 ---@param button string
@@ -217,6 +354,9 @@ function ForeverLootListRowMixin:OnEnter()
         if node.description then
             GameTooltip:AddLine(node.description, 1, 1, 1, true)
         end
+        for _, questID in ipairs(node.quests or {}) do
+            GameTooltip:AddLine(QUEST_LABEL .. questTitle(questID), 1, 0.82, 0)
+        end
     else
         GameTooltip:AddLine(node.name or "")
         if node.description then
@@ -234,6 +374,116 @@ function ForeverLootListRowMixin:OnLeave()
 end
 
 ----------------------------------------------------------------------------------------------------
+-- Tile: a picture card for entries of a `display = "tiles"` folder
+----------------------------------------------------------------------------------------------------
+
+-- How much brighter than painted a tile's picture is drawn: the picture is added onto itself
+-- with this alpha (0 = as painted, 0.5 = strongly lifted). The shade bands behind the texts are
+-- the two gradient alphas in ForeverLootTileTemplate.
+local TILE_PICTURE_BOOST = 0.3
+
+-- Clicking and hovering work exactly like a row, so those handlers are shared.
+---@class ForeverLoot.Tile : Button
+---@field Card Texture
+---@field Background Texture
+---@field Boost Texture
+---@field TopShade Texture
+---@field BottomShade Texture
+---@field Mask MaskTexture
+---@field Icon Texture
+---@field Name FontString
+---@field Info FontString
+---@field InfoRight FontString
+---@field node ForeverLoot.Node
+---@field view ForeverLoot.View
+---@field link? string
+ForeverLootTileMixin = {
+    OnClick = ForeverLootListRowMixin.OnClick,
+    OnEnter = ForeverLootListRowMixin.OnEnter,
+    OnLeave = ForeverLootListRowMixin.OnLeave,
+}
+app.ui.TileMixin = ForeverLootTileMixin
+
+---@param view ForeverLoot.View
+---@param node ForeverLoot.Node
+function ForeverLootTileMixin:Init(view, node)
+    self.view = view
+    self.node = node
+    self.link = nil
+
+    self.Name:SetText(node.name or "?")
+    local color = node.quality and ITEM_QUALITY_COLORS[node.quality] or HIGHLIGHT_FONT_COLOR
+    self.Name:SetTextColor(color.r, color.g, color.b)
+    self.Info:SetText(node.info or levelRangeText(node) or "")
+    self.InfoRight:SetText(node.infoRight or "")
+
+    local background = node.background
+    self.Background:SetShown(background ~= nil)
+    self.Boost:SetShown(background ~= nil and TILE_PICTURE_BOOST > 0)
+    self.TopShade:SetShown(background ~= nil)
+    self.BottomShade:SetShown(background ~= nil)
+    self.Icon:SetShown(background == nil)
+    if background then
+        local c = node.backgroundCoords or { 0, 1, 0, 1 }
+        for _, texture in ipairs({ self.Background, self.Boost }) do
+            texture:SetTexture(background)
+            texture:SetTexCoord(c[1], c[2], c[3], c[4])
+        end
+        self.Boost:SetAlpha(TILE_PICTURE_BOOST)
+    else
+        self.Icon:SetTexture(node.icon or FALLBACK_ICON)
+    end
+end
+
+----------------------------------------------------------------------------------------------------
+-- Card: a portrait card for entries of a `display = "cards"` folder (e.g. a boss)
+----------------------------------------------------------------------------------------------------
+
+---@class ForeverLoot.Card : Button
+---@field Card Texture
+---@field Portrait Texture
+---@field Icon Texture
+---@field Arrow Texture
+---@field QuestIcon Texture
+---@field Name FontString
+---@field Info FontString
+---@field InfoRight FontString
+---@field node ForeverLoot.Node
+---@field view ForeverLoot.View
+---@field link? string
+ForeverLootCardMixin = {
+    OnClick = ForeverLootListRowMixin.OnClick,
+    OnEnter = ForeverLootListRowMixin.OnEnter,
+    OnLeave = ForeverLootListRowMixin.OnLeave,
+}
+app.ui.CardMixin = ForeverLootCardMixin
+
+---@param view ForeverLoot.View
+---@param node ForeverLoot.Node
+function ForeverLootCardMixin:Init(view, node)
+    self.view = view
+    self.node = node
+    self.link = nil
+
+    self.Name:SetText(node.name or "?")
+    local color = node.quality and ITEM_QUALITY_COLORS[node.quality] or HIGHLIGHT_FONT_COLOR
+    self.Name:SetTextColor(color.r, color.g, color.b)
+    self.Info:SetText(node.info or levelRangeText(node) or "")
+    self.InfoRight:SetText(node.infoRight or "")
+    self.Arrow:SetShown(app.api.IsFolder(node))
+    self.QuestIcon:SetShown(node.quests ~= nil and #node.quests > 0)
+
+    local portrait = node.portrait
+    self.Portrait:SetShown(portrait ~= nil)
+    self.Icon:SetShown(portrait == nil)
+    if portrait then
+        self.Portrait:SetTexture(portrait)
+    else
+        self.Icon:SetTexture(node.icon or FALLBACK_ICON)
+    end
+end
+
+----------------------------------------------------------------------------------------------------
 -- Group label (row-sized, lighter than a page header)
 ----------------------------------------------------------------------------------------------------
 
@@ -243,33 +493,38 @@ end
 ForeverLootGroupLabelMixin = {}
 app.ui.GroupLabelMixin = ForeverLootGroupLabelMixin
 
-function ForeverLootGroupLabelMixin:OnLoad()
-    self.Text:SetTextColor(parchmentColor():GetRGB())
-end
-
 ---@param text string
 function ForeverLootGroupLabelMixin:Init(text)
     self.Text:SetText(text)
 end
 
 ----------------------------------------------------------------------------------------------------
--- Page header (section title with backplate and divider, like the spellbook)
+-- Page header (section title on the character frame's category plate)
 ----------------------------------------------------------------------------------------------------
 
 ---@class ForeverLoot.PageHeader : Frame
 ---@field Backplate Texture
 ---@field Text FontString
----@field Border Texture
 ForeverLootPageHeaderMixin = {}
 app.ui.PageHeaderMixin = ForeverLootPageHeaderMixin
 
-function ForeverLootPageHeaderMixin:OnLoad()
-    self.Text:SetTextColor(parchmentColor():GetRGB())
-end
+-- The plate behind the text: text width plus this much on each side, but never wider than
+-- the header itself.
+local HEADER_PLATE_PADDING = 40
 
 ---@param text string
 function ForeverLootPageHeaderMixin:Init(text)
     self.Text:SetText(text)
+    self:UpdatePlate()
+end
+
+function ForeverLootPageHeaderMixin:OnSizeChanged()
+    self:UpdatePlate()
+end
+
+function ForeverLootPageHeaderMixin:UpdatePlate()
+    local width = self.Text:GetStringWidth() + 2 * HEADER_PLATE_PADDING
+    self.Backplate:SetWidth(math.min(width, self:GetWidth()))
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -329,7 +584,7 @@ function ForeverLootSearchBoxMixin:OnTextChanged(userInput)
 end
 
 ----------------------------------------------------------------------------------------------------
--- View: breadcrumb + two pages of rows
+-- View: breadcrumb bar + one page of rows
 ----------------------------------------------------------------------------------------------------
 
 ---@class ForeverLoot.FilterDropdown : Frame, WowStyle1FilterDropdownMixin
@@ -339,8 +594,9 @@ end
 ---@class ForeverLoot.View : Frame
 ---@field BackButton Button
 ---@field Breadcrumbs ForeverLoot.LayoutFrame
----@field LeftPage ForeverLoot.Page
----@field RightPage ForeverLoot.Page
+---@field HeaderDivider Texture
+---@field Title ForeverLoot.PageHeader
+---@field Content ForeverLoot.Page
 ---@field PagingControls ForeverLoot.PagingControls
 ---@field SearchBox ForeverLoot.SearchBox
 ---@field FilterDropdown ForeverLoot.FilterDropdown
@@ -350,33 +606,32 @@ end
 ---@field crumbPool ForeverLoot.FramePool
 ---@field separatorPool ForeverLoot.FramePool
 ---@field rowHeight number
+---@field tileHeight number
+---@field cardHeight number
 ---@field headerHeight number
 ---@field headerGap number
 ---@field columnGap number
 ---@field pages ForeverLoot.PlacedElement[][]  # layout result for the current node
 ---@field path ForeverLoot.Node[]
 ---@field onNavigate? fun(view: ForeverLoot.View)
----@field isMinimized boolean  # one page (true) or the two-page spread (false)
 ---@field pendingItems table<integer, boolean>  # itemIDs whose info hasn't arrived yet
 ForeverLootViewMixin = {}
 app.ui.ViewMixin = ForeverLootViewMixin
 
+-- The list area: pooled rows/tiles/headers/group labels are placed from its top-left corner.
 ---@class ForeverLoot.Page : Frame
----@field Background Texture
 ---@field rowPool ForeverLoot.FramePool
+---@field tilePool ForeverLoot.FramePool
+---@field cardPool ForeverLoot.FramePool
 ---@field headerPool ForeverLoot.FramePool
 ---@field groupPool ForeverLoot.FramePool
----@field insetLeft number
----@field insetRight number
----@field insetTop number
----@field insetBottom number
 
 -- What a page displays. `kind` picks the template; new element kinds plug in here
 -- (BuildElements, LayoutPages, RenderPage).
 ---@class ForeverLoot.Element
----@field kind "header"|"group"|"row"
+---@field kind "header"|"group"|"row"|"tile"|"card"
 ---@field text? string  # header, group
----@field node? ForeverLoot.Node  # row
+---@field node? ForeverLoot.Node  # row, tile, card
 
 ---@class ForeverLoot.PlacedElement
 ---@field element ForeverLoot.Element
@@ -387,29 +642,19 @@ app.ui.ViewMixin = ForeverLootViewMixin
 
 function ForeverLootViewMixin:OnLoad()
     self.path = {}
-    self.isMinimized = true
 
-    self.RightPage.Background:SetAtlas(pageAtlas("Right"))
-    self:ApplyPageLayout()
-    -- The header row shares the view's child level with the pages, and WoW interleaves draw
-    -- layers within one level: the toolbar's BACKGROUND art (search border, filter backdrop)
-    -- would end up under the page art. Lift everything on that row above the pages.
-    local headerLevel = self.LeftPage:GetFrameLevel() + 2
-    for _, frame in ipairs({ self.BackButton, self.Breadcrumbs, self.SearchBox, self.FilterDropdown }) do
-        frame:SetFrameLevel(headerLevel)
-    end
-    for _, page in ipairs({ self.LeftPage, self.RightPage }) do
-        page.rowPool = CreateFramePool("Button", page, "ForeverLootListRowTemplate") --[[@as ForeverLoot.FramePool]]
-        page.headerPool = CreateFramePool("Frame", page, "ForeverLootPageHeaderTemplate") --[[@as ForeverLoot.FramePool]]
-        page.groupPool = CreateFramePool("Frame", page, "ForeverLootGroupLabelTemplate") --[[@as ForeverLoot.FramePool]]
-    end
+    local page = self.Content
+    page.rowPool = CreateFramePool("Button", page, "ForeverLootListRowTemplate") --[[@as ForeverLoot.FramePool]]
+    page.tilePool = CreateFramePool("Button", page, "ForeverLootTileTemplate") --[[@as ForeverLoot.FramePool]]
+    page.cardPool = CreateFramePool("Button", page, "ForeverLootCardTemplate") --[[@as ForeverLoot.FramePool]]
+    page.headerPool = CreateFramePool("Frame", page, "ForeverLootPageHeaderTemplate") --[[@as ForeverLoot.FramePool]]
+    page.groupPool = CreateFramePool("Frame", page, "ForeverLootGroupLabelTemplate") --[[@as ForeverLoot.FramePool]]
     self.pages = {}
     self.pendingItems = {}
     self.queries = {}
     self.resultCount = 0
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
 
-    self.ResultCount:SetTextColor(parchmentColor():GetRGB())
     -- The template's clear button sets the text programmatically (userInput = false), so the
     -- debounce never sees it; clear the query directly.
     self.SearchBox.clearButton:HookScript("OnClick", function()
@@ -465,39 +710,6 @@ function ForeverLootViewMixin:RequestItem(itemID)
     end
 end
 
--- Minimized shows only LeftPage stretched across the view (with the "halved" book art, which
--- is the right-page atlas, exactly as the spellbook's BookBGHalved does). Maximized shows both.
----@param minimized boolean
-function ForeverLootViewMixin:SetMinimized(minimized)
-    if self.isMinimized == minimized then
-        return
-    end
-    self.isMinimized = minimized
-    self:ApplyPageLayout()
-    self.PagingControls:SetCurrentPage(1)
-    self:Refresh()
-end
-
-function ForeverLootViewMixin:ApplyPageLayout()
-    local left = self.LeftPage
-    left:ClearAllPoints()
-    left:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
-    if self.isMinimized then
-        left:SetPoint("BOTTOMRIGHT", self, "BOTTOMRIGHT", 0, 0)
-        left.Background:SetAtlas(pageAtlas("Right"))
-        self.RightPage:Hide()
-    else
-        left:SetPoint("BOTTOMRIGHT", self, "BOTTOM", 0, 0)
-        left.Background:SetAtlas(pageAtlas("Left"))
-        self.RightPage:Show()
-    end
-end
-
----@return integer
-function ForeverLootViewMixin:GetPagesShown()
-    return self.isMinimized and 1 or 2
-end
-
 ---@param root ForeverLoot.Node
 function ForeverLootViewMixin:SetRoot(root)
     self.path = { root }
@@ -533,6 +745,18 @@ end
 function ForeverLootViewMixin:GetTitle()
     local node = self:GetCurrentNode()
     return node and node.name or "New Tab"
+end
+
+-- The icon of the deepest node on the path that has one (the root has none), for the tab.
+---@return string|number|nil
+function ForeverLootViewMixin:GetIcon()
+    for i = #self.path, 1, -1 do
+        local icon = self.path[i].icon
+        if icon then
+            return icon
+        end
+    end
+    return nil
 end
 
 -- Called after any path change: reset paging, redraw, and let the owner update the tab label.
@@ -773,13 +997,34 @@ function ForeverLootViewMixin:UpdateToolbar()
     self.ResultCount:SetText(("%d items"):format(self.resultCount))
 end
 
--- Columns per page for the current list. Defined by the collection itself (`node.columns`);
--- one full-width column when unset.
+-- The element kind a folder's entries are drawn as: "row" (default), "tile" or "card".
+---@param node ForeverLoot.Node?
+---@return "row"|"tile"|"card"
+local function entryKindOf(node)
+    local display = node and node.display
+    if display == "tiles" then
+        return "tile"
+    elseif display == "cards" then
+        return "card"
+    end
+    return "row"
+end
+
+-- Columns per line for each entry kind: { default, max }. Set by the collection itself
+-- (`node.columns`), clamped to what the kind can fit.
+local COLUMNS = {
+    row = { 1, 2 },
+    tile = { 3, 4 },
+    card = { 2, 2 },
+}
+
+-- Columns for the current list.
 ---@param node ForeverLoot.Node?
 ---@return integer
 function ForeverLootViewMixin:GetColumns(node)
-    local columns = node and node.columns or 1
-    return math.max(1, math.min(2, columns))
+    local range = COLUMNS[entryKindOf(node)]
+    local columns = node and node.columns or range[1]
+    return math.max(1, math.min(range[2], columns))
 end
 
 -- Full redraw: rebuild the element list and page layout for the current node, then render.
@@ -789,7 +1034,7 @@ function ForeverLootViewMixin:Refresh()
     local node = self:GetCurrentNode()
     self.pages = self:LayoutPages(self:BuildElements(node), self:GetColumns(node))
 
-    local maxPages = math.max(1, math.ceil(#self.pages / self:GetPagesShown()))
+    local maxPages = math.max(1, #self.pages)
     -- SetMaxPages may clamp the current page, which calls OnPageChanged -> Render.
     self.PagingControls:SetMaxPages(maxPages)
     self.PagingControls:SetShown(maxPages > 1)
@@ -797,22 +1042,22 @@ function ForeverLootViewMixin:Refresh()
     self:Render()
 end
 
--- Draws the pages for the current page index plus the chrome around them.
+-- Draws the current page plus the chrome around it.
 function ForeverLootViewMixin:Render()
-    local pagesShown = self:GetPagesShown()
-    local first = (self.PagingControls:GetCurrentPage() - 1) * pagesShown + 1
-    self:RenderPage(self.LeftPage, self.pages[first])
-    self:RenderPage(self.RightPage, not self.isMinimized and self.pages[first + 1] or nil)
+    local node = self:GetCurrentNode()
+    self.Title:Init(node and node.name or "")
+    self:RenderPage(self.Content, self.pages[self.PagingControls:GetCurrentPage()])
 
     self:RefreshBreadcrumbs()
     self:UpdateToolbar()
     self.BackButton:SetEnabled(#self.path > 1)
 end
 
--- Turns the current node into the flat list of things to draw: a title header, then its
--- children. `header` nodes become section headers, `group` nodes become group labels (followed
--- by their `items`), everything else a row. If the folder has `groupBy`, runs of plain entries
--- are bucketed into auto groups; explicit headers/groups are kept as written.
+-- Turns the current node into the flat list of things to draw: its children (the folder's
+-- own title is the fixed `Title` frame above the pages). `header` nodes become section headers, `group` nodes become group labels (followed
+-- by their `items`), everything else a row (or a tile in a `display = "tiles"` folder). If the
+-- folder has `groupBy`, runs of plain entries are bucketed into auto groups; explicit
+-- headers/groups are kept as written.
 ---@param node ForeverLoot.Node?
 ---@return ForeverLoot.Element[]
 function ForeverLootViewMixin:BuildElements(node)
@@ -820,15 +1065,15 @@ function ForeverLootViewMixin:BuildElements(node)
     if not node then
         return elements
     end
-    elements[#elements + 1] = { kind = "header", text = node.name }
 
     local groupBy = node.groupBy
     local keyFn = type(groupBy) == "function" and groupBy or nil
+    local entryKind = entryKindOf(node)
     local pending = {}
 
     local function addRows(entries)
         for _, entry in ipairs(entries) do
-            elements[#elements + 1] = { kind = "row", node = entry }
+            elements[#elements + 1] = { kind = entryKind, node = entry }
         end
     end
 
@@ -864,51 +1109,29 @@ function ForeverLootViewMixin:BuildElements(node)
     return elements
 end
 
--- The page frame that will display page number `index` (1-based) in the current mode.
----@param index integer
----@return ForeverLoot.Page
-function ForeverLootViewMixin:GetPageSlot(index)
-    if self.isMinimized or index % 2 == 1 then
-        return self.LeftPage
-    end
-    return self.RightPage
-end
-
--- Usable content size of a page frame, inside its insets.
----@param page ForeverLoot.Page
----@return number width, number height
-local function contentSize(page)
-    return page:GetWidth() - page.insetLeft - page.insetRight, page:GetHeight() - page.insetTop - page.insetBottom
-end
-
 -- Flows elements top-to-bottom into as many pages as needed. Headers span the full width and
--- start a new line; rows fill `columns` columns left to right. A header never ends a page.
--- Left and right pages may have different insets, so each page is measured individually.
+-- start a new line; rows, tiles and cards fill `columns` columns left to right (tiles and
+-- cards are taller and get a little air between lines). A header never ends a page.
 ---@param elements ForeverLoot.Element[]
 ---@param columns integer
 ---@return ForeverLoot.PlacedElement[][]
 function ForeverLootViewMixin:LayoutPages(elements, columns)
     local pages = {}
     local page, y, column = {}, 0, 0
-    local pageWidth, pageHeight, columnWidth
-
-    local function measure()
-        pageWidth, pageHeight = contentSize(self:GetPageSlot(#pages + 1))
-        columnWidth = (pageWidth - self.columnGap * (columns - 1)) / columns
-    end
+    local pageWidth, pageHeight = self.Content:GetSize()
+    local columnWidth = (pageWidth - self.columnGap * (columns - 1)) / columns
+    local lineHeight = self.rowHeight -- of the line being filled
 
     local function newPage()
         if #page > 0 then
             pages[#pages + 1] = page
         end
         page, y, column = {}, 0, 0
-        measure()
     end
-    measure()
 
     local function newLine()
         if column > 0 then
-            y = y + self.rowHeight
+            y = y + lineHeight
             column = 0
         end
     end
@@ -935,10 +1158,19 @@ function ForeverLootViewMixin:LayoutPages(elements, columns)
             place(element, 0, pageWidth, self.rowHeight)
             y = y + self.rowHeight
         else
-            if column == 0 and y + self.rowHeight > pageHeight then
-                newPage()
+            local height, gap = self.rowHeight, 0
+            if element.kind == "tile" then
+                height, gap = self.tileHeight, self.columnGap
+            elseif element.kind == "card" then
+                height, gap = self.cardHeight, self.columnGap
             end
-            place(element, column * (columnWidth + self.columnGap), columnWidth, self.rowHeight)
+            if column == 0 then
+                if y + height > pageHeight then
+                    newPage()
+                end
+                lineHeight = height + gap
+            end
+            place(element, column * (columnWidth + self.columnGap), columnWidth, height)
             column = column + 1
             if column >= columns then
                 newLine()
@@ -954,6 +1186,8 @@ end
 ---@param placed ForeverLoot.PlacedElement[]?
 function ForeverLootViewMixin:RenderPage(page, placed)
     page.rowPool:ReleaseAll()
+    page.tilePool:ReleaseAll()
+    page.cardPool:ReleaseAll()
     page.headerPool:ReleaseAll()
     page.groupPool:ReleaseAll()
     for _, item in ipairs(placed or {}) do
@@ -965,12 +1199,18 @@ function ForeverLootViewMixin:RenderPage(page, placed)
         elseif element.kind == "group" then
             frame = page.groupPool:Acquire() --[[@as ForeverLoot.GroupLabel]]
             frame:Init(element.text or "")
+        elseif element.kind == "tile" then
+            frame = page.tilePool:Acquire() --[[@as ForeverLoot.Tile]]
+            frame:Init(self, element.node)
+        elseif element.kind == "card" then
+            frame = page.cardPool:Acquire() --[[@as ForeverLoot.Card]]
+            frame:Init(self, element.node)
         else
             frame = page.rowPool:Acquire() --[[@as ForeverLoot.ListRow]]
             frame:Init(self, element.node)
         end
         frame:SetSize(item.width, item.height)
-        frame:SetPoint("TOPLEFT", page, "TOPLEFT", page.insetLeft + item.x, -(page.insetTop + item.y))
+        frame:SetPoint("TOPLEFT", page, "TOPLEFT", item.x, -item.y)
         frame:Show()
     end
 end

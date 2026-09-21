@@ -28,19 +28,49 @@ function api.BossLootEntries(bossID)
     return entries
 end
 
--- A boss folder: its loot in two auto-grouped columns.
+-- Drops worth a look on a boss card ("3 of interest"). Not decided yet what counts — a
+-- favorites system (the player's marked items), maybe an automatic rule on top — so until
+-- then nothing does and the text stays hidden.
+---@param bossID integer
+---@return integer
+local function dropsOfInterest(bossID)
+    return 0
+end
+
+-- "60 Beast": what the curated data knows about the boss; nil when it knows nothing.
+---@param boss ForeverLoot.Boss?
+---@return string?
+local function bossInfo(boss)
+    if not boss or (not boss.level and not boss.creatureType) then
+        return nil
+    end
+    if boss.level and boss.creatureType then
+        return ("%d %s"):format(boss.level, boss.creatureType)
+    end
+    return boss.creatureType or tostring(boss.level)
+end
+
+-- A boss folder: its loot in two auto-grouped columns. For lists that draw their entries as
+-- cards it carries the boss's portrait, level/type, drops of interest and quests.
 ---@param bossID integer
 ---@return ForeverLoot.Node
 function api.BossFolder(bossID)
+    local boss = Data:GetBoss(bossID)
+    local interesting = dropsOfInterest(bossID)
     return api.Folder(Data:GetBossName(bossID), ICON_BOSS, api.BossLootEntries(bossID), {
         columns = 2,
         groupBy = "auto",
+        portrait = boss and boss.portrait,
+        info = bossInfo(boss),
+        infoRight = interesting > 0 and ("%d of interest"):format(interesting) or nil,
+        quests = boss and boss.quests,
         meta = { bossID = bossID },
     })
 end
 
 -- An instance folder with one boss folder per encounter, carrying the instance's metadata
--- (`instanceID`, `minLevel`, `maxLevel`, `expansionID`) for sorting and filtering.
+-- (`instanceID`, `minLevel`, `maxLevel`, `expansionID`) for sorting and filtering and its
+-- picture for lists that draw their entries as tiles.
 ---@param instanceID integer
 ---@return ForeverLoot.Node?
 function api.InstanceFolder(instanceID)
@@ -53,11 +83,14 @@ function api.InstanceFolder(instanceID)
         bosses[i] = api.BossFolder(bossID)
     end
     return api.Folder(Data:GetInstanceName(instanceID), instance.icon or ICON_BOSS, bosses, {
+        display = "cards",
         instanceID = instanceID,
         minLevel = instance.minLevel,
         maxLevel = instance.maxLevel,
         expansionID = instance.expansionID,
         order = instance.minLevel,
+        background = instance.background,
+        backgroundCoords = instance.backgroundCoords,
     })
 end
 

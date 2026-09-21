@@ -16,7 +16,6 @@ local profile = {
         point = "CENTER",
         x = 0,
         y = 0,
-        minimized = true, -- one book page; false = two-page spread
     },
 }
 

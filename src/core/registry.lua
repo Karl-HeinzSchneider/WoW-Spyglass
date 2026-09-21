@@ -34,8 +34,16 @@ local log = app.logger
 ---@field tooltip? string[]  # custom entries: extra tooltip lines
 ---@field onClick? fun(node: ForeverLoot.Node, button: string)  # custom entries
 ---@field moduleID? string  # set on the root's module nodes
----@field columns? integer  # folders: 1 or 2 columns for this list; default 1
+---@field columns? integer  # folders: columns for this list; default 1 for rows, 3 for tiles
+---@field display? "rows"|"tiles"|"cards"  # folders: how the entries are drawn; default "rows"
 ---@field groupBy? "auto"|fun(node: ForeverLoot.Node): string?, string?  # folders: auto-group ungrouped entries; see api.DefaultGroupKey
+--- Tile / card fields, read when the parent folder has `display = "tiles"` or `"cards"`:
+---@field background? string|number  # tiles: wide picture filling the tile (texture path or fileID)
+---@field backgroundCoords? number[]  # tiles: { left, right, top, bottom } part of `background` to show; whole texture by default
+---@field portrait? string|number  # cards: picture of the entry (e.g. a boss) on the left of the card; `icon` when unset
+---@field info? string  # small text bottom-left; the level range when unset and `minLevel`/`maxLevel` are
+---@field infoRight? string  # small text bottom-right
+---@field quests? integer[]  # cards: quest ids the entry is involved in; shows a "!" and lists their titles in the tooltip
 ---@field order? number  # sort key when the owning module sorts its children
 ---@field header? string  # section header marker; see ForeverLoot.Header
 --- Optional metadata, free for modules and custom sort functions to use:
@@ -59,6 +67,7 @@ local log = app.logger
 ---@field getChildren? fun(def: ForeverLoot.ModuleDef): ForeverLoot.Node[]  # lazy alternative to `children`, called once
 ---@field query? boolean  # the module node lists the item DB (see ForeverLoot.Node.query); `children` may be empty
 ---@field columns? integer  # layout of the module's own list, as on folder nodes
+---@field display? "rows"|"tiles"|"cards"
 ---@field groupBy? "auto"|fun(node: ForeverLoot.Node): string?, string?
 ---@field sortChildren? boolean|fun(a: ForeverLoot.Node, b: ForeverLoot.Node): boolean  # true = by node `order`, then name; a function gets the full nodes incl. metadata
 --- Optional metadata, same meaning as on nodes:
@@ -105,8 +114,15 @@ ForeverLoot = api
 
 -- Anything in here is copied onto the folder node: layout options and metadata alike.
 ---@class ForeverLoot.FolderOptions
----@field columns? integer  # 1 = full-width rows, 2 = two columns per page
+---@field columns? integer  # columns per page: 1 (default) or 2 for rows and cards, up to 4 (default 3) for tiles
+---@field display? "rows"|"tiles"|"cards"  # draw the entries as rows (default), picture tiles or portrait cards
 ---@field description? string
+---@field background? string|number  # when this folder is itself listed as a tile
+---@field backgroundCoords? number[]
+---@field portrait? string|number  # when this folder is itself listed as a card
+---@field info? string
+---@field infoRight? string
+---@field quests? integer[]
 ---@field groupBy? "auto"|fun(node: ForeverLoot.Node): string?, string?  # cluster entries under group labels
 ---@field order? number
 ---@field expansionID? integer
@@ -214,10 +230,40 @@ end
 -- Grouping
 ----------------------------------------------------------------------------------------------------
 
--- Canonical order for equipment-slot groups; everything else follows in order of appearance.
+-- The four groups the default grouping sorts items into, in display order: quest items and
+-- everything else that isn't gear first, then armor, weapons and jewelry. Other keys
+-- (spells, collections, custom categories) follow in order of appearance.
+local GROUP_ORDER = { "QUEST", "ARMOR", "WEAPON", "ACCESSORY" }
+local GROUP_LABELS = {
+    QUEST = (AUCTION_CATEGORY_QUEST_ITEMS or "Quest Items") .. " & " .. (MISCELLANEOUS or "Misc"),
+    ARMOR = AUCTION_CATEGORY_ARMOR or "Armor",
+    WEAPON = AUCTION_CATEGORY_WEAPONS or "Weapons",
+    ACCESSORY = "Rings, Amulets & Trinkets",
+}
+local groupRank = {}
+for i, key in ipairs(GROUP_ORDER) do
+    groupRank[key] = i
+end
+
+-- Slots that count as weapons besides weapon-class items, and the jewelry slots.
+local WEAPON_SLOTS = {
+    INVTYPE_SHIELD = true,
+    INVTYPE_HOLDABLE = true,
+    INVTYPE_RANGED = true,
+    INVTYPE_RANGEDRIGHT = true,
+    INVTYPE_THROWN = true,
+    INVTYPE_RELIC = true,
+    INVTYPE_AMMO = true,
+}
+local ACCESSORY_SLOTS = {
+    INVTYPE_NECK = true,
+    INVTYPE_FINGER = true,
+    INVTYPE_TRINKET = true,
+}
+
+-- Order of slots inside a group (second sort key, after the armor / weapon type).
 local SLOT_ORDER = {
     "INVTYPE_HEAD",
-    "INVTYPE_NECK",
     "INVTYPE_SHOULDER",
     "INVTYPE_CLOAK",
     "INVTYPE_CHEST",
@@ -227,18 +273,22 @@ local SLOT_ORDER = {
     "INVTYPE_WAIST",
     "INVTYPE_LEGS",
     "INVTYPE_FEET",
+    "INVTYPE_BODY",
+    "INVTYPE_TABARD",
+    "INVTYPE_NECK",
     "INVTYPE_FINGER",
     "INVTYPE_TRINKET",
-    "WEAPON",
+    "INVTYPE_2HWEAPON",
+    "INVTYPE_WEAPON",
+    "INVTYPE_WEAPONMAINHAND",
+    "INVTYPE_WEAPONOFFHAND",
     "INVTYPE_SHIELD",
     "INVTYPE_HOLDABLE",
     "INVTYPE_RANGED",
     "INVTYPE_RANGEDRIGHT",
     "INVTYPE_THROWN",
     "INVTYPE_RELIC",
-    "INVTYPE_BODY",
-    "INVTYPE_TABARD",
-    "INVTYPE_BAG",
+    "INVTYPE_AMMO",
 }
 local slotRank = {}
 for i, slot in ipairs(SLOT_ORDER) do
@@ -248,40 +298,53 @@ end
 local ITEM_CLASS_WEAPON = 2
 local ITEM_CLASS_ARMOR = 4
 
--- Armor subclass -> rank inside a slot group: heavier armor first, then everything else.
+-- Armor subclass -> first sort key inside a group: cloth, leather, mail, plate, then the rest.
 local ARMOR_RANK = {
-    [4] = 1, -- Plate
-    [3] = 2, -- Mail
-    [2] = 3, -- Leather
-    [1] = 4, -- Cloth
-    [6] = 5, -- Shields
-    [0] = 6, -- Miscellaneous (rings, trinkets, cloaks, ...)
+    [1] = 1, -- Cloth
+    [2] = 2, -- Leather
+    [3] = 3, -- Mail
+    [4] = 4, -- Plate
+    [0] = 5, -- Miscellaneous (rings, trinkets, off-hands, ...)
+    [6] = 6, -- Shields
 }
 
--- Default grouping: items by equipment slot (weapons together), spells under "Spells",
--- custom/placeholder entries by their `category`, folders under "Collections".
--- Returns a sort key and the label to display; nil = leave ungrouped.
+-- Class id, subclass id and equip location of an item, from the client when it has the item,
+-- else from the DB row (server-side items the client hasn't fetched yet).
+---@param itemID integer
+---@return integer? classID, integer? subclassID, string? equipLoc
+local function itemKind(itemID)
+    -- GetItemInfoInstant needs no server round-trip, so grouping is stable on first draw.
+    local _, _, _, equipLoc, _, classID, subclassID = C_Item.GetItemInfoInstant(itemID)
+    if classID then
+        return classID, subclassID, equipLoc
+    end
+    local row = app.data and app.data:GetItem(itemID)
+    if row then
+        local ITEM = app.data.ITEM
+        return row[ITEM.CLASS], row[ITEM.SUBCLASS], row[ITEM.SLOT]
+    end
+    return nil, nil, nil
+end
+
+-- Default grouping: items into four groups (quest items & misc, armor, weapons, jewelry; see
+-- GROUP_ORDER), spells under "Spells", custom/placeholder entries by their `category`, folders
+-- under "Collections". Returns a sort key and the label to display; nil = leave ungrouped.
 ---@param node ForeverLoot.Node
 ---@return string? key, string? label
 function api.DefaultGroupKey(node)
     if node.itemID then
-        -- GetItemInfoInstant needs no server round-trip, so grouping is stable on first draw.
-        local _, itemType, _, equipLoc, _, classID = C_Item.GetItemInfoInstant(node.itemID)
-        if not classID then
-            -- Server-side item the client hasn't fetched yet: the DB row knows class and slot.
-            local row = app.data and app.data:GetItem(node.itemID)
-            if row then
-                local ITEM = app.data.ITEM
-                classID, equipLoc = row[ITEM.CLASS], row[ITEM.SLOT]
-                itemType = C_Item.GetItemClassInfo(classID)
-            end
+        local classID, _, equipLoc = itemKind(node.itemID)
+        local key
+        if classID == ITEM_CLASS_WEAPON or WEAPON_SLOTS[equipLoc] then
+            key = "WEAPON"
+        elseif ACCESSORY_SLOTS[equipLoc] then
+            key = "ACCESSORY"
+        elseif classID == ITEM_CLASS_ARMOR and equipLoc and equipLoc ~= "" then
+            key = "ARMOR"
+        else
+            key = "QUEST"
         end
-        if classID == ITEM_CLASS_WEAPON then
-            return "WEAPON", itemType
-        elseif equipLoc and equipLoc ~= "" then
-            return equipLoc, _G[equipLoc] or equipLoc
-        end
-        return itemType or "OTHER", itemType or OTHER
+        return key, GROUP_LABELS[key]
     elseif node.spellID then
         return "SPELLS", SPELLS or "Spells"
     elseif api.IsFolder(node) then
@@ -292,27 +355,23 @@ function api.DefaultGroupKey(node)
     return "OTHER", OTHER or "Other"
 end
 
--- Default order of entries inside a group: armor by type (plate > mail > leather > cloth),
--- weapons by weapon type, everything else keeps its original order.
+-- Default order of entries inside a group: first by type (armor: cloth, leather, mail, plate;
+-- weapons: by weapon type, shields and off-hands after them), then by slot (head, shoulder,
+-- chest, ... / main hand, off hand, ...); everything else keeps its original order.
 ---@param node ForeverLoot.Node
 ---@return number rank  # lower first
 function api.DefaultEntryRank(node)
     if node.itemID then
-        local _, _, _, _, _, classID, subclassID = C_Item.GetItemInfoInstant(node.itemID)
-        if not classID then
-            local row = app.data and app.data:GetItem(node.itemID)
-            if row then
-                classID, subclassID = row[app.data.ITEM.CLASS], row[app.data.ITEM.SUBCLASS]
-            end
+        local classID, subclassID, equipLoc = itemKind(node.itemID)
+        local typeRank
+        if classID == ITEM_CLASS_WEAPON then
+            typeRank = 10 + (subclassID or 0)
+        else
+            typeRank = ARMOR_RANK[subclassID] or 50
         end
-        if classID == ITEM_CLASS_ARMOR then
-            return ARMOR_RANK[subclassID] or 10
-        elseif classID == ITEM_CLASS_WEAPON then
-            return 20 + (subclassID or 0)
-        end
-        return 50
+        return typeRank * 100 + (slotRank[equipLoc] or 99)
     end
-    return 100
+    return 10000
 end
 
 ---@class ForeverLoot.EntryGroup
@@ -320,8 +379,9 @@ end
 ---@field label string
 ---@field entries ForeverLoot.Node[]
 
--- Buckets `entries` by the key function (default: api.DefaultGroupKey). Groups keep a canonical
--- equipment-slot order first, then the order in which they were first seen. Inside a group,
+-- Buckets `entries` by the key function (default: api.DefaultGroupKey). The default groups keep
+-- their canonical order (GROUP_ORDER), other keys follow in the order in which they were first
+-- seen. Inside a group,
 -- entries are ordered by the rank function (default: api.DefaultEntryRank), ties keep their
 -- original order.
 ---@param entries ForeverLoot.Node[]
@@ -346,7 +406,7 @@ function api.GroupEntries(entries, keyFn, rankFn)
         rankOf[entry], indexOf[entry] = rankFn(entry), index
     end
     table.sort(groups, function(a, b)
-        local ra, rb = slotRank[a.key] or (1000 + a.seen), slotRank[b.key] or (1000 + b.seen)
+        local ra, rb = groupRank[a.key] or (1000 + a.seen), groupRank[b.key] or (1000 + b.seen)
         return ra < rb
     end)
     for _, group in ipairs(groups) do
@@ -421,6 +481,9 @@ local function validate(def)
     end
     if def.query ~= nil and type(def.query) ~= "boolean" then
         return false, "field `query` must be a boolean"
+    end
+    if def.display ~= nil and def.display ~= "rows" and def.display ~= "tiles" and def.display ~= "cards" then
+        return false, "field `display` must be \"rows\", \"tiles\" or \"cards\""
     end
     return true
 end
@@ -551,6 +614,7 @@ function api:GetRootNode()
             children = (resolveChildren(def) and sortedChildren(def)),
             query = def.query,
             columns = def.columns,
+            display = def.display,
             groupBy = def.groupBy,
             moduleID = def.id,
         }

@@ -5,44 +5,89 @@ local log = app.logger
 app.ui = app.ui or {}
 
 local PORTRAIT_ICON = "Interface\\Icons\\INV_Misc_Bag_10"
-local NEW_TAB_LABEL = "+"
+-- The "+" tab: a plus in a ring, drawn at atlas proportions instead of filling the tab.
+local NEW_TAB_ATLAS = "communities-icon-addgroupplus"
+local NEW_TAB_ICON_SIZE = 36
+-- Vertical gap between side tabs, as in CharacterFrameMixin:UpdateTabLayout.
+local TAB_SPACING = -2
 
----@class ForeverLoot.TabSystem : Frame, TabSystemMixin, LayoutMixin
+----------------------------------------------------------------------------------------------------
+-- Side tab: one per open view, plus the "+" tab
+----------------------------------------------------------------------------------------------------
 
--- A pooled TabSystemButtonTemplate button with our close-on-right-click extras.
----@class ForeverLoot.TabButton : Button, TabSystemButtonMixin
----@field flView? ForeverLoot.View
----@field flCloseHooked? boolean
+-- LargeSideTabButtonTemplate is a Frame, not a Button: clicks arrive through the mixin's
+-- custom mouse-up handler, which is what tells left from right clicks.
+---@class ForeverLoot.SideTab : Frame, SidePanelTabButtonMixin
+---@field Icon Texture
+---@field tooltipText? string
+---@field flView? ForeverLoot.View  # nil on the "+" tab
+ForeverLootSideTabMixin = {}
+app.ui.SideTabMixin = ForeverLootSideTabMixin
 
----@class ForeverLoot.MaxMinButton : Frame, MaximizeMinimizeButtonFrameMixin
----@field MaximizeButton Button
----@field MinimizeButton Button
+function ForeverLootSideTabMixin:OnLoad()
+    SidePanelTabButtonMixin.OnLoad(self)
+    self:SetCustomOnMouseUpHandler(function(_, button, upInside)
+        if upInside then
+            local window = self:GetParent():GetParent() --[[@as ForeverLoot.MainWindow]]
+            window:OnTabClicked(self, button)
+        end
+    end)
+end
 
----@class ForeverLoot.MainWindow : Frame, PortraitFrameMixin, TabSystemOwnerMixin
----@field TabSystem ForeverLoot.TabSystem
----@field ViewContainer Frame
----@field MaximizeMinimizeButton ForeverLoot.MaxMinButton
----@field minimizedWidth number
----@field maximizedWidth number
----@field bookMinimizedWidth number
----@field bookMaximizedWidth number
----@field isMinimized boolean
+-- Shows a view: its icon fills the tab interior (fillToInterior), tooltip is the view title.
+---@param view ForeverLoot.View
+function ForeverLootSideTabMixin:SetView(view)
+    self.flView = view
+    self.Icon:SetTexture(view:GetIcon() or PORTRAIT_ICON)
+    -- Restores the interior tex coords/size; the pooled frame may have been the "+" tab.
+    self:SetFillToInterior(true)
+    self.tooltipText = view:GetTitle()
+end
+
+function ForeverLootSideTabMixin:SetNewTab()
+    self.flView = nil
+    -- SetFillToInterior(true) would clobber the atlas tex coords, so this tab opts out of it.
+    self:SetFillToInterior(false)
+    self.Icon:SetAtlas(NEW_TAB_ATLAS)
+    self.Icon:SetSize(NEW_TAB_ICON_SIZE, NEW_TAB_ICON_SIZE)
+    self.tooltipText = "Open a new tab"
+end
+
+-- SidePanelTabButtonMixin:OnEnter calls this; view tabs add the close hint under the title.
+function ForeverLootSideTabMixin:GetTooltipTextSetupFunction()
+    if not self.flView then
+        return nil
+    end
+    return function(tooltip)
+        tooltip:SetText(self.tooltipText)
+        tooltip:AddLine("Right-click to close", 1, 1, 1)
+        return true
+    end
+end
+
+----------------------------------------------------------------------------------------------------
+-- Main window
+----------------------------------------------------------------------------------------------------
+
+---@class ForeverLoot.RightPane : Frame
+---@field Title FontString
+---@field Divider Frame
+
+---@class ForeverLoot.MainWindow : Frame, PortraitFrameMixin
+---@field CloseButton Button
+---@field LeftPane Frame
+---@field RightPane ForeverLoot.RightPane
+---@field Tabs Frame
 ---@field views ForeverLoot.View[]
 ---@field viewPool ForeverLoot.FramePool
----@field viewToTabID table<ForeverLoot.View, integer>
----@field newTabID integer
----@field internalTabTracker table  # TabSystemTrackerMixin instance created by TabSystemOwnerMixin.OnLoad
+---@field tabPool ForeverLoot.FramePool
+---@field tabs ForeverLoot.SideTab[]  # in display order; the last one is the "+" tab
+---@field viewToTab table<ForeverLoot.View, ForeverLoot.SideTab>
+---@field selectedView? ForeverLoot.View
 ForeverLootMainWindowMixin = {}
 app.ui.MainWindowMixin = ForeverLootMainWindowMixin
 
 function ForeverLootMainWindowMixin:OnLoad()
-    -- Both inherited templates route <OnLoad method="OnLoad"/> here, so chain them by hand.
-    if PortraitFrameTemplateMixin and PortraitFrameTemplateMixin.OnLoad then
-        PortraitFrameTemplateMixin.OnLoad(self)
-    end
-    TabSystemOwnerMixin.OnLoad(self)
-
-    self:SetTabSystem(self.TabSystem)
     self:SetTitle(appName)
     self:SetPortraitToAsset(PORTRAIT_ICON)
 
@@ -50,18 +95,12 @@ function ForeverLootMainWindowMixin:OnLoad()
     tinsert(UISpecialFrames, self:GetName())
     self:RegisterForDrag("LeftButton")
 
-    self.MaximizeMinimizeButton:SetOnMinimizedCallback(function()
-        self:SetMinimized(true)
-    end)
-    self.MaximizeMinimizeButton:SetOnMaximizedCallback(function()
-        self:SetMinimized(false)
-    end)
-
     self.views = {}
-    self.viewToTabID = {}
-    self.viewPool = CreateFramePool("Frame", self.ViewContainer, "ForeverLootViewTemplate") --[[@as ForeverLoot.FramePool]]
+    self.tabs = {}
+    self.viewToTab = {}
+    self.viewPool = CreateFramePool("Frame", self.LeftPane, "ForeverLootViewTemplate") --[[@as ForeverLoot.FramePool]]
+    self.tabPool = CreateFramePool("Frame", self.Tabs, "ForeverLootSideTabTemplate") --[[@as ForeverLoot.FramePool]]
 
-    self:SetMinimized(true)
     self:OpenView()
     app.ui.mainWindow = self
 
@@ -92,32 +131,6 @@ end
 
 function ForeverLootMainWindowMixin:OnShow()
     self:RestorePosition()
-    if app.db then
-        self:SetMinimized(app.db.profile.window.minimized)
-    end
-end
-
-----------------------------------------------------------------------------------------------------
--- Minimized (one page) / maximized (two-page spread), like the spellbook
-----------------------------------------------------------------------------------------------------
-
----@param minimized boolean
-function ForeverLootMainWindowMixin:SetMinimized(minimized)
-    self.isMinimized = minimized
-    self:SetWidth(minimized and self.minimizedWidth or self.maximizedWidth)
-    self.ViewContainer:SetWidth(minimized and self.bookMinimizedWidth or self.bookMaximizedWidth)
-
-    for _, view in ipairs(self.views) do
-        view:SetMinimized(minimized)
-    end
-
-    -- Keep the button's icon in sync without re-firing its callbacks.
-    self.MaximizeMinimizeButton.MaximizeButton:SetShown(minimized)
-    self.MaximizeMinimizeButton.MinimizeButton:SetShown(not minimized)
-
-    if app.db then
-        app.db.profile.window.minimized = minimized
-    end
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -158,16 +171,15 @@ end
 ---@return ForeverLoot.View
 function ForeverLootMainWindowMixin:OpenView()
     local view = self.viewPool:Acquire() --[[@as ForeverLoot.View]]
-    view:SetAllPoints(self.ViewContainer)
-    view:SetMinimized(self.isMinimized)
+    view:SetAllPoints(self.LeftPane)
     view.onNavigate = function(v)
-        self:UpdateTabTitle(v)
+        self:UpdateTab(v)
     end
     view:SetRoot(app.api:GetRootNode())
     self.views[#self.views + 1] = view
 
     self:RebuildTabs()
-    self:SetTab(self.viewToTabID[view])
+    self:SelectView(view)
     return view
 end
 
@@ -182,80 +194,88 @@ function ForeverLootMainWindowMixin:CloseView(view)
         return
     end
 
-    local wasSelected = self:GetTab() == self.viewToTabID[view]
+    local wasSelected = self.selectedView == view
     tremove(self.views, index)
     self.viewPool:Release(view)
+    if wasSelected then
+        self.selectedView = nil
+    end
 
     self:RebuildTabs()
     if wasSelected then
-        local neighbor = self.views[math.min(index, #self.views)]
-        self:SetTab(self.viewToTabID[neighbor])
-    else
-        local current = self:GetTab()
-        if current then
-            self.TabSystem:SetTabVisuallySelected(current)
+        self:SelectView(self.views[math.min(index, #self.views)])
+    end
+end
+
+-- Lays the tab strip out from scratch: one tab per view in order, then the "+" tab, stacked
+-- top to bottom like CharacterFrameMixin:UpdateTabLayout.
+function ForeverLootMainWindowMixin:RebuildTabs()
+    self.tabPool:ReleaseAll()
+    wipe(self.tabs)
+    wipe(self.viewToTab)
+
+    local function add(setup)
+        local tab = self.tabPool:Acquire() --[[@as ForeverLoot.SideTab]]
+        setup(tab)
+        local previous = self.tabs[#self.tabs]
+        if previous then
+            tab:SetPoint("TOPLEFT", previous, "BOTTOMLEFT", 0, TAB_SPACING)
+        else
+            tab:SetPoint("TOPLEFT", self.Tabs, "TOPLEFT", 0, 0)
+        end
+        tab:Show()
+        self.tabs[#self.tabs + 1] = tab
+        return tab
+    end
+
+    for _, view in ipairs(self.views) do
+        self.viewToTab[view] = add(function(tab)
+            tab:SetView(view)
+            tab:SetChecked(view == self.selectedView)
+        end)
+    end
+    add(function(tab)
+        tab:SetNewTab()
+        tab:SetChecked(false)
+    end)
+end
+
+-- Shows one view and marks its tab; the others are hidden.
+---@param view ForeverLoot.View
+function ForeverLootMainWindowMixin:SelectView(view)
+    self.selectedView = view
+    for _, v in ipairs(self.views) do
+        v:SetShown(v == view)
+        local tab = self.viewToTab[v]
+        if tab then
+            tab:SetChecked(v == view)
         end
     end
 end
 
--- TabSystem can only append or clear tabs, so any open/close rebuilds the whole strip.
--- The owner's RemoveAllTabs only clears the strip; reset its tracker too or it keeps every
--- element ever added.
-function ForeverLootMainWindowMixin:RebuildTabs()
-    self:RemoveAllTabs()
-    self.internalTabTracker:Init()
-    wipe(self.viewToTabID)
-
-    for _, view in ipairs(self.views) do
-        local tabID = self:AddNamedTab(view:GetTitle(), view)
-        self.viewToTabID[view] = tabID
-        self:DecorateTabButton(self.TabSystem:GetTabButton(tabID) --[[@as ForeverLoot.TabButton]], view)
+-- Left-click selects (or opens, on the "+" tab), right-click closes.
+---@param tab ForeverLoot.SideTab
+---@param button string
+function ForeverLootMainWindowMixin:OnTabClicked(tab, button)
+    local view = tab.flView
+    if not view then
+        if button == "LeftButton" then
+            self:OpenView()
+        end
+    elseif button == "RightButton" then
+        self:CloseView(view)
+    elseif button == "LeftButton" then
+        self:SelectView(view)
     end
-    self.newTabID = self:AddNamedTab(NEW_TAB_LABEL)
-    local newTab = self.TabSystem:GetTabButton(self.newTabID) --[[@as ForeverLoot.TabButton]]
-    newTab.flView = nil -- pooled button may have been a view tab before
-    newTab:SetTooltipText("Open a new tab")
 end
 
--- Right-click on a tab closes its view. Tab buttons come from a pool, so hook each one only once.
----@param button ForeverLoot.TabButton
+-- The view navigated: its tab shows the icon and title of where it is now.
 ---@param view ForeverLoot.View
-function ForeverLootMainWindowMixin:DecorateTabButton(button, view)
-    button.flView = view
-    button:SetTooltipText("Right-click to close")
-    if not button.flCloseHooked then
-        button.flCloseHooked = true
-        button:RegisterForClicks("LeftButtonUp", "RightButtonUp")
-        button:HookScript("OnClick", function(btn, mouseButton)
-            if mouseButton == "RightButton" and btn.flView then
-                self:CloseView(btn.flView)
-            end
-        end)
+function ForeverLootMainWindowMixin:UpdateTab(view)
+    local tab = self.viewToTab[view]
+    if tab then
+        tab:SetView(view)
     end
-end
-
----@param view ForeverLoot.View
-function ForeverLootMainWindowMixin:UpdateTabTitle(view)
-    local tabID = self.viewToTabID[view]
-    if not tabID then
-        return
-    end
-    local button = self.TabSystem:GetTabButton(tabID) --[[@as ForeverLoot.TabButton]]
-    button.tabText = view:GetTitle()
-    button:SetText(button.tabText)
-    button:UpdateTabWidth()
-    self.TabSystem:MarkDirty()
-end
-
--- Tab selected callback (wired by SetTabSystem). Returning true suppresses the visual selection.
----@param tabID integer
----@param isUserAction? boolean
-function ForeverLootMainWindowMixin:SetTab(tabID, isUserAction)
-    if tabID == self.newTabID then
-        self:OpenView()
-        return true
-    end
-    TabSystemOwnerMixin.SetTab(self, tabID, isUserAction)
 end
 
 ----------------------------------------------------------------------------------------------------

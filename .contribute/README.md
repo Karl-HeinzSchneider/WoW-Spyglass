@@ -7,7 +7,7 @@ is produced from it and must not be edited by hand.
 .contribute/
   inbox/                 drop SavedVariables / export files here for `npm run import` (not committed)
   items/items_<n>.json   the item database: in-game scans, one file per 10 000 ids (machine-written)
-  dungeons/<name>.json   one file per dungeon: level range, icon, drops per boss (hand-curated)
+  dungeons/<name>.json   one file per dungeon: level range, icon, tile picture, boss portraits, drops per boss (hand-curated)
   raids/<name>.json      same for raids
   tools/                 the generator (TypeScript, npm)
 ```
@@ -76,7 +76,9 @@ side). Have a look at the diff before committing.
 1. Find the instance file in `dungeons/` or `raids/`, or create one — all you need is the map id
    (see the `-- Name` comments in `db/generated/instances.lua`). Encounter and item ids are the
    game's own (`DungeonEncounter.ID`, item id); the item id is in the item link (`item:5188:...`).
-2. Add rows to the boss's `loot` array. `chance` is 0–1 and optional. Names are informational
+2. Add rows to the boss's `loot` array. `chance` is 0–1 and optional. A boss may also carry its
+   `level` and `creatureType` as the game shows them (the card says "20 Humanoid"), a `portrait`
+   and the ids of `quests` it is involved in (the card gets a quest "!"). Names are informational
    and filled in for you; a row with only a `name` gets its `item` id filled in when exactly one
    scanned item carries that name. An item nobody has scanned yet is allowed (the boss page
    still shows it once the client fetches it), it just isn't searchable until scanned.
@@ -87,8 +89,13 @@ side). Have a look at the diff before committing.
   "minLevel": 15,
   "maxLevel": 21,
   "icon": "Interface\\Icons\\INV_Misc_Key_13",
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Deadmines",
+  "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],
   "encounters": [
-    { "id": 2747, "name": "Edwin VanCleef", "loot": [
+    { "id": 2747, "name": "Edwin VanCleef",
+      "portrait": "Interface\EncounterJournal\UI-EJ-BOSS-EdwinVancleef",
+      "level": 20, "creatureType": "Humanoid", "quests": [166],
+      "loot": [
       { "item": 5188, "name": "Filled Vessel", "chance": 0.9 },
       { "name": "Cruel Barb" }
     ] }

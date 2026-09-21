@@ -77,7 +77,7 @@ validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-la
   (`locales/<locale>/`, non-enUS files return early unless `GetLocale()` matches). Excluded from
   LuaLS and StyLua. Boss ids are `DungeonEncounter` ids, instance ids are `Map` ids.
 - `.contribute/` — everything people edit and send as pull requests: `dungeons/*.json` and
-  `raids/*.json` (one instance each: map id, level range, icon, drops with chance; names are
+  `raids/*.json` (one instance each: map id, level range, icon, tile picture, boss portraits, drops with chance; names are
   informational and rewritten by `npm run fix`; a row with only a `name` gets its id filled in
   when unambiguous), `items/items_<n>.json` (the scanned item dump: `ScannedItem` in
   `tools/src/items.ts`, names per locale; written by `npm run import`, not by hand) and `tools/`
@@ -99,7 +99,7 @@ validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-la
   from the `ketho.wow-api` VS Code extension, not from `lib/` (which is excluded from LuaLS) —
   inherit from them rather than redeclaring the API.
 - `src/types_blizzard.lua` — annotations only, not in the TOC. Blizzard UI mixins the UI inherits
-  from (`TabSystemOwnerMixin`, `PortraitFrameMixin`, `PagingControlsMixin`, …), limited to the
+  from (`SidePanelTabButtonMixin`, `PortraitFrameMixin`, `PagingControlsMixin`, …), limited to the
   methods we use, because the full ones are only in Ketho's opt-in FrameXML annotations. Extend
   a stub (verified against `BlizzardInterfaceCode`) when using a new method.
 - `src/ui/` — the main window, Blizzard-style **XML layout + Lua mixin** so the exported Blizzard
@@ -107,14 +107,33 @@ validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-la
   frame are globals prefixed `ForeverLoot…` (also on `app.ui.*`). Together with the public
   `ForeverLoot` API table these are the only sanctioned globals. Lua mixin files must be listed in the TOC *before* the XML that
   references them, and `templates.xml` before `mainwindow.xml`.
-  - `mainwindow.lua/.xml` — `ForeverLootMainWindow`: `PortraitFrameTemplate` + `TabSystemOwnerTemplate`
-    (modeled on `PlayerSpellsFrame`). Browser-style tabs: one per open *view*, plus a `+` tab;
-    right-click closes. The Blizzard tab strip can only append/clear, so `RebuildTabs()` redoes the
-    whole strip. Draggable; position saved to `profile.window`. `/fl` and the minimap button toggle it.
-  - `view.lua` + `templates.xml` — a view is a breadcrumb bar + two spellbook-art pages of rows with
-    Blizzard `PagingControls`. Navigation is a `path` stack over `ForeverLoot.Node` trees
-    (`Push`/`PopTo`/`Back` → `Refresh`). `Refresh()` rebuilds elements + page layout (navigation,
-    query/size changes); `Render()` only redraws the visible pages (page flips, item info arriving).
+  - `mainwindow.lua/.xml` — `ForeverLootMainWindow`, modeled on the Camelot `CharacterFrame`
+    (`Blizzard_UIPanels_Game/Camelot/CharacterFrame.xml`): `PortraitFrameBaseTemplate`, a dark
+    two-column interior (`LeftPane` = the views, `RightPane` = meta data, both using the
+    `UI-Character-Info-*-BG` atlases stretched to 900x620, split by `common-framedivider`) and
+    icon tabs down the right edge (`ForeverLootSideTabTemplate` = `LargeSideTabButtonTemplate`,
+    a *Frame*, so clicks come through `SetCustomOnMouseUpHandler`). Browser-style tabs: one per
+    open *view* (icon = deepest node with one, tooltip = title), plus a `+` tab; right-click
+    closes; `RebuildTabs()` relays the strip from a pool. Draggable; position saved to
+    `profile.window`. `/fl` and the minimap button toggle it.
+  - `view.lua` + `templates.xml` — a view fills the left column: header row (back button +
+    breadcrumbs left, search box + filter dropdown right) over a divider, then one `Content` page
+    of rows with Blizzard `PagingControls` bottom-right. A row is icon, name in quality color,
+    drop chance top-right, slot bottom-left and armor/weapon type bottom-right (`itemKindTexts`),
+    both red when the character can't equip the item — read from the item tooltip's slot line via
+    the hidden `ForeverLootScanTooltip` (`scanEquipErrors`), which is exact for this client's
+    proficiencies. A folder with `display = "tiles"` (raids, dungeons) draws its entries as
+    `ForeverLootTileTemplate` cards instead: `background`/`backgroundCoords` picture, name on
+    top, `info` (level range by default) and `infoRight` in the bottom corners, three per line.
+    `display = "cards"` (an instance's boss list) draws `ForeverLootCardTemplate`: the same
+    bevelled list-button atlas with the entry's `portrait` (a bust on transparency) standing on
+    the left, name and info texts beside it (boss level/type, drops of interest, a quest "!"
+    for `quests`), two per line. Pictures, level/type and quests are curated data
+    (`.contribute` JSON → `instances.lua` → `InstanceFolder`/`BossFolder`).
+    Section headers use the `UI-Character-Info-Title` plate. Navigation
+    is a `path` stack over `ForeverLoot.Node` trees (`Push`/`PopTo`/`Back` → `Refresh`).
+    `Refresh()` rebuilds elements + page layout (navigation, query/size changes); `Render()` only
+    redraws the current page (page flips, item info arriving).
     Children come from `view:GetChildren(node)`: static `children`, dynamic `getChildren`, or a
     `query` folder whose entries are `Query.Run` over the DB with the view's own per-node query
     state (`view.queries`); query folders show the `SearchBox` (debounced) and `FilterDropdown`
@@ -125,7 +144,8 @@ validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-la
 - `ForeverLoot.lua` — root entry file, loaded last.
 - `lib/` — vendored Ace3, LibStub, CallbackHandler, LibDBIcon. Excluded from LuaLS and StyLua.
 - `locales/` — localization string tables.
-- `assets/` — textures, icons, sounds referenced from code.
+- `assets/` — textures, icons, sounds referenced from code. Prefer the client's own atlases
+  (they scale with the frame); the client does not load `.png` files.
 
 ## XML files
 
@@ -164,6 +184,23 @@ If they exist, Claude should **read them, never edit them**:
   this export — they're looked up from XML usages in `BlizzardInterfaceCode` instead.
 
 Never list anything from these folders in the TOC or copy files out of them into `src/`.
+
+## Textures and Blizzard frames: reuse art, remake code
+
+- **Don't create new textures unless there is no other way.** Strongly prefer the textures and
+  atlases already in the game files (browse `../_data/BlizzardInterfaceArt/` and atlas usages in
+  `BlizzardInterfaceCode`). Client art scales with the frame and needs no shipping; the client
+  also doesn't load `.png`. If something really must be drawn, ask first.
+- **Don't hard-reference a frame from retail or Classic WoW.** Don't inherit its templates,
+  call its mixins, anchor to its frames or name it as the thing being copied in comments or
+  docs. Look at it to learn how it is built, then remake the look with our own template and
+  mixin; naming it as "an example" or "a similar idea" in a comment is fine. The frame's *art*
+  (atlases, textures) may be reused freely, as above.
+- Code that exists in the Forever/"Camelot" codebase itself (`Blizzard_*/Camelot/`, and shared
+  templates it loads such as `Blizzard_SharedXML`) is fair to lean on more directly: its
+  templates and mixins are what this client ships, so inheriting from e.g.
+  `PortraitFrameBaseTemplate`, `LargeSideTabButtonTemplate` or `PagingControlsTemplate` is fine.
+  Verify the file is loaded by this client (Camelot/Mainline TOC) before depending on it.
 
 ## WoW addon constraints to keep in mind
 
