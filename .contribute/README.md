@@ -1,19 +1,20 @@
 # Contributing data
 
-Everything in this folder is what the database is built from; everything under `db/generated/`
-is produced from it and must not be edited by hand.
+Everything under `data/` is what the database is built from; everything under
+`ForeverLoot/db/generated/` is produced from it and must not be edited by hand.
 
 ```text
 .contribute/
   inbox/                 drop SavedVariables / export files here for `npm run import` (not committed)
-  items/items_<n>.json   the item database: in-game scans, one file per 10 000 ids (machine-written)
-  dungeons/<name>.json   one file per dungeon: level range, icon, tile picture, boss portraits, drops per boss (hand-curated)
-  raids/<name>.json      same for raids
-  crafting/<name>.json   one file per profession: the items its recipes make (hand-curated)
-  pvp/<name>.json        one file per reward source (a battleground, the honor ranks): its rewards
-  collections/<name>.json one file per collection (mounts, companions, ...): its items and where they come from
-  reputation/<name>.json one file per faction: its rewards by standing
-  tools/                 the generator (TypeScript, npm)
+  data/
+    config.json          pinned client build and generation settings
+    items/items_<n>.json the item database: in-game scans, one file per 10 000 ids (machine-written)
+    dungeons/<name>.json one file per dungeon: levels, art, bosses and drops (hand-curated)
+    raids/<name>.json    same for raids
+    crafting/<name>.json one file per profession and the items its recipes make
+    pvp/<name>.json      one file per reward source and its rewards
+    collections/<name>.json one file per collection and its items
+    reputation/<name>.json one file per faction and its rewards
 ```
 
 WoW Forever's items are server-side. No data export describes them — the wago.tools tables
@@ -46,7 +47,6 @@ To get the records into the repository, copy your SavedVariables file
 on logout and `/reload`) into `inbox/` and run:
 
 ```sh
-cd .contribute/tools
 npm install          # once
 npm run import       # every .lua / .json in inbox/; or: npm run import -- <path to one file>
 npm run gen
@@ -56,12 +56,12 @@ Without a checkout of the repository, `/fl export` in-game shows the same data a
 into a file and attach it to an issue, or send it to someone who drops it into `inbox/`. Each
 export only holds the records new since the previous one (records stay in the SavedVariables
 until the shipped database has them, so a full dump would grow with every scan); `/fl export all`
-repeats everything. Either way, commit `items/` together with the regenerated
-`db/generated/` files. After `/reload` the addon drops records the shipped database now states
+repeats everything. Either way, commit `.contribute/data/items/` together with the regenerated
+`ForeverLoot/db/generated/` files. After `/reload` the addon drops records the shipped database now states
 exactly, so `/fl scan resume` keeps going with a clean slate; records that differ from the
 shipped row (a `force` re-scan, a changed item) stay until they have been imported too.
 
-`import` merges each record into `items/items_<range>.json`: the newest observation replaces
+`import` merges each record into `.contribute/data/items/items_<range>.json`: the newest observation replaces
 the old one, names are kept per locale (scan on a deDE client and the German names join the
 English ones). Names are only ever what a client of that language reported.
 
@@ -78,7 +78,7 @@ side). Have a look at the diff before committing.
 ### By hand
 
 1. Find the instance file in `dungeons/` or `raids/`, or create one — all you need is the map id
-   (see the `-- Name` comments in `db/generated/instances.lua`). Encounter and item ids are the
+   (see the `-- Name` comments in `ForeverLoot/db/generated/instances.lua`). Encounter and item ids are the
    game's own (`DungeonEncounter.ID`, item id); the item id is in the item link (`item:5188:...`).
 2. Add rows to the boss's `loot` array. `chance` is 0–1 and optional. A boss may also carry its
    `level` and `creatureType` as the game shows them (the card says "20 Humanoid"), a `portrait`
@@ -110,17 +110,17 @@ side). Have a look at the diff before committing.
 3. Run the tools (Node 20+):
 
 ```sh
-cd .contribute/tools
 npm install          # once
 npm run fix          # validate ids, fill names, add missing bosses
-npm run gen          # write db/generated/
+npm run gen          # write ForeverLoot/db/generated/
 ```
 
-4. Commit the JSON **and** the regenerated `db/generated/` files, then open a pull request.
+4. Commit the JSON **and** the regenerated `ForeverLoot/db/generated/` files, then open a pull request.
 
-`npm run check` only validates; `npm run gen -- --check` fails when `db/generated/` is stale
+`npm run check:data` only validates the data; `npm run generate:check` fails when
+`ForeverLoot/db/generated/` is stale
 (used in CI). Instances and encounters come from [wago.tools](https://wago.tools) (`Map`,
-`DungeonEncounter`) for the build pinned in `tools/config.json`, cached in `tools/.cache/`
+`DungeonEncounter`) for the build pinned in `data/config.json`, cached in the root `.cache/`
 (delete it to re-download). Bump `build` there when the client updates; `locales` lists the
 instance/boss name tables to ship (item names ship for every locale that was scanned).
 
@@ -160,11 +160,11 @@ optional and only passed through for now.
 Item rows work as for drops: give the `item` id, or a `name` that identifies exactly one scanned
 item (`npm run fix` fills the id in); unscanned items are allowed with a warning. A file with no
 rows still gets its tile — the page then asks for contributions. Then `npm run fix`,
-`npm run gen`, and commit the JSON with the regenerated `db/generated/<kind>/<name>.lua`.
+`npm run gen`, and commit the JSON with the regenerated `ForeverLoot/db/generated/<kind>/<name>.lua`.
 
 ## What is generated from what
 
-| Output (`db/generated/`) | Source |
+| Output (`ForeverLoot/db/generated/`) | Source under `.contribute/data/` |
 |---|---|
 | `items/items_NNN.lua` | `items/*.json`: the scanned items, `itemsPerFile` rows per file |
 | `instances.lua` | wago.tools `Map` + `DungeonEncounter` (only maps with encounters), levels/icons from the JSON |

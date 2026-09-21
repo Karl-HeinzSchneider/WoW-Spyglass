@@ -2,8 +2,8 @@
   "runtime.version": "Lua 5.1",
   "workspace.checkThirdParty": false,
   "workspace.ignoreDir": [
-    "lib",
-    "db/generated",
+    "ForeverLoot/lib",
+    "ForeverLoot/db/generated",
     ".contribute"
   ],
   "diagnostics.globals": [

@@ -1,7 +1,7 @@
 # ForeverLoot public API
 
 ForeverLoot exposes a global table `ForeverLoot` that other addons can use to add content to the
-ForeverLoot window. ForeverLoot's own content (the folders under `modules/`) is registered through
+ForeverLoot window. ForeverLoot's own content (the folders under `ForeverLoot/modules/`) is registered through
 exactly the same calls, so anything the built-in modules can do, yours can too.
 
 Load order: list `ForeverLoot` under `## Dependencies:` (or `## OptionalDeps:` and check
@@ -231,10 +231,10 @@ Constructors (optional sugar):
 ## Item database
 
 `ForeverLoot.Data` holds every scanned item and where it drops. ForeverLoot ships its data as
-generated files (`db/generated/`, built by `.contribute/tools` from in-game item scans, the
+generated files (`ForeverLoot/db/generated/`, built by the root TypeScript tools from in-game item scans, the
 curated drop JSON in `.contribute/` and wago.tools' instance/encounter tables); other addons may
 add to it with the same calls. The addon itself adds whatever it scans or sees dropping in-game
-(`global.discovered`, see `src/core/discovery.lua`), so `Data.items` can grow at runtime.
+(`global.discovered`, see `ForeverLoot/src/core/discovery.lua`), so `Data.items` can grow at runtime.
 Instance ids are `Map` ids, boss ids are `DungeonEncounter` ids. Tables are integer-keyed:
 
 ```lua

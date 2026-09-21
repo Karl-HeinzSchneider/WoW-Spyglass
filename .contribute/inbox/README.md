@@ -2,8 +2,9 @@
 
 Drop files here to import what the addon recorded in-game, then run
 
+From the repository root:
+
 ```sh
-cd .contribute/tools
 npm run import
 npm run gen
 ```

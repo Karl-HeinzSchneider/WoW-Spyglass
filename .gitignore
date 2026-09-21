@@ -1,5 +1,5 @@
-lib/
-.contribute/tools/node_modules/
-.contribute/tools/.cache/
+node_modules/
+.cache/
+dist/
 .contribute/inbox/*
 !.contribute/inbox/README.md
