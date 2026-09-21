@@ -24,6 +24,10 @@
 	<Script file="loot\stratholme.lua" />
 	<Script file="loot\the_hall_of_thanes.lua" />
 	<Script file="loot\wailing_caverns.lua" />
+	<Script file="collections\mounts.lua" />
+	<Script file="crafting\blacksmithing.lua" />
+	<Script file="pvp\warsong_gulch.lua" />
+	<Script file="reputation\argent_dawn.lua" />
 	<Script file="locales\enUS\items.lua" />
 	<Script file="locales\enUS\instances.lua" />
 	<Script file="locales\enUS\bosses.lua" />

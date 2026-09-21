@@ -15,6 +15,14 @@ export const CURATED_DIRS = {
   raid: resolve(CONTRIBUTE_DIR, "raids"),
 } as const;
 
+/**
+ * Curated item lists, one folder per built-in module and one file per list (a profession, a
+ * battleground, a collection, a faction): see lists.ts.
+ */
+export const LIST_KINDS = ["crafting", "pvp", "collections", "reputation"] as const;
+export type ListKind = (typeof LIST_KINDS)[number];
+export const LIST_DIRS = Object.fromEntries(LIST_KINDS.map((kind) => [kind, resolve(CONTRIBUTE_DIR, kind)])) as Record<ListKind, string>;
+
 /** The item database's source: in-game scans, one JSON file per id range (see items.ts). */
 export const SCANNED_ITEMS_DIR = resolve(CONTRIBUTE_DIR, "items");
 /** Drop folder for `npm run import` without a path: SavedVariables .lua and /fl export .json files (gitignored). */

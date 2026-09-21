@@ -12,6 +12,9 @@ local log = app.logger
 --   Data.instances[id]      = { type = "dungeon", bosses = { bossID, ... }, minLevel = 15, ... }
 --   Data.bosses[bossID]     = { instanceID = 36, order = 6000 }   -- bossID = DungeonEncounter id
 --   Data.bossLoot[bossID]   = { { itemID, chance }, ... }
+--   Data.lists[kind][id]    = { name = "Argent Dawn", icon = ..., factionID = 529 }  -- curated item lists;
+--                             kind = "crafting" | "pvp" | "collections" | "reputation", id = the file's slug
+--   Data.listLoot[kind][id] = { { itemID, standing = "Honored", ... }, ... }    -- the list's rows
 --   Data.names[locale]      = { items = {}, bosses = {}, instances = {} }
 --
 -- Item rows are positional arrays (see Data.ITEM) to keep tens of thousands of rows cheap.
@@ -61,10 +64,31 @@ local ITEM = {
 
 ---@alias ForeverLoot.LootRow { [1]: integer, [2]: number? }  # itemID, drop chance 0..1 (nil = unknown)
 
+-- The kinds of curated item lists; one built-in module each. Other addons may add their own.
+---@alias ForeverLoot.ListKind "crafting"|"pvp"|"collections"|"reputation"|string
+
+-- A curated item list: a profession, a battleground or rank set, a collection, a faction.
+---@class ForeverLoot.List
+---@field name string  # display name
+---@field icon? string|number
+---@field background? string|number  # wide picture for the list's tile in the browser
+---@field backgroundCoords? number[]  # { left, right, top, bottom } of `background` to show
+---@field info? string  # small text on the tile
+---@field order? number  # position among the kind's lists; by name when equal
+---@field factionID? integer  # reputation lists
+---@field skillLineID? integer  # crafting lists
+
+-- A row of a list: the item id, then the kind's fields by name (`standing`, `rank`, `skill`,
+-- `spell`, `source`, `side`, ...) and an optional `group` label overriding the default grouping.
+---@alias ForeverLoot.ListRow { [1]: integer, [string]: any }
+
+-- Where an item comes from: a boss (`chance`) or a row of a list (`kind`, `id` and that row's
+-- named fields, e.g. `standing`).
 ---@class ForeverLoot.ItemSource
----@field kind "boss"|string  # more kinds (vendor, quest, craft) later
----@field id integer  # bossID for kind "boss"
+---@field kind "boss"|ForeverLoot.ListKind
+---@field id integer|string  # bossID for kind "boss", the list id otherwise
 ---@field chance? number
+---@field [string] any
 
 ---@class ForeverLoot.NameTables
 ---@field items table<integer, string>
@@ -77,6 +101,8 @@ local ITEM = {
 ---@field instances table<integer, ForeverLoot.Instance>
 ---@field bosses table<integer, ForeverLoot.Boss>
 ---@field bossLoot table<integer, ForeverLoot.LootRow[]>
+---@field lists table<ForeverLoot.ListKind, table<string, ForeverLoot.List>>
+---@field listLoot table<ForeverLoot.ListKind, table<string, ForeverLoot.ListRow[]>>
 ---@field names table<string, ForeverLoot.NameTables>
 local Data = {
     ITEM = ITEM,
@@ -84,6 +110,8 @@ local Data = {
     instances = {},
     bosses = {},
     bossLoot = {},
+    lists = {},
+    listLoot = {},
     names = {},
 }
 app.data = Data
@@ -96,13 +124,14 @@ local version = 0
 -- Lazy caches, dropped whenever the data changes.
 local itemIDs ---@type integer[]?
 local instanceIDs ---@type integer[]?
+local listIDs ---@type table<ForeverLoot.ListKind, string[]>?
 local sources ---@type table<integer, ForeverLoot.ItemSource[]>?
 local searchNames ---@type table<integer, string>?
 local NO_SOURCES = {}
 
 local function invalidate()
     version = version + 1
-    itemIDs, instanceIDs, sources, searchNames = nil, nil, nil, nil
+    itemIDs, instanceIDs, listIDs, sources, searchNames = nil, nil, nil, nil, nil
     app.api.callbacks:Fire("OnDataChanged")
 end
 
@@ -177,6 +206,51 @@ function Data:AddBossLoot(bossID, rows)
     if not loot then
         loot = {}
         self.bossLoot[bossID] = loot
+    end
+    for _, row in ipairs(rows) do
+        loot[#loot + 1] = row
+    end
+    invalidate()
+end
+
+-- Adds or replaces a curated item list; `kind` names the module it belongs to, `id` is unique
+-- within the kind (the file's slug for shipped lists; other addons should prefix theirs).
+---@param kind ForeverLoot.ListKind
+---@param id string
+---@param def ForeverLoot.List
+function Data:AddList(kind, id, def)
+    if type(kind) ~= "string" or type(id) ~= "string" or type(def) ~= "table" or type(def.name) ~= "string" then
+        log:error("Data.AddList: expected (string, string, table with name), got (%s, %s, %s)", type(kind), type(id), type(def))
+        return
+    end
+    local lists = self.lists[kind]
+    if not lists then
+        lists = {}
+        self.lists[kind] = lists
+    end
+    lists[id] = def
+    invalidate()
+end
+
+-- Appends rows `{ { itemID, field = value, ... }, ... }` to a list; may be called more than once
+-- and before the list itself is added.
+---@param kind ForeverLoot.ListKind
+---@param id string
+---@param rows ForeverLoot.ListRow[]
+function Data:AddListLoot(kind, id, rows)
+    if type(kind) ~= "string" or type(id) ~= "string" or type(rows) ~= "table" then
+        log:error("Data.AddListLoot: expected (string, string, table), got (%s, %s, %s)", type(kind), type(id), type(rows))
+        return
+    end
+    local byID = self.listLoot[kind]
+    if not byID then
+        byID = {}
+        self.listLoot[kind] = byID
+    end
+    local loot = byID[id]
+    if not loot then
+        loot = {}
+        byID[id] = loot
     end
     for _, row in ipairs(rows) do
         loot[#loot + 1] = row
@@ -365,20 +439,78 @@ function Data:GetBossLoot(bossID)
     return self.bossLoot[bossID] or NO_SOURCES
 end
 
--- Inverted index item -> sources, built on first use from every loot table.
+---@param kind ForeverLoot.ListKind
+---@param id string
+---@return ForeverLoot.List?
+function Data:GetList(kind, id)
+    local lists = self.lists[kind]
+    return lists and lists[id]
+end
+
+-- Ids of one kind's lists sorted by `order` (unset last), then name.
+---@param kind ForeverLoot.ListKind
+---@return string[]
+function Data:GetListIDs(kind)
+    listIDs = listIDs or {}
+    local ids = listIDs[kind]
+    if not ids then
+        ids = {}
+        local lists = self.lists[kind] or {}
+        for id in pairs(lists) do
+            ids[#ids + 1] = id
+        end
+        table.sort(ids, function(a, b)
+            local oa, ob = lists[a].order or math.huge, lists[b].order or math.huge
+            if oa ~= ob then
+                return oa < ob
+            end
+            return lists[a].name < lists[b].name
+        end)
+        listIDs[kind] = ids
+    end
+    return ids
+end
+
+---@param kind ForeverLoot.ListKind
+---@param id string
+---@return ForeverLoot.ListRow[]
+function Data:GetListLoot(kind, id)
+    local byID = self.listLoot[kind]
+    return byID and byID[id] or NO_SOURCES
+end
+
+-- Inverted index item -> sources, built on first use from every loot table and list.
 ---@param itemID integer
 ---@return ForeverLoot.ItemSource[]
 function Data:GetItemSources(itemID)
     if not sources then
         sources = {}
+        ---@param id integer
+        ---@param source ForeverLoot.ItemSource
+        local function add(id, source)
+            local list = sources[id]
+            if not list then
+                list = {}
+                sources[id] = list
+            end
+            list[#list + 1] = source
+        end
         for bossID, loot in pairs(self.bossLoot) do
             for _, row in ipairs(loot) do
-                local list = sources[row[1]]
-                if not list then
-                    list = {}
-                    sources[row[1]] = list
+                add(row[1], { kind = "boss", id = bossID, chance = row[2] })
+            end
+        end
+        for kind, byID in pairs(self.listLoot) do
+            for id, loot in pairs(byID) do
+                for _, row in ipairs(loot) do
+                    local source = { kind = kind, id = id }
+                    for field, value in pairs(row) do
+                        if type(field) == "string" then
+                            source[field] = value
+                        end
+                    end
+                    add(row[1], source)
                 end
-                list[#list + 1] = { kind = "boss", id = bossID, chance = row[2] }
             end
         end
     end

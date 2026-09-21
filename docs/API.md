@@ -40,10 +40,12 @@ local dungeon = ForeverLoot.Folder("Gnomeregan", "Interface\\Icons\\...", { ...b
 ForeverLoot:AddToModule("dungeons", dungeon)
 ```
 
-Built-in module ids: `"items"`, `"raids"`, `"dungeons"`. The built-in raids/dungeons sort by
-`minLevel`, then name. If your instance is in the game's data, prefer adding its drops to the
-item database (`ForeverLoot.Data:AddBossLoot`) — it then shows up in the built-in modules and
-in the item browser's filters automatically.
+Built-in module ids: `"items"`, `"raids"`, `"dungeons"`, `"crafting"`, `"pvp"`, `"collections"`,
+`"reputation"`. The built-in raids/dungeons sort by `minLevel`, then name. If your instance is
+in the game's data, prefer adding its drops to the item database (`ForeverLoot.Data:AddBossLoot`)
+— it then shows up in the built-in modules and in the item browser's filters automatically. The
+same goes for the other four: a list added with `ForeverLoot.Data:AddList` /
+`AddListLoot` under one of those kinds becomes a tile in that module.
 
 ## `ForeverLoot:RegisterModule(def) -> boolean`
 
@@ -206,6 +208,12 @@ Constructors (optional sugar):
 - `ForeverLoot.InstanceFolders(type)` — folders for every DB instance of `type` (`"dungeon"` / `"raid"`)
 - `ForeverLoot.InstanceFolder(instanceID)` / `ForeverLoot.BossFolder(bossID)` / `ForeverLoot.BossLootEntries(bossID)` —
   DB-backed folders: instance → bosses → drops with `chance`
+- `ForeverLoot.ListFolders(kind)` — folders for every curated list of `kind` (`"crafting"`, `"pvp"`,
+  `"collections"`, `"reputation"`), by `order` then name; the built-in modules of those names are exactly this
+- `ForeverLoot.ListFolder(kind, id)` / `ForeverLoot.ListEntries(kind, id)` — one list as a two-column
+  folder; its item nodes carry the row's fields in `meta` (`standing`, `rank`, `skill`, `spell`, `source`,
+  `side`, `group`) and are grouped by the row's `group`, else the kind's default (standing / honor rank /
+  skill tier), else the item's type
 - `ForeverLoot.Log(fmt, ...)` — prefixed chat message
 - `ForeverLoot.PlaceholderItem(name, quality, icon)` — hard-coded display data, for prototyping
 - `ForeverLoot.PlaceholderItems(prefix, count)` — generates `count` placeholder items
@@ -237,14 +245,25 @@ Data.items[5188]     -- { quality, itemLevel, reqLevel, classID, subclassID, equ
 Data.instances[36]   -- { type = "dungeon", bosses = { 2741, ... }, minLevel = 15, maxLevel = 21, expansionID = 0, icon = "..." }
 Data.bosses[2747]    -- { instanceID = 36, order = 6000 }
 Data.bossLoot[2747]  -- { { 5188, 0.9 }, { 5191 }, ... }   -- { itemID, chance 0..1 or nil }
+Data.lists.reputation.argent_dawn      -- { name = "Argent Dawn", icon = "...", order = 1, factionID = 529 }
+Data.listLoot.reputation.argent_dawn   -- { { 13209, standing = "Friendly" }, ... }   -- { itemID, field = value, ... }
 Data.names.enUS      -- { items = { [5188] = "Filled Vessel" }, bosses = {...}, instances = {...} }
 ```
+
+Curated item lists (`Data.lists[kind][id]`) back the Crafting, PvP, Collections and Reputation
+modules: `kind` is one of `"crafting"`, `"pvp"`, `"collections"`, `"reputation"` (other addons may
+add kinds of their own and browse them with `ListFolders`), `id` is a string unique within the kind
+(the shipped ones are the `.contribute/<kind>/<id>.json` file names; prefix yours). A list is
+`{ name, icon?, background?, backgroundCoords?, info?, order?, factionID?, skillLineID? }`; its rows
+are `{ itemID, field = value, ... }` with the kind's fields by name (`standing`, `rank`, `skill`,
+`spell`, `source`, `side`) and an optional `group` label.
 
 Adding data (any call may be repeated; every one invalidates the caches and fires `OnDataChanged`):
 
 - `Data:AddItems({ [itemID] = { quality, ilvl, reqLevel, classID, subclassID, equipLoc, bind, icon, stats, ... }, ... })`
 - `Data:AddInstance(id, def)`, `Data:AddBoss(id, def)` (appends to its instance's `bosses` if missing),
   `Data:AddBossLoot(bossID, { { itemID, chance }, ... })`
+- `Data:AddList(kind, id, def)`, `Data:AddListLoot(kind, id, { { itemID, standing = "Honored" }, ... })`
 - `Data:AddNames(locale, "items" | "bosses" | "instances", { [id] = name })` — enUS is the fallback
 
 Reading:
@@ -253,9 +272,11 @@ Reading:
   `Data:GetItemCount()`, `for id, row in Data:EachItem() do`
 - `Data:GetItemName(id) -> name, known` — client locale, then enUS, then `C_Item.GetItemInfo`, then `"Item #id"`
 - `Data:GetItemStats(id) -> { INTELLECT = 4, ... }?`, `Data.StatLabel("INTELLECT") -> "Intellect"` (the game's `ITEM_MOD_*_SHORT`)
-- `Data:GetItemSources(id) -> { { kind = "boss", id = bossID, chance = 0.18 }, ... }` — inverted index, built lazily
+- `Data:GetItemSources(id) -> { { kind = "boss", id = bossID, chance = 0.18 }, { kind = "reputation", id = "argent_dawn", standing = "Honored" }, ... }`
+  — inverted index over boss loot and every list (a list source carries its row's fields), built lazily
 - `Data:GetInstance(id)`, `Data:GetInstanceIDs()` (by level, then name), `Data:GetBoss(id)`, `Data:GetBossLoot(bossID)`,
   `Data:GetInstanceName(id)`, `Data:GetBossName(id)`
+- `Data:GetList(kind, id)`, `Data:GetListIDs(kind)` (by `order`, then name), `Data:GetListLoot(kind, id)`
 - `Data:GetVersion()` — bumps on every change; cache against it
 
 ### Filters

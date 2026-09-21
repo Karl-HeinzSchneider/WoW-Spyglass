@@ -37,10 +37,7 @@ export interface CuratedEncounter {
   loot: CuratedLoot[];
 }
 
-export interface CuratedLoot {
-  /** Item id; may be left out when `name` identifies exactly one client item (`fix` fills it in). */
-  item?: number;
-  name?: string;
+export interface CuratedLoot extends CuratedItemRow {
   /** Drop chance 0..1; omit when unknown. */
   chance?: number;
 }
@@ -81,26 +78,93 @@ export interface Problem {
   warning?: boolean;
 }
 
-/** enUS item name (case-insensitive) -> ids, built on first use for rows that only give a name. */
-function itemsByName(ref: Reference): Map<string, number[]> {
-  const index = new Map<string, number[]>();
-  for (const [id, name] of ref.names.get(FALLBACK_LOCALE)!.items) {
-    const key = name.toLowerCase();
-    const list = index.get(key);
-    if (list) list.push(id);
-    else index.set(key, [id]);
+/** An item row as every curated file has them: an id, or a name that resolves to one. */
+export interface CuratedItemRow {
+  /** Item id; may be left out when `name` identifies exactly one client item (`fix` fills it in). */
+  item?: number;
+  name?: string;
+}
+
+/** Problem sink shared by the validators (instance files here, item lists in lists.ts). */
+export class Checker {
+  readonly problems: Problem[] = [];
+  private byName?: Map<string, number[]>;
+
+  constructor(
+    readonly ref: Reference,
+    readonly fix: boolean,
+  ) {}
+
+  report(file: { path: string }, message: string, fixable = false): void {
+    this.problems.push({ file: file.path, message, fixable });
   }
-  return index;
+
+  warn(file: { path: string }, message: string): void {
+    this.problems.push({ file: file.path, message, fixable: false, warning: true });
+  }
+
+  /** enUS item name (case-insensitive) -> ids, built on first use for rows that only give a name. */
+  private itemsByName(): Map<string, number[]> {
+    if (!this.byName) {
+      this.byName = new Map();
+      for (const [id, name] of this.ref.names.get(FALLBACK_LOCALE)!.items) {
+        const key = name.toLowerCase();
+        const list = this.byName.get(key);
+        if (list) list.push(id);
+        else this.byName.set(key, [id]);
+      }
+    }
+    return this.byName;
+  }
+
+  /**
+   * Checks one item row: resolves a name-only row to its id, rejects duplicates within `seen`
+   * and rewrites the name from the scans. Returns false when the row has no usable item id.
+   */
+  checkItemRow(file: { path: string }, where: string, row: CuratedItemRow, seen: Set<number>): boolean {
+    const { ref, fix } = this;
+    if (row.item === undefined && typeof row.name === "string" && row.name !== "") {
+      // Name-only row: resolve it when exactly one item carries that name.
+      const ids = this.itemsByName().get(row.name.toLowerCase()) ?? [];
+      if (ids.length === 1) {
+        this.report(file, `${where}: "${row.name}" -> item ${ids[0]}`, true);
+        if (fix) row.item = ids[0];
+        else return false;
+      } else if (ids.length === 0) {
+        this.report(file, `${where}: no item is named "${row.name}"; give its \`item\` id`);
+        return false;
+      } else {
+        this.report(file, `${where}: "${row.name}" is ambiguous (items ${ids.join(", ")}); give its \`item\` id`);
+        return false;
+      }
+    }
+    if (row.item === undefined || !Number.isInteger(row.item)) {
+      this.report(file, `${where}: row without an \`item\``);
+      return false;
+    }
+    if (seen.has(row.item)) this.report(file, `${where}: item ${row.item} listed twice`);
+    seen.add(row.item);
+    // Rows are curated independently of the scans: an unscanned item still gets its row (the
+    // page shows it once the client fetches it), it is just not searchable yet, and its name
+    // stays whatever the contributor typed.
+    if (!ref.items.has(row.item)) {
+      this.warn(file, `${where}: item ${row.item} (${row.name ?? "?"}) hasn't been scanned yet; /fl scan it in-game and import`);
+      return true;
+    }
+    const itemName = nameOf(ref, "items", row.item);
+    if (row.name !== itemName) {
+      this.report(file, `item ${row.item}: name "${row.name ?? ""}" -> "${itemName}"`, true);
+      if (fix) row.name = itemName;
+    }
+    return true;
+  }
 }
 
 /** Validates ids against the reference data; with `fix`, rewrites names and adds missing encounters. */
-export function validate(files: CuratedFile[], ref: Reference, fix: boolean): Problem[] {
-  const problems: Problem[] = [];
+export function validate(files: CuratedFile[], checker: Checker): void {
+  const { ref, fix } = checker;
   const seenMaps = new Map<number, string>();
-  let byName: Map<string, number[]> | undefined;
-  const report = (file: CuratedFile, message: string, fixable = false) =>
-    problems.push({ file: file.path, message, fixable });
-  const warn = (file: CuratedFile, message: string) => problems.push({ file: file.path, message, fixable: false, warning: true });
+  const report = checker.report.bind(checker);
 
   for (const file of files) {
     const d = file.data;
@@ -161,42 +225,9 @@ export function validate(files: CuratedFile[], ref: Reference, fix: boolean): Pr
       }
       const seenItems = new Set<number>();
       for (const row of enc.loot) {
-        if (row.item === undefined && typeof row.name === "string" && row.name !== "") {
-          // Name-only row: resolve it when exactly one item carries that name.
-          byName ??= itemsByName(ref);
-          const ids = byName.get(row.name.toLowerCase()) ?? [];
-          if (ids.length === 1) {
-            report(file, `encounter ${enc.id}: "${row.name}" -> item ${ids[0]}`, true);
-            if (fix) row.item = ids[0];
-            else continue;
-          } else if (ids.length === 0) {
-            report(file, `encounter ${enc.id}: no item is named "${row.name}"; give its \`item\` id`);
-            continue;
-          } else {
-            report(file, `encounter ${enc.id}: "${row.name}" is ambiguous (items ${ids.join(", ")}); give its \`item\` id`);
-            continue;
-          }
-        }
-        if (row.item === undefined || !Number.isInteger(row.item)) {
-          report(file, `encounter ${enc.id}: loot row without an \`item\``);
-          continue;
-        }
-        if (seenItems.has(row.item)) report(file, `encounter ${enc.id}: item ${row.item} listed twice`);
-        seenItems.add(row.item);
+        if (!checker.checkItemRow(file, `encounter ${enc.id}`, row, seenItems)) continue;
         if (row.chance !== undefined && !(row.chance >= 0 && row.chance <= 1)) {
           report(file, `encounter ${enc.id}: item ${row.item} chance must be between 0 and 1`);
-        }
-        // Drops are curated independently of the scans: an unscanned item still gets its loot row
-        // (the boss page shows it once the client fetches it), it is just not searchable yet, and
-        // its name stays whatever the contributor typed.
-        if (!ref.items.has(row.item)) {
-          warn(file, `encounter ${enc.id}: item ${row.item} (${row.name ?? "?"}) hasn't been scanned yet; /fl scan it in-game and import`);
-          continue;
-        }
-        const itemName = nameOf(ref, "items", row.item);
-        if (row.name !== itemName) {
-          report(file, `item ${row.item}: name "${row.name ?? ""}" -> "${itemName}"`, true);
-          if (fix) row.name = itemName;
         }
       }
     }
@@ -211,7 +242,6 @@ export function validate(files: CuratedFile[], ref: Reference, fix: boolean): Pr
       }
     }
   }
-  return problems;
 }
 
 /** Stable key order so `fix` produces minimal diffs. */

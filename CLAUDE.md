@@ -18,8 +18,10 @@ The one generated part is the database. `.contribute/tools/` (TypeScript, `npm i
 Node 20+) builds `db/generated/` from three inputs: the **item scans** in
 `.contribute/items/items_<n>.json` (recorded in-game by `/fl scan`, one file per 10 000 ids,
 machine-written by `npm run import`), the **curated drops** in `.contribute/dungeons|raids/*.json`,
-and wago.tools' `Map` + `DungeonEncounter` tables (instances, bosses, their names) for the build
-pinned in `config.json`. Commands: `npm run fix` (validate ids, fill names, add missing bosses),
+the **curated item lists** in `.contribute/crafting|pvp|collections|reputation/*.json` (one
+file per profession / reward source / collection / faction; nothing in them comes from a game
+table), and wago.tools' `Map` + `DungeonEncounter` tables (instances, bosses, their names) for
+the build pinned in `config.json`. Commands: `npm run fix` (validate ids, fill names, add missing bosses),
 `npm run gen` (write `db/generated/`), `npm run gen -- --check` (staleness, for CI),
 `npm run import` (merge what the addon recorded in-game — SavedVariables `ForeverLoot.lua` /
 `/fl export` JSON files dropped into the gitignored `.contribute/inbox/`, or one file given as
@@ -64,32 +66,44 @@ validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-la
   `ForeverLoot.Node` and `ForeverLoot.ModuleDef` types. Changing the API means updating `docs/API.md`.
 - `src/data/` — the item database, public as `ForeverLoot.Data/Filters/Query` (also `app.data`,
   `app.filters`, `app.query`). `data.lua`: normalized integer-keyed tables (`items` rows are
-  positional arrays indexed by `Data.ITEM`, `instances`, `bosses`, `bossLoot`, `names[locale]`),
-  `Add*` calls that invalidate caches and fire `OnDataChanged`, lazy `GetItemSources` inverted
-  index. `filters.lua`: registry of named predicates with options (`multi`/`single`), optional
+  positional arrays indexed by `Data.ITEM`, `instances`, `bosses`, `bossLoot`, `names[locale]`)
+  plus the string-keyed curated lists (`lists[kind][id]` = `{ name, icon, order, factionID, … }`,
+  `listLoot[kind][id]` = `{ { itemID, standing = "Honored", … }, … }`; kind = `crafting` / `pvp` /
+  `collections` / `reputation`, id = the JSON file's slug), `Add*` calls that invalidate caches
+  and fire `OnDataChanged`, lazy `GetItemSources` inverted index over boss loot and lists. `filters.lua`: registry of named predicates with options (`multi`/`single`), optional
   precomputed buckets, the built-in filters. `query.lua`: `Query.Run(q)` over a plain, serializable
   query table (`search`, `filters`, `sort`). Nothing in here touches frames.
   `nodes.lua`: DB-backed node constructors on the public API (`InstanceFolders(type)`,
-  `InstanceFolder(id)`, `BossFolder(id)`, `BossLootEntries(id)`) that modules build their trees from.
+  `InstanceFolder(id)`, `BossFolder(id)`, `BossLootEntries(id)`; `ListFolders(kind)`,
+  `ListFolder(kind, id)`, `ListEntries(kind, id)` — list rows become item nodes with the row's
+  fields in `meta`, grouped by the row's `group`, else the kind's default: standing for
+  reputation, honor rank/standing for pvp, skill tier for crafting) that modules build their
+  trees from.
 - `db/generated/` — **generated** (see Tooling); the TOC lists only `db\generated\generated.xml`.
   Every client item (`items/items_NNN.lua`), all instances with encounters plus curated
-  levels/icons (`instances.lua`), curated drops (`loot/<name>.lua`), names per locale
+  levels/icons (`instances.lua`), curated drops (`loot/<name>.lua`), curated item lists
+  (`<kind>/<slug>.lua`, one `Data:AddList` + `Data:AddListLoot` each), names per locale
   (`locales/<locale>/`, non-enUS files return early unless `GetLocale()` matches). Excluded from
   LuaLS and StyLua. Boss ids are `DungeonEncounter` ids, instance ids are `Map` ids.
 - `.contribute/` — everything people edit and send as pull requests: `dungeons/*.json` and
   `raids/*.json` (one instance each: map id, level range, icon, tile picture, boss portraits, drops with chance; names are
   informational and rewritten by `npm run fix`; a row with only a `name` gets its id filled in
-  when unambiguous), `items/items_<n>.json` (the scanned item dump: `ScannedItem` in
+  when unambiguous), `crafting|pvp|collections|reputation/*.json` (the item lists: `name` is the
+  displayed name, the file name the id, rows under `recipes` / `rewards` / `items` / `rewards`
+  with per-kind fields — schema and validation in `tools/src/lists.ts`, table in the README),
+  `items/items_<n>.json` (the scanned item dump: `ScannedItem` in
   `tools/src/items.ts`, names per locale; written by `npm run import`, not by hand) and `tools/`
   (the generator; `node_modules/` and `.cache/` are gitignored; `src/savedvars.ts` parses
-  SavedVariables Lua, `src/discovered.ts` + `src/import.ts` merge recorded data). Item ids from
+  SavedVariables Lua, `src/discovered.ts` + `src/import.ts` merge recorded data;
+  `src/curated.ts` exports the `Checker` whose `checkItemRow` every validator shares). Item ids from
   Classic/wowhead do **not** apply — WoW Forever has its own itemization, so items and drops must
   be recorded in this client.
-- `modules/<name>/` — one folder per built-in content module (`items`, `raids`, `dungeons`), each
-  with a `<name>.xml` loader listed in `modules/modules.xml`. `items` is a `query = true` module
-  (the item DB with the view's search box and filter dropdown); `raids`/`dungeons` build their
-  trees at runtime from the DB via `getChildren = function() return FL.InstanceFolders("raid") end`
-  and hold no data of their own. Modules use only the public API a third-party addon would use,
+- `modules/<name>/` — one folder per built-in content module (`items`, `raids`, `dungeons`,
+  `crafting`, `pvp`, `collections`, `reputation`), each with a `<name>.xml` loader listed in
+  `modules/modules.xml`. `items` is a `query = true` module (the item DB with the view's search
+  box and filter dropdown); `raids`/`dungeons` build their trees at runtime from the DB via
+  `getChildren = function() return FL.InstanceFolders("raid") end`, the other four via
+  `FL.ListFolders(kind)`; none holds data of its own. Modules use only the public API a third-party addon would use,
   so never give them private hooks.
 - `src/core/ace.lua` — `app.addon`, the AceAddon-3.0 object (mixins: AceConsole, AceEvent).
   `OnInitialize` creates `app.db` from `ForeverLootDB`, wires profile-change callbacks to

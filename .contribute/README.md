@@ -9,6 +9,10 @@ is produced from it and must not be edited by hand.
   items/items_<n>.json   the item database: in-game scans, one file per 10 000 ids (machine-written)
   dungeons/<name>.json   one file per dungeon: level range, icon, tile picture, boss portraits, drops per boss (hand-curated)
   raids/<name>.json      same for raids
+  crafting/<name>.json   one file per profession: the items its recipes make (hand-curated)
+  pvp/<name>.json        one file per reward source (a battleground, the honor ranks): its rewards
+  collections/<name>.json one file per collection (mounts, companions, ...): its items and where they come from
+  reputation/<name>.json one file per faction: its rewards by standing
   tools/                 the generator (TypeScript, npm)
 ```
 
@@ -120,6 +124,44 @@ npm run gen          # write db/generated/
 (delete it to re-download). Bump `build` there when the client updates; `locales` lists the
 instance/boss name tables to ship (item names ship for every locale that was scanned).
 
+## Item lists: crafting, PvP, collections, reputation
+
+Besides drops, the browser has one module each for crafting, PvP, collections and reputation.
+Each shows tiles, one per file in the matching folder, and each tile lists that file's items.
+Unlike instances, nothing here comes from a game table: the **file name is the list's id**
+(lowercase letters, digits, underscores), `name` is what the tile shows, and the rows are yours.
+The row key differs per kind so the files read naturally:
+
+| Folder | Rows key | Row fields besides `item`/`name` | Default grouping |
+|---|---|---|---|
+| `crafting/` | `recipes` | `spell` (recipe spell id), `skill` (required skill), `source` (free text: "Trainer", "Vendor: …") | skill tier (Apprentice, Journeyman, Expert, Artisan, Master) |
+| `pvp/` | `rewards` | `rank` (honor rank 1–14), `standing`, `side` (`Alliance`/`Horde`) | rank, else standing |
+| `collections/` | `items` | `source` (free text), `side` | none (by item type) |
+| `reputation/` | `rewards` | `standing` (`Neutral` … `Exalted`), `side` | standing |
+
+Every row may also carry a `group` label of your own, which replaces the default grouping for
+that row. Every file may carry `icon`, `background` + `backgroundCoords` (as for instances),
+`info` (small text on the tile) and `order` (tile position; by name otherwise). Reputation files
+may state the game's `faction` id and crafting files the profession's `skillLine` id; both are
+optional and only passed through for now.
+
+```json
+{
+  "name": "Argent Dawn",
+  "icon": "Interface\\Icons\\Achievement_Reputation_01",
+  "faction": 529,
+  "rewards": [
+    { "item": 13209, "name": "Seal of the Dawn", "standing": "Friendly" },
+    { "name": "Argent Dawn Tabard", "standing": "Honored", "side": "Alliance" }
+  ]
+}
+```
+
+Item rows work as for drops: give the `item` id, or a `name` that identifies exactly one scanned
+item (`npm run fix` fills the id in); unscanned items are allowed with a warning. A file with no
+rows still gets its tile — the page then asks for contributions. Then `npm run fix`,
+`npm run gen`, and commit the JSON with the regenerated `db/generated/<kind>/<name>.lua`.
+
 ## What is generated from what
 
 | Output (`db/generated/`) | Source |
@@ -127,6 +169,7 @@ instance/boss name tables to ship (item names ship for every locale that was sca
 | `items/items_NNN.lua` | `items/*.json`: the scanned items, `itemsPerFile` rows per file |
 | `instances.lua` | wago.tools `Map` + `DungeonEncounter` (only maps with encounters), levels/icons from the JSON |
 | `loot/<name>.lua` | the `dungeons/` and `raids/` files' `loot` rows |
+| `crafting/<name>.lua`, `pvp/…`, `collections/…`, `reputation/…` | the item lists, one file each |
 | `locales/<locale>/items.lua` | the scanned names of that locale |
 | `locales/<locale>/instances.lua`, `bosses.lua` | wago.tools name columns per configured locale |
 | `generated.xml` | loader listed in the TOC |

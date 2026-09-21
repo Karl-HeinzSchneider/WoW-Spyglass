@@ -3,6 +3,7 @@ import { dirname, relative, resolve } from "node:path";
 import { type Config, FALLBACK_LOCALE, OUTPUT_DIR, ROOT } from "./config.js";
 import { type CuratedFile } from "./curated.js";
 import { type ScannedItem } from "./items.js";
+import { type ListFile, ROW_FIELDS, rowsOf } from "./lists.js";
 import { header, luaFields, luaString, luaValue } from "./lua.js";
 import { type Reference, nameOf } from "./reference.js";
 
@@ -99,6 +100,42 @@ function emitLoot(file: CuratedFile, ref: Reference): string {
   return out.join("");
 }
 
+/** One curated list: its definition, then its rows as `{ itemID, field = value, ... }`. */
+function emitList(file: ListFile, ref: Reference): string {
+  const rel = relative(ROOT, file.path).replace(/\\/g, "/");
+  const d = file.data;
+  const out = [header(rel), "local Data = ForeverLoot.Data\n"];
+  out.push(`\n-- ${d.name}\n`);
+  out.push(`Data:AddList(${luaString(file.kind)}, ${luaString(file.slug)}, {\n`);
+  out.push(
+    ...luaFields(
+      {
+        name: d.name,
+        icon: d.icon,
+        background: d.background,
+        backgroundCoords: d.backgroundCoords,
+        info: d.info,
+        order: d.order,
+        factionID: d.faction,
+        skillLineID: d.skillLine,
+      },
+      ["name", "icon", "background", "backgroundCoords", "info", "order", "factionID", "skillLineID"],
+    ).map((l) => l + "\n"),
+  );
+  out.push("})\n");
+  const rows = rowsOf(file).filter((row) => row.item !== undefined); // name-only rows that `npm run fix` hasn't resolved yet
+  if (rows.length > 0) {
+    out.push(`Data:AddListLoot(${luaString(file.kind)}, ${luaString(file.slug)}, {\n`);
+    for (const row of rows) {
+      const fields = luaFields({ ...row }, [...ROW_FIELDS[file.kind], "group"], "").map((f) => `, ${f.replace(/,$/, "")}`);
+      const name = ref.items.has(row.item!) ? nameOf(ref, "items", row.item!) : (row.name ?? "?");
+      out.push(`    { ${row.item}${fields.join("")} }, -- ${name}\n`);
+    }
+    out.push("})\n");
+  }
+  return out.join("");
+}
+
 function emitNames(locale: string, kind: "items" | "bosses" | "instances", table: Map<number, string>, source: string): string {
   const out = [header(`${source}, locale ${locale}`)];
   if (locale !== FALLBACK_LOCALE) out.push(`if GetLocale() ~= "${locale}" then\n    return\nend\n`);
@@ -117,7 +154,7 @@ function emitXml(files: string[]): string {
 }
 
 /** Builds every output file in memory: { path relative to db/generated : content }. */
-export function build(ref: Reference, curated: CuratedFile[], config: Config): Map<string, string> {
+export function build(ref: Reference, curated: CuratedFile[], lists: ListFile[], config: Config): Map<string, string> {
   const files = new Map<string, string>();
   const order: string[] = [];
   const add = (path: string, content: string) => {
@@ -135,6 +172,11 @@ export function build(ref: Reference, curated: CuratedFile[], config: Config): M
 
   for (const file of [...curated].sort((a, b) => a.slug.localeCompare(b.slug))) {
     if (file.data.encounters.some((e) => e.loot?.length)) add(`loot/${file.slug}.lua`, emitLoot(file, ref));
+  }
+
+  // Every list file becomes a tile in its module, rows or not (an empty one asks for contributions).
+  for (const file of [...lists].sort((a, b) => a.kind.localeCompare(b.kind) || a.slug.localeCompare(b.slug))) {
+    add(`${file.kind}/${file.slug}.lua`, emitList(file, ref));
   }
 
   // Item names exist for the locales that were scanned; instance/boss names for the configured ones.

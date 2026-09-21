@@ -3,4 +3,8 @@
 	<Include file="items\items.xml" />
 	<Include file="raids\raids.xml" />
 	<Include file="dungeons\dungeons.xml" />
+	<Include file="crafting\crafting.xml" />
+	<Include file="pvp\pvp.xml" />
+	<Include file="collections\collections.xml" />
+	<Include file="reputation\reputation.xml" />
 </Ui>
