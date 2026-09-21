@@ -1,7 +1,6 @@
 -- Built-in module: Dungeons. Each instance is listed explicitly below (one `InstanceFolder` per
 -- line) so only dungeons with curated loot show up; uncomment a line once its drops are in
 -- .contribute/dungeons/*.json. Bosses and levels come from the item database (db/generated).
--- The list order is the display order.
 local FL = ForeverLoot
 
 FL:RegisterModule({
@@ -41,5 +40,17 @@ FL:RegisterModule({
             FL.InstanceFolder(3002), -- Half-Pint Tavern
             FL.InstanceFolder(3065), -- The Hall of Thanes
         }
+    end,
+    -- By level range (instances without a curated one go last), then name.
+    sortChildren = function(a, b)
+        local la, lb = a.minLevel or 999, b.minLevel or 999
+        if la ~= lb then
+            return la < lb
+        end
+        local ha, hb = a.maxLevel or 999, b.maxLevel or 999
+        if ha ~= hb then
+            return ha < hb
+        end
+        return (a.name or "") < (b.name or "")
     end,
 })

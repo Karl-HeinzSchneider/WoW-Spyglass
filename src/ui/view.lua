@@ -61,6 +61,31 @@ local function formatChance(chance)
     return ("%.1f%%"):format(chance * 100)
 end
 
+-- Instance folders show their level range behind the name, "Deadmines (15-21)", colored like
+-- mob levels: the low end in the orange of a hard mob, the high end in the green of an easy one.
+local LEVEL_LOW = QuestDifficultyColors and QuestDifficultyColors.verydifficult or { r = 1, g = 0.5, b = 0.25 }
+local LEVEL_HIGH = QuestDifficultyColors and QuestDifficultyColors.standard or { r = 0.25, g = 0.75, b = 0.25 }
+
+local function colorHex(c)
+    return ("|cff%02x%02x%02x"):format(math.floor(c.r * 255 + 0.5), math.floor(c.g * 255 + 0.5), math.floor(c.b * 255 + 0.5))
+end
+
+---@param node ForeverLoot.Node
+---@return string
+local function levelRangeName(node)
+    local name = node.name or "?"
+    local lo, hi = node.minLevel, node.maxLevel
+    if not lo and not hi then
+        return name
+    end
+    local low = lo and (colorHex(LEVEL_LOW) .. lo .. "|r") or nil
+    local high = hi and (colorHex(LEVEL_HIGH) .. hi .. "|r") or nil
+    if low and high then
+        return ("%s (%s-%s)"):format(name, low, high)
+    end
+    return ("%s (%s)"):format(name, low or high)
+end
+
 ---@class ForeverLoot.ListRow : Button
 ---@field Icon Texture
 ---@field Name FontString
@@ -122,7 +147,7 @@ function ForeverLootListRowMixin:Init(view, node)
             self:SetDisplay("Spell #" .. node.spellID, nil, nil, nil)
         end
     else
-        self:SetDisplay(node.name or "?", node.icon, node.description, node.quality)
+        self:SetDisplay(levelRangeName(node), node.icon, node.description, node.quality)
     end
 end
 
