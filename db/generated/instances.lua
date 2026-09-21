@@ -709,6 +709,8 @@ Data:AddInstance(2999, {
     minLevel = 15,
     maxLevel = 20,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
+    background = 7963782,
+    backgroundCoords = { 0.0445, 0.9552, 0.158, 0.842 },
     bosses = { 3353, 3357, 3355, 3354, 3408, 3411, 3412 },
 })
 Data:AddBoss(3353, { instanceID = 2999, order = 0 }) -- Witherfang
@@ -736,6 +738,8 @@ Data:AddInstance(3065, {
     minLevel = 13,
     maxLevel = 18,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
+    background = 7963781,
+    backgroundCoords = { 0.0445, 0.9552, 0.158, 0.842 },
     bosses = { 3493, 3495, 3494, 3496 },
 })
 Data:AddBoss(3493, { instanceID = 3065, order = 0 }) -- Faldrim Anvilmar
