@@ -80,7 +80,7 @@ local ITEM = {
 
 -- A row of a list: the item id, then the kind's fields by name (`standing`, `rank`, `skill`,
 -- `spell`, `source`, `side`, ...) and an optional `group` label overriding the default grouping.
----@alias ForeverLoot.ListRow { [1]: integer, [string]: any }
+---@alias ForeverLoot.ListLootRow { [1]: integer, [string]: any }
 
 -- Where an item comes from: a boss (`chance`) or a row of a list (`kind`, `id` and that row's
 -- named fields, e.g. `standing`).
@@ -102,7 +102,7 @@ local ITEM = {
 ---@field bosses table<integer, ForeverLoot.Boss>
 ---@field bossLoot table<integer, ForeverLoot.LootRow[]>
 ---@field lists table<ForeverLoot.ListKind, table<string, ForeverLoot.List>>
----@field listLoot table<ForeverLoot.ListKind, table<string, ForeverLoot.ListRow[]>>
+---@field listLoot table<ForeverLoot.ListKind, table<string, ForeverLoot.ListLootRow[]>>
 ---@field names table<string, ForeverLoot.NameTables>
 local Data = {
     ITEM = ITEM,
@@ -236,7 +236,7 @@ end
 -- and before the list itself is added.
 ---@param kind ForeverLoot.ListKind
 ---@param id string
----@param rows ForeverLoot.ListRow[]
+---@param rows ForeverLoot.ListLootRow[]
 function Data:AddListLoot(kind, id, rows)
     if type(kind) ~= "string" or type(id) ~= "string" or type(rows) ~= "table" then
         log:error("Data.AddListLoot: expected (string, string, table), got (%s, %s, %s)", type(kind), type(id), type(rows))
@@ -473,7 +473,7 @@ end
 
 ---@param kind ForeverLoot.ListKind
 ---@param id string
----@return ForeverLoot.ListRow[]
+---@return ForeverLoot.ListLootRow[]
 function Data:GetListLoot(kind, id)
     local byID = self.listLoot[kind]
     return byID and byID[id] or NO_SOURCES
