@@ -1,0 +1,161 @@
+# ForeverLoot (core addon)
+
+The distributable core: the public `ForeverLoot` API, the item database with filters and
+queries, the built-in content modules, the browser window, user settings and loot history
+(`ForeverLootDB`). It must work on its own; the companions (`ForeverLoot_Locale`,
+`ForeverLoot_Scraper`) are optional and **nothing in this directory may mention them** —
+`npm run check:addons` fails on the bare string, comments included. Repo-wide rules
+(constraints, XML, textures, Blizzard reference folders) are in the root `CLAUDE.md`; the
+public contract is `docs/API.md`.
+
+## Load order (`ForeverLoot.toc`)
+
+The TOC is the addon manifest: metadata (`## Interface: 16001`, `## SavedVariables: ForeverLootDB`)
+and the ordered file list. **Every new Lua/XML file must be listed, in dependency order.**
+Current order and why:
+
+1. `embeds.xml` — every vendored library in dependency order (LibStub → CallbackHandler → Ace*
+   → LibDataBroker → LibDBIcon).
+2. `src\core\logger.lua`, `db.lua`, `registry.lua`, `ace.lua`, `minimapbutton.lua`.
+3. `src\data\data.lua`, `filters.lua`, `query.lua`, `nodes.lua` — the DB API, then
+   `db\generated\generated.xml` (the generated data) and `modules\modules.xml` (the built-in
+   modules, which need both).
+4. `src\ui\view.lua`, `templates.xml`, `mainwindow.lua`, `mainwindow.xml` — Lua mixins before
+   the XML that names them; `templates.xml` before `mainwindow.xml`.
+5. `ForeverLoot.lua` — root entry, loaded last; only logs.
+
+## Files
+
+### `src/core/`
+
+- `logger.lua` — `app.logger`. Leveled, colored chat logging; `log("x")` is `log:info("x")`.
+  The public `ForeverLoot.Log` / `LogAt` (in `registry.lua`) wrap it so companions log under
+  the core prefix and level without reaching in.
+- `db.lua` — `app.dbDefaults`, the AceDB-3.0 defaults. `profile` = user settings (`logLevel`,
+  `minimap.hide`, `window` anchor), `char` = per-character data (`loot` history), `global` =
+  account-wide (`dbVersion`). Scraper collection state is deliberately *not* here.
+- `registry.lua` — `app.api`, which **is the public global `ForeverLoot`**. `API_VERSION`,
+  `RegisterModule(def)` (validates and stores module definitions), `AddToModule`,
+  `GetRootNode()` (the virtual tree the window browses, one node per module sorted by `order`,
+  cached until the module set changes), node constructors (`Folder/Item/Spell/Custom/Header/
+  Group`), grouping (`DefaultGroupKey`, `DefaultEntryRank`, `GroupEntries`), the slash-command
+  extension registry (`RegisterCommand/UnregisterCommand`; `app.commands` is the private
+  dispatcher, `show`/`loglevel`/`reset` are reserved), and CallbackHandler-1.0 events
+  (`OnModuleRegistered/Unregistered`, `OnModulesChanged`, `OnDataChanged`, `OnFiltersChanged`).
+  Defines the `ForeverLoot.Node` and `ForeverLoot.ModuleDef` types. **Changing anything here
+  means updating `docs/API.md`.**
+- `ace.lua` — `app.addon`, the AceAddon-3.0 object (mixins AceConsole, AceEvent).
+  `OnInitialize` creates `app.db` from `ForeverLootDB`, wires profile-change callbacks to
+  `OnProfileRefresh` (re-applies log level, refreshes views, calls modules' `OnProfileRefresh`)
+  and registers `/fl` + `/foreverloot`. `OnSlashCommand` handles the reserved commands and
+  hands everything else to `app.commands:Run`. Register game events in `OnEnable`.
+- `minimapbutton.lua` — `app.minimapButton`, an Ace module wrapping a LibDataBroker launcher +
+  LibDBIcon; toggles the window, honors `profile.minimap.hide`.
+
+### `src/data/` — the item database (public as `ForeverLoot.Data/Filters/Query`)
+
+Nothing in here touches frames.
+
+- `data.lua` — `app.data`. Normalized integer-keyed tables: `items` rows are positional arrays
+  indexed by `Data.ITEM` (layout must match `itemRow()` in `src/generate.ts`), `instances`,
+  `bosses`, `bossLoot`, `names[locale]`; plus the string-keyed curated lists
+  (`lists[kind][id]` = `{ name, icon, order, factionID, … }`, `listLoot[kind][id]` =
+  `{ { itemID, standing = "Honored", … }, … }`; kind = `crafting`/`pvp`/`collections`/
+  `reputation`, id = the JSON file's slug). `Add*` calls invalidate caches and fire
+  `OnDataChanged`; `GetVersion()` bumps on every change. `GetItemName` resolves client locale →
+  enUS → `C_Item.GetItemInfo` → `"Item #id"`. `GetItemSources` is a lazy inverted index over
+  boss loot and every list.
+- `filters.lua` — `app.filters`: registry of named predicates with options (`multi`/`single`),
+  optional precomputed buckets, and the built-ins (`quality`, `slot`, `armorType`, `weaponType`,
+  `itemLevel`, `reqLevel`, `instance`, `boss`).
+- `query.lua` — `app.query`: `Query.Run(q)` over a plain, serializable query table (`search`,
+  `filters`, `sort`). Filters AND, values within a filter OR.
+- `nodes.lua` — DB-backed node constructors on the public API that modules build their trees
+  from: `InstanceFolders(type)`, `InstanceFolder(id)` (a `cards` folder of bosses), `BossFolder(id)`,
+  `BossLootEntries(id)`; `ListFolders(kind)`, `ListFolder(kind, id)`, `ListEntries(kind, id)` —
+  list rows become item nodes with the row's fields in `meta`, grouped by the row's `group`,
+  else the kind's default (standing for reputation, honor rank/standing for pvp, skill tier for
+  crafting), else item type.
+
+### `db/generated/` — **generated, never hand-edited**
+
+Written by `npm run gen` from `.contribute/data/`; the TOC lists only `db\generated\generated.xml`,
+which loads the rest. `items/items_NNN.lua` (every scanned item, `itemsPerFile` rows each),
+`instances.lua` (all instances with encounters plus curated levels/icons/portraits; the `-- Name`
+comments are the place to look up map ids), `loot/<slug>.lua` (curated drops), `<kind>/<slug>.lua`
+(one `Data:AddList` + `Data:AddListLoot` per curated list), `locales/enUS/*.lua` (the standalone
+fallback names). Excluded from LuaLS and StyLua. The provenance header in these files
+intentionally still says `.contribute/tools` (see `src/CLAUDE.md`).
+
+### `modules/<name>/` — built-in content modules
+
+One folder per module (`items`, `raids`, `dungeons`, `crafting`, `pvp`, `collections`,
+`reputation`), each a `<name>.lua` + `<name>.xml` loader listed in `modules/modules.xml`. They
+hold no data and use **only the public API a third-party addon would** — never give them private
+hooks. `items` is a `query = true` module (the whole DB with search box and filter dropdown).
+`raids`/`dungeons` are `display = "tiles"` modules whose `getChildren` returns explicit
+`FL.InstanceFolder(mapID)` lines (commented out until an instance has curated loot). The other
+four return `FL.ListFolders(kind)`.
+
+### `src/ui/` — the main window (Blizzard-style XML layout + Lua mixin)
+
+XML `mixin=`/`name=` attributes need globals, so mixins and the window frame are globals prefixed
+`ForeverLoot…` (also exposed on `app.ui.*`). Together with the public API table these are the
+only sanctioned globals.
+
+- `mainwindow.lua/.xml` — `ForeverLootMainWindow`: `PortraitFrameBaseTemplate`, a dark two-column
+  interior (`LeftPane` = the views, `RightPane` = meta data, both `UI-Character-Info-*-BG` atlases
+  stretched to 900x620, split by `common-framedivider`) and icon tabs down the right edge
+  (`ForeverLootSideTabTemplate` = `LargeSideTabButtonTemplate`, a *Frame*, so clicks come through
+  `SetCustomOnMouseUpHandler`). Browser-style tabs: one per open *view* (icon = deepest node with
+  one, tooltip = title) plus a `+` tab; right-click closes; `RebuildTabs()` relays the strip from
+  a pool. Draggable; position saved to `profile.window`. Root node from `app.api:GetRootNode()`;
+  listens to `OnModulesChanged`, `OnDataChanged`, `OnFiltersChanged`.
+- `view.lua` + `templates.xml` — a view fills the left column: header row (back button +
+  breadcrumbs left, search box + filter dropdown right) over a divider, one `Content` page of rows
+  with Blizzard `PagingControls` bottom-right. Navigation is a `path` stack over `ForeverLoot.Node`
+  trees (`Push`/`PopTo`/`Back` → `Refresh`). `Refresh()` rebuilds elements + page layout
+  (navigation, query/size changes); `Render()` only redraws the current page (page flips, item
+  info arriving). Children come from `view:GetChildren(node)`: static `children`, dynamic
+  `getChildren`, or a `query` folder whose entries are `Query.Run` over the DB with per-node
+  query state (`view.queries`); query folders show the debounced `SearchBox` and the
+  `FilterDropdown` (Blizzard_Menu `WowStyle1FilterDropdownTemplate`, menu generated from the
+  filter registry).
+  - A **row** is icon, name in quality color, drop chance top-right, slot bottom-left and
+    armor/weapon type bottom-right (`itemKindTexts`), both red when the character can't equip
+    the item — read from the tooltip's slot line via the hidden `ForeverLootScanTooltip`
+    (`scanEquipErrors`), which is exact for this client's proficiencies.
+  - `display = "tiles"` (raids, dungeons) draws `ForeverLootTileTemplate` cards:
+    `background`/`backgroundCoords` picture, name on top, `info` (level range by default) and
+    `infoRight` in the bottom corners, three per line.
+  - `display = "cards"` (an instance's boss list) draws `ForeverLootCardTemplate`: the same
+    bevelled list-button atlas with the entry's `portrait` standing on the left, name and info
+    beside it (boss level/type, drops of interest, a quest "!" for `quests`), two per line.
+  - Section headers use the `UI-Character-Info-Title` plate; groups are row-sized labels.
+
+### Annotations (not in the TOC)
+
+- `src/types.lua` — declares the `ForeverLoot` private-table class (`app.*` fields),
+  `ForeverLoot.DB`, `ForeverLoot.UI` and `ForeverLoot.FramePool`. When a file adds a member to
+  `app`, add a matching `---@field` here.
+- `src/types_blizzard.lua` — Blizzard UI mixins the UI inherits from (`SidePanelTabButtonMixin`,
+  `PortraitFrameMixin`, `PagingControlsMixin`, …), limited to the methods we use, because the
+  full ones are only in Ketho's opt-in FrameXML annotations. Extend a stub (verified against
+  `BlizzardInterfaceCode`) when using a new method.
+
+### Other
+
+- `lib/` — vendored Ace3, LibStub, CallbackHandler, LibDBIcon (+ LibDataBroker). Excluded from
+  LuaLS and StyLua; update by replacing the folder, don't patch.
+- `assets/` — currently empty and not tracked; prefer the client's own atlases/textures (see the
+  root `CLAUDE.md`). Only put something here when nothing in the game files will do.
+
+## Conventions
+
+- Prototype-style Ace modules: define methods on a local `module` table and pass it to
+  `addon:NewModule("Name", module, …)`; state lives on the object Ace returns (see
+  `minimapbutton.lua`).
+- Comments and docs may say a Blizzard frame served as "an example"; never inherit, call or
+  anchor to retail/Classic frames. Camelot-shipped templates are fine.
+- After changing the API surface, data layout (`Data.ITEM` ↔ `src/generate.ts`), or module
+  behavior visible to addons, update `docs/API.md` in the same change.

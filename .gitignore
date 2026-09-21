@@ -2,4 +2,4 @@ node_modules/
 .cache/
 dist/
 .contribute/inbox/*
-!.contribute/inbox/README.md
+!.contribute/inbox/.gitkeep
