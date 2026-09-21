@@ -1,0 +1,30 @@
+{
+  "name": "Timbermaw Hold",
+  "icon": "Interface\\Icons\\Achievement_Reputation_01",
+  "faction": 576,
+  "rewards": {
+    "Friendly": [
+      { "item": 22392, "name": "Formula: Enchant 2H Weapon - Agility" },
+      { "item": 20253, "name": "Pattern: Warbear Harness" },
+      { "item": 20254, "name": "Pattern: Warbear Woolies" },
+      { "item": 13484, "name": "Recipe: Transmute Earth to Water" }
+    ],
+    "Honored": [
+      { "item": 19445, "name": "Formula: Enchant Weapon - Agility" },
+      { "item": 19202, "name": "Pattern: Heavy Timbermaw Belt" },
+      { "item": 19326, "name": "Pattern: Might of the Timbermaw" },
+      { "item": 19215, "name": "Pattern: Wisdom of the Timbermaw" }
+    ],
+    "Revered": [
+      { "item": 228982, "name": "Formula: Enchant Shield - Law of Nature" },
+      { "item": 19204, "name": "Pattern: Heavy Timbermaw Boots" },
+      { "item": 19218, "name": "Pattern: Mantle of the Timbermaw" },
+      { "item": 19327, "name": "Pattern: Timbermaw Brawlers" },
+      { "item": 251470, "name": "Plans: Bagh Nakh" },
+      { "item": 251469, "name": "Plans: Stormcarver" }
+    ],
+    "Exalted": [
+      { "item": 21326, "name": "Defender of the Timbermaw" }
+    ]
+  }
+}

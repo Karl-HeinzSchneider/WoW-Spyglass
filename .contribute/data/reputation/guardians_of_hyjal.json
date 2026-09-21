@@ -1,0 +1,13 @@
+{
+  "name": "Guardians of Hyjal",
+  "icon": "Interface\\Icons\\Achievement_Reputation_01",
+  "faction": 2765,
+  "rewards": {
+    "Revered": [
+      { "item": 274379, "name": "Rousing Seed Pod" }
+    ],
+    "Exalted": [
+      { "item": 274025, "name": "Guardians of Hyjal Tabard" }
+    ]
+  }
+}

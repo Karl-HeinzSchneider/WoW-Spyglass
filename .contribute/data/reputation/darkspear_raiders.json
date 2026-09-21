@@ -1,0 +1,36 @@
+{
+  "name": "Darkspear Raiders",
+  "icon": "Interface\\Icons\\Achievement_Reputation_01",
+  "info": "Horde",
+  "faction": 2798,
+  "rewards": {
+    "Friendly": [
+      { "item": 272059, "name": "Darkspear Voodoo Seal" },
+      { "item": 272061, "name": "Darkspear Voodoo Seal" },
+      { "item": 272060, "name": "Relentless Raider's Seal" },
+      { "item": 272062, "name": "Relentless Raider's Seal" }
+    ],
+    "Honored": [
+      { "item": 272068, "name": "Darkspear Signet" },
+      { "item": 272069, "name": "Darkspear Signet" },
+      { "item": 272070, "name": "Darkspear Signet" },
+      { "item": 272071, "name": "Darkspear Signet" },
+      { "item": 272072, "name": "Darkspear Warding Pendant" },
+      { "item": 272073, "name": "Darkspear Warding Pendant" },
+      { "item": 272074, "name": "Darkspear Warding Pendant" },
+      { "item": 272075, "name": "Darkspear Warding Pendant" },
+      { "item": 272064, "name": "Insurgent's Band" },
+      { "item": 272065, "name": "Insurgent's Band" },
+      { "item": 272066, "name": "Insurgent's Band" },
+      { "item": 272067, "name": "Insurgent's Band" }
+    ],
+    "Exalted": [
+      { "item": 276502, "name": "Darkspear Battle Tabard" },
+      { "item": 272105, "name": "Darkspear Pauldrons" },
+      { "item": 272095, "name": "Raider Gauntlets" },
+      { "item": 272096, "name": "Raider Gauntlets" },
+      { "item": 272097, "name": "Raider Handwraps" },
+      { "item": 272098, "name": "Raider Handwraps" }
+    ]
+  }
+}

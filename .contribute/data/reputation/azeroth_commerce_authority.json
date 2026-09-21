@@ -1,0 +1,15 @@
+{
+  "name": "Azeroth Commerce Authority",
+  "icon": "Interface\\Icons\\Achievement_Reputation_01",
+  "info": "Alliance",
+  "faction": 2586,
+  "rewards": {
+    "Honored": [
+      { "item": 270888, "name": "Advertising License Application" }
+    ],
+    "Exalted": [
+      { "item": 262765, "name": "Azeroth Commerce Authority Tabard" },
+      { "item": 280449, "name": "Skyborne Tabard" }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Ratchet",
+  "icon": "Interface\\Icons\\Achievement_Reputation_01",
+  "faction": 470,
+  "rewards": {
+    "Friendly": [
+      { "item": 274740, "name": "Quilted Cloak" },
+      { "item": 274742, "name": "Ratchet Wristwraps" },
+      { "item": 274741, "name": "Rumpled Kilt" }
+    ],
+    "Honored": [
+      { "item": 274744, "name": "Barrens Basher" },
+      { "item": 274743, "name": "Defective Samophlange" }
+    ],
+    "Revered": [
+      { "item": 274021, "name": "Barrens Headband" }
+    ]
+  }
+}

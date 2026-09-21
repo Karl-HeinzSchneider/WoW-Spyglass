@@ -1,0 +1,19 @@
+{
+  "name": "Powderfuse",
+  "icon": "Interface\\Icons\\Achievement_Reputation_01",
+  "faction": 2827,
+  "rewards": {
+    "Friendly": [
+      { "item": 276200, "name": "Crawler's Clackers" },
+      { "item": 276202, "name": "Disengagement Ring" },
+      { "item": 276201, "name": "Misplaced Pantaloons" }
+    ],
+    "Honored": [
+      { "item": 276203, "name": "Primitive Fishing Pole" },
+      { "item": 276204, "name": "Thrash's Trash" }
+    ],
+    "Revered": [
+      { "item": 276199, "name": "Haughty Fellow's Monocle" }
+    ]
+  }
+}

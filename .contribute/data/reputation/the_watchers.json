@@ -1,0 +1,33 @@
+{
+  "name": "The Watchers",
+  "icon": "Interface\\Icons\\Achievement_Reputation_01",
+  "faction": 2819,
+  "rewards": {
+    "Friendly": [
+      { "item": 275969, "name": "Brilliant Watcher's Signet" },
+      { "item": 275968, "name": "Ferocious Watcher's Signet" },
+      { "item": 275971, "name": "Stalwart Watcher's Signet" },
+      { "item": 275970, "name": "Vigilant Watcher's Signet" }
+    ],
+    "Honored": [
+      { "item": 275973, "name": "Brilliant Watcher's Signet" },
+      { "item": 275972, "name": "Ferocious Watcher's Signet" },
+      { "item": 277153, "name": "Intricate Filigree" },
+      { "item": 277519, "name": "Nelanna's Enchanted Jewel" },
+      { "item": 275975, "name": "Stalwart Watcher's Signet" },
+      { "item": 275974, "name": "Vigilant Watcher's Signet" }
+    ],
+    "Revered": [
+      { "item": 275977, "name": "Brilliant Watcher's Signet" },
+      { "item": 275976, "name": "Ferocious Watcher's Signet" },
+      { "item": 275980, "name": "Stalwart Watcher's Signet" },
+      { "item": 275979, "name": "Vigilant Watcher's Signet" }
+    ],
+    "Exalted": [
+      { "item": 275982, "name": "Brilliant Watcher's Signet" },
+      { "item": 275981, "name": "Ferocious Watcher's Signet" },
+      { "item": 275984, "name": "Stalwart Watcher's Signet" },
+      { "item": 275983, "name": "Vigilant Watcher's Signet" }
+    ]
+  }
+}

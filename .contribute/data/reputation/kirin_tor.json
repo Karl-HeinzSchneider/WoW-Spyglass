@@ -1,0 +1,20 @@
+{
+  "name": "Kirin Tor",
+  "icon": "Interface\\Icons\\Achievement_Reputation_01",
+  "faction": 2740,
+  "rewards": {
+    "Friendly": [
+      { "item": 276986, "name": "Pattern: Azure Gustwoven Hood" },
+      { "item": 276987, "name": "Pattern: Azure Gustwoven Spaulders" },
+      { "item": 276990, "name": "Pattern: Azure Stormsewn Cowl" },
+      { "item": 276991, "name": "Pattern: Azure Stormsewn Epaulets" },
+      { "item": 276988, "name": "Pattern: Azure Windraveled Cover" },
+      { "item": 276989, "name": "Pattern: Azure Windraveled Drapes" },
+      { "item": 276984, "name": "Plans: Azure Skyforged Helm" },
+      { "item": 276985, "name": "Plans: Azure Skyforged Pauldrons" }
+    ],
+    "Exalted": [
+      { "item": 285327, "name": "Kirin Tor Tabard" }
+    ]
+  }
+}

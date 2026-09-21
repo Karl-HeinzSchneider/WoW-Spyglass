@@ -1,0 +1,36 @@
+{
+  "name": "Theramore Expeditionary Force",
+  "icon": "Interface\\Icons\\Achievement_Reputation_01",
+  "info": "Alliance",
+  "faction": 2799,
+  "rewards": {
+    "Friendly": [
+      { "item": 271903, "name": "Enriched Seal" },
+      { "item": 271905, "name": "Enriched Seal" },
+      { "item": 271904, "name": "Volunteer's Lucky Seal" },
+      { "item": 271906, "name": "Volunteer's Lucky Seal" }
+    ],
+    "Honored": [
+      { "item": 271913, "name": "Militant's Band" },
+      { "item": 271914, "name": "Militant's Band" },
+      { "item": 271915, "name": "Militant's Band" },
+      { "item": 271916, "name": "Militant's Band" },
+      { "item": 271917, "name": "Seal of the Expedition" },
+      { "item": 271918, "name": "Seal of the Expedition" },
+      { "item": 271919, "name": "Seal of the Expedition" },
+      { "item": 271920, "name": "Seal of the Expedition" },
+      { "item": 271908, "name": "Theramore Signet" },
+      { "item": 271909, "name": "Theramore Signet" },
+      { "item": 271910, "name": "Theramore Signet" },
+      { "item": 271911, "name": "Theramore Signet" }
+    ],
+    "Exalted": [
+      { "item": 276504, "name": "Theramore Battle Tabard" },
+      { "item": 271940, "name": "Theramore Gauntlets" },
+      { "item": 271941, "name": "Theramore Gauntlets" },
+      { "item": 271945, "name": "Theramore Handwraps" },
+      { "item": 271946, "name": "Theramore Handwraps" },
+      { "item": 271955, "name": "Theramore Pauldrons" }
+    ]
+  }
+}

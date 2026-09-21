@@ -1,0 +1,21 @@
+{
+  "name": "Everlook",
+  "icon": "Interface\\Icons\\Achievement_Reputation_01",
+  "faction": 577,
+  "rewards": {
+    "Friendly": [
+      { "item": 274758, "name": "Coldmetal Guard" },
+      { "item": 274756, "name": "Impractical Headwarmer" },
+      { "item": 274755, "name": "Steamwheedle Grips" },
+      { "item": 274757, "name": "Substandard Belt Chain" }
+    ],
+    "Honored": [
+      { "item": 274760, "name": "Everlook Delivery Bot" },
+      { "item": 274759, "name": "Everlook Pathcarver" },
+      { "item": 274761, "name": "Parachute-Priest Pager" }
+    ],
+    "Revered": [
+      { "item": 274024, "name": "Fizzbolt's Fashionable Fedora" }
+    ]
+  }
+}

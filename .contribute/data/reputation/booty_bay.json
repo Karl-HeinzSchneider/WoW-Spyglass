@@ -1,0 +1,19 @@
+{
+  "name": "Booty Bay",
+  "icon": "Interface\\Icons\\Achievement_Reputation_01",
+  "faction": 21,
+  "rewards": {
+    "Friendly": [
+      { "item": 274745, "name": "Deckswabber's Mitts" },
+      { "item": 274746, "name": "Sea Giant's Toe Ring" },
+      { "item": 274747, "name": "Soggy Boots" }
+    ],
+    "Honored": [
+      { "item": 274748, "name": "Booty Bay Bruiser's Buckshot" },
+      { "item": 274749, "name": "Souvenier Sea Shell" }
+    ],
+    "Revered": [
+      { "item": 274022, "name": "Tough Guy's Eyepatch" }
+    ]
+  }
+}

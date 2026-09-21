@@ -1,0 +1,19 @@
+{
+  "name": "Gadgetzan",
+  "icon": "Interface\\Icons\\Achievement_Reputation_01",
+  "faction": 369,
+  "rewards": {
+    "Friendly": [
+      { "item": 274750, "name": "Reflective Wristguards" },
+      { "item": 274752, "name": "Sandstorm Cover" },
+      { "item": 274751, "name": "Sunburn Spaulders" }
+    ],
+    "Honored": [
+      { "item": 274753, "name": "Jhordy's Misplaced Screwdriver" },
+      { "item": 274754, "name": "Suspicious Spare Part" }
+    ],
+    "Revered": [
+      { "item": 274023, "name": "Stolen Wastewander Cowl" }
+    ]
+  }
+}
