@@ -72,8 +72,8 @@ Getting records into the repository, either route:
 
 1. **SavedVariables** — copy
    `World of Warcraft/_classic_beta_/WTF/Account/<ACCOUNT>/SavedVariables/ForeverLoot_Scraper.lua`
-   (written on logout and `/reload`; legacy `ForeverLoot.lua` files from before the scraper
-   split are accepted too) into `inbox/`, or pass its path: `npm run import -- <path>`.
+   (written on logout and `/reload`) into `inbox/`, or pass its path:
+   `npm run import -- <path>`.
 2. **`/fl export`** — shows the same data as JSON to copy into a `.json` file for `inbox/` or an
    issue. Each export holds only records new since the previous one (`/fl export all` repeats
    everything).

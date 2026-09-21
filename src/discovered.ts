@@ -113,19 +113,14 @@ function normalize(root: unknown, source: string): Discovered {
   };
 }
 
-/**
- * Loads a scraper SavedVariables file or a `/fl export` JSON file. The former core location is
- * accepted so exports recorded before the addon split remain importable.
- */
+/** Loads a scraper SavedVariables file or a `/fl export` JSON file. */
 export function loadDiscovered(path: string): Discovered {
   const text = readFileSync(path, "utf-8");
   if (extname(path).toLowerCase() === ".json") return normalize(JSON.parse(text), path);
   const globals: Map<string, LuaValue> = parseSavedVariables(text);
-  const discovered =
-    luaGet(globals.get("ForeverLootScraperDB"), "global", "discovered") ??
-    luaGet(globals.get("ForeverLootDB"), "global", "discovered");
+  const discovered = luaGet(globals.get("ForeverLootScraperDB"), "global", "discovered");
   if (!discovered) {
-    throw new Error(`${path}: no ForeverLootScraperDB.global.discovered (or legacy ForeverLootDB.global.discovered) in it; is this the scraper SavedVariables file written after a /reload or logout?`);
+    throw new Error(`${path}: no ForeverLootScraperDB.global.discovered in it; is this the scraper SavedVariables file written after a /reload or logout?`);
   }
   return normalize(discovered, path);
 }

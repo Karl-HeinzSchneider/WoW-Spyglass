@@ -13,12 +13,12 @@ the data workflow it feeds is in `.contribute/CLAUDE.md`.
   (its `---@field`s are here, not in a `types.lua`), stores `app.api`, `app.coreAPIVersion`, and
   `app.log`, a tiny logger whose `chat` / `info` / `debug` forward to `ForeverLoot.Log` /
   `ForeverLoot.LogAt` so output shares the core's prefix and level setting.
-- `src/db.lua` — `app.dbDefaults` for AceDB: `global.dbVersion`, `global.migratedFromCore`,
+- `src/db.lua` — `app.dbDefaults` for AceDB: `global.dbVersion`,
   `global.discovered = { build?, locale?, items = { [id] = DiscoveredItem }, loot = { [encounterID] = { id, kills, items = { [itemID] = count } } } }`,
   `global.scan = { next?, to?, limit? }` (progress that survives `/reload`). The Lua classes
   `DiscoveredItem/DiscoveredLoot/Discovered/ScanProgress` are the shape `src/discovered.ts` reads.
 - `src/ace.lua` — `app.addon`, the AceAddon object (AceEvent). `OnInitialize` opens
-  `ForeverLootScraperDB` and runs `migrateCoreState` (below). `OnEnable` registers `scan` and
+  `ForeverLootScraperDB`. `OnEnable` registers `scan` and
   `export` through `ForeverLoot:RegisterCommand`, `OnDisable` unregisters them; the handlers are
   stored on the object so unregistering matches.
 - `src/discovery.lua` — `app.discovery`, the Ace module doing all the work (see below).
@@ -57,21 +57,11 @@ Two ways in, both written to `discovered` and merged into `ForeverLoot.Data` rig
   (`{ version, build, locale, items, loot }`) is the same `discovered` table, and
   `src/discovered.ts` reads either the SavedVariables file or this JSON.
 
-## Migration from the combined addon
-
-`migrateCoreState` runs once per account (`global.migratedFromCore`): it merges legacy
-`ForeverLootDB.global.discovered` and `.scan` into the scraper DB (keeping the larger kill/item
-counts, never overwriting existing records), deletes those fields and the old `dbVersion` from
-`ForeverLootDB`, and logs once. `tests/lua/scraper_migration.lua` (`npm run test:lua`) executes
-the real `ForeverLoot_Scraper.lua`, `src/db.lua` and `src/ace.lua` under stock Lua with stubbed
-`ForeverLoot`, `LibStub`, AceAddon and AceDB — so **those three files must not call WoW API at
-load time or in `OnInitialize`** beyond what the stubs provide, and the migration must stay
-idempotent. `src/discovered.ts` accepts both SavedVariables layouts for old dumps.
-
 ## Conventions
 
 - Everything user-facing goes through `log:chat`; diagnostics through `log:info`/`log:debug`.
-- Never touch `ForeverLootDB` except in the one-time migration; never require a core private.
+- Never touch `ForeverLootDB`; never require a core private. There is no migration code and no
+  legacy SavedVariables layout to support: nobody used the addon before the scraper split.
 - Globals: only `ForeverLootScraperDB` and the XML-required `ForeverLootScraper…` mixin/frame.
 - When the recorded shape changes, change `src/db.lua`'s classes, `src/discovered.ts`'s
   `normalize`, and the `DiscoveredItem` ↔ `ScannedItem` mapping in `src/items.ts` together.

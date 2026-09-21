@@ -40,7 +40,6 @@ local _, app = ...
 ---@class ForeverLootScraper.DB.Global
 local global = {
     dbVersion = 1,
-    migratedFromCore = false,
     ---@type ForeverLootScraper.Discovered
     discovered = {
         items = {},

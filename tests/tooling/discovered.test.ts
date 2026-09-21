@@ -15,19 +15,28 @@ const discovered = `{
   },
 }`;
 
-for (const savedVariable of ["ForeverLootScraperDB", "ForeverLootDB"] as const) {
-  test(`loads ${savedVariable} discovered data`, () => {
-    const dir = mkdtempSync(join(tmpdir(), "foreverloot-discovered-"));
-    const path = join(dir, `${savedVariable}.lua`);
-    try {
-      writeFileSync(path, `${savedVariable} = { ["global"] = { ["discovered"] = ${discovered} } }\n`, "utf-8");
-      const result = loadDiscovered(path);
-      assert.equal(result.locale, "deDE");
-      assert.equal(result.items.get(101)?.name, "Test");
-      assert.equal(result.loot.get(7)?.kills, 4);
-      assert.equal(result.loot.get(7)?.items.get(101), 2);
-    } finally {
-      rmSync(dir, { recursive: true, force: true });
-    }
-  });
-}
+test("loads ForeverLootScraperDB discovered data", () => {
+  const dir = mkdtempSync(join(tmpdir(), "foreverloot-discovered-"));
+  const path = join(dir, "ForeverLoot_Scraper.lua");
+  try {
+    writeFileSync(path, `ForeverLootScraperDB = { ["global"] = { ["discovered"] = ${discovered} } }\n`, "utf-8");
+    const result = loadDiscovered(path);
+    assert.equal(result.locale, "deDE");
+    assert.equal(result.items.get(101)?.name, "Test");
+    assert.equal(result.loot.get(7)?.kills, 4);
+    assert.equal(result.loot.get(7)?.items.get(101), 2);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test("rejects a SavedVariables file without scraper data", () => {
+  const dir = mkdtempSync(join(tmpdir(), "foreverloot-discovered-"));
+  const path = join(dir, "ForeverLoot.lua");
+  try {
+    writeFileSync(path, `ForeverLootDB = { ["global"] = { ["discovered"] = ${discovered} } }\n`, "utf-8");
+    assert.throws(() => loadDiscovered(path), /no ForeverLootScraperDB\.global\.discovered/);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});

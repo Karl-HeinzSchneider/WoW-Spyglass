@@ -55,9 +55,8 @@ the data they consume is described in `.contribute/CLAUDE.md`.
   `parseSavedVariables`, `luaGet`. Not a Lua interpreter.
 - `discovered.ts` — `Discovered` (what the scraper recorded: `locale`, `build`, items, per-boss
   kills and seen items) and `loadDiscovered(path)`: a `.json` from `/fl export` or a `.lua`
-  SavedVariables file, reading `ForeverLootScraperDB.global.discovered` or the legacy
-  `ForeverLootDB.global.discovered`. Records carry their own `id`, which wins over the container
-  key.
+  SavedVariables file, reading `ForeverLootScraperDB.global.discovered` (the only layout; there
+  is no legacy one). Records carry their own `id`, which wins over the container key.
 - `import.ts` — `importDiscovered`: merges items into the scans (newest observation wins, names
   kept per locale) and observed drops into the instance files (creating them, slug from the
   instance name); new rows get a `chance` only after `MIN_KILLS_FOR_CHANCE` = 10 kills; existing
@@ -76,11 +75,9 @@ the data they consume is described in `.contribute/CLAUDE.md`.
 ## Tests (`tests/`)
 
 - `tests/tooling/*.test.ts` — node:test, `npm run test:tooling` (`tsx --test`). Cover pure
-  functions (`loadDiscovered` for both SavedVariables layouts, reputation list flattening and
+  functions (`loadDiscovered` from SavedVariables, reputation list flattening and
   serialization). Add one next to a new parsing/serialization rule.
-- `tests/lua/scraper_migration.lua` — `npm run test:lua`, stock Lua 5.1 (`lua` on PATH): loads
-  the real scraper bootstrap files with stubbed `ForeverLoot`/`LibStub`/Ace and asserts the
-  one-time SavedVariables migration. Run from the repo root (relative `loadfile` paths).
+- There is no Lua test suite; Lua is checked by `npm run check:lua` (syntax) and in-game.
 
 ## Conventions
 

@@ -49,10 +49,9 @@ collection state and transport: scan progress, discovered item rows, observed bo
 encoding, exports, the export dialog, and scan/export commands.
 
 The scraper registers `/fl scan` and `/fl export` through the public command-extension API. Its
-AceAddon object, database, frames, and modules remain private. On first load it merges legacy
-`ForeverLootDB.global.discovered` and `global.scan` values into `ForeverLootScraperDB`, removes the
-old fields, and records an idempotent migration marker. Repository import tooling accepts both
-SavedVariables layouts.
+AceAddon object, database, frames, and modules remain private. It never reads or writes
+`ForeverLootDB`; everything it records lives in `ForeverLootScraperDB`, which is also the only
+SavedVariables layout the repository import tooling reads.
 
 ## Tooling boundary
 

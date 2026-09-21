@@ -16,7 +16,7 @@ builds its item database. It is a monorepo of three addon distribution units and
 | `ForeverLoot_Scraper/` | Optional contributor companion: `/fl scan` item scanning, loot observation, `/fl export`. `ForeverLootScraperDB`. | [ForeverLoot_Scraper/CLAUDE.md](ForeverLoot_Scraper/CLAUDE.md) |
 | `.contribute/` | Everything the database is built from: in-game item scans, curated drops and item lists, the pinned client build. `inbox/` is the gitignored drop folder for `npm run import`. | [.contribute/CLAUDE.md](.contribute/CLAUDE.md) |
 | `src/` | Root Node/TypeScript tooling: validate and fix the curated data, import in-game recordings, generate the addon data, check the addons, link them into a client, package releases. | [src/CLAUDE.md](src/CLAUDE.md) |
-| `tests/` | `tests/tooling/*.test.ts` (node:test, run by `npm run test:tooling`) and `tests/lua/*.lua` (stock Lua 5.1 harnesses with stubs, run by `npm run test:lua`). | see `src/CLAUDE.md` |
+| `tests/` | `tests/tooling/*.test.ts` (node:test, run by `npm run test:tooling`). | see `src/CLAUDE.md` |
 | `docs/` | Human-facing documentation: `docs/API.md` (the public `ForeverLoot` contract, must be updated with every API change) and `docs/architecture.md` (addon ownership and integration rules). | — |
 
 A direct child directory with a same-named `.toc` is an addon; the tooling discovers addons that
@@ -43,7 +43,7 @@ wago.tools' `Map` + `DungeonEncounter` tables for the build pinned in `.contribu
 
 | Command | Does |
 |---|---|
-| `npm run check` | Everything below that validates, in order: typecheck, tooling tests, addon boundaries, data, generated staleness, Lua syntax, Lua tests, XML schema. Run it before finishing a change. |
+| `npm run check` | Everything below that validates, in order: typecheck, tooling tests, addon boundaries, data, generated staleness, Lua syntax, XML schema. Run it before finishing a change. |
 | `npm run check:data` | Validates the curated JSON against the game tables and the scans. |
 | `npm run fix` | Same, and rewrites names, resolves name-only rows to ids, adds missing encounters. |
 | `npm run gen` (`generate`) | Writes both generated trees. `npm run generate:check` fails when they are stale (CI). |
@@ -51,7 +51,7 @@ wago.tools' `Map` + `DungeonEncounter` tables for the build pinned in `.contribu
 | `npm run check:addons` | TOC entries exist, companions depend on `ForeverLoot`, no dependency cycles, and **no file under `ForeverLoot/` contains the string `ForeverLoot_Locale` or `ForeverLoot_Scraper`** (comments included). |
 | `npm run check:lua` | `luac -p` on every addon Lua file (needs a Lua 5.1 `luac` on PATH). |
 | `npm run check:xml` | Validates every addon XML against Blizzard's `UI.xsd` via python + lxml; skipped when `../_data/BlizzardInterfaceCode` is absent. |
-| `npm run test:lua` / `test:tooling` / `typecheck` | The Lua harnesses (needs `lua`), the node:test suite, `tsc --noEmit`. |
+| `npm run test:tooling` / `typecheck` | The node:test suite, `tsc --noEmit`. |
 | `npm run dev:link -- <AddOns dir>` | Symlink every addon into a client. |
 | `npm run package:addons` | Deterministic `dist/ForeverLoot-<version>.zip` of all addons (gitignored). |
 
