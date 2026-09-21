@@ -4,7 +4,7 @@ import { LIST_DIRS, LIST_KINDS, type ListKind } from "./config.js";
 import { type Checker, type CuratedItemRow } from "./curated.js";
 
 /**
- * A curated item list: .contribute/<kind>/<name>.json, one file per profession (crafting),
+ * A curated item list: .contribute/data/<kind>/<name>.json, one file per profession (crafting),
  * battleground or rank set (pvp), collection type (collections) or faction (reputation). The
  * file name is the list's id, `name` is what the browser shows, and the rows are items with
  * the fields the kind knows (see ROW_FIELDS). Unlike the instance files, nothing here comes

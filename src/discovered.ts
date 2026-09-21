@@ -5,7 +5,8 @@ import { type ScannedItem } from "./items.js";
 import { type LuaValue, luaGet, parseSavedVariables } from "./savedvars.js";
 
 /**
- * What the addon recorded in-game (`ForeverLootDB.global.discovered`, see ForeverLoot/src/core/discovery.lua):
+ * What the scraper recorded in-game (`ForeverLootScraperDB.global.discovered`, see
+ * ForeverLoot_Scraper/src/discovery.lua):
  * scanned items with everything GetItemInfo/GetItemStats return, and per boss (DungeonEncounter
  * id) how often it was killed and which items were seen dropping. `/fl export` writes the same
  * shape as JSON.
@@ -113,14 +114,18 @@ function normalize(root: unknown, source: string): Discovered {
 }
 
 /**
- * Loads a SavedVariables file (`ForeverLoot.lua`, uses `ForeverLootDB.global.discovered`) or a
- * `/fl export` JSON file.
+ * Loads a scraper SavedVariables file or a `/fl export` JSON file. The former core location is
+ * accepted so exports recorded before the addon split remain importable.
  */
 export function loadDiscovered(path: string): Discovered {
   const text = readFileSync(path, "utf-8");
   if (extname(path).toLowerCase() === ".json") return normalize(JSON.parse(text), path);
   const globals: Map<string, LuaValue> = parseSavedVariables(text);
-  const discovered = luaGet(globals.get("ForeverLootDB"), "global", "discovered");
-  if (!discovered) throw new Error(`${path}: no ForeverLootDB.global.discovered in it (is it ForeverLoot's SavedVariables file, written after a /reload or logout?)`);
+  const discovered =
+    luaGet(globals.get("ForeverLootScraperDB"), "global", "discovered") ??
+    luaGet(globals.get("ForeverLootDB"), "global", "discovered");
+  if (!discovered) {
+    throw new Error(`${path}: no ForeverLootScraperDB.global.discovered (or legacy ForeverLootDB.global.discovered) in it; is this the scraper SavedVariables file written after a /reload or logout?`);
+  }
   return normalize(discovered, path);
 }

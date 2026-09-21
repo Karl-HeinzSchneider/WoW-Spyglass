@@ -66,11 +66,11 @@ function addon:OnSlashCommand(input)
     elseif cmd == "reset" then
         self.db:ResetProfile()
         log:chat("Profile reset")
-    elseif cmd == "export" then
-        app.discovery:ExportCommand(a)
-    elseif cmd == "scan" then
-        app.discovery:ScanCommand(a, b, c)
+    elseif app.commands:Run(cmd, a, b, c) then
+        return
     else
-        log:chat("Commands: /fl, /fl export [all], /fl scan <from> [to], /fl scan resume, /fl scan limit <n|off>, /fl loglevel <level>, /fl reset")
+        local usages = app.commands:GetUsages()
+        local suffix = #usages > 0 and ", " .. table.concat(usages, ", ") or ""
+        log:chat("Commands: /fl, /fl loglevel <level>, /fl reset%s", suffix)
     end
 end

@@ -8,3 +8,9 @@
 ## X-License: MIT
 
 ForeverLoot_Scraper.lua
+src\db.lua
+src\json.lua
+src\ace.lua
+src\discovery.lua
+src\ui\exportframe.lua
+src\ui\exportframe.xml

@@ -12,8 +12,9 @@ an addon distribution unit.
 | `ForeverLoot_Locale` | Additional UI translations and generated localized item, instance and boss names | none planned | `ForeverLoot` |
 | `ForeverLoot_Scraper` | Item scanning, loot observation, contribution exports and scraper commands | `ForeverLootScraperDB` | `ForeverLoot` |
 
-Generated non-English names have been extracted into the locale addon. The scraper implementation
-has not been extracted yet; its shell establishes the future distribution and state boundary.
+Generated non-English names live in the locale addon. Scanning, discovery state, JSON export, and
+the export dialog live in the scraper addon. The core operates independently when either companion
+is absent or disabled.
 
 ## Runtime contract
 
@@ -45,11 +46,13 @@ other clients.
 
 The core owns browsing and durable user-facing loot history. The scraper owns contributor-facing
 collection state and transport: scan progress, discovered item rows, observed boss drops, JSON
-encoding, exports, and scan/export commands.
+encoding, exports, the export dialog, and scan/export commands.
 
-Until extraction, discovery code and its existing data remain in `ForeverLoot`. Step 10 must
-migrate or read `ForeverLootDB.global.discovered` and `ForeverLootDB.global.scan` before new state
-is written exclusively to `ForeverLootScraperDB`.
+The scraper registers `/fl scan` and `/fl export` through the public command-extension API. Its
+AceAddon object, database, frames, and modules remain private. On first load it merges legacy
+`ForeverLootDB.global.discovered` and `global.scan` values into `ForeverLootScraperDB`, removes the
+old fields, and records an idempotent migration marker. Repository import tooling accepts both
+SavedVariables layouts.
 
 ## Tooling boundary
 

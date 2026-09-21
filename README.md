@@ -7,7 +7,7 @@ monorepo.
 
 - `ForeverLoot/` — the distributable core addon.
 - `ForeverLoot_Locale/` — additional generated locale data loaded through the public core API.
-- `ForeverLoot_Scraper/` — the contributor scraper boundary; extraction follows later.
+- `ForeverLoot_Scraper/` — optional in-game scanning, loot observation and contribution exports.
 - `.contribute/data/` — canonical item scans and curated game data.
 - `.contribute/inbox/` — ignored SavedVariables and JSON exports waiting to be imported.
 - `src/` — the Node.js/TypeScript validation, import, generation, development and packaging tools.

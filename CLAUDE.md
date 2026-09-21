@@ -15,8 +15,8 @@ the code itself. To try changes, run `npm run dev:link -- "<WoW>/Interface/AddOn
 addon directory into the client, then run `/reload` in-game.
 
 The one generated part is the database. The root TypeScript tooling lives in `src/` and uses
-`package.json` (`npm install` once,
-Node 20+) builds `ForeverLoot/db/generated/` and `ForeverLoot_Locale/db/generated/` from three inputs: the **item scans** in
+`package.json` (`npm install` once, Node 20+). It builds `ForeverLoot/db/generated/` and
+`ForeverLoot_Locale/db/generated/` from three inputs: the **item scans** in
 `.contribute/data/items/items_<n>.json` (recorded in-game by `/fl scan`, one file per 10 000 ids,
 machine-written by `npm run import`), the **curated drops** in `.contribute/data/dungeons|raids/*.json`,
 the **curated item lists** in `.contribute/data/crafting|pvp|collections|reputation/*.json` (one
@@ -24,7 +24,7 @@ file per profession / reward source / collection / faction; nothing in them come
 table), and wago.tools' `Map` + `DungeonEncounter` tables (instances, bosses, their names) for
 the build pinned in `.contribute/data/config.json`. Commands: `npm run fix` (validate ids, fill names, add missing bosses),
 `npm run gen` (write both generated trees), `npm run generate:check` (staleness, for CI),
-`npm run import` (merge what the addon recorded in-game — SavedVariables `ForeverLoot.lua` /
+`npm run import` (merge what the scraper recorded in-game — SavedVariables `ForeverLoot_Scraper.lua` /
 `/fl export` JSON files dropped into the gitignored `.contribute/inbox/`, or one file given as
 `-- <path>` — into the scans and the curated files). Never edit
 either generated tree by hand. Contributor docs in `.contribute/README.md`.
@@ -52,17 +52,8 @@ validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-la
   Ace* → LibDataBroker/LibDBIcon). Listed first in the TOC.
 - `ForeverLoot/src/core/logger.lua` — `app.logger`. Leveled, colored chat logging; `log("x")` is `log:info("x")`.
 - `ForeverLoot/src/core/db.lua` — `app.dbDefaults`, the AceDB-3.0 defaults. `profile` = user settings,
-  `char` = per-character data (loot history), `global` = account-wide (`global.discovered`: items
-  and boss drops recorded in-game, the shape `npm run import` reads). Change the schema here.
-- `ForeverLoot/src/core/discovery.lua` — `app.discovery`, AceAddon module. `/fl scan <from> [to]` /
-  `resume` / `<from> <to> force` / `stop` requests ids via `RequestLoadItemDataByID` and records
-  every existing item in full (`GetItemInfo` + `GetItemStats`, stat keys shortened) into
-  `global.discovered.items`, 1000 new per run, progress in `global.scan`. Also records items the
-  DB lacks from `LOOT_OPENED`/`START_LOOT_ROLL` and boss drops (attributed to the last successful
-  `ENCOUNTER_END`, checked against the looted creature when `GetLootSourceInfo` exists). Everything
-  is merged into `Data` at once and on login; a record identical to the shipped row is pruned then.
-  Listed in the TOC after the generated data because it takes `app.data` at load time.
-- `ForeverLoot/src/core/json.lua` — `app.json.encode`, the minimal JSON encoder behind `/fl export`.
+  `char` = per-character data (loot history), `global` = account-wide core schema version. Scraper
+  collection state is deliberately not part of this database.
 - `ForeverLoot/src/core/registry.lua` — `app.api`, also the **public global `ForeverLoot`** (contract in
   `docs/API.md`). `RegisterModule(def)` validates and stores module definitions; `GetRootNode()`
   builds the virtual tree the window browses (one node per module, sorted by `order`). Events via
@@ -157,8 +148,6 @@ validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-la
     state (`view.queries`); query folders show the `SearchBox` (debounced) and `FilterDropdown`
     (Blizzard_Menu `WowStyle1FilterDropdownTemplate`, menu generated from the filter registry).
   - The window's root comes from `app.api:GetRootNode()`; it listens to `OnModulesChanged`.
-  - `exportframe.lua/.xml` — `ForeverLootExportFrame` (`BasicFrameTemplateWithInset` +
-    `InputScrollFrameTemplate`), the `/fl export` text box; `app.ui.exportFrame:ShowText(text)`.
 - `ForeverLoot/ForeverLoot.lua` — root entry file, loaded last.
 - `ForeverLoot/lib/` — vendored Ace3, LibStub, CallbackHandler, LibDBIcon. Excluded from LuaLS and StyLua.
 - `ForeverLoot/assets/` — textures, icons, sounds referenced from code. Prefer the client's own atlases
@@ -166,8 +155,11 @@ validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-la
 - `ForeverLoot_Locale/` — the locale companion. Its generated tree contains every non-English
   configured/scanned name table and registers them through `ForeverLoot.Data:AddNames`; each file
   returns immediately unless its locale matches. The core keeps generated enUS fallback names.
-- `ForeverLoot_Scraper/` — currently an inert companion shell with `ForeverLootScraperDB`. Step 10
-  moves scanning, discovery, export and their commands here, including migration of old core state.
+- `ForeverLoot_Scraper/` — optional contributor addon with its own AceAddon object and
+  `ForeverLootScraperDB`. `src/discovery.lua` scans item ids, observes loot/boss kills and merges
+  discoveries through `ForeverLoot.Data`; `src/json.lua` and `src/ui/exportframe.*` implement
+  `/fl export`. It registers `scan`/`export` through the public core command API and migrates the
+  legacy `ForeverLootDB.global.discovered`/`scan` fields once.
 - `src/` — root TypeScript tooling. It reads `.contribute/data/`, generates addon data, validates
   the monorepo, links addon directories for development and packages them for releases.
 

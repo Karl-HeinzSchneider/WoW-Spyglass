@@ -80,12 +80,25 @@ local log = app.logger
 ---@field Data ForeverLoot.Data  # item database (ForeverLoot/src/data/data.lua)
 ---@field Filters ForeverLoot.Filters  # filter registry (ForeverLoot/src/data/filters.lua)
 ---@field Query ForeverLoot.QueryAPI  # query runner (ForeverLoot/src/data/query.lua)
+---@field API_VERSION integer
+---@field Log fun(fmt: string, ...: any)
+---@field LogAt fun(level: string, fmt: string, ...: any): boolean
+---@field RegisterCommand fun(self: ForeverLoot.API, name: string, handler: fun(a?: string, b?: string, c?: string), usage: string): boolean
+---@field UnregisterCommand fun(self: ForeverLoot.API, name: string, handler?: function): boolean
 ---@field RegisterCallback fun(target: table, event: string, method: string|function, ...)
 ---@field UnregisterCallback fun(target: table, event: string)
 ---@field UnregisterAllCallbacks fun(target: table)
 ---@field callbacks CallbackHandlerRegistry
 local api = {}
 api.API_VERSION = 1
+
+---@class ForeverLoot.CommandDef
+---@field handler fun(a?: string, b?: string, c?: string)
+---@field usage string
+
+---@type table<string, ForeverLoot.CommandDef>
+local commands = {}
+local reservedCommands = { show = true, loglevel = true, reset = true }
 
 -- True for anything the window can open: static, dynamic and query folders.
 ---@param node ForeverLoot.Node
@@ -99,6 +112,83 @@ end
 ---@param ... any
 function api.Log(fmt, ...)
     log:chat(fmt, ...)
+end
+
+-- Leveled output for companion/third-party addons; uses the core user's current log threshold.
+---@param level string  # ERROR, WARN, INFO, VERBOSE, DEBUG or SILLY
+---@param fmt string
+---@param ... any
+---@return boolean validLevel
+function api.LogAt(level, fmt, ...)
+    local value = type(level) == "string" and log.level[level:upper()] or nil
+    if not value then
+        log:error("LogAt: unknown level %q", tostring(level))
+        return false
+    end
+    log:print(value, fmt, ...)
+    return true
+end
+
+-- Adds a subcommand to the core `/fl` command without exposing the core AceAddon object.
+---@param name string
+---@param handler fun(a?: string, b?: string, c?: string)
+---@param usage string
+---@return boolean ok
+function api:RegisterCommand(name, handler, usage)
+    name = type(name) == "string" and name:lower() or ""
+    if not name:match("^[a-z][a-z0-9_-]*$") or type(handler) ~= "function" or type(usage) ~= "string" then
+        log:error("RegisterCommand: expected (command name, function, usage string)")
+        return false
+    end
+    if reservedCommands[name] or commands[name] then
+        log:error("RegisterCommand: command %q is already registered or reserved", name)
+        return false
+    end
+    commands[name] = { handler = handler, usage = usage }
+    return true
+end
+
+---@param name string
+---@param handler? function  # when supplied, only unregisters the same handler
+---@return boolean removed
+function api:UnregisterCommand(name, handler)
+    name = type(name) == "string" and name:lower() or ""
+    local def = commands[name]
+    if not def or (handler and def.handler ~= handler) then
+        return false
+    end
+    commands[name] = nil
+    return true
+end
+
+-- Private dispatcher used by the core AceAddon. Errors stay contained in the registering addon.
+---@class ForeverLoot.CommandRegistry
+local commandRegistry = {}
+app.commands = commandRegistry
+
+---@param name string
+---@param ... string?
+---@return boolean found
+function commandRegistry:Run(name, ...)
+    local def = commands[name]
+    if not def then
+        return false
+    end
+    local ok, err = pcall(def.handler, ...)
+    if not ok then
+        log:error("Command %q failed: %s", name, tostring(err))
+    end
+    return true
+end
+
+---@return string[]
+function commandRegistry:GetUsages()
+    local usages = {}
+    for _, def in pairs(commands) do
+        usages[#usages + 1] = def.usage
+    end
+    table.sort(usages)
+    return usages
 end
 
 app.api = api

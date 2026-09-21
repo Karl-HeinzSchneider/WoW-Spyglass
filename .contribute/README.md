@@ -26,6 +26,8 @@ table; the two only meet through item ids.
 
 ## Items: scanning
 
+Scanning and export commands require the `ForeverLoot_Scraper` companion addon.
+
 ```text
 /fl scan 1              scan upward from id 1; stops after 1000 new items
 /fl scan resume         continue where the last scan stopped (survives /reload)
@@ -43,8 +45,8 @@ after 20 000 ids in a row that don't exist. Every item that exists is recorded w
 level, required level, class/subclass, slot, bind, icon, sell price, stack size, set, expansion,
 stats) and is usable in the addon right away.
 
-To get the records into the repository, copy your SavedVariables file
-(`World of Warcraft/_classic_beta_/WTF/Account/<ACCOUNT>/SavedVariables/ForeverLoot.lua`, written
+To get the records into the repository, copy the scraper's SavedVariables file
+(`World of Warcraft/_classic_beta_/WTF/Account/<ACCOUNT>/SavedVariables/ForeverLoot_Scraper.lua`, written
 on logout and `/reload`) into `inbox/` and run:
 
 ```sh

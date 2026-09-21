@@ -1,4 +1,4 @@
----@type string, ForeverLoot
+---@type string, ForeverLootScraper
 local _, app = ...
 
 -- Minimal JSON encoder for `/fl export`; there is nothing to decode in-game.
@@ -6,7 +6,7 @@ local _, app = ...
 -- numerically), so the output is stable. There are no arrays: a table keyed by item ids that
 -- happen to run 1..n must not turn into a list with the ids lost, so nothing is guessed.
 
----@class ForeverLoot.JSON
+---@class ForeverLootScraper.JSON
 local json = {}
 app.json = json
 

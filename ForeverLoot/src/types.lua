@@ -11,21 +11,18 @@
 ---@field dbDefaults ForeverLoot.DBDefaults
 ---@field db ForeverLoot.DB
 ---@field minimapButton ForeverLoot.MinimapButton
----@field discovery ForeverLoot.Discovery  # in-game recorder of items/drops the DB lacks
----@field json ForeverLoot.JSON  # encoder for /fl export
 ---@field api ForeverLoot.API  # also the global `ForeverLoot`
 ---@field data ForeverLoot.Data  # item database; also `ForeverLoot.Data`
 ---@field filters ForeverLoot.Filters  # filter registry; also `ForeverLoot.Filters`
 ---@field query ForeverLoot.QueryAPI  # query runner; also `ForeverLoot.Query`
+---@field commands ForeverLoot.CommandRegistry  # private dispatcher; registration is public API
 ---@field ui ForeverLoot.UI
 
 -- UI namespace. Mixins are globals (XML requires it) but also exposed here.
 ---@class ForeverLoot.UI
 ---@field mainWindow ForeverLoot.MainWindow  # set in ForeverLootMainWindowMixin:OnLoad
----@field exportFrame ForeverLoot.ExportFrame  # set in ForeverLootExportFrameMixin:OnLoad
 ---@field MainWindowMixin ForeverLoot.MainWindow
 ---@field SideTabMixin ForeverLoot.SideTab
----@field ExportFrameMixin ForeverLoot.ExportFrame
 ---@field ViewMixin ForeverLoot.View
 ---@field ListRowMixin ForeverLoot.ListRow
 ---@field TileMixin ForeverLoot.Tile

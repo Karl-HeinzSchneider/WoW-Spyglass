@@ -2,7 +2,7 @@
 
 	<!-- /fl export: a plain dialog with one big text box (InputScrollFrameTemplate from
 	     Blizzard_SharedXML/Shared/InputBox). maxLetters 0 = unlimited. -->
-	<Frame name="ForeverLootExportFrame" mixin="ForeverLootExportFrameMixin"
+	<Frame name="ForeverLootScraperExportFrame" mixin="ForeverLootScraperExportFrameMixin"
 		inherits="BasicFrameTemplateWithInset"
 		parent="UIParent" toplevel="true" enableMouse="true" movable="true" clampedToScreen="true" hidden="true" frameStrata="DIALOG">
 		<Size x="600" y="440"/>

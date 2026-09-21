@@ -1,14 +1,14 @@
----@type string, ForeverLoot
+---@type string, ForeverLootScraper
 local _, app = ...
 
-local log = app.logger
+local log = app.log
 local addon = app.addon
-local Data = app.data
+local Data = app.api.Data
 local ITEM = Data.ITEM
 
 -- Learns from the game what the shipped database doesn't have yet. WoW Forever's items are
 -- server-side, so no data export describes them; the client does, once it has fetched an item.
--- Two ways in, both recorded in `global.discovered` (see src/core/db.lua) and merged into
+-- Two ways in, both recorded in `ForeverLootScraperDB.global.discovered` and merged into
 -- ForeverLoot.Data right away:
 --
 --   /fl scan   asks the server about id ranges and records every item that exists — the way
@@ -39,14 +39,14 @@ local SCAN_SETTLE = 3
 
 local LOOT_SLOT_ITEM = LOOT_SLOT_ITEM or 1
 
----@class ForeverLoot.LastKill
+---@class ForeverLootScraper.LastKill
 ---@field id integer  # encounterID
 ---@field time number  # GetTime() at ENCOUNTER_END
 ---@field seen table<integer, boolean>  # itemIDs already counted for this kill
 ---@field creatures table<integer, boolean>  # creatureIDs of the encounter's units, may be empty
 ---@field hasCreatures boolean
 
----@class ForeverLoot.Scan
+---@class ForeverLootScraper.Scan
 ---@field from integer
 ---@field to? integer  # nil = open-ended
 ---@field next integer  # first id not requested yet
@@ -58,15 +58,15 @@ local LOOT_SLOT_ITEM = LOOT_SLOT_ITEM or 1
 ---@field ticker any
 
 -- Prototype: Ace attaches it to the real module object via __index (see minimapbutton.lua).
----@class ForeverLoot.Discovery : AceModule, AceEvent-3.0
----@field lastKill? ForeverLoot.LastKill
----@field scan? ForeverLoot.Scan
+---@class ForeverLootScraper.Discovery : AceModule, AceEvent-3.0
+---@field lastKill? ForeverLootScraper.LastKill
+---@field scan? ForeverLootScraper.Scan
 ---@field pendingItems table<integer, boolean>  # item loads waiting for the client
 ---@field merged table<integer, boolean>  # rows in Data that came from us, not from the shipped files
 local module = {}
-app.discovery = addon:NewModule("Discovery", module, "AceEvent-3.0") --[[@as ForeverLoot.Discovery]]
+app.discovery = addon:NewModule("Discovery", module, "AceEvent-3.0") --[[@as ForeverLootScraper.Discovery]]
 
----@return ForeverLoot.Discovered
+---@return ForeverLootScraper.Discovered
 local function discovered()
     return app.db.global.discovered
 end
@@ -91,7 +91,7 @@ local function readStats(link)
     return any and stats or nil
 end
 
----@param item ForeverLoot.DiscoveredItem
+---@param item ForeverLootScraper.DiscoveredItem
 ---@return ForeverLoot.ItemRow
 local function toRow(item)
     return {
@@ -187,7 +187,7 @@ function module:OnDisable()
 end
 
 ---@param encounterID integer
----@return ForeverLoot.DiscoveredLoot
+---@return ForeverLootScraper.DiscoveredLoot
 function module:LootEntry(encounterID)
     local loot = discovered().loot
     local entry = loot[encounterID]
@@ -265,7 +265,7 @@ function module:RecordItem(itemID, force)
     if not name then
         return false
     end
-    ---@type ForeverLoot.DiscoveredItem
+    ---@type ForeverLootScraper.DiscoveredItem
     local item = {
         id = itemID, -- the table key too, but a record must identify itself on its own
         name = name,
@@ -428,7 +428,7 @@ function module:StartScan(from, to, force)
         )
         return
     end
-    ---@type ForeverLoot.Scan
+    ---@type ForeverLootScraper.Scan
     local scan =
         { from = from, to = to, next = from, found = 0, force = force or false, gap = 0, pending = {}, done = false }
     self.scan = scan
@@ -632,5 +632,5 @@ function module:ExportCommand(what)
         count,
         what == "all" and "" or "; /fl export all repeats earlier ones"
     )
-    app.ui.exportFrame:ShowText(app.json.encode(export))
+    app.exportFrame:ShowText(app.json.encode(export))
 end

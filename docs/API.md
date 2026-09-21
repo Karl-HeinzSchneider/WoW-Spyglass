@@ -219,6 +219,7 @@ Constructors (optional sugar):
   `side`, `group`) and are grouped by the row's `group`, else the kind's default (standing / honor rank /
   skill tier), else the item's type
 - `ForeverLoot.Log(fmt, ...)` — prefixed chat message
+- `ForeverLoot.LogAt(level, fmt, ...)` — threshold-aware diagnostic output using the core logger
 - `ForeverLoot.PlaceholderItem(name, quality, icon)` — hard-coded display data, for prototyping
 - `ForeverLoot.PlaceholderItems(prefix, count)` — generates `count` placeholder items
 
@@ -232,14 +233,33 @@ Constructors (optional sugar):
   each carrying `moduleID`). Cached until the module set changes.
 - `ForeverLoot.API_VERSION` — currently `1`.
 
+### Slash-command extensions
+
+Companion and third-party addons can add a subcommand to the core `/fl` dispatcher without
+accessing its private AceAddon object:
+
+```lua
+local function handleScan(from, to, mode)
+    -- ...
+end
+
+ForeverLoot:RegisterCommand("scan", handleScan, "/fl scan <from> [to]")
+ForeverLoot:UnregisterCommand("scan", handleScan)
+```
+
+Names are lowercase command words. `show`, `loglevel`, and `reset` are reserved by the core;
+duplicate registration fails. A handler receives up to three parsed arguments and its errors are
+caught and logged. The usage string is appended to `/fl` help while registered.
+
 ## Item database
 
 `ForeverLoot.Data` holds every scanned item and where it drops. ForeverLoot ships its data as
 generated files (`ForeverLoot/db/generated/` plus non-English names in
 `ForeverLoot_Locale/db/generated/`, built by the root TypeScript tools from in-game item scans, the
 curated drop JSON in `.contribute/` and wago.tools' instance/encounter tables); other addons may
-add to it with the same calls. The addon itself adds whatever it scans or sees dropping in-game
-(`global.discovered`, see `ForeverLoot/src/core/discovery.lua`), so `Data.items` can grow at runtime.
+add to it with the same calls. The scraper companion adds whatever it scans or sees dropping
+in-game (`ForeverLootScraperDB.global.discovered`, see `ForeverLoot_Scraper/src/discovery.lua`),
+so `Data.items` can grow at runtime while the scraper is enabled.
 Instance ids are `Map` ids, boss ids are `DungeonEncounter` ids. Tables are integer-keyed:
 
 ```lua
@@ -258,7 +278,7 @@ Data.names.enUS      -- { items = { [5188] = "Filled Vessel" }, bosses = {...}, 
 Curated item lists (`Data.lists[kind][id]`) back the Crafting, PvP, Collections and Reputation
 modules: `kind` is one of `"crafting"`, `"pvp"`, `"collections"`, `"reputation"` (other addons may
 add kinds of their own and browse them with `ListFolders`), `id` is a string unique within the kind
-(the shipped ones are the `.contribute/<kind>/<id>.json` file names; prefix yours). A list is
+(the shipped ones are the `.contribute/data/<kind>/<id>.json` file names; prefix yours). A list is
 `{ name, icon?, background?, backgroundCoords?, info?, order?, factionID?, skillLineID? }`; its rows
 are `{ itemID, field = value, ... }` with the kind's fields by name (`standing`, `rank`, `skill`,
 `spell`, `source`, `side`) and an optional `group` label.

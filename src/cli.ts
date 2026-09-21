@@ -8,7 +8,7 @@
  *                            game data and the scans
  *   npm run fix              same, and rewrite names / add missing encounters
  *   npm run import           merge what the addon recorded in-game (SavedVariables
- *                            ForeverLoot.lua and /fl export JSON files in .contribute/inbox/)
+ *                            ForeverLoot_Scraper.lua and /fl export JSON files in .contribute/inbox/)
  *                            into .contribute/data/items/ and the curated loot files
  *   npm run import -- FILE   same for one file anywhere
  */
@@ -43,7 +43,7 @@ if (command === "import") {
     }
   }
   if (importPaths.length === 0) {
-    console.error(`nothing to import: put a SavedVariables ForeverLoot.lua or a /fl export .json into ${relative(ROOT, INBOX_DIR)}/, or pass a path`);
+    console.error(`nothing to import: put a SavedVariables ForeverLoot_Scraper.lua or a /fl export .json into ${relative(ROOT, INBOX_DIR)}/, or pass a path`);
     process.exit(2);
   }
 }

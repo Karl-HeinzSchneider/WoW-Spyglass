@@ -9,6 +9,7 @@
   ],
   "diagnostics.globals": [
     "ForeverLootDB",
+    "ForeverLootScraperDB",
     "LibStub",
     "HandleModifiedItemClick",
     "OTHER",
