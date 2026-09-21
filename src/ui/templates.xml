@@ -91,26 +91,28 @@
 				</Texture>
 			</Layer>
 			<Layer level="BORDER">
-				<!-- Darkens the picture towards the top and bottom edges for the texts. -->
+				<!-- Darkens the picture behind the texts, fading in towards the top and bottom
+				     edges. How dark the tiles look is mostly these two alphas (0 = untouched
+				     picture, 1 = black at the edge) and the bands' heights. -->
 				<Texture parentKey="TopShade">
-					<Size y="30"/>
+					<Size y="26"/>
 					<Anchors>
 						<Anchor point="TOPLEFT" x="1" y="-1"/>
 						<Anchor point="TOPRIGHT" x="-1" y="-1"/>
 					</Anchors>
 					<Gradient orientation="VERTICAL">
 						<MinColor r="0" g="0" b="0" a="0"/>
-						<MaxColor r="0" g="0" b="0" a="0.7"/>
+						<MaxColor r="0" g="0" b="0" a="0.45"/>
 					</Gradient>
 				</Texture>
 				<Texture parentKey="BottomShade">
-					<Size y="24"/>
+					<Size y="20"/>
 					<Anchors>
 						<Anchor point="BOTTOMLEFT" x="1" y="1"/>
 						<Anchor point="BOTTOMRIGHT" x="-1" y="1"/>
 					</Anchors>
 					<Gradient orientation="VERTICAL">
-						<MinColor r="0" g="0" b="0" a="0.7"/>
+						<MinColor r="0" g="0" b="0" a="0.45"/>
 						<MaxColor r="0" g="0" b="0" a="0"/>
 					</Gradient>
 				</Texture>
