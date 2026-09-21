@@ -372,11 +372,12 @@ local TILE_PICTURE_BOOST = 0.3
 
 -- Clicking and hovering work exactly like a row, so those handlers are shared.
 ---@class ForeverLoot.Tile : Button
----@field Frame Texture
+---@field Card Texture
 ---@field Background Texture
 ---@field Boost Texture
 ---@field TopShade Texture
 ---@field BottomShade Texture
+---@field Mask MaskTexture
 ---@field Icon Texture
 ---@field Name FontString
 ---@field Info FontString

@@ -72,25 +72,26 @@
 		</Scripts>
 	</Button>
 
-	<!-- A tile: an entry drawn as a picture card in lists with `display = "tiles"`. The
-	     background fills the card inside a 1px dark frame, the name sits across the top and
-	     two small texts (info / infoRight) in the bottom corners, over a shade so they read on
-	     any picture. Without a background the card is dark and shows the entry's icon. -->
+	<!-- A tile: an entry drawn as a picture card in lists with `display = "tiles"`. The card is
+	     the client's bevelled dark list button (common-button-list-large, stretched to the tile);
+	     the picture sits inside the bevel and is cut to the button's own silhouette by using the
+	     same atlas as a mask, so its corners follow the bevel. The name sits across the top and two
+	     small texts (info / infoRight) in the bottom corners, over a shade so they read on any
+	     picture. Without a background the card stays plain and shows the entry's icon. -->
 	<Button name="ForeverLootTileTemplate" mixin="ForeverLootTileMixin" registerForClicks="LeftButtonUp, RightButtonUp" virtual="true">
 		<Size x="196" y="84"/>
 		<Layers>
 			<!-- Textures of one layer only draw in a defined order when their sub-levels differ,
-			     so the frame, picture and boost get explicit ones (frame lowest). -->
+			     so card, picture and boost get explicit ones (card lowest). -->
 			<Layer level="BACKGROUND" textureSubLevel="-2">
-				<Texture parentKey="Frame" setAllPoints="true">
-					<Color r="0" g="0" b="0" a="0.8"/>
-				</Texture>
+				<Texture parentKey="Card" atlas="common-button-list-large" setAllPoints="true"/>
 			</Layer>
 			<Layer level="BACKGROUND" textureSubLevel="-1">
+				<!-- The 5px inset is the bevel that stays visible around the picture. -->
 				<Texture parentKey="Background">
 					<Anchors>
-						<Anchor point="TOPLEFT" x="1" y="-1"/>
-						<Anchor point="BOTTOMRIGHT" x="-1" y="1"/>
+						<Anchor point="TOPLEFT" x="5" y="-5"/>
+						<Anchor point="BOTTOMRIGHT" x="-5" y="5"/>
 					</Anchors>
 				</Texture>
 			</Layer>
@@ -111,8 +112,8 @@
 				<Texture parentKey="TopShade">
 					<Size y="26"/>
 					<Anchors>
-						<Anchor point="TOPLEFT" x="1" y="-1"/>
-						<Anchor point="TOPRIGHT" x="-1" y="-1"/>
+						<Anchor point="TOPLEFT" relativeKey="$parent.Background"/>
+						<Anchor point="TOPRIGHT" relativeKey="$parent.Background"/>
 					</Anchors>
 					<Gradient orientation="VERTICAL">
 						<MinColor r="0" g="0" b="0" a="0"/>
@@ -122,14 +123,27 @@
 				<Texture parentKey="BottomShade">
 					<Size y="20"/>
 					<Anchors>
-						<Anchor point="BOTTOMLEFT" x="1" y="1"/>
-						<Anchor point="BOTTOMRIGHT" x="-1" y="1"/>
+						<Anchor point="BOTTOMLEFT" relativeKey="$parent.Background"/>
+						<Anchor point="BOTTOMRIGHT" relativeKey="$parent.Background"/>
 					</Anchors>
 					<Gradient orientation="VERTICAL">
 						<MinColor r="0" g="0" b="0" a="0.45"/>
 						<MaxColor r="0" g="0" b="0" a="0"/>
 					</Gradient>
 				</Texture>
+				<!-- The card's silhouette, shrunk to the picture rect, clips the picture and shades. -->
+				<MaskTexture parentKey="Mask" atlas="common-button-list-large" hWrapMode="CLAMPTOBLACKADDITIVE" vWrapMode="CLAMPTOBLACKADDITIVE">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.Background"/>
+						<Anchor point="BOTTOMRIGHT" relativeKey="$parent.Background"/>
+					</Anchors>
+					<MaskedTextures>
+						<MaskedTexture childKey="Background"/>
+						<MaskedTexture childKey="Boost"/>
+						<MaskedTexture childKey="TopShade"/>
+						<MaskedTexture childKey="BottomShade"/>
+					</MaskedTextures>
+				</MaskTexture>
 			</Layer>
 			<Layer level="ARTWORK">
 				<Texture parentKey="Icon" hidden="true">
@@ -140,32 +154,24 @@
 				</Texture>
 				<FontString parentKey="Name" inherits="GameFontHighlightMedium" justifyH="CENTER" wordwrap="false">
 					<Anchors>
-						<Anchor point="TOPLEFT" x="8" y="-8"/>
-						<Anchor point="TOPRIGHT" x="-8" y="-8"/>
+						<Anchor point="TOPLEFT" x="12" y="-11"/>
+						<Anchor point="TOPRIGHT" x="-12" y="-11"/>
 					</Anchors>
 				</FontString>
 				<FontString parentKey="InfoRight" inherits="GameFontHighlightSmall" justifyH="RIGHT" wordwrap="false">
 					<Anchors>
-						<Anchor point="BOTTOMRIGHT" x="-7" y="6"/>
+						<Anchor point="BOTTOMRIGHT" x="-11" y="9"/>
 					</Anchors>
 				</FontString>
 				<FontString parentKey="Info" inherits="GameFontHighlightSmall" justifyH="LEFT" wordwrap="false">
 					<Anchors>
-						<Anchor point="BOTTOMLEFT" x="7" y="6"/>
+						<Anchor point="BOTTOMLEFT" x="11" y="9"/>
 						<Anchor point="RIGHT" relativeKey="$parent.InfoRight" relativePoint="LEFT" x="-6" y="0"/>
 					</Anchors>
 				</FontString>
 			</Layer>
-			<Layer level="HIGHLIGHT">
-				<Texture alphaMode="ADD">
-					<Anchors>
-						<Anchor point="TOPLEFT" x="1" y="-1"/>
-						<Anchor point="BOTTOMRIGHT" x="-1" y="1"/>
-					</Anchors>
-					<Color r="1" g="1" b="1" a="0.15"/>
-				</Texture>
-			</Layer>
 		</Layers>
+		<HighlightTexture atlas="common-button-list-large-hover" setAllPoints="true" alphaMode="ADD"/>
 		<Scripts>
 			<OnClick method="OnClick"/>
 			<OnEnter method="OnEnter"/>

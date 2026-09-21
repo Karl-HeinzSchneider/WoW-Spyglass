@@ -139,7 +139,8 @@ validation of every XML file against Blizzard's `UI.xsd`, the LuaLS CLI (`lua-la
 - `ForeverLoot.lua` — root entry file, loaded last.
 - `lib/` — vendored Ace3, LibStub, CallbackHandler, LibDBIcon. Excluded from LuaLS and StyLua.
 - `locales/` — localization string tables.
-- `assets/` — textures, icons, sounds referenced from code.
+- `assets/` — textures, icons, sounds referenced from code. Prefer the client's own atlases
+  (they scale with the frame); the client does not load `.png` files.
 
 ## XML files
 
