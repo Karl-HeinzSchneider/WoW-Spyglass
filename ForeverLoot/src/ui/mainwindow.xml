@@ -13,11 +13,11 @@
 
 	<!-- Modeled on Blizzard_UIPanels_Game/Camelot/CharacterFrame.xml: the same portrait frame,
 	     a dark two-column interior (LeftPaneHost / RightPaneHost) and icon tabs down the right
-	     edge. Only the size differs: 900x620 instead of 631x484, so the pane backgrounds are
+	     edge. Only the size differs: 900x640 instead of 631x484, so the pane backgrounds are
 	     stretched instead of drawn at atlas size. -->
 	<Frame name="ForeverLootMainWindow" mixin="ForeverLootMainWindowMixin" inherits="PortraitFrameBaseTemplate"
 		parent="UIParent" toplevel="true" enableMouse="true" movable="true" clampedToScreen="true" hidden="true">
-		<Size x="900" y="620"/>
+		<Size x="900" y="640"/>
 		<Anchors>
 			<Anchor point="CENTER"/>
 		</Anchors>

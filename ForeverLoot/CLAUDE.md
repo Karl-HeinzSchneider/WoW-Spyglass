@@ -123,7 +123,7 @@ only sanctioned globals.
 
 - `mainwindow.lua/.xml` — `ForeverLootMainWindow`: `PortraitFrameBaseTemplate`, a dark two-column
   interior (`LeftPane` = the views, `RightPane` = meta data, both `UI-Character-Info-*-BG` atlases
-  stretched to 900x620, split by `common-framedivider`) and icon tabs down the right edge
+  stretched to 900x640, split by `common-framedivider`) and icon tabs down the right edge
   (`ForeverLootSideTabTemplate` = `LargeSideTabButtonTemplate`, a *Frame*, so clicks come through
   `SetCustomOnMouseUpHandler`). Browser-style tabs: one per open *view* (icon = deepest node with
   one, tooltip = title) plus a `+` tab; right-click closes; `RebuildTabs()` relays the strip from
