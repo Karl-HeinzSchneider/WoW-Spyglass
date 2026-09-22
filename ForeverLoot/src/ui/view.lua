@@ -15,6 +15,17 @@ app.ui = app.ui or {}
 
 local FALLBACK_ICON = "Interface\\Icons\\INV_Misc_QuestionMark"
 
+-- Tints an icon's `IconRing` (ForeverLootIconRingTemplate, the slot frame around it) in the item's
+-- quality color; without a quality (folders, spells, custom entries) it keeps its own texture color. Shared by
+-- every widget that shows an icon.
+---@param ring Texture
+---@param quality? Enum.ItemQuality
+local function setIconQuality(ring, quality)
+    local color = quality and ITEM_QUALITY_COLORS[quality] or HIGHLIGHT_FONT_COLOR
+    ring:SetVertexColor(color.r, color.g, color.b)
+end
+app.ui.SetIconQuality = setIconQuality
+
 -- Delay between the last keystroke in the search box and running the query.
 local SEARCH_DEBOUNCE = 0.25
 
@@ -189,6 +200,8 @@ end
 ---@class ForeverLoot.ListRow : Button
 ---@field Backplate Texture
 ---@field Icon Texture
+---@field IconMask MaskTexture
+---@field IconRing Texture
 ---@field Name FontString
 ---@field Chance FontString
 ---@field Sub FontString
@@ -215,6 +228,7 @@ app.ui.ListRowMixin = ForeverLootListRowMixin
 ---@param d ForeverLoot.RowDisplay
 function ForeverLootListRowMixin:SetDisplay(d)
     self.Icon:SetTexture(d.icon or FALLBACK_ICON)
+    setIconQuality(self.IconRing, d.quality)
     self.Name:SetText(d.name)
     -- Items in their quality color, everything else white; both read on the dark pane.
     local color = d.quality and ITEM_QUALITY_COLORS[d.quality] or HIGHLIGHT_FONT_COLOR
@@ -420,6 +434,8 @@ local TILE_PICTURE_BOOST = 0.3
 ---@field BottomShade Texture
 ---@field Mask MaskTexture
 ---@field Icon Texture
+---@field IconMask MaskTexture
+---@field IconRing Texture
 ---@field Name FontString
 ---@field Info FontString
 ---@field InfoRight FontString
@@ -452,6 +468,8 @@ function ForeverLootTileMixin:Init(view, node)
     self.TopShade:SetShown(background ~= nil)
     self.BottomShade:SetShown(background ~= nil)
     self.Icon:SetShown(background == nil)
+    self.IconRing:SetShown(background == nil)
+    setIconQuality(self.IconRing, node.quality)
     if background then
         local c = node.backgroundCoords or { 0, 1, 0, 1 }
         for _, texture in ipairs({ self.Background, self.Boost }) do
@@ -472,6 +490,8 @@ end
 ---@field Card Texture
 ---@field Portrait Texture
 ---@field Icon Texture
+---@field IconMask MaskTexture
+---@field IconRing Texture
 ---@field Arrow Texture
 ---@field QuestIcon Texture
 ---@field Name FontString
@@ -505,6 +525,8 @@ function ForeverLootCardMixin:Init(view, node)
     local portrait = node.portrait
     self.Portrait:SetShown(portrait ~= nil)
     self.Icon:SetShown(portrait == nil)
+    self.IconRing:SetShown(portrait == nil)
+    setIconQuality(self.IconRing, node.quality)
     if portrait then
         self.Portrait:SetTexture(portrait)
     else

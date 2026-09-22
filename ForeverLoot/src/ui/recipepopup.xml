@@ -1,15 +1,34 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
 
-	<!-- A 32x32 item icon with an optional count and a quality-colored border: tooltip on
-	     hover, shift-click links it to chat. Also holds a spell (the recipe itself). -->
+	<!-- A 32x32 item icon in the shared icon frame (mask + ring, see templates.xml) with an
+	     optional count: tooltip on hover, shift-click links it to chat. Also holds a
+	     spell (the recipe itself). -->
 	<Button name="ForeverLootItemSlotTemplate" mixin="ForeverLootItemSlotMixin" registerForClicks="LeftButtonUp, RightButtonUp" virtual="true">
 		<Size x="32" y="32"/>
 		<Layers>
 			<Layer level="BACKGROUND">
-				<Texture parentKey="Icon" setAllPoints="true"/>
+				<Texture parentKey="Icon" setAllPoints="true">
+					<TexCoords left="0.07" right="0.93" top="0.07" bottom="0.93"/>
+				</Texture>
+				<MaskTexture parentKey="IconMask" atlas="UI-HUD-ActionBar-IconFrame-Mask" hWrapMode="CLAMPTOBLACKADDITIVE" vWrapMode="CLAMPTOBLACKADDITIVE">
+					<Size x="46" y="46"/>
+					<Anchors>
+						<Anchor point="CENTER" relativeKey="$parent.Icon"/>
+					</Anchors>
+					<MaskedTextures>
+						<MaskedTexture childKey="Icon"/>
+					</MaskedTextures>
+				</MaskTexture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<Texture parentKey="IconRing" inherits="ForeverLootIconRingTemplate">
+					<Size x="33" y="32"/>
+					<Anchors>
+						<Anchor point="TOPLEFT"/>
+					</Anchors>
+				</Texture>
 			</Layer>
 			<Layer level="OVERLAY">
-				<Texture parentKey="Border" file="Interface\Common\WhiteIconFrame" setAllPoints="true" hidden="true"/>
 				<FontString parentKey="Count" inherits="NumberFontNormal" justifyH="RIGHT" hidden="true">
 					<Anchors>
 						<Anchor point="BOTTOMRIGHT" x="-3" y="2"/>

@@ -11,8 +11,6 @@ local FALLBACK_ICON = "Interface\\Icons\\INV_Misc_QuestionMark"
 local SLOT_SIZE = 32
 local SLOT_GAP = 6
 local PADDING = 12
--- Qualities from this one up get the colored border (white and grey items stay plain).
-local MIN_BORDER_QUALITY = 2
 
 -- What the client knows about an item right now: the cache when it has the item (exact, with
 -- the link), else the database row. Uncached items are requested; GET_ITEM_INFO_RECEIVED redraws.
@@ -30,12 +28,13 @@ local function itemDisplay(itemID)
 end
 
 ----------------------------------------------------------------------------------------------------
--- Item slot: icon, count, quality border; tooltip and chat linking
+-- Item slot: icon in the shared icon frame (ring tinted by quality), count; tooltip and chat linking
 ----------------------------------------------------------------------------------------------------
 
 ---@class ForeverLoot.ItemSlot : Button
 ---@field Icon Texture
----@field Border Texture
+---@field IconMask MaskTexture
+---@field IconRing Texture
 ---@field Count FontString
 ---@field itemID? integer
 ---@field spellID? integer  # a spell instead of an item (an enchant recipe's product)
@@ -51,11 +50,7 @@ function ForeverLootItemSlotMixin:SetItem(itemID, count)
     self.itemID, self.spellID = itemID, nil
     self.link = link
     self.Icon:SetTexture(icon or FALLBACK_ICON)
-    local color = quality and quality >= MIN_BORDER_QUALITY and ITEM_QUALITY_COLORS[quality] or nil
-    if color then
-        self.Border:SetVertexColor(color.r, color.g, color.b)
-    end
-    self.Border:SetShown(color ~= nil)
+    app.ui.SetIconQuality(self.IconRing, quality)
     self.Count:SetText(count and count > 1 and tostring(count) or "")
     self.Count:SetShown(count ~= nil and count > 1)
     return name, quality
@@ -69,7 +64,7 @@ function ForeverLootItemSlotMixin:SetSpell(spellID, icon)
     self.itemID, self.spellID = nil, spellID
     self.link = C_Spell.GetSpellLink(spellID)
     self.Icon:SetTexture(icon or (info and info.iconID) or FALLBACK_ICON)
-    self.Border:Hide()
+    app.ui.SetIconQuality(self.IconRing, nil)
     self.Count:Hide()
 end
 

@@ -1,5 +1,16 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
 
+	<!-- The frame around every square icon, in two parts, both anchored to the widget's `Icon`:
+	     an `IconMask` (UI-HUD-ActionBar-IconFrame-Mask, whose rounded opening is icon-sized at
+	     ~1.45x the icon; inlined per widget because it must name the masked texture) clips the
+	     icon to the frame's inner shape, and `IconRing` is the action bar's bevelled slot frame
+	     (UI-HUD-ActionBar-IconFrame, the pair the client's own bag buttons use), drawn over the
+	     icon at icon size (+1 wide, top-left aligned, as the action button draws it) so its bevel
+	     covers the icon's outer pixels. On items the frame is tinted in the item's quality color
+	     by app.ui.SetIconQuality; anything else keeps the plain frame. Every `Icon` is zoomed in
+	     a little (TexCoords 0.07..0.93) so the dark edge baked into old icons is cropped away. -->
+	<Texture name="ForeverLootIconRingTemplate" atlas="UI-HUD-ActionBar-IconFrame" virtual="true"/>
+
 	<!-- One row in the list:  [icon] Name ............... chance
 	                          Slot ........... Armor type [>]   (arrow only for folders).
 	     The bottom line and the chance are optional; text colors are set in Lua. -->
@@ -21,7 +32,17 @@
 					<Anchors>
 						<Anchor point="LEFT" x="6" y="0"/>
 					</Anchors>
+					<TexCoords left="0.07" right="0.93" top="0.07" bottom="0.93"/>
 				</Texture>
+				<MaskTexture parentKey="IconMask" atlas="UI-HUD-ActionBar-IconFrame-Mask" hWrapMode="CLAMPTOBLACKADDITIVE" vWrapMode="CLAMPTOBLACKADDITIVE">
+					<Size x="46" y="46"/>
+					<Anchors>
+						<Anchor point="CENTER" relativeKey="$parent.Icon"/>
+					</Anchors>
+					<MaskedTextures>
+						<MaskedTexture childKey="Icon"/>
+					</MaskedTextures>
+				</MaskTexture>
 				<Texture parentKey="Arrow" atlas="common-icon-forwardarrow" useAtlasSize="false">
 					<Size x="16" y="16"/>
 					<Anchors>
@@ -55,6 +76,14 @@
 						<Anchor point="RIGHT" relativeKey="$parent.Type" relativePoint="LEFT" x="-8" y="0"/>
 					</Anchors>
 				</FontString>
+			</Layer>
+			<Layer level="ARTWORK" textureSubLevel="1">
+				<Texture parentKey="IconRing" inherits="ForeverLootIconRingTemplate">
+					<Size x="33" y="32"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.Icon"/>
+					</Anchors>
+				</Texture>
 			</Layer>
 			<Layer level="HIGHLIGHT">
 				<Texture file="Interface\QuestFrame\UI-QuestTitleHighlight" alphaMode="ADD">
@@ -151,7 +180,27 @@
 					<Anchors>
 						<Anchor point="CENTER" x="0" y="-2"/>
 					</Anchors>
+					<TexCoords left="0.07" right="0.93" top="0.07" bottom="0.93"/>
 				</Texture>
+				<MaskTexture parentKey="IconMask" atlas="UI-HUD-ActionBar-IconFrame-Mask" hWrapMode="CLAMPTOBLACKADDITIVE" vWrapMode="CLAMPTOBLACKADDITIVE">
+					<Size x="46" y="46"/>
+					<Anchors>
+						<Anchor point="CENTER" relativeKey="$parent.Icon"/>
+					</Anchors>
+					<MaskedTextures>
+						<MaskedTexture childKey="Icon"/>
+					</MaskedTextures>
+				</MaskTexture>
+			</Layer>
+			<Layer level="ARTWORK" textureSubLevel="1">
+				<Texture parentKey="IconRing" inherits="ForeverLootIconRingTemplate" hidden="true">
+					<Size x="33" y="32"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.Icon"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
 				<FontString parentKey="Name" inherits="GameFontHighlightMedium" justifyH="CENTER" wordwrap="false">
 					<Anchors>
 						<Anchor point="TOPLEFT" x="12" y="-11"/>
@@ -203,7 +252,27 @@
 					<Anchors>
 						<Anchor point="LEFT" x="24" y="0"/>
 					</Anchors>
+					<TexCoords left="0.07" right="0.93" top="0.07" bottom="0.93"/>
 				</Texture>
+				<MaskTexture parentKey="IconMask" atlas="UI-HUD-ActionBar-IconFrame-Mask" hWrapMode="CLAMPTOBLACKADDITIVE" vWrapMode="CLAMPTOBLACKADDITIVE">
+					<Size x="52" y="52"/>
+					<Anchors>
+						<Anchor point="CENTER" relativeKey="$parent.Icon"/>
+					</Anchors>
+					<MaskedTextures>
+						<MaskedTexture childKey="Icon"/>
+					</MaskedTextures>
+				</MaskTexture>
+			</Layer>
+			<Layer level="ARTWORK" textureSubLevel="1">
+				<Texture parentKey="IconRing" inherits="ForeverLootIconRingTemplate" hidden="true">
+					<Size x="37" y="36"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.Icon"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
 				<Texture parentKey="Arrow" atlas="common-icon-forwardarrow" useAtlasSize="false">
 					<Size x="16" y="16"/>
 					<Anchors>

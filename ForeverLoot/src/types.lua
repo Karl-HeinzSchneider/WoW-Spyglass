@@ -22,6 +22,7 @@
 ---@class ForeverLoot.UI
 ---@field mainWindow ForeverLoot.MainWindow  # set in ForeverLootMainWindowMixin:OnLoad
 ---@field recipePopup ForeverLoot.RecipePopup  # set in ForeverLootRecipePopupMixin:OnLoad
+---@field SetIconQuality fun(ring: Texture, quality?: Enum.ItemQuality)  # tints an icon's ring in the quality color, nil = plain (view.lua)
 ---@field MainWindowMixin ForeverLoot.MainWindow
 ---@field RecipePopupMixin ForeverLoot.RecipePopup
 ---@field ItemSlotMixin ForeverLoot.ItemSlot
