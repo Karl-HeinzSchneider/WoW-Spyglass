@@ -643,8 +643,7 @@ end
 ---@field headerHeight number
 ---@field headerGap number
 ---@field columnGap number
----@field pages ForeverLoot.PlacedElement[][]  # layout result for the current node
----@field placedCache ForeverLoot.PlacedElement[]  # PlacedElement tables reused by LayoutPages
+---@field pages ForeverLoot.PageRange[]  # layout result for the current node (into `layout`)
 ---@field path ForeverLoot.Node[]
 ---@field onNavigate? fun(view: ForeverLoot.View)
 ---@field pendingItems table<integer, boolean>  # itemIDs whose info hasn't arrived yet
@@ -667,12 +666,21 @@ app.ui.ViewMixin = ForeverLootViewMixin
 ---@field text? string  # header, group
 ---@field node? ForeverLoot.Node  # row, tile, card
 
----@class ForeverLoot.PlacedElement
----@field element ForeverLoot.Element
----@field x number
----@field y number
----@field width number
----@field height number
+-- Where every element of the current layout goes, as parallel arrays indexed by placement
+-- order; a page is a range of them. Shared by all views: only the shown view lays out and
+-- draws (a hidden one refreshes when shown, see Refresh), so one buffer serves every tab
+-- instead of a table per placed row per tab -- a 25k-item list is ~2 MB here, not ~7 MB each.
+---@class ForeverLoot.Layout
+---@field element ForeverLoot.Element[]
+---@field x number[]
+---@field y number[]
+---@field width number[]
+---@field height number[]
+local layout = { element = {}, x = {}, y = {}, width = {}, height = {} }
+
+---@class ForeverLoot.PageRange
+---@field first integer  # index into `layout`
+---@field last integer
 
 -- One element per (kind, node), shared across refreshes: a 25k-item query would otherwise
 -- allocate 25k of them every time the list is rebuilt.
@@ -702,7 +710,6 @@ function ForeverLootViewMixin:OnLoad()
     page.headerPool = CreateFramePool("Frame", page, "ForeverLootPageHeaderTemplate") --[[@as ForeverLoot.FramePool]]
     page.groupPool = CreateFramePool("Frame", page, "ForeverLootGroupLabelTemplate") --[[@as ForeverLoot.FramePool]]
     self.pages = {}
-    self.placedCache = {}
     self.pendingItems = {}
     self.queries = {}
     self.resultCount = 0
@@ -1095,6 +1102,11 @@ end
 -- Called on navigation, query changes, page-size changes and profile refreshes; page flips
 -- and item-info arrivals only need Render().
 function ForeverLootViewMixin:Refresh()
+    -- A hidden view (another tab is selected) shares `layout` with the shown one and would
+    -- overwrite it; it lays itself out in OnShow instead.
+    if not self:IsShown() then
+        return
+    end
     -- The rows are about to change; a recipe popup anchored to one of them would be stale.
     if app.ui.recipePopup and app.ui.recipePopup:IsShown() then
         app.ui.recipePopup:Hide()
@@ -1185,23 +1197,20 @@ end
 -- cards are taller and get a little air between lines). A header never ends a page.
 ---@param elements ForeverLoot.Element[]
 ---@param columns integer
----@return ForeverLoot.PlacedElement[][]
+---@return ForeverLoot.PageRange[]
 function ForeverLootViewMixin:LayoutPages(elements, columns)
     local pages = {}
-    local page, y, column = {}, 0, 0
-    -- The placed tables are reused from refresh to refresh: a 25k-item list would otherwise
-    -- allocate 25k of them each time. They are only referenced through `self.pages`, which
-    -- this call's result replaces.
-    local cache, placedCount = self.placedCache, 0
+    local first, count, y, column = 1, 0, 0, 0 -- first: layout index of the page being filled
+    local elementAt, xAt, yAt, widthAt, heightAt = layout.element, layout.x, layout.y, layout.width, layout.height
     local pageWidth, pageHeight = self.Content:GetSize()
     local columnWidth = (pageWidth - self.columnGap * (columns - 1)) / columns
     local lineHeight = self.rowHeight -- of the line being filled
 
     local function newPage()
-        if #page > 0 then
-            pages[#pages + 1] = page
+        if count >= first then
+            pages[#pages + 1] = { first = first, last = count }
         end
-        page, y, column = {}, 0, 0
+        first, y, column = count + 1, 0, 0
     end
 
     local function newLine()
@@ -1212,14 +1221,8 @@ function ForeverLootViewMixin:LayoutPages(elements, columns)
     end
 
     local function place(element, x, width, height)
-        placedCount = placedCount + 1
-        local item = cache[placedCount]
-        if not item then
-            item = {}
-            cache[placedCount] = item
-        end
-        item.element, item.x, item.y, item.width, item.height = element, x, y, width, height
-        page[#page + 1] = item
+        count = count + 1
+        elementAt[count], xAt[count], yAt[count], widthAt[count], heightAt[count] = element, x, y, width, height
     end
 
     for _, element in ipairs(elements) do
@@ -1265,15 +1268,15 @@ function ForeverLootViewMixin:LayoutPages(elements, columns)
 end
 
 ---@param page ForeverLoot.Page
----@param placed ForeverLoot.PlacedElement[]?
-function ForeverLootViewMixin:RenderPage(page, placed)
+---@param range ForeverLoot.PageRange?
+function ForeverLootViewMixin:RenderPage(page, range)
     page.rowPool:ReleaseAll()
     page.tilePool:ReleaseAll()
     page.cardPool:ReleaseAll()
     page.headerPool:ReleaseAll()
     page.groupPool:ReleaseAll()
-    for _, item in ipairs(placed or {}) do
-        local element = item.element
+    for i = range and range.first or 1, range and range.last or 0 do
+        local element = layout.element[i]
         local frame
         if element.kind == "header" then
             frame = page.headerPool:Acquire() --[[@as ForeverLoot.PageHeader]]
@@ -1291,8 +1294,8 @@ function ForeverLootViewMixin:RenderPage(page, placed)
             frame = page.rowPool:Acquire() --[[@as ForeverLoot.ListRow]]
             frame:Init(self, element.node)
         end
-        frame:SetSize(item.width, item.height)
-        frame:SetPoint("TOPLEFT", page, "TOPLEFT", item.x, -item.y)
+        frame:SetSize(layout.width[i], layout.height[i])
+        frame:SetPoint("TOPLEFT", page, "TOPLEFT", layout.x[i], -layout.y[i])
         frame:Show()
     end
 end
