@@ -641,9 +641,11 @@ end
 ---@field headerGap number
 ---@field columnGap number
 ---@field pages ForeverLoot.PlacedElement[][]  # layout result for the current node
+---@field placedCache ForeverLoot.PlacedElement[]  # PlacedElement tables reused by LayoutPages
 ---@field path ForeverLoot.Node[]
 ---@field onNavigate? fun(view: ForeverLoot.View)
 ---@field pendingItems table<integer, boolean>  # itemIDs whose info hasn't arrived yet
+---@field renderQueued? boolean  # a deferred Render is scheduled (item info arrived)
 ForeverLootViewMixin = {}
 app.ui.ViewMixin = ForeverLootViewMixin
 
@@ -669,6 +671,24 @@ app.ui.ViewMixin = ForeverLootViewMixin
 ---@field width number
 ---@field height number
 
+-- One element per (kind, node), shared across refreshes: a 25k-item query would otherwise
+-- allocate 25k of them every time the list is rebuilt.
+---@type table<string, table<ForeverLoot.Node, ForeverLoot.Element>>
+local entryElements = { row = {}, tile = {}, card = {} }
+
+---@param kind "row"|"tile"|"card"
+---@param node ForeverLoot.Node
+---@return ForeverLoot.Element
+local function entryElement(kind, node)
+    local byNode = entryElements[kind]
+    local element = byNode[node]
+    if not element then
+        element = { kind = kind, node = node }
+        byNode[node] = element
+    end
+    return element
+end
+
 function ForeverLootViewMixin:OnLoad()
     self.path = {}
 
@@ -679,6 +699,7 @@ function ForeverLootViewMixin:OnLoad()
     page.headerPool = CreateFramePool("Frame", page, "ForeverLootPageHeaderTemplate") --[[@as ForeverLoot.FramePool]]
     page.groupPool = CreateFramePool("Frame", page, "ForeverLootGroupLabelTemplate") --[[@as ForeverLoot.FramePool]]
     self.pages = {}
+    self.placedCache = {}
     self.pendingItems = {}
     self.queries = {}
     self.resultCount = 0
@@ -719,14 +740,21 @@ function ForeverLootViewMixin:OnMouseUp(button)
     end
 end
 
--- Item data arrives asynchronously; redraw once something we're showing has loaded.
+-- Item data arrives asynchronously; redraw once something we're showing has loaded. A fresh
+-- page can get dozens of these in one frame, so the redraw is deferred and done once.
 ---@param event string
 ---@param itemID integer
 function ForeverLootViewMixin:OnEvent(event, itemID)
     if event == "GET_ITEM_INFO_RECEIVED" and self.pendingItems[itemID] then
         self.pendingItems[itemID] = nil
-        if self:IsShown() then
-            self:Render()
+        if self:IsShown() and not self.renderQueued then
+            self.renderQueued = true
+            C_Timer.After(0, function()
+                self.renderQueued = nil
+                if self:IsShown() then
+                    self:Render()
+                end
+            end)
         end
     end
 end
@@ -1109,7 +1137,7 @@ function ForeverLootViewMixin:BuildElements(node)
 
     local function addRows(entries)
         for _, entry in ipairs(entries) do
-            elements[#elements + 1] = { kind = entryKind, node = entry }
+            elements[#elements + 1] = entryElement(entryKind, entry)
         end
     end
 
@@ -1137,8 +1165,11 @@ function ForeverLootViewMixin:BuildElements(node)
             flush()
             elements[#elements + 1] = { kind = "group", text = child.group }
             addRows(child.items or {})
-        else
+        elseif groupBy then
             pending[#pending + 1] = child
+        else
+            -- No grouping: straight in, without collecting 25k entries first.
+            elements[#elements + 1] = entryElement(entryKind, child)
         end
     end
     flush()
@@ -1154,6 +1185,10 @@ end
 function ForeverLootViewMixin:LayoutPages(elements, columns)
     local pages = {}
     local page, y, column = {}, 0, 0
+    -- The placed tables are reused from refresh to refresh: a 25k-item list would otherwise
+    -- allocate 25k of them each time. They are only referenced through `self.pages`, which
+    -- this call's result replaces.
+    local cache, placedCount = self.placedCache, 0
     local pageWidth, pageHeight = self.Content:GetSize()
     local columnWidth = (pageWidth - self.columnGap * (columns - 1)) / columns
     local lineHeight = self.rowHeight -- of the line being filled
@@ -1173,7 +1208,14 @@ function ForeverLootViewMixin:LayoutPages(elements, columns)
     end
 
     local function place(element, x, width, height)
-        page[#page + 1] = { element = element, x = x, y = y, width = width, height = height }
+        placedCount = placedCount + 1
+        local item = cache[placedCount]
+        if not item then
+            item = {}
+            cache[placedCount] = item
+        end
+        item.element, item.x, item.y, item.width, item.height = element, x, y, width, height
+        page[#page + 1] = item
     end
 
     for _, element in ipairs(elements) do
