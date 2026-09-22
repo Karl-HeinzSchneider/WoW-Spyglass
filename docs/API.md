@@ -283,7 +283,7 @@ Data.bosses[2747]    -- { instanceID = 36, order = 6000 }
 Data.bossLoot[2747]  -- { { 5188, 0.9 }, { 5191 }, ... }   -- { itemID, chance 0..1 or nil }
 Data.lists.reputation.argent_dawn      -- { name = "Argent Dawn", icon = "...", order = 1, factionID = 529 }
 Data.listLoot.reputation.argent_dawn   -- { { 13209, standing = "Friendly" }, ... }   -- { itemID, field = value, ... }
-Data.recipes[2661]   -- { skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto };
+Data.recipes[2661]   -- { skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto, taughtBy };
                      -- indices in Data.RECIPE: Copper Chain Belt = { 164, 2851, 1, 1, 70, 90, 110, 2466, { 2840, 6 } }
 Data.categories[2466] -- { skillLineID = 164, order = 160 }   -- trade skill category ("Mail Belts"), for group order
 Data.names.enUS      -- { items = { [5188] = "Filled Vessel" }, bosses = {...}, instances = {...},
@@ -305,11 +305,13 @@ Recipes (`Data.recipes`) are keyed by their spell id and come from the client's 
 (wago.tools `SkillLineAbility`, `SpellReagents`, `SpellEffect`, `SpellTotems`), limited to
 recipes whose products the scans confirm. A row is positional (`Data.RECIPE`): the profession's
 `skillLineID`, the created `itemID` (0 for enchants), `count` (a number, or `{ min, max }`),
-`minSkill` (what the client's tables require — 1 for nearly every Classic recipe; the trainer or
-recipe-item requirement is the curated `skill` row field), the skill at which it turns `yellow`,
-`green` and `grey` (orange below yellow), the `categoryID` into `Data.categories`, `reagents` as
-flat `{ itemID, count, ... }` pairs, `tools` as ids into `Data.names[locale].tools`, and `auto`
-(learned automatically at `minSkill`).
+`minSkill` (the skill needed to learn it: the requirement of the recipe item that teaches it when
+one is known, else the client's ability minimum, which is 1 for nearly every Classic recipe —
+trainer requirements are server-side and belong in the curated `skill` row field), the skill at
+which it turns `yellow`, `green` and `grey` (orange below yellow), the `categoryID` into
+`Data.categories`, `reagents` as flat `{ itemID, count, ... }` pairs, `tools` as ids into
+`Data.names[locale].tools`, `auto` (learned automatically at `minSkill`) and `taughtBy` (the
+scanned recipe item — "Plans: …" — that teaches it, nil when none is known).
 
 Adding data (any call may be repeated; every one invalidates the caches and fires `OnDataChanged`):
 
@@ -317,7 +319,7 @@ Adding data (any call may be repeated; every one invalidates the caches and fire
 - `Data:AddInstance(id, def)`, `Data:AddBoss(id, def)` (appends to its instance's `bosses` if missing),
   `Data:AddBossLoot(bossID, { { itemID, chance }, ... })`
 - `Data:AddList(kind, id, def)`, `Data:AddListLoot(kind, id, { { itemID, standing = "Honored" }, ... })`
-- `Data:AddRecipes({ [spellID] = { skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto }, ... })`,
+- `Data:AddRecipes({ [spellID] = { skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto, taughtBy }, ... })`,
   `Data:AddCategories({ [id] = { skillLineID = 164, order = 30 }, ... })`
 - `Data:AddNames(locale, kind, { [id] = name })` with `kind` one of `"items"`, `"bosses"`, `"instances"`,
   `"skillLines"`, `"categories"`, `"tools"` — enUS is the fallback; the official locale addon registers

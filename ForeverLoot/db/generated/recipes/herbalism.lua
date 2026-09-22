@@ -7,7 +7,7 @@ Data:AddCategories({
     [2716] = { skillLineID = 182, order = 1 }, -- Camping
     [2614] = { skillLineID = 182, order = 8888 }, -- Herbalism - NYI / PH
 })
--- { skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto }; see Data.RECIPE. Keyed by the recipe's spell id.
+-- { skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto, taughtBy }; see Data.RECIPE. Keyed by the recipe's spell id.
 Data:AddRecipes({
     [1229705] = { 182, 279962, 1, 1, 20, 22, 25, 2716, { 2447, 1, 765, 1 } }, -- Incense Candle
     [1262980] = { 182, 279964, 1, 1, 140, 142, 145, 2716, { 4470, 2, 8836, 1, 8831, 1 } }, -- Greenhouse

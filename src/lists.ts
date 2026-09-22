@@ -164,8 +164,14 @@ export function validateLists(files: ListFile[], checker: Checker): void {
     for (const field of LIST_ID_FIELDS[file.kind]) {
       if (d[field] !== undefined && !Number.isInteger(d[field])) checker.report(file, `\`${field}\` must be an integer id`);
     }
-    if (file.kind === "reputation" && (!Number.isInteger(d.faction) || d.faction! < 1)) {
-      checker.report(file, "`faction` must be a positive FactionID");
+    if (file.kind === "reputation") {
+      const faction = Number.isInteger(d.faction) ? checker.ref.factions.get(d.faction!) : undefined;
+      if (!faction) {
+        checker.report(file, `\`faction\` ${d.faction ?? "?"} is not a FactionID with a reputation bar`);
+      } else if (d.name !== faction.name) {
+        checker.report(file, `name "${d.name}" -> "${faction.name}" (faction ${faction.id})`, true);
+        if (checker.fix) d.name = faction.name;
+      }
     }
     if (file.kind === "crafting" && d.skillLine !== undefined && !checker.ref.skillLines.has(d.skillLine)) {
       checker.report(file, `\`skillLine\` ${d.skillLine} is not a profession with recipes (${[...checker.ref.skillLines.values()].map((s) => `${s.id} ${s.name}`).join(", ")})`);

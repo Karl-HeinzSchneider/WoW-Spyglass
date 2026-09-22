@@ -23,7 +23,7 @@ import { importDiscovered } from "./import.js";
 import { saveScannedItems } from "./items.js";
 import { type ListFile, loadLists, serializeList, validateLists } from "./lists.js";
 import { shipsRecipe } from "./recipes.js";
-import { loadReference } from "./reference.js";
+import { loadReference, relinkRecipes } from "./reference.js";
 
 const { positionals, values } = parseArgs({
   allowPositionals: true,
@@ -68,7 +68,10 @@ for (const path of importPaths) {
   console.log(`importing ${relative(ROOT, path)}${discovered.build ? ` (recorded on build ${discovered.build})` : ""}`);
   for (const line of importDiscovered(discovered, ref, curated)) console.log(`  ${line}`);
 }
-if (importPaths.length > 0) saveScannedItems(ref.items);
+if (importPaths.length > 0) {
+  saveScannedItems(ref.items);
+  relinkRecipes(ref);
+}
 
 const checker = new Checker(ref, fix);
 validate(curated, checker);

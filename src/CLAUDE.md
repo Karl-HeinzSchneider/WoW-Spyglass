@@ -38,9 +38,10 @@ the data they consume is described in `.contribute/CLAUDE.md`.
 - `wago.ts` — `fetchTable(table, build, locale)`: wago.tools DB2 CSV, cached in `.cache/<build>/`.
 - `reference.ts` — `Reference`: instances (`Map` rows with `InstanceType` 1/2 = dungeon/raid that
   have at least one encounter, minus `excludeMaps`), encounters (`DungeonEncounter`, ordered by
-  `OrderIndex`), the recipe tables from `recipes.ts` (`skillLines`, `recipes`, `categories`), the
-  scanned items, per-locale name tables (items, encounters, instances, skillLines, categories,
-  tools), `nameOf()` for comments and messages.
+  `OrderIndex`), the recipe tables from `recipes.ts` (`skillLines`, `recipes`, `categories`,
+  `itemSkills`), `factions` (`Faction` rows with a reputation bar), the scanned items, per-locale
+  name tables (items, encounters, instances, skillLines, categories, tools), `nameOf()` for
+  comments and messages.
 - `recipes.ts` — the profession recipe database from wago.tools: `buildRecipes(source, localeNames)`
   (pure, tested) turns `SkillLine`, `SkillLineAbility`, `SpellReagents`, `SpellEffect`,
   `SpellTotems`, `TradeSkillCategory`, `TotemCategory` and `SpellName` into `Recipe`s keyed by
@@ -50,8 +51,11 @@ the data they consume is described in `.contribute/CLAUDE.md`.
   class-restricted rows (rogue poisons), `[DNT]` skill lines and professions without recipes are
   dropped; tier skill lines (2938 "Blacksmithing" under 164) fold into their root. `shipsRecipe`
   is the rule the generator and the checker apply: the created item must be scanned (enchants:
-  every reagent), because the tables also hold other seasons' recipes. `loadRecipes(config)`
-  fetches and builds.
+  every reagent), because the tables also hold other seasons' recipes. `linkRecipeItems` matches
+  scanned recipe items (class 9, "Plans: X") to the recipe named X — `ItemSparse.RequiredSkill`
+  picks the profession and `RequiredSkillRank` becomes `learnSkill`, the item `taughtBy`;
+  `relinkRecipes(ref)` in reference.ts reruns it after an import. `loadRecipes(config)` fetches
+  and builds.
 - `items.ts` — `ScannedItem` (field meanings = `Data.ITEM` in the core) and the
   `.contribute/data/items/items_<start>.json` store: one file per `ID_RANGE` = 10 000 ids, keyed
   by id, sorted, fixed field order, empty ranges removed. Machine-written.
@@ -67,7 +71,8 @@ the data they consume is described in `.contribute/CLAUDE.md`.
   database (profession and created item; unknown spells warn) and on fix fills `item` from
   `spell`, `fillRecipeSpell` fills `spell` from `item` when one recipe of the profession makes it;
   rows for recipes that make no item (enchants) carry only `spell` and skip the item check; a
-  warning names each profession with recipes but no file.
+  warning names each profession with recipes but no file. Reputation files: `faction` must be in
+  `ref.factions`, `fix` rewrites `name` from it.
 - `savedvars.ts` — a parser for the Lua subset the client writes to SavedVariables (tables,
   `["key"]`/`[123]`/positional entries, quoted strings with escapes, numbers, booleans, nil);
   `parseSavedVariables`, `luaGet`. Not a Lua interpreter.
@@ -86,7 +91,8 @@ the data they consume is described in `.contribute/CLAUDE.md`.
   `crafting` = skill line/category/tool names) routed to the core for enUS and to the locale
   addon otherwise, each `generated.xml`); `write()` diffs against disk (CRLF-insensitive),
   removes stale files, returns the change count. `itemRow()` **must match `Data.ITEM`** and
-  `recipeRow()` **`Data.RECIPE` in `ForeverLoot/src/data/data.lua`**. A crafting list without an
+  `recipeRow()` **`Data.RECIPE` in `ForeverLoot/src/data/data.lua`** (`minSkill` is emitted as
+  `learnSkillOf()`: the recipe item's requirement when known). A crafting list without an
   `icon` gets its skill line's `SpellIconFileID`; a crafting row without an item (an enchant)
   is emitted as `{ spell = id, ... }`.
 - `lua.ts` — Lua serialization (`luaString`, `luaValue`, `luaFields`) and the provenance

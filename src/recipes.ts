@@ -18,6 +18,8 @@ export interface RecipeTables {
   recipes: Map<number, Recipe>;
   /** Per-locale names of skill lines, categories and tools (TotemCategory ids). */
   names: Map<string, RecipeNames>;
+  /** ItemSparse's skill requirement of items that have one (recipe items: "Plans: X" needs Blacksmithing 75), keyed by item id. */
+  itemSkills: Map<number, { skillLineID: number; rank: number }>;
 }
 
 export interface SkillLine {
@@ -50,6 +52,10 @@ export interface Recipe {
   count: number | [number, number];
   /** SkillLineAbility.MinSkillLineRank; 1 for nearly every Classic recipe (the real requirement lives on trainers and recipe items). */
   minSkill: number;
+  /** Skill needed to learn it from the recipe item that teaches it (`taughtBy`); 0 = no such item known. Set by `linkRecipeItems`. */
+  learnSkill: number;
+  /** Scanned recipe item ("Plans: Copper Chain Belt") that teaches it; 0 = none known. Set by `linkRecipeItems`. */
+  taughtBy: number;
   /** Skill at which the recipe turns yellow, green and grey; orange below yellow. */
   yellow: number;
   green: number;
@@ -80,6 +86,8 @@ export interface RecipeSource {
   tradeSkillCategory: Table;
   spellName: Table;
   totemCategory: Table;
+  /** Only `ID`, `RequiredSkill` and `RequiredSkillRank` are read. */
+  itemSparse: Table;
 }
 
 /** SkillLine.CategoryID values that are professions. */
@@ -186,6 +194,8 @@ export function buildRecipes(source: RecipeSource, localeNames: Map<string, Pick
       itemID: "enchant" in made ? 0 : made.itemID,
       count: "enchant" in made ? 1 : made.count,
       minSkill: int(row.MinSkillLineRank),
+      learnSkill: 0,
+      taughtBy: 0,
       yellow,
       green: Math.floor((yellow + grey) / 2),
       grey,
@@ -217,7 +227,47 @@ export function buildRecipes(source: RecipeSource, localeNames: Map<string, Pick
     names.set(locale, table);
   }
 
-  return { skillLines, categories, recipes, names };
+  const itemSkills = new Map<number, { skillLineID: number; rank: number }>();
+  for (const row of source.itemSparse) {
+    const skillLineID = int(row.RequiredSkill);
+    if (skillLineID > 0) itemSkills.set(int(row.ID), { skillLineID: rootOf.get(skillLineID) ?? skillLineID, rank: int(row.RequiredSkillRank) });
+  }
+
+  return { skillLines, categories, recipes, names, itemSkills };
+}
+
+/** "Plans: Copper Chain Belt" -> "Copper Chain Belt"; the prefixes of every profession's recipe items. */
+const RECIPE_ITEM_NAME = /^(?:Plans|Pattern|Recipe|Formula|Schematic|Manual|Design|Book|Guide): (.+)$/;
+const ITEM_CLASS_RECIPE = 9;
+
+/**
+ * Links every scanned recipe item ("Plans: X", item class 9) to the recipe it teaches, by name;
+ * ItemSparse's skill requirement on the item decides between professions with a recipe of that
+ * name and gives the skill needed to learn it. Recomputed from scratch, so it can run again
+ * after an import changed the scans.
+ */
+export function linkRecipeItems(tables: Pick<RecipeTables, "recipes" | "itemSkills">, items: Map<number, ScannedItem>): void {
+  const byName = new Map<string, Recipe[]>();
+  for (const recipe of tables.recipes.values()) {
+    recipe.taughtBy = 0;
+    recipe.learnSkill = 0;
+    const list = byName.get(recipe.name);
+    if (list) list.push(recipe);
+    else byName.set(recipe.name, [recipe]);
+  }
+  for (const itemID of [...items.keys()].sort((a, b) => a - b)) {
+    const item = items.get(itemID)!;
+    if (item.classID !== ITEM_CLASS_RECIPE) continue;
+    const match = RECIPE_ITEM_NAME.exec(item.names[FALLBACK_LOCALE] ?? "");
+    if (!match) continue;
+    const skill = tables.itemSkills.get(itemID);
+    let candidates = byName.get(match[1] ?? "") ?? [];
+    if (skill) candidates = candidates.filter((r) => r.skillLineID === skill.skillLineID);
+    const recipe = candidates.length === 1 ? candidates[0] : undefined;
+    if (!recipe || recipe.taughtBy !== 0) continue; // the lowest item id wins when several teach it (faction versions)
+    recipe.taughtBy = itemID;
+    if (skill && skill.rank > 0) recipe.learnSkill = skill.rank;
+  }
 }
 
 /**
@@ -233,7 +283,7 @@ export function shipsRecipe(recipe: Recipe, items: Map<number, ScannedItem>): bo
 export async function loadRecipes(config: Config): Promise<RecipeTables> {
   const { build } = config;
   const table = (name: string, locale = FALLBACK_LOCALE) => fetchTable(name, build, locale);
-  const [skillLine, skillLineAbility, spellReagents, spellEffect, spellTotems, tradeSkillCategory, spellName, totemCategory] = await Promise.all([
+  const [skillLine, skillLineAbility, spellReagents, spellEffect, spellTotems, tradeSkillCategory, spellName, totemCategory, itemSparse] = await Promise.all([
     table("SkillLine"),
     table("SkillLineAbility"),
     table("SpellReagents"),
@@ -242,8 +292,9 @@ export async function loadRecipes(config: Config): Promise<RecipeTables> {
     table("TradeSkillCategory"),
     table("SpellName"),
     table("TotemCategory"),
+    table("ItemSparse"),
   ]);
-  const source: RecipeSource = { skillLine, skillLineAbility, spellReagents, spellEffect, spellTotems, tradeSkillCategory, spellName, totemCategory };
+  const source: RecipeSource = { skillLine, skillLineAbility, spellReagents, spellEffect, spellTotems, tradeSkillCategory, spellName, totemCategory, itemSparse };
 
   const localeNames = new Map<string, Pick<RecipeSource, "skillLine" | "tradeSkillCategory" | "totemCategory">>();
   for (const locale of config.locales) {

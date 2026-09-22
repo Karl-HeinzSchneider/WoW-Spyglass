@@ -7,7 +7,7 @@ Data:AddCategories({
     [2715] = { skillLineID = 356, order = 1 }, -- Camping
     [2613] = { skillLineID = 356, order = 8888 }, -- Fishing - NYI / PH
 })
--- { skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto }; see Data.RECIPE. Keyed by the recipe's spell id.
+-- { skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto, taughtBy }; see Data.RECIPE. Keyed by the recipe's spell id.
 Data:AddRecipes({
     [1229745] = { 356, 279967, 1, 1, 20, 22, 25, 2715, { 6291, 1, 3371, 1 } }, -- Fish Bowl
     [1262990] = { 356, 279965, 1, 1, 140, 142, 145, 2715, { 4470, 2, 8925, 1, 8365, 2 } }, -- Fishing Rack

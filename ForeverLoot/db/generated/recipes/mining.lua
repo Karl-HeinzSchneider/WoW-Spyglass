@@ -8,7 +8,7 @@ Data:AddCategories({
     [2575] = { skillLineID = 186, order = 100 }, -- Smelted Bars
     [2617] = { skillLineID = 186, order = 8888 }, -- Mining - NYI / PH
 })
--- { skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto }; see Data.RECIPE. Keyed by the recipe's spell id.
+-- { skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto, taughtBy }; see Data.RECIPE. Keyed by the recipe's spell id.
 Data:AddRecipes({
     [1230161] = { 186, 279960, 1, 1, 20, 22, 25, 2717, { 2835, 1, 2840, 1 } }, -- Lodestone
     [1262975] = { 186, 279948, 1, 1, 140, 142, 145, 2717, { 2838, 2, 2772, 1, 2842, 1 } }, -- Rock Garden

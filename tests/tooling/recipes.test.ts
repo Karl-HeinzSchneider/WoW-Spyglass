@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { type ScannedItem } from "../../src/items.js";
-import { type RecipeSource, buildRecipes, shipsRecipe, slugOf } from "../../src/recipes.js";
+import { type RecipeSource, buildRecipes, linkRecipeItems, shipsRecipe, slugOf } from "../../src/recipes.js";
 
 /** A handful of rows shaped like wago.tools' CSV output (every value a string). */
 function source(): RecipeSource {
@@ -67,7 +67,17 @@ function source(): RecipeSource {
       { ID: "162", Name_lang: "Blacksmith Hammer" },
       { ID: "373", Name_lang: "Runed Copper Rod" },
     ],
+    itemSparse: [
+      // Plans: Copper Chain Belt (Blacksmithing 20); Pattern of the same name for Leatherworking (does not exist, tests the filter).
+      { ID: "3609", RequiredSkill: "2938", RequiredSkillRank: "20" },
+      { ID: "3610", RequiredSkill: "165", RequiredSkillRank: "35" },
+      { ID: "16072", RequiredSkill: "0", RequiredSkillRank: "0" },
+    ],
   };
+}
+
+function scannedItem(name: string, classID = 9): ScannedItem {
+  return { names: { enUS: name }, classID } as ScannedItem;
 }
 
 function build() {
@@ -128,6 +138,30 @@ test("a recipe ships when its item was scanned; an enchant when all its reagents
   assert.equal(shipsRecipe(recipes.get(2661)!, scanned([2840])), false, "reagents alone don't confirm an item recipe");
   assert.equal(shipsRecipe(recipes.get(13380)!, scanned([10938, 10940])), true);
   assert.equal(shipsRecipe(recipes.get(13380)!, scanned([10938])), false);
+});
+
+test("scanned recipe items are linked to the recipe they teach, with the skill to learn it", () => {
+  const tables = build();
+  const items = new Map<number, ScannedItem>([
+    [3609, scannedItem("Plans: Copper Chain Belt")],
+    [3610, scannedItem("Pattern: Copper Chain Belt")], // Leatherworking has no such recipe
+    [16072, scannedItem("Formula: Enchant Weapon - Minor Striking")], // not in ItemSparse: matched by name alone
+    [2851, scannedItem("Copper Chain Belt", 4)], // the product, not a recipe item
+  ]);
+  linkRecipeItems(tables, items);
+  const belt = tables.recipes.get(2661)!;
+  assert.equal(belt.taughtBy, 3609);
+  assert.equal(belt.learnSkill, 20);
+  const enchant = tables.recipes.get(13380)!;
+  assert.equal(enchant.taughtBy, 16072);
+  assert.equal(enchant.learnSkill, 0);
+  assert.equal(tables.recipes.get(2660)!.taughtBy, 0);
+
+  // Linking again after the scans changed starts from scratch.
+  items.delete(3609);
+  linkRecipeItems(tables, items);
+  assert.equal(belt.taughtBy, 0);
+  assert.equal(belt.learnSkill, 0);
 });
 
 test("slugs are file names", () => {

@@ -39,8 +39,11 @@ records everything the client then knows. Instances and encounters come from wag
 (`Map`, `DungeonEncounter`) for the pinned build: instance ids are `Map.ID`, boss ids are
 `DungeonEncounter.ID`. Profession recipes come from wago.tools too (`SkillLine`,
 `SkillLineAbility`, `SpellReagents`, `SpellEffect`, `SpellTotems`, `TradeSkillCategory`,
-`TotemCategory`): recipe ids are spell ids, profession ids are `SkillLine.ID`. Drops and item
-lists are hand-curated tables; they meet the scans only through item ids.
+`TotemCategory`): recipe ids are spell ids, profession ids are `SkillLine.ID`. Factions are
+checked against `Faction`. wago.tools' `ItemSparse` is incomplete for this server but agrees
+with the scans on the items it has, so the tooling reads one thing from it: the skill a
+scanned recipe item requires. Drops and item lists are hand-curated tables; they meet the
+scans only through item ids.
 
 | Output | Source under `data/` |
 |---|---|
@@ -152,8 +155,9 @@ row. Every file may carry `icon`, `background` + `backgroundCoords` (as for inst
 state the game's `faction` id — the addon uses it at runtime for the localized name, description
 and the character's standing; crafting files may state the profession's `skillLine` id. Valid
 standings: `Hated`, `Hostile`, `Unfriendly`, `Neutral`, `Friendly`, `Honored`, `Revered`,
-`Exalted`; empty groups may be omitted. Unknown fields, wrong rows keys and out-of-range values
-are errors.
+`Exalted`; empty groups may be omitted. A reputation's `faction` must be a faction with a
+reputation bar; `fix` rewrites `name` to the game's. Unknown fields, wrong rows keys and
+out-of-range values are errors.
 
 ```json
 {
@@ -182,8 +186,11 @@ many, reagents, tools, the skill at which it turns yellow/green/grey, the trade 
 and lays the file's `recipes` rows over it at runtime — so the rows are for what the game's
 tables can't say:
 
-- `skill`: the skill needed to learn the recipe (trainer or recipe item). The tables only carry the
-  yellow/green/grey thresholds, so without a row the orange number shown is the client's minimum (1).
+- `skill`: the skill needed to learn the recipe from a trainer. Recipes taught by an item
+  ("Plans: …") get that from the scanned recipe item automatically (its `RequiredSkillRank` in
+  wago.tools' `ItemSparse`, matched by name), and the item shows as "Taught by" in the tooltip;
+  trainer requirements are server-side, so without a row the orange number shown is the
+  client's minimum (1).
 - `source`: "Trainer", "Vendor: Name (Zone)", "Drop: Boss", …
 - `group`: a label of your own instead of the game's category.
 - rows for recipes the client's tables don't know (server-side ones): a plain item row, allowed

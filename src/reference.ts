@@ -1,6 +1,6 @@
 import { type Config, FALLBACK_LOCALE } from "./config.js";
 import { type ScannedItem, loadScannedItems } from "./items.js";
-import { type Recipe, type SkillLine, type TradeSkillCategory, loadRecipes } from "./recipes.js";
+import { type Recipe, type SkillLine, type TradeSkillCategory, linkRecipeItems, loadRecipes } from "./recipes.js";
 import { fetchTable, int } from "./wago.js";
 
 /**
@@ -16,6 +16,10 @@ export interface Reference {
   skillLines: Map<number, SkillLine>;
   recipes: Map<number, Recipe>;
   categories: Map<number, TradeSkillCategory>;
+  /** ItemSparse skill requirements, for linking scanned recipe items to recipes (`relinkRecipes`). */
+  itemSkills: Map<number, { skillLineID: number; rank: number }>;
+  /** Factions with a reputation bar (`Faction` rows with a ReputationIndex), for the reputation lists. */
+  factions: Map<number, Faction>;
   items: Map<number, ScannedItem>;
   /** Locales that have item names, enUS first when present. */
   itemLocales: string[];
@@ -37,6 +41,13 @@ export interface Encounter {
   order: number;
 }
 
+export interface Faction {
+  id: number; // Faction.ID
+  /** enUS name. */
+  name: string;
+  parentID: number;
+}
+
 export interface LocaleNames {
   items: Map<number, string>;
   encounters: Map<number, string>;
@@ -56,11 +67,19 @@ const INSTANCE_TYPES: Record<string, InstanceType> = { "1": "dungeon", "2": "rai
 
 export async function loadReference(config: Config): Promise<Reference> {
   const { build } = config;
-  const [maps, dungeonEncounters, recipeTables] = await Promise.all([
+  const [maps, dungeonEncounters, factionRows, recipeTables] = await Promise.all([
     fetchTable("Map", build, FALLBACK_LOCALE),
     fetchTable("DungeonEncounter", build, FALLBACK_LOCALE),
+    fetchTable("Faction", build, FALLBACK_LOCALE),
     loadRecipes(config),
   ]);
+
+  const factions = new Map<number, Faction>();
+  for (const row of factionRows) {
+    if (int(row.ReputationIndex, -1) < 0) continue; // no reputation bar: team, guild and helper factions
+    const id = int(row.ID);
+    factions.set(id, { id, name: row.Name_lang ?? "", parentID: int(row.ParentFactionID) });
+  }
 
   // Encounters first: an instance is a map that has at least one (weeds out unused maps).
   const encounters = new Map<number, Encounter>();
@@ -110,12 +129,20 @@ export async function loadReference(config: Config): Promise<Reference> {
     skillLines: recipeTables.skillLines,
     recipes: recipeTables.recipes,
     categories: recipeTables.categories,
+    itemSkills: recipeTables.itemSkills,
+    factions,
     items: loadScannedItems(),
     itemLocales: [],
     names,
   };
   refreshItemNames(ref);
+  relinkRecipes(ref);
   return ref;
+}
+
+/** Re-links scanned recipe items to the recipes they teach; call after the scanned items changed. */
+export function relinkRecipes(ref: Reference): void {
+  linkRecipeItems(ref, ref.items);
 }
 
 /** Rebuilds the per-locale item name tables from `ref.items`; call after the scanned items changed. */

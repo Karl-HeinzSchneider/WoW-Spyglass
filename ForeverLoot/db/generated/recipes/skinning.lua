@@ -7,7 +7,7 @@ Data:AddCategories({
     [2718] = { skillLineID = 393, order = 1 }, -- Camping
     [2618] = { skillLineID = 393, order = 8888 }, -- Skinning - NYI / PH
 })
--- { skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto }; see Data.RECIPE. Keyed by the recipe's spell id.
+-- { skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto, taughtBy }; see Data.RECIPE. Keyed by the recipe's spell id.
 Data:AddRecipes({
     [1229517] = { 393, 279979, 1, 1, 20, 22, 25, 2718, { 2318, 3, 4470, 2 } }, -- Camp Chair
     [1262985] = { 393, 279969, 1, 1, 140, 142, 145, 2718, { 2319, 3, 5784, 2, 2321, 1 } }, -- Field Guide

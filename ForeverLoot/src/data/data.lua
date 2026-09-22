@@ -15,7 +15,7 @@ local log = app.logger
 --   Data.lists[kind][id]    = { name = "Argent Dawn", icon = ..., factionID = 529 }  -- curated item lists;
 --                             kind = "crafting" | "pvp" | "collections" | "reputation", id = the file's slug
 --   Data.listLoot[kind][id] = { { itemID, standing = "Honored", ... }, ... }    -- the list's rows
---   Data.recipes[spellID]   = { skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto }
+--   Data.recipes[spellID]   = { skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto, taughtBy }
 --                             -- profession recipes from the client's spell tables (positions in Data.RECIPE)
 --   Data.categories[id]     = { skillLineID = 164, order = 30 }   -- the trade skill window's headers ("Plate Helmets")
 --   Data.names[locale]      = { items = {}, bosses = {}, instances = {}, skillLines = {}, categories = {}, tools = {} }
@@ -50,8 +50,9 @@ local RECIPE = {
     SKILL_LINE = 1, -- the profession's SkillLine id (164 = Blacksmithing)
     ITEM = 2, -- created item id; 0 when the recipe makes no item (enchants)
     COUNT = 3, -- items made per craft; { min, max } when it varies
-    -- Skill the client's tables require. 1 for nearly every Classic recipe: when a recipe can
-    -- be learned is decided by trainers and recipe items (the curated `skill` row field).
+    -- Skill needed to learn the recipe: from the recipe item that teaches it (TAUGHT_BY) when
+    -- one is known, else what the client's ability tables require, which is 1 for nearly every
+    -- Classic recipe (trainer requirements are server-side: the curated `skill` row field).
     MIN_SKILL = 4,
     YELLOW = 5, -- skill at which the recipe turns yellow (orange below, from when it is known)
     GREEN = 6,
@@ -60,6 +61,7 @@ local RECIPE = {
     REAGENTS = 9, -- { itemID, count, itemID, count, ... }; nil = none
     TOOLS = 10, -- { toolID, ... } ids into Data.names[locale].tools (Blacksmith Hammer, Anvil, ...); nil = none
     AUTO = 11, -- true when the recipe is learned automatically at MIN_SKILL
+    TAUGHT_BY = 12, -- item id of the recipe item ("Plans: ...") that teaches it; nil = none known
 }
 
 ---@alias ForeverLoot.ItemStats table<string, number>
@@ -86,7 +88,7 @@ local RECIPE = {
 
 ---@alias ForeverLoot.LootRow { [1]: integer, [2]: number? }  # itemID, drop chance 0..1 (nil = unknown)
 
----@alias ForeverLoot.RecipeRow { [1]: integer, [2]: integer, [3]: integer|integer[], [4]: integer, [5]: integer, [6]: integer, [7]: integer, [8]: integer, [9]: integer[]?, [10]: integer[]?, [11]: boolean? }
+---@alias ForeverLoot.RecipeRow { [1]: integer, [2]: integer, [3]: integer|integer[], [4]: integer, [5]: integer, [6]: integer, [7]: integer, [8]: integer, [9]: integer[]?, [10]: integer[]?, [11]: boolean?, [12]: integer? }
 
 ---@class ForeverLoot.Category
 ---@field skillLineID integer
@@ -303,7 +305,7 @@ function Data:AddListLoot(kind, id, rows)
 end
 
 -- Adds or replaces recipe rows keyed by spell id: `{ [spellID] = { skillLineID, itemID, count,
--- minSkill, yellow, green, grey, categoryID, reagents, tools, auto } }` (positions in Data.RECIPE).
+-- minSkill, yellow, green, grey, categoryID, reagents, tools, auto, taughtBy } }` (positions in Data.RECIPE).
 ---@param rows table<integer, ForeverLoot.RecipeRow>
 function Data:AddRecipes(rows)
     local recipes = self.recipes
@@ -576,7 +578,7 @@ function Data:GetCategory(categoryID)
 end
 
 -- Spell ids of one profession's recipes in the trade skill window's order: by category, then
--- by the skill they turn yellow at; cached until the data changes.
+-- by the skill to learn them and the skill they turn yellow at; cached until the data changes.
 ---@param skillLineID integer
 ---@return integer[]
 function Data:GetRecipeIDs(skillLineID)
@@ -601,6 +603,9 @@ function Data:GetRecipeIDs(skillLineID)
             local oa, ob = categoryOrder(ra), categoryOrder(rb)
             if oa ~= ob then
                 return oa < ob
+            end
+            if ra[RECIPE.MIN_SKILL] ~= rb[RECIPE.MIN_SKILL] then
+                return ra[RECIPE.MIN_SKILL] < rb[RECIPE.MIN_SKILL]
             end
             if ra[RECIPE.YELLOW] ~= rb[RECIPE.YELLOW] then
                 return ra[RECIPE.YELLOW] < rb[RECIPE.YELLOW]

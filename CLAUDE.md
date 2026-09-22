@@ -39,7 +39,9 @@ reference an unscanned id (warning, not error). Instances and encounters *do* co
 wago.tools' `Map` + `DungeonEncounter` tables for the build pinned in `.contribute/data/config.json`
 (instance ids = `Map` ids, boss ids = `DungeonEncounter` ids), and so do profession recipes
 (`SkillLineAbility`, `SpellReagents`, `SpellEffect`, …; recipe ids = spell ids), shipped only
-when the scans confirm the item they make.
+when the scans confirm the item they make, and the `Faction` list. `ItemSparse` agrees with the
+scans on the items it has but lacks thousands of this server's items, so it is read only for
+recipe items' skill requirements — never as an item source.
 
 ## Commands (Node 20+, run from the root after `npm install` once)
 

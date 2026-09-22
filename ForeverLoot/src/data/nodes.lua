@@ -189,8 +189,8 @@ local function thresholdText(recipe, skill)
 end
 
 -- Extra tooltip lines of a recipe node: what it makes (when more than one), reagents, tools,
--- the skill thresholds and the curated source. Built when the tooltip shows, so reagent names
--- the client fetched in the meantime are used.
+-- the skill thresholds, the recipe item that teaches it and the curated source. Built when the
+-- tooltip shows, so item names the client fetched in the meantime are used.
 ---@param node ForeverLoot.Node
 ---@return string[]
 local function recipeTooltip(node)
@@ -230,6 +230,10 @@ local function recipeTooltip(node)
     lines[#lines + 1] = (SKILL or "Skill") .. ": " .. thresholdText(recipe, meta.skill)
     if recipe[RECIPE.AUTO] then
         lines[#lines + 1] = ("Learned automatically at skill %d"):format(recipe[RECIPE.MIN_SKILL])
+    end
+    local taughtBy = recipe[RECIPE.TAUGHT_BY]
+    if taughtBy then
+        lines[#lines + 1] = "Taught by: " .. Data:GetItemName(taughtBy)
     end
     if type(meta.source) == "string" and meta.source ~= "" then
         lines[#lines + 1] = (SOURCE or "Source") .. ": " .. meta.source

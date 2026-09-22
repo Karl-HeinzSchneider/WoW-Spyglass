@@ -146,7 +146,12 @@ function emitList(file: ListFile, ref: Reference): string {
   return out.join("");
 }
 
-const RECIPE_LAYOUT = "skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto";
+const RECIPE_LAYOUT = "skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto, taughtBy";
+
+/** The skill needed to learn a recipe: from the recipe item that teaches it, else the ability's own minimum. */
+export function learnSkillOf(recipe: Recipe): number {
+  return Math.max(recipe.minSkill, recipe.learnSkill);
+}
 
 /** Recipe row layout; must match Data.RECIPE in ForeverLoot/src/data/data.lua. */
 function recipeRow(recipe: Recipe): unknown[] {
@@ -154,7 +159,7 @@ function recipeRow(recipe: Recipe): unknown[] {
     recipe.skillLineID,
     recipe.itemID,
     recipe.count,
-    recipe.minSkill,
+    learnSkillOf(recipe),
     recipe.yellow,
     recipe.green,
     recipe.grey,
@@ -162,6 +167,7 @@ function recipeRow(recipe: Recipe): unknown[] {
     recipe.reagents.length > 0 ? recipe.reagents.flat() : null,
     recipe.tools.length > 0 ? recipe.tools : null,
     recipe.auto ? true : null,
+    recipe.taughtBy > 0 ? recipe.taughtBy : null,
   ];
 }
 
@@ -183,7 +189,9 @@ function emitRecipes(skillLine: SkillLine, recipes: Recipe[], ref: Reference): s
     out.push("})\n");
   }
   const orderOf = (r: Recipe) => ref.categories.get(r.categoryID)?.order ?? Number.MAX_SAFE_INTEGER;
-  const sorted = [...recipes].sort((a, b) => orderOf(a) - orderOf(b) || a.categoryID - b.categoryID || a.yellow - b.yellow || a.spellID - b.spellID);
+  const sorted = [...recipes].sort(
+    (a, b) => orderOf(a) - orderOf(b) || a.categoryID - b.categoryID || learnSkillOf(a) - learnSkillOf(b) || a.yellow - b.yellow || a.spellID - b.spellID,
+  );
   out.push(`-- { ${RECIPE_LAYOUT} }; see Data.RECIPE. Keyed by the recipe's spell id.\n`);
   out.push("Data:AddRecipes({\n");
   for (const r of sorted) out.push(`    [${r.spellID}] = ${luaValue(trimRow(recipeRow(r)))}, -- ${r.name}\n`);
