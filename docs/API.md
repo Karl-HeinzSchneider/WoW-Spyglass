@@ -228,7 +228,11 @@ Constructors (optional sugar):
   makes, or the spell for enchants) with `meta.spell` and `meta.category`, the skill thresholds as
   `infoRight` and reagents/tools in the tooltip; the list's own rows then add their fields to the
   recipe they name (by `spell`, or by the item exactly one recipe makes) or become plain entries.
-  Crafting folders show the character's rank ("145 / 150") as `info` and the localized profession name.
+  `ListFolder` then splits a profession into one sub-folder per trade skill category ("Weapon
+  Stones", "Plate Helmets", ...; a curated `group` label makes a folder of its own, rows with
+  neither go under "Other"), each with its first recipe's icon and a recipe count, so the
+  profession page is a list of categories rather than hundreds of rows. Crafting folders show the
+  character's rank ("145 / 150") as `info` and the localized profession name.
   A plain click on any row whose `meta.spell` is a recipe in `Data.recipes` opens the recipe popup
   (product and teaching item, recipe link and reagents); modified clicks still link the row's item.
 - `ForeverLoot.Log(fmt, ...)` — prefixed chat message

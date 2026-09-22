@@ -144,7 +144,7 @@ key differs per kind:
 
 | Folder | Rows key | Row fields besides `item`/`name`/`group` | Default grouping |
 |---|---|---|---|
-| `crafting/` | `recipes` | `spell` (recipe spell id), `skill` (skill needed to learn it), `source` (free text: "Trainer", "Vendor: …") | trade skill category ("Plate Helmets"), else skill tier (Apprentice … Master) |
+| `crafting/` | `recipes` | `spell` (recipe spell id), `skill` (skill needed to learn it), `source` (free text: "Trainer", "Vendor: …") | one sub-folder per trade skill category ("Plate Helmets"); a `group` label is a folder of its own |
 | `pvp/` | `rewards` | `rank` (honor rank 1–14), `standing`, `side` (`Alliance`/`Horde`) | rank, else standing |
 | `collections/` | `items` | `source` (free text), `side` | none (by item type) |
 | `reputation/` | `rewards` **object keyed by standing** | `side` | standing |

@@ -468,8 +468,65 @@ local function listGroupKey(kind)
     end
 end
 
+-- The icon an entry shows: the item's from the database (the client may not have fetched it
+-- yet), else the spell's.
+---@param node ForeverLoot.Node
+---@return string|number?
+local function entryIcon(node)
+    if node.itemID then
+        local row = Data:GetItem(node.itemID)
+        return select(5, C_Item.GetItemInfoInstant(node.itemID)) or (row and row[Data.ITEM.ICON]) or nil
+    elseif node.spellID then
+        local info = C_Spell.GetSpellInfo(node.spellID)
+        return info and info.iconID or nil
+    end
+    return node.icon
+end
+
+-- Which folder a recipe row belongs in: its curated `group` label, else its trade skill
+-- category, else "Other".
+---@param node ForeverLoot.Node
+---@return string key, string label
+local function craftingFolderKey(node)
+    local meta = node.meta or {}
+    if type(meta.group) == "string" and meta.group ~= "" then
+        return "CUSTOM:" .. meta.group, meta.group
+    end
+    local key, label = categoryGroup(meta.category)
+    if key then
+        return key, label or key
+    end
+    return "OTHER", OTHER or "Other"
+end
+
+-- A profession's recipes as one folder per trade skill category ("Weapon Stones", "Plate
+-- Helmets", ...), in the trade skill window's order, so a profession's hundreds of recipes
+-- don't make one long list. Rows with a curated `group` label get a folder of their own where
+-- their first recipe sorts; rows with neither end up under "Other" at the end. Each folder
+-- shows its first recipe's icon and its recipe count.
+---@param kind ForeverLoot.ListKind
+---@param id string
+---@param entries ForeverLoot.Node[]  # from api.ListEntries, already in category order
+---@return ForeverLoot.Node[]
+local function categoryFolders(kind, id, entries)
+    local groups = api.GroupEntries(entries, craftingFolderKey, function()
+        return 0 -- keep ListEntries' order (category, then skill)
+    end)
+    local folders = {}
+    for _, group in ipairs(groups) do
+        local first = group.entries[1]
+        folders[#folders + 1] = api.Folder(group.label, entryIcon(first) or ICON_LIST, group.entries, {
+            columns = 2,
+            description = ("%d recipes"):format(#group.entries),
+            meta = { listKind = kind, listID = id, groupKey = group.key },
+        })
+    end
+    return folders
+end
+
 -- A list folder: its rows in two grouped columns, carrying the list's picture and info for
--- lists that draw their entries as tiles.
+-- lists that draw their entries as tiles. A profession (a crafting list with recipes) instead
+-- holds one folder per category, see categoryFolders.
 ---@param kind ForeverLoot.ListKind
 ---@param id string
 ---@return ForeverLoot.Node?
@@ -491,9 +548,14 @@ function api.ListFolder(kind, id)
     if skill and type(skill.rank) == "number" and skill.rank > 0 then
         rank = ("%d / %d"):format(skill.rank, skill.maxRank or 0)
     end
-    return api.Folder(name, list.icon or ICON_LIST, api.ListEntries(kind, id), {
+    local entries = api.ListEntries(kind, id)
+    local groupBy = listGroupKey(kind) ---@type ("auto"|fun(node: ForeverLoot.Node): string?, string?)?
+    if kind == "crafting" and entries[1] and (entries[1].itemID or entries[1].spellID) then
+        entries, groupBy = categoryFolders(kind, id, entries), nil
+    end
+    return api.Folder(name, list.icon or ICON_LIST, entries, {
         columns = 2,
-        groupBy = listGroupKey(kind),
+        groupBy = groupBy,
         order = list.order,
         info = list.info or standing or rank,
         description = description,

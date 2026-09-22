@@ -83,9 +83,11 @@ Nothing in here touches frames.
   skill tier for crafting), else item type. Crafting lists with a `skillLineID` are built from
   `Data.recipes` (`craftingEntries`: one node per recipe — the item it makes, or the spell for
   enchants — with the colored skill thresholds as `infoRight` and reagents/tools/source as a
-  `tooltip` function) and the curated rows are laid over them by `spell` or by item; the folder
-  takes the localized profession name from `Data:GetName("skillLines", …)` and the character's
-  rank from `C_SkillInfo.GetSkillLineInfoByID` as `info`.
+  `tooltip` function) and the curated rows are laid over them by `spell` or by item; the
+  profession folder holds one sub-folder per trade skill category (`categoryFolders`: curated
+  `group` labels get their own, the rest "Other"; first recipe's icon, "N recipes" as the
+  description) and takes the localized profession name from `Data:GetName("skillLines", …)`
+  and the character's rank from `C_SkillInfo.GetSkillLineInfoByID` as `info`.
 
 ### `db/generated/` — **generated, never hand-edited**
 
