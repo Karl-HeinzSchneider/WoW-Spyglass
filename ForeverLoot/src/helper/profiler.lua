@@ -2,7 +2,7 @@
 local _, app = ...
 
 -- Flip to true to time the high-level calls below; each prints its duration to the chat.
-local ENABLED = true
+local ENABLED = false
 
 if not ENABLED then
     return
