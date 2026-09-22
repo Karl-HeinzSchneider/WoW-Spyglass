@@ -44,5 +44,5 @@ local function wrapAll(name, tbl, ...)
 end
 
 wrapAll("Query", app.query, "Run")
-wrapAll("View", app.ui.ViewMixin, "Navigate", "Refresh", "Render")
+wrapAll("View", app.ui.ViewMixin, "Navigate", "Refresh", "Render", "OnPageChanged", "OnEvent")
 wrapAll("MainWindow", app.ui.MainWindowMixin, "OpenView", "Toggle", "RefreshViews")
