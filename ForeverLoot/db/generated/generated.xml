@@ -35,6 +35,7 @@
 	<Script file="crafting\herbalism.lua" />
 	<Script file="crafting\leatherworking.lua" />
 	<Script file="crafting\mining.lua" />
+	<Script file="crafting\poisons.lua" />
 	<Script file="crafting\skinning.lua" />
 	<Script file="crafting\tailoring.lua" />
 	<Script file="pvp\warsong_gulch.lua" />
@@ -58,6 +59,7 @@
 	<Script file="reputation\timbermaw_hold.lua" />
 	<Script file="recipes\alchemy.lua" />
 	<Script file="recipes\blacksmithing.lua" />
+	<Script file="recipes\comprehension.lua" />
 	<Script file="recipes\cooking.lua" />
 	<Script file="recipes\enchanting.lua" />
 	<Script file="recipes\engineering.lua" />
@@ -66,6 +68,7 @@
 	<Script file="recipes\herbalism.lua" />
 	<Script file="recipes\leatherworking.lua" />
 	<Script file="recipes\mining.lua" />
+	<Script file="recipes\poisons.lua" />
 	<Script file="recipes\skinning.lua" />
 	<Script file="recipes\tailoring.lua" />
 	<Script file="locales\enUS\items.lua" />

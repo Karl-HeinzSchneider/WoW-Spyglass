@@ -2,6 +2,7 @@
 local Data = ForeverLoot.Data
 
 Data:AddNames("enUS", "skillLines", {
+    [40] = "Poisons",
     [129] = "First Aid",
     [164] = "Blacksmithing",
     [165] = "Leatherworking",
@@ -14,6 +15,7 @@ Data:AddNames("enUS", "skillLines", {
     [333] = "Enchanting",
     [356] = "Fishing",
     [393] = "Skinning",
+    [3012] = "Comprehension",
 })
 
 Data:AddNames("enUS", "categories", {
@@ -192,6 +194,7 @@ Data:AddNames("enUS", "categories", {
     [2716] = "Camping",
     [2717] = "Camping",
     [2718] = "Camping",
+    [2734] = "Poisons",
     [2770] = "Thrown",
     [2771] = "Armor Food",
 })

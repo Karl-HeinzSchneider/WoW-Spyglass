@@ -111,8 +111,9 @@ export function slugOf(name: string): string {
 }
 
 /**
- * Turns the raw tables into the recipe database. Rows of class-restricted abilities (rogue
- * poisons) and of test skill lines are left out; professions without any recipe are not listed.
+ * Turns the raw tables into the recipe database. Class-restricted abilities (rogue poisons,
+ * which are a secondary skill line of their own) are kept; rows of test skill lines are left
+ * out, and professions without any recipe are not listed.
  */
 export function buildRecipes(source: RecipeSource, localeNames: Map<string, Pick<RecipeSource, "skillLine" | "tradeSkillCategory" | "totemCategory">>): RecipeTables {
   // Root profession of every skill line: the expansion tiers ("Blacksmithing" 2938 under 164) point at their parent.
@@ -178,7 +179,7 @@ export function buildRecipes(source: RecipeSource, localeNames: Map<string, Pick
   for (const row of source.skillLineAbility) {
     const skillLineID = rootOf.get(int(row.SkillLine)) ?? int(row.SkillLine);
     const profession = professions.get(skillLineID);
-    if (!profession || int(row.ClassMask) !== 0) continue;
+    if (!profession) continue;
     const spellID = int(row.Spell);
     const made = effects.get(spellID);
     const needs = reagents.get(spellID) ?? [];

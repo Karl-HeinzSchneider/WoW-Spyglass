@@ -11,6 +11,7 @@ function source(): RecipeSource {
       { ID: "2938", DisplayName_lang: "Blacksmithing", CategoryID: "11", ParentSkillLineID: "164", SpellIconFileID: "136241" },
       { ID: "129", DisplayName_lang: "First Aid", CategoryID: "9", ParentSkillLineID: "0", SpellIconFileID: "135966" },
       { ID: "40", DisplayName_lang: "Poisons", CategoryID: "9", ParentSkillLineID: "0", SpellIconFileID: "136242" },
+      { ID: "2988", DisplayName_lang: "Poisons", CategoryID: "9", ParentSkillLineID: "40", SpellIconFileID: "0" },
       { ID: "762", DisplayName_lang: "Riding", CategoryID: "9", ParentSkillLineID: "0", SpellIconFileID: "132164" },
       { ID: "2933", DisplayName_lang: "Test Profession [DNT]", CategoryID: "11", ParentSkillLineID: "0", SpellIconFileID: "134400" },
     ],
@@ -23,8 +24,8 @@ function source(): RecipeSource {
       { ID: "3", SkillLine: "164", Spell: "2018", MinSkillLineRank: "1", ClassMask: "0", AcquireMethod: "0", TrivialSkillLineRankHigh: "0", TrivialSkillLineRankLow: "0", TradeSkillCategoryID: "0" },
       // An enchant listed under the tier skill line: no item, needs reagents.
       { ID: "4", SkillLine: "2938", Spell: "13380", MinSkillLineRank: "1", ClassMask: "0", AcquireMethod: "0", TrivialSkillLineRankHigh: "130", TrivialSkillLineRankLow: "90", TradeSkillCategoryID: "2502" },
-      // A rogue poison: class-restricted.
-      { ID: "5", SkillLine: "40", Spell: "8681", MinSkillLineRank: "1", ClassMask: "8", AcquireMethod: "0", TrivialSkillLineRankHigh: "60", TrivialSkillLineRankLow: "20", TradeSkillCategoryID: "0" },
+      // Instant Poison: a rogue poison, class-restricted but a secondary profession all the same.
+      { ID: "5", SkillLine: "40", Spell: "8681", MinSkillLineRank: "1", ClassMask: "8", AcquireMethod: "0", TrivialSkillLineRankHigh: "60", TrivialSkillLineRankLow: "20", TradeSkillCategoryID: "2734" },
       // Linen Bandage: a secondary profession's recipe.
       { ID: "6", SkillLine: "129", Spell: "3275", MinSkillLineRank: "1", ClassMask: "0", AcquireMethod: "0", TrivialSkillLineRankHigh: "60", TrivialSkillLineRankLow: "30", TradeSkillCategoryID: "0" },
       // Test profession content.
@@ -34,7 +35,7 @@ function source(): RecipeSource {
       { ID: "1", SpellID: "2661", Reagent_0: "2840", ReagentCount_0: "6", Reagent_1: "0", ReagentCount_1: "0" },
       { ID: "2", SpellID: "2660", Reagent_0: "2835", ReagentCount_0: "1" },
       { ID: "3", SpellID: "13380", Reagent_0: "10938", ReagentCount_0: "1", Reagent_1: "10940", ReagentCount_1: "2" },
-      { ID: "4", SpellID: "8681", Reagent_0: "3775", ReagentCount_0: "1" },
+      { ID: "4", SpellID: "8681", Reagent_0: "2928", ReagentCount_0: "1", Reagent_1: "3371", ReagentCount_1: "1" },
       { ID: "5", SpellID: "3275", Reagent_0: "2589", ReagentCount_0: "1" },
       { ID: "6", SpellID: "1240345", Reagent_0: "2770", ReagentCount_0: "1" },
     ],
@@ -43,7 +44,7 @@ function source(): RecipeSource {
       { ID: "2", SpellID: "2660", Effect: "24", EffectItemType: "2862", EffectBasePointsF: "3", Variance: "0.66666668653" },
       { ID: "3", SpellID: "2018", Effect: "118", EffectItemType: "0", EffectBasePointsF: "1", Variance: "0" },
       { ID: "4", SpellID: "13380", Effect: "53", EffectItemType: "0", EffectBasePointsF: "0", Variance: "0" },
-      { ID: "5", SpellID: "8681", Effect: "54", EffectItemType: "0", EffectBasePointsF: "0", Variance: "0" },
+      { ID: "5", SpellID: "8681", Effect: "24", EffectItemType: "6947", EffectBasePointsF: "1", Variance: "0" },
       { ID: "6", SpellID: "3275", Effect: "24", EffectItemType: "1251", EffectBasePointsF: "1", Variance: "0" },
       { ID: "7", SpellID: "1240345", Effect: "24", EffectItemType: "2840", EffectBasePointsF: "1", Variance: "0" },
     ],
@@ -56,12 +57,15 @@ function source(): RecipeSource {
       { ID: "2460", Name_lang: "Weapon Stones", ParentTradeSkillCategoryID: "2425", SkillLineID: "2938", OrderIndex: "20" },
       { ID: "2466", Name_lang: "Mail Belts", ParentTradeSkillCategoryID: "2425", SkillLineID: "2938", OrderIndex: "160" },
       { ID: "2502", Name_lang: "Weapon Enchants", ParentTradeSkillCategoryID: "2427", SkillLineID: "2940", OrderIndex: "130" },
+      { ID: "2733", Name_lang: "Poisons", ParentTradeSkillCategoryID: "0", SkillLineID: "40", OrderIndex: "0" },
+      { ID: "2734", Name_lang: "Poisons", ParentTradeSkillCategoryID: "2733", SkillLineID: "2988", OrderIndex: "0" },
     ],
     spellName: [
       { ID: "2661", Name_lang: "Copper Chain Belt" },
       { ID: "2660", Name_lang: "Rough Sharpening Stone" },
       { ID: "13380", Name_lang: "Enchant Weapon - Minor Striking" },
       { ID: "3275", Name_lang: "Linen Bandage" },
+      { ID: "8681", Name_lang: "Instant Poison" },
     ],
     totemCategory: [
       { ID: "162", Name_lang: "Blacksmith Hammer" },
@@ -87,10 +91,13 @@ function build() {
 
 test("recipes come from profession abilities that make or enchant items", () => {
   const { recipes, skillLines } = build();
-  assert.deepEqual([...recipes.keys()].sort((a, b) => a - b), [2660, 2661, 3275, 13380]);
-  // Skill spells, class-restricted abilities and test professions are left out; so are professions without recipes.
-  assert.deepEqual([...skillLines.keys()].sort((a, b) => a - b), [129, 164]);
+  assert.deepEqual([...recipes.keys()].sort((a, b) => a - b), [2660, 2661, 3275, 8681, 13380]);
+  // Skill spells and test professions are left out, and so are professions without recipes;
+  // class-restricted abilities are not (rogue poisons are the "Poisons" secondary profession).
+  assert.deepEqual([...skillLines.keys()].sort((a, b) => a - b), [40, 129, 164]);
   assert.equal(skillLines.get(129)?.slug, "first_aid");
+  const poison = recipes.get(8681)!;
+  assert.deepEqual([poison.skillLineID, poison.itemID, poison.categoryID], [40, 6947, 2734]);
 });
 
 test("thresholds, reagents, tools and categories are read from the client's tables", () => {
@@ -126,8 +133,8 @@ test("an enchant listed under the tier skill line is a recipe of the root profes
 
 test("names are collected per locale for the shipped professions, categories and tools", () => {
   const names = build().names.get("enUS")!;
-  assert.deepEqual([...names.skillLines], [[164, "Blacksmithing"], [129, "First Aid"]]);
-  assert.deepEqual([...names.categories], [[2460, "Weapon Stones"], [2466, "Mail Belts"]]);
+  assert.deepEqual([...names.skillLines], [[164, "Blacksmithing"], [129, "First Aid"], [40, "Poisons"]]);
+  assert.deepEqual([...names.categories], [[2460, "Weapon Stones"], [2466, "Mail Belts"], [2734, "Poisons"]]);
   assert.equal(names.tools.get(162), "Blacksmith Hammer");
 });
 

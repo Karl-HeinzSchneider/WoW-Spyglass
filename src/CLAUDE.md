@@ -48,8 +48,8 @@ the data they consume is described in `.contribute/CLAUDE.md`.
   spell id — a profession ability whose spell creates an item (effect 24/157) or enchants one
   (53/54, needs reagents); yellow = `TrivialSkillLineRankLow`, grey = `TrivialSkillLineRankHigh`,
   green = their midpoint (the client's formula), `count` from `EffectBasePointsF` ± `Variance`;
-  class-restricted rows (rogue poisons), `[DNT]` skill lines and professions without recipes are
-  dropped; tier skill lines (2938 "Blacksmithing" under 164) fold into their root. `shipsRecipe`
+  `[DNT]` skill lines and professions without recipes are dropped, class-restricted rows are not
+  (rogue poisons are SkillLine 40 "Poisons", a secondary profession); tier skill lines (2938 "Blacksmithing" under 164) fold into their root. `shipsRecipe`
   is the rule the generator and the checker apply: the created item must be scanned (enchants:
   every reagent), because the tables also hold other seasons' recipes. `linkRecipeItems` matches
   scanned recipe items (class 9, "Plans: X") to the recipe named X — `ItemSparse.RequiredSkill`

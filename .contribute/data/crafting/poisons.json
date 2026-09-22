@@ -1,0 +1,7 @@
+{
+  "name": "Poisons",
+  "icon": "Interface\\Icons\\Ability_Poisons",
+  "order": 130,
+  "skillLine": 40,
+  "recipes": []
+}
