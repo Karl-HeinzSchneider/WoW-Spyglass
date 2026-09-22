@@ -29,3 +29,6 @@ src\ui\mainwindow.xml
 src\ui\recipepopup.lua
 src\ui\recipepopup.xml
 ForeverLoot.lua
+
+# Optional: hooks into the NumyFunctionProfiler addon when it is installed. Keep last.
+src\helper\profiler.lua
