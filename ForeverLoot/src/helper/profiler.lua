@@ -11,22 +11,28 @@ end
 local log = app.logger
 
 ---@param label string
+---@param minMs number
 ---@param start number
 ---@param ... any  # the wrapped function's results
 ---@return ...
-local function finish(label, start, ...)
-    log:chat("%s: %.2f ms", label, debugprofilestop() - start)
+local function finish(label, minMs, start, ...)
+    local ms = debugprofilestop() - start
+    if ms >= minMs then
+        log:chat("%s: %.2f ms", label, ms)
+    end
     return ...
 end
 
--- Returns `fn` wrapped so that every call reports how long it took.
+-- Returns `fn` wrapped so that every call taking at least `minMs` reports how long it took.
 ---@generic F: function
 ---@param label string
 ---@param fn F
+---@param minMs? number  # default 0: report every call
 ---@return F
-local function wrap(label, fn)
+local function wrap(label, fn, minMs)
+    minMs = minMs or 0
     return function(...)
-        return finish(label, debugprofilestop(), fn(...))
+        return finish(label, minMs, debugprofilestop(), fn(...))
     end
 end
 
@@ -35,14 +41,18 @@ end
 -- the frames (see the TOC).
 ---@param name string  # label prefix
 ---@param tbl table
+---@param minMs number  # only calls at least this long are reported
 ---@param ... string  # function names
-local function wrapAll(name, tbl, ...)
+local function wrapAll(name, tbl, minMs, ...)
     for i = 1, select("#", ...) do
         local key = select(i, ...)
-        tbl[key] = wrap(name .. ":" .. key, tbl[key])
+        tbl[key] = wrap(name .. ":" .. key, tbl[key], minMs)
     end
 end
 
-wrapAll("Query", app.query, "Run")
-wrapAll("View", app.ui.ViewMixin, "Navigate", "Refresh", "Render", "OnPageChanged", "OnEvent")
-wrapAll("MainWindow", app.ui.MainWindowMixin, "OpenView", "Toggle", "RefreshViews")
+wrapAll("Query", app.query, 0, "Run")
+wrapAll("View", app.ui.ViewMixin, 0, "Navigate", "Refresh", "Render", "OnPageChanged")
+-- GET_ITEM_INFO_RECEIVED fires for every item the client fetches, for every view; nearly all
+-- of those calls return at once.
+wrapAll("View", app.ui.ViewMixin, 0.5, "OnEvent")
+wrapAll("MainWindow", app.ui.MainWindowMixin, 0, "OpenView", "Toggle", "RefreshViews")
