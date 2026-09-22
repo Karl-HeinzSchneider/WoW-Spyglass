@@ -28,6 +28,9 @@ end
 
 -- Called after OnInitialize and whenever the addon is re-enabled. Register events here.
 function addon:OnEnable()
+    -- PLAYER_LOGIN is still behind the loading screen and every addon (the locale names too)
+    -- has loaded: build the query's sort order now instead of on the first click on Items.
+    app.query.Run(app.query.New())
     log:debug("Enabled")
 end
 

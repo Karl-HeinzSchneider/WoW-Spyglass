@@ -18,6 +18,9 @@ local FALLBACK_ICON = "Interface\\Icons\\INV_Misc_QuestionMark"
 -- Delay between the last keystroke in the search box and running the query.
 local SEARCH_DEBOUNCE = 0.25
 
+-- Minimum time between redraws while item info streams in for the page.
+local ITEM_INFO_REDRAW_INTERVAL = 0.1
+
 -- One node per DB item, shared by every query result so lists don't re-allocate 20k tables.
 ---@type table<integer, ForeverLoot.Node>
 local itemNodes = {}
@@ -640,10 +643,11 @@ end
 ---@field headerHeight number
 ---@field headerGap number
 ---@field columnGap number
----@field pages ForeverLoot.PlacedElement[][]  # layout result for the current node
+---@field pages ForeverLoot.PageRange[]  # layout result for the current node (into `layout`)
 ---@field path ForeverLoot.Node[]
 ---@field onNavigate? fun(view: ForeverLoot.View)
 ---@field pendingItems table<integer, boolean>  # itemIDs whose info hasn't arrived yet
+---@field renderQueued? boolean  # a deferred Render is scheduled (item info arrived)
 ForeverLootViewMixin = {}
 app.ui.ViewMixin = ForeverLootViewMixin
 
@@ -662,12 +666,39 @@ app.ui.ViewMixin = ForeverLootViewMixin
 ---@field text? string  # header, group
 ---@field node? ForeverLoot.Node  # row, tile, card
 
----@class ForeverLoot.PlacedElement
----@field element ForeverLoot.Element
----@field x number
----@field y number
----@field width number
----@field height number
+-- Where every element of the current layout goes, as parallel arrays indexed by placement
+-- order; a page is a range of them. Shared by all views: only the shown view lays out and
+-- draws (a hidden one refreshes when shown, see Refresh), so one buffer serves every tab
+-- instead of a table per placed row per tab -- a 25k-item list is ~2 MB here, not ~7 MB each.
+---@class ForeverLoot.Layout
+---@field element ForeverLoot.Element[]
+---@field x number[]
+---@field y number[]
+---@field width number[]
+---@field height number[]
+local layout = { element = {}, x = {}, y = {}, width = {}, height = {} }
+
+---@class ForeverLoot.PageRange
+---@field first integer  # index into `layout`
+---@field last integer
+
+-- One element per (kind, node), shared across refreshes: a 25k-item query would otherwise
+-- allocate 25k of them every time the list is rebuilt.
+---@type table<string, table<ForeverLoot.Node, ForeverLoot.Element>>
+local entryElements = { row = {}, tile = {}, card = {} }
+
+---@param kind "row"|"tile"|"card"
+---@param node ForeverLoot.Node
+---@return ForeverLoot.Element
+local function entryElement(kind, node)
+    local byNode = entryElements[kind]
+    local element = byNode[node]
+    if not element then
+        element = { kind = kind, node = node }
+        byNode[node] = element
+    end
+    return element
+end
 
 function ForeverLootViewMixin:OnLoad()
     self.path = {}
@@ -719,14 +750,22 @@ function ForeverLootViewMixin:OnMouseUp(button)
     end
 end
 
--- Item data arrives asynchronously; redraw once something we're showing has loaded.
+-- Item data arrives asynchronously; redraw once something we're showing has loaded. A fresh
+-- page gets dozens of these spread over a second or two, so redraws are rate-limited: the
+-- first arrival schedules one, later arrivals ride along until it runs.
 ---@param event string
 ---@param itemID integer
 function ForeverLootViewMixin:OnEvent(event, itemID)
     if event == "GET_ITEM_INFO_RECEIVED" and self.pendingItems[itemID] then
         self.pendingItems[itemID] = nil
-        if self:IsShown() then
-            self:Render()
+        if self:IsShown() and not self.renderQueued then
+            self.renderQueued = true
+            C_Timer.After(ITEM_INFO_REDRAW_INTERVAL, function()
+                self.renderQueued = nil
+                if self:IsShown() then
+                    self:Render()
+                end
+            end)
         end
     end
 end
@@ -1063,6 +1102,11 @@ end
 -- Called on navigation, query changes, page-size changes and profile refreshes; page flips
 -- and item-info arrivals only need Render().
 function ForeverLootViewMixin:Refresh()
+    -- A hidden view (another tab is selected) shares `layout` with the shown one and would
+    -- overwrite it; it lays itself out in OnShow instead.
+    if not self:IsShown() then
+        return
+    end
     -- The rows are about to change; a recipe popup anchored to one of them would be stale.
     if app.ui.recipePopup and app.ui.recipePopup:IsShown() then
         app.ui.recipePopup:Hide()
@@ -1109,7 +1153,7 @@ function ForeverLootViewMixin:BuildElements(node)
 
     local function addRows(entries)
         for _, entry in ipairs(entries) do
-            elements[#elements + 1] = { kind = entryKind, node = entry }
+            elements[#elements + 1] = entryElement(entryKind, entry)
         end
     end
 
@@ -1137,8 +1181,11 @@ function ForeverLootViewMixin:BuildElements(node)
             flush()
             elements[#elements + 1] = { kind = "group", text = child.group }
             addRows(child.items or {})
-        else
+        elseif groupBy then
             pending[#pending + 1] = child
+        else
+            -- No grouping: straight in, without collecting 25k entries first.
+            elements[#elements + 1] = entryElement(entryKind, child)
         end
     end
     flush()
@@ -1150,19 +1197,20 @@ end
 -- cards are taller and get a little air between lines). A header never ends a page.
 ---@param elements ForeverLoot.Element[]
 ---@param columns integer
----@return ForeverLoot.PlacedElement[][]
+---@return ForeverLoot.PageRange[]
 function ForeverLootViewMixin:LayoutPages(elements, columns)
     local pages = {}
-    local page, y, column = {}, 0, 0
+    local first, count, y, column = 1, 0, 0, 0 -- first: layout index of the page being filled
+    local elementAt, xAt, yAt, widthAt, heightAt = layout.element, layout.x, layout.y, layout.width, layout.height
     local pageWidth, pageHeight = self.Content:GetSize()
     local columnWidth = (pageWidth - self.columnGap * (columns - 1)) / columns
     local lineHeight = self.rowHeight -- of the line being filled
 
     local function newPage()
-        if #page > 0 then
-            pages[#pages + 1] = page
+        if count >= first then
+            pages[#pages + 1] = { first = first, last = count }
         end
-        page, y, column = {}, 0, 0
+        first, y, column = count + 1, 0, 0
     end
 
     local function newLine()
@@ -1173,7 +1221,8 @@ function ForeverLootViewMixin:LayoutPages(elements, columns)
     end
 
     local function place(element, x, width, height)
-        page[#page + 1] = { element = element, x = x, y = y, width = width, height = height }
+        count = count + 1
+        elementAt[count], xAt[count], yAt[count], widthAt[count], heightAt[count] = element, x, y, width, height
     end
 
     for _, element in ipairs(elements) do
@@ -1219,15 +1268,15 @@ function ForeverLootViewMixin:LayoutPages(elements, columns)
 end
 
 ---@param page ForeverLoot.Page
----@param placed ForeverLoot.PlacedElement[]?
-function ForeverLootViewMixin:RenderPage(page, placed)
+---@param range ForeverLoot.PageRange?
+function ForeverLootViewMixin:RenderPage(page, range)
     page.rowPool:ReleaseAll()
     page.tilePool:ReleaseAll()
     page.cardPool:ReleaseAll()
     page.headerPool:ReleaseAll()
     page.groupPool:ReleaseAll()
-    for _, item in ipairs(placed or {}) do
-        local element = item.element
+    for i = range and range.first or 1, range and range.last or 0 do
+        local element = layout.element[i]
         local frame
         if element.kind == "header" then
             frame = page.headerPool:Acquire() --[[@as ForeverLoot.PageHeader]]
@@ -1245,8 +1294,8 @@ function ForeverLootViewMixin:RenderPage(page, placed)
             frame = page.rowPool:Acquire() --[[@as ForeverLoot.ListRow]]
             frame:Init(self, element.node)
         end
-        frame:SetSize(item.width, item.height)
-        frame:SetPoint("TOPLEFT", page, "TOPLEFT", item.x, -item.y)
+        frame:SetSize(layout.width[i], layout.height[i])
+        frame:SetPoint("TOPLEFT", page, "TOPLEFT", layout.x[i], -layout.y[i])
         frame:Show()
     end
 end

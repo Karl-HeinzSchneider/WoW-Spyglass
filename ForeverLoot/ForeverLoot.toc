@@ -25,10 +25,9 @@ modules\modules.xml
 src\ui\view.lua
 src\ui\templates.xml
 src\ui\mainwindow.lua
+# Dev timing of the mixins above; must precede the XML that creates frames from them.
+src\helper\profiler.lua
 src\ui\mainwindow.xml
 src\ui\recipepopup.lua
 src\ui\recipepopup.xml
 ForeverLoot.lua
-
-# Optional: hooks into the NumyFunctionProfiler addon when it is installed. Keep last.
-src\helper\profiler.lua
