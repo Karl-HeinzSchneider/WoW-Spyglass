@@ -17,6 +17,7 @@ local log = app.logger
 --   spell   : `spellID`
 --   custom  : `name` (+ `icon`, `description`, `onClick`, `tooltip`), also used by placeholders
 --   header  : `header` (big section title)      group : `group` (row-sized label, + `items`)
+--   spacer  : `spacer` (one empty row of space)
 --   dynamic : `getChildren` (folder whose entries are computed when opened)
 --   query   : `query` (folder listing the item DB, filtered by the view's search/filter state)
 ---@class ForeverLoot.Node
@@ -46,6 +47,7 @@ local log = app.logger
 ---@field quests? integer[]  # cards: quest ids the entry is involved in; shows a "!" and lists their titles in the tooltip
 ---@field order? number  # sort key when the owning module sorts its children
 ---@field header? string  # section header marker; see ForeverLoot.Header
+---@field spacer? boolean  # spacer marker: one empty row of space; see ForeverLoot.Spacer
 --- Optional metadata, free for modules and custom sort functions to use:
 ---@field expansionID? integer  # e.g. LE_EXPANSION_CLASSIC
 ---@field seasonID? integer
@@ -62,6 +64,7 @@ local log = app.logger
 ---@field name string  # display name
 ---@field icon string|number  # texture path or fileID
 ---@field order? number  # sort position in the root list; lower first, default 100
+---@field spacerBefore? boolean  # an empty row above this module in the root list (unless it comes first)
 ---@field description? string  # shown in tooltips
 ---@field children? ForeverLoot.Node[]  # the module's top-level entries (may be empty and filled via AddToModule)
 ---@field getChildren? fun(def: ForeverLoot.ModuleDef): ForeverLoot.Node[]  # lazy alternative to `children`, called once
@@ -271,6 +274,12 @@ end
 ---@return ForeverLoot.Node
 function api.Header(text)
     return { header = text }
+end
+
+-- One empty row of space inside a folder's children, e.g. to set an entry apart from the rest.
+---@return ForeverLoot.Node
+function api.Spacer()
+    return { spacer = true }
 end
 
 -- A real item, resolved from the game's item database when displayed (not implemented yet).
@@ -557,6 +566,9 @@ local function validate(def)
     if def.order ~= nil and type(def.order) ~= "number" then
         return false, "field `order` must be a number"
     end
+    if def.spacerBefore ~= nil and type(def.spacerBefore) ~= "boolean" then
+        return false, "field `spacerBefore` must be a boolean"
+    end
     if def.children ~= nil and type(def.children) ~= "table" then
         return false, "field `children` must be a table"
     end
@@ -688,8 +700,8 @@ local function sortedChildren(def)
     return copy
 end
 
--- The virtual root node the main window browses: one child per registered module.
--- Rebuilt lazily whenever the module set changes.
+-- The virtual root node the main window browses: one child per registered module, with a
+-- spacer above every module that asks for one. Rebuilt lazily whenever the module set changes.
 ---@return ForeverLoot.Node
 function api:GetRootNode()
     if cachedRoot then
@@ -697,7 +709,10 @@ function api:GetRootNode()
     end
     local children = {}
     for i, def in ipairs(self:GetModules()) do
-        children[i] = {
+        if def.spacerBefore and i > 1 then
+            children[#children + 1] = api.Spacer()
+        end
+        children[#children + 1] = {
             name = def.name,
             icon = def.icon,
             description = def.description,

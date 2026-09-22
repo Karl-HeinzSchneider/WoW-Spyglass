@@ -7,7 +7,7 @@ FL:RegisterModule({
     id = "dungeons",
     name = "Dungeons",
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
-    order = 20,
+    order = 10,
     description = "Loot tables for 5-man dungeons.",
     display = "tiles",
     getChildren = function()

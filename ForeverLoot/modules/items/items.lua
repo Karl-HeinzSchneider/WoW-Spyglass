@@ -7,7 +7,8 @@ FL:RegisterModule({
     id = "items",
     name = "Items",
     icon = "Interface\\Icons\\INV_Misc_Bag_10",
-    order = 5,
+    order = 1000, -- last: after the content modules and any third-party ones (default 100)
+    spacerBefore = true,
     description = "Every known item, searchable and filterable.",
     query = true,
     columns = 2,

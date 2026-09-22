@@ -7,7 +7,7 @@ FL:RegisterModule({
     id = "collections",
     name = "Collections",
     icon = "Interface\\Icons\\Ability_Mount_RidingHorse",
-    order = 50,
+    order = 60,
     description = "Mounts, companions and other collectibles.",
     display = "tiles",
     getChildren = function()

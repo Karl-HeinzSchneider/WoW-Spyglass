@@ -61,7 +61,8 @@ if the definition is invalid; it never throws.
 | `id` | string | yes | Unique key. Prefix with your addon name to avoid collisions. |
 | `name` | string | yes | Display name. |
 | `icon` | string \| number | yes | Texture path or fileID. |
-| `order` | number | no | Sort position among modules; lower first. Default `100`. Ties sort by name. |
+| `order` | number | no | Sort position among modules; lower first. Default `100`. Ties sort by name. The built-in content modules use 10–60, the item browser `1000` so it stays last. |
+| `spacerBefore` | boolean | no | Leaves one empty row above the module in the root list (not when it comes first). The built-in `items` module uses it to sit apart from the content modules. |
 | `description` | string | no | Free text for tooltips. |
 | `children` | Node[] | one of | The module's top-level entries. |
 | `getChildren` | fun(def) -> Node[] | one of | Lazy alternative; called once, the first time the tree is built. Errors are caught and logged. |
@@ -184,6 +185,8 @@ Inside a folder's `children`:
   divider). The current folder's own name is always shown as the first header of its list.
 - `{ group = "Tier 2", items = { ... } }` renders as a row-sized group label followed by
   `items`. Without `items` it just marks where a group starts in the surrounding list.
+- `{ spacer = true }` is one empty row of space (as high as a list row, nothing drawn), e.g. to
+  set an entry apart from the rest. Dropped when it would fall at the top of a page.
 
 ### Automatic grouping
 
@@ -212,6 +215,7 @@ Constructors (optional sugar):
 - `ForeverLoot.Folder(name, icon, children, opts?)` — `opts = { columns = 2, display = "tiles", description = "...", groupBy = "auto" }`
 - `ForeverLoot.Header(text)` — section header inside a list
 - `ForeverLoot.Group(text, items?)` — group label, optionally with its entries
+- `ForeverLoot.Spacer()` — one empty row
 - `ForeverLoot.Item(itemID)`
 - `ForeverLoot.Spell(spellID)`
 - `ForeverLoot.Custom({ name, icon, description, quality, category, tooltip, onClick })`

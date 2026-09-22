@@ -7,7 +7,7 @@ FL:RegisterModule({
     id = "reputation",
     name = "Reputation",
     icon = "Interface\\Icons\\Achievement_Reputation_01",
-    order = 60,
+    order = 40,
     description = "Faction rewards by standing.",
     display = "tiles",
     getChildren = function()

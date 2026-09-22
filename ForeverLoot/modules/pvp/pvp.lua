@@ -7,7 +7,7 @@ FL:RegisterModule({
     id = "pvp",
     name = "PvP",
     icon = "Interface\\Icons\\INV_BannerPVP_02",
-    order = 40,
+    order = 50,
     description = "Honor and battleground rewards.",
     display = "tiles",
     getChildren = function()

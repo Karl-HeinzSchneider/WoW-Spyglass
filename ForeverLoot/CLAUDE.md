@@ -38,8 +38,9 @@ Current order and why:
 - `registry.lua` — `app.api`, which **is the public global `ForeverLoot`**. `API_VERSION`,
   `RegisterModule(def)` (validates and stores module definitions), `AddToModule`,
   `GetRootNode()` (the virtual tree the window browses, one node per module sorted by `order`,
-  cached until the module set changes), node constructors (`Folder/Item/Spell/Custom/Header/
-  Group`), grouping (`DefaultGroupKey`, `DefaultEntryRank`, `GroupEntries`), the slash-command
+  a spacer above modules with `spacerBefore`, cached until the module set changes), node
+  constructors (`Folder/Item/Spell/Custom/Header/Group/Spacer`), grouping (`DefaultGroupKey`,
+  `DefaultEntryRank`, `GroupEntries`), the slash-command
   extension registry (`RegisterCommand/UnregisterCommand`; `app.commands` is the private
   dispatcher, `show`/`loglevel`/`reset` are reserved), and CallbackHandler-1.0 events
   (`OnModuleRegistered/Unregistered`, `OnModulesChanged`, `OnDataChanged`, `OnFiltersChanged`).
@@ -107,7 +108,8 @@ from LuaLS and StyLua. The provenance header in these files intentionally still 
 One folder per module (`items`, `raids`, `dungeons`, `crafting`, `pvp`, `collections`,
 `reputation`), each a `<name>.lua` + `<name>.xml` loader listed in `modules/modules.xml`. They
 hold no data and use **only the public API a third-party addon would** — never give them private
-hooks. `items` is a `query = true` module (the whole DB with search box and filter dropdown).
+hooks. Root order: dungeons, raids, crafting, reputation, pvp, collections (`order` 10–60), then
+a spacer and `items` (`order = 1000`, `spacerBefore = true`). `items` is a `query = true` module (the whole DB with search box and filter dropdown).
 `raids`/`dungeons` are `display = "tiles"` modules whose `getChildren` returns explicit
 `FL.InstanceFolder(mapID)` lines (commented out until an instance has curated loot). The other
 four return `FL.ListFolders(kind)`; for `crafting` that means one tile per profession file, each
@@ -149,7 +151,9 @@ only sanctioned globals.
   - `display = "cards"` (an instance's boss list) draws `ForeverLootCardTemplate`: the same
     bevelled list-button atlas with the entry's `portrait` standing on the left, name and info
     beside it (boss level/type, drops of interest, a quest "!" for `quests`), two per line.
-  - Section headers use the `UI-Character-Info-Title` plate; groups are row-sized labels.
+  - Section headers use the `UI-Character-Info-Title` plate; groups are row-sized labels;
+    a `spacer` element is one row of empty space that takes part in the page layout but has no
+    frame (dropped at a page top).
 - `recipepopup.lua/.xml` — `ForeverLootRecipePopup` (`app.ui.recipePopup`), a tooltip-bordered
   child of the main window that a click on a recipe row (a node whose `meta.spell` is in
   `Data.recipes`) toggles below that row: title, then icons only — the product and the recipe

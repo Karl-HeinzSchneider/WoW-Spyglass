@@ -660,9 +660,10 @@ app.ui.ViewMixin = ForeverLootViewMixin
 ---@field groupPool ForeverLoot.FramePool
 
 -- What a page displays. `kind` picks the template; new element kinds plug in here
--- (BuildElements, LayoutPages, RenderPage).
+-- (BuildElements, LayoutPages, RenderPage). A `spacer` is one row of empty space: it takes
+-- part in the layout but draws nothing.
 ---@class ForeverLoot.Element
----@field kind "header"|"group"|"row"|"tile"|"card"
+---@field kind "header"|"group"|"spacer"|"row"|"tile"|"card"
 ---@field text? string  # header, group
 ---@field node? ForeverLoot.Node  # row, tile, card
 
@@ -1135,9 +1136,9 @@ end
 
 -- Turns the current node into the flat list of things to draw: its children (the folder's
 -- own title is the fixed `Title` frame above the pages). `header` nodes become section headers, `group` nodes become group labels (followed
--- by their `items`), everything else a row (or a tile in a `display = "tiles"` folder). If the
--- folder has `groupBy`, runs of plain entries are bucketed into auto groups; explicit
--- headers/groups are kept as written.
+-- by their `items`), `spacer` nodes an empty row, everything else a row (or a tile in a
+-- `display = "tiles"` folder). If the folder has `groupBy`, runs of plain entries are bucketed
+-- into auto groups; explicit headers/groups/spacers are kept as written.
 ---@param node ForeverLoot.Node?
 ---@return ForeverLoot.Element[]
 function ForeverLootViewMixin:BuildElements(node)
@@ -1181,6 +1182,9 @@ function ForeverLootViewMixin:BuildElements(node)
             flush()
             elements[#elements + 1] = { kind = "group", text = child.group }
             addRows(child.items or {})
+        elseif child.spacer then
+            flush()
+            elements[#elements + 1] = { kind = "spacer" }
         elseif groupBy then
             pending[#pending + 1] = child
         else
@@ -1194,7 +1198,9 @@ end
 
 -- Flows elements top-to-bottom into as many pages as needed. Headers span the full width and
 -- start a new line; rows, tiles and cards fill `columns` columns left to right (tiles and
--- cards are taller and get a little air between lines). A header never ends a page.
+-- cards are taller and get a little air between lines). A header never ends a page. A spacer
+-- is a row-high blank line that is dropped at the top of a page and never causes a page break
+-- by itself.
 ---@param elements ForeverLoot.Element[]
 ---@param columns integer
 ---@return ForeverLoot.PageRange[]
@@ -1242,6 +1248,13 @@ function ForeverLootViewMixin:LayoutPages(elements, columns)
             end
             place(element, 0, pageWidth, self.rowHeight)
             y = y + self.rowHeight
+        elseif element.kind == "spacer" then
+            -- Only space: nothing is placed, so nothing is drawn. Skipped at a page top and
+            -- swallowed when it would not fit, so a page never ends (or starts) with air.
+            newLine()
+            if y > 0 and y + self.rowHeight <= pageHeight then
+                y = y + self.rowHeight
+            end
         else
             local height, gap = self.rowHeight, 0
             if element.kind == "tile" then

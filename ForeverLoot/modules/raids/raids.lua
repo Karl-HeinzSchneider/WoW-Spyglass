@@ -8,7 +8,7 @@ FL:RegisterModule({
     id = "raids",
     name = "Raids",
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicRaider",
-    order = 10,
+    order = 20,
     description = "Loot tables for raid instances.",
     display = "tiles",
     getChildren = function()
