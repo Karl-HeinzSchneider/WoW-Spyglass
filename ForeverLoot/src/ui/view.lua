@@ -18,9 +18,6 @@ local FALLBACK_ICON = "Interface\\Icons\\INV_Misc_QuestionMark"
 -- Delay between the last keystroke in the search box and running the query.
 local SEARCH_DEBOUNCE = 0.25
 
--- Minimum time between redraws while item info streams in for the page.
-local ITEM_INFO_REDRAW_INTERVAL = 0.1
-
 -- One node per DB item, shared by every query result so lists don't re-allocate 20k tables.
 ---@type table<integer, ForeverLoot.Node>
 local itemNodes = {}
@@ -751,9 +748,8 @@ function ForeverLootViewMixin:OnMouseUp(button)
     end
 end
 
--- Item data arrives asynchronously; redraw once something we're showing has loaded. A fresh
--- page gets dozens of these spread over a second or two, so redraws are rate-limited: the
--- first arrival schedules one, later arrivals ride along until it runs.
+-- Item data arrives asynchronously; redraw once something we're showing has loaded. Several
+-- can arrive in one frame, so the redraw is deferred to the next frame and done once.
 ---@param event string
 ---@param itemID integer
 function ForeverLootViewMixin:OnEvent(event, itemID)
@@ -761,7 +757,7 @@ function ForeverLootViewMixin:OnEvent(event, itemID)
         self.pendingItems[itemID] = nil
         if self:IsShown() and not self.renderQueued then
             self.renderQueued = true
-            C_Timer.After(ITEM_INFO_REDRAW_INTERVAL, function()
+            C_Timer.After(0, function()
                 self.renderQueued = nil
                 if self:IsShown() then
                     self:Render()
