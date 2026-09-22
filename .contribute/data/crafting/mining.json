@@ -1,0 +1,7 @@
+{
+  "name": "Mining",
+  "icon": "Interface\\Icons\\Trade_Mining",
+  "order": 80,
+  "skillLine": 186,
+  "recipes": []
+}

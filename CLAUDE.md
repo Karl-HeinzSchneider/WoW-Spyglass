@@ -37,7 +37,9 @@ client and item ids from Classic/wowhead do **not** match. The in-game scan (`/f
 addon) is the only item source. Only scanned items exist in the DB; a curated loot row may
 reference an unscanned id (warning, not error). Instances and encounters *do* come from
 wago.tools' `Map` + `DungeonEncounter` tables for the build pinned in `.contribute/data/config.json`
-(instance ids = `Map` ids, boss ids = `DungeonEncounter` ids).
+(instance ids = `Map` ids, boss ids = `DungeonEncounter` ids), and so do profession recipes
+(`SkillLineAbility`, `SpellReagents`, `SpellEffect`, …; recipe ids = spell ids), shipped only
+when the scans confirm the item they make.
 
 ## Commands (Node 20+, run from the root after `npm install` once)
 

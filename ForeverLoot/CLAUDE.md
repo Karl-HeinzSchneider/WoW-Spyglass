@@ -58,24 +58,33 @@ Nothing in here touches frames.
 
 - `data.lua` — `app.data`. Normalized integer-keyed tables: `items` rows are positional arrays
   indexed by `Data.ITEM` (layout must match `itemRow()` in `src/generate.ts`), `instances`,
-  `bosses`, `bossLoot`, `names[locale]`; plus the string-keyed curated lists
-  (`lists[kind][id]` = `{ name, icon, order, factionID, … }`, `listLoot[kind][id]` =
-  `{ { itemID, standing = "Honored", … }, … }`; kind = `crafting`/`pvp`/`collections`/
-  `reputation`, id = the JSON file's slug). `Add*` calls invalidate caches and fire
-  `OnDataChanged`; `GetVersion()` bumps on every change. `GetItemName` resolves client locale →
-  enUS → `C_Item.GetItemInfo` → `"Item #id"`. `GetItemSources` is a lazy inverted index over
-  boss loot and every list.
+  `bosses`, `bossLoot`, `recipes` (positional rows indexed by `Data.RECIPE`, keyed by spell id,
+  layout must match `recipeRow()`), `categories` (trade skill categories: `skillLineID`,
+  `order`), `names[locale]` (`items`, `bosses`, `instances`, `skillLines`, `categories`,
+  `tools`); plus the string-keyed curated lists (`lists[kind][id]` = `{ name, icon, order,
+  factionID, skillLineID, … }`, `listLoot[kind][id]` = `{ { itemID, standing = "Honored", … }, … }`;
+  kind = `crafting`/`pvp`/`collections`/`reputation`, id = the JSON file's slug). `Add*` calls
+  invalidate caches and fire `OnDataChanged`; `GetVersion()` bumps on every change.
+  `GetItemName` resolves client locale → enUS → `C_Item.GetItemInfo` → `"Item #id"`;
+  `GetName(kind, id)` does client locale → enUS for the other kinds. `GetRecipeIDs(skillLineID)`
+  is a profession's recipes in trade-skill-window order. `GetItemSources` is a lazy inverted
+  index over boss loot, every list and the recipes that make an item.
 - `filters.lua` — `app.filters`: registry of named predicates with options (`multi`/`single`),
   optional precomputed buckets, and the built-ins (`quality`, `slot`, `armorType`, `weaponType`,
-  `itemLevel`, `reqLevel`, `instance`, `boss`).
+  `itemLevel`, `reqLevel`, `instance`, `boss`, `profession` = made by a profession's recipes).
 - `query.lua` — `app.query`: `Query.Run(q)` over a plain, serializable query table (`search`,
   `filters`, `sort`). Filters AND, values within a filter OR.
 - `nodes.lua` — DB-backed node constructors on the public API that modules build their trees
   from: `InstanceFolders(type)`, `InstanceFolder(id)` (a `cards` folder of bosses), `BossFolder(id)`,
-  `BossLootEntries(id)`; `ListFolders(kind)`, `ListFolder(kind, id)`, `ListEntries(kind, id)` —
-  list rows become item nodes with the row's fields in `meta`, grouped by the row's `group`,
-  else the kind's default (standing for reputation, honor rank/standing for pvp, skill tier for
-  crafting), else item type.
+  `BossLootEntries(id)`; `ListFolders(kind)`, `ListFolder(kind, id)`, `ListEntries(kind, id)` — list
+  rows become item nodes with the row's fields in `meta`, grouped by the row's `group`, else the
+  kind's default (standing for reputation, honor rank/standing for pvp, trade skill category then
+  skill tier for crafting), else item type. Crafting lists with a `skillLineID` are built from
+  `Data.recipes` (`craftingEntries`: one node per recipe — the item it makes, or the spell for
+  enchants — with the colored skill thresholds as `infoRight` and reagents/tools/source as a
+  `tooltip` function) and the curated rows are laid over them by `spell` or by item; the folder
+  takes the localized profession name from `Data:GetName("skillLines", …)` and the character's
+  rank from `C_SkillInfo.GetSkillLineInfoByID` as `info`.
 
 ### `db/generated/` — **generated, never hand-edited**
 
@@ -83,9 +92,12 @@ Written by `npm run gen` from `.contribute/data/`; the TOC lists only `db\genera
 which loads the rest. `items/items_NNN.lua` (every scanned item, `itemsPerFile` rows each),
 `instances.lua` (all instances with encounters plus curated levels/icons/portraits; the `-- Name`
 comments are the place to look up map ids), `loot/<slug>.lua` (curated drops), `<kind>/<slug>.lua`
-(one `Data:AddList` + `Data:AddListLoot` per curated list), `locales/enUS/*.lua` (the standalone
-fallback names). Excluded from LuaLS and StyLua. The provenance header in these files
-intentionally still says `.contribute/tools` (see `src/CLAUDE.md`).
+(one `Data:AddList` + `Data:AddListLoot` per curated list), `recipes/<profession>.lua` (the
+profession's trade skill categories and every recipe the scans confirm, from wago.tools; the
+`-- Name` comments are the place to look up recipe spell ids), `locales/enUS/*.lua` (the
+standalone fallback names, including `crafting.lua` = profession/category/tool names). Excluded
+from LuaLS and StyLua. The provenance header in these files intentionally still says
+`.contribute/tools` (see `src/CLAUDE.md`).
 
 ### `modules/<name>/` — built-in content modules
 
@@ -95,7 +107,8 @@ hold no data and use **only the public API a third-party addon would** — never
 hooks. `items` is a `query = true` module (the whole DB with search box and filter dropdown).
 `raids`/`dungeons` are `display = "tiles"` modules whose `getChildren` returns explicit
 `FL.InstanceFolder(mapID)` lines (commented out until an instance has curated loot). The other
-four return `FL.ListFolders(kind)`.
+four return `FL.ListFolders(kind)`; for `crafting` that means one tile per profession file, each
+listing the generated recipes merged with the file's rows (see `nodes.lua`).
 
 ### `src/ui/` — the main window (Blizzard-style XML layout + Lua mixin)
 
@@ -121,10 +134,12 @@ only sanctioned globals.
   query state (`view.queries`); query folders show the debounced `SearchBox` and the
   `FilterDropdown` (Blizzard_Menu `WowStyle1FilterDropdownTemplate`, menu generated from the
   filter registry).
-  - A **row** is icon, name in quality color, drop chance top-right, slot bottom-left and
-    armor/weapon type bottom-right (`itemKindTexts`), both red when the character can't equip
-    the item — read from the tooltip's slot line via the hidden `ForeverLootScanTooltip`
-    (`scanEquipErrors`), which is exact for this client's proficiencies.
+  - A **row** is icon, name in quality color, drop chance (else the node's `infoRight`, e.g. a
+    recipe's skill thresholds) top-right, slot bottom-left and armor/weapon type bottom-right
+    (`itemKindTexts`), both red when the character can't equip the item — read from the
+    tooltip's slot line via the hidden `ForeverLootScanTooltip` (`scanEquipErrors`), which is
+    exact for this client's proficiencies. Item and spell tooltips are followed by the node's
+    `tooltip` lines (a list or a function of the node).
   - `display = "tiles"` (raids, dungeons) draws `ForeverLootTileTemplate` cards:
     `background`/`backgroundCoords` picture, name on top, `info` (level range by default) and
     `infoRight` in the bottom corners, three per line.
@@ -139,8 +154,9 @@ only sanctioned globals.
   `ForeverLoot.DB`, `ForeverLoot.UI` and `ForeverLoot.FramePool`. When a file adds a member to
   `app`, add a matching `---@field` here.
 - `src/types_blizzard.lua` — Blizzard UI mixins the UI inherits from (`SidePanelTabButtonMixin`,
-  `PortraitFrameMixin`, `PagingControlsMixin`, …), limited to the methods we use, because the
-  full ones are only in Ketho's opt-in FrameXML annotations. Extend a stub (verified against
+  `PortraitFrameMixin`, `PagingControlsMixin`, …) and Classic-only API namespaces the
+  annotations lack (`C_SkillInfo`), limited to the methods we use, because the full ones are
+  only in Ketho's opt-in FrameXML annotations. Extend a stub (verified against
   `BlizzardInterfaceCode`) when using a new method.
 
 ### Other

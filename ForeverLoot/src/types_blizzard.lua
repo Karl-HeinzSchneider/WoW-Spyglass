@@ -37,6 +37,21 @@
 ---@field SetTabGlowAnimationPlaying fun(self: SidePanelTabButtonMixin, playing: boolean)
 SidePanelTabButtonMixin = {} --[[@as SidePanelTabButtonMixin]]
 
+-- C_SkillInfo (Blizzard_APIDocumentationGenerated/SkillInfoDocumentation.lua): the character's
+-- skill lines, used for the profession rank on crafting tiles.
+---@class SkillLineAttributes
+---@field skillID number
+---@field name string
+---@field isHeader boolean
+---@field rank number
+---@field maxRank number
+---@field parentSkillLineID number
+---@field skillLineCategoryID number
+
+---@class C_SkillInfo
+---@field GetSkillLineInfoByID fun(skillLineID: number): SkillLineAttributes?
+C_SkillInfo = {} --[[@as C_SkillInfo]]
+
 ---@class PagingControlsMixin
 ---@field GetMaxPages fun(self: PagingControlsMixin): integer
 ---@field SetMaxPages fun(self: PagingControlsMixin, maxPages: integer)

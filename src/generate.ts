@@ -5,6 +5,7 @@ import { type CuratedFile } from "./curated.js";
 import { type ScannedItem } from "./items.js";
 import { type ListFile, ROW_FIELDS, rowsOf } from "./lists.js";
 import { header, luaFields, luaString, luaValue } from "./lua.js";
+import { type Recipe, type SkillLine, shipsRecipe } from "./recipes.js";
 import { type Reference, nameOf } from "./reference.js";
 
 const DEFAULT_ICONS = {
@@ -117,7 +118,7 @@ function emitList(file: ListFile, ref: Reference): string {
     ...luaFields(
       {
         name: d.name,
-        icon: d.icon,
+        icon: d.icon ?? (d.skillLine !== undefined ? ref.skillLines.get(d.skillLine)?.icon : undefined),
         background: d.background,
         backgroundCoords: d.backgroundCoords,
         info: d.info,
@@ -129,14 +130,83 @@ function emitList(file: ListFile, ref: Reference): string {
     ).map((l) => l + "\n"),
   );
   out.push("})\n");
-  const rows = rowsOf(file).filter((row) => row.item !== undefined); // name-only rows that `npm run fix` hasn't resolved yet
+  // Rows without an item are either name-only rows `npm run fix` hasn't resolved yet (dropped) or
+  // crafting rows naming a recipe that makes no item (an enchant: kept, the spell is the row).
+  const rows = rowsOf(file).filter((row) => row.item !== undefined || (file.kind === "crafting" && row.spell !== undefined));
   if (rows.length > 0) {
     out.push(`Data:AddListLoot(${luaString(file.kind)}, ${luaString(file.slug)}, {\n`);
     for (const row of rows) {
-      const fields = luaFields({ ...row }, [...ROW_FIELDS[file.kind], "group"], "").map((f) => `, ${f.replace(/,$/, "")}`);
-      const name = ref.items.has(row.item!) ? nameOf(ref, "items", row.item!) : (row.name ?? "?");
-      out.push(`    { ${row.item}${fields.join("")} }, -- ${name}\n`);
+      const fields = luaFields({ ...row }, [...ROW_FIELDS[file.kind], "group"], "").map((f) => `${f.replace(/,$/, "")}`);
+      if (row.item !== undefined) fields.unshift(String(row.item));
+      const name = row.item !== undefined && ref.items.has(row.item) ? nameOf(ref, "items", row.item) : (row.name ?? ref.recipes.get(row.spell ?? 0)?.name ?? "?");
+      out.push(`    { ${fields.join(", ")} }, -- ${name}\n`);
     }
+    out.push("})\n");
+  }
+  return out.join("");
+}
+
+const RECIPE_LAYOUT = "skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto";
+
+/** Recipe row layout; must match Data.RECIPE in ForeverLoot/src/data/data.lua. */
+function recipeRow(recipe: Recipe): unknown[] {
+  return [
+    recipe.skillLineID,
+    recipe.itemID,
+    recipe.count,
+    recipe.minSkill,
+    recipe.yellow,
+    recipe.green,
+    recipe.grey,
+    recipe.categoryID,
+    recipe.reagents.length > 0 ? recipe.reagents.flat() : null,
+    recipe.tools.length > 0 ? recipe.tools : null,
+    recipe.auto ? true : null,
+  ];
+}
+
+/** Trims the trailing nils a positional row would otherwise end with. */
+function trimRow(row: unknown[]): unknown[] {
+  let end = row.length;
+  while (end > 0 && (row[end - 1] === null || row[end - 1] === undefined)) end--;
+  return row.slice(0, end);
+}
+
+/** One profession: its trade skill categories (for group order) and the recipes the scans confirm. */
+function emitRecipes(skillLine: SkillLine, recipes: Recipe[], ref: Reference): string {
+  const out = [header(`wago.tools SkillLineAbility/SpellReagents/SpellEffect, build ${ref.build}`), "local Data = ForeverLoot.Data\n"];
+  out.push(`\n-- ${skillLine.name} (SkillLine ${skillLine.id})\n`);
+  const categories = [...ref.categories.values()].filter((c) => c.skillLineID === skillLine.id).sort((a, b) => a.order - b.order || a.id - b.id);
+  if (categories.length > 0) {
+    out.push("Data:AddCategories({\n");
+    for (const c of categories) out.push(`    [${c.id}] = { skillLineID = ${c.skillLineID}, order = ${c.order} }, -- ${c.name}\n`);
+    out.push("})\n");
+  }
+  const orderOf = (r: Recipe) => ref.categories.get(r.categoryID)?.order ?? Number.MAX_SAFE_INTEGER;
+  const sorted = [...recipes].sort((a, b) => orderOf(a) - orderOf(b) || a.categoryID - b.categoryID || a.yellow - b.yellow || a.spellID - b.spellID);
+  out.push(`-- { ${RECIPE_LAYOUT} }; see Data.RECIPE. Keyed by the recipe's spell id.\n`);
+  out.push("Data:AddRecipes({\n");
+  for (const r of sorted) out.push(`    [${r.spellID}] = ${luaValue(trimRow(recipeRow(r)))}, -- ${r.name}\n`);
+  out.push("})\n");
+  return out.join("");
+}
+
+/** The localized names the crafting pages need: professions, trade skill categories and tools. */
+function emitCraftingNames(locale: string, ref: Reference, skillLines: SkillLine[], recipes: Recipe[]): string {
+  const names = ref.names.get(locale)!;
+  const out = [header(`wago.tools SkillLine/TradeSkillCategory/TotemCategory, build ${ref.build}, locale ${locale}`)];
+  if (locale !== FALLBACK_LOCALE) out.push(`if GetLocale() ~= "${locale}" then\n    return\nend\n`);
+  out.push("local Data = ForeverLoot.Data\n");
+  const shipped = new Set(skillLines.map((s) => s.id));
+  const tools = new Set(recipes.flatMap((r) => r.tools));
+  const tables: [string, Map<number, string>, (id: number) => boolean][] = [
+    ["skillLines", names.skillLines, (id) => shipped.has(id)],
+    ["categories", names.categories, (id) => shipped.has(ref.categories.get(id)?.skillLineID ?? 0)],
+    ["tools", names.tools, (id) => tools.has(id)],
+  ];
+  for (const [kind, table, wanted] of tables) {
+    out.push(`\nData:AddNames("${locale}", "${kind}", {\n`);
+    for (const id of [...table.keys()].filter(wanted).sort((a, b) => a - b)) out.push(`    [${id}] = ${luaString(table.get(id)!)},\n`);
     out.push("})\n");
   }
   return out.join("");
@@ -196,6 +266,17 @@ export function build(ref: Reference, curated: CuratedFile[], lists: ListFile[],
     addCore(`${file.kind}/${file.slug}.lua`, emitList(file, ref));
   }
 
+  // Profession recipes, one file per profession that has any the scans confirm; the crafting
+  // module merges them with the curated crafting lists at runtime.
+  const recipes = [...ref.recipes.values()].filter((r) => shipsRecipe(r, ref.items));
+  const skillLines: SkillLine[] = [];
+  for (const skillLine of [...ref.skillLines.values()].sort((a, b) => a.slug.localeCompare(b.slug))) {
+    const own = recipes.filter((r) => r.skillLineID === skillLine.id);
+    if (own.length === 0) continue;
+    skillLines.push(skillLine);
+    addCore(`recipes/${skillLine.slug}.lua`, emitRecipes(skillLine, own, ref));
+  }
+
   // The core always ships the English fallback. Every additional locale is an optional companion
   // payload, including item names when that locale has been scanned in-game.
   for (const locale of ref.itemLocales) {
@@ -207,6 +288,7 @@ export function build(ref: Reference, curated: CuratedFile[], lists: ListFile[],
     const add = locale === FALLBACK_LOCALE ? addCore : addLocale;
     add(`locales/${locale}/instances.lua`, emitNames(locale, "instances", names.instances, `wago.tools build ${ref.build}`));
     add(`locales/${locale}/bosses.lua`, emitNames(locale, "bosses", names.encounters, `wago.tools build ${ref.build}`));
+    add(`locales/${locale}/crafting.lua`, emitCraftingNames(locale, ref, skillLines, recipes));
   }
 
   core.set("generated.xml", emitXml(coreOrder));

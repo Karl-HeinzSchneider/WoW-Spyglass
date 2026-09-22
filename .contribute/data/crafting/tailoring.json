@@ -1,0 +1,7 @@
+{
+  "name": "Tailoring",
+  "icon": "Interface\\Icons\\Trade_Tailoring",
+  "order": 60,
+  "skillLine": 197,
+  "recipes": []
+}

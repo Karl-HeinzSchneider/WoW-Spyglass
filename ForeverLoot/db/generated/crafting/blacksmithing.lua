@@ -5,4 +5,6 @@ local Data = ForeverLoot.Data
 Data:AddList("crafting", "blacksmithing", {
     name = "Blacksmithing",
     icon = "Interface\\Icons\\Trade_BlackSmithing",
+    order = 20,
+    skillLineID = 164,
 })

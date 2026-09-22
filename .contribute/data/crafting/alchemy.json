@@ -1,0 +1,7 @@
+{
+  "name": "Alchemy",
+  "icon": "Interface\\Icons\\Trade_Alchemy",
+  "order": 10,
+  "skillLine": 171,
+  "recipes": []
+}

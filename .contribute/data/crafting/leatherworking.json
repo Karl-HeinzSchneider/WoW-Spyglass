@@ -1,0 +1,7 @@
+{
+  "name": "Leatherworking",
+  "icon": "Interface\\Icons\\Trade_LeatherWorking",
+  "order": 50,
+  "skillLine": 165,
+  "recipes": []
+}

@@ -22,6 +22,7 @@ import { build, write } from "./generate.js";
 import { importDiscovered } from "./import.js";
 import { saveScannedItems } from "./items.js";
 import { type ListFile, loadLists, serializeList, validateLists } from "./lists.js";
+import { shipsRecipe } from "./recipes.js";
 import { loadReference } from "./reference.js";
 
 const { positionals, values } = parseArgs({
@@ -54,9 +55,12 @@ const config = loadConfig();
 const ref = await loadReference(config);
 const curated = loadCurated();
 const lists = loadLists();
+const shippedRecipes = [...ref.recipes.values()].filter((r) => shipsRecipe(r, ref.items)).length;
 console.log(
   `build ${ref.build}: ${ref.instances.size} instances, ${ref.encounters.size} encounters; ` +
-    `${ref.items.size} scanned items (${ref.itemLocales.join("/") || "no names"}); ${curated.length} curated instance(s), ${lists.length} list(s)`,
+    `${ref.items.size} scanned items (${ref.itemLocales.join("/") || "no names"}); ` +
+    `${ref.recipes.size} recipes of ${ref.skillLines.size} professions, ${shippedRecipes} with scanned items; ` +
+    `${curated.length} curated instance(s), ${lists.length} list(s)`,
 );
 
 for (const path of importPaths) {

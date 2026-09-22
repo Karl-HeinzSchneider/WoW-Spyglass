@@ -342,23 +342,28 @@ local function bracketOf(level, step, max)
     return ("%d-%d"):format(lo, lo + step - 1)
 end
 
--- Instance/boss ids an item drops in, for the indexed source filters.
+-- Instance/boss ids an item drops in, or the professions that make it, for the indexed
+-- source filters.
 ---@param itemID integer
----@param field "instanceID"|"bossID"
+---@param field "instanceID"|"bossID"|"skillLineID"
 ---@return integer[]
 local function sourceKeys(itemID, field)
     local keys, seen = {}, {}
     for _, source in ipairs(Data:GetItemSources(itemID)) do
-        if source.kind == "boss" then
-            local key = source.id
+        local key
+        if field == "skillLineID" then
+            key = source.kind == "recipe" and source.skillLineID or nil
+        elseif source.kind == "boss" then
+            local bossID = source.id --[[@as integer]]
+            key = bossID
             if field == "instanceID" then
-                local boss = Data:GetBoss(source.id)
+                local boss = Data:GetBoss(bossID)
                 key = boss and boss.instanceID
             end
-            if key and not seen[key] then
-                seen[key] = true
-                keys[#keys + 1] = key
-            end
+        end
+        if key and not seen[key] then
+            seen[key] = true
+            keys[#keys + 1] = key
         end
     end
     return keys
@@ -527,5 +532,35 @@ Filters:Register({
     end,
     index = function(itemID)
         return sourceKeys(itemID, "bossID")
+    end,
+})
+
+-- Professions whose recipes make the item; the options are the professions that have lists.
+Filters:Register({
+    id = "profession",
+    name = TRADE_SKILLS or "Profession",
+    order = 90,
+    kind = "multi",
+    options = function()
+        local options = {}
+        for _, id in ipairs(Data:GetListIDs("crafting")) do
+            local list = Data:GetList("crafting", id)
+            if list and type(list.skillLineID) == "number" then
+                local label = Data:GetName("skillLines", list.skillLineID) or list.name
+                options[#options + 1] = { value = list.skillLineID, label = label }
+            end
+        end
+        return options
+    end,
+    match = function(itemID, _, value)
+        for _, key in ipairs(sourceKeys(itemID, "skillLineID")) do
+            if key == value then
+                return true
+            end
+        end
+        return false
+    end,
+    index = function(itemID)
+        return sourceKeys(itemID, "skillLineID")
     end,
 })

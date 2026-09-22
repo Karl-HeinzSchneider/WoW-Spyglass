@@ -1,0 +1,7 @@
+{
+  "name": "Cooking",
+  "icon": "Interface\\Icons\\INV_Misc_Food_15",
+  "order": 100,
+  "skillLine": 185,
+  "recipes": []
+}

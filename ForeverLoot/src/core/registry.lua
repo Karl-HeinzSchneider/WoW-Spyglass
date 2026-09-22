@@ -31,7 +31,7 @@ local log = app.logger
 ---@field spellID? integer
 ---@field quality? Enum.ItemQuality  # custom/placeholder entries: colors the name
 ---@field category? string  # custom/placeholder entries: bucket used by auto grouping
----@field tooltip? string[]  # custom entries: extra tooltip lines
+---@field tooltip? string[]|fun(node: ForeverLoot.Node): string[]  # extra tooltip lines (after the item/spell tooltip on those); a function is called when the tooltip shows
 ---@field onClick? fun(node: ForeverLoot.Node, button: string)  # custom entries
 ---@field moduleID? string  # set on the root's module nodes
 ---@field columns? integer  # folders: columns for this list; default 1 for rows, 3 for tiles
@@ -42,7 +42,7 @@ local log = app.logger
 ---@field backgroundCoords? number[]  # tiles: { left, right, top, bottom } part of `background` to show; whole texture by default
 ---@field portrait? string|number  # cards: picture of the entry (e.g. a boss) on the left of the card; `icon` when unset
 ---@field info? string  # small text bottom-left; the level range when unset and `minLevel`/`maxLevel` are
----@field infoRight? string  # small text bottom-right
+---@field infoRight? string  # small text bottom-right; on rows: the top-right corner (where a `chance` would go)
 ---@field quests? integer[]  # cards: quest ids the entry is involved in; shows a "!" and lists their titles in the tooltip
 ---@field order? number  # sort key when the owning module sorts its children
 ---@field header? string  # section header marker; see ForeverLoot.Header

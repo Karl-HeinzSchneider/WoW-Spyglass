@@ -81,6 +81,7 @@ A node is a plain table; the fields set decide what it displays as:
 { name = "All", icon = "...", query = true }                -- query folder: the item DB, filtered per view (search box + filter menu)
 { itemID = 17070 }                                          -- item: name/icon/quality/ilvl from the game, item tooltip, shift-click links
 { itemID = 17070, chance = 0.18 }                           -- item with a drop chance (0..1), shown as "18%"
+{ itemID = 2851, infoRight = "|cffffff00 70|r", tooltip = fn } -- item with its own top-right text and extra tooltip lines
 { spellID = 22888 }                                         -- spell: name/icon from the game, spell tooltip
 { name = "Title", icon = "...", description = "Second line", -- custom entry
   quality = 4, category = "Misc", tooltip = { "line", ... },
@@ -91,6 +92,11 @@ Items and spells resolve lazily. An item the client hasn't cached yet is drawn f
 database (name, quality, item level) when it is in there, otherwise as "Item #id"; either way
 it redraws when the game's data arrives. `ForeverLoot.IsFolder(node)` tells whether a node
 opens (static, dynamic or query folder).
+
+Any entry may carry `tooltip`: a list of extra lines, or a function `(node) -> lines` called
+each time the tooltip is shown (so names the client fetched in the meantime are used). On items
+and spells the lines follow the game's own tooltip. A row shows `infoRight` in its top-right
+corner when it has no `chance` (the built-in recipe rows put the skill thresholds there).
 
 Folders may also set `columns = 1 | 2` to control how their children are laid out: one
 full-width column (the default) or two columns per page. This is decided by the collection,
@@ -217,7 +223,12 @@ Constructors (optional sugar):
 - `ForeverLoot.ListFolder(kind, id)` / `ForeverLoot.ListEntries(kind, id)` — one list as a two-column
   folder; its item nodes carry the row's fields in `meta` (`standing`, `rank`, `skill`, `spell`, `source`,
   `side`, `group`) and are grouped by the row's `group`, else the kind's default (standing / honor rank /
-  skill tier), else the item's type
+  trade skill category, then skill tier), else the item's type. A crafting list with a `skillLineID`
+  starts from the recipe database: every recipe of that profession becomes an entry (the item it
+  makes, or the spell for enchants) with `meta.spell` and `meta.category`, the skill thresholds as
+  `infoRight` and reagents/tools in the tooltip; the list's own rows then add their fields to the
+  recipe they name (by `spell`, or by the item exactly one recipe makes) or become plain entries.
+  Crafting folders show the character's rank ("145 / 150") as `info` and the localized profession name.
 - `ForeverLoot.Log(fmt, ...)` — prefixed chat message
 - `ForeverLoot.LogAt(level, fmt, ...)` — threshold-aware diagnostic output using the core logger
 - `ForeverLoot.PlaceholderItem(name, quality, icon)` — hard-coded display data, for prototyping
@@ -272,7 +283,11 @@ Data.bosses[2747]    -- { instanceID = 36, order = 6000 }
 Data.bossLoot[2747]  -- { { 5188, 0.9 }, { 5191 }, ... }   -- { itemID, chance 0..1 or nil }
 Data.lists.reputation.argent_dawn      -- { name = "Argent Dawn", icon = "...", order = 1, factionID = 529 }
 Data.listLoot.reputation.argent_dawn   -- { { 13209, standing = "Friendly" }, ... }   -- { itemID, field = value, ... }
-Data.names.enUS      -- { items = { [5188] = "Filled Vessel" }, bosses = {...}, instances = {...} }
+Data.recipes[2661]   -- { skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto };
+                     -- indices in Data.RECIPE: Copper Chain Belt = { 164, 2851, 1, 1, 70, 90, 110, 2466, { 2840, 6 } }
+Data.categories[2466] -- { skillLineID = 164, order = 160 }   -- trade skill category ("Mail Belts"), for group order
+Data.names.enUS      -- { items = { [5188] = "Filled Vessel" }, bosses = {...}, instances = {...},
+                     --   skillLines = { [164] = "Blacksmithing" }, categories = { [2466] = "Mail Belts" }, tools = { [162] = "Blacksmith Hammer" } }
 ```
 
 Curated item lists (`Data.lists[kind][id]`) back the Crafting, PvP, Collections and Reputation
@@ -283,7 +298,18 @@ add kinds of their own and browse them with `ListFolders`), `id` is a string uni
 folders use `factionID` to resolve the localized name, description, current reaction and progress
 from `C_Reputation` at runtime, falling back to the generated fields. Its rows
 are `{ itemID, field = value, ... }` with the kind's fields by name (`standing`, `rank`, `skill`,
-`spell`, `source`, `side`) and an optional `group` label.
+`spell`, `source`, `side`) and an optional `group` label; a crafting row for a recipe that makes
+no item (an enchant) has no `itemID`, only its `spell`, and shows as a spell entry.
+
+Recipes (`Data.recipes`) are keyed by their spell id and come from the client's own spell tables
+(wago.tools `SkillLineAbility`, `SpellReagents`, `SpellEffect`, `SpellTotems`), limited to
+recipes whose products the scans confirm. A row is positional (`Data.RECIPE`): the profession's
+`skillLineID`, the created `itemID` (0 for enchants), `count` (a number, or `{ min, max }`),
+`minSkill` (what the client's tables require — 1 for nearly every Classic recipe; the trainer or
+recipe-item requirement is the curated `skill` row field), the skill at which it turns `yellow`,
+`green` and `grey` (orange below yellow), the `categoryID` into `Data.categories`, `reagents` as
+flat `{ itemID, count, ... }` pairs, `tools` as ids into `Data.names[locale].tools`, and `auto`
+(learned automatically at `minSkill`).
 
 Adding data (any call may be repeated; every one invalidates the caches and fires `OnDataChanged`):
 
@@ -291,8 +317,11 @@ Adding data (any call may be repeated; every one invalidates the caches and fire
 - `Data:AddInstance(id, def)`, `Data:AddBoss(id, def)` (appends to its instance's `bosses` if missing),
   `Data:AddBossLoot(bossID, { { itemID, chance }, ... })`
 - `Data:AddList(kind, id, def)`, `Data:AddListLoot(kind, id, { { itemID, standing = "Honored" }, ... })`
-- `Data:AddNames(locale, "items" | "bosses" | "instances", { [id] = name })` — enUS is the fallback;
-  the official locale addon registers every generated non-English name through this call
+- `Data:AddRecipes({ [spellID] = { skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto }, ... })`,
+  `Data:AddCategories({ [id] = { skillLineID = 164, order = 30 }, ... })`
+- `Data:AddNames(locale, kind, { [id] = name })` with `kind` one of `"items"`, `"bosses"`, `"instances"`,
+  `"skillLines"`, `"categories"`, `"tools"` — enUS is the fallback; the official locale addon registers
+  every generated non-English name through this call
 
 Reading:
 
@@ -300,11 +329,14 @@ Reading:
   `Data:GetItemCount()`, `for id, row in Data:EachItem() do`
 - `Data:GetItemName(id) -> name, known` — client locale, then enUS, then `C_Item.GetItemInfo`, then `"Item #id"`
 - `Data:GetItemStats(id) -> { INTELLECT = 4, ... }?`, `Data.StatLabel("INTELLECT") -> "Intellect"` (the game's `ITEM_MOD_*_SHORT`)
-- `Data:GetItemSources(id) -> { { kind = "boss", id = bossID, chance = 0.18 }, { kind = "reputation", id = "argent_dawn", standing = "Honored" }, ... }`
-  — inverted index over boss loot and every list (a list source carries its row's fields), built lazily
+- `Data:GetItemSources(id) -> { { kind = "boss", id = bossID, chance = 0.18 }, { kind = "reputation", id = "argent_dawn", standing = "Honored" }, { kind = "recipe", id = spellID, skillLineID = 164 }, ... }`
+  — inverted index over boss loot, every list (a list source carries its row's fields) and the recipes that make the item, built lazily
 - `Data:GetInstance(id)`, `Data:GetInstanceIDs()` (by level, then name), `Data:GetBoss(id)`, `Data:GetBossLoot(bossID)`,
   `Data:GetInstanceName(id)`, `Data:GetBossName(id)`
 - `Data:GetList(kind, id)`, `Data:GetListIDs(kind)` (by `order`, then name), `Data:GetListLoot(kind, id)`
+- `Data:GetRecipe(spellID) -> row?`, `Data:GetRecipeIDs(skillLineID)` (spell ids in the trade skill window's order:
+  category, then the yellow threshold; cached), `Data:GetCategory(id)`
+- `Data:GetName(kind, id) -> string?` — client locale, then enUS, for `"skillLines"`, `"categories"` and `"tools"`
 - `Data:GetVersion()` — bumps on every change; cache against it
 
 ### Filters
@@ -324,7 +356,8 @@ ForeverLoot.Filters:Register({
 })
 ```
 
-Built-in ids: `quality`, `slot`, `armorType`, `weaponType`, `itemLevel`, `reqLevel`, `instance`, `boss`.
+Built-in ids: `quality`, `slot`, `armorType`, `weaponType`, `itemLevel`, `reqLevel`, `instance`, `boss`,
+`profession` (items made by a profession's recipes; one option per crafting list with a `skillLineID`).
 Other calls: `Filters:Get(id)`, `Filters:GetAll()`, `Filters:GetOptions(id)`, `Filters:GetBucket(id, value)`,
 `Filters:Unregister(id)`. Registering fires `OnFiltersChanged`.
 

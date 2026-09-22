@@ -1,0 +1,7 @@
+{
+  "name": "Herbalism",
+  "icon": "Interface\\Icons\\Trade_Herbalism",
+  "order": 70,
+  "skillLine": 182,
+  "recipes": []
+}

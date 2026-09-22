@@ -200,7 +200,7 @@ end
 ForeverLootListRowMixin = {}
 app.ui.ListRowMixin = ForeverLootListRowMixin
 
--- What a row shows; the bottom line and the chance are optional.
+-- What a row shows; the bottom line and the top-right text are optional.
 ---@class ForeverLoot.RowDisplay
 ---@field name string
 ---@field icon? string|number
@@ -209,7 +209,8 @@ app.ui.ListRowMixin = ForeverLootListRowMixin
 ---@field type? string  # bottom right: armor / weapon type
 ---@field subInvalid? boolean  # draw `sub` red (can't equip)
 ---@field typeInvalid? boolean  # draw `type` red
----@field chance? number  # 0..1, top right
+---@field chance? number  # 0..1, top right, as a percentage
+---@field right? string  # top right, as given (a node's `infoRight`); `chance` wins when both are set
 
 ---@param d ForeverLoot.RowDisplay
 function ForeverLootListRowMixin:SetDisplay(d)
@@ -229,8 +230,9 @@ function ForeverLootListRowMixin:SetDisplay(d)
     local typeColor = d.typeInvalid and INVALID_COLOR or HIGHLIGHT_FONT_COLOR
     self.Type:SetTextColor(typeColor.r, typeColor.g, typeColor.b)
 
-    self.Chance:SetText(d.chance and formatChance(d.chance) or "")
-    self.Chance:SetShown(d.chance ~= nil)
+    local right = d.chance and formatChance(d.chance) or d.right
+    self.Chance:SetText(right or "")
+    self.Chance:SetShown(right ~= nil)
 
     -- With a bottom line the name sits in the upper half, otherwise it is vertically centered.
     self.Name:ClearAllPoints()
@@ -256,9 +258,9 @@ function ForeverLootListRowMixin:Init(view, node)
         local info = C_Spell.GetSpellInfo(node.spellID)
         if info then
             self.link = C_Spell.GetSpellLink(node.spellID)
-            self:SetDisplay({ name = info.name, icon = info.iconID, sub = node.description })
+            self:SetDisplay({ name = info.name, icon = info.iconID, sub = node.description, right = node.infoRight })
         else
-            self:SetDisplay({ name = "Spell #" .. node.spellID })
+            self:SetDisplay({ name = "Spell #" .. node.spellID, right = node.infoRight })
         end
     else
         self:SetDisplay({
@@ -300,6 +302,7 @@ function ForeverLootListRowMixin:InitItem(view, node)
             icon = icon,
             sub = RETRIEVING_ITEM_INFO or "Loading...",
             chance = node.chance,
+            right = node.infoRight,
         })
         return
     end
@@ -318,6 +321,7 @@ function ForeverLootListRowMixin:InitItem(view, node)
         subInvalid = slotInvalid,
         typeInvalid = typeInvalid,
         chance = node.chance,
+        right = node.infoRight,
     })
 end
 
@@ -342,13 +346,33 @@ function ForeverLootListRowMixin:OnClick(button)
     end
 end
 
+-- A node's extra tooltip lines: a list, or a function building one when the tooltip shows.
+---@param node ForeverLoot.Node
+---@return string[]
+local function extraTooltipLines(node)
+    local lines = node.tooltip
+    if type(lines) == "function" then
+        lines = lines(node)
+    end
+    return type(lines) == "table" and lines or {}
+end
+
 function ForeverLootListRowMixin:OnEnter()
     local node = self.node
     GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-    if node.itemID then
-        GameTooltip:SetItemByID(node.itemID)
-    elseif node.spellID then
-        GameTooltip:SetSpellByID(node.spellID)
+    if node.itemID or node.spellID then
+        if node.itemID then
+            GameTooltip:SetItemByID(node.itemID)
+        else
+            GameTooltip:SetSpellByID(node.spellID)
+        end
+        local lines = extraTooltipLines(node)
+        if #lines > 0 then
+            GameTooltip:AddLine(" ")
+            for _, line in ipairs(lines) do
+                GameTooltip:AddLine(line, 1, 1, 1, true)
+            end
+        end
     elseif app.api.IsFolder(node) then
         GameTooltip:AddLine(node.name or "")
         if node.description then
@@ -362,7 +386,7 @@ function ForeverLootListRowMixin:OnEnter()
         if node.description then
             GameTooltip:AddLine(node.description, 1, 1, 1, true)
         end
-        for _, line in ipairs(node.tooltip or {}) do
+        for _, line in ipairs(extraTooltipLines(node)) do
             GameTooltip:AddLine(line, 1, 1, 1, true)
         end
     end

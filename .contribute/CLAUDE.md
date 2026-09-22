@@ -13,7 +13,7 @@ records the scans is `ForeverLoot_Scraper/`.
     items/items_<n>.json    the item database: in-game scans, one file per 10 000 ids (machine-written)
     dungeons/<slug>.json    one file per dungeon: levels, art, bosses and drops (hand-curated)
     raids/<slug>.json       same for raids
-    crafting/<slug>.json    one file per profession and the items its recipes make
+    crafting/<slug>.json    one file per profession: its skill line, plus hand-curated additions to the generated recipes
     pvp/<slug>.json         one file per reward source and its rewards
     collections/<slug>.json one file per collection and its items
     reputation/<slug>.json  one file per faction and its rewards
@@ -37,8 +37,10 @@ incomplete and wrong for this client, and item ids from Classic/wowhead don't ma
 item database comes from the game itself**: the scraper asks the server about item ids and
 records everything the client then knows. Instances and encounters come from wago.tools
 (`Map`, `DungeonEncounter`) for the pinned build: instance ids are `Map.ID`, boss ids are
-`DungeonEncounter.ID`. Drops and item lists are hand-curated tables; they meet the scans only
-through item ids.
+`DungeonEncounter.ID`. Profession recipes come from wago.tools too (`SkillLine`,
+`SkillLineAbility`, `SpellReagents`, `SpellEffect`, `SpellTotems`, `TradeSkillCategory`,
+`TotemCategory`): recipe ids are spell ids, profession ids are `SkillLine.ID`. Drops and item
+lists are hand-curated tables; they meet the scans only through item ids.
 
 | Output | Source under `data/` |
 |---|---|
@@ -46,6 +48,8 @@ through item ids.
 | `…/instances.lua` | wago.tools `Map` + `DungeonEncounter` (only maps with encounters), levels/icons/portraits from `dungeons/` and `raids/` |
 | `…/loot/<slug>.lua` | the `loot` rows of `dungeons/` and `raids/` files that have any |
 | `…/<kind>/<slug>.lua` (crafting, pvp, collections, reputation) | the item lists, one file each, rows or not |
+| `…/recipes/<profession>.lua` | wago.tools recipe tables, one file per profession, only recipes whose product (enchants: every reagent) is in the scans |
+| `…/locales/<locale>/crafting.lua` | profession, trade skill category and tool names from wago.tools, for the configured locales |
 | `…/locales/enUS/*.lua` | English fallback names (items from scans, instances/bosses from wago) |
 | `ForeverLoot_Locale/db/generated/locales/<locale>/items.lua` | scanned names of every non-English locale |
 | `ForeverLoot_Locale/db/generated/locales/<locale>/instances.lua`, `bosses.lua` | wago.tools names for every configured non-English locale |
@@ -137,7 +141,7 @@ key differs per kind:
 
 | Folder | Rows key | Row fields besides `item`/`name`/`group` | Default grouping |
 |---|---|---|---|
-| `crafting/` | `recipes` | `spell` (recipe spell id), `skill` (required skill), `source` (free text: "Trainer", "Vendor: …") | skill tier (Apprentice, Journeyman, Expert, Artisan, Master) |
+| `crafting/` | `recipes` | `spell` (recipe spell id), `skill` (skill needed to learn it), `source` (free text: "Trainer", "Vendor: …") | trade skill category ("Plate Helmets"), else skill tier (Apprentice … Master) |
 | `pvp/` | `rewards` | `rank` (honor rank 1–14), `standing`, `side` (`Alliance`/`Horde`) | rank, else standing |
 | `collections/` | `items` | `source` (free text), `side` | none (by item type) |
 | `reputation/` | `rewards` **object keyed by standing** | `side` | standing |
@@ -166,6 +170,47 @@ are errors.
 Item rows work as for drops (id, or a name that resolves to exactly one scanned item; unscanned
 allowed with a warning). A file with no rows still gets its tile — the page then asks for
 contributions. Schema and validation: `src/lists.ts`.
+
+### Crafting: generated recipes plus curated rows
+
+A crafting file names its profession's `skillLine` (`164` Blacksmithing, `165` Leatherworking,
+`171` Alchemy, `182` Herbalism, `185` Cooking, `186` Mining, `197` Tailoring, `202` Engineering,
+`333` Enchanting, `356` Fishing, `393` Skinning, `129` First Aid; `npm run check` lists them when
+an id is wrong). The addon then shows **every recipe of that profession from the generated
+recipe database** (`ForeverLoot/db/generated/recipes/<profession>.lua`: what it makes and how
+many, reagents, tools, the skill at which it turns yellow/green/grey, the trade skill category)
+and lays the file's `recipes` rows over it at runtime — so the rows are for what the game's
+tables can't say:
+
+- `skill`: the skill needed to learn the recipe (trainer or recipe item). The tables only carry the
+  yellow/green/grey thresholds, so without a row the orange number shown is the client's minimum (1).
+- `source`: "Trainer", "Vendor: Name (Zone)", "Drop: Boss", …
+- `group`: a label of your own instead of the game's category.
+- rows for recipes the client's tables don't know (server-side ones): a plain item row, allowed
+  with a warning on `spell`.
+
+A row names its recipe by `spell` (the recipe's spell id, as in `-- Copper Chain Belt` comments of
+the generated file) or just by the item: `npm run fix` fills in the other when exactly one recipe
+of the profession makes that item. A recipe that makes no item (an enchant) is named by `spell`
+alone — the only rows allowed without an item. A `spell` of another profession or making a
+different item is an error. `npm run check` warns when a profession with recipes has no file here.
+
+```json
+{
+  "name": "Blacksmithing",
+  "icon": "Interface\\Icons\\Trade_BlackSmithing",
+  "order": 20,
+  "skillLine": 164,
+  "recipes": [
+    { "item": 2851, "name": "Copper Chain Belt", "spell": 2661, "skill": 1, "source": "Trainer" }
+  ]
+}
+```
+
+Which recipes ship is decided by the scans, not by hand: the client's tables also hold recipes
+of other seasons whose items this server never had, so a recipe is generated only when the item
+it makes has been scanned (an enchant: when every reagent has). Scan a missing crafted item and
+its recipe appears on the next `npm run gen`.
 
 ## Checklist for any data change
 

@@ -3,6 +3,7 @@ local _, app = ...
 
 local api = app.api
 local Data = app.data
+local RECIPE = Data.RECIPE
 
 -- Node constructors backed by the item database, so modules (built-in or third-party) can
 -- present it without touching the raw tables: instance -> bosses -> drops, and the curated
@@ -158,6 +159,177 @@ local function factionData(list)
     return C_Reputation.GetFactionDataByID(list.factionID)
 end
 
+----------------------------------------------------------------------------------------------------
+-- Crafting: the recipe database merged with the curated profession list
+----------------------------------------------------------------------------------------------------
+
+-- The trade skill window's difficulty colors (orange, yellow, green, grey), as escape codes.
+local DIFFICULTY_COLORS = { "|cffff8040", "|cffffff00", "|cff40bf40", "|cff808080" }
+
+---@param index integer  # 1 = orange .. 4 = grey
+---@param value any
+---@return string
+local function colored(index, value)
+    return DIFFICULTY_COLORS[index] .. tostring(value) .. "|r"
+end
+
+-- "1 70 90 110": the skill at which the recipe is orange (learnable: the curated `skill`, else
+-- what the client's tables require), then turns yellow, green and grey.
+---@param recipe ForeverLoot.RecipeRow
+---@param skill number?  # curated requirement
+---@return string
+local function thresholdText(recipe, skill)
+    local orange = type(skill) == "number" and skill or recipe[RECIPE.MIN_SKILL]
+    return table.concat({
+        colored(1, orange),
+        colored(2, recipe[RECIPE.YELLOW]),
+        colored(3, recipe[RECIPE.GREEN]),
+        colored(4, recipe[RECIPE.GREY]),
+    }, " ")
+end
+
+-- Extra tooltip lines of a recipe node: what it makes (when more than one), reagents, tools,
+-- the skill thresholds and the curated source. Built when the tooltip shows, so reagent names
+-- the client fetched in the meantime are used.
+---@param node ForeverLoot.Node
+---@return string[]
+local function recipeTooltip(node)
+    local meta = node.meta
+    if not meta then
+        return {}
+    end
+    local recipe = Data:GetRecipe(meta.spell)
+    if not recipe then
+        return {}
+    end
+    local lines = {}
+    local count = recipe[RECIPE.COUNT]
+    if type(count) == "table" then
+        lines[#lines + 1] = ("Makes %d-%d"):format(count[1], count[2])
+    elseif type(count) == "number" and count > 1 then
+        lines[#lines + 1] = ("Makes %d"):format(count)
+    end
+    local reagents = recipe[RECIPE.REAGENTS]
+    if reagents then
+        local parts = {}
+        for i = 1, #reagents, 2 do
+            local itemID, needed = reagents[i], reagents[i + 1]
+            local name = Data:GetItemName(itemID)
+            parts[#parts + 1] = needed > 1 and ("%s (%d)"):format(name, needed) or name
+        end
+        lines[#lines + 1] = (SPELL_REAGENTS or "Reagents:") .. " " .. table.concat(parts, ", ")
+    end
+    local tools = recipe[RECIPE.TOOLS]
+    if tools then
+        local parts = {}
+        for i, toolID in ipairs(tools) do
+            parts[i] = Data:GetName("tools", toolID) or ("Tool #" .. toolID)
+        end
+        lines[#lines + 1] = (REQUIRES_LABEL or "Requires:") .. " " .. table.concat(parts, ", ")
+    end
+    lines[#lines + 1] = (SKILL or "Skill") .. ": " .. thresholdText(recipe, meta.skill)
+    if recipe[RECIPE.AUTO] then
+        lines[#lines + 1] = ("Learned automatically at skill %d"):format(recipe[RECIPE.MIN_SKILL])
+    end
+    if type(meta.source) == "string" and meta.source ~= "" then
+        lines[#lines + 1] = (SOURCE or "Source") .. ": " .. meta.source
+    end
+    return lines
+end
+
+-- One recipe as a node: the item it makes (an item node, so the row shows its slot and type)
+-- or the recipe spell itself for enchants; `meta.spell` names the recipe either way, the row's
+-- top-right corner shows the skill thresholds and the tooltip lists reagents and tools.
+---@param spellID integer
+---@param recipe ForeverLoot.RecipeRow
+---@return ForeverLoot.Node
+local function recipeNode(spellID, recipe)
+    local itemID = recipe[RECIPE.ITEM]
+    return {
+        itemID = itemID ~= 0 and itemID or nil,
+        spellID = spellID,
+        meta = { spell = spellID, category = recipe[RECIPE.CATEGORY] },
+        infoRight = thresholdText(recipe),
+        tooltip = recipeTooltip,
+    }
+end
+
+-- The curated fields of a row copied onto a recipe node; the curated `skill` restates the
+-- orange threshold.
+---@param node ForeverLoot.Node
+---@param row ForeverLoot.ListLootRow
+local function applyCuratedRow(node, row)
+    local meta = node.meta --[[@as table]]
+    for field, value in pairs(row) do
+        if type(field) == "string" then
+            meta[field] = value
+        end
+    end
+    local recipe = Data:GetRecipe(meta.spell)
+    if recipe then
+        node.infoRight = thresholdText(recipe, meta.skill)
+    end
+end
+
+-- A list row as a plain node: the item, or the spell when the row has no item.
+---@param row ForeverLoot.ListLootRow
+---@return ForeverLoot.Node?
+local function rowNode(row)
+    local meta = {}
+    for field, value in pairs(row) do
+        if type(field) == "string" then
+            meta[field] = value
+        end
+    end
+    if row[1] then
+        return { itemID = row[1], meta = meta }
+    elseif type(meta.spell) == "number" then
+        return { spellID = meta.spell, meta = meta }
+    end
+    return nil
+end
+
+-- Every recipe of the list's profession, then the curated rows: a row naming a recipe (by
+-- `spell`, or by the item a single recipe makes) adds its fields to that recipe's node, any
+-- other row becomes a plain node — recipes the client's tables don't know.
+---@param list ForeverLoot.List
+---@param rows ForeverLoot.ListLootRow[]
+---@return ForeverLoot.Node[]
+local function craftingEntries(list, rows)
+    local entries, bySpell, byItem = {}, {}, {}
+    if type(list.skillLineID) == "number" then
+        for _, spellID in ipairs(Data:GetRecipeIDs(list.skillLineID)) do
+            local recipe = Data:GetRecipe(spellID) --[[@as ForeverLoot.RecipeRow]]
+            local node = recipeNode(spellID, recipe)
+            entries[#entries + 1] = node
+            bySpell[spellID] = node
+            local itemID = recipe[RECIPE.ITEM]
+            if itemID ~= 0 then
+                byItem[itemID] = byItem[itemID] == nil and node or false -- false: made by several recipes
+            end
+        end
+    end
+    for _, row in ipairs(rows) do
+        local node = (type(row.spell) == "number" and bySpell[row.spell]) or (row[1] and byItem[row[1]]) or nil
+        if node then
+            applyCuratedRow(node, row)
+        else
+            entries[#entries + 1] = rowNode(row)
+        end
+    end
+    return entries
+end
+
+-- The character's rank in a profession, from the client; nil when it doesn't have it.
+---@param list ForeverLoot.List
+---@return table?
+local function skillLineData(list)
+    if type(list.skillLineID) ~= "number" or not C_SkillInfo or not C_SkillInfo.GetSkillLineInfoByID then
+        return nil
+    end
+    return C_SkillInfo.GetSkillLineInfoByID(list.skillLineID)
+end
+
 -- Profession tiers by the skill a recipe needs.
 local SKILL_TIERS = {
     { 300, "Master" },
@@ -190,10 +362,25 @@ local function pvpRankGroup(rank)
     return "RANK" .. rank, ("%s %d"):format(RANK or "Rank", rank), rank
 end
 
+-- Recipes by the trade skill window's category ("Plate Helmets"), in its order.
+---@param categoryID any  # the row's `category` field
+---@return string? key, string? label, number rank
+local function categoryGroup(categoryID)
+    if type(categoryID) ~= "number" then
+        return nil, nil, math.huge
+    end
+    local category = Data:GetCategory(categoryID)
+    if not category then
+        return nil, nil, math.huge
+    end
+    local label = Data:GetName("categories", categoryID) or ("Category #" .. categoryID)
+    return "CATEGORY" .. categoryID, label, category.order
+end
+
 -- The default grouping of a list's rows per kind: reputation by standing, pvp by honor rank
--- (else standing), crafting by skill tier. Returns key, label and a sort rank; nothing when
--- the row has no such field (the row then falls back to the item's own group, see
--- api.DefaultGroupKey) or the kind has no default (collections).
+-- (else standing), crafting by trade skill category (else skill tier). Returns key, label and
+-- a sort rank; nothing when the row has no such field (the row then falls back to the item's
+-- own group, see api.DefaultGroupKey) or the kind has no default (collections).
 ---@param kind ForeverLoot.ListKind
 ---@param row table<string, any>
 ---@return string? key, string? label, number rank
@@ -207,6 +394,10 @@ local function rowGroup(kind, row)
         end
         return standingGroup(row.standing)
     elseif kind == "crafting" then
+        local key, label, rank = categoryGroup(row.category)
+        if key then
+            return key, label, rank
+        end
         return skillGroup(row.skill)
     end
     return nil, nil, math.huge
@@ -214,24 +405,27 @@ end
 
 -- The rows of one list as item nodes. Each node carries its row's named fields in `meta`
 -- (`standing`, `rank`, `skill`, `spell`, `source`, `side`, `group`, ...) and is sorted so that
--- the default groups come out in their natural order (Friendly before Honored, Apprentice
--- before Artisan). Lists without rows get a single explanatory entry.
+-- the default groups come out in their natural order (Friendly before Honored, "Weapon Stones"
+-- before "Plate Helmets"). Crafting lists with a `skillLineID` start from the recipe database
+-- and lay the curated rows over it (see craftingEntries). Lists without rows get a single
+-- explanatory entry.
 ---@param kind ForeverLoot.ListKind
 ---@param id string
 ---@return ForeverLoot.Node[]
 function api.ListEntries(kind, id)
     local entries, rankOf, indexOf = {}, {}, {}
-    for index, row in ipairs(Data:GetListLoot(kind, id)) do
-        local meta = {}
-        for field, value in pairs(row) do
-            if type(field) == "string" then
-                meta[field] = value
-            end
+    local rows = Data:GetListLoot(kind, id)
+    local list = Data:GetList(kind, id)
+    if kind == "crafting" and list then
+        entries = craftingEntries(list, rows)
+    else
+        for _, row in ipairs(rows) do
+            entries[#entries + 1] = rowNode(row)
         end
-        local node = { itemID = row[1], meta = meta }
-        local _, _, rank = rowGroup(kind, meta)
+    end
+    for index, node in ipairs(entries) do
+        local _, _, rank = rowGroup(kind, node.meta or {})
         rankOf[node], indexOf[node] = rank, index
-        entries[#entries + 1] = node
     end
     -- By group rank, ties in file order (table.sort isn't stable).
     table.sort(entries, function(a, b)
@@ -284,11 +478,20 @@ function api.ListFolder(kind, id)
     local name = faction and type(faction.name) == "string" and faction.name ~= "" and faction.name or list.name
     local description = faction and type(faction.description) == "string" and faction.description ~= "" and faction.description or nil
     local standing = faction and type(faction.reaction) == "number" and standingLabel(faction.reaction) or nil
+    -- Professions: the localized name from the database, the character's rank from the client.
+    local skill = kind == "crafting" and skillLineData(list) or nil
+    if kind == "crafting" and type(list.skillLineID) == "number" then
+        name = Data:GetName("skillLines", list.skillLineID) or name
+    end
+    local rank = nil
+    if skill and type(skill.rank) == "number" and skill.rank > 0 then
+        rank = ("%d / %d"):format(skill.rank, skill.maxRank or 0)
+    end
     return api.Folder(name, list.icon or ICON_LIST, api.ListEntries(kind, id), {
         columns = 2,
         groupBy = listGroupKey(kind),
         order = list.order,
-        info = list.info or standing,
+        info = list.info or standing or rank,
         description = description,
         background = list.background,
         backgroundCoords = list.backgroundCoords,
@@ -301,6 +504,8 @@ function api.ListFolder(kind, id)
             currentStanding = faction and faction.currentStanding,
             currentReactionThreshold = faction and faction.currentReactionThreshold,
             nextReactionThreshold = faction and faction.nextReactionThreshold,
+            skillRank = skill and skill.rank,
+            skillMaxRank = skill and skill.maxRank,
         },
     })
 end

@@ -15,9 +15,13 @@ local log = app.logger
 --   Data.lists[kind][id]    = { name = "Argent Dawn", icon = ..., factionID = 529 }  -- curated item lists;
 --                             kind = "crafting" | "pvp" | "collections" | "reputation", id = the file's slug
 --   Data.listLoot[kind][id] = { { itemID, standing = "Honored", ... }, ... }    -- the list's rows
---   Data.names[locale]      = { items = {}, bosses = {}, instances = {} }
+--   Data.recipes[spellID]   = { skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto }
+--                             -- profession recipes from the client's spell tables (positions in Data.RECIPE)
+--   Data.categories[id]     = { skillLineID = 164, order = 30 }   -- the trade skill window's headers ("Plate Helmets")
+--   Data.names[locale]      = { items = {}, bosses = {}, instances = {}, skillLines = {}, categories = {}, tools = {} }
 --
--- Item rows are positional arrays (see Data.ITEM) to keep tens of thousands of rows cheap.
+-- Item and recipe rows are positional arrays (see Data.ITEM, Data.RECIPE) to keep tens of
+-- thousands of rows cheap.
 
 -- Field indices into an item row.
 ---@class ForeverLoot.ItemFields
@@ -38,6 +42,24 @@ local ITEM = {
     SET = 12, -- item set id, 0 = none
     EXPANSION = 13,
     REAGENT = 14, -- boolean, crafting reagent
+}
+
+-- Field indices into a recipe row (keyed by the recipe's spell id).
+---@class ForeverLoot.RecipeFields
+local RECIPE = {
+    SKILL_LINE = 1, -- the profession's SkillLine id (164 = Blacksmithing)
+    ITEM = 2, -- created item id; 0 when the recipe makes no item (enchants)
+    COUNT = 3, -- items made per craft; { min, max } when it varies
+    -- Skill the client's tables require. 1 for nearly every Classic recipe: when a recipe can
+    -- be learned is decided by trainers and recipe items (the curated `skill` row field).
+    MIN_SKILL = 4,
+    YELLOW = 5, -- skill at which the recipe turns yellow (orange below, from when it is known)
+    GREEN = 6,
+    GREY = 7,
+    CATEGORY = 8, -- Data.categories id, 0 = none
+    REAGENTS = 9, -- { itemID, count, itemID, count, ... }; nil = none
+    TOOLS = 10, -- { toolID, ... } ids into Data.names[locale].tools (Blacksmith Hammer, Anvil, ...); nil = none
+    AUTO = 11, -- true when the recipe is learned automatically at MIN_SKILL
 }
 
 ---@alias ForeverLoot.ItemStats table<string, number>
@@ -64,6 +86,12 @@ local ITEM = {
 
 ---@alias ForeverLoot.LootRow { [1]: integer, [2]: number? }  # itemID, drop chance 0..1 (nil = unknown)
 
+---@alias ForeverLoot.RecipeRow { [1]: integer, [2]: integer, [3]: integer|integer[], [4]: integer, [5]: integer, [6]: integer, [7]: integer, [8]: integer, [9]: integer[]?, [10]: integer[]?, [11]: boolean? }
+
+---@class ForeverLoot.Category
+---@field skillLineID integer
+---@field order number  # position among the profession's categories
+
 -- The kinds of curated item lists; one built-in module each. Other addons may add their own.
 ---@alias ForeverLoot.ListKind "crafting"|"pvp"|"collections"|"reputation"|string
 
@@ -80,38 +108,51 @@ local ITEM = {
 
 -- A row of a list: the item id, then the kind's fields by name (`standing`, `rank`, `skill`,
 -- `spell`, `source`, `side`, ...) and an optional `group` label overriding the default grouping.
----@alias ForeverLoot.ListLootRow { [1]: integer, [string]: any }
+-- A crafting row for a recipe that makes no item (an enchant) has no item, only its `spell`.
+---@alias ForeverLoot.ListLootRow { [1]: integer?, [string]: any }
 
--- Where an item comes from: a boss (`chance`) or a row of a list (`kind`, `id` and that row's
--- named fields, e.g. `standing`).
+-- Where an item comes from: a boss (`chance`), a row of a list (`kind`, `id` and that row's
+-- named fields, e.g. `standing`) or a recipe that makes it (`skillLineID`).
 ---@class ForeverLoot.ItemSource
----@field kind "boss"|ForeverLoot.ListKind
----@field id integer|string  # bossID for kind "boss", the list id otherwise
+---@field kind "boss"|"recipe"|ForeverLoot.ListKind
+---@field id integer|string  # bossID for kind "boss", the recipe's spell id for "recipe", the list id otherwise
 ---@field chance? number
+---@field skillLineID? integer
 ---@field [string] any
+
+---@alias ForeverLoot.NameKind "items"|"bosses"|"instances"|"skillLines"|"categories"|"tools"
 
 ---@class ForeverLoot.NameTables
 ---@field items table<integer, string>
 ---@field bosses table<integer, string>
 ---@field instances table<integer, string>
+---@field skillLines table<integer, string>  # professions
+---@field categories table<integer, string>  # trade skill categories
+---@field tools table<integer, string>  # tools recipes need
 
 ---@class ForeverLoot.Data
 ---@field ITEM ForeverLoot.ItemFields
+---@field RECIPE ForeverLoot.RecipeFields
 ---@field items table<integer, ForeverLoot.ItemRow>
 ---@field instances table<integer, ForeverLoot.Instance>
 ---@field bosses table<integer, ForeverLoot.Boss>
 ---@field bossLoot table<integer, ForeverLoot.LootRow[]>
 ---@field lists table<ForeverLoot.ListKind, table<string, ForeverLoot.List>>
 ---@field listLoot table<ForeverLoot.ListKind, table<string, ForeverLoot.ListLootRow[]>>
+---@field recipes table<integer, ForeverLoot.RecipeRow>
+---@field categories table<integer, ForeverLoot.Category>
 ---@field names table<string, ForeverLoot.NameTables>
 local Data = {
     ITEM = ITEM,
+    RECIPE = RECIPE,
     items = {},
     instances = {},
     bosses = {},
     bossLoot = {},
     lists = {},
     listLoot = {},
+    recipes = {},
+    categories = {},
     names = {},
 }
 app.data = Data
@@ -119,19 +160,22 @@ app.api.Data = Data
 
 local FALLBACK_LOCALE = "enUS"
 
+local NAME_KINDS = { items = true, bosses = true, instances = true, skillLines = true, categories = true, tools = true }
+
 -- Bumped on every change; consumers cache against it (see Query).
 local version = 0
 -- Lazy caches, dropped whenever the data changes.
 local itemIDs ---@type integer[]?
 local instanceIDs ---@type integer[]?
 local listIDs ---@type table<ForeverLoot.ListKind, string[]>?
+local recipeIDs ---@type table<integer, integer[]>?
 local sources ---@type table<integer, ForeverLoot.ItemSource[]>?
 local searchNames ---@type table<integer, string>?
 local NO_SOURCES = {}
 
 local function invalidate()
     version = version + 1
-    itemIDs, instanceIDs, listIDs, sources, searchNames = nil, nil, nil, nil, nil
+    itemIDs, instanceIDs, listIDs, recipeIDs, sources, searchNames = nil, nil, nil, nil, nil, nil
     app.api.callbacks:Fire("OnDataChanged")
 end
 
@@ -258,18 +302,49 @@ function Data:AddListLoot(kind, id, rows)
     invalidate()
 end
 
--- Merges display names for one locale: kind is "items", "bosses" or "instances".
+-- Adds or replaces recipe rows keyed by spell id: `{ [spellID] = { skillLineID, itemID, count,
+-- minSkill, yellow, green, grey, categoryID, reagents, tools, auto } }` (positions in Data.RECIPE).
+---@param rows table<integer, ForeverLoot.RecipeRow>
+function Data:AddRecipes(rows)
+    local recipes = self.recipes
+    for id, row in pairs(rows) do
+        if type(id) == "number" and type(row) == "table" then
+            recipes[id] = row
+        else
+            log:error("Data.AddRecipes: bad row for key %s", tostring(id))
+        end
+    end
+    invalidate()
+end
+
+-- Adds or replaces trade skill categories: `{ [id] = { skillLineID = 164, order = 30 } }`; their
+-- names come through AddNames("categories").
+---@param rows table<integer, ForeverLoot.Category>
+function Data:AddCategories(rows)
+    local categories = self.categories
+    for id, def in pairs(rows) do
+        if type(id) == "number" and type(def) == "table" then
+            categories[id] = def
+        else
+            log:error("Data.AddCategories: bad row for key %s", tostring(id))
+        end
+    end
+    invalidate()
+end
+
+-- Merges display names for one locale: kind is "items", "bosses", "instances", "skillLines"
+-- (professions), "categories" (trade skill categories) or "tools" (what recipes need).
 ---@param locale string  # e.g. "enUS", "deDE"
----@param kind "items"|"bosses"|"instances"
+---@param kind ForeverLoot.NameKind
 ---@param tbl table<integer, string>
 function Data:AddNames(locale, kind, tbl)
-    if kind ~= "items" and kind ~= "bosses" and kind ~= "instances" then
+    if not NAME_KINDS[kind] then
         log:error("Data.AddNames: unknown kind %q", tostring(kind))
         return
     end
     local names = self.names[locale]
     if not names then
-        names = { items = {}, bosses = {}, instances = {} }
+        names = { items = {}, bosses = {}, instances = {}, skillLines = {}, categories = {}, tools = {} }
         self.names[locale] = names
     end
     local target = names[kind]
@@ -283,17 +358,26 @@ end
 -- Names
 ----------------------------------------------------------------------------------------------------
 
----@param kind "items"|"bosses"|"instances"
+---@param kind ForeverLoot.NameKind
 ---@param id integer
 ---@return string?
 local function localizedName(kind, id)
     local names = Data.names[GetLocale()]
-    local name = names and names[kind][id]
+    local name = names and names[kind] and names[kind][id]
     if name == nil then
         names = Data.names[FALLBACK_LOCALE]
-        name = names and names[kind][id]
+        name = names and names[kind] and names[kind][id]
     end
     return name
+end
+
+-- Client locale, then enUS; nil when neither knows the id. For professions, trade skill
+-- categories and tools (items, bosses and instances have their own getters with fallbacks).
+---@param kind ForeverLoot.NameKind
+---@param id integer
+---@return string?
+function Data:GetName(kind, id)
+    return localizedName(kind, id)
 end
 
 -- Client locale, then enUS, then the game's item cache, then "Item #id".
@@ -479,7 +563,56 @@ function Data:GetListLoot(kind, id)
     return byID and byID[id] or NO_SOURCES
 end
 
--- Inverted index item -> sources, built on first use from every loot table and list.
+---@param spellID integer
+---@return ForeverLoot.RecipeRow?
+function Data:GetRecipe(spellID)
+    return self.recipes[spellID]
+end
+
+---@param categoryID integer
+---@return ForeverLoot.Category?
+function Data:GetCategory(categoryID)
+    return self.categories[categoryID]
+end
+
+-- Spell ids of one profession's recipes in the trade skill window's order: by category, then
+-- by the skill they turn yellow at; cached until the data changes.
+---@param skillLineID integer
+---@return integer[]
+function Data:GetRecipeIDs(skillLineID)
+    recipeIDs = recipeIDs or {}
+    local ids = recipeIDs[skillLineID]
+    if not ids then
+        ids = {}
+        local recipes, categories = self.recipes, self.categories
+        for id, row in pairs(recipes) do
+            if row[RECIPE.SKILL_LINE] == skillLineID then
+                ids[#ids + 1] = id
+            end
+        end
+        ---@param row ForeverLoot.RecipeRow
+        ---@return number
+        local function categoryOrder(row)
+            local category = categories[row[RECIPE.CATEGORY]]
+            return category and category.order or math.huge
+        end
+        table.sort(ids, function(a, b)
+            local ra, rb = recipes[a], recipes[b]
+            local oa, ob = categoryOrder(ra), categoryOrder(rb)
+            if oa ~= ob then
+                return oa < ob
+            end
+            if ra[RECIPE.YELLOW] ~= rb[RECIPE.YELLOW] then
+                return ra[RECIPE.YELLOW] < rb[RECIPE.YELLOW]
+            end
+            return a < b
+        end)
+        recipeIDs[skillLineID] = ids
+    end
+    return ids
+end
+
+-- Inverted index item -> sources, built on first use from every loot table, list and recipe.
 ---@param itemID integer
 ---@return ForeverLoot.ItemSource[]
 function Data:GetItemSources(itemID)
@@ -503,14 +636,21 @@ function Data:GetItemSources(itemID)
         for kind, byID in pairs(self.listLoot) do
             for id, loot in pairs(byID) do
                 for _, row in ipairs(loot) do
-                    local source = { kind = kind, id = id }
-                    for field, value in pairs(row) do
-                        if type(field) == "string" then
-                            source[field] = value
+                    if row[1] then
+                        local source = { kind = kind, id = id }
+                        for field, value in pairs(row) do
+                            if type(field) == "string" then
+                                source[field] = value
+                            end
                         end
+                        add(row[1], source)
                     end
-                    add(row[1], source)
                 end
+            end
+        end
+        for spellID, row in pairs(self.recipes) do
+            if row[RECIPE.ITEM] ~= 0 then
+                add(row[RECIPE.ITEM], { kind = "recipe", id = spellID, skillLineID = row[RECIPE.SKILL_LINE] })
             end
         end
     end

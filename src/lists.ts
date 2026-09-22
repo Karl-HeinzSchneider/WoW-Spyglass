@@ -2,6 +2,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import { basename, resolve } from "node:path";
 import { LIST_DIRS, LIST_KINDS, type ListKind } from "./config.js";
 import { type Checker, type CuratedItemRow } from "./curated.js";
+import { type Recipe, shipsRecipe } from "./recipes.js";
 
 /**
  * A curated item list: .contribute/data/<kind>/<name>.json, one file per profession (crafting),
@@ -25,7 +26,7 @@ export interface CuratedList {
   order?: number;
   /** reputation: the game's FactionID. */
   faction?: number;
-  /** crafting: the game's SkillLine id of the profession. */
+  /** crafting: the game's SkillLine id of the profession; the module merges the generated recipes of that profession into the list at runtime. */
   skillLine?: number;
   /** The rows, under the kind's key (ROWS_KEY): `recipes`, `rewards` or `items`. */
   recipes?: CuratedListRow[];
@@ -44,9 +45,9 @@ export type ReputationRewards = Partial<Record<Standing, CuratedListRow[]>>;
  */
 export interface CuratedListRow extends CuratedItemRow {
   group?: string;
-  /** crafting: the recipe's spell id. */
+  /** crafting: the recipe's spell id (`fix` fills it in from the recipe database when the item is made by exactly one recipe of the profession, and the other way round). */
   spell?: number;
-  /** crafting: required profession skill. */
+  /** crafting: the skill needed to learn the recipe (trainer / recipe item requirement); the game's tables don't carry it. */
   skill?: number;
   /** crafting, collections: where it comes from, free text ("Trainer", "Vendor: Ogunaro Wolfrunner"). */
   source?: string;
@@ -166,6 +167,9 @@ export function validateLists(files: ListFile[], checker: Checker): void {
     if (file.kind === "reputation" && (!Number.isInteger(d.faction) || d.faction! < 1)) {
       checker.report(file, "`faction` must be a positive FactionID");
     }
+    if (file.kind === "crafting" && d.skillLine !== undefined && !checker.ref.skillLines.has(d.skillLine)) {
+      checker.report(file, `\`skillLine\` ${d.skillLine} is not a profession with recipes (${[...checker.ref.skillLines.values()].map((s) => `${s.id} ${s.name}`).join(", ")})`);
+    }
     for (const field of ["faction", "skillLine"] as const) {
       if (d[field] !== undefined && !LIST_ID_FIELDS[file.kind].includes(field)) {
         checker.report(file, `\`${field}\` is not a field of ${file.kind} lists`);
@@ -214,7 +218,7 @@ export function validateLists(files: ListFile[], checker: Checker): void {
         for (const row of group) groupedRows.push({ row, where: `rewards.${standing} ${row.item ?? row.name ?? "?"}` });
       }
     } else {
-      for (const row of rowsOf(file)) groupedRows.push({ row, where: `${key} ${row.item ?? row.name ?? "?"}` });
+      for (const row of rowsOf(file)) groupedRows.push({ row, where: `${key} ${row.item ?? row.name ?? (row.spell !== undefined ? `spell ${row.spell}` : "?")}` });
     }
 
     for (const { row, where } of groupedRows) {
@@ -227,8 +231,64 @@ export function validateLists(files: ListFile[], checker: Checker): void {
         const problem = spec && value !== undefined ? checkField(value, spec) : undefined;
         if (problem) checker.report(file, `${where}: \`${field}\` ${problem}`);
       }
-      checker.checkItemRow(file, where, row, seenItems);
+      if (file.kind !== "crafting") {
+        checker.checkItemRow(file, where, row, seenItems);
+        continue;
+      }
+      // Crafting rows may name a recipe instead of an item: a recipe that makes no item
+      // (an enchant) has nothing else to name.
+      const recipe = checkRecipeSpell(file, where, row, d.skillLine, checker);
+      if (recipe && recipe.itemID === 0) {
+        if (row.item !== undefined) checker.report(file, `${where}: spell ${row.spell} (${recipe.name}) makes no item; drop \`item\``);
+        continue;
+      }
+      if (checker.checkItemRow(file, where, row, seenItems) && !recipe) fillRecipeSpell(file, where, row, d.skillLine, checker);
     }
+  }
+
+  // Every profession the recipe database knows should have its tile.
+  const listed = new Set(files.filter((f) => f.kind === "crafting").map((f) => f.data.skillLine));
+  for (const skillLine of checker.ref.skillLines.values()) {
+    if (listed.has(skillLine.id)) continue;
+    if (![...checker.ref.recipes.values()].some((r) => r.skillLineID === skillLine.id && shipsRecipe(r, checker.ref.items))) continue;
+    checker.warn({ path: resolve(LIST_DIRS.crafting, `${skillLine.slug}.json`) }, `no crafting list for ${skillLine.name} (skillLine ${skillLine.id}); add one to show its recipes`);
+  }
+}
+
+/**
+ * A crafting row's `spell` against the recipe database: it must be a recipe of the file's
+ * profession (an unknown one is allowed with a warning: server-side recipes are not in the
+ * client's tables) and, with `fix`, fills in the item it makes. Returns the recipe when known.
+ */
+function checkRecipeSpell(file: ListFile, where: string, row: CuratedListRow, skillLine: number | undefined, checker: Checker): Recipe | undefined {
+  const { ref, fix } = checker;
+  if (row.spell === undefined) return undefined;
+  const recipe = ref.recipes.get(row.spell);
+  if (!recipe) {
+    checker.warn(file, `${where}: spell ${row.spell} is not a recipe the client's tables know; it stays a plain row`);
+    return undefined;
+  }
+  if (skillLine !== undefined && recipe.skillLineID !== skillLine) {
+    checker.report(file, `${where}: spell ${row.spell} (${recipe.name}) belongs to skillLine ${recipe.skillLineID}, not ${skillLine}`);
+  }
+  if (recipe.itemID > 0 && row.item === undefined && row.name === undefined) {
+    checker.report(file, `${where}: spell ${row.spell} makes item ${recipe.itemID} (${recipe.name})`, true);
+    if (fix) row.item = recipe.itemID;
+  } else if (recipe.itemID > 0 && row.item !== undefined && row.item !== recipe.itemID) {
+    checker.report(file, `${where}: spell ${row.spell} (${recipe.name}) makes item ${recipe.itemID}, not ${row.item}`);
+  }
+  return recipe;
+}
+
+/** With `fix`, an item row gets its `spell` when exactly one recipe of the profession makes the item. */
+function fillRecipeSpell(file: ListFile, where: string, row: CuratedListRow, skillLine: number | undefined, checker: Checker): void {
+  const { ref, fix } = checker;
+  if (row.item === undefined || row.spell !== undefined || skillLine === undefined) return;
+  const makers: Recipe[] = [...ref.recipes.values()].filter((r) => r.skillLineID === skillLine && r.itemID === row.item);
+  const maker = makers.length === 1 ? makers[0] : undefined;
+  if (maker) {
+    checker.report(file, `${where}: made by spell ${maker.spellID} (${maker.name})`, true);
+    if (fix) row.spell = maker.spellID;
   }
 }
 

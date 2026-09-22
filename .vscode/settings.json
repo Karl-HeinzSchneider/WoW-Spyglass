@@ -69,7 +69,12 @@
     "HandleModifiedItemClick",
     "RETRIEVING_ITEM_INFO",
     "ITEM_LEVEL",
-    "SPELLBOOK_FONT_COLOR"
+    "SPELLBOOK_FONT_COLOR",
+    "SPELL_REAGENTS",
+    "REQUIRES_LABEL",
+    "SKILL",
+    "SOURCE",
+    "TRADE_SKILLS"
   ],
   "Lua.diagnostics.disable": [
     "assign-type-mismatch",

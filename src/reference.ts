@@ -1,15 +1,21 @@
 import { type Config, FALLBACK_LOCALE } from "./config.js";
 import { type ScannedItem, loadScannedItems } from "./items.js";
+import { type Recipe, type SkillLine, type TradeSkillCategory, loadRecipes } from "./recipes.js";
 import { fetchTable, int } from "./wago.js";
 
 /**
- * Everything the generator draws on: instances and encounters from the game client's tables
- * (wago.tools), items from the in-game scans (.contribute/data/items/). Nothing in here is hand-edited.
+ * Everything the generator draws on: instances, encounters and profession recipes from the game
+ * client's tables (wago.tools), items from the in-game scans (.contribute/data/items/). Nothing in
+ * here is hand-edited.
  */
 export interface Reference {
   build: string;
   instances: Map<number, Instance>;
   encounters: Map<number, Encounter>;
+  /** Professions with recipes, recipes by spell id and the trade skill window's categories (recipes.ts). */
+  skillLines: Map<number, SkillLine>;
+  recipes: Map<number, Recipe>;
+  categories: Map<number, TradeSkillCategory>;
   items: Map<number, ScannedItem>;
   /** Locales that have item names, enUS first when present. */
   itemLocales: string[];
@@ -35,13 +41,26 @@ export interface LocaleNames {
   items: Map<number, string>;
   encounters: Map<number, string>;
   instances: Map<number, string>;
+  skillLines: Map<number, string>;
+  /** TradeSkillCategory names. */
+  categories: Map<number, string>;
+  /** TotemCategory names: the tools recipes need. */
+  tools: Map<number, string>;
+}
+
+function emptyNames(): LocaleNames {
+  return { items: new Map(), encounters: new Map(), instances: new Map(), skillLines: new Map(), categories: new Map(), tools: new Map() };
 }
 
 const INSTANCE_TYPES: Record<string, InstanceType> = { "1": "dungeon", "2": "raid" };
 
 export async function loadReference(config: Config): Promise<Reference> {
   const { build } = config;
-  const [maps, dungeonEncounters] = await Promise.all([fetchTable("Map", build, FALLBACK_LOCALE), fetchTable("DungeonEncounter", build, FALLBACK_LOCALE)]);
+  const [maps, dungeonEncounters, recipeTables] = await Promise.all([
+    fetchTable("Map", build, FALLBACK_LOCALE),
+    fetchTable("DungeonEncounter", build, FALLBACK_LOCALE),
+    loadRecipes(config),
+  ]);
 
   // Encounters first: an instance is a map that has at least one (weeds out unused maps).
   const encounters = new Map<number, Encounter>();
@@ -70,7 +89,9 @@ export async function loadReference(config: Config): Promise<Reference> {
       locale === FALLBACK_LOCALE
         ? [maps, dungeonEncounters]
         : await Promise.all([fetchTable("Map", build, locale), fetchTable("DungeonEncounter", build, locale)]);
-    const table: LocaleNames = { items: new Map(), encounters: new Map(), instances: new Map() };
+    const table = emptyNames();
+    const recipeNames = recipeTables.names.get(locale);
+    if (recipeNames) Object.assign(table, recipeNames);
     for (const row of lMaps) {
       const id = int(row.ID);
       if (instances.has(id) && row.MapName_lang) table.instances.set(id, row.MapName_lang);
@@ -82,7 +103,17 @@ export async function loadReference(config: Config): Promise<Reference> {
     names.set(locale, table);
   }
 
-  const ref: Reference = { build, instances, encounters, items: loadScannedItems(), itemLocales: [], names };
+  const ref: Reference = {
+    build,
+    instances,
+    encounters,
+    skillLines: recipeTables.skillLines,
+    recipes: recipeTables.recipes,
+    categories: recipeTables.categories,
+    items: loadScannedItems(),
+    itemLocales: [],
+    names,
+  };
   refreshItemNames(ref);
   return ref;
 }
@@ -96,7 +127,7 @@ export function refreshItemNames(ref: Reference): void {
       if (!name) continue;
       let table = ref.names.get(locale);
       if (!table) {
-        table = { items: new Map(), encounters: new Map(), instances: new Map() };
+        table = emptyNames();
         ref.names.set(locale, table);
       }
       table.items.set(id, name);

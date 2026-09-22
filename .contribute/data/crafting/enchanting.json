@@ -1,0 +1,7 @@
+{
+  "name": "Enchanting",
+  "icon": "Interface\\Icons\\Trade_Engraving",
+  "order": 30,
+  "skillLine": 333,
+  "recipes": []
+}

@@ -1,5 +1,7 @@
 {
   "name": "Blacksmithing",
   "icon": "Interface\\Icons\\Trade_BlackSmithing",
+  "order": 20,
+  "skillLine": 164,
   "recipes": []
 }

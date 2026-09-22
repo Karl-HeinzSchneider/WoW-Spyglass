@@ -1,0 +1,7 @@
+{
+  "name": "Engineering",
+  "icon": "Interface\\Icons\\Trade_Engineering",
+  "order": 40,
+  "skillLine": 202,
+  "recipes": []
+}

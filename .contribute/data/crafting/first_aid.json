@@ -1,0 +1,7 @@
+{
+  "name": "First Aid",
+  "icon": "Interface\\Icons\\Spell_Holy_SealOfSacrifice",
+  "order": 110,
+  "skillLine": 129,
+  "recipes": []
+}
