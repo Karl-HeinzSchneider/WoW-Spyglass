@@ -334,9 +334,14 @@ function ForeverLootListRowMixin:OnClick(button)
         self.view:Push(node)
     elseif node.onClick then
         node.onClick(node, button)
+    elseif self.link and HandleModifiedItemClick(self.link) then
+        -- Shift-click linked to chat, ctrl-click previewed in the dressing room, etc.
+        return
+    elseif node.meta and type(node.meta.spell) == "number" and Data:GetRecipe(node.meta.spell) then
+        -- A recipe: the popup with what it makes, what teaches it and what it needs.
+        app.ui.recipePopup:Toggle(node, self)
     elseif self.link then
-        -- Shift-click links to chat, ctrl-click previews in the dressing room, etc.
-        HandleModifiedItemClick(self.link)
+        return
     elseif node.itemID then
         -- DB item the client hasn't cached yet: ask for it, the next click will have the link.
         self.view:RequestItem(node.itemID)
@@ -795,6 +800,9 @@ end
 -- PagingControls calls this on its parent when the page changes. The layout is unchanged,
 -- so only the visible pages are redrawn.
 function ForeverLootViewMixin:OnPageChanged()
+    if app.ui.recipePopup and app.ui.recipePopup:IsShown() then
+        app.ui.recipePopup:Hide()
+    end
     self:Render()
 end
 
@@ -1055,6 +1063,10 @@ end
 -- Called on navigation, query changes, page-size changes and profile refreshes; page flips
 -- and item-info arrivals only need Render().
 function ForeverLootViewMixin:Refresh()
+    -- The rows are about to change; a recipe popup anchored to one of them would be stale.
+    if app.ui.recipePopup and app.ui.recipePopup:IsShown() then
+        app.ui.recipePopup:Hide()
+    end
     local node = self:GetCurrentNode()
     self.pages = self:LayoutPages(self:BuildElements(node), self:GetColumns(node))
 

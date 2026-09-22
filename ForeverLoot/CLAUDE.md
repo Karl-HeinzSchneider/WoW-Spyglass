@@ -20,8 +20,9 @@ Current order and why:
 3. `src\data\data.lua`, `filters.lua`, `query.lua`, `nodes.lua` — the DB API, then
    `db\generated\generated.xml` (the generated data) and `modules\modules.xml` (the built-in
    modules, which need both).
-4. `src\ui\view.lua`, `templates.xml`, `mainwindow.lua`, `mainwindow.xml` — Lua mixins before
-   the XML that names them; `templates.xml` before `mainwindow.xml`.
+4. `src\ui\view.lua`, `templates.xml`, `mainwindow.lua`, `mainwindow.xml`, `recipepopup.lua`,
+   `recipepopup.xml` — Lua mixins before the XML that names them; `templates.xml` before
+   `mainwindow.xml`; the popup after the window it is parented to.
 5. `ForeverLoot.lua` — root entry, loaded last; only logs.
 
 ## Files
@@ -147,6 +148,16 @@ only sanctioned globals.
     bevelled list-button atlas with the entry's `portrait` standing on the left, name and info
     beside it (boss level/type, drops of interest, a quest "!" for `quests`), two per line.
   - Section headers use the `UI-Character-Info-Title` plate; groups are row-sized labels.
+- `recipepopup.lua/.xml` — `ForeverLootRecipePopup` (`app.ui.recipePopup`), a tooltip-bordered
+  child of the main window that a click on a recipe row (a node whose `meta.spell` is in
+  `Data.recipes`) toggles below that row: title, then icons only — the product and the recipe
+  item that teaches it, then the recipe itself (the profession's tile icon; spell tooltip and
+  link) and one slot per reagent with its count. `ForeverLootItemSlotTemplate`/
+  `ForeverLootItemSlotMixin` is the 32px icon with count and quality border (`SetItem` /
+  `SetSpell`, tooltip on hover, `HandleModifiedItemClick` on click) that every slot uses; the
+  background is the main window's pane atlas (`UI-Character-Info-General-BG`) under the
+  tooltip border, the template's own translucent backdrop switched off. Redraws on `GET_ITEM_INFO_RECEIVED`; the
+  view hides it on `Refresh` and page changes because its anchor row is reused.
 
 ### Annotations (not in the TOC)
 

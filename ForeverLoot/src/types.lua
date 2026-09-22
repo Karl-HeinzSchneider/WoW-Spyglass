@@ -21,7 +21,10 @@
 -- UI namespace. Mixins are globals (XML requires it) but also exposed here.
 ---@class ForeverLoot.UI
 ---@field mainWindow ForeverLoot.MainWindow  # set in ForeverLootMainWindowMixin:OnLoad
+---@field recipePopup ForeverLoot.RecipePopup  # set in ForeverLootRecipePopupMixin:OnLoad
 ---@field MainWindowMixin ForeverLoot.MainWindow
+---@field RecipePopupMixin ForeverLoot.RecipePopup
+---@field ItemSlotMixin ForeverLoot.ItemSlot
 ---@field SideTabMixin ForeverLoot.SideTab
 ---@field ViewMixin ForeverLoot.View
 ---@field ListRowMixin ForeverLoot.ListRow

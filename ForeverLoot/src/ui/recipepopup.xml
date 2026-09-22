@@ -1,0 +1,90 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+
+	<!-- A 32x32 item icon with an optional count and a quality-colored border: tooltip on
+	     hover, shift-click links it to chat. Also holds a spell (the recipe itself). -->
+	<Button name="ForeverLootItemSlotTemplate" mixin="ForeverLootItemSlotMixin" registerForClicks="LeftButtonUp, RightButtonUp" virtual="true">
+		<Size x="32" y="32"/>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="Icon" setAllPoints="true"/>
+			</Layer>
+			<Layer level="OVERLAY">
+				<Texture parentKey="Border" file="Interface\Common\WhiteIconFrame" setAllPoints="true" hidden="true"/>
+				<FontString parentKey="Count" inherits="NumberFontNormal" justifyH="RIGHT" hidden="true">
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT" x="-3" y="2"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD"/>
+		<Scripts>
+			<OnEnter method="OnEnter"/>
+			<OnLeave method="OnLeave"/>
+			<OnClick method="OnClick"/>
+		</Scripts>
+	</Button>
+
+	<!-- The recipe popup, opened by clicking a recipe row:
+	         Recipe name                          [x]
+	         [product]  [recipe item]
+	         [recipe (profession icon)]  [reagent x6] [reagent x1] ...
+	     Tooltip-style border around the main window's own pane background (the tooltip
+	     backdrop itself is translucent art, so it is switched off); a child of the main window
+	     so it moves and hides with it. -->
+	<Frame name="ForeverLootRecipePopup" mixin="ForeverLootRecipePopupMixin" inherits="TooltipBorderedFrameTemplate"
+		parent="ForeverLootMainWindow" frameStrata="DIALOG" clampedToScreen="true" enableMouse="true" hidden="true">
+		<Size x="200" y="124"/>
+		<KeyValues>
+			<KeyValue key="backdropColorAlpha" value="0" type="number"/>
+		</KeyValues>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture atlas="UI-Character-Info-General-BG">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="3" y="-3"/>
+						<Anchor point="BOTTOMRIGHT" x="-3" y="3"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<FontString parentKey="Title" inherits="GameFontNormal" justifyH="LEFT" wordwrap="false">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="12" y="-12"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button parentKey="CloseButton" inherits="UIPanelCloseButton">
+				<Anchors>
+					<Anchor point="TOPRIGHT" x="4" y="4"/>
+				</Anchors>
+			</Button>
+			<!-- First line: what the recipe makes and the item that teaches it. -->
+			<Button parentKey="Product" inherits="ForeverLootItemSlotTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeKey="$parent.Title" relativePoint="BOTTOMLEFT" x="0" y="-8"/>
+				</Anchors>
+			</Button>
+			<Button parentKey="Source" inherits="ForeverLootItemSlotTemplate">
+				<Anchors>
+					<Anchor point="LEFT" relativeKey="$parent.Product" relativePoint="RIGHT" x="12" y="0"/>
+				</Anchors>
+			</Button>
+			<!-- Second line: the recipe itself (profession icon, spell tooltip and link), then the
+			     reagents (a pool of slots). -->
+			<Button parentKey="Recipe" inherits="ForeverLootItemSlotTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeKey="$parent.Product" relativePoint="BOTTOMLEFT" x="0" y="-8"/>
+				</Anchors>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad method="OnLoad"/>
+			<OnShow method="OnShow"/>
+			<OnHide method="OnHide"/>
+			<OnEvent method="OnEvent"/>
+		</Scripts>
+	</Frame>
+</Ui>

@@ -229,6 +229,8 @@ Constructors (optional sugar):
   `infoRight` and reagents/tools in the tooltip; the list's own rows then add their fields to the
   recipe they name (by `spell`, or by the item exactly one recipe makes) or become plain entries.
   Crafting folders show the character's rank ("145 / 150") as `info` and the localized profession name.
+  A plain click on any row whose `meta.spell` is a recipe in `Data.recipes` opens the recipe popup
+  (product and teaching item, recipe link and reagents); modified clicks still link the row's item.
 - `ForeverLoot.Log(fmt, ...)` — prefixed chat message
 - `ForeverLoot.LogAt(level, fmt, ...)` — threshold-aware diagnostic output using the core logger
 - `ForeverLoot.PlaceholderItem(name, quality, icon)` — hard-coded display data, for prototyping
