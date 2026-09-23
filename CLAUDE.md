@@ -52,6 +52,7 @@ name it matches — never as an item source.
 | `npm run check` | Everything below that validates, in order: typecheck, tooling tests, addon boundaries, data, generated staleness, Lua syntax, XML schema. Run it before finishing a change. |
 | `npm run check:data` | Validates the curated JSON against the game tables and the scans. |
 | `npm run fix` | Same, and rewrites names, resolves name-only rows to ids, adds missing encounters. |
+| `npm run format` | Prettier (`.prettierrc.json`, `.prettierignore`) on TS/JSON/Markdown, then StyLua (`stylua.toml`, `.styluaignore`) on Lua. Leaves `.contribute/data/` to `fix`/`import`, and XML to the editor. |
 | `npm run gen` (`generate`) | Writes both generated trees. `npm run generate:check` fails when they are stale (CI). |
 | `npm run import` | Merges what the scraper recorded (every `.lua` and `.json` in `.contribute/inbox/`, or one file given as `-- <path>`) into the scans and curated files; then `npm run gen`. |
 | `npm run check:addons` | TOC entries exist, companions depend on `ForeverLoot`, no dependency cycles, and **no file under `ForeverLoot/` contains the string `ForeverLoot_Locale` or `ForeverLoot_Scraper`** (comments included). |
