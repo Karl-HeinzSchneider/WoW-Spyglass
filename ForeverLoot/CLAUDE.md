@@ -181,11 +181,13 @@ only sanctioned globals.
   background is the main window's pane atlas (`UI-Character-Info-General-BG`) under the
   tooltip border, the template's own translucent backdrop switched off. Redraws on `GET_ITEM_INFO_RECEIVED`; the
   view hides it on `Refresh` and page changes because its anchor row is reused.
-- `tooltip.lua` — `app.tooltip`, an Ace module that appends an item's instance sources
-  (`Data:GetItemSources` kinds `boss`, `trash`, `quest`) to every item tooltip: after a blank
+- `tooltip.lua` — `app.tooltip`, an Ace module that appends an item's sources
+  (`Data:GetItemSources` kinds `boss`, `trash`, `quest`, `recipe`) to every item tooltip: after a blank
   line, the instance name in gold over its bosses, "Trash" and `Quest: <title>` lines, indented
   and sorted by encounter order; drops start with the `ParagonReputation_Bag` atlas (a loot
-  sack, used by the Camelot reputation frame), quests with `Interface\GossipFrame\AvailableQuestIcon`. Hooks once in `OnInitialize` through
+  sack, used by the Camelot reputation frame), quests with `Interface\GossipFrame\AvailableQuestIcon`.
+  Then one gold `Crafted by <profession>` line per profession with a recipe for the item, with
+  the icon of that profession's crafting list. Hooks once in `OnInitialize` through
   `TooltipDataProcessor.AddTooltipPostCall` when `GameTooltip` is built on the tooltip data
   handler, else `OnTooltipSetItem` on `GameTooltip` and `ItemRefTooltip`.
 

@@ -6,14 +6,16 @@ local Data = app.data
 
 -- Adds where an item comes from to every item tooltip: one block per instance, the instance's
 -- name over the bosses, trash and quests that give the item, a loot sack before drops and the
--- quest giver's "!" before quests.
+-- quest giver's "!" before quests; then one line per profession whose recipes make the item.
 --
 --   Deadmines
 --      [sack] Rhahk'Zor
 --      [!] Quest: The Defias Brotherhood
+--   [anvil] Crafted by Blacksmithing
 
 local INDENT = "   "
 local QUEST_LABEL = "Quest: "
+local CRAFTED_LABEL = "Crafted by "
 local ICON_SIZE = 14
 
 -- Inline markup of an atlas, ICON_SIZE high and as wide as its aspect ratio asks.
@@ -96,17 +98,62 @@ local function lineBefore(a, b)
     return a.text < b.text
 end
 
+-- The profession's crafting list, for its icon; nil when none is curated.
+---@param skillLineID integer
+---@return ForeverLoot.List?
+local function professionList(skillLineID)
+    for _, id in ipairs(Data:GetListIDs("crafting")) do
+        local list = Data:GetList("crafting", id)
+        if list and list.skillLineID == skillLineID then
+            return list
+        end
+    end
+end
+
+-- "Crafted by <profession>" once per profession with a recipe that makes the item, by name.
+---@param sources ForeverLoot.ItemSource[]
+---@return string[]
+local function craftedLines(sources)
+    local seen, professions = {}, {}
+    for _, source in ipairs(sources) do
+        local skillLineID = source.kind == "recipe" and source.skillLineID
+        if skillLineID and not seen[skillLineID] then
+            seen[skillLineID] = true
+            local list = professionList(skillLineID)
+            local name = Data:GetName("skillLines", skillLineID) or (list and list.name)
+            professions[#professions + 1] = {
+                name = name or ("Skill #%d"):format(skillLineID),
+                icon = list and list.icon,
+            }
+        end
+    end
+    table.sort(professions, function(a, b)
+        return a.name < b.name
+    end)
+    local out = {}
+    for i, profession in ipairs(professions) do
+        -- Trimmed like an action button icon, so the icon's own border doesn't show.
+        local icon = profession.icon
+                and CreateTextureMarkup(profession.icon, 64, 64, ICON_SIZE, ICON_SIZE, 0.07, 0.93, 0.07, 0.93) .. " "
+            or ""
+        out[i] = icon .. CRAFTED_LABEL .. profession.name
+    end
+    return out
+end
+
 ---@param tooltip GameTooltip
 ---@param itemID integer?
 function module:AddSources(tooltip, itemID)
     if not itemID then
         return
     end
+    local sources = Data:GetItemSources(itemID)
     local lines = {}
-    for _, source in ipairs(Data:GetItemSources(itemID)) do
+    for _, source in ipairs(sources) do
         lines[#lines + 1] = sourceLine(source)
     end
-    if #lines == 0 then
+    local crafted = craftedLines(sources)
+    if #lines == 0 and #crafted == 0 then
         return
     end
     table.sort(lines, lineBefore)
@@ -120,6 +167,9 @@ function module:AddSources(tooltip, itemID)
         end
         local icon = line.kind == QUEST and QUEST_ICON or LOOT_ICON
         tooltip:AddLine(INDENT .. icon .. " " .. line.text, HIGHLIGHT_FONT_COLOR:GetRGB())
+    end
+    for _, text in ipairs(crafted) do
+        tooltip:AddLine(text, NORMAL_FONT_COLOR:GetRGB())
     end
 end
 
