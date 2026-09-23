@@ -56,6 +56,7 @@ C_SkillInfo = {} --[[@as C_SkillInfo]]
 ---@class ModelSceneMixin
 ---@field TransitionToModelSceneID fun(self: ModelSceneMixin, modelSceneID: number, cameraTransitionType: number, cameraModificationType: number, forceEvenIfSame?: boolean)
 ---@field GetPlayerActor fun(self: ModelSceneMixin, overrideActorName?: string): ModelSceneFrameActor?
+---@field GetActorByTag fun(self: ModelSceneMixin, tag: string): ModelSceneFrameActor?
 
 ---@class PagingControlsMixin
 ---@field GetMaxPages fun(self: PagingControlsMixin): integer
