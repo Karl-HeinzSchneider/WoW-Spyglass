@@ -3,6 +3,12 @@ local Data = ForeverLoot.Data
 
 -- Ragefire Chasm (map 389)
 
+Data:AddBossLoot(2732, { -- Oggleflint
+    { 272996 }, -- Trogg Scepter
+    { 272998 }, -- Bone Knuckles
+    { 272999 }, -- Barbaric Crossbow
+})
+
 Data:AddBossLoot(2733, { -- Taragaman the Hungerer
     { 14145 }, -- Cursed Felblade
     { 14148 }, -- Crystalline Cuffs

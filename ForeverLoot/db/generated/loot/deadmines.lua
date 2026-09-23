@@ -46,3 +46,18 @@ Data:AddBossLoot(2747, { -- Edwin VanCleef
     { 5202 }, -- Corsair's Overshirt
     { 10399 }, -- Blackened Defias Armor
 })
+
+Data:AddTrashLoot(36, {
+    { 1934 }, -- Stonemason Trousers
+    { 10402 }, -- Blackened Defias Boots
+    { 1943 }, -- Goblin Mail Leggings
+    { 1951 }, -- Blackwater Cutlass
+    { 10400 }, -- Blackened Defias Leggings
+    { 10401 }, -- Blackened Defias Gloves
+    { 1929 }, -- Silk-threaded Trousers
+    { 1930 }, -- Stonemason Cloak
+    { 1936 }, -- Goblin Screwdriver
+    { 1944 }, -- Metalworking Gloves
+    { 1945 }, -- Woodworking Gloves
+    { 1925 }, -- Defias Rapier
+})

@@ -20,6 +20,14 @@
         {
           "item": 273804,
           "name": "Executioner Mantle"
+        },
+        {
+          "item": 273805,
+          "name": "Blackrock Harness"
+        },
+        {
+          "item": 273806,
+          "name": "Dark Horde Band"
         }
       ]
     },
@@ -32,6 +40,10 @@
         {
           "item": 2280,
           "name": "Kam's Walking Stick"
+        },
+        {
+          "item": 273808,
+          "name": "Bridgebreaker Bindings"
         }
       ]
     },
@@ -40,7 +52,16 @@
       "name": "Hamhock",
       "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\hamhock.blp",
       "displayID": 3250,
-      "loot": []
+      "loot": [
+        {
+          "item": 273809,
+          "name": "Hamhock's Cleaver"
+        },
+        {
+          "item": 273810,
+          "name": "Ogre Grips"
+        }
+      ]
     },
     {
       "id": 2759,
@@ -54,8 +75,30 @@
       "name": "Bazil Thredd",
       "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\bazil_thredd.blp",
       "displayID": 1621,
-      "loot": []
+      "loot": [
+        {
+          "item": 273824,
+          "name": "Defias Jailbreakers"
+        },
+        {
+          "item": 273825,
+          "name": "Red Wool Cloak"
+        },
+        {
+          "item": 273827,
+          "name": "Debt Collector"
+        },
+        {
+          "item": 273829,
+          "name": "Concealed Hand Crossbow"
+        }
+      ]
     }
   ],
-  "trash": []
+  "trash": [
+    {
+      "item": 274092,
+      "name": "Sharpened Cutlery"
+    }
+  ]
 }

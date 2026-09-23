@@ -15,7 +15,20 @@
       "id": 2732,
       "name": "Oggleflint",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Oggleflint",
-      "loot": []
+      "loot": [
+        {
+          "item": 272996,
+          "name": "Trogg Scepter"
+        },
+        {
+          "item": 272998,
+          "name": "Bone Knuckles"
+        },
+        {
+          "item": 272999,
+          "name": "Barbaric Crossbow"
+        }
+      ]
     },
     {
       "id": 2733,

@@ -51,3 +51,7 @@ Data:AddBossLoot(592, { -- Mutanus the Devourer
     { 6463 }, -- Deep Fathom Ring
     { 6627 }, -- Mutant Scale Breastplate
 })
+
+Data:AddTrashLoot(43, {
+    { 10413 }, -- Gloves of the Fang
+})

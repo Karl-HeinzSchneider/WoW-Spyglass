@@ -153,5 +153,18 @@
       ]
     }
   ],
-  "trash": []
+  "trash": [
+    {
+      "item": 16684,
+      "name": "Magister's Gloves"
+    },
+    {
+      "item": 16705,
+      "name": "Dreadmist Wraps"
+    },
+    {
+      "item": 16722,
+      "name": "Lightforge Bracers"
+    }
+  ]
 }

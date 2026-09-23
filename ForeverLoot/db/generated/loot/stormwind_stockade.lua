@@ -5,8 +5,27 @@ local Data = ForeverLoot.Data
 
 Data:AddBossLoot(2756, { -- Targorr the Dread
     { 273804 }, -- Executioner Mantle
+    { 273805 }, -- Blackrock Harness
+    { 273806 }, -- Dark Horde Band
 })
 
 Data:AddBossLoot(2757, { -- Kam Deepfury
     { 2280 }, -- Kam's Walking Stick
+    { 273808 }, -- Bridgebreaker Bindings
+})
+
+Data:AddBossLoot(2758, { -- Hamhock
+    { 273809 }, -- Hamhock's Cleaver
+    { 273810 }, -- Ogre Grips
+})
+
+Data:AddBossLoot(2760, { -- Bazil Thredd
+    { 273824 }, -- Defias Jailbreakers
+    { 273825 }, -- Red Wool Cloak
+    { 273827 }, -- Debt Collector
+    { 273829 }, -- Concealed Hand Crossbow
+})
+
+Data:AddTrashLoot(34, {
+    { 274092 }, -- Sharpened Cutlery
 })

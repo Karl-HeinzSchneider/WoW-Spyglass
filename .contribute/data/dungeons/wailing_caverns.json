@@ -168,5 +168,10 @@
       ]
     }
   ],
-  "trash": []
+  "trash": [
+    {
+      "item": 10413,
+      "name": "Gloves of the Fang"
+    }
+  ]
 }

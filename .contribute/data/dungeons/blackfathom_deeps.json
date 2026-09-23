@@ -50,7 +50,16 @@
       "name": "Geilhast",
       "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\geilhast.blp",
       "displayID": 1773,
-      "loot": []
+      "loot": [
+        {
+          "item": 6906,
+          "name": "Algae Fists"
+        },
+        {
+          "item": 6905,
+          "name": "Reef Axe"
+        }
+      ]
     },
     {
       "id": 2913,
@@ -89,6 +98,10 @@
         {
           "item": 6903,
           "name": "Gaze Dreamer Pants"
+        },
+        {
+          "item": 273846,
+          "name": "Twilight Lord Girdle"
         }
       ]
     },
@@ -112,5 +125,54 @@
       ]
     }
   ],
-  "trash": []
+  "trash": [
+    {
+      "item": 1454,
+      "name": "Axe of the Enforcer"
+    },
+    {
+      "item": 3414,
+      "name": "Crested Scepter"
+    },
+    {
+      "item": 3416,
+      "name": "Martyr's Chain"
+    },
+    {
+      "item": 3417,
+      "name": "Onyx Claymore"
+    },
+    {
+      "item": 1481,
+      "name": "Grimclaw"
+    },
+    {
+      "item": 1491,
+      "name": "Ring of Precision"
+    },
+    {
+      "item": 3413,
+      "name": "Doomspike"
+    },
+    {
+      "item": 1486,
+      "name": "Tree Bark Jacket"
+    },
+    {
+      "item": 3415,
+      "name": "Staff of the Friar"
+    },
+    {
+      "item": 2034,
+      "name": "Scholarly Robes"
+    },
+    {
+      "item": 2271,
+      "name": "Staff of the Blessed Seer"
+    },
+    {
+      "item": 2567,
+      "name": "Evocator's Blade"
+    }
+  ]
 }

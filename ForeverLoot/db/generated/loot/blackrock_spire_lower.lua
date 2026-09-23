@@ -27,3 +27,13 @@ Data:AddBossLoot(275, { -- Overlord Wyrmthalak
     { 13164 }, -- Heart of the Scale
     { 16679 }, -- Beaststalker's Mantle
 })
+
+Data:AddTrashLoot(22901, {
+    { 16673 }, -- Cord of Elements
+    { 16680 }, -- Beaststalker's Belt
+    { 16696 }, -- Devout Belt
+    { 16713 }, -- Shadowcraft Belt
+    { 16683 }, -- Magister's Bindings
+    { 16703 }, -- Dreadmist Bracers
+    { 16735 }, -- Bracers of Valor
+})

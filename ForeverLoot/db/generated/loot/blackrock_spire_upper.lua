@@ -27,3 +27,13 @@ Data:AddBossLoot(3069, { -- General Drakkisath
     { 16726 }, -- Lightforge Breastplate
     { 16730 }, -- Breastplate of Valor
 })
+
+Data:AddTrashLoot(22902, {
+    { 16673 }, -- Cord of Elements
+    { 16680 }, -- Beaststalker's Belt
+    { 16696 }, -- Devout Belt
+    { 16713 }, -- Shadowcraft Belt
+    { 16683 }, -- Magister's Bindings
+    { 16703 }, -- Dreadmist Bracers
+    { 16735 }, -- Bracers of Valor
+})

@@ -42,3 +42,9 @@ Data:AddBossLoot(484, { -- Baron Rivendare
     { 16728 }, -- Lightforge Legplates
     { 16732 }, -- Legplates of Valor
 })
+
+Data:AddTrashLoot(329, {
+    { 16725 }, -- Lightforge Boots
+    { 16723 }, -- Lightforge Belt
+    { 16697 }, -- Devout Bracers
+})

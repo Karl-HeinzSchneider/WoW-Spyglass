@@ -14,6 +14,11 @@ Data:AddBossLoot(2915, { -- Lady Sarevess
     { 11121 }, -- Darkwater Talwar
 })
 
+Data:AddBossLoot(2914, { -- Geilhast
+    { 6906 }, -- Algae Fists
+    { 6905 }, -- Reef Axe
+})
+
 Data:AddBossLoot(2912, { -- Old Serra'kis
     { 6901 }, -- Glowing Thresher Cape
     { 6904 }, -- Bite of Serra'kis
@@ -23,10 +28,26 @@ Data:AddBossLoot(2912, { -- Old Serra'kis
 Data:AddBossLoot(2911, { -- Twilight Lord Kelris
     { 1155 }, -- Rod of the Sleepwalker
     { 6903 }, -- Gaze Dreamer Pants
+    { 273846 }, -- Twilight Lord Girdle
 })
 
 Data:AddBossLoot(2910, { -- Aku'mai
     { 6909 }, -- Strike of the Hydra
     { 6911 }, -- Moss Cinch
     { 6910 }, -- Leech Pants
+})
+
+Data:AddTrashLoot(48, {
+    { 1454 }, -- Axe of the Enforcer
+    { 3414 }, -- Crested Scepter
+    { 3416 }, -- Martyr's Chain
+    { 3417 }, -- Onyx Claymore
+    { 1481 }, -- Grimclaw
+    { 1491 }, -- Ring of Precision
+    { 3413 }, -- Doomspike
+    { 1486 }, -- Tree Bark Jacket
+    { 3415 }, -- Staff of the Friar
+    { 2034 }, -- Scholarly Robes
+    { 2271 }, -- Staff of the Blessed Seer
+    { 2567 }, -- Evocator's Blade
 })

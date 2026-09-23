@@ -30,3 +30,9 @@ Data:AddBossLoot(2801, { -- Darkmaster Gandling
     { 16727 }, -- Lightforge Helm
     { 16731 }, -- Helm of Valor
 })
+
+Data:AddTrashLoot(289, {
+    { 16684 }, -- Magister's Gloves
+    { 16705 }, -- Dreadmist Wraps
+    { 16722 }, -- Lightforge Bracers
+})

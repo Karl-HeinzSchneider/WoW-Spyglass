@@ -36,15 +36,33 @@ Data:AddBossLoot(2752, { -- Odo the Blindwatcher
 Data:AddBossLoot(2753, { -- Fenrus the Devourer
     { 3230 }, -- Black Wolf Bracers
     { 6340 }, -- Fenrus' Hide
+    { 273646 }, -- Half-Eaten Boots
 })
 
 Data:AddBossLoot(2754, { -- Wolf Master Nandos
     { 3748 }, -- Feline Mantle
     { 6314 }, -- Wolfmaster Cape
+    { 273647 }, -- Worgpelt Leggings
 })
 
 Data:AddBossLoot(2755, { -- Archmage Arugal
     { 6220 }, -- Meteor Shard
     { 6324 }, -- Robes of Arugal
     { 6392 }, -- Belt of Arugal
+})
+
+Data:AddTrashLoot(33, {
+    { 1489 }, -- Gloomshroud Armor
+    { 2205 }, -- Duskbringer
+    { 2292 }, -- Necrology Robes
+    { 5943 }, -- Rift Bracers
+    { 1482 }, -- Shadowfang
+    { 1935 }, -- Assassin's Blade
+    { 1318 }, -- Night Reaver
+    { 2807 }, -- Guillotine Axe
+    { 1484 }, -- Witching Stave
+    { 1974 }, -- Mindthrust Bracers
+    { 1483 }, -- Face Smasher
+    { 3194 }, -- Black Malice
+    { 6341 }, -- Eerie Stable Lantern
 })

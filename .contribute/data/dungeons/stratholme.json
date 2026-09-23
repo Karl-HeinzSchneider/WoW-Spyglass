@@ -193,5 +193,18 @@
       "loot": []
     }
   ],
-  "trash": []
+  "trash": [
+    {
+      "item": 16725,
+      "name": "Lightforge Boots"
+    },
+    {
+      "item": 16723,
+      "name": "Lightforge Belt"
+    },
+    {
+      "item": 16697,
+      "name": "Devout Bracers"
+    }
+  ]
 }

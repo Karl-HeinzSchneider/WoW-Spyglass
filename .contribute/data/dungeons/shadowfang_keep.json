@@ -122,6 +122,10 @@
         {
           "item": 6340,
           "name": "Fenrus' Hide"
+        },
+        {
+          "item": 273646,
+          "name": "Half-Eaten Boots"
         }
       ]
     },
@@ -138,6 +142,10 @@
         {
           "item": 6314,
           "name": "Wolfmaster Cape"
+        },
+        {
+          "item": 273647,
+          "name": "Worgpelt Leggings"
         }
       ]
     },
@@ -162,5 +170,58 @@
       ]
     }
   ],
-  "trash": []
+  "trash": [
+    {
+      "item": 1489,
+      "name": "Gloomshroud Armor"
+    },
+    {
+      "item": 2205,
+      "name": "Duskbringer"
+    },
+    {
+      "item": 2292,
+      "name": "Necrology Robes"
+    },
+    {
+      "item": 5943,
+      "name": "Rift Bracers"
+    },
+    {
+      "item": 1482,
+      "name": "Shadowfang"
+    },
+    {
+      "item": 1935,
+      "name": "Assassin's Blade"
+    },
+    {
+      "item": 1318,
+      "name": "Night Reaver"
+    },
+    {
+      "item": 2807,
+      "name": "Guillotine Axe"
+    },
+    {
+      "item": 1484,
+      "name": "Witching Stave"
+    },
+    {
+      "item": 1974,
+      "name": "Mindthrust Bracers"
+    },
+    {
+      "item": 1483,
+      "name": "Face Smasher"
+    },
+    {
+      "item": 3194,
+      "name": "Black Malice"
+    },
+    {
+      "item": 6341,
+      "name": "Eerie Stable Lantern"
+    }
+  ]
 }

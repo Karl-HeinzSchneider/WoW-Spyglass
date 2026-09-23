@@ -153,5 +153,54 @@
       ]
     }
   ],
-  "trash": []
+  "trash": [
+    {
+      "item": 1934,
+      "name": "Stonemason Trousers"
+    },
+    {
+      "item": 10402,
+      "name": "Blackened Defias Boots"
+    },
+    {
+      "item": 1943,
+      "name": "Goblin Mail Leggings"
+    },
+    {
+      "item": 1951,
+      "name": "Blackwater Cutlass"
+    },
+    {
+      "item": 10400,
+      "name": "Blackened Defias Leggings"
+    },
+    {
+      "item": 10401,
+      "name": "Blackened Defias Gloves"
+    },
+    {
+      "item": 1929,
+      "name": "Silk-threaded Trousers"
+    },
+    {
+      "item": 1930,
+      "name": "Stonemason Cloak"
+    },
+    {
+      "item": 1936,
+      "name": "Goblin Screwdriver"
+    },
+    {
+      "item": 1944,
+      "name": "Metalworking Gloves"
+    },
+    {
+      "item": 1945,
+      "name": "Woodworking Gloves"
+    },
+    {
+      "item": 1925,
+      "name": "Defias Rapier"
+    }
+  ]
 }
