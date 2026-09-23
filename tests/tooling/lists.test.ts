@@ -67,7 +67,10 @@ test("a section's categories may be named and are resolved to ids by fix", () =>
   const checker = sectionChecker(true);
   validateLists([file], checker);
   assert.deepEqual(file.data.sections?.[0]?.categories, [2469, 2470]);
-  assert.deepEqual(checker.problems.filter((p) => !p.fixable && !p.warning), []);
+  assert.deepEqual(
+    checker.problems.filter((p) => !p.fixable && !p.warning),
+    [],
+  );
 });
 
 test("sections reject other professions' categories, unknown names and doubled categories", () => {

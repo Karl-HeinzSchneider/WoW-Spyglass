@@ -1,7 +1,14 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { dirname, relative, resolve } from "node:path";
 import { type Config, FALLBACK_LOCALE, LOCALE_OUTPUT_DIR, OUTPUT_DIR, ROOT } from "./config.js";
-import { type CuratedFile, type CuratedInstance, type CuratedLoot, type CuratedQuest, classToken, instanceIDOf } from "./curated.js";
+import {
+  type CuratedFile,
+  type CuratedInstance,
+  type CuratedLoot,
+  type CuratedQuest,
+  classToken,
+  instanceIDOf,
+} from "./curated.js";
 import { type ScannedItem } from "./items.js";
 import { type ListFile, type ListSection, ROW_FIELDS, rowsOf } from "./lists.js";
 import { header, luaFields, luaString, luaValue } from "./lua.js";
@@ -13,7 +20,8 @@ const DEFAULT_ICONS = {
   raid: "Interface\\Icons\\Achievement_Dungeon_ClassicRaider",
 };
 
-const ITEM_LAYOUT = "quality, itemLevel, reqLevel, classID, subclassID, slot, bind, icon, stats, sellPrice, stackCount, setID, expansionID, craftingReagent";
+const ITEM_LAYOUT =
+  "quality, itemLevel, reqLevel, classID, subclassID, slot, bind, icon, stats, sellPrice, stackCount, setID, expansionID, craftingReagent";
 
 /** Item row layout; must match Data.ITEM in ForeverLoot/src/data/data.lua (stats is nil when the item has none). */
 function itemRow(item: ScannedItem): unknown[] {
@@ -59,13 +67,27 @@ function emitInstances(ref: Reference, curated: CuratedFile[]): string {
     // A map players see as several dungeons: one instance per file, with the encounters it lists.
     for (const file of parts) {
       const listed = new Set(file.data.encounters.map((e) => e.id));
-      out.push(...emitInstance(ref, file.data.id!, inst, inst.encounters.filter((id) => listed.has(id)), file.data));
+      out.push(
+        ...emitInstance(
+          ref,
+          file.data.id!,
+          inst,
+          inst.encounters.filter((id) => listed.has(id)),
+          file.data,
+        ),
+      );
     }
   }
   return out.join("");
 }
 
-function emitInstance(ref: Reference, id: number, inst: Instance, encounters: number[], cur: CuratedInstance | undefined): string[] {
+function emitInstance(
+  ref: Reference,
+  id: number,
+  inst: Instance,
+  encounters: number[],
+  cur: CuratedInstance | undefined,
+): string[] {
   const out: string[] = [];
   out.push(`\n-- ${cur?.id !== undefined ? cur.name : nameOf(ref, "instances", id)}\n`);
   out.push(`Data:AddInstance(${id}, {\n`);
@@ -89,7 +111,15 @@ function emitInstance(ref: Reference, id: number, inst: Instance, encounters: nu
     const enc = ref.encounters.get(encID)!;
     const c = cur?.encounters.find((e) => e.id === encID);
     const fields = luaFields(
-      { instanceID: id, order: enc.order, portrait: c?.portrait, displayID: c?.displayID, level: c?.level, creatureType: c?.creatureType, quests: c?.quests },
+      {
+        instanceID: id,
+        order: enc.order,
+        portrait: c?.portrait,
+        displayID: c?.displayID,
+        level: c?.level,
+        creatureType: c?.creatureType,
+        quests: c?.quests,
+      },
       ["instanceID", "order", "portrait", "displayID", "level", "creatureType", "quests"],
       "",
     )
@@ -103,7 +133,9 @@ function emitInstance(ref: Reference, id: number, inst: Instance, encounters: nu
 // Generated provenance comments keep their pre-monorepo paths so a layout-only migration does
 // not rewrite every generated file. The real source paths are rooted under .contribute/data/.
 function sourceLabel(path: string): string {
-  return relative(ROOT, path).replace(/\\/g, "/").replace(/^\.contribute\/data\//, ".contribute/");
+  return relative(ROOT, path)
+    .replace(/\\/g, "/")
+    .replace(/^\.contribute\/data\//, ".contribute/");
 }
 
 /** One `{ itemID, chance }` loot row per line, with the item's name as a comment. */
@@ -132,7 +164,9 @@ function emitLoot(file: CuratedFile, ref: Reference): string {
   const rel = sourceLabel(file.path);
   const out = [header(rel), "local Data = ForeverLoot.Data\n"];
   const id = instanceIDOf(file.data);
-  out.push(`\n-- ${file.data.id !== undefined ? file.data.name : nameOf(ref, "instances", id)} (map ${file.data.map})\n`);
+  out.push(
+    `\n-- ${file.data.id !== undefined ? file.data.name : nameOf(ref, "instances", id)} (map ${file.data.map})\n`,
+  );
   for (const enc of file.data.encounters) {
     if (!enc.loot?.length) continue;
     out.push(`\nData:AddBossLoot(${enc.id}, { -- ${enc.name || nameOf(ref, "encounters", enc.id)}\n`);
@@ -149,7 +183,11 @@ function emitLoot(file: CuratedFile, ref: Reference): string {
   if (quests.length > 0) {
     out.push(`\nData:AddQuests(${id}, {\n`);
     for (const quest of quests) {
-      const fields = luaFields({ ...quest, class: quest.class && classToken(quest.class) }, ["id", "name", "side", "class"], "").join(" ");
+      const fields = luaFields(
+        { ...quest, class: quest.class && classToken(quest.class) },
+        ["id", "name", "side", "class"],
+        "",
+      ).join(" ");
       const items = emitLootRows(quest.items ?? [], ref, "        ");
       if (items.length === 0) {
         out.push(`    { ${fields} items = {} },\n`);
@@ -188,13 +226,20 @@ function emitList(file: ListFile, ref: Reference): string {
   out.push("})\n");
   // Rows without an item are either name-only rows `npm run fix` hasn't resolved yet (dropped) or
   // crafting rows naming a recipe that makes no item (an enchant: kept, the spell is the row).
-  const rows = rowsOf(file).filter((row) => row.item !== undefined || (file.kind === "crafting" && row.spell !== undefined));
+  const rows = rowsOf(file).filter(
+    (row) => row.item !== undefined || (file.kind === "crafting" && row.spell !== undefined),
+  );
   if (rows.length > 0) {
     out.push(`Data:AddListLoot(${luaString(file.kind)}, ${luaString(file.slug)}, {\n`);
     for (const row of rows) {
-      const fields = luaFields({ ...row }, [...ROW_FIELDS[file.kind], "group"], "").map((f) => `${f.replace(/,$/, "")}`);
+      const fields = luaFields({ ...row }, [...ROW_FIELDS[file.kind], "group"], "").map(
+        (f) => `${f.replace(/,$/, "")}`,
+      );
       if (row.item !== undefined) fields.unshift(String(row.item));
-      const name = row.item !== undefined && ref.items.has(row.item) ? nameOf(ref, "items", row.item) : (row.name ?? ref.recipes.get(row.spell ?? 0)?.name ?? "?");
+      const name =
+        row.item !== undefined && ref.items.has(row.item)
+          ? nameOf(ref, "items", row.item)
+          : (row.name ?? ref.recipes.get(row.spell ?? 0)?.name ?? "?");
       out.push(`    { ${fields.join(", ")} }, -- ${name}\n`);
     }
     out.push("})\n");
@@ -210,14 +255,19 @@ function emitSections(sections: ListSection[] | undefined, ref: Reference): stri
   if (!sections || sections.length === 0) return [];
   const out = ["    sections = {\n"];
   for (const section of sections) {
-    const names = section.categories.map((c) => (typeof c === "number" ? (ref.categories.get(c)?.name ?? `#${c}`) : c)).join(", ");
-    out.push(`        { name = ${luaString(section.name)}, categories = ${luaValue(section.categories)} }, -- ${names}\n`);
+    const names = section.categories
+      .map((c) => (typeof c === "number" ? (ref.categories.get(c)?.name ?? `#${c}`) : c))
+      .join(", ");
+    out.push(
+      `        { name = ${luaString(section.name)}, categories = ${luaValue(section.categories)} }, -- ${names}\n`,
+    );
   }
   out.push("    },\n");
   return out;
 }
 
-const RECIPE_LAYOUT = "skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto, taughtBy";
+const RECIPE_LAYOUT =
+  "skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto, taughtBy";
 
 /** The skill needed to learn a recipe: from the recipe item that teaches it, else the ability's own minimum. */
 export function learnSkillOf(recipe: Recipe): number {
@@ -251,17 +301,28 @@ function trimRow(row: unknown[]): unknown[] {
 
 /** One profession: its trade skill categories (for group order) and the recipes the scans confirm. */
 function emitRecipes(skillLine: SkillLine, recipes: Recipe[], ref: Reference): string {
-  const out = [header(`wago.tools SkillLineAbility/SpellReagents/SpellEffect, build ${ref.build}`), "local Data = ForeverLoot.Data\n"];
+  const out = [
+    header(`wago.tools SkillLineAbility/SpellReagents/SpellEffect, build ${ref.build}`),
+    "local Data = ForeverLoot.Data\n",
+  ];
   out.push(`\n-- ${skillLine.name} (SkillLine ${skillLine.id})\n`);
-  const categories = [...ref.categories.values()].filter((c) => c.skillLineID === skillLine.id).sort((a, b) => a.order - b.order || a.id - b.id);
+  const categories = [...ref.categories.values()]
+    .filter((c) => c.skillLineID === skillLine.id)
+    .sort((a, b) => a.order - b.order || a.id - b.id);
   if (categories.length > 0) {
     out.push("Data:AddCategories({\n");
-    for (const c of categories) out.push(`    [${c.id}] = { skillLineID = ${c.skillLineID}, order = ${c.order} }, -- ${c.name}\n`);
+    for (const c of categories)
+      out.push(`    [${c.id}] = { skillLineID = ${c.skillLineID}, order = ${c.order} }, -- ${c.name}\n`);
     out.push("})\n");
   }
   const orderOf = (r: Recipe) => ref.categories.get(r.categoryID)?.order ?? Number.MAX_SAFE_INTEGER;
   const sorted = [...recipes].sort(
-    (a, b) => orderOf(a) - orderOf(b) || a.categoryID - b.categoryID || learnSkillOf(a) - learnSkillOf(b) || a.yellow - b.yellow || a.spellID - b.spellID,
+    (a, b) =>
+      orderOf(a) - orderOf(b) ||
+      a.categoryID - b.categoryID ||
+      learnSkillOf(a) - learnSkillOf(b) ||
+      a.yellow - b.yellow ||
+      a.spellID - b.spellID,
   );
   out.push(`-- { ${RECIPE_LAYOUT} }; see Data.RECIPE. Keyed by the recipe's spell id.\n`);
   out.push("Data:AddRecipes({\n");
@@ -285,13 +346,19 @@ function emitCraftingNames(locale: string, ref: Reference, skillLines: SkillLine
   ];
   for (const [kind, table, wanted] of tables) {
     out.push(`\nData:AddNames("${locale}", "${kind}", {\n`);
-    for (const id of [...table.keys()].filter(wanted).sort((a, b) => a - b)) out.push(`    [${id}] = ${luaString(table.get(id)!)},\n`);
+    for (const id of [...table.keys()].filter(wanted).sort((a, b) => a - b))
+      out.push(`    [${id}] = ${luaString(table.get(id)!)},\n`);
     out.push("})\n");
   }
   return out.join("");
 }
 
-function emitNames(locale: string, kind: "items" | "bosses" | "instances", table: Map<number, string>, source: string): string {
+function emitNames(
+  locale: string,
+  kind: "items" | "bosses" | "instances",
+  table: Map<number, string>,
+  source: string,
+): string {
   const out = [header(`${source}, locale ${locale}`)];
   if (locale !== FALLBACK_LOCALE) out.push(`if GetLocale() ~= "${locale}" then\n    return\nend\n`);
   out.push("local Data = ForeverLoot.Data\n\n");
@@ -302,7 +369,10 @@ function emitNames(locale: string, kind: "items" | "bosses" | "instances", table
 }
 
 function emitXml(files: string[]): string {
-  const lines = ['<Ui xmlns="http://www.blizzard.com/wow/ui/">', "\t<!-- Generated by .contribute/tools (npm run gen) - do not edit. -->"];
+  const lines = [
+    '<Ui xmlns="http://www.blizzard.com/wow/ui/">',
+    "\t<!-- Generated by .contribute/tools (npm run gen) - do not edit. -->",
+  ];
   for (const f of files) lines.push(`\t<Script file="${f.replace(/\//g, "\\")}" />`);
   lines.push("</Ui>");
   return lines.join("\n") + "\n";
@@ -360,7 +430,10 @@ export function build(ref: Reference, curated: CuratedFile[], lists: ListFile[],
   // scans on a client of that language (see refreshItemNames).
   for (const locale of ref.itemLocales) {
     const add = locale === FALLBACK_LOCALE ? addCore : addLocale;
-    const source = locale === FALLBACK_LOCALE ? ".contribute/items (in-game scans)" : `.contribute/items (in-game scans) and wago.tools ItemSparse build ${ref.build}`;
+    const source =
+      locale === FALLBACK_LOCALE
+        ? ".contribute/items (in-game scans)"
+        : `.contribute/items (in-game scans) and wago.tools ItemSparse build ${ref.build}`;
     add(`locales/${locale}/items.lua`, emitNames(locale, "items", ref.names.get(locale)!.items, source));
   }
   // Bosses an instance file names differently from the game table (renamed by the server): the
@@ -380,8 +453,14 @@ export function build(ref: Reference, curated: CuratedFile[], lists: ListFile[],
       else bosses.delete(id); // falls back to the English one
     }
     // The parts of a split map have no name in the game's tables: the file's name is the English one.
-    const parts = locale === FALLBACK_LOCALE ? curated.filter((f) => f.data.id !== undefined).map((f): [number, string] => [f.data.id!, f.data.name!]) : [];
-    add(`locales/${locale}/instances.lua`, emitNames(locale, "instances", new Map([...names.instances, ...parts]), `wago.tools build ${ref.build}`));
+    const parts =
+      locale === FALLBACK_LOCALE
+        ? curated.filter((f) => f.data.id !== undefined).map((f): [number, string] => [f.data.id!, f.data.name!])
+        : [];
+    add(
+      `locales/${locale}/instances.lua`,
+      emitNames(locale, "instances", new Map([...names.instances, ...parts]), `wago.tools build ${ref.build}`),
+    );
     add(`locales/${locale}/bosses.lua`, emitNames(locale, "bosses", bosses, `wago.tools build ${ref.build}`));
     add(`locales/${locale}/crafting.lua`, emitCraftingNames(locale, ref, skillLines, recipes));
   }
@@ -393,7 +472,10 @@ export function build(ref: Reference, curated: CuratedFile[], lists: ListFile[],
 
 /** Writes both addon trees, removes stale files, and returns the number of changed files. */
 export function write(files: GeneratedFiles, check: boolean): number {
-  return writeTree(files.core, OUTPUT_DIR, "ForeverLoot/db/generated", check) + writeTree(files.locale, LOCALE_OUTPUT_DIR, "ForeverLoot_Locale/db/generated", check);
+  return (
+    writeTree(files.core, OUTPUT_DIR, "ForeverLoot/db/generated", check) +
+    writeTree(files.locale, LOCALE_OUTPUT_DIR, "ForeverLoot_Locale/db/generated", check)
+  );
 }
 
 function writeTree(files: Map<string, string>, outputDir: string, displayDir: string, check: boolean): number {

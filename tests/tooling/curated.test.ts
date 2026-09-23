@@ -50,7 +50,10 @@ test("fix gives an instance without a trash list an empty one", () => {
   const checker = dungeonChecker(true);
   validate([file], checker);
   assert.deepEqual(file.data.trash, []);
-  assert.deepEqual(checker.problems.filter((p) => !p.fixable && !p.warning), []);
+  assert.deepEqual(
+    checker.problems.filter((p) => !p.fixable && !p.warning),
+    [],
+  );
 });
 
 test("trash and quest rows resolve a name-only row and keep their shape through a fix rewrite", () => {
@@ -60,7 +63,10 @@ test("trash and quest rows resolve a name-only row and keep their shape through 
   });
   const checker = dungeonChecker(true);
   validate([file], checker);
-  assert.deepEqual(checker.problems.filter((p) => !p.fixable && !p.warning), []);
+  assert.deepEqual(
+    checker.problems.filter((p) => !p.fixable && !p.warning),
+    [],
+  );
   const serialized = JSON.parse(serialize(file.data)) as Record<string, unknown>;
   assert.deepEqual(serialized.trash, [{ item: 100, name: "Trash Trinket", chance: 0.02 }]);
   assert.deepEqual(serialized.quests, [
@@ -72,7 +78,10 @@ test("a displayName is kept through a fix rewrite and must not be empty", () => 
   const file = dungeonFile({ displayName: "TD" });
   const checker = dungeonChecker(true);
   validate([file], checker);
-  assert.deepEqual(checker.problems.filter((p) => !p.fixable && !p.warning), []);
+  assert.deepEqual(
+    checker.problems.filter((p) => !p.fixable && !p.warning),
+    [],
+  );
   assert.equal((JSON.parse(serialize(file.data)) as { displayName?: string }).displayName, "TD");
 
   const empty = dungeonChecker(false);
@@ -101,16 +110,25 @@ test("a quest without a name is only a warning: no game table can supply one", (
   const file = dungeonFile({ trash: [], quests: [{ id: 26, items: [{ item: 200, name: "Quest Reward" }] }] });
   const checker = dungeonChecker(false);
   validate([file], checker);
-  assert.deepEqual(checker.problems.filter((p) => !p.fixable && !p.warning), []);
+  assert.deepEqual(
+    checker.problems.filter((p) => !p.fixable && !p.warning),
+    [],
+  );
   assert.equal(checker.problems.filter((p) => p.warning).length, 1);
   assert.match(checker.problems.find((p) => p.warning)!.message, /quest 26: no `name`/);
 });
 
 test("a quest without an id is only a warning: the id is added by hand later", () => {
-  const file = dungeonFile({ trash: [], quests: [{ name: "A Test Quest", items: [{ item: 200, name: "Quest Reward" }] }] });
+  const file = dungeonFile({
+    trash: [],
+    quests: [{ name: "A Test Quest", items: [{ item: 200, name: "Quest Reward" }] }],
+  });
   const checker = dungeonChecker(false);
   validate([file], checker);
-  assert.deepEqual(checker.problems.filter((p) => !p.fixable && !p.warning), []);
+  assert.deepEqual(
+    checker.problems.filter((p) => !p.fixable && !p.warning),
+    [],
+  );
   assert.deepEqual(
     checker.problems.filter((p) => p.warning).map((p) => p.message),
     ['quest "A Test Quest": no `id`; it isn\'t shipped until it has one'],
@@ -135,9 +153,20 @@ test("a class quest names one of the classes, and keeps it through a fix rewrite
 });
 
 test("a split map: each file needs an id, a boss may be in one of them only, one in none is a warning", () => {
-  const part = (slug: string, data: Partial<CuratedFile["data"]>): CuratedFile => ({ ...dungeonFile({ trash: [], ...data }), slug, path: `.contribute/data/dungeons/${slug}.json` });
-  const east = part("test_east", { id: 3601, name: "Test Dungeon: East", encounters: [{ id: 2747, name: "Test Boss", loot: [] }] });
-  const west = part("test_west", { name: "Test Dungeon: West", encounters: [{ id: 2747, name: "Test Boss", loot: [] }] });
+  const part = (slug: string, data: Partial<CuratedFile["data"]>): CuratedFile => ({
+    ...dungeonFile({ trash: [], ...data }),
+    slug,
+    path: `.contribute/data/dungeons/${slug}.json`,
+  });
+  const east = part("test_east", {
+    id: 3601,
+    name: "Test Dungeon: East",
+    encounters: [{ id: 2747, name: "Test Boss", loot: [] }],
+  });
+  const west = part("test_west", {
+    name: "Test Dungeon: West",
+    encounters: [{ id: 2747, name: "Test Boss", loot: [] }],
+  });
   const checker = dungeonChecker(false, [2747, 2748]);
   validate([east, west], checker);
   const errors = checker.problems.filter((p) => !p.fixable && !p.warning).map((p) => p.message);

@@ -606,7 +606,7 @@ local function validate(def)
         return false, "field `query` must be a boolean"
     end
     if def.display ~= nil and def.display ~= "rows" and def.display ~= "tiles" and def.display ~= "cards" then
-        return false, "field `display` must be \"rows\", \"tiles\" or \"cards\""
+        return false, 'field `display` must be "rows", "tiles" or "cards"'
     end
     return true
 end

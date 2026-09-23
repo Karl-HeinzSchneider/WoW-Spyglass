@@ -31,9 +31,9 @@ the data workflow it feeds is in `.contribute/CLAUDE.md`.
   **twice side by side, on black and on white**, so one screenshot carries both and the pair
   gives the transparency back (alpha = 1 - (white - black)), which a single background cannot.
   Each area is resized (on show, and on `UI_SCALE_CHANGED`/`DISPLAY_SIZE_CHANGED`) to aim for
-  512x256 *screen* pixels -- 4x the client's own 128x64 boss art -- and the window grows around
+  512x256 _screen_ pixels -- 4x the client's own 128x64 boss art -- and the window grows around
   them; the size it really got is printed in the settings line, because the crop only needs a
-  2:1 area, not an exact one. A magenta marker rings each area *outside* the pixels being
+  2:1 area, not an exact one. A magenta marker rings each area _outside_ the pixels being
   cropped. The model is frozen with `FreezeAnimation(0, 0, 0)` while its clock keeps running:
   pausing the frame stops a model part-way through its fade-in and it stays translucent, which
   silently ruins the alpha. `< Boss` / `Boss >` walk every boss the core knows a `displayID` for

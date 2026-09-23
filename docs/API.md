@@ -56,20 +56,20 @@ same goes for the other four: a list added with `ForeverLoot.Data:AddList` /
 Registers (or, if `def.id` already exists, replaces) a module. Returns `false` and logs an error
 if the definition is invalid; it never throws.
 
-| Field | Type | Required | Notes |
-|---|---|---|---|
-| `id` | string | yes | Unique key. Prefix with your addon name to avoid collisions. |
-| `name` | string | yes | Display name. |
-| `icon` | string \| number | yes | Texture path or fileID. |
-| `order` | number | no | Sort position among modules; lower first. Default `100`. Ties sort by name. The built-in content modules use 10–60, the item browser `1000` so it stays last. |
-| `spacerBefore` | boolean | no | Leaves one empty row above the module in the root list (not when it comes first). The built-in `items` module uses it to sit apart from the content modules. |
-| `description` | string | no | Free text for tooltips. |
-| `children` | Node[] | one of | The module's top-level entries. |
-| `getChildren` | fun(def) -> Node[] | one of | Lazy alternative; called once, the first time the tree is built. Errors are caught and logged. |
-| `sortChildren` | boolean \| fun(a, b) | no | `true` sorts children by node `order` (default 100), then `name`; a function is used as the comparator and receives the full nodes (metadata included). Applies to `AddToModule` entries too. |
-| `query` | boolean | no | The module's own list is the item database, filtered by the view's search box and filter menu (see [Item database](#item-database)). `children` may be `{}`. |
-| `columns`, `display`, `groupBy` | | no | Layout of the module's own list, as on folder nodes (see [Tiles](#tiles) and [Cards](#cards)). |
-| `expansionID`, `seasonID`, `tags`, `meta` | various | no | Metadata; see below. |
+| Field                                     | Type                 | Required | Notes                                                                                                                                                                                         |
+| ----------------------------------------- | -------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                                      | string               | yes      | Unique key. Prefix with your addon name to avoid collisions.                                                                                                                                  |
+| `name`                                    | string               | yes      | Display name.                                                                                                                                                                                 |
+| `icon`                                    | string \| number     | yes      | Texture path or fileID.                                                                                                                                                                       |
+| `order`                                   | number               | no       | Sort position among modules; lower first. Default `100`. Ties sort by name. The built-in content modules use 10–60, the item browser `1000` so it stays last.                                 |
+| `spacerBefore`                            | boolean              | no       | Leaves one empty row above the module in the root list (not when it comes first). The built-in `items` module uses it to sit apart from the content modules.                                  |
+| `description`                             | string               | no       | Free text for tooltips.                                                                                                                                                                       |
+| `children`                                | Node[]               | one of   | The module's top-level entries.                                                                                                                                                               |
+| `getChildren`                             | fun(def) -> Node[]   | one of   | Lazy alternative; called once, the first time the tree is built. Errors are caught and logged.                                                                                                |
+| `sortChildren`                            | boolean \| fun(a, b) | no       | `true` sorts children by node `order` (default 100), then `name`; a function is used as the comparator and receives the full nodes (metadata included). Applies to `AddToModule` entries too. |
+| `query`                                   | boolean              | no       | The module's own list is the item database, filtered by the view's search box and filter menu (see [Item database](#item-database)). `children` may be `{}`.                                  |
+| `columns`, `display`, `groupBy`           |                      | no       | Layout of the module's own list, as on folder nodes (see [Tiles](#tiles) and [Cards](#cards)).                                                                                                |
+| `expansionID`, `seasonID`, `tags`, `meta` | various              | no       | Metadata; see below.                                                                                                                                                                          |
 
 ## Nodes
 
@@ -108,13 +108,13 @@ not by a user setting, so choose it per list (e.g. `columns = 2` for a boss's lo
 A folder with `display = "tiles"` draws its entries as picture cards instead of rows — three
 per line by default (`columns` = 1..4), about twice as tall as a row. Each entry may carry:
 
-| Field | Type | Notes |
-|---|---|---|
-| `background` | string \| number | Wide picture filling the card: a texture (path or fileID) or an atlas name. Without it the card is dark and shows the entry's `icon`. |
-| `backgroundCoords` | number[4] | `{ left, right, top, bottom }` in 0..1: the part of `background` to show — of an atlas, the part of the atlas's own region. All of it by default. |
-| `showIcon` | boolean | With a `background`, also show the entry's `icon`, at the picture's left edge. The built-in Crafting tiles do, so a profession is recognized at a glance. |
-| `info` | string | Small text in the bottom-left corner. Defaults to the level range (`minLevel`-`maxLevel`) when the entry has one. |
-| `infoRight` | string | Small text in the bottom-right corner. |
+| Field              | Type             | Notes                                                                                                                                                     |
+| ------------------ | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `background`       | string \| number | Wide picture filling the card: a texture (path or fileID) or an atlas name. Without it the card is dark and shows the entry's `icon`.                     |
+| `backgroundCoords` | number[4]        | `{ left, right, top, bottom }` in 0..1: the part of `background` to show — of an atlas, the part of the atlas's own region. All of it by default.         |
+| `showIcon`         | boolean          | With a `background`, also show the entry's `icon`, at the picture's left edge. The built-in Crafting tiles do, so a profession is recognized at a glance. |
+| `info`             | string           | Small text in the bottom-left corner. Defaults to the level range (`minLevel`-`maxLevel`) when the entry has one.                                         |
+| `infoRight`        | string           | Small text in the bottom-right corner.                                                                                                                    |
 
 The entry's `name` is the card's title (in `quality` color when set); clicking, tooltips and
 right-click-to-go-back work as for rows. Headers and groups inside the folder are drawn as
@@ -128,17 +128,17 @@ A folder with `display = "cards"` draws its entries as portrait cards: a bevelle
 picture standing on its left, the name and the two info texts beside it, two cards per line
 (`columns` = 1..2). Entries use `info` / `infoRight` as for tiles plus:
 
-| Field | Type | Notes |
-|---|---|---|
-| `portrait` | string \| number | Picture on the left of the card (path or fileID), best a bust on transparency at 2:1. Without it the entry's `icon` is shown there. |
-| `portraitDisplayID` | integer | CreatureDisplayID the client renders the picture from, for entries without a `portrait` (the game's own boss buttons draw creature portraits the same way). |
-| `quests` | integer[] | Quest ids the entry is involved in: the card shows a quest "!" and the tooltip lists the quests' titles. |
+| Field               | Type             | Notes                                                                                                                                                       |
+| ------------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `portrait`          | string \| number | Picture on the left of the card (path or fileID), best a bust on transparency at 2:1. Without it the entry's `icon` is shown there.                         |
+| `portraitDisplayID` | integer          | CreatureDisplayID the client renders the picture from, for entries without a `portrait` (the game's own boss buttons draw creature portraits the same way). |
+| `quests`            | integer[]        | Quest ids the entry is involved in: the card shows a quest "!" and the tooltip lists the quests' titles.                                                    |
 
 `InstanceFolder` nodes are card folders. The first card, "All Bosses", lists every item any of
 the instance's bosses drops (each item once), so the whole loot table reads at a glance. Then
 each `BossFolder(bossID)` carries what the database
 knows about the boss — portrait (a texture, or the model's display id for bosses without art), `info` as "<level> <creature type>" (e.g. "60 Beast"), `quests`,
-and `infoRight` reserved for its *drops of interest* (hidden until the planned favorites
+and `infoRight` reserved for its _drops of interest_ (hidden until the planned favorites
 system decides what counts). After the bosses come the instance's own two cards,
 `TrashFolder(instanceID)` and `QuestFolder(instanceID)` — both always present, both showing a
 contribution hint while the database has nothing for them.
@@ -161,15 +161,15 @@ ForeverLoot:RegisterModule({
 Modules and nodes accept optional metadata that ForeverLoot stores but does not interpret;
 it is there for your sort functions, filters and other addons:
 
-| Field | Type | Notes |
-|---|---|---|
-| `order` | number | Sort key used by `sortChildren = true`. Use fractions for ties, e.g. `60.1`, `60.2`. |
-| `expansionID` | integer | e.g. `LE_EXPANSION_CLASSIC` |
-| `seasonID` | integer | |
-| `instanceID` | integer | journal / map instance id |
-| `minLevel`, `maxLevel` | integer | |
-| `tags` | string[] | |
-| `meta` | table | anything else |
+| Field                  | Type     | Notes                                                                                |
+| ---------------------- | -------- | ------------------------------------------------------------------------------------ |
+| `order`                | number   | Sort key used by `sortChildren = true`. Use fractions for ties, e.g. `60.1`, `60.2`. |
+| `expansionID`          | integer  | e.g. `LE_EXPANSION_CLASSIC`                                                          |
+| `seasonID`             | integer  |                                                                                      |
+| `instanceID`           | integer  | journal / map instance id                                                            |
+| `minLevel`, `maxLevel` | integer  |                                                                                      |
+| `tags`                 | string[] |                                                                                      |
+| `meta`                 | table    | anything else                                                                        |
 
 `Folder(name, icon, children, opts)` copies every key of `opts` onto the node, so layout
 options and metadata go in the same table; `Custom(def)` copies every field of `def`.
@@ -206,9 +206,9 @@ Explicit headers, subheaders and groups in the same list are kept as written; on
 between them are grouped.
 
 - `groupBy = "auto"` uses `ForeverLoot.DefaultGroupKey`: items into four groups in this order —
-  *Quest Items & Misc* (quest items and anything that isn't gear: recipes, consumables, keys, …),
-  *Armor* (head to feet, cloaks, shirts, tabards), *Weapons* (weapons, shields, off-hands, ranged,
-  relics) and *Rings, Amulets & Trinkets* — then spells under "Spells", folders under
+  _Quest Items & Misc_ (quest items and anything that isn't gear: recipes, consumables, keys, …),
+  _Armor_ (head to feet, cloaks, shirts, tabards), _Weapons_ (weapons, shields, off-hands, ranged,
+  relics) and _Rings, Amulets & Trinkets_ — then spells under "Spells", folders under
   "Collections", custom entries by their `category`.
 - `groupBy = function(node) return key, label end` for your own logic (return `nil` to leave
   an entry ungrouped under "Other"). Groups with unknown keys keep first-seen order.
@@ -255,7 +255,7 @@ Constructors (optional sugar):
   Stones", "Plate Helmets", ...; a curated `group` label makes a folder of its own, rows with
   neither go under "Other"), each with its first recipe's icon and a recipe count, so the
   profession page is a list of categories rather than hundreds of rows. Professions with many
-  categories can put those folders under subheaders — see *Category sections* below. Crafting folders show the
+  categories can put those folders under subheaders — see _Category sections_ below. Crafting folders show the
   character's rank ("145 / 150") as `info` and the localized profession name.
   A plain click on any row whose `meta.spell` is a recipe in `Data.recipes` opens the recipe popup
   (product and teaching item, recipe link and reagents); modified clicks still link the row's item.

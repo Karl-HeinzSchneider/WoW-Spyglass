@@ -115,7 +115,10 @@ export function slugOf(name: string): string {
  * which are a secondary skill line of their own) are kept; rows of test skill lines are left
  * out, and professions without any recipe are not listed.
  */
-export function buildRecipes(source: RecipeSource, localeNames: Map<string, Pick<RecipeSource, "skillLine" | "tradeSkillCategory" | "totemCategory">>): RecipeTables {
+export function buildRecipes(
+  source: RecipeSource,
+  localeNames: Map<string, Pick<RecipeSource, "skillLine" | "tradeSkillCategory" | "totemCategory">>,
+): RecipeTables {
   // Root profession of every skill line: the expansion tiers ("Blacksmithing" 2938 under 164) point at their parent.
   const rootOf = new Map<number, number>();
   const professions = new Map<number, SkillLine>();
@@ -125,7 +128,11 @@ export function buildRecipes(source: RecipeSource, localeNames: Map<string, Pick
     rootOf.set(id, parent || id);
     const category = int(row.CategoryID);
     const name = row.DisplayName_lang ?? "";
-    if (parent === 0 && (category === SKILL_CATEGORY_PROFESSION || category === SKILL_CATEGORY_SECONDARY) && !/\[DNT\]/.test(name)) {
+    if (
+      parent === 0 &&
+      (category === SKILL_CATEGORY_PROFESSION || category === SKILL_CATEGORY_SECONDARY) &&
+      !/\[DNT\]/.test(name)
+    ) {
       professions.set(id, { id, name, icon: int(row.SpellIconFileID), slug: slugOf(name) });
     }
   }
@@ -231,7 +238,11 @@ export function buildRecipes(source: RecipeSource, localeNames: Map<string, Pick
   const itemSkills = new Map<number, { skillLineID: number; rank: number }>();
   for (const row of source.itemSparse) {
     const skillLineID = int(row.RequiredSkill);
-    if (skillLineID > 0) itemSkills.set(int(row.ID), { skillLineID: rootOf.get(skillLineID) ?? skillLineID, rank: int(row.RequiredSkillRank) });
+    if (skillLineID > 0)
+      itemSkills.set(int(row.ID), {
+        skillLineID: rootOf.get(skillLineID) ?? skillLineID,
+        rank: int(row.RequiredSkillRank),
+      });
   }
 
   return { skillLines, categories, recipes, names, itemSkills };
@@ -247,7 +258,10 @@ const ITEM_CLASS_RECIPE = 9;
  * name and gives the skill needed to learn it. Recomputed from scratch, so it can run again
  * after an import changed the scans.
  */
-export function linkRecipeItems(tables: Pick<RecipeTables, "recipes" | "itemSkills">, items: Map<number, ScannedItem>): void {
+export function linkRecipeItems(
+  tables: Pick<RecipeTables, "recipes" | "itemSkills">,
+  items: Map<number, ScannedItem>,
+): void {
   const byName = new Map<string, Recipe[]>();
   for (const recipe of tables.recipes.values()) {
     recipe.taughtBy = 0;
@@ -284,7 +298,17 @@ export function shipsRecipe(recipe: Recipe, items: Map<number, ScannedItem>): bo
 export async function loadRecipes(config: Config): Promise<RecipeTables> {
   const { build } = config;
   const table = (name: string, locale = FALLBACK_LOCALE) => fetchTable(name, build, locale);
-  const [skillLine, skillLineAbility, spellReagents, spellEffect, spellTotems, tradeSkillCategory, spellName, totemCategory, itemSparse] = await Promise.all([
+  const [
+    skillLine,
+    skillLineAbility,
+    spellReagents,
+    spellEffect,
+    spellTotems,
+    tradeSkillCategory,
+    spellName,
+    totemCategory,
+    itemSparse,
+  ] = await Promise.all([
     table("SkillLine"),
     table("SkillLineAbility"),
     table("SpellReagents"),
@@ -295,7 +319,17 @@ export async function loadRecipes(config: Config): Promise<RecipeTables> {
     table("TotemCategory"),
     table("ItemSparse"),
   ]);
-  const source: RecipeSource = { skillLine, skillLineAbility, spellReagents, spellEffect, spellTotems, tradeSkillCategory, spellName, totemCategory, itemSparse };
+  const source: RecipeSource = {
+    skillLine,
+    skillLineAbility,
+    spellReagents,
+    spellEffect,
+    spellTotems,
+    tradeSkillCategory,
+    spellName,
+    totemCategory,
+    itemSparse,
+  };
 
   const localeNames = new Map<string, Pick<RecipeSource, "skillLine" | "tradeSkillCategory" | "totemCategory">>();
   for (const locale of config.locales) {
@@ -303,7 +337,11 @@ export async function loadRecipes(config: Config): Promise<RecipeTables> {
       localeNames.set(locale, { skillLine, tradeSkillCategory, totemCategory });
       continue;
     }
-    const [lSkill, lCategory, lTotem] = await Promise.all([table("SkillLine", locale), table("TradeSkillCategory", locale), table("TotemCategory", locale)]);
+    const [lSkill, lCategory, lTotem] = await Promise.all([
+      table("SkillLine", locale),
+      table("TradeSkillCategory", locale),
+      table("TotemCategory", locale),
+    ]);
     localeNames.set(locale, { skillLine: lSkill, tradeSkillCategory: lCategory, totemCategory: lTotem });
   }
   return buildRecipes(source, localeNames);

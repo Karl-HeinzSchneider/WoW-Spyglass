@@ -4,7 +4,16 @@ import { spawnSync } from "node:child_process";
 import { requireAddons } from "./addons.js";
 import { ROOT } from "./config.js";
 
-const schema = resolve(ROOT, "..", "_data", "BlizzardInterfaceCode", "Interface", "AddOns", "Blizzard_SharedXML", "UI.xsd");
+const schema = resolve(
+  ROOT,
+  "..",
+  "_data",
+  "BlizzardInterfaceCode",
+  "Interface",
+  "AddOns",
+  "Blizzard_SharedXML",
+  "UI.xsd",
+);
 if (!existsSync(schema)) {
   console.log("XML validation skipped: ../_data/BlizzardInterfaceCode is not installed");
   process.exit(0);
@@ -24,9 +33,12 @@ const script = [
   "raise SystemExit(1 if failed else 0)",
 ].join("\n");
 
-const result = spawnSync("python", ["-c", script, schema, ...requireAddons().map((addon) => addon.path)], { encoding: "utf-8" });
+const result = spawnSync("python", ["-c", script, schema, ...requireAddons().map((addon) => addon.path)], {
+  encoding: "utf-8",
+});
 if (result.error) {
-  if ((result.error as NodeJS.ErrnoException).code === "ENOENT") throw new Error("python was not found; it is required for XML validation");
+  if ((result.error as NodeJS.ErrnoException).code === "ENOENT")
+    throw new Error("python was not found; it is required for XML validation");
   throw result.error;
 }
 process.stdout.write(result.stdout);

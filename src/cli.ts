@@ -44,7 +44,9 @@ if (command === "import") {
     }
   }
   if (importPaths.length === 0) {
-    console.error(`nothing to import: put a SavedVariables ForeverLoot_Scraper.lua or a /fl export .json into ${relative(ROOT, INBOX_DIR)}/, or pass a path`);
+    console.error(
+      `nothing to import: put a SavedVariables ForeverLoot_Scraper.lua or a /fl export .json into ${relative(ROOT, INBOX_DIR)}/, or pass a path`,
+    );
     process.exit(2);
   }
 }
@@ -77,7 +79,10 @@ const checker = new Checker(ref, fix);
 validate(curated, checker);
 validateLists(lists, checker);
 const problems = checker.problems;
-for (const p of problems) console.log(`${p.warning ? "warning" : p.fixable ? (fix ? "fixed" : "fixable") : "ERROR"}  ${relative(ROOT, p.file)}: ${p.message}`);
+for (const p of problems)
+  console.log(
+    `${p.warning ? "warning" : p.fixable ? (fix ? "fixed" : "fixable") : "ERROR"}  ${relative(ROOT, p.file)}: ${p.message}`,
+  );
 const errors = problems.filter((p) => !p.fixable && !p.warning);
 if (fix) writeCurated(curated, lists);
 
@@ -86,7 +91,9 @@ if (command === "check") {
   process.exit(errors.length ? 1 : 0);
 }
 if (command === "import") {
-  console.log(errors.length ? `${errors.length} error(s); fix them, then run npm run gen` : "imported; now run npm run gen");
+  console.log(
+    errors.length ? `${errors.length} error(s); fix them, then run npm run gen` : "imported; now run npm run gen",
+  );
   process.exit(errors.length ? 1 : 0);
 }
 if (errors.length) {

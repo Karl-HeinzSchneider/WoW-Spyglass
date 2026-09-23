@@ -6,11 +6,11 @@ an addon distribution unit.
 
 ## Addon boundaries
 
-| Addon | Owns | Persistent state | Dependency |
-|---|---|---|---|
-| `ForeverLoot` | Public API, data store and queries, content modules, UI, user settings and loot history | `ForeverLootDB` | none |
-| `ForeverLoot_Locale` | Additional UI translations, generated localized item, instance and boss names, and the item names a non-English client looks up in-game | `ForeverLootLocaleDB` | `ForeverLoot` |
-| `ForeverLoot_Scraper` | Item scanning, loot observation, contribution exports and scraper commands | `ForeverLootScraperDB` | `ForeverLoot` |
+| Addon                 | Owns                                                                                                                                    | Persistent state       | Dependency    |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- | ------------- |
+| `ForeverLoot`         | Public API, data store and queries, content modules, UI, user settings and loot history                                                 | `ForeverLootDB`        | none          |
+| `ForeverLoot_Locale`  | Additional UI translations, generated localized item, instance and boss names, and the item names a non-English client looks up in-game | `ForeverLootLocaleDB`  | `ForeverLoot` |
+| `ForeverLoot_Scraper` | Item scanning, loot observation, contribution exports and scraper commands                                                              | `ForeverLootScraperDB` | `ForeverLoot` |
 
 Generated non-English names live in the locale addon. Scanning, discovery state, JSON export, and
 the export dialog live in the scraper addon. The core operates independently when either companion

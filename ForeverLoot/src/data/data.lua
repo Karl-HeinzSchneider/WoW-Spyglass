@@ -350,7 +350,12 @@ end
 ---@param def ForeverLoot.List
 function Data:AddList(kind, id, def)
     if type(kind) ~= "string" or type(id) ~= "string" or type(def) ~= "table" or type(def.name) ~= "string" then
-        log:error("Data.AddList: expected (string, string, table with name), got (%s, %s, %s)", type(kind), type(id), type(def))
+        log:error(
+            "Data.AddList: expected (string, string, table with name), got (%s, %s, %s)",
+            type(kind),
+            type(id),
+            type(def)
+        )
         return
     end
     local lists = self.lists[kind]
@@ -369,7 +374,12 @@ end
 ---@param rows ForeverLoot.ListLootRow[]
 function Data:AddListLoot(kind, id, rows)
     if type(kind) ~= "string" or type(id) ~= "string" or type(rows) ~= "table" then
-        log:error("Data.AddListLoot: expected (string, string, table), got (%s, %s, %s)", type(kind), type(id), type(rows))
+        log:error(
+            "Data.AddListLoot: expected (string, string, table), got (%s, %s, %s)",
+            type(kind),
+            type(id),
+            type(rows)
+        )
         return
     end
     local byID = self.listLoot[kind]

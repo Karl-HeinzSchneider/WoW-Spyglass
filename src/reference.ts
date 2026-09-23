@@ -62,7 +62,14 @@ export interface LocaleNames {
 }
 
 function emptyNames(): LocaleNames {
-  return { items: new Map(), encounters: new Map(), instances: new Map(), skillLines: new Map(), categories: new Map(), tools: new Map() };
+  return {
+    items: new Map(),
+    encounters: new Map(),
+    instances: new Map(),
+    skillLines: new Map(),
+    categories: new Map(),
+    tools: new Map(),
+  };
 }
 
 const INSTANCE_TYPES: Record<string, InstanceType> = { "1": "dungeon", "2": "raid" };
@@ -208,7 +215,9 @@ export function refreshItemNames(ref: Reference): void {
       if (name) set(locale, id, name);
     }
   }
-  ref.itemLocales = [...locales].sort((a, b) => (a === FALLBACK_LOCALE ? -1 : b === FALLBACK_LOCALE ? 1 : a.localeCompare(b)));
+  ref.itemLocales = [...locales].sort((a, b) =>
+    a === FALLBACK_LOCALE ? -1 : b === FALLBACK_LOCALE ? 1 : a.localeCompare(b),
+  );
 }
 
 /** enUS name lookup (items: any scanned locale as a fallback) with an "#id" fallback, for comments and messages. */

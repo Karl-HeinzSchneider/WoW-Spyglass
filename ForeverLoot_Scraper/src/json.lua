@@ -23,9 +23,11 @@ local ESCAPES = {
 ---@param s string
 ---@return string
 local function encodeString(s)
-    return '"' .. s:gsub('[%c"\\]', function(c)
-        return ESCAPES[c] or ("\\u%04x"):format(c:byte())
-    end) .. '"'
+    return '"'
+        .. s:gsub('[%c"\\]', function(c)
+            return ESCAPES[c] or ("\\u%04x"):format(c:byte())
+        end)
+        .. '"'
 end
 
 ---@param a string|number

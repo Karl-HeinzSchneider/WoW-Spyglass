@@ -27,7 +27,9 @@ function luaKey(key: string): string {
 
 /** `key = value,` lines for the defined fields of an object, in the given order. */
 export function luaFields(obj: Record<string, unknown>, fields: string[], indent = "    "): string[] {
-  return fields.filter((f) => obj[f] !== undefined && obj[f] !== null).map((f) => `${indent}${f} = ${luaValue(obj[f])},`);
+  return fields
+    .filter((f) => obj[f] !== undefined && obj[f] !== null)
+    .map((f) => `${indent}${f} = ${luaValue(obj[f])},`);
 }
 
 export function header(source: string): string {

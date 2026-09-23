@@ -12,8 +12,14 @@ const dependencies = new Map<string, string[]>();
 for (const addon of addons) {
   const toc = readFileSync(addon.toc, "utf-8");
   const dependencyLine = /^## (?:Dependencies|RequiredDeps):\s*(.*)$/m.exec(toc)?.[1] ?? "";
-  const deps = dependencyLine.split(",").map((value) => value.trim()).filter(Boolean);
-  dependencies.set(addon.name, deps.filter((dependency) => names.has(dependency)));
+  const deps = dependencyLine
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean);
+  dependencies.set(
+    addon.name,
+    deps.filter((dependency) => names.has(dependency)),
+  );
 
   if (addon.name.startsWith(`${CORE}_`) && !deps.includes(CORE)) {
     failures.push(`${relative(ROOT, addon.toc)}: companion addons must depend on ${CORE}`);
@@ -34,7 +40,8 @@ else {
   for (const path of walkFiles(core.path).filter((file) => /\.(lua|xml|toc)$/i.test(file))) {
     const content = readFileSync(path, "utf-8");
     for (const companion of companionNames) {
-      if (content.includes(companion)) failures.push(`${relative(ROOT, path)}: core runtime references companion ${companion}`);
+      if (content.includes(companion))
+        failures.push(`${relative(ROOT, path)}: core runtime references companion ${companion}`);
     }
   }
 }

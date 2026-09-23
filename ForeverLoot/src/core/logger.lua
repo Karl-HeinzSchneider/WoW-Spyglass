@@ -100,12 +100,24 @@ function logger:print(level, fmt, ...)
 end
 
 -- Level shortcuts: logger:info("Looted %s x%d", link, count)
-function logger:error(...) self:print(self.level.ERROR, ...) end
-function logger:warn(...) self:print(self.level.WARN, ...) end
-function logger:info(...) self:print(self.level.INFO, ...) end
-function logger:verbose(...) self:print(self.level.VERBOSE, ...) end
-function logger:debug(...) self:print(self.level.DEBUG, ...) end
-function logger:silly(...) self:print(self.level.SILLY, ...) end
+function logger:error(...)
+    self:print(self.level.ERROR, ...)
+end
+function logger:warn(...)
+    self:print(self.level.WARN, ...)
+end
+function logger:info(...)
+    self:print(self.level.INFO, ...)
+end
+function logger:verbose(...)
+    self:print(self.level.VERBOSE, ...)
+end
+function logger:debug(...)
+    self:print(self.level.DEBUG, ...)
+end
+function logger:silly(...)
+    self:print(self.level.SILLY, ...)
+end
 
 -- Plain user-facing chat output, never filtered by level and without a level tag.
 function logger:chat(fmt, ...)

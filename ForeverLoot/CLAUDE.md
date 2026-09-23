@@ -35,7 +35,7 @@ Current order and why:
   the core prefix and level without reaching in.
 - `db.lua` — `app.dbDefaults`, the AceDB-3.0 defaults. `profile` = user settings (`logLevel`,
   `minimap.hide`, `window` anchor), `char` = per-character data (`loot` history), `global` =
-  account-wide (`dbVersion`). Scraper collection state is deliberately *not* here.
+  account-wide (`dbVersion`). Scraper collection state is deliberately _not_ here.
 - `registry.lua` — `app.api`, which **is the public global `ForeverLoot`**. `API_VERSION`,
   `RegisterModule(def)` (validates and stores module definitions), `AddToModule`,
   `GetRootNode()` (the virtual tree the window browses, one node per module sorted by `order`,
@@ -67,7 +67,7 @@ Nothing in here touches frames.
   layout must match `recipeRow()`), `categories` (trade skill categories: `skillLineID`,
   `order`), `names[locale]` (`items`, `bosses`, `instances`, `skillLines`, `categories`,
   `tools`); plus the string-keyed curated lists (`lists[kind][id]` = `{ name, icon, order,
-  factionID, skillLineID, … }`, `listLoot[kind][id]` = `{ { itemID, standing = "Honored", … }, … }`;
+factionID, skillLineID, … }`, `listLoot[kind][id]` = `{ { itemID, standing = "Honored", … }, … }`;
   kind = `crafting`/`pvp`/`collections`/`reputation`, id = the JSON file's slug). `Add*` calls
   invalidate caches and fire `OnDataChanged`; `GetVersion()` bumps on every change.
   `GetItemName` resolves client locale → enUS → `C_Item.GetItemInfo` → `"Item #id"`;
@@ -141,8 +141,8 @@ only sanctioned globals.
 - `mainwindow.lua/.xml` — `ForeverLootMainWindow`: `PortraitFrameBaseTemplate`, a dark two-column
   interior (`LeftPane` = the views, `RightPane` = meta data, both `UI-Character-Info-*-BG` atlases
   stretched to 900x640, split by `common-framedivider`) and icon tabs down the right edge
-  (`ForeverLootSideTabTemplate` = `LargeSideTabButtonTemplate`, a *Frame*, so clicks come through
-  `SetCustomOnMouseUpHandler`). Browser-style tabs: one per open *view* (icon = deepest node with
+  (`ForeverLootSideTabTemplate` = `LargeSideTabButtonTemplate`, a _Frame_, so clicks come through
+  `SetCustomOnMouseUpHandler`). Browser-style tabs: one per open _view_ (icon = deepest node with
   one, tooltip = title) plus a `+` tab; right-click closes; `RebuildTabs()` relays the strip from
   a pool. Draggable; position saved to `profile.window`. Root node from `app.api:GetRootNode()`;
   listens to `OnModulesChanged`, `OnDataChanged`, `OnFiltersChanged`.

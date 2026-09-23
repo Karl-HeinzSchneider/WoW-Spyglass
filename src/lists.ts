@@ -96,12 +96,22 @@ const LIST_ID_FIELDS: Record<ListKind, (keyof CuratedList)[]> = {
   reputation: ["faction"],
 };
 
-export const STANDINGS = ["Hated", "Hostile", "Unfriendly", "Neutral", "Friendly", "Honored", "Revered", "Exalted"] as const;
+export const STANDINGS = [
+  "Hated",
+  "Hostile",
+  "Unfriendly",
+  "Neutral",
+  "Friendly",
+  "Honored",
+  "Revered",
+  "Exalted",
+] as const;
 export type Standing = (typeof STANDINGS)[number];
 const SIDES = ["Alliance", "Horde"];
 
 /** What a row field must look like: a number range, a string, or one of a fixed set of strings. */
-type FieldSpec = { type: "integer"; min?: number; max?: number } | { type: "string" } | { type: "enum"; values: readonly string[] };
+type FieldSpec =
+  { type: "integer"; min?: number; max?: number } | { type: "string" } | { type: "enum"; values: readonly string[] };
 
 const FIELD_SPECS: Record<string, FieldSpec> = {
   group: { type: "string" },
@@ -135,7 +145,9 @@ export function loadLists(): ListFile[] {
   for (const kind of LIST_KINDS) {
     let entries: string[] = [];
     try {
-      entries = readdirSync(LIST_DIRS[kind]).filter((f) => f.endsWith(".json")).sort();
+      entries = readdirSync(LIST_DIRS[kind])
+        .filter((f) => f.endsWith(".json"))
+        .sort();
     } catch {
       continue; // folder may not exist yet
     }
@@ -175,7 +187,8 @@ export function validateLists(files: ListFile[], checker: Checker): void {
     if (d.order !== undefined && typeof d.order !== "number") checker.report(file, "`order` must be a number");
     if (d.info !== undefined && typeof d.info !== "string") checker.report(file, "`info` must be a string");
     for (const field of LIST_ID_FIELDS[file.kind]) {
-      if (d[field] !== undefined && !Number.isInteger(d[field])) checker.report(file, `\`${field}\` must be an integer id`);
+      if (d[field] !== undefined && !Number.isInteger(d[field]))
+        checker.report(file, `\`${field}\` must be an integer id`);
     }
     if (file.kind === "reputation") {
       const faction = Number.isInteger(d.faction) ? checker.ref.factions.get(d.faction!) : undefined;
@@ -187,7 +200,10 @@ export function validateLists(files: ListFile[], checker: Checker): void {
       }
     }
     if (file.kind === "crafting" && d.skillLine !== undefined && !checker.ref.skillLines.has(d.skillLine)) {
-      checker.report(file, `\`skillLine\` ${d.skillLine} is not a profession with recipes (${[...checker.ref.skillLines.values()].map((s) => `${s.id} ${s.name}`).join(", ")})`);
+      checker.report(
+        file,
+        `\`skillLine\` ${d.skillLine} is not a profession with recipes (${[...checker.ref.skillLines.values()].map((s) => `${s.id} ${s.name}`).join(", ")})`,
+      );
     }
     validateSections(file, checker);
     for (const field of ["faction", "skillLine"] as const) {
@@ -206,8 +222,7 @@ export function validateLists(files: ListFile[], checker: Checker): void {
         else if (file.kind === "crafting") d.recipes = rows as CuratedListRow[];
         else if (file.kind === "pvp") d.rewards = rows as CuratedListRow[];
         else d.items = rows as CuratedListRow[];
-      }
-      else continue;
+      } else continue;
     } else if (file.kind === "reputation" && (Array.isArray(rows) || typeof rows !== "object" || rows === null)) {
       checker.report(file, "`rewards` must be an object grouped by standing");
       continue;
@@ -216,7 +231,8 @@ export function validateLists(files: ListFile[], checker: Checker): void {
       continue;
     }
     for (const other of ["recipes", "rewards", "items"] as const) {
-      if (other !== key && d[other] !== undefined) checker.report(file, `\`${other}\` is not the rows key of ${file.kind} lists (use \`${key}\`)`);
+      if (other !== key && d[other] !== undefined)
+        checker.report(file, `\`${other}\` is not the rows key of ${file.kind} lists (use \`${key}\`)`);
     }
 
     const seenItems = new Set<number>();
@@ -238,7 +254,11 @@ export function validateLists(files: ListFile[], checker: Checker): void {
         for (const row of group) groupedRows.push({ row, where: `rewards.${standing} ${row.item ?? row.name ?? "?"}` });
       }
     } else {
-      for (const row of rowsOf(file)) groupedRows.push({ row, where: `${key} ${row.item ?? row.name ?? (row.spell !== undefined ? `spell ${row.spell}` : "?")}` });
+      for (const row of rowsOf(file))
+        groupedRows.push({
+          row,
+          where: `${key} ${row.item ?? row.name ?? (row.spell !== undefined ? `spell ${row.spell}` : "?")}`,
+        });
     }
 
     for (const { row, where } of groupedRows) {
@@ -259,10 +279,12 @@ export function validateLists(files: ListFile[], checker: Checker): void {
       // (an enchant) has nothing else to name.
       const recipe = checkRecipeSpell(file, where, row, d.skillLine, checker);
       if (recipe && recipe.itemID === 0) {
-        if (row.item !== undefined) checker.report(file, `${where}: spell ${row.spell} (${recipe.name}) makes no item; drop \`item\``);
+        if (row.item !== undefined)
+          checker.report(file, `${where}: spell ${row.spell} (${recipe.name}) makes no item; drop \`item\``);
         continue;
       }
-      if (checker.checkItemRow(file, where, row, seenItems) && !recipe) fillRecipeSpell(file, where, row, d.skillLine, checker);
+      if (checker.checkItemRow(file, where, row, seenItems) && !recipe)
+        fillRecipeSpell(file, where, row, d.skillLine, checker);
     }
   }
 
@@ -270,8 +292,16 @@ export function validateLists(files: ListFile[], checker: Checker): void {
   const listed = new Set(files.filter((f) => f.kind === "crafting").map((f) => f.data.skillLine));
   for (const skillLine of checker.ref.skillLines.values()) {
     if (listed.has(skillLine.id)) continue;
-    if (![...checker.ref.recipes.values()].some((r) => r.skillLineID === skillLine.id && shipsRecipe(r, checker.ref.items))) continue;
-    checker.warn({ path: resolve(LIST_DIRS.crafting, `${skillLine.slug}.json`) }, `no crafting list for ${skillLine.name} (skillLine ${skillLine.id}); add one to show its recipes`);
+    if (
+      ![...checker.ref.recipes.values()].some(
+        (r) => r.skillLineID === skillLine.id && shipsRecipe(r, checker.ref.items),
+      )
+    )
+      continue;
+    checker.warn(
+      { path: resolve(LIST_DIRS.crafting, `${skillLine.slug}.json`) },
+      `no crafting list for ${skillLine.name} (skillLine ${skillLine.id}); add one to show its recipes`,
+    );
   }
 }
 
@@ -318,11 +348,17 @@ function validateSections(file: ListFile, checker: Checker): void {
         id = entry as number;
         const category = checker.ref.categories.get(id);
         if (!category || category.skillLineID !== d.skillLine) {
-          checker.report(file, `${where} (${section.name}): category ${id} is not a category of skillLine ${d.skillLine ?? "?"}`);
+          checker.report(
+            file,
+            `${where} (${section.name}): category ${id} is not a category of skillLine ${d.skillLine ?? "?"}`,
+          );
           continue;
         }
       } else {
-        checker.report(file, `${where} (${section.name}): categories must be ids or names, got ${JSON.stringify(entry)}`);
+        checker.report(
+          file,
+          `${where} (${section.name}): categories must be ids or names, got ${JSON.stringify(entry)}`,
+        );
         continue;
       }
       const other = seen.get(id);
@@ -340,7 +376,13 @@ function validateSections(file: ListFile, checker: Checker): void {
  * profession (an unknown one is allowed with a warning: server-side recipes are not in the
  * client's tables) and, with `fix`, fills in the item it makes. Returns the recipe when known.
  */
-function checkRecipeSpell(file: ListFile, where: string, row: CuratedListRow, skillLine: number | undefined, checker: Checker): Recipe | undefined {
+function checkRecipeSpell(
+  file: ListFile,
+  where: string,
+  row: CuratedListRow,
+  skillLine: number | undefined,
+  checker: Checker,
+): Recipe | undefined {
   const { ref, fix } = checker;
   if (row.spell === undefined) return undefined;
   const recipe = ref.recipes.get(row.spell);
@@ -349,7 +391,10 @@ function checkRecipeSpell(file: ListFile, where: string, row: CuratedListRow, sk
     return undefined;
   }
   if (skillLine !== undefined && recipe.skillLineID !== skillLine) {
-    checker.report(file, `${where}: spell ${row.spell} (${recipe.name}) belongs to skillLine ${recipe.skillLineID}, not ${skillLine}`);
+    checker.report(
+      file,
+      `${where}: spell ${row.spell} (${recipe.name}) belongs to skillLine ${recipe.skillLineID}, not ${skillLine}`,
+    );
   }
   if (recipe.itemID > 0 && row.item === undefined && row.name === undefined) {
     checker.report(file, `${where}: spell ${row.spell} makes item ${recipe.itemID} (${recipe.name})`, true);
@@ -361,10 +406,18 @@ function checkRecipeSpell(file: ListFile, where: string, row: CuratedListRow, sk
 }
 
 /** With `fix`, an item row gets its `spell` when exactly one recipe of the profession makes the item. */
-function fillRecipeSpell(file: ListFile, where: string, row: CuratedListRow, skillLine: number | undefined, checker: Checker): void {
+function fillRecipeSpell(
+  file: ListFile,
+  where: string,
+  row: CuratedListRow,
+  skillLine: number | undefined,
+  checker: Checker,
+): void {
   const { ref, fix } = checker;
   if (row.item === undefined || row.spell !== undefined || skillLine === undefined) return;
-  const makers: Recipe[] = [...ref.recipes.values()].filter((r) => r.skillLineID === skillLine && r.itemID === row.item);
+  const makers: Recipe[] = [...ref.recipes.values()].filter(
+    (r) => r.skillLineID === skillLine && r.itemID === row.item,
+  );
   const maker = makers.length === 1 ? makers[0] : undefined;
   if (maker) {
     checker.report(file, `${where}: made by spell ${maker.spellID} (${maker.name})`, true);
@@ -396,7 +449,10 @@ export function serializeList(file: ListFile): string {
   if (file.kind === "reputation") {
     const grouped = (d.rewards ?? {}) as ReputationRewards;
     ordered.rewards = Object.fromEntries(
-      STANDINGS.filter((standing) => Object.hasOwn(grouped, standing)).map((standing) => [standing, (grouped[standing] ?? []).map(serializeRow)]),
+      STANDINGS.filter((standing) => Object.hasOwn(grouped, standing)).map((standing) => [
+        standing,
+        (grouped[standing] ?? []).map(serializeRow),
+      ]),
     );
   } else {
     ordered[ROWS_KEY[file.kind]] = rowsOf(file).map(serializeRow);

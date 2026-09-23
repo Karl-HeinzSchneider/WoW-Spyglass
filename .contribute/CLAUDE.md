@@ -49,18 +49,18 @@ scanned recipe item requires, and a scanned item's name in the other configured 
 its English name there is the scanned one (a name scanned on a client of that language wins). Drops and item lists are hand-curated tables; they meet the
 scans only through item ids.
 
-| Output | Source under `data/` |
-|---|---|
-| `ForeverLoot/db/generated/items/items_NNN.lua` | `items/*.json`, `itemsPerFile` rows per file |
-| `…/instances.lua` | wago.tools `Map` + `DungeonEncounter` (only maps with encounters), levels/icons/portraits from `dungeons/` and `raids/` |
-| `…/loot/<slug>.lua` | the `loot` rows of `dungeons/` and `raids/` files that have any |
-| `…/<kind>/<slug>.lua` (crafting, pvp, collections, reputation) | the item lists, one file each, rows or not |
-| `…/recipes/<profession>.lua` | wago.tools recipe tables, one file per profession, only recipes whose product (enchants: every reagent) is in the scans |
-| `…/locales/<locale>/crafting.lua` | profession, trade skill category and tool names from wago.tools, for the configured locales |
-| `…/locales/enUS/*.lua` | English fallback names (items from scans, instances/bosses from wago) |
-| `ForeverLoot_Locale/db/generated/locales/<locale>/items.lua` | names of the scanned items in every configured or scanned non-English locale: wago.tools `ItemSparse`, overridden by names scanned in that language |
-| `ForeverLoot_Locale/db/generated/locales/<locale>/instances.lua`, `bosses.lua` | wago.tools names for every configured non-English locale |
-| each `generated.xml` | the loader listed in that addon's TOC |
+| Output                                                                         | Source under `data/`                                                                                                                                |
+| ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ForeverLoot/db/generated/items/items_NNN.lua`                                 | `items/*.json`, `itemsPerFile` rows per file                                                                                                        |
+| `…/instances.lua`                                                              | wago.tools `Map` + `DungeonEncounter` (only maps with encounters), levels/icons/portraits from `dungeons/` and `raids/`                             |
+| `…/loot/<slug>.lua`                                                            | the `loot` rows of `dungeons/` and `raids/` files that have any                                                                                     |
+| `…/<kind>/<slug>.lua` (crafting, pvp, collections, reputation)                 | the item lists, one file each, rows or not                                                                                                          |
+| `…/recipes/<profession>.lua`                                                   | wago.tools recipe tables, one file per profession, only recipes whose product (enchants: every reagent) is in the scans                             |
+| `…/locales/<locale>/crafting.lua`                                              | profession, trade skill category and tool names from wago.tools, for the configured locales                                                         |
+| `…/locales/enUS/*.lua`                                                         | English fallback names (items from scans, instances/bosses from wago)                                                                               |
+| `ForeverLoot_Locale/db/generated/locales/<locale>/items.lua`                   | names of the scanned items in every configured or scanned non-English locale: wago.tools `ItemSparse`, overridden by names scanned in that language |
+| `ForeverLoot_Locale/db/generated/locales/<locale>/instances.lua`, `bosses.lua` | wago.tools names for every configured non-English locale                                                                                            |
+| each `generated.xml`                                                           | the loader listed in that addon's TOC                                                                                                               |
 
 ## Items: scanning (`ForeverLoot_Scraper`)
 
@@ -128,7 +128,7 @@ warning (`fix` can't know which part it belongs to, so it doesn't add it).
 
 **A shorter name: `displayName`.** Any instance file may set `displayName` (e.g.
 `"SM: Graveyard"`), which the browser shows instead of the full name on the instance's tile,
-breadcrumbs and page title, in every language. Item tooltips and the *Instance* filter keep the
+breadcrumbs and page title, in every language. Item tooltips and the _Instance_ filter keep the
 full `name`. `fix` leaves it alone; an empty one is an error.
 
 Besides the bosses, an instance file has two lists of its own, `trash` and `quests`. The browser
@@ -143,23 +143,24 @@ shows each of them as one more card next to the boss cards, in that order.
   "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Deadmines",
   "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],
   "encounters": [
-    { "id": 2747, "name": "Edwin VanCleef",
+    {
+      "id": 2747,
+      "name": "Edwin VanCleef",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-EdwinVancleef",
-      "level": 20, "creatureType": "Humanoid", "quests": [166],
-      "loot": [
-        { "item": 5188, "name": "Filled Vessel", "chance": 0.9 },
-        { "name": "Cruel Barb" }
-      ] }
+      "level": 20,
+      "creatureType": "Humanoid",
+      "quests": [166],
+      "loot": [{ "item": 5188, "name": "Filled Vessel", "chance": 0.9 }, { "name": "Cruel Barb" }]
+    }
   ],
-  "trash": [
-    { "item": 1935, "name": "Buzzer Blade", "chance": 0.01 }
-  ],
+  "trash": [{ "item": 1935, "name": "Buzzer Blade", "chance": 0.01 }],
   "quests": [
-    { "id": 166, "name": "Underground Assault", "side": "Alliance",
-      "items": [
-        { "item": 6220, "name": "Silver-Thread Cape" },
-        { "name": "Gold-Flecked Gloves" }
-      ] }
+    {
+      "id": 166,
+      "name": "Underground Assault",
+      "side": "Alliance",
+      "items": [{ "item": 6220, "name": "Silver-Thread Cape" }, { "name": "Gold-Flecked Gloves" }]
+    }
   ]
 }
 ```
@@ -196,21 +197,21 @@ the model is the right one.
 for everything that drops off the instance's non-boss enemies. Every instance has the category,
 so `npm run fix` adds an empty `"trash": []` to a file without one; leaving it empty is fine —
 the browser then shows the card and asks for contributions, exactly as it does for a boss with
-no recorded loot. Unlike a boss's loot, trash is keyed by the *map*, so a trash row is not
-attached to any encounter (an item found there still matches the browser's *Instance* filter,
-just not its *Boss* filter).
+no recorded loot. Unlike a boss's loot, trash is keyed by the _map_, so a trash row is not
+attached to any encounter (an item found there still matches the browser's _Instance_ filter,
+just not its _Boss_ filter).
 
 ### `quests`: the instance's quests and what they reward
 
 `quests` is a list of quest objects, in the order they should be shown:
 
-| Field | Type | Meaning |
-|---|---|---|
-| `id` | integer | The quest id, and the only field checked against anything: positive, and listed once per file. A quest without one is a warning and isn't shipped until the id is added (the addon keeps quests by id). |
-| `name` | string | The quest's title. Curated, because this client ships no quest table — `npm run fix` never rewrites it, and a quest without one is a warning. |
-| `side` | string | `"Alliance"`, `"Horde"` or `"Both"`; omitting it means the same as `"Both"`. Anything else is an error. |
-| `class` | string | A class quest's class: `"Warrior"`, `"Paladin"`, `"Hunter"`, `"Rogue"`, `"Priest"`, `"Shaman"`, `"Mage"`, `"Warlock"` or `"Druid"`; omitted means any class. |
-| `items` | array | The items the quest rewards: the same `item` / `name` rows as loot, without a `chance`. May be empty. |
+| Field   | Type    | Meaning                                                                                                                                                                                                 |
+| ------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`    | integer | The quest id, and the only field checked against anything: positive, and listed once per file. A quest without one is a warning and isn't shipped until the id is added (the addon keeps quests by id). |
+| `name`  | string  | The quest's title. Curated, because this client ships no quest table — `npm run fix` never rewrites it, and a quest without one is a warning.                                                           |
+| `side`  | string  | `"Alliance"`, `"Horde"` or `"Both"`; omitting it means the same as `"Both"`. Anything else is an error.                                                                                                 |
+| `class` | string  | A class quest's class: `"Warrior"`, `"Paladin"`, `"Hunter"`, `"Rogue"`, `"Priest"`, `"Shaman"`, `"Mage"`, `"Warlock"` or `"Druid"`; omitted means any class.                                            |
+| `items` | array   | The items the quest rewards: the same `item` / `name` rows as loot, without a `chance`. May be empty.                                                                                                   |
 
 The quest ids are what the game knows the quests by, so they are the same ids a boss's `quests`
 field lists (the "!" on its card) — a boss that hands in or is the objective of a quest names the
@@ -218,7 +219,7 @@ id there, the quest itself and its rewards are described once here. Item rows be
 everywhere else: a row with only a `name` gets its `item` filled in when exactly one scanned item
 carries that name, and the same item may appear in several quests.
 
-In the browser the instance's *Quests* card opens a page with one subheader per quest — its title
+In the browser the instance's _Quests_ card opens a page with one subheader per quest — its title
 and id, plus the faction when `side` restricts it and the class of a class quest — and that
 quest's reward items underneath. A quest that runs through several instances (the warlock quest
 "The Orb of Soran'ruk" needs Blackfathom Deeps and Shadowfang Keep) is listed in each of their
@@ -240,12 +241,12 @@ items. Nothing here comes from a game table: **the file name is the list's id** 
 letters, digits, underscores), `name` is what the tile shows, and the rows are yours. The rows
 key differs per kind:
 
-| Folder | Rows key | Row fields besides `item`/`name`/`group` | Default grouping |
-|---|---|---|---|
-| `crafting/` | `recipes` | `spell` (recipe spell id), `skill` (skill needed to learn it), `source` (free text: "Trainer", "Vendor: …") | one sub-folder per trade skill category ("Plate Helmets"), optionally under subheaders (`sections`); a `group` label is a folder of its own |
-| `pvp/` | `rewards` | `rank` (honor rank 1–14), `standing`, `side` (`Alliance`/`Horde`) | rank, else standing |
-| `collections/` | `items` | `source` (free text), `side` | none (by item type) |
-| `reputation/` | `rewards` **object keyed by standing** | `side` | standing |
+| Folder         | Rows key                               | Row fields besides `item`/`name`/`group`                                                                    | Default grouping                                                                                                                            |
+| -------------- | -------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `crafting/`    | `recipes`                              | `spell` (recipe spell id), `skill` (skill needed to learn it), `source` (free text: "Trainer", "Vendor: …") | one sub-folder per trade skill category ("Plate Helmets"), optionally under subheaders (`sections`); a `group` label is a folder of its own |
+| `pvp/`         | `rewards`                              | `rank` (honor rank 1–14), `standing`, `side` (`Alliance`/`Horde`)                                           | rank, else standing                                                                                                                         |
+| `collections/` | `items`                                | `source` (free text), `side`                                                                                | none (by item type)                                                                                                                         |
+| `reputation/`  | `rewards` **object keyed by standing** | `side`                                                                                                      | standing                                                                                                                                    |
 
 Every row may carry a `group` label of your own, which replaces the default grouping for that
 row. Every file may carry `icon`, `background` + `backgroundCoords` (as for instances; `background`
@@ -265,8 +266,8 @@ out-of-range values are errors.
   "icon": "Interface\\Icons\\Achievement_Reputation_01",
   "faction": 529,
   "rewards": {
-    "Friendly": [ { "item": 13209, "name": "Seal of the Dawn" } ],
-    "Honored": [ { "name": "Argent Dawn Tabard", "side": "Alliance" } ]
+    "Friendly": [{ "item": 13209, "name": "Seal of the Dawn" }],
+    "Honored": [{ "name": "Argent Dawn Tabard", "side": "Alliance" }]
   }
 }
 ```
@@ -308,9 +309,7 @@ different item is an error. `npm run check` warns when a profession with recipes
   "icon": "Interface\\Icons\\Trade_BlackSmithing",
   "order": 20,
   "skillLine": 164,
-  "recipes": [
-    { "item": 2851, "name": "Copper Chain Belt", "spell": 2661, "skill": 1, "source": "Trainer" }
-  ]
+  "recipes": [{ "item": 2851, "name": "Copper Chain Belt", "spell": 2661, "skill": 1, "source": "Trainer" }]
 }
 ```
 

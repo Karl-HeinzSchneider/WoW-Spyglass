@@ -115,7 +115,9 @@ export function loadCurated(): CuratedFile[] {
   for (const [folder, dir] of Object.entries(CURATED_DIRS) as [InstanceType, string][]) {
     let entries: string[] = [];
     try {
-      entries = readdirSync(dir).filter((f) => f.endsWith(".json")).sort();
+      entries = readdirSync(dir)
+        .filter((f) => f.endsWith(".json"))
+        .sort();
     } catch {
       continue; // folder may not exist yet
     }
@@ -207,7 +209,10 @@ export class Checker {
     // page shows it once the client fetches it), it is just not searchable yet, and its name
     // stays whatever the contributor typed.
     if (!ref.items.has(row.item)) {
-      this.warn(file, `${where}: item ${row.item} (${row.name ?? "?"}) hasn't been scanned yet; /fl scan it in-game and import`);
+      this.warn(
+        file,
+        `${where}: item ${row.item} (${row.name ?? "?"}) hasn't been scanned yet; /fl scan it in-game and import`,
+      );
       return true;
     }
     const itemName = nameOf(ref, "items", row.item);
@@ -248,7 +253,8 @@ export function validate(files: CuratedFile[], checker: Checker): void {
     }
     if (d.id !== undefined) {
       if (!Number.isInteger(d.id) || d.id <= 0) report(file, "`id` must be a positive integer (map * 100 + n)");
-      else if (ref.instances.has(d.id)) report(file, `id ${d.id} is the map id of ${nameOf(ref, "instances", d.id)}; use map * 100 + n`);
+      else if (ref.instances.has(d.id))
+        report(file, `id ${d.id} is the map id of ${nameOf(ref, "instances", d.id)}; use map * 100 + n`);
       else if (seenIDs.has(d.id)) report(file, `id ${d.id} is also used by ${seenIDs.get(d.id)}`);
       seenIDs.set(d.id, file.path);
     } else if (isSplit(d.map)) {
@@ -294,7 +300,11 @@ export function validate(files: CuratedFile[], checker: Checker): void {
         report(file, `encounter ${enc.id} (${nameOf(ref, "encounters", enc.id)}) belongs to map ${known.mapID}`);
       }
       if (seenEncounters.has(enc.id)) report(file, `encounter ${enc.id} listed twice`);
-      else if (listedIn.has(enc.id)) report(file, `encounter ${enc.id} (${nameOf(ref, "encounters", enc.id)}) is also listed in ${listedIn.get(enc.id)}`);
+      else if (listedIn.has(enc.id))
+        report(
+          file,
+          `encounter ${enc.id} (${nameOf(ref, "encounters", enc.id)}) is also listed in ${listedIn.get(enc.id)}`,
+        );
       seenEncounters.add(enc.id);
       listedIn.set(enc.id, file.path);
       // The file's name wins: the server may have renamed a boss the client's table still knows by
@@ -331,7 +341,11 @@ export function validate(files: CuratedFile[], checker: Checker): void {
     // split map's are checked across all its files below, since `fix` can't know which part.
     const missing = isSplit(d.map) ? [] : instance.encounters.filter((id) => !seenEncounters.has(id));
     if (missing.length > 0) {
-      report(file, `missing encounters: ${missing.map((id) => `${id} (${nameOf(ref, "encounters", id)})`).join(", ")}`, true);
+      report(
+        file,
+        `missing encounters: ${missing.map((id) => `${id} (${nameOf(ref, "encounters", id)})`).join(", ")}`,
+        true,
+      );
       if (fix) {
         for (const id of missing) d.encounters.push({ id, name: nameOf(ref, "encounters", id), loot: [] });
         d.encounters.sort((a, b) => (ref.encounters.get(a.id)?.order ?? 0) - (ref.encounters.get(b.id)?.order ?? 0));
@@ -346,7 +360,10 @@ export function validate(files: CuratedFile[], checker: Checker): void {
     if (!instance || !isSplit(map)) continue;
     const missing = instance.encounters.filter((id) => !listedIn.has(id));
     if (missing.length > 0) {
-      checker.warn(list[0]!, `map ${map}: encounters in none of its files: ${missing.map((id) => `${id} (${nameOf(ref, "encounters", id)})`).join(", ")}`);
+      checker.warn(
+        list[0]!,
+        `map ${map}: encounters in none of its files: ${missing.map((id) => `${id} (${nameOf(ref, "encounters", id)})`).join(", ")}`,
+      );
     }
   }
 }

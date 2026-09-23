@@ -105,7 +105,8 @@ class Parser {
         const m = /^\d{1,3}/.exec(this.text.slice(this.pos - 1, this.pos + 2))!;
         this.pos += m[0].length - 1;
         out += String.fromCharCode(Number(m[0]));
-      } else if (e !== undefined) out += e; // \" \\ \' and anything else literal
+      } else if (e !== undefined)
+        out += e; // \" \\ \' and anything else literal
       else this.fail("unterminated string");
     }
   }
@@ -129,7 +130,10 @@ class Parser {
         this.expect("]");
         this.expect("=");
         table.set(key, this.value());
-      } else if (/[A-Za-z_]/.test(c) && /^[A-Za-z_][A-Za-z0-9_]*\s*=[^=]/.test(this.text.slice(this.pos, this.pos + 260))) {
+      } else if (
+        /[A-Za-z_]/.test(c) &&
+        /^[A-Za-z_][A-Za-z0-9_]*\s*=[^=]/.test(this.text.slice(this.pos, this.pos + 260))
+      ) {
         const key = this.identifier();
         this.expect("=");
         table.set(key, this.value());

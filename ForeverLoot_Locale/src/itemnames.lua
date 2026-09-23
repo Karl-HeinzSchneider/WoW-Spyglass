@@ -94,7 +94,9 @@ end
 -- PLAYER_LOGIN
 function module:OnEnable()
     if not self.saved then
-        log:info("ForeverLoot Locale isn't needed on an English client: ForeverLoot has every English name. You can disable it in the AddOns list.")
+        log:info(
+            "ForeverLoot Locale isn't needed on an English client: ForeverLoot has every English name. You can disable it in the AddOns list."
+        )
         return
     end
     self:RegisterEvent("ITEM_DATA_LOAD_RESULT")

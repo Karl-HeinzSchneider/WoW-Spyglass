@@ -85,17 +85,83 @@ end
 -- The control bar, built in code because it is a dozen identical buttons: label, width and
 -- what the click does. They flow left to right under the capture areas and wrap.
 local CONTROLS = {
-    { "< Boss", 70, function(self) self:Step(-1) end },
-    { "Boss >", 70, function(self) self:Step(1) end },
-    { "Zoom -", 60, function(self) self:Nudge("zoom", -ZOOM_STEP) end },
-    { "Zoom +", 60, function(self) self:Nudge("zoom", ZOOM_STEP) end },
-    { "Turn <", 60, function(self) self:Nudge("facing", -FACING_STEP) end },
-    { "Turn >", 60, function(self) self:Nudge("facing", FACING_STEP) end },
-    { "Left", 50, function(self) self:Nudge("x", -MOVE_STEP) end },
-    { "Right", 50, function(self) self:Nudge("x", MOVE_STEP) end },
-    { "Down", 50, function(self) self:Nudge("y", -MOVE_STEP) end },
-    { "Up", 50, function(self) self:Nudge("y", MOVE_STEP) end },
-    { "Reset", 60, function(self) self:Reset() end },
+    {
+        "< Boss",
+        70,
+        function(self)
+            self:Step(-1)
+        end,
+    },
+    {
+        "Boss >",
+        70,
+        function(self)
+            self:Step(1)
+        end,
+    },
+    {
+        "Zoom -",
+        60,
+        function(self)
+            self:Nudge("zoom", -ZOOM_STEP)
+        end,
+    },
+    {
+        "Zoom +",
+        60,
+        function(self)
+            self:Nudge("zoom", ZOOM_STEP)
+        end,
+    },
+    {
+        "Turn <",
+        60,
+        function(self)
+            self:Nudge("facing", -FACING_STEP)
+        end,
+    },
+    {
+        "Turn >",
+        60,
+        function(self)
+            self:Nudge("facing", FACING_STEP)
+        end,
+    },
+    {
+        "Left",
+        50,
+        function(self)
+            self:Nudge("x", -MOVE_STEP)
+        end,
+    },
+    {
+        "Right",
+        50,
+        function(self)
+            self:Nudge("x", MOVE_STEP)
+        end,
+    },
+    {
+        "Down",
+        50,
+        function(self)
+            self:Nudge("y", -MOVE_STEP)
+        end,
+    },
+    {
+        "Up",
+        50,
+        function(self)
+            self:Nudge("y", MOVE_STEP)
+        end,
+    },
+    {
+        "Reset",
+        60,
+        function(self)
+            self:Reset()
+        end,
+    },
 }
 
 -- Lays the buttons out in rows under the left capture area and adds the settings line below.

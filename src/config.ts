@@ -22,7 +22,10 @@ export const CURATED_DIRS = {
  */
 export const LIST_KINDS = ["crafting", "pvp", "collections", "reputation"] as const;
 export type ListKind = (typeof LIST_KINDS)[number];
-export const LIST_DIRS = Object.fromEntries(LIST_KINDS.map((kind) => [kind, resolve(DATA_DIR, kind)])) as Record<ListKind, string>;
+export const LIST_DIRS = Object.fromEntries(LIST_KINDS.map((kind) => [kind, resolve(DATA_DIR, kind)])) as Record<
+  ListKind,
+  string
+>;
 
 /** The item database's source: in-game scans, one JSON file per id range (see items.ts). */
 export const SCANNED_ITEMS_DIR = resolve(DATA_DIR, "items");

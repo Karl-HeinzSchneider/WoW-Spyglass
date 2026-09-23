@@ -3,7 +3,9 @@ import { relative } from "node:path";
 import { requireAddons, walkFiles } from "./addons.js";
 import { ROOT } from "./config.js";
 
-const files = requireAddons().flatMap((addon) => walkFiles(addon.path)).filter((path) => path.endsWith(".lua"));
+const files = requireAddons()
+  .flatMap((addon) => walkFiles(addon.path))
+  .filter((path) => path.endsWith(".lua"));
 const failures: string[] = [];
 
 for (const file of files) {

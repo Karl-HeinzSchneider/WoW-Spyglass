@@ -34,7 +34,14 @@ export interface DiscoveredLoot {
  * `null` holes) imports just as well as a keyed object.
  */
 function numericEntries(value: unknown): [number, unknown][] {
-  const raw: [unknown, unknown][] = value instanceof Map ? [...value] : Array.isArray(value) ? value.map((v, i) => [i + 1, v]) : value && typeof value === "object" ? Object.entries(value) : [];
+  const raw: [unknown, unknown][] =
+    value instanceof Map
+      ? [...value]
+      : Array.isArray(value)
+        ? value.map((v, i) => [i + 1, v])
+        : value && typeof value === "object"
+          ? Object.entries(value)
+          : [];
   const out: [number, unknown][] = [];
   for (const [key, entry] of raw) {
     if (entry === null || entry === undefined) continue;
@@ -56,7 +63,8 @@ function num(value: unknown, fallback = 0): number {
 }
 
 function stats(value: unknown): Record<string, number> | undefined {
-  const entries: [unknown, unknown][] = value instanceof Map ? [...value] : value && typeof value === "object" ? Object.entries(value) : [];
+  const entries: [unknown, unknown][] =
+    value instanceof Map ? [...value] : value && typeof value === "object" ? Object.entries(value) : [];
   const out: Record<string, number> = {};
   let any = false;
   for (const [key, v] of entries) {
@@ -120,7 +128,9 @@ export function loadDiscovered(path: string): Discovered {
   const globals: Map<string, LuaValue> = parseSavedVariables(text);
   const discovered = luaGet(globals.get("ForeverLootScraperDB"), "global", "discovered");
   if (!discovered) {
-    throw new Error(`${path}: no ForeverLootScraperDB.global.discovered in it; is this the scraper SavedVariables file written after a /reload or logout?`);
+    throw new Error(
+      `${path}: no ForeverLootScraperDB.global.discovered in it; is this the scraper SavedVariables file written after a /reload or logout?`,
+    );
   }
   return normalize(discovered, path);
 }

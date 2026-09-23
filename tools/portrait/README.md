@@ -22,6 +22,7 @@ Needs Python 3 with Pillow (`pip install pillow`).
    `<name>` is the file name without extension, lowercase with underscores like the boss
    (`magmatus` -> `ForeverLoot/assets/bosses/magmatus.blp`); a path ending in `.blp` writes
    there instead. `--preview` also writes a 4x PNG on grey to look at the result.
+
 4. The script prints the line for the boss in its instance file under
    `.contribute/data/dungeons/` (or `raids/`); add it to the encounter:
 

@@ -56,19 +56,32 @@ export function importDiscovered(d: Discovered, ref: Reference, files: CuratedFi
     }
     const instance = ref.instances.get(encounter.mapID);
     if (!instance) {
-      lines.push(`encounter ${encounterID} (${nameOf(ref, "encounters", encounterID)}): map ${encounter.mapID} is not a known instance, skipped`);
+      lines.push(
+        `encounter ${encounterID} (${nameOf(ref, "encounters", encounterID)}): map ${encounter.mapID} is not a known instance, skipped`,
+      );
       continue;
     }
     // A split map (several files, each with an `id`): the file that lists the encounter.
     const shared = files.filter((f) => f.data.map === encounter.mapID);
     let file = shared.find((f) => f.data.encounters.some((e) => e.id === encounterID)) ?? byMap.get(encounter.mapID);
-    if (file && shared.some((f) => f.data.id !== undefined) && !file.data.encounters.some((e) => e.id === encounterID)) {
-      lines.push(`encounter ${encounterID} (${nameOf(ref, "encounters", encounterID)}): map ${encounter.mapID} is split and none of its files lists it, skipped`);
+    if (
+      file &&
+      shared.some((f) => f.data.id !== undefined) &&
+      !file.data.encounters.some((e) => e.id === encounterID)
+    ) {
+      lines.push(
+        `encounter ${encounterID} (${nameOf(ref, "encounters", encounterID)}): map ${encounter.mapID} is split and none of its files lists it, skipped`,
+      );
       continue;
     }
     if (!file) {
       const slug = slugOf(nameOf(ref, "instances", encounter.mapID));
-      file = { path: resolve(CURATED_DIRS[instance.type], `${slug}.json`), folder: instance.type, slug, data: { map: encounter.mapID, encounters: [] } };
+      file = {
+        path: resolve(CURATED_DIRS[instance.type], `${slug}.json`),
+        folder: instance.type,
+        slug,
+        data: { map: encounter.mapID, encounters: [] },
+      };
       files.push(file);
       byMap.set(encounter.mapID, file);
       lines.push(`new file ${instance.type}s/${slug}.json`);
@@ -89,11 +102,18 @@ export function importDiscovered(d: Discovered, ref: Reference, files: CuratedFi
         parts.push(`= ${name} ${ratio}`);
         continue;
       }
-      const chance = observed.kills >= MIN_KILLS_FOR_CHANCE ? Math.min(1, Math.round((seen / observed.kills) * 100) / 100) : undefined;
+      const chance =
+        observed.kills >= MIN_KILLS_FOR_CHANCE
+          ? Math.min(1, Math.round((seen / observed.kills) * 100) / 100)
+          : undefined;
       enc.loot.push({ item: itemID, name: scanned ? name : undefined, chance });
-      parts.push(`+ ${name} ${ratio}${chance !== undefined ? ` -> ${Math.round(chance * 100)}%` : ""}${scanned ? "" : " (not scanned yet)"}`);
+      parts.push(
+        `+ ${name} ${ratio}${chance !== undefined ? ` -> ${Math.round(chance * 100)}%` : ""}${scanned ? "" : " (not scanned yet)"}`,
+      );
     }
-    lines.push(`${file.slug}: ${nameOf(ref, "encounters", encounterID)} (${encounterID}), ${observed.kills} kill(s): ${parts.join(", ") || "no drops seen"}`);
+    lines.push(
+      `${file.slug}: ${nameOf(ref, "encounters", encounterID)} (${encounterID}), ${observed.kills} kill(s): ${parts.join(", ") || "no drops seen"}`,
+    );
   }
   return lines;
 }

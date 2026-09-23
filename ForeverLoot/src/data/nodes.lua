@@ -772,7 +772,11 @@ function api.ListFolder(kind, id, opts)
     end
     local faction = kind == "reputation" and factionData(list) or nil
     local name = faction and type(faction.name) == "string" and faction.name ~= "" and faction.name or list.name
-    local description = faction and type(faction.description) == "string" and faction.description ~= "" and faction.description or nil
+    local description = faction
+            and type(faction.description) == "string"
+            and faction.description ~= ""
+            and faction.description
+        or nil
     local standing = faction and type(faction.reaction) == "number" and standingLabel(faction.reaction) or nil
     -- Professions: the localized name from the database, the character's rank from the client.
     local skill = kind == "crafting" and skillLineData(list) or nil

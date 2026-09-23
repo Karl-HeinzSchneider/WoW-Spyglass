@@ -30,11 +30,7 @@ function addon:OnInitialize()
 end
 
 function addon:OnEnable()
-    FL:RegisterCommand(
-        "scan",
-        self.scanHandler,
-        "/fl scan <from> [to] | resume | stop | limit <n|off>"
-    )
+    FL:RegisterCommand("scan", self.scanHandler, "/fl scan <from> [to] | resume | stop | limit <n|off>")
     FL:RegisterCommand("export", self.exportHandler, "/fl export [all]")
     FL:RegisterCommand("portrait", self.portraitHandler, "/fl portrait [displayID]")
     log:debug("Enabled")
