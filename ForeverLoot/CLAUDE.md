@@ -78,7 +78,8 @@ factionID, skillLineID, … }`, `listLoot[kind][id]` = `{ { itemID, standing = "
   index over boss loot, instance trash, quest rewards, every list and the recipes that make an
   item (kinds `"boss"`, `"trash"`, `"quest"`, `"recipe"` and the list kinds).
 - `filters.lua` — `app.filters`: registry of named predicates with options (`multi`/`single`),
-  optional precomputed buckets, and the built-ins (`quality`, `slot`, `armorType`, `weaponType`,
+  optional precomputed buckets, and the built-ins (`type` = item class with mounts/pets split out
+  of Miscellaneous, `quality`, `slot`, `armorType`, `weaponType`,
   `itemLevel`, `reqLevel`, `instance`, `boss`, `profession` = made by a profession's recipes).
 - `query.lua` — `app.query`: `Query.Run(q)` over a plain, serializable query table (`search`,
   `filters`, `sort`). Filters AND, values within a filter OR. `search` matches

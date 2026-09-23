@@ -443,7 +443,8 @@ ForeverLoot.Filters:Register({
 })
 ```
 
-Built-in ids: `quality`, `slot`, `armorType`, `weaponType`, `itemLevel`, `reqLevel`, `instance`
+Built-in ids: `type` (the item class, value = its `Enum.ItemClass` id; mounts and companion
+pets are split out of Miscellaneous as `"15:5"` and `"15:2"`), `quality`, `slot`, `armorType`, `weaponType`, `itemLevel`, `reqLevel`, `instance`
 (anything the instance drops or rewards: a boss's loot, its trash and its quests), `boss`,
 `profession` (items made by a profession's recipes; one option per crafting list with a `skillLineID`).
 Other calls: `Filters:Get(id)`, `Filters:GetAll()`, `Filters:GetOptions(id)`, `Filters:GetBucket(id, value)`,
