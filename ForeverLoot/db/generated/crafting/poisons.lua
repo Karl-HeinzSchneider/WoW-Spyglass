@@ -5,6 +5,8 @@ local Data = ForeverLoot.Data
 Data:AddList("crafting", "poisons", {
     name = "Poisons",
     icon = "Interface\\Icons\\Ability_Poisons",
+    background = "Profession-overview-Card-Poisons",
+    backgroundCoords = { 0.57, 1, 0.2, 1 },
     order = 130,
     skillLineID = 40,
 })

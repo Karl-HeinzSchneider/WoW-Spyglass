@@ -158,8 +158,9 @@ only sanctioned globals.
     tooltip's slot line via the hidden `ForeverLootScanTooltip` (`scanEquipErrors`), which is
     exact for this client's proficiencies. Item and spell tooltips are followed by the node's
     `tooltip` lines (a list or a function of the node).
-  - `display = "tiles"` (raids, dungeons) draws `ForeverLootTileTemplate` cards:
-    `background`/`backgroundCoords` picture, name on top, `info` (level range by default) and
+  - `display = "tiles"` (raids, dungeons, crafting) draws `ForeverLootTileTemplate` cards:
+    `background`/`backgroundCoords` picture (a texture, or an atlas resolved through
+    `C_Texture.GetAtlasInfo` with the coords cut from its region), name on top, `info` (level range by default) and
     `infoRight` in the bottom corners, three per line.
   - `display = "cards"` (an instance's boss list) draws `ForeverLootCardTemplate`: the same
     bevelled list-button atlas with the entry's `portrait` standing on the left (a

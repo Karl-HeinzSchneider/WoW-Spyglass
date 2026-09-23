@@ -1,6 +1,13 @@
 {
   "name": "Leatherworking",
   "icon": "Interface\\Icons\\Trade_LeatherWorking",
+  "background": "Profession-overview-Card-Leatherworking",
+  "backgroundCoords": [
+    0.57,
+    1,
+    0.2,
+    1
+  ],
   "order": 50,
   "skillLine": 165,
   "sections": [

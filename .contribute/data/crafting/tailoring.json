@@ -1,6 +1,13 @@
 {
   "name": "Tailoring",
   "icon": "Interface\\Icons\\Trade_Tailoring",
+  "background": "Profession-overview-Card-Tailoring",
+  "backgroundCoords": [
+    0.57,
+    1,
+    0.2,
+    1
+  ],
   "order": 60,
   "skillLine": 197,
   "sections": [

@@ -16,9 +16,9 @@ export interface CuratedList {
   name: string;
   /** Texture path shown on the tile, e.g. "Interface\\Icons\\Trade_BlackSmithing". */
   icon?: string;
-  /** Wide picture filling the tile (texture path or fileID), instead of the icon. */
+  /** Wide picture filling the tile (texture path, fileID or atlas name), instead of the icon. */
   background?: string | number;
-  /** Part of `background` to show: [left, right, top, bottom] in 0..1; the whole texture when omitted. */
+  /** Part of `background` to show: [left, right, top, bottom] in 0..1 (of an atlas: of its region); all of it when omitted. */
   backgroundCoords?: [number, number, number, number];
   /** Small text in the tile's bottom-left corner, e.g. "Alliance" or "Level 40+". */
   info?: string;

@@ -5,6 +5,8 @@ local Data = ForeverLoot.Data
 Data:AddList("crafting", "enchanting", {
     name = "Enchanting",
     icon = "Interface\\Icons\\Trade_Engraving",
+    background = "Profession-overview-Card-Enchanting",
+    backgroundCoords = { 0.57, 1, 0.2, 1 },
     order = 30,
     skillLineID = 333,
     sections = {

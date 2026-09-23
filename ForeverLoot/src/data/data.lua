@@ -115,7 +115,7 @@ local RECIPE = {
 ---@class ForeverLoot.List
 ---@field name string  # display name
 ---@field icon? string|number
----@field background? string|number  # wide picture for the list's tile in the browser
+---@field background? string|number  # wide picture for the list's tile in the browser (texture or atlas name)
 ---@field backgroundCoords? number[]  # { left, right, top, bottom } of `background` to show
 ---@field info? string  # small text on the tile
 ---@field order? number  # position among the kind's lists; by name when equal

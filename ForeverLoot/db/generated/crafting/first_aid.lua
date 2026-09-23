@@ -5,6 +5,8 @@ local Data = ForeverLoot.Data
 Data:AddList("crafting", "first_aid", {
     name = "First Aid",
     icon = "Interface\\Icons\\Spell_Holy_SealOfSacrifice",
+    background = "Profession-overview-card-generic-firstaid",
+    backgroundCoords = { 0.04, 0.96, 0.4, 0.6995 },
     order = 110,
     skillLineID = 129,
 })

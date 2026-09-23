@@ -241,7 +241,9 @@ key differs per kind:
 | `reputation/` | `rewards` **object keyed by standing** | `side` | standing |
 
 Every row may carry a `group` label of your own, which replaces the default grouping for that
-row. Every file may carry `icon`, `background` + `backgroundCoords` (as for instances), `info`
+row. Every file may carry `icon`, `background` + `backgroundCoords` (as for instances; `background`
+may also be an atlas name, the coords then cut its region — the crafting files use the client's
+`Profession-overview-Card-<Profession>` art this way), `info`
 (small text on the tile) and `order` (tile position; by name otherwise). Reputation files must
 state the game's `faction` id — the addon uses it at runtime for the localized name, description
 and the character's standing; crafting files may state the profession's `skillLine` id. Valid

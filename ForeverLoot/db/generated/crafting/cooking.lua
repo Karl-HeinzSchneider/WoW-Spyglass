@@ -5,6 +5,8 @@ local Data = ForeverLoot.Data
 Data:AddList("crafting", "cooking", {
     name = "Cooking",
     icon = "Interface\\Icons\\INV_Misc_Food_15",
+    background = "Profession-overview-card-generic-cooking",
+    backgroundCoords = { 0.04, 0.96, 0.4, 0.6995 },
     order = 100,
     skillLineID = 185,
 })

@@ -425,6 +425,24 @@ end
 -- the two gradient alphas in ForeverLootTileTemplate.
 local TILE_PICTURE_BOOST = 0.3
 
+local WHOLE_TEXTURE = { 0, 1, 0, 1 }
+
+-- The file and texture coordinates of a tile's picture. `background` is a texture (path or
+-- fileID) or an atlas name; `coords` pick the part to show, for an atlas within its own region.
+---@param background string|number
+---@param coords? number[]
+---@return (string|number)? file, number left, number right, number top, number bottom
+local function tilePicture(background, coords)
+    local c = coords or WHOLE_TEXTURE
+    local atlas = type(background) == "string" and C_Texture.GetAtlasInfo(background)
+    if not atlas then
+        return background, c[1], c[2], c[3], c[4]
+    end
+    local l, r, t, b = atlas.leftTexCoord, atlas.rightTexCoord, atlas.topTexCoord, atlas.bottomTexCoord
+    local w, h = r - l, b - t
+    return atlas.file or atlas.filename, l + w * c[1], l + w * c[2], t + h * c[3], t + h * c[4]
+end
+
 -- Clicking and hovering work exactly like a row, so those handlers are shared.
 ---@class ForeverLoot.Tile : Button
 ---@field Card Texture
@@ -471,10 +489,10 @@ function ForeverLootTileMixin:Init(view, node)
     self.IconRing:SetShown(background == nil)
     setIconQuality(self.IconRing, node.quality)
     if background then
-        local c = node.backgroundCoords or { 0, 1, 0, 1 }
+        local file, left, right, top, bottom = tilePicture(background, node.backgroundCoords)
         for _, texture in ipairs({ self.Background, self.Boost }) do
-            texture:SetTexture(background)
-            texture:SetTexCoord(c[1], c[2], c[3], c[4])
+            texture:SetTexture(file)
+            texture:SetTexCoord(left, right, top, bottom)
         end
         self.Boost:SetAlpha(TILE_PICTURE_BOOST)
     else

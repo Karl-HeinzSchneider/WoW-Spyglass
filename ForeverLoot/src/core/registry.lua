@@ -40,8 +40,8 @@ local log = app.logger
 ---@field display? "rows"|"tiles"|"cards"  # folders: how the entries are drawn; default "rows"
 ---@field groupBy? "auto"|fun(node: ForeverLoot.Node): string?, string?  # folders: auto-group ungrouped entries; see api.DefaultGroupKey
 --- Tile / card fields, read when the parent folder has `display = "tiles"` or `"cards"`:
----@field background? string|number  # tiles: wide picture filling the tile (texture path or fileID)
----@field backgroundCoords? number[]  # tiles: { left, right, top, bottom } part of `background` to show; whole texture by default
+---@field background? string|number  # tiles: wide picture filling the tile (texture path, fileID or atlas name)
+---@field backgroundCoords? number[]  # tiles: { left, right, top, bottom } part of `background` to show (of an atlas: of its region); all of it by default
 ---@field portrait? string|number  # cards: picture of the entry (e.g. a boss) on the left of the card; `icon` when unset
 ---@field portraitDisplayID? integer  # cards: CreatureDisplayID the client renders the picture from, for entries without a `portrait`
 ---@field info? string  # small text bottom-left; the level range when unset and `minLevel`/`maxLevel` are
