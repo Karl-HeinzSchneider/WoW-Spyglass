@@ -4,7 +4,11 @@
 ## Author: Karl-HeinzSchneider
 ## Version: 0.1.0
 ## Dependencies: ForeverLoot
+## SavedVariables: ForeverLootLocaleDB
 ## X-License: MIT
 
 ForeverLoot_Locale.lua
 db\generated\generated.xml
+src\db.lua
+src\ace.lua
+src\itemnames.lua

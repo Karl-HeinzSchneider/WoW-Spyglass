@@ -12,7 +12,7 @@ builds its item database. It is a monorepo of three addon distribution units and
 | Part | What it is | Details |
 |---|---|---|
 | `ForeverLoot/` | The core addon: public `ForeverLoot` API, item database and queries, built-in content modules, the browser window, user settings and (planned) loot history. `ForeverLootDB`. | [ForeverLoot/CLAUDE.md](ForeverLoot/CLAUDE.md) |
-| `ForeverLoot_Locale/` | Companion: generated non-English item/instance/boss names, registered through the core API. No saved state. | [ForeverLoot_Locale/CLAUDE.md](ForeverLoot_Locale/CLAUDE.md) |
+| `ForeverLoot_Locale/` | Companion: generated non-English item/instance/boss names, registered through the core API, plus the item names a non-English client looks up in-game. `ForeverLootLocaleDB`. | [ForeverLoot_Locale/CLAUDE.md](ForeverLoot_Locale/CLAUDE.md) |
 | `ForeverLoot_Scraper/` | Optional contributor companion: `/fl scan` item scanning, loot observation, `/fl export`. `ForeverLootScraperDB`. | [ForeverLoot_Scraper/CLAUDE.md](ForeverLoot_Scraper/CLAUDE.md) |
 | `.contribute/` | Everything the database is built from: in-game item scans, curated drops and item lists, the pinned client build. `inbox/` is the gitignored drop folder for `npm run import`. | [.contribute/CLAUDE.md](.contribute/CLAUDE.md) |
 | `src/` | Root Node/TypeScript tooling: validate and fix the curated data, import in-game recordings, generate the addon data, check the addons, link them into a client, package releases. | [src/CLAUDE.md](src/CLAUDE.md) |
