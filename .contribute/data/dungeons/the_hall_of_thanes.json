@@ -53,6 +53,8 @@
     {
       "id": 3494,
       "name": "Plunder",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\plunder.blp",
+      "displayID": 142840,
       "loot": [
         {
           "item": 270228,
@@ -71,6 +73,8 @@
     {
       "id": 3496,
       "name": "Durgen Dirgehammer",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\durgen_dirgehammer.blp",
+      "displayID": 142837,
       "loot": [
         {
           "item": 270256,

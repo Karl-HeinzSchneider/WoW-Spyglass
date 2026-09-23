@@ -14,6 +14,7 @@
     {
       "id": 2756,
       "name": "Targorr the Dread",
+      "displayID": 517,
       "loot": [
         {
           "item": 273804,
@@ -24,6 +25,7 @@
     {
       "id": 2757,
       "name": "Kam Deepfury",
+      "displayID": 825,
       "loot": [
         {
           "item": 2280,
@@ -34,16 +36,19 @@
     {
       "id": 2758,
       "name": "Hamhock",
+      "displayID": 3250,
       "loot": []
     },
     {
       "id": 2759,
       "name": "Dextren Ward",
+      "displayID": 2149,
       "loot": []
     },
     {
       "id": 2760,
       "name": "Bazil Thredd",
+      "displayID": 1621,
       "loot": []
     }
   ]

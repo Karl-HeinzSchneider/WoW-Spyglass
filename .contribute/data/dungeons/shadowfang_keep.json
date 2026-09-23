@@ -14,6 +14,7 @@
     {
       "id": 2748,
       "name": "Rethilgore",
+      "displayID": 524,
       "loot": [
         {
           "item": 5254,
@@ -32,6 +33,7 @@
     {
       "id": 2749,
       "name": "Razorclaw the Butcher",
+      "displayID": 524,
       "loot": [
         {
           "item": 1292,
@@ -88,6 +90,7 @@
     {
       "id": 2752,
       "name": "Odo the Blindwatcher",
+      "displayID": 522,
       "loot": [
         {
           "item": 6318,
@@ -106,6 +109,7 @@
     {
       "id": 2753,
       "name": "Fenrus the Devourer",
+      "displayID": 2352,
       "loot": [
         {
           "item": 3230,
@@ -120,6 +124,7 @@
     {
       "id": 2754,
       "name": "Wolf Master Nandos",
+      "displayID": 11179,
       "loot": [
         {
           "item": 3748,
@@ -134,6 +139,7 @@
     {
       "id": 2755,
       "name": "Archmage Arugal",
+      "displayID": 2353,
       "loot": [
         {
           "item": 6220,
