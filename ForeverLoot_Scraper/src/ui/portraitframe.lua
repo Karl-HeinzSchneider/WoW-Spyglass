@@ -133,7 +133,8 @@ function mixin:OnLoad()
     self.Black.Background:SetColorTexture(0, 0, 0, 1)
     self.White.Background:SetColorTexture(1, 1, 1, 1)
     self:BuildControls()
-    self:Reset()
+    self.zoom, self.facing = DEFAULTS.zoom, DEFAULTS.facing
+    self.x, self.y = DEFAULTS.x, DEFAULTS.y
     tinsert(UISpecialFrames, self:GetName())
     self:RegisterForDrag("LeftButton")
     -- The capture areas are measured in screen pixels, so they are re-laid out whenever the
@@ -193,7 +194,7 @@ end
 function mixin:Reset()
     self.zoom, self.facing = DEFAULTS.zoom, DEFAULTS.facing
     self.x, self.y = DEFAULTS.x, DEFAULTS.y
-    self:ApplyModel()
+    self:ApplyFraming()
 end
 
 ---@param displayID integer
@@ -202,7 +203,7 @@ function mixin:SetDisplayID(displayID, subject)
     self.displayID = displayID
     self.subject = subject
     self.IDBox:SetText(tostring(displayID))
-    self:ApplyModel()
+    self:LoadModels()
     self:Show()
 end
 
@@ -227,15 +228,18 @@ function mixin:Nudge(field, delta)
     else
         self[field] = self[field] + delta
     end
-    self:ApplyModel()
+    self:ApplyFraming()
 end
 
--- Puts the model in both capture areas with the same framing: frozen in its stand pose, so the
--- two sides line up pixel for pixel -- which is what recovering the transparency depends on.
-function mixin:ApplyModel()
+-- Loads a model into both capture areas, frozen in its stand pose so the two sides line up
+-- pixel for pixel -- which is what recovering the transparency depends on. Only called when the
+-- display id actually changes: re-setting a model that is already loaded brings it back unlit
+-- (it renders black until the frame is shown again), and the framing needs no reload anyway.
+function mixin:LoadModels()
     for _, capture in ipairs({ self.Black, self.White }) do
         local model = capture and capture.Model
-        if model then
+        if model and capture.loadedDisplayID ~= self.displayID then
+            capture.loadedDisplayID = self.displayID
             model:ClearModel()
             if self.displayID then
                 model:SetDisplayInfo(self.displayID)
@@ -245,10 +249,23 @@ function mixin:ApplyModel()
                 model:SetPaused(false)
                 model:SetModelAlpha(1)
                 model:FreezeAnimation(0, 0, 0)
-                model:SetPortraitZoom(self.zoom)
-                model:SetRotation(self.facing)
-                model:SetPosition(0, self.x, self.y)
+                -- Re-showing the frame is what makes a newly set model light itself properly.
+                model:Hide()
+                model:Show()
             end
+        end
+    end
+    self:ApplyFraming()
+end
+
+-- Zoom, turn and offset: applied to the loaded models without touching the model itself.
+function mixin:ApplyFraming()
+    for _, capture in ipairs({ self.Black, self.White }) do
+        local model = capture and capture.Model
+        if model and capture.loadedDisplayID then
+            model:SetPortraitZoom(self.zoom)
+            model:SetRotation(self.facing)
+            model:SetPosition(0, self.x, self.y)
         end
     end
     self:UpdateSettings()
