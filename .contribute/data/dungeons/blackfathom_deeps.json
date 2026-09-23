@@ -48,6 +48,8 @@
     {
       "id": 2914,
       "name": "Geilhast",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\geilhast.blp",
+      "displayID": 1773,
       "loot": []
     },
     {
@@ -142,6 +144,8 @@
     {
       "id": 2763,
       "name": "Geilhast",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\geilhast.blp",
+      "displayID": 1773,
       "loot": []
     },
     {

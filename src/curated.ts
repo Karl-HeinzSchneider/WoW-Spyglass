@@ -29,6 +29,13 @@ export interface CuratedEncounter {
   name?: string;
   /** Picture of the boss for its card in the browser (texture path or fileID). */
   portrait?: string | number;
+  /**
+   * CreatureDisplayID of the boss's model. The client renders the portrait from it, which is
+   * how bosses without Encounter Journal art get a picture; `portrait` wins when both are set.
+   */
+  displayID?: number;
+  /** The boss's NPC id. Not shipped: a note of where `displayID` came from, so it can be re-checked. */
+  npc?: number;
   /** Boss level and creature type ("Beast", "Undead", ...) as the game shows them; the card says "60 Beast". */
   level?: number;
   creatureType?: string;
@@ -218,6 +225,12 @@ export function validate(files: CuratedFile[], checker: Checker): void {
         report(file, `encounter ${enc.id}: name "${enc.name ?? ""}" -> "${encName}"`, true);
         if (fix) enc.name = encName;
       }
+      for (const field of ["displayID", "npc"] as const) {
+        const value = enc[field];
+        if (value !== undefined && (!Number.isInteger(value) || value <= 0)) {
+          report(file, `encounter ${enc.id}: \`${field}\` must be a positive integer id`);
+        }
+      }
       if (!Array.isArray(enc.loot)) {
         report(file, `encounter ${enc.id}: \`loot\` must be an array`, true);
         if (fix) enc.loot = [];
@@ -258,6 +271,8 @@ export function serialize(d: CuratedInstance): string {
       id: e.id,
       name: e.name,
       portrait: e.portrait,
+      displayID: e.displayID,
+      npc: e.npc,
       level: e.level,
       creatureType: e.creatureType,
       quests: e.quests,

@@ -14,6 +14,8 @@
     {
       "id": 2756,
       "name": "Targorr the Dread",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\targorr_the_dread.blp",
+      "displayID": 517,
       "loot": [
         {
           "item": 273804,
@@ -24,6 +26,8 @@
     {
       "id": 2757,
       "name": "Kam Deepfury",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\kam_deepfury.blp",
+      "displayID": 825,
       "loot": [
         {
           "item": 2280,
@@ -34,16 +38,22 @@
     {
       "id": 2758,
       "name": "Hamhock",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\hamhock.blp",
+      "displayID": 3250,
       "loot": []
     },
     {
       "id": 2759,
       "name": "Dextren Ward",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\dextren_ward.blp",
+      "displayID": 2149,
       "loot": []
     },
     {
       "id": 2760,
       "name": "Bazil Thredd",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\bazil_thredd.blp",
+      "displayID": 1621,
       "loot": []
     }
   ]

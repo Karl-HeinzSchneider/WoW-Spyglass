@@ -152,7 +152,9 @@ only sanctioned globals.
     `background`/`backgroundCoords` picture, name on top, `info` (level range by default) and
     `infoRight` in the bottom corners, three per line.
   - `display = "cards"` (an instance's boss list) draws `ForeverLootCardTemplate`: the same
-    bevelled list-button atlas with the entry's `portrait` standing on the left, name and info
+    bevelled list-button atlas with the entry's `portrait` standing on the left (a
+    `portraitDisplayID` instead draws the creature's model through
+    `SetPortraitTextureFromCreatureDisplayID` into the same region), name and info
     beside it (boss level/type, drops of interest, a quest "!" for `quests`), two per line.
   - Section headers use the `UI-Character-Info-Title` plate; subheaders (`subheader` nodes) are
     a smaller step below them — centered text with `UI-Character-Info-ScrollLine-Long` running
@@ -185,8 +187,11 @@ only sanctioned globals.
 
 - `lib/` — vendored Ace3, LibStub, CallbackHandler, LibDBIcon (+ LibDataBroker). Excluded from
   LuaLS and StyLua; update by replacing the folder, don't patch.
-- `assets/` — currently empty and not tracked; prefer the client's own atlases/textures (see the
-  root `CLAUDE.md`). Only put something here when nothing in the game files will do.
+- `assets/` — the few textures the game files cannot provide; prefer the client's own atlases
+  and textures (see the root `CLAUDE.md`). `assets/bosses/<slug>.blp` holds boss pictures for
+  bosses this server added, shot with the scraper's `/fl portrait` studio and cut to 128x64
+  with an alpha channel like the client's own boss art; a curated encounter points at one with
+  `"portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\<slug>.blp"`.
 
 ## Conventions
 

@@ -82,6 +82,7 @@ local RECIPE = {
 ---@field instanceID integer
 ---@field order? integer  # position inside the instance
 ---@field portrait? string|number  # picture of the boss for its card in the browser
+---@field displayID? integer  # CreatureDisplayID of the boss's model; the client draws a portrait from it when there is no `portrait`
 ---@field level? integer
 ---@field creatureType? string  # "Beast", "Undead", ... as the game shows it
 ---@field quests? integer[]  # quest ids the boss is involved in

@@ -486,6 +486,10 @@ end
 -- Card: a portrait card for entries of a `display = "cards"` folder (e.g. a boss)
 ----------------------------------------------------------------------------------------------------
 
+-- The card's picture region: the template's 2:1 size for art files, a square for a portrait
+-- the client renders from a creature display id (those come out square and would stretch).
+local PORTRAIT_WIDTH, PORTRAIT_HEIGHT, PORTRAIT_SQUARE = 112, 56, 58
+
 ---@class ForeverLoot.Card : Button
 ---@field Card Texture
 ---@field Portrait Texture
@@ -522,13 +526,24 @@ function ForeverLootCardMixin:Init(view, node)
     self.Arrow:SetShown(app.api.IsFolder(node))
     self.QuestIcon:SetShown(node.quests ~= nil and #node.quests > 0)
 
-    local portrait = node.portrait
-    self.Portrait:SetShown(portrait ~= nil)
-    self.Icon:SetShown(portrait == nil)
-    self.IconRing:SetShown(portrait == nil)
+    -- A picture beats a generated portrait beats the entry's icon. Art files are 2:1 busts
+    -- (the client's own boss art is 128x64), while a portrait the client renders from a
+    -- creature display id is square, so the region takes the shape of what fills it.
+    local portrait, displayID = node.portrait, node.portraitDisplayID
+    local hasPortrait = portrait ~= nil or displayID ~= nil
+    self.Portrait:SetShown(hasPortrait)
+    self.Icon:SetShown(not hasPortrait)
+    self.IconRing:SetShown(not hasPortrait)
     setIconQuality(self.IconRing, node.quality)
+    self.Portrait:ClearAllPoints()
     if portrait then
+        self.Portrait:SetSize(PORTRAIT_WIDTH, PORTRAIT_HEIGHT)
+        self.Portrait:SetPoint("BOTTOMLEFT", 2, 5)
         self.Portrait:SetTexture(portrait)
+    elseif displayID then
+        self.Portrait:SetSize(PORTRAIT_SQUARE, PORTRAIT_SQUARE)
+        self.Portrait:SetPoint("LEFT", (PORTRAIT_WIDTH - PORTRAIT_SQUARE) / 2, 0)
+        SetPortraitTextureFromCreatureDisplayID(self.Portrait, displayID)
     else
         self.Icon:SetTexture(node.icon or FALLBACK_ICON)
     end

@@ -43,6 +43,7 @@ local log = app.logger
 ---@field background? string|number  # tiles: wide picture filling the tile (texture path or fileID)
 ---@field backgroundCoords? number[]  # tiles: { left, right, top, bottom } part of `background` to show; whole texture by default
 ---@field portrait? string|number  # cards: picture of the entry (e.g. a boss) on the left of the card; `icon` when unset
+---@field portraitDisplayID? integer  # cards: CreatureDisplayID the client renders the picture from, for entries without a `portrait`
 ---@field info? string  # small text bottom-left; the level range when unset and `minLevel`/`maxLevel` are
 ---@field infoRight? string  # small text bottom-right; on rows: the top-right corner (where a `chance` would go)
 ---@field quests? integer[]  # cards: quest ids the entry is involved in; shows a "!" and lists their titles in the tooltip

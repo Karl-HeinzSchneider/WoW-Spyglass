@@ -104,7 +104,8 @@ count, so ratios err low). Review the diff before committing.
 By hand: find or create the instance file — all it needs is the map id (the `-- Name` comments
 in `ForeverLoot/db/generated/instances.lua` list them). Add rows to a boss's `loot`. `chance` is
 0–1 and optional. A boss may carry `level` and `creatureType` as the game shows them (card says
-"20 Humanoid"), a `portrait`, and the ids of `quests` it is involved in (quest "!" on the card).
+"20 Humanoid"), a picture (`portrait` or `displayID`, see below), and the ids of `quests` it is
+involved in (quest "!" on the card).
 Names are informational and rewritten by `fix`; a row with only a `name` gets its `item` id
 filled in when exactly one scanned item has that name. An unscanned item is allowed (warning):
 the boss page shows it once the client fetches it, it just isn't searchable until scanned.
@@ -127,6 +128,32 @@ the boss page shows it once the client fetches it, it just isn't searchable unti
       ] }
   ]
 }
+```
+
+### A boss's picture: `portrait` or `displayID`
+
+`portrait` is a texture path or fileID, normally the Encounter Journal's hand-made boss art
+(`Interface\EncounterJournal\UI-EJ-BOSS-<Name>`). Bosses this server added have none — this
+client ships no Encounter Journal data at all — so they instead carry `displayID`, the
+**CreatureDisplayID** of the model, which the client renders into a portrait by itself
+(`SetPortraitTextureFromCreatureDisplayID`, the same call and the same 2:1 shape the game's own
+boss buttons use). `portrait` wins when both are set; with neither, the card shows a generic
+boss icon.
+
+A display id is not in any client table for these NPCs, so it is collected in game. With the
+boss (or any copy of it) as your target:
+
+```
+/run local m=CreateFrame("PlayerModel") m:SetUnit("target") print(m:GetDisplayInfo(), UnitGUID("target"))
+```
+
+The number is the `displayID`; the GUID's sixth field is the NPC id, which goes in the optional
+`npc` field — it is not shipped, it only records where the display id came from so it can be
+re-checked later. Both must be positive integers; `npm run check` verifies that much, not that
+the model is the right one.
+
+```json
+{ "id": 3493, "name": "Faldrim Anvilmar", "displayID": 142826, "npc": 261306, "loot": [] }
 ```
 
 `npm run fix` validates ids (map exists and is in the right folder, encounters belong to the

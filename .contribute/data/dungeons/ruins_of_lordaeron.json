@@ -4,16 +4,13 @@
   "minLevel": 15,
   "maxLevel": 20,
   "background": 7963782,
-  "backgroundCoords": [
-    0.0445,
-    0.9552,
-    0.158,
-    0.842
-  ],
+  "backgroundCoords": [0.0445, 0.9552, 0.158, 0.842],
   "encounters": [
     {
       "id": 3353,
       "name": "Witherfang",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\witherfang.blp",
+      "displayID": 144189,
       "loot": [
         {
           "item": 271201,
@@ -32,6 +29,8 @@
     {
       "id": 3357,
       "name": "The Abandoned",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\the_abandoned.blp",
+      "displayID": 138667,
       "loot": [
         {
           "item": 271207,
@@ -50,12 +49,15 @@
     {
       "id": 3355,
       "name": "The Butcher",
-      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-The Butcher",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\the_butcher.blp",
+      "displayID": 144188,
       "loot": []
     },
     {
       "id": 3354,
       "name": "Rath'mael",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\rathmael.blp",
+      "displayID": 144175,
       "loot": [
         {
           "item": 271213,
@@ -79,6 +81,8 @@
     {
       "id": 3411,
       "name": "Viktor the Vile",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\viktor_the_vile.blp",
+      "displayID": 139455,
       "loot": [
         {
           "item": 271211,
@@ -97,6 +101,8 @@
     {
       "id": 3412,
       "name": "Bjork",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\bjork.blp",
+      "displayID": 144170,
       "loot": [
         {
           "item": 271209,

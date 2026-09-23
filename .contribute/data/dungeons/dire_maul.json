@@ -32,6 +32,8 @@
     {
       "id": 2792,
       "name": "Pusillin",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\pusillin.blp",
+      "displayID": 7552,
       "loot": []
     },
     {
@@ -115,11 +117,15 @@
     {
       "id": 2793,
       "name": "Lord Hel'nurath",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\lord_helnurath.blp",
+      "displayID": 14556,
       "loot": []
     },
     {
       "id": 2794,
       "name": "Tsu'zee",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\tsuzee.blp",
+      "displayID": 11250,
       "loot": []
     }
   ]
