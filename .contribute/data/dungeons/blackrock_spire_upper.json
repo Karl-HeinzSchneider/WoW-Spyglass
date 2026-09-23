@@ -1,7 +1,8 @@
 {
   "map": 229,
-  "name": "Blackrock Spire",
-  "minLevel": 55,
+  "id": 22902,
+  "name": "Blackrock Spire: Upper",
+  "minLevel": 58,
   "maxLevel": 60,
   "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-BlackrockSpire",
   "backgroundCoords": [
@@ -11,94 +12,6 @@
     0.6797
   ],
   "encounters": [
-    {
-      "id": 267,
-      "name": "Highlord Omokk",
-      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Highlord Omokk",
-      "loot": [
-        {
-          "item": 16670,
-          "name": "Boots of Elements"
-        }
-      ]
-    },
-    {
-      "id": 268,
-      "name": "Shadow Hunter Vosh'gajin",
-      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Shadow Hunter Voshgajin",
-      "loot": [
-        {
-          "item": 16712,
-          "name": "Shadowcraft Gloves"
-        }
-      ]
-    },
-    {
-      "id": 269,
-      "name": "War Master Voone",
-      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-War Master Voone",
-      "loot": [
-        {
-          "item": 16676,
-          "name": "Beaststalker's Gloves"
-        }
-      ]
-    },
-    {
-      "id": 270,
-      "name": "Mother Smolderweb",
-      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Mother Smolderweb",
-      "loot": [
-        {
-          "item": 16715,
-          "name": "Wildheart Boots"
-        }
-      ]
-    },
-    {
-      "id": 271,
-      "name": "Urok Doomhowl",
-      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Urok Doomhowl",
-      "loot": []
-    },
-    {
-      "id": 272,
-      "name": "Quartermaster Zigris",
-      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Quartermaster Zigris",
-      "loot": []
-    },
-    {
-      "id": 274,
-      "name": "Halycon",
-      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Halycon",
-      "loot": []
-    },
-    {
-      "id": 273,
-      "name": "Gizrul the Slavener",
-      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Gizrul the Slavener",
-      "loot": [
-        {
-          "item": 16718,
-          "name": "Wildheart Spaulders"
-        }
-      ]
-    },
-    {
-      "id": 275,
-      "name": "Overlord Wyrmthalak",
-      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Overlord Wyrmthalak",
-      "loot": [
-        {
-          "item": 13164,
-          "name": "Heart of the Scale"
-        },
-        {
-          "item": 16679,
-          "name": "Beaststalker's Mantle"
-        }
-      ]
-    },
     {
       "id": 3062,
       "name": "Pyroguard Emberseer",

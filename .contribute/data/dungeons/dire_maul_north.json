@@ -1,0 +1,59 @@
+{
+  "map": 429,
+  "id": 42903,
+  "name": "Dire Maul: North",
+  "minLevel": 57,
+  "maxLevel": 60,
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-DireMaul",
+  "backgroundCoords": [
+    0.0156,
+    0.6641,
+    0.0703,
+    0.6797
+  ],
+  "encounters": [
+    {
+      "id": 362,
+      "name": "Guard Mol'dar",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Guard Moldar",
+      "loot": []
+    },
+    {
+      "id": 363,
+      "name": "Stomper Kreeg",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Stomper Kreeg",
+      "loot": []
+    },
+    {
+      "id": 364,
+      "name": "Guard Fengus",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Guard Fengus",
+      "loot": []
+    },
+    {
+      "id": 365,
+      "name": "Guard Slip'kik",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Guard Slipkik",
+      "loot": []
+    },
+    {
+      "id": 366,
+      "name": "Captain Kromcrush",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Captain Kromcrush",
+      "loot": []
+    },
+    {
+      "id": 367,
+      "name": "Cho'Rush the Observer",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-ChoRush the Observer",
+      "loot": []
+    },
+    {
+      "id": 368,
+      "name": "King Gordok",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-King Gordok",
+      "loot": []
+    }
+  ],
+  "trash": []
+}

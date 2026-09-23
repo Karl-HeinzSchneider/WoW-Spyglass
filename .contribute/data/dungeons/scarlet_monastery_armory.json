@@ -1,0 +1,23 @@
+{
+  "map": 189,
+  "id": 18903,
+  "name": "Scarlet Monastery: Armory",
+  "minLevel": 32,
+  "maxLevel": 42,
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-ScarletMonastery",
+  "backgroundCoords": [
+    0.0156,
+    0.6641,
+    0.0703,
+    0.6797
+  ],
+  "encounters": [
+    {
+      "id": 448,
+      "name": "Herod",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Herod",
+      "loot": []
+    }
+  ],
+  "trash": []
+}

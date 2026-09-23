@@ -1,12 +1,12 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { dirname, relative, resolve } from "node:path";
 import { type Config, FALLBACK_LOCALE, LOCALE_OUTPUT_DIR, OUTPUT_DIR, ROOT } from "./config.js";
-import { type CuratedFile, type CuratedLoot } from "./curated.js";
+import { type CuratedFile, type CuratedInstance, type CuratedLoot, instanceIDOf } from "./curated.js";
 import { type ScannedItem } from "./items.js";
 import { type ListFile, type ListSection, ROW_FIELDS, rowsOf } from "./lists.js";
 import { header, luaFields, luaString, luaValue } from "./lua.js";
 import { type Recipe, type SkillLine, shipsRecipe } from "./recipes.js";
-import { type Reference, nameOf } from "./reference.js";
+import { type Instance, type Reference, nameOf } from "./reference.js";
 
 const DEFAULT_ICONS = {
   dungeon: "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
@@ -44,44 +44,59 @@ function emitItems(ids: number[], ref: Reference): string {
   return out.join("");
 }
 
-function emitInstances(ref: Reference, curated: Map<number, CuratedFile>): string {
+function emitInstances(ref: Reference, curated: CuratedFile[]): string {
   const out = [header(`wago.tools Map+DungeonEncounter, build ${ref.build}, plus levels/icons from .contribute`)];
   out.push("local Data = ForeverLoot.Data\n");
-  const ids = [...ref.instances.keys()].sort((a, b) => a - b);
-  for (const id of ids) {
-    const inst = ref.instances.get(id)!;
-    const cur = curated.get(id)?.data;
-    out.push(`\n-- ${nameOf(ref, "instances", id)}\n`);
-    out.push(`Data:AddInstance(${id}, {\n`);
-    out.push(
-      ...luaFields(
-        {
-          type: inst.type,
-          expansionID: inst.expansionID,
-          minLevel: cur?.minLevel,
-          maxLevel: cur?.maxLevel,
-          icon: cur?.icon ?? DEFAULT_ICONS[inst.type],
-          background: cur?.background,
-          backgroundCoords: cur?.backgroundCoords,
-        },
-        ["type", "expansionID", "minLevel", "maxLevel", "icon", "background", "backgroundCoords"],
-      ).map((l) => l + "\n"),
-    );
-    out.push(`    bosses = ${luaValue(inst.encounters)},\n})\n`);
-    for (const encID of inst.encounters) {
-      const enc = ref.encounters.get(encID)!;
-      const c = cur?.encounters.find((e) => e.id === encID);
-      const fields = luaFields(
-        { instanceID: id, order: enc.order, portrait: c?.portrait, displayID: c?.displayID, level: c?.level, creatureType: c?.creatureType, quests: c?.quests },
-        ["instanceID", "order", "portrait", "displayID", "level", "creatureType", "quests"],
-        "",
-      )
-        .join(" ")
-        .replace(/,$/, "");
-      out.push(`Data:AddBoss(${encID}, { ${fields} }) -- ${nameOf(ref, "encounters", encID)}\n`);
+  const maps = [...ref.instances.keys()].sort((a, b) => a - b);
+  for (const map of maps) {
+    const inst = ref.instances.get(map)!;
+    const files = curated.filter((f) => f.data.map === map);
+    const parts = files.filter((f) => f.data.id !== undefined).sort((a, b) => a.data.id! - b.data.id!);
+    if (parts.length === 0) {
+      out.push(...emitInstance(ref, map, inst, inst.encounters, files[0]?.data));
+      continue;
+    }
+    // A map players see as several dungeons: one instance per file, with the encounters it lists.
+    for (const file of parts) {
+      const listed = new Set(file.data.encounters.map((e) => e.id));
+      out.push(...emitInstance(ref, file.data.id!, inst, inst.encounters.filter((id) => listed.has(id)), file.data));
     }
   }
   return out.join("");
+}
+
+function emitInstance(ref: Reference, id: number, inst: Instance, encounters: number[], cur: CuratedInstance | undefined): string[] {
+  const out: string[] = [];
+  out.push(`\n-- ${cur?.id !== undefined ? cur.name : nameOf(ref, "instances", id)}\n`);
+  out.push(`Data:AddInstance(${id}, {\n`);
+  out.push(
+    ...luaFields(
+      {
+        type: inst.type,
+        expansionID: inst.expansionID,
+        minLevel: cur?.minLevel,
+        maxLevel: cur?.maxLevel,
+        icon: cur?.icon ?? DEFAULT_ICONS[inst.type],
+        background: cur?.background,
+        backgroundCoords: cur?.backgroundCoords,
+      },
+      ["type", "expansionID", "minLevel", "maxLevel", "icon", "background", "backgroundCoords"],
+    ).map((l) => l + "\n"),
+  );
+  out.push(`    bosses = ${luaValue(encounters)},\n})\n`);
+  for (const encID of encounters) {
+    const enc = ref.encounters.get(encID)!;
+    const c = cur?.encounters.find((e) => e.id === encID);
+    const fields = luaFields(
+      { instanceID: id, order: enc.order, portrait: c?.portrait, displayID: c?.displayID, level: c?.level, creatureType: c?.creatureType, quests: c?.quests },
+      ["instanceID", "order", "portrait", "displayID", "level", "creatureType", "quests"],
+      "",
+    )
+      .join(" ")
+      .replace(/,$/, "");
+    out.push(`Data:AddBoss(${encID}, { ${fields} }) -- ${nameOf(ref, "encounters", encID)}\n`);
+  }
+  return out;
 }
 
 // Generated provenance comments keep their pre-monorepo paths so a layout-only migration does
@@ -110,7 +125,8 @@ export function hasLoot(file: CuratedFile): boolean {
 function emitLoot(file: CuratedFile, ref: Reference): string {
   const rel = sourceLabel(file.path);
   const out = [header(rel), "local Data = ForeverLoot.Data\n"];
-  out.push(`\n-- ${nameOf(ref, "instances", file.data.map)} (map ${file.data.map})\n`);
+  const id = instanceIDOf(file.data);
+  out.push(`\n-- ${file.data.id !== undefined ? file.data.name : nameOf(ref, "instances", id)} (map ${file.data.map})\n`);
   for (const enc of file.data.encounters) {
     if (!enc.loot?.length) continue;
     out.push(`\nData:AddBossLoot(${enc.id}, { -- ${nameOf(ref, "encounters", enc.id)}\n`);
@@ -119,12 +135,12 @@ function emitLoot(file: CuratedFile, ref: Reference): string {
   }
   // The instance's own two categories, keyed by the map rather than by an encounter.
   if (file.data.trash?.length) {
-    out.push(`\nData:AddTrashLoot(${file.data.map}, {\n`);
+    out.push(`\nData:AddTrashLoot(${id}, {\n`);
     out.push(...emitLootRows(file.data.trash, ref, "    "));
     out.push("})\n");
   }
   if (file.data.quests?.length) {
-    out.push(`\nData:AddQuests(${file.data.map}, {\n`);
+    out.push(`\nData:AddQuests(${id}, {\n`);
     for (const quest of file.data.quests) {
       const fields = luaFields({ ...quest }, ["id", "name", "side"], "").join(" ");
       const items = emitLootRows(quest.items ?? [], ref, "        ");
@@ -310,8 +326,7 @@ export function build(ref: Reference, curated: CuratedFile[], lists: ListFile[],
   for (let i = 0; i < itemIDs.length; i += config.itemsPerFile) chunks.push(itemIDs.slice(i, i + config.itemsPerFile));
   chunks.forEach((chunk, i) => addCore(`items/items_${String(i + 1).padStart(3, "0")}.lua`, emitItems(chunk, ref)));
 
-  const byMap = new Map(curated.map((f) => [f.data.map, f]));
-  addCore("instances.lua", emitInstances(ref, byMap));
+  addCore("instances.lua", emitInstances(ref, curated));
 
   for (const file of [...curated].sort((a, b) => a.slug.localeCompare(b.slug))) {
     if (hasLoot(file)) addCore(`loot/${file.slug}.lua`, emitLoot(file, ref));
@@ -342,7 +357,9 @@ export function build(ref: Reference, curated: CuratedFile[], lists: ListFile[],
   for (const locale of config.locales) {
     const names = ref.names.get(locale)!;
     const add = locale === FALLBACK_LOCALE ? addCore : addLocale;
-    add(`locales/${locale}/instances.lua`, emitNames(locale, "instances", names.instances, `wago.tools build ${ref.build}`));
+    // The parts of a split map have no name in the game's tables: the file's name is the English one.
+    const parts = locale === FALLBACK_LOCALE ? curated.filter((f) => f.data.id !== undefined).map((f): [number, string] => [f.data.id!, f.data.name!]) : [];
+    add(`locales/${locale}/instances.lua`, emitNames(locale, "instances", new Map([...names.instances, ...parts]), `wago.tools build ${ref.build}`));
     add(`locales/${locale}/bosses.lua`, emitNames(locale, "bosses", names.encounters, `wago.tools build ${ref.build}`));
     add(`locales/${locale}/crafting.lua`, emitCraftingNames(locale, ref, skillLines, recipes));
   }

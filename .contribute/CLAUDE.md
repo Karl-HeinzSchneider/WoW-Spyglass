@@ -112,6 +112,15 @@ Names are informational and rewritten by `fix`; a row with only a `name` gets it
 filled in when exactly one scanned item has that name. An unscanned item is allowed (warning):
 the boss page shows it once the client fetches it, it just isn't searchable until scanned.
 
+**Split dungeons.** Some maps are several dungeons to players: Scarlet Monastery (map 189) is
+Graveyard, Library, Armory and Cathedral; Blackrock Spire (229) is Lower and Upper; Dire Maul
+(429) is East, West and North. Such a map has one file per part, all with the same `map`, each
+with its own `id` (by convention map × 100 + n: `18901`…`18904`) and its own `name` (no game
+table has one, so `fix` leaves it alone). The addon knows the part by that `id`: its tile, boss
+cards, trash and quests, and its `FL.InstanceFolder(id)` line in the module. Each of the map's
+encounters goes in exactly one of the files: one listed in two is an error, one in none a
+warning (`fix` can't know which part it belongs to, so it doesn't add it).
+
 Besides the bosses, an instance file has two lists of its own, `trash` and `quests`. The browser
 shows each of them as one more card next to the boss cards, in that order.
 
@@ -203,7 +212,8 @@ and id, plus the faction when `side` restricts it — and that quest's reward it
 
 `npm run fix` validates ids (map exists and is in the right folder, encounters belong to the
 map, no duplicates, chance in range, quest ids positive and unique, `side` a known value), fills
-names, adds every encounter the game knows that the file doesn't list yet (empty `loot`) and a
+names, adds every encounter the game knows that the file doesn't list yet (empty `loot`; not on a
+split map, see above) and a
 `trash` list to files without one, and rewrites the file in stable key order. Schema:
 `CuratedInstance` / `CuratedQuest` in `src/curated.ts`. A raid only appears in the Raids module
 once its `FL.InstanceFolder(mapID)` line in `ForeverLoot/modules/raids/raids.lua` is uncommented.

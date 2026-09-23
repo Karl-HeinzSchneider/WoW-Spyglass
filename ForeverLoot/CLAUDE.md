@@ -123,7 +123,8 @@ hold no data and use **only the public API a third-party addon would** — never
 hooks. Root order: dungeons, raids, crafting, reputation, pvp, collections (`order` 10–60), then
 a spacer and `items` (`order = 1000`, `spacerBefore = true`). `items` is a `query = true` module (the whole DB with search box and filter dropdown).
 `raids`/`dungeons` are `display = "tiles"` modules whose `getChildren` returns explicit
-`FL.InstanceFolder(mapID)` lines (commented out until an instance has curated loot). The other
+`FL.InstanceFolder(mapID)` lines (commented out until an instance has curated loot; a split
+dungeon's parts are listed by their own ids, e.g. `18901`). The other
 four return `FL.ListFolders(kind)`; for `crafting` that means one tile per profession file, each
 listing the generated recipes merged with the file's rows (see `nodes.lua`).
 

@@ -1,0 +1,61 @@
+{
+  "map": 429,
+  "id": 42902,
+  "name": "Dire Maul: West",
+  "minLevel": 56,
+  "maxLevel": 60,
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-DireMaul",
+  "backgroundCoords": [
+    0.0156,
+    0.6641,
+    0.0703,
+    0.6797
+  ],
+  "encounters": [
+    {
+      "id": 350,
+      "name": "Tendris Warpwood",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Tendris Warpwood",
+      "loot": []
+    },
+    {
+      "id": 347,
+      "name": "Illyanna Ravenoak",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Illyanna Ravenoak",
+      "loot": []
+    },
+    {
+      "id": 348,
+      "name": "Magister Kalendris",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Magister Kalendris",
+      "loot": []
+    },
+    {
+      "id": 349,
+      "name": "Immol'thar",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Immolthar",
+      "loot": []
+    },
+    {
+      "id": 361,
+      "name": "Prince Tortheldrin",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Prince Tortheldrin",
+      "loot": []
+    },
+    {
+      "id": 2793,
+      "name": "Lord Hel'nurath",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\lord_helnurath.blp",
+      "displayID": 14556,
+      "loot": []
+    },
+    {
+      "id": 2794,
+      "name": "Tsu'zee",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\tsuzee.blp",
+      "displayID": 11250,
+      "loot": []
+    }
+  ],
+  "trash": []
+}

@@ -42,4 +42,13 @@ Data:AddNames("enUS", "instances", {
     [2999] = "Ruins of Lordaeron",
     [3002] = "Half-Pint Tavern",
     [3065] = "The Hall of Thanes",
+    [18901] = "Scarlet Monastery: Graveyard",
+    [18902] = "Scarlet Monastery: Library",
+    [18903] = "Scarlet Monastery: Armory",
+    [18904] = "Scarlet Monastery: Cathedral",
+    [22901] = "Blackrock Spire: Lower",
+    [22902] = "Blackrock Spire: Upper",
+    [42901] = "Dire Maul: East",
+    [42902] = "Dire Maul: West",
+    [42903] = "Dire Maul: North",
 })

@@ -1,0 +1,29 @@
+{
+  "map": 189,
+  "id": 18902,
+  "name": "Scarlet Monastery: Library",
+  "minLevel": 29,
+  "maxLevel": 39,
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-ScarletMonastery",
+  "backgroundCoords": [
+    0.0156,
+    0.6641,
+    0.0703,
+    0.6797
+  ],
+  "encounters": [
+    {
+      "id": 446,
+      "name": "Houndmaster Loksey",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Houndmaster Loksey",
+      "loot": []
+    },
+    {
+      "id": 447,
+      "name": "Arcanist Doan",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Arcanist Doan",
+      "loot": []
+    }
+  ],
+  "trash": []
+}

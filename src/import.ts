@@ -59,7 +59,13 @@ export function importDiscovered(d: Discovered, ref: Reference, files: CuratedFi
       lines.push(`encounter ${encounterID} (${nameOf(ref, "encounters", encounterID)}): map ${encounter.mapID} is not a known instance, skipped`);
       continue;
     }
-    let file = byMap.get(encounter.mapID);
+    // A split map (several files, each with an `id`): the file that lists the encounter.
+    const shared = files.filter((f) => f.data.map === encounter.mapID);
+    let file = shared.find((f) => f.data.encounters.some((e) => e.id === encounterID)) ?? byMap.get(encounter.mapID);
+    if (file && shared.some((f) => f.data.id !== undefined) && !file.data.encounters.some((e) => e.id === encounterID)) {
+      lines.push(`encounter ${encounterID} (${nameOf(ref, "encounters", encounterID)}): map ${encounter.mapID} is split and none of its files lists it, skipped`);
+      continue;
+    }
     if (!file) {
       const slug = slugOf(nameOf(ref, "instances", encounter.mapID));
       file = { path: resolve(CURATED_DIRS[instance.type], `${slug}.json`), folder: instance.type, slug, data: { map: encounter.mapID, encounters: [] } };

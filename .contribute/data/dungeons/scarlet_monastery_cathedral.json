@@ -1,0 +1,34 @@
+{
+  "map": 189,
+  "id": 18904,
+  "name": "Scarlet Monastery: Cathedral",
+  "minLevel": 35,
+  "maxLevel": 45,
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-ScarletMonastery",
+  "backgroundCoords": [
+    0.0156,
+    0.6641,
+    0.0703,
+    0.6797
+  ],
+  "encounters": [
+    {
+      "id": 449,
+      "name": "High Inquisitor Fairbanks",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-High Inquisitor Fairbanks",
+      "loot": []
+    },
+    {
+      "id": 450,
+      "name": "High Inquisitor Whitemane",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-High Inquisitor Whitemane",
+      "loot": [
+        {
+          "item": 7726,
+          "name": "Aegis of the Scarlet Commander"
+        }
+      ]
+    }
+  ],
+  "trash": []
+}

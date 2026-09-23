@@ -330,7 +330,10 @@ curated drop JSON in `.contribute/` and wago.tools' instance/encounter tables); 
 add to it with the same calls. The scraper companion adds whatever it scans or sees dropping
 in-game (`ForeverLootScraperDB.global.discovered`, see `ForeverLoot_Scraper/src/discovery.lua`),
 so `Data.items` can grow at runtime while the scraper is enabled.
-Instance ids are `Map` ids, boss ids are `DungeonEncounter` ids. Tables are integer-keyed:
+Instance ids are `Map` ids, except for a map players see as several dungeons (Scarlet Monastery's
+wings, Upper/Lower Blackrock Spire, Dire Maul's parts): each part has its own id, by convention
+map × 100 + n (`18901` = Scarlet Monastery: Graveyard). Boss ids are `DungeonEncounter` ids.
+Tables are integer-keyed:
 
 ```lua
 local Data = ForeverLoot.Data

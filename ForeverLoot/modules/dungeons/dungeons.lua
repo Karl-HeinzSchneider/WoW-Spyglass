@@ -20,15 +20,21 @@ FL:RegisterModule({
             FL.InstanceFolder(34), -- Stormwind Stockade
             FL.InstanceFolder(90), -- Gnomeregan
             FL.InstanceFolder(47), -- Razorfen Kraul
-            FL.InstanceFolder(189), -- Scarlet Monastery
+            FL.InstanceFolder(18901), -- Scarlet Monastery: Graveyard
+            FL.InstanceFolder(18902), -- Scarlet Monastery: Library
+            FL.InstanceFolder(18903), -- Scarlet Monastery: Armory
+            FL.InstanceFolder(18904), -- Scarlet Monastery: Cathedral
             FL.InstanceFolder(129), -- Razorfen Downs
             FL.InstanceFolder(70), -- Uldaman
             FL.InstanceFolder(209), -- Zul'Farrak
             FL.InstanceFolder(349), -- Maraudon
             FL.InstanceFolder(109), -- Sunken Temple
             FL.InstanceFolder(230), -- Blackrock Depths
-            FL.InstanceFolder(229), -- Blackrock Spire
-            FL.InstanceFolder(429), -- Dire Maul
+            FL.InstanceFolder(22901), -- Blackrock Spire: Lower
+            FL.InstanceFolder(22902), -- Blackrock Spire: Upper
+            FL.InstanceFolder(42901), -- Dire Maul: East
+            FL.InstanceFolder(42902), -- Dire Maul: West
+            FL.InstanceFolder(42903), -- Dire Maul: North
             FL.InstanceFolder(329), -- Stratholme
             FL.InstanceFolder(289), -- Scholomance
             FL.InstanceFolder(2720), -- The Searing Basin

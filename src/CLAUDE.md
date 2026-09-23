@@ -64,7 +64,9 @@ the data they consume is described in `.contribute/CLAUDE.md`.
   missing encounters added on fix; the instance's own `trash` list — added empty on fix, since
   every instance has one — and its `quests`, whose ids must be positive and unique and whose
   `side` must be one of `QUEST_SIDES`; a quest title can only be warned about, no game table
-  has one), `serialize` (stable key order), and the shared `Checker`
+  has one; a split map — several files with one `map`, each with its own `id` — must list each
+  encounter in exactly one of its files: twice is an error, none a warning, never added on fix),
+  `instanceIDOf` (the file's `id`, else its map), `serialize` (stable key order), and the shared `Checker`
   whose `checkItemRow` every validator uses: resolves name-only rows to an id when unambiguous,
   rejects duplicates, rewrites names from the scans, warns on unscanned ids.
 - `lists.ts` — `CuratedList/Row` (the crafting/pvp/collections/reputation JSON), `ROWS_KEY`,
@@ -88,10 +90,12 @@ the data they consume is described in `.contribute/CLAUDE.md`.
   is no legacy one). Records carry their own `id`, which wins over the container key.
 - `import.ts` — `importDiscovered`: merges items into the scans (newest observation wins, names
   kept per locale) and observed drops into the instance files (creating them, slug from the
-  instance name); new rows get a `chance` only after `MIN_KILLS_FOR_CHANCE` = 10 kills; existing
+  instance name; on a split map, the file that lists the encounter, else skipped); new rows get a `chance` only after `MIN_KILLS_FOR_CHANCE` = 10 kills; existing
   rows are never changed, only reported.
 - `generate.ts` — `build()` produces both trees in memory (`items/items_NNN.lua` chunks of
-  `itemsPerFile`, `instances.lua`, `loot/<slug>.lua` for every file `hasLoot` is true for (a
+  `itemsPerFile`, `instances.lua` (one instance per map, or per file with its own `id` on a split
+  map, with the encounters that file lists; the English name of such a part is its file's),
+  `loot/<slug>.lua` for every file `hasLoot` is true for (a
   boss's drops via `AddBossLoot`, the instance's trash via `AddTrashLoot`, its quests via
   `AddQuests`), `<kind>/<slug>.lua`,
   `recipes/<profession>.lua` for every profession with shipped recipes (`AddCategories` +

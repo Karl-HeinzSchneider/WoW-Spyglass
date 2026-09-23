@@ -1,0 +1,29 @@
+{
+  "map": 189,
+  "id": 18901,
+  "name": "Scarlet Monastery: Graveyard",
+  "minLevel": 26,
+  "maxLevel": 36,
+  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-ScarletMonastery",
+  "backgroundCoords": [
+    0.0156,
+    0.6641,
+    0.0703,
+    0.6797
+  ],
+  "encounters": [
+    {
+      "id": 444,
+      "name": "Interrogator Vishas",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Interrogator Vishas",
+      "loot": []
+    },
+    {
+      "id": 2779,
+      "name": "Bloodmage Thalnos",
+      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Bloodmage Thalnos",
+      "loot": []
+    }
+  ],
+  "trash": []
+}

@@ -10,7 +10,13 @@ import { type InstanceType, type Reference, nameOf } from "./reference.js";
 export interface CuratedInstance {
   /** Map.ID of the instance (see ForeverLoot/db/generated/instances.lua for the list). */
   map: number;
-  /** Informational, filled by `fix`. */
+  /**
+   * The instance's own id when players see its map as several dungeons (Scarlet Monastery's four
+   * wings all share map 189): every file of such a map has one, by convention map * 100 + n
+   * (18901). Without it the instance id is the map id.
+   */
+  id?: number;
+  /** Informational, filled by `fix`; for a file with an `id` it is the displayed name (no game table has it). */
   name?: string;
   minLevel?: number;
   maxLevel?: number;
@@ -74,6 +80,11 @@ export interface CuratedQuest {
 
 /** What `CuratedQuest.side` accepts; leaving it out means the same as "Both". */
 export const QUEST_SIDES = ["Alliance", "Horde", "Both"];
+
+/** The id the addon knows the instance by: its own `id` on a split map, else the map id. */
+export function instanceIDOf(d: CuratedInstance): number {
+  return d.id ?? d.map;
+}
 
 export interface CuratedFile {
   path: string;
@@ -196,8 +207,18 @@ export class Checker {
 /** Validates ids against the reference data; with `fix`, rewrites names and adds missing encounters. */
 export function validate(files: CuratedFile[], checker: Checker): void {
   const { ref, fix } = checker;
-  const seenMaps = new Map<number, string>();
   const report = checker.report.bind(checker);
+
+  // A map is one file, or several that each have an `id` (a map players see as several dungeons).
+  const byMap = new Map<number, CuratedFile[]>();
+  for (const file of files) {
+    const list = byMap.get(file.data.map);
+    if (list) list.push(file);
+    else byMap.set(file.data.map, [file]);
+  }
+  const isSplit = (map: number) => byMap.get(map)!.length > 1 || byMap.get(map)!.some((f) => f.data.id !== undefined);
+  const seenIDs = new Map<number, string>();
+  const listedIn = new Map<number, string>(); // encounter -> the file that lists it
 
   for (const file of files) {
     const d = file.data;
@@ -210,9 +231,14 @@ export function validate(files: CuratedFile[], checker: Checker): void {
       report(file, `map ${d.map} is not an instance with encounters in build ${ref.build}`);
       continue;
     }
-    const other = seenMaps.get(d.map);
-    if (other) report(file, `map ${d.map} is also defined in ${other}`);
-    seenMaps.set(d.map, file.path);
+    if (d.id !== undefined) {
+      if (!Number.isInteger(d.id) || d.id <= 0) report(file, "`id` must be a positive integer (map * 100 + n)");
+      else if (ref.instances.has(d.id)) report(file, `id ${d.id} is the map id of ${nameOf(ref, "instances", d.id)}; use map * 100 + n`);
+      else if (seenIDs.has(d.id)) report(file, `id ${d.id} is also used by ${seenIDs.get(d.id)}`);
+      seenIDs.set(d.id, file.path);
+    } else if (isSplit(d.map)) {
+      report(file, `map ${d.map} is split into several files; each needs its own \`id\` (map * 100 + n)`);
+    }
     if (instance.type !== file.folder) {
       report(file, `map ${d.map} is a ${instance.type} but the file is in the ${file.folder}s folder`);
     }
@@ -224,10 +250,15 @@ export function validate(files: CuratedFile[], checker: Checker): void {
       continue;
     }
 
-    const instanceName = nameOf(ref, "instances", d.map);
-    if (d.name !== instanceName) {
-      report(file, `name "${d.name ?? ""}" -> "${instanceName}"`, true);
-      if (fix) d.name = instanceName;
+    if (d.id !== undefined) {
+      // A part of a map has no name in any game table: the file's is the one shown.
+      if (typeof d.name !== "string" || d.name === "") report(file, "a file with an `id` needs its own `name`");
+    } else {
+      const instanceName = nameOf(ref, "instances", d.map);
+      if (d.name !== instanceName) {
+        report(file, `name "${d.name ?? ""}" -> "${instanceName}"`, true);
+        if (fix) d.name = instanceName;
+      }
     }
 
     const seenEncounters = new Set<number>();
@@ -245,7 +276,9 @@ export function validate(files: CuratedFile[], checker: Checker): void {
         report(file, `encounter ${enc.id} (${nameOf(ref, "encounters", enc.id)}) belongs to map ${known.mapID}`);
       }
       if (seenEncounters.has(enc.id)) report(file, `encounter ${enc.id} listed twice`);
+      else if (listedIn.has(enc.id)) report(file, `encounter ${enc.id} (${nameOf(ref, "encounters", enc.id)}) is also listed in ${listedIn.get(enc.id)}`);
       seenEncounters.add(enc.id);
+      listedIn.set(enc.id, file.path);
       const encName = nameOf(ref, "encounters", enc.id);
       if (enc.name !== encName) {
         report(file, `encounter ${enc.id}: name "${enc.name ?? ""}" -> "${encName}"`, true);
@@ -274,14 +307,26 @@ export function validate(files: CuratedFile[], checker: Checker): void {
     validateTrash(file, checker);
     validateQuests(file, checker);
 
-    // Encounters the game knows but the file doesn't list yet: add empty skeletons in order.
-    const missing = instance.encounters.filter((id) => !seenEncounters.has(id));
+    // Encounters the game knows but the file doesn't list yet: add empty skeletons in order. A
+    // split map's are checked across all its files below, since `fix` can't know which part.
+    const missing = isSplit(d.map) ? [] : instance.encounters.filter((id) => !seenEncounters.has(id));
     if (missing.length > 0) {
       report(file, `missing encounters: ${missing.map((id) => `${id} (${nameOf(ref, "encounters", id)})`).join(", ")}`, true);
       if (fix) {
         for (const id of missing) d.encounters.push({ id, name: nameOf(ref, "encounters", id), loot: [] });
         d.encounters.sort((a, b) => (ref.encounters.get(a.id)?.order ?? 0) - (ref.encounters.get(b.id)?.order ?? 0));
       }
+    }
+  }
+
+  // A split map: every encounter belongs in one of its files; one that is in none is only warned
+  // about (listed twice is an error above).
+  for (const [map, list] of byMap) {
+    const instance = ref.instances.get(map);
+    if (!instance || !isSplit(map)) continue;
+    const missing = instance.encounters.filter((id) => !listedIn.has(id));
+    if (missing.length > 0) {
+      checker.warn(list[0]!, `map ${map}: encounters in none of its files: ${missing.map((id) => `${id} (${nameOf(ref, "encounters", id)})`).join(", ")}`);
     }
   }
 }
@@ -353,6 +398,7 @@ function validateQuests(file: CuratedFile, checker: Checker): void {
 export function serialize(d: CuratedInstance): string {
   const ordered = {
     map: d.map,
+    id: d.id,
     name: d.name,
     minLevel: d.minLevel,
     maxLevel: d.maxLevel,
