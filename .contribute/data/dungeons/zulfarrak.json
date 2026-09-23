@@ -61,26 +61,5 @@
     }
   ],
   "trash": [],
-  "quests": [
-    {
-      "name": "Divino-matic Rod",
-      "side": "Both",
-      "items": []
-    },
-    {
-      "name": "Tiara of the Deep",
-      "side": "Both",
-      "items": []
-    },
-    {
-      "name": "Gahz'rilla",
-      "side": "Both",
-      "items": [
-        {
-          "item": 11122,
-          "name": "Carrot on a Stick"
-        }
-      ]
-    }
-  ]
+  "quests": []
 }

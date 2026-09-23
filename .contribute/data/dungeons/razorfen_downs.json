@@ -51,26 +51,5 @@
     }
   ],
   "trash": [],
-  "quests": [
-    {
-      "name": "Extinguishing the Idol",
-      "side": "Both",
-      "items": []
-    },
-    {
-      "name": "Bring the Light",
-      "side": "Alliance",
-      "items": []
-    },
-    {
-      "name": "An Unholy Alliance",
-      "side": "Horde",
-      "items": []
-    },
-    {
-      "name": "Bring the End",
-      "side": "Horde",
-      "items": []
-    }
-  ]
+  "quests": []
 }

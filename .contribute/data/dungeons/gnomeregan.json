@@ -55,11 +55,6 @@
   "trash": [],
   "quests": [
     {
-      "name": "The Grand Betrayal",
-      "side": "Alliance",
-      "items": []
-    },
-    {
       "id": 2904,
       "name": "A Fine Mess",
       "side": "Both",
@@ -75,11 +70,6 @@
       ]
     },
     {
-      "name": "Data Rescue",
-      "side": "Alliance",
-      "items": []
-    },
-    {
       "id": 2928,
       "name": "Gyrodrillmatic Excavationators",
       "side": "Alliance",
@@ -93,11 +83,6 @@
           "name": "Shilly Mitts"
         }
       ]
-    },
-    {
-      "name": "Rig Wars",
-      "side": "Both",
-      "items": []
     },
     {
       "id": 2922,

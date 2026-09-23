@@ -130,11 +130,5 @@
       "name": "Bracers of Valor"
     }
   ],
-  "quests": [
-    {
-      "name": "General Drakkisath's Demise",
-      "side": "Both",
-      "items": []
-    }
-  ]
+  "quests": []
 }

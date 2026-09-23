@@ -207,21 +207,5 @@
       "name": "Devout Bracers"
     }
   ],
-  "quests": [
-    {
-      "name": "Houses of the Holy",
-      "side": "Both",
-      "items": []
-    },
-    {
-      "name": "Aurius' Reckoning",
-      "side": "Both",
-      "items": []
-    },
-    {
-      "name": "The Active Agent",
-      "side": "Both",
-      "items": []
-    }
-  ]
+  "quests": []
 }

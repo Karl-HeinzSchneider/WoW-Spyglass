@@ -57,36 +57,5 @@
     }
   ],
   "trash": [],
-  "quests": [
-    {
-      "name": "Jammal'an the Prophet",
-      "side": "Both",
-      "items": []
-    },
-    {
-      "name": "The God Hakkar",
-      "side": "Both",
-      "items": []
-    },
-    {
-      "name": "The Essence of Eranikus",
-      "side": "Both",
-      "items": []
-    },
-    {
-      "name": "Da Voodoo",
-      "side": "Both",
-      "items": []
-    },
-    {
-      "name": "Voodoo Feathers",
-      "side": "Both",
-      "items": []
-    },
-    {
-      "name": "Into The Temple of Atal'Hakkar",
-      "side": "Both",
-      "items": []
-    }
-  ]
+  "quests": []
 }

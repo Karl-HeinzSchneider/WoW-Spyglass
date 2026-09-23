@@ -131,36 +131,5 @@
       "name": "Bracers of Valor"
     }
   ],
-  "quests": [
-    {
-      "name": "Warlord's Command",
-      "side": "Both",
-      "items": []
-    },
-    {
-      "name": "Mother's Milk",
-      "side": "Both",
-      "items": []
-    },
-    {
-      "name": "Put Her Down",
-      "side": "Both",
-      "items": []
-    },
-    {
-      "name": "Urok Doomhowl",
-      "side": "Both",
-      "items": []
-    },
-    {
-      "name": "Maxwell's Mission",
-      "side": "Both",
-      "items": []
-    },
-    {
-      "name": "Seal of Ascension",
-      "side": "Both",
-      "items": []
-    }
-  ]
+  "quests": []
 }

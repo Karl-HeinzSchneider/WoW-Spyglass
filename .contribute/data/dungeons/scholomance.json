@@ -167,31 +167,5 @@
       "name": "Lightforge Bracers"
     }
   ],
-  "quests": [
-    {
-      "name": "Kirtonos the Herald",
-      "side": "Both",
-      "items": []
-    },
-    {
-      "name": "The Lich, Ras Frostwhisper",
-      "side": "Both",
-      "items": []
-    },
-    {
-      "name": "Dawn's Gambit",
-      "side": "Both",
-      "items": []
-    },
-    {
-      "name": "Alas, Andorhal",
-      "side": "Horde",
-      "items": [
-        {
-          "item": 17759,
-          "name": "Mark of Resolution"
-        }
-      ]
-    }
-  ]
+  "quests": []
 }

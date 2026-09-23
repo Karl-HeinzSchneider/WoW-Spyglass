@@ -61,31 +61,5 @@
     }
   ],
   "trash": [],
-  "quests": [
-    {
-      "name": "The Hidden Chamber",
-      "side": "Alliance",
-      "items": []
-    },
-    {
-      "name": "Solution to Doom",
-      "side": "Both",
-      "items": []
-    },
-    {
-      "name": "Power Stones",
-      "side": "Both",
-      "items": []
-    },
-    {
-      "name": "Agmond's Fate",
-      "side": "Both",
-      "items": []
-    },
-    {
-      "name": "Restoring the Necklace",
-      "side": "Both",
-      "items": []
-    }
-  ]
+  "quests": []
 }

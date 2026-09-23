@@ -228,20 +228,6 @@
       ]
     },
     {
-      "name": "In Nightmares",
-      "side": "Horde",
-      "items": [
-        {
-          "item": 10657,
-          "name": "Talbar Mantle"
-        },
-        {
-          "item": 10658,
-          "name": "Quagmire Galoshes"
-        }
-      ]
-    },
-    {
       "id": 1489,
       "name": "Hamuul Runetotem",
       "items": []
