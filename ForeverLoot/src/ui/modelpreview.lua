@@ -61,12 +61,38 @@ function ForeverLootModelPreviewMixin:Clear()
     self:Hide()
 end
 
--- Shown while ctrl is down and the item can be worn visibly (not rings, trinkets, bags, ...).
--- Items the client hasn't cached yet have no link to try on; the view has already asked for them.
+-- The mount an item teaches, from the item or, when the client doesn't know the item as a mount,
+-- from its use spell (needs the item cached).
+---@param itemID integer
+---@return integer?
+local function mountFromItem(itemID)
+    if not C_MountJournal then
+        return nil
+    end
+    local mountID = C_MountJournal.GetMountFromItem(itemID)
+    if not mountID then
+        local spellID = select(2, C_Item.GetItemSpell(itemID))
+        mountID = spellID and C_MountJournal.GetMountFromSpell(spellID)
+    end
+    return mountID
+end
+
+-- Shown while ctrl is down and the item is a mount or can be worn visibly (not rings, trinkets,
+-- bags, ...). Items the client hasn't cached yet have no link to try on; the view has already
+-- asked for them.
 function ForeverLootModelPreviewMixin:Update()
     local itemID = self.itemID
     if not (itemID and IsControlKeyDown() and GameTooltip:IsOwned(self.owner)) then
         self:Hide()
+        return
+    end
+    local mountID = mountFromItem(itemID)
+    if mountID then
+        self:Place()
+        self:Show()
+        if not self:ShowMount(mountID) then
+            self:Hide()
+        end
         return
     end
     local link = select(2, C_Item.GetItemInfo(itemID))
@@ -110,6 +136,39 @@ function ForeverLootModelPreviewMixin:TryOn(link)
     local equipLoc = select(4, C_Item.GetItemInfoInstant(link))
     actor:SetYaw((self.yaw or 0) + (equipLoc == "INVTYPE_CLOAK" and math.pi or TURN))
     return actor:TryOn(link) == Enum.ItemTryOnReason.Success
+end
+
+-- The mount on its own in the mount's model scene (the scene the mount journal frames it with);
+-- false when the client has no model for it.
+---@param mountID integer
+---@return boolean
+function ForeverLootModelPreviewMixin:ShowMount(mountID)
+    local creatureDisplayID, _, _, isSelfMount, _, modelSceneID = C_MountJournal.GetMountInfoExtraByID(mountID)
+    if not (creatureDisplayID and modelSceneID) then
+        return false
+    end
+    local scene = self.ModelScene
+    scene:TransitionToModelSceneID(
+        modelSceneID,
+        CAMERA_TRANSITION_TYPE_IMMEDIATE,
+        CAMERA_MODIFICATION_TYPE_DISCARD,
+        true
+    )
+    -- The dressing room's actor is gone; the next item preview sets it up again.
+    self.playerReady = false
+    local actor = scene:GetActorByTag("unwrapped")
+    if not actor then
+        return false
+    end
+    actor:SetModelByCreatureDisplayID(creatureDisplayID)
+    if isSelfMount then
+        actor:SetAnimationBlendOperation(Enum.ModelBlendOperation.None)
+        actor:SetAnimation(618) -- MountSelfIdle
+    else
+        actor:SetAnimationBlendOperation(Enum.ModelBlendOperation.Anim)
+        actor:SetAnimation(0)
+    end
+    return true
 end
 
 -- As wide as the tooltip, below it; above it when the screen ends first.

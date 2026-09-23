@@ -78,7 +78,8 @@ factionID, skillLineID, … }`, `listLoot[kind][id]` = `{ { itemID, standing = "
   index over boss loot, instance trash, quest rewards, every list and the recipes that make an
   item (kinds `"boss"`, `"trash"`, `"quest"`, `"recipe"` and the list kinds).
 - `filters.lua` — `app.filters`: registry of named predicates with options (`multi`/`single`),
-  optional precomputed buckets, and the built-ins (`quality`, `slot`, `armorType`, `weaponType`,
+  optional precomputed buckets, and the built-ins (`type` = item class with mounts/pets split out
+  of Miscellaneous, `quality`, `slot`, `armorType`, `weaponType`,
   `itemLevel`, `reqLevel`, `instance`, `boss`, `profession` = made by a profession's recipes).
 - `query.lua` — `app.query`: `Query.Run(q)` over a plain, serializable query table (`search`,
   `filters`, `sort`). Filters AND, values within a filter OR. `search` matches
@@ -197,8 +198,11 @@ only sanctioned globals.
   model scene id (596) with `SetupPlayerForModelScene`, then `actor:Dress()` + `TryOn(link)`
   per item, turned 25° further than the scene's yaw (towards the main hand) or around (+ π)
   for a cloak; only items `C_Item.IsDressableItemByID` accepts and the client has cached. The
-  actor is rebuilt after `PLAYER_EQUIPMENT_CHANGED` / `UNIT_MODEL_CHANGED`. The recipe popup's
-  look (tooltip border over `UI-Character-Info-General-BG`).
+  actor is rebuilt after `PLAYER_EQUIPMENT_CHANGED` / `UNIT_MODEL_CHANGED`. A mount item
+  (`C_MountJournal.GetMountFromItem`, else from the item's use spell) shows the mount instead:
+  the scene switches to the mount's `uiModelSceneID` and its `unwrapped` actor gets the mount's
+  creature display (no rider). The recipe popup's look (tooltip border over
+  `UI-Character-Info-General-BG`).
 - `tooltip.lua` — `app.tooltip`, an Ace module that appends an item's sources
   (`Data:GetItemSources` kinds `boss`, `trash`, `quest`, `recipe`) to every item tooltip: after a blank
   line, the instance name in gold over its bosses, "Trash" and `Quest: <title>` lines, indented

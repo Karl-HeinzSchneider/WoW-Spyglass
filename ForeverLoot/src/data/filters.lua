@@ -374,6 +374,76 @@ local function sourceKeys(itemID, field)
     return keys
 end
 
+-- The item's class (Enum.ItemClass). Mounts and companion pets are Miscellaneous subclasses but
+-- get options of their own; "Miscellaneous" is the rest of that class.
+local ITEM_CLASS_MISC = 15
+local MISC_SPLIT = { [5] = "15:5", [2] = "15:2" } -- subclass -> option value (Mount, Companion Pets)
+local TYPE_VALUES = { 4, 2, 0, 1, 11, 6, 5, 7, 9, 12, 13, "15:5", "15:2", 15 } -- menu order
+local CLASS_NAMES = {
+    [0] = "Consumable",
+    [1] = "Container",
+    [2] = "Weapon",
+    [4] = "Armor",
+    [5] = "Reagent",
+    [6] = "Projectile",
+    [7] = "Trade Goods",
+    [9] = "Recipe",
+    [11] = "Quiver",
+    [12] = "Quest",
+    [13] = "Key",
+    [15] = "Miscellaneous",
+    ["15:5"] = "Mount",
+    ["15:2"] = "Companion Pets",
+}
+
+---@param row ForeverLoot.ItemRow
+---@return string|number
+local function typeOf(row)
+    local classID = row[ITEM.CLASS]
+    return classID == ITEM_CLASS_MISC and MISC_SPLIT[row[ITEM.SUBCLASS]] or classID
+end
+
+---@param value string|number
+---@return string
+local function typeName(value)
+    local name
+    if type(value) == "number" then
+        name = C_Item and C_Item.GetItemClassInfo and C_Item.GetItemClassInfo(value)
+    elseif C_Item and C_Item.GetItemSubClassInfo then
+        name = C_Item.GetItemSubClassInfo(ITEM_CLASS_MISC, tonumber(value:match(":(%d+)$")))
+    end
+    if name and name ~= "" then
+        return name
+    end
+    return CLASS_NAMES[value] or tostring(value)
+end
+
+Filters:Register({
+    id = "type",
+    name = "Type",
+    order = 5,
+    kind = "multi",
+    options = function()
+        local present = {}
+        for _, row in Data:EachItem() do
+            present[typeOf(row)] = true
+        end
+        local options = {}
+        for _, value in ipairs(TYPE_VALUES) do
+            if present[value] then
+                options[#options + 1] = { value = value, label = typeName(value) }
+            end
+        end
+        return options
+    end,
+    match = function(_, row, value)
+        return typeOf(row) == value
+    end,
+    index = function(_, row)
+        return typeOf(row)
+    end,
+})
+
 Filters:Register({
     id = "quality",
     name = QUALITY or "Quality",

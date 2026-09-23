@@ -56,6 +56,7 @@ C_SkillInfo = {} --[[@as C_SkillInfo]]
 ---@class ModelSceneMixin
 ---@field TransitionToModelSceneID fun(self: ModelSceneMixin, modelSceneID: number, cameraTransitionType: number, cameraModificationType: number, forceEvenIfSame?: boolean)
 ---@field GetPlayerActor fun(self: ModelSceneMixin, overrideActorName?: string): ModelSceneFrameActor?
+---@field GetActorByTag fun(self: ModelSceneMixin, tag: string): ModelSceneFrameActor?
 
 ---@class PagingControlsMixin
 ---@field GetMaxPages fun(self: PagingControlsMixin): integer
@@ -72,6 +73,9 @@ C_SkillInfo = {} --[[@as C_SkillInfo]]
 ---@field SetupMenu fun(self: WowStyle1FilterDropdownMixin, generator: fun(dropdown: WowStyle1FilterDropdownMixin, rootDescription: RootMenuDescriptionProxy))
 ---@field GenerateMenu fun(self: WowStyle1FilterDropdownMixin)
 ---@field SetDefaultText fun(self: WowStyle1FilterDropdownMixin, text: string)
+---@field SetIsDefaultCallback fun(self: WowStyle1FilterDropdownMixin, callback: fun(): boolean)
+---@field SetDefaultCallback fun(self: WowStyle1FilterDropdownMixin, callback: fun())
+---@field ValidateResetState fun(self: WowStyle1FilterDropdownMixin)
 
 -- Element handlers get the element's `data`; returning a MenuResponse value is optional.
 ---@alias MenuHandler fun(data: any): integer?
