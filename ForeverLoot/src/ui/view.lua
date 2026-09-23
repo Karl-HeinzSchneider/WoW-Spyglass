@@ -428,7 +428,7 @@ end
 -- How much brighter than painted a tile's picture is drawn: the picture is added onto itself
 -- with this alpha (0 = as painted, 0.5 = strongly lifted). The shade bands behind the texts are
 -- the two gradient alphas in ForeverLootTileTemplate.
-local TILE_PICTURE_BOOST = 0.3
+local TILE_PICTURE_BOOST = 0
 
 local WHOLE_TEXTURE = { 0, 1, 0, 1 }
 
