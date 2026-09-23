@@ -42,6 +42,7 @@ local log = app.logger
 --- Tile / card fields, read when the parent folder has `display = "tiles"` or `"cards"`:
 ---@field background? string|number  # tiles: wide picture filling the tile (texture path, fileID or atlas name)
 ---@field backgroundCoords? number[]  # tiles: { left, right, top, bottom } part of `background` to show (of an atlas: of its region); all of it by default
+---@field showIcon? boolean  # tiles: also show `icon` on a tile with a `background` (at its left edge)
 ---@field portrait? string|number  # cards: picture of the entry (e.g. a boss) on the left of the card; `icon` when unset
 ---@field portraitDisplayID? integer  # cards: CreatureDisplayID the client renders the picture from, for entries without a `portrait`
 ---@field info? string  # small text bottom-left; the level range when unset and `minLevel`/`maxLevel` are

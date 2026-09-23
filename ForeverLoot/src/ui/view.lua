@@ -485,8 +485,11 @@ function ForeverLootTileMixin:Init(view, node)
     self.Boost:SetShown(background ~= nil and TILE_PICTURE_BOOST > 0)
     self.TopShade:SetShown(background ~= nil)
     self.BottomShade:SetShown(background ~= nil)
-    self.Icon:SetShown(background == nil)
-    self.IconRing:SetShown(background == nil)
+    -- The icon stands in for a missing picture (centered) or, with `showIcon`, sits at the
+    -- picture's left edge, between the name and the bottom texts.
+    local showIcon = background == nil or node.showIcon == true
+    self.Icon:SetShown(showIcon)
+    self.IconRing:SetShown(showIcon)
     setIconQuality(self.IconRing, node.quality)
     if background then
         local file, left, right, top, bottom = tilePicture(background, node.backgroundCoords)
@@ -495,8 +498,15 @@ function ForeverLootTileMixin:Init(view, node)
             texture:SetTexCoord(left, right, top, bottom)
         end
         self.Boost:SetAlpha(TILE_PICTURE_BOOST)
-    else
+    end
+    if showIcon then
         self.Icon:SetTexture(node.icon or FALLBACK_ICON)
+        self.Icon:ClearAllPoints()
+        if background then
+            self.Icon:SetPoint("LEFT", 14, -3)
+        else
+            self.Icon:SetPoint("CENTER", 0, -2)
+        end
     end
 end
 

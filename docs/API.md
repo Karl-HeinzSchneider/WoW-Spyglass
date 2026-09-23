@@ -112,6 +112,7 @@ per line by default (`columns` = 1..4), about twice as tall as a row. Each entry
 |---|---|---|
 | `background` | string \| number | Wide picture filling the card: a texture (path or fileID) or an atlas name. Without it the card is dark and shows the entry's `icon`. |
 | `backgroundCoords` | number[4] | `{ left, right, top, bottom }` in 0..1: the part of `background` to show — of an atlas, the part of the atlas's own region. All of it by default. |
+| `showIcon` | boolean | With a `background`, also show the entry's `icon`, at the picture's left edge. The built-in Crafting tiles do, so a profession is recognized at a glance. |
 | `info` | string | Small text in the bottom-left corner. Defaults to the level range (`minLevel`-`maxLevel`) when the entry has one. |
 | `infoRight` | string | Small text in the bottom-right corner. |
 

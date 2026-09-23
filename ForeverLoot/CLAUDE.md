@@ -126,7 +126,8 @@ a spacer and `items` (`order = 1000`, `spacerBefore = true`). `items` is a `quer
 `FL.InstanceFolder(mapID)` lines (commented out until an instance has curated loot; a split
 dungeon's parts are listed by their own ids, e.g. `18901`). The other
 four return `FL.ListFolders(kind)`; for `crafting` that means one tile per profession file, each
-listing the generated recipes merged with the file's rows (see `nodes.lua`).
+listing the generated recipes merged with the file's rows (see `nodes.lua`), with `showIcon` set
+so the profession's icon shows beside its picture.
 
 ### `src/ui/` — the main window (Blizzard-style XML layout + Lua mixin)
 

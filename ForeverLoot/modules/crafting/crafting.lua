@@ -17,9 +17,14 @@ FL:RegisterModule({
         -- Professions with many categories group their folders under subheaders; those come
         -- from the profession's `sections` in .contribute/data/crafting/<profession>.json. To
         -- try a grouping without touching the data, pass it here instead:
-        --   return FL.ListFolders("crafting", { sections = { blacksmithing = {
+        --   local folders = FL.ListFolders("crafting", { sections = { blacksmithing = {
         --       { name = "Plate Armor", categories = { 2469, 2470 } },
         --   } } })
-        return FL.ListFolders("crafting")
+        local folders = FL.ListFolders("crafting")
+        -- The profession's icon beside its picture: quicker to recognize than the picture alone.
+        for _, folder in ipairs(folders) do
+            folder.showIcon = true
+        end
+        return folders
     end,
 })

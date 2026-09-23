@@ -106,7 +106,8 @@
 	     the picture sits inside the bevel and is cut to the button's own silhouette by using the
 	     same atlas as a mask, so its corners follow the bevel. The name sits across the top and two
 	     small texts (info / infoRight) in the bottom corners, over a shade so they read on any
-	     picture. Without a background the card stays plain and shows the entry's icon. -->
+	     picture. Without a background the card stays plain and shows the entry's icon in the
+	     middle; with one, `showIcon` puts the icon at the picture's left edge (anchored in Lua). -->
 	<Button name="ForeverLootTileTemplate" mixin="ForeverLootTileMixin" registerForClicks="LeftButtonUp, RightButtonUp" virtual="true">
 		<Size x="196" y="84"/>
 		<Layers>
