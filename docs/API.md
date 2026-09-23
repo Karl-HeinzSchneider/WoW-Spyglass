@@ -329,10 +329,13 @@ caught and logged. The usage string is appended to `/fl` help while registered.
 `ForeverLoot.Data` holds every scanned item and where it drops. ForeverLoot ships its data as
 generated files (`ForeverLoot/db/generated/` plus non-English names in
 `ForeverLoot_Locale/db/generated/`, built by the root TypeScript tools from in-game item scans, the
-curated drop JSON in `.contribute/` and wago.tools' instance/encounter tables); other addons may
+curated drop JSON in `.contribute/` and wago.tools' instance/encounter tables and localized item
+names); other addons may
 add to it with the same calls. The scraper companion adds whatever it scans or sees dropping
 in-game (`ForeverLootScraperDB.global.discovered`, see `ForeverLoot_Scraper/src/discovery.lua`),
-so `Data.items` can grow at runtime while the scraper is enabled.
+so `Data.items` can grow at runtime while the scraper is enabled. On a non-English client the
+locale companion looks up the names of the items the generated files don't name and registers
+them with `AddNames` (`ForeverLootLocaleDB`, see `ForeverLoot_Locale/src/itemnames.lua`).
 Instance ids are `Map` ids, except for a map players see as several dungeons (Scarlet Monastery's
 wings, Upper/Lower Blackrock Spire, Dire Maul's parts): each part has its own id, by convention
 map × 100 + n (`18901` = Scarlet Monastery: Graveyard). Boss ids are `DungeonEncounter` ids.
@@ -401,7 +404,7 @@ Adding data (any call may be repeated; every one invalidates the caches and fire
   `Data:AddCategories({ [id] = { skillLineID = 164, order = 30 }, ... })`
 - `Data:AddNames(locale, kind, { [id] = name })` with `kind` one of `"items"`, `"bosses"`, `"instances"`,
   `"skillLines"`, `"categories"`, `"tools"` — enUS is the fallback; the official locale addon registers
-  every generated non-English name through this call
+  every generated non-English name and every item name it learns in-game through this call
 
 Reading:
 
@@ -451,7 +454,7 @@ A query is plain data — no functions — so it can be saved or shared:
 
 ```lua
 local ids = ForeverLoot.Query.Run({
-    search = "defias",                                       -- case-insensitive substring; all digits also matches the id
+    search = "defias",                                       -- case-insensitive substring of the name in the client's language or in English; all digits also matches the id
     filters = { quality = { 3, 4 }, slot = { "INVTYPE_CHEST" }, itemLevel = "21-30" },
     sort = "name",                                           -- "name" | "ilvl" | "quality" | "id"
 })

@@ -9,7 +9,7 @@ an addon distribution unit.
 | Addon | Owns | Persistent state | Dependency |
 |---|---|---|---|
 | `ForeverLoot` | Public API, data store and queries, content modules, UI, user settings and loot history | `ForeverLootDB` | none |
-| `ForeverLoot_Locale` | Additional UI translations and generated localized item, instance and boss names | none planned | `ForeverLoot` |
+| `ForeverLoot_Locale` | Additional UI translations, generated localized item, instance and boss names, and the item names a non-English client looks up in-game | `ForeverLootLocaleDB` | `ForeverLoot` |
 | `ForeverLoot_Scraper` | Item scanning, loot observation, contribution exports and scraper commands | `ForeverLootScraperDB` | `ForeverLoot` |
 
 Generated non-English names live in the locale addon. Scanning, discovery state, JSON export, and
@@ -35,7 +35,9 @@ is absent or disabled.
 
 The core owns locale selection, English fallback behavior, and the registration surface. It ships
 generated `enUS` names so it remains useful without the companion. The locale addon owns every
-non-fallback generated name table and will own translated UI strings. Locale data registers after
+non-fallback generated name table, the item names it learns in-game for the items those tables
+lack, and will own translated UI strings. The core searches an item's client-locale and English
+names both. Locale data registers after
 the core database loads; `OnDataChanged` refreshes visible data.
 
 The generator routes `enUS` names to `ForeverLoot/db/generated/locales/` and every other configured

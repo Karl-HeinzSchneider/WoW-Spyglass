@@ -491,7 +491,9 @@ function Data:GetInstanceName(instanceID)
     return localizedName("instances", instanceID) or ("Instance #%d"):format(instanceID)
 end
 
--- Lowercased item name for substring search; built lazily for the whole DB.
+-- Lowercased item name for substring search; built lazily for the whole DB. The name in the
+-- client's language, then the English one after a newline when it differs, so either finds the
+-- item and no search matches across the two.
 ---@param itemID integer
 ---@return string
 function Data:GetSearchName(itemID)
@@ -500,7 +502,13 @@ function Data:GetSearchName(itemID)
     end
     local name = searchNames[itemID]
     if not name then
-        name = (localizedName("items", itemID) or ""):lower()
+        name = localizedName("items", itemID) or ""
+        local english = Data.names[FALLBACK_LOCALE]
+        english = english and english.items[itemID]
+        if english and english ~= name then
+            name = name .. "\n" .. english
+        end
+        name = name:lower()
         searchNames[itemID] = name
     end
     return name

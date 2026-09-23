@@ -81,7 +81,9 @@ Nothing in here touches frames.
   optional precomputed buckets, and the built-ins (`quality`, `slot`, `armorType`, `weaponType`,
   `itemLevel`, `reqLevel`, `instance`, `boss`, `profession` = made by a profession's recipes).
 - `query.lua` — `app.query`: `Query.Run(q)` over a plain, serializable query table (`search`,
-  `filters`, `sort`). Filters AND, values within a filter OR.
+  `filters`, `sort`). Filters AND, values within a filter OR. `search` matches
+  `Data:GetSearchName`: the client-locale name and, when it differs, the English one after a
+  newline, lowercased, so either language finds an item.
 - `nodes.lua` — DB-backed node constructors on the public API that modules build their trees
   from: `InstanceFolders(type)`, `InstanceFolder(id)` (a `cards` folder: an "All Bosses" card
   with every boss's drops, the bosses, then the instance's own two cards), `BossFolder(id)`,

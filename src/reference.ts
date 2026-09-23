@@ -21,6 +21,8 @@ export interface Reference {
   /** Factions with a reputation bar (`Faction` rows with a ReputationIndex), for the reputation lists. */
   factions: Map<number, Faction>;
   items: Map<number, ScannedItem>;
+  /** ItemSparse's item names per configured locale (enUS too, to check it means the scanned item). */
+  wagoItemNames: Map<string, Map<number, string>>;
   /** Locales that have item names, enUS first when present. */
   itemLocales: string[];
   names: Map<string, LocaleNames>;
@@ -141,6 +143,16 @@ export async function loadReference(config: Config): Promise<Reference> {
     names.set(locale, table);
   }
 
+  // One locale at a time: each ItemSparse table is a large CSV and only its names are kept.
+  const wagoItemNames = new Map<string, Map<number, string>>();
+  for (const locale of config.locales) {
+    const table = new Map<number, string>();
+    for (const row of await fetchTable("ItemSparse", build, locale)) {
+      if (row.Display_lang) table.set(int(row.ID), row.Display_lang);
+    }
+    wagoItemNames.set(locale, table);
+  }
+
   const ref: Reference = {
     build,
     instances,
@@ -151,6 +163,7 @@ export async function loadReference(config: Config): Promise<Reference> {
     itemSkills: recipeTables.itemSkills,
     factions,
     items: loadScannedItems(),
+    wagoItemNames,
     itemLocales: [],
     names,
   };
@@ -164,20 +177,35 @@ export function relinkRecipes(ref: Reference): void {
   linkRecipeItems(ref, ref.items);
 }
 
-/** Rebuilds the per-locale item name tables from `ref.items`; call after the scanned items changed. */
+/**
+ * Rebuilds the per-locale item name tables of the scanned items; call after they changed. ItemSparse
+ * names an item in every configured locale when its English name there is the scanned one (a
+ * server rename would leave the table's names outdated in every language); a name scanned in-game
+ * on a client of that language wins over it.
+ */
 export function refreshItemNames(ref: Reference): void {
   for (const table of ref.names.values()) table.items = new Map();
   const locales = new Set<string>();
+  const set = (locale: string, id: number, name: string) => {
+    let table = ref.names.get(locale);
+    if (!table) {
+      table = emptyNames();
+      ref.names.set(locale, table);
+    }
+    table.items.set(id, name);
+    locales.add(locale);
+  };
+  const wagoEnglish = ref.wagoItemNames.get(FALLBACK_LOCALE);
   for (const [id, item] of ref.items) {
-    for (const [locale, name] of Object.entries(item.names ?? {})) {
-      if (!name) continue;
-      let table = ref.names.get(locale);
-      if (!table) {
-        table = emptyNames();
-        ref.names.set(locale, table);
+    const english = item.names?.[FALLBACK_LOCALE];
+    if (english && wagoEnglish?.get(id) === english) {
+      for (const [locale, table] of ref.wagoItemNames) {
+        const name = table.get(id);
+        if (locale !== FALLBACK_LOCALE && name) set(locale, id, name);
       }
-      table.items.set(id, name);
-      locales.add(locale);
+    }
+    for (const [locale, name] of Object.entries(item.names ?? {})) {
+      if (name) set(locale, id, name);
     }
   }
   ref.itemLocales = [...locales].sort((a, b) => (a === FALLBACK_LOCALE ? -1 : b === FALLBACK_LOCALE ? 1 : a.localeCompare(b)));
