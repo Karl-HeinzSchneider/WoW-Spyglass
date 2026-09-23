@@ -779,6 +779,6 @@ Data:AddInstance(3065, {
     bosses = { 3493, 3495, 3494, 3496 },
 })
 Data:AddBoss(3493, { instanceID = 3065, order = 0, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\faldrim_anvilmar.blp", displayID = 142826 }) -- Faldrim Anvilmar
-Data:AddBoss(3495, { instanceID = 3065, order = 2000 }) -- Infurnus
+Data:AddBoss(3495, { instanceID = 3065, order = 2000, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\magmatus.blp", displayID = 1070 }) -- Magmatus
 Data:AddBoss(3494, { instanceID = 3065, order = 2500, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\plunder.blp", displayID = 142840 }) -- Plunder
 Data:AddBoss(3496, { instanceID = 3065, order = 3000, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\durgen_dirgehammer.blp", displayID = 142837 }) -- Durgen Dirgehammer

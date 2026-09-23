@@ -200,7 +200,7 @@ only sanctioned globals.
 - `assets/` — the few textures the game files cannot provide; prefer the client's own atlases
   and textures (see the root `CLAUDE.md`). `assets/bosses/<slug>.blp` holds boss pictures for
   bosses this server added, shot with the scraper's `/fl portrait` studio and cut to 128x64
-  with an alpha channel like the client's own boss art; a curated encounter points at one with
+  with an alpha channel like the client's own boss art by `tools/portrait/portrait.py`; a curated encounter points at one with
   `"portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\<slug>.blp"`.
 
 ## Conventions

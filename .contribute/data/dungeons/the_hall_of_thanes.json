@@ -4,12 +4,7 @@
   "minLevel": 13,
   "maxLevel": 18,
   "background": 7963781,
-  "backgroundCoords": [
-    0.0445,
-    0.9552,
-    0.158,
-    0.842
-  ],
+  "backgroundCoords": [0.0445, 0.9552, 0.158, 0.842],
   "encounters": [
     {
       "id": 3493,
@@ -34,7 +29,10 @@
     },
     {
       "id": 3495,
-      "name": "Infurnus",
+      "name": "Magmatus",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\magmatus.blp",
+      "displayID": 1070,
+      "npc": 261316,
       "loot": [
         {
           "item": 270230,

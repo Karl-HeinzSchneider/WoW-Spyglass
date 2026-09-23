@@ -94,7 +94,7 @@ function emitInstance(ref: Reference, id: number, inst: Instance, encounters: nu
     )
       .join(" ")
       .replace(/,$/, "");
-    out.push(`Data:AddBoss(${encID}, { ${fields} }) -- ${nameOf(ref, "encounters", encID)}\n`);
+    out.push(`Data:AddBoss(${encID}, { ${fields} }) -- ${c?.name || nameOf(ref, "encounters", encID)}\n`);
   }
   return out;
 }
@@ -129,7 +129,7 @@ function emitLoot(file: CuratedFile, ref: Reference): string {
   out.push(`\n-- ${file.data.id !== undefined ? file.data.name : nameOf(ref, "instances", id)} (map ${file.data.map})\n`);
   for (const enc of file.data.encounters) {
     if (!enc.loot?.length) continue;
-    out.push(`\nData:AddBossLoot(${enc.id}, { -- ${nameOf(ref, "encounters", enc.id)}\n`);
+    out.push(`\nData:AddBossLoot(${enc.id}, { -- ${enc.name || nameOf(ref, "encounters", enc.id)}\n`);
     out.push(...emitLootRows(enc.loot, ref, "    "));
     out.push("})\n");
   }
@@ -354,13 +354,26 @@ export function build(ref: Reference, curated: CuratedFile[], lists: ListFile[],
     const add = locale === FALLBACK_LOCALE ? addCore : addLocale;
     add(`locales/${locale}/items.lua`, emitNames(locale, "items", ref.names.get(locale)!.items, ".contribute/items (in-game scans)"));
   }
+  // Bosses an instance file names differently from the game table (renamed by the server): the
+  // file's name in every language, since the table's names for them are all the outdated one.
+  const renamed = new Map<number, string>();
+  for (const file of curated) {
+    for (const enc of file.data.encounters) {
+      if (enc.name && enc.name !== nameOf(ref, "encounters", enc.id)) renamed.set(enc.id, enc.name);
+    }
+  }
   for (const locale of config.locales) {
     const names = ref.names.get(locale)!;
     const add = locale === FALLBACK_LOCALE ? addCore : addLocale;
+    const bosses = new Map(names.encounters);
+    for (const [id, name] of renamed) {
+      if (locale === FALLBACK_LOCALE) bosses.set(id, name);
+      else bosses.delete(id); // falls back to the English one
+    }
     // The parts of a split map have no name in the game's tables: the file's name is the English one.
     const parts = locale === FALLBACK_LOCALE ? curated.filter((f) => f.data.id !== undefined).map((f): [number, string] => [f.data.id!, f.data.name!]) : [];
     add(`locales/${locale}/instances.lua`, emitNames(locale, "instances", new Map([...names.instances, ...parts]), `wago.tools build ${ref.build}`));
-    add(`locales/${locale}/bosses.lua`, emitNames(locale, "bosses", names.encounters, `wago.tools build ${ref.build}`));
+    add(`locales/${locale}/bosses.lua`, emitNames(locale, "bosses", bosses, `wago.tools build ${ref.build}`));
     add(`locales/${locale}/crafting.lua`, emitCraftingNames(locale, ref, skillLines, recipes));
   }
 

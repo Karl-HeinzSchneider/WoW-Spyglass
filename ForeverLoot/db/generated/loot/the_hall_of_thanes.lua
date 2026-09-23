@@ -9,7 +9,7 @@ Data:AddBossLoot(3493, { -- Faldrim Anvilmar
     { 271097 }, -- Spiritwraith Drape
 })
 
-Data:AddBossLoot(3495, { -- Infurnus
+Data:AddBossLoot(3495, { -- Magmatus
     { 270230 }, -- Kindlegem Girdle
     { 270231 }, -- Flamefist Grips
     { 271095 }, -- Fang of Magmatus

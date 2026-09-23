@@ -17,6 +17,7 @@ builds its item database. It is a monorepo of three addon distribution units and
 | `.contribute/` | Everything the database is built from: in-game item scans, curated drops and item lists, the pinned client build. `inbox/` is the gitignored drop folder for `npm run import`. | [.contribute/CLAUDE.md](.contribute/CLAUDE.md) |
 | `src/` | Root Node/TypeScript tooling: validate and fix the curated data, import in-game recordings, generate the addon data, check the addons, link them into a client, package releases. | [src/CLAUDE.md](src/CLAUDE.md) |
 | `tests/` | `tests/tooling/*.test.ts` (node:test, run by `npm run test:tooling`). | see `src/CLAUDE.md` |
+| `tools/portrait/` | Python + Pillow: a screenshot of the scraper's `/fl portrait` window -> a boss picture in `ForeverLoot/assets/bosses/`. | [tools/portrait/README.md](tools/portrait/README.md) |
 | `docs/` | Human-facing documentation: `docs/API.md` (the public `ForeverLoot` contract, must be updated with every API change) and `docs/architecture.md` (addon ownership and integration rules). | — |
 
 A direct child directory with a same-named `.toc` is an addon; the tooling discovers addons that

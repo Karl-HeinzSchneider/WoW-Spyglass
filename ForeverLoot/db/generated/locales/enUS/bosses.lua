@@ -296,7 +296,7 @@ Data:AddNames("enUS", "bosses", {
     [3482] = "Relic Guardian",
     [3493] = "Faldrim Anvilmar",
     [3494] = "Plunder",
-    [3495] = "Infurnus",
+    [3495] = "Magmatus",
     [3496] = "Durgen Dirgehammer",
     [3582] = "Atal'alarion",
     [3583] = "Avatar of Hakkar",

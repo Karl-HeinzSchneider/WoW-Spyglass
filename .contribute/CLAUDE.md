@@ -108,7 +108,10 @@ in `ForeverLoot/db/generated/instances.lua` list them). Add rows to a boss's `lo
 0–1 and optional. A boss may carry `level` and `creatureType` as the game shows them (card says
 "20 Humanoid"), a picture (`portrait` or `displayID`, see below), and the ids of `quests` it is
 involved in (quest "!" on the card).
-Names are informational and rewritten by `fix`; a row with only a `name` gets its `item` id
+Item names are informational and rewritten by `fix`. A boss's `name` is filled in by `fix` when
+missing and otherwise left alone: when it differs from the game table's, it is the name shown in
+every language (the server renamed the boss, the client's table still has the old name: Hall of
+Thanes' "Magmatus" is "Infurnus" there). A loot row with only a `name` gets its `item` id
 filled in when exactly one scanned item has that name. An unscanned item is allowed (warning):
 the boss page shows it once the client fetches it, it just isn't searchable until scanned.
 

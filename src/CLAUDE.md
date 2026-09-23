@@ -99,7 +99,9 @@ the data they consume is described in `.contribute/CLAUDE.md`.
   boss's drops via `AddBossLoot`, the instance's trash via `AddTrashLoot`, its quests via
   `AddQuests`), `<kind>/<slug>.lua`,
   `recipes/<profession>.lua` for every profession with shipped recipes (`AddCategories` +
-  `AddRecipes`, rows in category order), `locales/<locale>/*` (`items`, `instances`, `bosses`,
+  `AddRecipes`, rows in category order), `locales/<locale>/*` (`items`, `instances`, `bosses` —
+  a boss an instance file names differently from the game table gets the file's name in enUS and
+  no entry in other locales, so they fall back to it —,
   `crafting` = skill line/category/tool names) routed to the core for enUS and to the locale
   addon otherwise, each `generated.xml`); `write()` diffs against disk (CRLF-insensitive),
   removes stale files, returns the change count. `itemRow()` **must match `Data.ITEM`** and

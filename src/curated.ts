@@ -279,9 +279,11 @@ export function validate(files: CuratedFile[], checker: Checker): void {
       else if (listedIn.has(enc.id)) report(file, `encounter ${enc.id} (${nameOf(ref, "encounters", enc.id)}) is also listed in ${listedIn.get(enc.id)}`);
       seenEncounters.add(enc.id);
       listedIn.set(enc.id, file.path);
-      const encName = nameOf(ref, "encounters", enc.id);
-      if (enc.name !== encName) {
-        report(file, `encounter ${enc.id}: name "${enc.name ?? ""}" -> "${encName}"`, true);
+      // The file's name wins: the server may have renamed a boss the client's table still knows by
+      // an old name (Hall of Thanes' Magmatus is "Infurnus" there). `fix` only fills in a missing one.
+      if (typeof enc.name !== "string" || enc.name === "") {
+        const encName = nameOf(ref, "encounters", enc.id);
+        report(file, `encounter ${enc.id}: name -> "${encName}"`, true);
         if (fix) enc.name = encName;
       }
       for (const field of ["displayID", "npc"] as const) {

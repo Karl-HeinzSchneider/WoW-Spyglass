@@ -299,7 +299,6 @@ Data:AddNames("deDE", "bosses", {
     [3482] = "Reliktwächter",
     [3493] = "Faldrim Anvilmar",
     [3494] = "Plünderung",
-    [3495] = "Infurnus",
     [3496] = "Durgen Dirgehammer",
     [3582] = "Atal'alarion",
     [3583] = "Avatar von Hakkar",
