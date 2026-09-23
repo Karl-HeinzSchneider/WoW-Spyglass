@@ -1,0 +1,29 @@
+{
+  "map": 2998,
+  "name": "Excavation Site: Wetlands",
+  "minLevel": 26,
+  "maxLevel": 30,
+  "encounters": [
+    {
+      "id": 3480,
+      "name": "Saltspine",
+      "loot": []
+    },
+    {
+      "id": 3481,
+      "name": "Shadetooth",
+      "loot": []
+    },
+    {
+      "id": 3644,
+      "name": "Highland Horror",
+      "loot": []
+    },
+    {
+      "id": 3482,
+      "name": "Relic Guardian",
+      "loot": []
+    }
+  ],
+  "trash": []
+}

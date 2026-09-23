@@ -717,6 +717,8 @@ Data:AddBoss(3296, { instanceID = 2921, order = 0 }) -- Spirit of Mograine
 Data:AddInstance(2959, {
     type = "dungeon",
     expansionID = 0,
+    minLevel = 28,
+    maxLevel = 33,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     bosses = { 3298, 3299, 3300, 3301, 3302, 3303, 3310, 3311, 3312 },
 })
@@ -734,6 +736,8 @@ Data:AddBoss(3312, { instanceID = 2959, order = 8000 }) -- Mana Wraith
 Data:AddInstance(2998, {
     type = "dungeon",
     expansionID = 0,
+    minLevel = 26,
+    maxLevel = 30,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     bosses = { 3480, 3481, 3644, 3482 },
 })

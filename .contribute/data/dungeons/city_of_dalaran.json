@@ -1,0 +1,54 @@
+{
+  "map": 2959,
+  "name": "City of Dalaran",
+  "minLevel": 28,
+  "maxLevel": 33,
+  "encounters": [
+    {
+      "id": 3298,
+      "name": "Arcane Anomaly",
+      "loot": []
+    },
+    {
+      "id": 3299,
+      "name": "Fel Ancient",
+      "loot": []
+    },
+    {
+      "id": 3300,
+      "name": "Mana Devourer",
+      "loot": []
+    },
+    {
+      "id": 3301,
+      "name": "Mana Elemental",
+      "loot": []
+    },
+    {
+      "id": 3302,
+      "name": "Unstable Sentinel",
+      "loot": []
+    },
+    {
+      "id": 3303,
+      "name": "Shade of the Archmage",
+      "loot": []
+    },
+    {
+      "id": 3310,
+      "name": "Lyn the Ignored",
+      "loot": []
+    },
+    {
+      "id": 3311,
+      "name": "Atrexis the Grave Knight",
+      "loot": []
+    },
+    {
+      "id": 3312,
+      "name": "Mana Wraith",
+      "loot": []
+    }
+  ],
+  "trash": []
+}

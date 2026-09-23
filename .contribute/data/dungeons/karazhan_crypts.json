@@ -1,0 +1,62 @@
+{
+  "map": 2875,
+  "name": "Karazhan Crypts",
+  "encounters": [
+    {
+      "id": 3141,
+      "name": "Harbinger of Sin",
+      "loot": []
+    },
+    {
+      "id": 3146,
+      "name": "Creeping Malison",
+      "loot": []
+    },
+    {
+      "id": 3144,
+      "name": "Three Little Wolves",
+      "loot": []
+    },
+    {
+      "id": 3145,
+      "name": "Dark Rider",
+      "loot": []
+    },
+    {
+      "id": 3143,
+      "name": "Kharon",
+      "loot": []
+    },
+    {
+      "id": 3152,
+      "name": "Unk'omon",
+      "loot": []
+    },
+    {
+      "id": 3168,
+      "name": "Hans and Greta",
+      "loot": []
+    },
+    {
+      "id": 3169,
+      "name": "The Ugly Goblin",
+      "loot": []
+    },
+    {
+      "id": 3170,
+      "name": "Kaigy Maryla",
+      "loot": []
+    },
+    {
+      "id": 3171,
+      "name": "Sairuh Maryla",
+      "loot": []
+    },
+    {
+      "id": 3172,
+      "name": "Barian Maryla",
+      "loot": []
+    }
+  ],
+  "trash": []
+}

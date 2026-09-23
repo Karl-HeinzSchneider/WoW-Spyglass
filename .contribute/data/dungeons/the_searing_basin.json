@@ -1,0 +1,12 @@
+{
+  "map": 2720,
+  "name": "The Searing Basin",
+  "encounters": [
+    {
+      "id": 3025,
+      "name": "Testwerk",
+      "loot": []
+    }
+  ],
+  "trash": []
+}

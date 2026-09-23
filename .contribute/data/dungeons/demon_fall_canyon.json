@@ -1,0 +1,42 @@
+{
+  "map": 2784,
+  "name": "Demon Fall Canyon",
+  "encounters": [
+    {
+      "id": 3023,
+      "name": "Grimroot",
+      "loot": []
+    },
+    {
+      "id": 3028,
+      "name": "Destructor's Wraith",
+      "loot": []
+    },
+    {
+      "id": 3029,
+      "name": "Zilbagob",
+      "loot": []
+    },
+    {
+      "id": 3030,
+      "name": "Pyranis",
+      "loot": []
+    },
+    {
+      "id": 3024,
+      "name": "Diathorus the Seeker",
+      "loot": []
+    },
+    {
+      "id": 3031,
+      "name": "Hellscream's Phantom",
+      "loot": []
+    },
+    {
+      "id": 3080,
+      "name": "Azgaloth",
+      "loot": []
+    }
+  ],
+  "trash": []
+}
