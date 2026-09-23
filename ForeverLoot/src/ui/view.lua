@@ -480,7 +480,7 @@ function ForeverLootTileMixin:Init(view, node)
     self.link = nil
 
     self.Name:SetText(node.name or "?")
-    local color = node.quality and ITEM_QUALITY_COLORS[node.quality] or HIGHLIGHT_FONT_COLOR
+    local color = node.quality and ITEM_QUALITY_COLORS[node.quality] or NORMAL_FONT_COLOR
     self.Name:SetTextColor(color.r, color.g, color.b)
     self.Info:SetText(node.info or levelRangeText(node) or "")
     self.InfoRight:SetText(node.infoRight or "")
