@@ -448,6 +448,21 @@ local function tilePicture(background, coords)
     return atlas.file or atlas.filename, l + w * c[1], l + w * c[2], t + h * c[3], t + h * c[4]
 end
 
+-- The dark box behind a bottom text: the text's width plus its 6px inset from the picture edge
+-- on both sides, and only when there is a picture under it and a text to read.
+local INFO_BOX_PADDING = 6
+
+---@param box Texture
+---@param text FontString
+---@param hasPicture boolean
+local function fitInfoBox(box, text, hasPicture)
+    local show = hasPicture and (text:GetText() or "") ~= ""
+    box:SetShown(show)
+    if show then
+        box:SetWidth(text:GetStringWidth() + 2 * INFO_BOX_PADDING)
+    end
+end
+
 -- Clicking and hovering work exactly like a row, so those handlers are shared.
 ---@class ForeverLoot.Tile : Button
 ---@field Card Texture
@@ -455,6 +470,8 @@ end
 ---@field Boost Texture
 ---@field TopShade Texture
 ---@field BottomShade Texture
+---@field InfoBox Texture
+---@field InfoRightBox Texture
 ---@field Mask MaskTexture
 ---@field Icon Texture
 ---@field IconMask MaskTexture
@@ -490,6 +507,8 @@ function ForeverLootTileMixin:Init(view, node)
     self.Boost:SetShown(background ~= nil and TILE_PICTURE_BOOST > 0)
     self.TopShade:SetShown(background ~= nil)
     self.BottomShade:SetShown(background ~= nil)
+    fitInfoBox(self.InfoBox, self.Info, background ~= nil)
+    fitInfoBox(self.InfoRightBox, self.InfoRight, background ~= nil)
     -- The icon stands in for a missing picture (centered) or, with `showIcon`, sits at the
     -- picture's left edge, between the name and the bottom texts.
     local showIcon = background == nil or node.showIcon == true

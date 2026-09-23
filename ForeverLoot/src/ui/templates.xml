@@ -105,9 +105,10 @@
 	     the client's bevelled dark list button (common-button-list-large, stretched to the tile);
 	     the picture sits inside the bevel and is cut to the button's own silhouette by using the
 	     same atlas as a mask, so its corners follow the bevel. The name sits at the top left in a
-	     dark box and two small texts (info / infoRight) in the bottom corners over a shade, so
-	     they read on any picture. Without a background the card stays plain and shows the entry's icon in the
-	     middle; with one, `showIcon` puts the icon at the picture's left edge (anchored in Lua). -->
+	     dark box and two small texts (info / infoRight) in the bottom corners, each in a small
+	     dark box of its own, so they read on any picture. Without a background the card stays
+	     plain and shows the entry's icon in the middle; with one, `showIcon` puts the icon at the
+	     picture's left edge (anchored in Lua). -->
 	<Button name="ForeverLootTileTemplate" mixin="ForeverLootTileMixin" registerForClicks="LeftButtonUp, RightButtonUp" virtual="true">
 		<Size x="196" y="84"/>
 		<Layers>
@@ -137,7 +138,8 @@
 			</Layer>
 			<Layer level="BORDER">
 				<!-- Darkens the picture behind the texts: a translucent black box a little taller
-				     than the name across the top, and a band fading in towards the bottom edge.
+				     than the name across the top, a band fading in towards the bottom edge, and a
+				     box behind each bottom text in its corner (as wide as the text, set in Lua).
 				     How dark the tiles look is mostly their alphas (0 = untouched picture, 1 =
 				     black) and heights. -->
 				<Texture parentKey="TopShade">
@@ -159,6 +161,20 @@
 						<MaxColor r="0" g="0" b="0" a="0"/>
 					</Gradient>
 				</Texture>
+				<Texture parentKey="InfoBox" hidden="true">
+					<Size x="1" y="18"/>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" relativeKey="$parent.Background"/>
+					</Anchors>
+					<Color r="0" g="0" b="0" a="0.6"/>
+				</Texture>
+				<Texture parentKey="InfoRightBox" hidden="true">
+					<Size x="1" y="18"/>
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT" relativeKey="$parent.Background"/>
+					</Anchors>
+					<Color r="0" g="0" b="0" a="0.6"/>
+				</Texture>
 				<!-- The card's silhouette, shrunk to the picture rect, clips the picture and shades. -->
 				<MaskTexture parentKey="Mask" atlas="common-button-list-large" hWrapMode="CLAMPTOBLACKADDITIVE" vWrapMode="CLAMPTOBLACKADDITIVE">
 					<Anchors>
@@ -170,6 +186,8 @@
 						<MaskedTexture childKey="Boost"/>
 						<MaskedTexture childKey="TopShade"/>
 						<MaskedTexture childKey="BottomShade"/>
+						<MaskedTexture childKey="InfoBox"/>
+						<MaskedTexture childKey="InfoRightBox"/>
 					</MaskedTextures>
 				</MaskTexture>
 			</Layer>
