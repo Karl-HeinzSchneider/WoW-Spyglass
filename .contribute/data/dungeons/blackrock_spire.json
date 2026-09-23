@@ -182,6 +182,7 @@
     {
       "id": 3070,
       "name": "Lord Valthalak",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\lord_valthalak.blp",
       "displayID": 14308,
       "loot": []
     }

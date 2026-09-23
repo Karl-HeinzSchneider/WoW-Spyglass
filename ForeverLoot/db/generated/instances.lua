@@ -12,14 +12,14 @@ Data:AddInstance(33, {
     backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
     bosses = { 2748, 2749, 2750, 2751, 2752, 2753, 2754, 2755 },
 })
-Data:AddBoss(2748, { instanceID = 33, order = 0, displayID = 524 }) -- Rethilgore
-Data:AddBoss(2749, { instanceID = 33, order = 1000, displayID = 524 }) -- Razorclaw the Butcher
+Data:AddBoss(2748, { instanceID = 33, order = 0, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\rethilgore.blp", displayID = 524 }) -- Rethilgore
+Data:AddBoss(2749, { instanceID = 33, order = 1000, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\rethilgore.blp", displayID = 524 }) -- Razorclaw the Butcher
 Data:AddBoss(2750, { instanceID = 33, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Baron Silverlaine" }) -- Baron Silverlaine
 Data:AddBoss(2751, { instanceID = 33, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Commander Springvale" }) -- Commander Springvale
-Data:AddBoss(2752, { instanceID = 33, order = 4000, displayID = 522 }) -- Odo the Blindwatcher
-Data:AddBoss(2753, { instanceID = 33, order = 5000, displayID = 2352 }) -- Fenrus the Devourer
-Data:AddBoss(2754, { instanceID = 33, order = 6000, displayID = 11179 }) -- Wolf Master Nandos
-Data:AddBoss(2755, { instanceID = 33, order = 7000, displayID = 2353 }) -- Archmage Arugal
+Data:AddBoss(2752, { instanceID = 33, order = 4000, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\odo_the_blindwatcher.blp", displayID = 522 }) -- Odo the Blindwatcher
+Data:AddBoss(2753, { instanceID = 33, order = 5000, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\fenrus_the_devourer.blp", displayID = 2352 }) -- Fenrus the Devourer
+Data:AddBoss(2754, { instanceID = 33, order = 6000, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\wolf_master_nandos.blp", displayID = 11179 }) -- Wolf Master Nandos
+Data:AddBoss(2755, { instanceID = 33, order = 7000, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\archmage_arugal.blp", displayID = 2353 }) -- Archmage Arugal
 
 -- Stormwind Stockade
 Data:AddInstance(34, {
@@ -32,11 +32,11 @@ Data:AddInstance(34, {
     backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
     bosses = { 2756, 2757, 2758, 2759, 2760 },
 })
-Data:AddBoss(2756, { instanceID = 34, order = 0, displayID = 517 }) -- Targorr the Dread
-Data:AddBoss(2757, { instanceID = 34, order = 1000, displayID = 825 }) -- Kam Deepfury
-Data:AddBoss(2758, { instanceID = 34, order = 2000, displayID = 3250 }) -- Hamhock
-Data:AddBoss(2759, { instanceID = 34, order = 3000, displayID = 2149 }) -- Dextren Ward
-Data:AddBoss(2760, { instanceID = 34, order = 4000, displayID = 1621 }) -- Bazil Thredd
+Data:AddBoss(2756, { instanceID = 34, order = 0, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\targorr_the_dread.blp", displayID = 517 }) -- Targorr the Dread
+Data:AddBoss(2757, { instanceID = 34, order = 1000, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\kam_deepfury.blp", displayID = 825 }) -- Kam Deepfury
+Data:AddBoss(2758, { instanceID = 34, order = 2000, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\hamhock.blp", displayID = 3250 }) -- Hamhock
+Data:AddBoss(2759, { instanceID = 34, order = 3000, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\dextren_ward.blp", displayID = 2149 }) -- Dextren Ward
+Data:AddBoss(2760, { instanceID = 34, order = 4000, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\bazil_thredd.blp", displayID = 1621 }) -- Bazil Thredd
 
 -- Deadmines
 Data:AddInstance(36, {
@@ -219,9 +219,9 @@ Data:AddInstance(129, {
     bosses = { 2780, 2781, 2782, 2783, 2784, 2785 },
 })
 Data:AddBoss(2780, { instanceID = 129, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Tutenkash" }) -- Tuten'kash
-Data:AddBoss(2781, { instanceID = 129, order = 1000, displayID = 6124 }) -- Plaguemaw the Rotting
+Data:AddBoss(2781, { instanceID = 129, order = 1000, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\plaguemaw_the_rotting.blp", displayID = 6124 }) -- Plaguemaw the Rotting
 Data:AddBoss(2782, { instanceID = 129, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Mordresh Fire Eye" }) -- Mordresh Fire Eye
-Data:AddBoss(2783, { instanceID = 129, order = 3000, displayID = 11382 }) -- Ragglesnout
+Data:AddBoss(2783, { instanceID = 129, order = 3000, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\ragglesnout.blp", displayID = 11382 }) -- Ragglesnout
 Data:AddBoss(2784, { instanceID = 129, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Glutton" }) -- Glutton
 Data:AddBoss(2785, { instanceID = 129, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Amnennar the Coldbringer" }) -- Amnennar the Coldbringer
 
@@ -288,7 +288,7 @@ Data:AddBoss(3062, { instanceID = 229, order = 9000, portrait = "Interface\\Enco
 Data:AddBoss(3063, { instanceID = 229, order = 10000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Warchief Rend Blackhand" }) -- Warchief Rend Blackhand
 Data:AddBoss(3068, { instanceID = 229, order = 11000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-The Beast" }) -- The Beast
 Data:AddBoss(3069, { instanceID = 229, order = 12000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-General Drakkisath" }) -- General Drakkisath
-Data:AddBoss(3070, { instanceID = 229, order = 13000, displayID = 14308 }) -- Lord Valthalak
+Data:AddBoss(3070, { instanceID = 229, order = 13000, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\lord_valthalak.blp", displayID = 14308 }) -- Lord Valthalak
 
 -- Blackrock Depths
 Data:AddInstance(230, {
@@ -479,7 +479,7 @@ Data:AddInstance(429, {
 Data:AddBoss(343, { instanceID = 429, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Zevrim Thornhoof" }) -- Zevrim Thornhoof
 Data:AddBoss(344, { instanceID = 429, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hydrospawn" }) -- Hydrospawn
 Data:AddBoss(345, { instanceID = 429, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lethtendris" }) -- Lethtendris
-Data:AddBoss(2792, { instanceID = 429, order = 2500, displayID = 7552 }) -- Pusillin
+Data:AddBoss(2792, { instanceID = 429, order = 2500, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\pusillin.blp", displayID = 7552 }) -- Pusillin
 Data:AddBoss(346, { instanceID = 429, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Alzzin the Wildshaper" }) -- Alzzin the Wildshaper
 Data:AddBoss(350, { instanceID = 429, order = 3500, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Tendris Warpwood" }) -- Tendris Warpwood
 Data:AddBoss(347, { instanceID = 429, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Illyanna Ravenoak" }) -- Illyanna Ravenoak
@@ -493,8 +493,8 @@ Data:AddBoss(365, { instanceID = 429, order = 11000, portrait = "Interface\\Enco
 Data:AddBoss(366, { instanceID = 429, order = 12000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Captain Kromcrush" }) -- Captain Kromcrush
 Data:AddBoss(367, { instanceID = 429, order = 13000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-ChoRush the Observer" }) -- Cho'Rush the Observer
 Data:AddBoss(368, { instanceID = 429, order = 14000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-King Gordok" }) -- King Gordok
-Data:AddBoss(2793, { instanceID = 429, order = 15000, displayID = 14556 }) -- Lord Hel'nurath
-Data:AddBoss(2794, { instanceID = 429, order = 16000, displayID = 11250 }) -- Tsu'zee
+Data:AddBoss(2793, { instanceID = 429, order = 15000, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\lord_helnurath.blp", displayID = 14556 }) -- Lord Hel'nurath
+Data:AddBoss(2794, { instanceID = 429, order = 16000, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\tsuzee.blp", displayID = 11250 }) -- Tsu'zee
 
 -- Blackwing Lair
 Data:AddInstance(469, {

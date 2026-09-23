@@ -14,6 +14,7 @@
     {
       "id": 2748,
       "name": "Rethilgore",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\rethilgore.blp",
       "displayID": 524,
       "loot": [
         {
@@ -33,6 +34,7 @@
     {
       "id": 2749,
       "name": "Razorclaw the Butcher",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\rethilgore.blp",
       "displayID": 524,
       "loot": [
         {
@@ -90,6 +92,7 @@
     {
       "id": 2752,
       "name": "Odo the Blindwatcher",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\odo_the_blindwatcher.blp",
       "displayID": 522,
       "loot": [
         {
@@ -109,6 +112,7 @@
     {
       "id": 2753,
       "name": "Fenrus the Devourer",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\fenrus_the_devourer.blp",
       "displayID": 2352,
       "loot": [
         {
@@ -124,6 +128,7 @@
     {
       "id": 2754,
       "name": "Wolf Master Nandos",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\wolf_master_nandos.blp",
       "displayID": 11179,
       "loot": [
         {
@@ -139,6 +144,7 @@
     {
       "id": 2755,
       "name": "Archmage Arugal",
+      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\archmage_arugal.blp",
       "displayID": 2353,
       "loot": [
         {
