@@ -39,9 +39,12 @@ the data they consume is described in `.contribute/CLAUDE.md`.
 - `reference.ts` — `Reference`: instances (`Map` rows with `InstanceType` 1/2 = dungeon/raid that
   have at least one encounter, minus `excludeMaps`), encounters (`DungeonEncounter`, ordered by
   `OrderIndex`; one difficulty per map, the normal 5-player set, see `ENCOUNTER_DIFFICULTIES`), the recipe tables from `recipes.ts` (`skillLines`, `recipes`, `categories`,
-  `itemSkills`), `factions` (`Faction` rows with a reputation bar), the scanned items, per-locale
-  name tables (items, encounters, instances, skillLines, categories, tools), `nameOf()` for
-  comments and messages.
+  `itemSkills`), `factions` (`Faction` rows with a reputation bar), the scanned items,
+  `wagoItemNames` (`ItemSparse.Display_lang` per configured locale), per-locale name tables
+  (items, encounters, instances, skillLines, categories, tools), `nameOf()` for comments and
+  messages. `refreshItemNames` builds the item tables: `ItemSparse`'s name in each non-English
+  locale for a scanned item whose enUS name there is the scanned one, then the names the scans
+  carry, which win.
 - `recipes.ts` — the profession recipe database from wago.tools: `buildRecipes(source, localeNames)`
   (pure, tested) turns `SkillLine`, `SkillLineAbility`, `SpellReagents`, `SpellEffect`,
   `SpellTotems`, `TradeSkillCategory`, `TotemCategory` and `SpellName` into `Recipe`s keyed by

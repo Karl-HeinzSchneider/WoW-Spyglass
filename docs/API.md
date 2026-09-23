@@ -329,7 +329,8 @@ caught and logged. The usage string is appended to `/fl` help while registered.
 `ForeverLoot.Data` holds every scanned item and where it drops. ForeverLoot ships its data as
 generated files (`ForeverLoot/db/generated/` plus non-English names in
 `ForeverLoot_Locale/db/generated/`, built by the root TypeScript tools from in-game item scans, the
-curated drop JSON in `.contribute/` and wago.tools' instance/encounter tables); other addons may
+curated drop JSON in `.contribute/` and wago.tools' instance/encounter tables and localized item
+names); other addons may
 add to it with the same calls. The scraper companion adds whatever it scans or sees dropping
 in-game (`ForeverLootScraperDB.global.discovered`, see `ForeverLoot_Scraper/src/discovery.lua`),
 so `Data.items` can grow at runtime while the scraper is enabled.

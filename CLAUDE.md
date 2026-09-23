@@ -42,7 +42,8 @@ wago.tools' `Map` + `DungeonEncounter` tables for the build pinned in `.contribu
 (`SkillLineAbility`, `SpellReagents`, `SpellEffect`, …; recipe ids = spell ids), shipped only
 when the scans confirm the item they make, and the `Faction` list. `ItemSparse` agrees with the
 scans on the items it has but lacks thousands of this server's items, so it is read only for
-recipe items' skill requirements — never as an item source.
+recipe items' skill requirements and for the non-English names of scanned items whose English
+name it matches — never as an item source.
 
 ## Commands (Node 20+, run from the root after `npm install` once)
 

@@ -20,8 +20,9 @@ records the scans is `ForeverLoot_Scraper/`.
 ```
 
 `config.json`: `build` (wago.tools build, bump when the client updates; the download is cached
-in the root `.cache/<build>/`, delete it to refresh), `locales` (instance/boss name tables to
-ship; enUS is always first; item names ship for every locale that was scanned), `excludeMaps`
+in the root `.cache/<build>/`, delete it to refresh), `locales` (the languages to ship
+instance, boss, profession and item names for from wago.tools; enUS is always first; item names
+also ship for every locale that was scanned), `excludeMaps`
 (maps with encounters to leave out, e.g. test maps), `itemsPerFile` (rows per generated
 `items_NNN.lua`).
 
@@ -43,8 +44,9 @@ normal 5-player set is used, the other ids are unknown to the tooling. Professio
 `SkillLineAbility`, `SpellReagents`, `SpellEffect`, `SpellTotems`, `TradeSkillCategory`,
 `TotemCategory`): recipe ids are spell ids, profession ids are `SkillLine.ID`. Factions are
 checked against `Faction`. wago.tools' `ItemSparse` is incomplete for this server but agrees
-with the scans on the items it has, so the tooling reads one thing from it: the skill a
-scanned recipe item requires. Drops and item lists are hand-curated tables; they meet the
+with the scans on the items it has, so the tooling reads two things from it: the skill a
+scanned recipe item requires, and a scanned item's name in the other configured locales when
+its English name there is the scanned one (a name scanned on a client of that language wins). Drops and item lists are hand-curated tables; they meet the
 scans only through item ids.
 
 | Output | Source under `data/` |
@@ -56,7 +58,7 @@ scans only through item ids.
 | `…/recipes/<profession>.lua` | wago.tools recipe tables, one file per profession, only recipes whose product (enchants: every reagent) is in the scans |
 | `…/locales/<locale>/crafting.lua` | profession, trade skill category and tool names from wago.tools, for the configured locales |
 | `…/locales/enUS/*.lua` | English fallback names (items from scans, instances/bosses from wago) |
-| `ForeverLoot_Locale/db/generated/locales/<locale>/items.lua` | scanned names of every non-English locale |
+| `ForeverLoot_Locale/db/generated/locales/<locale>/items.lua` | names of the scanned items in every configured or scanned non-English locale: wago.tools `ItemSparse`, overridden by names scanned in that language |
 | `ForeverLoot_Locale/db/generated/locales/<locale>/instances.lua`, `bosses.lua` | wago.tools names for every configured non-English locale |
 | each `generated.xml` | the loader listed in that addon's TOC |
 

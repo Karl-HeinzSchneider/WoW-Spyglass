@@ -355,10 +355,12 @@ export function build(ref: Reference, curated: CuratedFile[], lists: ListFile[],
   }
 
   // The core always ships the English fallback. Every additional locale is an optional companion
-  // payload, including item names when that locale has been scanned in-game.
+  // payload: item names from wago.tools' ItemSparse for the configured locales, and from in-game
+  // scans on a client of that language (see refreshItemNames).
   for (const locale of ref.itemLocales) {
     const add = locale === FALLBACK_LOCALE ? addCore : addLocale;
-    add(`locales/${locale}/items.lua`, emitNames(locale, "items", ref.names.get(locale)!.items, ".contribute/items (in-game scans)"));
+    const source = locale === FALLBACK_LOCALE ? ".contribute/items (in-game scans)" : `.contribute/items (in-game scans) and wago.tools ItemSparse build ${ref.build}`;
+    add(`locales/${locale}/items.lua`, emitNames(locale, "items", ref.names.get(locale)!.items, source));
   }
   // Bosses an instance file names differently from the game table (renamed by the server): the
   // file's name in every language, since the table's names for them are all the outdated one.
