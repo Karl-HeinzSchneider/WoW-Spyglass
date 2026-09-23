@@ -59,9 +59,12 @@ the data they consume is described in `.contribute/CLAUDE.md`.
 - `items.ts` — `ScannedItem` (field meanings = `Data.ITEM` in the core) and the
   `.contribute/data/items/items_<start>.json` store: one file per `ID_RANGE` = 10 000 ids, keyed
   by id, sorted, fixed field order, empty ranges removed. Machine-written.
-- `curated.ts` — `CuratedInstance/Encounter/Loot` (the dungeon/raid JSON), `loadCurated`,
+- `curated.ts` — `CuratedInstance/Encounter/Loot/Quest` (the dungeon/raid JSON), `loadCurated`,
   `validate` (ids against the reference, folder vs `InstanceType`, duplicates, chance range,
-  missing encounters added on fix), `serialize` (stable key order), and the shared `Checker`
+  missing encounters added on fix; the instance's own `trash` list — added empty on fix, since
+  every instance has one — and its `quests`, whose ids must be positive and unique and whose
+  `side` must be one of `QUEST_SIDES`; a quest title can only be warned about, no game table
+  has one), `serialize` (stable key order), and the shared `Checker`
   whose `checkItemRow` every validator uses: resolves name-only rows to an id when unambiguous,
   rejects duplicates, rewrites names from the scans, warns on unscanned ids.
 - `lists.ts` — `CuratedList/Row` (the crafting/pvp/collections/reputation JSON), `ROWS_KEY`,
@@ -88,7 +91,9 @@ the data they consume is described in `.contribute/CLAUDE.md`.
   instance name); new rows get a `chance` only after `MIN_KILLS_FOR_CHANCE` = 10 kills; existing
   rows are never changed, only reported.
 - `generate.ts` — `build()` produces both trees in memory (`items/items_NNN.lua` chunks of
-  `itemsPerFile`, `instances.lua`, `loot/<slug>.lua`, `<kind>/<slug>.lua`,
+  `itemsPerFile`, `instances.lua`, `loot/<slug>.lua` for every file `hasLoot` is true for (a
+  boss's drops via `AddBossLoot`, the instance's trash via `AddTrashLoot`, its quests via
+  `AddQuests`), `<kind>/<slug>.lua`,
   `recipes/<profession>.lua` for every profession with shipped recipes (`AddCategories` +
   `AddRecipes`, rows in category order), `locales/<locale>/*` (`items`, `instances`, `bosses`,
   `crafting` = skill line/category/tool names) routed to the core for enUS and to the locale
@@ -108,8 +113,8 @@ the data they consume is described in `.contribute/CLAUDE.md`.
 
 - `tests/tooling/*.test.ts` — node:test, `npm run test:tooling` (`tsx --test`). Cover pure
   functions (`loadDiscovered` from SavedVariables, reputation list flattening and
-  serialization, `buildRecipes`/`shipsRecipe` on hand-written table rows). Add one next to a
-  new parsing/serialization rule.
+  serialization, `buildRecipes`/`shipsRecipe` on hand-written table rows, the instance files'
+  `trash`/`quests` validation and round-trip). Add one next to a new parsing/serialization rule.
 - There is no Lua test suite; Lua is checked by `npm run check:lua` (syntax) and in-game.
 
 ## Conventions

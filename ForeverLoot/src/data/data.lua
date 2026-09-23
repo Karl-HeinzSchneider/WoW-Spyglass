@@ -12,6 +12,9 @@ local log = app.logger
 --   Data.instances[id]      = { type = "dungeon", bosses = { bossID, ... }, minLevel = 15, ... }
 --   Data.bosses[bossID]     = { instanceID = 36, order = 6000 }   -- bossID = DungeonEncounter id
 --   Data.bossLoot[bossID]   = { { itemID, chance }, ... }
+--   Data.trashLoot[instID]  = { { itemID, chance }, ... }   -- what the instance's non-boss enemies drop
+--   Data.quests[questID]    = { id = 26, name = "...", side = "Alliance", instanceID = 36, items = { { itemID }, ... } }
+--   Data.instanceQuests[id] = { questID, ... }              -- the instance's quests, in curated order
 --   Data.lists[kind][id]    = { name = "Argent Dawn", icon = ..., factionID = 529 }  -- curated item lists;
 --                             kind = "crafting" | "pvp" | "collections" | "reputation", id = the file's slug
 --   Data.listLoot[kind][id] = { { itemID, standing = "Honored", ... }, ... }    -- the list's rows
@@ -89,6 +92,15 @@ local RECIPE = {
 
 ---@alias ForeverLoot.LootRow { [1]: integer, [2]: number? }  # itemID, drop chance 0..1 (nil = unknown)
 
+-- A quest of an instance and what it rewards. This client ships no quest table, so the title is
+-- curated data: `C_QuestLog` only knows quests the character has seen.
+---@class ForeverLoot.Quest
+---@field id integer  # quest id
+---@field name? string  # quest title, as curated
+---@field side? "Alliance"|"Horde"|"Both"  # faction the quest is available to; nil = both
+---@field instanceID? integer  # the instance it was registered for, set by Data:AddQuests
+---@field items ForeverLoot.LootRow[]  # the items it rewards
+
 ---@alias ForeverLoot.RecipeRow { [1]: integer, [2]: integer, [3]: integer|integer[], [4]: integer, [5]: integer, [6]: integer, [7]: integer, [8]: integer, [9]: integer[]?, [10]: integer[]?, [11]: boolean?, [12]: integer? }
 
 ---@class ForeverLoot.Category
@@ -121,11 +133,12 @@ local RECIPE = {
 -- A crafting row for a recipe that makes no item (an enchant) has no item, only its `spell`.
 ---@alias ForeverLoot.ListLootRow { [1]: integer?, [string]: any }
 
--- Where an item comes from: a boss (`chance`), a row of a list (`kind`, `id` and that row's
--- named fields, e.g. `standing`) or a recipe that makes it (`skillLineID`).
+-- Where an item comes from: a boss or an instance's trash (`chance`), a quest (`instanceID`,
+-- `side`), a row of a list (`kind`, `id` and that row's named fields, e.g. `standing`) or a
+-- recipe that makes it (`skillLineID`).
 ---@class ForeverLoot.ItemSource
----@field kind "boss"|"recipe"|ForeverLoot.ListKind
----@field id integer|string  # bossID for kind "boss", the recipe's spell id for "recipe", the list id otherwise
+---@field kind "boss"|"trash"|"quest"|"recipe"|ForeverLoot.ListKind
+---@field id integer|string  # bossID for "boss", the instance id for "trash", the quest id for "quest", the recipe's spell id for "recipe", the list id otherwise
 ---@field chance? number
 ---@field skillLineID? integer
 ---@field [string] any
@@ -147,6 +160,9 @@ local RECIPE = {
 ---@field instances table<integer, ForeverLoot.Instance>
 ---@field bosses table<integer, ForeverLoot.Boss>
 ---@field bossLoot table<integer, ForeverLoot.LootRow[]>
+---@field trashLoot table<integer, ForeverLoot.LootRow[]>  # keyed by instance id
+---@field quests table<integer, ForeverLoot.Quest>  # keyed by quest id
+---@field instanceQuests table<integer, integer[]>  # instance id -> quest ids in curated order
 ---@field lists table<ForeverLoot.ListKind, table<string, ForeverLoot.List>>
 ---@field listLoot table<ForeverLoot.ListKind, table<string, ForeverLoot.ListLootRow[]>>
 ---@field recipes table<integer, ForeverLoot.RecipeRow>
@@ -159,6 +175,9 @@ local Data = {
     instances = {},
     bosses = {},
     bossLoot = {},
+    trashLoot = {},
+    quests = {},
+    instanceQuests = {},
     lists = {},
     listLoot = {},
     recipes = {},
@@ -263,6 +282,56 @@ function Data:AddBossLoot(bossID, rows)
     end
     for _, row in ipairs(rows) do
         loot[#loot + 1] = row
+    end
+    invalidate()
+end
+
+-- Appends loot rows `{ { itemID, chance }, ... }` to an instance's trash — what its non-boss
+-- enemies drop. Keyed by the instance, because trash belongs to no encounter.
+---@param instanceID integer
+---@param rows ForeverLoot.LootRow[]
+function Data:AddTrashLoot(instanceID, rows)
+    if type(instanceID) ~= "number" or type(rows) ~= "table" then
+        log:error("Data.AddTrashLoot: expected (number, table), got (%s, %s)", type(instanceID), type(rows))
+        return
+    end
+    local loot = self.trashLoot[instanceID]
+    if not loot then
+        loot = {}
+        self.trashLoot[instanceID] = loot
+    end
+    for _, row in ipairs(rows) do
+        loot[#loot + 1] = row
+    end
+    invalidate()
+end
+
+-- Appends quests to an instance: `{ { id = 26, name = "...", side = "Alliance", items = { { itemID }, ... } }, ... }`.
+-- Each quest is stored by its id with `instanceID` filled in, and listed under the instance in
+-- the order it was added; adding a quest id again replaces it.
+---@param instanceID integer
+---@param quests ForeverLoot.Quest[]
+function Data:AddQuests(instanceID, quests)
+    if type(instanceID) ~= "number" or type(quests) ~= "table" then
+        log:error("Data.AddQuests: expected (number, table), got (%s, %s)", type(instanceID), type(quests))
+        return
+    end
+    local ids = self.instanceQuests[instanceID]
+    if not ids then
+        ids = {}
+        self.instanceQuests[instanceID] = ids
+    end
+    for _, quest in ipairs(quests) do
+        if type(quest) ~= "table" or type(quest.id) ~= "number" then
+            log:error("Data.AddQuests: quest without an id in instance %d", instanceID)
+        else
+            quest.instanceID = instanceID
+            quest.items = quest.items or {}
+            if not self.quests[quest.id] then
+                ids[#ids + 1] = quest.id
+            end
+            self.quests[quest.id] = quest
+        end
     end
     invalidate()
 end
@@ -533,6 +602,45 @@ function Data:GetBossLoot(bossID)
     return self.bossLoot[bossID] or NO_SOURCES
 end
 
+-- What the instance's non-boss enemies drop.
+---@param instanceID integer
+---@return ForeverLoot.LootRow[]
+function Data:GetTrashLoot(instanceID)
+    return self.trashLoot[instanceID] or NO_SOURCES
+end
+
+---@param questID integer
+---@return ForeverLoot.Quest?
+function Data:GetQuest(questID)
+    return self.quests[questID]
+end
+
+-- A quest's title: the client's when it knows the quest, else the curated one, else "#id".
+---@param questID integer
+---@return string
+function Data:GetQuestName(questID)
+    local title = C_QuestLog and C_QuestLog.GetTitleForQuestID and C_QuestLog.GetTitleForQuestID(questID)
+    if type(title) == "string" and title ~= "" then
+        return title
+    end
+    local quest = self.quests[questID]
+    if quest and type(quest.name) == "string" and quest.name ~= "" then
+        return quest.name
+    end
+    return "#" .. questID
+end
+
+-- The instance's quests, in the order they were added.
+---@param instanceID integer
+---@return ForeverLoot.Quest[]
+function Data:GetInstanceQuests(instanceID)
+    local quests = {}
+    for _, questID in ipairs(self.instanceQuests[instanceID] or NO_SOURCES) do
+        quests[#quests + 1] = self.quests[questID]
+    end
+    return quests
+end
+
 ---@param kind ForeverLoot.ListKind
 ---@param id string
 ---@return ForeverLoot.List?
@@ -644,6 +752,16 @@ function Data:GetItemSources(itemID)
         for bossID, loot in pairs(self.bossLoot) do
             for _, row in ipairs(loot) do
                 add(row[1], { kind = "boss", id = bossID, chance = row[2] })
+            end
+        end
+        for instanceID, loot in pairs(self.trashLoot) do
+            for _, row in ipairs(loot) do
+                add(row[1], { kind = "trash", id = instanceID, chance = row[2] })
+            end
+        end
+        for questID, quest in pairs(self.quests) do
+            for _, row in ipairs(quest.items or NO_SOURCES) do
+                add(row[1], { kind = "quest", id = questID, instanceID = quest.instanceID, side = quest.side })
             end
         end
         for kind, byID in pairs(self.listLoot) do

@@ -1,7 +1,7 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { dirname, relative, resolve } from "node:path";
 import { type Config, FALLBACK_LOCALE, LOCALE_OUTPUT_DIR, OUTPUT_DIR, ROOT } from "./config.js";
-import { type CuratedFile } from "./curated.js";
+import { type CuratedFile, type CuratedLoot } from "./curated.js";
 import { type ScannedItem } from "./items.js";
 import { type ListFile, type ListSection, ROW_FIELDS, rowsOf } from "./lists.js";
 import { header, luaFields, luaString, luaValue } from "./lua.js";
@@ -90,6 +90,23 @@ function sourceLabel(path: string): string {
   return relative(ROOT, path).replace(/\\/g, "/").replace(/^\.contribute\/data\//, ".contribute/");
 }
 
+/** One `{ itemID, chance }` loot row per line, with the item's name as a comment. */
+function emitLootRows(rows: CuratedLoot[], ref: Reference, indent: string): string[] {
+  const out: string[] = [];
+  for (const row of rows) {
+    if (row.item === undefined) continue; // name-only row that `npm run fix` hasn't resolved yet
+    const chance = row.chance !== undefined ? `, ${luaValue(row.chance)}` : "";
+    out.push(`${indent}{ ${row.item}${chance} }, -- ${nameOf(ref, "items", row.item)}\n`);
+  }
+  return out;
+}
+
+/** True when the file has anything to ship: a boss's drops, the instance's trash or a quest. */
+export function hasLoot(file: CuratedFile): boolean {
+  const d = file.data;
+  return d.encounters.some((e) => e.loot?.length) || !!d.trash?.length || !!d.quests?.length;
+}
+
 function emitLoot(file: CuratedFile, ref: Reference): string {
   const rel = sourceLabel(file.path);
   const out = [header(rel), "local Data = ForeverLoot.Data\n"];
@@ -97,10 +114,25 @@ function emitLoot(file: CuratedFile, ref: Reference): string {
   for (const enc of file.data.encounters) {
     if (!enc.loot?.length) continue;
     out.push(`\nData:AddBossLoot(${enc.id}, { -- ${nameOf(ref, "encounters", enc.id)}\n`);
-    for (const row of enc.loot) {
-      if (row.item === undefined) continue; // name-only row that `npm run fix` hasn't resolved yet
-      const chance = row.chance !== undefined ? `, ${luaValue(row.chance)}` : "";
-      out.push(`    { ${row.item}${chance} }, -- ${nameOf(ref, "items", row.item)}\n`);
+    out.push(...emitLootRows(enc.loot, ref, "    "));
+    out.push("})\n");
+  }
+  // The instance's own two categories, keyed by the map rather than by an encounter.
+  if (file.data.trash?.length) {
+    out.push(`\nData:AddTrashLoot(${file.data.map}, {\n`);
+    out.push(...emitLootRows(file.data.trash, ref, "    "));
+    out.push("})\n");
+  }
+  if (file.data.quests?.length) {
+    out.push(`\nData:AddQuests(${file.data.map}, {\n`);
+    for (const quest of file.data.quests) {
+      const fields = luaFields({ ...quest }, ["id", "name", "side"], "").join(" ");
+      const items = emitLootRows(quest.items ?? [], ref, "        ");
+      if (items.length === 0) {
+        out.push(`    { ${fields} items = {} },\n`);
+        continue;
+      }
+      out.push(`    { ${fields} items = {\n`, ...items, "    } },\n");
     }
     out.push("})\n");
   }
@@ -282,7 +314,7 @@ export function build(ref: Reference, curated: CuratedFile[], lists: ListFile[],
   addCore("instances.lua", emitInstances(ref, byMap));
 
   for (const file of [...curated].sort((a, b) => a.slug.localeCompare(b.slug))) {
-    if (file.data.encounters.some((e) => e.loot?.length)) addCore(`loot/${file.slug}.lua`, emitLoot(file, ref));
+    if (hasLoot(file)) addCore(`loot/${file.slug}.lua`, emitLoot(file, ref));
   }
 
   // Every list file becomes a tile in its module, rows or not (an empty one asks for contributions).

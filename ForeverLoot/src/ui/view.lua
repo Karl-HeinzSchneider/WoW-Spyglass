@@ -188,13 +188,13 @@ local function itemKindTexts(classID, subclassID, equipSlot)
     return class, subclass ~= class and subclass or ""
 end
 
--- Quest titles come from the client when it knows the quest, else the id.
+-- Quest titles come from the client when it knows the quest, else from the curated data, else
+-- the id (see Data:GetQuestName).
 local QUEST_LABEL = "Quest: "
 ---@param questID integer
 ---@return string
 local function questTitle(questID)
-    local title = C_QuestLog and C_QuestLog.GetTitleForQuestID and C_QuestLog.GetTitleForQuestID(questID)
-    return title or ("#" .. questID)
+    return Data:GetQuestName(questID)
 end
 
 ---@class ForeverLoot.ListRow : Button

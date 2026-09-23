@@ -135,7 +135,9 @@ picture standing on its left, the name and the two info texts beside it, two car
 `InstanceFolder` nodes are card folders: each `BossFolder(bossID)` carries what the database
 knows about the boss — portrait (a texture, or the model's display id for bosses without art), `info` as "<level> <creature type>" (e.g. "60 Beast"), `quests`,
 and `infoRight` reserved for its *drops of interest* (hidden until the planned favorites
-system decides what counts).
+system decides what counts). After the bosses come the instance's own two cards,
+`TrashFolder(instanceID)` and `QuestFolder(instanceID)` — both always present, both showing a
+contribution hint while the database has nothing for them.
 
 ```lua
 ForeverLoot:RegisterModule({
@@ -228,6 +230,13 @@ Constructors (optional sugar):
 - `ForeverLoot.InstanceFolders(type)` — folders for every DB instance of `type` (`"dungeon"` / `"raid"`)
 - `ForeverLoot.InstanceFolder(instanceID)` / `ForeverLoot.BossFolder(bossID)` / `ForeverLoot.BossLootEntries(bossID)` —
   DB-backed folders: instance → bosses → drops with `chance`
+- `ForeverLoot.TrashFolder(instanceID)` / `ForeverLoot.TrashLootEntries(instanceID)` — the instance's
+  trash card and its drops: what the enemies between the bosses drop (`Data:GetTrashLoot`), auto-grouped
+  like a boss's loot and with the drop count as `info`
+- `ForeverLoot.QuestFolder(instanceID)` / `ForeverLoot.InstanceQuestEntries(instanceID)` — the instance's
+  quest card and its contents: one `Subheader` per quest (title and id, plus the faction when the quest's
+  `side` restricts it) followed by the items that quest rewards. The card carries the quest ids in
+  `quests`, so it shows the same "!" and title list a boss with quests does.
 - `ForeverLoot.ListFolders(kind, opts?)` — folders for every curated list of `kind` (`"crafting"`, `"pvp"`,
   `"collections"`, `"reputation"`), by `order` then name; the built-in modules of those names are exactly this
 - `ForeverLoot.ListFolder(kind, id, opts?)` / `ForeverLoot.ListEntries(kind, id)` — one list as a two-column
@@ -331,6 +340,9 @@ Data.items[5188]     -- { quality, itemLevel, reqLevel, classID, subclassID, equ
 Data.instances[36]   -- { type = "dungeon", bosses = { 2741, ... }, minLevel = 15, maxLevel = 21, expansionID = 0, icon = "..." }
 Data.bosses[2747]    -- { instanceID = 36, order = 6000 }
 Data.bossLoot[2747]  -- { { 5188, 0.9 }, { 5191 }, ... }   -- { itemID, chance 0..1 or nil }
+Data.trashLoot[36]   -- { { 1935, 0.01 }, ... }   -- same rows, keyed by the instance: what its non-boss enemies drop
+Data.quests[166]     -- { id = 166, name = "Underground Assault", side = "Alliance", instanceID = 36, items = { { 6220 }, ... } }
+Data.instanceQuests[36] -- { 166, ... }   -- the instance's quest ids, in curated order
 Data.lists.reputation.argent_dawn      -- { name = "Argent Dawn", icon = "...", order = 1, factionID = 529 }
 Data.listLoot.reputation.argent_dawn   -- { { 13209, standing = "Friendly" }, ... }   -- { itemID, field = value, ... }
 Data.recipes[2661]   -- { skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto, taughtBy };
@@ -368,6 +380,13 @@ Adding data (any call may be repeated; every one invalidates the caches and fire
 - `Data:AddItems({ [itemID] = { quality, ilvl, reqLevel, classID, subclassID, equipLoc, bind, icon, stats, ... }, ... })`
 - `Data:AddInstance(id, def)`, `Data:AddBoss(id, def)` (appends to its instance's `bosses` if missing),
   `Data:AddBossLoot(bossID, { { itemID, chance }, ... })`
+- `Data:AddTrashLoot(instanceID, { { itemID, chance }, ... })` — the same rows for what an instance's
+  non-boss enemies drop; keyed by the instance, because trash belongs to no encounter
+- `Data:AddQuests(instanceID, { { id = 166, name = "...", side = "Alliance", items = { { itemID }, ... } }, ... })` —
+  the instance's quests. `side` is `"Alliance"`, `"Horde"` or `"Both"` (nil = both). Each quest is stored
+  by its id with `instanceID` filled in and listed under the instance in the order it was added; adding a
+  quest id again replaces it. Quest titles are curated data: this client ships no quest table, and
+  `C_QuestLog` only knows quests the character has seen
 - `Data:AddList(kind, id, def)`, `Data:AddListLoot(kind, id, { { itemID, standing = "Honored" }, ... })`
 - `Data:AddRecipes({ [spellID] = { skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto, taughtBy }, ... })`,
   `Data:AddCategories({ [id] = { skillLineID = 164, order = 30 }, ... })`
@@ -381,10 +400,13 @@ Reading:
   `Data:GetItemCount()`, `for id, row in Data:EachItem() do`
 - `Data:GetItemName(id) -> name, known` — client locale, then enUS, then `C_Item.GetItemInfo`, then `"Item #id"`
 - `Data:GetItemStats(id) -> { INTELLECT = 4, ... }?`, `Data.StatLabel("INTELLECT") -> "Intellect"` (the game's `ITEM_MOD_*_SHORT`)
-- `Data:GetItemSources(id) -> { { kind = "boss", id = bossID, chance = 0.18 }, { kind = "reputation", id = "argent_dawn", standing = "Honored" }, { kind = "recipe", id = spellID, skillLineID = 164 }, ... }`
-  — inverted index over boss loot, every list (a list source carries its row's fields) and the recipes that make the item, built lazily
+- `Data:GetItemSources(id) -> { { kind = "boss", id = bossID, chance = 0.18 }, { kind = "trash", id = instanceID, chance = 0.01 }, { kind = "quest", id = questID, instanceID = 36, side = "Alliance" }, { kind = "reputation", id = "argent_dawn", standing = "Honored" }, { kind = "recipe", id = spellID, skillLineID = 164 }, ... }`
+  — inverted index over boss loot, instance trash, quest rewards, every list (a list source carries its row's fields) and the recipes that make the item, built lazily
 - `Data:GetInstance(id)`, `Data:GetInstanceIDs()` (by level, then name), `Data:GetBoss(id)`, `Data:GetBossLoot(bossID)`,
   `Data:GetInstanceName(id)`, `Data:GetBossName(id)`
+- `Data:GetTrashLoot(instanceID)`, `Data:GetInstanceQuests(instanceID) -> quest[]` (in curated order),
+  `Data:GetQuest(questID)`, `Data:GetQuestName(questID)` — the client's title when it knows the quest,
+  then the curated one, then `"#id"`
 - `Data:GetList(kind, id)`, `Data:GetListIDs(kind)` (by `order`, then name), `Data:GetListLoot(kind, id)`
 - `Data:GetRecipe(spellID) -> row?`, `Data:GetRecipeIDs(skillLineID)` (spell ids in the trade skill window's order:
   category, then the yellow threshold; cached), `Data:GetCategory(id)`
@@ -408,7 +430,8 @@ ForeverLoot.Filters:Register({
 })
 ```
 
-Built-in ids: `quality`, `slot`, `armorType`, `weaponType`, `itemLevel`, `reqLevel`, `instance`, `boss`,
+Built-in ids: `quality`, `slot`, `armorType`, `weaponType`, `itemLevel`, `reqLevel`, `instance`
+(anything the instance drops or rewards: a boss's loot, its trash and its quests), `boss`,
 `profession` (items made by a profession's recipes; one option per crafting list with a `skillLineID`).
 Other calls: `Filters:Get(id)`, `Filters:GetAll()`, `Filters:GetOptions(id)`, `Filters:GetBucket(id, value)`,
 `Filters:Unregister(id)`. Registering fires `OnFiltersChanged`.

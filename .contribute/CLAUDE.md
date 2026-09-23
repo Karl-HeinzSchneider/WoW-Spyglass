@@ -110,6 +110,9 @@ Names are informational and rewritten by `fix`; a row with only a `name` gets it
 filled in when exactly one scanned item has that name. An unscanned item is allowed (warning):
 the boss page shows it once the client fetches it, it just isn't searchable until scanned.
 
+Besides the bosses, an instance file has two lists of its own, `trash` and `quests`. The browser
+shows each of them as one more card next to the boss cards, in that order.
+
 ```json
 {
   "map": 36,
@@ -125,6 +128,16 @@ the boss page shows it once the client fetches it, it just isn't searchable unti
       "loot": [
         { "item": 5188, "name": "Filled Vessel", "chance": 0.9 },
         { "name": "Cruel Barb" }
+      ] }
+  ],
+  "trash": [
+    { "item": 1935, "name": "Buzzer Blade", "chance": 0.01 }
+  ],
+  "quests": [
+    { "id": 166, "name": "Underground Assault", "side": "Alliance",
+      "items": [
+        { "item": 6220, "name": "Silver-Thread Cape" },
+        { "name": "Gold-Flecked Gloves" }
       ] }
   ]
 }
@@ -156,11 +169,42 @@ the model is the right one.
 { "id": 3493, "name": "Faldrim Anvilmar", "displayID": 142826, "npc": 261306, "loot": [] }
 ```
 
+### `trash`: what the enemies between the bosses drop
+
+`trash` is a list of the same rows a boss's `loot` has (`item`, `name`, optional `chance` 0–1),
+for everything that drops off the instance's non-boss enemies. Every instance has the category,
+so `npm run fix` adds an empty `"trash": []` to a file without one; leaving it empty is fine —
+the browser then shows the card and asks for contributions, exactly as it does for a boss with
+no recorded loot. Unlike a boss's loot, trash is keyed by the *map*, so a trash row is not
+attached to any encounter (an item found there still matches the browser's *Instance* filter,
+just not its *Boss* filter).
+
+### `quests`: the instance's quests and what they reward
+
+`quests` is a list of quest objects, in the order they should be shown:
+
+| Field | Type | Meaning |
+|---|---|---|
+| `id` | integer | The quest id, and the only field checked against anything: positive, and listed once per file. **Required.** |
+| `name` | string | The quest's title. Curated, because this client ships no quest table — `npm run fix` never rewrites it, and a quest without one is a warning. |
+| `side` | string | `"Alliance"`, `"Horde"` or `"Both"`; omitting it means the same as `"Both"`. Anything else is an error. |
+| `items` | array | The items the quest rewards: the same `item` / `name` rows as loot, without a `chance`. May be empty. |
+
+The quest ids are what the game knows the quests by, so they are the same ids a boss's `quests`
+field lists (the "!" on its card) — a boss that hands in or is the objective of a quest names the
+id there, the quest itself and its rewards are described once here. Item rows behave as they do
+everywhere else: a row with only a `name` gets its `item` filled in when exactly one scanned item
+carries that name, and the same item may appear in several quests.
+
+In the browser the instance's *Quests* card opens a page with one subheader per quest — its title
+and id, plus the faction when `side` restricts it — and that quest's reward items underneath.
+
 `npm run fix` validates ids (map exists and is in the right folder, encounters belong to the
-map, no duplicates, chance in range), fills names, adds every encounter the game knows that the
-file doesn't list yet (empty `loot`), and rewrites the file in stable key order. Schema:
-`CuratedInstance` in `src/curated.ts`. A raid only appears in the Raids module once its
-`FL.InstanceFolder(mapID)` line in `ForeverLoot/modules/raids/raids.lua` is uncommented.
+map, no duplicates, chance in range, quest ids positive and unique, `side` a known value), fills
+names, adds every encounter the game knows that the file doesn't list yet (empty `loot`) and a
+`trash` list to files without one, and rewrites the file in stable key order. Schema:
+`CuratedInstance` / `CuratedQuest` in `src/curated.ts`. A raid only appears in the Raids module
+once its `FL.InstanceFolder(mapID)` line in `ForeverLoot/modules/raids/raids.lua` is uncommented.
 
 ## Item lists (`crafting/`, `pvp/`, `collections/`, `reputation/`)
 

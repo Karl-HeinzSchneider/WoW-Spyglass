@@ -10,6 +10,9 @@ local RECIPE = Data.RECIPE
 -- item lists (crafting, pvp, collections, reputation): list -> rows.
 
 local ICON_BOSS = "Interface\\Icons\\Ability_Creature_Cursed_02"
+local ICON_TRASH = "Interface\\Icons\\INV_Misc_Bag_10"
+local ICON_QUEST = "Interface\\Icons\\Achievement_Quests_Completed_01"
+local ICON_MISSING = "Interface\\Icons\\INV_Misc_QuestionMark"
 
 -- The drops of one boss as item nodes carrying their drop chance. Bosses without recorded
 -- loot get a single explanatory entry instead of an empty page.
@@ -23,7 +26,7 @@ function api.BossLootEntries(bossID)
     if #entries == 0 then
         entries[1] = api.Custom({
             name = "No drops recorded yet",
-            icon = "Interface\\Icons\\INV_Misc_QuestionMark",
+            icon = ICON_MISSING,
             description = "Help out: add this boss's loot in the repository's .contribute folder.",
         })
     end
@@ -71,9 +74,118 @@ function api.BossFolder(bossID)
     })
 end
 
--- An instance folder with one boss folder per encounter, carrying the instance's metadata
--- (`instanceID`, `minLevel`, `maxLevel`, `expansionID`) for sorting and filtering and its
--- picture for lists that draw their entries as tiles.
+-- "1 drop" / "3 drops": how much an instance's own card has to show, nil when it has nothing.
+---@param count integer
+---@param singular string
+---@param plural string
+---@return string?
+local function countText(count, singular, plural)
+    if count == 0 then
+        return nil
+    end
+    return count == 1 and ("1 " .. singular) or ("%d %s"):format(count, plural)
+end
+
+-- What the instance's non-boss enemies drop, as item nodes carrying their drop chance.
+---@param instanceID integer
+---@return ForeverLoot.Node[]
+function api.TrashLootEntries(instanceID)
+    local entries = {}
+    for _, row in ipairs(Data:GetTrashLoot(instanceID)) do
+        entries[#entries + 1] = { itemID = row[1], chance = row[2] }
+    end
+    if #entries == 0 then
+        entries[1] = api.Custom({
+            name = "No trash drops recorded yet",
+            icon = ICON_MISSING,
+            description = "Help out: add the instance's `trash` list in the repository's .contribute folder.",
+        })
+    end
+    return entries
+end
+
+-- The trash folder every instance has, next to its bosses: one category for everything that
+-- drops off the enemies between them.
+---@param instanceID integer
+---@return ForeverLoot.Node
+function api.TrashFolder(instanceID)
+    local count = #Data:GetTrashLoot(instanceID)
+    return api.Folder("Trash", ICON_TRASH, api.TrashLootEntries(instanceID), {
+        columns = 2,
+        groupBy = "auto",
+        info = countText(count, "drop", "drops"),
+        description = "What the enemies between the bosses drop.",
+        meta = { instanceID = instanceID, trash = true },
+    })
+end
+
+-- "Uncovering the Past (#26) - Alliance": a quest's subheader. The title comes from the client
+-- when it knows the quest and from the curated data otherwise, and the id is shown next to it
+-- so a quest is identifiable while the curated titles are still being filled in.
+---@param quest ForeverLoot.Quest
+---@return string
+local function questHeading(quest)
+    local text = ("%s (#%d)"):format(Data:GetQuestName(quest.id), quest.id)
+    local side = quest.side
+    if side ~= "Alliance" and side ~= "Horde" then
+        return text
+    end
+    local label = side == "Alliance" and (FACTION_ALLIANCE or side) or (FACTION_HORDE or side)
+    local color = PLAYER_FACTION_COLORS and PLAYER_FACTION_COLORS[side == "Alliance" and 1 or 0]
+    if color and color.WrapTextInColorCode then
+        label = color:WrapTextInColorCode(label)
+    end
+    return text .. " - " .. label
+end
+
+-- The instance's quests: one subheader per quest with the items it rewards under it.
+---@param instanceID integer
+---@return ForeverLoot.Node[]
+function api.InstanceQuestEntries(instanceID)
+    local entries = {}
+    for _, quest in ipairs(Data:GetInstanceQuests(instanceID)) do
+        local items = {}
+        for _, row in ipairs(quest.items) do
+            items[#items + 1] = { itemID = row[1], chance = row[2] }
+        end
+        if #items == 0 then
+            items[1] = api.Custom({ name = "No rewards recorded yet", icon = ICON_MISSING })
+        end
+        entries[#entries + 1] = api.Subheader(questHeading(quest), items)
+    end
+    if #entries == 0 then
+        entries[1] = api.Custom({
+            name = "No quests recorded yet",
+            icon = ICON_MISSING,
+            description = "Help out: add the instance's `quests` list in the repository's .contribute folder.",
+        })
+    end
+    return entries
+end
+
+-- The quest folder every instance has, next to its bosses and its trash. Its card carries the
+-- quest ids, so it shows the same "!" a boss with quests does and lists their titles.
+---@param instanceID integer
+---@return ForeverLoot.Node
+function api.QuestFolder(instanceID)
+    local quests = Data:GetInstanceQuests(instanceID)
+    local ids = {}
+    for i, quest in ipairs(quests) do
+        ids[i] = quest.id
+    end
+    return api.Folder(QUESTS_LABEL or "Quests", ICON_QUEST, api.InstanceQuestEntries(instanceID), {
+        columns = 2,
+        info = countText(#quests, "quest", "quests"),
+        quests = #ids > 0 and ids or nil,
+        description = "The quests that take place here and what they reward.",
+        meta = { instanceID = instanceID, quests = true },
+    })
+end
+
+-- An instance folder with one boss folder per encounter followed by the instance's own two
+-- categories (trash and quests), carrying the instance's metadata (`instanceID`, `minLevel`,
+-- `maxLevel`, `expansionID`) for sorting and filtering and its picture for lists that draw
+-- their entries as tiles.
 ---@param instanceID integer
 ---@return ForeverLoot.Node?
 function api.InstanceFolder(instanceID)
@@ -81,11 +193,13 @@ function api.InstanceFolder(instanceID)
     if not instance then
         return nil
     end
-    local bosses = {}
+    local entries = {}
     for i, bossID in ipairs(instance.bosses) do
-        bosses[i] = api.BossFolder(bossID)
+        entries[i] = api.BossFolder(bossID)
     end
-    return api.Folder(Data:GetInstanceName(instanceID), instance.icon or ICON_BOSS, bosses, {
+    entries[#entries + 1] = api.TrashFolder(instanceID)
+    entries[#entries + 1] = api.QuestFolder(instanceID)
+    return api.Folder(Data:GetInstanceName(instanceID), instance.icon or ICON_BOSS, entries, {
         display = "cards",
         instanceID = instanceID,
         minLevel = instance.minLevel,
@@ -442,7 +556,7 @@ function api.ListEntries(kind, id)
     if #entries == 0 then
         entries[1] = api.Custom({
             name = "Nothing recorded yet",
-            icon = "Interface\\Icons\\INV_Misc_QuestionMark",
+            icon = ICON_MISSING,
             description = ("Help out: add this list's items in the repository's .contribute/%s folder."):format(kind),
         })
     end

@@ -60,7 +60,9 @@ Nothing in here touches frames.
 
 - `data.lua` — `app.data`. Normalized integer-keyed tables: `items` rows are positional arrays
   indexed by `Data.ITEM` (layout must match `itemRow()` in `src/generate.ts`), `instances`,
-  `bosses`, `bossLoot`, `recipes` (positional rows indexed by `Data.RECIPE`, keyed by spell id,
+  `bosses`, `bossLoot`, `trashLoot` (loot rows keyed by instance: what its non-boss enemies
+  drop), `quests` (curated quest definitions keyed by quest id) with `instanceQuests` listing
+  each instance's in curated order, `recipes` (positional rows indexed by `Data.RECIPE`, keyed by spell id,
   layout must match `recipeRow()`), `categories` (trade skill categories: `skillLineID`,
   `order`), `names[locale]` (`items`, `bosses`, `instances`, `skillLines`, `categories`,
   `tools`); plus the string-keyed curated lists (`lists[kind][id]` = `{ name, icon, order,
@@ -68,17 +70,24 @@ Nothing in here touches frames.
   kind = `crafting`/`pvp`/`collections`/`reputation`, id = the JSON file's slug). `Add*` calls
   invalidate caches and fire `OnDataChanged`; `GetVersion()` bumps on every change.
   `GetItemName` resolves client locale → enUS → `C_Item.GetItemInfo` → `"Item #id"`;
-  `GetName(kind, id)` does client locale → enUS for the other kinds. `GetRecipeIDs(skillLineID)`
+  `GetName(kind, id)` does client locale → enUS for the other kinds; `GetQuestName` does
+  `C_QuestLog` → the curated title → `"#id"`, because this client ships no quest table.
+  `GetRecipeIDs(skillLineID)`
   is a profession's recipes in trade-skill-window order. `GetItemSources` is a lazy inverted
-  index over boss loot, every list and the recipes that make an item.
+  index over boss loot, instance trash, quest rewards, every list and the recipes that make an
+  item (kinds `"boss"`, `"trash"`, `"quest"`, `"recipe"` and the list kinds).
 - `filters.lua` — `app.filters`: registry of named predicates with options (`multi`/`single`),
   optional precomputed buckets, and the built-ins (`quality`, `slot`, `armorType`, `weaponType`,
   `itemLevel`, `reqLevel`, `instance`, `boss`, `profession` = made by a profession's recipes).
 - `query.lua` — `app.query`: `Query.Run(q)` over a plain, serializable query table (`search`,
   `filters`, `sort`). Filters AND, values within a filter OR.
 - `nodes.lua` — DB-backed node constructors on the public API that modules build their trees
-  from: `InstanceFolders(type)`, `InstanceFolder(id)` (a `cards` folder of bosses), `BossFolder(id)`,
-  `BossLootEntries(id)`; `ListFolders(kind)`, `ListFolder(kind, id)`, `ListEntries(kind, id)` — list
+  from: `InstanceFolders(type)`, `InstanceFolder(id)` (a `cards` folder of bosses, then the
+  instance's own two cards), `BossFolder(id)`,
+  `BossLootEntries(id)`, `TrashFolder(id)`/`TrashLootEntries(id)` (the drops of everything
+  between the bosses) and `QuestFolder(id)`/`InstanceQuestEntries(id)` (one subheader per quest —
+  title, id and the faction when its `side` restricts it — over the items it rewards);
+  `ListFolders(kind)`, `ListFolder(kind, id)`, `ListEntries(kind, id)` — list
   rows become item nodes with the row's fields in `meta`, grouped by the row's `group`, else the
   kind's default (standing for reputation, honor rank/standing for pvp, trade skill category then
   skill tier for crafting), else item type. Crafting lists with a `skillLineID` are built from

@@ -360,6 +360,11 @@ local function sourceKeys(itemID, field)
                 local boss = Data:GetBoss(bossID)
                 key = boss and boss.instanceID
             end
+        elseif field == "instanceID" and source.kind == "trash" then
+            -- Trash belongs to the instance, not to an encounter, so it has no boss key.
+            key = source.id --[[@as integer]]
+        elseif field == "instanceID" and source.kind == "quest" then
+            key = source.instanceID
         end
         if key and not seen[key] then
             seen[key] = true

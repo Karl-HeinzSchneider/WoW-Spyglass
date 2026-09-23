@@ -69,7 +69,7 @@ public global `ForeverLoot` (`docs/API.md`). The core must work with both compan
 never references them — not even by name. No addon reads another addon's private table
 (the `...` table each file receives) or adds a cross-addon global. Built-in content modules use
 the same public API a third-party addon would; never give them private hooks. Late data goes in
-through `ForeverLoot.Data:AddNames/AddItems/AddBossLoot/AddList/AddListLoot`, which invalidate
+through `ForeverLoot.Data:AddNames/AddItems/AddBossLoot/AddTrashLoot/AddQuests/AddList/AddListLoot`, which invalidate
 caches and fire `OnDataChanged`. A breaking API change bumps `ForeverLoot.API_VERSION` and
 updates `docs/API.md`. Full rules: `docs/architecture.md`.
 

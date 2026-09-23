@@ -21,6 +21,13 @@ export interface CuratedInstance {
   /** Part of `background` to show: [left, right, top, bottom] in 0..1; the whole texture when omitted. */
   backgroundCoords?: [number, number, number, number];
   encounters: CuratedEncounter[];
+  /**
+   * What the instance's non-boss enemies drop. Every instance has this category, so `fix` adds
+   * an empty list to files that don't have one yet.
+   */
+  trash?: CuratedLoot[];
+  /** The quests that take place in the instance and the items they reward. */
+  quests?: CuratedQuest[];
 }
 
 export interface CuratedEncounter {
@@ -48,6 +55,25 @@ export interface CuratedLoot extends CuratedItemRow {
   /** Drop chance 0..1; omit when unknown. */
   chance?: number;
 }
+
+/**
+ * One quest of an instance and the items it rewards. This client ships no quest table, so both
+ * the id and the title are curated: the id is what the game knows the quest by, `name` is what
+ * the browser shows when the client cannot resolve the title itself.
+ */
+export interface CuratedQuest {
+  /** Quest id. */
+  id: number;
+  /** Quest title. Shipped, because no game table can supply it; `fix` never rewrites it. */
+  name?: string;
+  /** Faction the quest is available to: "Alliance", "Horde" or "Both"; omitted means both. */
+  side?: string;
+  /** The items the quest rewards. */
+  items: CuratedItemRow[];
+}
+
+/** What `CuratedQuest.side` accepts; leaving it out means the same as "Both". */
+export const QUEST_SIDES = ["Alliance", "Horde", "Both"];
 
 export interface CuratedFile {
   path: string;
@@ -245,6 +271,9 @@ export function validate(files: CuratedFile[], checker: Checker): void {
       }
     }
 
+    validateTrash(file, checker);
+    validateQuests(file, checker);
+
     // Encounters the game knows but the file doesn't list yet: add empty skeletons in order.
     const missing = instance.encounters.filter((id) => !seenEncounters.has(id));
     if (missing.length > 0) {
@@ -254,6 +283,69 @@ export function validate(files: CuratedFile[], checker: Checker): void {
         d.encounters.sort((a, b) => (ref.encounters.get(a.id)?.order ?? 0) - (ref.encounters.get(b.id)?.order ?? 0));
       }
     }
+  }
+}
+
+/**
+ * The instance's trash loot: the same rows a boss has. Every instance drops something off its
+ * non-boss enemies, so a file without the list gets an empty one instead of nothing at all —
+ * the browser shows the category either way and then asks for contributions.
+ */
+function validateTrash(file: CuratedFile, checker: Checker): void {
+  const d = file.data;
+  if (d.trash === undefined) {
+    checker.report(file, "no `trash` list; every instance has one -> []", true);
+    if (!checker.fix) return;
+    d.trash = [];
+  }
+  if (!Array.isArray(d.trash)) {
+    checker.report(file, "`trash` must be an array", true);
+    if (!checker.fix) return;
+    d.trash = [];
+  }
+  const seen = new Set<number>();
+  for (const row of d.trash) {
+    if (!checker.checkItemRow(file, "trash", row, seen)) continue;
+    if (row.chance !== undefined && !(row.chance >= 0 && row.chance <= 1)) {
+      checker.report(file, `trash: item ${row.item} chance must be between 0 and 1`);
+    }
+  }
+}
+
+/**
+ * The instance's quests. Only the id is checked against anything (it must be a positive integer
+ * and unique in the file) — this client has no quest table, so the title cannot be verified and
+ * a quest without one is only a warning.
+ */
+function validateQuests(file: CuratedFile, checker: Checker): void {
+  const d = file.data;
+  if (d.quests === undefined) return;
+  if (!Array.isArray(d.quests)) {
+    checker.report(file, "`quests` must be an array");
+    return;
+  }
+  const seenQuests = new Set<number>();
+  for (const quest of d.quests) {
+    if (!Number.isInteger(quest.id) || quest.id <= 0) {
+      checker.report(file, "quest without a positive integer `id`");
+      continue;
+    }
+    if (seenQuests.has(quest.id)) checker.report(file, `quest ${quest.id} listed twice`);
+    seenQuests.add(quest.id);
+    if (quest.name === undefined || quest.name === "") {
+      checker.warn(file, `quest ${quest.id}: no \`name\`; the browser can only show its id`);
+    }
+    if (quest.side !== undefined && !QUEST_SIDES.includes(quest.side)) {
+      checker.report(file, `quest ${quest.id}: \`side\` must be one of ${QUEST_SIDES.join(", ")}`);
+    }
+    if (!Array.isArray(quest.items)) {
+      checker.report(file, `quest ${quest.id}: \`items\` must be an array`, true);
+      if (checker.fix) quest.items = [];
+      else continue;
+    }
+    // Items may repeat across quests (a shared reward), so each quest counts on its own.
+    const seenItems = new Set<number>();
+    for (const row of quest.items) checker.checkItemRow(file, `quest ${quest.id}`, row, seenItems);
   }
 }
 
@@ -277,6 +369,13 @@ export function serialize(d: CuratedInstance): string {
       creatureType: e.creatureType,
       quests: e.quests,
       loot: e.loot.map((r) => ({ item: r.item, name: r.name, chance: r.chance })),
+    })),
+    trash: d.trash?.map((r) => ({ item: r.item, name: r.name, chance: r.chance })),
+    quests: d.quests?.map((q) => ({
+      id: q.id,
+      name: q.name,
+      side: q.side,
+      items: (q.items ?? []).map((r) => ({ item: r.item, name: r.name })),
     })),
   };
   return JSON.stringify(ordered, null, 2) + "\n";
