@@ -3,5 +3,11 @@
   "icon": "Interface\\Icons\\Trade_Engraving",
   "order": 30,
   "skillLine": 333,
+  "sections": [
+    { "name": "Armor Enchants", "categories": [2493, 2494, 2495, 2496, 2497, 2498, 2499, 2500, 2506] },
+    { "name": "Weapon Enchants", "categories": [2502, 2501, 2503, 2504] },
+    { "name": "Jewelry Enchants", "categories": [2505, 2507, 2508] },
+    { "name": "Crafted Items", "categories": [2511, 2512, 2513, 2509, 2510, 2492, 2491] }
+  ],
   "recipes": []
 }

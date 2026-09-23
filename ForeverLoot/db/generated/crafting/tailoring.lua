@@ -7,4 +7,9 @@ Data:AddList("crafting", "tailoring", {
     icon = "Interface\\Icons\\Trade_Tailoring",
     order = 60,
     skillLineID = 197,
+    sections = {
+        { name = "Armor", categories = { 2581, 2582, 2583, 2584, 2585, 2586, 2587, 2588, 2580 } }, -- Hoods, Spaulders, Robes and Vests, Bracers, Gloves, Belts, Leggings, Shoes, Cloaks
+        { name = "Bags", categories = { 2578, 2579 } }, -- Bags, Specialty Bags
+        { name = "Clothing", categories = { 2589, 2590 } }, -- Shirts, Dressed for the Occasion
+    },
 })

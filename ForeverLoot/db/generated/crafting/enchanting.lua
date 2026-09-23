@@ -7,4 +7,10 @@ Data:AddList("crafting", "enchanting", {
     icon = "Interface\\Icons\\Trade_Engraving",
     order = 30,
     skillLineID = 333,
+    sections = {
+        { name = "Armor Enchants", categories = { 2493, 2494, 2495, 2496, 2497, 2498, 2499, 2500, 2506 } }, -- Helmet Enchants, Shoulder Enchants, Chest Enchants, Bracer Enchants, Glove Enchants, Belt Enchants, Pants Enchants, Boots Enchants, Cloak Enchants
+        { name = "Weapon Enchants", categories = { 2502, 2501, 2503, 2504 } }, -- Weapon Enchants, Two-Handed Weapon Enchants, Shield Enchants, Off-Hand Enchants
+        { name = "Jewelry Enchants", categories = { 2505, 2507, 2508 } }, -- Amulet Enchants, Ring Enchants, Trinket Enchants
+        { name = "Crafted Items", categories = { 2511, 2512, 2513, 2509, 2510, 2492, 2491 } }, -- Staves, Wands, Off-Hands, Relics, Curios, Wizard Oils, Runed Enchanting Rods
+    },
 })
