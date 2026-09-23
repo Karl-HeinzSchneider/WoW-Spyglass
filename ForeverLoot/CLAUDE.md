@@ -187,8 +187,11 @@ only sanctioned globals.
 
 - `lib/` — vendored Ace3, LibStub, CallbackHandler, LibDBIcon (+ LibDataBroker). Excluded from
   LuaLS and StyLua; update by replacing the folder, don't patch.
-- `assets/` — currently empty and not tracked; prefer the client's own atlases/textures (see the
-  root `CLAUDE.md`). Only put something here when nothing in the game files will do.
+- `assets/` — the few textures the game files cannot provide; prefer the client's own atlases
+  and textures (see the root `CLAUDE.md`). `assets/bosses/<slug>.blp` holds boss pictures for
+  bosses this server added, shot with the scraper's `/fl portrait` studio and cut to 128x64
+  with an alpha channel like the client's own boss art; a curated encounter points at one with
+  `"portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\<slug>.blp"`.
 
 ## Conventions
 

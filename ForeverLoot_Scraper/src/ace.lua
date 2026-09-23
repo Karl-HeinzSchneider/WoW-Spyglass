@@ -8,6 +8,7 @@ local log = app.log
 ---@field db ForeverLootScraper.DB
 ---@field scanHandler function
 ---@field exportHandler function
+---@field portraitHandler function
 local addon = {}
 LibStub("AceAddon-3.0"):NewAddon(addon, appName, "AceEvent-3.0")
 app.addon = addon
@@ -23,6 +24,9 @@ function addon:OnInitialize()
     self.exportHandler = function(a)
         app.discovery:ExportCommand(a)
     end
+    self.portraitHandler = function(a)
+        app.portraitFrame:Command(a)
+    end
 end
 
 function addon:OnEnable()
@@ -32,11 +36,13 @@ function addon:OnEnable()
         "/fl scan <from> [to] | resume | stop | limit <n|off>"
     )
     FL:RegisterCommand("export", self.exportHandler, "/fl export [all]")
+    FL:RegisterCommand("portrait", self.portraitHandler, "/fl portrait [displayID]")
     log:debug("Enabled")
 end
 
 function addon:OnDisable()
     FL:UnregisterCommand("scan", self.scanHandler)
     FL:UnregisterCommand("export", self.exportHandler)
+    FL:UnregisterCommand("portrait", self.portraitHandler)
     log:debug("Disabled")
 end

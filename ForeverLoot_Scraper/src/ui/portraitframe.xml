@@ -1,0 +1,76 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+
+	<!-- One capture area: the boss model on a flat background, with a magenta marker poking out
+	     around it (it sits behind the background, so the magenta is a frame *outside* the
+	     pixels that get cropped). The mixin sizes it and sets the background color. -->
+	<Frame name="ForeverLootScraperCaptureTemplate" virtual="true">
+		<Size x="512" y="256"/>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="Marker">
+					<Color r="1" g="0" b="1" a="1"/>
+				</Texture>
+			</Layer>
+			<Layer level="BORDER">
+				<Texture parentKey="Background" setAllPoints="true">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<PlayerModel parentKey="Model" setAllPoints="true"/>
+		</Frames>
+	</Frame>
+
+	<!-- /fl portrait: the same model on black and on white side by side, so one screenshot
+	     carries both and the pair gives the transparency back. -->
+	<Frame name="ForeverLootScraperPortraitFrame" mixin="ForeverLootScraperPortraitFrameMixin"
+		inherits="BasicFrameTemplateWithInset"
+		parent="UIParent" toplevel="true" enableMouse="true" movable="true" clampedToScreen="true" hidden="true" frameStrata="DIALOG">
+		<Size x="600" y="480"/>
+		<Anchors>
+			<Anchor point="CENTER"/>
+		</Anchors>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString parentKey="Hint" inherits="GameFontHighlightSmall" justifyH="LEFT" justifyV="TOP">
+					<Size x="0" y="32"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" x="14" y="-30"/>
+						<Anchor point="TOPRIGHT" x="-14" y="-30"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Subject" inherits="GameFontNormal" justifyH="CENTER" wordwrap="false">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="14" y="-66"/>
+						<Anchor point="TOPRIGHT" x="-14" y="-66"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame parentKey="Black" inherits="ForeverLootScraperCaptureTemplate">
+				<Anchors>
+					<Anchor point="TOP" x="0" y="-90"/>
+				</Anchors>
+			</Frame>
+			<Frame parentKey="White" inherits="ForeverLootScraperCaptureTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeKey="$parent.Black" relativePoint="TOPRIGHT" x="12" y="0"/>
+				</Anchors>
+			</Frame>
+			<EditBox parentKey="IDBox" inherits="InputBoxTemplate" autoFocus="false" numeric="true">
+				<Size x="90" y="20"/>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeKey="$parent.Black" relativePoint="BOTTOMLEFT" x="6" y="-34"/>
+				</Anchors>
+			</EditBox>
+		</Frames>
+		<Scripts>
+			<OnLoad method="OnLoad"/>
+			<OnShow method="OnShow"/>
+			<OnDragStart method="OnDragStart"/>
+			<OnDragStop method="OnDragStop"/>
+		</Scripts>
+	</Frame>
+</Ui>

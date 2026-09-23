@@ -9,6 +9,7 @@
 ---@field discovery ForeverLootScraper.Discovery
 ---@field json ForeverLootScraper.JSON
 ---@field exportFrame ForeverLootScraper.ExportFrame
+---@field portraitFrame ForeverLootScraper.PortraitFrame
 ---@field ExportFrameMixin ForeverLootScraper.ExportFrame
 local addonName, addon = ...
 

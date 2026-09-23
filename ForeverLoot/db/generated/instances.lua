@@ -742,7 +742,7 @@ Data:AddInstance(3065, {
     backgroundCoords = { 0.0445, 0.9552, 0.158, 0.842 },
     bosses = { 3493, 3495, 3494, 3496 },
 })
-Data:AddBoss(3493, { instanceID = 3065, order = 0, displayID = 142826 }) -- Faldrim Anvilmar
+Data:AddBoss(3493, { instanceID = 3065, order = 0, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\faldrim_anvilmar.blp", displayID = 142826 }) -- Faldrim Anvilmar
 Data:AddBoss(3495, { instanceID = 3065, order = 2000 }) -- Infurnus
 Data:AddBoss(3494, { instanceID = 3065, order = 2500 }) -- Plunder
 Data:AddBoss(3496, { instanceID = 3065, order = 3000 }) -- Durgen Dirgehammer

@@ -14,3 +14,5 @@ src\ace.lua
 src\discovery.lua
 src\ui\exportframe.lua
 src\ui\exportframe.xml
+src\ui\portraitframe.lua
+src\ui\portraitframe.xml
