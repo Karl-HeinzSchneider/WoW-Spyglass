@@ -79,9 +79,13 @@ function ForeverLootItemSlotMixin:OnEnter()
         return
     end
     GameTooltip:Show()
+    if self.itemID then
+        app.ui.modelPreview:SetItem(self, self.itemID)
+    end
 end
 
 function ForeverLootItemSlotMixin:OnLeave()
+    app.ui.modelPreview:Clear()
     GameTooltip:Hide()
 end
 

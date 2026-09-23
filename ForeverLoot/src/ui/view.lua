@@ -410,9 +410,14 @@ function ForeverLootListRowMixin:OnEnter()
         end
     end
     GameTooltip:Show()
+    if node.itemID then
+        -- Holding ctrl shows the character wearing the item under the tooltip.
+        app.ui.modelPreview:SetItem(self, node.itemID)
+    end
 end
 
 function ForeverLootListRowMixin:OnLeave()
+    app.ui.modelPreview:Clear()
     GameTooltip:Hide()
 end
 

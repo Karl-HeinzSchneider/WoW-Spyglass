@@ -52,6 +52,11 @@ SidePanelTabButtonMixin = {} --[[@as SidePanelTabButtonMixin]]
 ---@field GetSkillLineInfoByID fun(skillLineID: number): SkillLineAttributes?
 C_SkillInfo = {} --[[@as C_SkillInfo]]
 
+-- NonInteractableModelSceneMixinTemplate (Blizzard_SharedXML/ModelSceneMixin.lua).
+---@class ModelSceneMixin
+---@field TransitionToModelSceneID fun(self: ModelSceneMixin, modelSceneID: number, cameraTransitionType: number, cameraModificationType: number, forceEvenIfSame?: boolean)
+---@field GetPlayerActor fun(self: ModelSceneMixin, overrideActorName?: string): ModelSceneFrameActor?
+
 ---@class PagingControlsMixin
 ---@field GetMaxPages fun(self: PagingControlsMixin): integer
 ---@field SetMaxPages fun(self: PagingControlsMixin, maxPages: integer)

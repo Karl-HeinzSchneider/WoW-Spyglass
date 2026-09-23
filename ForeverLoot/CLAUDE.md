@@ -21,8 +21,9 @@ Current order and why:
    `db\generated\generated.xml` (the generated data) and `modules\modules.xml` (the built-in
    modules, which need both).
 4. `src\ui\view.lua`, `templates.xml`, `mainwindow.lua`, `mainwindow.xml`, `recipepopup.lua`,
-   `recipepopup.xml`, `tooltip.lua` — Lua mixins before the XML that names them; `templates.xml`
-   before `mainwindow.xml`; the popup after the window it is parented to.
+   `recipepopup.xml`, `modelpreview.lua`, `modelpreview.xml`, `tooltip.lua` — Lua mixins before
+   the XML that names them; `templates.xml` before `mainwindow.xml`; the popup after the window
+   it is parented to.
 5. `ForeverLoot.lua` — root entry, loaded last; only logs.
 
 ## Files
@@ -185,6 +186,17 @@ only sanctioned globals.
   background is the main window's pane atlas (`UI-Character-Info-General-BG`) under the
   tooltip border, the template's own translucent backdrop switched off. Redraws on `GET_ITEM_INFO_RECEIVED`; the
   view hides it on `Refresh` and page changes because its anchor row is reused.
+- `modelpreview.lua/.xml` — `ForeverLootModelPreview` (`app.ui.modelPreview`): while ctrl is
+  held over an item row or item slot, the character wearing that item, under `GameTooltip`
+  (above it when the screen ends first) and as wide as it. Rows call `SetItem(owner, itemID)`
+  after showing the tooltip and `Clear()` on leave; `MODIFIER_STATE_CHANGED` shows/hides it
+  and `OnUpdate` drops it once the tooltip belongs to someone else. A
+  `NonInteractableModelSceneMixinTemplate` (Blizzard_SharedXML) set up from the dressing room's
+  model scene id (596) with `SetupPlayerForModelScene`, then `actor:Dress()` + `TryOn(link)`
+  per item, turned 25° further than the scene's yaw (towards the main hand) or around (+ π)
+  for a cloak; only items `C_Item.IsDressableItemByID` accepts and the client has cached. The
+  actor is rebuilt after `PLAYER_EQUIPMENT_CHANGED` / `UNIT_MODEL_CHANGED`. The recipe popup's
+  look (tooltip border over `UI-Character-Info-General-BG`).
 - `tooltip.lua` — `app.tooltip`, an Ace module that appends an item's sources
   (`Data:GetItemSources` kinds `boss`, `trash`, `quest`, `recipe`) to every item tooltip: after a blank
   line, the instance name in gold over its bosses, "Trash" and `Quest: <title>` lines, indented
