@@ -73,6 +73,7 @@ function emitInstance(ref: Reference, id: number, inst: Instance, encounters: nu
     ...luaFields(
       {
         type: inst.type,
+        displayName: cur?.displayName,
         expansionID: inst.expansionID,
         minLevel: cur?.minLevel,
         maxLevel: cur?.maxLevel,
@@ -80,7 +81,7 @@ function emitInstance(ref: Reference, id: number, inst: Instance, encounters: nu
         background: cur?.background,
         backgroundCoords: cur?.backgroundCoords,
       },
-      ["type", "expansionID", "minLevel", "maxLevel", "icon", "background", "backgroundCoords"],
+      ["type", "displayName", "expansionID", "minLevel", "maxLevel", "icon", "background", "backgroundCoords"],
     ).map((l) => l + "\n"),
   );
   out.push(`    bosses = ${luaValue(encounters)},\n})\n`);

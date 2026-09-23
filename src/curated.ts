@@ -18,6 +18,11 @@ export interface CuratedInstance {
   id?: number;
   /** Informational, filled by `fix`; for a file with an `id` it is the displayed name (no game table has it). */
   name?: string;
+  /**
+   * Shorter name the browser shows for the instance ("SM: Graveyard"): its tile, breadcrumbs and
+   * page title, in every language. Tooltips and filters keep `name`.
+   */
+  displayName?: string;
   minLevel?: number;
   maxLevel?: number;
   /** Texture path shown in the browser, e.g. "Interface\\Icons\\INV_Misc_Key_13". */
@@ -270,6 +275,9 @@ export function validate(files: CuratedFile[], checker: Checker): void {
         if (fix) d.name = instanceName;
       }
     }
+    if (d.displayName !== undefined && (typeof d.displayName !== "string" || d.displayName === "")) {
+      report(file, "`displayName` must be a non-empty string");
+    }
 
     const seenEncounters = new Set<number>();
     for (const enc of d.encounters) {
@@ -420,6 +428,7 @@ export function serialize(d: CuratedInstance): string {
     map: d.map,
     id: d.id,
     name: d.name,
+    displayName: d.displayName,
     minLevel: d.minLevel,
     maxLevel: d.maxLevel,
     icon: d.icon,

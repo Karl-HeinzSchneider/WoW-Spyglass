@@ -192,6 +192,7 @@ Data:AddBoss(2785, { instanceID = 129, order = 5000, portrait = "Interface\\Enco
 -- Scarlet Monastery: Graveyard
 Data:AddInstance(18901, {
     type = "dungeon",
+    displayName = "SM: Graveyard",
     expansionID = 0,
     minLevel = 26,
     maxLevel = 36,
@@ -206,6 +207,7 @@ Data:AddBoss(2779, { instanceID = 18901, order = 1000, portrait = "Interface\\En
 -- Scarlet Monastery: Library
 Data:AddInstance(18902, {
     type = "dungeon",
+    displayName = "SM: Library",
     expansionID = 0,
     minLevel = 29,
     maxLevel = 39,
@@ -220,6 +222,7 @@ Data:AddBoss(447, { instanceID = 18902, order = 3000, portrait = "Interface\\Enc
 -- Scarlet Monastery: Armory
 Data:AddInstance(18903, {
     type = "dungeon",
+    displayName = "SM: Armory",
     expansionID = 0,
     minLevel = 32,
     maxLevel = 42,
@@ -233,6 +236,7 @@ Data:AddBoss(448, { instanceID = 18903, order = 4000, portrait = "Interface\\Enc
 -- Scarlet Monastery: Cathedral
 Data:AddInstance(18904, {
     type = "dungeon",
+    displayName = "SM: Cathedral",
     expansionID = 0,
     minLevel = 35,
     maxLevel = 45,

@@ -119,7 +119,8 @@ per line by default (`columns` = 1..4), about twice as tall as a row. Each entry
 The entry's `name` is the card's title (in `quality` color when set); clicking, tooltips and
 right-click-to-go-back work as for rows. Headers and groups inside the folder are drawn as
 usual. The built-in Raids/Dungeons modules are tile folders; `InstanceFolder` nodes carry the
-instance's picture from the database.
+instance's picture from the database, and are named by the instance's `displayName` (a shorter
+curated name, e.g. "SM: Graveyard") when it has one, else by `Data:GetInstanceName`.
 
 ### Cards
 

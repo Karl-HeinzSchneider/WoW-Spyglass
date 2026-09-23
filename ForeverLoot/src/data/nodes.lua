@@ -228,7 +228,7 @@ end
 -- An instance folder with an "All Bosses" card, one boss folder per encounter and the instance's
 -- own two categories (trash and quests), carrying the instance's metadata (`instanceID`, `minLevel`,
 -- `maxLevel`, `expansionID`) for sorting and filtering and its picture for lists that draw
--- their entries as tiles.
+-- their entries as tiles. Named by the instance's curated `displayName` when it has one.
 ---@param instanceID integer
 ---@return ForeverLoot.Node?
 function api.InstanceFolder(instanceID)
@@ -242,7 +242,8 @@ function api.InstanceFolder(instanceID)
     end
     entries[#entries + 1] = api.TrashFolder(instanceID)
     entries[#entries + 1] = api.QuestFolder(instanceID)
-    return api.Folder(Data:GetInstanceName(instanceID), instance.icon or ICON_BOSS, entries, {
+    local name = instance.displayName or Data:GetInstanceName(instanceID)
+    return api.Folder(name, instance.icon or ICON_BOSS, entries, {
         display = "cards",
         instanceID = instanceID,
         minLevel = instance.minLevel,

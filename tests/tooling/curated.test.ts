@@ -68,6 +68,18 @@ test("trash and quest rows resolve a name-only row and keep their shape through 
   ]);
 });
 
+test("a displayName is kept through a fix rewrite and must not be empty", () => {
+  const file = dungeonFile({ displayName: "TD" });
+  const checker = dungeonChecker(true);
+  validate([file], checker);
+  assert.deepEqual(checker.problems.filter((p) => !p.fixable && !p.warning), []);
+  assert.equal((JSON.parse(serialize(file.data)) as { displayName?: string }).displayName, "TD");
+
+  const empty = dungeonChecker(false);
+  validate([dungeonFile({ displayName: "" })], empty);
+  assert.ok(empty.problems.some((p) => !p.warning && p.message.includes("displayName")));
+});
+
 test("a quest needs an id, a known side and no duplicate", () => {
   const file = dungeonFile({
     quests: [

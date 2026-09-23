@@ -126,6 +126,11 @@ cards, trash and quests, and its `FL.InstanceFolder(id)` line in the module. Eac
 encounters goes in exactly one of the files: one listed in two is an error, one in none a
 warning (`fix` can't know which part it belongs to, so it doesn't add it).
 
+**A shorter name: `displayName`.** Any instance file may set `displayName` (e.g.
+`"SM: Graveyard"`), which the browser shows instead of the full name on the instance's tile,
+breadcrumbs and page title, in every language. Item tooltips and the *Instance* filter keep the
+full `name`. `fix` leaves it alone; an empty one is an error.
+
 Besides the bosses, an instance file has two lists of its own, `trash` and `quests`. The browser
 shows each of them as one more card next to the boss cards, in that order.
 

@@ -72,6 +72,7 @@ local RECIPE = {
 
 ---@class ForeverLoot.Instance
 ---@field type "raid"|"dungeon"|string
+---@field displayName? string  # shorter name the browser shows for the instance (tile, breadcrumbs), in every language
 ---@field bosses integer[]  # bossIDs in encounter order
 ---@field minLevel? integer
 ---@field maxLevel? integer
