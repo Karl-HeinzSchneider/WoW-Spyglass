@@ -3,5 +3,12 @@
   "icon": "Interface\\Icons\\Trade_BlackSmithing",
   "order": 20,
   "skillLine": 164,
+  "sections": [
+    { "name": "Plate Armor", "categories": [2469, 2470, 2471, 2472, 2473, 2474, 2475, 2476] },
+    { "name": "Mail Armor", "categories": [2461, 2462, 2463, 2464, 2465, 2466, 2467, 2468] },
+    { "name": "Weapons", "categories": [2477, 2478, 2479, 2480, 2481, 2482, 2483, 2484, 2485, 2770] },
+    { "name": "Shields & Off-Hands", "categories": [2486] },
+    { "name": "Stones, Rods & Reagents", "categories": [2460, 2459, 2488] }
+  ],
   "recipes": []
 }

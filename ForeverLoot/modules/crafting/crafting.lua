@@ -14,6 +14,12 @@ FL:RegisterModule({
     description = "Items made by professions.",
     display = "tiles",
     getChildren = function()
+        -- Professions with many categories group their folders under subheaders; those come
+        -- from the profession's `sections` in .contribute/data/crafting/<profession>.json. To
+        -- try a grouping without touching the data, pass it here instead:
+        --   return FL.ListFolders("crafting", { sections = { blacksmithing = {
+        --       { name = "Plate Armor", categories = { 2469, 2470 } },
+        --   } } })
         return FL.ListFolders("crafting")
     end,
 })

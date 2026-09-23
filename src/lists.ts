@@ -28,11 +28,24 @@ export interface CuratedList {
   faction?: number;
   /** crafting: the game's SkillLine id of the profession; the module merges the generated recipes of that profession into the list at runtime. */
   skillLine?: number;
+  /** crafting: groups the profession's category folders under subheaders in the browser. */
+  sections?: ListSection[];
   /** The rows, under the kind's key (ROWS_KEY): `recipes`, `rewards` or `items`. */
   recipes?: CuratedListRow[];
   /** PvP rows, or reputation rows grouped by standing. */
   rewards?: CuratedListRow[] | ReputationRewards;
   items?: CuratedListRow[];
+}
+
+/**
+ * One subheader of a crafting list: the trade skill categories that belong under it, by
+ * category id (see the `-- Name` comments in the generated recipe file) or by their enUS name,
+ * which `npm run fix` resolves to the id. Categories the sections don't name keep the
+ * profession's own order and follow under "Other".
+ */
+export interface ListSection {
+  name: string;
+  categories: (number | string)[];
 }
 
 /** Reputation rewards are grouped in source; the generator adds `standing` to each Lua row. */
@@ -176,6 +189,7 @@ export function validateLists(files: ListFile[], checker: Checker): void {
     if (file.kind === "crafting" && d.skillLine !== undefined && !checker.ref.skillLines.has(d.skillLine)) {
       checker.report(file, `\`skillLine\` ${d.skillLine} is not a profession with recipes (${[...checker.ref.skillLines.values()].map((s) => `${s.id} ${s.name}`).join(", ")})`);
     }
+    validateSections(file, checker);
     for (const field of ["faction", "skillLine"] as const) {
       if (d[field] !== undefined && !LIST_ID_FIELDS[file.kind].includes(field)) {
         checker.report(file, `\`${field}\` is not a field of ${file.kind} lists`);
@@ -262,6 +276,66 @@ export function validateLists(files: ListFile[], checker: Checker): void {
 }
 
 /**
+ * A crafting list's `sections` against the recipe database: every category must belong to the
+ * file's profession and appear in one section only. A category given by name is reported as
+ * fixable and rewritten to its id by `npm run fix`.
+ */
+function validateSections(file: ListFile, checker: Checker): void {
+  const d = file.data;
+  if (d.sections === undefined) return;
+  if (file.kind !== "crafting") {
+    checker.report(file, "`sections` is only a field of crafting lists");
+    return;
+  }
+  if (!Array.isArray(d.sections)) {
+    checker.report(file, "`sections` must be an array of { name, categories }");
+    return;
+  }
+  const own = [...checker.ref.categories.values()].filter((c) => c.skillLineID === d.skillLine);
+  const byName = new Map(own.map((c) => [c.name.toLowerCase(), c.id]));
+  const seen = new Map<number, string>();
+  for (const [index, section] of d.sections.entries()) {
+    const where = `sections[${index}]`;
+    if (typeof section?.name !== "string" || section.name === "") {
+      checker.report(file, `${where}: \`name\` must be a non-empty string (it is the subheader)`);
+      continue;
+    }
+    if (!Array.isArray(section.categories)) {
+      checker.report(file, `${where} (${section.name}): \`categories\` must be an array of category ids or names`);
+      continue;
+    }
+    for (const [at, entry] of section.categories.entries()) {
+      let id: number | undefined;
+      if (typeof entry === "string") {
+        id = byName.get(entry.toLowerCase());
+        if (id === undefined) {
+          checker.report(file, `${where} (${section.name}): no category of this profession is named "${entry}"`);
+          continue;
+        }
+        checker.report(file, `${where} (${section.name}): "${entry}" -> category ${id}`, true);
+        if (checker.fix) section.categories[at] = id;
+      } else if (Number.isInteger(entry)) {
+        id = entry as number;
+        const category = checker.ref.categories.get(id);
+        if (!category || category.skillLineID !== d.skillLine) {
+          checker.report(file, `${where} (${section.name}): category ${id} is not a category of skillLine ${d.skillLine ?? "?"}`);
+          continue;
+        }
+      } else {
+        checker.report(file, `${where} (${section.name}): categories must be ids or names, got ${JSON.stringify(entry)}`);
+        continue;
+      }
+      const other = seen.get(id);
+      if (other !== undefined) {
+        checker.report(file, `${where} (${section.name}): category ${id} is already in section "${other}"`);
+      } else {
+        seen.set(id, section.name);
+      }
+    }
+  }
+}
+
+/**
  * A crafting row's `spell` against the recipe database: it must be a recipe of the file's
  * profession (an unknown one is allowed with a warning: server-side recipes are not in the
  * client's tables) and, with `fix`, fills in the item it makes. Returns the recipe when known.
@@ -310,6 +384,7 @@ export function serializeList(file: ListFile): string {
     order: d.order,
   };
   for (const field of LIST_ID_FIELDS[file.kind]) ordered[field] = d[field];
+  ordered.sections = d.sections?.map((section) => ({ name: section.name, categories: section.categories }));
   const serializeRow = (r: CuratedListRow) => {
     const row: Record<string, unknown> = { item: r.item, name: r.name };
     for (const field of ROW_FIELDS[file.kind]) {

@@ -524,13 +524,89 @@ local function categoryFolders(kind, id, entries)
     return folders
 end
 
+-- Puts the category folders of a profession under subheaders: each section names the
+-- categories that belong under its title, by category id, by the category's displayed name or
+-- by a curated `group` label, and the folders follow in the order the section lists them.
+-- Categories no section claims keep their order and follow under "Other". Sections come from
+-- the list's `sections` (the crafting JSON) or from the caller (see api.ListFolder); when none
+-- of them matches anything, the plain folder list is left as it is.
+---@param folders ForeverLoot.Node[]  # from categoryFolders, in the trade skill window's order
+---@param sections ForeverLoot.ListSection[]
+---@return ForeverLoot.Node[]
+local function sectionedFolders(folders, sections)
+    local byKey, byLabel = {}, {}
+    for _, folder in ipairs(folders) do
+        byKey[(folder.meta or {}).groupKey or folder.name] = folder
+        if byLabel[folder.name] == nil then
+            byLabel[folder.name] = folder
+        end
+    end
+
+    local out, taken = {}, {}
+    for _, section in ipairs(sections) do
+        local entries = {}
+        for _, entry in ipairs(type(section) == "table" and section.categories or {}) do
+            local folder
+            if type(entry) == "number" then
+                folder = byKey["CATEGORY" .. entry]
+            elseif type(entry) == "string" then
+                folder = byLabel[entry] or byKey["CUSTOM:" .. entry]
+            end
+            if folder and not taken[folder] then
+                taken[folder] = true
+                entries[#entries + 1] = folder
+            end
+        end
+        if #entries > 0 then
+            out[#out + 1] = api.Subheader(section.name or "", entries)
+        end
+    end
+    if #out == 0 then
+        return folders
+    end
+
+    local rest = {}
+    for _, folder in ipairs(folders) do
+        if not taken[folder] then
+            rest[#rest + 1] = folder
+        end
+    end
+    if #rest > 0 then
+        out[#out + 1] = api.Subheader(OTHER or "Other", rest)
+    end
+    return out
+end
+
+-- The sections a list's category folders are grouped by: what the caller passed for this list
+-- (`false` switches the list's own off), else the list's `sections` from the curated file.
+---@param list ForeverLoot.List
+---@param id string
+---@param opts ForeverLoot.ListFolderOptions?
+---@return ForeverLoot.ListSection[]?
+local function sectionsOf(list, id, opts)
+    local given = opts and opts.sections
+    if type(given) == "function" then
+        given = given(id, list)
+    elseif type(given) == "table" and given[id] ~= nil then
+        given = given[id]
+    end
+    if given == false then
+        return nil
+    end
+    if type(given) == "table" and given[1] ~= nil then
+        return given --[[@as ForeverLoot.ListSection[] ]]
+    end
+    return type(list.sections) == "table" and list.sections or nil
+end
+
 -- A list folder: its rows in two grouped columns, carrying the list's picture and info for
 -- lists that draw their entries as tiles. A profession (a crafting list with recipes) instead
--- holds one folder per category, see categoryFolders.
+-- holds one folder per category, see categoryFolders, optionally under subheaders (`sections`).
 ---@param kind ForeverLoot.ListKind
 ---@param id string
+---@param opts? ForeverLoot.ListFolderOptions
 ---@return ForeverLoot.Node?
-function api.ListFolder(kind, id)
+function api.ListFolder(kind, id, opts)
     local list = Data:GetList(kind, id)
     if not list then
         return nil
@@ -552,6 +628,10 @@ function api.ListFolder(kind, id)
     local groupBy = listGroupKey(kind) ---@type ("auto"|fun(node: ForeverLoot.Node): string?, string?)?
     if kind == "crafting" and entries[1] and (entries[1].itemID or entries[1].spellID) then
         entries, groupBy = categoryFolders(kind, id, entries), nil
+        local sections = sectionsOf(list, id, opts)
+        if sections then
+            entries = sectionedFolders(entries, sections)
+        end
     end
     return api.Folder(name, list.icon or ICON_LIST, entries, {
         columns = 2,
@@ -577,13 +657,15 @@ function api.ListFolder(kind, id)
 end
 
 -- Folders for every list of one kind ("crafting", "pvp", "collections", "reputation"), in DB
--- order (`order`, then name).
+-- order (`order`, then name). `opts` is passed on to every list (see api.ListFolder); its
+-- `sections` may be keyed by list id or a function, so one call can regroup several lists.
 ---@param kind ForeverLoot.ListKind
+---@param opts? ForeverLoot.ListFolderOptions
 ---@return ForeverLoot.Node[]
-function api.ListFolders(kind)
+function api.ListFolders(kind, opts)
     local folders = {}
     for _, id in ipairs(Data:GetListIDs(kind)) do
-        folders[#folders + 1] = api.ListFolder(kind, id)
+        folders[#folders + 1] = api.ListFolder(kind, id, opts)
     end
     return folders
 end

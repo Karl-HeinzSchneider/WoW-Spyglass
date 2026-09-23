@@ -144,7 +144,7 @@ key differs per kind:
 
 | Folder | Rows key | Row fields besides `item`/`name`/`group` | Default grouping |
 |---|---|---|---|
-| `crafting/` | `recipes` | `spell` (recipe spell id), `skill` (skill needed to learn it), `source` (free text: "Trainer", "Vendor: …") | one sub-folder per trade skill category ("Plate Helmets"); a `group` label is a folder of its own |
+| `crafting/` | `recipes` | `spell` (recipe spell id), `skill` (skill needed to learn it), `source` (free text: "Trainer", "Vendor: …") | one sub-folder per trade skill category ("Plate Helmets"), optionally under subheaders (`sections`); a `group` label is a folder of its own |
 | `pvp/` | `rewards` | `rank` (honor rank 1–14), `standing`, `side` (`Alliance`/`Horde`) | rank, else standing |
 | `collections/` | `items` | `source` (free text), `side` | none (by item type) |
 | `reputation/` | `rewards` **object keyed by standing** | `side` | standing |
@@ -213,6 +213,34 @@ different item is an error. `npm run check` warns when a profession with recipes
   ]
 }
 ```
+
+### Crafting: subheaders over the category folders (`sections`)
+
+A profession with many trade skill categories (Blacksmithing has 34) becomes one long list of
+folders. An optional `sections` array groups them under subheaders in the browser: each section
+has a `name` (the subheader) and the `categories` under it, by category id — the `-- Name`
+comments in `ForeverLoot/db/generated/recipes/<profession>.lua` are the place to look them up —
+or by the category's enUS name, which `npm run fix` rewrites to the id. The folders appear in
+the order the section lists them, sections in the order of the array, and every category no
+section claims keeps its place under a final "Other". Categories of another profession, an
+unknown id or name, and a category in two sections are errors.
+
+```json
+{
+  "name": "Blacksmithing",
+  "skillLine": 164,
+  "sections": [
+    { "name": "Plate Armor", "categories": [2469, 2470, 2471, 2472, 2473, 2474, 2475, 2476] },
+    { "name": "Mail Armor", "categories": ["Mail Helmets", "Mail Pauldrons"] }
+  ],
+  "recipes": []
+}
+```
+
+A `group` label used by the file's rows can be named in a section too (its folder is matched by
+that label), so curated groups sit under a subheader like any category. Sections are a display
+choice, not data: a module may pass its own to `ForeverLoot.ListFolders` and override the
+file's (see `docs/API.md`).
 
 Which recipes ship is decided by the scans, not by hand: the client's tables also hold recipes
 of other seasons whose items this server never had, so a recipe is generated only when the item

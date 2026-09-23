@@ -61,6 +61,13 @@ local log = app.logger
 ---@field group? string  # group label marker; `items` optionally holds the grouped entries
 ---@field items? ForeverLoot.Node[]
 
+-- What api.ListFolder / api.ListFolders may be told about a list, so a module can regroup a
+-- list without touching the curated data: `sections` replaces the list's own subheaders (see
+-- ForeverLoot.ListSection), either directly, keyed by list id, or as a function of it;
+-- `false` drops the ones the data brings.
+---@class ForeverLoot.ListFolderOptions
+---@field sections? ForeverLoot.ListSection[]|false|table<string, ForeverLoot.ListSection[]|false>|fun(id: string, list: ForeverLoot.List): ForeverLoot.ListSection[]|false|nil
+
 ---@class ForeverLoot.ModuleDef
 ---@field id string  # unique key, e.g. "raids"; other addons should prefix theirs ("myaddon-raids")
 ---@field name string  # display name

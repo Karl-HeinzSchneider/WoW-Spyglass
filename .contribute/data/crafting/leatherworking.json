@@ -3,5 +3,12 @@
   "icon": "Interface\\Icons\\Trade_LeatherWorking",
   "order": 50,
   "skillLine": 165,
+  "sections": [
+    { "name": "Leather Armor", "categories": [2553, 2554, 2555, 2556, 2557, 2558, 2559, 2560] },
+    { "name": "Mail Armor", "categories": [2561, 2562, 2563, 2564, 2565, 2566, 2567, 2568] },
+    { "name": "Cloaks & Armor Kits", "categories": [2552, 2569] },
+    { "name": "Bags & Quivers", "categories": [2551, 2570, 2571] },
+    { "name": "Ranged Weapons", "categories": [2572, 2573] }
+  ],
   "recipes": []
 }

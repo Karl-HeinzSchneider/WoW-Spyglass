@@ -107,6 +107,13 @@ local RECIPE = {
 ---@field order? number  # position among the kind's lists; by name when equal
 ---@field factionID? integer  # reputation lists
 ---@field skillLineID? integer  # crafting lists
+---@field sections? ForeverLoot.ListSection[]  # crafting lists: the categories grouped under subheaders
+
+-- One subheader of a crafting list and the trade skill categories under it, by category id,
+-- by the category's displayed name or by a curated `group` label.
+---@class ForeverLoot.ListSection
+---@field name string
+---@field categories (integer|string)[]
 
 -- A row of a list: the item id, then the kind's fields by name (`standing`, `rank`, `skill`,
 -- `spell`, `source`, `side`, ...) and an optional `group` label overriding the default grouping.

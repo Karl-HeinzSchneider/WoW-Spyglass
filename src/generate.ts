@@ -3,7 +3,7 @@ import { dirname, relative, resolve } from "node:path";
 import { type Config, FALLBACK_LOCALE, LOCALE_OUTPUT_DIR, OUTPUT_DIR, ROOT } from "./config.js";
 import { type CuratedFile } from "./curated.js";
 import { type ScannedItem } from "./items.js";
-import { type ListFile, ROW_FIELDS, rowsOf } from "./lists.js";
+import { type ListFile, type ListSection, ROW_FIELDS, rowsOf } from "./lists.js";
 import { header, luaFields, luaString, luaValue } from "./lua.js";
 import { type Recipe, type SkillLine, shipsRecipe } from "./recipes.js";
 import { type Reference, nameOf } from "./reference.js";
@@ -129,6 +129,7 @@ function emitList(file: ListFile, ref: Reference): string {
       ["name", "icon", "background", "backgroundCoords", "info", "order", "factionID", "skillLineID"],
     ).map((l) => l + "\n"),
   );
+  out.push(...emitSections(d.sections, ref));
   out.push("})\n");
   // Rows without an item are either name-only rows `npm run fix` hasn't resolved yet (dropped) or
   // crafting rows naming a recipe that makes no item (an enchant: kept, the spell is the row).
@@ -144,6 +145,21 @@ function emitList(file: ListFile, ref: Reference): string {
     out.push("})\n");
   }
   return out.join("");
+}
+
+/**
+ * A crafting list's subheaders: one line per section, with the categories' names as a comment,
+ * so the ids stay readable next to the generated recipe file they come from.
+ */
+function emitSections(sections: ListSection[] | undefined, ref: Reference): string[] {
+  if (!sections || sections.length === 0) return [];
+  const out = ["    sections = {\n"];
+  for (const section of sections) {
+    const names = section.categories.map((c) => (typeof c === "number" ? (ref.categories.get(c)?.name ?? `#${c}`) : c)).join(", ");
+    out.push(`        { name = ${luaString(section.name)}, categories = ${luaValue(section.categories)} }, -- ${names}\n`);
+  }
+  out.push("    },\n");
+  return out;
 }
 
 const RECIPE_LAYOUT = "skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto, taughtBy";

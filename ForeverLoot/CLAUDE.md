@@ -87,7 +87,10 @@ Nothing in here touches frames.
   `tooltip` function) and the curated rows are laid over them by `spell` or by item; the
   profession folder holds one sub-folder per trade skill category (`categoryFolders`: curated
   `group` labels get their own, the rest "Other"; first recipe's icon, "N recipes" as the
-  description) and takes the localized profession name from `Data:GetName("skillLines", …)`
+  description), grouped under subheaders when the list has `sections` (`sectionedFolders`: from
+  the crafting JSON, or from what the caller passes as `ListFolder(kind, id, opts)` /
+  `ListFolders(kind, opts)`; categories no section names follow under "Other"), and takes the
+  localized profession name from `Data:GetName("skillLines", …)`
   and the character's rank from `C_SkillInfo.GetSkillLineInfoByID` as `info`.
 
 ### `db/generated/` — **generated, never hand-edited**

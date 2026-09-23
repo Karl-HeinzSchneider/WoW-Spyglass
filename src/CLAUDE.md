@@ -70,8 +70,11 @@ the data they consume is described in `.contribute/CLAUDE.md`.
   must be a profession with recipes; `checkRecipeSpell` checks a row's `spell` against the recipe
   database (profession and created item; unknown spells warn) and on fix fills `item` from
   `spell`, `fillRecipeSpell` fills `spell` from `item` when one recipe of the profession makes it;
-  rows for recipes that make no item (enchants) carry only `spell` and skip the item check; a
-  warning names each profession with recipes but no file. Reputation files: `faction` must be in
+  rows for recipes that make no item (enchants) carry only `spell` and skip the item check;
+  `validateSections` checks the optional `sections` (subheaders over the profession's category
+  folders): every category must belong to the file's profession and to one section only, a
+  category given by name is fixed to its id; a warning names each profession with recipes but
+  no file. Reputation files: `faction` must be in
   `ref.factions`, `fix` rewrites `name` from it.
 - `savedvars.ts` — a parser for the Lua subset the client writes to SavedVariables (tables,
   `["key"]`/`[123]`/positional entries, quoted strings with escapes, numbers, booleans, nil);

@@ -7,4 +7,11 @@ Data:AddList("crafting", "leatherworking", {
     icon = "Interface\\Icons\\Trade_LeatherWorking",
     order = 50,
     skillLineID = 165,
+    sections = {
+        { name = "Leather Armor", categories = { 2553, 2554, 2555, 2556, 2557, 2558, 2559, 2560 } }, -- Leather Helmets, Leather Pauldrons, Leather Chestguards, Leather Bracers, Leather Gauntlets, Leather Belts, Leather Legguards, Leather Boots
+        { name = "Mail Armor", categories = { 2561, 2562, 2563, 2564, 2565, 2566, 2567, 2568 } }, -- Mail Helmets, Mail Pauldrons, Mail Chestguards, Mail Bracers, Mail Gauntlets, Mail Belts, Mail Legguards, Mail Boots
+        { name = "Cloaks & Armor Kits", categories = { 2552, 2569 } }, -- Cloaks, Armor Kits
+        { name = "Bags & Quivers", categories = { 2551, 2570, 2571 } }, -- Bags, Quivers, Ammo Pouches
+        { name = "Ranged Weapons", categories = { 2572, 2573 } }, -- Crossbows, Arrows
+    },
 })

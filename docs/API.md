@@ -227,9 +227,9 @@ Constructors (optional sugar):
 - `ForeverLoot.InstanceFolders(type)` — folders for every DB instance of `type` (`"dungeon"` / `"raid"`)
 - `ForeverLoot.InstanceFolder(instanceID)` / `ForeverLoot.BossFolder(bossID)` / `ForeverLoot.BossLootEntries(bossID)` —
   DB-backed folders: instance → bosses → drops with `chance`
-- `ForeverLoot.ListFolders(kind)` — folders for every curated list of `kind` (`"crafting"`, `"pvp"`,
+- `ForeverLoot.ListFolders(kind, opts?)` — folders for every curated list of `kind` (`"crafting"`, `"pvp"`,
   `"collections"`, `"reputation"`), by `order` then name; the built-in modules of those names are exactly this
-- `ForeverLoot.ListFolder(kind, id)` / `ForeverLoot.ListEntries(kind, id)` — one list as a two-column
+- `ForeverLoot.ListFolder(kind, id, opts?)` / `ForeverLoot.ListEntries(kind, id)` — one list as a two-column
   folder; its item nodes carry the row's fields in `meta` (`standing`, `rank`, `skill`, `spell`, `source`,
   `side`, `group`) and are grouped by the row's `group`, else the kind's default (standing / honor rank /
   trade skill category, then skill tier), else the item's type. A crafting list with a `skillLineID`
@@ -240,7 +240,8 @@ Constructors (optional sugar):
   `ListFolder` then splits a profession into one sub-folder per trade skill category ("Weapon
   Stones", "Plate Helmets", ...; a curated `group` label makes a folder of its own, rows with
   neither go under "Other"), each with its first recipe's icon and a recipe count, so the
-  profession page is a list of categories rather than hundreds of rows. Crafting folders show the
+  profession page is a list of categories rather than hundreds of rows. Professions with many
+  categories can put those folders under subheaders — see *Category sections* below. Crafting folders show the
   character's rank ("145 / 150") as `info` and the localized profession name.
   A plain click on any row whose `meta.spell` is a recipe in `Data.recipes` opens the recipe popup
   (product and teaching item, recipe link and reagents); modified clicks still link the row's item.
@@ -248,6 +249,39 @@ Constructors (optional sugar):
 - `ForeverLoot.LogAt(level, fmt, ...)` — threshold-aware diagnostic output using the core logger
 - `ForeverLoot.PlaceholderItem(name, quality, icon)` — hard-coded display data, for prototyping
 - `ForeverLoot.PlaceholderItems(prefix, count)` — generates `count` placeholder items
+
+### Category sections (crafting)
+
+A profession with many trade skill categories (Blacksmithing has 34) lists a lot of folders.
+`sections` groups them under `Subheader` titles: each section has a `name` and the `categories`
+below it, named by category id, by the category's displayed name, or by a curated `group` label.
+The folders come in the order the section lists them, sections in array order, and categories no
+section claims follow under "Other". Nothing else changes — the folders and their contents are
+the same nodes.
+
+Sections normally come from the profession's curated file (`.contribute/data/crafting/*.json`),
+so every player sees them. A module can pass its own instead, which is the quick way to try a
+grouping out:
+
+```lua
+ForeverLoot.ListFolders("crafting", {
+    sections = {
+        -- per list id (the JSON file's name); `false` drops the ones the data brings
+        blacksmithing = {
+            { name = "Plate Armor", categories = { 2469, 2470, 2471, 2472, 2473, 2474, 2475, 2476 } },
+            { name = "Weapons", categories = { "Two-Handed Axes", "One-Handed Axes", "Daggers" } },
+        },
+        enchanting = false,
+    },
+})
+
+-- or as a function of the list, and for a single profession
+ForeverLoot.ListFolders("crafting", { sections = function(id, list) return mySections[list.skillLineID] end })
+ForeverLoot.ListFolder("crafting", "tailoring", { sections = { { name = "Bags", categories = { "Bags", "Specialty Bags" } } } })
+```
+
+`opts` is passed through unchanged to every list, so the same call works for the other kinds;
+only crafting lists read `sections` today.
 
 ## Other calls
 
