@@ -872,6 +872,18 @@ function ForeverLootViewMixin:OnLoad()
     self.FilterDropdown:SetupMenu(function(_, rootDescription)
         self:BuildFilterMenu(rootDescription)
     end)
+    -- The template's red X over the button's corner: shown while filters or sort differ from
+    -- the defaults, a click resets them.
+    self.FilterDropdown:SetIsDefaultCallback(function()
+        local q = self:GetCurrentQuery()
+        return not q or self:IsDefaultQuery(q)
+    end)
+    self.FilterDropdown:SetDefaultCallback(function()
+        local q = self:GetCurrentQuery()
+        if q then
+            self:ResetFilters(q)
+        end
+    end)
 
     self.crumbPool = CreateFramePool("Button", self.Breadcrumbs, "ForeverLootBreadcrumbButtonTemplate") --[[@as ForeverLoot.FramePool]]
     self.separatorPool = CreateFramePool("Frame", self.Breadcrumbs, "ForeverLootBreadcrumbSeparatorTemplate") --[[@as ForeverLoot.FramePool]]
@@ -1140,6 +1152,22 @@ function ForeverLootViewMixin:ResetFilters(q)
     self:OnQueryChanged()
 end
 
+-- Filters and sort as ResetFilters leaves them (the search text doesn't count). A multi filter
+-- whose last value was unticked is left as an empty table.
+---@param q ForeverLoot.Query
+---@return boolean
+function ForeverLootViewMixin:IsDefaultQuery(q)
+    if (q.sort or "name") ~= "name" then
+        return false
+    end
+    for _, values in pairs(q.filters) do
+        if type(values) ~= "table" or #values > 0 then
+            return false
+        end
+    end
+    return true
+end
+
 local SORT_OPTIONS = {
     { value = "name", label = NAME or "Name" },
     { value = "ilvl", label = ITEM_LEVEL_ABBR or "Item Level" },
@@ -1224,6 +1252,7 @@ function ForeverLootViewMixin:UpdateToolbar()
         self.SearchBox:SetText(q.search or "") -- userInput = false: no query re-run
     end
     self.ResultCount:SetText(("%d items"):format(self.resultCount))
+    self.FilterDropdown:ValidateResetState()
 end
 
 -- The element kind a folder's entries are drawn as: "row" (default), "tile" or "card".
