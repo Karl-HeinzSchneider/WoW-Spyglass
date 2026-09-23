@@ -158,7 +158,7 @@ boss icon.
 A display id is not in any client table for these NPCs, so it is collected in game. With the
 boss (or any copy of it) as your target:
 
-```
+```text
 /run local m=CreateFrame("PlayerModel") m:SetUnit("target") print(m:GetDisplayInfo(), UnitGUID("target"))
 ```
 
