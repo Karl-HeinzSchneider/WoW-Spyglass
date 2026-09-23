@@ -132,7 +132,9 @@ picture standing on its left, the name and the two info texts beside it, two car
 | `portraitDisplayID` | integer | CreatureDisplayID the client renders the picture from, for entries without a `portrait` (the game's own boss buttons draw creature portraits the same way). |
 | `quests` | integer[] | Quest ids the entry is involved in: the card shows a quest "!" and the tooltip lists the quests' titles. |
 
-`InstanceFolder` nodes are card folders: each `BossFolder(bossID)` carries what the database
+`InstanceFolder` nodes are card folders. The first card, "All Bosses", lists every item any of
+the instance's bosses drops (each item once), so the whole loot table reads at a glance. Then
+each `BossFolder(bossID)` carries what the database
 knows about the boss — portrait (a texture, or the model's display id for bosses without art), `info` as "<level> <creature type>" (e.g. "60 Beast"), `quests`,
 and `infoRight` reserved for its *drops of interest* (hidden until the planned favorites
 system decides what counts). After the bosses come the instance's own two cards,

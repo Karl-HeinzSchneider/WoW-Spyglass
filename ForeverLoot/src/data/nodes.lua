@@ -192,8 +192,41 @@ function api.QuestFolder(instanceID)
     })
 end
 
--- An instance folder with one boss folder per encounter followed by the instance's own two
--- categories (trash and quests), carrying the instance's metadata (`instanceID`, `minLevel`,
+-- Every item the instance's bosses drop on one card, in front of the boss cards, so the whole
+-- loot table can be read at a glance. An item more than one boss drops is listed once, with the
+-- first boss's chance.
+---@param instanceID integer
+---@param instance ForeverLoot.Instance
+---@return ForeverLoot.Node
+local function allBossesFolder(instanceID, instance)
+    local entries, seen = {}, {}
+    for _, bossID in ipairs(instance.bosses) do
+        for _, row in ipairs(Data:GetBossLoot(bossID)) do
+            if not seen[row[1]] then
+                seen[row[1]] = true
+                entries[#entries + 1] = { itemID = row[1], chance = row[2] }
+            end
+        end
+    end
+    local count = #entries
+    if count == 0 then
+        entries[1] = api.Custom({
+            name = "No drops recorded yet",
+            icon = ICON_MISSING,
+            description = "Help out: add the bosses' loot in the repository's .contribute folder.",
+        })
+    end
+    return api.Folder("All Bosses", ICON_BOSS, entries, {
+        columns = 2,
+        groupBy = "auto",
+        info = countText(count, "drop", "drops"),
+        description = "Everything the bosses here drop, on one page.",
+        meta = { instanceID = instanceID, allBosses = true },
+    })
+end
+
+-- An instance folder with an "All Bosses" card, one boss folder per encounter and the instance's
+-- own two categories (trash and quests), carrying the instance's metadata (`instanceID`, `minLevel`,
 -- `maxLevel`, `expansionID`) for sorting and filtering and its picture for lists that draw
 -- their entries as tiles.
 ---@param instanceID integer
@@ -203,9 +236,9 @@ function api.InstanceFolder(instanceID)
     if not instance then
         return nil
     end
-    local entries = {}
-    for i, bossID in ipairs(instance.bosses) do
-        entries[i] = api.BossFolder(bossID)
+    local entries = { allBossesFolder(instanceID, instance) }
+    for _, bossID in ipairs(instance.bosses) do
+        entries[#entries + 1] = api.BossFolder(bossID)
     end
     entries[#entries + 1] = api.TrashFolder(instanceID)
     entries[#entries + 1] = api.QuestFolder(instanceID)

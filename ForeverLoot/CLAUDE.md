@@ -82,8 +82,8 @@ Nothing in here touches frames.
 - `query.lua` — `app.query`: `Query.Run(q)` over a plain, serializable query table (`search`,
   `filters`, `sort`). Filters AND, values within a filter OR.
 - `nodes.lua` — DB-backed node constructors on the public API that modules build their trees
-  from: `InstanceFolders(type)`, `InstanceFolder(id)` (a `cards` folder of bosses, then the
-  instance's own two cards), `BossFolder(id)`,
+  from: `InstanceFolders(type)`, `InstanceFolder(id)` (a `cards` folder: an "All Bosses" card
+  with every boss's drops, the bosses, then the instance's own two cards), `BossFolder(id)`,
   `BossLootEntries(id)`, `TrashFolder(id)`/`TrashLootEntries(id)` (the drops of everything
   between the bosses) and `QuestFolder(id)`/`InstanceQuestEntries(id)` (one subheader per quest —
   title, id and the faction when its `side` restricts it — over the items it rewards);
