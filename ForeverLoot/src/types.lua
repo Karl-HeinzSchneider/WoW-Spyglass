@@ -11,6 +11,7 @@
 ---@field dbDefaults ForeverLoot.DBDefaults
 ---@field db ForeverLoot.DB
 ---@field minimapButton ForeverLoot.MinimapButton
+---@field tooltip ForeverLoot.Tooltip  # adds the instance loot sources to item tooltips
 ---@field api ForeverLoot.API  # also the global `ForeverLoot`
 ---@field data ForeverLoot.Data  # item database; also `ForeverLoot.Data`
 ---@field filters ForeverLoot.Filters  # filter registry; also `ForeverLoot.Filters`

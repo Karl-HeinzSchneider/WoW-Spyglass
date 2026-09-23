@@ -30,4 +30,5 @@ src\helper\profiler.lua
 src\ui\mainwindow.xml
 src\ui\recipepopup.lua
 src\ui\recipepopup.xml
+src\ui\tooltip.lua
 ForeverLoot.lua
