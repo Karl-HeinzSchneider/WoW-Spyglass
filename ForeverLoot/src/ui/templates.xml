@@ -448,7 +448,7 @@
 		</Layers>
 	</Frame>
 
-	<!-- A view fills the window's left column: a header row (back button + breadcrumbs on the
+	<!-- A view fills the window's left column: a header row (breadcrumbs on the
 	     left, search box + filter on the right) over a divider, the list below it, page
 	     controls bottom-right. Mouse wheel turns pages; right-click anywhere goes one level back. -->
 	<Frame name="ForeverLootViewTemplate" mixin="ForeverLootViewMixin" enableMouse="true" virtual="true">
@@ -463,22 +463,15 @@
 			<KeyValue key="columnGap" value="12" type="number"/>
 		</KeyValues>
 		<Frames>
-			<Button parentKey="BackButton">
-				<Size x="24" y="24"/>
-				<Anchors>
-					<Anchor point="TOPLEFT" x="14" y="-12"/>
-				</Anchors>
-				<NormalTexture atlas="common-icon-backarrow"/>
-				<HighlightTexture atlas="common-icon-backarrow" alphaMode="ADD"/>
-				<DisabledTexture atlas="common-icon-backarrow" alpha="0.3"/>
-			</Button>
+			<!-- Starts right of the window's portrait circle (62px at x = -5), which hangs over
+			     the top-left corner of the view. -->
 			<Frame parentKey="Breadcrumbs" inherits="HorizontalLayoutFrame">
 				<KeyValues>
 					<KeyValue key="spacing" value="2" type="number"/>
 				</KeyValues>
 				<Size x="1" y="24"/>
 				<Anchors>
-					<Anchor point="LEFT" relativeKey="$parent.BackButton" relativePoint="RIGHT" x="8" y="0"/>
+					<Anchor point="TOPLEFT" x="66" y="-12"/>
 				</Anchors>
 			</Frame>
 			<!-- Query toolbar, only shown on item-DB folders. -->

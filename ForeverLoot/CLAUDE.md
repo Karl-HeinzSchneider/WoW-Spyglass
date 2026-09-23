@@ -146,8 +146,8 @@ only sanctioned globals.
   one, tooltip = title) plus a `+` tab; right-click closes; `RebuildTabs()` relays the strip from
   a pool. Draggable; position saved to `profile.window`. Root node from `app.api:GetRootNode()`;
   listens to `OnModulesChanged`, `OnDataChanged`, `OnFiltersChanged`.
-- `view.lua` + `templates.xml` — a view fills the left column: header row (back button +
-  breadcrumbs left, search box + filter dropdown right) over a divider, one `Content` page of rows
+- `view.lua` + `templates.xml` — a view fills the left column: header row (breadcrumbs
+  left, starting right of the window portrait, search box + filter dropdown right) over a divider, one `Content` page of rows
   with Blizzard `PagingControls` bottom-right. Navigation is a `path` stack over `ForeverLoot.Node`
   trees (`Push`/`PopTo`/`Back` → `Refresh`). `Refresh()` rebuilds elements + page layout
   (navigation, query/size changes); `Render()` only redraws the current page (page flips, item

@@ -769,7 +769,6 @@ end
 ---@class ForeverLoot.PagingControls : Frame, PagingControlsMixin
 
 ---@class ForeverLoot.View : Frame
----@field BackButton Button
 ---@field Breadcrumbs ForeverLoot.LayoutFrame
 ---@field HeaderDivider Texture
 ---@field Title ForeverLoot.PageHeader
@@ -876,10 +875,6 @@ function ForeverLootViewMixin:OnLoad()
 
     self.crumbPool = CreateFramePool("Button", self.Breadcrumbs, "ForeverLootBreadcrumbButtonTemplate") --[[@as ForeverLoot.FramePool]]
     self.separatorPool = CreateFramePool("Frame", self.Breadcrumbs, "ForeverLootBreadcrumbSeparatorTemplate") --[[@as ForeverLoot.FramePool]]
-
-    self.BackButton:SetScript("OnClick", function()
-        self:Back()
-    end)
 end
 
 function ForeverLootViewMixin:OnShow()
@@ -1293,7 +1288,6 @@ function ForeverLootViewMixin:Render()
 
     self:RefreshBreadcrumbs()
     self:UpdateToolbar()
-    self.BackButton:SetEnabled(#self.path > 1)
 end
 
 -- Turns the current node into the flat list of things to draw: its children (the folder's
