@@ -31,6 +31,8 @@ function addon:OnEnable()
     -- PLAYER_LOGIN is still behind the loading screen and every addon (the locale names too)
     -- has loaded: build the query's sort order now instead of on the first click on Items.
     app.query.Run(app.query.New())
+    -- Likewise the tile pictures, so no tile is drawn before its picture has loaded.
+    app.ui.mainWindow.views[1]:PreloadTilePictures()
     log:debug("Enabled")
 end
 

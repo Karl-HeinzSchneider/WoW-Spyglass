@@ -160,7 +160,9 @@ only sanctioned globals.
     `tooltip` lines (a list or a function of the node).
   - `display = "tiles"` (raids, dungeons, crafting) draws `ForeverLootTileTemplate` cards:
     `background`/`backgroundCoords` picture (a texture, or an atlas resolved through
-    `C_Texture.GetAtlasInfo` with the coords cut from its region), name on top, `info` (level range by default) and
+    `C_Texture.GetAtlasInfo` with the coords cut from its region; `addon:OnEnable` preloads the
+    pictures of the root's tile folders onto textures of their own, set once on an alpha-0
+    frame, so the files are loaded before the first visit and never drop out), name on top, `info` (level range by default) and
     `infoRight` in the bottom corners, three per line.
   - `display = "cards"` (an instance's boss list) draws `ForeverLootCardTemplate`: the same
     bevelled list-button atlas with the entry's `portrait` standing on the left (a

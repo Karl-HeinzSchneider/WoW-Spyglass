@@ -500,8 +500,33 @@ function ForeverLootTileMixin:Init(view, node)
     end
 end
 
-----------------------------------------------------------------------------------------------------
--- Card: a portrait card for entries of a `display = "cards"` folder (e.g. a boss)
+-- The client loads a texture file in the background when a texture first asks for it and drops
+-- it again once no texture uses it, so a tile drawn before its picture has loaded shows it a few
+-- frames late; and as the tile pool hands frames from one folder to the next, every visit can
+-- load it anew. The stock profession overview avoids this by never changing a card's picture.
+-- The same here: every tile picture gets a texture of its own that is set once and kept, on a
+-- frame that is shown at alpha 0 (the world map keeps its loading tiles that way), so the files
+-- load early and stay loaded.
+local pictureHolder ---@type Frame?
+local heldPictures = {} ---@type table<string|number, Texture>
+
+---@param background string|number
+local function holdPicture(background)
+    local file = tilePicture(background)
+    if file == nil or heldPictures[file] then
+        return
+    end
+    if not pictureHolder then
+        pictureHolder = CreateFrame("Frame", nil, UIParent)
+        pictureHolder:SetSize(1, 1)
+        pictureHolder:SetPoint("TOPLEFT")
+        pictureHolder:SetAlpha(0)
+    end
+    local texture = pictureHolder:CreateTexture()
+    texture:SetAllPoints()
+    texture:SetTexture(file)
+    heldPictures[file] = texture
+end
 ----------------------------------------------------------------------------------------------------
 
 -- The card's picture region: the template's 2:1 size for art files, a square for a portrait
@@ -955,6 +980,20 @@ function ForeverLootViewMixin:GetChildren(node)
         return {}
     end
     return node.children or {}
+end
+
+-- Loads the pictures of the tiles in the root's tile folders (Dungeons, Raids, Crafting, …)
+-- ahead of the first visit and keeps them loaded (see holdPicture).
+function ForeverLootViewMixin:PreloadTilePictures()
+    for _, module in ipairs(self:GetChildren(self.path[1])) do
+        if module.display == "tiles" then
+            for _, child in ipairs(self:GetChildren(module)) do
+                if child.background then
+                    holdPicture(child.background)
+                end
+            end
+        end
+    end
 end
 
 -- The query state of a query folder, created on first use and kept while this tab lives.
