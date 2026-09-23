@@ -202,5 +202,122 @@
       "item": 1925,
       "name": "Defias Rapier"
     }
+  ],
+  "quests": [
+    {
+      "id": 166,
+      "name": "The Defias Brotherhood",
+      "side": "Alliance",
+      "items": [
+        {
+          "item": 2041,
+          "name": "Tunic of Westfall"
+        },
+        {
+          "item": 2042,
+          "name": "Staff of Westfall"
+        },
+        {
+          "item": 6087,
+          "name": "Chausses of Westfall"
+        }
+      ]
+    },
+    {
+      "id": 168,
+      "name": "Collecting Memories",
+      "side": "Alliance",
+      "items": [
+        {
+          "item": 2036,
+          "name": "Dusty Mining Gloves"
+        },
+        {
+          "item": 2037,
+          "name": "Tunneler's Boots"
+        },
+        {
+          "item": 270007,
+          "name": "Worn Miner's Waistcord"
+        }
+      ]
+    },
+    {
+      "id": 167,
+      "name": "Oh Brother. . .",
+      "side": "Alliance",
+      "items": [
+        {
+          "item": 1893,
+          "name": "Miner's Revenge"
+        },
+        {
+          "item": 270012,
+          "name": "Miner's Workgloves"
+        },
+        {
+          "item": 270013,
+          "name": "Miner's Workboots"
+        }
+      ]
+    },
+    {
+      "id": 214,
+      "name": "Red Silk Bandanas",
+      "side": "Alliance",
+      "items": [
+        {
+          "item": 2074,
+          "name": "Solid Shortblade"
+        },
+        {
+          "item": 2089,
+          "name": "Scrimshaw Dagger"
+        },
+        {
+          "item": 6094,
+          "name": "Piercing Axe"
+        },
+        {
+          "item": 270005,
+          "name": "Monastic Hammer"
+        }
+      ]
+    },
+    {
+      "id": 2040,
+      "name": "Underground Assault",
+      "side": "Alliance",
+      "items": [
+        {
+          "item": 7606,
+          "name": "Polar Gauntlets"
+        },
+        {
+          "item": 7607,
+          "name": "Sable Wand"
+        },
+        {
+          "item": 270015,
+          "name": "Bravo's Armbands"
+        },
+        {
+          "item": 270016,
+          "name": "Dreamer's Leggings"
+        }
+      ]
+    },
+    {
+      "id": 92753,
+      "name": "Destruction in Deadmines",
+      "side": "Alliance",
+      "items": []
+    },
+    {
+      "id": 373,
+      "name": "The Unsent Letter",
+      "side": "Alliance",
+      "items": []
+    }
   ]
 }

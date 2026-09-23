@@ -62,8 +62,10 @@ the data they consume is described in `.contribute/CLAUDE.md`.
 - `curated.ts` — `CuratedInstance/Encounter/Loot/Quest` (the dungeon/raid JSON), `loadCurated`,
   `validate` (ids against the reference, folder vs `InstanceType`, duplicates, chance range,
   missing encounters added on fix; the instance's own `trash` list — added empty on fix, since
-  every instance has one — and its `quests`, whose ids must be positive and unique and whose
-  `side` must be one of `QUEST_SIDES`; a quest title can only be warned about, no game table
+  every instance has one — and its `quests`, whose ids must be positive and unique (a missing
+  id is a warning, and `generate.ts` leaves that quest out until it has one) and whose
+  `side` must be one of `QUEST_SIDES` and `class` (a class quest) one of `QUEST_CLASSES`,
+  shipped as the client's class token via `classToken`; a quest title can only be warned about, no game table
   has one; a split map — several files with one `map`, each with its own `id` — must list each
   encounter in exactly one of its files: twice is an error, none a warning, never added on fix),
   `instanceIDOf` (the file's `id`, else its map), `serialize` (stable key order), and the shared `Checker`

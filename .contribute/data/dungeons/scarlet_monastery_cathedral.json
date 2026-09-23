@@ -30,5 +30,12 @@
       ]
     }
   ],
-  "trash": []
+  "trash": [],
+  "quests": [
+    {
+      "name": "In the Name of the Light",
+      "side": "Alliance",
+      "items": []
+    }
+  ]
 }

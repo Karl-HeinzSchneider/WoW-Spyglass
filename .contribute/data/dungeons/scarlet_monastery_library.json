@@ -25,5 +25,17 @@
       "loot": []
     }
   ],
-  "trash": []
+  "trash": [],
+  "quests": [
+    {
+      "name": "Mythology of the Titans",
+      "side": "Alliance",
+      "items": []
+    },
+    {
+      "name": "Compendium of the Fallen",
+      "side": "Horde",
+      "items": []
+    }
+  ]
 }

@@ -17,6 +17,7 @@
 	<Script file="loot\deadmines.lua" />
 	<Script file="loot\gnomeregan.lua" />
 	<Script file="loot\ragefire_chasm.lua" />
+	<Script file="loot\razorfen_kraul.lua" />
 	<Script file="loot\ruins_of_lordaeron.lua" />
 	<Script file="loot\scarlet_monastery_cathedral.lua" />
 	<Script file="loot\scholomance.lua" />

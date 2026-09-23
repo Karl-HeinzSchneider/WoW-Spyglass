@@ -1,7 +1,7 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { dirname, relative, resolve } from "node:path";
 import { type Config, FALLBACK_LOCALE, LOCALE_OUTPUT_DIR, OUTPUT_DIR, ROOT } from "./config.js";
-import { type CuratedFile, type CuratedInstance, type CuratedLoot, instanceIDOf } from "./curated.js";
+import { type CuratedFile, type CuratedInstance, type CuratedLoot, type CuratedQuest, classToken, instanceIDOf } from "./curated.js";
 import { type ScannedItem } from "./items.js";
 import { type ListFile, type ListSection, ROW_FIELDS, rowsOf } from "./lists.js";
 import { header, luaFields, luaString, luaValue } from "./lua.js";
@@ -116,10 +116,15 @@ function emitLootRows(rows: CuratedLoot[], ref: Reference, indent: string): stri
   return out;
 }
 
+/** The quests that can ship: the addon keeps quests by id, one without is left out until it has one. */
+function shippedQuests(file: CuratedFile): CuratedQuest[] {
+  return (file.data.quests ?? []).filter((q) => q.id !== undefined);
+}
+
 /** True when the file has anything to ship: a boss's drops, the instance's trash or a quest. */
 export function hasLoot(file: CuratedFile): boolean {
   const d = file.data;
-  return d.encounters.some((e) => e.loot?.length) || !!d.trash?.length || !!d.quests?.length;
+  return d.encounters.some((e) => e.loot?.length) || !!d.trash?.length || shippedQuests(file).length > 0;
 }
 
 function emitLoot(file: CuratedFile, ref: Reference): string {
@@ -139,10 +144,11 @@ function emitLoot(file: CuratedFile, ref: Reference): string {
     out.push(...emitLootRows(file.data.trash, ref, "    "));
     out.push("})\n");
   }
-  if (file.data.quests?.length) {
+  const quests = shippedQuests(file);
+  if (quests.length > 0) {
     out.push(`\nData:AddQuests(${id}, {\n`);
-    for (const quest of file.data.quests) {
-      const fields = luaFields({ ...quest }, ["id", "name", "side"], "").join(" ");
+    for (const quest of quests) {
+      const fields = luaFields({ ...quest, class: quest.class && classToken(quest.class) }, ["id", "name", "side", "class"], "").join(" ");
       const items = emitLootRows(quest.items ?? [], ref, "        ");
       if (items.length === 0) {
         out.push(`    { ${fields} items = {} },\n`);

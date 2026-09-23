@@ -55,3 +55,26 @@ Data:AddBossLoot(592, { -- Mutanus the Devourer
 Data:AddTrashLoot(43, {
     { 10413 }, -- Gloves of the Fang
 })
+
+Data:AddQuests(43, {
+    { id = 914, name = "Leaders of the Fang", side = "Horde", items = {
+        { 6504 }, -- Wingblade
+        { 6505 }, -- Crescent Staff
+    } },
+    { id = 1486, name = "Deviate Hides", side = "Both", items = {
+        { 6480 }, -- Slick Deviate Leggings
+    } },
+    { id = 962, name = "Serpentbloom", side = "Horde", items = {
+        { 10919 }, -- Apothecary Gloves
+    } },
+    { id = 1487, name = "Deviate Eradication", side = "Both", items = {
+        { 6481 }, -- Dagmire Gauntlets
+        { 8071 }, -- Sizzle Stick
+    } },
+    { id = 1489, name = "Hamuul Runetotem", items = {} },
+    { id = 1490, name = "Nara Wildmane", items = {} },
+    { id = 1491, name = "Smart Drinks", items = {} },
+    { id = 959, name = "Trouble at the Docks", items = {} },
+    { id = 3366, name = "The Glowing Shard", items = {} },
+    { id = 6981, name = "The Glowing Shard", items = {} },
+})

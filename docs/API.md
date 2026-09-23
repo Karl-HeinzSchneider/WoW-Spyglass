@@ -345,6 +345,7 @@ Data.bosses[2747]    -- { instanceID = 36, order = 6000 }
 Data.bossLoot[2747]  -- { { 5188, 0.9 }, { 5191 }, ... }   -- { itemID, chance 0..1 or nil }
 Data.trashLoot[36]   -- { { 1935, 0.01 }, ... }   -- same rows, keyed by the instance: what its non-boss enemies drop
 Data.quests[166]     -- { id = 166, name = "Underground Assault", side = "Alliance", instanceID = 36, items = { { 6220 }, ... } }
+                     -- a class quest also has class = "WARLOCK" (the client's class token)
 Data.instanceQuests[36] -- { 166, ... }   -- the instance's quest ids, in curated order
 Data.lists.reputation.argent_dawn      -- { name = "Argent Dawn", icon = "...", order = 1, factionID = 529 }
 Data.listLoot.reputation.argent_dawn   -- { { 13209, standing = "Friendly" }, ... }   -- { itemID, field = value, ... }
@@ -386,9 +387,11 @@ Adding data (any call may be repeated; every one invalidates the caches and fire
 - `Data:AddTrashLoot(instanceID, { { itemID, chance }, ... })` — the same rows for what an instance's
   non-boss enemies drop; keyed by the instance, because trash belongs to no encounter
 - `Data:AddQuests(instanceID, { { id = 166, name = "...", side = "Alliance", items = { { itemID }, ... } }, ... })` —
-  the instance's quests. `side` is `"Alliance"`, `"Horde"` or `"Both"` (nil = both). Each quest is stored
-  by its id with `instanceID` filled in and listed under the instance in the order it was added; adding a
-  quest id again replaces it. Quest titles are curated data: this client ships no quest table, and
+  the instance's quests. `side` is `"Alliance"`, `"Horde"` or `"Both"` (nil = both); `class` is a class
+  token (`"WARLOCK"`) for a class quest (nil = any class). Each quest is stored by its id with
+  `instanceID` filled in and listed under the instance in the order it was added; adding a quest id
+  again replaces its definition, and a quest added by several instances (one that runs through two
+  dungeons) is listed under each of them and is a source of its rewards in each. Quest titles are curated data: this client ships no quest table, and
   `C_QuestLog` only knows quests the character has seen
 - `Data:AddList(kind, id, def)`, `Data:AddListLoot(kind, id, { { itemID, standing = "Honored" }, ... })`
 - `Data:AddRecipes({ [spellID] = { skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto, taughtBy }, ... })`,

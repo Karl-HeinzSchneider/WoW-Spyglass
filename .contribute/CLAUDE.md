@@ -199,9 +199,10 @@ just not its *Boss* filter).
 
 | Field | Type | Meaning |
 |---|---|---|
-| `id` | integer | The quest id, and the only field checked against anything: positive, and listed once per file. **Required.** |
+| `id` | integer | The quest id, and the only field checked against anything: positive, and listed once per file. A quest without one is a warning and isn't shipped until the id is added (the addon keeps quests by id). |
 | `name` | string | The quest's title. Curated, because this client ships no quest table — `npm run fix` never rewrites it, and a quest without one is a warning. |
 | `side` | string | `"Alliance"`, `"Horde"` or `"Both"`; omitting it means the same as `"Both"`. Anything else is an error. |
+| `class` | string | A class quest's class: `"Warrior"`, `"Paladin"`, `"Hunter"`, `"Rogue"`, `"Priest"`, `"Shaman"`, `"Mage"`, `"Warlock"` or `"Druid"`; omitted means any class. |
 | `items` | array | The items the quest rewards: the same `item` / `name` rows as loot, without a `chance`. May be empty. |
 
 The quest ids are what the game knows the quests by, so they are the same ids a boss's `quests`
@@ -211,10 +212,14 @@ everywhere else: a row with only a `name` gets its `item` filled in when exactly
 carries that name, and the same item may appear in several quests.
 
 In the browser the instance's *Quests* card opens a page with one subheader per quest — its title
-and id, plus the faction when `side` restricts it — and that quest's reward items underneath.
+and id, plus the faction when `side` restricts it and the class of a class quest — and that
+quest's reward items underneath. A quest that runs through several instances (the warlock quest
+"The Orb of Soran'ruk" needs Blackfathom Deeps and Shadowfang Keep) is listed in each of their
+files with the same id and the same fields: the addon keeps one definition per id, the one
+loaded last.
 
 `npm run fix` validates ids (map exists and is in the right folder, encounters belong to the
-map, no duplicates, chance in range, quest ids positive and unique, `side` a known value), fills
+map, no duplicates, chance in range, quest ids positive and unique (missing: a warning), `side` a known value), fills
 names, adds every encounter the game knows that the file doesn't list yet (empty `loot`; not on a
 split map, see above) and a
 `trash` list to files without one, and rewrites the file in stable key order. Schema:

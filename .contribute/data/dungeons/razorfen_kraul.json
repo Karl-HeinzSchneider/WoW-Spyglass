@@ -48,5 +48,33 @@
       "loot": []
     }
   ],
-  "trash": []
+  "trash": [],
+  "quests": [
+    {
+      "id": 1144,
+      "name": "Willix the Importer",
+      "side": "Both",
+      "items": []
+    },
+    {
+      "name": "Mortality Wanes",
+      "side": "Alliance",
+      "items": []
+    },
+    {
+      "name": "The Crone of the Kraul",
+      "side": "Alliance",
+      "items": []
+    },
+    {
+      "name": "A Vengeful Fate",
+      "side": "Horde",
+      "items": []
+    },
+    {
+      "id": 1221,
+      "name": "Blueleaf Tubers",
+      "items": []
+    }
+  ]
 }

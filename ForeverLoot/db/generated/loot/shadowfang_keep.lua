@@ -66,3 +66,19 @@ Data:AddTrashLoot(33, {
     { 3194 }, -- Black Malice
     { 6341 }, -- Eerie Stable Lantern
 })
+
+Data:AddQuests(33, {
+    { id = 1098, name = "Deathstalkers in Shadowfang", side = "Horde", items = {
+        { 3324 }, -- Ghostly Mantle
+    } },
+    { id = 1014, name = "Arugal Must Die", side = "Horde", items = {
+        { 6414 }, -- Seal of Sylvanas
+    } },
+    { id = 1013, name = "The Book of Ur", side = "Horde", items = {
+        { 6335 }, -- Grizzled Boots
+    } },
+    { id = 1740, name = "The Orb of Soran'ruk", side = "Both", class = "WARLOCK", items = {
+        { 6898 }, -- Orb of Soran'ruk
+        { 15109 }, -- Staff of Soran'ruk
+    } },
+})

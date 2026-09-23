@@ -25,5 +25,12 @@
       "loot": []
     }
   ],
-  "trash": []
+  "trash": [],
+  "quests": [
+    {
+      "name": "Vorrel's Revenge",
+      "side": "Horde",
+      "items": []
+    }
+  ]
 }

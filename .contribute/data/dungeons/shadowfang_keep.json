@@ -223,5 +223,66 @@
       "item": 6341,
       "name": "Eerie Stable Lantern"
     }
+  ],
+  "quests": [
+    {
+      "id": 1098,
+      "name": "Deathstalkers in Shadowfang",
+      "side": "Horde",
+      "items": [
+        {
+          "item": 3324,
+          "name": "Ghostly Mantle"
+        }
+      ]
+    },
+    {
+      "id": 1014,
+      "name": "Arugal Must Die",
+      "side": "Horde",
+      "items": [
+        {
+          "item": 6414,
+          "name": "Seal of Sylvanas"
+        }
+      ]
+    },
+    {
+      "id": 1013,
+      "name": "The Book of Ur",
+      "side": "Horde",
+      "items": [
+        {
+          "item": 6335,
+          "name": "Grizzled Boots"
+        }
+      ]
+    },
+    {
+      "name": "The Test of Righteousness",
+      "side": "Both",
+      "items": [
+        {
+          "item": 6953,
+          "name": "Verigan's Fist"
+        }
+      ]
+    },
+    {
+      "id": 1740,
+      "name": "The Orb of Soran'ruk",
+      "side": "Both",
+      "class": "Warlock",
+      "items": [
+        {
+          "item": 6898,
+          "name": "Orb of Soran'ruk"
+        },
+        {
+          "item": 15109,
+          "name": "Staff of Soran'ruk"
+        }
+      ]
+    }
   ]
 }

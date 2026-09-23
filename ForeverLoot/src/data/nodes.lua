@@ -127,15 +127,25 @@ end
 local function questHeading(quest)
     local text = ("%s (#%d)"):format(Data:GetQuestName(quest.id), quest.id)
     local side = quest.side
-    if side ~= "Alliance" and side ~= "Horde" then
-        return text
+    if side == "Alliance" or side == "Horde" then
+        local label = side == "Alliance" and (FACTION_ALLIANCE or side) or (FACTION_HORDE or side)
+        local color = PLAYER_FACTION_COLORS and PLAYER_FACTION_COLORS[side == "Alliance" and 1 or 0]
+        if color and color.WrapTextInColorCode then
+            label = color:WrapTextInColorCode(label)
+        end
+        text = text .. " - " .. label
     end
-    local label = side == "Alliance" and (FACTION_ALLIANCE or side) or (FACTION_HORDE or side)
-    local color = PLAYER_FACTION_COLORS and PLAYER_FACTION_COLORS[side == "Alliance" and 1 or 0]
-    if color and color.WrapTextInColorCode then
-        label = color:WrapTextInColorCode(label)
+    -- A class quest: " - Warlock", in the client's name and color for the class token.
+    local class = quest.class
+    if class then
+        local label = LOCALIZED_CLASS_NAMES_MALE and LOCALIZED_CLASS_NAMES_MALE[class] or class
+        local color = RAID_CLASS_COLORS and RAID_CLASS_COLORS[class]
+        if color and color.WrapTextInColorCode then
+            label = color:WrapTextInColorCode(label)
+        end
+        text = text .. " - " .. label
     end
-    return text .. " - " .. label
+    return text
 end
 
 -- The instance's quests: one subheader per quest with the items it rewards under it.

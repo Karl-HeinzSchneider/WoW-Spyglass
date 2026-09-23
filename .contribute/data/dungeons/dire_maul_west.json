@@ -57,5 +57,22 @@
       "loot": []
     }
   ],
-  "trash": []
+  "trash": [],
+  "quests": [
+    {
+      "name": "The Treasure of the Shen'dralar",
+      "side": "Both",
+      "items": []
+    },
+    {
+      "name": "The Emerald Dream...",
+      "side": "Both",
+      "items": []
+    },
+    {
+      "name": "Codex of Defense",
+      "side": "Both",
+      "items": []
+    }
+  ]
 }

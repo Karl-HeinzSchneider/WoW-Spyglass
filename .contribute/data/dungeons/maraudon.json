@@ -60,5 +60,45 @@
       "loot": []
     }
   ],
-  "trash": []
+  "trash": [],
+  "quests": [
+    {
+      "name": "Corruption of Earth and Seed",
+      "side": "Both",
+      "items": [
+        {
+          "item": 17705,
+          "name": "Thrash Blade"
+        },
+        {
+          "item": 17743,
+          "name": "Resurgence Rod"
+        },
+        {
+          "item": 17753,
+          "name": "Verdant Keeper's Aim"
+        }
+      ]
+    },
+    {
+      "name": "Shadowshard Fragments",
+      "side": "Horde",
+      "items": []
+    },
+    {
+      "name": "Vyletongue Corruption",
+      "side": "Both",
+      "items": []
+    },
+    {
+      "name": "Twisted Evils",
+      "side": "Both",
+      "items": []
+    },
+    {
+      "name": "The Pariah's Instructions",
+      "side": "Both",
+      "items": []
+    }
+  ]
 }

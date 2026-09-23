@@ -135,5 +135,75 @@
       "loot": []
     }
   ],
-  "trash": []
+  "trash": [],
+  "quests": [
+    {
+      "name": "The Love Potion",
+      "side": "Both",
+      "items": []
+    },
+    {
+      "name": "The Rise of the Machines",
+      "side": "Horde",
+      "items": []
+    },
+    {
+      "name": "Abandoned Hope",
+      "side": "Alliance",
+      "items": [
+        {
+          "item": 12018,
+          "name": "Conservator Helm"
+        },
+        {
+          "item": 12021,
+          "name": "Shieldplate Sabatons"
+        },
+        {
+          "item": 12041,
+          "name": "Windshear Leggings"
+        }
+      ]
+    },
+    {
+      "name": "Jail Break!",
+      "side": "Alliance",
+      "items": []
+    },
+    {
+      "name": "Hurley Blackbreath",
+      "side": "Alliance",
+      "items": []
+    },
+    {
+      "name": "Ribbly Screwspigot",
+      "side": "Both",
+      "items": []
+    },
+    {
+      "name": "Lost Thunderbrew Recipe",
+      "side": "Both",
+      "items": []
+    },
+    {
+      "name": "Incendius!",
+      "side": "Alliance",
+      "items": []
+    },
+    {
+      "name": "Disharmony of Fire",
+      "side": "Horde",
+      "items": []
+    },
+    {
+      "name": "The Last Element",
+      "side": "Horde",
+      "items": []
+    },
+    {
+      "name": "Operation: Death to Angerforge",
+      "side": "Horde",
+      "items": []
+    }
+  ]
 }

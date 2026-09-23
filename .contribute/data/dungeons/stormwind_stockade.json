@@ -100,5 +100,34 @@
       "item": 274092,
       "name": "Sharpened Cutlery"
     }
+  ],
+  "quests": [
+    {
+      "id": 386,
+      "name": "What Comes Around...",
+      "side": "Alliance",
+      "items": []
+    },
+    {
+      "id": 377,
+      "name": "Crime and Punishment",
+      "side": "Alliance",
+      "items": []
+    },
+    {
+      "id": 387,
+      "name": "Quell the Uprising",
+      "items": []
+    },
+    {
+      "id": 388,
+      "name": "The Color of Blood",
+      "items": []
+    },
+    {
+      "id": 391,
+      "name": "The Stockade Riots",
+      "items": []
+    }
   ]
 }

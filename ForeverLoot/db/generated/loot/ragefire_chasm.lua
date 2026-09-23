@@ -25,3 +25,24 @@ Data:AddBossLoot(2735, { -- Bazzalan
     { 273003 }, -- Searing Dagger
     { 273007 }, -- Chasm Walkers
 })
+
+Data:AddQuests(389, {
+    { id = 5728, name = "Hidden Enemies", side = "Both", items = {
+        { 15424 }, -- Axe of Orgrimmar
+        { 15443 }, -- Kris of Orgrimmar
+        { 15444 }, -- Staff of Orgrimmar
+        { 15445 }, -- Hammer of Orgrimmar
+    } },
+    { id = 5725, name = "The Power to Destroy...", side = "Both", items = {
+        { 15449 }, -- Ghastly Trousers
+        { 15450 }, -- Dredgemire Leggings
+        { 15451 }, -- Gargoyle Leggings
+    } },
+    { id = 5724, name = "Returning the Lost Satchel", side = "Horde", items = {
+        { 15452 }, -- Featherbead Bracers
+        { 15453 }, -- Savannah Bracers
+    } },
+    { id = 5723, name = "Testing an Enemy's Strength", items = {} },
+    { id = 5722, name = "Searching for the Lost Satchel", items = {} },
+    { id = 5761, name = "Slaying the Beast", items = {} },
+})

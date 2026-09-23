@@ -44,5 +44,22 @@
       "loot": []
     }
   ],
-  "trash": []
+  "trash": [],
+  "quests": [
+    {
+      "name": "Pusillin and the Elder Azj'Tordin",
+      "side": "Both",
+      "items": []
+    },
+    {
+      "name": "Lethtendris's Web",
+      "side": "Horde",
+      "items": []
+    },
+    {
+      "name": "Shards of the Felvine",
+      "side": "Both",
+      "items": []
+    }
+  ]
 }

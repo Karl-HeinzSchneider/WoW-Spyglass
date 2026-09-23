@@ -174,5 +174,134 @@
       "item": 2567,
       "name": "Evocator's Blade"
     }
+  ],
+  "quests": [
+    {
+      "id": 1200,
+      "name": "Blackfathom Villainy",
+      "side": "Alliance",
+      "items": [
+        {
+          "item": 7001,
+          "name": "Gravestone Scepter"
+        },
+        {
+          "item": 7002,
+          "name": "Arctic Buckler"
+        }
+      ]
+    },
+    {
+      "id": 6561,
+      "name": "Blackfathom Villainy",
+      "side": "Horde",
+      "items": [
+        {
+          "item": 7001,
+          "name": "Gravestone Scepter"
+        },
+        {
+          "item": 7002,
+          "name": "Arctic Buckler"
+        }
+      ]
+    },
+    {
+      "id": 1199,
+      "name": "Twilight Falls",
+      "side": "Alliance",
+      "items": [
+        {
+          "item": 6998,
+          "name": "Nimbus Boots"
+        },
+        {
+          "item": 7000,
+          "name": "Heartwood Girdle"
+        }
+      ]
+    },
+    {
+      "id": 6564,
+      "name": "Allegiance to the Old Gods",
+      "items": []
+    },
+    {
+      "id": 6565,
+      "name": "Allegiance to the Old Gods",
+      "side": "Horde",
+      "items": [
+        {
+          "item": 17694,
+          "name": "Band of the Fist"
+        },
+        {
+          "item": 17695,
+          "name": "Chestnut Mantle"
+        }
+      ]
+    },
+    {
+      "id": 1275,
+      "name": "Researching the Corruption",
+      "side": "Both",
+      "items": [
+        {
+          "item": 7003,
+          "name": "Beetle Clasps"
+        },
+        {
+          "item": 7004,
+          "name": "Prelacy Cape"
+        }
+      ]
+    },
+    {
+      "id": 1740,
+      "name": "The Orb of Soran'ruk",
+      "side": "Both",
+      "class": "Warlock",
+      "items": [
+        {
+          "item": 6898,
+          "name": "Orb of Soran'ruk"
+        },
+        {
+          "item": 15109,
+          "name": "Staff of Soran'ruk"
+        }
+      ]
+    },
+    {
+      "name": "Baron Aquanis",
+      "side": "Horde",
+      "items": []
+    },
+    {
+      "id": 971,
+      "name": "Knowledge in the Deeps",
+      "side": "Both",
+      "items": [
+        {
+          "item": 6743,
+          "name": "Sustaining Ring"
+        }
+      ]
+    },
+    {
+      "id": 6563,
+      "name": "The Essence of Aku'Mai",
+      "items": []
+    },
+    {
+      "id": 6562,
+      "name": "Trouble in the Deeps",
+      "items": []
+    },
+    {
+      "id": 1198,
+      "name": "In Search of Thaelrid",
+      "items": []
+    }
   ]
 }

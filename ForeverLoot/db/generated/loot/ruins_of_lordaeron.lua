@@ -32,3 +32,34 @@ Data:AddBossLoot(3412, { -- Bjork
     { 271210 }, -- Tuskwrap Belt
     { 271217 }, -- Corpse Chopper
 })
+
+Data:AddQuests(2999, {
+    { id = 92422, name = "The Wrath of Rath'mael", side = "Both", items = {
+        { 251533 }, -- Forsaken Greataxe
+        { 251534 }, -- Gnarled Necromancer's Staff
+    } },
+    { id = 92415, name = "Remember That I Love You", side = "Alliance", items = {
+        { 279870 }, -- Tarnished Locket
+    } },
+    { id = 92421, name = "Light's Justice", side = "Horde", items = {
+        { 279874 }, -- The Stitcher
+        { 279875 }, -- Spare Part Bindings
+    } },
+    { id = 95250, name = "Abominable Creatures", side = "Alliance", items = {
+        { 279864 }, -- Monstrous Cleaver
+        { 279865 }, -- Grave Shroud
+        { 279867 }, -- Slain Baron's Signet
+    } },
+    { id = 95195, name = "Bloodied Insignia", side = "Alliance", items = {
+        { 279868 }, -- Duty Bound Leggings
+        { 279869 }, -- Remembrance Armor
+    } },
+    { id = 95216, name = "The New Plague", side = "Horde", items = {
+        { 279876 }, -- Plaguefang
+        { 279877 }, -- Blight Gloves
+    } },
+    { id = 97288, name = "Unending Torment", side = "Horde", items = {} },
+    { id = 92401, name = "A Frightened Request", side = "Horde", items = {} },
+    { id = 95189, name = "Crest of Lordaeron", side = "Alliance", items = {} },
+    { id = 95204, name = "Crest of Lordaeron", items = {} },
+})

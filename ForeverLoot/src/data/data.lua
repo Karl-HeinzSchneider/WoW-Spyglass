@@ -98,7 +98,8 @@ local RECIPE = {
 ---@field id integer  # quest id
 ---@field name? string  # quest title, as curated
 ---@field side? "Alliance"|"Horde"|"Both"  # faction the quest is available to; nil = both
----@field instanceID? integer  # the instance it was registered for, set by Data:AddQuests
+---@field class? string  # class token ("WARLOCK") of a class quest; nil = any class
+---@field instanceID? integer  # the (last) instance it was registered for, set by Data:AddQuests
 ---@field items ForeverLoot.LootRow[]  # the items it rewards
 
 ---@alias ForeverLoot.RecipeRow { [1]: integer, [2]: integer, [3]: integer|integer[], [4]: integer, [5]: integer, [6]: integer, [7]: integer, [8]: integer, [9]: integer[]?, [10]: integer[]?, [11]: boolean?, [12]: integer? }
@@ -308,7 +309,8 @@ end
 
 -- Appends quests to an instance: `{ { id = 26, name = "...", side = "Alliance", items = { { itemID }, ... } }, ... }`.
 -- Each quest is stored by its id with `instanceID` filled in, and listed under the instance in
--- the order it was added; adding a quest id again replaces it.
+-- the order it was added; adding a quest id again replaces its definition. A quest that spans
+-- several instances (a class quest through two dungeons) is listed under each that adds it.
 ---@param instanceID integer
 ---@param quests ForeverLoot.Quest[]
 function Data:AddQuests(instanceID, quests)
@@ -327,7 +329,11 @@ function Data:AddQuests(instanceID, quests)
         else
             quest.instanceID = instanceID
             quest.items = quest.items or {}
-            if not self.quests[quest.id] then
+            local listed = false
+            for _, id in ipairs(ids) do
+                listed = listed or id == quest.id
+            end
+            if not listed then
                 ids[#ids + 1] = quest.id
             end
             self.quests[quest.id] = quest
@@ -759,9 +765,13 @@ function Data:GetItemSources(itemID)
                 add(row[1], { kind = "trash", id = instanceID, chance = row[2] })
             end
         end
-        for questID, quest in pairs(self.quests) do
-            for _, row in ipairs(quest.items or NO_SOURCES) do
-                add(row[1], { kind = "quest", id = questID, instanceID = quest.instanceID, side = quest.side })
+        -- Per instance, so a quest listed under two instances is a source in both.
+        for instanceID, questIDs in pairs(self.instanceQuests) do
+            for _, questID in ipairs(questIDs) do
+                local quest = self.quests[questID]
+                for _, row in ipairs(quest and quest.items or NO_SOURCES) do
+                    add(row[1], { kind = "quest", id = questID, instanceID = instanceID, side = quest.side })
+                end
             end
         end
         for kind, byID in pairs(self.listLoot) do

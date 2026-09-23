@@ -68,18 +68,28 @@ export interface CuratedLoot extends CuratedItemRow {
  * the browser shows when the client cannot resolve the title itself.
  */
 export interface CuratedQuest {
-  /** Quest id. */
-  id: number;
+  /** Quest id. A quest without one is only warned about and not shipped until it has one. */
+  id?: number;
   /** Quest title. Shipped, because no game table can supply it; `fix` never rewrites it. */
   name?: string;
   /** Faction the quest is available to: "Alliance", "Horde" or "Both"; omitted means both. */
   side?: string;
+  /** The class a class quest is for ("Warlock"); omitted means any class. */
+  class?: string;
   /** The items the quest rewards. */
   items: CuratedItemRow[];
 }
 
 /** What `CuratedQuest.side` accepts; leaving it out means the same as "Both". */
 export const QUEST_SIDES = ["Alliance", "Horde", "Both"];
+
+/** What `CuratedQuest.class` accepts; shipped as the client's class token (`classToken`). */
+export const QUEST_CLASSES = ["Warrior", "Paladin", "Hunter", "Rogue", "Priest", "Shaman", "Mage", "Warlock", "Druid"];
+
+/** "Warlock" -> "WARLOCK", the key of the client's LOCALIZED_CLASS_NAMES_MALE and RAID_CLASS_COLORS. */
+export function classToken(name: string): string {
+  return name.toUpperCase().replace(/ /g, "");
+}
 
 /** The id the addon knows the instance by: its own `id` on a split map, else the map id. */
 export function instanceIDOf(d: CuratedInstance): number {
@@ -373,6 +383,11 @@ function validateQuests(file: CuratedFile, checker: Checker): void {
   }
   const seenQuests = new Set<number>();
   for (const quest of d.quests) {
+    if (quest.id === undefined) {
+      // Titles and rewards often come first; the id is added by hand later.
+      checker.warn(file, `quest "${quest.name ?? "?"}": no \`id\`; it isn't shipped until it has one`);
+      continue;
+    }
     if (!Number.isInteger(quest.id) || quest.id <= 0) {
       checker.report(file, "quest without a positive integer `id`");
       continue;
@@ -384,6 +399,9 @@ function validateQuests(file: CuratedFile, checker: Checker): void {
     }
     if (quest.side !== undefined && !QUEST_SIDES.includes(quest.side)) {
       checker.report(file, `quest ${quest.id}: \`side\` must be one of ${QUEST_SIDES.join(", ")}`);
+    }
+    if (quest.class !== undefined && !QUEST_CLASSES.includes(quest.class)) {
+      checker.report(file, `quest ${quest.id}: \`class\` must be one of ${QUEST_CLASSES.join(", ")}`);
     }
     if (!Array.isArray(quest.items)) {
       checker.report(file, `quest ${quest.id}: \`items\` must be an array`, true);
@@ -423,6 +441,7 @@ export function serialize(d: CuratedInstance): string {
       id: q.id,
       name: q.name,
       side: q.side,
+      class: q.class,
       items: (q.items ?? []).map((r) => ({ item: r.item, name: r.name })),
     })),
   };

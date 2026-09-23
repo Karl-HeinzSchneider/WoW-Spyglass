@@ -26,3 +26,23 @@ Data:AddBossLoot(3496, { -- Durgen Dirgehammer
     { 270260 }, -- Direhammer Leggings
     { 270261 }, -- Robes of the Disgraced Thane
 })
+
+Data:AddQuests(3065, {
+    { id = 96393, name = "Old Ironforge Incursion", side = "Both", items = {
+        { 279894 }, -- Calibrated Blunderbuss
+        { 279895 }, -- Ironforge Greathammer
+        { 279896 }, -- Deepblaze
+    } },
+    { id = 96395, name = "An Ancient Grudge", side = "Both", items = {
+        { 279899 }, -- Catacomb Cloak
+        { 279900 }, -- Deepgrave Trousers
+    } },
+    { id = 96403, name = "Important Heirlooms", side = "Both", items = {
+        { 279898 }, -- Dwarven Tome
+        { 280096 }, -- Tomb Robber's Gloves
+    } },
+    { id = 96394, name = "The Restless Dead", side = "Alliance", items = {
+        { 279897 }, -- Dusty Belt
+        { 280095 }, -- Cryptwalker Bracers
+    } },
+})

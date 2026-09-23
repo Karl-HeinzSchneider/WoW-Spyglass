@@ -51,3 +51,37 @@ Data:AddTrashLoot(48, {
     { 2271 }, -- Staff of the Blessed Seer
     { 2567 }, -- Evocator's Blade
 })
+
+Data:AddQuests(48, {
+    { id = 1200, name = "Blackfathom Villainy", side = "Alliance", items = {
+        { 7001 }, -- Gravestone Scepter
+        { 7002 }, -- Arctic Buckler
+    } },
+    { id = 6561, name = "Blackfathom Villainy", side = "Horde", items = {
+        { 7001 }, -- Gravestone Scepter
+        { 7002 }, -- Arctic Buckler
+    } },
+    { id = 1199, name = "Twilight Falls", side = "Alliance", items = {
+        { 6998 }, -- Nimbus Boots
+        { 7000 }, -- Heartwood Girdle
+    } },
+    { id = 6564, name = "Allegiance to the Old Gods", items = {} },
+    { id = 6565, name = "Allegiance to the Old Gods", side = "Horde", items = {
+        { 17694 }, -- Band of the Fist
+        { 17695 }, -- Chestnut Mantle
+    } },
+    { id = 1275, name = "Researching the Corruption", side = "Both", items = {
+        { 7003 }, -- Beetle Clasps
+        { 7004 }, -- Prelacy Cape
+    } },
+    { id = 1740, name = "The Orb of Soran'ruk", side = "Both", class = "WARLOCK", items = {
+        { 6898 }, -- Orb of Soran'ruk
+        { 15109 }, -- Staff of Soran'ruk
+    } },
+    { id = 971, name = "Knowledge in the Deeps", side = "Both", items = {
+        { 6743 }, -- Sustaining Ring
+    } },
+    { id = 6563, name = "The Essence of Aku'Mai", items = {} },
+    { id = 6562, name = "Trouble in the Deeps", items = {} },
+    { id = 1198, name = "In Search of Thaelrid", items = {} },
+})

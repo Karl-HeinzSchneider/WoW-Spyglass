@@ -173,5 +173,103 @@
       "item": 10413,
       "name": "Gloves of the Fang"
     }
+  ],
+  "quests": [
+    {
+      "id": 914,
+      "name": "Leaders of the Fang",
+      "side": "Horde",
+      "items": [
+        {
+          "item": 6504,
+          "name": "Wingblade"
+        },
+        {
+          "item": 6505,
+          "name": "Crescent Staff"
+        }
+      ]
+    },
+    {
+      "id": 1486,
+      "name": "Deviate Hides",
+      "side": "Both",
+      "items": [
+        {
+          "item": 6480,
+          "name": "Slick Deviate Leggings"
+        }
+      ]
+    },
+    {
+      "id": 962,
+      "name": "Serpentbloom",
+      "side": "Horde",
+      "items": [
+        {
+          "item": 10919,
+          "name": "Apothecary Gloves"
+        }
+      ]
+    },
+    {
+      "id": 1487,
+      "name": "Deviate Eradication",
+      "side": "Both",
+      "items": [
+        {
+          "item": 6481,
+          "name": "Dagmire Gauntlets"
+        },
+        {
+          "item": 8071,
+          "name": "Sizzle Stick"
+        }
+      ]
+    },
+    {
+      "name": "In Nightmares",
+      "side": "Horde",
+      "items": [
+        {
+          "item": 10657,
+          "name": "Talbar Mantle"
+        },
+        {
+          "item": 10658,
+          "name": "Quagmire Galoshes"
+        }
+      ]
+    },
+    {
+      "id": 1489,
+      "name": "Hamuul Runetotem",
+      "items": []
+    },
+    {
+      "id": 1490,
+      "name": "Nara Wildmane",
+      "items": []
+    },
+    {
+      "id": 1491,
+      "name": "Smart Drinks",
+      "items": []
+    },
+    {
+      "id": 959,
+      "name": "Trouble at the Docks",
+      "items": []
+    },
+    {
+      "id": 3366,
+      "name": "The Glowing Shard",
+      "items": []
+    },
+    {
+      "id": 6981,
+      "name": "The Glowing Shard",
+      "items": []
+    }
   ]
 }
