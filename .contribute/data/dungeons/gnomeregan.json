@@ -50,41 +50,6 @@
       "name": "Mekgineer Thermaplugg",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Mekgineer Thermaplugg",
       "loot": []
-    },
-    {
-      "id": 2925,
-      "name": "Grubbis",
-      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Grubbis",
-      "loot": []
-    },
-    {
-      "id": 2928,
-      "name": "Viscous Fallout",
-      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Viscous Fallout",
-      "loot": []
-    },
-    {
-      "id": 2899,
-      "name": "Crowd Pummeler 9-60",
-      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Crowd Pummeler 9-60",
-      "loot": []
-    },
-    {
-      "id": 2927,
-      "name": "Electrocutioner 6000",
-      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Electrocutioner 6000",
-      "loot": []
-    },
-    {
-      "id": 2935,
-      "name": "Mechanical Menagerie",
-      "loot": []
-    },
-    {
-      "id": 2940,
-      "name": "Mekgineer Thermaplugg",
-      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Mekgineer Thermaplugg",
-      "loot": []
     }
   ],
   "trash": []

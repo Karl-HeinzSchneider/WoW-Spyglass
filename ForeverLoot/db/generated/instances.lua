@@ -104,7 +104,7 @@ Data:AddInstance(48, {
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-BlackfathomDeeps",
     backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
-    bosses = { 2916, 2915, 2914, 2913, 2912, 2911, 2694, 2761, 2910, 2697, 2762, 2699, 2763, 2704, 2764, 2710, 2765, 2766, 2767, 2825, 2891 },
+    bosses = { 2916, 2915, 2914, 2913, 2912, 2911, 2910 },
 })
 Data:AddBoss(2916, { instanceID = 48, order = -6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ghamoo Ra" }) -- Ghamoo-ra
 Data:AddBoss(2915, { instanceID = 48, order = -5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lady Sarevess" }) -- Lady Sarevess
@@ -112,21 +112,7 @@ Data:AddBoss(2914, { instanceID = 48, order = -4000, portrait = "Interface\\AddO
 Data:AddBoss(2913, { instanceID = 48, order = -3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lorgus Jett" }) -- Lorgus Jett
 Data:AddBoss(2912, { instanceID = 48, order = -2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Old Serrakis" }) -- Old Serra'kis
 Data:AddBoss(2911, { instanceID = 48, order = -1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Twilight Lord Kelris" }) -- Twilight Lord Kelris
-Data:AddBoss(2694, { instanceID = 48, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Baron Aquanis" }) -- Baron Aquanis
-Data:AddBoss(2761, { instanceID = 48, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ghamoo Ra" }) -- Ghamoo-ra
 Data:AddBoss(2910, { instanceID = 48, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Akumai" }) -- Aku'mai
-Data:AddBoss(2697, { instanceID = 48, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ghamoo Ra" }) -- Ghamoo-ra
-Data:AddBoss(2762, { instanceID = 48, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lady Sarevess" }) -- Lady Sarevess
-Data:AddBoss(2699, { instanceID = 48, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lady Sarevess" }) -- Lady Sarevess
-Data:AddBoss(2763, { instanceID = 48, order = 2000, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\geilhast.blp", displayID = 1773 }) -- Geilhast
-Data:AddBoss(2704, { instanceID = 48, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Gelihast" }) -- Gelihast
-Data:AddBoss(2764, { instanceID = 48, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lorgus Jett" }) -- Lorgus Jett
-Data:AddBoss(2710, { instanceID = 48, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lorgus Jett" }) -- Lorgus Jett
-Data:AddBoss(2765, { instanceID = 48, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Old Serrakis" }) -- Old Serra'kis
-Data:AddBoss(2766, { instanceID = 48, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Twilight Lord Kelris" }) -- Twilight Lord Kelris
-Data:AddBoss(2767, { instanceID = 48, order = 6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Akumai" }) -- Aku'mai
-Data:AddBoss(2825, { instanceID = 48, order = 7000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Twilight Lord Kelris" }) -- Twilight Lord Kelris
-Data:AddBoss(2891, { instanceID = 48, order = 8000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Akumai" }) -- Aku'mai
 
 -- Uldaman
 Data:AddInstance(70, {
@@ -157,19 +143,13 @@ Data:AddInstance(90, {
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Gnomeregan",
     backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
-    bosses = { 2768, 2769, 2770, 2771, 2772, 2925, 2928, 2899, 2927, 2935, 2940 },
+    bosses = { 2768, 2769, 2770, 2771, 2772 },
 })
 Data:AddBoss(2768, { instanceID = 90, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Grubbis" }) -- Grubbis
 Data:AddBoss(2769, { instanceID = 90, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Viscous Fallout" }) -- Viscous Fallout
 Data:AddBoss(2770, { instanceID = 90, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Electrocutioner 6000" }) -- Electrocutioner 6000
 Data:AddBoss(2771, { instanceID = 90, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Crowd Pummeler 9-60" }) -- Crowd Pummeler 9-60
 Data:AddBoss(2772, { instanceID = 90, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Mekgineer Thermaplugg" }) -- Mekgineer Thermaplugg
-Data:AddBoss(2925, { instanceID = 90, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Grubbis" }) -- Grubbis
-Data:AddBoss(2928, { instanceID = 90, order = 4500, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Viscous Fallout" }) -- Viscous Fallout
-Data:AddBoss(2899, { instanceID = 90, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Crowd Pummeler 9-60" }) -- Crowd Pummeler 9-60
-Data:AddBoss(2927, { instanceID = 90, order = 6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Electrocutioner 6000" }) -- Electrocutioner 6000
-Data:AddBoss(2935, { instanceID = 90, order = 7000 }) -- Mechanical Menagerie
-Data:AddBoss(2940, { instanceID = 90, order = 8000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Mekgineer Thermaplugg" }) -- Mekgineer Thermaplugg
 
 -- Sunken Temple
 Data:AddInstance(109, {
@@ -180,32 +160,16 @@ Data:AddInstance(109, {
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-SunkenTemple",
     backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
-    bosses = { 492, 2952, 3582, 488, 486, 2953, 3583, 487, 2954, 3584, 2955, 3585, 2956, 3586, 490, 2957, 3587, 491, 2958, 3588, 2959, 3589, 493, 2814 },
+    bosses = { 3582, 3583, 3584, 3585, 3586, 3587, 3588, 3589 },
 })
-Data:AddBoss(492, { instanceID = 109, order = -500, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Avatar of Hakkar" }) -- Avatar of Hakkar
-Data:AddBoss(2952, { instanceID = 109, order = 0 }) -- Atal'alarion
 Data:AddBoss(3582, { instanceID = 109, order = 0 }) -- Atal'alarion
-Data:AddBoss(488, { instanceID = 109, order = 500, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Jammalan the Prophet" }) -- Jammal'an the Prophet
-Data:AddBoss(486, { instanceID = 109, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Dreamscythe" }) -- Dreamscythe
-Data:AddBoss(2953, { instanceID = 109, order = 1000 }) -- Festering Rotslime
 Data:AddBoss(3583, { instanceID = 109, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Avatar of Hakkar" }) -- Avatar of Hakkar
-Data:AddBoss(487, { instanceID = 109, order = 2000 }) -- Weaver
-Data:AddBoss(2954, { instanceID = 109, order = 2000 }) -- Atal'ai Defenders
 Data:AddBoss(3584, { instanceID = 109, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Shade of Eranikus" }) -- Shade of Eranikus
-Data:AddBoss(2955, { instanceID = 109, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Dreamscythe" }) -- Dreamscythe and Weaver
 Data:AddBoss(3585, { instanceID = 109, order = 3000 }) -- Hazzas
-Data:AddBoss(2956, { instanceID = 109, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Avatar of Hakkar" }) -- Avatar of Hakkar
 Data:AddBoss(3586, { instanceID = 109, order = 4000 }) -- Morphaz
-Data:AddBoss(490, { instanceID = 109, order = 5000 }) -- Morphaz
-Data:AddBoss(2957, { instanceID = 109, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Jammalan the Prophet" }) -- Jammal'an and Ogom
 Data:AddBoss(3587, { instanceID = 109, order = 5000 }) -- Weaver
-Data:AddBoss(491, { instanceID = 109, order = 6000 }) -- Hazzas
-Data:AddBoss(2958, { instanceID = 109, order = 6000 }) -- Morphaz and Hazzas
 Data:AddBoss(3588, { instanceID = 109, order = 6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Dreamscythe" }) -- Dreamscythe
-Data:AddBoss(2959, { instanceID = 109, order = 7000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Shade of Eranikus" }) -- Shade of Eranikus
 Data:AddBoss(3589, { instanceID = 109, order = 7000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Jammalan the Prophet" }) -- Jammal'an the Prophet
-Data:AddBoss(493, { instanceID = 109, order = 8000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Shade of Eranikus" }) -- Shade of Eranikus
-Data:AddBoss(2814, { instanceID = 109, order = 9000 }) -- Atal'alarion
 
 -- Razorfen Downs
 Data:AddInstance(129, {

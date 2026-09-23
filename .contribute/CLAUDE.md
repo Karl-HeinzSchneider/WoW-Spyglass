@@ -37,7 +37,9 @@ incomplete and wrong for this client, and item ids from Classic/wowhead don't ma
 item database comes from the game itself**: the scraper asks the server about item ids and
 records everything the client then knows. Instances and encounters come from wago.tools
 (`Map`, `DungeonEncounter`) for the pinned build: instance ids are `Map.ID`, boss ids are
-`DungeonEncounter.ID`. Profession recipes come from wago.tools too (`SkillLine`,
+`DungeonEncounter.ID`. A few maps (Blackfathom Deeps, Gnomeregan, Sunken Temple) also carry the
+same bosses for other difficulties (Season of Discovery raids, a second 5-player set); only the
+normal 5-player set is used, the other ids are unknown to the tooling. Profession recipes come from wago.tools too (`SkillLine`,
 `SkillLineAbility`, `SpellReagents`, `SpellEffect`, `SpellTotems`, `TradeSkillCategory`,
 `TotemCategory`): recipe ids are spell ids, profession ids are `SkillLine.ID`. Factions are
 checked against `Faction`. wago.tools' `ItemSparse` is incomplete for this server but agrees

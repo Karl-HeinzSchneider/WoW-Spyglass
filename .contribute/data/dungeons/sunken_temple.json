@@ -12,36 +12,8 @@
   ],
   "encounters": [
     {
-      "id": 492,
-      "name": "Avatar of Hakkar",
-      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Avatar of Hakkar",
-      "loot": []
-    },
-    {
-      "id": 2952,
-      "name": "Atal'alarion",
-      "loot": []
-    },
-    {
       "id": 3582,
       "name": "Atal'alarion",
-      "loot": []
-    },
-    {
-      "id": 488,
-      "name": "Jammal'an the Prophet",
-      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Jammalan the Prophet",
-      "loot": []
-    },
-    {
-      "id": 486,
-      "name": "Dreamscythe",
-      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Dreamscythe",
-      "loot": []
-    },
-    {
-      "id": 2953,
-      "name": "Festering Rotslime",
       "loot": []
     },
     {
@@ -51,25 +23,9 @@
       "loot": []
     },
     {
-      "id": 487,
-      "name": "Weaver",
-      "loot": []
-    },
-    {
-      "id": 2954,
-      "name": "Atal'ai Defenders",
-      "loot": []
-    },
-    {
       "id": 3584,
       "name": "Shade of Eranikus",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Shade of Eranikus",
-      "loot": []
-    },
-    {
-      "id": 2955,
-      "name": "Dreamscythe and Weaver",
-      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Dreamscythe",
       "loot": []
     },
     {
@@ -78,40 +34,13 @@
       "loot": []
     },
     {
-      "id": 2956,
-      "name": "Avatar of Hakkar",
-      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Avatar of Hakkar",
-      "loot": []
-    },
-    {
       "id": 3586,
       "name": "Morphaz",
       "loot": []
     },
     {
-      "id": 490,
-      "name": "Morphaz",
-      "loot": []
-    },
-    {
-      "id": 2957,
-      "name": "Jammal'an and Ogom",
-      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Jammalan the Prophet",
-      "loot": []
-    },
-    {
       "id": 3587,
       "name": "Weaver",
-      "loot": []
-    },
-    {
-      "id": 491,
-      "name": "Hazzas",
-      "loot": []
-    },
-    {
-      "id": 2958,
-      "name": "Morphaz and Hazzas",
       "loot": []
     },
     {
@@ -121,26 +50,9 @@
       "loot": []
     },
     {
-      "id": 2959,
-      "name": "Shade of Eranikus",
-      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Shade of Eranikus",
-      "loot": []
-    },
-    {
       "id": 3589,
       "name": "Jammal'an the Prophet",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Jammalan the Prophet",
-      "loot": []
-    },
-    {
-      "id": 493,
-      "name": "Shade of Eranikus",
-      "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Shade of Eranikus",
-      "loot": []
-    },
-    {
-      "id": 2814,
-      "name": "Atal'alarion",
       "loot": []
     }
   ],

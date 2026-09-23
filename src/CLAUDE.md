@@ -38,7 +38,7 @@ the data they consume is described in `.contribute/CLAUDE.md`.
 - `wago.ts` — `fetchTable(table, build, locale)`: wago.tools DB2 CSV, cached in `.cache/<build>/`.
 - `reference.ts` — `Reference`: instances (`Map` rows with `InstanceType` 1/2 = dungeon/raid that
   have at least one encounter, minus `excludeMaps`), encounters (`DungeonEncounter`, ordered by
-  `OrderIndex`), the recipe tables from `recipes.ts` (`skillLines`, `recipes`, `categories`,
+  `OrderIndex`; one difficulty per map, the normal 5-player set, see `ENCOUNTER_DIFFICULTIES`), the recipe tables from `recipes.ts` (`skillLines`, `recipes`, `categories`,
   `itemSkills`), `factions` (`Faction` rows with a reputation bar), the scanned items, per-locale
   name tables (items, encounters, instances, skillLines, categories, tools), `nameOf()` for
   comments and messages.

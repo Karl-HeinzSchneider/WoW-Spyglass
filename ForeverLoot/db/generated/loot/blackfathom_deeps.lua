@@ -30,8 +30,3 @@ Data:AddBossLoot(2910, { -- Aku'mai
     { 6911 }, -- Moss Cinch
     { 6910 }, -- Leech Pants
 })
-
-Data:AddBossLoot(2704, { -- Gelihast
-    { 6906 }, -- Algae Fists
-    { 6905 }, -- Reef Axe
-})

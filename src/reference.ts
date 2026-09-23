@@ -65,6 +65,15 @@ function emptyNames(): LocaleNames {
 
 const INSTANCE_TYPES: Record<string, InstanceType> = { "1": "dungeon", "2": "raid" };
 
+/**
+ * One encounter set per map. A few maps (Blackfathom Deeps, Gnomeregan, Sunken Temple) also carry
+ * other versions' sets for the same bosses (Season of Discovery raids, a second 5-player set); this
+ * client has one version of each dungeon, the normal 5-player one. Per map, only the encounters of
+ * the first difficulty in this list that the map has are kept: 0 = none (every other map),
+ * 1 = Normal 5-player, 201 = Normal 5-player on a map without a difficulty-1 set (Gnomeregan).
+ */
+const ENCOUNTER_DIFFICULTIES = [0, 1, 201];
+
 export async function loadReference(config: Config): Promise<Reference> {
   const { build } = config;
   const [maps, dungeonEncounters, factionRows, recipeTables] = await Promise.all([
@@ -82,10 +91,20 @@ export async function loadReference(config: Config): Promise<Reference> {
   }
 
   // Encounters first: an instance is a map that has at least one (weeds out unused maps).
+  const difficulties = new Map<number, Set<number>>(); // map -> difficulty ids of its encounters
+  for (const row of dungeonEncounters) {
+    const mapID = int(row.MapID);
+    const set = difficulties.get(mapID) ?? new Set<number>();
+    set.add(int(row.DifficultyID));
+    difficulties.set(mapID, set);
+  }
   const encounters = new Map<number, Encounter>();
   for (const row of dungeonEncounters) {
     const id = int(row.ID);
-    encounters.set(id, { id, mapID: int(row.MapID), order: int(row.OrderIndex) });
+    const mapID = int(row.MapID);
+    const keep = ENCOUNTER_DIFFICULTIES.find((d) => difficulties.get(mapID)!.has(d));
+    if (keep !== undefined && int(row.DifficultyID) !== keep) continue;
+    encounters.set(id, { id, mapID, order: int(row.OrderIndex) });
   }
 
   const excluded = new Set(config.excludeMaps);
