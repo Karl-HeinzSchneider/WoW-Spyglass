@@ -72,8 +72,8 @@ function emitInstances(ref: Reference, curated: Map<number, CuratedFile>): strin
       const enc = ref.encounters.get(encID)!;
       const c = cur?.encounters.find((e) => e.id === encID);
       const fields = luaFields(
-        { instanceID: id, order: enc.order, portrait: c?.portrait, level: c?.level, creatureType: c?.creatureType, quests: c?.quests },
-        ["instanceID", "order", "portrait", "level", "creatureType", "quests"],
+        { instanceID: id, order: enc.order, portrait: c?.portrait, displayID: c?.displayID, level: c?.level, creatureType: c?.creatureType, quests: c?.quests },
+        ["instanceID", "order", "portrait", "displayID", "level", "creatureType", "quests"],
         "",
       )
         .join(" ")

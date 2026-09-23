@@ -63,6 +63,7 @@ function api.BossFolder(bossID)
         columns = 2,
         groupBy = "auto",
         portrait = boss and boss.portrait,
+        portraitDisplayID = boss and boss.displayID,
         info = bossInfo(boss),
         infoRight = interesting > 0 and ("%d of interest"):format(interesting) or nil,
         quests = boss and boss.quests,

@@ -129,10 +129,11 @@ picture standing on its left, the name and the two info texts beside it, two car
 | Field | Type | Notes |
 |---|---|---|
 | `portrait` | string \| number | Picture on the left of the card (path or fileID), best a bust on transparency at 2:1. Without it the entry's `icon` is shown there. |
+| `portraitDisplayID` | integer | CreatureDisplayID the client renders the picture from, for entries without a `portrait` (the game's own boss buttons draw creature portraits the same way). |
 | `quests` | integer[] | Quest ids the entry is involved in: the card shows a quest "!" and the tooltip lists the quests' titles. |
 
 `InstanceFolder` nodes are card folders: each `BossFolder(bossID)` carries what the database
-knows about the boss — portrait, `info` as "<level> <creature type>" (e.g. "60 Beast"), `quests`,
+knows about the boss — portrait (a texture, or the model's display id for bosses without art), `info` as "<level> <creature type>" (e.g. "60 Beast"), `quests`,
 and `infoRight` reserved for its *drops of interest* (hidden until the planned favorites
 system decides what counts).
 

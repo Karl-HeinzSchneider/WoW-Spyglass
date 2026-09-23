@@ -522,13 +522,19 @@ function ForeverLootCardMixin:Init(view, node)
     self.Arrow:SetShown(app.api.IsFolder(node))
     self.QuestIcon:SetShown(node.quests ~= nil and #node.quests > 0)
 
-    local portrait = node.portrait
-    self.Portrait:SetShown(portrait ~= nil)
-    self.Icon:SetShown(portrait == nil)
-    self.IconRing:SetShown(portrait == nil)
+    -- A picture beats a generated portrait beats the entry's icon. The client renders a
+    -- creature display id into the very same 2:1 region (as the game's own boss buttons do),
+    -- so bosses whose model we know need no art file at all.
+    local portrait, displayID = node.portrait, node.portraitDisplayID
+    local hasPortrait = portrait ~= nil or displayID ~= nil
+    self.Portrait:SetShown(hasPortrait)
+    self.Icon:SetShown(not hasPortrait)
+    self.IconRing:SetShown(not hasPortrait)
     setIconQuality(self.IconRing, node.quality)
     if portrait then
         self.Portrait:SetTexture(portrait)
+    elseif displayID then
+        SetPortraitTextureFromCreatureDisplayID(self.Portrait, displayID)
     else
         self.Icon:SetTexture(node.icon or FALLBACK_ICON)
     end

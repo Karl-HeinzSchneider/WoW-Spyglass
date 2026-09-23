@@ -152,7 +152,9 @@ only sanctioned globals.
     `background`/`backgroundCoords` picture, name on top, `info` (level range by default) and
     `infoRight` in the bottom corners, three per line.
   - `display = "cards"` (an instance's boss list) draws `ForeverLootCardTemplate`: the same
-    bevelled list-button atlas with the entry's `portrait` standing on the left, name and info
+    bevelled list-button atlas with the entry's `portrait` standing on the left (a
+    `portraitDisplayID` instead draws the creature's model through
+    `SetPortraitTextureFromCreatureDisplayID` into the same region), name and info
     beside it (boss level/type, drops of interest, a quest "!" for `quests`), two per line.
   - Section headers use the `UI-Character-Info-Title` plate; subheaders (`subheader` nodes) are
     a smaller step below them — centered text with `UI-Character-Info-ScrollLine-Long` running

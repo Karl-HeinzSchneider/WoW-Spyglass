@@ -14,6 +14,8 @@
     {
       "id": 3493,
       "name": "Faldrim Anvilmar",
+      "displayID": 142826,
+      "npc": 261306,
       "loot": [
         {
           "item": 270227,
