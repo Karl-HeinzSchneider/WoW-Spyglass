@@ -32,6 +32,7 @@
 ---@field TileMixin ForeverLoot.Tile
 ---@field CardMixin ForeverLoot.Card
 ---@field PageHeaderMixin ForeverLoot.PageHeader
+---@field SubheaderMixin ForeverLoot.Subheader
 ---@field GroupLabelMixin ForeverLoot.GroupLabel
 ---@field BreadcrumbButtonMixin ForeverLoot.BreadcrumbButton
 ---@field SearchBoxMixin ForeverLoot.SearchBox

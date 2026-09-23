@@ -337,6 +337,39 @@
 		</Layers>
 	</Frame>
 
+	<!-- Subheader: one step under the section header - centered gold text with the character
+	     pane's scroll line running out to both sides of it. -->
+	<Frame name="ForeverLootSubheaderTemplate" mixin="ForeverLootSubheaderMixin" virtual="true">
+		<Size x="200" y="24"/>
+		<Layers>
+			<Layer level="ARTWORK">
+				<!-- No width: the FontString sizes itself to the text and the lines follow its
+				     edges (the mixin caps it so they never vanish). -->
+				<FontString parentKey="Text" inherits="GameFontNormal" justifyH="CENTER" wordwrap="false">
+					<Anchors>
+						<Anchor point="CENTER" y="1"/>
+					</Anchors>
+				</FontString>
+				<!-- Atlas height, width from the anchors (as on the group label). -->
+				<Texture parentKey="LineLeft" atlas="UI-Character-Info-ScrollLine-Long" useAtlasSize="true">
+					<Anchors>
+						<Anchor point="LEFT" x="8"/>
+						<Anchor point="RIGHT" relativeKey="$parent.Text" relativePoint="LEFT" x="-10"/>
+					</Anchors>
+				</Texture>
+				<Texture parentKey="LineRight" atlas="UI-Character-Info-ScrollLine-Long" useAtlasSize="true">
+					<Anchors>
+						<Anchor point="LEFT" relativeKey="$parent.Text" relativePoint="RIGHT" x="10"/>
+						<Anchor point="RIGHT" x="-8"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnSizeChanged method="OnSizeChanged"/>
+		</Scripts>
+	</Frame>
+
 	<!-- Section header: the character frame's stat-category plate (CharacterStatFrameCategoryTemplate)
 	     stretched to the list width, white centered text. -->
 	<Frame name="ForeverLootPageHeaderTemplate" mixin="ForeverLootPageHeaderMixin" virtual="true">
@@ -408,6 +441,8 @@
 			<KeyValue key="cardHeight" value="72" type="number"/>
 			<KeyValue key="headerHeight" value="40" type="number"/>
 			<KeyValue key="headerGap" value="6" type="number"/>
+			<KeyValue key="subheaderHeight" value="24" type="number"/>
+			<KeyValue key="subheaderGap" value="4" type="number"/>
 			<KeyValue key="columnGap" value="12" type="number"/>
 		</KeyValues>
 		<Frames>

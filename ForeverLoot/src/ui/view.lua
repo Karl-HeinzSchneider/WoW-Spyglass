@@ -550,6 +550,40 @@ function ForeverLootGroupLabelMixin:Init(text)
 end
 
 ----------------------------------------------------------------------------------------------------
+-- Subheader (small section title: one step under a page header, above the group labels)
+----------------------------------------------------------------------------------------------------
+
+---@class ForeverLoot.Subheader : Frame
+---@field Text FontString
+---@field LineLeft Texture
+---@field LineRight Texture
+ForeverLootSubheaderMixin = {}
+app.ui.SubheaderMixin = ForeverLootSubheaderMixin
+
+-- How much of the flanking lines has to stay visible on each side; a title that would leave
+-- less than this is truncated instead (the text is centered, so both sides shrink together).
+local SUBHEADER_LINE_MIN = 20
+
+---@param text string
+function ForeverLootSubheaderMixin:Init(text)
+    self.Text:SetText(text)
+    self:UpdateText()
+end
+
+function ForeverLootSubheaderMixin:OnSizeChanged()
+    self:UpdateText()
+end
+
+function ForeverLootSubheaderMixin:UpdateText()
+    -- Width 0 = size to the text; the lines are anchored to its edges and follow along.
+    self.Text:SetWidth(0)
+    local maximum = self:GetWidth() - 2 * SUBHEADER_LINE_MIN
+    if maximum > 0 and self.Text:GetStringWidth() > maximum then
+        self.Text:SetWidth(maximum)
+    end
+end
+
+----------------------------------------------------------------------------------------------------
 -- Page header (section title on the character frame's category plate)
 ----------------------------------------------------------------------------------------------------
 
@@ -661,6 +695,8 @@ end
 ---@field cardHeight number
 ---@field headerHeight number
 ---@field headerGap number
+---@field subheaderHeight number
+---@field subheaderGap number
 ---@field columnGap number
 ---@field pages ForeverLoot.PageRange[]  # layout result for the current node (into `layout`)
 ---@field path ForeverLoot.Node[]
@@ -676,14 +712,15 @@ app.ui.ViewMixin = ForeverLootViewMixin
 ---@field tilePool ForeverLoot.FramePool
 ---@field cardPool ForeverLoot.FramePool
 ---@field headerPool ForeverLoot.FramePool
+---@field subheaderPool ForeverLoot.FramePool
 ---@field groupPool ForeverLoot.FramePool
 
 -- What a page displays. `kind` picks the template; new element kinds plug in here
 -- (BuildElements, LayoutPages, RenderPage). A `spacer` is one row of empty space: it takes
 -- part in the layout but draws nothing.
 ---@class ForeverLoot.Element
----@field kind "header"|"group"|"spacer"|"row"|"tile"|"card"
----@field text? string  # header, group
+---@field kind "header"|"subheader"|"group"|"spacer"|"row"|"tile"|"card"
+---@field text? string  # header, subheader, group
 ---@field node? ForeverLoot.Node  # row, tile, card
 
 -- Where every element of the current layout goes, as parallel arrays indexed by placement
@@ -728,6 +765,7 @@ function ForeverLootViewMixin:OnLoad()
     page.tilePool = CreateFramePool("Button", page, "ForeverLootTileTemplate") --[[@as ForeverLoot.FramePool]]
     page.cardPool = CreateFramePool("Button", page, "ForeverLootCardTemplate") --[[@as ForeverLoot.FramePool]]
     page.headerPool = CreateFramePool("Frame", page, "ForeverLootPageHeaderTemplate") --[[@as ForeverLoot.FramePool]]
+    page.subheaderPool = CreateFramePool("Frame", page, "ForeverLootSubheaderTemplate") --[[@as ForeverLoot.FramePool]]
     page.groupPool = CreateFramePool("Frame", page, "ForeverLootGroupLabelTemplate") --[[@as ForeverLoot.FramePool]]
     self.pages = {}
     self.pendingItems = {}
@@ -1153,10 +1191,11 @@ function ForeverLootViewMixin:Render()
 end
 
 -- Turns the current node into the flat list of things to draw: its children (the folder's
--- own title is the fixed `Title` frame above the pages). `header` nodes become section headers, `group` nodes become group labels (followed
+-- own title is the fixed `Title` frame above the pages). `header` nodes become section headers,
+-- `subheader` nodes the smaller section titles under them, `group` nodes group labels (followed
 -- by their `items`), `spacer` nodes an empty row, everything else a row (or a tile in a
 -- `display = "tiles"` folder). If the folder has `groupBy`, runs of plain entries are bucketed
--- into auto groups; explicit headers/groups/spacers are kept as written.
+-- into auto groups; explicit headers/subheaders/groups/spacers are kept as written.
 ---@param node ForeverLoot.Node?
 ---@return ForeverLoot.Element[]
 function ForeverLootViewMixin:BuildElements(node)
@@ -1196,6 +1235,10 @@ function ForeverLootViewMixin:BuildElements(node)
         if child.header then
             flush()
             elements[#elements + 1] = { kind = "header", text = child.header }
+        elseif child.subheader then
+            flush()
+            elements[#elements + 1] = { kind = "subheader", text = child.subheader }
+            addRows(child.items or {})
         elseif child.group then
             flush()
             elements[#elements + 1] = { kind = "group", text = child.group }
@@ -1214,9 +1257,10 @@ function ForeverLootViewMixin:BuildElements(node)
     return elements
 end
 
--- Flows elements top-to-bottom into as many pages as needed. Headers span the full width and
--- start a new line; rows, tiles and cards fill `columns` columns left to right (tiles and
--- cards are taller and get a little air between lines). A header never ends a page. A spacer
+-- Flows elements top-to-bottom into as many pages as needed. Headers and subheaders span the
+-- full width and start a new line; rows, tiles and cards fill `columns` columns left to right
+-- (tiles and cards are taller and get a little air between lines). A header never ends a page
+-- (nor does a subheader: both take the row that follows them along to the next one). A spacer
 -- is a row-high blank line that is dropped at the top of a page and never causes a page break
 -- by itself.
 ---@param elements ForeverLoot.Element[]
@@ -1258,6 +1302,15 @@ function ForeverLootViewMixin:LayoutPages(elements, columns)
             end
             place(element, 0, pageWidth, self.headerHeight)
             y = y + self.headerHeight + self.headerGap
+        elseif element.kind == "subheader" then
+            -- Like a header, only smaller; also never left alone at a page bottom.
+            newLine()
+            local needed = self.subheaderHeight + self.subheaderGap + self.rowHeight
+            if y > 0 and y + needed > pageHeight then
+                newPage()
+            end
+            place(element, 0, pageWidth, self.subheaderHeight)
+            y = y + self.subheaderHeight + self.subheaderGap
         elseif element.kind == "group" then
             -- Row-sized, full width, on its own line, and never orphaned at a page bottom.
             newLine()
@@ -1305,12 +1358,16 @@ function ForeverLootViewMixin:RenderPage(page, range)
     page.tilePool:ReleaseAll()
     page.cardPool:ReleaseAll()
     page.headerPool:ReleaseAll()
+    page.subheaderPool:ReleaseAll()
     page.groupPool:ReleaseAll()
     for i = range and range.first or 1, range and range.last or 0 do
         local element = layout.element[i]
         local frame
         if element.kind == "header" then
             frame = page.headerPool:Acquire() --[[@as ForeverLoot.PageHeader]]
+            frame:Init(element.text or "")
+        elseif element.kind == "subheader" then
+            frame = page.subheaderPool:Acquire() --[[@as ForeverLoot.Subheader]]
             frame:Init(element.text or "")
         elseif element.kind == "group" then
             frame = page.groupPool:Acquire() --[[@as ForeverLoot.GroupLabel]]

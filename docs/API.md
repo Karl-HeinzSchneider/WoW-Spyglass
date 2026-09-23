@@ -179,10 +179,14 @@ ForeverLoot:RegisterModule({
 
 ### Headers and groups
 
-Inside a folder's `children`:
+Inside a folder's `children`, from the biggest to the smallest:
 
 - `{ header = "Weapons" }` renders as a big section header (spellbook-style title with a
   divider). The current folder's own name is always shown as the first header of its list.
+- `{ subheader = "Rare Drops", items = { ... } }` renders as a small centered section title with
+  a line to either side, followed by `items` — one level under a header, for lists with enough
+  sections that the group labels alone no longer structure them. Without `items` it just marks
+  where the section starts.
 - `{ group = "Tier 2", items = { ... } }` renders as a row-sized group label followed by
   `items`. Without `items` it just marks where a group starts in the surrounding list.
 - `{ spacer = true }` is one empty row of space (as high as a list row, nothing drawn), e.g. to
@@ -191,8 +195,8 @@ Inside a folder's `children`:
 ### Automatic grouping
 
 Set `groupBy` on a folder to cluster its plain entries under group labels automatically.
-Explicit headers/groups in the same list are kept as written; only the entries between them
-are grouped.
+Explicit headers, subheaders and groups in the same list are kept as written; only the entries
+between them are grouped.
 
 - `groupBy = "auto"` uses `ForeverLoot.DefaultGroupKey`: items into four groups in this order —
   *Quest Items & Misc* (quest items and anything that isn't gear: recipes, consumables, keys, …),
@@ -214,6 +218,7 @@ Constructors (optional sugar):
 
 - `ForeverLoot.Folder(name, icon, children, opts?)` — `opts = { columns = 2, display = "tiles", description = "...", groupBy = "auto" }`
 - `ForeverLoot.Header(text)` — section header inside a list
+- `ForeverLoot.Subheader(text, items?)` — small section title under a header, optionally with its entries
 - `ForeverLoot.Group(text, items?)` — group label, optionally with its entries
 - `ForeverLoot.Spacer()` — one empty row
 - `ForeverLoot.Item(itemID)`

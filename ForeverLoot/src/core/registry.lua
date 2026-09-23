@@ -17,6 +17,7 @@ local log = app.logger
 --   spell   : `spellID`
 --   custom  : `name` (+ `icon`, `description`, `onClick`, `tooltip`), also used by placeholders
 --   header  : `header` (big section title)      group : `group` (row-sized label, + `items`)
+--   subheader: `subheader` (small section title between the two, + `items`)
 --   spacer  : `spacer` (one empty row of space)
 --   dynamic : `getChildren` (folder whose entries are computed when opened)
 --   query   : `query` (folder listing the item DB, filtered by the view's search/filter state)
@@ -47,6 +48,7 @@ local log = app.logger
 ---@field quests? integer[]  # cards: quest ids the entry is involved in; shows a "!" and lists their titles in the tooltip
 ---@field order? number  # sort key when the owning module sorts its children
 ---@field header? string  # section header marker; see ForeverLoot.Header
+---@field subheader? string  # small section header marker; `items` optionally holds the entries under it; see ForeverLoot.Subheader
 ---@field spacer? boolean  # spacer marker: one empty row of space; see ForeverLoot.Spacer
 --- Optional metadata, free for modules and custom sort functions to use:
 ---@field expansionID? integer  # e.g. LE_EXPANSION_CLASSIC
@@ -274,6 +276,16 @@ end
 ---@return ForeverLoot.Node
 function api.Header(text)
     return { header = text }
+end
+
+-- A small section title one step under a Header, for lists long enough to need a level between
+-- the headers and the group labels ("Rare Drops" under "Mounts", with its own groups inside).
+-- With `items`, those entries follow it; without, it just marks where the section starts.
+---@param text string
+---@param items? ForeverLoot.Node[]
+---@return ForeverLoot.Node
+function api.Subheader(text, items)
+    return { subheader = text, items = items }
 end
 
 -- One empty row of space inside a folder's children, e.g. to set an entry apart from the rest.
