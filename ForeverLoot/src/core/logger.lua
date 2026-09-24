@@ -43,7 +43,7 @@ local levelColors = {
 
 local PREFIX = "|cff33ccff" .. appName .. "|r"
 
--- TODO: read from ForeverLootDB once settings exist; INFO while in development.
+-- Until OnInitialize applies profile.logLevel (default in db.lua).
 logger.threshold = logger.level.INFO
 
 -- Accepts a numeric level or a level name ("DEBUG", case-insensitive). Returns nil if invalid.

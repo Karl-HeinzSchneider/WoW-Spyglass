@@ -29,9 +29,9 @@ The core operates independently when any companion is absent or disabled.
   access another addon's private table or introduce a cross-addon implementation global.
 - Companion addons integrate only through the documented global `ForeverLoot` API. A required
   breaking change increments `ForeverLoot.API_VERSION` and updates `docs/API.md`.
-- Late data registration uses `ForeverLoot.Data:AddNames`, `AddItems`, `AddBossLoot`,
-  `AddTrashLoot`, `AddQuests`, `AddList`, `AddListLoot`, `AddRecipes` or `AddCategories`. These
-  calls invalidate affected caches and publish `OnDataChanged`.
+- Late data registration uses `ForeverLoot.Data:AddNames`, `AddItems`, `AddInstance`, `AddBoss`,
+  `AddBossLoot`, `AddTrashLoot`, `AddQuests`, `AddList`, `AddListLoot`, `AddRecipes` or
+  `AddCategories`. These calls invalidate affected caches and publish `OnDataChanged`.
 - Built-in content modules continue to use the same public API available to third-party addons.
 
 ## Localization boundary

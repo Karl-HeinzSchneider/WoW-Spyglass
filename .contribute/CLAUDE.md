@@ -26,7 +26,7 @@ format of every file here (instance files with split dungeons, `displayName`, bo
 
 - Every data change ends with `npm run fix` (no `ERROR` lines; warnings are fine), then
   `npm run gen`; the JSON and all three regenerated trees are committed together
-  (`npm run generate:check` is what CI runs).
+  (`npm run generate:check`, part of `npm run check`, fails when they are stale).
 - `items/*.json` is machine-written by `npm run import`; change it through a scan, not by hand.
 - Only ids matter: every `name` in an item row is informational and rewritten by `fix`. A boss's
   `name`, a split dungeon's `name`, `displayName` and quest titles are the exceptions `fix` leaves

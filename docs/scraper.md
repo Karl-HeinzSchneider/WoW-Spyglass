@@ -14,7 +14,7 @@ scanned item is browsable immediately.
 
 `/fl scan <from> [to]`, `resume`, `stop`, `limit <n|off>`, `<from> <to> force`.
 
-- `StartScan` / `ScanTick` request `SCAN_BATCH` = 25 ids per `SCAN_INTERVAL` = 0.25 s (about 50 per
+- `StartScan` / `ScanTick` request `SCAN_BATCH` = 25 ids per `SCAN_INTERVAL` = 0.25 s (about 100 per
   second) through `C_Item.RequestLoadItemDataByID`. `ITEM_DATA_LOAD_RESULT` records each existing
   item with everything `C_Item.GetItemInfo` + `C_Item.GetItemStats` return (`RecordItem`; stat
   keys are shortened, `ITEM_MOD_X_SHORT` → `X`).

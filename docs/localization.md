@@ -45,7 +45,7 @@ so on a non-English client `app.itemNames` asks for them and keeps the answers i
 - `OnEnable` (`PLAYER_LOGIN`) starts a lookup `START_DELAY` = 15 s later, for every id from
   `Data:GetItemIDs()` without a name in `Data.names[locale].items` and not `missing`. Those ids
   are the rows `ForeverLoot_Database` adds; without that addon nothing is looked up.
-- `BATCH` = 5 ids per `INTERVAL` = 0.5 s (10 per second, a fifth of `/fl scan`), none while
+- `BATCH` = 5 ids per `INTERVAL` = 0.5 s (10 per second, a tenth of `/fl scan`), none while
   `InCombatLockdown()`. A cached item is read at once, others through
   `C_Item.RequestLoadItemDataByID` and `ITEM_DATA_LOAD_RESULT`.
 - A name from `C_Item.GetItemInfo` goes into the saved table right away, and to `Data:AddNames`

@@ -47,8 +47,8 @@ ForeverLoot:AddToModule("dungeons", dungeon)
 
 Built-in module ids: `"raids"`, `"dungeons"`, `"crafting"`, `"pvp"`, `"collections"`,
 `"reputation"`; `ForeverLoot_Database` adds `"items"` (the item browser). The built-in
-raids/dungeons sort by `minLevel`, then name. If your instance is
-in the game's data, prefer adding its drops to the item database (`ForeverLoot.Data:AddBossLoot`)
+dungeons sort by level range (`minLevel`, then `maxLevel`; none last), then name; the raids keep
+the order they are listed in. If your instance is in the game's data, prefer adding its drops to the item database (`ForeverLoot.Data:AddBossLoot`)
 — it then shows up in the built-in modules and in the item browser's filters automatically. The
 same goes for the other four: a list added with `ForeverLoot.Data:AddList` /
 `AddListLoot` under one of those kinds becomes a tile in that module.
@@ -446,7 +446,7 @@ own to make it appear there:
 ForeverLoot.Filters:Register({
     id = "myaddon-usable",          -- prefix with your addon name
     name = "Usable by me",
-    order = 90,                     -- menu position, lower first (built-ins use 10..80)
+    order = 100,                    -- menu position, lower first (built-ins use 5..90)
     kind = "multi",                 -- "multi" = checkboxes (values OR-ed) | "single" = radios (one value or nil)
     options = { { value = 1, label = "Yes" } },  -- or a function returning that list (re-evaluated when the data changes)
     match = function(itemID, row, value) return ... end,   -- row = Data.items[itemID]

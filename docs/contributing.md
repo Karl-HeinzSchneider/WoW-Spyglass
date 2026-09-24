@@ -30,8 +30,8 @@ boundaries, data, generated staleness, Lua syntax, XML schema).
    names, fills in ids, adds missing encounters and writes every file in stable key order.
 3. `npm run gen` — writes the three generated trees (`ForeverLoot/db/generated/`,
    `ForeverLoot_Database/db/generated/`, `ForeverLoot_Locale/db/generated/`).
-4. Commit the JSON **and** the regenerated trees together; CI runs `npm run generate:check`,
-   which fails when they are stale.
+4. Commit the JSON **and** the regenerated trees together; `npm run generate:check` (part of
+   `npm run check`) fails when they are stale.
 
 Never edit a generated tree by hand. Texture paths in JSON need doubled backslashes
 (`"Interface\\Icons\\INV_Misc_Key_13"`). The schemas, with a comment per field, are
@@ -76,7 +76,7 @@ recorded in the game by the `ForeverLoot_Scraper` addon:
 /fl scan limit off             no per-scan item limit (for the SavedVariables route); `limit 1000` restores it
 ```
 
-A scan asks for about 50 ids per second and skips ids the shipped database already has; an
+A scan asks for about 100 ids per second and skips ids the shipped database already has; an
 open-ended scan gives up after 20 000 consecutive missing ids. Every existing item is recorded
 with everything `C_Item.GetItemInfo` and `C_Item.GetItemStats` return (name in the client's
 language, quality, item level, required level, class/subclass, slot, bind, icon, sell price,
