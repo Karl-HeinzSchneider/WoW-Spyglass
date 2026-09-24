@@ -157,7 +157,8 @@ only sanctioned globals.
 - `view.lua` + `templates.xml` — a view fills the left column: header row (breadcrumbs
   left, starting right of the window portrait, search box + filter dropdown right) over a divider, one `Content` page of rows
   with Blizzard `PagingControls` bottom-right. Navigation is a `path` stack over `ForeverLoot.Node`
-  trees (`Push`/`PopTo`/`Back` → `Refresh`). `Refresh()` rebuilds elements + page layout
+  trees (`Push`/`PopTo`/`Back` → `Refresh`); `Push` keeps the page the node was on in
+  `view.pathPages`, and going back (`PopTo`, breadcrumbs, right-click) returns to that page. `Refresh()` rebuilds elements + page layout
   (navigation, query/size changes) and keeps the current page; `Render()` only redraws it (page
   flips, item info arriving). Items the grouping couldn't place (`app.unknownItemKinds`, cleared
   before each build: no DB row and not fetched yet) are all requested after the build and marked

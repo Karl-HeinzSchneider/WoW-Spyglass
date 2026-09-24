@@ -792,6 +792,7 @@ end
 ---@field columnGap number
 ---@field pages ForeverLoot.PageRange[]  # layout result for the current node (into `layout`)
 ---@field path ForeverLoot.Node[]
+---@field pathPages integer[]  # pathPages[i] = the page path[i] was on when a deeper node was opened
 ---@field onNavigate? fun(view: ForeverLoot.View)
 ---@field pendingItems table<integer, boolean>  # itemIDs whose info hasn't arrived yet
 ---@field regroupItems table<integer, boolean>  # items grouped without their kind: true = waiting to regroup, false = done
@@ -853,6 +854,7 @@ end
 
 function ForeverLootViewMixin:OnLoad()
     self.path = {}
+    self.pathPages = {}
 
     local page = self.Content
     page.rowPool = CreateFramePool("Button", page, "ForeverLootListRowTemplate") --[[@as ForeverLoot.FramePool]]
@@ -952,21 +954,29 @@ end
 ---@param root ForeverLoot.Node
 function ForeverLootViewMixin:SetRoot(root)
     self.path = { root }
+    self.pathPages = {}
     self:Navigate()
 end
 
+-- Opens `node` below the current one; the current node's page is kept for the way back.
 ---@param node ForeverLoot.Node
 function ForeverLootViewMixin:Push(node)
+    self.pathPages[#self.path] = self.PagingControls:GetCurrentPage()
     self.path[#self.path + 1] = node
     self:Navigate()
 end
 
+-- Goes back to path[index], on the page it was left on.
 ---@param index integer
 function ForeverLootViewMixin:PopTo(index)
     for i = #self.path, index + 1, -1 do
         self.path[i] = nil
     end
-    self:Navigate()
+    local page = self.pathPages[index]
+    for i = #self.pathPages, index, -1 do
+        self.pathPages[i] = nil
+    end
+    self:Navigate(page)
 end
 
 function ForeverLootViewMixin:Back()
@@ -986,7 +996,7 @@ function ForeverLootViewMixin:GetTitle()
     return node and node.name or "New Tab"
 end
 
--- The icon of the deepest node on the path that has one (the root has none), for the tab.
+-- The icon of the deepest node on the path that has one (the root carries the addon's), for the tab.
 ---@return string|number|nil
 function ForeverLootViewMixin:GetIcon()
     for i = #self.path, 1, -1 do
@@ -998,10 +1008,16 @@ function ForeverLootViewMixin:GetIcon()
     return nil
 end
 
--- Called after any path change: reset paging, redraw, and let the owner update the tab label.
-function ForeverLootViewMixin:Navigate()
+-- Called after any path change: reset paging (or go to `page`, when coming back to a node),
+-- redraw, and let the owner update the tab label.
+---@param page? integer
+function ForeverLootViewMixin:Navigate(page)
     self.PagingControls:SetCurrentPage(1)
     self:Refresh()
+    -- After Refresh: SetCurrentPage clamps to the page count, which only now is this node's.
+    if page and page > 1 then
+        self.PagingControls:SetCurrentPage(page)
+    end
     if self.onNavigate then
         self.onNavigate(self)
     end
