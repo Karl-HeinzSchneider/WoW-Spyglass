@@ -6,12 +6,12 @@ an addon distribution unit.
 
 ## Addon boundaries
 
-| Addon                  | Owns                                                                                                                                    | Persistent state       | Dependency                            |
-| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- | ------------------------------------- |
-| `ForeverLoot`          | Public API, data store and queries, content modules, UI, user settings and loot history                                                 | `ForeverLootDB`        | none                                  |
-| `ForeverLoot_Database` | Every scanned item row with its English name, and the `items` module (the searchable, filterable item browser)                          | none                   | `ForeverLoot`                         |
-| `ForeverLoot_Locale`   | Additional UI translations, generated localized item, instance and boss names, and the item names a non-English client looks up in-game | `ForeverLootLocaleDB`  | `ForeverLoot`                         |
-| `ForeverLoot_Scraper`  | Item scanning, loot observation, contribution exports and scraper commands                                                              | `ForeverLootScraperDB` | `ForeverLoot`, `ForeverLoot_Database` |
+| Addon                  | Owns                                                                                                                    | Persistent state       | Dependency                            |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------- | ---------------------- | ------------------------------------- |
+| `ForeverLoot`          | Public API, data store and queries, content modules, UI, user settings and (planned) loot history                       | `ForeverLootDB`        | none                                  |
+| `ForeverLoot_Database` | Every scanned item row with its English name, and the `items` module (the searchable, filterable item browser)          | none                   | `ForeverLoot`                         |
+| `ForeverLoot_Locale`   | Generated non-English item, instance, boss and crafting names, and the item names a non-English client looks up in-game | `ForeverLootLocaleDB`  | `ForeverLoot`                         |
+| `ForeverLoot_Scraper`  | Item scanning, loot observation, contribution exports and the boss portrait studio                                      | `ForeverLootScraperDB` | `ForeverLoot`, `ForeverLoot_Database` |
 
 The scanned item rows live in the database addon, generated non-English names in the locale
 addon. Scanning, discovery state, JSON export, and the export dialog live in the scraper addon.
@@ -42,14 +42,8 @@ item names come from the client in its own language. The locale addon owns every
 generated name table, the item names it learns in-game for the items those tables lack, and will
 own translated UI strings. The core searches an item's client-locale and English names both.
 Locale data registers after the core database loads; `OnDataChanged` refreshes visible data.
-
-The generator routes `enUS` instance, boss and crafting names to
-`ForeverLoot/db/generated/locales/`, `enUS` item names (with the item rows) to
-`ForeverLoot_Database/db/generated/locales/`, and every other configured or scanned locale to
-`ForeverLoot_Locale/db/generated/locales/`. The locale addon's TOC lists its files as
-`locales\[TextLocale]\<file>.lua`, which the client resolves to its own language, so the other
-languages are never read; every client language has all four files (placeholders where there are
-no names), because a missing one is a `LUA_WARNING` at login.
+Where each name table lives and how the locale addon loads only the client's language:
+[localization.md](localization.md).
 
 ## Database boundary
 
@@ -61,14 +55,16 @@ quality, icon and kind from the client, fetching what it has not cached yet.
 
 ## Scraper boundary
 
-The core owns browsing and durable user-facing loot history. The scraper owns contributor-facing
-collection state and transport: scan progress, discovered item rows, observed boss drops, JSON
-encoding, exports, the export dialog, and scan/export commands.
+The core owns browsing and the (planned) durable user-facing loot history. The scraper owns
+contributor-facing collection state and transport: scan progress, discovered item rows, observed
+boss drops, JSON encoding, exports, the export dialog, the boss portrait studio, and their
+commands.
 
-The scraper registers `/fl scan` and `/fl export` through the public command-extension API. Its
-AceAddon object, database, frames, and modules remain private. It never reads or writes
-`ForeverLootDB`; everything it records lives in `ForeverLootScraperDB`, which is also the only
-SavedVariables layout the repository import tooling reads.
+The scraper registers `/fl scan`, `/fl export` and `/fl portrait` through the public
+command-extension API. Its AceAddon object, database, frames, and modules remain private. It
+never reads or writes `ForeverLootDB`; everything it records lives in `ForeverLootScraperDB`,
+which is also the only SavedVariables layout the repository import tooling reads. How it works:
+[scraper.md](scraper.md).
 
 ## Tooling boundary
 

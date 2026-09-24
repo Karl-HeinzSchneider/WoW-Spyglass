@@ -1,7 +1,8 @@
 # CLAUDE.md
 
-Guidance for Claude Code when working in this repository. Each part of the repo has its own
-`CLAUDE.md` with the details; this file holds the map and the rules that apply everywhere.
+Guidance for Claude Code when working in this repository. This file holds the map and the rules
+that apply everywhere; each part of the repo has its own `CLAUDE.md` with its rules and file map,
+and the detailed descriptions live in `docs/`.
 
 ## What this is
 
@@ -13,16 +14,31 @@ builds its item database. It is a monorepo of four addon distribution units and 
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
 | `ForeverLoot/`          | The core addon: public `ForeverLoot` API, item database API and queries (no item rows), built-in content modules, the browser window, user settings and (planned) loot history. `ForeverLootDB`. | [ForeverLoot/CLAUDE.md](ForeverLoot/CLAUDE.md)                   |
 | `ForeverLoot_Database/` | Companion: every scanned item row with its English name, and the `items` module (the searchable, filterable item browser). No SavedVariables.                                                    | [ForeverLoot_Database/CLAUDE.md](ForeverLoot_Database/CLAUDE.md) |
-| `ForeverLoot_Locale/`   | Companion: generated non-English item/instance/boss names, registered through the core API, plus the item names a non-English client looks up in-game. `ForeverLootLocaleDB`.                    | [ForeverLoot_Locale/CLAUDE.md](ForeverLoot_Locale/CLAUDE.md)     |
-| `ForeverLoot_Scraper/`  | Optional contributor companion: `/fl scan` item scanning, loot observation, `/fl export`. Also depends on `ForeverLoot_Database`. `ForeverLootScraperDB`.                                        | [ForeverLoot_Scraper/CLAUDE.md](ForeverLoot_Scraper/CLAUDE.md)   |
+| `ForeverLoot_Locale/`   | Companion: generated non-English item, instance, boss and crafting names, plus the item names a non-English client looks up in-game. `ForeverLootLocaleDB`.                                      | [ForeverLoot_Locale/CLAUDE.md](ForeverLoot_Locale/CLAUDE.md)     |
+| `ForeverLoot_Scraper/`  | Optional contributor companion: `/fl scan` item scanning, loot observation, `/fl export`, the `/fl portrait` studio. Also depends on `ForeverLoot_Database`. `ForeverLootScraperDB`.             | [ForeverLoot_Scraper/CLAUDE.md](ForeverLoot_Scraper/CLAUDE.md)   |
 | `.contribute/`          | Everything the database is built from: in-game item scans, curated drops and item lists, the pinned client build. `inbox/` is the gitignored drop folder for `npm run import`.                   | [.contribute/CLAUDE.md](.contribute/CLAUDE.md)                   |
 | `src/`                  | Root Node/TypeScript tooling: validate and fix the curated data, import in-game recordings, generate the addon data, check the addons, link them into a client, package releases.                | [src/CLAUDE.md](src/CLAUDE.md)                                   |
 | `tests/`                | `tests/tooling/*.test.ts` (node:test, run by `npm run test:tooling`).                                                                                                                            | see `src/CLAUDE.md`                                              |
 | `tools/portrait/`       | Python + Pillow: a screenshot of the scraper's `/fl portrait` window -> a boss picture in `ForeverLoot/assets/bosses/`.                                                                          | [tools/portrait/README.md](tools/portrait/README.md)             |
-| `docs/`                 | Human-facing documentation: `docs/API.md` (the public `ForeverLoot` contract, must be updated with every API change) and `docs/architecture.md` (addon ownership and integration rules).         | —                                                                |
+| `docs/`                 | Human-facing documentation, see below.                                                                                                                                                           | —                                                                |
 
 A direct child directory with a same-named `.toc` is an addon; the tooling discovers addons that
 way, so adding one needs no registration anywhere.
+
+## Documentation (`docs/`)
+
+| File                                      | Covers                                                                                         |
+| ----------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| [API.md](docs/API.md)                     | The public `ForeverLoot` contract: modules, nodes, `Data`, `Filters`, `Query`, events.         |
+| [architecture.md](docs/architecture.md)   | Which addon owns what, and the integration rules between them.                                 |
+| [contributing.md](docs/contributing.md)   | Setup, scanning and importing, and the format of every file under `.contribute/data/`.         |
+| [data-pipeline.md](docs/data-pipeline.md) | Where the data comes from and what validation, generation and import do (`src/`).              |
+| [ui.md](docs/ui.md)                       | How the core's browser window is built (`ForeverLoot/src/ui/`).                                |
+| [scraper.md](docs/scraper.md)             | How the scraper scans, records loot, exports, and the portrait studio.                         |
+| [localization.md](docs/localization.md)   | Where every name comes from in each language, and the locale addon's in-game item name lookup. |
+
+Read the matching file before changing what it describes, and update it in the same change when
+behavior it describes changes. Every change to the public API updates `docs/API.md`.
 
 ## Working on the code
 
@@ -35,16 +51,11 @@ The one generated part is the item database (`ForeverLoot/db/generated/`,
 generated tree by hand**; change the inputs under `.contribute/data/` and run `npm run gen`.
 
 WoW Forever's items are server-side: wago.tools' item tables are incomplete and wrong for this
-client and item ids from Classic/wowhead do **not** match. The in-game scan (`/fl scan`, scraper
-addon) is the only item source. Only scanned items exist in the DB; a curated loot row may
-reference an unscanned id (warning, not error). Instances and encounters _do_ come from
-wago.tools' `Map` + `DungeonEncounter` tables for the build pinned in `.contribute/data/config.json`
-(instance ids = `Map` ids, boss ids = `DungeonEncounter` ids), and so do profession recipes
-(`SkillLineAbility`, `SpellReagents`, `SpellEffect`, …; recipe ids = spell ids), shipped only
-when the scans confirm the item they make, and the `Faction` list. `ItemSparse` agrees with the
-scans on the items it has but lacks thousands of this server's items, so it is read only for
-recipe items' skill requirements and for the non-English names of scanned items whose English
-name it matches — never as an item source.
+client, and item ids from Classic/wowhead do **not** match. The in-game scan (`/fl scan`) is the
+only item source, so only scanned items exist in the database. Instances, encounters, profession
+recipes and factions _do_ come from wago.tools, for the build pinned in
+`.contribute/data/config.json`; `ItemSparse` is read only for recipe skill requirements and
+non-English names, never as an item source. Details: `docs/data-pipeline.md`.
 
 ## Commands (Node 20+, run from the root after `npm install` once)
 
@@ -56,7 +67,7 @@ name it matches — never as an item source.
 | `npm run format`                     | Prettier (`.prettierrc.json`, `.prettierignore`) on TS/JSON/Markdown, then StyLua (`stylua.toml`, `.styluaignore`) on Lua. Includes `.contribute/data/`, which `fix`/`import` already write in the same Prettier layout; leaves XML to the editor. |
 | `npm run gen` (`generate`)           | Writes the three generated trees. `npm run generate:check` fails when they are stale (CI).                                                                                                                                                         |
 | `npm run import`                     | Merges what the scraper recorded (every `.lua` and `.json` in `.contribute/inbox/`, or one file given as `-- <path>`) into the scans and curated files; then `npm run gen`.                                                                        |
-| `npm run check:addons`               | TOC entries exist, companions depend on `ForeverLoot`, no dependency cycles, and **no file under `ForeverLoot/` contains a companion's name** (`ForeverLoot_Database`, `_Locale`, `_Scraper`; comments included).                                  |
+| `npm run check:addons`               | TOC entries exist, companions depend on `ForeverLoot`, no dependency cycles, and **no `.lua`/`.xml`/`.toc` under `ForeverLoot/` contains a companion's name** (`ForeverLoot_Database`, `_Locale`, `_Scraper`; comments included).                  |
 | `npm run check:lua`                  | `luac -p` on every addon Lua file (needs a Lua 5.1 `luac` on PATH).                                                                                                                                                                                |
 | `npm run check:xml`                  | Validates every addon XML against Blizzard's `UI.xsd` via python + lxml; skipped when `../_data/BlizzardInterfaceCode` is absent.                                                                                                                  |
 | `npm run test:tooling` / `typecheck` | The node:test suite, `tsc --noEmit`.                                                                                                                                                                                                               |
@@ -70,20 +81,20 @@ Static checks also used ad hoc: `lua-language-server --check` (config in `.luarc
 
 Companions depend on the core (`## Dependencies: ForeverLoot`) and use **only** the documented
 public global `ForeverLoot` (`docs/API.md`); the scraper also depends on `ForeverLoot_Database`.
-The core must work with every companion absent and never references them — not even by name. No addon reads another addon's private table
-(the `...` table each file receives) or adds a cross-addon global. Built-in content modules use
-the same public API a third-party addon would; never give them private hooks. Late data goes in
-through `ForeverLoot.Data:AddNames/AddItems/AddBossLoot/AddTrashLoot/AddQuests/AddList/AddListLoot`, which invalidate
-caches and fire `OnDataChanged`. A breaking API change bumps `ForeverLoot.API_VERSION` and
-updates `docs/API.md`. Full rules: `docs/architecture.md`.
+The core must work with every companion absent and never references them — not even by name. No
+addon reads another addon's private table (the `...` table each file receives) or adds a
+cross-addon global. Built-in content modules use the same public API a third-party addon would;
+never give them private hooks. Late data goes in through the `ForeverLoot.Data:Add*` calls, which
+invalidate caches and fire `OnDataChanged`. A breaking API change bumps
+`ForeverLoot.API_VERSION` and updates `docs/API.md`. Full rules: `docs/architecture.md`.
 
 ## WoW addon constraints
 
 - Lua 5.1 with Blizzard's restricted API. No `require`, `io`, `os`, or `loadstring` of external
   files; every code file must be listed in its addon's TOC, in dependency order, or it will not
   load.
-- Addons share one global namespace. Keep state in the private table passed to each file. Every
-  file starts with
+- Addons share one global namespace. Keep state in the private table passed to each file. A file
+  that uses it starts with
 
   ```lua
   ---@type string, ForeverLoot
@@ -93,7 +104,10 @@ updates `docs/API.md`. Full rules: `docs/architecture.md`.
   (`local _, app = ...` when the name is unused, or LuaLS flags it; the class is
   `ForeverLootScraper` / `ForeverLootLocale` in the companions). The `---@type` line gives the
   language server completion on `app.*`. When a file adds a member to `app`, add a matching
-  `---@field` to that addon's annotations-only `types.lua`.
+  `---@field` where the class is declared: the core's `src/types.lua`, or the companion's
+  bootstrap file (`ForeverLoot_Scraper.lua`, `ForeverLoot_Locale.lua`). The built-in modules
+  and `ForeverLoot_Database.lua` don't touch the private table at all: they use only the global
+  `ForeverLoot`, as a third-party addon would.
 
 - The only sanctioned globals are the public `ForeverLoot` table, the SavedVariables tables, and
   XML-required mixins/frames prefixed `ForeverLoot…` (`ForeverLootScraper…` in the scraper).
