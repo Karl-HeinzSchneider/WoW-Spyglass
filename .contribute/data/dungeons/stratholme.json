@@ -4,12 +4,7 @@
   "minLevel": 48,
   "maxLevel": 58,
   "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Stratholme",
-  "backgroundCoords": [
-    0.0156,
-    0.6641,
-    0.0703,
-    0.6797
-  ],
+  "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],
   "encounters": [
     {
       "id": 473,

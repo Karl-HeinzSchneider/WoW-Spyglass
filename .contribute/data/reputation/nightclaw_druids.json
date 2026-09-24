@@ -4,59 +4,206 @@
   "faction": 2758,
   "rewards": {
     "Friendly": [
-      { "item": 276961, "name": "Pattern: Azure Gustwoven Belt" },
-      { "item": 276963, "name": "Pattern: Azure Gustwoven Boots" },
-      { "item": 276959, "name": "Pattern: Azure Gustwoven Bracers" },
-      { "item": 276960, "name": "Pattern: Azure Gustwoven Gloves" },
-      { "item": 276973, "name": "Pattern: Azure Stormsewn Cord" },
-      { "item": 276971, "name": "Pattern: Azure Stormsewn Cuffs" },
-      { "item": 276972, "name": "Pattern: Azure Stormsewn Handwraps" },
-      { "item": 276975, "name": "Pattern: Azure Stormsewn Shoes" },
-      { "item": 276965, "name": "Pattern: Azure Windraveled Armguards" },
-      { "item": 276969, "name": "Pattern: Azure Windraveled Footwraps" },
-      { "item": 276966, "name": "Pattern: Azure Windraveled Mitts" },
-      { "item": 276967, "name": "Pattern: Azure Windraveled Strap" },
-      { "item": 276937, "name": "Pattern: Cloudy Gustwoven Belt" },
-      { "item": 276939, "name": "Pattern: Cloudy Gustwoven Boots" },
-      { "item": 276935, "name": "Pattern: Cloudy Gustwoven Bracers" },
-      { "item": 276936, "name": "Pattern: Cloudy Gustwoven Gloves" },
-      { "item": 276949, "name": "Pattern: Cloudy Stormsewn Cord" },
-      { "item": 276947, "name": "Pattern: Cloudy Stormsewn Cuffs" },
-      { "item": 276948, "name": "Pattern: Cloudy Stormsewn Handwraps" },
-      { "item": 276951, "name": "Pattern: Cloudy Stormsewn Shoes" },
-      { "item": 276941, "name": "Pattern: Cloudy Windraveled Armguards" },
-      { "item": 276945, "name": "Pattern: Cloudy Windraveled Footwraps" },
-      { "item": 276942, "name": "Pattern: Cloudy Windraveled Mitts" },
-      { "item": 276943, "name": "Pattern: Cloudy Windraveled Strap" },
-      { "item": 276955, "name": "Plans: Azure Skyforged Chain" },
-      { "item": 276954, "name": "Plans: Azure Skyforged Gauntlets" },
-      { "item": 276957, "name": "Plans: Azure Skyforged Greaves" },
-      { "item": 276953, "name": "Plans: Azure Skyforged Wristguards" },
-      { "item": 276931, "name": "Plans: Cloudy Skyforged Chain" },
-      { "item": 276930, "name": "Plans: Cloudy Skyforged Gauntlets" },
-      { "item": 276933, "name": "Plans: Cloudy Skyforged Greaves" },
-      { "item": 276929, "name": "Plans: Cloudy Skyforged Wristguards" }
+      {
+        "item": 276961,
+        "name": "Pattern: Azure Gustwoven Belt"
+      },
+      {
+        "item": 276963,
+        "name": "Pattern: Azure Gustwoven Boots"
+      },
+      {
+        "item": 276959,
+        "name": "Pattern: Azure Gustwoven Bracers"
+      },
+      {
+        "item": 276960,
+        "name": "Pattern: Azure Gustwoven Gloves"
+      },
+      {
+        "item": 276973,
+        "name": "Pattern: Azure Stormsewn Cord"
+      },
+      {
+        "item": 276971,
+        "name": "Pattern: Azure Stormsewn Cuffs"
+      },
+      {
+        "item": 276972,
+        "name": "Pattern: Azure Stormsewn Handwraps"
+      },
+      {
+        "item": 276975,
+        "name": "Pattern: Azure Stormsewn Shoes"
+      },
+      {
+        "item": 276965,
+        "name": "Pattern: Azure Windraveled Armguards"
+      },
+      {
+        "item": 276969,
+        "name": "Pattern: Azure Windraveled Footwraps"
+      },
+      {
+        "item": 276966,
+        "name": "Pattern: Azure Windraveled Mitts"
+      },
+      {
+        "item": 276967,
+        "name": "Pattern: Azure Windraveled Strap"
+      },
+      {
+        "item": 276937,
+        "name": "Pattern: Cloudy Gustwoven Belt"
+      },
+      {
+        "item": 276939,
+        "name": "Pattern: Cloudy Gustwoven Boots"
+      },
+      {
+        "item": 276935,
+        "name": "Pattern: Cloudy Gustwoven Bracers"
+      },
+      {
+        "item": 276936,
+        "name": "Pattern: Cloudy Gustwoven Gloves"
+      },
+      {
+        "item": 276949,
+        "name": "Pattern: Cloudy Stormsewn Cord"
+      },
+      {
+        "item": 276947,
+        "name": "Pattern: Cloudy Stormsewn Cuffs"
+      },
+      {
+        "item": 276948,
+        "name": "Pattern: Cloudy Stormsewn Handwraps"
+      },
+      {
+        "item": 276951,
+        "name": "Pattern: Cloudy Stormsewn Shoes"
+      },
+      {
+        "item": 276941,
+        "name": "Pattern: Cloudy Windraveled Armguards"
+      },
+      {
+        "item": 276945,
+        "name": "Pattern: Cloudy Windraveled Footwraps"
+      },
+      {
+        "item": 276942,
+        "name": "Pattern: Cloudy Windraveled Mitts"
+      },
+      {
+        "item": 276943,
+        "name": "Pattern: Cloudy Windraveled Strap"
+      },
+      {
+        "item": 276955,
+        "name": "Plans: Azure Skyforged Chain"
+      },
+      {
+        "item": 276954,
+        "name": "Plans: Azure Skyforged Gauntlets"
+      },
+      {
+        "item": 276957,
+        "name": "Plans: Azure Skyforged Greaves"
+      },
+      {
+        "item": 276953,
+        "name": "Plans: Azure Skyforged Wristguards"
+      },
+      {
+        "item": 276931,
+        "name": "Plans: Cloudy Skyforged Chain"
+      },
+      {
+        "item": 276930,
+        "name": "Plans: Cloudy Skyforged Gauntlets"
+      },
+      {
+        "item": 276933,
+        "name": "Plans: Cloudy Skyforged Greaves"
+      },
+      {
+        "item": 276929,
+        "name": "Plans: Cloudy Skyforged Wristguards"
+      }
     ],
     "Honored": [
-      { "item": 276958, "name": "Pattern: Azure Gustwoven Harness" },
-      { "item": 276962, "name": "Pattern: Azure Gustwoven Trousers" },
-      { "item": 276974, "name": "Pattern: Azure Stormsewn Leggings" },
-      { "item": 276970, "name": "Pattern: Azure Stormsewn Vest" },
-      { "item": 276964, "name": "Pattern: Azure Windraveled Jerkin" },
-      { "item": 276968, "name": "Pattern: Azure Windraveled Pants" },
-      { "item": 276934, "name": "Pattern: Cloudy Gustwoven Harness" },
-      { "item": 276938, "name": "Pattern: Cloudy Gustwoven Trousers" },
-      { "item": 276950, "name": "Pattern: Cloudy Stormsewn Leggings" },
-      { "item": 276946, "name": "Pattern: Cloudy Stormsewn Vest" },
-      { "item": 276940, "name": "Pattern: Cloudy Windraveled Jerkin" },
-      { "item": 276944, "name": "Pattern: Cloudy Windraveled Pants" },
-      { "item": 276952, "name": "Plans: Azure Skyforged Chainmail" },
-      { "item": 276956, "name": "Plans: Azure Skyforged Legguards" },
-      { "item": 276928, "name": "Plans: Cloudy Skyforged Chainmail" },
-      { "item": 276932, "name": "Plans: Cloudy Skyforged Legguards" }
+      {
+        "item": 276958,
+        "name": "Pattern: Azure Gustwoven Harness"
+      },
+      {
+        "item": 276962,
+        "name": "Pattern: Azure Gustwoven Trousers"
+      },
+      {
+        "item": 276974,
+        "name": "Pattern: Azure Stormsewn Leggings"
+      },
+      {
+        "item": 276970,
+        "name": "Pattern: Azure Stormsewn Vest"
+      },
+      {
+        "item": 276964,
+        "name": "Pattern: Azure Windraveled Jerkin"
+      },
+      {
+        "item": 276968,
+        "name": "Pattern: Azure Windraveled Pants"
+      },
+      {
+        "item": 276934,
+        "name": "Pattern: Cloudy Gustwoven Harness"
+      },
+      {
+        "item": 276938,
+        "name": "Pattern: Cloudy Gustwoven Trousers"
+      },
+      {
+        "item": 276950,
+        "name": "Pattern: Cloudy Stormsewn Leggings"
+      },
+      {
+        "item": 276946,
+        "name": "Pattern: Cloudy Stormsewn Vest"
+      },
+      {
+        "item": 276940,
+        "name": "Pattern: Cloudy Windraveled Jerkin"
+      },
+      {
+        "item": 276944,
+        "name": "Pattern: Cloudy Windraveled Pants"
+      },
+      {
+        "item": 276952,
+        "name": "Plans: Azure Skyforged Chainmail"
+      },
+      {
+        "item": 276956,
+        "name": "Plans: Azure Skyforged Legguards"
+      },
+      {
+        "item": 276928,
+        "name": "Plans: Cloudy Skyforged Chainmail"
+      },
+      {
+        "item": 276932,
+        "name": "Plans: Cloudy Skyforged Legguards"
+      }
     ],
     "Revered": [
-      { "item": 280347, "name": "Shadowgale Squirrel" }
+      {
+        "item": 280347,
+        "name": "Shadowgale Squirrel"
+      }
     ]
   }
 }

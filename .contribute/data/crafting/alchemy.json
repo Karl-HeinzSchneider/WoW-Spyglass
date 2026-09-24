@@ -2,12 +2,7 @@
   "name": "Alchemy",
   "icon": "Interface\\Icons\\Trade_Alchemy",
   "background": "Profession-overview-Card-Alchemy",
-  "backgroundCoords": [
-    0.57,
-    1,
-    0.2,
-    1
-  ],
+  "backgroundCoords": [0.57, 1, 0.2, 1],
   "order": 10,
   "skillLine": 171,
   "recipes": []

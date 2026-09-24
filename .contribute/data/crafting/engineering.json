@@ -2,12 +2,7 @@
   "name": "Engineering",
   "icon": "Interface\\Icons\\Trade_Engineering",
   "background": "Profession-overview-Card-Engineering",
-  "backgroundCoords": [
-    0.57,
-    1,
-    0.2,
-    1
-  ],
+  "backgroundCoords": [0.57, 1, 0.2, 1],
   "order": 40,
   "skillLine": 202,
   "recipes": []

@@ -4,47 +4,152 @@
   "faction": 609,
   "rewards": {
     "Friendly": [
-      { "item": 20732, "name": "Formula: Enchant Cloak - Greater Fire Resistance" },
-      { "item": 275586, "name": "Pattern: Bileblister Claws" },
-      { "item": 275595, "name": "Pattern: Broodwatcher's Clenchers" },
-      { "item": 22310, "name": "Pattern: Cenarion Herb Bag" },
-      { "item": 275589, "name": "Pattern: Hivethrasher's Claws" },
-      { "item": 275592, "name": "Pattern: Scalegut Clenchers" },
-      { "item": 275583, "name": "Pattern: Swarmtender's Gloves" },
-      { "item": 22772, "name": "Pattern: Sylvan Shoulders" },
-      { "item": 275580, "name": "Pattern: Venomspew Gloves" },
-      { "item": 275601, "name": "Plans: Clutchlord's Grips" },
-      { "item": 275598, "name": "Plans: Goregasher Grips" },
-      { "item": 229897, "name": "Scroll: Create Signet of Beckoning" }
+      {
+        "item": 20732,
+        "name": "Formula: Enchant Cloak - Greater Fire Resistance"
+      },
+      {
+        "item": 275586,
+        "name": "Pattern: Bileblister Claws"
+      },
+      {
+        "item": 275595,
+        "name": "Pattern: Broodwatcher's Clenchers"
+      },
+      {
+        "item": 22310,
+        "name": "Pattern: Cenarion Herb Bag"
+      },
+      {
+        "item": 275589,
+        "name": "Pattern: Hivethrasher's Claws"
+      },
+      {
+        "item": 275592,
+        "name": "Pattern: Scalegut Clenchers"
+      },
+      {
+        "item": 275583,
+        "name": "Pattern: Swarmtender's Gloves"
+      },
+      {
+        "item": 22772,
+        "name": "Pattern: Sylvan Shoulders"
+      },
+      {
+        "item": 275580,
+        "name": "Pattern: Venomspew Gloves"
+      },
+      {
+        "item": 275601,
+        "name": "Plans: Clutchlord's Grips"
+      },
+      {
+        "item": 275598,
+        "name": "Plans: Goregasher Grips"
+      },
+      {
+        "item": 229897,
+        "name": "Scroll: Create Signet of Beckoning"
+      }
     ],
     "Honored": [
-      { "item": 20733, "name": "Formula: Enchant Cloak - Greater Nature Resistance" },
-      { "item": 275588, "name": "Pattern: Bileblister Boots" },
-      { "item": 275587, "name": "Pattern: Bileblister Girdle" },
-      { "item": 275596, "name": "Pattern: Broodwatcher's Belt" },
-      { "item": 275597, "name": "Pattern: Broodwatcher's Treaders" },
-      { "item": 275591, "name": "Pattern: Hivethrasher's Boots" },
-      { "item": 275590, "name": "Pattern: Hivethrasher's Girdle" },
-      { "item": 275593, "name": "Pattern: Scalegut Belt" },
-      { "item": 275594, "name": "Pattern: Scalegut Treaders" },
-      { "item": 275584, "name": "Pattern: Swarmtender's Cord" },
-      { "item": 275585, "name": "Pattern: Swarmtender's Footpads" },
-      { "item": 22773, "name": "Pattern: Sylvan Crown" },
-      { "item": 275581, "name": "Pattern: Venomspew Cord" },
-      { "item": 275582, "name": "Pattern: Venomspew Footpads" },
-      { "item": 275603, "name": "Plans: Clutchlord's Stompers" },
-      { "item": 275602, "name": "Plans: Clutchlord's Support" },
-      { "item": 275600, "name": "Plans: Goregasher Stompers" },
-      { "item": 275599, "name": "Plans: Goregasher Support" }
+      {
+        "item": 20733,
+        "name": "Formula: Enchant Cloak - Greater Nature Resistance"
+      },
+      {
+        "item": 275588,
+        "name": "Pattern: Bileblister Boots"
+      },
+      {
+        "item": 275587,
+        "name": "Pattern: Bileblister Girdle"
+      },
+      {
+        "item": 275596,
+        "name": "Pattern: Broodwatcher's Belt"
+      },
+      {
+        "item": 275597,
+        "name": "Pattern: Broodwatcher's Treaders"
+      },
+      {
+        "item": 275591,
+        "name": "Pattern: Hivethrasher's Boots"
+      },
+      {
+        "item": 275590,
+        "name": "Pattern: Hivethrasher's Girdle"
+      },
+      {
+        "item": 275593,
+        "name": "Pattern: Scalegut Belt"
+      },
+      {
+        "item": 275594,
+        "name": "Pattern: Scalegut Treaders"
+      },
+      {
+        "item": 275584,
+        "name": "Pattern: Swarmtender's Cord"
+      },
+      {
+        "item": 275585,
+        "name": "Pattern: Swarmtender's Footpads"
+      },
+      {
+        "item": 22773,
+        "name": "Pattern: Sylvan Crown"
+      },
+      {
+        "item": 275581,
+        "name": "Pattern: Venomspew Cord"
+      },
+      {
+        "item": 275582,
+        "name": "Pattern: Venomspew Footpads"
+      },
+      {
+        "item": 275603,
+        "name": "Plans: Clutchlord's Stompers"
+      },
+      {
+        "item": 275602,
+        "name": "Plans: Clutchlord's Support"
+      },
+      {
+        "item": 275600,
+        "name": "Plans: Goregasher Stompers"
+      },
+      {
+        "item": 275599,
+        "name": "Plans: Goregasher Support"
+      }
     ],
     "Revered": [
-      { "item": 22683, "name": "Pattern: Gaea's Embrace" },
-      { "item": 22312, "name": "Pattern: Satchel of Cenarius" },
-      { "item": 22774, "name": "Pattern: Sylvan Vest" },
-      { "item": 22219, "name": "Plans: Jagged Obsidian Shield" }
+      {
+        "item": 22683,
+        "name": "Pattern: Gaea's Embrace"
+      },
+      {
+        "item": 22312,
+        "name": "Pattern: Satchel of Cenarius"
+      },
+      {
+        "item": 22774,
+        "name": "Pattern: Sylvan Vest"
+      },
+      {
+        "item": 22219,
+        "name": "Plans: Jagged Obsidian Shield"
+      }
     ],
     "Exalted": [
-      { "item": 22221, "name": "Plans: Obsidian Mail Tunic" }
+      {
+        "item": 22221,
+        "name": "Plans: Obsidian Mail Tunic"
+      }
     ]
   }
 }

@@ -13,7 +13,7 @@
  *                            into .contribute/data/items/ and the curated loot files
  *   npm run import -- FILE   same for one file anywhere
  */
-import { existsSync, mkdirSync, readdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync } from "node:fs";
 import { parseArgs } from "node:util";
 import { dirname, relative, resolve } from "node:path";
 import { INBOX_DIR, ROOT, loadConfig } from "./config.js";
@@ -22,6 +22,7 @@ import { loadDiscovered } from "./discovered.js";
 import { build, write } from "./generate.js";
 import { importDiscovered } from "./import.js";
 import { saveScannedItems } from "./items.js";
+import { writeJson } from "./json.js";
 import { type ListFile, loadLists, serializeList, validateLists } from "./lists.js";
 import { shipsRecipe } from "./recipes.js";
 import { loadReference, relinkRecipes } from "./reference.js";
@@ -72,7 +73,7 @@ for (const path of importPaths) {
   for (const line of importDiscovered(discovered, ref, curated)) console.log(`  ${line}`);
 }
 if (importPaths.length > 0) {
-  saveScannedItems(ref.items);
+  await saveScannedItems(ref.items);
   relinkRecipes(ref);
 }
 
@@ -85,7 +86,7 @@ for (const p of problems)
     `${p.warning ? "warning" : p.fixable ? (fix ? "fixed" : "fixable") : "ERROR"}  ${relative(ROOT, p.file)}: ${p.message}`,
   );
 const errors = problems.filter((p) => !p.fixable && !p.warning);
-if (fix) writeCurated(curated, lists);
+if (fix) await writeCurated(curated, lists);
 
 if (command === "check") {
   console.log(errors.length ? `${errors.length} error(s)` : "curated files OK");
@@ -108,10 +109,10 @@ if (values.check) {
 }
 console.log(changed ? `${changed} file(s) written` : "generated addon data unchanged");
 
-function writeCurated(files: CuratedFile[], lists: ListFile[]): void {
+async function writeCurated(files: CuratedFile[], lists: ListFile[]): Promise<void> {
   for (const file of files) {
     mkdirSync(dirname(file.path), { recursive: true });
-    writeFileSync(file.path, serialize(file.data), "utf-8");
+    await writeJson(file.path, serialize(file.data));
   }
-  for (const file of lists) writeFileSync(file.path, serializeList(file), "utf-8");
+  for (const file of lists) await writeJson(file.path, serializeList(file));
 }

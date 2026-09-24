@@ -2,18 +2,22 @@
   "name": "Tailoring",
   "icon": "Interface\\Icons\\Trade_Tailoring",
   "background": "Profession-overview-Card-Tailoring",
-  "backgroundCoords": [
-    0.57,
-    1,
-    0.2,
-    1
-  ],
+  "backgroundCoords": [0.57, 1, 0.2, 1],
   "order": 60,
   "skillLine": 197,
   "sections": [
-    { "name": "Armor", "categories": [2581, 2582, 2583, 2584, 2585, 2586, 2587, 2588, 2580] },
-    { "name": "Bags", "categories": [2578, 2579] },
-    { "name": "Clothing", "categories": [2589, 2590] }
+    {
+      "name": "Armor",
+      "categories": [2581, 2582, 2583, 2584, 2585, 2586, 2587, 2588, 2580]
+    },
+    {
+      "name": "Bags",
+      "categories": [2578, 2579]
+    },
+    {
+      "name": "Clothing",
+      "categories": [2589, 2590]
+    }
   ],
   "recipes": []
 }

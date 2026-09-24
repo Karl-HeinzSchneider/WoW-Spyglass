@@ -2,12 +2,7 @@
   "name": "Mining",
   "icon": "Interface\\Icons\\Trade_Mining",
   "background": "Profession-overview-Card-Mining",
-  "backgroundCoords": [
-    0.57,
-    1,
-    0.2,
-    1
-  ],
+  "backgroundCoords": [0.57, 1, 0.2, 1],
   "order": 80,
   "skillLine": 186,
   "recipes": []

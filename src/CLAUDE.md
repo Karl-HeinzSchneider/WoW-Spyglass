@@ -127,6 +127,8 @@ the data they consume is described in `.contribute/CLAUDE.md`.
   `.contribute/tools (npm run gen)`: the tools moved to `src/` in the monorepo refactor and
   keeping the old label avoided rewriting every generated file. Changing it is a mass diff of
   the generated trees; do it only on purpose.
+- `json.ts` — `writeJson(path, json)`: writes JSON text formatted by Prettier with the repo's
+  config (resolved for `path`); every data file the tools write goes through it (see Conventions).
 
 ## Tests (`tests/`)
 
@@ -139,11 +141,16 @@ the data they consume is described in `.contribute/CLAUDE.md`.
 ## Conventions
 
 - ESM with `.js` extensions in relative imports (`import … from "./config.js"`), `tsx` runs the
-  `.ts` directly; `npm run typecheck` is `tsc --noEmit` (strict). Only dependency: `csv-parse`.
+  `.ts` directly; `npm run typecheck` is `tsc --noEmit` (strict). Dependencies: `csv-parse`, and
+  `prettier` for writing JSON.
 - Report through the `Checker` (`report` = error or, with `fixable`, something `--fix` corrects;
   `warn` = printed but never fails) rather than throwing, so one run lists every problem.
 - Serializers write stable key order and a trailing newline so `fix`/`import` produce minimal
   diffs; keep that property when adding fields (`serialize`, `serializeList`, `saveScannedItems`).
+  Every JSON file under `.contribute/data/` is written through `writeJson` (`json.ts`): the
+  serializer's `JSON.stringify(value, null, 2)` run through the repo's Prettier config, so a
+  tool-written file is exactly what `npm run format` and format-on-save make of it (objects
+  expanded, arrays joined when they fit in 120 columns). Never `writeFileSync` a data file directly.
 - Generated files are compared ignoring CRLF; write them with `\n`.
 - One-off data pulls (scraping a site into `.contribute/data/`) belong in a scratchpad script,
   not in a new command here.

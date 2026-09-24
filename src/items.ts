@@ -1,6 +1,7 @@
-import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync } from "node:fs";
 import { resolve } from "node:path";
 import { SCANNED_ITEMS_DIR } from "./config.js";
+import { writeJson } from "./json.js";
 
 /**
  * The item database's source: what `/fl scan` recorded in-game, merged in by `npm run import`.
@@ -73,7 +74,7 @@ export function loadScannedItems(): Map<number, ScannedItem> {
 }
 
 /** Sorted ids, fixed field order and sorted stat/name keys, one file per id range; empty ranges get no file. */
-export function saveScannedItems(items: Map<number, ScannedItem>): void {
+export async function saveScannedItems(items: Map<number, ScannedItem>): Promise<void> {
   const byRange = new Map<number, Record<string, unknown>>();
   for (const id of [...items.keys()].sort((a, b) => a - b)) {
     const item = items.get(id)!;
@@ -97,7 +98,7 @@ export function saveScannedItems(items: Map<number, ScannedItem>): void {
     if (m && !byRange.has(Number(m[1]))) rmSync(resolve(SCANNED_ITEMS_DIR, entry));
   }
   for (const [start, bucket] of byRange) {
-    writeFileSync(fileFor(start), JSON.stringify(bucket, null, 2) + "\n", "utf-8");
+    await writeJson(fileFor(start), JSON.stringify(bucket, null, 2) + "\n");
   }
 }
 
