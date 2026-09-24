@@ -1,5 +1,5 @@
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
-import { relative, resolve, sep } from "node:path";
+import { basename, relative, resolve, sep } from "node:path";
 import { addonVersion, requireAddons, walkFiles } from "./addons.js";
 import { ROOT } from "./config.js";
 
@@ -7,16 +7,28 @@ const addons = requireAddons();
 const versions = [...new Set(addons.map(addonVersion))];
 const version = versions.length === 1 ? versions[0]! : "mixed";
 const outputDir = resolve(ROOT, "dist");
-const output = resolve(outputDir, `ForeverLoot-${version}.zip`);
+const output = resolve(outputDir, `ForeverLoot-${fileNamePart(version)}.zip`);
+
+// The TOC version may carry WoW color codes (`|cff8080ff…|r`), and a file name can't hold `|` or
+// the other characters Windows forbids.
+function fileNamePart(value: string): string {
+  const plain = value.replace(/\|c[0-9a-f]{8}|\|r/gi, "");
+  return plain.replace(/[<>:"/\\|?*\x00-\x1f]/g, "").trim() || "dev";
+}
 
 mkdirSync(outputDir, { recursive: true });
 rmSync(output, { force: true });
 
+// Guidance for Claude Code in the repository, not part of the addon.
+const isClaudeMd = (path: string) => basename(path).toLowerCase() === "claude.md";
+
 const entries = addons.flatMap((addon) =>
-  walkFiles(addon.path).map((path) => ({
-    name: `${addon.name}/${relative(addon.path, path).split(sep).join("/")}`,
-    data: readFileSync(path),
-  })),
+  walkFiles(addon.path)
+    .filter((path) => !isClaudeMd(path))
+    .map((path) => ({
+      name: `${addon.name}/${relative(addon.path, path).split(sep).join("/")}`,
+      data: readFileSync(path),
+    })),
 );
 
 function createZip(entries: { name: string; data: Buffer }[]): Buffer {
