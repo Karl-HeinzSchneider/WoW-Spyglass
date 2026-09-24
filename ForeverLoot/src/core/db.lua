@@ -10,6 +10,10 @@ local profile = {
     logLevel = "INFO",
     minimap = {
         hide = false,
+        -- Degrees around the minimap (0 = east, counter-clockwise), written by LibDBIcon on drag.
+        -- LibDBIcon puts every button at 225 when it has none, so buttons nobody has dragged yet
+        -- all stack on one spot; start a bit further round instead.
+        minimapPos = 245,
     },
     -- Main window anchor relative to UIParent; written on drag stop.
     window = {

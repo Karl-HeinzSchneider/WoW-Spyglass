@@ -4,7 +4,8 @@ local appName, app = ...
 local log = app.logger
 local addon = app.addon
 
-local ICON = "Interface\\Icons\\INV_Misc_Bag_10"
+-- Same texture as the TOC's `## IconTexture` (a fileID).
+local ICON = 8197077
 
 -- Prototype: Ace attaches it to the real module object via __index, so methods are defined
 -- here but state (self.ldb, ...) lives on the object NewModule returns.

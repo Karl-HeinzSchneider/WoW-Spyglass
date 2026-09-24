@@ -757,6 +757,7 @@ function api:GetRootNode()
             moduleID = def.id,
         }
     end
-    cachedRoot = { name = appName, icon = "Interface\\Icons\\INV_Misc_Bag_10", children = children }
+    -- The addon's icon, the TOC's `## IconTexture` (a fileID); the root tab shows it.
+    cachedRoot = { name = appName, icon = 8197077, children = children }
     return cachedRoot
 end

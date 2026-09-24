@@ -35,7 +35,8 @@ Current order and why:
   The public `ForeverLoot.Log` / `LogAt` (in `registry.lua`) wrap it so companions log under
   the core prefix and level without reaching in.
 - `db.lua` — `app.dbDefaults`, the AceDB-3.0 defaults. `profile` = user settings (`logLevel`,
-  `minimap.hide`, `window` anchor), `char` = per-character data (`loot` history), `global` =
+  `minimap.hide`, `minimap.minimapPos` = 245° so an undragged button doesn't sit on LibDBIcon's
+  shared 225° default, `window` anchor), `char` = per-character data (`loot` history), `global` =
   account-wide (`dbVersion`). Scraper collection state is deliberately _not_ here.
 - `registry.lua` — `app.api`, which **is the public global `ForeverLoot`**. `API_VERSION`,
   `RegisterModule(def)` (validates and stores module definitions), `AddToModule`,
@@ -56,7 +57,7 @@ Current order and why:
   and registers `/fl` + `/foreverloot`. `OnSlashCommand` handles the reserved commands and
   hands everything else to `app.commands:Run`. Register game events in `OnEnable`.
 - `minimapbutton.lua` — `app.minimapButton`, an Ace module wrapping a LibDataBroker launcher +
-  LibDBIcon; toggles the window, honors `profile.minimap.hide`.
+  LibDBIcon; toggles the window, honors `profile.minimap` (`hide`, `minimapPos`).
 
 ### `src/data/` — the item database (public as `ForeverLoot.Data/Filters/Query`)
 

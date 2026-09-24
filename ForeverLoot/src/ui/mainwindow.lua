@@ -4,7 +4,9 @@ local appName, app = ...
 local log = app.logger
 app.ui = app.ui or {}
 
-local PORTRAIT_ICON = "Interface\\Icons\\INV_Misc_Bag_10"
+-- The addon's icon, the TOC's `## IconTexture` (a fileID): the window portrait, and the tab of a
+-- view with no icon anywhere on its path (the root node carries the same one, see GetRootNode).
+local PORTRAIT_ICON = 8197077
 -- The "+" tab: a plus in a ring, drawn at atlas proportions instead of filling the tab.
 local NEW_TAB_ATLAS = "communities-icon-addgroupplus"
 local NEW_TAB_ICON_SIZE = 36
