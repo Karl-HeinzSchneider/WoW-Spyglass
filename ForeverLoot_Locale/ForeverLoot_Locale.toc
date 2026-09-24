@@ -1,11 +1,13 @@
 ## Interface: 16001
 ## Title: ForeverLoot Locale
-## Notes: Additional localization data for ForeverLoot.
+## Notes: Additional localization data for ForeverLoot. |n|cffbbbbbbBy Karl-Heinz Schneider|r|n|n|TInterface/Addons/ForeverLoot/assets/core/coffee:12:12|t |cff82c5ffbuymeacoffee.com/karlheinzschneider|r
+## IconTexture: 8197077
 ## Author: Karl-HeinzSchneider
-## Version: 0.1.0
+## Version: |cff8080ff@project-version@|r
 ## Dependencies: ForeverLoot
 ## SavedVariables: ForeverLootLocaleDB
 ## X-License: MIT
+## X-Website: http://github.com/Karl-HeinzSchneider/WoW-ForeverLoot
 
 ForeverLoot_Locale.lua
 db\generated\generated.xml
