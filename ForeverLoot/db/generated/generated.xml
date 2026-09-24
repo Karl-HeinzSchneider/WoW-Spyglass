@@ -19,6 +19,7 @@
 	<Script file="collections\mounts.lua" />
 	<Script file="crafting\alchemy.lua" />
 	<Script file="crafting\blacksmithing.lua" />
+	<Script file="crafting\comprehension.lua" />
 	<Script file="crafting\cooking.lua" />
 	<Script file="crafting\enchanting.lua" />
 	<Script file="crafting\engineering.lua" />
