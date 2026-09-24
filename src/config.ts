@@ -33,6 +33,26 @@ export const SCANNED_ITEMS_DIR = resolve(DATA_DIR, "items");
 export const INBOX_DIR = resolve(CONTRIBUTE_DIR, "inbox");
 
 export const FALLBACK_LOCALE = "enUS";
+/**
+ * Every value of the client's [TextLocale] TOC path variable. The locale addon's TOC loads
+ * `locales\[TextLocale]\<file>`, and a missing file is a LUA_WARNING at login, so the generator
+ * writes each LOCALE_FILES entry for all of them (a placeholder where there are no names).
+ */
+export const CLIENT_LOCALES = [
+  "enUS",
+  "enGB",
+  "deDE",
+  "esES",
+  "esMX",
+  "frFR",
+  "itIT",
+  "koKR",
+  "ptBR",
+  "ruRU",
+  "zhCN",
+  "zhTW",
+] as const;
+export const LOCALE_FILES = ["items.lua", "instances.lua", "bosses.lua", "crafting.lua"] as const;
 
 export interface Config {
   /** wago.tools build, e.g. "1.60.1.69913" (see https://wago.tools/api/builds). */

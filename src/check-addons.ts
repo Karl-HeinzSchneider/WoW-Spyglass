@@ -1,7 +1,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import { dirname, relative, resolve } from "node:path";
 import { requireAddons, walkFiles } from "./addons.js";
-import { ROOT } from "./config.js";
+import { CLIENT_LOCALES, ROOT } from "./config.js";
 
 const CORE = "ForeverLoot";
 const addons = requireAddons();
@@ -29,7 +29,13 @@ for (const addon of addons) {
     const entry = line.trim();
     if (!entry || entry.startsWith("#")) continue;
     const path = resolve(dirname(addon.toc), entry.replace(/\\/g, "/"));
-    if (!existsSync(path)) failures.push(`${relative(ROOT, addon.toc)}: missing load entry ${entry}`);
+    // The client loads a [TextLocale] entry for its own language only and warns when that file is
+    // missing, so it has to exist for every client language.
+    const locales: string[] = path.includes("[TextLocale]") ? [...CLIENT_LOCALES] : [""];
+    for (const locale of locales) {
+      if (!existsSync(path.replaceAll("[TextLocale]", locale)))
+        failures.push(`${relative(ROOT, addon.toc)}: missing load entry ${entry}${locale && ` for ${locale}`}`);
+    }
   }
 }
 

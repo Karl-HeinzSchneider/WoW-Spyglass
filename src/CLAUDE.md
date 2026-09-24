@@ -14,7 +14,9 @@ the data they consume is described in `.contribute/CLAUDE.md`.
   `Checker` + `validate` + `validateLists` → (fix: rewrite the JSON) → `build` + `write`.
   `import` always fixes (it writes the curated files anyway). Errors stop generation; fixable
   problems and warnings don't.
-- `check-addons.ts` — discovers addons, checks that every TOC load entry exists, that
+- `check-addons.ts` — discovers addons, checks that every TOC load entry exists (an entry with
+  the client's `[TextLocale]` path variable: for every one of `CLIENT_LOCALES`, since the client
+  warns at login when its own language's file is missing), that
   `ForeverLoot_*` addons declare `## Dependencies: ForeverLoot`, that there are no dependency
   cycles, and that **no `.lua`/`.xml`/`.toc` under `ForeverLoot/` contains a companion's name**
   (plain substring, comments included).
@@ -108,7 +110,10 @@ the data they consume is described in `.contribute/CLAUDE.md`.
   a boss an instance file names differently from the game table gets the file's name in enUS and
   no entry in other locales, so they fall back to it —,
   `crafting` = skill line/category/tool names) routed to the core for enUS and to the locale
-  addon otherwise, each `generated.xml`); `write()` diffs against disk (CRLF-insensitive),
+  addon otherwise, and the core's `generated.xml` — the locale addon has no loader, its TOC
+  lists `locales\[TextLocale]\*.lua` so a client loads only its own language, and every
+  `LOCALE_FILES` entry is written for every `CLIENT_LOCALES` language, as a comment-only
+  placeholder where there are no names, because a missing one is a `LUA_WARNING`); `write()` diffs against disk (CRLF-insensitive),
   removes stale files, returns the change count. `itemRow()` **must match `Data.ITEM`** and
   `recipeRow()` **`Data.RECIPE` in `ForeverLoot/src/data/data.lua`** (`minSkill` is emitted as
   `learnSkillOf()`: the recipe item's requirement when known). A crafting list without an

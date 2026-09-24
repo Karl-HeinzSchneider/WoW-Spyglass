@@ -60,7 +60,7 @@ scans only through item ids.
 | `…/locales/enUS/*.lua`                                                         | English fallback names (items from scans, instances/bosses from wago)                                                                               |
 | `ForeverLoot_Locale/db/generated/locales/<locale>/items.lua`                   | names of the scanned items in every configured or scanned non-English locale: wago.tools `ItemSparse`, overridden by names scanned in that language |
 | `ForeverLoot_Locale/db/generated/locales/<locale>/instances.lua`, `bosses.lua` | wago.tools names for every configured non-English locale                                                                                            |
-| each `generated.xml`                                                           | the loader listed in that addon's TOC                                                                                                               |
+| `ForeverLoot/db/generated/generated.xml`                                       | the core's loader, listed in its TOC (the locale addon's TOC lists `locales\[TextLocale]\*.lua` instead)                                            |
 
 ## Items: scanning (`ForeverLoot_Scraper`)
 

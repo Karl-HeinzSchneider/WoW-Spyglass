@@ -10,7 +10,11 @@
 ## X-Website: http://github.com/Karl-HeinzSchneider/WoW-ForeverLoot
 
 ForeverLoot_Locale.lua
-db\generated\generated.xml
+# Only the client's language (the client resolves [TextLocale]); every language needs all four files, or the client warns.
+db\generated\locales\[TextLocale]\items.lua
+db\generated\locales\[TextLocale]\instances.lua
+db\generated\locales\[TextLocale]\bosses.lua
+db\generated\locales\[TextLocale]\crafting.lua
 src\db.lua
 src\ace.lua
 src\itemnames.lua
