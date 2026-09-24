@@ -1,6 +1,7 @@
 ForeverLoot/lib/
 ForeverLoot/db/generated/
 ForeverLoot_Locale/db/generated/
+ForeverLoot_Database/db/generated/
 # written by `npm run fix` / `npm run import` in their own JSON.stringify layout
 .contribute/data/
 package-lock.json

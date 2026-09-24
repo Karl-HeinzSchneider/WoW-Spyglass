@@ -4,7 +4,7 @@
 ## IconTexture: 8197077
 ## Author: Karl-HeinzSchneider
 ## Version: |cff8080ff@project-version@|r
-## Dependencies: ForeverLoot
+## Dependencies: ForeverLoot, ForeverLoot_Database
 ## SavedVariables: ForeverLootScraperDB
 ## X-License: MIT
 ## X-Website: http://github.com/Karl-HeinzSchneider/WoW-ForeverLoot

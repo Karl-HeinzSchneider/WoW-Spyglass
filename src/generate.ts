@@ -3,6 +3,7 @@ import { dirname, relative, resolve } from "node:path";
 import {
   CLIENT_LOCALES,
   type Config,
+  DATABASE_OUTPUT_DIR,
   FALLBACK_LOCALE,
   LOCALE_FILES,
   LOCALE_OUTPUT_DIR,
@@ -389,13 +390,16 @@ function emitXml(files: string[]): string {
 export interface GeneratedFiles {
   core: Map<string, string>;
   locale: Map<string, string>;
+  database: Map<string, string>;
 }
 
-/** Builds both generated addon trees in memory, keyed by paths relative to their generated directory. */
+/** Builds the three generated addon trees in memory, keyed by paths relative to their generated directory. */
 export function build(ref: Reference, curated: CuratedFile[], lists: ListFile[], config: Config): GeneratedFiles {
   const core = new Map<string, string>();
   const locale = new Map<string, string>();
+  const database = new Map<string, string>();
   const coreOrder: string[] = [];
+  const databaseOrder: string[] = [];
   const addCore = (path: string, content: string) => {
     core.set(path, content);
     coreOrder.push(path);
@@ -405,11 +409,17 @@ export function build(ref: Reference, curated: CuratedFile[], lists: ListFile[],
   const addLocale = (path: string, content: string) => {
     locale.set(path, content);
   };
+  const addDatabase = (path: string, content: string) => {
+    database.set(path, content);
+    databaseOrder.push(path);
+  };
 
+  // Every scanned item row lives in the database addon; the core's lists get what they show
+  // from the client (and from these rows when the database addon is installed).
   const itemIDs = [...ref.items.keys()].sort((a, b) => a - b);
   const chunks: number[][] = [];
   for (let i = 0; i < itemIDs.length; i += config.itemsPerFile) chunks.push(itemIDs.slice(i, i + config.itemsPerFile));
-  chunks.forEach((chunk, i) => addCore(`items/items_${String(i + 1).padStart(3, "0")}.lua`, emitItems(chunk, ref)));
+  chunks.forEach((chunk, i) => addDatabase(`items/items_${String(i + 1).padStart(3, "0")}.lua`, emitItems(chunk, ref)));
 
   addCore("instances.lua", emitInstances(ref, curated));
 
@@ -433,11 +443,12 @@ export function build(ref: Reference, curated: CuratedFile[], lists: ListFile[],
     addCore(`recipes/${skillLine.slug}.lua`, emitRecipes(skillLine, own, ref));
   }
 
-  // The core always ships the English fallback. Every additional locale is an optional companion
-  // payload: item names from wago.tools' ItemSparse for the configured locales, and from in-game
-  // scans on a client of that language (see refreshItemNames).
+  // English item names go with the item rows into the database addon (the core's lists take an
+  // item's name from the client). Every other locale is the locale addon's: item names from
+  // wago.tools' ItemSparse for the configured locales, and from in-game scans on a client of that
+  // language (see refreshItemNames).
   for (const locale of ref.itemLocales) {
-    const add = locale === FALLBACK_LOCALE ? addCore : addLocale;
+    const add = locale === FALLBACK_LOCALE ? addDatabase : addLocale;
     const source =
       locale === FALLBACK_LOCALE
         ? ".contribute/items (in-game scans)"
@@ -488,14 +499,16 @@ export function build(ref: Reference, curated: CuratedFile[], lists: ListFile[],
   }
 
   core.set("generated.xml", emitXml(coreOrder));
-  return { core, locale };
+  database.set("generated.xml", emitXml(databaseOrder));
+  return { core, locale, database };
 }
 
-/** Writes both addon trees, removes stale files, and returns the number of changed files. */
+/** Writes the three addon trees, removes stale files, and returns the number of changed files. */
 export function write(files: GeneratedFiles, check: boolean): number {
   return (
     writeTree(files.core, OUTPUT_DIR, "ForeverLoot/db/generated", check) +
-    writeTree(files.locale, LOCALE_OUTPUT_DIR, "ForeverLoot_Locale/db/generated", check)
+    writeTree(files.locale, LOCALE_OUTPUT_DIR, "ForeverLoot_Locale/db/generated", check) +
+    writeTree(files.database, DATABASE_OUTPUT_DIR, "ForeverLoot_Database/db/generated", check)
   );
 }
 

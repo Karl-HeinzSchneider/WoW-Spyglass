@@ -286,10 +286,11 @@ function ForeverLootListRowMixin:Init(view, node)
     end
 end
 
--- Items: the shipped DB answers immediately (name, quality, class, slot); the client's item
--- cache, when it has the item, wins because it is exact, provides the link and lets the
+-- Items: the client's item cache, when it has the item, is exact, provides the link and lets the
 -- tooltip say whether the character can equip it. Uncached items are requested so that
--- arrives; GET_ITEM_INFO_RECEIVED re-renders the page. Server-side items are unknown to
+-- arrives; GET_ITEM_INFO_RECEIVED re-renders the page. Until then a DB row, when an addon has
+-- added the item's (the core ships none), answers immediately (name, quality, class, slot);
+-- without one the row shows "Item #id" and loading. Server-side items are unknown to
 -- GetItemInfoInstant until fetched, so their icon comes from the row.
 ---@param view ForeverLoot.View
 ---@param node ForeverLoot.Node
@@ -793,7 +794,9 @@ end
 ---@field path ForeverLoot.Node[]
 ---@field onNavigate? fun(view: ForeverLoot.View)
 ---@field pendingItems table<integer, boolean>  # itemIDs whose info hasn't arrived yet
+---@field regroupItems table<integer, boolean>  # items grouped without their kind: true = waiting to regroup, false = done
 ---@field renderQueued? boolean  # a deferred Render is scheduled (item info arrived)
+---@field refreshQueued? boolean  # the deferred redraw is a Refresh (an item to regroup arrived)
 ForeverLootViewMixin = {}
 app.ui.ViewMixin = ForeverLootViewMixin
 
@@ -860,6 +863,7 @@ function ForeverLootViewMixin:OnLoad()
     page.groupPool = CreateFramePool("Frame", page, "ForeverLootGroupLabelTemplate") --[[@as ForeverLoot.FramePool]]
     self.pages = {}
     self.pendingItems = {}
+    self.regroupItems = {}
     self.queries = {}
     self.resultCount = 0
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
@@ -908,18 +912,29 @@ function ForeverLootViewMixin:OnMouseUp(button)
 end
 
 -- Item data arrives asynchronously; redraw once something we're showing has loaded. Several
--- can arrive in one frame, so the redraw is deferred to the next frame and done once.
+-- can arrive in one frame, so the redraw is deferred to the next frame and done once. An item
+-- the list was grouped without (see Refresh) is regrouped: a Refresh instead of a Render, once
+-- per item, so an item the server never answers for can't loop.
 ---@param event string
 ---@param itemID integer
 function ForeverLootViewMixin:OnEvent(event, itemID)
     if event == "GET_ITEM_INFO_RECEIVED" and self.pendingItems[itemID] then
         self.pendingItems[itemID] = nil
+        if self.regroupItems[itemID] then
+            self.regroupItems[itemID] = false
+            self.refreshQueued = true
+        end
         if self:IsShown() and not self.renderQueued then
             self.renderQueued = true
             C_Timer.After(0, function()
-                self.renderQueued = nil
+                local refresh = self.refreshQueued
+                self.renderQueued, self.refreshQueued = nil, nil
                 if self:IsShown() then
-                    self:Render()
+                    if refresh then
+                        self:Refresh()
+                    else
+                        self:Render()
+                    end
                 end
             end)
         end
@@ -1286,8 +1301,8 @@ function ForeverLootViewMixin:GetColumns(node)
 end
 
 -- Full redraw: rebuild the element list and page layout for the current node, then render.
--- Called on navigation, query changes, page-size changes and profile refreshes; page flips
--- and item-info arrivals only need Render().
+-- Called on navigation, query changes, page-size changes, profile refreshes and when an item
+-- the grouping had to guess arrives; page flips and other item-info arrivals only need Render().
 function ForeverLootViewMixin:Refresh()
     -- A hidden view (another tab is selected) shares `layout` with the shown one and would
     -- overwrite it; it lays itself out in OnShow instead.
@@ -1299,7 +1314,16 @@ function ForeverLootViewMixin:Refresh()
         app.ui.recipePopup:Hide()
     end
     local node = self:GetCurrentNode()
+    wipe(app.unknownItemKinds)
     self.pages = self:LayoutPages(self:BuildElements(node), self:GetColumns(node))
+    -- Items the grouping had to guess (no DB row, not fetched yet): fetch them all, not only the
+    -- ones on this page, and regroup once each has arrived (OnEvent).
+    for itemID in pairs(app.unknownItemKinds) do
+        if self.regroupItems[itemID] == nil then
+            self.regroupItems[itemID] = true
+            self:RequestItem(itemID)
+        end
+    end
 
     local maxPages = math.max(1, #self.pages)
     -- SetMaxPages may clamp the current page, which calls OnPageChanged -> Render.

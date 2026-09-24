@@ -7,18 +7,19 @@ Guidance for Claude Code when working in this repository. Each part of the repo 
 
 ForeverLoot is a World of Warcraft addon for the _WoW Forever_ Classic client
 (`## Interface: 16001`), written in Lua 5.1 on top of Ace3, plus the TypeScript tooling that
-builds its item database. It is a monorepo of three addon distribution units and one toolchain:
+builds its item database. It is a monorepo of four addon distribution units and one toolchain:
 
-| Part                   | What it is                                                                                                                                                                               | Details                                                        |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| `ForeverLoot/`         | The core addon: public `ForeverLoot` API, item database and queries, built-in content modules, the browser window, user settings and (planned) loot history. `ForeverLootDB`.            | [ForeverLoot/CLAUDE.md](ForeverLoot/CLAUDE.md)                 |
-| `ForeverLoot_Locale/`  | Companion: generated non-English item/instance/boss names, registered through the core API, plus the item names a non-English client looks up in-game. `ForeverLootLocaleDB`.            | [ForeverLoot_Locale/CLAUDE.md](ForeverLoot_Locale/CLAUDE.md)   |
-| `ForeverLoot_Scraper/` | Optional contributor companion: `/fl scan` item scanning, loot observation, `/fl export`. `ForeverLootScraperDB`.                                                                        | [ForeverLoot_Scraper/CLAUDE.md](ForeverLoot_Scraper/CLAUDE.md) |
-| `.contribute/`         | Everything the database is built from: in-game item scans, curated drops and item lists, the pinned client build. `inbox/` is the gitignored drop folder for `npm run import`.           | [.contribute/CLAUDE.md](.contribute/CLAUDE.md)                 |
-| `src/`                 | Root Node/TypeScript tooling: validate and fix the curated data, import in-game recordings, generate the addon data, check the addons, link them into a client, package releases.        | [src/CLAUDE.md](src/CLAUDE.md)                                 |
-| `tests/`               | `tests/tooling/*.test.ts` (node:test, run by `npm run test:tooling`).                                                                                                                    | see `src/CLAUDE.md`                                            |
-| `tools/portrait/`      | Python + Pillow: a screenshot of the scraper's `/fl portrait` window -> a boss picture in `ForeverLoot/assets/bosses/`.                                                                  | [tools/portrait/README.md](tools/portrait/README.md)           |
-| `docs/`                | Human-facing documentation: `docs/API.md` (the public `ForeverLoot` contract, must be updated with every API change) and `docs/architecture.md` (addon ownership and integration rules). | —                                                              |
+| Part                    | What it is                                                                                                                                                                                       | Details                                                          |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
+| `ForeverLoot/`          | The core addon: public `ForeverLoot` API, item database API and queries (no item rows), built-in content modules, the browser window, user settings and (planned) loot history. `ForeverLootDB`. | [ForeverLoot/CLAUDE.md](ForeverLoot/CLAUDE.md)                   |
+| `ForeverLoot_Database/` | Companion: every scanned item row with its English name, and the `items` module (the searchable, filterable item browser). No SavedVariables.                                                    | [ForeverLoot_Database/CLAUDE.md](ForeverLoot_Database/CLAUDE.md) |
+| `ForeverLoot_Locale/`   | Companion: generated non-English item/instance/boss names, registered through the core API, plus the item names a non-English client looks up in-game. `ForeverLootLocaleDB`.                    | [ForeverLoot_Locale/CLAUDE.md](ForeverLoot_Locale/CLAUDE.md)     |
+| `ForeverLoot_Scraper/`  | Optional contributor companion: `/fl scan` item scanning, loot observation, `/fl export`. Also depends on `ForeverLoot_Database`. `ForeverLootScraperDB`.                                        | [ForeverLoot_Scraper/CLAUDE.md](ForeverLoot_Scraper/CLAUDE.md)   |
+| `.contribute/`          | Everything the database is built from: in-game item scans, curated drops and item lists, the pinned client build. `inbox/` is the gitignored drop folder for `npm run import`.                   | [.contribute/CLAUDE.md](.contribute/CLAUDE.md)                   |
+| `src/`                  | Root Node/TypeScript tooling: validate and fix the curated data, import in-game recordings, generate the addon data, check the addons, link them into a client, package releases.                | [src/CLAUDE.md](src/CLAUDE.md)                                   |
+| `tests/`                | `tests/tooling/*.test.ts` (node:test, run by `npm run test:tooling`).                                                                                                                            | see `src/CLAUDE.md`                                              |
+| `tools/portrait/`       | Python + Pillow: a screenshot of the scraper's `/fl portrait` window -> a boss picture in `ForeverLoot/assets/bosses/`.                                                                          | [tools/portrait/README.md](tools/portrait/README.md)             |
+| `docs/`                 | Human-facing documentation: `docs/API.md` (the public `ForeverLoot` contract, must be updated with every API change) and `docs/architecture.md` (addon ownership and integration rules).         | —                                                                |
 
 A direct child directory with a same-named `.toc` is an addon; the tooling discovers addons that
 way, so adding one needs no registration anywhere.
@@ -30,8 +31,8 @@ change: `npm run dev:link -- "<WoW>/Interface/AddOns"` (once; symlinks every add
 also honors `WOW_ADDONS_DIR`) and `/reload` in-game. `/fl` toggles the window.
 
 The one generated part is the item database (`ForeverLoot/db/generated/`,
-`ForeverLoot_Locale/db/generated/`). **Never edit either generated tree by hand**; change the
-inputs under `.contribute/data/` and run `npm run gen`.
+`ForeverLoot_Database/db/generated/`, `ForeverLoot_Locale/db/generated/`). **Never edit a
+generated tree by hand**; change the inputs under `.contribute/data/` and run `npm run gen`.
 
 WoW Forever's items are server-side: wago.tools' item tables are incomplete and wrong for this
 client and item ids from Classic/wowhead do **not** match. The in-game scan (`/fl scan`, scraper
@@ -47,29 +48,29 @@ name it matches — never as an item source.
 
 ## Commands (Node 20+, run from the root after `npm install` once)
 
-| Command                              | Does                                                                                                                                                                                                     |
-| ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `npm run check`                      | Everything below that validates, in order: typecheck, tooling tests, addon boundaries, data, generated staleness, Lua syntax, XML schema. Run it before finishing a change.                              |
-| `npm run check:data`                 | Validates the curated JSON against the game tables and the scans.                                                                                                                                        |
-| `npm run fix`                        | Same, and rewrites names, resolves name-only rows to ids, adds missing encounters.                                                                                                                       |
-| `npm run format`                     | Prettier (`.prettierrc.json`, `.prettierignore`) on TS/JSON/Markdown, then StyLua (`stylua.toml`, `.styluaignore`) on Lua. Leaves `.contribute/data/` to `fix`/`import`, and XML to the editor.          |
-| `npm run gen` (`generate`)           | Writes both generated trees. `npm run generate:check` fails when they are stale (CI).                                                                                                                    |
-| `npm run import`                     | Merges what the scraper recorded (every `.lua` and `.json` in `.contribute/inbox/`, or one file given as `-- <path>`) into the scans and curated files; then `npm run gen`.                              |
-| `npm run check:addons`               | TOC entries exist, companions depend on `ForeverLoot`, no dependency cycles, and **no file under `ForeverLoot/` contains the string `ForeverLoot_Locale` or `ForeverLoot_Scraper`** (comments included). |
-| `npm run check:lua`                  | `luac -p` on every addon Lua file (needs a Lua 5.1 `luac` on PATH).                                                                                                                                      |
-| `npm run check:xml`                  | Validates every addon XML against Blizzard's `UI.xsd` via python + lxml; skipped when `../_data/BlizzardInterfaceCode` is absent.                                                                        |
-| `npm run test:tooling` / `typecheck` | The node:test suite, `tsc --noEmit`.                                                                                                                                                                     |
-| `npm run dev:link -- <AddOns dir>`   | Symlink every addon into a client.                                                                                                                                                                       |
-| `npm run package:addons`             | Deterministic `dist/ForeverLoot-<version>.zip` of all addons (gitignored).                                                                                                                               |
+| Command                              | Does                                                                                                                                                                                                              |
+| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `npm run check`                      | Everything below that validates, in order: typecheck, tooling tests, addon boundaries, data, generated staleness, Lua syntax, XML schema. Run it before finishing a change.                                       |
+| `npm run check:data`                 | Validates the curated JSON against the game tables and the scans.                                                                                                                                                 |
+| `npm run fix`                        | Same, and rewrites names, resolves name-only rows to ids, adds missing encounters.                                                                                                                                |
+| `npm run format`                     | Prettier (`.prettierrc.json`, `.prettierignore`) on TS/JSON/Markdown, then StyLua (`stylua.toml`, `.styluaignore`) on Lua. Leaves `.contribute/data/` to `fix`/`import`, and XML to the editor.                   |
+| `npm run gen` (`generate`)           | Writes the three generated trees. `npm run generate:check` fails when they are stale (CI).                                                                                                                        |
+| `npm run import`                     | Merges what the scraper recorded (every `.lua` and `.json` in `.contribute/inbox/`, or one file given as `-- <path>`) into the scans and curated files; then `npm run gen`.                                       |
+| `npm run check:addons`               | TOC entries exist, companions depend on `ForeverLoot`, no dependency cycles, and **no file under `ForeverLoot/` contains a companion's name** (`ForeverLoot_Database`, `_Locale`, `_Scraper`; comments included). |
+| `npm run check:lua`                  | `luac -p` on every addon Lua file (needs a Lua 5.1 `luac` on PATH).                                                                                                                                               |
+| `npm run check:xml`                  | Validates every addon XML against Blizzard's `UI.xsd` via python + lxml; skipped when `../_data/BlizzardInterfaceCode` is absent.                                                                                 |
+| `npm run test:tooling` / `typecheck` | The node:test suite, `tsc --noEmit`.                                                                                                                                                                              |
+| `npm run dev:link -- <AddOns dir>`   | Symlink every addon into a client.                                                                                                                                                                                |
+| `npm run package:addons`             | Deterministic `dist/ForeverLoot-<version>.zip` of all addons (gitignored).                                                                                                                                        |
 
 Static checks also used ad hoc: `lua-language-server --check` (config in `.luarc.json`;
-`lib/`, both generated trees and `.contribute` are excluded from LuaLS and StyLua).
+`lib/`, the generated trees and `.contribute` are excluded from LuaLS and StyLua).
 
 ## Addon boundaries (the contract, in one paragraph)
 
 Companions depend on the core (`## Dependencies: ForeverLoot`) and use **only** the documented
-public global `ForeverLoot` (`docs/API.md`). The core must work with both companions absent and
-never references them — not even by name. No addon reads another addon's private table
+public global `ForeverLoot` (`docs/API.md`); the scraper also depends on `ForeverLoot_Database`.
+The core must work with every companion absent and never references them — not even by name. No addon reads another addon's private table
 (the `...` table each file receives) or adds a cross-addon global. Built-in content modules use
 the same public API a third-party addon would; never give them private hooks. Late data goes in
 through `ForeverLoot.Data:AddNames/AddItems/AddBossLoot/AddTrashLoot/AddQuests/AddList/AddListLoot`, which invalidate

@@ -17,6 +17,7 @@
 ---@field filters ForeverLoot.Filters  # filter registry; also `ForeverLoot.Filters`
 ---@field query ForeverLoot.QueryAPI  # query runner; also `ForeverLoot.Query`
 ---@field commands ForeverLoot.CommandRegistry  # private dispatcher; registration is public API
+---@field unknownItemKinds table<integer, true>  # items grouped without knowing their kind (registry.lua; the view regroups them)
 ---@field ui ForeverLoot.UI
 
 -- UI namespace. Mixins are globals (XML requires it) but also exposed here.

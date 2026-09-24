@@ -4,7 +4,10 @@ Optional addon that **collects the data the repository is built from**: it scans
 (`/fl scan`), observes what drops from which boss, and exports the records (`/fl export`) for
 `npm run import`. Its own AceAddon object, database (`ForeverLootScraperDB`), frames and modules
 are private; it depends on `ForeverLoot` and uses only the public API (`app.api = ForeverLoot`).
-Disabling it leaves the core fully functional. Rules for all addons are in the root `CLAUDE.md`;
+It also depends on `ForeverLoot_Database` (`## Dependencies: ForeverLoot, ForeverLoot_Database`),
+because it tells new items from known ones by the scanned item rows (`Data:GetItem`), which only
+that addon ships; without them every item would count as new. Disabling it leaves the core fully
+functional. Rules for all addons are in the root `CLAUDE.md`;
 the data workflow it feeds is in `.contribute/CLAUDE.md`.
 
 ## Files (`ForeverLoot_Scraper.toc`, in load order)

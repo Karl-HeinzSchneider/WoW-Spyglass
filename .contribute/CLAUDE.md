@@ -1,8 +1,8 @@
 # .contribute — the data the database is built from
 
-Everything under `data/` is input; `ForeverLoot/db/generated/` and
-`ForeverLoot_Locale/db/generated/` are produced from it by `npm run gen` and **never edited by
-hand**. The tooling that reads this folder is described in `src/CLAUDE.md`; the addon that
+Everything under `data/` is input; `ForeverLoot/db/generated/`,
+`ForeverLoot_Database/db/generated/` and `ForeverLoot_Locale/db/generated/` are produced from it
+by `npm run gen` and **never edited by hand**. The tooling that reads this folder is described in `src/CLAUDE.md`; the addon that
 records the scans is `ForeverLoot_Scraper/`.
 
 ```text
@@ -49,18 +49,19 @@ scanned recipe item requires, and a scanned item's name in the other configured 
 its English name there is the scanned one (a name scanned on a client of that language wins). Drops and item lists are hand-curated tables; they meet the
 scans only through item ids.
 
-| Output                                                                         | Source under `data/`                                                                                                                                |
-| ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ForeverLoot/db/generated/items/items_NNN.lua`                                 | `items/*.json`, `itemsPerFile` rows per file                                                                                                        |
-| `…/instances.lua`                                                              | wago.tools `Map` + `DungeonEncounter` (only maps with encounters), levels/icons/portraits from `dungeons/` and `raids/`                             |
-| `…/loot/<slug>.lua`                                                            | the `loot` rows of `dungeons/` and `raids/` files that have any                                                                                     |
-| `…/<kind>/<slug>.lua` (crafting, pvp, collections, reputation)                 | the item lists, one file each, rows or not                                                                                                          |
-| `…/recipes/<profession>.lua`                                                   | wago.tools recipe tables, one file per profession, only recipes whose product (enchants: every reagent) is in the scans                             |
-| `…/locales/<locale>/crafting.lua`                                              | profession, trade skill category and tool names from wago.tools, for the configured locales                                                         |
-| `…/locales/enUS/*.lua`                                                         | English fallback names (items from scans, instances/bosses from wago)                                                                               |
-| `ForeverLoot_Locale/db/generated/locales/<locale>/items.lua`                   | names of the scanned items in every configured or scanned non-English locale: wago.tools `ItemSparse`, overridden by names scanned in that language |
-| `ForeverLoot_Locale/db/generated/locales/<locale>/instances.lua`, `bosses.lua` | wago.tools names for every configured non-English locale                                                                                            |
-| `ForeverLoot/db/generated/generated.xml`                                       | the core's loader, listed in its TOC (the locale addon's TOC lists `locales\[TextLocale]\*.lua` instead)                                            |
+| Output                                                                           | Source under `data/`                                                                                                                                |
+| -------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ForeverLoot_Database/db/generated/items/items_NNN.lua`                          | `items/*.json`, `itemsPerFile` rows per file                                                                                                        |
+| `ForeverLoot_Database/db/generated/locales/enUS/items.lua`                       | English names of the scanned items                                                                                                                  |
+| `ForeverLoot/db/generated/instances.lua`                                         | wago.tools `Map` + `DungeonEncounter` (only maps with encounters), levels/icons/portraits from `dungeons/` and `raids/`                             |
+| `…/loot/<slug>.lua`                                                              | the `loot` rows of `dungeons/` and `raids/` files that have any                                                                                     |
+| `…/<kind>/<slug>.lua` (crafting, pvp, collections, reputation)                   | the item lists, one file each, rows or not                                                                                                          |
+| `…/recipes/<profession>.lua`                                                     | wago.tools recipe tables, one file per profession, only recipes whose product (enchants: every reagent) is in the scans                             |
+| `…/locales/<locale>/crafting.lua`                                                | profession, trade skill category and tool names from wago.tools, for the configured locales                                                         |
+| `…/locales/enUS/*.lua`                                                           | English fallback names (instances/bosses from wago)                                                                                                 |
+| `ForeverLoot_Locale/db/generated/locales/<locale>/items.lua`                     | names of the scanned items in every configured or scanned non-English locale: wago.tools `ItemSparse`, overridden by names scanned in that language |
+| `ForeverLoot_Locale/db/generated/locales/<locale>/instances.lua`, `bosses.lua`   | wago.tools names for every configured non-English locale                                                                                            |
+| `ForeverLoot/db/generated/generated.xml`, `ForeverLoot_Database/…/generated.xml` | each addon's loader, listed in its TOC (the locale addon's TOC lists `locales\[TextLocale]\*.lua` instead)                                          |
 
 ## Items: scanning (`ForeverLoot_Scraper`)
 

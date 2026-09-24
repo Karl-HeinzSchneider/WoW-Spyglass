@@ -1,9 +1,10 @@
 # ForeverLoot (core addon)
 
-The distributable core: the public `ForeverLoot` API, the item database with filters and
-queries, the built-in content modules, the browser window, user settings and loot history
-(`ForeverLootDB`). It must work on its own; the companions (`ForeverLoot_Locale`,
-`ForeverLoot_Scraper`) are optional and **nothing in this directory may mention them** —
+The distributable core: the public `ForeverLoot` API, the item database API with filters and
+queries (but **no item rows**: those, and the `items` module, ship in the `ForeverLoot_Database`
+companion), the built-in content modules, the browser window, user settings and loot history
+(`ForeverLootDB`). It must work on its own; the companions (`ForeverLoot_Database`,
+`ForeverLoot_Locale`, `ForeverLoot_Scraper`) are optional and **nothing in this directory may mention them** —
 `npm run check:addons` fails on the bare string, comments included. Repo-wide rules
 (constraints, XML, textures, Blizzard reference folders) are in the root `CLAUDE.md`; the
 public contract is `docs/API.md`.
@@ -41,7 +42,9 @@ Current order and why:
   `GetRootNode()` (the virtual tree the window browses, one node per module sorted by `order`,
   a spacer above modules with `spacerBefore`, cached until the module set changes), node
   constructors (`Folder/Item/Spell/Custom/Header/Group/Spacer`), grouping (`DefaultGroupKey`,
-  `DefaultEntryRank`, `GroupEntries`), the slash-command
+  `DefaultEntryRank`, `GroupEntries`; an item's class and slot come from `GetItemInfoInstant`,
+  else its DB row, else the client's item cache, else it is recorded in
+  `app.unknownItemKinds` for the view to fetch and regroup), the slash-command
   extension registry (`RegisterCommand/UnregisterCommand`; `app.commands` is the private
   dispatcher, `show`/`loglevel`/`reset` are reserved), and CallbackHandler-1.0 events
   (`OnModuleRegistered/Unregistered`, `OnModulesChanged`, `OnDataChanged`, `OnFiltersChanged`).
@@ -109,23 +112,26 @@ factionID, skillLineID, … }`, `listLoot[kind][id]` = `{ { itemID, standing = "
 ### `db/generated/` — **generated, never hand-edited**
 
 Written by `npm run gen` from `.contribute/data/`; the TOC lists only `db\generated\generated.xml`,
-which loads the rest. `items/items_NNN.lua` (every scanned item, `itemsPerFile` rows each),
-`instances.lua` (all instances with encounters plus curated levels/icons/portraits; the `-- Name`
+which loads the rest. No item rows and no English item names: those are generated into the
+database companion. `instances.lua` (all instances with encounters plus curated levels/icons/portraits; the `-- Name`
 comments are the place to look up map ids), `loot/<slug>.lua` (curated drops), `<kind>/<slug>.lua`
 (one `Data:AddList` + `Data:AddListLoot` per curated list), `recipes/<profession>.lua` (the
 profession's trade skill categories and every recipe the scans confirm, from wago.tools; the
 `-- Name` comments are the place to look up recipe spell ids), `locales/enUS/*.lua` (the
-standalone fallback names, including `crafting.lua` = profession/category/tool names). Excluded
+standalone fallback names: `instances`, `bosses` and `crafting.lua` = profession/category/tool
+names). Excluded
 from LuaLS and StyLua. The provenance header in these files intentionally still says
 `.contribute/tools` (see `src/CLAUDE.md`).
 
 ### `modules/<name>/` — built-in content modules
 
-One folder per module (`items`, `raids`, `dungeons`, `crafting`, `pvp`, `collections`,
-`reputation`), each a `<name>.lua` + `<name>.xml` loader listed in `modules/modules.xml`. They
+One folder per module (`raids`, `dungeons`, `crafting`, `pvp`, `collections`, `reputation`),
+each a `<name>.lua` + `<name>.xml` loader listed in `modules/modules.xml`. They
 hold no data and use **only the public API a third-party addon would** — never give them private
-hooks. Root order: dungeons, raids, crafting, reputation, pvp, collections (`order` 10–60), then
-a spacer and `items` (`order = 1000`, `spacerBefore = true`). `items` is a `query = true` module (the whole DB with search box and filter dropdown).
+hooks. Root order: dungeons, raids, crafting, reputation, pvp, collections (`order` 10–60); the
+database companion's `items` module follows after a spacer (`order = 1000`,
+`spacerBefore = true`, a `query = true` module: the whole DB with search box and filter
+dropdown).
 `raids`/`dungeons` are `display = "tiles"` modules whose `getChildren` returns explicit
 `FL.InstanceFolder(mapID)` lines (commented out until an instance has curated loot; a split
 dungeon's parts are listed by their own ids, e.g. `18901`). The other
@@ -151,8 +157,11 @@ only sanctioned globals.
   left, starting right of the window portrait, search box + filter dropdown right) over a divider, one `Content` page of rows
   with Blizzard `PagingControls` bottom-right. Navigation is a `path` stack over `ForeverLoot.Node`
   trees (`Push`/`PopTo`/`Back` → `Refresh`). `Refresh()` rebuilds elements + page layout
-  (navigation, query/size changes); `Render()` only redraws the current page (page flips, item
-  info arriving). Children come from `view:GetChildren(node)`: static `children`, dynamic
+  (navigation, query/size changes) and keeps the current page; `Render()` only redraws it (page
+  flips, item info arriving). Items the grouping couldn't place (`app.unknownItemKinds`, cleared
+  before each build: no DB row and not fetched yet) are all requested after the build and marked
+  in `view.regroupItems`; when one arrives the deferred redraw is a `Refresh` instead of a
+  `Render`, once per item, so the list regroups on the page it was showing. Children come from `view:GetChildren(node)`: static `children`, dynamic
   `getChildren`, or a `query` folder whose entries are `Query.Run` over the DB with per-node
   query state (`view.queries`); query folders show the debounced `SearchBox` and the
   `FilterDropdown` (Blizzard_Menu `WowStyle1FilterDropdownTemplate`, menu generated from the

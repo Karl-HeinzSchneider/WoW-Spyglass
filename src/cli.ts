@@ -2,7 +2,8 @@
 /**
  * ForeverLoot database tools.
  *
- *   npm run gen              wago.tools Map/DungeonEncounter (cached) + .contribute/data/ -> ForeverLoot/db/generated/
+ *   npm run gen              wago.tools Map/DungeonEncounter (cached) + .contribute/data/ -> <addon>/db/generated/
+ *                            (ForeverLoot, ForeverLoot_Locale, ForeverLoot_Database)
  *   npm run generate:check   exit 1 if generated files are out of date (CI)
  *   npm run check            validate the curated files (instances and item lists) against the
  *                            game data and the scans

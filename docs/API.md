@@ -7,9 +7,10 @@ exactly the same calls, so anything the built-in modules can do, yours can too.
 Load order: list `ForeverLoot` under `## Dependencies:` (or `## OptionalDeps:` and check
 `ForeverLoot ~= nil`) in your TOC so the global exists when your files run.
 
-The official `ForeverLoot_Locale` and `ForeverLoot_Scraper` companion addons follow this same
-contract. They depend on the core and use only this public global; the core never depends on or
-reaches into either companion. See [architecture.md](architecture.md) for ownership boundaries.
+The official `ForeverLoot_Database`, `ForeverLoot_Locale` and `ForeverLoot_Scraper` companion
+addons follow this same contract. They depend on the core and use only this public global; the
+core never depends on or reaches into any companion. See [architecture.md](architecture.md) for
+ownership boundaries.
 
 ```lua
 -- MyAddon/MyAddon.toc
@@ -44,8 +45,9 @@ local dungeon = ForeverLoot.Folder("Gnomeregan", "Interface\\Icons\\...", { ...b
 ForeverLoot:AddToModule("dungeons", dungeon)
 ```
 
-Built-in module ids: `"items"`, `"raids"`, `"dungeons"`, `"crafting"`, `"pvp"`, `"collections"`,
-`"reputation"`. The built-in raids/dungeons sort by `minLevel`, then name. If your instance is
+Built-in module ids: `"raids"`, `"dungeons"`, `"crafting"`, `"pvp"`, `"collections"`,
+`"reputation"`; `ForeverLoot_Database` adds `"items"` (the item browser). The built-in
+raids/dungeons sort by `minLevel`, then name. If your instance is
 in the game's data, prefer adding its drops to the item database (`ForeverLoot.Data:AddBossLoot`)
 — it then shows up in the built-in modules and in the item browser's filters automatically. The
 same goes for the other four: a list added with `ForeverLoot.Data:AddList` /
@@ -62,7 +64,7 @@ if the definition is invalid; it never throws.
 | `name`                                    | string               | yes      | Display name.                                                                                                                                                                                 |
 | `icon`                                    | string \| number     | yes      | Texture path or fileID.                                                                                                                                                                       |
 | `order`                                   | number               | no       | Sort position among modules; lower first. Default `100`. Ties sort by name. The built-in content modules use 10–60, the item browser `1000` so it stays last.                                 |
-| `spacerBefore`                            | boolean              | no       | Leaves one empty row above the module in the root list (not when it comes first). The built-in `items` module uses it to sit apart from the content modules.                                  |
+| `spacerBefore`                            | boolean              | no       | Leaves one empty row above the module in the root list (not when it comes first). The `items` module (`ForeverLoot_Database`) uses it to sit apart from the content modules.                  |
 | `description`                             | string               | no       | Free text for tooltips.                                                                                                                                                                       |
 | `children`                                | Node[]               | one of   | The module's top-level entries.                                                                                                                                                               |
 | `getChildren`                             | fun(def) -> Node[]   | one of   | Lazy alternative; called once, the first time the tree is built. Errors are caught and logged.                                                                                                |
@@ -90,8 +92,9 @@ A node is a plain table; the fields set decide what it displays as:
 ```
 
 Items and spells resolve lazily. An item the client hasn't cached yet is drawn from the item
-database (name, quality, item level) when it is in there, otherwise as "Item #id"; either way
-it redraws when the game's data arrives. `ForeverLoot.IsFolder(node)` tells whether a node
+database (name, quality, item level) when it is in there (the core ships no item rows;
+`ForeverLoot_Database` adds them), otherwise as "Item #id"; either way it is requested and
+redraws when the game's data arrives. `ForeverLoot.IsFolder(node)` tells whether a node
 opens (static, dynamic or query folder).
 
 Any entry may carry `tooltip`: a list of extra lines, or a function `(node) -> lines` called
@@ -218,6 +221,11 @@ cloth, leather, mail, plate; weapons: by weapon type, shields and off-hands afte
 slot (head, shoulder, chest, … / neck, finger, trinket / main hand, off hand, …); everything
 else keeps its written order.
 
+Both read an item's class and slot from the client, else from its item database row. An item
+with neither (a server-side item the client hasn't fetched, without the database addon) is
+grouped as _Quest Items & Misc_ at first; the window then fetches every such item of the list
+and groups the list again once each has arrived, on the page it was showing.
+
 `ForeverLoot.GroupEntries(entries, keyFn?, rankFn?)` exposes the same bucketing and sorting for
 your own use; pass `rankFn` to change the in-group order.
 
@@ -328,11 +336,14 @@ caught and logged. The usage string is appended to `/fl` help while registered.
 ## Item database
 
 `ForeverLoot.Data` holds every scanned item and where it drops. ForeverLoot ships its data as
-generated files (`ForeverLoot/db/generated/` plus non-English names in
-`ForeverLoot_Locale/db/generated/`, built by the root TypeScript tools from in-game item scans, the
-curated drop JSON in `.contribute/` and wago.tools' instance/encounter tables and localized item
-names); other addons may
-add to it with the same calls. The scraper companion adds whatever it scans or sees dropping
+generated files, built by the root TypeScript tools from in-game item scans, the curated drop
+JSON in `.contribute/` and wago.tools' instance/encounter tables and localized item names: the
+core's `ForeverLoot/db/generated/` has the instances, loot, lists, recipes and their English
+names but **no item rows**; every scanned item row and its English name is in
+`ForeverLoot_Database/db/generated/`, the non-English names in
+`ForeverLoot_Locale/db/generated/`. Without the database addon `Data.items` is empty (unless
+another addon adds rows) and the core's lists take what they show from the client. Other addons
+may add to it with the same calls. The scraper companion adds whatever it scans or sees dropping
 in-game (`ForeverLootScraperDB.global.discovered`, see `ForeverLoot_Scraper/src/discovery.lua`),
 so `Data.items` can grow at runtime while the scraper is enabled. On a non-English client the
 locale companion looks up the names of the items the generated files don't name and registers

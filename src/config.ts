@@ -9,6 +9,7 @@ export const DATA_DIR = resolve(CONTRIBUTE_DIR, "data");
 export const CACHE_DIR = resolve(ROOT, ".cache");
 export const OUTPUT_DIR = resolve(ROOT, "ForeverLoot", "db", "generated");
 export const LOCALE_OUTPUT_DIR = resolve(ROOT, "ForeverLoot_Locale", "db", "generated");
+export const DATABASE_OUTPUT_DIR = resolve(ROOT, "ForeverLoot_Database", "db", "generated");
 
 /** Curated input folders; the key is informational, Map.InstanceType decides the real type. */
 export const CURATED_DIRS = {
@@ -61,7 +62,7 @@ export interface Config {
   locales: string[];
   /** Map IDs to leave out even though they have encounters (test maps). */
   excludeMaps: number[];
-  /** Split ForeverLoot/db/generated/items_NNN.lua after this many rows. */
+  /** Split ForeverLoot_Database/db/generated/items/items_NNN.lua after this many rows. */
   itemsPerFile: number;
 }
 

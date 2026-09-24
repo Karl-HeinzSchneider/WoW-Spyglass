@@ -428,8 +428,15 @@ local ARMOR_RANK = {
     [6] = 6, -- Shields
 }
 
+-- Items whose kind itemKind couldn't tell (server-side items the client hasn't fetched, with no
+-- DB row). The view clears it before grouping a list and fetches what it collects, then groups
+-- again once they have arrived.
+---@type table<integer, true>
+app.unknownItemKinds = {}
+
 -- Class id, subclass id and equip location of an item, from the client when it has the item,
--- else from the DB row (server-side items the client hasn't fetched yet).
+-- else from the DB row (server-side items the client hasn't fetched yet), else from the
+-- client's item cache.
 ---@param itemID integer
 ---@return integer? classID, integer? subclassID, string? equipLoc
 local function itemKind(itemID)
@@ -443,6 +450,11 @@ local function itemKind(itemID)
         local ITEM = app.data.ITEM
         return row[ITEM.CLASS], row[ITEM.SUBCLASS], row[ITEM.SLOT]
     end
+    _, _, _, _, _, _, _, _, equipLoc, _, _, classID, subclassID = C_Item.GetItemInfo(itemID)
+    if classID then
+        return classID, subclassID, equipLoc
+    end
+    app.unknownItemKinds[itemID] = true
     return nil, nil, nil
 end
 

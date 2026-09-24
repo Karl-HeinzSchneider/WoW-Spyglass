@@ -22,7 +22,7 @@ ownership contract is `docs/architecture.md`.
   loader XML: the TOC lists the four files as `db\generated\locales\[TextLocale]\<file>.lua`,
   a path variable the client resolves to its text locale, so only the client's own language is
   read at all. A missing file is a `LUA_WARNING` at login, so every client language (`enUS` and
-  `enGB` included, whose names are in the core) has all four files, comment-only placeholders
+  `enGB` included, whose English names are in the core and `ForeverLoot_Database`) has all four files, comment-only placeholders
   where there are no names; `check:addons` enforces it. Each file with names still starts with
   `if GetLocale() ~= "<locale>" then return end`. Excluded from LuaLS and StyLua.
 - `src/db.lua` — `app.dbDefaults` for AceDB:
@@ -44,7 +44,8 @@ fetched them, so on a non-English client:
   one `Data:AddNames(locale, "items", …)`.
 - `OnEnable` (PLAYER_LOGIN) starts a lookup `START_DELAY` = 15 s later (an `info` line says
   how many names it looks up): every id from
-  `Data:GetItemIDs()` without a name in `Data.names[locale].items` and not `missing`. `BATCH` = 5
+  `Data:GetItemIDs()` (the item rows `ForeverLoot_Database` adds; without that addon there are
+  none and nothing is looked up) without a name in `Data.names[locale].items` and not `missing`. `BATCH` = 5
   ids per `INTERVAL` = 0.5 s (10/s, a fifth of `/fl scan`), none while `InCombatLockdown()`; a
   cached item is read at once, others through `C_Item.RequestLoadItemDataByID` and
   `ITEM_DATA_LOAD_RESULT`. The name from `C_Item.GetItemInfo` goes into the saved table right
@@ -55,13 +56,15 @@ fetched them, so on a non-English client:
 - `/fl locale` prints progress or the saved counts; `/fl locale rescan` clears `missing` and asks
   for every learned item again too.
 
-English clients (`GetLocale() == "enUS"`) keep no state and run nothing; every name is in the core.
+English clients (`GetLocale() == "enUS"`) keep no state and run nothing; every English name is in
+the core (item names: in `ForeverLoot_Database`, or from the client).
 At login they get one `info` line saying the addon isn't needed there and can be disabled.
 
 ## How names flow
 
-The core keeps the generated `enUS` tables as its standalone fallback
-(`ForeverLoot/db/generated/locales/enUS/`); the generator (`src/generate.ts`, `build()`) routes
+The core keeps the generated `enUS` instance, boss and crafting names as its standalone fallback
+(`ForeverLoot/db/generated/locales/enUS/`), `ForeverLoot_Database` the `enUS` item names with
+the item rows; the generator (`src/generate.ts`, `build()`) routes
 every other locale here. Item names come from wago.tools' `ItemSparse` for the configured
 locales, for the scanned items whose English name there matches the scan (about 82% of them),
 and from in-game scans on a client of that language (a deDE scan adds German names next to the

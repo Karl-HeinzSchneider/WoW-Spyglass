@@ -5,7 +5,8 @@ local log = app.logger
 
 -- The item database: normalized, integer-keyed tables plus lazily built indexes.
 -- Public as `ForeverLoot.Data`; the generated files under db/ fill it through the Add* calls,
--- and third-party addons may do the same. Contract in docs/API.md.
+-- and other addons may do the same. The core's own files add no item rows (`items`) or English
+-- item names: those come from an addon that adds the item database. Contract in docs/API.md.
 --
 --   Data.items[itemID]      = { quality, itemLevel, reqLevel, classID, subclassID, equipLoc, bindType,
 --                               icon, stats, sellPrice, stackCount, setID, expansionID, craftingReagent }

@@ -31,8 +31,10 @@ the data they consume is described in `.contribute/CLAUDE.md`.
 
 ## Modules
 
-- `config.ts` — repo paths (`ROOT`, `DATA_DIR`, `OUTPUT_DIR`, `LOCALE_OUTPUT_DIR`, `INBOX_DIR`,
-  `CURATED_DIRS`, `LIST_KINDS`/`LIST_DIRS`, `SCANNED_ITEMS_DIR`), `FALLBACK_LOCALE = "enUS"`,
+- `config.ts` — repo paths (`ROOT`, `DATA_DIR`, `OUTPUT_DIR`, `LOCALE_OUTPUT_DIR`,
+  `DATABASE_OUTPUT_DIR`, `INBOX_DIR`, `CURATED_DIRS`, `LIST_KINDS`/`LIST_DIRS`,
+  `SCANNED_ITEMS_DIR`), `FALLBACK_LOCALE = "enUS"`, `CLIENT_LOCALES` (every `[TextLocale]` value)
+  and `LOCALE_FILES` (the locale addon's per-language files),
   and `loadConfig()` for `.contribute/data/config.json` (`build`, `locales`, `excludeMaps`,
   `itemsPerFile`).
 - `addons.ts` — `addonDirectories()`: every direct child of the root with a same-named `.toc`
@@ -99,8 +101,9 @@ the data they consume is described in `.contribute/CLAUDE.md`.
   kept per locale) and observed drops into the instance files (creating them, slug from the
   instance name; on a split map, the file that lists the encounter, else skipped); new rows get a `chance` only after `MIN_KILLS_FOR_CHANCE` = 10 kills; existing
   rows are never changed, only reported.
-- `generate.ts` — `build()` produces both trees in memory (`items/items_NNN.lua` chunks of
-  `itemsPerFile`, `instances.lua` (one instance per map, or per file with its own `id` on a split
+- `generate.ts` — `build()` produces the three trees in memory (`items/items_NNN.lua` chunks of
+  `itemsPerFile` and the `enUS` item names for `ForeverLoot_Database`, with its own
+  `generated.xml`; everything else for the core and the locale addon: `instances.lua` (one instance per map, or per file with its own `id` on a split
   map, with the encounters that file lists; the English name of such a part is its file's),
   `loot/<slug>.lua` for every file `hasLoot` is true for (a
   boss's drops via `AddBossLoot`, the instance's trash via `AddTrashLoot`, its quests via
@@ -109,8 +112,8 @@ the data they consume is described in `.contribute/CLAUDE.md`.
   `AddRecipes`, rows in category order), `locales/<locale>/*` (`items`, `instances`, `bosses` —
   a boss an instance file names differently from the game table gets the file's name in enUS and
   no entry in other locales, so they fall back to it —,
-  `crafting` = skill line/category/tool names) routed to the core for enUS and to the locale
-  addon otherwise, and the core's `generated.xml` — the locale addon has no loader, its TOC
+  `crafting` = skill line/category/tool names) routed to the core for enUS (enUS `items` to the
+  database addon) and to the locale addon otherwise, and the core's `generated.xml` — the locale addon has no loader, its TOC
   lists `locales\[TextLocale]\*.lua` so a client loads only its own language, and every
   `LOCALE_FILES` entry is written for every `CLIENT_LOCALES` language, as a comment-only
   placeholder where there are no names, because a missing one is a `LUA_WARNING`); `write()` diffs against disk (CRLF-insensitive),
