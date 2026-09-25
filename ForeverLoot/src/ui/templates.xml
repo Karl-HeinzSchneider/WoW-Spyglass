@@ -549,10 +549,11 @@
 				</Anchors>
 			</Frame>
 			<!-- Footer, left: the class filter (left-click toggles, right-click picks the class)
-			     and next to it hide / fade out, on the same center line as the page controls. -->
+			     and next to it hide / fade out, on the same center line as the page controls. The
+			     first lines up with the list's row icons (Content's 14px inset + the row's 6px). -->
 			<Button parentKey="ClassFilter" inherits="ForeverLootFooterButtonTemplate" mixin="ForeverLootClassFilterButtonMixin">
 				<Anchors>
-					<Anchor point="LEFT" relativePoint="BOTTOMLEFT" x="14" y="25"/>
+					<Anchor point="LEFT" relativePoint="BOTTOMLEFT" x="20" y="25"/>
 				</Anchors>
 			</Button>
 			<Button parentKey="ClassFilterMode" inherits="ForeverLootFooterButtonTemplate" mixin="ForeverLootClassFilterModeButtonMixin">
