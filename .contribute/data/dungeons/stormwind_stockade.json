@@ -7,6 +7,7 @@
   "zone": 1453,
   "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-TheStockade",
   "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],
+  "entrance": [1453, 52, 70],
   "encounters": [
     {
       "id": 2756,

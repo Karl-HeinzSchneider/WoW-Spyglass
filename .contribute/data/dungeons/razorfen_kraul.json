@@ -7,6 +7,7 @@
   "zone": 1413,
   "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-RazorfenKraul",
   "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],
+  "entrance": [1413, 43, 90],
   "encounters": [
     {
       "id": 2773,

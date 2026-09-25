@@ -7,7 +7,7 @@
   "zone": 1440,
   "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-BlackfathomDeeps",
   "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],
-  "entrance": [1440, 14.5, 14.2],
+  "entrance": [1440, 15, 14],
   "encounters": [
     {
       "id": 2916,
