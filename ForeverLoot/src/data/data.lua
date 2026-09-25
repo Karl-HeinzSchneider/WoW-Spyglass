@@ -77,6 +77,8 @@ local RECIPE = {
 ---@field bosses integer[]  # bossIDs in encounter order
 ---@field minLevel? integer
 ---@field maxLevel? integer
+---@field requiredLevel? integer  # the level a character needs to enter
+---@field zone? integer  # uiMapID of the zone the entrance is in
 ---@field expansionID? integer
 ---@field icon? string|number
 ---@field background? string|number  # wide picture for the instance's tile in the browser

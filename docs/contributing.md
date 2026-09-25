@@ -155,6 +155,8 @@ The instance:
 | `id`, `name`                     | Only on a split dungeon, see below.                                                                                     |
 | `displayName`                    | A shorter name for the browser, see below.                                                                              |
 | `minLevel`, `maxLevel`           | The level range shown on the tile and in the info panel.                                                                |
+| `requiredLevel`                  | The level a character needs to enter; shown in the info panel.                                                          |
+| `zone`                           | uiMapID of the zone the entrance is in; the info panel shows the game's name for it, in the player's language.          |
 | `entrance`                       | `[uiMapID, x, y]` of the entrance (x, y in 0–100, as the map shows them): the info panel's "Show entrance" button.      |
 | `icon`                           | Texture path.                                                                                                           |
 | `background`, `backgroundCoords` | The tile's picture: a texture path or fileID, and `[left, right, top, bottom]` in 0–1 of it (all of it when omitted).   |
@@ -197,7 +199,8 @@ error.
 
 ### The info panel of an instance
 
-While an instance is open, the window's right column shows its level range and boss count, a
+While an instance is open, the window's right column shows the zone its entrance is in, its
+level range, the level needed to enter and its boss count, a
 "Show entrance" button when the file has an `entrance` (it opens the map with a waypoint there;
 the game tables of this client carry no dungeon entrances, so they are curated), and the
 instance's `quests` with the character's progress on each: done, ready to turn in, active or not

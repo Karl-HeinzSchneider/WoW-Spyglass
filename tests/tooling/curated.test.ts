@@ -104,6 +104,24 @@ test("an entrance is kept through a fix rewrite and must be a map id with coordi
   assert.ok(wrong.problems.some((p) => !p.warning && p.message.includes("entrance")));
 });
 
+test("requiredLevel and zone are kept through a fix rewrite and must be a level and a map id", () => {
+  const file = dungeonFile({ requiredLevel: 10, zone: 1440 });
+  const checker = dungeonChecker(true);
+  validate([file], checker);
+  assert.deepEqual(
+    checker.problems.filter((p) => !p.fixable && !p.warning),
+    [],
+  );
+  const serialized = JSON.parse(serialize(file.data)) as { requiredLevel?: number; zone?: number };
+  assert.deepEqual([serialized.requiredLevel, serialized.zone], [10, 1440]);
+
+  const wrong = dungeonChecker(false);
+  validate([dungeonFile({ requiredLevel: 0, zone: 14.4 })], wrong);
+  const errors = wrong.problems.filter((p) => !p.warning).map((p) => p.message);
+  assert.ok(errors.some((m) => m.includes("requiredLevel")));
+  assert.ok(errors.some((m) => m.includes("zone")));
+});
+
 test("a quest needs an id, a known side and no duplicate", () => {
   const file = dungeonFile({
     quests: [

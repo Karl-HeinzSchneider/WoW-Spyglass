@@ -3,6 +3,8 @@
   "name": "Gnomeregan",
   "minLevel": 26,
   "maxLevel": 36,
+  "requiredLevel": 15,
+  "zone": 1426,
   "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Gnomeregan",
   "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],
   "encounters": [

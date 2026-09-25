@@ -3,6 +3,8 @@
   "name": "Ragefire Chasm",
   "minLevel": 15,
   "maxLevel": 25,
+  "requiredLevel": 8,
+  "zone": 1454,
   "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-RagefireChasm",
   "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],
   "encounters": [

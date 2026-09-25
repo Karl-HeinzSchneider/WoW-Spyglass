@@ -357,7 +357,8 @@ ForeverLoot:RegisterModule({
 `ListFolder` gives every list its file's `panel` (see [contributing.md](contributing.md#the-info-panel-panel)),
 else a default: reputation lists `{ bar = "reputation" }, { description = true }`, professions
 `{ bar = "skill" }, { row = "Recipes", value = count }`. `InstanceFolder` gives an instance a
-panel of its level range and boss count, a "Show entrance" `map` button when the instance has an
+panel of its zone (`zone`, a uiMapID, by the client's name for it), level range, required level
+(`requiredLevel`) and boss count, a "Show entrance" `map` button when the instance has an
 `entrance` (`Data:AddInstance`, `{ uiMapID, x, y }`), and a `quests` line list of its quests.
 
 ## Other calls

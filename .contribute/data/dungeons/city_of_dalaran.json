@@ -3,6 +3,7 @@
   "name": "City of Dalaran",
   "minLevel": 28,
   "maxLevel": 33,
+  "zone": 1416,
   "encounters": [
     {
       "id": 3298,

@@ -225,19 +225,27 @@ local function allBossesFolder(instanceID, instance)
     })
 end
 
--- The right pane of an instance: its level range and boss count, a button to its entrance when
--- the curated data has one, and its quests with the character's progress.
+-- The right pane of an instance: the zone its entrance is in (the client's name for the map, so
+-- it is localized), its level range, the level needed to enter and its boss count, a button to
+-- its entrance when the curated data has one, and its quests with the character's progress.
 ---@param instanceID integer
 ---@param instance ForeverLoot.Instance
 ---@return ForeverLoot.PanelWidget[]
 local function instancePanel(instanceID, instance)
     local panel = {}
+    local zone = instance.zone and C_Map.GetMapInfo(instance.zone)
+    if zone and zone.name and zone.name ~= "" then
+        panel[#panel + 1] = { row = ZONE or "Zone", value = zone.name }
+    end
     local minLevel, maxLevel = instance.minLevel, instance.maxLevel
     if minLevel then
         local range = maxLevel and maxLevel ~= minLevel and ("%d - %d"):format(minLevel, maxLevel)
             or maxLevel and tostring(minLevel)
             or ("%d+"):format(minLevel)
         panel[#panel + 1] = { row = LEVEL or "Level", value = range }
+    end
+    if instance.requiredLevel then
+        panel[#panel + 1] = { row = "Required level", value = instance.requiredLevel }
     end
     panel[#panel + 1] = { row = "Bosses", value = #instance.bosses }
     if type(instance.entrance) == "table" then

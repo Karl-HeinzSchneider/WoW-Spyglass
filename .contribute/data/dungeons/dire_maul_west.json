@@ -4,6 +4,8 @@
   "name": "Dire Maul: West",
   "minLevel": 56,
   "maxLevel": 60,
+  "requiredLevel": 45,
+  "zone": 1444,
   "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-DireMaul",
   "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],
   "encounters": [
