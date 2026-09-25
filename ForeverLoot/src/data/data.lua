@@ -14,7 +14,8 @@ local log = app.logger
 --   Data.bosses[bossID]     = { instanceID = 36, order = 6000 }   -- bossID = DungeonEncounter id
 --   Data.bossLoot[bossID]   = { { itemID, chance }, ... }
 --   Data.trashLoot[instID]  = { { itemID, chance }, ... }   -- what the instance's non-boss enemies drop
---   Data.quests[questID]    = { id = 26, name = "...", side = "Alliance", instanceID = 36, items = { { itemID }, ... } }
+--   Data.quests[questID]    = { id = 26, name = "...", side = "Alliance", requiredLevel = 14, xp = 4688, objective = "...",
+--                               instanceID = 36, items = { { itemID }, ... } }
 --   Data.instanceQuests[id] = { questID, ... }              -- the instance's quests, in curated order
 --   Data.lists[kind][id]    = { name = "Argent Dawn", icon = ..., factionID = 529 }  -- curated item lists;
 --                             kind = "crafting" | "pvp" | "collections" | "reputation", id = the file's slug
@@ -104,6 +105,9 @@ local RECIPE = {
 ---@field name? string  # quest title, as curated
 ---@field side? "Alliance"|"Horde"|"Both"  # faction the quest is available to; nil = both
 ---@field class? string  # class token ("WARLOCK") of a class quest; nil = any class
+---@field requiredLevel? integer  # the level a character needs to accept it
+---@field xp? integer  # the experience it rewards
+---@field objective? string  # what it asks for, in one sentence (English)
 ---@field instanceID? integer  # the (last) instance it was registered for, set by Data:AddQuests
 ---@field items ForeverLoot.LootRow[]  # the items it rewards
 

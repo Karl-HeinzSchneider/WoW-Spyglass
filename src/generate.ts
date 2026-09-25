@@ -209,7 +209,7 @@ function emitLoot(file: CuratedFile, ref: Reference): string {
     for (const quest of quests) {
       const fields = luaFields(
         { ...quest, class: quest.class && classToken(quest.class) },
-        ["id", "name", "side", "class"],
+        ["id", "name", "side", "class", "requiredLevel", "xp", "objective"],
         "",
       ).join(" ");
       const items = emitLootRows(quest.items ?? [], ref, "        ");

@@ -218,17 +218,61 @@ local function questLink(questID)
     return link
 end
 
--- A quest line's tooltip: the game's own quest tooltip from its link, else the title and id
--- while the client doesn't have the quest yet.
+-- A reward's tooltip line: the item's icon and name, in its quality color. The client's cache when
+-- it has the item, else the database row; an uncached item is requested for the next hover.
+---@param itemID integer
+---@return string text, ColorMixin color
+local function rewardLine(itemID)
+    local name, _, quality, _, _, _, _, _, _, icon = C_Item.GetItemInfo(itemID)
+    if not name then
+        C_Item.RequestLoadItemDataByID(itemID)
+        local row = app.data:GetItem(itemID)
+        name = app.data:GetItemName(itemID)
+        quality = row and row[app.data.ITEM.QUALITY]
+        icon = select(5, C_Item.GetItemInfoInstant(itemID)) or (row and row[app.data.ITEM.ICON])
+    end
+    local markup = CreateSimpleTextureMarkup(icon or "Interface\\Icons\\INV_Misc_QuestionMark", 16, 16)
+    return markup .. " " .. name, quality and ITEM_QUALITY_COLORS[quality] or HIGHLIGHT_FONT_COLOR
+end
+
+-- A quest line's tooltip: the game's own quest tooltip from its link, else, while the client
+-- doesn't have the quest (quests are server-side), the curated title, id, level and objective.
+-- The curated rewards and experience follow either way.
 ---@param line Button|{ questID: integer }
 local function showQuestTooltip(line)
     GameTooltip:SetOwner(line, "ANCHOR_RIGHT")
+    local quest = app.data:GetQuest(line.questID)
     local link = questLink(line.questID)
     if link then
         GameTooltip:SetHyperlink(link)
     else
         GameTooltip:SetText(app.data:GetQuestName(line.questID), NORMAL_FONT_COLOR:GetRGB())
         GameTooltip:AddLine(("Quest #%d"):format(line.questID), HIGHLIGHT_FONT_COLOR:GetRGB())
+        if quest and quest.requiredLevel then
+            GameTooltip:AddLine(("Required level %d"):format(quest.requiredLevel), HIGHLIGHT_FONT_COLOR:GetRGB())
+        end
+        if quest and quest.objective then
+            GameTooltip:AddLine(" ")
+            GameTooltip:AddLine(
+                quest.objective,
+                HIGHLIGHT_FONT_COLOR.r,
+                HIGHLIGHT_FONT_COLOR.g,
+                HIGHLIGHT_FONT_COLOR.b,
+                true
+            )
+        end
+    end
+    if quest and (#quest.items > 0 or quest.xp) then
+        GameTooltip:AddLine(" ")
+        GameTooltip:AddLine(QUEST_REWARDS or "Rewards", NORMAL_FONT_COLOR:GetRGB())
+        for _, row in ipairs(quest.items) do
+            local text, color = rewardLine(row[1])
+            GameTooltip:AddLine(text, color.r, color.g, color.b)
+        end
+        if quest.xp then
+            local xp = ("%s %s"):format(EXPERIENCE_COLON or "Experience:", BreakUpLargeNumbers(quest.xp))
+            GameTooltip:AddLine(xp, HIGHLIGHT_FONT_COLOR:GetRGB())
+        end
     end
     GameTooltip:Show()
 end

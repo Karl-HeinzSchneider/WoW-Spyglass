@@ -53,35 +53,42 @@ Data:AddTrashLoot(48, {
 })
 
 Data:AddQuests(48, {
-    { id = 1200, name = "Blackfathom Villainy", side = "Alliance", items = {
+    { id = 1200, name = "Blackfathom Villainy", side = "Alliance", requiredLevel = 18, xp = 12375, objective = "Defeat Twilight Lord Kelris and recover the Head of Kelris.", items = {
         { 7001 }, -- Gravestone Scepter
         { 7002 }, -- Arctic Buckler
+        { 270031 }, -- Dark Ritual Leggings
+        { 270032 }, -- Cultist's Armguards
     } },
-    { id = 6561, name = "Blackfathom Villainy", side = "Horde", items = {
+    { id = 6561, name = "Blackfathom Villainy", side = "Horde", requiredLevel = 18, xp = 12375, objective = "Defeat Twilight Lord Kelris and recover the Head of Kelris.", items = {
         { 7001 }, -- Gravestone Scepter
         { 7002 }, -- Arctic Buckler
+        { 270031 }, -- Dark Ritual Leggings
+        { 270032 }, -- Cultist's Armguards
     } },
-    { id = 1199, name = "Twilight Falls", side = "Alliance", items = {
+    { id = 1199, name = "Twilight Falls", side = "Alliance", requiredLevel = 20, xp = 9563, objective = "Collect 10 Twilight Pendants from Twilight's Hammer members in Blackfathom Deeps.", items = {
         { 6998 }, -- Nimbus Boots
         { 7000 }, -- Heartwood Girdle
+        { 270025 }, -- Silvered Gauntlets
     } },
-    { id = 6564, name = "Allegiance to the Old Gods", items = {} },
-    { id = 6565, name = "Allegiance to the Old Gods", side = "Horde", items = {
+    { id = 6564, name = "Allegiance to the Old Gods", side = "Horde", requiredLevel = 17, xp = 1300, objective = "Bring the Damp Note to Je'neu Sancrea in Ashenvale.", items = {} },
+    { id = 6565, name = "Allegiance to the Old Gods", side = "Horde", requiredLevel = 17, xp = 9938, objective = "Defeat Lorgus Jett in Blackfathom Deeps.", items = {
         { 17694 }, -- Band of the Fist
         { 17695 }, -- Chestnut Mantle
     } },
-    { id = 1275, name = "Researching the Corruption", side = "Both", items = {
+    { id = 1275, name = "Researching the Corruption", side = "Alliance", requiredLevel = 18, xp = 2400, objective = "Collect 8 Corrupted Brain Stems from creatures in Blackfathom Deeps.", items = {
         { 7003 }, -- Beetle Clasps
         { 7004 }, -- Prelacy Cape
+        { 270021 }, -- Staghide Armguards
     } },
-    { id = 1740, name = "The Orb of Soran'ruk", side = "Both", class = "WARLOCK", items = {
+    { id = 1740, name = "The Orb of Soran'ruk", side = "Both", class = "WARLOCK", requiredLevel = 20, xp = 2550, objective = "Find 3 Soran'ruk Fragments and 1 Large Soran'ruk Fragment and return them to Doan Karhan.", items = {
         { 6898 }, -- Orb of Soran'ruk
         { 15109 }, -- Staff of Soran'ruk
     } },
-    { id = 971, name = "Knowledge in the Deeps", side = "Both", items = {
+    { id = 971, name = "Knowledge in the Deeps", side = "Alliance", requiredLevel = 10, xp = 10313, objective = "Recover the Lorgalis Manuscript from Blackfathom Deeps.", items = {
         { 6743 }, -- Sustaining Ring
     } },
-    { id = 6563, name = "The Essence of Aku'Mai", items = {} },
-    { id = 6562, name = "Trouble in the Deeps", items = {} },
-    { id = 1198, name = "In Search of Thaelrid", items = {} },
+    { id = 6563, name = "The Essence of Aku'Mai", side = "Horde", requiredLevel = 17, xp = 1750, objective = "Collect 20 Sapphires of Aku'Mai in Blackfathom Deeps.", items = {} },
+    { id = 6562, name = "Trouble in the Deeps", side = "Horde", requiredLevel = 17, xp = 435, objective = "Speak to Je'neu Sancrea in Ashenvale.", items = {} },
+    { id = 1198, name = "In Search of Thaelrid", side = "Alliance", requiredLevel = 18, xp = 2400, objective = "Find Argent Guard Thaelrid inside Blackfathom Deeps.", items = {} },
+    { id = 6921, name = "Amongst the Ruins", side = "Horde", requiredLevel = 21, xp = 10313, objective = "Recover the Fathom Core from the Fathom Stone in Blackfathom Deeps.", items = {} },
 })
