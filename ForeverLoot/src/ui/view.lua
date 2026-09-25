@@ -772,6 +772,7 @@ end
 ---@class ForeverLoot.View : Frame
 ---@field Breadcrumbs ForeverLoot.LayoutFrame
 ---@field HeaderDivider Texture
+---@field FooterDivider Texture
 ---@field Title ForeverLoot.PageHeader
 ---@field Content ForeverLoot.Page
 ---@field PagingControls ForeverLoot.PagingControls

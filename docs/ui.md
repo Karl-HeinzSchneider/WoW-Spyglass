@@ -11,7 +11,7 @@ globals. The TOC lists each Lua mixin before the XML that names it.
 
 ## Main window (`mainwindow.lua` / `.xml`)
 
-`ForeverLootMainWindow` inherits `PortraitFrameBaseTemplate`, sized 900x640, with a dark
+`ForeverLootMainWindow` inherits `PortraitFrameBaseTemplate`, sized 900x650, with a dark
 two-column interior: `LeftPane` holds the views, `RightPane` the info pane (below). Both are
 `UI-Character-Info-*-BG` atlases stretched to fit, split by `common-framedivider`. Icon tabs run
 down the right edge (`ForeverLootSideTabTemplate`, from `LargeSideTabButtonTemplate`, which is a
@@ -33,7 +33,8 @@ The root node comes from `app.api:GetRootNode()`; the window listens to `OnModul
 
 A view fills the left column: a header row (breadcrumbs on the left, starting right of the
 window portrait; search box and filter dropdown on the right) over a divider, then one `Content`
-page of rows with Blizzard's `PagingControls` at the bottom right.
+page of rows, then under a second divider (`FooterDivider`) a footer row as high as the header row (44px) with Blizzard's
+`PagingControls` on the right, room left for more controls.
 
 - **Navigation** is a `path` stack over `ForeverLoot.Node` trees (`Push` / `PopTo` / `Back`, then
   `Refresh`). `Push` remembers the page the node was on in `view.pathPages`, and going back

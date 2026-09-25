@@ -449,8 +449,8 @@
 	</Frame>
 
 	<!-- A view fills the window's left column: a header row (breadcrumbs on the
-	     left, search box + filter on the right) over a divider, the list below it, page
-	     controls bottom-right. Mouse wheel turns pages; right-click anywhere goes one level back. -->
+	     left, search box + filter on the right) over a divider, the list below it, and under
+	     another divider a footer row with the page controls on the right. Mouse wheel turns pages; right-click anywhere goes one level back. -->
 	<Frame name="ForeverLootViewTemplate" mixin="ForeverLootViewMixin" enableMouse="true" virtual="true">
 		<KeyValues>
 			<KeyValue key="rowHeight" value="40" type="number"/>
@@ -501,12 +501,14 @@
 			<Frame parentKey="Content">
 				<Anchors>
 					<Anchor point="TOPLEFT" relativeKey="$parent.Title" relativePoint="BOTTOMLEFT" x="0" y="-6"/>
-					<Anchor point="BOTTOMRIGHT" x="-14" y="42"/>
+					<Anchor point="BOTTOMRIGHT" x="-14" y="52"/>
 				</Anchors>
 			</Frame>
+			<!-- Footer row under FooterDivider, as high as the header row above HeaderDivider
+			     (44px): page controls on the right, vertically centered. -->
 			<Frame parentKey="PagingControls" inherits="PagingControlsHorizontalTemplate">
 				<Anchors>
-					<Anchor point="BOTTOMRIGHT" x="-14" y="6"/>
+					<Anchor point="RIGHT" relativePoint="BOTTOMRIGHT" x="-14" y="25"/>
 				</Anchors>
 			</Frame>
 		</Frames>
@@ -516,6 +518,14 @@
 					<Anchors>
 						<Anchor point="TOPLEFT" x="14" y="-44"/>
 						<Anchor point="TOPRIGHT" x="-14" y="-44"/>
+					</Anchors>
+				</Texture>
+				<!-- HeaderDivider mirrored: its bottom edge 44px over the view's bottom, the list
+				     ending 8px above that edge as the title starts 8px under HeaderDivider's top. -->
+				<Texture parentKey="FooterDivider" atlas="UI-Character-Info-ScrollLine-Long" useAtlasSize="true">
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" x="14" y="44"/>
+						<Anchor point="BOTTOMRIGHT" x="-14" y="44"/>
 					</Anchors>
 				</Texture>
 				<FontString parentKey="ResultCount" inherits="GameFontNormalSmall" justifyH="RIGHT" hidden="true">
