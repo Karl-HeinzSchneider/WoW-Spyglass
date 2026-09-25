@@ -18,6 +18,8 @@
 ---@field query ForeverLoot.QueryAPI  # query runner; also `ForeverLoot.Query`
 ---@field commands ForeverLoot.CommandRegistry  # private dispatcher; registration is public API
 ---@field unknownItemKinds table<integer, true>  # items grouped without knowing their kind (registry.lua; the view regroups them)
+---@field itemKind fun(itemID: integer): integer?, integer?, string?  # class id, subclass id, equip loc; nil when unknown (registry.lua)
+---@field classFilter ForeverLoot.ClassFilter  # which classes can use which armor/weapons (classfilter.lua)
 ---@field ui ForeverLoot.UI
 
 -- UI namespace. Mixins are globals (XML requires it) but also exposed here.
@@ -41,6 +43,8 @@
 ---@field GroupLabelMixin ForeverLoot.GroupLabel
 ---@field BreadcrumbButtonMixin ForeverLoot.BreadcrumbButton
 ---@field SearchBoxMixin ForeverLoot.SearchBox
+---@field ClassFilterButtonMixin ForeverLoot.ClassFilterButton
+---@field ClassFilterModeButtonMixin ForeverLoot.ClassFilterModeButton
 
 -- Return type of CreateFramePool. The FrameXML annotations keep the pool mixins private,
 -- so the methods we use are declared here.

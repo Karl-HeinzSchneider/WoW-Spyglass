@@ -762,6 +762,123 @@ function ForeverLootSearchBoxMixin:OnTextChanged(userInput)
 end
 
 ----------------------------------------------------------------------------------------------------
+-- Class filter button (footer): the class's icon in an item slot frame
+----------------------------------------------------------------------------------------------------
+
+-- The frame around the button's icon while the filter is on; off, it is the plain frame and the
+-- icon is grey.
+local CLASS_FILTER_ON_COLOR = NORMAL_FONT_COLOR
+
+---@class ForeverLoot.ClassFilterButton : Button
+---@field Icon Texture
+---@field IconMask MaskTexture
+---@field IconRing Texture
+ForeverLootClassFilterButtonMixin = {}
+app.ui.ClassFilterButtonMixin = ForeverLootClassFilterButtonMixin
+
+---@return ForeverLoot.View
+function ForeverLootClassFilterButtonMixin:GetView()
+    return self:GetParent() --[[@as ForeverLoot.View]]
+end
+
+-- Shows the view's class and whether the filter is on.
+function ForeverLootClassFilterButtonMixin:Update()
+    local view = self:GetView()
+    self.Icon:SetTexture(app.classFilter:GetIcon(view:GetFilterClass()))
+    self.Icon:SetDesaturated(not view.classFilterOn)
+    local color = view.classFilterOn and CLASS_FILTER_ON_COLOR or HIGHLIGHT_FONT_COLOR
+    self.IconRing:SetVertexColor(color.r, color.g, color.b)
+end
+
+-- Left-click turns the filter on and off, right-click opens the class and mode menu.
+---@param button string
+function ForeverLootClassFilterButtonMixin:OnClick(button)
+    local view = self:GetView()
+    if button == "RightButton" then
+        MenuUtil.CreateContextMenu(self, function(_, root)
+            view:BuildClassFilterMenu(root)
+        end)
+    else
+        view:SetClassFilter(not view.classFilterOn)
+    end
+    if GameTooltip:IsOwned(self) then
+        self:OnEnter()
+    end
+end
+
+function ForeverLootClassFilterButtonMixin:OnEnter()
+    local view = self:GetView()
+    local name = app.classFilter:GetName(view:GetFilterClass())
+    GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+    GameTooltip:SetText("Class filter: " .. name)
+    if not view.classFilterOn then
+        GameTooltip:AddLine("Off", 1, 1, 1)
+    elseif view.classFilterMode == "fade" then
+        GameTooltip:AddLine(("Fades armor and weapons a %s can't use"):format(name), 1, 1, 1, true)
+    else
+        GameTooltip:AddLine(("Hides armor and weapons a %s can't use"):format(name), 1, 1, 1, true)
+    end
+    GameTooltip:AddLine(" ")
+    GameTooltip:AddLine("Left-click to turn on or off", 0.5, 0.5, 0.5)
+    GameTooltip:AddLine("Right-click to pick the class", 0.5, 0.5, 0.5)
+    GameTooltip:Show()
+end
+
+function ForeverLootClassFilterButtonMixin:OnLeave()
+    GameTooltip:Hide()
+end
+
+-- The button next to it: whether the items the class can't use are faded out or hidden. A click
+-- switches; like the class button it is grey while the filter is off.
+local CLASS_FILTER_MODE_ICONS = {
+    fade = "Interface\\Icons\\Spell_Nature_Invisibilty",
+    hide = "Interface\\Icons\\Ability_Vanish",
+}
+
+---@class ForeverLoot.ClassFilterModeButton : ForeverLoot.ClassFilterButton
+ForeverLootClassFilterModeButtonMixin = {
+    GetView = ForeverLootClassFilterButtonMixin.GetView,
+    OnLeave = ForeverLootClassFilterButtonMixin.OnLeave,
+}
+app.ui.ClassFilterModeButtonMixin = ForeverLootClassFilterModeButtonMixin
+
+function ForeverLootClassFilterModeButtonMixin:Update()
+    local view = self:GetView()
+    self.Icon:SetTexture(CLASS_FILTER_MODE_ICONS[view.classFilterMode])
+    self.Icon:SetDesaturated(not view.classFilterOn)
+    local color = view.classFilterOn and CLASS_FILTER_ON_COLOR or HIGHLIGHT_FONT_COLOR
+    self.IconRing:SetVertexColor(color.r, color.g, color.b)
+end
+
+function ForeverLootClassFilterModeButtonMixin:OnClick()
+    local view = self:GetView()
+    view:SetClassFilter(nil, nil, view.classFilterMode == "fade" and "hide" or "fade")
+    if GameTooltip:IsOwned(self) then
+        self:OnEnter()
+    end
+end
+
+function ForeverLootClassFilterModeButtonMixin:OnEnter()
+    local view = self:GetView()
+    local fade = view.classFilterMode == "fade"
+    GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+    GameTooltip:SetText(fade and "Fade out" or "Hide")
+    GameTooltip:AddLine(
+        ("Armor and weapons a %s can't use are %s"):format(
+            app.classFilter:GetName(view:GetFilterClass()),
+            fade and "faded out" or "hidden"
+        ),
+        1,
+        1,
+        1,
+        true
+    )
+    GameTooltip:AddLine(" ")
+    GameTooltip:AddLine(fade and "Click to hide them instead" or "Click to fade them out instead", 0.5, 0.5, 0.5)
+    GameTooltip:Show()
+end
+
+----------------------------------------------------------------------------------------------------
 -- View: breadcrumb bar + one page of rows
 ----------------------------------------------------------------------------------------------------
 
@@ -779,6 +896,11 @@ end
 ---@field SearchBox ForeverLoot.SearchBox
 ---@field FilterDropdown ForeverLoot.FilterDropdown
 ---@field ResultCount FontString
+---@field ClassFilter ForeverLoot.ClassFilterButton
+---@field ClassFilterMode ForeverLoot.ClassFilterModeButton
+---@field classFilterOn boolean  # the footer's class filter is on, for this tab
+---@field classFilterMode "hide"|"fade"  # what it does to the items the class can't use
+---@field filterClass? string  # the class it filters for; nil = the character's own
 ---@field queries table<ForeverLoot.Node, ForeverLoot.Query>  # filter state per query node, for this tab
 ---@field resultCount integer  # size of the last query result
 ---@field panelState table<ForeverLoot.Node, table<integer, any>>  # per panel node: the value of each checkbox/dropdown widget (by index), for this tab
@@ -870,6 +992,8 @@ function ForeverLootViewMixin:OnLoad()
     self.regroupItems = {}
     self.queries = {}
     self.panelState = {}
+    self.classFilterOn = false
+    self.classFilterMode = "fade"
     self.resultCount = 0
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
 
@@ -1232,6 +1356,73 @@ function ForeverLootViewMixin:GetEntryFilter()
         end
         return true
     end
+end
+
+----------------------------------------------------------------------------------------------------
+-- Class filter: the footer button's state, per tab; which items a class can use is classfilter.lua
+----------------------------------------------------------------------------------------------------
+
+-- How visible a faded item stays (its row, tile or card, with its icon grey).
+local FADED_ALPHA = 0.3
+
+---@return string
+function ForeverLootViewMixin:GetFilterClass()
+    return self.filterClass or app.classFilter:GetPlayerClass()
+end
+
+-- Changes the class filter; the arguments left nil keep their value. The list is filtered again
+-- from page 1.
+---@param on boolean?
+---@param class string?
+---@param mode ("hide"|"fade")?
+function ForeverLootViewMixin:SetClassFilter(on, class, mode)
+    if on ~= nil then
+        self.classFilterOn = on
+    end
+    self.filterClass = class or self.filterClass
+    self.classFilterMode = mode or self.classFilterMode
+    self.ClassFilter:Update()
+    self.ClassFilterMode:Update()
+    self.PagingControls:SetCurrentPage(1)
+    self:Refresh()
+end
+
+-- The class button's right-click menu: the classes; picking one turns the filter on.
+---@param root RootMenuDescriptionProxy
+function ForeverLootViewMixin:BuildClassFilterMenu(root)
+    local classFilter = app.classFilter
+    root:CreateTitle("Class")
+    for _, class in ipairs(classFilter:GetClasses()) do
+        local label = ("|T%s:16:16|t %s"):format(classFilter:GetIcon(class), classFilter:GetName(class))
+        root:CreateRadio(label, function()
+            return class == self:GetFilterClass()
+        end, function()
+            self:SetClassFilter(true, class)
+        end)
+    end
+end
+
+-- The class filter's test for BuildElements: nil unless it is on and hiding.
+---@return (fun(entry: ForeverLoot.Node): boolean)?
+function ForeverLootViewMixin:GetClassFilterTest()
+    if not self.classFilterOn or self.classFilterMode ~= "hide" then
+        return nil
+    end
+    local class, classFilter = self:GetFilterClass(), app.classFilter
+    return function(entry)
+        return not entry.itemID or classFilter:CanUse(class, entry.itemID)
+    end
+end
+
+-- Is `node` an item the class filter fades out?
+---@param node ForeverLoot.Node?
+---@return boolean
+function ForeverLootViewMixin:IsFaded(node)
+    return self.classFilterOn
+        and self.classFilterMode == "fade"
+        and node ~= nil
+        and node.itemID ~= nil
+        and not app.classFilter:CanUse(self:GetFilterClass(), node.itemID)
 end
 
 -- The values `field` has in the current list's `meta` (entries under subheaders and groups
@@ -1601,6 +1792,8 @@ function ForeverLootViewMixin:Render()
 
     self:RefreshBreadcrumbs()
     self:UpdateToolbar()
+    self.ClassFilter:Update()
+    self.ClassFilterMode:Update()
 end
 
 -- Turns the current node into the flat list of things to draw: its children (the folder's
@@ -1621,8 +1814,17 @@ function ForeverLootViewMixin:BuildElements(node)
     local keyFn = type(groupBy) == "function" and groupBy or nil
     local entryKind = entryKindOf(node)
     local pending = {}
-    -- The info panel's checkboxes/dropdowns; folders always stay.
+    -- The info panel's checkboxes/dropdowns and the class filter; folders always stay.
     local filter = self:GetEntryFilter()
+    local classTest = self:GetClassFilterTest()
+    if filter and classTest then
+        local panelTest = filter
+        filter = function(entry)
+            return panelTest(entry) and classTest(entry)
+        end
+    else
+        filter = filter or classTest
+    end
     local function keep(entry)
         return not filter or app.api.IsFolder(entry) or filter(entry)
     end
@@ -1823,6 +2025,12 @@ function ForeverLootViewMixin:RenderPage(page, range)
         else
             frame = page.rowPool:Acquire() --[[@as ForeverLoot.ListRow]]
             frame:Init(self, element.node)
+        end
+        if element.node then
+            -- Pooled frames come back from other lists: reset what fading changed.
+            local faded = self:IsFaded(element.node)
+            frame:SetAlpha(faded and FADED_ALPHA or 1)
+            frame.Icon:SetDesaturated(faded)
         end
         frame:SetSize(layout.width[i], layout.height[i])
         frame:SetPoint("TOPLEFT", page, "TOPLEFT", layout.x[i], -layout.y[i])

@@ -484,6 +484,7 @@ local function itemKind(itemID)
     app.unknownItemKinds[itemID] = true
     return nil, nil, nil
 end
+app.itemKind = itemKind
 
 -- Default grouping: items into four groups (quest items & misc, armor, weapons, jewelry; see
 -- GROUP_ORDER), spells under "Spells", custom/placeholder entries by their `category`, folders

@@ -21,6 +21,7 @@ src\data\data.lua
 src\data\filters.lua
 src\data\query.lua
 src\data\nodes.lua
+src\data\classfilter.lua
 db\generated\generated.xml
 modules\modules.xml
 
