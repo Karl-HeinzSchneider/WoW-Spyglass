@@ -89,6 +89,21 @@ test("a displayName is kept through a fix rewrite and must not be empty", () => 
   assert.ok(empty.problems.some((p) => !p.warning && p.message.includes("displayName")));
 });
 
+test("an entrance is kept through a fix rewrite and must be a map id with coordinates in 0..100", () => {
+  const file = dungeonFile({ entrance: [1440, 14.5, 14.2] });
+  const checker = dungeonChecker(true);
+  validate([file], checker);
+  assert.deepEqual(
+    checker.problems.filter((p) => !p.fixable && !p.warning),
+    [],
+  );
+  assert.deepEqual((JSON.parse(serialize(file.data)) as { entrance?: number[] }).entrance, [1440, 14.5, 14.2]);
+
+  const wrong = dungeonChecker(false);
+  validate([dungeonFile({ entrance: [1440, 145, 14.2] })], wrong);
+  assert.ok(wrong.problems.some((p) => !p.warning && p.message.includes("entrance")));
+});
+
 test("a quest needs an id, a known side and no duplicate", () => {
   const file = dungeonFile({
     quests: [

@@ -104,6 +104,7 @@ Data:AddInstance(48, {
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-BlackfathomDeeps",
     backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
+    entrance = { 1440, 14.5, 14.2 },
     bosses = { 2916, 2915, 2914, 2913, 2912, 2911, 2910 },
 })
 Data:AddBoss(2916, { instanceID = 48, order = -6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ghamoo Ra" }) -- Ghamoo-ra

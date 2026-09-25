@@ -111,8 +111,19 @@ function emitInstance(
         icon: cur?.icon ?? DEFAULT_ICONS[inst.type],
         background: cur?.background,
         backgroundCoords: cur?.backgroundCoords,
+        entrance: cur?.entrance,
       },
-      ["type", "displayName", "expansionID", "minLevel", "maxLevel", "icon", "background", "backgroundCoords"],
+      [
+        "type",
+        "displayName",
+        "expansionID",
+        "minLevel",
+        "maxLevel",
+        "icon",
+        "background",
+        "backgroundCoords",
+        "entrance",
+      ],
     ).map((l) => l + "\n"),
   );
   out.push(`    bosses = ${luaValue(encounters)},\n})\n`);

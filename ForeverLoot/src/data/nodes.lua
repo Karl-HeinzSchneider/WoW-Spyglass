@@ -225,6 +225,36 @@ local function allBossesFolder(instanceID, instance)
     })
 end
 
+-- The right pane of an instance: its level range and boss count, a button to its entrance when
+-- the curated data has one, and its quests with the character's progress.
+---@param instanceID integer
+---@param instance ForeverLoot.Instance
+---@return ForeverLoot.PanelWidget[]
+local function instancePanel(instanceID, instance)
+    local panel = {}
+    local minLevel, maxLevel = instance.minLevel, instance.maxLevel
+    if minLevel then
+        local range = maxLevel and maxLevel ~= minLevel and ("%d - %d"):format(minLevel, maxLevel)
+            or maxLevel and tostring(minLevel)
+            or ("%d+"):format(minLevel)
+        panel[#panel + 1] = { row = LEVEL or "Level", value = range }
+    end
+    panel[#panel + 1] = { row = "Bosses", value = #instance.bosses }
+    if type(instance.entrance) == "table" then
+        panel[#panel + 1] = { spacer = true }
+        panel[#panel + 1] = { button = "Show entrance", map = instance.entrance }
+    end
+    local ids = {}
+    for i, quest in ipairs(Data:GetInstanceQuests(instanceID)) do
+        ids[i] = quest.id
+    end
+    if #ids > 0 then
+        panel[#panel + 1] = { header = QUESTS_LABEL or "Quests" }
+        panel[#panel + 1] = { quests = ids }
+    end
+    return panel
+end
+
 -- An instance folder with an "All Bosses" card, one boss folder per encounter and the instance's
 -- own two categories (trash and quests), carrying the instance's metadata (`instanceID`, `minLevel`,
 -- `maxLevel`, `expansionID`) for sorting and filtering and its picture for lists that draw
@@ -252,6 +282,7 @@ function api.InstanceFolder(instanceID)
         order = instance.minLevel,
         background = instance.background,
         backgroundCoords = instance.backgroundCoords,
+        panel = instancePanel(instanceID, instance),
     })
 end
 

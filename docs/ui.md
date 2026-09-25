@@ -104,10 +104,26 @@ registers itself with the character frame, so it can't be inherited): the title 
 - `button`: `SharedGoldRedButtonSmallTemplate`. A `map` button sets a user waypoint from a plain
   `{ uiMapID, position }` table (`UiMapPoint` isn't loaded in this client) and calls
   `OpenWorldMap`.
+- `quests`: one `ForeverLootInfoQuestTemplate` line per quest the character can take (side and
+  class from `Data:GetQuest`), the title wrapped on the left, the progress on the right from
+  `C_QuestLog` (`IsQuestFlaggedCompleted`, `IsOnQuest`, `ReadyForTurnIn` / `IsComplete`).
+  Each line is a button that behaves like a quest link in chat: hover shows the game's quest
+  tooltip (`GameTooltip:SetHyperlink` with `GetQuestLink`), a modified click goes through
+  `HandleModifiedItemClick`. A quest the client hasn't loaded has no link yet; it is asked for
+  once (`C_QuestLog.RequestLoadQuestByID`) and `QUEST_DATA_LOAD_RESULT` redraws the pane, until
+  then the tooltip shows the title and id.
+
+Text that may run over one line (`text`, `description`, quest titles) sits in a FontString with
+a fixed width: the rows are measured before the layout frame places them, so a width taken from
+anchors would measure as a single line.
 
 The main window hands the pane the selected view (`SetView` in `SelectView`) and refreshes it
 when that view navigates and on `OnDataChanged`; the pane itself redraws on `OnShow`,
-`UPDATE_FACTION` and `SKILL_LINES_CHANGED`. A checkbox or dropdown only calls the view's
+`UPDATE_FACTION`, `SKILL_LINES_CHANGED`, `QUEST_LOG_UPDATE`, `QUEST_TURNED_IN` and
+`QUEST_DATA_LOAD_RESULT`. Event redraws wait for the next frame and happen once however many
+events came: asking for a quest while the lines are drawn can fire `QUEST_DATA_LOAD_RESULT`
+inside that call, and a redraw inside a redraw would release lines still being filled. A
+checkbox or dropdown only calls the view's
 `SetPanelValue`; its own state already shows the change.
 
 ## Recipe popup (`recipepopup.lua` / `.xml`)

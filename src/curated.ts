@@ -31,6 +31,8 @@ export interface CuratedInstance {
   background?: string | number;
   /** Part of `background` to show: [left, right, top, bottom] in 0..1; the whole texture when omitted. */
   backgroundCoords?: [number, number, number, number];
+  /** Where the entrance is: [uiMapID, x, y], x and y in 0..100 as the map shows them; the browser's "Show entrance" button. */
+  entrance?: [number, number, number];
   encounters: CuratedEncounter[];
   /**
    * What the instance's non-boss enemies drop. Every instance has this category, so `fix` adds
@@ -284,6 +286,18 @@ export function validate(files: CuratedFile[], checker: Checker): void {
     if (d.displayName !== undefined && (typeof d.displayName !== "string" || d.displayName === "")) {
       report(file, "`displayName` must be a non-empty string");
     }
+    if (d.entrance !== undefined) {
+      const [mapID, x, y] = Array.isArray(d.entrance) ? d.entrance : [];
+      const inRange = (n: unknown) => typeof n === "number" && n >= 0 && n <= 100;
+      if (
+        !Array.isArray(d.entrance) ||
+        d.entrance.length !== 3 ||
+        !Number.isInteger(mapID) ||
+        !inRange(x) ||
+        !inRange(y)
+      )
+        report(file, "`entrance` must be [uiMapID, x, y] with x and y in 0..100");
+    }
 
     const seenEncounters = new Set<number>();
     for (const enc of d.encounters) {
@@ -451,6 +465,7 @@ export function serialize(d: CuratedInstance): string {
     icon: d.icon,
     background: d.background,
     backgroundCoords: d.backgroundCoords,
+    entrance: d.entrance,
     encounters: d.encounters.map((e) => ({
       id: e.id,
       name: e.name,

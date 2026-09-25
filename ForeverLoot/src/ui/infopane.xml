@@ -129,6 +129,29 @@
 		<DisabledFont style="GameFontDisableSmall"/>
 	</Button>
 
+	<!-- quests: one line per quest, the title (wrapped, fixed width like the text widget) on the
+	     left and the character's progress on the right; the mixin sets the height. Hovering shows
+	     the quest's tooltip, a modified click links it in chat, as a quest link in chat does. -->
+	<Button name="ForeverLootInfoQuestTemplate" virtual="true">
+		<Size x="228" y="16"/>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString parentKey="Title" inherits="GameFontNormal" justifyH="LEFT" justifyV="TOP">
+					<Size x="156" y="0"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" x="2" y="0"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Status" inherits="GameFontHighlightSmall" justifyH="RIGHT" wordwrap="false">
+					<Size x="66" y="0"/>
+					<Anchors>
+						<Anchor point="TOPRIGHT" x="-2" y="-1"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Button>
+
 	<!-- spacer: empty space; the mixin sets the height. -->
 	<Frame name="ForeverLootInfoSpacerTemplate" virtual="true">
 		<Size x="228" y="8"/>

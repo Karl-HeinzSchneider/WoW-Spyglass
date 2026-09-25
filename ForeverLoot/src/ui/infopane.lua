@@ -17,6 +17,7 @@ local WIDGETS = {
     checkbox = { "CheckButton", "ForeverLootInfoCheckboxTemplate" },
     dropdown = { "Frame", "ForeverLootInfoDropdownTemplate" },
     button = { "Button", "ForeverLootInfoButtonTemplate" },
+    quest = { "Button", "ForeverLootInfoQuestTemplate" },
     spacer = { "Frame", "ForeverLootInfoSpacerTemplate" },
 }
 local SPACER_HEIGHT = 8
@@ -29,6 +30,7 @@ local NOT_LEARNED = "Not learned"
 ---@field pools table<string, ForeverLoot.FramePool>
 ---@field layoutIndex integer
 ---@field view? ForeverLoot.View
+---@field refreshQueued? boolean  # an event redraw is scheduled for the next frame
 ForeverLootInfoPaneMixin = {}
 app.ui.InfoPaneMixin = ForeverLootInfoPaneMixin
 
@@ -38,18 +40,31 @@ function ForeverLootInfoPaneMixin:OnLoad()
         self.pools[kind] = CreateFramePool(template[1], self.Content, template[2]) --[[@as ForeverLoot.FramePool]]
     end
     self.layoutIndex = 0
-    -- The bars show the character's standing and skill.
+    -- The bars show the character's standing and skill, the quest lines its quest progress.
     self:RegisterEvent("UPDATE_FACTION")
     self:RegisterEvent("SKILL_LINES_CHANGED")
+    self:RegisterEvent("QUEST_LOG_UPDATE")
+    self:RegisterEvent("QUEST_TURNED_IN")
+    -- A quest the client hadn't loaded arrived: its title and link are known now.
+    self:RegisterEvent("QUEST_DATA_LOAD_RESULT")
 end
 
 function ForeverLootInfoPaneMixin:OnShow()
     self:Refresh()
 end
 
+-- Redraws on the next frame, once for any number of events. Never directly: drawing the quest
+-- lines asks the server for quests, whose QUEST_DATA_LOAD_RESULT can fire inside that call, and
+-- a Refresh inside a Refresh releases the lines the outer one is still filling.
 function ForeverLootInfoPaneMixin:OnEvent()
-    if self:IsVisible() then
-        self:Refresh()
+    if self:IsVisible() and not self.refreshQueued then
+        self.refreshQueued = true
+        C_Timer.After(0, function()
+            self.refreshQueued = nil
+            if self:IsVisible() then
+                self:Refresh()
+            end
+        end)
     end
 end
 
@@ -156,9 +171,100 @@ function ForeverLootInfoPaneMixin:AddWidget(view, node, index, widget)
         frame:SetScript("OnClick", function()
             self:RunButton(view, node, widget)
         end)
+    elseif widget.quests then
+        self:AddQuests(widget.quests)
     elseif widget.spacer then
         local frame = self:Acquire("spacer")
         frame:SetHeight(type(widget.spacer) == "number" and widget.spacer --[[@as number]] or SPACER_HEIGHT)
+    end
+end
+
+----------------------------------------------------------------------------------------------------
+-- Quests
+----------------------------------------------------------------------------------------------------
+
+-- The character's progress on a quest, as text and color: turned in, objectives complete,
+-- in the quest log, or not taken yet.
+---@param questID integer
+---@return string, ColorMixin
+local function questStatus(questID)
+    local questLog = C_QuestLog
+    if questLog.IsQuestFlaggedCompleted(questID) then
+        return "Done", GREEN_FONT_COLOR
+    end
+    if questLog.IsOnQuest(questID) then
+        if questLog.ReadyForTurnIn(questID) or questLog.IsComplete(questID) then
+            return "Ready", YELLOW_FONT_COLOR
+        end
+        return "Active", HIGHLIGHT_FONT_COLOR
+    end
+    return "Not started", GRAY_FONT_COLOR
+end
+
+-- Quests asked from the server once, so a quest it never answers for can't redraw in a loop.
+---@type table<integer, true>
+local requestedQuests = {}
+
+-- The quest's chat link; nil until the client has the quest's data, which is then asked for
+-- (QUEST_DATA_LOAD_RESULT redraws the pane).
+---@param questID integer
+---@return string?
+local function questLink(questID)
+    local link = GetQuestLink(questID)
+    if not link and not requestedQuests[questID] and C_QuestLog.RequestLoadQuestByID then
+        requestedQuests[questID] = true
+        C_QuestLog.RequestLoadQuestByID(questID)
+    end
+    return link
+end
+
+-- A quest line's tooltip: the game's own quest tooltip from its link, else the title and id
+-- while the client doesn't have the quest yet.
+---@param line Button|{ questID: integer }
+local function showQuestTooltip(line)
+    GameTooltip:SetOwner(line, "ANCHOR_RIGHT")
+    local link = questLink(line.questID)
+    if link then
+        GameTooltip:SetHyperlink(link)
+    else
+        GameTooltip:SetText(app.data:GetQuestName(line.questID), NORMAL_FONT_COLOR:GetRGB())
+        GameTooltip:AddLine(("Quest #%d"):format(line.questID), HIGHLIGHT_FONT_COLOR:GetRGB())
+    end
+    GameTooltip:Show()
+end
+
+-- A modified click links the quest in chat, like a quest link there.
+---@param line Button|{ questID: integer }
+local function linkQuest(line)
+    local link = questLink(line.questID)
+    if link then
+        HandleModifiedItemClick(link)
+    end
+end
+
+-- One line per quest the character can do: quests of the other faction and class quests of
+-- other classes are left out.
+---@param questIDs integer[]
+function ForeverLootInfoPaneMixin:AddQuests(questIDs)
+    local playerSide = UnitFactionGroup("player")
+    local _, playerClass = UnitClass("player")
+    for _, questID in ipairs(questIDs) do
+        local quest = app.data:GetQuest(questID)
+        local side, class = quest and quest.side, quest and quest.class
+        local forSide = side ~= "Alliance" and side ~= "Horde" or side == playerSide
+        if forSide and (not class or class == playerClass) then
+            local frame = self:Acquire("quest") --[[@as Button|{ Title: FontString, Status: FontString, questID: integer }]]
+            frame.questID = questID
+            questLink(questID) -- loads the quest ahead of hover and click
+            frame:SetScript("OnEnter", showQuestTooltip)
+            frame:SetScript("OnLeave", GameTooltip_Hide)
+            frame:SetScript("OnClick", linkQuest)
+            frame.Title:SetText(app.data:GetQuestName(questID))
+            local text, color = questStatus(questID)
+            frame.Status:SetText(text)
+            frame.Status:SetTextColor(color:GetRGB())
+            frame:SetHeight(math.max(14, frame.Title:GetStringHeight()))
+        end
     end
 end
 

@@ -81,6 +81,7 @@ local RECIPE = {
 ---@field icon? string|number
 ---@field background? string|number  # wide picture for the instance's tile in the browser
 ---@field backgroundCoords? number[]  # { left, right, top, bottom } of `background` to show
+---@field entrance? number[]  # { uiMapID, x, y } of the entrance, x and y in 0..100
 
 ---@class ForeverLoot.Boss
 ---@field npcID? integer  # optional; not in the generated data

@@ -154,7 +154,8 @@ The instance:
 | `map`                            | The game's map id. Required.                                                                                            |
 | `id`, `name`                     | Only on a split dungeon, see below.                                                                                     |
 | `displayName`                    | A shorter name for the browser, see below.                                                                              |
-| `minLevel`, `maxLevel`           | The level range shown on the tile.                                                                                      |
+| `minLevel`, `maxLevel`           | The level range shown on the tile and in the info panel.                                                                |
+| `entrance`                       | `[uiMapID, x, y]` of the entrance (x, y in 0–100, as the map shows them): the info panel's "Show entrance" button.      |
 | `icon`                           | Texture path.                                                                                                           |
 | `background`, `backgroundCoords` | The tile's picture: a texture path or fileID, and `[left, right, top, bottom]` in 0–1 of it (all of it when omitted).   |
 | `encounters`                     | The bosses. `fix` adds every encounter the game knows for the map that the file doesn't list yet, with an empty `loot`. |
@@ -193,6 +194,15 @@ Any instance file may set `displayName` (e.g. `"SM: Graveyard"`), which the brow
 of the full name on the instance's tile, breadcrumbs and page title, in every language. Item
 tooltips and the _Instance_ filter keep the full name. `fix` leaves it alone; an empty one is an
 error.
+
+### The info panel of an instance
+
+While an instance is open, the window's right column shows its level range and boss count, a
+"Show entrance" button when the file has an `entrance` (it opens the map with a waypoint there;
+the game tables of this client carry no dungeon entrances, so they are curated), and the
+instance's `quests` with the character's progress on each: done, ready to turn in, active or not
+started. Quests of the other faction and other classes' quests are left out. Each quest shows the game's quest
+tooltip on hover and can be shift-clicked into chat.
 
 ### A boss's picture: `portrait` or `displayID`
 

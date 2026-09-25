@@ -66,7 +66,7 @@ local log = app.logger
 
 -- One widget of a node's info panel (the window's right pane), top to bottom. The type is the
 -- one type key it carries (header, text, description, row, bar, checkbox, dropdown, button,
--- spacer); the other fields are its options. See docs/API.md, "Info panel".
+-- quests, spacer); the other fields are its options. See docs/API.md, "Info panel".
 ---@class ForeverLoot.PanelWidget
 ---@field header? string  # a section plate
 ---@field text? string  # wrapped text
@@ -86,6 +86,7 @@ local log = app.logger
 ---@field open? string  # button: path of the collection to open, "<module>/<list id>[/<category>...]"
 ---@field map? number[]  # button: { uiMapID, x, y }, x and y in 0..100
 ---@field onClick? fun(node: ForeverLoot.Node, view: ForeverLoot.View)  # button
+---@field quests? integer[]  # quest ids, one line each: title and the character's progress (done, ready, active)
 ---@field spacer? boolean|number  # empty space; a number is its height
 
 -- What api.ListFolder / api.ListFolders may be told about a list, so a module can regroup a
