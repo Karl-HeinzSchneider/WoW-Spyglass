@@ -27,6 +27,13 @@ local profile = {
 ---@class ForeverLoot.DB.Char
 local char = {
     loot = {},
+    -- The window's open tabs, written whenever one opens, closes, is selected or navigates.
+    -- `paths[i]` = the names of the folders tab i has open below the root (empty = the root);
+    -- `selected` = the index of the selected tab.
+    tabs = {
+        paths = {},
+        selected = 1,
+    },
 }
 
 -- Account-wide data shared by every character.

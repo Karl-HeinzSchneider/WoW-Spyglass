@@ -1312,6 +1312,45 @@ function ForeverLootViewMixin:OpenPath(path)
     return true
 end
 
+-- Where the tab is, for the SavedVariables: the name of every folder below the root.
+---@return string[]
+function ForeverLootViewMixin:GetSavedPath()
+    local names = {}
+    for i = 2, #self.path do
+        names[#names + 1] = self.path[i].name
+    end
+    return names
+end
+
+-- Opens a path GetSavedPath saved in an earlier session: each name picks a folder among the
+-- entries of the one before it, subheaders' and groups' included. A name that matches nothing
+-- (the module is gone, the client's language changed) ends the path there.
+---@param names string[]
+function ForeverLootViewMixin:RestorePath(names)
+    local nodes = { self.path[1] }
+    for _, name in ipairs(names) do
+        local found
+        for _, child in ipairs(self:GetChildren(nodes[#nodes])) do
+            for _, entry in ipairs(child.items or { child }) do
+                if app.api.IsFolder(entry) and entry.name == name then
+                    found = entry
+                    break
+                end
+            end
+            if found then
+                break
+            end
+        end
+        if not found then
+            break
+        end
+        nodes[#nodes + 1] = found
+    end
+    self.path = nodes
+    self.pathPages = {}
+    self:Navigate()
+end
+
 ---@param text string
 function ForeverLootViewMixin:SetSearch(text)
     local q = self:GetCurrentQuery()

@@ -28,6 +28,7 @@ end
 
 -- Called after OnInitialize and whenever the addon is re-enabled. Register events here.
 function addon:OnEnable()
+    app.ui.mainWindow:RestoreTabs()
     -- PLAYER_LOGIN is still behind the loading screen: load the tile pictures now, so no tile is
     -- drawn before its picture has loaded.
     app.ui.mainWindow.views[1]:PreloadTilePictures()

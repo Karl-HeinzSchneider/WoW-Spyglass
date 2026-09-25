@@ -19,7 +19,12 @@ _Frame_, so clicks arrive through `SetCustomOnMouseUpHandler`).
 
 The tabs work like a browser's: one per open _view_ (icon = the deepest node that has one,
 tooltip = its title) plus a `+` tab; right-click closes one, and `RebuildTabs()` lays the strip
-out again from a pool. The window is draggable and its position is saved to `profile.window`.
+out again from a pool. The open tabs survive the session: `SaveTabs()` writes them to
+`char.tabs` (per tab the names of the folders open below the root, plus the selected tab)
+whenever one opens, closes, is selected or navigates, and `RestoreTabs()` reopens them from
+`OnEnable`, when every module is registered, following each path by name as far as it still
+matches. Search text, filters, panel settings and the page are not kept. The window is
+draggable and its position is saved to `profile.window`.
 The root node comes from `app.api:GetRootNode()`; the window listens to `OnModulesChanged`,
 `OnDataChanged` and `OnFiltersChanged`.
 

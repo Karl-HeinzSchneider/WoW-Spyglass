@@ -86,6 +86,7 @@ end
 ---@field tabs ForeverLoot.SideTab[]  # in display order; the last one is the "+" tab
 ---@field viewToTab table<ForeverLoot.View, ForeverLoot.SideTab>
 ---@field selectedView? ForeverLoot.View
+---@field tabsRestored? boolean  # RestoreTabs has run; until then SaveTabs keeps the saved tabs
 ForeverLootMainWindowMixin = {}
 app.ui.MainWindowMixin = ForeverLootMainWindowMixin
 
@@ -180,6 +181,7 @@ function ForeverLootMainWindowMixin:OpenView()
         if v == self.selectedView then
             self.RightPane.Info:Refresh()
         end
+        self:SaveTabs()
     end
     view:SetRoot(app.api:GetRootNode())
     self.views[#self.views + 1] = view
@@ -211,6 +213,7 @@ function ForeverLootMainWindowMixin:CloseView(view)
     if wasSelected then
         self:SelectView(self.views[math.min(index, #self.views)])
     end
+    self:SaveTabs()
 end
 
 -- Lays the tab strip out from scratch: one tab per view in order, then the "+" tab, stacked
@@ -258,6 +261,7 @@ function ForeverLootMainWindowMixin:SelectView(view)
             tab:SetChecked(v == view)
         end
     end
+    self:SaveTabs()
 end
 
 -- Left-click selects (or opens, on the "+" tab), right-click closes.
@@ -283,6 +287,41 @@ function ForeverLootMainWindowMixin:UpdateTab(view)
     if tab then
         tab:SetView(view)
     end
+end
+
+----------------------------------------------------------------------------------------------------
+-- Tabs across sessions (persisted per character)
+----------------------------------------------------------------------------------------------------
+
+-- Writes the open tabs to `char.tabs`. Does nothing before RestoreTabs: modules registering at
+-- load time navigate the first tab, and that must not overwrite the tabs of the last session.
+function ForeverLootMainWindowMixin:SaveTabs()
+    if not app.db or not self.tabsRestored then
+        return
+    end
+    local paths = {}
+    for i, view in ipairs(self.views) do
+        paths[i] = view:GetSavedPath()
+    end
+    local saved = app.db.char.tabs
+    saved.paths = paths
+    saved.selected = tIndexOf(self.views, self.selectedView) or 1
+end
+
+-- Reopens the tabs of the last session. Called once from OnEnable, when every module is
+-- registered. The views are hidden while they navigate, so only the selected one lays out.
+function ForeverLootMainWindowMixin:RestoreTabs()
+    local saved = app.db.char.tabs
+    if #saved.paths > 0 then
+        for i, names in ipairs(saved.paths) do
+            local view = self.views[i] or self:OpenView()
+            view:Hide()
+            view:RestorePath(names)
+        end
+        self:SelectView(self.views[saved.selected] or self.views[1])
+    end
+    self.tabsRestored = true
+    self:SaveTabs()
 end
 
 ----------------------------------------------------------------------------------------------------

@@ -30,8 +30,8 @@ be listed**. The order follows these rules:
   Companions log through the public `ForeverLoot.Log` / `LogAt` wrappers in `registry.lua`.
 - `db.lua` — `app.dbDefaults` for AceDB: `profile` = user settings (`logLevel`, `minimap`,
   `window` anchor; `minimapPos` = 245° so an undragged button doesn't sit on LibDBIcon's shared
-  225° default), `char.loot` = a placeholder for the planned loot history (nothing reads or
-  writes it yet), `global.dbVersion`. Scraper state deliberately lives in the scraper.
+  225° default), `char.tabs` = the window's open tabs (see `docs/ui.md`), `char.loot` = a
+  placeholder for the planned loot history (nothing reads or writes it yet), `global.dbVersion`. Scraper state deliberately lives in the scraper.
 - `registry.lua` — `app.api`, which **is the public global `ForeverLoot`**: `API_VERSION`, the
   module registry and `GetRootNode()`, the node constructors, grouping, the slash-command
   extension registry and the CallbackHandler events. Its private parts: `app.commands` (the
