@@ -7,6 +7,7 @@
   "zone": 1423,
   "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Stratholme",
   "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],
+  "entrance": [1423, 31, 16],
   "encounters": [
     {
       "id": 473,

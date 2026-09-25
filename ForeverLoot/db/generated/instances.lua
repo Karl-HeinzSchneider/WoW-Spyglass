@@ -320,9 +320,11 @@ Data:AddInstance(22901, {
     minLevel = 55,
     maxLevel = 60,
     requiredLevel = 45,
+    zone = 1428,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-BlackrockSpire",
     backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
+    entrance = { 1428, 29, 38 },
     bosses = { 267, 268, 269, 270, 271, 272, 274, 273, 275 },
 })
 Data:AddBoss(267, { instanceID = 22901, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Highlord Omokk" }) -- Highlord Omokk
@@ -342,9 +344,11 @@ Data:AddInstance(22902, {
     minLevel = 58,
     maxLevel = 60,
     requiredLevel = 45,
+    zone = 1428,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-BlackrockSpire",
     backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
+    entrance = { 1428, 29, 38 },
     bosses = { 3062, 3063, 3068, 3069, 3070 },
 })
 Data:AddBoss(3062, { instanceID = 22902, order = 9000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Pyroguard Emberseer" }) -- Pyroguard Emberseer
@@ -360,9 +364,11 @@ Data:AddInstance(230, {
     minLevel = 52,
     maxLevel = 60,
     requiredLevel = 40,
+    zone = 1428,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-BlackrockDepths",
     backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
+    entrance = { 1428, 29, 38 },
     bosses = { 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 2791, 242, 243, 244, 2789, 2790 },
 })
 Data:AddBoss(227, { instanceID = 230, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-High Interrogator Gerstahn" }) -- High Interrogator Gerstahn
@@ -459,6 +465,7 @@ Data:AddInstance(329, {
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Stratholme",
     backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 },
+    entrance = { 1423, 31, 16 },
     bosses = { 473, 474, 476, 475, 477, 478, 472, 479, 480, 481, 482, 483, 484, 2795, 2796, 2797, 2798, 2799, 2800 },
 })
 Data:AddBoss(473, { instanceID = 329, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hearthsinger Forresten" }) -- Hearthsinger Forresten
@@ -761,6 +768,7 @@ Data:AddInstance(2875, {
     expansionID = 0,
     zone = 1430,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
+    entrance = { 1430, 46, 75 },
     bosses = { 3141, 3146, 3144, 3145, 3143, 3152, 3168, 3169, 3170, 3171, 3172 },
 })
 Data:AddBoss(3141, { instanceID = 2875, order = 0 }) -- Harbinger of Sin
@@ -792,6 +800,7 @@ Data:AddInstance(2959, {
     maxLevel = 33,
     zone = 1416,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
+    entrance = { 1416, 17, 67 },
     bosses = { 3298, 3299, 3300, 3301, 3302, 3303, 3310, 3311, 3312 },
 })
 Data:AddBoss(3298, { instanceID = 2959, order = 0 }) -- Arcane Anomaly
@@ -812,6 +821,7 @@ Data:AddInstance(2998, {
     maxLevel = 29,
     zone = 1437,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
+    entrance = { 1437, 42, 60 },
     bosses = { 3480, 3481, 3644, 3482 },
 })
 Data:AddBoss(3480, { instanceID = 2998, order = 0 }) -- Saltspine
@@ -829,6 +839,7 @@ Data:AddInstance(2999, {
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = 7963782,
     backgroundCoords = { 0.0445, 0.9552, 0.158, 0.842 },
+    entrance = { 1420, 62, 69 },
     bosses = { 3353, 3357, 3355, 3354, 3408, 3411, 3412 },
 })
 Data:AddBoss(3353, { instanceID = 2999, order = 0, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\witherfang.blp", displayID = 144189 }) -- Witherfang
@@ -859,6 +870,7 @@ Data:AddInstance(3065, {
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = 7963781,
     backgroundCoords = { 0.0445, 0.9552, 0.158, 0.842 },
+    entrance = { 1455, 43, 51 },
     bosses = { 3493, 3495, 3494, 3496 },
 })
 Data:AddBoss(3493, { instanceID = 3065, order = 0, portrait = "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\faldrim_anvilmar.blp", displayID = 142826 }) -- Faldrim Anvilmar

@@ -5,8 +5,10 @@
   "minLevel": 55,
   "maxLevel": 60,
   "requiredLevel": 45,
+  "zone": 1428,
   "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-BlackrockSpire",
   "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],
+  "entrance": [1428, 29, 38],
   "encounters": [
     {
       "id": 267,

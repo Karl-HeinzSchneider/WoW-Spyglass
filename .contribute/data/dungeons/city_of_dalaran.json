@@ -4,6 +4,7 @@
   "minLevel": 28,
   "maxLevel": 33,
   "zone": 1416,
+  "entrance": [1416, 17, 67],
   "encounters": [
     {
       "id": 3298,

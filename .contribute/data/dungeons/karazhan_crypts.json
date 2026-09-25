@@ -2,6 +2,7 @@
   "map": 2875,
   "name": "Karazhan Crypts",
   "zone": 1430,
+  "entrance": [1430, 46, 75],
   "encounters": [
     {
       "id": 3141,
