@@ -87,6 +87,12 @@ export interface CuratedQuest {
   side?: string;
   /** The class a class quest is for ("Warlock"); omitted means any class. */
   class?: string;
+  /** The level a character needs to accept the quest. Curated, not shipped yet. */
+  requiredLevel?: number;
+  /** The experience the quest rewards. Curated, not shipped yet. */
+  xp?: number;
+  /** What the quest asks for, in one sentence. Curated, not shipped yet. */
+  objective?: string;
   /** The items the quest rewards. */
   items: CuratedItemRow[];
 }
@@ -452,6 +458,15 @@ function validateQuests(file: CuratedFile, checker: Checker): void {
     if (quest.class !== undefined && !QUEST_CLASSES.includes(quest.class)) {
       checker.report(file, `quest ${quest.id}: \`class\` must be one of ${QUEST_CLASSES.join(", ")}`);
     }
+    if (quest.requiredLevel !== undefined && (!Number.isInteger(quest.requiredLevel) || quest.requiredLevel < 1)) {
+      checker.report(file, `quest ${quest.id}: \`requiredLevel\` must be a level (an integer from 1)`);
+    }
+    if (quest.xp !== undefined && (!Number.isInteger(quest.xp) || quest.xp < 0)) {
+      checker.report(file, `quest ${quest.id}: \`xp\` must be a non-negative integer`);
+    }
+    if (quest.objective !== undefined && (typeof quest.objective !== "string" || quest.objective === "")) {
+      checker.report(file, `quest ${quest.id}: \`objective\` must be a non-empty string`);
+    }
     if (!Array.isArray(quest.items)) {
       checker.report(file, `quest ${quest.id}: \`items\` must be an array`, true);
       if (checker.fix) quest.items = [];
@@ -495,6 +510,9 @@ export function serialize(d: CuratedInstance): string {
       name: q.name,
       side: q.side,
       class: q.class,
+      requiredLevel: q.requiredLevel,
+      xp: q.xp,
+      objective: q.objective,
       items: (q.items ?? []).map((r) => ({ item: r.item, name: r.name })),
     })),
   };

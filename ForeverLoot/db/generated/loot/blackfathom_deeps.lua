@@ -56,32 +56,39 @@ Data:AddQuests(48, {
     { id = 1200, name = "Blackfathom Villainy", side = "Alliance", items = {
         { 7001 }, -- Gravestone Scepter
         { 7002 }, -- Arctic Buckler
+        { 270031 }, -- Dark Ritual Leggings
+        { 270032 }, -- Cultist's Armguards
     } },
     { id = 6561, name = "Blackfathom Villainy", side = "Horde", items = {
         { 7001 }, -- Gravestone Scepter
         { 7002 }, -- Arctic Buckler
+        { 270031 }, -- Dark Ritual Leggings
+        { 270032 }, -- Cultist's Armguards
     } },
     { id = 1199, name = "Twilight Falls", side = "Alliance", items = {
         { 6998 }, -- Nimbus Boots
         { 7000 }, -- Heartwood Girdle
+        { 270025 }, -- Silvered Gauntlets
     } },
-    { id = 6564, name = "Allegiance to the Old Gods", items = {} },
+    { id = 6564, name = "Allegiance to the Old Gods", side = "Horde", items = {} },
     { id = 6565, name = "Allegiance to the Old Gods", side = "Horde", items = {
         { 17694 }, -- Band of the Fist
         { 17695 }, -- Chestnut Mantle
     } },
-    { id = 1275, name = "Researching the Corruption", side = "Both", items = {
+    { id = 1275, name = "Researching the Corruption", side = "Alliance", items = {
         { 7003 }, -- Beetle Clasps
         { 7004 }, -- Prelacy Cape
+        { 270021 }, -- Staghide Armguards
     } },
     { id = 1740, name = "The Orb of Soran'ruk", side = "Both", class = "WARLOCK", items = {
         { 6898 }, -- Orb of Soran'ruk
         { 15109 }, -- Staff of Soran'ruk
     } },
-    { id = 971, name = "Knowledge in the Deeps", side = "Both", items = {
+    { id = 971, name = "Knowledge in the Deeps", side = "Alliance", items = {
         { 6743 }, -- Sustaining Ring
     } },
-    { id = 6563, name = "The Essence of Aku'Mai", items = {} },
-    { id = 6562, name = "Trouble in the Deeps", items = {} },
-    { id = 1198, name = "In Search of Thaelrid", items = {} },
+    { id = 6563, name = "The Essence of Aku'Mai", side = "Horde", items = {} },
+    { id = 6562, name = "Trouble in the Deeps", side = "Horde", items = {} },
+    { id = 1198, name = "In Search of Thaelrid", side = "Alliance", items = {} },
+    { id = 6921, name = "Amongst the Ruins", side = "Horde", items = {} },
 })

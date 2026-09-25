@@ -58,23 +58,28 @@ Data:AddTrashLoot(43, {
 
 Data:AddQuests(43, {
     { id = 914, name = "Leaders of the Fang", side = "Horde", items = {
-        { 6504 }, -- Wingblade
         { 6505 }, -- Crescent Staff
+        { 6504 }, -- Wingblade
+        { 270018 }, -- Hammerbone
     } },
     { id = 1486, name = "Deviate Hides", side = "Both", items = {
         { 6480 }, -- Slick Deviate Leggings
+        { 918 }, -- Deviate Hide Pack
     } },
     { id = 962, name = "Serpentbloom", side = "Horde", items = {
         { 10919 }, -- Apothecary Gloves
+        { 270008 }, -- Heat Resistant Mitts
+        { 270009 }, -- Safety Boots
     } },
     { id = 1487, name = "Deviate Eradication", side = "Both", items = {
-        { 6481 }, -- Dagmire Gauntlets
+        { 6476 }, -- Pattern: Deviate Scale Belt
         { 8071 }, -- Sizzle Stick
+        { 6481 }, -- Dagmire Gauntlets
     } },
     { id = 1489, name = "Hamuul Runetotem", items = {} },
     { id = 1490, name = "Nara Wildmane", items = {} },
-    { id = 1491, name = "Smart Drinks", items = {} },
-    { id = 959, name = "Trouble at the Docks", items = {} },
+    { id = 1491, name = "Smart Drinks", side = "Both", items = {} },
+    { id = 959, name = "Trouble at the Docks", side = "Both", items = {} },
     { id = 3366, name = "The Glowing Shard", items = {} },
-    { id = 6981, name = "The Glowing Shard", items = {} },
+    { id = 6981, name = "The Glowing Shard", side = "Both", items = {} },
 })

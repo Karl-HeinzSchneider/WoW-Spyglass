@@ -70,12 +70,16 @@ Data:AddTrashLoot(33, {
 Data:AddQuests(33, {
     { id = 1098, name = "Deathstalkers in Shadowfang", side = "Horde", items = {
         { 3324 }, -- Ghostly Mantle
+        { 270023 }, -- Tanned Shoulderpads
+        { 270024 }, -- Bronzed Shoulderguards
     } },
     { id = 1014, name = "Arugal Must Die", side = "Horde", items = {
         { 6414 }, -- Seal of Sylvanas
     } },
     { id = 1013, name = "The Book of Ur", side = "Horde", items = {
         { 6335 }, -- Grizzled Boots
+        { 4534 }, -- #4534
+        { 270030 }, -- Tattered Mittens
     } },
     { id = 1740, name = "The Orb of Soran'ruk", side = "Both", class = "WARLOCK", items = {
         { 6898 }, -- Orb of Soran'ruk

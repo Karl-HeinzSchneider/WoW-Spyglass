@@ -34,7 +34,7 @@ Data:AddBossLoot(3412, { -- Bjork
 })
 
 Data:AddQuests(2999, {
-    { id = 92422, name = "The Wrath of Rath'mael", side = "Both", items = {
+    { id = 92422, name = "The Wrath of Rath'mael", side = "Horde", items = {
         { 251533 }, -- Forsaken Greataxe
         { 251534 }, -- Gnarled Necromancer's Staff
     } },
@@ -59,7 +59,14 @@ Data:AddQuests(2999, {
         { 279877 }, -- Blight Gloves
     } },
     { id = 97288, name = "Unending Torment", side = "Horde", items = {} },
-    { id = 92401, name = "A Frightened Request", side = "Horde", items = {} },
-    { id = 95189, name = "Crest of Lordaeron", side = "Alliance", items = {} },
-    { id = 95204, name = "Crest of Lordaeron", items = {} },
+    { id = 92401, name = "A Frightened Request", side = "Horde", items = {
+        { 251485 }, -- Edwards' Knife
+        { 251486 }, -- Tabitha's Cuffs
+    } },
+    { id = 95189, name = "Crest of Lordaeron", side = "Alliance", items = {
+        { 280567 }, -- Small Sack of Gems
+    } },
+    { id = 95204, name = "Crest of Lordaeron", side = "Horde", items = {
+        { 280567 }, -- Small Sack of Gems
+    } },
 })

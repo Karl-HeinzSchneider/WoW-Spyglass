@@ -25,6 +25,7 @@ Data:AddBossLoot(3496, { -- Durgen Dirgehammer
     { 270256 }, -- Durgen's Crescent Axe
     { 270260 }, -- Direhammer Leggings
     { 270261 }, -- Robes of the Disgraced Thane
+    { 274286 }, -- Durgen Dirgehammer's Head
 })
 
 Data:AddQuests(3065, {
@@ -45,4 +46,5 @@ Data:AddQuests(3065, {
         { 279897 }, -- Dusty Belt
         { 280095 }, -- Cryptwalker Bracers
     } },
+    { id = 98423, name = "The Treaty of Understanding", side = "Alliance", items = {} },
 })

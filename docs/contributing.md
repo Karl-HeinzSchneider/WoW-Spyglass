@@ -247,13 +247,16 @@ filter.
 
 `quests` is a list of quest objects, in the order they should be shown:
 
-| Field   | Type    | Meaning                                                                                                                                                             |
-| ------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `id`    | integer | The quest id, and the only field checked against anything: positive, and listed once per file. A quest without one is a warning and isn't shipped until it has one. |
-| `name`  | string  | The quest's title. Curated, because this client ships no quest table: `fix` never rewrites it, and a quest without one is a warning.                                |
-| `side`  | string  | `"Alliance"`, `"Horde"` or `"Both"`; omitting it means `"Both"`. Anything else is an error.                                                                         |
-| `class` | string  | A class quest's class: `"Warrior"`, `"Paladin"`, `"Hunter"`, `"Rogue"`, `"Priest"`, `"Shaman"`, `"Mage"`, `"Warlock"` or `"Druid"`; omitted means any class.        |
-| `items` | array   | The items the quest rewards: item rows without a `chance`. May be empty.                                                                                            |
+| Field           | Type    | Meaning                                                                                                                                                             |
+| --------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`            | integer | The quest id, and the only field checked against anything: positive, and listed once per file. A quest without one is a warning and isn't shipped until it has one. |
+| `name`          | string  | The quest's title. Curated, because this client ships no quest table: `fix` never rewrites it, and a quest without one is a warning.                                |
+| `side`          | string  | `"Alliance"`, `"Horde"` or `"Both"`; omitting it means `"Both"`. Anything else is an error.                                                                         |
+| `class`         | string  | A class quest's class: `"Warrior"`, `"Paladin"`, `"Hunter"`, `"Rogue"`, `"Priest"`, `"Shaman"`, `"Mage"`, `"Warlock"` or `"Druid"`; omitted means any class.        |
+| `requiredLevel` | integer | The level a character needs to accept the quest. Not shipped yet.                                                                                                   |
+| `xp`            | integer | The experience the quest rewards. Not shipped yet.                                                                                                                  |
+| `objective`     | string  | What the quest asks for, in one sentence. Not shipped yet.                                                                                                          |
+| `items`         | array   | The items the quest rewards: item rows without a `chance`. May be empty.                                                                                            |
 
 The quest ids are the ones a boss's `quests` field lists: a boss that hands out or is the
 objective of a quest names the id there, and the quest and its rewards are described once here.
