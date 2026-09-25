@@ -24,7 +24,7 @@
 		<Frames>
 			<Button parentKey="CloseButton" inherits="UIPanelCloseButtonDefaultAnchors"/>
 
-			<!-- Right column: meta data about what the left column shows (filled in later). -->
+			<!-- Right column: the info panel of what the selected tab shows (infopane.xml). -->
 			<Frame parentKey="RightPane">
 				<Size x="260"/>
 				<Anchors>
@@ -35,15 +35,15 @@
 					<Layer level="BACKGROUND">
 						<Texture atlas="UI-Character-Info-Stat-BG" setAllPoints="true"/>
 					</Layer>
-					<Layer level="ARTWORK">
-						<FontString parentKey="Title" inherits="GameFontNormalMed3" justifyH="CENTER">
-							<Anchors>
-								<Anchor point="TOP" x="0" y="-14"/>
-							</Anchors>
-						</FontString>
-					</Layer>
 				</Layers>
 				<Frames>
+					<!-- Insets as the character frame's side panes have them in its right column. -->
+					<Frame parentKey="Info" inherits="ForeverLootInfoPaneTemplate">
+						<Anchors>
+							<Anchor point="TOPLEFT" x="16" y="-14"/>
+							<Anchor point="BOTTOMRIGHT" x="-12" y="14"/>
+						</Anchors>
+					</Frame>
 					<!-- The seam between the columns, drawn above the window border (NineSlice is 500). -->
 					<Frame parentKey="Divider" frameLevel="505">
 						<Size x="11"/>

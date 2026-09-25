@@ -6,6 +6,15 @@ Data:AddList("reputation", "cenarion_circle", {
     name = "Cenarion Circle",
     icon = "Interface\\Icons\\Achievement_Reputation_01",
     factionID = 609,
+    panel = {
+        { bar = "reputation" },
+        { description = true },
+        { header = "Rewards" },
+        { checkbox = "Only reached standings", filter = "standing" },
+        { dropdown = "Standing", field = "standing" },
+        { header = "Where" },
+        { button = "Show Cenarion Hold", map = { 1451, 51.2, 38.3 } },
+    },
 })
 Data:AddListLoot("reputation", "cenarion_circle", {
     { 20732, standing = "Friendly" }, -- Formula: Enchant Cloak - Greater Fire Resistance

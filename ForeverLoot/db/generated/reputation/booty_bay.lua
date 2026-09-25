@@ -6,6 +6,13 @@ Data:AddList("reputation", "booty_bay", {
     name = "Booty Bay",
     icon = "Interface\\Icons\\Achievement_Reputation_01",
     factionID = 21,
+    panel = {
+        { bar = "reputation" },
+        { description = true },
+        { header = "Rewards" },
+        { checkbox = "Only reached standings", filter = "standing" },
+        { dropdown = "Standing", field = "standing" },
+    },
 })
 Data:AddListLoot("reputation", "booty_bay", {
     { 274745, standing = "Friendly" }, -- Deckswabber's Mitts

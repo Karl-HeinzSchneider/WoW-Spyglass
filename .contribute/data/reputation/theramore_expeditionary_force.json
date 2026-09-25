@@ -3,6 +3,25 @@
   "icon": "Interface\\Icons\\Achievement_Reputation_01",
   "info": "Alliance",
   "faction": 2799,
+  "panel": [
+    {
+      "bar": "reputation"
+    },
+    {
+      "description": true
+    },
+    {
+      "header": "Rewards"
+    },
+    {
+      "checkbox": "Only reached standings",
+      "filter": "standing"
+    },
+    {
+      "dropdown": "Standing",
+      "field": "standing"
+    }
+  ],
   "rewards": {
     "Friendly": [
       {

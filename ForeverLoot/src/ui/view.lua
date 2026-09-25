@@ -780,6 +780,7 @@ end
 ---@field ResultCount FontString
 ---@field queries table<ForeverLoot.Node, ForeverLoot.Query>  # filter state per query node, for this tab
 ---@field resultCount integer  # size of the last query result
+---@field panelState table<ForeverLoot.Node, table<integer, any>>  # per panel node: the value of each checkbox/dropdown widget (by index), for this tab
 ---@field crumbPool ForeverLoot.FramePool
 ---@field separatorPool ForeverLoot.FramePool
 ---@field rowHeight number
@@ -867,6 +868,7 @@ function ForeverLootViewMixin:OnLoad()
     self.pendingItems = {}
     self.regroupItems = {}
     self.queries = {}
+    self.panelState = {}
     self.resultCount = 0
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
 
@@ -1106,6 +1108,208 @@ end
 function ForeverLootViewMixin:OnQueryChanged()
     self.PagingControls:SetCurrentPage(1)
     self:Refresh()
+end
+
+----------------------------------------------------------------------------------------------------
+-- Info panel: the right pane's widgets for the current path, and what they do to the list
+----------------------------------------------------------------------------------------------------
+
+-- Standings as the curated rows spell them, in the game's order.
+local STANDING_RANK = {
+    Hated = 1,
+    Hostile = 2,
+    Unfriendly = 3,
+    Neutral = 4,
+    Friendly = 5,
+    Honored = 6,
+    Revered = 7,
+    Exalted = 8,
+}
+
+-- The built-in checkbox filters, by the id a panel widget's `filter` names: does `entry` stay
+-- in the list? `node` is the node the panel belongs to.
+---@type table<string, fun(entry: ForeverLoot.Node, node: ForeverLoot.Node): boolean>
+local PANEL_FILTERS = {
+    -- Only my faction: rows restricted to the other faction are hidden.
+    side = function(entry)
+        local side = entry.meta and entry.meta.side
+        return side == nil or side == UnitFactionGroup("player")
+    end,
+    -- Reached standings only: rewards above the character's standing with the list's faction
+    -- are hidden (a faction the character hasn't met counts as Neutral).
+    standing = function(entry, node)
+        local rank = entry.meta and STANDING_RANK[entry.meta.standing]
+        if not rank then
+            return true
+        end
+        local factionID = node.meta and node.meta.factionID
+        local data = factionID and C_Reputation and C_Reputation.GetFactionDataByID(factionID)
+        return rank <= (data and data.reaction or STANDING_RANK.Neutral)
+    end,
+}
+
+-- The deepest node on the path that has a `panel`, and its widgets (a function panel is called
+-- each time). Nil when no node on the path has one.
+---@return ForeverLoot.Node?, ForeverLoot.PanelWidget[]?
+function ForeverLootViewMixin:GetPanel()
+    for i = #self.path, 1, -1 do
+        local node = self.path[i]
+        local panel = node.panel
+        if type(panel) == "function" then
+            local ok, result = pcall(panel, node, self)
+            if not ok then
+                log:error("%s: panel failed: %s", tostring(node.name), tostring(result))
+            end
+            panel = ok and result or nil
+        end
+        if type(panel) == "table" then
+            return node, panel
+        end
+    end
+    return nil, nil
+end
+
+-- The value a panel's checkbox (true/nil) or dropdown (the picked value, nil = all) has in this tab.
+---@param node ForeverLoot.Node  # the panel's node
+---@param index integer  # the widget's index in the panel
+---@return any
+function ForeverLootViewMixin:GetPanelValue(node, index)
+    local state = self.panelState[node]
+    return state and state[index]
+end
+
+-- A checkbox or dropdown changed: the list is filtered again, from page 1.
+---@param node ForeverLoot.Node
+---@param index integer
+---@param value any
+function ForeverLootViewMixin:SetPanelValue(node, index, value)
+    local state = self.panelState[node]
+    if not state then
+        state = {}
+        self.panelState[node] = state
+    end
+    state[index] = value
+    self.PagingControls:SetCurrentPage(1)
+    self:Refresh()
+end
+
+-- The test the current panel's checkboxes and dropdowns put on the list's entries, or nil when
+-- none is set. Folders always pass (BuildElements), so filters reach the entries inside them.
+---@return (fun(entry: ForeverLoot.Node): boolean)?
+function ForeverLootViewMixin:GetEntryFilter()
+    local node, widgets = self:GetPanel()
+    local state = node and self.panelState[node]
+    if not node or not widgets or not state then
+        return nil
+    end
+    local tests = {}
+    for index, widget in ipairs(widgets) do
+        local value = state[index]
+        if widget.checkbox and value then
+            local filter = widget.filter
+            local test = type(filter) == "function" and filter or PANEL_FILTERS[filter]
+            if test then
+                tests[#tests + 1] = function(entry)
+                    return test(entry, node)
+                end
+            end
+        elseif widget.dropdown and value ~= nil then
+            local field = widget.field
+            tests[#tests + 1] = function(entry)
+                return entry.meta ~= nil and entry.meta[field] == value
+            end
+        end
+    end
+    if #tests == 0 then
+        return nil
+    end
+    return function(entry)
+        for _, test in ipairs(tests) do
+            if not test(entry) then
+                return false
+            end
+        end
+        return true
+    end
+end
+
+-- The values `field` has in the current list's `meta` (entries under subheaders and groups
+-- included), in list order, with what a dropdown shows for them: standings by their localized
+-- label, anything else as it is.
+---@param field string
+---@return { value: any, label: string }[]
+function ForeverLootViewMixin:GetFieldValues(field)
+    local values, seen = {}, {}
+    local function add(entry)
+        local value = entry.meta and entry.meta[field]
+        if value ~= nil and not seen[value] then
+            seen[value] = true
+            local rank = field == "standing" and STANDING_RANK[value]
+            local label = rank and _G["FACTION_STANDING_LABEL" .. rank] or tostring(value)
+            values[#values + 1] = { value = value, label = label }
+        end
+    end
+    local node = self:GetCurrentNode()
+    for _, child in ipairs(node and self:GetChildren(node) or {}) do
+        for _, entry in ipairs(child.items or { child }) do
+            add(entry)
+        end
+    end
+    return values
+end
+
+-- Does `node` answer to one segment of an `open` path: a module id, a list id, a crafting
+-- category folder by category id or curated group label, an instance id, or its name.
+---@param node ForeverLoot.Node
+---@param segment string
+---@return boolean
+local function matchesSegment(node, segment)
+    if node.moduleID == segment or node.name == segment then
+        return true
+    end
+    if node.instanceID and tostring(node.instanceID) == segment then
+        return true
+    end
+    local meta = node.meta
+    if not meta then
+        return false
+    end
+    if meta.groupKey then
+        return meta.groupKey == "CATEGORY" .. segment or meta.groupKey == "CUSTOM:" .. segment
+    end
+    return meta.listID == segment
+end
+
+-- Opens a collection by path (a panel button's `open`, e.g. "crafting/cooking"): from the root,
+-- each segment picks a folder among the entries of the one before it, subheaders' and groups'
+-- included. The tab navigates there as if clicked through; false when a segment matches nothing.
+---@param path string
+---@return boolean
+function ForeverLootViewMixin:OpenPath(path)
+    local nodes = { self.path[1] }
+    for segment in path:gmatch("[^/]+") do
+        local parent, found = nodes[#nodes], nil
+        for _, child in ipairs(self:GetChildren(parent)) do
+            for _, entry in ipairs(child.items or { child }) do
+                if app.api.IsFolder(entry) and matchesSegment(entry, segment) then
+                    found = entry
+                    break
+                end
+            end
+            if found then
+                break
+            end
+        end
+        if not found then
+            log:warn("Cannot open %q: nothing called %q in %s", path, segment, tostring(parent.name))
+            return false
+        end
+        nodes[#nodes + 1] = found
+    end
+    self.path = nodes
+    self.pathPages = {}
+    self:Navigate()
+    return true
 end
 
 ---@param text string
@@ -1377,11 +1581,34 @@ function ForeverLootViewMixin:BuildElements(node)
     local keyFn = type(groupBy) == "function" and groupBy or nil
     local entryKind = entryKindOf(node)
     local pending = {}
+    -- The info panel's checkboxes/dropdowns; folders always stay.
+    local filter = self:GetEntryFilter()
+    local function keep(entry)
+        return not filter or app.api.IsFolder(entry) or filter(entry)
+    end
 
     local function addRows(entries)
         for _, entry in ipairs(entries) do
-            elements[#elements + 1] = entryElement(entryKind, entry)
+            if keep(entry) then
+                elements[#elements + 1] = entryElement(entryKind, entry)
+            end
         end
+    end
+
+    -- A subheader's or group's own entries after filtering; a label whose entries were all
+    -- filtered out is dropped with them.
+    ---@param items ForeverLoot.Node[]?
+    ---@return boolean
+    local function hasKept(items)
+        if not filter or not items or #items == 0 then
+            return true
+        end
+        for _, entry in ipairs(items) do
+            if keep(entry) then
+                return true
+            end
+        end
+        return false
     end
 
     -- Emit the plain entries collected so far, auto-grouped if the folder asks for it.
@@ -1406,18 +1633,24 @@ function ForeverLootViewMixin:BuildElements(node)
             elements[#elements + 1] = { kind = "header", text = child.header }
         elseif child.subheader then
             flush()
-            elements[#elements + 1] = { kind = "subheader", text = child.subheader }
-            addRows(child.items or {})
+            if hasKept(child.items) then
+                elements[#elements + 1] = { kind = "subheader", text = child.subheader }
+                addRows(child.items or {})
+            end
         elseif child.group then
             flush()
-            elements[#elements + 1] = { kind = "group", text = child.group }
-            addRows(child.items or {})
+            if hasKept(child.items) then
+                elements[#elements + 1] = { kind = "group", text = child.group }
+                addRows(child.items or {})
+            end
         elseif child.spacer then
             flush()
             elements[#elements + 1] = { kind = "spacer" }
         elseif groupBy then
-            pending[#pending + 1] = child
-        else
+            if keep(child) then
+                pending[#pending + 1] = child
+            end
+        elseif keep(child) then
             -- No grouping: straight in, without collecting 25k entries first.
             elements[#elements + 1] = entryElement(entryKind, child)
         end

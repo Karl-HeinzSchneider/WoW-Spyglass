@@ -72,7 +72,7 @@ end
 ----------------------------------------------------------------------------------------------------
 
 ---@class ForeverLoot.RightPane : Frame
----@field Title FontString
+---@field Info ForeverLoot.InfoPane
 ---@field Divider Frame
 
 ---@class ForeverLoot.MainWindow : Frame, PortraitFrameMixin
@@ -115,6 +115,7 @@ end
 function ForeverLootMainWindowMixin:OnDataChanged()
     if self:IsShown() then
         self:RefreshViews()
+        self.RightPane.Info:Refresh()
     end
 end
 
@@ -176,6 +177,9 @@ function ForeverLootMainWindowMixin:OpenView()
     view:SetAllPoints(self.LeftPane)
     view.onNavigate = function(v)
         self:UpdateTab(v)
+        if v == self.selectedView then
+            self.RightPane.Info:Refresh()
+        end
     end
     view:SetRoot(app.api:GetRootNode())
     self.views[#self.views + 1] = view
@@ -242,10 +246,11 @@ function ForeverLootMainWindowMixin:RebuildTabs()
     end)
 end
 
--- Shows one view and marks its tab; the others are hidden.
+-- Shows one view and marks its tab, and its panel in the right pane; the others are hidden.
 ---@param view ForeverLoot.View
 function ForeverLootMainWindowMixin:SelectView(view)
     self.selectedView = view
+    self.RightPane.Info:SetView(view)
     for _, v in ipairs(self.views) do
         v:SetShown(v == view)
         local tab = self.viewToTab[v]

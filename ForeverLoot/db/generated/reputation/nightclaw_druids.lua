@@ -6,6 +6,13 @@ Data:AddList("reputation", "nightclaw_druids", {
     name = "Nightclaw Druids",
     icon = "Interface\\Icons\\Achievement_Reputation_01",
     factionID = 2758,
+    panel = {
+        { bar = "reputation" },
+        { description = true },
+        { header = "Rewards" },
+        { checkbox = "Only reached standings", filter = "standing" },
+        { dropdown = "Standing", field = "standing" },
+    },
 })
 Data:AddListLoot("reputation", "nightclaw_druids", {
     { 276961, standing = "Friendly" }, -- Pattern: Azure Gustwoven Belt

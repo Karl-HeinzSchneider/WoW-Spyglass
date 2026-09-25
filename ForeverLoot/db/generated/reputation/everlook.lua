@@ -6,6 +6,13 @@ Data:AddList("reputation", "everlook", {
     name = "Everlook",
     icon = "Interface\\Icons\\Achievement_Reputation_01",
     factionID = 577,
+    panel = {
+        { bar = "reputation" },
+        { description = true },
+        { header = "Rewards" },
+        { checkbox = "Only reached standings", filter = "standing" },
+        { dropdown = "Standing", field = "standing" },
+    },
 })
 Data:AddListLoot("reputation", "everlook", {
     { 274758, standing = "Friendly" }, -- Coldmetal Guard

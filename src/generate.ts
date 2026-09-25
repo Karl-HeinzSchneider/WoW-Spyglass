@@ -232,6 +232,9 @@ function emitList(file: ListFile, ref: Reference): string {
     ).map((l) => l + "\n"),
   );
   out.push(...emitSections(d.sections, ref));
+  if (d.panel && d.panel.length > 0) {
+    out.push("    panel = {\n", ...d.panel.map((widget) => `        ${luaValue(widget)},\n`), "    },\n");
+  }
   out.push("})\n");
   // Rows without an item are either name-only rows `npm run fix` hasn't resolved yet (dropped) or
   // crafting rows naming a recipe that makes no item (an enchant: kept, the spell is the row).

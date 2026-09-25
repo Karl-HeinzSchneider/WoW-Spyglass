@@ -7,6 +7,13 @@ Data:AddList("reputation", "azeroth_commerce_authority", {
     icon = "Interface\\Icons\\Achievement_Reputation_01",
     info = "Alliance",
     factionID = 2586,
+    panel = {
+        { bar = "reputation" },
+        { description = true },
+        { header = "Rewards" },
+        { checkbox = "Only reached standings", filter = "standing" },
+        { dropdown = "Standing", field = "standing" },
+    },
 })
 Data:AddListLoot("reputation", "azeroth_commerce_authority", {
     { 270888, standing = "Honored" }, -- Advertising License Application

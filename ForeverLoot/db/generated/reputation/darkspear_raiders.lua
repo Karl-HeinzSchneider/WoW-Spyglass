@@ -7,6 +7,13 @@ Data:AddList("reputation", "darkspear_raiders", {
     icon = "Interface\\Icons\\Achievement_Reputation_01",
     info = "Horde",
     factionID = 2798,
+    panel = {
+        { bar = "reputation" },
+        { description = true },
+        { header = "Rewards" },
+        { checkbox = "Only reached standings", filter = "standing" },
+        { dropdown = "Standing", field = "standing" },
+    },
 })
 Data:AddListLoot("reputation", "darkspear_raiders", {
     { 272059, standing = "Friendly" }, -- Darkspear Voodoo Seal

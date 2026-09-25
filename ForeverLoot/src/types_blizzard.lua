@@ -52,6 +52,17 @@ SidePanelTabButtonMixin = {} --[[@as SidePanelTabButtonMixin]]
 ---@field GetSkillLineInfoByID fun(skillLineID: number): SkillLineAttributes?
 C_SkillInfo = {} --[[@as C_SkillInfo]]
 
+-- ColoredProgressBarTemplate (Blizzard_SharedXML/Camelot/ProgressBars/ColoredProgressBar.lua):
+-- the character frame's skill and reputation bar.
+---@class ColoredProgressBarMixin : Frame
+---@field Fill Texture
+---@field Text FontString
+---@field ColorType { Red: integer, Green: integer, Blue: integer, White: integer }
+---@field SetText fun(self: ColoredProgressBarMixin, text: string)
+---@field SetFillPercent fun(self: ColoredProgressBarMixin, percent: number)
+---@field SetFillTextureByColorType fun(self: ColoredProgressBarMixin, colorType: integer)
+ColoredProgressBarMixin = {} --[[@as ColoredProgressBarMixin]]
+
 -- NonInteractableModelSceneMixinTemplate (Blizzard_SharedXML/ModelSceneMixin.lua).
 ---@class ModelSceneMixin
 ---@field TransitionToModelSceneID fun(self: ModelSceneMixin, modelSceneID: number, cameraTransitionType: number, cameraModificationType: number, forceEvenIfSame?: boolean)

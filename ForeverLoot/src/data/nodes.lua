@@ -758,6 +758,22 @@ local function sectionsOf(list, id, opts)
     return type(list.sections) == "table" and list.sections or nil
 end
 
+-- The right pane of a list whose file brings no `panel`: a reputation shows the character's
+-- standing and the faction's description, a profession the character's skill and its recipe
+-- count. The other kinds get none (the pane then shows the list's name).
+---@param kind ForeverLoot.ListKind
+---@param list ForeverLoot.List
+---@param count integer  # entries of the list
+---@return ForeverLoot.PanelWidget[]?
+local function defaultPanel(kind, list, count)
+    if kind == "reputation" then
+        return { { bar = "reputation" }, { description = true } }
+    elseif kind == "crafting" and type(list.skillLineID) == "number" then
+        return { { bar = "skill" }, { row = "Recipes", value = count } }
+    end
+    return nil
+end
+
 -- A list folder: its rows in two grouped columns, carrying the list's picture and info for
 -- lists that draw their entries as tiles. A profession (a crafting list with recipes) instead
 -- holds one folder per category, see categoryFolders, optionally under subheaders (`sections`).
@@ -788,6 +804,7 @@ function api.ListFolder(kind, id, opts)
         rank = ("%d / %d"):format(skill.rank, skill.maxRank or 0)
     end
     local entries = api.ListEntries(kind, id)
+    local panel = list.panel or defaultPanel(kind, list, #entries)
     local groupBy = listGroupKey(kind) ---@type ("auto"|fun(node: ForeverLoot.Node): string?, string?)?
     if kind == "crafting" and entries[1] and (entries[1].itemID or entries[1].spellID) then
         entries, groupBy = categoryFolders(kind, id, entries), nil
@@ -804,6 +821,7 @@ function api.ListFolder(kind, id, opts)
         description = description,
         background = list.background,
         backgroundCoords = list.backgroundCoords,
+        panel = panel,
         meta = {
             listKind = kind,
             listID = id,

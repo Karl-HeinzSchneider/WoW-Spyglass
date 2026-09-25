@@ -6,4 +6,11 @@ Data:AddList("reputation", "barkskin_burrow", {
     name = "Barkskin Burrow",
     icon = "Interface\\Icons\\Achievement_Reputation_01",
     factionID = 2747,
+    panel = {
+        { bar = "reputation" },
+        { description = true },
+        { header = "Rewards" },
+        { checkbox = "Only reached standings", filter = "standing" },
+        { dropdown = "Standing", field = "standing" },
+    },
 })

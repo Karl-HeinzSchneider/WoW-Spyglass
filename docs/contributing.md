@@ -368,6 +368,49 @@ A `group` label used by the file's rows can be named in a section too (its folde
 that label). Sections are a display choice, not data: a module may pass its own to
 `ForeverLoot.ListFolders` and override the file's (see [API.md](API.md#category-sections-crafting)).
 
+### The info panel: `panel`
+
+The window's right column shows the _info panel_ of the list that is open (also while one of
+its category folders is): its name as the title, then the widgets of the file's `panel`, top to
+bottom. Without a `panel` a reputation shows the character's standing bar and the faction's
+description, a profession the skill bar and its recipe count, the other kinds just the name. A
+file's `panel` replaces that default, so repeat the bar if you want to keep it.
+
+Each widget is an object with exactly one of these keys, plus that widget's options:
+
+| Widget        | Options             | Shows                                                                                                                                                                                                    |
+| ------------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `header`      |                     | a section plate with the text                                                                                                                                                                            |
+| `text`        |                     | wrapped text                                                                                                                                                                                             |
+| `description` |                     | `true`: the list's own description (a faction's, from the game, in the player's language)                                                                                                                |
+| `row`         | `value`             | a label on the left, `value` on the right                                                                                                                                                                |
+| `bar`         |                     | `"reputation"`: the character's standing with the file's `faction`; `"skill"`: the character's rank in the file's `skillLine`                                                                            |
+| `checkbox`    | `filter`            | a checkbox that hides entries while checked. Filters: `"side"` (rows of the other faction), `"standing"` (reputation: rewards above the character's standing)                                            |
+| `dropdown`    | `field`             | a dropdown with every value the list's rows have in `field` (`standing`, `source`, `group`, ...); picking one shows only those rows                                                                      |
+| `button`      | `open` **or** `map` | `open`: goes to another collection, `"<module>/<list id>"`, optionally deeper (a crafting category by id: `"crafting/blacksmithing/2469"`). `map`: `[uiMapID, x, y]` opens the map there with a waypoint |
+| `spacer`      |                     | `true`: a little empty space                                                                                                                                                                             |
+
+Checkboxes and dropdowns act on the list in that tab only and are forgotten when the tab is
+closed. `npm run check` reports unknown widgets and options, a bar without the file's id, a
+filter or field the kind doesn't have, and an `open` naming a module or list that doesn't exist.
+
+```json
+{
+  "name": "Cenarion Circle",
+  "faction": 609,
+  "panel": [
+    { "bar": "reputation" },
+    { "description": true },
+    { "header": "Rewards" },
+    { "checkbox": "Only reached standings", "filter": "standing" },
+    { "dropdown": "Standing", "field": "standing" },
+    { "button": "Show Cenarion Hold", "map": [1451, 51.2, 38.3] },
+    { "button": "Open Timbermaw Hold", "open": "reputation/timbermaw_hold" }
+  ],
+  "rewards": {}
+}
+```
+
 ## Code changes
 
 The addons are plain Lua/XML loaded by the game; there is no build step. The rules between the

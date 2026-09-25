@@ -124,6 +124,7 @@ local RECIPE = {
 ---@field factionID? integer  # reputation lists
 ---@field skillLineID? integer  # crafting lists
 ---@field sections? ForeverLoot.ListSection[]  # crafting lists: the categories grouped under subheaders
+---@field panel? ForeverLoot.PanelWidget[]  # the right pane while the list is open; replaces the kind's default
 
 -- One subheader of a crafting list and the trade skill categories under it, by category id,
 -- by the category's displayed name or by a curated `group` label.

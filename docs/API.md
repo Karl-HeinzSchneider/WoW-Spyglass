@@ -71,6 +71,7 @@ if the definition is invalid; it never throws.
 | `sortChildren`                            | boolean \| fun(a, b) | no       | `true` sorts children by node `order` (default 100), then `name`; a function is used as the comparator and receives the full nodes (metadata included). Applies to `AddToModule` entries too. |
 | `query`                                   | boolean              | no       | The module's own list is the item database, filtered by the view's search box and filter menu (see [Item database](#item-database)). `children` may be `{}`.                                  |
 | `columns`, `display`, `groupBy`           |                      | no       | Layout of the module's own list, as on folder nodes (see [Tiles](#tiles) and [Cards](#cards)).                                                                                                |
+| `panel`                                   | table \| function    | no       | The window's right pane inside the module, as on folder nodes (see [Info panel](#info-panel)).                                                                                                |
 | `expansionID`, `seasonID`, `tags`, `meta` | various              | no       | Metadata; see below.                                                                                                                                                                          |
 
 ## Nodes
@@ -101,6 +102,9 @@ Any entry may carry `tooltip`: a list of extra lines, or a function `(node) -> l
 each time the tooltip is shown (so names the client fetched in the meantime are used). On items
 and spells the lines follow the game's own tooltip. A row shows `infoRight` in its top-right
 corner when it has no `chance` (the built-in recipe rows put the skill thresholds there).
+
+A folder may carry a `panel`: what the window's right column shows while it (or a folder below
+it) is open. See [Info panel](#info-panel).
 
 Folders may also set `columns = 1 | 2` to control how their children are laid out: one
 full-width column (the default) or two columns per page. This is decided by the collection,
@@ -304,6 +308,54 @@ ForeverLoot.ListFolder("crafting", "tailoring", { sections = { { name = "Bags", 
 
 `opts` is passed through unchanged to every list, so the same call works for the other kinds;
 only crafting lists read `sections` today.
+
+### Info panel
+
+The window's right column shows the _info panel_ of the selected tab: the `panel` of the
+deepest node on the tab's path that has one, under that node's name. Nodes further down inherit
+it (a profession's panel stays while one of its category folders is open). Without one on the
+path, the pane shows the current node's name and `description`.
+
+`panel` is a list of widgets drawn top to bottom, or a function `(node, view) -> widgets` called
+each time the pane is drawn. Each widget has exactly one type key; the other fields are its
+options:
+
+| Widget                   | Options                                         | Notes                                                                                                                                                                                                                                                                               |
+| ------------------------ | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `{ header = text }`      |                                                 | Section plate.                                                                                                                                                                                                                                                                      |
+| `{ text = text }`        |                                                 | Wrapped text.                                                                                                                                                                                                                                                                       |
+| `{ description = true }` |                                                 | The panel node's `description`.                                                                                                                                                                                                                                                     |
+| `{ row = label }`        | `value`                                         | Label left, value right.                                                                                                                                                                                                                                                            |
+| `{ bar = kind }`         | `faction`, `skillLine`; `value`, `max`, `label` | `"reputation"`: the character's standing with `faction` (default `meta.factionID` of the panel node); `"skill"`: the rank in `skillLine` (default `meta.skillLineID`); `"value"`: `value` of `max`, `label` on the bar.                                                             |
+| `{ checkbox = label }`   | `filter`                                        | While checked, hides the list's entries `filter` rejects: a built-in id (`"side"`: rows whose `meta.side` is the other faction; `"standing"`: rows whose `meta.standing` is above the character's standing with the panel node's faction) or a function `(entry, node) -> boolean`. |
+| `{ dropdown = label }`   | `field`                                         | Offers every value of `meta[field]` among the current list's entries; picking one shows only entries with that value.                                                                                                                                                               |
+| `{ button = label }`     | `onClick`, `open` or `map`                      | `onClick(node, view)`; `open`: a path from the root (`"crafting/cooking"`, see below); `map`: `{ uiMapID, x, y }` opens the world map there with a waypoint (x, y in 0..100).                                                                                                       |
+| `{ spacer = true }`      |                                                 | Empty space; a number is its height.                                                                                                                                                                                                                                                |
+
+Checkbox and dropdown filters apply to the entries of whatever list the tab shows below the
+panel's node (folders are never hidden) and are kept per tab and panel node until the tab is
+closed. An `open` path is `/`-separated: each segment picks a folder among the entries of the
+one before it, starting at the root, by module id, list id (`meta.listID`), crafting category id
+or curated group label (category folders), `instanceID`, or name. The tab navigates there as if
+clicked through.
+
+```lua
+ForeverLoot:RegisterModule({
+    id = "myaddon-worldbosses", name = "World Bosses", icon = icon, children = bosses,
+    panel = function(node, view)
+        return {
+            { header = "This week" },
+            { row = "Killed", value = ("%d / %d"):format(killed(), #bosses) },
+            { bar = "value", value = killed(), max = #bosses },
+            { button = "Reset", onClick = function() resetKills() end },
+        }
+    end,
+})
+```
+
+`ListFolder` gives every list its file's `panel` (see [contributing.md](contributing.md#the-info-panel-panel)),
+else a default: reputation lists `{ bar = "reputation" }, { description = true }`, professions
+`{ bar = "skill" }, { row = "Recipes", value = count }`.
 
 ## Other calls
 

@@ -7,6 +7,13 @@ Data:AddList("reputation", "theramore_expeditionary_force", {
     icon = "Interface\\Icons\\Achievement_Reputation_01",
     info = "Alliance",
     factionID = 2799,
+    panel = {
+        { bar = "reputation" },
+        { description = true },
+        { header = "Rewards" },
+        { checkbox = "Only reached standings", filter = "standing" },
+        { dropdown = "Standing", field = "standing" },
+    },
 })
 Data:AddListLoot("reputation", "theramore_expeditionary_force", {
     { 271903, standing = "Friendly" }, -- Enriched Seal

@@ -6,6 +6,13 @@ Data:AddList("reputation", "gadgetzan", {
     name = "Gadgetzan",
     icon = "Interface\\Icons\\Achievement_Reputation_01",
     factionID = 369,
+    panel = {
+        { bar = "reputation" },
+        { description = true },
+        { header = "Rewards" },
+        { checkbox = "Only reached standings", filter = "standing" },
+        { dropdown = "Standing", field = "standing" },
+    },
 })
 Data:AddListLoot("reputation", "gadgetzan", {
     { 274750, standing = "Friendly" }, -- Reflective Wristguards

@@ -7,4 +7,11 @@ Data:AddList("reputation", "brotherhood_of_the_horse", {
     icon = "Interface\\Icons\\Achievement_Reputation_01",
     info = "Alliance",
     factionID = 2826,
+    panel = {
+        { bar = "reputation" },
+        { description = true },
+        { header = "Rewards" },
+        { checkbox = "Only reached standings", filter = "standing" },
+        { dropdown = "Standing", field = "standing" },
+    },
 })
