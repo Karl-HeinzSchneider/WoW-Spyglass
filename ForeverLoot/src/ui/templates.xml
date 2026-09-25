@@ -448,9 +448,46 @@
 		</Layers>
 	</Frame>
 
+	<!-- A footer button: an icon in an item slot's frame (as ForeverLootItemSlotTemplate draws
+	     it). The instance brings the mixin with Update, OnClick, OnEnter and OnLeave. -->
+	<Button name="ForeverLootFooterButtonTemplate" registerForClicks="LeftButtonUp, RightButtonUp" virtual="true">
+		<Size x="32" y="32"/>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="Icon" setAllPoints="true">
+					<TexCoords left="0.07" right="0.93" top="0.07" bottom="0.93"/>
+				</Texture>
+				<MaskTexture parentKey="IconMask" atlas="UI-HUD-ActionBar-IconFrame-Mask" hWrapMode="CLAMPTOBLACKADDITIVE" vWrapMode="CLAMPTOBLACKADDITIVE">
+					<Size x="46" y="46"/>
+					<Anchors>
+						<Anchor point="CENTER" relativeKey="$parent.Icon"/>
+					</Anchors>
+					<MaskedTextures>
+						<MaskedTexture childKey="Icon"/>
+					</MaskedTextures>
+				</MaskTexture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<Texture parentKey="IconRing" inherits="ForeverLootIconRingTemplate">
+					<Size x="33" y="32"/>
+					<Anchors>
+						<Anchor point="TOPLEFT"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD"/>
+		<Scripts>
+			<OnEnter method="OnEnter"/>
+			<OnLeave method="OnLeave"/>
+			<OnClick method="OnClick"/>
+		</Scripts>
+	</Button>
+
 	<!-- A view fills the window's left column: a header row (breadcrumbs on the
 	     left, search box + filter on the right) over a divider, the list below it, and under
-	     another divider a footer row with the page controls on the right. Mouse wheel turns pages; right-click anywhere goes one level back. -->
+	     another divider a footer row with the class filter buttons on the left and the page controls
+	     on the right. Mouse wheel turns pages; right-click anywhere goes one level back. -->
 	<Frame name="ForeverLootViewTemplate" mixin="ForeverLootViewMixin" enableMouse="true" virtual="true">
 		<KeyValues>
 			<KeyValue key="rowHeight" value="40" type="number"/>
@@ -511,6 +548,19 @@
 					<Anchor point="RIGHT" relativePoint="BOTTOMRIGHT" x="-14" y="25"/>
 				</Anchors>
 			</Frame>
+			<!-- Footer, left: the class filter (left-click toggles, right-click picks the class)
+			     and next to it hide / fade out, on the same center line as the page controls. The
+			     first lines up with the list's row icons (Content's 14px inset + the row's 6px). -->
+			<Button parentKey="ClassFilter" inherits="ForeverLootFooterButtonTemplate" mixin="ForeverLootClassFilterButtonMixin">
+				<Anchors>
+					<Anchor point="LEFT" relativePoint="BOTTOMLEFT" x="20" y="25"/>
+				</Anchors>
+			</Button>
+			<Button parentKey="ClassFilterMode" inherits="ForeverLootFooterButtonTemplate" mixin="ForeverLootClassFilterModeButtonMixin">
+				<Anchors>
+					<Anchor point="LEFT" relativeKey="$parent.ClassFilter" relativePoint="RIGHT" x="6" y="0"/>
+				</Anchors>
+			</Button>
 		</Frames>
 		<Layers>
 			<Layer level="ARTWORK">

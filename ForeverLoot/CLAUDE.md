@@ -59,6 +59,9 @@ Nothing in here touches frames. The tables, calls and built-in filters are docum
 - `filters.lua` — `app.filters`: the filter registry and the built-in filters.
 - `query.lua` — `app.query`: `Query.Run(q)` over a plain query table. `search` matches
   `Data:GetSearchName`, the client-locale name plus the English one after a newline.
+- `classfilter.lua` — `app.classFilter`: which classes can use which armor and weapon
+  subclasses (the `USERS` table; edit it to tune the view's class filter), `CanUse(class,
+  itemID)`. Private, not part of the public API.
 - `nodes.lua` — the DB-backed node constructors modules build their trees from
   (`InstanceFolder(s)`, `BossFolder`, `TrashFolder`, `QuestFolder`, `ListFolder(s)`, …). Crafting
   lists merge the generated recipes with the curated rows (`craftingEntries`) and split into
@@ -100,7 +103,7 @@ the window.
   selected tab's info `panel`, drawn with the character frame's side-pane look. Its checkbox
   filter ids live in `view.lua` and must match `PANEL_FILTERS` in `src/lists.ts`.
 - `view.lua` + `templates.xml` — a view: header row, paged content, the navigation stack, rows,
-  tiles, cards and headers, search box and filter dropdown.
+  tiles, cards and headers, search box and filter dropdown, the footer's class filter buttons.
 - `recipepopup.lua/.xml` — `app.ui.recipePopup`, toggled by a click on a recipe row;
   `ForeverLootItemSlotTemplate` is the icon slot every slot uses.
 - `modelpreview.lua/.xml` — `app.ui.modelPreview`: the character (or the mount) wearing the item
