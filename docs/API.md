@@ -250,8 +250,10 @@ Constructors (optional sugar):
   trash card and its drops: what the enemies between the bosses drop (`Data:GetTrashLoot`), auto-grouped
   like a boss's loot and with the drop count as `info`
 - `ForeverLoot.QuestFolder(instanceID)` / `ForeverLoot.InstanceQuestEntries(instanceID)` — the instance's
-  quest card and its contents: one `Subheader` per quest (title and id, plus the faction when the quest's
-  `side` restricts it) followed by the items that quest rewards. The card carries the quest ids in
+  quest card and its contents: one `Subheader` per quest (title and id, plus the class of a class quest)
+  followed by the items that quest rewards, sorted by `requiredLevel`, then title. When the instance has
+  quests of more than one side, they are split under a `Header` per side ("Both factions", Alliance,
+  Horde); otherwise the subheader names the faction when the quest's `side` restricts it. The card carries the quest ids in
   `quests`, so it shows the same "!" and title list a boss with quests does.
 - `ForeverLoot.ListFolders(kind, opts?)` — folders for every curated list of `kind` (`"crafting"`, `"pvp"`,
   `"collections"`, `"reputation"`), by `order` then name; the built-in modules of those names are exactly this

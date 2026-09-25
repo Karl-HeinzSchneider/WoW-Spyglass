@@ -248,7 +248,8 @@ filter.
 
 ### `quests`: the instance's quests and what they reward
 
-`quests` is a list of quest objects, in the order they should be shown:
+`quests` is a list of quest objects, in the order the info panel should list them (the _Quests_
+card sorts them itself, see below):
 
 | Field           | Type    | Meaning                                                                                                                                                             |
 | --------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -266,8 +267,9 @@ objective of a quest names the id there, and the quest and its rewards are descr
 The same item may appear in several quests.
 
 In the browser, the instance's _Quests_ card opens a page with one subheader per quest (its title
-and id, plus the faction when `side` restricts it and the class of a class quest) and the quest's
-reward items under it. A quest that runs through several instances (the warlock quest "The Orb
+and id, plus the class of a class quest) and the quest's reward items under it, sorted by
+`requiredLevel`, then title. An instance with quests of more than one `side` splits them under a
+header per side: both factions, Alliance, Horde. A quest that runs through several instances (the warlock quest "The Orb
 of Soran'ruk" needs Blackfathom Deeps and Shadowfang Keep) is listed in each of their files with
 the same id and fields; the addon keeps one definition per id, the one loaded last.
 

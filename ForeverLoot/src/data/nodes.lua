@@ -119,21 +119,33 @@ function api.TrashFolder(instanceID)
     })
 end
 
+-- A faction's name in the client's language and the faction's color; "Both factions" otherwise.
+---@param side string
+---@return string
+local function sideLabel(side)
+    if side ~= "Alliance" and side ~= "Horde" then
+        return "Both factions"
+    end
+    local label = side == "Alliance" and (FACTION_ALLIANCE or side) or (FACTION_HORDE or side)
+    local color = PLAYER_FACTION_COLORS and PLAYER_FACTION_COLORS[side == "Alliance" and 1 or 0]
+    if color and color.WrapTextInColorCode then
+        label = color:WrapTextInColorCode(label)
+    end
+    return label
+end
+
 -- "Uncovering the Past (#26) - Alliance": a quest's subheader. The title comes from the client
 -- when it knows the quest and from the curated data otherwise, and the id is shown next to it
--- so a quest is identifiable while the curated titles are still being filled in.
+-- so a quest is identifiable while the curated titles are still being filled in. The faction is
+-- left out when a faction header above already names it.
 ---@param quest ForeverLoot.Quest
+---@param withSide boolean
 ---@return string
-local function questHeading(quest)
+local function questHeading(quest, withSide)
     local text = ("%s (#%d)"):format(Data:GetQuestName(quest.id), quest.id)
     local side = quest.side
-    if side == "Alliance" or side == "Horde" then
-        local label = side == "Alliance" and (FACTION_ALLIANCE or side) or (FACTION_HORDE or side)
-        local color = PLAYER_FACTION_COLORS and PLAYER_FACTION_COLORS[side == "Alliance" and 1 or 0]
-        if color and color.WrapTextInColorCode then
-            label = color:WrapTextInColorCode(label)
-        end
-        text = text .. " - " .. label
+    if withSide and (side == "Alliance" or side == "Horde") then
+        text = text .. " - " .. sideLabel(side)
     end
     -- A class quest: " - Warlock", in the client's name and color for the class token.
     local class = quest.class
@@ -148,20 +160,61 @@ local function questHeading(quest)
     return text
 end
 
--- The instance's quests: one subheader per quest with the items it rewards under it.
+-- The sections of an instance's quest card, in order: quests for both factions, then each
+-- faction's own.
+local QUEST_SIDES = { "Both", "Alliance", "Horde" }
+
+-- Quests by required level (unknown last), then title, then id.
+---@param a ForeverLoot.Quest
+---@param b ForeverLoot.Quest
+---@return boolean
+local function questOrder(a, b)
+    local levelA, levelB = a.requiredLevel or math.huge, b.requiredLevel or math.huge
+    if levelA ~= levelB then
+        return levelA < levelB
+    end
+    local nameA, nameB = Data:GetQuestName(a.id), Data:GetQuestName(b.id)
+    if nameA ~= nameB then
+        return nameA < nameB
+    end
+    return a.id < b.id
+end
+
+-- The instance's quests: one subheader per quest with the items it rewards under it, sorted by
+-- level. When the instance has quests of more than one side, they are split under one header
+-- per side (both factions, Alliance, Horde).
 ---@param instanceID integer
 ---@return ForeverLoot.Node[]
 function api.InstanceQuestEntries(instanceID)
-    local entries = {}
+    local bySide = { Both = {}, Alliance = {}, Horde = {} }
     for _, quest in ipairs(Data:GetInstanceQuests(instanceID)) do
-        local items = {}
-        for _, row in ipairs(quest.items) do
-            items[#items + 1] = { itemID = row[1], chance = row[2] }
+        local list = bySide[quest.side] or bySide.Both
+        list[#list + 1] = quest
+    end
+    local sections = 0
+    for _, side in ipairs(QUEST_SIDES) do
+        if #bySide[side] > 0 then
+            sections = sections + 1
         end
-        if #items == 0 then
-            items[1] = api.Custom({ name = "No rewards recorded yet", icon = ICON_MISSING })
+    end
+
+    local entries = {}
+    for _, side in ipairs(QUEST_SIDES) do
+        local quests = bySide[side]
+        table.sort(quests, questOrder)
+        if #quests > 0 and sections > 1 then
+            entries[#entries + 1] = api.Header(sideLabel(side))
         end
-        entries[#entries + 1] = api.Subheader(questHeading(quest), items)
+        for _, quest in ipairs(quests) do
+            local items = {}
+            for _, row in ipairs(quest.items) do
+                items[#items + 1] = { itemID = row[1], chance = row[2] }
+            end
+            if #items == 0 then
+                items[1] = api.Custom({ name = "No rewards recorded yet", icon = ICON_MISSING })
+            end
+            entries[#entries + 1] = api.Subheader(questHeading(quest, sections == 1), items)
+        end
     end
     if #entries == 0 then
         entries[1] = api.Custom({
