@@ -1006,10 +1006,10 @@ function ForeverLootViewMixin:OnLoad()
         self:BuildFilterMenu(rootDescription)
     end)
     -- The template's red X over the button's corner: shown while filters or sort differ from
-    -- the defaults, a click resets them.
+    -- the defaults or the class filter is on, a click resets them.
     self.FilterDropdown:SetIsDefaultCallback(function()
         local q = self:GetCurrentQuery()
-        return not q or self:IsDefaultQuery(q)
+        return not q or (self:IsDefaultQuery(q) and not self.classFilterOn)
     end)
     self.FilterDropdown:SetDefaultCallback(function()
         local q = self:GetCurrentQuery()
@@ -1387,14 +1387,19 @@ function ForeverLootViewMixin:SetClassFilter(on, class, mode)
     self:Refresh()
 end
 
+-- A class in a menu: its icon and name.
+---@param class string
+---@return string
+local function classMenuLabel(class)
+    return ("|T%s:16:16|t %s"):format(app.classFilter:GetIcon(class), app.classFilter:GetName(class))
+end
+
 -- The class button's right-click menu: the classes; picking one turns the filter on.
 ---@param root RootMenuDescriptionProxy
 function ForeverLootViewMixin:BuildClassFilterMenu(root)
-    local classFilter = app.classFilter
     root:CreateTitle("Class")
-    for _, class in ipairs(classFilter:GetClasses()) do
-        local label = ("|T%s:16:16|t %s"):format(classFilter:GetIcon(class), classFilter:GetName(class))
-        root:CreateRadio(label, function()
+    for _, class in ipairs(app.classFilter:GetClasses()) do
+        root:CreateRadio(classMenuLabel(class), function()
             return class == self:GetFilterClass()
         end, function()
             self:SetClassFilter(true, class)
@@ -1610,11 +1615,14 @@ function ForeverLootViewMixin:SetSort(q, sort)
     end
 end
 
--- Clears filters and sort but keeps the search text (that's what the search box's X is for).
+-- Clears filters and sort and turns the class filter off, but keeps the search text (that's what
+-- the search box's X is for).
 ---@param q ForeverLoot.Query
 function ForeverLootViewMixin:ResetFilters(q)
     wipe(q.filters)
     q.sort = "name"
+    -- Off, keeping class and mode; the redraw updates the footer buttons.
+    self.classFilterOn = false
     self:OnQueryChanged()
 end
 
@@ -1684,6 +1692,37 @@ function ForeverLootViewMixin:BuildFilterMenu(root)
             submenu:SetScrollMode(20 * SCROLL_AFTER)
         end
     end
+
+    -- The footer's class filter, the same state as its two buttons: "Off" or a class (which
+    -- turns it on), then fade out or hide.
+    local classMenu = root:CreateButton("Class")
+    classMenu:CreateRadio(OFF or "Off", function()
+        return not self.classFilterOn
+    end, function()
+        self:SetClassFilter(false)
+        return MenuResponse.Refresh
+    end)
+    for _, class in ipairs(app.classFilter:GetClasses()) do
+        classMenu:CreateRadio(classMenuLabel(class), function()
+            return self.classFilterOn and class == self:GetFilterClass()
+        end, function()
+            self:SetClassFilter(true, class)
+            return MenuResponse.Refresh
+        end)
+    end
+    classMenu:CreateDivider()
+    classMenu:CreateRadio("Fade out", function()
+        return self.classFilterMode == "fade"
+    end, function()
+        self:SetClassFilter(nil, nil, "fade")
+        return MenuResponse.Refresh
+    end)
+    classMenu:CreateRadio("Hide", function()
+        return self.classFilterMode == "hide"
+    end, function()
+        self:SetClassFilter(nil, nil, "hide")
+        return MenuResponse.Refresh
+    end)
 
     root:CreateDivider()
     local sortMenu = root:CreateButton("Sort by")
@@ -1898,6 +1937,17 @@ function ForeverLootViewMixin:BuildElements(node)
         end
     end
     flush()
+    -- The query counted its result before the filters above removed entries from it: the count
+    -- next to the search box is what is listed.
+    if filter and node.query then
+        local count = 0
+        for _, element in ipairs(elements) do
+            if element.kind == entryKind then
+                count = count + 1
+            end
+        end
+        self.resultCount = count
+    end
     return elements
 end
 

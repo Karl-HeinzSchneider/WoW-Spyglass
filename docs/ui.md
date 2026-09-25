@@ -57,7 +57,9 @@ right.
   on). `ClassFilterMode` next to it switches with a click whether the armor and weapons that
   class can't use are _faded_ (the default; `IsFaded`: `RenderPage` draws the row, tile or card
   at `FADED_ALPHA` with a grey icon) or _hidden_ (`GetClassFilterTest`, joined with the info
-  panel's filters in `BuildElements`). The state is per tab (`classFilterOn`, `classFilterMode`,
+  panel's filters in `BuildElements`). On query folders the `FilterDropdown` menu has the same
+  state as a "Class" submenu (Off / a class / fade out or hide); its red X shows while the
+  class filter is on, and its reset (`ResetFilters`) turns it off. The state is per tab (`classFilterOn`, `classFilterMode`,
   `filterClass`, nil = the character's class) and not saved. Which class can use what is the
   table in `src/data/classfilter.lua` (`app.classFilter:CanUse(class, itemID)`): per armor and
   weapon subclass the classes that can use it, turned around at load into a per-class set of
