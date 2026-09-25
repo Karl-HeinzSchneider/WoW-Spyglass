@@ -19,7 +19,8 @@ _Frame_, so clicks arrive through `SetCustomOnMouseUpHandler`).
 
 The tabs work like a browser's: one per open _view_ (icon = the deepest node that has one,
 tooltip = its title) plus a `+` tab; right-click closes one, and `RebuildTabs()` lays the strip
-out again from a pool. The open tabs survive the session: `SaveTabs()` writes them to
+out again from a pool. The window's edge fits ten tabs, so at most nine views are open
+(`MAX_VIEWS`): with nine the `+` tab is left out until one is closed. The open tabs survive the session: `SaveTabs()` writes them to
 `char.tabs` (per tab the names of the folders open below the root, plus the selected tab)
 whenever one opens, closes, is selected or navigates, and `RestoreTabs()` reopens them from
 `OnEnable`, when every module is registered, following each path by name as far as it still

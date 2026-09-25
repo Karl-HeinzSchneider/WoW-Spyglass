@@ -12,6 +12,9 @@ local NEW_TAB_ATLAS = "communities-icon-addgroupplus"
 local NEW_TAB_ICON_SIZE = 36
 -- Vertical gap between side tabs, as in CharacterFrameMixin:UpdateTabLayout.
 local TAB_SPACING = -2
+-- The strip fits ten tabs down the window's edge: nine views and the "+" tab, which is left out
+-- while nine are open.
+local MAX_VIEWS = 9
 
 ----------------------------------------------------------------------------------------------------
 -- Side tab: one per open view, plus the "+" tab
@@ -83,7 +86,7 @@ end
 ---@field views ForeverLoot.View[]
 ---@field viewPool ForeverLoot.FramePool
 ---@field tabPool ForeverLoot.FramePool
----@field tabs ForeverLoot.SideTab[]  # in display order; the last one is the "+" tab
+---@field tabs ForeverLoot.SideTab[]  # in display order; the last one is the "+" tab, unless MAX_VIEWS are open
 ---@field viewToTab table<ForeverLoot.View, ForeverLoot.SideTab>
 ---@field selectedView? ForeverLoot.View
 ---@field tabsRestored? boolean  # RestoreTabs has run; until then SaveTabs keeps the saved tabs
@@ -243,10 +246,12 @@ function ForeverLootMainWindowMixin:RebuildTabs()
             tab:SetChecked(view == self.selectedView)
         end)
     end
-    add(function(tab)
-        tab:SetNewTab()
-        tab:SetChecked(false)
-    end)
+    if #self.views < MAX_VIEWS then
+        add(function(tab)
+            tab:SetNewTab()
+            tab:SetChecked(false)
+        end)
+    end
 end
 
 -- Shows one view and marks its tab, and its panel in the right pane; the others are hidden.
@@ -313,7 +318,8 @@ end
 function ForeverLootMainWindowMixin:RestoreTabs()
     local saved = app.db.char.tabs
     if #saved.paths > 0 then
-        for i, names in ipairs(saved.paths) do
+        for i = 1, math.min(#saved.paths, MAX_VIEWS) do
+            local names = saved.paths[i]
             local view = self.views[i] or self:OpenView()
             view:Hide()
             view:RestorePath(names)
