@@ -1,8 +1,10 @@
 {
   "map": 2998,
   "name": "Excavation Site: Wetlands",
-  "minLevel": 26,
-  "maxLevel": 30,
+  "minLevel": 24,
+  "maxLevel": 29,
+  "zone": 1437,
+  "entrance": [1437, 42, 60],
   "encounters": [
     {
       "id": 3480,

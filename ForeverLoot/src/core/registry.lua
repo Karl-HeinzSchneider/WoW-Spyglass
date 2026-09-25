@@ -52,6 +52,7 @@ local log = app.logger
 ---@field header? string  # section header marker; see ForeverLoot.Header
 ---@field subheader? string  # small section header marker; `items` optionally holds the entries under it; see ForeverLoot.Subheader
 ---@field spacer? boolean  # spacer marker: one empty row of space; see ForeverLoot.Spacer
+---@field panel? ForeverLoot.PanelWidget[]|fun(node: ForeverLoot.Node, view: ForeverLoot.View): ForeverLoot.PanelWidget[]?  # folders: the right pane while this node or one below it (without a panel of its own) is open
 --- Optional metadata, free for modules and custom sort functions to use:
 ---@field expansionID? integer  # e.g. LE_EXPANSION_CLASSIC
 ---@field seasonID? integer
@@ -62,6 +63,31 @@ local log = app.logger
 ---@field meta? table<string, any>  # anything else
 ---@field group? string  # group label marker; `items` optionally holds the grouped entries
 ---@field items? ForeverLoot.Node[]
+
+-- One widget of a node's info panel (the window's right pane), top to bottom. The type is the
+-- one type key it carries (header, text, description, row, bar, checkbox, dropdown, button,
+-- quests, spacer); the other fields are its options. See docs/API.md, "Info panel".
+---@class ForeverLoot.PanelWidget
+---@field header? string  # a section plate
+---@field text? string  # wrapped text
+---@field description? boolean  # the panel node's own `description`
+---@field row? string  # label of a label/value line
+---@field value? string|number  # row: the value; bar "value": the filled amount
+---@field bar? "reputation"|"skill"|"value"  # the character's standing / skill, or `value` of `max`
+---@field faction? integer  # bar "reputation": the faction; default the panel node's meta.factionID
+---@field skillLine? integer  # bar "skill": the profession; default the panel node's meta.skillLineID
+---@field max? number  # bar "value"
+---@field label? string  # bar "value": the text on the bar; default "value / max"
+---@field checkbox? string  # label of a checkbox that switches `filter` on
+---@field filter? string|fun(entry: ForeverLoot.Node, node: ForeverLoot.Node): boolean  # checkbox: a built-in filter id ("side", "standing") or a test; false hides the entry
+---@field dropdown? string  # label of a dropdown that shows only entries with the picked `meta[field]`
+---@field field? string  # dropdown: the entry `meta` field it offers the values of
+---@field button? string  # label of a button that runs `onClick`, `open` or `map`
+---@field open? string  # button: path of the collection to open, "<module>/<list id>[/<category>...]"
+---@field map? number[]  # button: { uiMapID, x, y }, x and y in 0..100
+---@field onClick? fun(node: ForeverLoot.Node, view: ForeverLoot.View)  # button
+---@field quests? integer[]  # quest ids, one line each: title and the character's progress (done, ready, active)
+---@field spacer? boolean|number  # empty space; a number is its height
 
 -- What api.ListFolder / api.ListFolders may be told about a list, so a module can regroup a
 -- list without touching the curated data: `sections` replaces the list's own subheaders (see
@@ -84,6 +110,7 @@ local log = app.logger
 ---@field display? "rows"|"tiles"|"cards"
 ---@field groupBy? "auto"|fun(node: ForeverLoot.Node): string?, string?
 ---@field sortChildren? boolean|fun(a: ForeverLoot.Node, b: ForeverLoot.Node): boolean  # true = by node `order`, then name; a function gets the full nodes incl. metadata
+---@field panel? ForeverLoot.PanelWidget[]|fun(node: ForeverLoot.Node, view: ForeverLoot.View): ForeverLoot.PanelWidget[]?  # the right pane inside the module, as on folder nodes
 --- Optional metadata, same meaning as on nodes:
 ---@field expansionID? integer
 ---@field seasonID? integer
@@ -754,6 +781,7 @@ function api:GetRootNode()
             columns = def.columns,
             display = def.display,
             groupBy = def.groupBy,
+            panel = def.panel,
             moduleID = def.id,
         }
     end

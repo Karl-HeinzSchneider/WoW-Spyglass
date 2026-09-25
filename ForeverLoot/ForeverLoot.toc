@@ -27,8 +27,10 @@ modules\modules.xml
 src\ui\view.lua
 src\ui\templates.xml
 src\ui\mainwindow.lua
+src\ui\infopane.lua
 # Dev timing of the mixins above; must precede the XML that creates frames from them.
 src\helper\profiler.lua
+src\ui\infopane.xml
 src\ui\mainwindow.xml
 src\ui\recipepopup.lua
 src\ui\recipepopup.xml

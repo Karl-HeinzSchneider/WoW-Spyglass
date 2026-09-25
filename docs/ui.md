@@ -12,7 +12,7 @@ globals. The TOC lists each Lua mixin before the XML that names it.
 ## Main window (`mainwindow.lua` / `.xml`)
 
 `ForeverLootMainWindow` inherits `PortraitFrameBaseTemplate`, sized 900x640, with a dark
-two-column interior: `LeftPane` holds the views, `RightPane` the metadata. Both are
+two-column interior: `LeftPane` holds the views, `RightPane` the info pane (below). Both are
 `UI-Character-Info-*-BG` atlases stretched to fit, split by `common-framedivider`. Icon tabs run
 down the right edge (`ForeverLootSideTabTemplate`, from `LargeSideTabButtonTemplate`, which is a
 _Frame_, so clicks arrive through `SetCustomOnMouseUpHandler`).
@@ -74,6 +74,57 @@ Section headers use the `UI-Character-Info-Title` plate. Subheaders are a step s
 text with `UI-Character-Info-ScrollLine-Long` running out to both sides. Groups are row-sized
 labels. A `spacer` element is one row of empty space that takes part in the page layout but has
 no frame; it is dropped at the top of a page.
+
+### Info panel filters
+
+A view keeps the state of the info panel's checkboxes and dropdowns in `view.panelState`, per
+panel node and widget index. `GetPanel()` finds the deepest node on the path with a `panel`
+(calling a function panel), `GetEntryFilter()` turns the set checkboxes and dropdowns into one
+test, and `BuildElements` drops the entries it rejects (never folders), along with a subheader
+or group label whose entries are all gone. `SetPanelValue` stores a value and refreshes from
+page 1. The checkbox filter ids (`PANEL_FILTERS`: `side`, `standing`) must match the ones
+`src/lists.ts` accepts. `OpenPath(path)` resolves a button's `open` path from the root and
+replaces the tab's path with the nodes it passed.
+
+## Info pane (`infopane.lua` / `.xml`)
+
+`ForeverLootInfoPaneMixin` is `RightPane.Info`, inset like the character frame's side panes. It
+remakes the look of that frame's reputation and skill detail panes (`CharacterFrameSidePaneTemplate`
+registers itself with the character frame, so it can't be inherited): the title in
+`GameFontNormalMed3`, the `UI-Character-Info-ScrollLine` divider, then the widgets in a
+`VerticalLayoutFrame` of fixed width. Each widget kind has a pooled template:
+
+- `header`: the `UI-Character-Info-Title` plate; `text`/`description`: wrapped white text;
+  `row`: gold label, white value; `spacer`: empty space.
+- `bar`: `ColoredProgressBarTemplate` (Blizzard_SharedXML, Camelot). Reputation as the
+  reputation pane draws it (white fill tinted with `FACTION_BAR_COLORS`, standing and progress
+  text), skill in the blue fill with "rank / max".
+- `checkbox`: `checkbox-minimal` / `checkmark-minimal`, the label beside it inside the hit rect;
+  `dropdown`: `WowStyle1DropdownTemplate` with an "All" radio and one per value.
+- `button`: `SharedGoldRedButtonSmallTemplate`. A `map` button sets a user waypoint from a plain
+  `{ uiMapID, position }` table (`UiMapPoint` isn't loaded in this client) and calls
+  `OpenWorldMap`.
+- `quests`: one `ForeverLootInfoQuestTemplate` line per quest the character can take (side and
+  class from `Data:GetQuest`), the title wrapped on the left, the progress on the right from
+  `C_QuestLog` (`IsQuestFlaggedCompleted`, `IsOnQuest`, `ReadyForTurnIn` / `IsComplete`).
+  Each line is a button that behaves like a quest link in chat: hover shows the game's quest
+  tooltip (`GameTooltip:SetHyperlink` with `GetQuestLink`), a modified click goes through
+  `HandleModifiedItemClick`. A quest the client hasn't loaded has no link yet; it is asked for
+  once (`C_QuestLog.RequestLoadQuestByID`) and `QUEST_DATA_LOAD_RESULT` redraws the pane, until
+  then the tooltip shows the title and id.
+
+Text that may run over one line (`text`, `description`, quest titles) sits in a FontString with
+a fixed width: the rows are measured before the layout frame places them, so a width taken from
+anchors would measure as a single line.
+
+The main window hands the pane the selected view (`SetView` in `SelectView`) and refreshes it
+when that view navigates and on `OnDataChanged`; the pane itself redraws on `OnShow`,
+`UPDATE_FACTION`, `SKILL_LINES_CHANGED`, `QUEST_LOG_UPDATE`, `QUEST_TURNED_IN` and
+`QUEST_DATA_LOAD_RESULT`. Event redraws wait for the next frame and happen once however many
+events came: asking for a quest while the lines are drawn can fire `QUEST_DATA_LOAD_RESULT`
+inside that call, and a redraw inside a redraw would release lines still being filled. A
+checkbox or dropdown only calls the view's
+`SetPanelValue`; its own state already shows the change.
 
 ## Recipe popup (`recipepopup.lua` / `.xml`)
 

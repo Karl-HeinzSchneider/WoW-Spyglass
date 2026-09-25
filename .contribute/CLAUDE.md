@@ -7,7 +7,8 @@ Everything under `data/` is input; the three generated trees (`ForeverLoot/db/ge
 
 **Before editing a data file, read the matching section of `docs/contributing.md`**: it has the
 format of every file here (instance files with split dungeons, `displayName`, boss pictures,
-`trash` and `quests`; the four kinds of item lists; crafting rows and `sections`) and what
+`trash` and `quests`; the four kinds of item lists; crafting rows and `sections`; a list's info
+`panel`) and what
 `npm run fix` checks and rewrites. Where the data comes from and how it is turned into Lua is in
 `docs/data-pipeline.md`; the tooling that reads this folder is `src/`.
 

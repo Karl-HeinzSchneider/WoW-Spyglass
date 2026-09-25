@@ -7,4 +7,11 @@ Data:AddList("reputation", "high_order", {
     icon = "Interface\\Icons\\Achievement_Reputation_01",
     info = "Alliance",
     factionID = 2779,
+    panel = {
+        { bar = "reputation" },
+        { description = true },
+        { header = "Rewards" },
+        { checkbox = "Only reached standings", filter = "standing" },
+        { dropdown = "Standing", field = "standing" },
+    },
 })

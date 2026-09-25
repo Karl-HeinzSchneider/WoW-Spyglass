@@ -225,6 +225,44 @@ local function allBossesFolder(instanceID, instance)
     })
 end
 
+-- The right pane of an instance: the zone its entrance is in (the client's name for the map, so
+-- it is localized), its level range, the level needed to enter and its boss count, a button to
+-- its entrance when the curated data has one, and its quests with the character's progress.
+---@param instanceID integer
+---@param instance ForeverLoot.Instance
+---@return ForeverLoot.PanelWidget[]
+local function instancePanel(instanceID, instance)
+    local panel = {}
+    local zone = instance.zone and C_Map.GetMapInfo(instance.zone)
+    if zone and zone.name and zone.name ~= "" then
+        panel[#panel + 1] = { row = ZONE or "Zone", value = zone.name }
+    end
+    local minLevel, maxLevel = instance.minLevel, instance.maxLevel
+    if minLevel then
+        local range = maxLevel and maxLevel ~= minLevel and ("%d - %d"):format(minLevel, maxLevel)
+            or maxLevel and tostring(minLevel)
+            or ("%d+"):format(minLevel)
+        panel[#panel + 1] = { row = LEVEL or "Level", value = range }
+    end
+    if instance.requiredLevel then
+        panel[#panel + 1] = { row = "Required level", value = instance.requiredLevel }
+    end
+    panel[#panel + 1] = { row = "Bosses", value = #instance.bosses }
+    if type(instance.entrance) == "table" then
+        panel[#panel + 1] = { spacer = true }
+        panel[#panel + 1] = { button = "Show entrance", map = instance.entrance }
+    end
+    local ids = {}
+    for i, quest in ipairs(Data:GetInstanceQuests(instanceID)) do
+        ids[i] = quest.id
+    end
+    if #ids > 0 then
+        panel[#panel + 1] = { header = QUESTS_LABEL or "Quests" }
+        panel[#panel + 1] = { quests = ids }
+    end
+    return panel
+end
+
 -- An instance folder with an "All Bosses" card, one boss folder per encounter and the instance's
 -- own two categories (trash and quests), carrying the instance's metadata (`instanceID`, `minLevel`,
 -- `maxLevel`, `expansionID`) for sorting and filtering and its picture for lists that draw
@@ -252,6 +290,7 @@ function api.InstanceFolder(instanceID)
         order = instance.minLevel,
         background = instance.background,
         backgroundCoords = instance.backgroundCoords,
+        panel = instancePanel(instanceID, instance),
     })
 end
 
@@ -758,6 +797,22 @@ local function sectionsOf(list, id, opts)
     return type(list.sections) == "table" and list.sections or nil
 end
 
+-- The right pane of a list whose file brings no `panel`: a reputation shows the character's
+-- standing and the faction's description, a profession the character's skill and its recipe
+-- count. The other kinds get none (the pane then shows the list's name).
+---@param kind ForeverLoot.ListKind
+---@param list ForeverLoot.List
+---@param count integer  # entries of the list
+---@return ForeverLoot.PanelWidget[]?
+local function defaultPanel(kind, list, count)
+    if kind == "reputation" then
+        return { { bar = "reputation" }, { description = true } }
+    elseif kind == "crafting" and type(list.skillLineID) == "number" then
+        return { { bar = "skill" }, { row = "Recipes", value = count } }
+    end
+    return nil
+end
+
 -- A list folder: its rows in two grouped columns, carrying the list's picture and info for
 -- lists that draw their entries as tiles. A profession (a crafting list with recipes) instead
 -- holds one folder per category, see categoryFolders, optionally under subheaders (`sections`).
@@ -788,6 +843,7 @@ function api.ListFolder(kind, id, opts)
         rank = ("%d / %d"):format(skill.rank, skill.maxRank or 0)
     end
     local entries = api.ListEntries(kind, id)
+    local panel = list.panel or defaultPanel(kind, list, #entries)
     local groupBy = listGroupKey(kind) ---@type ("auto"|fun(node: ForeverLoot.Node): string?, string?)?
     if kind == "crafting" and entries[1] and (entries[1].itemID or entries[1].spellID) then
         entries, groupBy = categoryFolders(kind, id, entries), nil
@@ -804,6 +860,7 @@ function api.ListFolder(kind, id, opts)
         description = description,
         background = list.background,
         backgroundCoords = list.backgroundCoords,
+        panel = panel,
         meta = {
             listKind = kind,
             listID = id,

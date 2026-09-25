@@ -3,8 +3,11 @@
   "name": "Zul'Farrak",
   "minLevel": 46,
   "maxLevel": 56,
+  "requiredLevel": 35,
+  "zone": 1446,
   "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-ZulFarrak",
   "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],
+  "entrance": [1446, 39, 20],
   "encounters": [
     {
       "id": 593,

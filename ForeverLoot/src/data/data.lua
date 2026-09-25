@@ -77,10 +77,13 @@ local RECIPE = {
 ---@field bosses integer[]  # bossIDs in encounter order
 ---@field minLevel? integer
 ---@field maxLevel? integer
+---@field requiredLevel? integer  # the level a character needs to enter
+---@field zone? integer  # uiMapID of the zone the entrance is in
 ---@field expansionID? integer
 ---@field icon? string|number
 ---@field background? string|number  # wide picture for the instance's tile in the browser
 ---@field backgroundCoords? number[]  # { left, right, top, bottom } of `background` to show
+---@field entrance? number[]  # { uiMapID, x, y } of the entrance, x and y in 0..100
 
 ---@class ForeverLoot.Boss
 ---@field npcID? integer  # optional; not in the generated data
@@ -124,6 +127,7 @@ local RECIPE = {
 ---@field factionID? integer  # reputation lists
 ---@field skillLineID? integer  # crafting lists
 ---@field sections? ForeverLoot.ListSection[]  # crafting lists: the categories grouped under subheaders
+---@field panel? ForeverLoot.PanelWidget[]  # the right pane while the list is open; replaces the kind's default
 
 -- One subheader of a crafting list and the trade skill categories under it, by category id,
 -- by the category's displayed name or by a curated `group` label.

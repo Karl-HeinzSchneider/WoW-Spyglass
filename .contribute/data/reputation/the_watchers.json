@@ -2,6 +2,25 @@
   "name": "The Watchers",
   "icon": "Interface\\Icons\\Achievement_Reputation_01",
   "faction": 2819,
+  "panel": [
+    {
+      "bar": "reputation"
+    },
+    {
+      "description": true
+    },
+    {
+      "header": "Rewards"
+    },
+    {
+      "checkbox": "Only reached standings",
+      "filter": "standing"
+    },
+    {
+      "dropdown": "Standing",
+      "field": "standing"
+    }
+  ],
   "rewards": {
     "Friendly": [
       {

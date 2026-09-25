@@ -6,6 +6,13 @@ Data:AddList("reputation", "timbermaw_hold", {
     name = "Timbermaw Hold",
     icon = "Interface\\Icons\\Achievement_Reputation_01",
     factionID = 576,
+    panel = {
+        { bar = "reputation" },
+        { description = true },
+        { header = "Rewards" },
+        { checkbox = "Only reached standings", filter = "standing" },
+        { dropdown = "Standing", field = "standing" },
+    },
 })
 Data:AddListLoot("reputation", "timbermaw_hold", {
     { 22392, standing = "Friendly" }, -- Formula: Enchant 2H Weapon - Agility

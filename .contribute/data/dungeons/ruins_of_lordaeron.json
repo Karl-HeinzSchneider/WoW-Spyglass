@@ -3,8 +3,10 @@
   "name": "Ruins of Lordaeron",
   "minLevel": 15,
   "maxLevel": 20,
+  "zone": 1420,
   "background": 7963782,
   "backgroundCoords": [0.0445, 0.9552, 0.158, 0.842],
+  "entrance": [1420, 62, 69],
   "encounters": [
     {
       "id": 3353,

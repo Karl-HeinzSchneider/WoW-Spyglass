@@ -25,12 +25,18 @@ export interface CuratedInstance {
   displayName?: string;
   minLevel?: number;
   maxLevel?: number;
+  /** The level a character needs to enter. */
+  requiredLevel?: number;
+  /** uiMapID of the zone the entrance is in; the addon shows the client's (localized) name of it. */
+  zone?: number;
   /** Texture path shown in the browser, e.g. "Interface\\Icons\\INV_Misc_Key_13". */
   icon?: string;
   /** Wide picture behind the instance's tile in the browser (texture path or fileID). */
   background?: string | number;
   /** Part of `background` to show: [left, right, top, bottom] in 0..1; the whole texture when omitted. */
   backgroundCoords?: [number, number, number, number];
+  /** Where the entrance is: [uiMapID, x, y], x and y in 0..100 as the map shows them; the browser's "Show entrance" button. */
+  entrance?: [number, number, number];
   encounters: CuratedEncounter[];
   /**
    * What the instance's non-boss enemies drop. Every instance has this category, so `fix` adds
@@ -284,6 +290,24 @@ export function validate(files: CuratedFile[], checker: Checker): void {
     if (d.displayName !== undefined && (typeof d.displayName !== "string" || d.displayName === "")) {
       report(file, "`displayName` must be a non-empty string");
     }
+    if (d.requiredLevel !== undefined && (!Number.isInteger(d.requiredLevel) || d.requiredLevel < 1)) {
+      report(file, "`requiredLevel` must be a level (an integer from 1)");
+    }
+    if (d.zone !== undefined && (!Number.isInteger(d.zone) || d.zone <= 0)) {
+      report(file, "`zone` must be a uiMapID");
+    }
+    if (d.entrance !== undefined) {
+      const [mapID, x, y] = Array.isArray(d.entrance) ? d.entrance : [];
+      const inRange = (n: unknown) => typeof n === "number" && n >= 0 && n <= 100;
+      if (
+        !Array.isArray(d.entrance) ||
+        d.entrance.length !== 3 ||
+        !Number.isInteger(mapID) ||
+        !inRange(x) ||
+        !inRange(y)
+      )
+        report(file, "`entrance` must be [uiMapID, x, y] with x and y in 0..100");
+    }
 
     const seenEncounters = new Set<number>();
     for (const enc of d.encounters) {
@@ -448,9 +472,12 @@ export function serialize(d: CuratedInstance): string {
     displayName: d.displayName,
     minLevel: d.minLevel,
     maxLevel: d.maxLevel,
+    requiredLevel: d.requiredLevel,
+    zone: d.zone,
     icon: d.icon,
     background: d.background,
     backgroundCoords: d.backgroundCoords,
+    entrance: d.entrance,
     encounters: d.encounters.map((e) => ({
       id: e.id,
       name: e.name,

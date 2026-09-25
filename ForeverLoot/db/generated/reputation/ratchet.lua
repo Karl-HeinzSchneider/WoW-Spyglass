@@ -6,6 +6,13 @@ Data:AddList("reputation", "ratchet", {
     name = "Ratchet",
     icon = "Interface\\Icons\\Achievement_Reputation_01",
     factionID = 470,
+    panel = {
+        { bar = "reputation" },
+        { description = true },
+        { header = "Rewards" },
+        { checkbox = "Only reached standings", filter = "standing" },
+        { dropdown = "Standing", field = "standing" },
+    },
 })
 Data:AddListLoot("reputation", "ratchet", {
     { 274740, standing = "Friendly" }, -- Quilted Cloak

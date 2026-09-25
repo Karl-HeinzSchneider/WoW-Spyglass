@@ -30,6 +30,8 @@ export interface CuratedList {
   skillLine?: number;
   /** crafting: groups the profession's category folders under subheaders in the browser. */
   sections?: ListSection[];
+  /** The window's right pane while the list is open, top to bottom; replaces the kind's default panel. */
+  panel?: PanelWidget[];
   /** The rows, under the kind's key (ROWS_KEY): `recipes`, `rewards` or `items`. */
   recipes?: CuratedListRow[];
   /** PvP rows, or reputation rows grouped by standing. */
@@ -47,6 +49,55 @@ export interface ListSection {
   name: string;
   categories: (number | string)[];
 }
+
+/**
+ * One widget of a list's info panel (the window's right pane). Each widget has exactly one type
+ * key; the other keys are its options. Bars read the list's own `faction` / `skillLine`,
+ * checkboxes and dropdowns filter the entries the view shows, buttons run one fixed action.
+ */
+export interface PanelWidget {
+  header?: string;
+  text?: string;
+  /** The list's own description (a faction's, from the client). */
+  description?: true;
+  row?: string;
+  value?: string;
+  bar?: "reputation" | "skill";
+  checkbox?: string;
+  /** checkbox: the built-in filter it switches on (PANEL_FILTERS). */
+  filter?: string;
+  dropdown?: string;
+  /** dropdown: the row field whose values it offers. */
+  field?: string;
+  button?: string;
+  /** button: `<module>/<list id>[/<category id or name>...]`, the collection to open. */
+  open?: string;
+  /** button: `[uiMapID, x, y]`, x and y in 0..100 as the map shows them. */
+  map?: [number, number, number];
+  spacer?: true;
+}
+
+/** A widget's type key -> the option keys it may carry (and the ones it needs). */
+const PANEL_WIDGETS: Record<string, { options: string[]; required?: string[] }> = {
+  header: { options: [] },
+  text: { options: [] },
+  description: { options: [] },
+  row: { options: ["value"], required: ["value"] },
+  bar: { options: [] },
+  checkbox: { options: ["filter"], required: ["filter"] },
+  dropdown: { options: ["field"], required: ["field"] },
+  button: { options: ["open", "map"] },
+  spacer: { options: [] },
+};
+
+/** The checkbox filters the addon knows (ForeverLoot/src/ui/view.lua), and the kinds they fit. */
+const PANEL_FILTERS: Record<string, ListKind[] | "all"> = {
+  side: "all",
+  standing: ["reputation"],
+};
+
+/** The browser's built-in module ids, the first segment of a button's `open`. */
+const MODULE_IDS = ["dungeons", "raids", "crafting", "pvp", "collections", "reputation", "items"];
 
 /** Reputation rewards are grouped in source; the generator adds `standing` to each Lua row. */
 export type ReputationRewards = Partial<Record<Standing, CuratedListRow[]>>;
@@ -176,6 +227,7 @@ function checkField(value: unknown, spec: FieldSpec): string | undefined {
 
 /** Validates the list files: display fields, the kind's id fields and every row (via the checker). */
 export function validateLists(files: ListFile[], checker: Checker): void {
+  const listIDs = new Set(files.map((f) => `${f.kind}/${f.slug}`));
   for (const file of files) {
     const d = file.data;
     if (!/^[a-z0-9_]+$/.test(file.slug)) {
@@ -206,6 +258,7 @@ export function validateLists(files: ListFile[], checker: Checker): void {
       );
     }
     validateSections(file, checker);
+    validatePanel(file, listIDs, checker);
     for (const field of ["faction", "skillLine"] as const) {
       if (d[field] !== undefined && !LIST_ID_FIELDS[file.kind].includes(field)) {
         checker.report(file, `\`${field}\` is not a field of ${file.kind} lists`);
@@ -372,6 +425,119 @@ function validateSections(file: ListFile, checker: Checker): void {
 }
 
 /**
+ * A list's `panel`: every widget has exactly one known type key and only that type's options,
+ * bars need the list's `faction` / `skillLine`, filters and dropdown fields must fit the kind,
+ * and a button opens a module (a list of it by id) or a point on the map.
+ */
+function validatePanel(file: ListFile, listIDs: Set<string>, checker: Checker): void {
+  const d = file.data;
+  if (d.panel === undefined) return;
+  if (!Array.isArray(d.panel)) {
+    checker.report(file, "`panel` must be an array of widgets");
+    return;
+  }
+  const fields = new Set<string>([...ROW_FIELDS[file.kind], "group"]);
+  for (const [index, widget] of d.panel.entries()) {
+    const where = `panel[${index}]`;
+    if (typeof widget !== "object" || widget === null || Array.isArray(widget)) {
+      checker.report(file, `${where}: a widget must be an object`);
+      continue;
+    }
+    const keys = Object.keys(widget);
+    const types = keys.filter((key) => Object.hasOwn(PANEL_WIDGETS, key));
+    if (types.length !== 1) {
+      checker.report(
+        file,
+        `${where}: needs exactly one of ${Object.keys(PANEL_WIDGETS).join(", ")}, got ${types.join(", ") || "none"}`,
+      );
+      continue;
+    }
+    const type = types[0]!;
+    const spec = PANEL_WIDGETS[type]!;
+    for (const key of keys) {
+      if (key !== type && !spec.options.includes(key))
+        checker.report(file, `${where} (${type}): unknown key \`${key}\``);
+    }
+    for (const key of spec.required ?? []) {
+      if (widget[key as keyof PanelWidget] === undefined)
+        checker.report(file, `${where} (${type}): \`${key}\` is missing`);
+    }
+    const w = widget;
+    switch (type) {
+      case "description":
+      case "spacer":
+        if (w[type] !== true) checker.report(file, `${where}: \`${type}\` must be true`);
+        break;
+      case "bar":
+        if (w.bar === "reputation" && d.faction === undefined)
+          checker.report(file, `${where}: a reputation bar needs the list's \`faction\``);
+        else if (w.bar === "skill" && d.skillLine === undefined)
+          checker.report(file, `${where}: a skill bar needs the list's \`skillLine\``);
+        else if (w.bar !== "reputation" && w.bar !== "skill")
+          checker.report(file, `${where}: \`bar\` must be "reputation" or "skill"`);
+        break;
+      case "checkbox": {
+        const kinds = w.filter !== undefined ? PANEL_FILTERS[w.filter] : undefined;
+        if (typeof w.checkbox !== "string" || w.checkbox === "")
+          checker.report(file, `${where}: \`checkbox\` must be its label`);
+        if (w.filter !== undefined && !kinds)
+          checker.report(
+            file,
+            `${where}: unknown filter \`${w.filter}\` (known: ${Object.keys(PANEL_FILTERS).join(", ")})`,
+          );
+        else if (kinds && kinds !== "all" && !kinds.includes(file.kind))
+          checker.report(file, `${where}: filter \`${w.filter}\` only works in ${kinds.join(", ")} lists`);
+        break;
+      }
+      case "dropdown":
+        if (typeof w.dropdown !== "string" || w.dropdown === "")
+          checker.report(file, `${where}: \`dropdown\` must be its label`);
+        if (w.field !== undefined && !fields.has(w.field))
+          checker.report(
+            file,
+            `${where}: \`field\` must be a row field of ${file.kind} lists (${[...fields].join(", ")})`,
+          );
+        break;
+      case "button":
+        if (typeof w.button !== "string" || w.button === "")
+          checker.report(file, `${where}: \`button\` must be its label`);
+        if ((w.open === undefined) === (w.map === undefined))
+          checker.report(file, `${where}: a button needs exactly one action, \`open\` or \`map\``);
+        if (w.open !== undefined) checkOpenTarget(file, where, w.open, listIDs, checker);
+        if (w.map !== undefined) {
+          const [mapID, x, y] = Array.isArray(w.map) ? w.map : [];
+          const inRange = (n: unknown) => typeof n === "number" && n >= 0 && n <= 100;
+          if (!Array.isArray(w.map) || w.map.length !== 3 || !Number.isInteger(mapID) || !inRange(x) || !inRange(y))
+            checker.report(file, `${where}: \`map\` must be [uiMapID, x, y] with x and y in 0..100`);
+        }
+        break;
+      default:
+        if (typeof w[type as keyof PanelWidget] !== "string" || w[type as keyof PanelWidget] === "")
+          checker.report(file, `${where}: \`${type}\` must be a non-empty string`);
+        if (type === "row" && w.value !== undefined && typeof w.value !== "string")
+          checker.report(file, `${where}: \`value\` must be a string`);
+    }
+  }
+}
+
+/** A button's `open` path: a built-in module, and for the list modules a list that exists. */
+function checkOpenTarget(file: ListFile, where: string, open: unknown, listIDs: Set<string>, checker: Checker): void {
+  const segments = typeof open === "string" ? open.split("/") : [];
+  const [module, list] = segments;
+  if (segments.length === 0 || segments.some((s) => s === "")) {
+    checker.report(file, `${where}: \`open\` must be "<module>/<list id>[/<category>...]"`);
+  } else if (!MODULE_IDS.includes(module!)) {
+    checker.report(file, `${where}: \`open\` starts with an unknown module "${module}" (${MODULE_IDS.join(", ")})`);
+  } else if (
+    list !== undefined &&
+    (LIST_KINDS as readonly string[]).includes(module!) &&
+    !listIDs.has(`${module}/${list}`)
+  ) {
+    checker.report(file, `${where}: \`open\` names no list "${list}" in ${module}`);
+  }
+}
+
+/**
  * A crafting row's `spell` against the recipe database: it must be a recipe of the file's
  * profession (an unknown one is allowed with a warning: server-side recipes are not in the
  * client's tables) and, with `fix`, fills in the item it makes. Returns the recipe when known.
@@ -438,6 +604,7 @@ export function serializeList(file: ListFile): string {
   };
   for (const field of LIST_ID_FIELDS[file.kind]) ordered[field] = d[field];
   ordered.sections = d.sections?.map((section) => ({ name: section.name, categories: section.categories }));
+  ordered.panel = d.panel;
   const serializeRow = (r: CuratedListRow) => {
     const row: Record<string, unknown> = { item: r.item, name: r.name };
     for (const field of ROW_FIELDS[file.kind]) {

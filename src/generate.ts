@@ -108,11 +108,26 @@ function emitInstance(
         expansionID: inst.expansionID,
         minLevel: cur?.minLevel,
         maxLevel: cur?.maxLevel,
+        requiredLevel: cur?.requiredLevel,
+        zone: cur?.zone,
         icon: cur?.icon ?? DEFAULT_ICONS[inst.type],
         background: cur?.background,
         backgroundCoords: cur?.backgroundCoords,
+        entrance: cur?.entrance,
       },
-      ["type", "displayName", "expansionID", "minLevel", "maxLevel", "icon", "background", "backgroundCoords"],
+      [
+        "type",
+        "displayName",
+        "expansionID",
+        "minLevel",
+        "maxLevel",
+        "requiredLevel",
+        "zone",
+        "icon",
+        "background",
+        "backgroundCoords",
+        "entrance",
+      ],
     ).map((l) => l + "\n"),
   );
   out.push(`    bosses = ${luaValue(encounters)},\n})\n`);
@@ -232,6 +247,9 @@ function emitList(file: ListFile, ref: Reference): string {
     ).map((l) => l + "\n"),
   );
   out.push(...emitSections(d.sections, ref));
+  if (d.panel && d.panel.length > 0) {
+    out.push("    panel = {\n", ...d.panel.map((widget) => `        ${luaValue(widget)},\n`), "    },\n");
+  }
   out.push("})\n");
   // Rows without an item are either name-only rows `npm run fix` hasn't resolved yet (dropped) or
   // crafting rows naming a recipe that makes no item (an enchant: kept, the spell is the row).

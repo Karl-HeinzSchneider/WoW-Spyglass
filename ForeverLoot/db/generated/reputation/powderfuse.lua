@@ -6,6 +6,13 @@ Data:AddList("reputation", "powderfuse", {
     name = "Powderfuse",
     icon = "Interface\\Icons\\Achievement_Reputation_01",
     factionID = 2827,
+    panel = {
+        { bar = "reputation" },
+        { description = true },
+        { header = "Rewards" },
+        { checkbox = "Only reached standings", filter = "standing" },
+        { dropdown = "Standing", field = "standing" },
+    },
 })
 Data:AddListLoot("reputation", "powderfuse", {
     { 276200, standing = "Friendly" }, -- Crawler's Clackers

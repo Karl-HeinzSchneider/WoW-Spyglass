@@ -6,6 +6,13 @@ Data:AddList("reputation", "the_watchers", {
     name = "The Watchers",
     icon = "Interface\\Icons\\Achievement_Reputation_01",
     factionID = 2819,
+    panel = {
+        { bar = "reputation" },
+        { description = true },
+        { header = "Rewards" },
+        { checkbox = "Only reached standings", filter = "standing" },
+        { dropdown = "Standing", field = "standing" },
+    },
 })
 Data:AddListLoot("reputation", "the_watchers", {
     { 275969, standing = "Friendly" }, -- Brilliant Watcher's Signet

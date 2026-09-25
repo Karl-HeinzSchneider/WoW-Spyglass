@@ -6,6 +6,13 @@ Data:AddList("reputation", "kirin_tor", {
     name = "Kirin Tor",
     icon = "Interface\\Icons\\Achievement_Reputation_01",
     factionID = 2740,
+    panel = {
+        { bar = "reputation" },
+        { description = true },
+        { header = "Rewards" },
+        { checkbox = "Only reached standings", filter = "standing" },
+        { dropdown = "Standing", field = "standing" },
+    },
 })
 Data:AddListLoot("reputation", "kirin_tor", {
     { 276986, standing = "Friendly" }, -- Pattern: Azure Gustwoven Hood

@@ -154,7 +154,10 @@ The instance:
 | `map`                            | The game's map id. Required.                                                                                            |
 | `id`, `name`                     | Only on a split dungeon, see below.                                                                                     |
 | `displayName`                    | A shorter name for the browser, see below.                                                                              |
-| `minLevel`, `maxLevel`           | The level range shown on the tile.                                                                                      |
+| `minLevel`, `maxLevel`           | The level range shown on the tile and in the info panel.                                                                |
+| `requiredLevel`                  | The level a character needs to enter; shown in the info panel.                                                          |
+| `zone`                           | uiMapID of the zone the entrance is in; the info panel shows the game's name for it, in the player's language.          |
+| `entrance`                       | `[uiMapID, x, y]` of the entrance (x, y in 0–100, as the map shows them): the info panel's "Show entrance" button.      |
 | `icon`                           | Texture path.                                                                                                           |
 | `background`, `backgroundCoords` | The tile's picture: a texture path or fileID, and `[left, right, top, bottom]` in 0–1 of it (all of it when omitted).   |
 | `encounters`                     | The bosses. `fix` adds every encounter the game knows for the map that the file doesn't list yet, with an empty `loot`. |
@@ -193,6 +196,16 @@ Any instance file may set `displayName` (e.g. `"SM: Graveyard"`), which the brow
 of the full name on the instance's tile, breadcrumbs and page title, in every language. Item
 tooltips and the _Instance_ filter keep the full name. `fix` leaves it alone; an empty one is an
 error.
+
+### The info panel of an instance
+
+While an instance is open, the window's right column shows the zone its entrance is in, its
+level range, the level needed to enter and its boss count, a
+"Show entrance" button when the file has an `entrance` (it opens the map with a waypoint there;
+the game tables of this client carry no dungeon entrances, so they are curated), and the
+instance's `quests` with the character's progress on each: done, ready to turn in, active or not
+started. Quests of the other faction and other classes' quests are left out. Each quest shows the game's quest
+tooltip on hover and can be shift-clicked into chat.
 
 ### A boss's picture: `portrait` or `displayID`
 
@@ -367,6 +380,49 @@ of another profession, an unknown id or name, and a category in two sections are
 A `group` label used by the file's rows can be named in a section too (its folder is matched by
 that label). Sections are a display choice, not data: a module may pass its own to
 `ForeverLoot.ListFolders` and override the file's (see [API.md](API.md#category-sections-crafting)).
+
+### The info panel: `panel`
+
+The window's right column shows the _info panel_ of the list that is open (also while one of
+its category folders is): its name as the title, then the widgets of the file's `panel`, top to
+bottom. Without a `panel` a reputation shows the character's standing bar and the faction's
+description, a profession the skill bar and its recipe count, the other kinds just the name. A
+file's `panel` replaces that default, so repeat the bar if you want to keep it.
+
+Each widget is an object with exactly one of these keys, plus that widget's options:
+
+| Widget        | Options             | Shows                                                                                                                                                                                                    |
+| ------------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `header`      |                     | a section plate with the text                                                                                                                                                                            |
+| `text`        |                     | wrapped text                                                                                                                                                                                             |
+| `description` |                     | `true`: the list's own description (a faction's, from the game, in the player's language)                                                                                                                |
+| `row`         | `value`             | a label on the left, `value` on the right                                                                                                                                                                |
+| `bar`         |                     | `"reputation"`: the character's standing with the file's `faction`; `"skill"`: the character's rank in the file's `skillLine`                                                                            |
+| `checkbox`    | `filter`            | a checkbox that hides entries while checked. Filters: `"side"` (rows of the other faction), `"standing"` (reputation: rewards above the character's standing)                                            |
+| `dropdown`    | `field`             | a dropdown with every value the list's rows have in `field` (`standing`, `source`, `group`, ...); picking one shows only those rows                                                                      |
+| `button`      | `open` **or** `map` | `open`: goes to another collection, `"<module>/<list id>"`, optionally deeper (a crafting category by id: `"crafting/blacksmithing/2469"`). `map`: `[uiMapID, x, y]` opens the map there with a waypoint |
+| `spacer`      |                     | `true`: a little empty space                                                                                                                                                                             |
+
+Checkboxes and dropdowns act on the list in that tab only and are forgotten when the tab is
+closed. `npm run check` reports unknown widgets and options, a bar without the file's id, a
+filter or field the kind doesn't have, and an `open` naming a module or list that doesn't exist.
+
+```json
+{
+  "name": "Cenarion Circle",
+  "faction": 609,
+  "panel": [
+    { "bar": "reputation" },
+    { "description": true },
+    { "header": "Rewards" },
+    { "checkbox": "Only reached standings", "filter": "standing" },
+    { "dropdown": "Standing", "field": "standing" },
+    { "button": "Show Cenarion Hold", "map": [1451, 51.2, 38.3] },
+    { "button": "Open Timbermaw Hold", "open": "reputation/timbermaw_hold" }
+  ],
+  "rewards": {}
+}
+```
 
 ## Code changes
 

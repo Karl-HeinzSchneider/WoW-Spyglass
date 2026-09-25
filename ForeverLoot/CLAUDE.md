@@ -16,8 +16,8 @@ be listed**. The order follows these rules:
    Ace\* → LibDataBroker → LibDBIcon).
 2. `src\core\`, then `src\data\` (the database API), then `db\generated\generated.xml` (the data)
    and `modules\modules.xml` (the modules, which need both).
-3. `src\ui\`: each Lua mixin before the XML that names it, `templates.xml` before
-   `mainwindow.xml`, the recipe popup after the window it is parented to.
+3. `src\ui\`: each Lua mixin before the XML that names it, `templates.xml` and `infopane.xml`
+   before `mainwindow.xml`, the recipe popup after the window it is parented to.
    `src\helper\profiler.lua` sits between the mixins it wraps and the XML that creates frames
    from them.
 4. `ForeverLoot.lua` last; it only logs.
@@ -96,6 +96,9 @@ the window.
 
 - `mainwindow.lua/.xml` — `ForeverLootMainWindow` (`app.ui.mainWindow`): the frame, its two panes
   and the browser-style view tabs.
+- `infopane.lua/.xml` — `ForeverLootInfoPaneMixin`, the right pane (`RightPane.Info`): the
+  selected tab's info `panel`, drawn with the character frame's side-pane look. Its checkbox
+  filter ids live in `view.lua` and must match `PANEL_FILTERS` in `src/lists.ts`.
 - `view.lua` + `templates.xml` — a view: header row, paged content, the navigation stack, rows,
   tiles, cards and headers, search box and filter dropdown.
 - `recipepopup.lua/.xml` — `app.ui.recipePopup`, toggled by a click on a recipe row;
