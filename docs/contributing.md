@@ -205,7 +205,10 @@ level range, the level needed to enter and its boss count, a
 the game tables of this client carry no dungeon entrances, so they are curated), and the
 instance's `quests` with the character's progress on each: done, ready to turn in, active or not
 started. Quests of the other faction and other classes' quests are left out. Each quest shows the game's quest
-tooltip on hover and can be shift-clicked into chat.
+tooltip on hover and can be shift-clicked into chat. Quests are server-side, so the client often
+doesn't have a quest yet; its tooltip then shows the curated title, `requiredLevel` and
+`objective` instead. Either way the tooltip ends with the quest's rewards: the `items` with their
+icons and the `xp`.
 
 ### A boss's picture: `portrait` or `displayID`
 
@@ -253,9 +256,9 @@ filter.
 | `name`          | string  | The quest's title. Curated, because this client ships no quest table: `fix` never rewrites it, and a quest without one is a warning.                                |
 | `side`          | string  | `"Alliance"`, `"Horde"` or `"Both"`; omitting it means `"Both"`. Anything else is an error.                                                                         |
 | `class`         | string  | A class quest's class: `"Warrior"`, `"Paladin"`, `"Hunter"`, `"Rogue"`, `"Priest"`, `"Shaman"`, `"Mage"`, `"Warlock"` or `"Druid"`; omitted means any class.        |
-| `requiredLevel` | integer | The level a character needs to accept the quest. Not shipped yet.                                                                                                   |
-| `xp`            | integer | The experience the quest rewards. Not shipped yet.                                                                                                                  |
-| `objective`     | string  | What the quest asks for, in one sentence. Not shipped yet.                                                                                                          |
+| `requiredLevel` | integer | The level a character needs to accept the quest; shown in the quest's tooltip in the info panel.                                                                    |
+| `xp`            | integer | The experience the quest rewards; shown in the quest's tooltip in the info panel.                                                                                   |
+| `objective`     | string  | What the quest asks for, in one English sentence; shown in the quest's tooltip in the info panel.                                                                   |
 | `items`         | array   | The items the quest rewards: item rows without a `chance`. May be empty.                                                                                            |
 
 The quest ids are the ones a boss's `quests` field lists: a boss that hands out or is the

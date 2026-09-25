@@ -111,7 +111,10 @@ registers itself with the character frame, so it can't be inherited): the title 
   tooltip (`GameTooltip:SetHyperlink` with `GetQuestLink`), a modified click goes through
   `HandleModifiedItemClick`. A quest the client hasn't loaded has no link yet; it is asked for
   once (`C_QuestLog.RequestLoadQuestByID`) and `QUEST_DATA_LOAD_RESULT` redraws the pane, until
-  then the tooltip shows the title and id.
+  then the tooltip shows the curated title, id, `requiredLevel` and `objective` from
+  `Data:GetQuest`. Either tooltip ends with the curated rewards: each of the quest's `items` as
+  its icon and name in its quality color (the item cache, else the database row; an uncached item
+  is requested for the next hover), then the `xp`.
 
 Text that may run over one line (`text`, `description`, quest titles) sits in a FontString with
 a fixed width: the rows are measured before the layout frame places them, so a width taken from

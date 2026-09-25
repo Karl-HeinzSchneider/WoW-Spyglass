@@ -87,11 +87,11 @@ export interface CuratedQuest {
   side?: string;
   /** The class a class quest is for ("Warlock"); omitted means any class. */
   class?: string;
-  /** The level a character needs to accept the quest. Curated, not shipped yet. */
+  /** The level a character needs to accept the quest; the quest tooltip shows it. */
   requiredLevel?: number;
-  /** The experience the quest rewards. Curated, not shipped yet. */
+  /** The experience the quest rewards; the quest tooltip shows it. */
   xp?: number;
-  /** What the quest asks for, in one sentence. Curated, not shipped yet. */
+  /** What the quest asks for, in one sentence (English); the quest tooltip shows it. */
   objective?: string;
   /** The items the quest rewards. */
   items: CuratedItemRow[];

@@ -29,22 +29,22 @@ Data:AddBossLoot(3496, { -- Durgen Dirgehammer
 })
 
 Data:AddQuests(3065, {
-    { id = 96393, name = "Old Ironforge Incursion", side = "Both", items = {
+    { id = 96393, name = "Old Ironforge Incursion", side = "Both", requiredLevel = 9, xp = 4930, objective = "Enter Hall of Thanes and claim Durgen Dirgehammer's Head.", items = {
         { 279894 }, -- Calibrated Blunderbuss
         { 279895 }, -- Ironforge Greathammer
         { 279896 }, -- Deepblaze
     } },
-    { id = 96395, name = "An Ancient Grudge", side = "Both", items = {
+    { id = 96395, name = "An Ancient Grudge", side = "Both", requiredLevel = 10, xp = 3570, objective = "Put the spirit of Faldrim Anvilmar to rest.", items = {
         { 279899 }, -- Catacomb Cloak
         { 279900 }, -- Deepgrave Trousers
     } },
-    { id = 96403, name = "Important Heirlooms", side = "Both", items = {
+    { id = 96403, name = "Important Heirlooms", side = "Both", requiredLevel = 10, xp = 4590, objective = "Collect 8 Dwarven Heirlooms from the Hall of Thanes.", items = {
         { 279898 }, -- Dwarven Tome
         { 280096 }, -- Tomb Robber's Gloves
     } },
-    { id = 96394, name = "The Restless Dead", side = "Alliance", items = {
+    { id = 96394, name = "The Restless Dead", side = "Alliance", requiredLevel = 10, xp = 3570, objective = "Kill 15 Enraged Apparitions and 10 Tormented Souls, then put Anvilmar's spirit to rest.", items = {
         { 279897 }, -- Dusty Belt
         { 280095 }, -- Cryptwalker Bracers
     } },
-    { id = 98423, name = "The Treaty of Understanding", side = "Alliance", items = {} },
+    { id = 98423, name = "The Treaty of Understanding", side = "Alliance", requiredLevel = 9, xp = 3900, objective = "Deliver the Treaty of Understanding to Magni Bronzebeard in Ironforge.", items = {} },
 })
