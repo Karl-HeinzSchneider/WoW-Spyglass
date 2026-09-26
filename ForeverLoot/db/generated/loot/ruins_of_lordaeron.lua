@@ -15,10 +15,22 @@ Data:AddBossLoot(3357, { -- The Abandoned
     { 271216 }, -- Scepter of the Abandoned
 })
 
+Data:AddBossLoot(3355, { -- The Baron
+    { 271204 }, -- Meathook Slicer
+    { 271205 }, -- Abomination Bones
+    { 271206 }, -- Leftover Abomination Skin
+    { 280438 }, -- Abominable Head
+})
+
 Data:AddBossLoot(3354, { -- Rath'mael
     { 271213 }, -- Mirror of Rath'mael
     { 271214 }, -- Rotmender's Treads
     { 271215 }, -- Coldspire Staff
+})
+
+Data:AddBossLoot(3408, { -- Lordaeron Captain
+    { 6641 }, -- Haunting Blade
+    { 6642 }, -- Phantom Armor
 })
 
 Data:AddBossLoot(3411, { -- Viktor the Vile
@@ -31,6 +43,10 @@ Data:AddBossLoot(3412, { -- Bjork
     { 271209 }, -- Bonerust Leggings
     { 271210 }, -- Tuskwrap Belt
     { 271217 }, -- Corpse Chopper
+})
+
+Data:AddTrashLoot(2999, {
+    { 268535 }, -- Bloodied Insignia
 })
 
 Data:AddQuests(2999, {

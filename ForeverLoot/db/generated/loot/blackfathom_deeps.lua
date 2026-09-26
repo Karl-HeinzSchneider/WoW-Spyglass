@@ -6,17 +6,24 @@ local Data = ForeverLoot.Data
 Data:AddBossLoot(2916, { -- Ghamoo-ra
     { 6907 }, -- Tortoise Armor
     { 6908 }, -- Ghamoo-ra's Bind
+    { 273839 }, -- Spiked Shell Band
 })
 
 Data:AddBossLoot(2915, { -- Lady Sarevess
     { 888 }, -- Naga Battle Gloves
     { 3078 }, -- Naga Heartpiercer
     { 11121 }, -- Darkwater Talwar
+    { 252798 }, -- Pattern: Brawler's Leather Hood
 })
 
 Data:AddBossLoot(2914, { -- Geilhast
     { 6906 }, -- Algae Fists
     { 6905 }, -- Reef Axe
+    { 1470 }, -- Murloc Skin Bag
+})
+
+Data:AddBossLoot(2913, { -- Lorgus Jett
+    { 273843 }, -- Fallenroot Longbow
 })
 
 Data:AddBossLoot(2912, { -- Old Serra'kis
@@ -50,6 +57,7 @@ Data:AddTrashLoot(48, {
     { 2034 }, -- Scholarly Robes
     { 2271 }, -- Staff of the Blessed Seer
     { 2567 }, -- Evocator's Blade
+    { 16782 }, -- Strange Water Globe
 })
 
 Data:AddQuests(48, {

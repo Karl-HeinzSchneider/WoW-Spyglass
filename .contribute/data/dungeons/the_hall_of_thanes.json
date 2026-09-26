@@ -14,6 +14,7 @@
       "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\faldrim_anvilmar.blp",
       "displayID": 142826,
       "npc": 261306,
+      "level": 16,
       "loot": [
         {
           "item": 270227,
@@ -35,6 +36,7 @@
       "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\magmatus.blp",
       "displayID": 1070,
       "npc": 261316,
+      "level": 16,
       "loot": [
         {
           "item": 270230,
@@ -55,6 +57,8 @@
       "name": "Plunder",
       "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\plunder.blp",
       "displayID": 142840,
+      "npc": 261311,
+      "level": 16,
       "loot": [
         {
           "item": 270228,
@@ -75,6 +79,8 @@
       "name": "Durgen Dirgehammer",
       "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\durgen_dirgehammer.blp",
       "displayID": 142837,
+      "npc": 261319,
+      "level": 16,
       "loot": [
         {
           "item": 270256,
@@ -100,7 +106,7 @@
     {
       "id": 96393,
       "name": "Old Ironforge Incursion",
-      "side": "Both",
+      "side": "Alliance",
       "requiredLevel": 9,
       "xp": 4930,
       "objective": "Enter Hall of Thanes and claim Durgen Dirgehammer's Head.",

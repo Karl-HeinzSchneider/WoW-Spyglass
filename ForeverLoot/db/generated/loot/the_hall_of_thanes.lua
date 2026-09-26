@@ -29,7 +29,7 @@ Data:AddBossLoot(3496, { -- Durgen Dirgehammer
 })
 
 Data:AddQuests(3065, {
-    { id = 96393, name = "Old Ironforge Incursion", side = "Both", requiredLevel = 9, xp = 4930, objective = "Enter Hall of Thanes and claim Durgen Dirgehammer's Head.", items = {
+    { id = 96393, name = "Old Ironforge Incursion", side = "Alliance", requiredLevel = 9, xp = 4930, objective = "Enter Hall of Thanes and claim Durgen Dirgehammer's Head.", items = {
         { 279894 }, -- Calibrated Blunderbuss
         { 279895 }, -- Ironforge Greathammer
         { 279896 }, -- Deepblaze

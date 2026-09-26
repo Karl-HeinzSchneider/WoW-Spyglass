@@ -136,7 +136,6 @@ Data:AddNames("itIT", "bosses", {
     [3312] = "Mana Wraith",
     [3353] = "Witherfang",
     [3354] = "Rath'mael",
-    [3355] = "The Butcher",
     [3357] = "The Abandoned",
     [3369] = "Deathulus",
     [3371] = "Crushfist Bloodbreaker",

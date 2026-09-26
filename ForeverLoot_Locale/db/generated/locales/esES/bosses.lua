@@ -287,7 +287,6 @@ Data:AddNames("esES", "bosses", {
     [3312] = "Ánima de maná",
     [3353] = "Colmimarchito",
     [3354] = "Rath'mael",
-    [3355] = "El Carnicero",
     [3357] = "El Abandonado",
     [3369] = "Muerthulus",
     [3371] = "Crujepuño Rompesangre",

@@ -287,7 +287,6 @@ Data:AddNames("ptBR", "bosses", {
     [3312] = "Aparição de Mana",
     [3353] = "Sugapresa",
     [3354] = "Rath'mael",
-    [3355] = "O Carniceiro",
     [3357] = "O Abandonado",
     [3369] = "Mortulus",
     [3371] = "Murraça Quebrassangue",

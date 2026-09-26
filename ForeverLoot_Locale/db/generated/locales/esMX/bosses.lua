@@ -287,7 +287,6 @@ Data:AddNames("esMX", "bosses", {
     [3312] = "Ánima de maná",
     [3353] = "Marchitacolmillos",
     [3354] = "Rath'mael",
-    [3355] = "El Carnicero",
     [3357] = "El Abandonado",
     [3369] = "Muertulus",
     [3371] = "Desgarrasangre Aplastalonte",

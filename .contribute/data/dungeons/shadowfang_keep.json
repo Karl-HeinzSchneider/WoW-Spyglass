@@ -14,6 +14,8 @@
       "name": "Rethilgore",
       "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\rethilgore.blp",
       "displayID": 524,
+      "npc": 3914,
+      "level": 20,
       "loot": [
         {
           "item": 5254,
@@ -34,6 +36,8 @@
       "name": "Razorclaw the Butcher",
       "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\rethilgore.blp",
       "displayID": 524,
+      "npc": 3886,
+      "level": 22,
       "loot": [
         {
           "item": 1292,
@@ -53,6 +57,9 @@
       "id": 2750,
       "name": "Baron Silverlaine",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Baron Silverlaine",
+      "displayID": 3222,
+      "npc": 3887,
+      "level": 24,
       "loot": [
         {
           "item": 6321,
@@ -72,6 +79,9 @@
       "id": 2751,
       "name": "Commander Springvale",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Commander Springvale",
+      "displayID": 3223,
+      "npc": 4278,
+      "level": 24,
       "loot": [
         {
           "item": 3191,
@@ -92,6 +102,8 @@
       "name": "Odo the Blindwatcher",
       "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\odo_the_blindwatcher.blp",
       "displayID": 522,
+      "npc": 4279,
+      "level": 24,
       "loot": [
         {
           "item": 6318,
@@ -112,6 +124,8 @@
       "name": "Fenrus the Devourer",
       "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\fenrus_the_devourer.blp",
       "displayID": 2352,
+      "npc": 4274,
+      "level": 25,
       "loot": [
         {
           "item": 3230,
@@ -132,6 +146,8 @@
       "name": "Wolf Master Nandos",
       "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\wolf_master_nandos.blp",
       "displayID": 11179,
+      "npc": 3927,
+      "level": 25,
       "loot": [
         {
           "item": 3748,
@@ -152,6 +168,8 @@
       "name": "Archmage Arugal",
       "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\archmage_arugal.blp",
       "displayID": 2353,
+      "npc": 4275,
+      "level": 26,
       "loot": [
         {
           "item": 6220,
@@ -220,6 +238,18 @@
     {
       "item": 6341,
       "name": "Eerie Stable Lantern"
+    },
+    {
+      "item": 932,
+      "name": "Fel Steed Saddlebags"
+    },
+    {
+      "item": 6642,
+      "name": "Phantom Armor"
+    },
+    {
+      "item": 6641,
+      "name": "Haunting Blade"
     }
   ],
   "quests": [

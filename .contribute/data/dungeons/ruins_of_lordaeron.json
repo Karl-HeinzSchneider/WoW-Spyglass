@@ -13,6 +13,8 @@
       "name": "Witherfang",
       "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\witherfang.blp",
       "displayID": 144189,
+      "npc": 250483,
+      "level": 17,
       "loot": [
         {
           "item": 271201,
@@ -33,6 +35,8 @@
       "name": "The Abandoned",
       "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\the_abandoned.blp",
       "displayID": 138667,
+      "npc": 250631,
+      "level": 18,
       "loot": [
         {
           "item": 271207,
@@ -50,16 +54,37 @@
     },
     {
       "id": 3355,
-      "name": "The Butcher",
+      "name": "The Baron",
       "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\the_butcher.blp",
       "displayID": 144188,
-      "loot": []
+      "npc": 250660,
+      "level": 17,
+      "loot": [
+        {
+          "item": 271204,
+          "name": "Meathook Slicer"
+        },
+        {
+          "item": 271205,
+          "name": "Abomination Bones"
+        },
+        {
+          "item": 271206,
+          "name": "Leftover Abomination Skin"
+        },
+        {
+          "item": 280438,
+          "name": "Abominable Head"
+        }
+      ]
     },
     {
       "id": 3354,
       "name": "Rath'mael",
       "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\rathmael.blp",
       "displayID": 144175,
+      "npc": 250657,
+      "level": 20,
       "loot": [
         {
           "item": 271213,
@@ -78,13 +103,25 @@
     {
       "id": 3408,
       "name": "Lordaeron Captain",
-      "loot": []
+      "level": 19,
+      "loot": [
+        {
+          "item": 6641,
+          "name": "Haunting Blade"
+        },
+        {
+          "item": 6642,
+          "name": "Phantom Armor"
+        }
+      ]
     },
     {
       "id": 3411,
       "name": "Viktor the Vile",
       "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\viktor_the_vile.blp",
       "displayID": 139455,
+      "npc": 256035,
+      "level": 19,
       "loot": [
         {
           "item": 271211,
@@ -105,6 +142,8 @@
       "name": "Bjork",
       "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\bjork.blp",
       "displayID": 144170,
+      "npc": 256097,
+      "level": 19,
       "loot": [
         {
           "item": 271209,
@@ -121,7 +160,12 @@
       ]
     }
   ],
-  "trash": [],
+  "trash": [
+    {
+      "item": 268535,
+      "name": "Bloodied Insignia"
+    }
+  ],
   "quests": [
     {
       "id": 92422,

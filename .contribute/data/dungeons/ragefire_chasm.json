@@ -13,6 +13,9 @@
       "id": 2732,
       "name": "Oggleflint",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Oggleflint",
+      "displayID": 11611,
+      "npc": 11517,
+      "level": 16,
       "loot": [
         {
           "item": 272996,
@@ -32,6 +35,9 @@
       "id": 2733,
       "name": "Taragaman the Hungerer",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Taragaman the Hungerer",
+      "displayID": 7970,
+      "npc": 11520,
+      "level": 16,
       "loot": [
         {
           "item": 14145,
@@ -51,6 +57,9 @@
       "id": 2734,
       "name": "Jergosh the Invoker",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Jergosh the Invoker",
+      "displayID": 11429,
+      "npc": 11518,
+      "level": 16,
       "loot": [
         {
           "item": 14147,
@@ -70,6 +79,9 @@
       "id": 2735,
       "name": "Bazzalan",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Bazzalan",
+      "displayID": 2007,
+      "npc": 11519,
+      "level": 16,
       "loot": [
         {
           "item": 273003,
@@ -78,6 +90,10 @@
         {
           "item": 273007,
           "name": "Chasm Walkers"
+        },
+        {
+          "item": 273005,
+          "name": "Satyrskin Cloak"
         }
       ]
     }

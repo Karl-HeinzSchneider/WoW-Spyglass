@@ -287,7 +287,6 @@ Data:AddNames("frFR", "bosses", {
     [3312] = "Âme en peine de mana",
     [3353] = "Croc-Flétri",
     [3354] = "Rath’mael",
-    [3355] = "Le Boucher",
     [3357] = "L’Abandonné",
     [3369] = "Mortulus",
     [3371] = "Poing-de-Rage Brisesang",

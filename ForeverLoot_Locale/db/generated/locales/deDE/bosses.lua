@@ -287,7 +287,6 @@ Data:AddNames("deDE", "bosses", {
     [3312] = "Managespenst",
     [3353] = "Welkzahn",
     [3354] = "Rath'mael",
-    [3355] = "Der Schlächter",
     [3357] = "Der Verlassene",
     [3369] = "Deathulus",
     [3371] = "Crushfist Bloodbreaker",

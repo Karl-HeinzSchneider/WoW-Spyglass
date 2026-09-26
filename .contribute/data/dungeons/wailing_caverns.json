@@ -13,6 +13,9 @@
       "id": 585,
       "name": "Lady Anacondra",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lady Anacondra",
+      "displayID": 4313,
+      "npc": 3671,
+      "level": 20,
       "loot": [
         {
           "item": 5404,
@@ -25,6 +28,10 @@
         {
           "item": 10412,
           "name": "Belt of the Fang"
+        },
+        {
+          "item": 6446,
+          "name": "Snakeskin Bag"
         }
       ]
     },
@@ -32,6 +39,9 @@
       "id": 586,
       "name": "Lord Cobrahn",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Cobrahn",
+      "displayID": 4213,
+      "npc": 3669,
+      "level": 20,
       "loot": [
         {
           "item": 6460,
@@ -51,6 +61,9 @@
       "id": 587,
       "name": "Kresh",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Kresh",
+      "displayID": 5126,
+      "npc": 3653,
+      "level": 20,
       "loot": [
         {
           "item": 13245,
@@ -70,6 +83,9 @@
       "id": 588,
       "name": "Lord Pythas",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Pythas",
+      "displayID": 4214,
+      "npc": 3670,
+      "level": 21,
       "loot": [
         {
           "item": 6472,
@@ -89,6 +105,9 @@
       "id": 589,
       "name": "Skum",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Skum",
+      "displayID": 4203,
+      "npc": 3674,
+      "level": 21,
       "loot": [
         {
           "item": 6449,
@@ -108,6 +127,9 @@
       "id": 590,
       "name": "Lord Serpentis",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Serpentis",
+      "displayID": 4215,
+      "npc": 3673,
+      "level": 21,
       "loot": [
         {
           "item": 6469,
@@ -131,6 +153,9 @@
       "id": 591,
       "name": "Verdan the Everliving",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Verdan the Everliving",
+      "displayID": 4256,
+      "npc": 5775,
+      "level": 21,
       "loot": [
         {
           "item": 6630,
@@ -150,6 +175,9 @@
       "id": 592,
       "name": "Mutanus the Devourer",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Mutanus the Devourer",
+      "displayID": 4088,
+      "npc": 3654,
+      "level": 22,
       "loot": [
         {
           "item": 6461,
@@ -162,6 +190,10 @@
         {
           "item": 6627,
           "name": "Mutant Scale Breastplate"
+        },
+        {
+          "item": 10441,
+          "name": "Glowing Shard"
         }
       ]
     }
@@ -170,6 +202,14 @@
     {
       "item": 10413,
       "name": "Gloves of the Fang"
+    },
+    {
+      "item": 5243,
+      "name": "Firebelcher"
+    },
+    {
+      "item": 6632,
+      "name": "Feyscale Cloak"
     }
   ],
   "quests": [
@@ -177,7 +217,7 @@
       "id": 914,
       "name": "Leaders of the Fang",
       "side": "Horde",
-      "requiredLevel": 11,
+      "requiredLevel": 10,
       "xp": 6380,
       "objective": "Bring the Gems of Cobrahn, Anacondra, Pythas and Serpentis to Nara Wildmane.",
       "items": [

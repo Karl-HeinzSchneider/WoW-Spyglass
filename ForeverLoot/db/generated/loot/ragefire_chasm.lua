@@ -24,6 +24,7 @@ Data:AddBossLoot(2734, { -- Jergosh the Invoker
 Data:AddBossLoot(2735, { -- Bazzalan
     { 273003 }, -- Searing Dagger
     { 273007 }, -- Chasm Walkers
+    { 273005 }, -- Satyrskin Cloak
 })
 
 Data:AddQuests(389, {

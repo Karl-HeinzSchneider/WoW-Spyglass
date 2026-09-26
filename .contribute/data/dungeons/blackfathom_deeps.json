@@ -13,6 +13,9 @@
       "id": 2916,
       "name": "Ghamoo-ra",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Ghamoo Ra",
+      "displayID": 5027,
+      "npc": 4887,
+      "level": 25,
       "loot": [
         {
           "item": 6907,
@@ -21,6 +24,10 @@
         {
           "item": 6908,
           "name": "Ghamoo-ra's Bind"
+        },
+        {
+          "item": 273839,
+          "name": "Spiked Shell Band"
         }
       ]
     },
@@ -28,6 +35,9 @@
       "id": 2915,
       "name": "Lady Sarevess",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lady Sarevess",
+      "displayID": 4979,
+      "npc": 4831,
+      "level": 25,
       "loot": [
         {
           "item": 888,
@@ -40,6 +50,10 @@
         {
           "item": 11121,
           "name": "Darkwater Talwar"
+        },
+        {
+          "item": 252798,
+          "name": "Pattern: Brawler's Leather Hood"
         }
       ]
     },
@@ -48,6 +62,8 @@
       "name": "Geilhast",
       "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\geilhast.blp",
       "displayID": 1773,
+      "npc": 6243,
+      "level": 26,
       "loot": [
         {
           "item": 6906,
@@ -56,6 +72,10 @@
         {
           "item": 6905,
           "name": "Reef Axe"
+        },
+        {
+          "item": 1470,
+          "name": "Murloc Skin Bag"
         }
       ]
     },
@@ -63,12 +83,23 @@
       "id": 2913,
       "name": "Lorgus Jett",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lorgus Jett",
-      "loot": []
+      "displayID": 12822,
+      "npc": 12902,
+      "level": 26,
+      "loot": [
+        {
+          "item": 273843,
+          "name": "Fallenroot Longbow"
+        }
+      ]
     },
     {
       "id": 2912,
       "name": "Old Serra'kis",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Old Serrakis",
+      "displayID": 1816,
+      "npc": 4830,
+      "level": 26,
       "loot": [
         {
           "item": 6901,
@@ -88,6 +119,9 @@
       "id": 2911,
       "name": "Twilight Lord Kelris",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Twilight Lord Kelris",
+      "displayID": 4939,
+      "npc": 4832,
+      "level": 27,
       "loot": [
         {
           "item": 1155,
@@ -107,6 +141,9 @@
       "id": 2910,
       "name": "Aku'mai",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Akumai",
+      "displayID": 2837,
+      "npc": 4829,
+      "level": 28,
       "loot": [
         {
           "item": 6909,
@@ -171,6 +208,10 @@
     {
       "item": 2567,
       "name": "Evocator's Blade"
+    },
+    {
+      "item": 16782,
+      "name": "Strange Water Globe"
     }
   ],
   "quests": [

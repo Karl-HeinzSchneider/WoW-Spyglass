@@ -13,6 +13,10 @@ Data:AddBossLoot(2742, { -- Sneed
     { 5194 }, -- Taskmaster Axe
     { 5195 }, -- Gold-flecked Gloves
     { 273293 }, -- Bandsaw Wristbands
+    { 1937 }, -- Buzz Saw
+    { 2169 }, -- Buzzer Blade
+    { 285292 }, -- Dull Sawblade
+    { 273092 }, -- Blueprint: Repair Bot
 })
 
 Data:AddBossLoot(2743, { -- Gilnid
@@ -45,6 +49,7 @@ Data:AddBossLoot(2747, { -- Edwin VanCleef
     { 5193 }, -- Cape of the Brotherhood
     { 5202 }, -- Corsair's Overshirt
     { 10399 }, -- Blackened Defias Armor
+    { 2874 }, -- An Unsent Letter
 })
 
 Data:AddTrashLoot(36, {
@@ -60,6 +65,8 @@ Data:AddTrashLoot(36, {
     { 1944 }, -- Metalworking Gloves
     { 1945 }, -- Woodworking Gloves
     { 1925 }, -- Defias Rapier
+    { 5443 }, -- Gold-plated Buckler
+    { 5444 }, -- Miner's Cape
 })
 
 Data:AddQuests(36, {

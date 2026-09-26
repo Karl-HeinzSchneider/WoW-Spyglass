@@ -7,6 +7,7 @@ Data:AddBossLoot(585, { -- Lady Anacondra
     { 5404 }, -- Serpent's Shoulders
     { 273088 }, -- Snake Eye Kaleidoscope
     { 10412 }, -- Belt of the Fang
+    { 6446 }, -- Snakeskin Bag
 })
 
 Data:AddBossLoot(586, { -- Lord Cobrahn
@@ -50,14 +51,17 @@ Data:AddBossLoot(592, { -- Mutanus the Devourer
     { 6461 }, -- Slime-encrusted Pads
     { 6463 }, -- Deep Fathom Ring
     { 6627 }, -- Mutant Scale Breastplate
+    { 10441 }, -- Glowing Shard
 })
 
 Data:AddTrashLoot(43, {
     { 10413 }, -- Gloves of the Fang
+    { 5243 }, -- Firebelcher
+    { 6632 }, -- Feyscale Cloak
 })
 
 Data:AddQuests(43, {
-    { id = 914, name = "Leaders of the Fang", side = "Horde", requiredLevel = 11, xp = 6380, objective = "Bring the Gems of Cobrahn, Anacondra, Pythas and Serpentis to Nara Wildmane.", items = {
+    { id = 914, name = "Leaders of the Fang", side = "Horde", requiredLevel = 10, xp = 6380, objective = "Bring the Gems of Cobrahn, Anacondra, Pythas and Serpentis to Nara Wildmane.", items = {
         { 6505 }, -- Crescent Staff
         { 6504 }, -- Wingblade
         { 270018 }, -- Hammerbone
