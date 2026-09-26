@@ -86,11 +86,19 @@
 				</Texture>
 			</Layer>
 			<Layer level="OVERLAY">
-				<!-- On a favorite item: the friends list's star over the icon's top-left corner. -->
-				<Texture parentKey="Favorite" atlas="friendslist-favorite" hidden="true">
-					<Size x="16" y="16"/>
+				<!-- On a favorite item: the favorites star over the icon's top-left corner; on an item
+				     of another list: that list's marker over the top-right one (app.ui.SetItemBadges).
+				     The star (the transmog frame's) is 15 for the marker's 14, so both look the same size. -->
+				<Texture parentKey="Favorite" atlas="transmog-icon-favorite" hidden="true">
+					<Size x="15" y="15"/>
 					<Anchors>
 						<Anchor point="CENTER" relativeKey="$parent.Icon" relativePoint="TOPLEFT" x="2" y="-2"/>
+					</Anchors>
+				</Texture>
+				<Texture parentKey="ListMarker" hidden="true">
+					<Size x="14" y="14"/>
+					<Anchors>
+						<Anchor point="CENTER" relativeKey="$parent.Icon" relativePoint="TOPRIGHT" x="-2" y="-2"/>
 					</Anchors>
 				</Texture>
 			</Layer>

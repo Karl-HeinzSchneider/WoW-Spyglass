@@ -118,18 +118,24 @@ function ForeverLootMainWindowMixin:OnLoad()
     app.api.RegisterCallback(self, "OnModulesChanged", "OnModulesChanged")
     app.api.RegisterCallback(self, "OnDataChanged", "OnDataChanged")
     app.api.RegisterCallback(self, "OnFiltersChanged", "OnDataChanged")
-    app.api.RegisterCallback(self, "OnFavoritesChanged", "OnFavoritesChanged")
+    app.api.RegisterCallback(self, "OnListsChanged", "OnListsChanged")
 end
 
--- An item was (un)marked as a favorite: redraw the shown page for its star, and the info pane
--- (the Favorites panel counts them). Only a redraw, so the page stays as it is: an item unmarked
--- in the Favorites list keeps its row (without the star) until the list is opened again, and no
--- row slides under the cursor.
-function ForeverLootMainWindowMixin:OnFavoritesChanged()
+-- A list changed. An item added or removed only redraws the shown page for its badges (and the
+-- info pane, whose list panel counts them), so the page stays as it is: an item removed from the
+-- list being shown keeps its row (without the badge) until the list is opened again, and no row
+-- slides under the cursor. A list made, renamed, deleted or made active rebuilds the page (the
+-- Lists tiles show all of that).
+---@param itemID? integer  # after the event name and the list id
+function ForeverLootMainWindowMixin:OnListsChanged(_, _, itemID)
     if self:IsShown() then
         for _, view in ipairs(self.views) do
             if view:IsShown() then
-                view:Render()
+                if itemID then
+                    view:Render()
+                else
+                    view:Refresh()
+                end
             end
         end
         self.RightPane.Info:Refresh()

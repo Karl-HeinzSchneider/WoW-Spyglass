@@ -16,7 +16,7 @@
 ---@field data ForeverLoot.Data  # item database; also `ForeverLoot.Data`
 ---@field filters ForeverLoot.Filters  # filter registry; also `ForeverLoot.Filters`
 ---@field query ForeverLoot.QueryAPI  # query runner; also `ForeverLoot.Query`
----@field favorites ForeverLoot.Favorites  # the user's favorite items; also `ForeverLoot.Favorites`
+---@field lists ForeverLoot.Lists  # the user's item lists, Favorites first; also `ForeverLoot.Lists`
 ---@field commands ForeverLoot.CommandRegistry  # private dispatcher; registration is public API
 ---@field unknownItemKinds table<integer, true>  # items grouped without knowing their kind (registry.lua; the view regroups them)
 ---@field itemKind fun(itemID: integer): integer?, integer?, string?  # class id, subclass id, equip loc; nil when unknown (registry.lua)
@@ -31,6 +31,9 @@
 ---@field HidePopups fun()  # hides the recipe and set popups (recipepopup.lua)
 ---@field modelPreview ForeverLoot.ModelPreview  # set in ForeverLootModelPreviewMixin:OnLoad
 ---@field SetIconQuality fun(ring: Texture, quality?: Enum.ItemQuality)  # tints an icon's ring in the quality color, nil = plain (view.lua)
+---@field SetItemBadges fun(frame: { Favorite: Texture, ListMarker: Texture }, itemID?: integer)  # the list star/marker on an item's icon (view.lua)
+---@field listDialog ForeverLoot.ListDialog  # set in ForeverLootListDialogMixin:OnLoad
+---@field ListDialogMixin ForeverLoot.ListDialog
 ---@field MainWindowMixin ForeverLoot.MainWindow
 ---@field InfoPaneMixin ForeverLoot.InfoPane
 ---@field RecipePopupMixin ForeverLoot.RecipePopup

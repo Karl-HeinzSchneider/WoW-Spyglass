@@ -29,7 +29,7 @@ registered, following each path by name as far as it still matches. Search text,
 settings and the page are not kept. The window is
 draggable and its position is saved to `profile.window`.
 The root node comes from `app.api:GetRootNode()`; the window listens to `OnModulesChanged`,
-`OnDataChanged`, `OnFiltersChanged` and `OnFavoritesChanged` (see [Favorites](#favorites)).
+`OnDataChanged`, `OnFiltersChanged` and `OnListsChanged` (see [Item lists](#item-lists)).
 
 ## Views (`view.lua` + `templates.xml`)
 
@@ -78,17 +78,33 @@ read from the tooltip's slot line through the hidden `ForeverLootScanTooltip`
 (`scanEquipErrors`), which is exact for this client's proficiencies. Item and spell tooltips are
 followed by the node's `tooltip` lines (a list, or a function of the node).
 
-### Favorites
+### Item lists
 
-Alt-click on an item row (or an item slot in a popup) toggles the item in
-`app.favorites` (`ForeverLoot.Favorites`, see [API.md](API.md#favorites)) and rebuilds the
-tooltip under the cursor. A favorite item has the friends list's star (`friendslist-favorite`)
-over its icon's top-left corner (`Favorite` in `ForeverLootListRowTemplate` and
-`ForeverLootItemSlotTemplate`). On `OnFavoritesChanged` the main window only `Render`s the
-shown view, so rows keep their places, and refreshes the info pane (the Favorites panel counts
-them). An item unmarked in the Favorites list keeps its row (without the star) until the list
-is opened again, and the next row never slides under the cursor. The popups `Refresh` for their
-slots.
+Alt-click on an item row (or an item slot in a popup) toggles the item in the active list of
+`app.lists` (`ForeverLoot.Lists`, see [API.md](API.md#lists-and-favorites)) and rebuilds the
+tooltip under the cursor. `app.ui.SetItemBadges` (view.lua) draws an item's list badges on the
+row and slot templates. `Favorite` is the transmog frame's favorite star
+(`transmog-icon-favorite`, 19x19 in `Interface\Transmogrify\UITransmogrify2x`) over the icon's
+top-left corner, for Favorites. `ListMarker` is over the top-right corner: the marker of the
+active list when it has the item, else of the first other list that has it. The star is drawn
+at 15px next to the 14px markers (`Lists:GetMarkerMarkup` scales it the same in tooltips), so
+both look the same size.
+
+On `OnListsChanged` with an item id, the main window only `Render`s the shown view, so rows
+keep their places, and refreshes the info pane, whose list panel counts the items. An item
+removed from the list being shown keeps its row (without the badge) until the list is opened
+again, and the next row never slides under the cursor. Without an item id (a list made,
+renamed, deleted or made active), the shown views `Refresh`, since the Lists tiles show all of
+that. The popups `Refresh` for their slots either way.
+
+`ForeverLootListDialog` (`listdialog.lua` / `.xml`, `app.ui.listDialog`) is behind
+`Lists:Open*Dialog`: one `ForeverLootPopupTemplate` frame centered on the main window whose mode
+(create, edit, export, import, delete) picks the parts `Layout()` stacks under the title. The
+parts are a message, a name box (`InputBoxTemplate`), the eight raid target markers as buttons
+(the picked one opaque), a "Show in item tooltips" checkbox (the info pane's checkbox template),
+a text box (`ScrollingEditBoxTemplate` on a dark backdrop; the export string is selected for
+Ctrl+C) and the accept button. A failed import shows its message in red and keeps the dialog
+open.
 
 ### Tiles and cards
 
@@ -195,7 +211,7 @@ set, so shift-click on the name links the clicked item instead, whose tooltip sh
 
 `ForeverLootItemSlotTemplate` / `ForeverLootItemSlotMixin` is the 32px icon with count and quality
 border that every slot uses (`SetItem` / `SetSpell`, tooltip on hover, `HandleModifiedItemClick`
-on click, alt-click toggles the favorite). The background is the main window's pane atlas (`UI-Character-Info-General-BG`) under
+on click, alt-click toggles the item in the active list). The background is the main window's pane atlas (`UI-Character-Info-General-BG`) under
 the tooltip border, with the template's own translucent backdrop switched off. A popup redraws
 on `GET_ITEM_INFO_RECEIVED`; the view hides them on `Refresh` and on page changes, because their
 anchor row is reused.
@@ -222,8 +238,9 @@ first), as wide as the tooltip, in the recipe popup's look (tooltip border over
 ## Item tooltips (`tooltip.lua`)
 
 `app.tooltip`, an Ace module, appends an item's sources (`Data:GetItemSources` kinds `boss`,
-`trash`, `quest`, `recipe`) to every item tooltip. After a blank line comes a gold
-`[star] Favorite` line when the item is a favorite (the star the rows use), then the instance name in
+`trash`, `quest`, `recipe`) to every item tooltip. After a blank line comes one gold line per
+user list that has the item and is shown in tooltips, with the list's marker: `[star] Favorite`,
+`[skull] Warrior BiS`. Then the instance name in
 gold over its bosses, "Trash" and `Quest: <title>` lines, indented and sorted by encounter order.
 Drops start with the `ParagonReputation_Bag` atlas (a loot sack, used by the Camelot reputation
 frame), quests with `Interface\GossipFrame\AvailableQuestIcon`. Then one gold

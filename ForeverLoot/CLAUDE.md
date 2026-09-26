@@ -18,7 +18,8 @@ be listed**. The order follows these rules:
    and `modules\modules.xml` (the modules, which need both).
 3. `src\ui\`: each Lua mixin before the XML that names it, `templates.xml` and `infopane.xml`
    before `mainwindow.xml`, the recipe popup after the window it is parented to.
-   The set popup comes after the recipe popup, whose template and mixin it builds on.
+   The set popup comes after the recipe popup, whose template and mixin it builds on; the list
+   dialog after both (it uses the popup template and the info pane's checkbox template).
    `src\helper\profiler.lua` sits between the mixins it wraps and the XML that creates frames
    from them.
 4. `ForeverLoot.lua` last; it only logs.
@@ -33,7 +34,8 @@ be listed**. The order follows these rules:
   `window` anchor; `minimapPos` = 245° so an undragged button doesn't sit on LibDBIcon's shared
   225° default), `char.tabs` = the window's open tabs (see `docs/ui.md`), `char.loot` = a
   placeholder for the planned loot history (nothing reads or writes it yet), `global.dbVersion`,
-  `global.favorites` (account-wide). Scraper state deliberately lives in the scraper.
+  `global.lists` (account-wide; made by `lists.lua`, not a default). Scraper state deliberately
+  lives in the scraper.
 - `registry.lua` — `app.api`, which **is the public global `ForeverLoot`**: `API_VERSION`, the
   module registry and `GetRootNode()`, the node constructors, grouping, the slash-command
   extension registry and the CallbackHandler events. Its private parts: `app.commands` (the
@@ -41,8 +43,10 @@ be listed**. The order follows these rules:
   grouping couldn't classify — no `GetItemInfoInstant` result, no DB row, not in the client's
   cache — which the view fetches and regroups). **Everything public here is in `docs/API.md`;
   change both together.**
-- `favorites.lua` — `app.favorites`, public as `ForeverLoot.Favorites`: the favorite items in
-  `global.favorites`; each change fires `OnFavoritesChanged` (`docs/API.md`, "Favorites").
+- `lists.lua` — `app.lists`, public as `ForeverLoot.Lists`: the user's item lists in
+  `global.lists` (Favorites first; the active list alt-click adds to; markers; export/import),
+  plus `ForeverLoot.Favorites` over the Favorites list. Each change fires `OnListsChanged`
+  (`docs/API.md`, "Lists and favorites"). The `Open*Dialog` calls are added by `src/ui/listdialog.lua`.
 - `ace.lua` — `app.addon`, the AceAddon object (AceConsole, AceEvent). `OnInitialize` opens
   `app.db`, wires the profile callbacks to `OnProfileRefresh` (log level, views, modules'
   `OnProfileRefresh`) and registers `/fl` + `/foreverloot`; `OnSlashCommand` handles the reserved
@@ -89,15 +93,18 @@ They hold no data and use **only the public API a third-party addon would** (`lo
 ForeverLoot`, no private table); never give them private hooks.
 
 - Root order by `order`: dungeons 10, raids 20, crafting 30, reputation 40, pvp 50,
-  collections 60, favorites 70. The database companion's `items` module follows at 1000, after a
+  collections 60, lists 70. The database companion's `items` module follows at 1000, after a
   spacer.
 - `raids` and `dungeons` are `display = "tiles"` modules listing explicit `FL.InstanceFolder(id)`
   lines, commented out until the instance has curated loot (a split dungeon's parts by their own
   ids, e.g. `18901`). Crafting, reputation, pvp and collections return `FL.ListFolders(kind)`;
   `crafting` also sets `showIcon` on each tile, and `collections` appends the item set tiles (one
   per source).
-- `favorites` lists `FL.Favorites` through `getEntries` (rebuilt on every open), with a panel
-  whose `grouping` dropdown groups them by source, kind of content or item type.
+- `lists` is a `display = "tiles"` module built through `getEntries` (rebuilt on every open):
+  one tile per `FL.Lists` list (kept per list id, so an open tab's node survives a rename), then
+  "New list" and "Import list". A list's panel has the `grouping` dropdown (source, kind of
+  content, item type; kept in front of the widgets that come and go, so the picked option keeps
+  its index) and the buttons that call `FL.Lists` and its dialogs.
 
 ### `src/ui/` — the browser window
 
@@ -119,8 +126,10 @@ the window.
   the set.
 - `modelpreview.lua/.xml` — `app.ui.modelPreview`: the character (or the mount) wearing the item
   while ctrl is held.
-- `tooltip.lua` — `app.tooltip`: appends the favorite mark and an item's sources to every item
-  tooltip.
+- `listdialog.lua/.xml` — `app.ui.listDialog`: the new/edit/export/import/delete dialog of the
+  item lists; it adds the `Open*Dialog` calls to `ForeverLoot.Lists`.
+- `tooltip.lua` — `app.tooltip`: appends the user lists that have the item and its sources to
+  every item tooltip.
 
 ### Annotations (not in the TOC)
 

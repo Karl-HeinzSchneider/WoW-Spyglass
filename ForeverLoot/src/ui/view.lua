@@ -26,6 +26,32 @@ local function setIconQuality(ring, quality)
 end
 app.ui.SetIconQuality = setIconQuality
 
+-- The list badges on an item's icon (`Favorite` and `ListMarker` of the row and slot templates):
+-- the star when Favorites has the item; the marker of the active list when it has the item,
+-- else of the first other list that has it. Nothing for no item.
+---@param frame { Favorite: Texture, ListMarker: Texture }
+---@param itemID? integer
+local function setItemBadges(frame, itemID)
+    local Lists = app.lists
+    local favorite, marked = false, nil
+    if itemID then
+        local active = Lists:GetActive()
+        for _, id in ipairs(Lists:GetListsOf(itemID)) do
+            if id == Lists.FAVORITES then
+                favorite = true
+            elseif id == active or not marked then
+                marked = id
+            end
+        end
+    end
+    frame.Favorite:SetShown(favorite)
+    frame.ListMarker:SetShown(marked ~= nil)
+    if marked then
+        Lists:SetMarkerTexture(frame.ListMarker, marked)
+    end
+end
+app.ui.SetItemBadges = setItemBadges
+
 -- Delay between the last keystroke in the search box and running the query.
 local SEARCH_DEBOUNCE = 0.25
 
@@ -208,6 +234,7 @@ end
 ---@field Type FontString
 ---@field Arrow Texture
 ---@field Favorite Texture  # the star on a favorite item's icon
+---@field ListMarker Texture  # the marker of a list with the item (setItemBadges)
 ---@field node ForeverLoot.Node
 ---@field view ForeverLoot.View
 ---@field link? string  # item/spell link for chat linking
@@ -266,7 +293,7 @@ function ForeverLootListRowMixin:Init(view, node)
     self.node = node
     self.link = nil
     self.Arrow:SetShown(app.api.IsFolder(node))
-    self.Favorite:SetShown(node.itemID ~= nil and app.favorites:IsFavorite(node.itemID))
+    setItemBadges(self, node.itemID)
 
     if node.itemID then
         self:InitItem(view, node)
@@ -350,9 +377,9 @@ function ForeverLootListRowMixin:OnClick(button)
     elseif app.api.IsFolder(node) then
         self.view:Push(node)
     elseif node.itemID and IsAltKeyDown() then
-        -- Alt-click marks the item as a favorite or unmarks it; the window redraws the stars on
-        -- OnFavoritesChanged, the tooltip is built again here.
-        app.favorites:Toggle(node.itemID)
+        -- Alt-click adds the item to the active list or removes it; the window redraws the badges
+        -- on OnListsChanged, the tooltip is built again here.
+        app.lists:Toggle(app.lists:GetActive(), node.itemID)
         if GameTooltip:IsOwned(self) then
             self:OnEnter()
         end

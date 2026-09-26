@@ -40,10 +40,12 @@ local char = {
 
 -- Account-wide data shared by every character.
 ---@class ForeverLoot.DB.Global
+---@field lists? ForeverLoot.ListStore
+---@field favorites? table<integer, true>  # before lists; moved into lists.byID.favorites
 local global = {
     dbVersion = 2,
-    -- The favorite items (favorites.lua), itemID -> true.
-    favorites = {},
+    -- `lists` = the user's item lists (lists.lua), created there on first use; it takes over
+    -- `favorites` (itemID -> true) of the version before lists.
 }
 
 ---@class ForeverLoot.DBDefaults : AceDB.Schema
