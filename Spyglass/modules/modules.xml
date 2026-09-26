@@ -1,0 +1,10 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<!-- One folder per built-in module. Each registers itself through the public Spyglass API. -->
+	<Include file="raids\raids.xml" />
+	<Include file="dungeons\dungeons.xml" />
+	<Include file="crafting\crafting.xml" />
+	<Include file="pvp\pvp.xml" />
+	<Include file="collections\collections.xml" />
+	<Include file="reputation\reputation.xml" />
+	<Include file="lists\lists.xml" />
+</Ui>

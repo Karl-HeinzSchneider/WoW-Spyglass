@@ -18,7 +18,7 @@
     {
       "id": 2781,
       "name": "Plaguemaw the Rotting",
-      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\plaguemaw_the_rotting.blp",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\plaguemaw_the_rotting.blp",
       "displayID": 6124,
       "loot": []
     },
@@ -31,7 +31,7 @@
     {
       "id": 2783,
       "name": "Ragglesnout",
-      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\ragglesnout.blp",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\ragglesnout.blp",
       "displayID": 11382,
       "loot": []
     },

@@ -3,7 +3,7 @@ import { dirname, relative, resolve } from "node:path";
 import { requireAddons, walkFiles } from "./addons.js";
 import { CLIENT_LOCALES, ROOT } from "./config.js";
 
-const CORE = "ForeverLoot";
+const CORE = "Spyglass";
 const addons = requireAddons();
 const names = new Set(addons.map((addon) => addon.name));
 const failures: string[] = [];

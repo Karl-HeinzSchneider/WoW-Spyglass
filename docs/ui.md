@@ -1,20 +1,20 @@
 # The browser window
 
-How the core addon's window (`ForeverLoot/src/ui/`) is built. What modules and nodes can ask the
+How the core addon's window (`Spyglass/src/ui/`) is built. What modules and nodes can ask the
 window to draw is the public contract in [API.md](API.md); this document is about the
 implementation behind it.
 
 Every frame is a Blizzard-style XML layout with a Lua mixin. XML `mixin=` / `name=` attributes
-need globals, so the mixins and the window frame are globals prefixed `ForeverLoot…` (also
+need globals, so the mixins and the window frame are globals prefixed `Spyglass…` (also
 exposed on `app.ui.*`); together with the public API table they are the only sanctioned
 globals. The TOC lists each Lua mixin before the XML that names it.
 
 ## Main window (`mainwindow.lua` / `.xml`)
 
-`ForeverLootMainWindow` inherits `PortraitFrameBaseTemplate`, sized 900x650, with a dark
+`SpyglassMainWindow` inherits `PortraitFrameBaseTemplate`, sized 900x650, with a dark
 two-column interior: `LeftPane` holds the views, `RightPane` the info pane (below). Both are
 `UI-Character-Info-*-BG` atlases stretched to fit, split by `common-framedivider`. Icon tabs run
-down the right edge (`ForeverLootSideTabTemplate`, from `LargeSideTabButtonTemplate`, which is a
+down the right edge (`SpyglassSideTabTemplate`, from `LargeSideTabButtonTemplate`, which is a
 _Frame_, so clicks arrive through `SetCustomOnMouseUpHandler`).
 
 The tabs work like a browser's: one per open _view_ (icon = the deepest node that has one,
@@ -39,7 +39,7 @@ page of rows, then under a second divider (`FooterDivider`) a footer row as high
 row (44px) with the two class filter buttons on the left, then the active list dropdown
 (`ActiveList`, see [Item lists](#item-lists)), and Blizzard's `PagingControls` on the right.
 
-- **Navigation** is a `path` stack over `ForeverLoot.Node` trees (`Push` / `PopTo` / `Back`, then
+- **Navigation** is a `path` stack over `Spyglass.Node` trees (`Push` / `PopTo` / `Back`, then
   `Refresh`). `Push` remembers the page the node was on in `view.pathPages`, and going back
   (`PopTo`, breadcrumbs, right-click) returns to that page.
 - **`Refresh()`** rebuilds the elements and the page layout (navigation, query or size changes)
@@ -53,7 +53,7 @@ row (44px) with the two class filter buttons on the left, then the active list d
   requested after the build and marked in `view.regroupItems`. When one arrives the deferred
   redraw is a `Refresh` instead of a `Render`, once per item, so the list regroups on the page it
   was showing.
-- **Class filter.** Two footer buttons (`ForeverLootFooterButtonTemplate`: an icon in an item
+- **Class filter.** Two footer buttons (`SpyglassFooterButtonTemplate`: an icon in an item
   slot's frame; gold frame = on, grey icon = off). `ClassFilter` shows the class icon:
   left-click toggles the filter, right-click opens a menu to pick the class (which also turns it
   on). `ClassFilterMode` next to it switches with a click whether the armor and weapons that
@@ -74,14 +74,14 @@ row (44px) with the two class filter buttons on the left, then the active list d
 A row is the icon, the name in quality color, the drop chance top right (else the node's
 `infoRight`, e.g. a recipe's skill thresholds), the slot bottom left and the armor or weapon type
 bottom right (`itemKindTexts`). Both turn red when the character can't equip the item; that is
-read from the tooltip's slot line through the hidden `ForeverLootScanTooltip`
+read from the tooltip's slot line through the hidden `SpyglassScanTooltip`
 (`scanEquipErrors`), which is exact for this client's proficiencies. Item and spell tooltips are
 followed by the node's `tooltip` lines (a list, or a function of the node).
 
 ### Item lists
 
 Alt-click on an item row (or an item slot in a popup) toggles the item in the active list of
-`app.lists` (`ForeverLoot.Lists`, see [API.md](API.md#lists-and-favorites)) and rebuilds the
+`app.lists` (`Spyglass.Lists`, see [API.md](API.md#lists-and-favorites)) and rebuilds the
 tooltip under the cursor. The footer's `ActiveList` (`WowStyle1DropdownTemplate`) shows the
 active list with its marker and offers every list as a radio; picking one calls `SetActive`.
 `Render` regenerates its menu, so it follows a list made active, renamed or deleted elsewhere. `app.ui.SetItemBadges` (view.lua) draws an item's list badges on the
@@ -99,8 +99,8 @@ again, and the next row never slides under the cursor. Without an item id (a lis
 renamed, deleted or made active), the shown views `Refresh`, since the Lists tiles show all of
 that. The popups `Refresh` for their slots either way.
 
-`ForeverLootListDialog` (`listdialog.lua` / `.xml`, `app.ui.listDialog`) is behind
-`Lists:Open*Dialog`: one `ForeverLootPopupTemplate` frame centered on the main window whose mode
+`SpyglassListDialog` (`listdialog.lua` / `.xml`, `app.ui.listDialog`) is behind
+`Lists:Open*Dialog`: one `SpyglassPopupTemplate` frame centered on the main window whose mode
 (create, edit, export, import, delete) picks the parts `Layout()` stacks under the title. The
 parts are a message, a name box (`InputBoxTemplate`), the eight raid target markers as buttons
 (the picked one opaque), a "Show in item tooltips" checkbox (the info pane's checkbox template),
@@ -110,14 +110,14 @@ open.
 
 ### Tiles and cards
 
-- **`display = "tiles"`** (raids, dungeons, crafting) draws `ForeverLootTileTemplate` cards, three
+- **`display = "tiles"`** (raids, dungeons, crafting) draws `SpyglassTileTemplate` cards, three
   per line: the `background` / `backgroundCoords` picture (a texture, or an atlas resolved through
   `C_Texture.GetAtlasInfo` with the coords cut from its region), the name on top, `info` (the
   level range by default) and `infoRight` in the bottom corners. `addon:OnEnable` (still behind
   the loading screen) preloads the pictures of the root's tile folders onto textures of their
   own, set once on an alpha-0 frame, so the files are loaded before the first visit and never
   drop out.
-- **`display = "cards"`** (an instance's boss list) draws `ForeverLootCardTemplate`, two per line:
+- **`display = "cards"`** (an instance's boss list) draws `SpyglassCardTemplate`, two per line:
   the same bevelled list-button atlas with the entry's `portrait` standing on the left (a
   `portraitDisplayID` instead draws the creature's model through
   `SetPortraitTextureFromCreatureDisplayID` into the same region), and the name and info beside
@@ -145,7 +145,7 @@ replaces the tab's path with the nodes it passed.
 
 ## Info pane (`infopane.lua` / `.xml`)
 
-`ForeverLootInfoPaneMixin` is `RightPane.Info`, inset like the character frame's side panes. It
+`SpyglassInfoPaneMixin` is `RightPane.Info`, inset like the character frame's side panes. It
 remakes the look of that frame's reputation and skill detail panes (`CharacterFrameSidePaneTemplate`
 registers itself with the character frame, so it can't be inherited): the title in
 `GameFontNormalMed3`, the `UI-Character-Info-ScrollLine` divider, then the widgets in a
@@ -162,7 +162,7 @@ registers itself with the character frame, so it can't be inherited): the title 
 - `button`: `SharedGoldRedButtonSmallTemplate`. A `map` button sets a user waypoint from a plain
   `{ uiMapID, position }` table (`UiMapPoint` isn't loaded in this client) and calls
   `OpenWorldMap`.
-- `quests`: one `ForeverLootInfoQuestTemplate` line per quest the character can take (side and
+- `quests`: one `SpyglassInfoQuestTemplate` line per quest the character can take (side and
   class from `Data:GetQuest`), the title wrapped on the left, the progress on the right from
   `C_QuestLog` (`IsQuestFlaggedCompleted`, `IsOnQuest`, `ReadyForTurnIn` / `IsComplete`).
   Each line is a button that behaves like a quest link in chat: hover shows the game's quest
@@ -189,16 +189,16 @@ checkbox or dropdown only calls the view's
 
 ## Recipe and set popups (`recipepopup.lua` / `.xml`, `setpopup.lua` / `.xml`)
 
-Both popups are `ForeverLootPopupTemplate` frames: a tooltip-bordered child of the main window
-with a title and a close button. `ForeverLootPopupMixin` (which both mixins build on) toggles one
+Both popups are `SpyglassPopupTemplate` frames: a tooltip-bordered child of the main window
+with a title and a close button. `SpyglassPopupMixin` (which both mixins build on) toggles one
 below the row it was clicked from and closes the other; `app.ui.HidePopups()` closes both.
 
-`ForeverLootRecipePopup` (`app.ui.recipePopup`): a click on a recipe row (a node whose
+`SpyglassRecipePopup` (`app.ui.recipePopup`): a click on a recipe row (a node whose
 `meta.spell` is in `Data.recipes`) toggles it: a title, then icons only — the product and the
 recipe item that teaches it, then the recipe itself (the profession's tile icon; spell tooltip
 and link) and one slot per reagent with its count.
 
-`ForeverLootSetPopup` (`app.ui.setPopup`): a plain click on any other item row whose item is in a
+`SpyglassSetPopup` (`app.ui.setPopup`): a plain click on any other item row whose item is in a
 set the database knows (`HasSet`) toggles it: the set's name (`Data:GetSetName`), then one slot
 per item of the set (`Data:GetSetItems`), in loot-list order (armor type, then slot), eight per
 line. The item tooltip on a slot shows the game's set bonuses.
@@ -211,7 +211,7 @@ pieces and active bonuses show as the game shows them. Until the client has that
 the set's name and items, and redraws when the item arrives. The client has no chat link for a
 set, so shift-click on the name links the clicked item instead, whose tooltip shows the set.
 
-`ForeverLootItemSlotTemplate` / `ForeverLootItemSlotMixin` is the 32px icon with count and quality
+`SpyglassItemSlotTemplate` / `SpyglassItemSlotMixin` is the 32px icon with count and quality
 border that every slot uses (`SetItem` / `SetSpell`, tooltip on hover, `HandleModifiedItemClick`
 on click, alt-click toggles the item in the active list). The background is the main window's pane atlas (`UI-Character-Info-General-BG`) under
 the tooltip border, with the template's own translucent backdrop switched off. A popup redraws
@@ -220,7 +220,7 @@ anchor row is reused.
 
 ## Model preview (`modelpreview.lua` / `.xml`)
 
-`ForeverLootModelPreview` (`app.ui.modelPreview`): while ctrl is held over an item row or item
+`SpyglassModelPreview` (`app.ui.modelPreview`): while ctrl is held over an item row or item
 slot, it shows the character wearing that item under `GameTooltip` (above it when the screen ends
 first), as wide as the tooltip, in the recipe popup's look (tooltip border over
 `UI-Character-Info-General-BG`).

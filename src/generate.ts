@@ -32,7 +32,7 @@ const DEFAULT_ICONS = {
 const ITEM_LAYOUT =
   "quality, itemLevel, reqLevel, classID, subclassID, slot, bind, icon, stats, sellPrice, stackCount, setID, expansionID, craftingReagent";
 
-/** Item row layout; must match Data.ITEM in ForeverLoot/src/data/data.lua (stats is nil when the item has none). */
+/** Item row layout; must match Data.ITEM in Spyglass/src/data/data.lua (stats is nil when the item has none). */
 function itemRow(item: ScannedItem): unknown[] {
   return [
     item.quality,
@@ -53,7 +53,7 @@ function itemRow(item: ScannedItem): unknown[] {
 }
 
 function emitItems(ids: number[], ref: Reference): string {
-  const out = [header(".contribute/items (in-game scans)"), "local Data = ForeverLoot.Data\n\n"];
+  const out = [header(".contribute/items (in-game scans)"), "local Data = Spyglass.Data\n\n"];
   out.push(`-- { ${ITEM_LAYOUT} }; see Data.ITEM.\n`);
   out.push("Data:AddItems({\n");
   for (const id of ids) out.push(`    [${id}] = ${luaValue(itemRow(ref.items.get(id)!))},\n`);
@@ -63,7 +63,7 @@ function emitItems(ids: number[], ref: Reference): string {
 
 function emitInstances(ref: Reference, curated: CuratedFile[]): string {
   const out = [header(`wago.tools Map+DungeonEncounter, build ${ref.build}, plus levels/icons from .contribute`)];
-  out.push("local Data = ForeverLoot.Data\n");
+  out.push("local Data = Spyglass.Data\n");
   const maps = [...ref.instances.keys()].sort((a, b) => a - b);
   for (const map of maps) {
     const inst = ref.instances.get(map)!;
@@ -186,7 +186,7 @@ export function hasLoot(file: CuratedFile): boolean {
 
 function emitLoot(file: CuratedFile, ref: Reference): string {
   const rel = sourceLabel(file.path);
-  const out = [header(rel), "local Data = ForeverLoot.Data\n"];
+  const out = [header(rel), "local Data = Spyglass.Data\n"];
   const id = instanceIDOf(file.data);
   out.push(
     `\n-- ${file.data.id !== undefined ? file.data.name : nameOf(ref, "instances", id)} (map ${file.data.map})\n`,
@@ -228,7 +228,7 @@ function emitLoot(file: CuratedFile, ref: Reference): string {
 function emitList(file: ListFile, ref: Reference): string {
   const rel = sourceLabel(file.path);
   const d = file.data;
-  const out = [header(rel), "local Data = ForeverLoot.Data\n"];
+  const out = [header(rel), "local Data = Spyglass.Data\n"];
   out.push(`\n-- ${d.name}\n`);
   out.push(`Data:AddList(${luaString(file.kind)}, ${luaString(file.slug)}, {\n`);
   out.push(
@@ -301,7 +301,7 @@ export function learnSkillOf(recipe: Recipe): number {
   return Math.max(recipe.minSkill, recipe.learnSkill);
 }
 
-/** Recipe row layout; must match Data.RECIPE in ForeverLoot/src/data/data.lua. */
+/** Recipe row layout; must match Data.RECIPE in Spyglass/src/data/data.lua. */
 function recipeRow(recipe: Recipe): unknown[] {
   return [
     recipe.skillLineID,
@@ -330,7 +330,7 @@ function trimRow(row: unknown[]): unknown[] {
 function emitRecipes(skillLine: SkillLine, recipes: Recipe[], ref: Reference): string {
   const out = [
     header(`wago.tools SkillLineAbility/SpellReagents/SpellEffect, build ${ref.build}`),
-    "local Data = ForeverLoot.Data\n",
+    "local Data = Spyglass.Data\n",
   ];
   out.push(`\n-- ${skillLine.name} (SkillLine ${skillLine.id})\n`);
   const categories = [...ref.categories.values()]
@@ -363,7 +363,7 @@ function emitCraftingNames(locale: string, ref: Reference, skillLines: SkillLine
   const names = ref.names.get(locale)!;
   const out = [header(`wago.tools SkillLine/TradeSkillCategory/TotemCategory, build ${ref.build}, locale ${locale}`)];
   if (locale !== FALLBACK_LOCALE) out.push(`if GetLocale() ~= "${locale}" then\n    return\nend\n`);
-  out.push("local Data = ForeverLoot.Data\n");
+  out.push("local Data = Spyglass.Data\n");
   const shipped = new Set(skillLines.map((s) => s.id));
   const tools = new Set(recipes.flatMap((r) => r.tools));
   const tables: [string, Map<number, string>, (id: number) => boolean][] = [
@@ -388,7 +388,7 @@ function emitNames(
 ): string {
   const out = [header(`${source}, locale ${locale}`)];
   if (locale !== FALLBACK_LOCALE) out.push(`if GetLocale() ~= "${locale}" then\n    return\nend\n`);
-  out.push("local Data = ForeverLoot.Data\n\n");
+  out.push("local Data = Spyglass.Data\n\n");
   out.push(`Data:AddNames("${locale}", "${kind}", {\n`);
   for (const id of [...table.keys()].sort((a, b) => a - b)) out.push(`    [${id}] = ${luaString(table.get(id)!)},\n`);
   out.push("})\n");
@@ -524,9 +524,9 @@ export function build(ref: Reference, curated: CuratedFile[], lists: ListFile[],
 /** Writes the three addon trees, removes stale files, and returns the number of changed files. */
 export function write(files: GeneratedFiles, check: boolean): number {
   return (
-    writeTree(files.core, OUTPUT_DIR, "ForeverLoot/db/generated", check) +
-    writeTree(files.locale, LOCALE_OUTPUT_DIR, "ForeverLoot_Locale/db/generated", check) +
-    writeTree(files.database, DATABASE_OUTPUT_DIR, "ForeverLoot_Database/db/generated", check)
+    writeTree(files.core, OUTPUT_DIR, "Spyglass/db/generated", check) +
+    writeTree(files.locale, LOCALE_OUTPUT_DIR, "Spyglass_Locale/db/generated", check) +
+    writeTree(files.database, DATABASE_OUTPUT_DIR, "Spyglass_Database/db/generated", check)
   );
 }
 

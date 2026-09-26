@@ -1,6 +1,6 @@
 # Contributing
 
-ForeverLoot's database is built from what players record in the game, plus hand-curated drop
+Spyglass's database is built from what players record in the game, plus hand-curated drop
 tables and item lists. This guide covers setting up the repository, getting in-game recordings
 into it, and the format of every file under `.contribute/data/`. How those files become the
 addons' generated data is in [data-pipeline.md](data-pipeline.md); the API other addons use is
@@ -16,7 +16,7 @@ in [API.md](API.md), the rules between the addons in [architecture.md](architect
   pictures ([tools/portrait/README.md](../tools/portrait/README.md)).
 - Link the addons into your client once:
   `npm run dev:link -- "<World of Warcraft>/_classic_beta_/Interface/AddOns"` (or set
-  `WOW_ADDONS_DIR`). After that, edit and `/reload`; `/fl` opens the window.
+  `WOW_ADDONS_DIR`). After that, edit and `/reload`; `/sg` opens the window.
 
 Before sending a change: `npm run format`, then `npm run check` (typecheck, tooling tests, addon
 boundaries, data, generated staleness, Lua syntax, XML schema).
@@ -28,8 +28,8 @@ boundaries, data, generated staleness, Lua syntax, XML schema).
    the game data and the scans (the map exists and its file is in the right folder, `dungeons/`
    or `raids/`; the encounters belong to the map; no duplicates; values in range), rewrites
    names, fills in ids, adds missing encounters and writes every file in stable key order.
-3. `npm run gen` — writes the three generated trees (`ForeverLoot/db/generated/`,
-   `ForeverLoot_Database/db/generated/`, `ForeverLoot_Locale/db/generated/`).
+3. `npm run gen` — writes the three generated trees (`Spyglass/db/generated/`,
+   `Spyglass_Database/db/generated/`, `Spyglass_Locale/db/generated/`).
 4. Commit the JSON **and** the regenerated trees together; `npm run generate:check` (part of
    `npm run check`) fails when they are stale.
 
@@ -65,15 +65,15 @@ Never edit a generated tree by hand. Texture paths in JSON need doubled backslas
 ## Items: scanning in game
 
 WoW Forever's items are server-side, and no data export describes them, so the item database is
-recorded in the game by the `ForeverLoot_Scraper` addon:
+recorded in the game by the `Spyglass_Scraper` addon:
 
 ```text
-/fl scan 1                     scan upward from id 1; stops after 1000 new items
-/fl scan resume                continue where the last scan stopped (survives /reload)
-/fl scan 270000 280000         scan a range
-/fl scan 270000 280000 force   re-record every id in the range, known or not
-/fl scan stop    /fl scan      stop; status
-/fl scan limit off             no per-scan item limit (for the SavedVariables route); `limit 1000` restores it
+/sg scan 1                     scan upward from id 1; stops after 1000 new items
+/sg scan resume                continue where the last scan stopped (survives /reload)
+/sg scan 270000 280000         scan a range
+/sg scan 270000 280000 force   re-record every id in the range, known or not
+/sg scan stop    /sg scan      stop; status
+/sg scan limit off             no per-scan item limit (for the SavedVariables route); `limit 1000` restores it
 ```
 
 A scan asks for about 100 ids per second and skips ids the shipped database already has; an
@@ -85,11 +85,11 @@ stack size, set, expansion, stats) and is browsable in the addon right away.
 Getting the records into the repository, either way:
 
 1. **SavedVariables** — copy
-   `World of Warcraft/_classic_beta_/WTF/Account/<ACCOUNT>/SavedVariables/ForeverLoot_Scraper.lua`
+   `World of Warcraft/_classic_beta_/WTF/Account/<ACCOUNT>/SavedVariables/Spyglass_Scraper.lua`
    (written on logout and `/reload`) into `.contribute/inbox/`, or pass its path:
    `npm run import -- <path>`.
-2. **`/fl export`** — shows the same data as JSON, to copy into a `.json` file for the inbox or an
-   issue. Each export holds only the records new since the previous one (`/fl export all`
+2. **`/sg export`** — shows the same data as JSON, to copy into a `.json` file for the inbox or an
+   issue. Each export holds only the records new since the previous one (`/sg export all`
    repeats everything).
 
 Then `npm run import` (every `.lua`/`.json` in the inbox, in name order) and `npm run gen`, and
@@ -114,7 +114,7 @@ loot or roll still count, so the ratios err low. Review the diff before committi
 ### By hand
 
 Find or create the instance file; all it needs is the map id (the `-- Name` comments in
-`ForeverLoot/db/generated/instances.lua` list them). Then add rows to a boss's `loot`.
+`Spyglass/db/generated/instances.lua` list them). Then add rows to a boss's `loot`.
 
 ```json
 {
@@ -216,7 +216,7 @@ icons and the `xp`.
 (`Interface\EncounterJournal\UI-EJ-BOSS-<Name>`). Bosses this server added have none — this
 client ships no Encounter Journal data at all — so they carry either a picture made with the
 portrait tool ([tools/portrait/README.md](../tools/portrait/README.md), which writes
-`"portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\<slug>.blp"`) or `displayID`, the
+`"portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\<slug>.blp"`) or `displayID`, the
 **CreatureDisplayID** of the model, which the client renders into a portrait by itself (the same
 call and the same 2:1 shape the game's own boss buttons use). `portrait` wins when both are set;
 with neither, the card shows a generic boss icon.
@@ -276,8 +276,8 @@ the same id and fields; the addon keeps one definition per id, the one loaded la
 ### Showing an instance in the browser
 
 The Dungeons and Raids modules list their instances explicitly, one
-`FL.InstanceFolder(<id>)` line each in `ForeverLoot/modules/dungeons/dungeons.lua` and
-`ForeverLoot/modules/raids/raids.lua`, commented out until the instance has curated loot.
+`SG.InstanceFolder(<id>)` line each in `Spyglass/modules/dungeons/dungeons.lua` and
+`Spyglass/modules/raids/raids.lua`, commented out until the instance has curated loot.
 Uncomment (or add) the line when you add the first drops; a split dungeon's parts are listed by
 their own `id`.
 
@@ -328,7 +328,7 @@ Comprehension, `185` Cooking, `333` Enchanting, `202` Engineering, `129` First A
 `182` Herbalism, `165` Leatherworking, `186` Mining, `40` Poisons, `393` Skinning, `197`
 Tailoring (`npm run check` lists the valid ones when an id is wrong, and warns about a profession
 with recipes but no file). The addon then shows **every recipe of that profession from the
-generated recipe database** (`ForeverLoot/db/generated/recipes/<profession>.lua`: what it makes
+generated recipe database** (`Spyglass/db/generated/recipes/<profession>.lua`: what it makes
 and how many, reagents, tools, the skill at which it turns yellow/green/grey, the trade skill
 category) and lays the file's `recipes` rows over it at runtime. So the rows are for what the
 game's tables can't say:
@@ -368,7 +368,7 @@ recipe appears on the next `npm run gen`.
 A profession with many trade skill categories (Blacksmithing has 34) becomes one long list of
 folders. An optional `sections` array groups them under subheaders: each section has a `name`
 (the subheader) and the `categories` under it, by category id (the `-- Name` comments in
-`ForeverLoot/db/generated/recipes/<profession>.lua` list them) or by the category's English name,
+`Spyglass/db/generated/recipes/<profession>.lua` list them) or by the category's English name,
 which `fix` rewrites to the id. The folders appear in the order the section lists them, sections
 in array order, and every category no section claims follows under a final "Other". A category
 of another profession, an unknown id or name, and a category in two sections are errors.
@@ -387,7 +387,7 @@ of another profession, an unknown id or name, and a category in two sections are
 
 A `group` label used by the file's rows can be named in a section too (its folder is matched by
 that label). Sections are a display choice, not data: a module may pass its own to
-`ForeverLoot.ListFolders` and override the file's (see [API.md](API.md#category-sections-crafting)).
+`Spyglass.ListFolders` and override the file's (see [API.md](API.md#category-sections-crafting)).
 
 ### The info panel: `panel`
 
@@ -435,7 +435,7 @@ filter or field the kind doesn't have, and an `open` naming a module or list tha
 ## Code changes
 
 The addons are plain Lua/XML loaded by the game; there is no build step. The rules between the
-addons are in [architecture.md](architecture.md), and a change to the public `ForeverLoot` API
+addons are in [architecture.md](architecture.md), and a change to the public `Spyglass` API
 updates [API.md](API.md) in the same commit. Internals: [ui.md](ui.md) (the browser window),
 [scraper.md](scraper.md) (scanning and loot recording), [localization.md](localization.md)
 (names in every language), [data-pipeline.md](data-pipeline.md) (the generator).

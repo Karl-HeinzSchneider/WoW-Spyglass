@@ -1,17 +1,17 @@
 # Architecture
 
-ForeverLoot is a monorepo containing independently loadable World of Warcraft addons and the
+Spyglass is a monorepo containing independently loadable World of Warcraft addons and the
 tooling that produces their data. A direct child directory containing a same-named `.toc` file is
 an addon distribution unit.
 
 ## Addon boundaries
 
-| Addon                  | Owns                                                                                                                    | Persistent state       | Dependency                            |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------- | ---------------------- | ------------------------------------- |
-| `ForeverLoot`          | Public API, data store and queries, content modules, UI, user settings and (planned) loot history                       | `ForeverLootDB`        | none                                  |
-| `ForeverLoot_Database` | Every scanned item row with its English name, and the `items` module (the searchable, filterable item browser)          | none                   | `ForeverLoot`                         |
-| `ForeverLoot_Locale`   | Generated non-English item, instance, boss and crafting names, and the item names a non-English client looks up in-game | `ForeverLootLocaleDB`  | `ForeverLoot`                         |
-| `ForeverLoot_Scraper`  | Item scanning, loot observation, contribution exports and the boss portrait studio                                      | `ForeverLootScraperDB` | `ForeverLoot`, `ForeverLoot_Database` |
+| Addon               | Owns                                                                                                                    | Persistent state    | Dependency                      |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------- | ------------------------------- |
+| `Spyglass`          | Public API, data store and queries, content modules, UI, user settings and (planned) loot history                       | `SpyglassDB`        | none                            |
+| `Spyglass_Database` | Every scanned item row with its English name, and the `items` module (the searchable, filterable item browser)          | none                | `Spyglass`                      |
+| `Spyglass_Locale`   | Generated non-English item, instance, boss and crafting names, and the item names a non-English client looks up in-game | `SpyglassLocaleDB`  | `Spyglass`                      |
+| `Spyglass_Scraper`  | Item scanning, loot observation, contribution exports and the boss portrait studio                                      | `SpyglassScraperDB` | `Spyglass`, `Spyglass_Database` |
 
 The scanned item rows live in the database addon, generated non-English names in the locale
 addon. Scanning, discovery state, JSON export, and the export dialog live in the scraper addon.
@@ -19,17 +19,17 @@ The core operates independently when any companion is absent or disabled.
 
 ## Runtime contract
 
-- `ForeverLoot` must work when any companion addon is absent or disabled. It retains an English
+- `Spyglass` must work when any companion addon is absent or disabled. It retains an English
   fallback for instance, boss and crafting names (item names come from the client) and cannot
   reference companion files or private addon tables.
-- Companion addons declare `## Dependencies: ForeverLoot`, so the public global exists before they
-  load. The scraper also depends on `ForeverLoot_Database`: it tells new items from known ones by
+- Companion addons declare `## Dependencies: Spyglass`, so the public global exists before they
+  load. The scraper also depends on `Spyglass_Database`: it tells new items from known ones by
   the item rows (`Data:GetItem`).
 - Each addon keeps implementation state in the private table passed through `...`. No addon may
   access another addon's private table or introduce a cross-addon implementation global.
-- Companion addons integrate only through the documented global `ForeverLoot` API. A required
-  breaking change increments `ForeverLoot.API_VERSION` and updates `docs/API.md`.
-- Late data registration uses `ForeverLoot.Data:AddNames`, `AddItems`, `AddInstance`, `AddBoss`,
+- Companion addons integrate only through the documented global `Spyglass` API. A required
+  breaking change increments `Spyglass.API_VERSION` and updates `docs/API.md`.
+- Late data registration uses `Spyglass.Data:AddNames`, `AddItems`, `AddInstance`, `AddBoss`,
   `AddBossLoot`, `AddTrashLoot`, `AddQuests`, `AddList`, `AddListLoot`, `AddRecipes` or
   `AddCategories`. These calls invalidate affected caches and publish `OnDataChanged`.
 - Built-in content modules continue to use the same public API available to third-party addons.
@@ -47,8 +47,8 @@ Where each name table lives and how the locale addon loads only the client's lan
 
 ## Database boundary
 
-The core owns the item database API (`ForeverLoot.Data`, `Filters`, `Query`) and every list that
-shows items, but ships no item rows. `ForeverLoot_Database` adds every scanned item row and its
+The core owns the item database API (`Spyglass.Data`, `Filters`, `Query`) and every list that
+shows items, but ships no item rows. `Spyglass_Database` adds every scanned item row and its
 English name through `Data:AddItems` / `AddNames`, registers the `items` module, and builds the
 item browser's sort order at `PLAYER_LOGIN`. Without it the core's lists take an item's name,
 quality, icon and kind from the client, fetching what it has not cached yet.
@@ -60,9 +60,9 @@ contributor-facing collection state and transport: scan progress, discovered ite
 boss drops, JSON encoding, exports, the export dialog, the boss portrait studio, and their
 commands.
 
-The scraper registers `/fl scan`, `/fl export` and `/fl portrait` through the public
+The scraper registers `/sg scan`, `/sg export` and `/sg portrait` through the public
 command-extension API. Its AceAddon object, database, frames, and modules remain private. It
-never reads or writes `ForeverLootDB`; everything it records lives in `ForeverLootScraperDB`,
+never reads or writes `SpyglassDB`; everything it records lives in `SpyglassScraperDB`,
 which is also the only SavedVariables layout the repository import tooling reads. How it works:
 [scraper.md](scraper.md).
 

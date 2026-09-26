@@ -8,7 +8,7 @@ import { type InstanceType, type Reference, nameOf } from "./reference.js";
  * Only ids matter; every `name` is informational and rewritten by `npm run fix`.
  */
 export interface CuratedInstance {
-  /** Map.ID of the instance (see ForeverLoot/db/generated/instances.lua for the list). */
+  /** Map.ID of the instance (see Spyglass/db/generated/instances.lua for the list). */
   map: number;
   /**
    * The instance's own id when players see its map as several dungeons (Scarlet Monastery's four
@@ -117,7 +117,7 @@ export interface CuratedFile {
   path: string;
   /** Folder it was found in; the generator warns when it disagrees with Map.InstanceType. */
   folder: InstanceType;
-  /** Output name: ForeverLoot/db/generated/loot/<slug>.lua */
+  /** Output name: Spyglass/db/generated/loot/<slug>.lua */
   slug: string;
   data: CuratedInstance;
 }
@@ -223,7 +223,7 @@ export class Checker {
     if (!ref.items.has(row.item)) {
       this.warn(
         file,
-        `${where}: item ${row.item} (${row.name ?? "?"}) hasn't been scanned yet; /fl scan it in-game and import`,
+        `${where}: item ${row.item} (${row.name ?? "?"}) hasn't been scanned yet; /sg scan it in-game and import`,
       );
       return true;
     }

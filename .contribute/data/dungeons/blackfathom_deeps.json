@@ -60,7 +60,7 @@
     {
       "id": 2914,
       "name": "Geilhast",
-      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\geilhast.blp",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\geilhast.blp",
       "displayID": 1773,
       "npc": 6243,
       "level": 26,

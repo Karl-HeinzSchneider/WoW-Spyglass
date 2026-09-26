@@ -7,9 +7,9 @@ export const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 export const CONTRIBUTE_DIR = resolve(ROOT, ".contribute");
 export const DATA_DIR = resolve(CONTRIBUTE_DIR, "data");
 export const CACHE_DIR = resolve(ROOT, ".cache");
-export const OUTPUT_DIR = resolve(ROOT, "ForeverLoot", "db", "generated");
-export const LOCALE_OUTPUT_DIR = resolve(ROOT, "ForeverLoot_Locale", "db", "generated");
-export const DATABASE_OUTPUT_DIR = resolve(ROOT, "ForeverLoot_Database", "db", "generated");
+export const OUTPUT_DIR = resolve(ROOT, "Spyglass", "db", "generated");
+export const LOCALE_OUTPUT_DIR = resolve(ROOT, "Spyglass_Locale", "db", "generated");
+export const DATABASE_OUTPUT_DIR = resolve(ROOT, "Spyglass_Database", "db", "generated");
 
 /** Curated input folders; the key is informational, Map.InstanceType decides the real type. */
 export const CURATED_DIRS = {
@@ -30,7 +30,7 @@ export const LIST_DIRS = Object.fromEntries(LIST_KINDS.map((kind) => [kind, reso
 
 /** The item database's source: in-game scans, one JSON file per id range (see items.ts). */
 export const SCANNED_ITEMS_DIR = resolve(DATA_DIR, "items");
-/** Drop folder for `npm run import` without a path: SavedVariables .lua and /fl export .json files (gitignored). */
+/** Drop folder for `npm run import` without a path: SavedVariables .lua and /sg export .json files (gitignored). */
 export const INBOX_DIR = resolve(CONTRIBUTE_DIR, "inbox");
 
 export const FALLBACK_LOCALE = "enUS";
@@ -62,7 +62,7 @@ export interface Config {
   locales: string[];
   /** Map IDs to leave out even though they have encounters (test maps). */
   excludeMaps: number[];
-  /** Split ForeverLoot_Database/db/generated/items/items_NNN.lua after this many rows. */
+  /** Split Spyglass_Database/db/generated/items/items_NNN.lua after this many rows. */
   itemsPerFile: number;
 }
 

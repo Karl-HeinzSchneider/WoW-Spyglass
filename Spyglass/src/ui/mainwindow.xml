@@ -1,0 +1,96 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+
+	<!-- One tab on the right edge of the window: an icon on the side-tab art, tooltip on hover.
+	     Same template the character frame's mode tabs use (CharacterFrameModeSideTabTemplate). -->
+	<Frame name="SpyglassSideTabTemplate" inherits="LargeSideTabButtonTemplate" mixin="SpyglassSideTabMixin" virtual="true">
+		<KeyValues>
+			<KeyValue key="fillToInterior" value="true" type="boolean"/>
+		</KeyValues>
+		<Scripts>
+			<OnLoad method="OnLoad"/>
+		</Scripts>
+	</Frame>
+
+	<!-- Modeled on Blizzard_UIPanels_Game/Camelot/CharacterFrame.xml: the same portrait frame,
+	     a dark two-column interior (LeftPaneHost / RightPaneHost) and icon tabs down the right
+	     edge. Only the size differs: 900x650 instead of 631x484, so the pane backgrounds are
+	     stretched instead of drawn at atlas size. -->
+	<Frame name="SpyglassMainWindow" mixin="SpyglassMainWindowMixin" inherits="PortraitFrameBaseTemplate"
+		parent="UIParent" toplevel="true" enableMouse="true" movable="true" clampedToScreen="true" hidden="true">
+		<Size x="900" y="650"/>
+		<Anchors>
+			<Anchor point="CENTER"/>
+		</Anchors>
+		<Frames>
+			<Button parentKey="CloseButton" inherits="UIPanelCloseButtonDefaultAnchors"/>
+
+			<!-- Right column: the info panel of what the selected tab shows (infopane.xml). -->
+			<Frame parentKey="RightPane">
+				<Size x="260"/>
+				<Anchors>
+					<Anchor point="TOPRIGHT" x="0" y="-20"/>
+					<Anchor point="BOTTOMRIGHT" x="0" y="0"/>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture atlas="UI-Character-Info-Stat-BG" setAllPoints="true"/>
+					</Layer>
+				</Layers>
+				<Frames>
+					<!-- Insets as the character frame's side panes have them in its right column. -->
+					<Frame parentKey="Info" inherits="SpyglassInfoPaneTemplate">
+						<Anchors>
+							<Anchor point="TOPLEFT" x="16" y="-14"/>
+							<Anchor point="BOTTOMRIGHT" x="-12" y="14"/>
+						</Anchors>
+					</Frame>
+					<!-- The seam between the columns, drawn above the window border (NineSlice is 500). -->
+					<Frame parentKey="Divider" frameLevel="505">
+						<Size x="11"/>
+						<Anchors>
+							<Anchor point="TOPLEFT" x="0" y="-1"/>
+							<Anchor point="BOTTOMLEFT" x="0" y="0"/>
+						</Anchors>
+						<Layers>
+							<Layer level="OVERLAY">
+								<Texture atlas="common-framedivider" useAtlasSize="true">
+									<Anchors>
+										<Anchor point="TOPLEFT" x="-6" y="0"/>
+										<Anchor point="BOTTOMLEFT" x="-6" y="0"/>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+					</Frame>
+				</Frames>
+			</Frame>
+
+			<!-- Left column: the views (SpyglassViewTemplate) fill this. -->
+			<Frame parentKey="LeftPane">
+				<Anchors>
+					<Anchor point="TOPLEFT" x="0" y="-20"/>
+					<Anchor point="BOTTOMRIGHT" relativeKey="$parent.RightPane" relativePoint="BOTTOMLEFT" x="0" y="0"/>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture atlas="UI-Character-Info-General-BG" setAllPoints="true"/>
+					</Layer>
+				</Layers>
+			</Frame>
+
+			<!-- Side tabs hang off the right edge like CharacterFrameModeTabs; laid out in Lua. -->
+			<Frame parentKey="Tabs">
+				<Size x="64" y="384"/>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativePoint="TOPRIGHT" x="0" y="-30"/>
+				</Anchors>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnLoad method="OnLoad"/>
+			<OnShow method="OnShow"/>
+			<OnDragStart method="OnDragStart"/>
+			<OnDragStop method="OnDragStop"/>
+		</Scripts>
+	</Frame>
+</Ui>

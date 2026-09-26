@@ -1,10 +1,10 @@
-"""Turns a screenshot of the scraper's `/fl portrait` window into a boss portrait texture.
+"""Turns a screenshot of the scraper's `/sg portrait` window into a boss portrait texture.
 
     python tools/portrait/portrait.py <screenshot> <name> [--preview <png>]
 
 The window draws the boss twice, on black and on white, each inside a magenta frame. The pair
 gives the transparency back (alpha = 1 - (white - black)); the result is scaled to 128x64 and
-written as ForeverLoot/assets/bosses/<name>.blp (or to <name> itself when it ends in .blp) in the
+written as Spyglass/assets/bosses/<name>.blp (or to <name> itself when it ends in .blp) in the
 format of the client's own boss art: BLP2, uncompressed BGRA, 8-bit alpha, no mipmaps.
 See README.md next to this file.
 """
@@ -17,7 +17,7 @@ from pathlib import Path
 from PIL import Image, ImageChops
 
 WIDTH, HEIGHT = 128, 64
-ASSETS = Path(__file__).resolve().parents[2] / "ForeverLoot" / "assets" / "bosses"
+ASSETS = Path(__file__).resolve().parents[2] / "Spyglass" / "assets" / "bosses"
 
 
 def magenta_mask(shot: Image.Image) -> Image.Image:
@@ -35,7 +35,7 @@ def find_frames(mask: Image.Image) -> list[tuple[int, int, int, int]]:
     # The frames' top edge: the first row with long magenta runs, one run per frame.
     top = next((y for y in range(height) if count((0, y, width, y + 1)) > 400), None)
     if top is None:
-        sys.exit("no magenta frames found; is this a screenshot of the /fl portrait window?")
+        sys.exit("no magenta frames found; is this a screenshot of the /sg portrait window?")
     row = mask.crop((0, top, width, top + 1)).tobytes()
     runs, start = [], None
     for x in range(width + 1):
@@ -108,9 +108,9 @@ def write_blp(image: Image.Image, path: Path) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Screenshot of /fl portrait -> boss portrait .blp")
+    parser = argparse.ArgumentParser(description="Screenshot of /sg portrait -> boss portrait .blp")
     parser.add_argument("screenshot", type=Path)
-    parser.add_argument("name", help="file name in ForeverLoot/assets/bosses (e.g. magmatus), or a path ending in .blp")
+    parser.add_argument("name", help="file name in Spyglass/assets/bosses (e.g. magmatus), or a path ending in .blp")
     parser.add_argument("--preview", type=Path, help="also write a 4x PNG on grey, to check the result")
     args = parser.parse_args()
 
@@ -123,7 +123,7 @@ def main() -> None:
         Image.alpha_composite(grey, image).convert("RGB").resize((WIDTH * 4, HEIGHT * 4), Image.NEAREST).save(args.preview)
         print(f"wrote {args.preview}")
     if out.parent == ASSETS:
-        print(f'"portrait": "Interface\\\\AddOns\\\\ForeverLoot\\\\assets\\\\bosses\\\\{out.name}"')
+        print(f'"portrait": "Interface\\\\AddOns\\\\Spyglass\\\\assets\\\\bosses\\\\{out.name}"')
 
 
 if __name__ == "__main__":

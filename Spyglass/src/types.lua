@@ -1,0 +1,76 @@
+-- Type annotations only; this file is not listed in the TOC and never runs in-game.
+-- It exists so the Lua language server can type the `...` vararg every file receives.
+-- Every file should start with:
+--   ---@type string, Spyglass
+--   local appName, app = ...
+-- When a file adds something to `app`, add a matching ---@field here.
+
+---@class Spyglass
+---@field logger Spyglass.Logger
+---@field addon Spyglass.Addon
+---@field dbDefaults Spyglass.DBDefaults
+---@field db Spyglass.DB
+---@field minimapButton Spyglass.MinimapButton
+---@field tooltip Spyglass.Tooltip  # adds the instance loot sources to item tooltips
+---@field api Spyglass.API  # also the global `Spyglass`
+---@field data Spyglass.Data  # item database; also `Spyglass.Data`
+---@field filters Spyglass.Filters  # filter registry; also `Spyglass.Filters`
+---@field query Spyglass.QueryAPI  # query runner; also `Spyglass.Query`
+---@field lists Spyglass.Lists  # the user's item lists, Favorites first; also `Spyglass.Lists`
+---@field commands Spyglass.CommandRegistry  # private dispatcher; registration is public API
+---@field unknownItemKinds table<integer, true>  # items grouped without knowing their kind (registry.lua; the view regroups them)
+---@field itemKind fun(itemID: integer): integer?, integer?, string?  # class id, subclass id, equip loc; nil when unknown (registry.lua)
+---@field classFilter Spyglass.ClassFilter  # which classes can use which armor/weapons (classfilter.lua)
+---@field ui Spyglass.UI
+
+-- UI namespace. Mixins are globals (XML requires it) but also exposed here.
+---@class Spyglass.UI
+---@field mainWindow Spyglass.MainWindow  # set in SpyglassMainWindowMixin:OnLoad
+---@field recipePopup Spyglass.RecipePopup  # set in SpyglassRecipePopupMixin:OnLoad
+---@field setPopup Spyglass.SetPopup  # set in SpyglassSetPopupMixin:OnLoad
+---@field HidePopups fun()  # hides the recipe and set popups (recipepopup.lua)
+---@field modelPreview Spyglass.ModelPreview  # set in SpyglassModelPreviewMixin:OnLoad
+---@field SetIconQuality fun(ring: Texture, quality?: Enum.ItemQuality)  # tints an icon's ring in the quality color, nil = plain (view.lua)
+---@field SetItemBadges fun(frame: { Favorite: Texture, ListMarker: Texture }, itemID?: integer)  # the list star/marker on an item's icon (view.lua)
+---@field listDialog Spyglass.ListDialog  # set in SpyglassListDialogMixin:OnLoad
+---@field ListDialogMixin Spyglass.ListDialog
+---@field MainWindowMixin Spyglass.MainWindow
+---@field InfoPaneMixin Spyglass.InfoPane
+---@field RecipePopupMixin Spyglass.RecipePopup
+---@field SetPopupMixin Spyglass.SetPopup
+---@field ModelPreviewMixin Spyglass.ModelPreview
+---@field ItemSlotMixin Spyglass.ItemSlot
+---@field SideTabMixin Spyglass.SideTab
+---@field ViewMixin Spyglass.View
+---@field ListRowMixin Spyglass.ListRow
+---@field TileMixin Spyglass.Tile
+---@field CardMixin Spyglass.Card
+---@field PageHeaderMixin Spyglass.PageHeader
+---@field SubheaderMixin Spyglass.Subheader
+---@field GroupLabelMixin Spyglass.GroupLabel
+---@field BreadcrumbButtonMixin Spyglass.BreadcrumbButton
+---@field SearchBoxMixin Spyglass.SearchBox
+---@field ClassFilterButtonMixin Spyglass.ClassFilterButton
+---@field ClassFilterModeButtonMixin Spyglass.ClassFilterModeButton
+
+-- Return type of CreateFramePool. The FrameXML annotations keep the pool mixins private,
+-- so the methods we use are declared here.
+---@class Spyglass.FramePool
+---@field Acquire fun(self: Spyglass.FramePool): Frame
+---@field Release fun(self: Spyglass.FramePool, frame: Frame)
+---@field ReleaseAll fun(self: Spyglass.FramePool)
+---@field EnumerateActive fun(self: Spyglass.FramePool): fun(): Frame
+
+-- A HorizontalLayoutFrame / VerticalLayoutFrame instance.
+---@class Spyglass.LayoutFrame : Frame, LayoutMixin
+
+-- Any child placed in a layout frame needs a layoutIndex.
+---@class Spyglass.LayoutChild : Frame
+---@field layoutIndex integer
+
+-- The AceDB object, with profile/char/global narrowed to the shape of app.dbDefaults.
+-- Ace3 API types (AceAddon, AceDBObject-3.0, ...) come from the ketho.wow-api extension.
+---@class Spyglass.DB : AceDBObject-3.0
+---@field profile Spyglass.DB.Profile
+---@field char Spyglass.DB.Char
+---@field global Spyglass.DB.Global

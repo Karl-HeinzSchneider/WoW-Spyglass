@@ -1,14 +1,14 @@
 # Boss portrait converter
 
-Turns a screenshot of the scraper's `/fl portrait` window into a boss picture for the browser's
-boss cards: `ForeverLoot/assets/bosses/<name>.blp`, 128x64 with transparency, the same format as
+Turns a screenshot of the scraper's `/sg portrait` window into a boss picture for the browser's
+boss cards: `Spyglass/assets/bosses/<name>.blp`, 128x64 with transparency, the same format as
 the client's own Encounter Journal boss art.
 
 Needs Python 3 with Pillow (`pip install pillow`).
 
 ## Steps
 
-1. In game, with `ForeverLoot_Scraper` enabled: `/fl portrait <displayID>` (or walk the bosses
+1. In game, with `Spyglass_Scraper` enabled: `/sg portrait <displayID>` (or walk the bosses
    with `< Boss` / `Boss >`). Frame the model with zoom / turn / offset; keep the defaults
    (`Reset`) unless the boss doesn't fit, so all pictures look alike.
 2. Take a screenshot (Print Screen) with the whole window visible. A lossless PNG gives the
@@ -20,14 +20,14 @@ Needs Python 3 with Pillow (`pip install pillow`).
    ```
 
    `<name>` is the file name without extension, lowercase with underscores like the boss
-   (`magmatus` -> `ForeverLoot/assets/bosses/magmatus.blp`); a path ending in `.blp` writes
+   (`magmatus` -> `Spyglass/assets/bosses/magmatus.blp`); a path ending in `.blp` writes
    there instead. `--preview` also writes a 4x PNG on grey to look at the result.
 
 4. The script prints the line for the boss in its instance file under
    `.contribute/data/dungeons/` (or `raids/`); add it to the encounter:
 
    ```json
-   "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\magmatus.blp",
+   "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\magmatus.blp",
    ```
 
 5. `npm run gen`, and restart the game client: it only finds new files on startup, `/reload`

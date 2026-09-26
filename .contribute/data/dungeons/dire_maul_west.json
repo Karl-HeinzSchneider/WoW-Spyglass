@@ -43,14 +43,14 @@
     {
       "id": 2793,
       "name": "Lord Hel'nurath",
-      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\lord_helnurath.blp",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\lord_helnurath.blp",
       "displayID": 14556,
       "loot": []
     },
     {
       "id": 2794,
       "name": "Tsu'zee",
-      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\tsuzee.blp",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\tsuzee.blp",
       "displayID": 11250,
       "loot": []
     }

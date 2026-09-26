@@ -90,7 +90,7 @@ const PANEL_WIDGETS: Record<string, { options: string[]; required?: string[] }> 
   spacer: { options: [] },
 };
 
-/** The checkbox filters the addon knows (ForeverLoot/src/ui/view.lua), and the kinds they fit. */
+/** The checkbox filters the addon knows (Spyglass/src/ui/view.lua), and the kinds they fit. */
 const PANEL_FILTERS: Record<string, ListKind[] | "all"> = {
   side: "all",
   standing: ["reputation"],
@@ -126,7 +126,7 @@ export interface CuratedListRow extends CuratedItemRow {
 export interface ListFile {
   path: string;
   kind: ListKind;
-  /** The list id, from the file name: ForeverLoot/db/generated/<kind>/<slug>.lua and Data.lists[kind][slug]. */
+  /** The list id, from the file name: Spyglass/db/generated/<kind>/<slug>.lua and Data.lists[kind][slug]. */
   slug: string;
   data: CuratedList;
 }

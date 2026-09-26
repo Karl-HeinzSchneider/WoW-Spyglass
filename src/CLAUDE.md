@@ -15,9 +15,9 @@ contributors write are in `docs/contributing.md`.
 - `cli.ts` — `generate` (default; `--check` = staleness only), `check` (`--fix` = `npm run fix`),
   `import [file]`. The pipeline order is in `docs/data-pipeline.md`.
 - `check-addons.ts` — discovers the addons; checks that every TOC load entry exists (a
-  `[TextLocale]` entry for every one of `CLIENT_LOCALES`), that `ForeverLoot_*` addons declare
-  `## Dependencies: ForeverLoot`, that there are no dependency cycles, and that **no
-  `.lua`/`.xml`/`.toc` under `ForeverLoot/` contains a companion's name** (plain substring,
+  `[TextLocale]` entry for every one of `CLIENT_LOCALES`), that `Spyglass_*` addons declare
+  `## Dependencies: Spyglass`, that there are no dependency cycles, and that **no
+  `.lua`/`.xml`/`.toc` under `Spyglass/` contains a companion's name** (plain substring,
   comments included).
 - `check-lua.ts` — `luac -p` on every `.lua` in every addon (requires Lua 5.1's `luac`).
 - `check-xml.ts` — validates every addon `.xml` against
@@ -26,7 +26,7 @@ contributors write are in `docs/contributing.md`.
 - `link-addons.ts` — `npm run dev:link -- <AddOns dir>` (or `WOW_ADDONS_DIR`): a junction/symlink
   per addon; refuses to replace a path that isn't already our link.
 - `package-addons.ts` — deterministic zip (fixed timestamps, hand-rolled writer, no dependency)
-  of every addon into `dist/ForeverLoot-<version>.zip`; version from the TOCs (`mixed` if they
+  of every addon into `dist/Spyglass-<version>.zip`; version from the TOCs (`mixed` if they
   differ).
 
 ## Modules
@@ -51,11 +51,11 @@ contributors write are in `docs/contributing.md`.
 - `savedvars.ts` — a parser for the Lua subset the client writes to SavedVariables; not a Lua
   interpreter.
 - `discovered.ts` — `Discovered` (what the scraper recorded) and `loadDiscovered(path)` for a
-  `/fl export` `.json` or a SavedVariables `.lua`.
+  `/sg export` `.json` or a SavedVariables `.lua`.
 - `import.ts` — `importDiscovered`: merges items into the scans and observed drops into the
   instance files.
 - `generate.ts` — `build()` (the three trees in memory) and `write()`. `itemRow()` **must match
-  `Data.ITEM`** and `recipeRow()` **`Data.RECIPE`** in `ForeverLoot/src/data/data.lua`.
+  `Data.ITEM`** and `recipeRow()` **`Data.RECIPE`** in `Spyglass/src/data/data.lua`.
 - `lua.ts` — Lua serialization and the provenance `header()`, which deliberately still says
   `.contribute/tools (npm run gen)`; changing it rewrites every generated file, so do it only on
   purpose.

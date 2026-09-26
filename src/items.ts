@@ -4,12 +4,12 @@ import { SCANNED_ITEMS_DIR } from "./config.js";
 import { writeJson } from "./json.js";
 
 /**
- * The item database's source: what `/fl scan` recorded in-game, merged in by `npm run import`.
+ * The item database's source: what `/sg scan` recorded in-game, merged in by `npm run import`.
  * One file per ID_RANGE ids (`items_270000.json` holds 270000..279999), keyed by item id, so an
  * item always lands in the same file and diffs stay small. Machine-written; not meant for
  * hand edits, though nothing breaks if you make them.
  *
- * Field meanings match Data.ITEM in ForeverLoot/src/data/data.lua; `names` is per locale, one per client
+ * Field meanings match Data.ITEM in Spyglass/src/data/data.lua; `names` is per locale, one per client
  * the item was scanned on.
  */
 export interface ScannedItem {

@@ -30,18 +30,18 @@ wago.tools tables are downloaded as CSV and cached in `.cache/<build>/` (`src/wa
 
 ## What each generated file comes from
 
-| Output                                                                                         | Source                                                                                                                                 |
-| ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `ForeverLoot_Database/db/generated/items/items_NNN.lua`                                        | the scans, `itemsPerFile` rows per file                                                                                                |
-| `ForeverLoot_Database/db/generated/locales/enUS/items.lua`                                     | the scanned items' English names                                                                                                       |
-| `ForeverLoot/db/generated/instances.lua`                                                       | `Map` + `DungeonEncounter` (only maps with encounters), levels/icons/portraits from `dungeons/` and `raids/`                           |
-| `ForeverLoot/db/generated/loot/<slug>.lua`                                                     | the boss loot, trash and quests of every instance file that has any                                                                    |
-| `ForeverLoot/db/generated/<kind>/<slug>.lua` (crafting, pvp, collections, reputation)          | the item lists, one file each, rows or not                                                                                             |
-| `ForeverLoot/db/generated/recipes/<profession>.lua`                                            | the recipe tables, one file per profession, only recipes whose product (enchants: every reagent) is scanned                            |
-| `ForeverLoot/db/generated/locales/enUS/*.lua`                                                  | the English fallback names: `instances`, `bosses`, `crafting` (profession, trade skill category and tool names)                        |
-| `ForeverLoot_Locale/db/generated/locales/<locale>/items.lua`                                   | the scanned items' names in every configured or scanned non-English locale: `ItemSparse`, overridden by names scanned in that language |
-| `ForeverLoot_Locale/db/generated/locales/<locale>/instances.lua`, `bosses.lua`, `crafting.lua` | the wago.tools names for every configured non-English locale                                                                           |
-| `ForeverLoot/db/generated/generated.xml`, `ForeverLoot_Database/db/generated/generated.xml`    | each addon's loader, listed in its TOC; the locale addon has none (its TOC lists `locales\[TextLocale]\*.lua` instead)                 |
+| Output                                                                                      | Source                                                                                                                                 |
+| ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `Spyglass_Database/db/generated/items/items_NNN.lua`                                        | the scans, `itemsPerFile` rows per file                                                                                                |
+| `Spyglass_Database/db/generated/locales/enUS/items.lua`                                     | the scanned items' English names                                                                                                       |
+| `Spyglass/db/generated/instances.lua`                                                       | `Map` + `DungeonEncounter` (only maps with encounters), levels/icons/portraits from `dungeons/` and `raids/`                           |
+| `Spyglass/db/generated/loot/<slug>.lua`                                                     | the boss loot, trash and quests of every instance file that has any                                                                    |
+| `Spyglass/db/generated/<kind>/<slug>.lua` (crafting, pvp, collections, reputation)          | the item lists, one file each, rows or not                                                                                             |
+| `Spyglass/db/generated/recipes/<profession>.lua`                                            | the recipe tables, one file per profession, only recipes whose product (enchants: every reagent) is scanned                            |
+| `Spyglass/db/generated/locales/enUS/*.lua`                                                  | the English fallback names: `instances`, `bosses`, `crafting` (profession, trade skill category and tool names)                        |
+| `Spyglass_Locale/db/generated/locales/<locale>/items.lua`                                   | the scanned items' names in every configured or scanned non-English locale: `ItemSparse`, overridden by names scanned in that language |
+| `Spyglass_Locale/db/generated/locales/<locale>/instances.lua`, `bosses.lua`, `crafting.lua` | the wago.tools names for every configured non-English locale                                                                           |
+| `Spyglass/db/generated/generated.xml`, `Spyglass_Database/db/generated/generated.xml`       | each addon's loader, listed in its TOC; the locale addon has none (its TOC lists `locales\[TextLocale]\*.lua` instead)                 |
 
 ## The run (`src/cli.ts`)
 
@@ -104,7 +104,7 @@ ability whose spell creates an item (effect 24 or 157) or enchants one (53 or 54
 removes stale files and returns the number of changes. `npm run generate:check` only reports.
 
 - `itemRow()` must match `Data.ITEM` and `recipeRow()` `Data.RECIPE` in
-  `ForeverLoot/src/data/data.lua`; both rows are positional. A recipe's `minSkill` is
+  `Spyglass/src/data/data.lua`; both rows are positional. A recipe's `minSkill` is
   `learnSkillOf()`: the recipe item's requirement when one is known.
 - `instances.lua` has one instance per map, or per file with its own `id` on a split map, with the
   encounters that file lists; the English name of such a part is its file's `name`.
@@ -126,8 +126,8 @@ removes stale files and returns the number of changes. `npm run generate:check` 
 
 ## Import (`src/import.ts`, `src/discovered.ts`)
 
-`loadDiscovered(path)` reads what the scraper recorded, from a `/fl export` `.json` or the
-`ForeverLoot_Scraper.lua` SavedVariables file (`ForeverLootScraperDB.global.discovered`, the only
+`loadDiscovered(path)` reads what the scraper recorded, from a `/sg export` `.json` or the
+`Spyglass_Scraper.lua` SavedVariables file (`SpyglassScraperDB.global.discovered`, the only
 layout; `src/savedvars.ts` parses the Lua subset the client writes, it is not a Lua interpreter).
 Records carry their own `id`, which wins over the container key.
 

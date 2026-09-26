@@ -1,7 +1,7 @@
 # .contribute — the data the database is built from
 
-Everything under `data/` is input; the three generated trees (`ForeverLoot/db/generated/`,
-`ForeverLoot_Database/db/generated/`, `ForeverLoot_Locale/db/generated/`) are produced from it by
+Everything under `data/` is input; the three generated trees (`Spyglass/db/generated/`,
+`Spyglass_Database/db/generated/`, `Spyglass_Locale/db/generated/`) are produced from it by
 `npm run gen` and **never edited by hand**. `inbox/` is the gitignored drop folder for
 `npm run import`.
 
@@ -32,8 +32,8 @@ format of every file here (instance files with split dungeons, `displayName`, bo
 - Only ids matter: every `name` in an item row is informational and rewritten by `fix`. A boss's
   `name`, a split dungeon's `name`, `displayName` and quest titles are the exceptions `fix` leaves
   alone.
-- A new instance only shows in the browser once its `FL.InstanceFolder(<id>)` line in
-  `ForeverLoot/modules/dungeons/dungeons.lua` or `raids/raids.lua` is uncommented.
+- A new instance only shows in the browser once its `SG.InstanceFolder(<id>)` line in
+  `Spyglass/modules/dungeons/dungeons.lua` or `raids/raids.lua` is uncommented.
 - Texture paths in JSON need `\\`; write these files with the Write/Edit tools, not shell
   heredocs.
 - When asked to pull data in from somewhere (a website's drop tables, a spreadsheet), do it with

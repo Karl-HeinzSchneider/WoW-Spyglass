@@ -11,7 +11,7 @@
     {
       "id": 3493,
       "name": "Faldrim Anvilmar",
-      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\faldrim_anvilmar.blp",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\faldrim_anvilmar.blp",
       "displayID": 142826,
       "npc": 261306,
       "level": 16,
@@ -33,7 +33,7 @@
     {
       "id": 3495,
       "name": "Magmatus",
-      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\magmatus.blp",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\magmatus.blp",
       "displayID": 1070,
       "npc": 261316,
       "level": 16,
@@ -55,7 +55,7 @@
     {
       "id": 3494,
       "name": "Plunder",
-      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\plunder.blp",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\plunder.blp",
       "displayID": 142840,
       "npc": 261311,
       "level": 16,
@@ -77,7 +77,7 @@
     {
       "id": 3496,
       "name": "Durgen Dirgehammer",
-      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\durgen_dirgehammer.blp",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\durgen_dirgehammer.blp",
       "displayID": 142837,
       "npc": 261319,
       "level": 16,

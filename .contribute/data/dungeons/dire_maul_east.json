@@ -31,7 +31,7 @@
     {
       "id": 2792,
       "name": "Pusillin",
-      "portrait": "Interface\\AddOns\\ForeverLoot\\assets\\bosses\\pusillin.blp",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\pusillin.blp",
       "displayID": 7552,
       "loot": []
     },

@@ -1,0 +1,621 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+
+	<!-- The frame around every square icon, in two parts, both anchored to the widget's `Icon`:
+	     an `IconMask` (UI-HUD-ActionBar-IconFrame-Mask, whose rounded opening is icon-sized at
+	     ~1.45x the icon; inlined per widget because it must name the masked texture) clips the
+	     icon to the frame's inner shape, and `IconRing` is the action bar's bevelled slot frame
+	     (UI-HUD-ActionBar-IconFrame, the pair the client's own bag buttons use), drawn over the
+	     icon at icon size (+1 wide, top-left aligned, as the action button draws it) so its bevel
+	     covers the icon's outer pixels. On items the frame is tinted in the item's quality color
+	     by app.ui.SetIconQuality; anything else keeps the plain frame. Every `Icon` is zoomed in
+	     a little (TexCoords 0.07..0.93) so the dark edge baked into old icons is cropped away. -->
+	<Texture name="SpyglassIconRingTemplate" atlas="UI-HUD-ActionBar-IconFrame" virtual="true"/>
+
+	<!-- One row in the list:  [icon] Name ............... chance
+	                          Slot ........... Armor type [>]   (arrow only for folders).
+	     The bottom line and the chance are optional; text colors are set in Lua. -->
+	<Button name="SpyglassListRowTemplate" mixin="SpyglassListRowMixin" registerForClicks="LeftButtonUp, RightButtonUp" virtual="true">
+		<Size x="200" y="40"/>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="Backplate">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="0" y="-1"/>
+						<Anchor point="BOTTOMRIGHT" x="0" y="1"/>
+					</Anchors>
+					<Color r="0" g="0" b="0" a="0.3"/>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<Texture parentKey="Icon">
+					<Size x="32" y="32"/>
+					<Anchors>
+						<Anchor point="LEFT" x="6" y="0"/>
+					</Anchors>
+					<TexCoords left="0.07" right="0.93" top="0.07" bottom="0.93"/>
+				</Texture>
+				<MaskTexture parentKey="IconMask" atlas="UI-HUD-ActionBar-IconFrame-Mask" hWrapMode="CLAMPTOBLACKADDITIVE" vWrapMode="CLAMPTOBLACKADDITIVE">
+					<Size x="46" y="46"/>
+					<Anchors>
+						<Anchor point="CENTER" relativeKey="$parent.Icon"/>
+					</Anchors>
+					<MaskedTextures>
+						<MaskedTexture childKey="Icon"/>
+					</MaskedTextures>
+				</MaskTexture>
+				<Texture parentKey="Arrow" atlas="common-icon-forwardarrow" useAtlasSize="false">
+					<Size x="16" y="16"/>
+					<Anchors>
+						<Anchor point="RIGHT" x="-10" y="0"/>
+					</Anchors>
+				</Texture>
+				<!-- Top line: name (in quality color), drop chance right-aligned on the same line. -->
+				<FontString parentKey="Chance" inherits="GameFontNormalSmall" justifyH="RIGHT" hidden="true">
+					<Anchors>
+						<Anchor point="TOP" relativeKey="$parent.Icon" relativePoint="TOP" x="0" y="-2"/>
+						<Anchor point="RIGHT" relativeKey="$parent.Arrow" relativePoint="LEFT" x="-4" y="0"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Name" inherits="GameFontHighlightMedium" justifyH="LEFT" wordwrap="false">
+					<Anchors>
+						<Anchor point="LEFT" relativeKey="$parent.Icon" relativePoint="RIGHT" x="8" y="0"/>
+						<Anchor point="RIGHT" relativeKey="$parent.Chance" relativePoint="LEFT" x="-4" y="0"/>
+					</Anchors>
+				</FontString>
+				<!-- Bottom line (when shown, Name moves up): slot / description left, armor or
+				     weapon type right. Both red when the character can't equip the item. -->
+				<FontString parentKey="Type" inherits="GameFontHighlightSmall" justifyH="RIGHT" hidden="true">
+					<Anchors>
+						<Anchor point="BOTTOM" relativeKey="$parent.Icon" relativePoint="BOTTOM" x="0" y="3"/>
+						<Anchor point="RIGHT" relativeKey="$parent.Arrow" relativePoint="LEFT" x="-4" y="0"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Sub" inherits="GameFontHighlightSmall" justifyH="LEFT" wordwrap="false" hidden="true">
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" relativeKey="$parent.Icon" relativePoint="BOTTOMRIGHT" x="8" y="3"/>
+						<Anchor point="RIGHT" relativeKey="$parent.Type" relativePoint="LEFT" x="-8" y="0"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+			<Layer level="ARTWORK" textureSubLevel="1">
+				<Texture parentKey="IconRing" inherits="SpyglassIconRingTemplate">
+					<Size x="33" y="32"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.Icon"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<!-- On a favorite item: the favorites star over the icon's top-left corner; on an item
+				     of another list: that list's marker over the top-right one (app.ui.SetItemBadges).
+				     The star (the transmog frame's) is 15 for the marker's 14, so both look the same size. -->
+				<Texture parentKey="Favorite" atlas="transmog-icon-favorite" hidden="true">
+					<Size x="15" y="15"/>
+					<Anchors>
+						<Anchor point="CENTER" relativeKey="$parent.Icon" relativePoint="TOPLEFT" x="2" y="-2"/>
+					</Anchors>
+				</Texture>
+				<Texture parentKey="ListMarker" hidden="true">
+					<Size x="14" y="14"/>
+					<Anchors>
+						<Anchor point="CENTER" relativeKey="$parent.Icon" relativePoint="TOPRIGHT" x="-2" y="-2"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="HIGHLIGHT">
+				<Texture file="Interface\QuestFrame\UI-QuestTitleHighlight" alphaMode="ADD">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="2" y="-2"/>
+						<Anchor point="BOTTOMRIGHT" x="-2" y="2"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick method="OnClick"/>
+			<OnEnter method="OnEnter"/>
+			<OnLeave method="OnLeave"/>
+		</Scripts>
+	</Button>
+
+	<!-- A tile: an entry drawn as a picture card in lists with `display = "tiles"`. The card is
+	     the client's bevelled dark list button (common-button-list-large, stretched to the tile);
+	     the picture sits inside the bevel and is cut to the button's own silhouette by using the
+	     same atlas as a mask, so its corners follow the bevel. The name sits at the top left in a
+	     dark box and two small texts (info / infoRight) in the bottom corners, each in a small
+	     dark box of its own, so they read on any picture. Without a background the card stays
+	     plain and shows the entry's icon in the middle; with one, `showIcon` puts the icon at the
+	     picture's left edge (anchored in Lua). -->
+	<Button name="SpyglassTileTemplate" mixin="SpyglassTileMixin" registerForClicks="LeftButtonUp, RightButtonUp" virtual="true">
+		<Size x="196" y="84"/>
+		<Layers>
+			<!-- Textures of one layer only draw in a defined order when their sub-levels differ,
+			     so card, picture and boost get explicit ones (card lowest). -->
+			<Layer level="BACKGROUND" textureSubLevel="-2">
+				<Texture parentKey="Card" atlas="common-button-list-large" setAllPoints="true"/>
+			</Layer>
+			<Layer level="BACKGROUND" textureSubLevel="-1">
+				<!-- The 5px inset is the bevel that stays visible around the picture. -->
+				<Texture parentKey="Background">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="5" y="-5"/>
+						<Anchor point="BOTTOMRIGHT" x="-5" y="5"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="BACKGROUND" textureSubLevel="0">
+				<!-- The same picture added on top of itself: brightens it beyond how it was
+				     painted. Its alpha (TILE_PICTURE_BOOST in view.lua) is the brightness knob. -->
+				<Texture parentKey="Boost" alphaMode="ADD">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.Background"/>
+						<Anchor point="BOTTOMRIGHT" relativeKey="$parent.Background"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="BORDER">
+				<!-- Darkens the picture behind the texts: a translucent black box a little taller
+				     than the name across the top, a band fading in towards the bottom edge, and a
+				     box behind each bottom text in its corner (as wide as the text, set in Lua).
+				     How dark the tiles look is mostly their alphas (0 = untouched picture, 1 =
+				     black) and heights. -->
+				<Texture parentKey="TopShade">
+					<Size y="22"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.Background"/>
+						<Anchor point="TOPRIGHT" relativeKey="$parent.Background"/>
+					</Anchors>
+					<Color r="0" g="0" b="0" a="0.6"/>
+				</Texture>
+				<Texture parentKey="BottomShade">
+					<Size y="20"/>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" relativeKey="$parent.Background"/>
+						<Anchor point="BOTTOMRIGHT" relativeKey="$parent.Background"/>
+					</Anchors>
+					<Gradient orientation="VERTICAL">
+						<MinColor r="0" g="0" b="0" a="0.45"/>
+						<MaxColor r="0" g="0" b="0" a="0"/>
+					</Gradient>
+				</Texture>
+				<Texture parentKey="InfoBox" hidden="true">
+					<Size x="1" y="18"/>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" relativeKey="$parent.Background"/>
+					</Anchors>
+					<Color r="0" g="0" b="0" a="0.6"/>
+				</Texture>
+				<Texture parentKey="InfoRightBox" hidden="true">
+					<Size x="1" y="18"/>
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT" relativeKey="$parent.Background"/>
+					</Anchors>
+					<Color r="0" g="0" b="0" a="0.6"/>
+				</Texture>
+				<!-- The card's silhouette, shrunk to the picture rect, clips the picture and shades. -->
+				<MaskTexture parentKey="Mask" atlas="common-button-list-large" hWrapMode="CLAMPTOBLACKADDITIVE" vWrapMode="CLAMPTOBLACKADDITIVE">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.Background"/>
+						<Anchor point="BOTTOMRIGHT" relativeKey="$parent.Background"/>
+					</Anchors>
+					<MaskedTextures>
+						<MaskedTexture childKey="Background"/>
+						<MaskedTexture childKey="Boost"/>
+						<MaskedTexture childKey="TopShade"/>
+						<MaskedTexture childKey="BottomShade"/>
+						<MaskedTexture childKey="InfoBox"/>
+						<MaskedTexture childKey="InfoRightBox"/>
+					</MaskedTextures>
+				</MaskTexture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<Texture parentKey="Icon" hidden="true">
+					<Size x="32" y="32"/>
+					<Anchors>
+						<Anchor point="CENTER" x="0" y="-2"/>
+					</Anchors>
+					<TexCoords left="0.07" right="0.93" top="0.07" bottom="0.93"/>
+				</Texture>
+				<MaskTexture parentKey="IconMask" atlas="UI-HUD-ActionBar-IconFrame-Mask" hWrapMode="CLAMPTOBLACKADDITIVE" vWrapMode="CLAMPTOBLACKADDITIVE">
+					<Size x="46" y="46"/>
+					<Anchors>
+						<Anchor point="CENTER" relativeKey="$parent.Icon"/>
+					</Anchors>
+					<MaskedTextures>
+						<MaskedTexture childKey="Icon"/>
+					</MaskedTextures>
+				</MaskTexture>
+			</Layer>
+			<Layer level="ARTWORK" textureSubLevel="1">
+				<Texture parentKey="IconRing" inherits="SpyglassIconRingTemplate" hidden="true">
+					<Size x="33" y="32"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.Icon"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<FontString parentKey="Name" inherits="GameFontNormalMed3" justifyH="LEFT" wordwrap="false">
+					<Anchors>
+						<Anchor point="LEFT" relativeKey="$parent.TopShade" x="7" y="0"/>
+						<Anchor point="RIGHT" relativeKey="$parent.TopShade" x="-7" y="0"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="InfoRight" inherits="GameFontHighlightSmall" justifyH="RIGHT" wordwrap="false">
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT" x="-11" y="9"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Info" inherits="GameFontHighlightSmall" justifyH="LEFT" wordwrap="false">
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" x="11" y="9"/>
+						<Anchor point="RIGHT" relativeKey="$parent.InfoRight" relativePoint="LEFT" x="-6" y="0"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<HighlightTexture atlas="common-button-list-large-hover" setAllPoints="true" alphaMode="ADD"/>
+		<Scripts>
+			<OnClick method="OnClick"/>
+			<OnEnter method="OnEnter"/>
+			<OnLeave method="OnLeave"/>
+		</Scripts>
+	</Button>
+
+	<!-- A card: an entry drawn as a portrait card in lists with `display = "cards"`, e.g. one boss
+	     of an instance. The same bevelled list button as the tiles; the portrait (a bust on
+	     transparency, so nothing needs cutting) stands on the left, name and the two small info
+	     texts to its right, the folder arrow at the far right. Without a portrait the entry's
+	     icon takes its place. -->
+	<Button name="SpyglassCardTemplate" mixin="SpyglassCardMixin" registerForClicks="LeftButtonUp, RightButtonUp" virtual="true">
+		<Size x="300" y="72"/>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="Card" atlas="common-button-list-large" setAllPoints="true"/>
+			</Layer>
+			<Layer level="ARTWORK">
+				<!-- 2:1 like the client's boss portraits; bottom-aligned so the bust stands on the card. -->
+				<Texture parentKey="Portrait">
+					<Size x="112" y="56"/>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" x="2" y="5"/>
+					</Anchors>
+				</Texture>
+				<Texture parentKey="Icon" hidden="true">
+					<Size x="36" y="36"/>
+					<Anchors>
+						<Anchor point="LEFT" x="24" y="0"/>
+					</Anchors>
+					<TexCoords left="0.07" right="0.93" top="0.07" bottom="0.93"/>
+				</Texture>
+				<MaskTexture parentKey="IconMask" atlas="UI-HUD-ActionBar-IconFrame-Mask" hWrapMode="CLAMPTOBLACKADDITIVE" vWrapMode="CLAMPTOBLACKADDITIVE">
+					<Size x="52" y="52"/>
+					<Anchors>
+						<Anchor point="CENTER" relativeKey="$parent.Icon"/>
+					</Anchors>
+					<MaskedTextures>
+						<MaskedTexture childKey="Icon"/>
+					</MaskedTextures>
+				</MaskTexture>
+			</Layer>
+			<Layer level="ARTWORK" textureSubLevel="1">
+				<Texture parentKey="IconRing" inherits="SpyglassIconRingTemplate" hidden="true">
+					<Size x="37" y="36"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.Icon"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<Texture parentKey="Arrow" atlas="common-icon-forwardarrow" useAtlasSize="false">
+					<Size x="16" y="16"/>
+					<Anchors>
+						<Anchor point="RIGHT" x="-12" y="0"/>
+					</Anchors>
+				</Texture>
+				<!-- Quest "!" in the top-right corner for entries with `quests`; the name stops short
+				     of it even while hidden so it never overlaps. -->
+				<Texture parentKey="QuestIcon" file="Interface\GossipFrame\AvailableQuestIcon" hidden="true">
+					<Size x="16" y="16"/>
+					<Anchors>
+						<Anchor point="TOPRIGHT" x="-12" y="-7"/>
+					</Anchors>
+				</Texture>
+				<FontString parentKey="Name" inherits="GameFontHighlightMedium" justifyH="LEFT" wordwrap="false">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="98" y="-14"/>
+						<Anchor point="RIGHT" relativeKey="$parent.QuestIcon" relativePoint="LEFT" x="-4" y="0"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="InfoRight" inherits="GameFontHighlightSmall" justifyH="RIGHT" wordwrap="false">
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT" relativeKey="$parent.Arrow" relativePoint="BOTTOMLEFT" x="-6" y="-12"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Info" inherits="GameFontHighlightSmall" justifyH="LEFT" wordwrap="false">
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" x="98" y="14"/>
+						<Anchor point="RIGHT" relativeKey="$parent.InfoRight" relativePoint="LEFT" x="-6" y="0"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<HighlightTexture atlas="common-button-list-large-hover" setAllPoints="true" alphaMode="ADD"/>
+		<Scripts>
+			<OnClick method="OnClick"/>
+			<OnEnter method="OnEnter"/>
+			<OnLeave method="OnLeave"/>
+		</Scripts>
+	</Button>
+
+	<!-- Group label: a row-sized gold text line with a thin divider, used to cluster entries
+	     without the weight of a full section header. -->
+	<Frame name="SpyglassGroupLabelTemplate" mixin="SpyglassGroupLabelMixin" virtual="true">
+		<Size x="200" y="40"/>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString parentKey="Text" inherits="GameFontNormal" justifyH="LEFT" wordwrap="false">
+					<Anchors>
+						<Anchor point="LEFT" x="8" y="2"/>
+						<Anchor point="RIGHT" x="-8" y="2"/>
+					</Anchors>
+				</FontString>
+				<!-- Atlas height, stretched to the row width (like Options_HorizontalDivider in AddonList). -->
+				<Texture parentKey="Line" atlas="UI-Character-Info-ScrollLine-Long" useAtlasSize="true">
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" x="0" y="2"/>
+						<Anchor point="BOTTOMRIGHT" x="0" y="2"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+	</Frame>
+
+	<!-- Subheader: one step under the section header - centered gold text with the character
+	     pane's scroll line running out to both sides of it. -->
+	<Frame name="SpyglassSubheaderTemplate" mixin="SpyglassSubheaderMixin" virtual="true">
+		<Size x="200" y="24"/>
+		<Layers>
+			<Layer level="ARTWORK">
+				<!-- No width: the FontString sizes itself to the text and the lines follow its
+				     edges (the mixin caps it so they never vanish). -->
+				<FontString parentKey="Text" inherits="GameFontNormal" justifyH="CENTER" wordwrap="false">
+					<Anchors>
+						<Anchor point="CENTER" y="1"/>
+					</Anchors>
+				</FontString>
+				<!-- Atlas height, width from the anchors (as on the group label). -->
+				<Texture parentKey="LineLeft" atlas="UI-Character-Info-ScrollLine-Long" useAtlasSize="true">
+					<Anchors>
+						<Anchor point="LEFT" x="8"/>
+						<Anchor point="RIGHT" relativeKey="$parent.Text" relativePoint="LEFT" x="-10"/>
+					</Anchors>
+				</Texture>
+				<Texture parentKey="LineRight" atlas="UI-Character-Info-ScrollLine-Long" useAtlasSize="true">
+					<Anchors>
+						<Anchor point="LEFT" relativeKey="$parent.Text" relativePoint="RIGHT" x="10"/>
+						<Anchor point="RIGHT" x="-8"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnSizeChanged method="OnSizeChanged"/>
+		</Scripts>
+	</Frame>
+
+	<!-- Section header: the character frame's stat-category plate (CharacterStatFrameCategoryTemplate)
+	     stretched to the list width, white centered text. -->
+	<Frame name="SpyglassPageHeaderTemplate" mixin="SpyglassPageHeaderMixin" virtual="true">
+		<Size x="300" y="40"/>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<!-- Centered; its width follows the text (plus padding, see the mixin), so a short
+				     title doesn't turn into a plate stretched across the whole list. -->
+				<Texture parentKey="Backplate" atlas="UI-Character-Info-Title">
+					<Anchors>
+						<Anchor point="TOP"/>
+						<Anchor point="BOTTOM"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<FontString parentKey="Text" inherits="GameFontHighlightMedium" justifyH="CENTER" wordwrap="false">
+					<Anchors>
+						<Anchor point="LEFT" x="12" y="1"/>
+						<Anchor point="RIGHT" x="-12" y="1"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnSizeChanged method="OnSizeChanged"/>
+		</Scripts>
+	</Frame>
+
+	<!-- One segment of the breadcrumb trail. Width follows the text (set in Init). -->
+	<Button name="SpyglassBreadcrumbButtonTemplate" mixin="SpyglassBreadcrumbButtonMixin" virtual="true">
+		<Size x="50" y="24"/>
+		<ButtonText parentKey="Text">
+			<Anchors>
+				<Anchor point="CENTER"/>
+			</Anchors>
+		</ButtonText>
+		<!-- Ancestors gold, hover and the current (disabled) crumb white. -->
+		<NormalFont style="GameFontNormal"/>
+		<HighlightFont style="GameFontHighlight"/>
+		<DisabledFont style="GameFontHighlight"/>
+		<Scripts>
+			<OnClick method="OnClick"/>
+		</Scripts>
+	</Button>
+
+	<!-- Separator between crumbs: the same arrow atlas as the rows, dimmed. -->
+	<Frame name="SpyglassBreadcrumbSeparatorTemplate" virtual="true">
+		<Size x="18" y="24"/>
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture atlas="common-icon-forwardarrow" useAtlasSize="false" alpha="0.6">
+					<Size x="14" y="14"/>
+					<Anchors>
+						<Anchor point="CENTER" x="0" y="0"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+	</Frame>
+
+	<!-- A footer button: an icon in an item slot's frame (as SpyglassItemSlotTemplate draws
+	     it). The instance brings the mixin with Update, OnClick, OnEnter and OnLeave. -->
+	<Button name="SpyglassFooterButtonTemplate" registerForClicks="LeftButtonUp, RightButtonUp" virtual="true">
+		<Size x="32" y="32"/>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="Icon" setAllPoints="true">
+					<TexCoords left="0.07" right="0.93" top="0.07" bottom="0.93"/>
+				</Texture>
+				<MaskTexture parentKey="IconMask" atlas="UI-HUD-ActionBar-IconFrame-Mask" hWrapMode="CLAMPTOBLACKADDITIVE" vWrapMode="CLAMPTOBLACKADDITIVE">
+					<Size x="46" y="46"/>
+					<Anchors>
+						<Anchor point="CENTER" relativeKey="$parent.Icon"/>
+					</Anchors>
+					<MaskedTextures>
+						<MaskedTexture childKey="Icon"/>
+					</MaskedTextures>
+				</MaskTexture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<Texture parentKey="IconRing" inherits="SpyglassIconRingTemplate">
+					<Size x="33" y="32"/>
+					<Anchors>
+						<Anchor point="TOPLEFT"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD"/>
+		<Scripts>
+			<OnEnter method="OnEnter"/>
+			<OnLeave method="OnLeave"/>
+			<OnClick method="OnClick"/>
+		</Scripts>
+	</Button>
+
+	<!-- A view fills the window's left column: a header row (breadcrumbs on the
+	     left, search box + filter on the right) over a divider, the list below it, and under
+	     another divider a footer row with the class filter buttons on the left and the page controls
+	     on the right. Mouse wheel turns pages; right-click anywhere goes one level back. -->
+	<Frame name="SpyglassViewTemplate" mixin="SpyglassViewMixin" enableMouse="true" virtual="true">
+		<KeyValues>
+			<KeyValue key="rowHeight" value="40" type="number"/>
+			<KeyValue key="tileHeight" value="84" type="number"/>
+			<KeyValue key="cardHeight" value="72" type="number"/>
+			<KeyValue key="headerHeight" value="40" type="number"/>
+			<KeyValue key="headerGap" value="6" type="number"/>
+			<KeyValue key="subheaderHeight" value="24" type="number"/>
+			<KeyValue key="subheaderGap" value="4" type="number"/>
+			<KeyValue key="columnGap" value="12" type="number"/>
+		</KeyValues>
+		<Frames>
+			<!-- Starts right of the window's portrait circle (62px at x = -5), which hangs over
+			     the top-left corner of the view. -->
+			<Frame parentKey="Breadcrumbs" inherits="HorizontalLayoutFrame">
+				<KeyValues>
+					<KeyValue key="spacing" value="2" type="number"/>
+				</KeyValues>
+				<Size x="1" y="24"/>
+				<Anchors>
+					<Anchor point="TOPLEFT" x="66" y="-12"/>
+				</Anchors>
+			</Frame>
+			<!-- Query toolbar, only shown on item-DB folders. -->
+			<DropdownButton parentKey="FilterDropdown" inherits="WowStyle1FilterDropdownTemplate" hidden="true">
+				<Anchors>
+					<Anchor point="TOPRIGHT" x="-14" y="-13"/>
+				</Anchors>
+			</DropdownButton>
+			<EditBox parentKey="SearchBox" inherits="SearchBoxTemplate" mixin="SpyglassSearchBoxMixin" letters="40" hidden="true">
+				<Size x="180" y="22"/>
+				<Anchors>
+					<Anchor point="RIGHT" relativeKey="$parent.FilterDropdown" relativePoint="LEFT" x="-8" y="0"/>
+				</Anchors>
+				<Scripts>
+					<!-- prepend: the template's handler (clear button, instructions) runs first. -->
+					<OnTextChanged inherit="prepend" method="OnTextChanged"/>
+				</Scripts>
+			</EditBox>
+			<!-- The current folder's title: fixed above the list, on every page. -->
+			<Frame parentKey="Title" inherits="SpyglassPageHeaderTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT" x="14" y="-52"/>
+					<Anchor point="TOPRIGHT" x="-14" y="-52"/>
+				</Anchors>
+			</Frame>
+			<!-- The list area; rows/headers are pooled children placed from its TOPLEFT. -->
+			<Frame parentKey="Content">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeKey="$parent.Title" relativePoint="BOTTOMLEFT" x="0" y="-6"/>
+					<Anchor point="BOTTOMRIGHT" x="-14" y="52"/>
+				</Anchors>
+			</Frame>
+			<!-- Footer row under FooterDivider, as high as the header row above HeaderDivider
+			     (44px): page controls on the right, vertically centered. -->
+			<Frame parentKey="PagingControls" inherits="PagingControlsHorizontalTemplate">
+				<Anchors>
+					<Anchor point="RIGHT" relativePoint="BOTTOMRIGHT" x="-14" y="25"/>
+				</Anchors>
+			</Frame>
+			<!-- Footer, left: the class filter (left-click toggles, right-click picks the class)
+			     and next to it hide / fade out, on the same center line as the page controls. The
+			     first lines up with the list's row icons (Content's 14px inset + the row's 6px). -->
+			<Button parentKey="ClassFilter" inherits="SpyglassFooterButtonTemplate" mixin="SpyglassClassFilterButtonMixin">
+				<Anchors>
+					<Anchor point="LEFT" relativePoint="BOTTOMLEFT" x="20" y="25"/>
+				</Anchors>
+			</Button>
+			<Button parentKey="ClassFilterMode" inherits="SpyglassFooterButtonTemplate" mixin="SpyglassClassFilterModeButtonMixin">
+				<Anchors>
+					<Anchor point="LEFT" relativeKey="$parent.ClassFilter" relativePoint="RIGHT" x="6" y="0"/>
+				</Anchors>
+			</Button>
+			<!-- Footer, after the filter buttons: the active item list (the one alt-click adds
+			     to), shown with its marker; picking another makes it active. -->
+			<DropdownButton parentKey="ActiveList" inherits="WowStyle1DropdownTemplate">
+				<Size x="160" y="26"/>
+				<Anchors>
+					<Anchor point="LEFT" relativeKey="$parent.ClassFilterMode" relativePoint="RIGHT" x="12" y="0"/>
+				</Anchors>
+			</DropdownButton>
+		</Frames>
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture parentKey="HeaderDivider" atlas="UI-Character-Info-ScrollLine-Long" useAtlasSize="true">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="14" y="-44"/>
+						<Anchor point="TOPRIGHT" x="-14" y="-44"/>
+					</Anchors>
+				</Texture>
+				<!-- HeaderDivider mirrored: its bottom edge 44px over the view's bottom, the list
+				     ending 8px above that edge as the title starts 8px under HeaderDivider's top. -->
+				<Texture parentKey="FooterDivider" atlas="UI-Character-Info-ScrollLine-Long" useAtlasSize="true">
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" x="14" y="44"/>
+						<Anchor point="BOTTOMRIGHT" x="-14" y="44"/>
+					</Anchors>
+				</Texture>
+				<FontString parentKey="ResultCount" inherits="GameFontNormalSmall" justifyH="RIGHT" hidden="true">
+					<Anchors>
+						<Anchor point="RIGHT" relativeKey="$parent.SearchBox" relativePoint="LEFT" x="-10" y="0"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad method="OnLoad"/>
+			<OnShow method="OnShow"/>
+			<OnMouseWheel method="OnMouseWheel"/>
+			<OnMouseUp method="OnMouseUp"/>
+			<OnEvent method="OnEvent"/>
+		</Scripts>
+	</Frame>
+</Ui>

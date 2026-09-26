@@ -1,8 +1,8 @@
 {
-  "name": "wow-foreverloot",
+  "name": "wow-spyglass",
   "private": true,
   "version": "0.1.0",
-  "description": "ForeverLoot addon monorepo and data-generation tools",
+  "description": "Spyglass addon monorepo and data-generation tools",
   "type": "module",
   "engines": {
     "node": ">=20"

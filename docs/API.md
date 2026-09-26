@@ -1,34 +1,34 @@
-# ForeverLoot public API
+# Spyglass public API
 
-ForeverLoot exposes a global table `ForeverLoot` that other addons can use to add content to the
-ForeverLoot window. ForeverLoot's own content (the folders under `ForeverLoot/modules/`) is registered through
+Spyglass exposes a global table `Spyglass` that other addons can use to add content to the
+Spyglass window. Spyglass's own content (the folders under `Spyglass/modules/`) is registered through
 exactly the same calls, so anything the built-in modules can do, yours can too.
 
-Load order: list `ForeverLoot` under `## Dependencies:` (or `## OptionalDeps:` and check
-`ForeverLoot ~= nil`) in your TOC so the global exists when your files run.
+Load order: list `Spyglass` under `## Dependencies:` (or `## OptionalDeps:` and check
+`Spyglass ~= nil`) in your TOC so the global exists when your files run.
 
-The official `ForeverLoot_Database`, `ForeverLoot_Locale` and `ForeverLoot_Scraper` companion
+The official `Spyglass_Database`, `Spyglass_Locale` and `Spyglass_Scraper` companion
 addons follow this same contract. They depend on the core and use only this public global; the
 core never depends on or reaches into any companion. See [architecture.md](architecture.md) for
 ownership boundaries.
 
 ```lua
 -- MyAddon/MyAddon.toc
-## Dependencies: ForeverLoot
+## Dependencies: Spyglass
 
 -- MyAddon/MyAddon.lua
-local FL = ForeverLoot
+local SG = Spyglass
 
-FL:RegisterModule({
+SG:RegisterModule({
     id = "myaddon-worldbosses",          -- unique; prefix with your addon name
     name = "World Bosses",               -- shown in the window
     icon = "Interface\\Icons\\Achievement_Boss_Azuregos",
     order = 30,                          -- lower sorts first (built-ins use 10, 20, ...)
     description = "Outdoor raid bosses", -- optional
     children = {
-        FL.Folder("Azuregos", "Interface\\Icons\\Achievement_Boss_Azuregos", {
-            FL.Item(17070), -- Fang of the Mystics
-            FL.Item(18202), -- Eskhandar's Left Claw
+        SG.Folder("Azuregos", "Interface\\Icons\\Achievement_Boss_Azuregos", {
+            SG.Item(17070), -- Fang of the Mystics
+            SG.Item(18202), -- Eskhandar's Left Claw
         }),
     },
 })
@@ -36,29 +36,29 @@ FL:RegisterModule({
 
 ## Adding to an existing module
 
-You don't have to create a module to contribute content. `ForeverLoot:AddToModule(id, node)`
+You don't have to create a module to contribute content. `Spyglass:AddToModule(id, node)`
 appends a folder (or any node) to a registered module, e.g. a new dungeon inside the built-in
 `"dungeons"` module:
 
 ```lua
-local dungeon = ForeverLoot.Folder("Gnomeregan", "Interface\\Icons\\...", { ...bosses... }, { minLevel = 24 })
-ForeverLoot:AddToModule("dungeons", dungeon)
+local dungeon = Spyglass.Folder("Gnomeregan", "Interface\\Icons\\...", { ...bosses... }, { minLevel = 24 })
+Spyglass:AddToModule("dungeons", dungeon)
 ```
 
 Built-in module ids: `"raids"`, `"dungeons"`, `"crafting"`, `"pvp"`, `"collections"`,
-`"reputation"`, `"lists"` (the user's [item lists](#lists-and-favorites)); `ForeverLoot_Database` adds
+`"reputation"`, `"lists"` (the user's [item lists](#lists-and-favorites)); `Spyglass_Database` adds
 `"items"` (the item browser). `"collections"` lists its curated lists, then the database's item sets as one tile per source — Dungeon, Raid, PvP,
 Crafted, Reputation and Other Sets — each set going to the source most of its items have
 (`Data:GetItemSources`), grouped by armor type inside. The set tiles are always there and
 find their sets when opened (a module's entries are built while the core loads, before an
 addon has added the item rows). The built-in
 dungeons sort by level range (`minLevel`, then `maxLevel`; none last), then name; the raids keep
-the order they are listed in. If your instance is in the game's data, prefer adding its drops to the item database (`ForeverLoot.Data:AddBossLoot`)
+the order they are listed in. If your instance is in the game's data, prefer adding its drops to the item database (`Spyglass.Data:AddBossLoot`)
 — it then shows up in the built-in modules and in the item browser's filters automatically. The
-same goes for the other four: a list added with `ForeverLoot.Data:AddList` /
+same goes for the other four: a list added with `Spyglass.Data:AddList` /
 `AddListLoot` under one of those kinds becomes a tile in that module.
 
-## `ForeverLoot:RegisterModule(def) -> boolean`
+## `Spyglass:RegisterModule(def) -> boolean`
 
 Registers (or, if `def.id` already exists, replaces) a module. Returns `false` and logs an error
 if the definition is invalid; it never throws.
@@ -69,7 +69,7 @@ if the definition is invalid; it never throws.
 | `name`                                    | string                    | yes      | Display name.                                                                                                                                                                                 |
 | `icon`                                    | string \| number          | yes      | Texture path or fileID.                                                                                                                                                                       |
 | `order`                                   | number                    | no       | Sort position among modules; lower first. Default `100`. Ties sort by name. The built-in content modules use 10–70, the item browser `1000` so it stays last.                                 |
-| `spacerBefore`                            | boolean                   | no       | Leaves one empty row above the module in the root list (not when it comes first). The `items` module (`ForeverLoot_Database`) uses it to sit apart from the content modules.                  |
+| `spacerBefore`                            | boolean                   | no       | Leaves one empty row above the module in the root list (not when it comes first). The `items` module (`Spyglass_Database`) uses it to sit apart from the content modules.                     |
 | `description`                             | string                    | no       | Free text for tooltips.                                                                                                                                                                       |
 | `children`                                | Node[]                    | one of   | The module's top-level entries.                                                                                                                                                               |
 | `getChildren`                             | fun(def) -> Node[]        | one of   | Lazy alternative; called once, the first time the tree is built. Errors are caught and logged.                                                                                                |
@@ -100,8 +100,8 @@ A node is a plain table; the fields set decide what it displays as:
 
 Items and spells resolve lazily. An item the client hasn't cached yet is drawn from the item
 database (name, quality, item level) when it is in there (the core ships no item rows;
-`ForeverLoot_Database` adds them), otherwise as "Item #id"; either way it is requested and
-redraws when the game's data arrives. `ForeverLoot.IsFolder(node)` tells whether a node
+`Spyglass_Database` adds them), otherwise as "Item #id"; either way it is requested and
+redraws when the game's data arrives. `Spyglass.IsFolder(node)` tells whether a node
 opens (static, dynamic or query folder).
 
 Any entry may carry `tooltip`: a list of extra lines, or a function `(node) -> lines` called
@@ -157,10 +157,10 @@ system decides what counts). After the bosses come the instance's own two cards,
 contribution hint while the database has nothing for them.
 
 ```lua
-ForeverLoot:RegisterModule({
+Spyglass:RegisterModule({
     id = "myaddon-favorites", name = "Favorites", icon = icon, display = "tiles",
     children = {
-        ForeverLoot.Folder("Deadmines", icon, entries, {
+        Spyglass.Folder("Deadmines", icon, entries, {
             background = "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Deadmines",
             backgroundCoords = { 0.0156, 0.6641, 0.0703, 0.6797 }, -- the picture is in the top-left of a 256x128 texture
             minLevel = 15, maxLevel = 21, infoRight = "Westfall",
@@ -171,7 +171,7 @@ ForeverLoot:RegisterModule({
 
 ### Metadata
 
-Modules and nodes accept optional metadata that ForeverLoot stores but does not interpret;
+Modules and nodes accept optional metadata that Spyglass stores but does not interpret;
 it is there for your sort functions, filters and other addons:
 
 | Field                  | Type     | Notes                                                                                |
@@ -188,10 +188,10 @@ it is there for your sort functions, filters and other addons:
 options and metadata go in the same table; `Custom(def)` copies every field of `def`.
 
 ```lua
-local dungeon = ForeverLoot.Folder("Gnomeregan", icon, bosses, {
+local dungeon = Spyglass.Folder("Gnomeregan", icon, bosses, {
     order = 29, minLevel = 24, maxLevel = 34, expansionID = 0, instanceID = 90, tags = { "tech" },
 })
-ForeverLoot:RegisterModule({
+Spyglass:RegisterModule({
     id = "myaddon-season", name = "Season 3", icon = icon, seasonID = 3, children = {},
     sortChildren = function(a, b) return (a.minLevel or 0) < (b.minLevel or 0) end,
 })
@@ -218,7 +218,7 @@ Set `groupBy` on a folder to cluster its plain entries under group labels automa
 Explicit headers, subheaders and groups in the same list are kept as written; only the entries
 between them are grouped.
 
-- `groupBy = "auto"` uses `ForeverLoot.DefaultGroupKey`: items into four groups in this order —
+- `groupBy = "auto"` uses `Spyglass.DefaultGroupKey`: items into four groups in this order —
   _Quest Items & Misc_ (quest items and anything that isn't gear: recipes, consumables, keys, …),
   _Armor_ (head to feet, cloaks, shirts, tabards), _Weapons_ (weapons, shields, off-hands, ranged,
   relics) and _Rings, Amulets & Trinkets_ — then spells under "Spells", folders under
@@ -226,7 +226,7 @@ between them are grouped.
 - `groupBy = function(node) return key, label end` for your own logic (return `nil` to leave
   an entry ungrouped under "Other"). Groups with unknown keys keep first-seen order.
 
-Inside each group, entries are sorted by `ForeverLoot.DefaultEntryRank`: first by type (armor:
+Inside each group, entries are sorted by `Spyglass.DefaultEntryRank`: first by type (armor:
 cloth, leather, mail, plate; weapons: by weapon type, shields and off-hands after them), then by
 slot (head, shoulder, chest, … / neck, finger, trinket / main hand, off hand, …); everything
 else keeps its written order.
@@ -236,34 +236,34 @@ with neither (a server-side item the client hasn't fetched, without the database
 grouped as _Quest Items & Misc_ at first; the window then fetches every such item of the list
 and groups the list again once each has arrived, on the page it was showing.
 
-`ForeverLoot.GroupEntries(entries, keyFn?, rankFn?)` exposes the same bucketing and sorting for
+`Spyglass.GroupEntries(entries, keyFn?, rankFn?)` exposes the same bucketing and sorting for
 your own use; pass `rankFn` to change the in-group order.
 
 Constructors (optional sugar):
 
-- `ForeverLoot.Folder(name, icon, children, opts?)` — `opts = { columns = 2, display = "tiles", description = "...", groupBy = "auto" }`
-- `ForeverLoot.Header(text)` — section header inside a list
-- `ForeverLoot.Subheader(text, items?)` — small section title under a header, optionally with its entries
-- `ForeverLoot.Group(text, items?)` — group label, optionally with its entries
-- `ForeverLoot.Spacer()` — one empty row
-- `ForeverLoot.Item(itemID)`
-- `ForeverLoot.Spell(spellID)`
-- `ForeverLoot.Custom({ name, icon, description, quality, category, tooltip, onClick })`
-- `ForeverLoot.InstanceFolders(type)` — folders for every DB instance of `type` (`"dungeon"` / `"raid"`)
-- `ForeverLoot.InstanceFolder(instanceID)` / `ForeverLoot.BossFolder(bossID)` / `ForeverLoot.BossLootEntries(bossID)` —
+- `Spyglass.Folder(name, icon, children, opts?)` — `opts = { columns = 2, display = "tiles", description = "...", groupBy = "auto" }`
+- `Spyglass.Header(text)` — section header inside a list
+- `Spyglass.Subheader(text, items?)` — small section title under a header, optionally with its entries
+- `Spyglass.Group(text, items?)` — group label, optionally with its entries
+- `Spyglass.Spacer()` — one empty row
+- `Spyglass.Item(itemID)`
+- `Spyglass.Spell(spellID)`
+- `Spyglass.Custom({ name, icon, description, quality, category, tooltip, onClick })`
+- `Spyglass.InstanceFolders(type)` — folders for every DB instance of `type` (`"dungeon"` / `"raid"`)
+- `Spyglass.InstanceFolder(instanceID)` / `Spyglass.BossFolder(bossID)` / `Spyglass.BossLootEntries(bossID)` —
   DB-backed folders: instance → bosses → drops with `chance`
-- `ForeverLoot.TrashFolder(instanceID)` / `ForeverLoot.TrashLootEntries(instanceID)` — the instance's
+- `Spyglass.TrashFolder(instanceID)` / `Spyglass.TrashLootEntries(instanceID)` — the instance's
   trash card and its drops: what the enemies between the bosses drop (`Data:GetTrashLoot`), auto-grouped
   like a boss's loot and with the drop count as `info`
-- `ForeverLoot.QuestFolder(instanceID)` / `ForeverLoot.InstanceQuestEntries(instanceID)` — the instance's
+- `Spyglass.QuestFolder(instanceID)` / `Spyglass.InstanceQuestEntries(instanceID)` — the instance's
   quest card and its contents: one `Subheader` per quest (title and id, plus the class of a class quest)
   followed by the items that quest rewards, sorted by `requiredLevel`, then title. When the instance has
   quests of more than one side, they are split under a `Header` per side ("Both factions", Alliance,
   Horde); otherwise the subheader names the faction when the quest's `side` restricts it. The card carries the quest ids in
   `quests`, so it shows the same "!" and title list a boss with quests does.
-- `ForeverLoot.ListFolders(kind, opts?)` — folders for every curated list of `kind` (`"crafting"`, `"pvp"`,
+- `Spyglass.ListFolders(kind, opts?)` — folders for every curated list of `kind` (`"crafting"`, `"pvp"`,
   `"collections"`, `"reputation"`), by `order` then name; the built-in modules of those names are exactly this
-- `ForeverLoot.ListFolder(kind, id, opts?)` / `ForeverLoot.ListEntries(kind, id)` — one list as a two-column
+- `Spyglass.ListFolder(kind, id, opts?)` / `Spyglass.ListEntries(kind, id)` — one list as a two-column
   folder; its item nodes carry the row's fields in `meta` (`standing`, `rank`, `skill`, `spell`, `source`,
   `side`, `group`) and are grouped by the row's `group`, else the kind's default (standing / honor rank /
   trade skill category, then skill tier), else the item's type. A crafting list with a `skillLineID`
@@ -281,10 +281,10 @@ Constructors (optional sugar):
   (product and teaching item, recipe link and reagents); modified clicks still link the row's item.
   Likewise, a plain click on any item row whose item belongs to a set (`Data:GetSetItems`) opens
   the set popup: the set's name and every item of the set.
-- `ForeverLoot.Log(fmt, ...)` — prefixed chat message
-- `ForeverLoot.LogAt(level, fmt, ...)` — threshold-aware diagnostic output using the core logger
-- `ForeverLoot.PlaceholderItem(name, quality, icon)` — hard-coded display data, for prototyping
-- `ForeverLoot.PlaceholderItems(prefix, count)` — generates `count` placeholder items
+- `Spyglass.Log(fmt, ...)` — prefixed chat message
+- `Spyglass.LogAt(level, fmt, ...)` — threshold-aware diagnostic output using the core logger
+- `Spyglass.PlaceholderItem(name, quality, icon)` — hard-coded display data, for prototyping
+- `Spyglass.PlaceholderItems(prefix, count)` — generates `count` placeholder items
 
 ### Category sections (crafting)
 
@@ -300,7 +300,7 @@ so every player sees them. A module can pass its own instead, which is the quick
 grouping out:
 
 ```lua
-ForeverLoot.ListFolders("crafting", {
+Spyglass.ListFolders("crafting", {
     sections = {
         -- per list id (the JSON file's name); `false` drops the ones the data brings
         blacksmithing = {
@@ -312,8 +312,8 @@ ForeverLoot.ListFolders("crafting", {
 })
 
 -- or as a function of the list, and for a single profession
-ForeverLoot.ListFolders("crafting", { sections = function(id, list) return mySections[list.skillLineID] end })
-ForeverLoot.ListFolder("crafting", "tailoring", { sections = { { name = "Bags", categories = { "Bags", "Specialty Bags" } } } })
+Spyglass.ListFolders("crafting", { sections = function(id, list) return mySections[list.skillLineID] end })
+Spyglass.ListFolder("crafting", "tailoring", { sections = { { name = "Bags", categories = { "Bags", "Specialty Bags" } } } })
 ```
 
 `opts` is passed through unchanged to every list, so the same call works for the other kinds;
@@ -352,7 +352,7 @@ or curated group label (category folders), `instanceID`, or name. The tab naviga
 clicked through.
 
 ```lua
-ForeverLoot:RegisterModule({
+Spyglass:RegisterModule({
     id = "myaddon-worldbosses", name = "World Bosses", icon = icon, children = bosses,
     panel = function(node, view)
         return {
@@ -374,17 +374,17 @@ panel of its zone (`zone`, a uiMapID, by the client's name for it), level range,
 
 ## Other calls
 
-- `ForeverLoot:AddToModule(id, node) -> boolean` — append an entry to a registered module
-- `ForeverLoot:UnregisterModule(id) -> boolean`
-- `ForeverLoot:GetModule(id) -> def?`
-- `ForeverLoot:GetModules() -> def[]` — sorted by `order`, then `name`
-- `ForeverLoot:GetRootNode() -> Node` — the virtual root the window browses (one child per module,
+- `Spyglass:AddToModule(id, node) -> boolean` — append an entry to a registered module
+- `Spyglass:UnregisterModule(id) -> boolean`
+- `Spyglass:GetModule(id) -> def?`
+- `Spyglass:GetModules() -> def[]` — sorted by `order`, then `name`
+- `Spyglass:GetRootNode() -> Node` — the virtual root the window browses (one child per module,
   each carrying `moduleID`). Cached until the module set changes.
-- `ForeverLoot.API_VERSION` — currently `1`.
+- `Spyglass.API_VERSION` — currently `1`.
 
 ### Slash-command extensions
 
-Companion and third-party addons can add a subcommand to the core `/fl` dispatcher without
+Companion and third-party addons can add a subcommand to the core `/sg` dispatcher without
 accessing its private AceAddon object:
 
 ```lua
@@ -392,18 +392,18 @@ local function handleScan(from, to, mode)
     -- ...
 end
 
-ForeverLoot:RegisterCommand("scan", handleScan, "/fl scan <from> [to]")
-ForeverLoot:UnregisterCommand("scan", handleScan)
+Spyglass:RegisterCommand("scan", handleScan, "/sg scan <from> [to]")
+Spyglass:UnregisterCommand("scan", handleScan)
 ```
 
 Names are lowercase command words. `show`, `loglevel`, and `reset` are reserved by the core;
 duplicate registration fails. A handler receives up to three parsed arguments and its errors are
-caught and logged. The usage string is appended to `/fl` help while registered.
+caught and logged. The usage string is appended to `/sg` help while registered.
 
 ## Lists and favorites
 
-`ForeverLoot.Lists` holds the user's item lists (a BiS list, a farm list, …), account-wide in
-`ForeverLootDB.global.lists`. The built-in list `Lists.FAVORITES` (`"favorites"`) comes first,
+`Spyglass.Lists` holds the user's item lists (a BiS list, a farm list, …), account-wide in
+`SpyglassDB.global.lists`. The built-in list `Lists.FAVORITES` (`"favorites"`) comes first,
 shows a star and can't be renamed, re-marked or deleted. Every other list has a _marker_, one of
 the eight raid target icons (1 = star … 8 = skull). In the window, alt-click adds an item to the
 _active_ list or removes it. The window's footer shows the active list in a dropdown that
@@ -443,7 +443,7 @@ active, and edit, export, import into or delete it.
   `OpenImportDialog(intoID?)`, `OpenDeleteDialog(id)` — the window's list dialog (name, marker
   and tooltip switch; the export string to copy; a box to paste into; the delete confirmation)
 
-`ForeverLoot.Favorites` is the favorites API of before the lists, over the Favorites list:
+`Spyglass.Favorites` is the favorites API of before the lists, over the Favorites list:
 `IsFavorite(itemID)`, `SetFavorite(itemID, favorite)`, `Toggle(itemID)`, `GetAll()`.
 
 The SavedVariables load after the addons' files, so there are no lists before `ADDON_LOADED`
@@ -455,26 +455,26 @@ active or imported into. A change to Favorites' items also fires `OnFavoritesCha
 
 ## Item database
 
-`ForeverLoot.Data` holds every scanned item and where it drops. ForeverLoot ships its data as
+`Spyglass.Data` holds every scanned item and where it drops. Spyglass ships its data as
 generated files, built by the root TypeScript tools from in-game item scans, the curated drop
 JSON in `.contribute/` and wago.tools' instance/encounter tables and localized item names: the
-core's `ForeverLoot/db/generated/` has the instances, loot, lists, recipes and their English
+core's `Spyglass/db/generated/` has the instances, loot, lists, recipes and their English
 names but **no item rows**; every scanned item row and its English name is in
-`ForeverLoot_Database/db/generated/`, the non-English names in
-`ForeverLoot_Locale/db/generated/`. Without the database addon `Data.items` is empty (unless
+`Spyglass_Database/db/generated/`, the non-English names in
+`Spyglass_Locale/db/generated/`. Without the database addon `Data.items` is empty (unless
 another addon adds rows) and the core's lists take what they show from the client. Other addons
 may add to it with the same calls. The scraper companion adds whatever it scans or sees dropping
-in-game (`ForeverLootScraperDB.global.discovered`, see `ForeverLoot_Scraper/src/discovery.lua`),
+in-game (`SpyglassScraperDB.global.discovered`, see `Spyglass_Scraper/src/discovery.lua`),
 so `Data.items` can grow at runtime while the scraper is enabled. On a non-English client the
 locale companion looks up the names of the items the generated files don't name and registers
-them with `AddNames` (`ForeverLootLocaleDB`, see `ForeverLoot_Locale/src/itemnames.lua`).
+them with `AddNames` (`SpyglassLocaleDB`, see `Spyglass_Locale/src/itemnames.lua`).
 Instance ids are `Map` ids, except for a map players see as several dungeons (Scarlet Monastery's
 wings, Upper/Lower Blackrock Spire, Dire Maul's parts): each part has its own id, by convention
 map × 100 + n (`18901` = Scarlet Monastery: Graveyard). Boss ids are `DungeonEncounter` ids.
 Tables are integer-keyed:
 
 ```lua
-local Data = ForeverLoot.Data
+local Data = Spyglass.Data
 Data.items[5188]     -- { quality, itemLevel, reqLevel, classID, subclassID, equipLoc, bind, icon (fileDataID),
                      --   stats, sellPrice, stackCount, setID, expansionID, craftingReagent }; indices in Data.ITEM
                      -- stats = { INTELLECT = 4, SPELL_POWER = 18 } (GetItemStats keys without ITEM_MOD_/_SHORT) or nil
@@ -564,11 +564,11 @@ Reading:
 
 ### Filters
 
-`ForeverLoot.Filters` is the registry behind the filter menu on query folders. Register your
+`Spyglass.Filters` is the registry behind the filter menu on query folders. Register your
 own to make it appear there:
 
 ```lua
-ForeverLoot.Filters:Register({
+Spyglass.Filters:Register({
     id = "myaddon-usable",          -- prefix with your addon name
     name = "Usable by me",
     order = 100,                    -- menu position, lower first (built-ins use 5..90)
@@ -591,7 +591,7 @@ Other calls: `Filters:Get(id)`, `Filters:GetAll()`, `Filters:GetOptions(id)`, `F
 A query is plain data — no functions — so it can be saved or shared:
 
 ```lua
-local ids = ForeverLoot.Query.Run({
+local ids = Spyglass.Query.Run({
     search = "defias",                                       -- case-insensitive substring of the name in the client's language or in English; all digits also matches the id
     filters = { quality = { 3, 4 }, slot = { "INVTYPE_CHEST" }, itemLevel = "21-30" },
     sort = "name",                                           -- "name" | "ilvl" | "quality" | "id"
@@ -606,14 +606,14 @@ and `Query.IsEmpty(q)` are helpers. Each view (tab) keeps its own query per quer
 Backed by CallbackHandler-1.0:
 
 ```lua
-ForeverLoot.RegisterCallback(myTable, "OnModuleRegistered", function(event, id, replaced) end)
-ForeverLoot.RegisterCallback(myTable, "OnModuleUnregistered", function(event, id) end)
-ForeverLoot.RegisterCallback(myTable, "OnModulesChanged", function(event) end)
-ForeverLoot.RegisterCallback(myTable, "OnDataChanged", function(event) end)     -- item DB changed
-ForeverLoot.RegisterCallback(myTable, "OnFiltersChanged", function(event) end)  -- filter registry changed
-ForeverLoot.RegisterCallback(myTable, "OnListsChanged", function(event, listID, itemID) end)       -- itemID nil: the list itself changed
-ForeverLoot.RegisterCallback(myTable, "OnFavoritesChanged", function(event, itemID, isFavorite) end)
-ForeverLoot.UnregisterCallback(myTable, "OnModulesChanged")
+Spyglass.RegisterCallback(myTable, "OnModuleRegistered", function(event, id, replaced) end)
+Spyglass.RegisterCallback(myTable, "OnModuleUnregistered", function(event, id) end)
+Spyglass.RegisterCallback(myTable, "OnModulesChanged", function(event) end)
+Spyglass.RegisterCallback(myTable, "OnDataChanged", function(event) end)     -- item DB changed
+Spyglass.RegisterCallback(myTable, "OnFiltersChanged", function(event) end)  -- filter registry changed
+Spyglass.RegisterCallback(myTable, "OnListsChanged", function(event, listID, itemID) end)       -- itemID nil: the list itself changed
+Spyglass.RegisterCallback(myTable, "OnFavoritesChanged", function(event, itemID, isFavorite) end)
+Spyglass.UnregisterCallback(myTable, "OnModulesChanged")
 ```
 
 `OnModulesChanged` fires after either of the first two. The main window listens to it and

@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 /**
- * ForeverLoot database tools.
+ * Spyglass database tools.
  *
  *   npm run gen              wago.tools Map/DungeonEncounter (cached) + .contribute/data/ -> <addon>/db/generated/
- *                            (ForeverLoot, ForeverLoot_Locale, ForeverLoot_Database)
+ *                            (Spyglass, Spyglass_Locale, Spyglass_Database)
  *   npm run generate:check   exit 1 if generated files are out of date (CI)
  *   npm run check            validate the curated files (instances and item lists) against the
  *                            game data and the scans
  *   npm run fix              same, and rewrite names / add missing encounters
  *   npm run import           merge what the addon recorded in-game (SavedVariables
- *                            ForeverLoot_Scraper.lua and /fl export JSON files in .contribute/inbox/)
+ *                            Spyglass_Scraper.lua and /sg export JSON files in .contribute/inbox/)
  *                            into .contribute/data/items/ and the curated loot files
  *   npm run import -- FILE   same for one file anywhere
  */
@@ -47,7 +47,7 @@ if (command === "import") {
   }
   if (importPaths.length === 0) {
     console.error(
-      `nothing to import: put a SavedVariables ForeverLoot_Scraper.lua or a /fl export .json into ${relative(ROOT, INBOX_DIR)}/, or pass a path`,
+      `nothing to import: put a SavedVariables Spyglass_Scraper.lua or a /sg export .json into ${relative(ROOT, INBOX_DIR)}/, or pass a path`,
     );
     process.exit(2);
   }

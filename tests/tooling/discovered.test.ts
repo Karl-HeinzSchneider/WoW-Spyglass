@@ -15,11 +15,11 @@ const discovered = `{
   },
 }`;
 
-test("loads ForeverLootScraperDB discovered data", () => {
-  const dir = mkdtempSync(join(tmpdir(), "foreverloot-discovered-"));
-  const path = join(dir, "ForeverLoot_Scraper.lua");
+test("loads SpyglassScraperDB discovered data", () => {
+  const dir = mkdtempSync(join(tmpdir(), "spyglass-discovered-"));
+  const path = join(dir, "Spyglass_Scraper.lua");
   try {
-    writeFileSync(path, `ForeverLootScraperDB = { ["global"] = { ["discovered"] = ${discovered} } }\n`, "utf-8");
+    writeFileSync(path, `SpyglassScraperDB = { ["global"] = { ["discovered"] = ${discovered} } }\n`, "utf-8");
     const result = loadDiscovered(path);
     assert.equal(result.locale, "deDE");
     assert.equal(result.items.get(101)?.name, "Test");
@@ -31,11 +31,11 @@ test("loads ForeverLootScraperDB discovered data", () => {
 });
 
 test("rejects a SavedVariables file without scraper data", () => {
-  const dir = mkdtempSync(join(tmpdir(), "foreverloot-discovered-"));
-  const path = join(dir, "ForeverLoot.lua");
+  const dir = mkdtempSync(join(tmpdir(), "spyglass-discovered-"));
+  const path = join(dir, "Spyglass.lua");
   try {
-    writeFileSync(path, `ForeverLootDB = { ["global"] = { ["discovered"] = ${discovered} } }\n`, "utf-8");
-    assert.throws(() => loadDiscovered(path), /no ForeverLootScraperDB\.global\.discovered/);
+    writeFileSync(path, `SpyglassDB = { ["global"] = { ["discovered"] = ${discovered} } }\n`, "utf-8");
+    assert.throws(() => loadDiscovered(path), /no SpyglassScraperDB\.global\.discovered/);
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }

@@ -1,0 +1,12 @@
+## Interface: 16001
+## Title: Spyglass Database
+## Notes: Every scanned item for Spyglass: the searchable, filterable Items browser. |n|cffbbbbbbBy Karl-Heinz Schneider|r|n|n|TInterface/Addons/Spyglass/assets/core/coffee:12:12|t |cff82c5ffbuymeacoffee.com/karlheinzschneider|r
+## IconTexture: 8197077
+## Author: Karl-HeinzSchneider
+## Version: |cff8080ff@project-version@|r
+## Dependencies: Spyglass
+## X-License: MIT
+## X-Website: http://github.com/Karl-HeinzSchneider/WoW-Spyglass
+
+db\generated\generated.xml
+Spyglass_Database.lua

@@ -7,7 +7,7 @@ const addons = requireAddons();
 const versions = [...new Set(addons.map(addonVersion))];
 const version = versions.length === 1 ? versions[0]! : "mixed";
 const outputDir = resolve(ROOT, "dist");
-const output = resolve(outputDir, `ForeverLoot-${fileNamePart(version)}.zip`);
+const output = resolve(outputDir, `Spyglass-${fileNamePart(version)}.zip`);
 
 // The TOC version may carry WoW color codes (`|cff8080ff…|r`), and a file name can't hold `|` or
 // the other characters Windows forbids.
