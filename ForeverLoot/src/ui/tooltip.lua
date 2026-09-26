@@ -7,9 +7,10 @@ local Data = app.data
 -- Adds where an item comes from to every item tooltip: one block per instance, the instance's
 -- name over the bosses, trash and quests that give the item, a loot sack before drops and the
 -- quest giver's "!" before quests; then one line per profession whose recipes make the item.
--- A favorite item (app.favorites) says so first.
+-- First, one line per list of the user's that has the item (app.lists, those shown in tooltips).
 --
 --   [star] Favorite
+--   [skull] Warrior BiS
 --   Deadmines
 --      [sack] Rhahk'Zor
 --      [!] Quest: The Defias Brotherhood
@@ -34,8 +35,21 @@ end
 
 local LOOT_ICON = atlasIcon("ParagonReputation_Bag")
 local QUEST_ICON = CreateSimpleTextureMarkup("Interface\\GossipFrame\\AvailableQuestIcon", ICON_SIZE, ICON_SIZE)
--- The friends list's favorite star, the same the window puts on a favorite item's icon.
-local FAVORITE_LINE = atlasIcon("friendslist-favorite") .. " Favorite"
+-- The lines naming the user's lists that have the item and are shown in tooltips, each with
+-- the list's marker (the star for Favorites, which reads "Favorite").
+---@param itemID integer
+---@return string[]
+local function listLines(itemID)
+    local Lists, out = app.lists, {}
+    for _, id in ipairs(Lists:GetListsOf(itemID)) do
+        local list = Lists:Get(id) --[[@as ForeverLoot.ItemList]]
+        if list.tooltip then
+            local name = id == Lists.FAVORITES and "Favorite" or list.name
+            out[#out + 1] = Lists:GetMarkerMarkup(id, ICON_SIZE) .. " " .. name
+        end
+    end
+    return out
+end
 
 -- Order of the kinds under one instance.
 local BOSS, TRASH, QUEST = 1, 2, 3
@@ -157,15 +171,15 @@ function module:AddSources(tooltip, itemID)
         lines[#lines + 1] = sourceLine(source)
     end
     local crafted = craftedLines(sources)
-    local favorite = app.favorites:IsFavorite(itemID)
-    if #lines == 0 and #crafted == 0 and not favorite then
+    local lists = listLines(itemID)
+    if #lines == 0 and #crafted == 0 and #lists == 0 then
         return
     end
     table.sort(lines, lineBefore)
 
     tooltip:AddLine(" ")
-    if favorite then
-        tooltip:AddLine(FAVORITE_LINE, NORMAL_FONT_COLOR:GetRGB())
+    for _, text in ipairs(lists) do
+        tooltip:AddLine(text, NORMAL_FONT_COLOR:GetRGB())
     end
     local instanceID
     for _, line in ipairs(lines) do

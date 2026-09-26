@@ -37,6 +37,7 @@ end
 ---@field IconRing Texture
 ---@field Count FontString
 ---@field Favorite Texture
+---@field ListMarker Texture
 ---@field itemID? integer
 ---@field spellID? integer  # a spell instead of an item (an enchant recipe's product)
 ---@field link? string
@@ -54,7 +55,7 @@ function ForeverLootItemSlotMixin:SetItem(itemID, count)
     app.ui.SetIconQuality(self.IconRing, quality)
     self.Count:SetText(count and count > 1 and tostring(count) or "")
     self.Count:SetShown(count ~= nil and count > 1)
-    self.Favorite:SetShown(app.favorites:IsFavorite(itemID))
+    app.ui.SetItemBadges(self, itemID)
     return name, quality
 end
 
@@ -68,7 +69,7 @@ function ForeverLootItemSlotMixin:SetSpell(spellID, icon)
     self.Icon:SetTexture(icon or (info and info.iconID) or FALLBACK_ICON)
     app.ui.SetIconQuality(self.IconRing, nil)
     self.Count:Hide()
-    self.Favorite:Hide()
+    app.ui.SetItemBadges(self, nil)
 end
 
 function ForeverLootItemSlotMixin:OnEnter()
@@ -92,13 +93,13 @@ function ForeverLootItemSlotMixin:OnLeave()
     GameTooltip:Hide()
 end
 
--- Shift-click links the item to chat (ctrl-click previews it), alt-click marks it as a favorite
--- or unmarks it (the open popup redraws on OnFavoritesChanged); a plain click on an item the
+-- Shift-click links the item to chat (ctrl-click previews it), alt-click adds it to the active
+-- list or removes it (the open popup redraws on OnListsChanged); a plain click on an item the
 -- client hasn't cached asks for it.
 ---@param button string
 function ForeverLootItemSlotMixin:OnClick(button)
     if self.itemID and button == "LeftButton" and IsAltKeyDown() then
-        app.favorites:Toggle(self.itemID)
+        app.lists:Toggle(app.lists:GetActive(), self.itemID)
         if GameTooltip:IsOwned(self) then
             self:OnEnter()
         end
@@ -132,8 +133,8 @@ end
 
 function ForeverLootPopupMixin:OnLoad()
     popups[#popups + 1] = self
-    -- Redraw the stars when an item of the popup (or of the list under it) was (un)marked.
-    app.api.RegisterCallback(self, "OnFavoritesChanged", function()
+    -- Redraw the badges when an item of the popup (or of the list under it) or a list changed.
+    app.api.RegisterCallback(self, "OnListsChanged", function()
         if self:IsShown() and self.node then
             self:Refresh()
         end

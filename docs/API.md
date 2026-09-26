@@ -46,7 +46,7 @@ ForeverLoot:AddToModule("dungeons", dungeon)
 ```
 
 Built-in module ids: `"raids"`, `"dungeons"`, `"crafting"`, `"pvp"`, `"collections"`,
-`"reputation"`, `"favorites"` (the [favorite items](#favorites)); `ForeverLoot_Database` adds
+`"reputation"`, `"lists"` (the user's [item lists](#lists-and-favorites)); `ForeverLoot_Database` adds
 `"items"` (the item browser). `"collections"` lists its curated lists, then the database's item sets as one tile per source — Dungeon, Raid, PvP,
 Crafted, Reputation and Other Sets — each set going to the source most of its items have
 (`Data:GetItemSources`), grouped by armor type inside. The set tiles are always there and
@@ -73,7 +73,7 @@ if the definition is invalid; it never throws.
 | `description`                             | string                    | no       | Free text for tooltips.                                                                                                                                                                       |
 | `children`                                | Node[]                    | one of   | The module's top-level entries.                                                                                                                                                               |
 | `getChildren`                             | fun(def) -> Node[]        | one of   | Lazy alternative; called once, the first time the tree is built. Errors are caught and logged.                                                                                                |
-| `getEntries`                              | fun(node, view) -> Node[] | no       | The module's own list, built each time it is drawn, as a dynamic folder's `getChildren`; takes the place of `children` (which may be `{}`). The `favorites` module uses it.                   |
+| `getEntries`                              | fun(node, view) -> Node[] | no       | The module's own list, built each time it is drawn, as a dynamic folder's `getChildren`; takes the place of `children` (which may be `{}`). The `lists` module uses it.                       |
 | `sortChildren`                            | boolean \| fun(a, b)      | no       | `true` sorts children by node `order` (default 100), then `name`; a function is used as the comparator and receives the full nodes (metadata included). Applies to `AddToModule` entries too. |
 | `query`                                   | boolean                   | no       | The module's own list is the item database, filtered by the view's search box and filter menu (see [Item database](#item-database)). `children` may be `{}`.                                  |
 | `columns`, `display`, `groupBy`           |                           | no       | Layout of the module's own list, as on folder nodes (see [Tiles](#tiles) and [Cards](#cards)).                                                                                                |
@@ -400,25 +400,58 @@ Names are lowercase command words. `show`, `loglevel`, and `reset` are reserved 
 duplicate registration fails. A handler receives up to three parsed arguments and its errors are
 caught and logged. The usage string is appended to `/fl` help while registered.
 
-## Favorites
+## Lists and favorites
 
-`ForeverLoot.Favorites` is the set of items the user marked as favorites. In the window,
-alt-click toggles one. They are account-wide (`ForeverLootDB.global.favorites`), show with a star
-on the item's icon and a "Favorite" line in every item tooltip, and are listed by the
-`favorites` module. Its info panel explains alt-click, counts the favorites per kind of content
-and groups the list with a `grouping` dropdown: by _Source_ (the instance, profession or list an
-item comes from; the default), _Content_ (Dungeons, Raids, Crafted, PvP, Reputation, Collections,
-No known source) or _Item type_ (`"auto"`). An item with several sources is filed under the one
-of the earliest kind of content in that order.
+`ForeverLoot.Lists` holds the user's item lists (a BiS list, a farm list, …), account-wide in
+`ForeverLootDB.global.lists`. The built-in list `Lists.FAVORITES` (`"favorites"`) comes first,
+shows a star and can't be renamed, re-marked or deleted. Every other list has a _marker_, one of
+the eight raid target icons (1 = star … 8 = skull). In the window, alt-click adds an item to the
+_active_ list or removes it. The window's footer shows the active list in a dropdown that
+switches it (as does a list's "Make active" button). Favorites is the active list until another
+is made active, and again after the active list is deleted. An item on a list shows the list's marker on its icon
+(the star top-left for Favorites, one other list's marker top-right: the active list's, else
+the first that has the item). Every item tooltip gets one line per list that has the item and
+`tooltip` set.
 
-- `Favorites:IsFavorite(itemID) -> boolean`
-- `Favorites:SetFavorite(itemID, favorite) -> boolean` — false when nothing changed
-- `Favorites:Toggle(itemID) -> boolean` — whether the item is a favorite now
-- `Favorites:GetAll() -> integer[]` — every favorite item id, ascending
+The `lists` module shows one tile per list, then "New list" and "Import list". A list opens as
+its items. Its info panel says whether alt-click adds to it, and counts the items per kind of
+content. It groups them with a `grouping` dropdown: by _Source_ (the instance, profession or list
+an item comes from; the default), _Content_ (Dungeons, Raids, Crafted, PvP, Reputation,
+Collections, No known source) or _Item type_ (`"auto"`). An item with several sources is filed
+under the one of the earliest kind of content in that order. The panel's buttons make the list
+active, and edit, export, import into or delete it.
 
-The SavedVariables load after the addons' files, so there are no favorites before `ADDON_LOADED`
-(`OnInitialize` in an AceAddon), and changes made before that are ignored. Every change fires
-`OnFavoritesChanged` (see [Events](#events)).
+- `Lists:GetAll() -> string[]` — every list id, Favorites first, then in the order made
+- `Lists:Get(id) -> { name, marker?, tooltip, items = { [itemID] = true } }?` — read it, change it only through the calls below
+- `Lists:Create(name, marker?, tooltip?) -> id?` — a free marker when none is given; `tooltip` defaults to true
+- `Lists:Delete(id)`, `Lists:Rename(id, name)`, `Lists:SetMarker(id, marker)`,
+  `Lists:SetShowInTooltip(id, show)` — each `-> boolean`, false when nothing changed
+- `Lists:GetActive() -> id`, `Lists:SetActive(id) -> boolean`
+- `Lists:Contains(id, itemID) -> boolean`, `Lists:SetItem(id, itemID, on) -> boolean` (changed),
+  `Lists:Toggle(id, itemID) -> boolean` (on the list now)
+- `Lists:GetItems(id) -> integer[]` (ascending), `Lists:GetCount(id) -> integer`,
+  `Lists:GetListsOf(itemID) -> string[]` (in list order)
+- `Lists:GetMarkerFile(marker) -> path`, `Lists:SetMarkerTexture(texture, id)`,
+  `Lists:GetMarkerMarkup(id, size) -> string` — a list's marker (Favorites: the star)
+- `Lists:Export(id) -> string?` — `FL1:<name>:<marker>:<id>,<id>,…`, with `%`, `:` and line
+  breaks in the name as `%25`, `%3A`, `%0A`/`%0D`; Favorites exports marker 0
+- `Lists:Import(text, intoID?) -> id?, countOrError` — reads an export string, else every
+  `item:<id>` in the text (pasted links), else every number. It adds the items to `intoID`, or
+  to a new list named and marked by the export (else "Imported list"). It returns the list and
+  how many items were new to it, or nil and a message. Ids the database doesn't know are kept.
+- `Lists:OpenCreateDialog()`, `OpenEditDialog(id)`, `OpenExportDialog(id)`,
+  `OpenImportDialog(intoID?)`, `OpenDeleteDialog(id)` — the window's list dialog (name, marker
+  and tooltip switch; the export string to copy; a box to paste into; the delete confirmation)
+
+`ForeverLoot.Favorites` is the favorites API of before the lists, over the Favorites list:
+`IsFavorite(itemID)`, `SetFavorite(itemID, favorite)`, `Toggle(itemID)`, `GetAll()`.
+
+The SavedVariables load after the addons' files, so there are no lists before `ADDON_LOADED`
+(`OnInitialize` in an AceAddon), and changes made before that are ignored. On first use the
+favorites of the single-list version (`global.favorites`) move into the Favorites list. Every
+change fires `OnListsChanged` (see [Events](#events)): with the item id for an item added or
+removed, without one for a list made, deleted, renamed, re-marked, switched in tooltips, made
+active or imported into. A change to Favorites' items also fires `OnFavoritesChanged`.
 
 ## Item database
 
@@ -578,10 +611,12 @@ ForeverLoot.RegisterCallback(myTable, "OnModuleUnregistered", function(event, id
 ForeverLoot.RegisterCallback(myTable, "OnModulesChanged", function(event) end)
 ForeverLoot.RegisterCallback(myTable, "OnDataChanged", function(event) end)     -- item DB changed
 ForeverLoot.RegisterCallback(myTable, "OnFiltersChanged", function(event) end)  -- filter registry changed
+ForeverLoot.RegisterCallback(myTable, "OnListsChanged", function(event, listID, itemID) end)       -- itemID nil: the list itself changed
 ForeverLoot.RegisterCallback(myTable, "OnFavoritesChanged", function(event, itemID, isFavorite) end)
 ForeverLoot.UnregisterCallback(myTable, "OnModulesChanged")
 ```
 
 `OnModulesChanged` fires after either of the first two. The main window listens to it and
 refreshes any view that is sitting at the root; `OnDataChanged`/`OnFiltersChanged` redraw the
-open views, `OnFavoritesChanged` the shown page.
+open views, `OnListsChanged` the shown page (an item's badges) or the open views (a list itself
+changed).

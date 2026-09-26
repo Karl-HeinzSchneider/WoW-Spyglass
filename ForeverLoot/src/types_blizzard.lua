@@ -13,6 +13,15 @@
 
 ---@class LayoutMixin : BaseLayoutMixin
 
+-- ScrollingEditBoxTemplate (Blizzard_SharedXML/Shared/Scroll/ScrollTemplates.lua).
+---@class ScrollingEditBoxMixin : Frame
+---@field SetText fun(self: ScrollingEditBoxMixin, text: string)
+---@field ClearText fun(self: ScrollingEditBoxMixin)
+---@field GetInputText fun(self: ScrollingEditBoxMixin): string
+---@field GetEditBox fun(self: ScrollingEditBoxMixin): EditBox
+---@field SetFocus fun(self: ScrollingEditBoxMixin)
+---@field ClearFocus fun(self: ScrollingEditBoxMixin)
+
 ---@class TitledPanelMixin
 ---@field SetTitle fun(self: TitledPanelMixin, title: string)
 ---@field SetTitleFormatted fun(self: TitledPanelMixin, fmt: string, ...: any)

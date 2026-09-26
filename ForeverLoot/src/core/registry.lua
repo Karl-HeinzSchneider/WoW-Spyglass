@@ -130,7 +130,8 @@ local log = app.logger
 ---@field Data ForeverLoot.Data  # item database (ForeverLoot/src/data/data.lua)
 ---@field Filters ForeverLoot.Filters  # filter registry (ForeverLoot/src/data/filters.lua)
 ---@field Query ForeverLoot.QueryAPI  # query runner (ForeverLoot/src/data/query.lua)
----@field Favorites ForeverLoot.Favorites  # the user's favorite items (ForeverLoot/src/core/favorites.lua)
+---@field Lists ForeverLoot.Lists  # the user's item lists (ForeverLoot/src/core/lists.lua)
+---@field Favorites ForeverLoot.Favorites  # the Favorites list, as the favorites API of before the lists (lists.lua)
 ---@field API_VERSION integer
 ---@field Log fun(fmt: string, ...: any)
 ---@field LogAt fun(level: string, fmt: string, ...: any): boolean

@@ -26,6 +26,32 @@ local function setIconQuality(ring, quality)
 end
 app.ui.SetIconQuality = setIconQuality
 
+-- The list badges on an item's icon (`Favorite` and `ListMarker` of the row and slot templates):
+-- the star when Favorites has the item; the marker of the active list when it has the item,
+-- else of the first other list that has it. Nothing for no item.
+---@param frame { Favorite: Texture, ListMarker: Texture }
+---@param itemID? integer
+local function setItemBadges(frame, itemID)
+    local Lists = app.lists
+    local favorite, marked = false, nil
+    if itemID then
+        local active = Lists:GetActive()
+        for _, id in ipairs(Lists:GetListsOf(itemID)) do
+            if id == Lists.FAVORITES then
+                favorite = true
+            elseif id == active or not marked then
+                marked = id
+            end
+        end
+    end
+    frame.Favorite:SetShown(favorite)
+    frame.ListMarker:SetShown(marked ~= nil)
+    if marked then
+        Lists:SetMarkerTexture(frame.ListMarker, marked)
+    end
+end
+app.ui.SetItemBadges = setItemBadges
+
 -- Delay between the last keystroke in the search box and running the query.
 local SEARCH_DEBOUNCE = 0.25
 
@@ -208,6 +234,7 @@ end
 ---@field Type FontString
 ---@field Arrow Texture
 ---@field Favorite Texture  # the star on a favorite item's icon
+---@field ListMarker Texture  # the marker of a list with the item (setItemBadges)
 ---@field node ForeverLoot.Node
 ---@field view ForeverLoot.View
 ---@field link? string  # item/spell link for chat linking
@@ -266,7 +293,7 @@ function ForeverLootListRowMixin:Init(view, node)
     self.node = node
     self.link = nil
     self.Arrow:SetShown(app.api.IsFolder(node))
-    self.Favorite:SetShown(node.itemID ~= nil and app.favorites:IsFavorite(node.itemID))
+    setItemBadges(self, node.itemID)
 
     if node.itemID then
         self:InitItem(view, node)
@@ -350,9 +377,9 @@ function ForeverLootListRowMixin:OnClick(button)
     elseif app.api.IsFolder(node) then
         self.view:Push(node)
     elseif node.itemID and IsAltKeyDown() then
-        -- Alt-click marks the item as a favorite or unmarks it; the window redraws the stars on
-        -- OnFavoritesChanged, the tooltip is built again here.
-        app.favorites:Toggle(node.itemID)
+        -- Alt-click adds the item to the active list or removes it; the window redraws the badges
+        -- on OnListsChanged, the tooltip is built again here.
+        app.lists:Toggle(app.lists:GetActive(), node.itemID)
         if GameTooltip:IsOwned(self) then
             self:OnEnter()
         end
@@ -910,6 +937,7 @@ end
 ---@field ResultCount FontString
 ---@field ClassFilter ForeverLoot.ClassFilterButton
 ---@field ClassFilterMode ForeverLoot.ClassFilterModeButton
+---@field ActiveList WowStyle1FilterDropdownMixin|Frame  # the footer's active list dropdown
 ---@field classFilterOn boolean  # the footer's class filter is on, for this tab
 ---@field classFilterMode "hide"|"fade"  # what it does to the items the class can't use
 ---@field filterClass? string  # the class it filters for; nil = the character's own
@@ -1028,6 +1056,29 @@ function ForeverLootViewMixin:OnLoad()
         if q then
             self:ResetFilters(q)
         end
+    end)
+
+    -- The footer's active list: every list with its marker, the active one picked. The text
+    -- follows changes made elsewhere (Render).
+    local Lists = app.lists
+    self.ActiveList:SetupMenu(function(_, rootDescription)
+        for _, id in ipairs(Lists:GetAll()) do
+            local list = Lists:Get(id) --[[@as ForeverLoot.ItemList]]
+            rootDescription:CreateRadio(Lists:GetMarkerMarkup(id, 14) .. " " .. list.name, function()
+                return Lists:GetActive() == id
+            end, function()
+                Lists:SetActive(id)
+            end)
+        end
+    end)
+    self.ActiveList:HookScript("OnEnter", function(dropdown)
+        GameTooltip:SetOwner(dropdown, "ANCHOR_TOP")
+        GameTooltip:AddLine("Active list")
+        GameTooltip:AddLine("Alt-click an item to add it to this list, or to remove it.", 1, 1, 1, true)
+        GameTooltip:Show()
+    end)
+    self.ActiveList:HookScript("OnLeave", function()
+        GameTooltip:Hide()
     end)
 
     self.crumbPool = CreateFramePool("Button", self.Breadcrumbs, "ForeverLootBreadcrumbButtonTemplate") --[[@as ForeverLoot.FramePool]]
@@ -1878,6 +1929,8 @@ function ForeverLootViewMixin:Render()
     self:UpdateToolbar()
     self.ClassFilter:Update()
     self.ClassFilterMode:Update()
+    -- The active list may have changed, or been renamed, since the menu was last built.
+    self.ActiveList:GenerateMenu()
 end
 
 -- Turns the current node into the flat list of things to draw: its children (the folder's

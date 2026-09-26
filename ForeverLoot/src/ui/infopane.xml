@@ -124,6 +124,15 @@
 		<KeyValues>
 			<KeyValue key="align" value="center" type="string"/>
 		</KeyValues>
+		<!-- A label of its own, as wide as the button's inside and on one line: the engine's
+		     default one sizes itself to the text, and after a click it could come out a few
+		     pixels too narrow in the normal font and break the word ("Expor" / "t"). -->
+		<ButtonText parentKey="Text" wordwrap="false">
+			<Size x="164" y="0"/>
+			<Anchors>
+				<Anchor point="CENTER"/>
+			</Anchors>
+		</ButtonText>
 		<NormalFont style="GameFontNormalSmall"/>
 		<HighlightFont style="GameFontWhiteSmall"/>
 		<DisabledFont style="GameFontDisableSmall"/>
