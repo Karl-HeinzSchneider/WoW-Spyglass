@@ -802,7 +802,11 @@ function api:GetRootNode()
             moduleID = def.id,
         }
     end
-    -- The addon's icon, the TOC's `## IconTexture` (a fileID); the root tab shows it.
-    cachedRoot = { name = appName, icon = 8197077, children = children }
+    -- The addon's icon, the TOC's `## IconTexture`; the root tab shows it.
+    cachedRoot = {
+        name = appName,
+        icon = "Interface\\AddOns\\Spyglass\\assets\\core\\INV_Misc_Spyglass_03",
+        children = children,
+    }
     return cachedRoot
 end

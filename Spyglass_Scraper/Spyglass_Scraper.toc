@@ -1,7 +1,7 @@
 ## Interface: 16001
 ## Title: Spyglass Scraper
 ## Notes: Collects item and loot data for Spyglass contributors. |n|cffbbbbbbBy Karl-Heinz Schneider|r|n|n|TInterface/Addons/Spyglass/assets/core/coffee:12:12|t |cff82c5ffbuymeacoffee.com/karlheinzschneider|r
-## IconTexture: 8197077
+## IconTexture: Interface\AddOns\Spyglass\assets\core\INV_Misc_Spyglass_03
 ## Author: Karl-HeinzSchneider
 ## Version: |cff8080ff@project-version@|r
 ## Dependencies: Spyglass, Spyglass_Database

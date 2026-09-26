@@ -4,8 +4,8 @@ local appName, app = ...
 local log = app.logger
 local addon = app.addon
 
--- Same texture as the TOC's `## IconTexture` (a fileID).
-local ICON = 8197077
+-- Same texture as the TOC's `## IconTexture`.
+local ICON = "Interface\\AddOns\\Spyglass\\assets\\core\\INV_Misc_Spyglass_03"
 
 -- Prototype: Ace attaches it to the real module object via __index, so methods are defined
 -- here but state (self.ldb, ...) lives on the object NewModule returns.
