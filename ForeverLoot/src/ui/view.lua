@@ -1388,6 +1388,8 @@ function ForeverLootViewMixin:SetClassFilter(on, class, mode)
     self.ClassFilterMode:Update()
     self.PagingControls:SetCurrentPage(1)
     self:Refresh()
+    -- Kept with the tabs across sessions.
+    app.ui.mainWindow:SaveTabs()
 end
 
 -- A class in a menu: its icon and name.
@@ -1627,6 +1629,7 @@ function ForeverLootViewMixin:ResetFilters(q)
     -- Off, keeping class and mode; the redraw updates the footer buttons.
     self.classFilterOn = false
     self:OnQueryChanged()
+    app.ui.mainWindow:SaveTabs()
 end
 
 -- Filters and sort as ResetFilters leaves them (the search text doesn't count). A multi filter

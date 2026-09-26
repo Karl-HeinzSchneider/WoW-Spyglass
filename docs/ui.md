@@ -21,10 +21,11 @@ The tabs work like a browser's: one per open _view_ (icon = the deepest node tha
 tooltip = its title) plus a `+` tab; right-click closes one, and `RebuildTabs()` lays the strip
 out again from a pool. The window's edge fits ten tabs, so at most nine views are open
 (`MAX_VIEWS`): with nine the `+` tab is left out until one is closed. The open tabs survive the session: `SaveTabs()` writes them to
-`char.tabs` (per tab the names of the folders open below the root, plus the selected tab)
-whenever one opens, closes, is selected or navigates, and `RestoreTabs()` reopens them from
-`OnEnable`, when every module is registered, following each path by name as far as it still
-matches. Search text, filters, panel settings and the page are not kept. The window is
+`char.tabs` (per tab the names of the folders open below the root and the footer's class
+filter, plus the selected tab) whenever one opens, closes, is selected or navigates and whenever
+a class filter changes, and `RestoreTabs()` reopens them from `OnEnable`, when every module is
+registered, following each path by name as far as it still matches. Search text, filters, panel
+settings and the page are not kept. The window is
 draggable and its position is saved to `profile.window`.
 The root node comes from `app.api:GetRootNode()`; the window listens to `OnModulesChanged`,
 `OnDataChanged` and `OnFiltersChanged`.
@@ -60,7 +61,7 @@ right.
   panel's filters in `BuildElements`). On query folders the `FilterDropdown` menu has the same
   state as a "Class" submenu (Off / a class / fade out or hide); its red X shows while the
   class filter is on, and its reset (`ResetFilters`) turns it off. The state is per tab (`classFilterOn`, `classFilterMode`,
-  `filterClass`, nil = the character's class) and not saved. Which class can use what is the
+  `filterClass`, nil = the character's class) and saved with the tabs (`char.tabs.classFilters`). Which class can use what is the
   table in `src/data/classfilter.lua` (`app.classFilter:CanUse(class, itemID)`): per armor and
   weapon subclass the classes that can use it, turned around at load into a per-class set of
   blocked subclasses, so a lookup is the item's kind (`app.itemKind`) plus two table reads.

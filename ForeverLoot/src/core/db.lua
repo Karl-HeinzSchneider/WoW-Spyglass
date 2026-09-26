@@ -29,10 +29,12 @@ local char = {
     loot = {},
     -- The window's open tabs, written whenever one opens, closes, is selected or navigates.
     -- `paths[i]` = the names of the folders tab i has open below the root (empty = the root);
-    -- `selected` = the index of the selected tab.
+    -- `selected` = the index of the selected tab; `classFilters[i]` = tab i's footer class filter,
+    -- `{ on = true, class = "MAGE", mode = "fade" }` (class nil = the character's class).
     tabs = {
         paths = {},
         selected = 1,
+        classFilters = {},
     },
 }
 

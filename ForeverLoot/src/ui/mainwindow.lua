@@ -304,12 +304,14 @@ function ForeverLootMainWindowMixin:SaveTabs()
     if not app.db or not self.tabsRestored then
         return
     end
-    local paths = {}
+    local paths, classFilters = {}, {}
     for i, view in ipairs(self.views) do
         paths[i] = view:GetSavedPath()
+        classFilters[i] = { on = view.classFilterOn, class = view.filterClass, mode = view.classFilterMode }
     end
     local saved = app.db.char.tabs
     saved.paths = paths
+    saved.classFilters = classFilters
     saved.selected = tIndexOf(self.views, self.selectedView) or 1
 end
 
@@ -323,6 +325,11 @@ function ForeverLootMainWindowMixin:RestoreTabs()
             local view = self.views[i] or self:OpenView()
             view:Hide()
             view:RestorePath(names)
+            local filter = saved.classFilters[i]
+            if type(filter) == "table" then
+                local mode = (filter.mode == "hide" or filter.mode == "fade") and filter.mode or nil
+                view:SetClassFilter(filter.on == true, type(filter.class) == "string" and filter.class or nil, mode)
+            end
         end
         self:SelectView(self.views[saved.selected] or self.views[1])
     end
