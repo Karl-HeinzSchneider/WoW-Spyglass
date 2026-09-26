@@ -169,6 +169,14 @@ set the database knows (`HasSet`) toggles it: the set's name (`Data:GetSetName`)
 per item of the set (`Data:GetSetItems`), in loot-list order (armor type, then slot), eight per
 line. The item tooltip on a slot shows the game's set bonuses.
 
+The set's name is hoverable (`TitleButton`, sized to the title): the tooltip is the set part of
+the clicked item's tooltip data (`C_TooltipInfo.GetItemByID`), copied line by line with the
+game's colors — from the header matching `ITEM_SET_NAME` with the set's name, over the items
+that follow it, to the last line matching `ITEM_SET_BONUS_GRAY` or `ITEM_SET_BONUS` — so owned
+pieces and active bonuses show as the game shows them. Until the client has that data it lists
+the set's name and items, and redraws when the item arrives. The client has no chat link for a
+set, so shift-click on the name links the clicked item instead, whose tooltip shows the set.
+
 `ForeverLootItemSlotTemplate` / `ForeverLootItemSlotMixin` is the 32px icon with count and quality
 border that every slot uses (`SetItem` / `SetSpell`, tooltip on hover, `HandleModifiedItemClick`
 on click). The background is the main window's pane atlas (`UI-Character-Info-General-BG`) under

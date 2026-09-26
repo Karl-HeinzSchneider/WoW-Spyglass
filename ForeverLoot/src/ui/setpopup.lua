@@ -39,12 +39,77 @@ local function sortedItems(setID)
     return items
 end
 
+local MAGIC = "[%^%$%(%)%.%[%]%*%+%-%?%%]"
+
+-- A Lua pattern for the start of a line the game writes with a format string (ITEM_SET_NAME,
+-- "%s (%d/%d)"): its %s become `s`, its %d become numbers, the rest must match literally.
+---@param fmt string
+---@param s string  # a pattern
+---@return string
+local function formatPattern(fmt, s)
+    local out, pos = {}, 1
+    for start, kind, stop in fmt:gmatch("()%%[%d%$]*([sd])()") do
+        out[#out + 1] = (fmt:sub(pos, start - 1):gsub(MAGIC, "%%%0"))
+        out[#out + 1] = kind == "s" and s or "%d+"
+        pos = stop
+    end
+    out[#out + 1] = (fmt:sub(pos):gsub(MAGIC, "%%%0"))
+    return "^" .. table.concat(out)
+end
+
+---@param text string
+---@return boolean
+local function isSetBonus(text)
+    return text:find(formatPattern(ITEM_SET_BONUS_GRAY, ".+")) ~= nil
+        or text:find(formatPattern(ITEM_SET_BONUS, ".+")) ~= nil
+end
+
+-- The set part of an item's tooltip as the game draws it: from the set's header ("Rotmender's
+-- Raiment (0/5)") over its items (grey when not owned) to its last bonus ("(2) Set: ...", grey
+-- while inactive). nil when the client has no tooltip data for the item (yet) or no set part.
+---@param itemID integer
+---@param setName string
+---@return { text: string, r: number, g: number, b: number }[]?
+local function setTooltipLines(itemID, setName)
+    local data = C_TooltipInfo and C_TooltipInfo.GetItemByID(itemID)
+    local lines = data and data.lines
+    if not lines then
+        return nil
+    end
+    local header = formatPattern(ITEM_SET_NAME, (setName:gsub(MAGIC, "%%%0")))
+    local first, last, bonuses
+    for i, line in ipairs(lines) do
+        local text = line.leftText or ""
+        if not first then
+            if text:find(header) then
+                first, last = i, i
+            end
+        elseif isSetBonus(text) then
+            last, bonuses = i, true
+        elseif not bonuses and last == i - 1 and text:match("%S") then
+            last = i -- the set's items follow the header without a gap
+        end
+    end
+    if not first then
+        return nil
+    end
+    local out = {}
+    for i = first, last do
+        local line = lines[i]
+        local color = line.leftColor or NORMAL_FONT_COLOR
+        out[#out + 1] = { text = line.leftText or "", r = color.r, g = color.g, b = color.b }
+    end
+    return out
+end
+
 ----------------------------------------------------------------------------------------------------
 -- The item set popup: the set's name, then every item of the set, PER_LINE slots per line
 ----------------------------------------------------------------------------------------------------
 
 ---@class ForeverLoot.SetPopup : ForeverLoot.Popup
+---@field TitleButton Button  # over the title: hover shows the set's tooltip, shift-click links
 ---@field slotPool ForeverLoot.FramePool
+---@field setID? integer  # the set it shows
 ForeverLootSetPopupMixin = CreateFromMixins(ForeverLootPopupMixin)
 app.ui.SetPopupMixin = ForeverLootSetPopupMixin
 
@@ -52,6 +117,63 @@ function ForeverLootSetPopupMixin:OnLoad()
     ForeverLootPopupMixin.OnLoad(self)
     app.ui.setPopup = self
     self.slotPool = CreateFramePool("Button", self, "ForeverLootItemSlotTemplate") --[[@as ForeverLoot.FramePool]]
+    self.TitleButton:SetScript("OnEnter", function()
+        self:ShowSetTooltip()
+    end)
+    self.TitleButton:SetScript("OnLeave", function()
+        self.Title:SetTextColor(NORMAL_FONT_COLOR:GetRGB())
+        GameTooltip:Hide()
+    end)
+    self.TitleButton:SetScript("OnClick", function()
+        self:LinkSet()
+    end)
+end
+
+function ForeverLootSetPopupMixin:OnHide()
+    ForeverLootPopupMixin.OnHide(self)
+    if GameTooltip:GetOwner() == self.TitleButton then
+        GameTooltip:Hide()
+    end
+    self.Title:SetTextColor(NORMAL_FONT_COLOR:GetRGB())
+end
+
+-- The set part of the tooltip of the item the popup was opened from; until the client has that
+-- item's tooltip data, the set's name and the names of its items.
+function ForeverLootSetPopupMixin:ShowSetTooltip()
+    local itemID, setID = self.node and self.node.itemID, self.setID
+    if not itemID or not setID then
+        return
+    end
+    self.Title:SetTextColor(HIGHLIGHT_FONT_COLOR:GetRGB())
+    GameTooltip:SetOwner(self.TitleButton, "ANCHOR_RIGHT")
+    local lines = setTooltipLines(itemID, Data:GetSetName(setID))
+    if lines then
+        for _, line in ipairs(lines) do
+            GameTooltip:AddLine(line.text:match("%S") and line.text or " ", line.r, line.g, line.b, true)
+        end
+    else
+        C_Item.RequestLoadItemDataByID(itemID)
+        GameTooltip:AddLine(Data:GetSetName(setID))
+        for _, id in ipairs(sortedItems(setID)) do
+            GameTooltip:AddLine("  " .. Data:GetItemName(id), GRAY_FONT_COLOR:GetRGB())
+        end
+    end
+    GameTooltip:Show()
+end
+
+-- There is no chat link for an item set: shift-click links the item the popup was opened from,
+-- whose tooltip shows the whole set (ctrl-click tries it on, as on any item).
+function ForeverLootSetPopupMixin:LinkSet()
+    local itemID = self.node and self.node.itemID
+    if not itemID then
+        return
+    end
+    local _, link = C_Item.GetItemInfo(itemID)
+    if link then
+        HandleModifiedItemClick(link)
+    else
+        C_Item.RequestLoadItemDataByID(itemID)
+    end
 end
 
 -- Whether a click on this node opens the popup: an item of a set the database knows.
@@ -67,7 +189,9 @@ function ForeverLootSetPopupMixin:Refresh()
         self:Hide()
         return
     end
+    self.setID = setID
     self.Title:SetText(Data:GetSetName(setID))
+    self.TitleButton:SetSize(self.Title:GetStringWidth(), self.Title:GetStringHeight())
 
     self.slotPool:ReleaseAll()
     local items = sortedItems(setID)
@@ -91,4 +215,9 @@ function ForeverLootSetPopupMixin:Refresh()
     local titleWidth = self.Title:GetStringWidth() + 24 -- room for the close button
     self:SetWidth(math.max(titleWidth, gridWidth) + 2 * PADDING)
     self:SetHeight(PADDING + self.Title:GetStringHeight() + TITLE_GAP + gridHeight + PADDING)
+
+    -- Item data arrived while the set's tooltip is up: draw it again, now from the game's lines.
+    if GameTooltip:GetOwner() == self.TitleButton then
+        self:ShowSetTooltip()
+    end
 end

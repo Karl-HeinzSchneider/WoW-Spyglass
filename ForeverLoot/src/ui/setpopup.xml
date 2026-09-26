@@ -3,7 +3,17 @@
 	<!-- The item set popup, opened by clicking an item of a set:
 	         Set name                             [x]
 	         [item] [item] [item] ... (8 per line)
-	     The slots are a pool, placed and sized by the mixin. -->
+	     The slots are a pool, placed and sized by the mixin. `TitleButton` lies over the set's
+	     name (sized to it by the mixin): hover shows the set's tooltip, shift-click links. -->
 	<Frame name="ForeverLootSetPopup" mixin="ForeverLootSetPopupMixin" inherits="ForeverLootPopupTemplate"
-		parent="ForeverLootMainWindow"/>
+		parent="ForeverLootMainWindow">
+		<Frames>
+			<Button parentKey="TitleButton" registerForClicks="LeftButtonUp">
+				<Size x="1" y="1"/>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeKey="$parent.Title"/>
+				</Anchors>
+			</Button>
+		</Frames>
+	</Frame>
 </Ui>
