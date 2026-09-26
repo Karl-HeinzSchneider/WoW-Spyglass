@@ -1135,6 +1135,17 @@ function ForeverLootViewMixin:GetTitle()
     return node and node.name or "New Tab"
 end
 
+-- The folders open below the root, "Crafting > Alchemy > Camping", for the tab's tooltip; nil at
+-- the root.
+---@return string?
+function ForeverLootViewMixin:GetPathText()
+    local names = {}
+    for i = 2, #self.path do
+        names[#names + 1] = self.path[i].name or "?"
+    end
+    return #names > 0 and table.concat(names, " > ") or nil
+end
+
 -- The icon of the deepest node on the path that has one (the root carries the addon's), for the tab.
 ---@return string|number|nil
 function ForeverLootViewMixin:GetIcon()

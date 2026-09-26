@@ -18,7 +18,8 @@ down the right edge (`ForeverLootSideTabTemplate`, from `LargeSideTabButtonTempl
 _Frame_, so clicks arrive through `SetCustomOnMouseUpHandler`).
 
 The tabs work like a browser's: one per open _view_ (icon = the deepest node that has one,
-tooltip = its title) plus a `+` tab; right-click closes one, and `RebuildTabs()` lays the strip
+tooltip = its title, then the path of folders below the root in gold, "Crafting > Alchemy >
+Camping", when there is more than one) plus a `+` tab; right-click closes one, and `RebuildTabs()` lays the strip
 out again from a pool. The window's edge fits ten tabs, so at most nine views are open
 (`MAX_VIEWS`): with nine the `+` tab is left out until one is closed. The open tabs survive the session: `SaveTabs()` writes them to
 `char.tabs` (per tab the names of the folders open below the root and the footer's class

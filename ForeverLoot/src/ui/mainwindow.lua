@@ -58,13 +58,18 @@ function ForeverLootSideTabMixin:SetNewTab()
     self.tooltipText = "Open a new tab"
 end
 
--- SidePanelTabButtonMixin:OnEnter calls this; view tabs add the close hint under the title.
+-- SidePanelTabButtonMixin:OnEnter calls this; view tabs add their path (when it says more than
+-- the title) and the close hint under the title.
 function ForeverLootSideTabMixin:GetTooltipTextSetupFunction()
     if not self.flView then
         return nil
     end
     return function(tooltip)
         tooltip:SetText(self.tooltipText)
+        local path = self.flView:GetPathText()
+        if path and path ~= self.tooltipText then
+            tooltip:AddLine(path, NORMAL_FONT_COLOR:GetRGB())
+        end
         tooltip:AddLine("Right-click to close", 1, 1, 1)
         return true
     end
