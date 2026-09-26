@@ -44,15 +44,12 @@
 		</Scripts>
 	</Button>
 
-	<!-- The recipe popup, opened by clicking a recipe row:
-	         Recipe name                          [x]
-	         [product]  [recipe item]
-	         [recipe (profession icon)]  [reagent x6] [reagent x1] ...
-	     Tooltip-style border around the main window's own pane background (the tooltip
-	     backdrop itself is translucent art, so it is switched off); a child of the main window
-	     so it moves and hides with it. -->
-	<Frame name="ForeverLootRecipePopup" mixin="ForeverLootRecipePopupMixin" inherits="TooltipBorderedFrameTemplate"
-		parent="ForeverLootMainWindow" frameStrata="DIALOG" clampedToScreen="true" enableMouse="true" hidden="true">
+	<!-- The shell of the popups opened from a list row (recipe, item set): a title and a close
+	     button. Tooltip-style border around the main window's own pane background (the tooltip
+	     backdrop itself is translucent art, so it is switched off); each popup is a child of the
+	     main window so it moves and hides with it. -->
+	<Frame name="ForeverLootPopupTemplate" inherits="TooltipBorderedFrameTemplate" frameStrata="DIALOG"
+		clampedToScreen="true" enableMouse="true" hidden="true" virtual="true">
 		<Size x="200" y="124"/>
 		<KeyValues>
 			<KeyValue key="backdropColorAlpha" value="0" type="number"/>
@@ -80,6 +77,23 @@
 					<Anchor point="TOPRIGHT" x="4" y="4"/>
 				</Anchors>
 			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad method="OnLoad"/>
+			<OnShow method="OnShow"/>
+			<OnHide method="OnHide"/>
+			<OnEvent method="OnEvent"/>
+		</Scripts>
+	</Frame>
+
+	<!-- The recipe popup, opened by clicking a recipe row:
+	         Recipe name                          [x]
+	         [product]  [recipe item]
+	         [recipe (profession icon)]  [reagent x6] [reagent x1] ...
+	-->
+	<Frame name="ForeverLootRecipePopup" mixin="ForeverLootRecipePopupMixin" inherits="ForeverLootPopupTemplate"
+		parent="ForeverLootMainWindow">
+		<Frames>
 			<!-- First line: what the recipe makes and the item that teaches it. -->
 			<Button parentKey="Product" inherits="ForeverLootItemSlotTemplate">
 				<Anchors>
@@ -99,11 +113,5 @@
 				</Anchors>
 			</Button>
 		</Frames>
-		<Scripts>
-			<OnLoad method="OnLoad"/>
-			<OnShow method="OnShow"/>
-			<OnHide method="OnHide"/>
-			<OnEvent method="OnEvent"/>
-		</Scripts>
 	</Frame>
 </Ui>

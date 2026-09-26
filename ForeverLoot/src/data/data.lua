@@ -211,11 +211,14 @@ local listIDs ---@type table<ForeverLoot.ListKind, string[]>?
 local recipeIDs ---@type table<integer, integer[]>?
 local sources ---@type table<integer, ForeverLoot.ItemSource[]>?
 local searchNames ---@type table<integer, string>?
+local setItems ---@type table<integer, integer[]>?
+local setIDs ---@type integer[]?
 local NO_SOURCES = {}
 
 local function invalidate()
     version = version + 1
     itemIDs, instanceIDs, listIDs, recipeIDs, sources, searchNames = nil, nil, nil, nil, nil, nil
+    setItems, setIDs = nil, nil
     app.api.callbacks:Fire("OnDataChanged")
 end
 
@@ -824,4 +827,55 @@ function Data:GetItemSources(itemID)
         end
     end
     return sources[itemID] or NO_SOURCES
+end
+
+-- Item sets, from the rows' SET field: set id -> its item ids (ascending), built on first use.
+---@return table<integer, integer[]>
+local function itemSets()
+    if not setItems then
+        setItems = {}
+        for id, row in Data:EachItem() do
+            local setID = row[ITEM.SET]
+            if type(setID) == "number" and setID ~= 0 then
+                local items = setItems[setID]
+                if not items then
+                    items = {}
+                    setItems[setID] = items
+                end
+                items[#items + 1] = id
+            end
+        end
+    end
+    return setItems
+end
+
+-- The items of a set that are in the database, ascending by id; empty when none are.
+---@param setID integer
+---@return integer[]
+function Data:GetSetItems(setID)
+    return itemSets()[setID] or NO_SOURCES
+end
+
+-- Every set id some item in the database belongs to, ascending; cached until the data changes.
+---@return integer[]
+function Data:GetSetIDs()
+    if not setIDs then
+        setIDs = {}
+        for id in pairs(itemSets()) do
+            setIDs[#setIDs + 1] = id
+        end
+        table.sort(setIDs)
+    end
+    return setIDs
+end
+
+-- A set's name in the client's language ("Rotmender's Raiment"), else "Set #id".
+---@param setID integer
+---@return string
+function Data:GetSetName(setID)
+    local name = C_Item and C_Item.GetItemSetInfo and C_Item.GetItemSetInfo(setID)
+    if type(name) == "string" and name ~= "" then
+        return name
+    end
+    return ("Set #%d"):format(setID)
 end

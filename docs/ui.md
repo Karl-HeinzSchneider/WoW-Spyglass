@@ -152,19 +152,27 @@ inside that call, and a redraw inside a redraw would release lines still being f
 checkbox or dropdown only calls the view's
 `SetPanelValue`; its own state already shows the change.
 
-## Recipe popup (`recipepopup.lua` / `.xml`)
+## Recipe and set popups (`recipepopup.lua` / `.xml`, `setpopup.lua` / `.xml`)
 
-`ForeverLootRecipePopup` (`app.ui.recipePopup`) is a tooltip-bordered child of the main window.
-A click on a recipe row (a node whose `meta.spell` is in `Data.recipes`) toggles it below that
-row: a title, then icons only — the product and the recipe item that teaches it, then the recipe
-itself (the profession's tile icon; spell tooltip and link) and one slot per reagent with its
-count.
+Both popups are `ForeverLootPopupTemplate` frames: a tooltip-bordered child of the main window
+with a title and a close button. `ForeverLootPopupMixin` (which both mixins build on) toggles one
+below the row it was clicked from and closes the other; `app.ui.HidePopups()` closes both.
+
+`ForeverLootRecipePopup` (`app.ui.recipePopup`): a click on a recipe row (a node whose
+`meta.spell` is in `Data.recipes`) toggles it: a title, then icons only — the product and the
+recipe item that teaches it, then the recipe itself (the profession's tile icon; spell tooltip
+and link) and one slot per reagent with its count.
+
+`ForeverLootSetPopup` (`app.ui.setPopup`): a plain click on any other item row whose item is in a
+set the database knows (`HasSet`) toggles it: the set's name (`Data:GetSetName`), then one slot
+per item of the set (`Data:GetSetItems`), in loot-list order (armor type, then slot), eight per
+line. The item tooltip on a slot shows the game's set bonuses.
 
 `ForeverLootItemSlotTemplate` / `ForeverLootItemSlotMixin` is the 32px icon with count and quality
 border that every slot uses (`SetItem` / `SetSpell`, tooltip on hover, `HandleModifiedItemClick`
 on click). The background is the main window's pane atlas (`UI-Character-Info-General-BG`) under
-the tooltip border, with the template's own translucent backdrop switched off. The popup redraws
-on `GET_ITEM_INFO_RECEIVED`; the view hides it on `Refresh` and on page changes, because its
+the tooltip border, with the template's own translucent backdrop switched off. A popup redraws
+on `GET_ITEM_INFO_RECEIVED`; the view hides them on `Refresh` and on page changes, because their
 anchor row is reused.
 
 ## Model preview (`modelpreview.lua` / `.xml`)

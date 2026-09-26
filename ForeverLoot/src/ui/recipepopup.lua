@@ -100,56 +100,79 @@ function ForeverLootItemSlotMixin:OnClick()
 end
 
 ----------------------------------------------------------------------------------------------------
--- The popup
+-- A popup opened from a list row (ForeverLootPopupTemplate): one open at a time, below its row
 ----------------------------------------------------------------------------------------------------
 
----@class ForeverLoot.RecipePopup : Frame
+---@class ForeverLoot.Popup : Frame
 ---@field Title FontString
 ---@field CloseButton Button
----@field Product ForeverLoot.ItemSlot
----@field Source ForeverLoot.ItemSlot
----@field Recipe ForeverLoot.ItemSlot
----@field reagentPool ForeverLoot.FramePool
----@field node? ForeverLoot.Node  # the recipe node it shows
+---@field node? ForeverLoot.Node  # the node it shows
 ---@field anchor? Frame  # the row it was opened from
-ForeverLootRecipePopupMixin = {}
-app.ui.RecipePopupMixin = ForeverLootRecipePopupMixin
+---@field Refresh fun(self: ForeverLoot.Popup)  # draws `node`; hides the popup when there is nothing to show
+ForeverLootPopupMixin = {}
 
-function ForeverLootRecipePopupMixin:OnLoad()
-    app.ui.recipePopup = self
-    self.reagentPool = CreateFramePool("Button", self, "ForeverLootItemSlotTemplate") --[[@as ForeverLoot.FramePool]]
+local popups = {} ---@type ForeverLoot.Popup[]
+
+-- Hides every popup; the view calls it when the rows they are anchored to are about to change.
+function app.ui.HidePopups()
+    for _, popup in ipairs(popups) do
+        popup:Hide()
+    end
 end
 
-function ForeverLootRecipePopupMixin:OnShow()
+function ForeverLootPopupMixin:OnLoad()
+    popups[#popups + 1] = self
+end
+
+function ForeverLootPopupMixin:OnShow()
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
 end
 
-function ForeverLootRecipePopupMixin:OnHide()
+function ForeverLootPopupMixin:OnHide()
     self:UnregisterEvent("GET_ITEM_INFO_RECEIVED")
     self.node, self.anchor = nil, nil
 end
 
 -- Item names and icons arrive asynchronously; redraw with whatever is known now.
-function ForeverLootRecipePopupMixin:OnEvent(event)
+function ForeverLootPopupMixin:OnEvent(event)
     if event == "GET_ITEM_INFO_RECEIVED" and self.node then
         self:Refresh()
     end
 end
 
--- Opens the popup for a recipe node below the row it was clicked on; clicking the same row
--- again closes it.
----@param node ForeverLoot.Node  # a node whose `meta.spell` is a recipe (see ForeverLoot.ListEntries)
+-- Opens the popup for a node below the row it was clicked on, closing any other popup;
+-- clicking the same row again closes it.
+---@param node ForeverLoot.Node
 ---@param anchor Frame
-function ForeverLootRecipePopupMixin:Toggle(node, anchor)
+function ForeverLootPopupMixin:Toggle(node, anchor)
     if self:IsShown() and self.node == node then
         self:Hide()
         return
     end
+    app.ui.HidePopups()
     self.node, self.anchor = node, anchor
     self:ClearAllPoints()
     self:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -2)
     self:Refresh()
     self:Show()
+end
+
+----------------------------------------------------------------------------------------------------
+-- The recipe popup
+----------------------------------------------------------------------------------------------------
+
+---@class ForeverLoot.RecipePopup : ForeverLoot.Popup
+---@field Product ForeverLoot.ItemSlot
+---@field Source ForeverLoot.ItemSlot
+---@field Recipe ForeverLoot.ItemSlot
+---@field reagentPool ForeverLoot.FramePool
+ForeverLootRecipePopupMixin = CreateFromMixins(ForeverLootPopupMixin)
+app.ui.RecipePopupMixin = ForeverLootRecipePopupMixin
+
+function ForeverLootRecipePopupMixin:OnLoad()
+    ForeverLootPopupMixin.OnLoad(self)
+    app.ui.recipePopup = self
+    self.reagentPool = CreateFramePool("Button", self, "ForeverLootItemSlotTemplate") --[[@as ForeverLoot.FramePool]]
 end
 
 ---@param node ForeverLoot.Node

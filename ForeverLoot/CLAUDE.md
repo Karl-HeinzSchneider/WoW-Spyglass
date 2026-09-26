@@ -18,6 +18,7 @@ be listed**. The order follows these rules:
    and `modules\modules.xml` (the modules, which need both).
 3. `src\ui\`: each Lua mixin before the XML that names it, `templates.xml` and `infopane.xml`
    before `mainwindow.xml`, the recipe popup after the window it is parented to.
+   The set popup comes after the recipe popup, whose template and mixin it builds on.
    `src\helper\profiler.lua` sits between the mixins it wraps and the XML that creates frames
    from them.
 4. `ForeverLoot.lua` last; it only logs.
@@ -61,7 +62,7 @@ Nothing in here touches frames. The tables, calls and built-in filters are docum
   `Data:GetSearchName`, the client-locale name plus the English one after a newline.
 - `classfilter.lua` — `app.classFilter`: which classes can use which armor and weapon
   subclasses (the `USERS` table; edit it to tune the view's class filter), `CanUse(class,
-  itemID)`. Private, not part of the public API.
+itemID)`. Private, not part of the public API.
 - `nodes.lua` — the DB-backed node constructors modules build their trees from
   (`InstanceFolder(s)`, `BossFolder`, `TrashFolder`, `QuestFolder`, `ListFolder(s)`, …). Crafting
   lists merge the generated recipes with the curated rows (`craftingEntries`) and split into
@@ -89,7 +90,7 @@ ForeverLoot`, no private table); never give them private hooks.
 - `raids` and `dungeons` are `display = "tiles"` modules listing explicit `FL.InstanceFolder(id)`
   lines, commented out until the instance has curated loot (a split dungeon's parts by their own
   ids, e.g. `18901`). The other four return `FL.ListFolders(kind)`; `crafting` also sets
-  `showIcon` on each tile.
+  `showIcon` on each tile, and `collections` appends the item set tiles (one per source).
 
 ### `src/ui/` — the browser window
 
@@ -105,7 +106,10 @@ the window.
 - `view.lua` + `templates.xml` — a view: header row, paged content, the navigation stack, rows,
   tiles, cards and headers, search box and filter dropdown, the footer's class filter buttons.
 - `recipepopup.lua/.xml` — `app.ui.recipePopup`, toggled by a click on a recipe row;
-  `ForeverLootItemSlotTemplate` is the icon slot every slot uses.
+  `ForeverLootPopupTemplate` / `ForeverLootPopupMixin`, the shell both popups share
+  (`app.ui.HidePopups()`); `ForeverLootItemSlotTemplate` is the icon slot every slot uses.
+- `setpopup.lua/.xml` — `app.ui.setPopup`, toggled by a click on an item of a set: every item of
+  the set.
 - `modelpreview.lua/.xml` — `app.ui.modelPreview`: the character (or the mount) wearing the item
   while ctrl is held.
 - `tooltip.lua` — `app.tooltip`: appends an item's sources to every item tooltip.

@@ -26,11 +26,14 @@
 ---@class ForeverLoot.UI
 ---@field mainWindow ForeverLoot.MainWindow  # set in ForeverLootMainWindowMixin:OnLoad
 ---@field recipePopup ForeverLoot.RecipePopup  # set in ForeverLootRecipePopupMixin:OnLoad
+---@field setPopup ForeverLoot.SetPopup  # set in ForeverLootSetPopupMixin:OnLoad
+---@field HidePopups fun()  # hides the recipe and set popups (recipepopup.lua)
 ---@field modelPreview ForeverLoot.ModelPreview  # set in ForeverLootModelPreviewMixin:OnLoad
 ---@field SetIconQuality fun(ring: Texture, quality?: Enum.ItemQuality)  # tints an icon's ring in the quality color, nil = plain (view.lua)
 ---@field MainWindowMixin ForeverLoot.MainWindow
 ---@field InfoPaneMixin ForeverLoot.InfoPane
 ---@field RecipePopupMixin ForeverLoot.RecipePopup
+---@field SetPopupMixin ForeverLoot.SetPopup
 ---@field ModelPreviewMixin ForeverLoot.ModelPreview
 ---@field ItemSlotMixin ForeverLoot.ItemSlot
 ---@field SideTabMixin ForeverLoot.SideTab

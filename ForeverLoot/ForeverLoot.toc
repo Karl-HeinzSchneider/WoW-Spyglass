@@ -35,6 +35,8 @@ src\ui\infopane.xml
 src\ui\mainwindow.xml
 src\ui\recipepopup.lua
 src\ui\recipepopup.xml
+src\ui\setpopup.lua
+src\ui\setpopup.xml
 src\ui\modelpreview.lua
 src\ui\modelpreview.xml
 src\ui\tooltip.lua

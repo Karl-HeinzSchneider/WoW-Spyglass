@@ -46,7 +46,12 @@ ForeverLoot:AddToModule("dungeons", dungeon)
 ```
 
 Built-in module ids: `"raids"`, `"dungeons"`, `"crafting"`, `"pvp"`, `"collections"`,
-`"reputation"`; `ForeverLoot_Database` adds `"items"` (the item browser). The built-in
+`"reputation"`; `ForeverLoot_Database` adds `"items"` (the item browser). `"collections"` lists
+its curated lists, then the database's item sets as one tile per source — Dungeon, Raid, PvP,
+Crafted, Reputation and Other Sets — each set going to the source most of its items have
+(`Data:GetItemSources`), grouped by armor type inside. The set tiles are always there and
+find their sets when opened (a module's entries are built while the core loads, before an
+addon has added the item rows). The built-in
 dungeons sort by level range (`minLevel`, then `maxLevel`; none last), then name; the raids keep
 the order they are listed in. If your instance is in the game's data, prefer adding its drops to the item database (`ForeverLoot.Data:AddBossLoot`)
 — it then shows up in the built-in modules and in the item browser's filters automatically. The
@@ -273,6 +278,8 @@ Constructors (optional sugar):
   character's rank ("145 / 150") as `info` and the localized profession name.
   A plain click on any row whose `meta.spell` is a recipe in `Data.recipes` opens the recipe popup
   (product and teaching item, recipe link and reagents); modified clicks still link the row's item.
+  Likewise, a plain click on any item row whose item belongs to a set (`Data:GetSetItems`) opens
+  the set popup: the set's name and every item of the set.
 - `ForeverLoot.Log(fmt, ...)` — prefixed chat message
 - `ForeverLoot.LogAt(level, fmt, ...)` — threshold-aware diagnostic output using the core logger
 - `ForeverLoot.PlaceholderItem(name, quality, icon)` — hard-coded display data, for prototyping
@@ -492,6 +499,9 @@ Reading:
   `Data:GetQuest(questID)`, `Data:GetQuestName(questID)` — the client's title when it knows the quest,
   then the curated one, then `"#id"`
 - `Data:GetList(kind, id)`, `Data:GetListIDs(kind)` (by `order`, then name), `Data:GetListLoot(kind, id)`
+- `Data:GetSetItems(setID) -> itemID[]` (the set's items in the database, ascending), `Data:GetSetIDs()`
+  (every set id an item belongs to, ascending; cached), `Data:GetSetName(setID)` — the client's
+  `C_Item.GetItemSetInfo`, else `"Set #id"`. Built from the rows' `setID` (`Data.ITEM.SET`)
 - `Data:GetRecipe(spellID) -> row?`, `Data:GetRecipeIDs(skillLineID)` (spell ids in the trade skill window's order:
   category, then the yellow threshold; cached), `Data:GetCategory(id)`
 - `Data:GetName(kind, id) -> string?` — client locale, then enUS, for `"skillLines"`, `"categories"` and `"tools"`

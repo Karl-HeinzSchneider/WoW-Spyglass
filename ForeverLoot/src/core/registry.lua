@@ -248,6 +248,7 @@ ForeverLoot = api
 ---@field columns? integer  # columns per page: 1 (default) or 2 for rows and cards, up to 4 (default 3) for tiles
 ---@field display? "rows"|"tiles"|"cards"  # draw the entries as rows (default), picture tiles or portrait cards
 ---@field description? string
+---@field quality? Enum.ItemQuality  # colors the folder's name
 ---@field background? string|number  # when this folder is itself listed as a tile
 ---@field backgroundCoords? number[]
 ---@field portrait? string|number  # when this folder is itself listed as a card

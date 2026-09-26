@@ -355,6 +355,9 @@ function ForeverLootListRowMixin:OnClick(button)
     elseif node.meta and type(node.meta.spell) == "number" and Data:GetRecipe(node.meta.spell) then
         -- A recipe: the popup with what it makes, what teaches it and what it needs.
         app.ui.recipePopup:Toggle(node, self)
+    elseif app.ui.setPopup:HasSet(node) then
+        -- An item of a set: the popup with every item of the set.
+        app.ui.setPopup:Toggle(node, self)
     elseif self.link then
         return
     elseif node.itemID then
@@ -1153,8 +1156,8 @@ end
 -- PagingControls calls this on its parent when the page changes. The layout is unchanged,
 -- so only the visible pages are redrawn.
 function ForeverLootViewMixin:OnPageChanged()
-    if app.ui.recipePopup and app.ui.recipePopup:IsShown() then
-        app.ui.recipePopup:Hide()
+    if app.ui.HidePopups then
+        app.ui.HidePopups()
     end
     self:Render()
 end
@@ -1799,9 +1802,9 @@ function ForeverLootViewMixin:Refresh()
     if not self:IsShown() then
         return
     end
-    -- The rows are about to change; a recipe popup anchored to one of them would be stale.
-    if app.ui.recipePopup and app.ui.recipePopup:IsShown() then
-        app.ui.recipePopup:Hide()
+    -- The rows are about to change; a popup anchored to one of them would be stale.
+    if app.ui.HidePopups then
+        app.ui.HidePopups()
     end
     local node = self:GetCurrentNode()
     wipe(app.unknownItemKinds)

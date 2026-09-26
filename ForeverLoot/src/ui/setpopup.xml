@@ -1,0 +1,9 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+
+	<!-- The item set popup, opened by clicking an item of a set:
+	         Set name                             [x]
+	         [item] [item] [item] ... (8 per line)
+	     The slots are a pool, placed and sized by the mixin. -->
+	<Frame name="ForeverLootSetPopup" mixin="ForeverLootSetPopupMixin" inherits="ForeverLootPopupTemplate"
+		parent="ForeverLootMainWindow"/>
+</Ui>
