@@ -15,6 +15,24 @@ local TAB_SPACING = -2
 -- The strip fits ten tabs down the window's edge: nine views and the "+" tab, which is left out
 -- while nine are open.
 local MAX_VIEWS = 9
+-- The version after the title, in the TOC's highlight color.
+local VERSION_COLOR = "ff8080ff"
+
+-- The TOC's `## Version`. The packager writes the release over `@project-version@`; a client
+-- linked to the git repo still reads the token, which shows as the dev version.
+local function versionText()
+    local version = C_AddOns.GetAddOnMetadata(appName, "Version")
+    if not version then
+        return nil
+    end
+    -- The TOC wraps it in a color code already; strip it so the color is set here only.
+    version = version:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
+    -- A pattern, not the literal token: the packager replaces that in Lua files too.
+    if version:find("@project%-version@") then
+        version = "dev (git)"
+    end
+    return WrapTextInColorCode(version, VERSION_COLOR)
+end
 
 ----------------------------------------------------------------------------------------------------
 -- Side tab: one per open view, plus the "+" tab
@@ -99,7 +117,8 @@ SpyglassMainWindowMixin = {}
 app.ui.MainWindowMixin = SpyglassMainWindowMixin
 
 function SpyglassMainWindowMixin:OnLoad()
-    self:SetTitle(appName)
+    local version = versionText()
+    self:SetTitle(version and (appName .. " " .. version) or appName)
     self:SetPortraitToAsset(PORTRAIT_ICON)
 
     -- ESC closes the window.

@@ -15,7 +15,9 @@ globals. The TOC lists each Lua mixin before the XML that names it.
 two-column interior: `LeftPane` holds the views, `RightPane` the info pane (below). Both are
 `UI-Character-Info-*-BG` atlases stretched to fit, split by `common-framedivider`. Icon tabs run
 down the right edge (`SpyglassSideTabTemplate`, from `LargeSideTabButtonTemplate`, which is a
-_Frame_, so clicks arrive through `SetCustomOnMouseUpHandler`).
+_Frame_, so clicks arrive through `SetCustomOnMouseUpHandler`). The title is the addon name and
+the TOC's `## Version` in `ff8080ff`; a client linked to the git repo, whose TOC still has the
+packager's `@project-version@` token, shows "dev (git)" instead.
 
 The tabs work like a browser's: one per open _view_ (icon = the deepest node that has one,
 tooltip = its title, then the path of folders below the root in gold, "Crafting > Alchemy >
