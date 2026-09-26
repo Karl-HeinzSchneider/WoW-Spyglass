@@ -11,6 +11,7 @@
 ---@field dbDefaults Spyglass.DBDefaults
 ---@field db Spyglass.DB
 ---@field minimapButton Spyglass.MinimapButton
+---@field options Spyglass.Options  # the AceConfig options, in the Settings panel and the window
 ---@field tooltip Spyglass.Tooltip  # adds the instance loot sources to item tooltips
 ---@field api Spyglass.API  # also the global `Spyglass`
 ---@field data Spyglass.Data  # item database; also `Spyglass.Data`

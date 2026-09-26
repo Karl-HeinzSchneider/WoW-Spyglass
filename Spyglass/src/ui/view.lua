@@ -1,5 +1,5 @@
 ---@type string, Spyglass
-local _, app = ...
+local appName, app = ...
 
 local log = app.logger
 local Data = app.data
@@ -918,6 +918,66 @@ function SpyglassClassFilterModeButtonMixin:OnEnter()
 end
 
 ----------------------------------------------------------------------------------------------------
+-- Options page: "Spyglass > Options", opened by the window's gear button
+----------------------------------------------------------------------------------------------------
+
+-- A page of its own, not a module: it lists nothing, and the AceConfig options of options.lua are
+-- drawn in its list area instead. Only one view is shown at a time, so one AceGUI container
+-- serves every tab; the view on the options page borrows it (showOptionsIn).
+local OPTIONS_NODE = { name = "Options", icon = "Interface\\Buttons\\UI-OptionsButton" }
+---@type AceGUIContainer?, Frame?
+local optionsGroup, optionsFrame
+-- The container holds the current options; cleared whenever it hides.
+local optionsFed = false
+
+local function feedOptions()
+    LibStub("AceConfigDialog-3.0"):Open(appName, optionsGroup)
+    optionsFed = true
+end
+
+-- Puts the options into `page` (a view's list area). They are fed anew after being hidden, so what
+-- changed meanwhile (in the Settings panel, say) is drawn.
+---@param page Frame
+local function showOptionsIn(page)
+    if not optionsGroup then
+        -- The container the Settings panel uses too: AceConfigDialog puts a scroll frame in it.
+        local group = LibStub("AceGUI-3.0"):Create("BlizOptionsGroup") --[[@as table]]
+        -- The page header already says "Options": keep AceConfigDialog from adding its title.
+        local setTitle = group.SetTitle
+        group.SetTitle = function(widget)
+            setTitle(widget, nil)
+        end
+        group:SetTitle()
+        group:SetCallback("OnHide", function()
+            optionsFed = false
+        end)
+        optionsGroup, optionsFrame = group, group.frame
+        -- A setting changed elsewhere (profile switch, /sg loglevel): redraw the shown options.
+        LibStub("AceConfigRegistry-3.0").RegisterCallback(OPTIONS_NODE, "ConfigTableChange", function(_, changed)
+            if changed == appName and optionsFrame:IsVisible() then
+                feedOptions()
+            end
+        end)
+    end
+    if optionsFrame:GetParent() ~= page then
+        optionsFrame:SetParent(page)
+        optionsFrame:ClearAllPoints()
+        optionsFrame:SetAllPoints(page)
+    end
+    optionsFrame:Show()
+    if not optionsFed then
+        feedOptions()
+    end
+end
+
+---@param page Frame
+local function hideOptionsIn(page)
+    if optionsFrame and optionsFrame:GetParent() == page then
+        optionsFrame:Hide()
+    end
+end
+
+----------------------------------------------------------------------------------------------------
 -- View: breadcrumb bar + one page of rows
 ----------------------------------------------------------------------------------------------------
 
@@ -1178,6 +1238,22 @@ end
 ---@return Spyglass.Node?
 function SpyglassViewMixin:GetCurrentNode()
     return self.path[#self.path]
+end
+
+-- Opens the options page right below the root, or goes back to the root when it is open.
+function SpyglassViewMixin:ToggleOptions()
+    if self:IsShowingOptions() then
+        self:PopTo(1)
+    else
+        self.path = { self.path[1], OPTIONS_NODE }
+        self.pathPages = {}
+        self:Navigate()
+    end
+end
+
+---@return boolean
+function SpyglassViewMixin:IsShowingOptions()
+    return self:GetCurrentNode() == OPTIONS_NODE
 end
 
 ---@return string
@@ -1924,9 +2000,19 @@ function SpyglassViewMixin:Render()
     local node = self:GetCurrentNode()
     self.Title:Init(node and node.name or "")
     self:RenderPage(self.Content, self.pages[self.PagingControls:GetCurrentPage()])
+    local isOptions = node == OPTIONS_NODE
+    if isOptions then
+        showOptionsIn(self.Content)
+    else
+        hideOptionsIn(self.Content)
+    end
 
     self:RefreshBreadcrumbs()
     self:UpdateToolbar()
+    -- The footer's class filter and active list act on items; the options page has none.
+    self.ClassFilter:SetShown(not isOptions)
+    self.ClassFilterMode:SetShown(not isOptions)
+    self.ActiveList:SetShown(not isOptions)
     self.ClassFilter:Update()
     self.ClassFilterMode:Update()
     -- The active list may have changed, or been renamed, since the menu was last built.

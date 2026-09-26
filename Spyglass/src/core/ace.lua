@@ -64,6 +64,7 @@ function addon:OnSlashCommand(input)
         if a and log:setLevel(a) then
             self.db.profile.logLevel = log:getLevelName()
             log:chat("Log level set to %s", self.db.profile.logLevel)
+            app.options:Refresh()
         else
             log:chat("Log level is %s", log:getLevelName())
         end

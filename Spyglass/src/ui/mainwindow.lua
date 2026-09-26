@@ -103,6 +103,7 @@ end
 
 ---@class Spyglass.MainWindow : Frame, PortraitFrameMixin
 ---@field CloseButton Button
+---@field OptionsButton Button
 ---@field LeftPane Frame
 ---@field RightPane Spyglass.RightPane
 ---@field Tabs Frame
@@ -124,6 +125,21 @@ function SpyglassMainWindowMixin:OnLoad()
     -- ESC closes the window.
     tinsert(UISpecialFrames, self:GetName())
     self:RegisterForDrag("LeftButton")
+
+    local gear = self.OptionsButton
+    gear:SetScript("OnClick", function()
+        if self.selectedView then
+            self.selectedView:ToggleOptions()
+        end
+    end)
+    gear:SetScript("OnEnter", function()
+        GameTooltip:SetOwner(gear, "ANCHOR_RIGHT")
+        GameTooltip:SetText("Options")
+        GameTooltip:Show()
+    end)
+    gear:SetScript("OnLeave", function()
+        GameTooltip:Hide()
+    end)
 
     self.views = {}
     self.tabs = {}
@@ -229,6 +245,7 @@ function SpyglassMainWindowMixin:OpenView()
         self:UpdateTab(v)
         if v == self.selectedView then
             self.RightPane.Info:Refresh()
+            self:UpdateOptionsButton()
         end
         self:SaveTabs()
     end
@@ -312,6 +329,7 @@ function SpyglassMainWindowMixin:SelectView(view)
             tab:SetChecked(v == view)
         end
     end
+    self:UpdateOptionsButton()
     self:SaveTabs()
 end
 
@@ -337,6 +355,20 @@ function SpyglassMainWindowMixin:UpdateTab(view)
     local tab = self.viewToTab[view]
     if tab then
         tab:SetView(view)
+    end
+end
+
+----------------------------------------------------------------------------------------------------
+-- Options (the gear button)
+----------------------------------------------------------------------------------------------------
+
+-- The gear stays lit while the selected tab is on the options page (view.lua).
+function SpyglassMainWindowMixin:UpdateOptionsButton()
+    local view = self.selectedView
+    if view and view:IsShowingOptions() then
+        self.OptionsButton:LockHighlight()
+    else
+        self.OptionsButton:UnlockHighlight()
     end
 end
 

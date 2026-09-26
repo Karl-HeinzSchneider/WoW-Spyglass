@@ -54,6 +54,9 @@ be listed**. The order follows these rules:
   Register game events in `OnEnable`.
 - `minimapbutton.lua` — `app.minimapButton`, a LibDataBroker launcher + LibDBIcon that toggles
   the window and honors `profile.minimap`.
+- `options.lua` — `app.options`: the user options as **one** AceConfig table, registered in the
+  game's Settings panel (`AddToBlizOptions`) and shown by the window's gear button (`docs/ui.md`).
+  A new option goes only here. `Refresh()` redraws them after a setting changed elsewhere.
 
 ### `src/data/` — the item database (public as `Spyglass.Data/Filters/Query`)
 

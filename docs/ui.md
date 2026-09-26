@@ -19,6 +19,18 @@ _Frame_, so clicks arrive through `SetCustomOnMouseUpHandler`). The title is the
 the TOC's `## Version` in `ff8080ff`; a client linked to the git repo, whose TOC still has the
 packager's `@project-version@` token, shows "dev (git)" instead.
 
+The gear left of the close button (`OptionsButton`, `Interface\Buttons\UI-OptionsButton`, above
+the border at frame level 510 like the close button) opens the options page in the selected tab,
+"Spyglass > Options" (`view:ToggleOptions()`; clicked again, or via the breadcrumb or a
+right-click, it goes back to the root). It stays lit while that tab is on the page. The page is
+a private node of `view.lua`, not a module: it lists nothing, the footer's class filter and
+active list are hidden, and its list area holds the same AceConfig table the game's Settings
+panel shows (`src/core/options.lua`), drawn into one AceGUI `BlizOptionsGroup` (the container
+the Settings panel uses, so AceConfigDialog gives it a scroll frame; its own title is suppressed)
+that the view on the page borrows. It is fed again after being hidden, and while shown on
+`ConfigTableChange` (a profile switch, `/sg loglevel`), so a new option needs no window code. The
+page isn't restored with the tabs of the last session (it is not a child of the root).
+
 The tabs work like a browser's: one per open _view_ (icon = the deepest node that has one,
 tooltip = its title, then the path of folders below the root in gold, "Crafting > Alchemy >
 Camping", when there is more than one) plus a `+` tab; right-click closes one, and `RebuildTabs()` lays the strip

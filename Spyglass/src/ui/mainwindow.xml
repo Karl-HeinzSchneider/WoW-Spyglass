@@ -24,6 +24,17 @@
 		<Frames>
 			<Button parentKey="CloseButton" inherits="UIPanelCloseButtonDefaultAnchors"/>
 
+			<!-- The gear left of the close button: shows the options in place of the selected view.
+			     Above the window border (NineSlice is 500), like the close button's 510. -->
+			<Button parentKey="OptionsButton" frameLevel="510">
+				<Size x="16" y="16"/>
+				<Anchors>
+					<Anchor point="RIGHT" relativeKey="$parent.CloseButton" relativePoint="LEFT" x="-2" y="0"/>
+				</Anchors>
+				<NormalTexture file="Interface\Buttons\UI-OptionsButton"/>
+				<HighlightTexture file="Interface\Buttons\UI-OptionsButton" alphaMode="ADD"/>
+			</Button>
+
 			<!-- Right column: the info panel of what the selected tab shows (infopane.xml). -->
 			<Frame parentKey="RightPane">
 				<Size x="260"/>
