@@ -6,7 +6,9 @@
 ## Version: |cff8080ff@project-version@|r
 ## SavedVariables: SpyglassDB
 ## X-License: MIT
-## X-Website: http://github.com/Karl-HeinzSchneider/WoW-Spyglass
+## X-Website: https://github.com/Karl-HeinzSchneider/WoW-Spyglass
+## X-Curse-Project-ID: 1712199
+## X-Wago-ID: 56nb9069
 
 embeds.xml
 

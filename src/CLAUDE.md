@@ -28,6 +28,10 @@ contributors write are in `docs/contributing.md`.
 - `package-addons.ts` — deterministic zip (fixed timestamps, hand-rolled writer, no dependency)
   of every addon into `dist/Spyglass-<version>.zip`; version from the TOCs (`mixed` if they
   differ).
+- `package-local.ts` — `npm run package:local [-- <release.sh options>]`: downloads the BigWigs
+  packager's `release.sh` (`v2`, the release workflows' version; cached in `.cache/packager/`)
+  and runs it with `-d` (never uploads) in Git for Windows' bash, output in `.release/`. When that
+  bash has no `zip` it passes `-z` and zips the packaged folders itself.
 
 ## Modules
 
@@ -60,6 +64,8 @@ contributors write are in `docs/contributing.md`.
   `.contribute/tools (npm run gen)`; changing it rewrites every generated file, so do it only on
   purpose.
 - `json.ts` — `writeJson(path, json)`: JSON formatted with the repo's Prettier config.
+- `zip.ts` — `createZip` (stored, fixed timestamps), `directoryEntries`, `fileNamePart` (a TOC
+  version as a file name), shared by the two packaging scripts.
 
 ## Tests (`tests/`)
 

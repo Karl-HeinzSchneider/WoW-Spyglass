@@ -1,0 +1,21 @@
+# Actions > Release > Run workflow: tags the head of main with the given version and uploads it
+# as a release.
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Release version to tag on main, e.g. v1.0.0
+        required: true
+        type: string
+
+jobs:
+  package:
+    uses: ./.github/workflows/package.yml
+    with:
+      tag: ${{ inputs.version }}
+      kind: release
+    permissions:
+      contents: write
+    secrets: inherit

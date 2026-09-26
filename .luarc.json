@@ -6,7 +6,8 @@
     "Spyglass/db/generated",
     "Spyglass_Locale/db/generated",
     "Spyglass_Database/db/generated",
-    ".contribute"
+    ".contribute",
+    ".release"
   ],
   "diagnostics.globals": [
     "SpyglassDB",

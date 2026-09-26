@@ -22,7 +22,8 @@
     "import": "tsx src/cli.ts import",
     "typecheck": "tsc --noEmit",
     "dev:link": "tsx src/link-addons.ts",
-    "package:addons": "tsx src/package-addons.ts"
+    "package:addons": "tsx src/package-addons.ts",
+    "package:local": "tsx src/package-local.ts"
   },
   "devDependencies": {
     "@johnnymorganz/stylua-bin": "^2.5.2",

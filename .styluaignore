@@ -2,3 +2,4 @@ Spyglass/lib/
 Spyglass/db/generated/
 Spyglass_Locale/db/generated/
 Spyglass_Database/db/generated/
+.release/

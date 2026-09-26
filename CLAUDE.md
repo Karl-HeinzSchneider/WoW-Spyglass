@@ -73,6 +73,13 @@ non-English names, never as an item source. Details: `docs/data-pipeline.md`.
 | `npm run test:tooling` / `typecheck` | The node:test suite, `tsc --noEmit`.                                                                                                                                                                                                               |
 | `npm run dev:link -- <AddOns dir>`   | Symlink every addon into a client.                                                                                                                                                                                                                 |
 | `npm run package:addons`             | Deterministic `dist/Spyglass-<version>.zip` of all addons (gitignored).                                                                                                                                                                            |
+| `npm run package:local`              | The BigWigs packager the release workflows use (`.pkgmeta`), run locally without uploading: addon folders and zip in `.release/` (gitignored). Extra `release.sh` options go after `--`. On Windows it needs Git for Windows.                      |
+
+Releases: `.github/workflows/` runs the BigWigs packager on a pushed `v*` tag (`release-tag.yml`)
+and from Actions > Run workflow (`release.yml`, `beta.yml`, `alpha.yml`, which tag the head of
+`main` first); all four call `package.yml`. What goes into the zip is set by `.pkgmeta` — a new
+root file or folder that is not an addon must be added to its `ignore` list, or it ships inside
+the core's folder.
 
 Static checks also used ad hoc: `lua-language-server --check` (config in `.luarc.json`;
 `lib/`, the generated trees and `.contribute` are excluded from LuaLS and StyLua).
