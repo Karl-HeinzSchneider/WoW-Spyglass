@@ -32,7 +32,8 @@ be listed**. The order follows these rules:
 - `db.lua` — `app.dbDefaults` for AceDB: `profile` = user settings (`logLevel`, `minimap`,
   `window` anchor; `minimapPos` = 245° so an undragged button doesn't sit on LibDBIcon's shared
   225° default), `char.tabs` = the window's open tabs (see `docs/ui.md`), `char.loot` = a
-  placeholder for the planned loot history (nothing reads or writes it yet), `global.dbVersion`. Scraper state deliberately lives in the scraper.
+  placeholder for the planned loot history (nothing reads or writes it yet), `global.dbVersion`,
+  `global.favorites` (account-wide). Scraper state deliberately lives in the scraper.
 - `registry.lua` — `app.api`, which **is the public global `ForeverLoot`**: `API_VERSION`, the
   module registry and `GetRootNode()`, the node constructors, grouping, the slash-command
   extension registry and the CallbackHandler events. Its private parts: `app.commands` (the
@@ -40,6 +41,8 @@ be listed**. The order follows these rules:
   grouping couldn't classify — no `GetItemInfoInstant` result, no DB row, not in the client's
   cache — which the view fetches and regroups). **Everything public here is in `docs/API.md`;
   change both together.**
+- `favorites.lua` — `app.favorites`, public as `ForeverLoot.Favorites`: the favorite items in
+  `global.favorites`; each change fires `OnFavoritesChanged` (`docs/API.md`, "Favorites").
 - `ace.lua` — `app.addon`, the AceAddon object (AceConsole, AceEvent). `OnInitialize` opens
   `app.db`, wires the profile callbacks to `OnProfileRefresh` (log level, views, modules'
   `OnProfileRefresh`) and registers `/fl` + `/foreverloot`; `OnSlashCommand` handles the reserved
@@ -86,11 +89,15 @@ They hold no data and use **only the public API a third-party addon would** (`lo
 ForeverLoot`, no private table); never give them private hooks.
 
 - Root order by `order`: dungeons 10, raids 20, crafting 30, reputation 40, pvp 50,
-  collections 60. The database companion's `items` module follows at 1000, after a spacer.
+  collections 60, favorites 70. The database companion's `items` module follows at 1000, after a
+  spacer.
 - `raids` and `dungeons` are `display = "tiles"` modules listing explicit `FL.InstanceFolder(id)`
   lines, commented out until the instance has curated loot (a split dungeon's parts by their own
-  ids, e.g. `18901`). The other four return `FL.ListFolders(kind)`; `crafting` also sets
-  `showIcon` on each tile, and `collections` appends the item set tiles (one per source).
+  ids, e.g. `18901`). Crafting, reputation, pvp and collections return `FL.ListFolders(kind)`;
+  `crafting` also sets `showIcon` on each tile, and `collections` appends the item set tiles (one
+  per source).
+- `favorites` lists `FL.Favorites` through `getEntries` (rebuilt on every open), with a panel
+  whose `grouping` dropdown groups them by source, kind of content or item type.
 
 ### `src/ui/` — the browser window
 
@@ -112,7 +119,8 @@ the window.
   the set.
 - `modelpreview.lua/.xml` — `app.ui.modelPreview`: the character (or the mount) wearing the item
   while ctrl is held.
-- `tooltip.lua` — `app.tooltip`: appends an item's sources to every item tooltip.
+- `tooltip.lua` — `app.tooltip`: appends the favorite mark and an item's sources to every item
+  tooltip.
 
 ### Annotations (not in the TOC)
 

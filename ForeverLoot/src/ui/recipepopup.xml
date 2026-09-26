@@ -1,7 +1,8 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
 
 	<!-- A 32x32 item icon in the shared icon frame (mask + ring, see templates.xml) with an
-	     optional count: tooltip on hover, shift-click links it to chat. Also holds a
+	     optional count: tooltip on hover, shift-click links it to chat, alt-click marks it as a
+	     favorite (star in the corner). Also holds a
 	     spell (the recipe itself). -->
 	<Button name="ForeverLootItemSlotTemplate" mixin="ForeverLootItemSlotMixin" registerForClicks="LeftButtonUp, RightButtonUp" virtual="true">
 		<Size x="32" y="32"/>
@@ -34,6 +35,13 @@
 						<Anchor point="BOTTOMRIGHT" x="-3" y="2"/>
 					</Anchors>
 				</FontString>
+				<!-- On a favorite item: the star the list rows use (templates.xml). -->
+				<Texture parentKey="Favorite" atlas="friendslist-favorite" hidden="true">
+					<Size x="16" y="16"/>
+					<Anchors>
+						<Anchor point="CENTER" relativePoint="TOPLEFT" x="2" y="-2"/>
+					</Anchors>
+				</Texture>
 			</Layer>
 		</Layers>
 		<HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD"/>

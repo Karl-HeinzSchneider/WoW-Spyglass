@@ -13,6 +13,7 @@ embeds.xml
 src\core\logger.lua
 src\core\db.lua
 src\core\registry.lua
+src\core\favorites.lua
 src\core\ace.lua
 src\core\minimapbutton.lua
 

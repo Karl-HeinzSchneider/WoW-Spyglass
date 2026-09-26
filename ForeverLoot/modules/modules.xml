@@ -6,4 +6,5 @@
 	<Include file="pvp\pvp.xml" />
 	<Include file="collections\collections.xml" />
 	<Include file="reputation\reputation.xml" />
+	<Include file="favorites\favorites.xml" />
 </Ui>

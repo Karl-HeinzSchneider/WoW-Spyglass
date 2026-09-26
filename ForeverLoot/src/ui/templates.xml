@@ -85,6 +85,15 @@
 					</Anchors>
 				</Texture>
 			</Layer>
+			<Layer level="OVERLAY">
+				<!-- On a favorite item: the friends list's star over the icon's top-left corner. -->
+				<Texture parentKey="Favorite" atlas="friendslist-favorite" hidden="true">
+					<Size x="16" y="16"/>
+					<Anchors>
+						<Anchor point="CENTER" relativeKey="$parent.Icon" relativePoint="TOPLEFT" x="2" y="-2"/>
+					</Anchors>
+				</Texture>
+			</Layer>
 			<Layer level="HIGHLIGHT">
 				<Texture file="Interface\QuestFrame\UI-QuestTitleHighlight" alphaMode="ADD">
 					<Anchors>

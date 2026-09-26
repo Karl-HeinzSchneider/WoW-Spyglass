@@ -113,6 +113,22 @@ function ForeverLootMainWindowMixin:OnLoad()
     app.api.RegisterCallback(self, "OnModulesChanged", "OnModulesChanged")
     app.api.RegisterCallback(self, "OnDataChanged", "OnDataChanged")
     app.api.RegisterCallback(self, "OnFiltersChanged", "OnDataChanged")
+    app.api.RegisterCallback(self, "OnFavoritesChanged", "OnFavoritesChanged")
+end
+
+-- An item was (un)marked as a favorite: redraw the shown page for its star, and the info pane
+-- (the Favorites panel counts them). Only a redraw, so the page stays as it is: an item unmarked
+-- in the Favorites list keeps its row (without the star) until the list is opened again, and no
+-- row slides under the cursor.
+function ForeverLootMainWindowMixin:OnFavoritesChanged()
+    if self:IsShown() then
+        for _, view in ipairs(self.views) do
+            if view:IsShown() then
+                view:Render()
+            end
+        end
+        self.RightPane.Info:Refresh()
+    end
 end
 
 -- Item DB or filter set changed (a late-loading addon added data): redraw what's visible.

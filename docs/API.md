@@ -46,8 +46,8 @@ ForeverLoot:AddToModule("dungeons", dungeon)
 ```
 
 Built-in module ids: `"raids"`, `"dungeons"`, `"crafting"`, `"pvp"`, `"collections"`,
-`"reputation"`; `ForeverLoot_Database` adds `"items"` (the item browser). `"collections"` lists
-its curated lists, then the database's item sets as one tile per source — Dungeon, Raid, PvP,
+`"reputation"`, `"favorites"` (the [favorite items](#favorites)); `ForeverLoot_Database` adds
+`"items"` (the item browser). `"collections"` lists its curated lists, then the database's item sets as one tile per source — Dungeon, Raid, PvP,
 Crafted, Reputation and Other Sets — each set going to the source most of its items have
 (`Data:GetItemSources`), grouped by armor type inside. The set tiles are always there and
 find their sets when opened (a module's entries are built while the core loads, before an
@@ -63,21 +63,22 @@ same goes for the other four: a list added with `ForeverLoot.Data:AddList` /
 Registers (or, if `def.id` already exists, replaces) a module. Returns `false` and logs an error
 if the definition is invalid; it never throws.
 
-| Field                                     | Type                 | Required | Notes                                                                                                                                                                                         |
-| ----------------------------------------- | -------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `id`                                      | string               | yes      | Unique key. Prefix with your addon name to avoid collisions.                                                                                                                                  |
-| `name`                                    | string               | yes      | Display name.                                                                                                                                                                                 |
-| `icon`                                    | string \| number     | yes      | Texture path or fileID.                                                                                                                                                                       |
-| `order`                                   | number               | no       | Sort position among modules; lower first. Default `100`. Ties sort by name. The built-in content modules use 10–60, the item browser `1000` so it stays last.                                 |
-| `spacerBefore`                            | boolean              | no       | Leaves one empty row above the module in the root list (not when it comes first). The `items` module (`ForeverLoot_Database`) uses it to sit apart from the content modules.                  |
-| `description`                             | string               | no       | Free text for tooltips.                                                                                                                                                                       |
-| `children`                                | Node[]               | one of   | The module's top-level entries.                                                                                                                                                               |
-| `getChildren`                             | fun(def) -> Node[]   | one of   | Lazy alternative; called once, the first time the tree is built. Errors are caught and logged.                                                                                                |
-| `sortChildren`                            | boolean \| fun(a, b) | no       | `true` sorts children by node `order` (default 100), then `name`; a function is used as the comparator and receives the full nodes (metadata included). Applies to `AddToModule` entries too. |
-| `query`                                   | boolean              | no       | The module's own list is the item database, filtered by the view's search box and filter menu (see [Item database](#item-database)). `children` may be `{}`.                                  |
-| `columns`, `display`, `groupBy`           |                      | no       | Layout of the module's own list, as on folder nodes (see [Tiles](#tiles) and [Cards](#cards)).                                                                                                |
-| `panel`                                   | table \| function    | no       | The window's right pane inside the module, as on folder nodes (see [Info panel](#info-panel)).                                                                                                |
-| `expansionID`, `seasonID`, `tags`, `meta` | various              | no       | Metadata; see below.                                                                                                                                                                          |
+| Field                                     | Type                      | Required | Notes                                                                                                                                                                                         |
+| ----------------------------------------- | ------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                                      | string                    | yes      | Unique key. Prefix with your addon name to avoid collisions.                                                                                                                                  |
+| `name`                                    | string                    | yes      | Display name.                                                                                                                                                                                 |
+| `icon`                                    | string \| number          | yes      | Texture path or fileID.                                                                                                                                                                       |
+| `order`                                   | number                    | no       | Sort position among modules; lower first. Default `100`. Ties sort by name. The built-in content modules use 10–70, the item browser `1000` so it stays last.                                 |
+| `spacerBefore`                            | boolean                   | no       | Leaves one empty row above the module in the root list (not when it comes first). The `items` module (`ForeverLoot_Database`) uses it to sit apart from the content modules.                  |
+| `description`                             | string                    | no       | Free text for tooltips.                                                                                                                                                                       |
+| `children`                                | Node[]                    | one of   | The module's top-level entries.                                                                                                                                                               |
+| `getChildren`                             | fun(def) -> Node[]        | one of   | Lazy alternative; called once, the first time the tree is built. Errors are caught and logged.                                                                                                |
+| `getEntries`                              | fun(node, view) -> Node[] | no       | The module's own list, built each time it is drawn, as a dynamic folder's `getChildren`; takes the place of `children` (which may be `{}`). The `favorites` module uses it.                   |
+| `sortChildren`                            | boolean \| fun(a, b)      | no       | `true` sorts children by node `order` (default 100), then `name`; a function is used as the comparator and receives the full nodes (metadata included). Applies to `AddToModule` entries too. |
+| `query`                                   | boolean                   | no       | The module's own list is the item database, filtered by the view's search box and filter menu (see [Item database](#item-database)). `children` may be `{}`.                                  |
+| `columns`, `display`, `groupBy`           |                           | no       | Layout of the module's own list, as on folder nodes (see [Tiles](#tiles) and [Cards](#cards)).                                                                                                |
+| `panel`                                   | table \| function         | no       | The window's right pane inside the module, as on folder nodes (see [Info panel](#info-panel)).                                                                                                |
+| `expansionID`, `seasonID`, `tags`, `meta` | various                   | no       | Metadata; see below.                                                                                                                                                                          |
 
 ## Nodes
 
@@ -338,13 +339,14 @@ options:
 | `{ bar = kind }`         | `faction`, `skillLine`; `value`, `max`, `label` | `"reputation"`: the character's standing with `faction` (default `meta.factionID` of the panel node); `"skill"`: the rank in `skillLine` (default `meta.skillLineID`); `"value"`: `value` of `max`, `label` on the bar.                                                                                                                                                                                                                                                           |
 | `{ checkbox = label }`   | `filter`                                        | While checked, hides the list's entries `filter` rejects: a built-in id (`"side"`: rows whose `meta.side` is the other faction; `"standing"`: rows whose `meta.standing` is above the character's standing with the panel node's faction) or a function `(entry, node) -> boolean`.                                                                                                                                                                                               |
 | `{ dropdown = label }`   | `field`                                         | Offers every value of `meta[field]` among the current list's entries; picking one shows only entries with that value.                                                                                                                                                                                                                                                                                                                                                             |
+| `{ grouping = label }`   | `options`                                       | A dropdown of `options`, each `{ label = text, groupBy = ... }`; the picked one's `groupBy` (as on folder nodes, `false` = no groups) replaces the list's own. The first option is picked until another is.                                                                                                                                                                                                                                                                       |
 | `{ button = label }`     | `onClick`, `open` or `map`                      | `onClick(node, view)`; `open`: a path from the root (`"crafting/cooking"`, see below); `map`: `{ uiMapID, x, y }` opens the world map there with a waypoint (x, y in 0..100).                                                                                                                                                                                                                                                                                                     |
 | `{ quests = ids }`       |                                                 | One line per quest id: the title (`Data:GetQuestName`) and the character's progress, "Done", "Ready" (objectives complete), "Active" or "Not started". Quests the database marks for the other faction or another class are left out. Hover shows the quest tooltip (the game's when the client has the quest, else the curated title, `requiredLevel` and `objective`), followed by the quest's reward items with their icons and its `xp`; shift-click links the quest in chat. |
 | `{ spacer = true }`      |                                                 | Empty space; a number is its height.                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
-Checkbox and dropdown filters apply to the entries of whatever list the tab shows below the
-panel's node (folders are never hidden) and are kept per tab and panel node until the tab is
-closed. An `open` path is `/`-separated: each segment picks a folder among the entries of the
+Checkbox and dropdown filters and the grouping apply to the entries of whatever list the tab
+shows below the panel's node (folders are never hidden) and are kept per tab and panel node until
+the tab is closed. An `open` path is `/`-separated: each segment picks a folder among the entries of the
 one before it, starting at the root, by module id, list id (`meta.listID`), crafting category id
 or curated group label (category folders), `instanceID`, or name. The tab navigates there as if
 clicked through.
@@ -397,6 +399,26 @@ ForeverLoot:UnregisterCommand("scan", handleScan)
 Names are lowercase command words. `show`, `loglevel`, and `reset` are reserved by the core;
 duplicate registration fails. A handler receives up to three parsed arguments and its errors are
 caught and logged. The usage string is appended to `/fl` help while registered.
+
+## Favorites
+
+`ForeverLoot.Favorites` is the set of items the user marked as favorites. In the window,
+alt-click toggles one. They are account-wide (`ForeverLootDB.global.favorites`), show with a star
+on the item's icon and a "Favorite" line in every item tooltip, and are listed by the
+`favorites` module. Its info panel explains alt-click, counts the favorites per kind of content
+and groups the list with a `grouping` dropdown: by _Source_ (the instance, profession or list an
+item comes from; the default), _Content_ (Dungeons, Raids, Crafted, PvP, Reputation, Collections,
+No known source) or _Item type_ (`"auto"`). An item with several sources is filed under the one
+of the earliest kind of content in that order.
+
+- `Favorites:IsFavorite(itemID) -> boolean`
+- `Favorites:SetFavorite(itemID, favorite) -> boolean` — false when nothing changed
+- `Favorites:Toggle(itemID) -> boolean` — whether the item is a favorite now
+- `Favorites:GetAll() -> integer[]` — every favorite item id, ascending
+
+The SavedVariables load after the addons' files, so there are no favorites before `ADDON_LOADED`
+(`OnInitialize` in an AceAddon), and changes made before that are ignored. Every change fires
+`OnFavoritesChanged` (see [Events](#events)).
 
 ## Item database
 
@@ -556,9 +578,10 @@ ForeverLoot.RegisterCallback(myTable, "OnModuleUnregistered", function(event, id
 ForeverLoot.RegisterCallback(myTable, "OnModulesChanged", function(event) end)
 ForeverLoot.RegisterCallback(myTable, "OnDataChanged", function(event) end)     -- item DB changed
 ForeverLoot.RegisterCallback(myTable, "OnFiltersChanged", function(event) end)  -- filter registry changed
+ForeverLoot.RegisterCallback(myTable, "OnFavoritesChanged", function(event, itemID, isFavorite) end)
 ForeverLoot.UnregisterCallback(myTable, "OnModulesChanged")
 ```
 
 `OnModulesChanged` fires after either of the first two. The main window listens to it and
 refreshes any view that is sitting at the root; `OnDataChanged`/`OnFiltersChanged` redraw the
-open views.
+open views, `OnFavoritesChanged` the shown page.

@@ -165,6 +165,19 @@ function ForeverLootInfoPaneMixin:AddWidget(view, node, index, widget)
                 radio(option.label, option.value)
             end
         end)
+    elseif widget.grouping then
+        -- The same dropdown, one radio per option; the first is picked until another is.
+        local frame = self:Acquire("dropdown") --[[@as Frame|{ Label: FontString, Dropdown: WowStyle1FilterDropdownMixin }]]
+        frame.Label:SetText(widget.grouping)
+        frame.Dropdown:SetupMenu(function(_, root)
+            for i, option in ipairs(widget.options or {}) do
+                root:CreateRadio(option.label, function()
+                    return (view:GetPanelValue(node, index) or 1) == i
+                end, function()
+                    view:SetPanelValue(node, index, i)
+                end)
+            end
+        end)
     elseif widget.button then
         local frame = self:Acquire("button") --[[@as Button]]
         frame:SetText(widget.button)

@@ -207,6 +207,7 @@ end
 ---@field Sub FontString
 ---@field Type FontString
 ---@field Arrow Texture
+---@field Favorite Texture  # the star on a favorite item's icon
 ---@field node ForeverLoot.Node
 ---@field view ForeverLoot.View
 ---@field link? string  # item/spell link for chat linking
@@ -265,6 +266,7 @@ function ForeverLootListRowMixin:Init(view, node)
     self.node = node
     self.link = nil
     self.Arrow:SetShown(app.api.IsFolder(node))
+    self.Favorite:SetShown(node.itemID ~= nil and app.favorites:IsFavorite(node.itemID))
 
     if node.itemID then
         self:InitItem(view, node)
@@ -347,6 +349,13 @@ function ForeverLootListRowMixin:OnClick(button)
         self.view:Back()
     elseif app.api.IsFolder(node) then
         self.view:Push(node)
+    elseif node.itemID and IsAltKeyDown() then
+        -- Alt-click marks the item as a favorite or unmarks it; the window redraws the stars on
+        -- OnFavoritesChanged, the tooltip is built again here.
+        app.favorites:Toggle(node.itemID)
+        if GameTooltip:IsOwned(self) then
+            self:OnEnter()
+        end
     elseif node.onClick then
         node.onClick(node, button)
     elseif self.link and HandleModifiedItemClick(self.link) then
@@ -906,7 +915,7 @@ end
 ---@field filterClass? string  # the class it filters for; nil = the character's own
 ---@field queries table<ForeverLoot.Node, ForeverLoot.Query>  # filter state per query node, for this tab
 ---@field resultCount integer  # size of the last query result
----@field panelState table<ForeverLoot.Node, table<integer, any>>  # per panel node: the value of each checkbox/dropdown widget (by index), for this tab
+---@field panelState table<ForeverLoot.Node, table<integer, any>>  # per panel node: the value of each checkbox/dropdown/grouping widget (by index), for this tab
 ---@field crumbPool ForeverLoot.FramePool
 ---@field separatorPool ForeverLoot.FramePool
 ---@field rowHeight number
@@ -1297,7 +1306,8 @@ function ForeverLootViewMixin:GetPanel()
     return nil, nil
 end
 
--- The value a panel's checkbox (true/nil) or dropdown (the picked value, nil = all) has in this tab.
+-- The value a panel's checkbox (true/nil), dropdown (the picked value, nil = all) or grouping
+-- (the picked option's index, nil = the first) has in this tab.
 ---@param node ForeverLoot.Node  # the panel's node
 ---@param index integer  # the widget's index in the panel
 ---@return any
@@ -1306,7 +1316,7 @@ function ForeverLootViewMixin:GetPanelValue(node, index)
     return state and state[index]
 end
 
--- A checkbox or dropdown changed: the list is filtered again, from page 1.
+-- A checkbox, dropdown or grouping changed: the list is filtered and grouped again, from page 1.
 ---@param node ForeverLoot.Node
 ---@param index integer
 ---@param value any
@@ -1319,6 +1329,24 @@ function ForeverLootViewMixin:SetPanelValue(node, index, value)
     state[index] = value
     self.PagingControls:SetCurrentPage(1)
     self:Refresh()
+end
+
+-- The grouping the current panel's `grouping` dropdown has picked in this tab (its first option
+-- until another is picked). `found` is false when the panel has none, and the list keeps its own.
+---@return boolean found, ("auto"|fun(node: ForeverLoot.Node): string?, string?|false)? groupBy
+function ForeverLootViewMixin:GetPanelGrouping()
+    local node, widgets = self:GetPanel()
+    if not node or not widgets then
+        return false, nil
+    end
+    for index, widget in ipairs(widgets) do
+        local options = widget.grouping and widget.options
+        if options and #options > 0 then
+            local option = options[self:GetPanelValue(node, index) or 1] or options[1]
+            return true, option.groupBy
+        end
+    end
+    return false, nil
 end
 
 -- The test the current panel's checkboxes and dropdowns put on the list's entries, or nil when
@@ -1846,7 +1874,8 @@ end
 -- `subheader` nodes the smaller section titles under them, `group` nodes group labels (followed
 -- by their `items`), `spacer` nodes an empty row, everything else a row (or a tile in a
 -- `display = "tiles"` folder). If the folder has `groupBy`, runs of plain entries are bucketed
--- into auto groups; explicit headers/subheaders/groups/spacers are kept as written.
+-- into auto groups (or as the info panel's `grouping` dropdown picked); explicit
+-- headers/subheaders/groups/spacers are kept as written.
 ---@param node ForeverLoot.Node?
 ---@return ForeverLoot.Element[]
 function ForeverLootViewMixin:BuildElements(node)
@@ -1856,6 +1885,10 @@ function ForeverLootViewMixin:BuildElements(node)
     end
 
     local groupBy = node.groupBy
+    local picked, pickedGroupBy = self:GetPanelGrouping()
+    if picked then
+        groupBy = pickedGroupBy or nil
+    end
     local keyFn = type(groupBy) == "function" and groupBy or nil
     local entryKind = entryKindOf(node)
     local pending = {}

@@ -7,7 +7,9 @@ local Data = app.data
 -- Adds where an item comes from to every item tooltip: one block per instance, the instance's
 -- name over the bosses, trash and quests that give the item, a loot sack before drops and the
 -- quest giver's "!" before quests; then one line per profession whose recipes make the item.
+-- A favorite item (app.favorites) says so first.
 --
+--   [star] Favorite
 --   Deadmines
 --      [sack] Rhahk'Zor
 --      [!] Quest: The Defias Brotherhood
@@ -32,6 +34,8 @@ end
 
 local LOOT_ICON = atlasIcon("ParagonReputation_Bag")
 local QUEST_ICON = CreateSimpleTextureMarkup("Interface\\GossipFrame\\AvailableQuestIcon", ICON_SIZE, ICON_SIZE)
+-- The friends list's favorite star, the same the window puts on a favorite item's icon.
+local FAVORITE_LINE = atlasIcon("friendslist-favorite") .. " Favorite"
 
 -- Order of the kinds under one instance.
 local BOSS, TRASH, QUEST = 1, 2, 3
@@ -153,12 +157,16 @@ function module:AddSources(tooltip, itemID)
         lines[#lines + 1] = sourceLine(source)
     end
     local crafted = craftedLines(sources)
-    if #lines == 0 and #crafted == 0 then
+    local favorite = app.favorites:IsFavorite(itemID)
+    if #lines == 0 and #crafted == 0 and not favorite then
         return
     end
     table.sort(lines, lineBefore)
 
     tooltip:AddLine(" ")
+    if favorite then
+        tooltip:AddLine(FAVORITE_LINE, NORMAL_FONT_COLOR:GetRGB())
+    end
     local instanceID
     for _, line in ipairs(lines) do
         if line.instanceID ~= instanceID then

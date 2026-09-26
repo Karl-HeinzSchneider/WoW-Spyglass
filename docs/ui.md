@@ -28,7 +28,7 @@ registered, following each path by name as far as it still matches. Search text,
 settings and the page are not kept. The window is
 draggable and its position is saved to `profile.window`.
 The root node comes from `app.api:GetRootNode()`; the window listens to `OnModulesChanged`,
-`OnDataChanged` and `OnFiltersChanged`.
+`OnDataChanged`, `OnFiltersChanged` and `OnFavoritesChanged` (see [Favorites](#favorites)).
 
 ## Views (`view.lua` + `templates.xml`)
 
@@ -77,6 +77,18 @@ read from the tooltip's slot line through the hidden `ForeverLootScanTooltip`
 (`scanEquipErrors`), which is exact for this client's proficiencies. Item and spell tooltips are
 followed by the node's `tooltip` lines (a list, or a function of the node).
 
+### Favorites
+
+Alt-click on an item row (or an item slot in a popup) toggles the item in
+`app.favorites` (`ForeverLoot.Favorites`, see [API.md](API.md#favorites)) and rebuilds the
+tooltip under the cursor. A favorite item has the friends list's star (`friendslist-favorite`)
+over its icon's top-left corner (`Favorite` in `ForeverLootListRowTemplate` and
+`ForeverLootItemSlotTemplate`). On `OnFavoritesChanged` the main window only `Render`s the
+shown view, so rows keep their places, and refreshes the info pane (the Favorites panel counts
+them). An item unmarked in the Favorites list keeps its row (without the star) until the list
+is opened again, and the next row never slides under the cursor. The popups `Refresh` for their
+slots.
+
 ### Tiles and cards
 
 - **`display = "tiles"`** (raids, dungeons, crafting) draws `ForeverLootTileTemplate` cards, three
@@ -101,11 +113,13 @@ no frame; it is dropped at the top of a page.
 
 ### Info panel filters
 
-A view keeps the state of the info panel's checkboxes and dropdowns in `view.panelState`, per
-panel node and widget index. `GetPanel()` finds the deepest node on the path with a `panel`
-(calling a function panel), `GetEntryFilter()` turns the set checkboxes and dropdowns into one
-test, and `BuildElements` drops the entries it rejects (never folders), along with a subheader
-or group label whose entries are all gone. `SetPanelValue` stores a value and refreshes from
+A view keeps the state of the info panel's checkboxes, dropdowns and grouping in
+`view.panelState`, per panel node and widget index. `GetPanel()` finds the deepest node on the
+path with a `panel` (calling a function panel), `GetEntryFilter()` turns the set checkboxes and
+dropdowns into one test, and `BuildElements` drops the entries it rejects (never folders), along
+with a subheader or group label whose entries are all gone. `GetPanelGrouping()` returns the
+picked `grouping` option's `groupBy` (the option's index is the stored value, the first until
+one is picked), which `BuildElements` uses instead of the node's. `SetPanelValue` stores a value and refreshes from
 page 1. The checkbox filter ids (`PANEL_FILTERS`: `side`, `standing`) must match the ones
 `src/lists.ts` accepts. `OpenPath(path)` resolves a button's `open` path from the root and
 replaces the tab's path with the nodes it passed.
@@ -124,7 +138,8 @@ registers itself with the character frame, so it can't be inherited): the title 
   reputation pane draws it (white fill tinted with `FACTION_BAR_COLORS`, standing and progress
   text), skill in the blue fill with "rank / max".
 - `checkbox`: `checkbox-minimal` / `checkmark-minimal`, the label beside it inside the hit rect;
-  `dropdown`: `WowStyle1DropdownTemplate` with an "All" radio and one per value.
+  `dropdown`: `WowStyle1DropdownTemplate` with an "All" radio and one per value; `grouping`:
+  the same dropdown with one radio per option.
 - `button`: `SharedGoldRedButtonSmallTemplate`. A `map` button sets a user waypoint from a plain
   `{ uiMapID, position }` table (`UiMapPoint` isn't loaded in this client) and calls
   `OpenWorldMap`.
@@ -179,7 +194,7 @@ set, so shift-click on the name links the clicked item instead, whose tooltip sh
 
 `ForeverLootItemSlotTemplate` / `ForeverLootItemSlotMixin` is the 32px icon with count and quality
 border that every slot uses (`SetItem` / `SetSpell`, tooltip on hover, `HandleModifiedItemClick`
-on click). The background is the main window's pane atlas (`UI-Character-Info-General-BG`) under
+on click, alt-click toggles the favorite). The background is the main window's pane atlas (`UI-Character-Info-General-BG`) under
 the tooltip border, with the template's own translucent backdrop switched off. A popup redraws
 on `GET_ITEM_INFO_RECEIVED`; the view hides them on `Refresh` and on page changes, because their
 anchor row is reused.
@@ -206,7 +221,8 @@ first), as wide as the tooltip, in the recipe popup's look (tooltip border over
 ## Item tooltips (`tooltip.lua`)
 
 `app.tooltip`, an Ace module, appends an item's sources (`Data:GetItemSources` kinds `boss`,
-`trash`, `quest`, `recipe`) to every item tooltip. After a blank line comes the instance name in
+`trash`, `quest`, `recipe`) to every item tooltip. After a blank line comes a gold
+`[star] Favorite` line when the item is a favorite (the star the rows use), then the instance name in
 gold over its bosses, "Trash" and `Quest: <title>` lines, indented and sorted by encounter order.
 Drops start with the `ParagonReputation_Bag` atlas (a loot sack, used by the Camelot reputation
 frame), quests with `Interface\GossipFrame\AvailableQuestIcon`. Then one gold

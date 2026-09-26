@@ -16,6 +16,7 @@
 ---@field data ForeverLoot.Data  # item database; also `ForeverLoot.Data`
 ---@field filters ForeverLoot.Filters  # filter registry; also `ForeverLoot.Filters`
 ---@field query ForeverLoot.QueryAPI  # query runner; also `ForeverLoot.Query`
+---@field favorites ForeverLoot.Favorites  # the user's favorite items; also `ForeverLoot.Favorites`
 ---@field commands ForeverLoot.CommandRegistry  # private dispatcher; registration is public API
 ---@field unknownItemKinds table<integer, true>  # items grouped without knowing their kind (registry.lua; the view regroups them)
 ---@field itemKind fun(itemID: integer): integer?, integer?, string?  # class id, subclass id, equip loc; nil when unknown (registry.lua)

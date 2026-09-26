@@ -65,8 +65,8 @@ local log = app.logger
 ---@field items? ForeverLoot.Node[]
 
 -- One widget of a node's info panel (the window's right pane), top to bottom. The type is the
--- one type key it carries (header, text, description, row, bar, checkbox, dropdown, button,
--- quests, spacer); the other fields are its options. See docs/API.md, "Info panel".
+-- one type key it carries (header, text, description, row, bar, checkbox, dropdown, grouping,
+-- button, quests, spacer); the other fields are its options. See docs/API.md, "Info panel".
 ---@class ForeverLoot.PanelWidget
 ---@field header? string  # a section plate
 ---@field text? string  # wrapped text
@@ -82,12 +82,20 @@ local log = app.logger
 ---@field filter? string|fun(entry: ForeverLoot.Node, node: ForeverLoot.Node): boolean  # checkbox: a built-in filter id ("side", "standing") or a test; false hides the entry
 ---@field dropdown? string  # label of a dropdown that shows only entries with the picked `meta[field]`
 ---@field field? string  # dropdown: the entry `meta` field it offers the values of
+---@field grouping? string  # label of a dropdown that picks how the list is grouped, among `options`
+---@field options? ForeverLoot.GroupingOption[]  # grouping: the choices, the first one until another is picked
 ---@field button? string  # label of a button that runs `onClick`, `open` or `map`
 ---@field open? string  # button: path of the collection to open, "<module>/<list id>[/<category>...]"
 ---@field map? number[]  # button: { uiMapID, x, y }, x and y in 0..100
 ---@field onClick? fun(node: ForeverLoot.Node, view: ForeverLoot.View)  # button
 ---@field quests? integer[]  # quest ids, one line each: title and the character's progress (done, ready, active)
 ---@field spacer? boolean|number  # empty space; a number is its height
+
+-- One choice of a `grouping` panel widget: while picked, `groupBy` replaces the list's own
+-- (as on folder nodes; false = no groups).
+---@class ForeverLoot.GroupingOption
+---@field label string
+---@field groupBy "auto"|fun(node: ForeverLoot.Node): string?, string?|false
 
 -- What api.ListFolder / api.ListFolders may be told about a list, so a module can regroup a
 -- list without touching the curated data: `sections` replaces the list's own subheaders (see
@@ -105,6 +113,7 @@ local log = app.logger
 ---@field description? string  # shown in tooltips
 ---@field children? ForeverLoot.Node[]  # the module's top-level entries (may be empty and filled via AddToModule)
 ---@field getChildren? fun(def: ForeverLoot.ModuleDef): ForeverLoot.Node[]  # lazy alternative to `children`, called once
+---@field getEntries? fun(node: ForeverLoot.Node, view: ForeverLoot.View): ForeverLoot.Node[]  # the module's own list, built each time it is drawn (a dynamic folder's getChildren); `children` may be `{}`
 ---@field query? boolean  # the module node lists the item DB (see ForeverLoot.Node.query); `children` may be empty
 ---@field columns? integer  # layout of the module's own list, as on folder nodes
 ---@field display? "rows"|"tiles"|"cards"
@@ -121,6 +130,7 @@ local log = app.logger
 ---@field Data ForeverLoot.Data  # item database (ForeverLoot/src/data/data.lua)
 ---@field Filters ForeverLoot.Filters  # filter registry (ForeverLoot/src/data/filters.lua)
 ---@field Query ForeverLoot.QueryAPI  # query runner (ForeverLoot/src/data/query.lua)
+---@field Favorites ForeverLoot.Favorites  # the user's favorite items (ForeverLoot/src/core/favorites.lua)
 ---@field API_VERSION integer
 ---@field Log fun(fmt: string, ...: any)
 ---@field LogAt fun(level: string, fmt: string, ...: any): boolean
@@ -637,6 +647,9 @@ local function validate(def)
     if def.getChildren ~= nil and type(def.getChildren) ~= "function" then
         return false, "field `getChildren` must be a function"
     end
+    if def.getEntries ~= nil and type(def.getEntries) ~= "function" then
+        return false, "field `getEntries` must be a function"
+    end
     if def.children == nil and def.getChildren == nil then
         return false, "one of `children` or `getChildren` is required"
     end
@@ -779,6 +792,7 @@ function api:GetRootNode()
             icon = def.icon,
             description = def.description,
             children = (resolveChildren(def) and sortedChildren(def)),
+            getChildren = def.getEntries,
             query = def.query,
             columns = def.columns,
             display = def.display,

@@ -42,6 +42,8 @@ local char = {
 ---@class ForeverLoot.DB.Global
 local global = {
     dbVersion = 2,
+    -- The favorite items (favorites.lua), itemID -> true.
+    favorites = {},
 }
 
 ---@class ForeverLoot.DBDefaults : AceDB.Schema
