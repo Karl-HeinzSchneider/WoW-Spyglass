@@ -6346,7 +6346,7 @@
     "stackCount": 20,
     "setID": 0,
     "expansionID": 0,
-    "craftingReagent": false
+    "craftingReagent": true
   },
   "248820": {
     "names": {
@@ -6364,7 +6364,7 @@
     "stackCount": 20,
     "setID": 0,
     "expansionID": 0,
-    "craftingReagent": false
+    "craftingReagent": true
   },
   "248821": {
     "names": {

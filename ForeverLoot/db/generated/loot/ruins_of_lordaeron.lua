@@ -10,14 +10,14 @@ Data:AddBossLoot(3353, { -- Witherfang
 })
 
 Data:AddBossLoot(3357, { -- The Abandoned
-    { 271207 }, -- Wispcloth Leggings
+    { 271207 }, -- Rotmender's Leggings
     { 271208 }, -- Grip of Fear
     { 271216 }, -- Scepter of the Abandoned
 })
 
 Data:AddBossLoot(3354, { -- Rath'mael
     { 271213 }, -- Mirror of Rath'mael
-    { 271214 }, -- Frostbane Treads
+    { 271214 }, -- Rotmender's Treads
     { 271215 }, -- Coldspire Staff
 })
 
@@ -60,7 +60,7 @@ Data:AddQuests(2999, {
     } },
     { id = 97288, name = "Unending Torment", side = "Horde", requiredLevel = 16, xp = 5280, objective = "Deliver the Abominable Head to the Undercity.", items = {} },
     { id = 92401, name = "A Frightened Request", side = "Horde", requiredLevel = 15, xp = 7040, objective = "Investigate the disappearance of Edward Heartweaver in Ruins of Lordaeron.", items = {
-        { 251485 }, -- Edwards' Knife
+        { 251485 }, -- Edward's Knife
         { 251486 }, -- Tabitha's Cuffs
     } },
     { id = 95189, name = "Crest of Lordaeron", side = "Alliance", requiredLevel = 16, xp = 9750, objective = "Return the Crest of Lordaeron to Stormwind.", items = {

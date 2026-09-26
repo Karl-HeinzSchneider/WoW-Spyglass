@@ -4834,6 +4834,24 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "213422": {
+    "names": {
+      "enUS": "Illegible Recipe"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 237451,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
   "213426": {
     "names": {
       "enUS": "Ogre Lightning Rod"
@@ -6045,6 +6063,48 @@
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
+  },
+  "215374": {
+    "names": {
+      "enUS": "Ancestral Sword"
+    },
+    "quality": 1,
+    "itemLevel": 31,
+    "reqLevel": 26,
+    "classID": 2,
+    "subclassID": 8,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 0,
+    "icon": 135321,
+    "sellPrice": 1257,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 19.84
+    }
+  },
+  "215376": {
+    "names": {
+      "enUS": "Crusader's Mace"
+    },
+    "quality": 1,
+    "itemLevel": 31,
+    "reqLevel": 26,
+    "classID": 2,
+    "subclassID": 4,
+    "slot": "INVTYPE_WEAPONMAINHAND",
+    "bind": 0,
+    "icon": 133478,
+    "sellPrice": 1257,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 15
+    }
   },
   "215383": {
     "names": {

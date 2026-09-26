@@ -36,7 +36,7 @@
       "loot": [
         {
           "item": 271207,
-          "name": "Wispcloth Leggings"
+          "name": "Rotmender's Leggings"
         },
         {
           "item": 271208,
@@ -67,7 +67,7 @@
         },
         {
           "item": 271214,
-          "name": "Frostbane Treads"
+          "name": "Rotmender's Treads"
         },
         {
           "item": 271215,
@@ -249,7 +249,7 @@
       "items": [
         {
           "item": 251485,
-          "name": "Edwards' Knife"
+          "name": "Edward's Knife"
         },
         {
           "item": 251486,

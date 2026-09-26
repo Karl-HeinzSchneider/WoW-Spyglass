@@ -5430,7 +5430,7 @@
   },
   "250954": {
     "names": {
-      "enUS": "Potion of Elemental Siphoning"
+      "enUS": "Potion of Elemental Purging"
     },
     "quality": 1,
     "itemLevel": 55,
@@ -5448,7 +5448,7 @@
   },
   "250955": {
     "names": {
-      "enUS": "Potion of Beast Culling"
+      "enUS": "Potion of Beast Slaying"
     },
     "quality": 1,
     "itemLevel": 55,
@@ -5844,7 +5844,7 @@
   },
   "250998": {
     "names": {
-      "enUS": "Recipe: Potion of Elemental Siphoning"
+      "enUS": "Recipe: Potion of Elemental Purging"
     },
     "quality": 1,
     "itemLevel": 1,
@@ -5862,7 +5862,7 @@
   },
   "250999": {
     "names": {
-      "enUS": "Recipe: Potion of Beast Culling"
+      "enUS": "Recipe: Potion of Beast Slaying"
     },
     "quality": 1,
     "itemLevel": 1,
@@ -8274,7 +8274,7 @@
   },
   "251485": {
     "names": {
-      "enUS": "Edwards' Knife"
+      "enUS": "Edward's Knife"
     },
     "quality": 3,
     "itemLevel": 24,
@@ -16833,6 +16833,24 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "252948": {
+    "names": {
+      "enUS": "Cleansed Felbloom"
+    },
+    "quality": 1,
+    "itemLevel": 60,
+    "reqLevel": 50,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 4279015,
+    "sellPrice": 0,
+    "stackCount": 10,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": true
+  },
   "253017": {
     "names": {
       "enUS": "Corrupted Felbloom"
@@ -23410,7 +23428,7 @@
     "stackCount": 20,
     "setID": 0,
     "expansionID": 0,
-    "craftingReagent": false
+    "craftingReagent": true
   },
   "255010": {
     "names": {
@@ -23486,7 +23504,7 @@
   },
   "255645": {
     "names": {
-      "enUS": "Swolen Venom Sac"
+      "enUS": "Swollen Venom Sac"
     },
     "quality": 1,
     "itemLevel": 1,
@@ -23500,7 +23518,7 @@
     "stackCount": 5,
     "setID": 0,
     "expansionID": 0,
-    "craftingReagent": false
+    "craftingReagent": true
   },
   "255656": {
     "names": {
@@ -23617,8 +23635,8 @@
     "quality": 1,
     "itemLevel": 36,
     "reqLevel": 0,
-    "classID": 5,
-    "subclassID": 0,
+    "classID": 7,
+    "subclassID": 11,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 0,
     "icon": 132104,
@@ -23635,8 +23653,8 @@
     "quality": 1,
     "itemLevel": 16,
     "reqLevel": 0,
-    "classID": 5,
-    "subclassID": 0,
+    "classID": 7,
+    "subclassID": 11,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 0,
     "icon": 4554333,
@@ -23653,8 +23671,8 @@
     "quality": 1,
     "itemLevel": 26,
     "reqLevel": 0,
-    "classID": 5,
-    "subclassID": 0,
+    "classID": 7,
+    "subclassID": 11,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 0,
     "icon": 4554335,
@@ -23671,8 +23689,8 @@
     "quality": 1,
     "itemLevel": 36,
     "reqLevel": 0,
-    "classID": 5,
-    "subclassID": 0,
+    "classID": 7,
+    "subclassID": 11,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 0,
     "icon": 4554334,
@@ -23689,8 +23707,8 @@
     "quality": 1,
     "itemLevel": 58,
     "reqLevel": 0,
-    "classID": 5,
-    "subclassID": 0,
+    "classID": 7,
+    "subclassID": 11,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 0,
     "icon": 4554332,
@@ -23707,8 +23725,8 @@
     "quality": 1,
     "itemLevel": 21,
     "reqLevel": 0,
-    "classID": 5,
-    "subclassID": 0,
+    "classID": 7,
+    "subclassID": 11,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 0,
     "icon": 133675,
@@ -23725,8 +23743,8 @@
     "quality": 1,
     "itemLevel": 36,
     "reqLevel": 0,
-    "classID": 5,
-    "subclassID": 0,
+    "classID": 7,
+    "subclassID": 11,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 0,
     "icon": 133676,
@@ -23743,8 +23761,8 @@
     "quality": 1,
     "itemLevel": 58,
     "reqLevel": 0,
-    "classID": 5,
-    "subclassID": 0,
+    "classID": 7,
+    "subclassID": 11,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 0,
     "icon": 133679,
@@ -25738,9 +25756,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "ATTACK_POWER": 1,
-      "DAMAGE_PER_SECOND": 22.33,
-      "STAMINA": 1
+      "DAMAGE_PER_SECOND": 22.33
     }
   },
   "259892": {

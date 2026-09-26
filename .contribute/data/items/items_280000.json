@@ -1,4 +1,22 @@
 {
+  "280042": {
+    "names": {
+      "enUS": "Tattered Spellbook"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 133733,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
   "280087": {
     "names": {
       "enUS": "Soft Nightsaber Pelt"
@@ -576,6 +594,24 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "280330": {
+    "names": {
+      "enUS": "Carnage's Head"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 838683,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
   "280331": {
     "names": {
       "enUS": "Malignant Rotclaw Flesh"
@@ -702,6 +738,114 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "280392": {
+    "names": {
+      "enUS": "Howin's Missive"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 133458,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "280394": {
+    "names": {
+      "enUS": "Goaz Stone"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134457,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "280395": {
+    "names": {
+      "enUS": "Heart of Ados"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134419,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "280396": {
+    "names": {
+      "enUS": "Heart of Modr"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134420,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "280397": {
+    "names": {
+      "enUS": "Heart of Golm"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134417,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "280398": {
+    "names": {
+      "enUS": "Heart of Neru"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134422,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
   "280399": {
     "names": {
       "enUS": "Damaged Scimitar"
@@ -764,6 +908,24 @@
     "stats": {
       "DAMAGE_PER_SECOND": 0.94
     }
+  },
+  "280403": {
+    "names": {
+      "enUS": "Whelgar Relic Package"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 132763,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
   },
   "280404": {
     "names": {
@@ -1069,6 +1231,42 @@
       "SPELL_POWER": 46
     }
   },
+  "280608": {
+    "names": {
+      "enUS": "Eldarath Relic"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134903,
+    "sellPrice": 0,
+    "stackCount": 12,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "280610": {
+    "names": {
+      "enUS": "Lord Sarthiss' Head"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 1391617,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
   "280611": {
     "names": {
       "enUS": "Veteran Adventurer's Loyal Companion"
@@ -1081,6 +1279,24 @@
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 1,
     "icon": 7931167,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "280612": {
+    "names": {
+      "enUS": "Night Watchman's Torch"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 135432,
     "sellPrice": 0,
     "stackCount": 1,
     "setID": 0,
@@ -1653,7 +1869,7 @@
   },
   "281019": {
     "names": {
-      "enUS": "Monster - Sword1H, Skyborne Back Sheathe (White)"
+      "enUS": "Monster - Sword1H, Skyborne Back Sheathe (Blue)"
     },
     "quality": 0,
     "itemLevel": 1,
@@ -1813,6 +2029,24 @@
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 4,
     "icon": 132915,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "281039": {
+    "names": {
+      "enUS": "Mulgore Expansion Plans"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134332,
     "sellPrice": 0,
     "stackCount": 1,
     "setID": 0,
@@ -4090,7 +4324,7 @@
     "bind": 1,
     "icon": 135249,
     "sellPrice": 170,
-    "stackCount": 3,
+    "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
@@ -4138,7 +4372,7 @@
     "quality": 1,
     "itemLevel": 1,
     "reqLevel": 0,
-    "classID": 15,
+    "classID": 13,
     "subclassID": 0,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 1,
@@ -5748,6 +5982,54 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "282007": {
+    "names": {
+      "enUS": "Emerald Watcher's Dreamstaff"
+    },
+    "quality": 3,
+    "itemLevel": 49,
+    "reqLevel": 44,
+    "classID": 2,
+    "subclassID": 10,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 1,
+    "icon": 135154,
+    "sellPrice": 10779,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 31.67,
+      "INTELLECT": 19,
+      "SPELL_POWER": 56,
+      "SPIRIT": 19
+    }
+  },
+  "282008": {
+    "names": {
+      "enUS": "Wyrmak's Cuirass"
+    },
+    "quality": 3,
+    "itemLevel": 47,
+    "reqLevel": 42,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_CHEST",
+    "bind": 1,
+    "icon": 132746,
+    "sellPrice": 16464,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 499,
+      "SPELL_POWER": 11,
+      "STAMINA": 21,
+      "STRENGTH": 9
+    }
+  },
   "282011": {
     "names": {
       "enUS": "Restored Healing Potion"
@@ -5765,6 +6047,29 @@
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
+  },
+  "282012": {
+    "names": {
+      "enUS": "Corsepickers"
+    },
+    "quality": 2,
+    "itemLevel": 54,
+    "reqLevel": 49,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_HAND",
+    "bind": 2,
+    "icon": 132957,
+    "sellPrice": 497,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 44,
+      "SPELL_POWER": 11,
+      "SPIRIT": 12
+    }
   },
   "282013": {
     "names": {
@@ -5856,6 +6161,51 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "282019": {
+    "names": {
+      "enUS": "Braided Seer Stones"
+    },
+    "quality": 2,
+    "itemLevel": 56,
+    "reqLevel": 51,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_NECK",
+    "bind": 2,
+    "icon": 133306,
+    "sellPrice": 13436,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "SPELL_DAMAGE_DONE": 10,
+      "SPIRIT": 10
+    }
+  },
+  "282023": {
+    "names": {
+      "enUS": "Clack's Claw"
+    },
+    "quality": 2,
+    "itemLevel": 55,
+    "reqLevel": 50,
+    "classID": 2,
+    "subclassID": 13,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 2,
+    "icon": 135663,
+    "sellPrice": 32155,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 32.8,
+      "SPIRIT": 4,
+      "STRENGTH": 8
+    }
+  },
   "282026": {
     "names": {
       "enUS": "Unyielding Battle Signet"
@@ -5896,6 +6246,29 @@
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
+  },
+  "282029": {
+    "names": {
+      "enUS": "Reaver's Repeater"
+    },
+    "quality": 2,
+    "itemLevel": 58,
+    "reqLevel": 53,
+    "classID": 2,
+    "subclassID": 3,
+    "slot": "INVTYPE_RANGEDRIGHT",
+    "bind": 2,
+    "icon": 135616,
+    "sellPrice": 27267,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 27.04,
+      "RANGED_ATTACK_POWER": 13,
+      "STAMINA": 5
+    }
   },
   "282046": {
     "names": {
@@ -5938,21 +6311,21 @@
       "enUS": "Tim's Lost Rib"
     },
     "quality": 2,
-    "itemLevel": 18,
+    "itemLevel": 12,
     "reqLevel": 0,
     "classID": 2,
     "subclassID": 15,
     "slot": "INVTYPE_WEAPONMAINHAND",
     "bind": 1,
     "icon": 135651,
-    "sellPrice": 1128,
+    "sellPrice": 412,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "AGILITY": 2,
-      "DAMAGE_PER_SECOND": 8.82,
+      "AGILITY": 1,
+      "DAMAGE_PER_SECOND": 6.18,
       "STAMINA": 1
     }
   },
@@ -5973,6 +6346,30 @@
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
+  },
+  "282070": {
+    "names": {
+      "enUS": "Gruklash's Basher"
+    },
+    "quality": 2,
+    "itemLevel": 61,
+    "reqLevel": 56,
+    "classID": 2,
+    "subclassID": 5,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 2,
+    "icon": 133058,
+    "sellPrice": 56588,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 47.36,
+      "SPIRIT": 11,
+      "STAMINA": 13,
+      "STRENGTH": 18
+    }
   },
   "282080": {
     "names": {
@@ -6329,6 +6726,27 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "282551": {
+    "names": {
+      "enUS": "Golem Fist"
+    },
+    "quality": 2,
+    "itemLevel": 38,
+    "reqLevel": 33,
+    "classID": 2,
+    "subclassID": 13,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 2,
+    "icon": 132945,
+    "sellPrice": 9736,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 20.42
+    }
+  },
   "282557": {
     "names": {
       "enUS": "Broken Tooth's Flayed Hide"
@@ -6547,6 +6965,29 @@
       "STAMINA": 5
     }
   },
+  "282658": {
+    "names": {
+      "enUS": "Dragonmaw Battle Shroud"
+    },
+    "quality": 2,
+    "itemLevel": 32,
+    "reqLevel": 27,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_CLOAK",
+    "bind": 2,
+    "icon": 133760,
+    "sellPrice": 1643,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 22,
+      "SPIRIT": 1,
+      "STRENGTH": 7
+    }
+  },
   "282711": {
     "names": {
       "enUS": "Naga Maiden's Gown"
@@ -6653,6 +7094,72 @@
       "DAMAGE_PER_SECOND": 20.28,
       "MANA_REGENERATION": 3,
       "STRENGTH": 7
+    }
+  },
+  "282778": {
+    "names": {
+      "enUS": "Mark of the Red Flight"
+    },
+    "quality": 3,
+    "itemLevel": 46,
+    "reqLevel": 41,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_TRINKET",
+    "bind": 1,
+    "icon": 134317,
+    "sellPrice": 8681,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ATTACK_POWER_VS_DRAGONKIN": 12
+    }
+  },
+  "283254": {
+    "names": {
+      "enUS": "Heart of Alterac"
+    },
+    "quality": 2,
+    "itemLevel": 39,
+    "reqLevel": 34,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_HOLDABLE",
+    "bind": 2,
+    "icon": 134337,
+    "sellPrice": 3980,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 5,
+      "STAMINA": 7
+    }
+  },
+  "283255": {
+    "names": {
+      "enUS": "Syndicate Executioner's Slicer"
+    },
+    "quality": 2,
+    "itemLevel": 38,
+    "reqLevel": 33,
+    "classID": 2,
+    "subclassID": 7,
+    "slot": "INVTYPE_WEAPONMAINHAND",
+    "bind": 2,
+    "icon": 135325,
+    "sellPrice": 481,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 4,
+      "DAMAGE_PER_SECOND": 20.58,
+      "STRENGTH": 4
     }
   },
   "283259": {
@@ -6882,7 +7389,7 @@
     "bind": 1,
     "icon": 135258,
     "sellPrice": 170,
-    "stackCount": 5,
+    "stackCount": 3,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
@@ -7201,6 +7708,28 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "284230": {
+    "names": {
+      "enUS": "Rage Paw"
+    },
+    "quality": 2,
+    "itemLevel": 53,
+    "reqLevel": 48,
+    "classID": 2,
+    "subclassID": 13,
+    "slot": "INVTYPE_WEAPONMAINHAND",
+    "bind": 2,
+    "icon": 132941,
+    "sellPrice": 27283,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 31.54,
+      "STRENGTH": 9
+    }
+  },
   "284257": {
     "names": {
       "enUS": "Icesworn Decapitator"
@@ -7273,6 +7802,28 @@
       "STRENGTH": 12
     }
   },
+  "284266": {
+    "names": {
+      "enUS": "Wintersaber Hide Lined Gloves"
+    },
+    "quality": 2,
+    "itemLevel": 59,
+    "reqLevel": 54,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_HAND",
+    "bind": 2,
+    "icon": 132961,
+    "sellPrice": 505,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 48,
+      "STAMINA": 7
+    }
+  },
   "284268": {
     "names": {
       "enUS": "Furbolg Shaman's Girdle"
@@ -7313,6 +7864,54 @@
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
+  },
+  "284272": {
+    "names": {
+      "enUS": "Chimaera Hide Legs"
+    },
+    "quality": 2,
+    "itemLevel": 50,
+    "reqLevel": 45,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_LEGS",
+    "bind": 2,
+    "icon": 134586,
+    "sellPrice": 11428,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "FIRE_RESISTANCE": 14,
+      "NATURE_RESISTANCE": 14,
+      "RESISTANCE0_NAME": 116,
+      "RESISTANCE2_NAME": 14,
+      "RESISTANCE3_NAME": 14
+    }
+  },
+  "284282": {
+    "names": {
+      "enUS": "Queen Guard's Royal Seal"
+    },
+    "quality": 3,
+    "itemLevel": 50,
+    "reqLevel": 45,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_FINGER",
+    "bind": 2,
+    "icon": 133351,
+    "sellPrice": 11681,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 8,
+      "STAMINA": 6,
+      "STRENGTH": 11
+    }
   },
   "284286": {
     "names": {
@@ -7564,6 +8163,29 @@
       "STAMINA": 11
     }
   },
+  "284403": {
+    "names": {
+      "enUS": "Shapeshifting Sentinel's Strides"
+    },
+    "quality": 3,
+    "itemLevel": 29,
+    "reqLevel": 24,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_FEET",
+    "bind": 1,
+    "icon": 132551,
+    "sellPrice": 1788,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 8,
+      "ATTACK_POWER": 16,
+      "RESISTANCE0_NAME": 70
+    }
+  },
   "284583": {
     "names": {
       "enUS": "Coin Pouch"
@@ -7759,6 +8381,29 @@
     "stats": {
       "ATTACK_POWER": 20,
       "DAMAGE_PER_SECOND": 18.28
+    }
+  },
+  "284702": {
+    "names": {
+      "enUS": "Slimy Sword"
+    },
+    "quality": 2,
+    "itemLevel": 25,
+    "reqLevel": 20,
+    "classID": 2,
+    "subclassID": 7,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 2,
+    "icon": 135325,
+    "sellPrice": 2636,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ATTACK_POWER_VS_HUMANOID": 5,
+      "DAMAGE_PER_SECOND": 12.81,
+      "STAMINA": 3
     }
   },
   "284704": {
@@ -8104,6 +8749,29 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "285191": {
+    "names": {
+      "enUS": "Banished Centaur's Pauldrons"
+    },
+    "quality": 2,
+    "itemLevel": 33,
+    "reqLevel": 28,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_SHOULDER",
+    "bind": 2,
+    "icon": 135040,
+    "sellPrice": 2593,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 155,
+      "SPIRIT": 4,
+      "STAMINA": 7
+    }
+  },
   "285192": {
     "names": {
       "enUS": "Kobold Firestarter"
@@ -8124,6 +8792,29 @@
     "stats": {
       "FIRE_DAMAGE_DONE": 6,
       "STAMINA": 4
+    }
+  },
+  "285212": {
+    "names": {
+      "enUS": "Foulmountain Family Hammer"
+    },
+    "quality": 2,
+    "itemLevel": 29,
+    "reqLevel": 24,
+    "classID": 2,
+    "subclassID": 4,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 2,
+    "icon": 133049,
+    "sellPrice": 2,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 15.23,
+      "SPELL_POWER": 4,
+      "STAMINA": 2
     }
   },
   "285228": {
@@ -8608,6 +9299,27 @@
     "craftingReagent": false,
     "stats": {
       "DAMAGE_PER_SECOND": 8.06
+    }
+  },
+  "285283": {
+    "names": {
+      "enUS": "Serrated Axes"
+    },
+    "quality": 2,
+    "itemLevel": 38,
+    "reqLevel": 33,
+    "classID": 2,
+    "subclassID": 16,
+    "slot": "INVTYPE_THROWN",
+    "bind": 2,
+    "icon": 135420,
+    "sellPrice": 9,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 18.57
     }
   },
   "285285": {
@@ -11241,7 +11953,7 @@
     "subclassID": 8,
     "slot": "INVTYPE_2HWEAPON",
     "bind": 2,
-    "icon": 135324,
+    "icon": 135321,
     "sellPrice": 5234,
     "stackCount": 1,
     "setID": 0,
@@ -11297,5 +12009,632 @@
       "STAMINA": 6,
       "STRENGTH": 12
     }
+  },
+  "286647": {
+    "names": {
+      "enUS": "Depleted Crystal Heart"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134131,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "286648": {
+    "names": {
+      "enUS": "Depleted Crystal Heart"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134131,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "286728": {
+    "names": {
+      "enUS": "Kolkar Hammer"
+    },
+    "quality": 1,
+    "itemLevel": 8,
+    "reqLevel": 0,
+    "classID": 2,
+    "subclassID": 4,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 1,
+    "icon": 133053,
+    "sellPrice": 83,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 3.33
+    }
+  },
+  "286729": {
+    "names": {
+      "enUS": "Kolkar Bow"
+    },
+    "quality": 1,
+    "itemLevel": 8,
+    "reqLevel": 0,
+    "classID": 2,
+    "subclassID": 2,
+    "slot": "INVTYPE_RANGED",
+    "bind": 1,
+    "icon": 135500,
+    "sellPrice": 62,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 2.68
+    }
+  },
+  "286730": {
+    "names": {
+      "enUS": "Pristine Orcish Dagger"
+    },
+    "quality": 2,
+    "itemLevel": 12,
+    "reqLevel": 0,
+    "classID": 2,
+    "subclassID": 15,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 1,
+    "icon": 135650,
+    "sellPrice": 412,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 1,
+      "DAMAGE_PER_SECOND": 6.25
+    }
+  },
+  "286731": {
+    "names": {
+      "enUS": "Aggor's Refitted Belt"
+    },
+    "quality": 2,
+    "itemLevel": 12,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_WAIST",
+    "bind": 1,
+    "icon": 132498,
+    "sellPrice": 112,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 69,
+      "STAMINA": 2
+    }
+  },
+  "286732": {
+    "names": {
+      "enUS": "Shiny Silver Coin"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 237282,
+    "sellPrice": 100,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "286733": {
+    "names": {
+      "enUS": "Fightin' Fish"
+    },
+    "quality": 1,
+    "itemLevel": 7,
+    "reqLevel": 0,
+    "classID": 2,
+    "subclassID": 4,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 1,
+    "icon": 133888,
+    "sellPrice": 54,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 2.71
+    }
+  },
+  "286734": {
+    "names": {
+      "enUS": "Ban'ethil Quiver"
+    },
+    "quality": 1,
+    "itemLevel": 9,
+    "reqLevel": 0,
+    "classID": 11,
+    "subclassID": 2,
+    "slot": "INVTYPE_BAG",
+    "bind": 1,
+    "icon": 134410,
+    "sellPrice": 100,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "286735": {
+    "names": {
+      "enUS": "Sentinel's Slasher"
+    },
+    "quality": 1,
+    "itemLevel": 9,
+    "reqLevel": 0,
+    "classID": 2,
+    "subclassID": 7,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 1,
+    "icon": 135324,
+    "sellPrice": 107,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 3.75
+    }
+  },
+  "286737": {
+    "names": {
+      "enUS": "Avala's Binding"
+    },
+    "quality": 1,
+    "itemLevel": 8,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_FINGER",
+    "bind": 1,
+    "icon": 133349,
+    "sellPrice": 31,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "FROST_RESISTANCE": 1,
+      "RESISTANCE4_NAME": 1
+    }
+  },
+  "286740": {
+    "names": {
+      "enUS": "Proud Brave's Guard"
+    },
+    "quality": 1,
+    "itemLevel": 9,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 6,
+    "slot": "INVTYPE_SHIELD",
+    "bind": 1,
+    "icon": 134955,
+    "sellPrice": 72,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 135
+    }
+  },
+  "286741": {
+    "names": {
+      "enUS": "Centaur Skull Basher"
+    },
+    "quality": 1,
+    "itemLevel": 9,
+    "reqLevel": 0,
+    "classID": 2,
+    "subclassID": 5,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 1,
+    "icon": 133046,
+    "sellPrice": 141,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 5
+    }
+  },
+  "286742": {
+    "names": {
+      "enUS": "Riptear's Cleaver"
+    },
+    "quality": 2,
+    "itemLevel": 13,
+    "reqLevel": 0,
+    "classID": 2,
+    "subclassID": 1,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 1,
+    "icon": 135420,
+    "sellPrice": 625,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 8.94,
+      "STRENGTH": 3
+    }
+  },
+  "286743": {
+    "names": {
+      "enUS": "Riptear's Spare Arm"
+    },
+    "quality": 2,
+    "itemLevel": 13,
+    "reqLevel": 0,
+    "classID": 2,
+    "subclassID": 19,
+    "slot": "INVTYPE_RANGEDRIGHT",
+    "bind": 1,
+    "icon": 136157,
+    "sellPrice": 376,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 9.41
+    }
+  },
+  "286744": {
+    "names": {
+      "enUS": "Thrice-Stitched Flesh"
+    },
+    "quality": 2,
+    "itemLevel": 13,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_CLOAK",
+    "bind": 1,
+    "icon": 133759,
+    "sellPrice": 151,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 1,
+      "RESISTANCE0_NAME": 12
+    }
+  },
+  "286745": {
+    "names": {
+      "enUS": "Furlfeather Ring"
+    },
+    "quality": 2,
+    "itemLevel": 12,
+    "reqLevel": 7,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_FINGER",
+    "bind": 2,
+    "icon": 133354,
+    "sellPrice": 162,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "SPELL_HEALING_DONE": 1
+    }
+  },
+  "286746": {
+    "names": {
+      "enUS": "Shal'ma's Shawl"
+    },
+    "quality": 1,
+    "itemLevel": 9,
+    "reqLevel": 4,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_CLOAK",
+    "bind": 2,
+    "icon": 133150,
+    "sellPrice": 34,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 8
+    }
+  },
+  "286748": {
+    "names": {
+      "enUS": "Bristlebark Bow"
+    },
+    "quality": 2,
+    "itemLevel": 10,
+    "reqLevel": 5,
+    "classID": 2,
+    "subclassID": 2,
+    "slot": "INVTYPE_RANGED",
+    "bind": 2,
+    "icon": 135491,
+    "sellPrice": 188,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 1,
+      "DAMAGE_PER_SECOND": 4.29
+    }
+  },
+  "286749": {
+    "names": {
+      "enUS": "Wrathroot"
+    },
+    "quality": 1,
+    "itemLevel": 8,
+    "reqLevel": 3,
+    "classID": 2,
+    "subclassID": 10,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 2,
+    "icon": 135139,
+    "sellPrice": 104,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 4.39
+    }
+  },
+  "286750": {
+    "names": {
+      "enUS": "Wisesight Wand"
+    },
+    "quality": 2,
+    "itemLevel": 10,
+    "reqLevel": 5,
+    "classID": 2,
+    "subclassID": 19,
+    "slot": "INVTYPE_RANGEDRIGHT",
+    "bind": 2,
+    "icon": 135463,
+    "sellPrice": 190,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 7.06,
+      "INTELLECT": 1
+    }
+  },
+  "286751": {
+    "names": {
+      "enUS": "Ghostfang's Steps"
+    },
+    "quality": 2,
+    "itemLevel": 10,
+    "reqLevel": 5,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_FEET",
+    "bind": 2,
+    "icon": 132539,
+    "sellPrice": 69,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 13,
+      "SPIRIT": 1
+    }
+  },
+  "286752": {
+    "names": {
+      "enUS": "Igleggings"
+    },
+    "quality": 2,
+    "itemLevel": 12,
+    "reqLevel": 7,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_LEGS",
+    "bind": 2,
+    "icon": 134582,
+    "sellPrice": 187,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 2,
+      "RESISTANCE0_NAME": 54
+    }
+  },
+  "286753": {
+    "names": {
+      "enUS": "Snarlsnout Shooter"
+    },
+    "quality": 2,
+    "itemLevel": 10,
+    "reqLevel": 5,
+    "classID": 2,
+    "subclassID": 3,
+    "slot": "INVTYPE_RANGEDRIGHT",
+    "bind": 2,
+    "icon": 135614,
+    "sellPrice": 174,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 4.29,
+      "STRENGTH": 1
+    }
+  },
+  "286754": {
+    "names": {
+      "enUS": "Ukta's Conduit"
+    },
+    "quality": 2,
+    "itemLevel": 12,
+    "reqLevel": 7,
+    "classID": 2,
+    "subclassID": 10,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 2,
+    "icon": 135144,
+    "sellPrice": 486,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 8.33,
+      "STAMINA": 2
+    }
+  },
+  "286755": {
+    "names": {
+      "enUS": "Helm Splitter"
+    },
+    "quality": 2,
+    "itemLevel": 11,
+    "reqLevel": 6,
+    "classID": 2,
+    "subclassID": 7,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 2,
+    "icon": 135274,
+    "sellPrice": 312,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 6.04,
+      "STRENGTH": 1
+    }
+  },
+  "286978": {
+    "names": {
+      "enUS": "Rotmender's Robes"
+    },
+    "quality": 3,
+    "itemLevel": 23,
+    "reqLevel": 18,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_CHEST",
+    "bind": 2,
+    "icon": 134400,
+    "sellPrice": 975,
+    "stackCount": 1,
+    "setID": 2133,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 41
+    }
+  },
+  "286979": {
+    "names": {
+      "enUS": "Rotmender's Gloves"
+    },
+    "quality": 3,
+    "itemLevel": 22,
+    "reqLevel": 17,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_HAND",
+    "bind": 2,
+    "icon": 134400,
+    "sellPrice": 445,
+    "stackCount": 1,
+    "setID": 2133,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 25
+    }
+  },
+  "286980": {
+    "names": {
+      "enUS": "Rotmender's Sash"
+    },
+    "quality": 3,
+    "itemLevel": 22,
+    "reqLevel": 17,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_WAIST",
+    "bind": 2,
+    "icon": 134400,
+    "sellPrice": 447,
+    "stackCount": 1,
+    "setID": 2133,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 22
+    }
+  },
+  "287090": {
+    "names": {
+      "enUS": "Sharpened Letter Opener"
+    },
+    "quality": 1,
+    "itemLevel": 17,
+    "reqLevel": 2,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_HOLDABLE",
+    "bind": 1,
+    "icon": 135656,
+    "sellPrice": 38,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
   }
 }

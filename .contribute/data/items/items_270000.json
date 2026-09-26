@@ -85,7 +85,9 @@
     "craftingReagent": false,
     "stats": {
       "RESISTANCE0_NAME": 78,
-      "SPIRIT": 5
+      "SPELL_DAMAGE_DONE": 1,
+      "SPELL_HEALING_DONE": 4,
+      "SPIRIT": 4
     }
   },
   "270004": {
@@ -2256,7 +2258,7 @@
     "subclassID": 10,
     "slot": "INVTYPE_2HWEAPON",
     "bind": 1,
-    "icon": 135473,
+    "icon": 135155,
     "sellPrice": 1617,
     "stackCount": 1,
     "setID": 0,
@@ -3432,7 +3434,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "AGILITY": 4,
+      "INTELLECT": 4,
       "RESISTANCE0_NAME": 184,
       "STAMINA": 2,
       "STRENGTH": 9
@@ -3463,7 +3465,7 @@
   },
   "271207": {
     "names": {
-      "enUS": "Wispcloth Leggings"
+      "enUS": "Rotmender's Leggings"
     },
     "quality": 3,
     "itemLevel": 22,
@@ -3475,7 +3477,7 @@
     "icon": 134599,
     "sellPrice": 911,
     "stackCount": 1,
-    "setID": 0,
+    "setID": 2133,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
@@ -3629,7 +3631,7 @@
   },
   "271214": {
     "names": {
-      "enUS": "Frostbane Treads"
+      "enUS": "Rotmender's Treads"
     },
     "quality": 3,
     "itemLevel": 24,
@@ -3641,7 +3643,7 @@
     "icon": 132539,
     "sellPrice": 831,
     "stackCount": 1,
-    "setID": 0,
+    "setID": 2133,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
@@ -8230,7 +8232,7 @@
     "subclassID": 0,
     "slot": "INVTYPE_FINGER",
     "bind": 1,
-    "icon": 133370,
+    "icon": 133362,
     "sellPrice": 22669,
     "stackCount": 1,
     "setID": 0,
@@ -8252,7 +8254,7 @@
     "subclassID": 0,
     "slot": "INVTYPE_FINGER",
     "bind": 1,
-    "icon": 133370,
+    "icon": 133362,
     "sellPrice": 13321,
     "stackCount": 1,
     "setID": 0,
@@ -8274,7 +8276,7 @@
     "subclassID": 0,
     "slot": "INVTYPE_FINGER",
     "bind": 1,
-    "icon": 133370,
+    "icon": 133362,
     "sellPrice": 6611,
     "stackCount": 1,
     "setID": 0,
@@ -8296,7 +8298,7 @@
     "subclassID": 0,
     "slot": "INVTYPE_FINGER",
     "bind": 1,
-    "icon": 133370,
+    "icon": 133362,
     "sellPrice": 2856,
     "stackCount": 1,
     "setID": 0,
@@ -9428,7 +9430,7 @@
   },
   "272160": {
     "names": {
-      "enUS": "Monster - Sword1H, Skyborne (White)"
+      "enUS": "Monster - Sword1H, Skyborne (Blue)"
     },
     "quality": 0,
     "itemLevel": 1,
@@ -9449,7 +9451,7 @@
   },
   "272161": {
     "names": {
-      "enUS": "Monster - Sword1H, Skyborne (Grey)"
+      "enUS": "Monster - Sword1H, Skyborne (Blue)"
     },
     "quality": 0,
     "itemLevel": 1,
@@ -14147,8 +14149,8 @@
     "stats": {
       "DAMAGE_PER_SECOND": 45.67,
       "INTELLECT": 20,
+      "SPELL_PENETRATION": 5,
       "SPELL_POWER": 94,
-      "SPIRIT": 15,
       "STAMINA": 36
     }
   },
@@ -18597,8 +18599,8 @@
     "stats": {
       "DAMAGE_PER_SECOND": 45.67,
       "INTELLECT": 20,
+      "SPELL_PENETRATION": 5,
       "SPELL_POWER": 94,
-      "SPIRIT": 15,
       "STAMINA": 36
     }
   },
@@ -20165,8 +20167,8 @@
     "quality": 1,
     "itemLevel": 45,
     "reqLevel": 35,
-    "classID": 5,
-    "subclassID": 0,
+    "classID": 7,
+    "subclassID": 8,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 0,
     "icon": 351501,
@@ -30573,6 +30575,29 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "274042": {
+    "names": {
+      "enUS": "Skullduggery Belt"
+    },
+    "quality": 3,
+    "itemLevel": 34,
+    "reqLevel": 29,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_WAIST",
+    "bind": 1,
+    "icon": 132501,
+    "sellPrice": 1987,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ATTACK_POWER": 16,
+      "RESISTANCE0_NAME": 62,
+      "SPIRIT": 7
+    }
+  },
   "274044": {
     "names": {
       "enUS": "Twisted Fire Totem"
@@ -30586,7 +30611,7 @@
     "bind": 4,
     "icon": 135825,
     "sellPrice": 0,
-    "stackCount": 20,
+    "stackCount": 5,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
@@ -30604,7 +30629,7 @@
     "bind": 4,
     "icon": 310733,
     "sellPrice": 0,
-    "stackCount": 20,
+    "stackCount": 5,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
@@ -30622,7 +30647,7 @@
     "bind": 4,
     "icon": 538575,
     "sellPrice": 0,
-    "stackCount": 20,
+    "stackCount": 5,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
@@ -30640,7 +30665,7 @@
     "bind": 4,
     "icon": 538576,
     "sellPrice": 0,
-    "stackCount": 20,
+    "stackCount": 5,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
@@ -30662,6 +30687,47 @@
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
+  },
+  "274049": {
+    "names": {
+      "enUS": "Schematic: 9-60 Battery Pack"
+    },
+    "quality": 2,
+    "itemLevel": 34,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 3,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "274068": {
+    "names": {
+      "enUS": "Thermaplugg Medal of Honor"
+    },
+    "quality": 3,
+    "itemLevel": 34,
+    "reqLevel": 29,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_NECK",
+    "bind": 1,
+    "icon": 133278,
+    "sellPrice": 3223,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ATTACK_POWER": 10,
+      "SPIRIT": 6,
+      "STAMINA": 6
+    }
   },
   "274077": {
     "names": {
@@ -30806,6 +30872,52 @@
       "RESISTANCE3_NAME": 7,
       "SPIRIT": 12,
       "STAMINA": 8
+    }
+  },
+  "274158": {
+    "names": {
+      "enUS": "Death Prophet Spine"
+    },
+    "quality": 3,
+    "itemLevel": 31,
+    "reqLevel": 26,
+    "classID": 2,
+    "subclassID": 10,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 1,
+    "icon": 135154,
+    "sellPrice": 7487,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 18.93,
+      "MANA_REGENERATION": 5,
+      "SPELL_POWER": 34,
+      "STAMINA": 11
+    }
+  },
+  "274159": {
+    "names": {
+      "enUS": "Thorncursed Grips"
+    },
+    "quality": 3,
+    "itemLevel": 33,
+    "reqLevel": 27,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_HAND",
+    "bind": 1,
+    "icon": 132939,
+    "sellPrice": 1833,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ATTACK_POWER": 18,
+      "RESISTANCE0_NAME": 68
     }
   },
   "274162": {
@@ -46201,7 +46313,7 @@
   },
   "277172": {
     "names": {
-      "enUS": "Yeti Shard"
+      "enUS": "Corrupted Chillhowl Shard"
     },
     "quality": 3,
     "itemLevel": 1,
@@ -46219,7 +46331,7 @@
   },
   "277174": {
     "names": {
-      "enUS": "Dreadspinner Shard"
+      "enUS": "Corrupted Dreadspinner Shard"
     },
     "quality": 3,
     "itemLevel": 1,
@@ -46237,7 +46349,7 @@
   },
   "277175": {
     "names": {
-      "enUS": "Tangleclaw Shard"
+      "enUS": "Corrupted Tangleclaw Shard"
     },
     "quality": 3,
     "itemLevel": 1,
@@ -46255,7 +46367,7 @@
   },
   "277178": {
     "names": {
-      "enUS": "Sorrowful Shard"
+      "enUS": "Corrupted Sorrowful Shard"
     },
     "quality": 3,
     "itemLevel": 1,
@@ -46273,7 +46385,7 @@
   },
   "277179": {
     "names": {
-      "enUS": "Amethrax Shard"
+      "enUS": "Corrupted Amethrax Shard"
     },
     "quality": 3,
     "itemLevel": 1,
@@ -47471,22 +47583,22 @@
       "enUS": "Mug of Muddled Memories"
     },
     "quality": 2,
-    "itemLevel": 18,
+    "itemLevel": 12,
     "reqLevel": 0,
     "classID": 2,
     "subclassID": 4,
     "slot": "INVTYPE_WEAPONMAINHAND",
     "bind": 1,
     "icon": 132790,
-    "sellPrice": 1107,
+    "sellPrice": 404,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DAMAGE_PER_SECOND": 5.89,
+      "DAMAGE_PER_SECOND": 4.29,
       "INTELLECT": 1,
-      "SPELL_POWER": 10,
+      "SPELL_POWER": 4,
       "SPIRIT": 1
     }
   },
@@ -47588,20 +47700,20 @@
       "enUS": "Misplaced Shooter"
     },
     "quality": 2,
-    "itemLevel": 18,
+    "itemLevel": 12,
     "reqLevel": 0,
     "classID": 2,
     "subclassID": 3,
     "slot": "INVTYPE_RANGEDRIGHT",
     "bind": 1,
     "icon": 135616,
-    "sellPrice": 794,
+    "sellPrice": 290,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DAMAGE_PER_SECOND": 7.14,
+      "DAMAGE_PER_SECOND": 4.82,
       "STAMINA": 1,
       "STRENGTH": 1
     }
@@ -52981,7 +53093,7 @@
     "craftingReagent": false,
     "stats": {
       "AGILITY": 6,
-      "ATTACK_POWER": 12,
+      "INTELLECT": 6,
       "RESISTANCE0_NAME": 81,
       "STAMINA": 9
     }
@@ -53005,9 +53117,9 @@
     "craftingReagent": false,
     "stats": {
       "RESISTANCE0_NAME": 198,
-      "SPIRIT": 4,
-      "STAMINA": 10,
-      "STRENGTH": 4
+      "SPIRIT": 6,
+      "STAMINA": 9,
+      "STRENGTH": 5
     }
   },
   "279870": {
@@ -53190,7 +53302,8 @@
     "craftingReagent": false,
     "stats": {
       "DAMAGE_PER_SECOND": 18.53,
-      "INTELLECT": 3
+      "FIRE_RESISTANCE": 3,
+      "RESISTANCE2_NAME": 3
     }
   },
   "279897": {
@@ -53305,6 +53418,24 @@
     "craftingReagent": false
   },
   "279915": {
+    "names": {
+      "enUS": "Nord'el"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 348548,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "279924": {
     "names": {
       "enUS": "Nord'el"
     },
@@ -54128,6 +54259,42 @@
     "icon": 133749,
     "sellPrice": 0,
     "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "279993": {
+    "names": {
+      "enUS": "Titanic Keystone"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134418,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "279996": {
+    "names": {
+      "enUS": "Goaz Stone"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134457,
+    "sellPrice": 0,
+    "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
