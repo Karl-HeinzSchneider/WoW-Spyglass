@@ -406,8 +406,9 @@ caught and logged. The usage string is appended to `/fl` help while registered.
 `ForeverLootDB.global.lists`. The built-in list `Lists.FAVORITES` (`"favorites"`) comes first,
 shows a star and can't be renamed, re-marked or deleted. Every other list has a _marker_, one of
 the eight raid target icons (1 = star … 8 = skull). In the window, alt-click adds an item to the
-_active_ list or removes it. Favorites is the active list until another is made active, and
-again after the active list is deleted. An item on a list shows the list's marker on its icon
+_active_ list or removes it. The window's footer shows the active list in a dropdown that
+switches it (as does a list's "Make active" button). Favorites is the active list until another
+is made active, and again after the active list is deleted. An item on a list shows the list's marker on its icon
 (the star top-left for Favorites, one other list's marker top-right: the active list's, else
 the first that has the item). Every item tooltip gets one line per list that has the item and
 `tooltip` set.

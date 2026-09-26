@@ -578,6 +578,14 @@
 					<Anchor point="LEFT" relativeKey="$parent.ClassFilter" relativePoint="RIGHT" x="6" y="0"/>
 				</Anchors>
 			</Button>
+			<!-- Footer, after the filter buttons: the active item list (the one alt-click adds
+			     to), shown with its marker; picking another makes it active. -->
+			<DropdownButton parentKey="ActiveList" inherits="WowStyle1DropdownTemplate">
+				<Size x="160" y="26"/>
+				<Anchors>
+					<Anchor point="LEFT" relativeKey="$parent.ClassFilterMode" relativePoint="RIGHT" x="12" y="0"/>
+				</Anchors>
+			</DropdownButton>
 		</Frames>
 		<Layers>
 			<Layer level="ARTWORK">

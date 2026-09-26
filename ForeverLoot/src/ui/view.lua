@@ -937,6 +937,7 @@ end
 ---@field ResultCount FontString
 ---@field ClassFilter ForeverLoot.ClassFilterButton
 ---@field ClassFilterMode ForeverLoot.ClassFilterModeButton
+---@field ActiveList WowStyle1FilterDropdownMixin|Frame  # the footer's active list dropdown
 ---@field classFilterOn boolean  # the footer's class filter is on, for this tab
 ---@field classFilterMode "hide"|"fade"  # what it does to the items the class can't use
 ---@field filterClass? string  # the class it filters for; nil = the character's own
@@ -1055,6 +1056,29 @@ function ForeverLootViewMixin:OnLoad()
         if q then
             self:ResetFilters(q)
         end
+    end)
+
+    -- The footer's active list: every list with its marker, the active one picked. The text
+    -- follows changes made elsewhere (Render).
+    local Lists = app.lists
+    self.ActiveList:SetupMenu(function(_, rootDescription)
+        for _, id in ipairs(Lists:GetAll()) do
+            local list = Lists:Get(id) --[[@as ForeverLoot.ItemList]]
+            rootDescription:CreateRadio(Lists:GetMarkerMarkup(id, 14) .. " " .. list.name, function()
+                return Lists:GetActive() == id
+            end, function()
+                Lists:SetActive(id)
+            end)
+        end
+    end)
+    self.ActiveList:HookScript("OnEnter", function(dropdown)
+        GameTooltip:SetOwner(dropdown, "ANCHOR_TOP")
+        GameTooltip:AddLine("Active list")
+        GameTooltip:AddLine("Alt-click an item to add it to this list, or to remove it.", 1, 1, 1, true)
+        GameTooltip:Show()
+    end)
+    self.ActiveList:HookScript("OnLeave", function()
+        GameTooltip:Hide()
     end)
 
     self.crumbPool = CreateFramePool("Button", self.Breadcrumbs, "ForeverLootBreadcrumbButtonTemplate") --[[@as ForeverLoot.FramePool]]
@@ -1905,6 +1929,8 @@ function ForeverLootViewMixin:Render()
     self:UpdateToolbar()
     self.ClassFilter:Update()
     self.ClassFilterMode:Update()
+    -- The active list may have changed, or been renamed, since the menu was last built.
+    self.ActiveList:GenerateMenu()
 end
 
 -- Turns the current node into the flat list of things to draw: its children (the folder's

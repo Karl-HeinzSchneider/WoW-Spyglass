@@ -36,8 +36,8 @@ The root node comes from `app.api:GetRootNode()`; the window listens to `OnModul
 A view fills the left column: a header row (breadcrumbs on the left, starting right of the
 window portrait; search box and filter dropdown on the right) over a divider, then one `Content`
 page of rows, then under a second divider (`FooterDivider`) a footer row as high as the header
-row (44px) with the two class filter buttons on the left and Blizzard's `PagingControls` on the
-right.
+row (44px) with the two class filter buttons on the left, then the active list dropdown
+(`ActiveList`, see [Item lists](#item-lists)), and Blizzard's `PagingControls` on the right.
 
 - **Navigation** is a `path` stack over `ForeverLoot.Node` trees (`Push` / `PopTo` / `Back`, then
   `Refresh`). `Push` remembers the page the node was on in `view.pathPages`, and going back
@@ -82,7 +82,9 @@ followed by the node's `tooltip` lines (a list, or a function of the node).
 
 Alt-click on an item row (or an item slot in a popup) toggles the item in the active list of
 `app.lists` (`ForeverLoot.Lists`, see [API.md](API.md#lists-and-favorites)) and rebuilds the
-tooltip under the cursor. `app.ui.SetItemBadges` (view.lua) draws an item's list badges on the
+tooltip under the cursor. The footer's `ActiveList` (`WowStyle1DropdownTemplate`) shows the
+active list with its marker and offers every list as a radio; picking one calls `SetActive`.
+`Render` regenerates its menu, so it follows a list made active, renamed or deleted elsewhere. `app.ui.SetItemBadges` (view.lua) draws an item's list badges on the
 row and slot templates. `Favorite` is the transmog frame's favorite star
 (`transmog-icon-favorite`, 19x19 in `Interface\Transmogrify\UITransmogrify2x`) over the icon's
 top-left corner, for Favorites. `ListMarker` is over the top-right corner: the marker of the
