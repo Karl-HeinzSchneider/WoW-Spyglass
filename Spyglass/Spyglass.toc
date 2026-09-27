@@ -29,6 +29,7 @@ src\data\classfilter.lua
 db\generated\generated.xml
 modules\modules.xml
 
+src\ui\quests.lua
 src\ui\view.lua
 src\ui\templates.xml
 src\ui\mainwindow.lua

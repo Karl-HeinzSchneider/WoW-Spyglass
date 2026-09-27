@@ -52,6 +52,7 @@ local log = app.logger
 ---@field header? string  # section header marker; see Spyglass.Header
 ---@field subheader? string  # small section header marker; `items` optionally holds the entries under it; see Spyglass.Subheader
 ---@field spacer? boolean  # spacer marker: one empty row of space; see Spyglass.Spacer
+---@field quest? integer  # quest banner marker (a quest id); `items` optionally holds the entries under it (its rewards); see Spyglass.QuestEntry
 ---@field panel? Spyglass.PanelWidget[]|fun(node: Spyglass.Node, view: Spyglass.View): Spyglass.PanelWidget[]?  # folders: the right pane while this node or one below it (without a panel of its own) is open
 --- Optional metadata, free for modules and custom sort functions to use:
 ---@field expansionID? integer  # e.g. LE_EXPANSION_CLASSIC
@@ -334,6 +335,18 @@ end
 ---@return Spyglass.Node
 function api.Subheader(text, items)
     return { subheader = text, items = items }
+end
+
+-- A quest inside a folder's children: a full-width banner with the quest's title, `info` (e.g.
+-- "Level 14 - Alliance"), objective, experience and the character's progress, from the quest
+-- database; hover shows the quest's tooltip, shift-click links it. With `items` (what it
+-- rewards), those entries follow it.
+---@param questID integer
+---@param items? Spyglass.Node[]
+---@param info? string
+---@return Spyglass.Node
+function api.QuestEntry(questID, items, info)
+    return { quest = questID, items = items, info = info }
 end
 
 -- One empty row of space inside a folder's children, e.g. to set an entry apart from the rest.

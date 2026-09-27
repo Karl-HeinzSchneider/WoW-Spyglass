@@ -117,11 +117,15 @@ the window.
 
 - `mainwindow.lua/.xml` — `SpyglassMainWindow` (`app.ui.mainWindow`): the frame, its two panes
   and the browser-style view tabs.
+- `quests.lua` — `app.questInfo`: a quest's progress (text, color, icon), chat link, tooltip and
+  modified click, shared by the info pane's quest lines and the view's quest banners. Loaded
+  before `view.lua`.
 - `infopane.lua/.xml` — `SpyglassInfoPaneMixin`, the right pane (`RightPane.Info`): the
   selected tab's info `panel`, drawn with the character frame's side-pane look. Its checkbox
   filter ids live in `view.lua` and must match `PANEL_FILTERS` in `src/lists.ts`.
 - `view.lua` + `templates.xml` — a view: header row, paged content, the navigation stack, rows,
-  tiles, cards and headers, search box and filter dropdown, the footer's class filter buttons.
+  tiles, cards, quest banners and headers, search box and filter dropdown, the footer's class
+  filter buttons.
 - `recipepopup.lua/.xml` — `app.ui.recipePopup`, toggled by a click on a recipe row;
   `SpyglassPopupTemplate` / `SpyglassPopupMixin`, the shell both popups share
   (`app.ui.HidePopups()`); `SpyglassItemSlotTemplate` is the icon slot every slot uses.

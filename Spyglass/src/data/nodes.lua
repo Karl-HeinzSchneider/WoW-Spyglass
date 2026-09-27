@@ -134,20 +134,21 @@ local function sideLabel(side)
     return label
 end
 
--- "Uncovering the Past (#26) - Alliance": a quest's subheader. The title comes from the client
--- when it knows the quest and from the curated data otherwise, and the id is shown next to it
--- so a quest is identifiable while the curated titles are still being filled in. The faction is
--- left out when a faction header above already names it.
+-- "Level 14 · Alliance · Warlock": what a quest's banner shows next to its title. The faction is
+-- left out when a faction header above already names it; a class quest names the class in the
+-- client's name and color for the class token.
 ---@param quest Spyglass.Quest
 ---@param withSide boolean
----@return string
-local function questHeading(quest, withSide)
-    local text = ("%s (#%d)"):format(Data:GetQuestName(quest.id), quest.id)
+---@return string?
+local function questInfo(quest, withSide)
+    local parts = {}
+    if quest.requiredLevel then
+        parts[#parts + 1] = ("%s %d"):format(LEVEL or "Level", quest.requiredLevel)
+    end
     local side = quest.side
     if withSide and (side == "Alliance" or side == "Horde") then
-        text = text .. " - " .. sideLabel(side)
+        parts[#parts + 1] = sideLabel(side)
     end
-    -- A class quest: " - Warlock", in the client's name and color for the class token.
     local class = quest.class
     if class then
         local label = LOCALIZED_CLASS_NAMES_MALE and LOCALIZED_CLASS_NAMES_MALE[class] or class
@@ -155,9 +156,9 @@ local function questHeading(quest, withSide)
         if color and color.WrapTextInColorCode then
             label = color:WrapTextInColorCode(label)
         end
-        text = text .. " - " .. label
+        parts[#parts + 1] = label
     end
-    return text
+    return #parts > 0 and table.concat(parts, " \194\183 ") or nil
 end
 
 -- The sections of an instance's quest card, in order: quests for both factions, then each
@@ -180,9 +181,10 @@ local function questOrder(a, b)
     return a.id < b.id
 end
 
--- The instance's quests: one subheader per quest with the items it rewards under it, sorted by
--- level. When the instance has quests of more than one side, they are split under one header
--- per side (both factions, Alliance, Horde).
+-- The instance's quests: one quest banner per quest (title, level, objective, experience and the
+-- character's progress) with the items it rewards under it, sorted by level. When the instance
+-- has quests of more than one side, they are split under one header per side (both factions,
+-- Alliance, Horde).
 ---@param instanceID integer
 ---@return Spyglass.Node[]
 function api.InstanceQuestEntries(instanceID)
@@ -210,10 +212,7 @@ function api.InstanceQuestEntries(instanceID)
             for _, row in ipairs(quest.items) do
                 items[#items + 1] = { itemID = row[1], chance = row[2] }
             end
-            if #items == 0 then
-                items[1] = api.Custom({ name = "No rewards recorded yet", icon = ICON_MISSING })
-            end
-            entries[#entries + 1] = api.Subheader(questHeading(quest, sections == 1), items)
+            entries[#entries + 1] = api.QuestEntry(quest.id, items, questInfo(quest, sections == 1))
         end
     end
     if #entries == 0 then

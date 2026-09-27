@@ -23,6 +23,7 @@
 ---@field itemKind fun(itemID: integer): integer?, integer?, string?  # class id, subclass id, equip loc; nil when unknown (registry.lua)
 ---@field classFilter Spyglass.ClassFilter  # which classes can use which armor/weapons (classfilter.lua)
 ---@field ui Spyglass.UI
+---@field questInfo Spyglass.QuestInfo  # quest progress, link, tooltip and click, for the info pane and the quest banners (src/ui/quests.lua)
 
 -- UI namespace. Mixins are globals (XML requires it) but also exposed here.
 ---@class Spyglass.UI
@@ -48,6 +49,7 @@
 ---@field CardMixin Spyglass.Card
 ---@field PageHeaderMixin Spyglass.PageHeader
 ---@field SubheaderMixin Spyglass.Subheader
+---@field QuestBannerMixin Spyglass.QuestBanner
 ---@field GroupLabelMixin Spyglass.GroupLabel
 ---@field BreadcrumbButtonMixin Spyglass.BreadcrumbButton
 ---@field SearchBoxMixin Spyglass.SearchBox

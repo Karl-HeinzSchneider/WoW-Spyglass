@@ -404,6 +404,84 @@
 		</Scripts>
 	</Frame>
 
+	<!-- Quest banner: a quest spanning the list's width, above the rewards that follow it.
+	         [!]  Title  Level 14 · Alliance ..................... 9,750 XP
+	              Objective, in one line ......................... Not started
+	     The icon is the gossip window's quest mark for the character's progress (the ready check's
+	     tick once done); the line under it ties the banner to its rewards like a group label.
+	     Hovering shows the quest's tooltip, shift-click links it, right-click goes back. -->
+	<Button name="SpyglassQuestBannerTemplate" mixin="SpyglassQuestBannerMixin" registerForClicks="LeftButtonUp, RightButtonUp" virtual="true">
+		<Size x="300" y="46"/>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="Backplate">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="0" y="-1"/>
+						<Anchor point="BOTTOMRIGHT" x="0" y="1"/>
+					</Anchors>
+					<Color r="0" g="0" b="0" a="0.45"/>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<Texture parentKey="Icon">
+					<Size x="24" y="24"/>
+					<Anchors>
+						<Anchor point="LEFT" x="8" y="0"/>
+					</Anchors>
+				</Texture>
+				<Texture parentKey="Line" atlas="UI-Character-Info-ScrollLine-Long" useAtlasSize="true">
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" x="0" y="0"/>
+						<Anchor point="BOTTOMRIGHT" x="0" y="0"/>
+					</Anchors>
+				</Texture>
+				<!-- Right column first: the texts on the left stop short of it. -->
+				<FontString parentKey="XP" inherits="GameFontHighlight" justifyH="RIGHT" wordwrap="false">
+					<Anchors>
+						<Anchor point="TOPRIGHT" x="-10" y="-8"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Status" inherits="GameFontHighlightSmall" justifyH="RIGHT" wordwrap="false">
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT" x="-10" y="9"/>
+					</Anchors>
+				</FontString>
+				<!-- No width: sized to the text so Info follows it (the mixin caps it, see UpdateTitle). -->
+				<FontString parentKey="Title" inherits="GameFontNormalMed2" justifyH="LEFT" wordwrap="false">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="42" y="-7"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Info" inherits="GameFontHighlightSmall" justifyH="LEFT" wordwrap="false">
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" relativeKey="$parent.Title" relativePoint="BOTTOMRIGHT" x="10" y="1"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Objective" inherits="GameFontHighlightSmall" justifyH="LEFT" wordwrap="false">
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" x="42" y="9"/>
+						<Anchor point="RIGHT" relativeKey="$parent.Status" relativePoint="LEFT" x="-16" y="0"/>
+					</Anchors>
+					<Color r="0.8" g="0.8" b="0.8"/>
+				</FontString>
+			</Layer>
+			<Layer level="HIGHLIGHT">
+				<Texture file="Interface\QuestFrame\UI-QuestTitleHighlight" alphaMode="ADD">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="2" y="-2"/>
+						<Anchor point="BOTTOMRIGHT" x="-2" y="2"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick method="OnClick"/>
+			<OnEnter method="OnEnter"/>
+			<OnLeave method="OnLeave"/>
+			<OnSizeChanged method="OnSizeChanged"/>
+		</Scripts>
+	</Button>
+
 	<!-- Section header: the character frame's stat-category plate (CharacterStatFrameCategoryTemplate)
 	     stretched to the list width, white centered text. -->
 	<Frame name="SpyglassPageHeaderTemplate" mixin="SpyglassPageHeaderMixin" virtual="true">
@@ -514,6 +592,8 @@
 			<KeyValue key="headerGap" value="6" type="number"/>
 			<KeyValue key="subheaderHeight" value="24" type="number"/>
 			<KeyValue key="subheaderGap" value="4" type="number"/>
+			<KeyValue key="questHeight" value="46" type="number"/>
+			<KeyValue key="questGap" value="4" type="number"/>
 			<KeyValue key="columnGap" value="12" type="number"/>
 		</KeyValues>
 		<Frames>

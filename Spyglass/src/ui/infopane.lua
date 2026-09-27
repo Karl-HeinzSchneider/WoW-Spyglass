@@ -196,128 +196,32 @@ end
 -- Quests
 ----------------------------------------------------------------------------------------------------
 
--- The character's progress on a quest, as text and color: turned in, objectives complete,
--- in the quest log, or not taken yet.
----@param questID integer
----@return string, ColorMixin
-local function questStatus(questID)
-    local questLog = C_QuestLog
-    if questLog.IsQuestFlaggedCompleted(questID) then
-        return "Done", GREEN_FONT_COLOR
-    end
-    if questLog.IsOnQuest(questID) then
-        if questLog.ReadyForTurnIn(questID) or questLog.IsComplete(questID) then
-            return "Ready", YELLOW_FONT_COLOR
-        end
-        return "Active", HIGHLIGHT_FONT_COLOR
-    end
-    return "Not started", GRAY_FONT_COLOR
-end
+local Quests = app.questInfo
 
--- Quests asked from the server once, so a quest it never answers for can't redraw in a loop.
----@type table<integer, true>
-local requestedQuests = {}
-
--- The quest's chat link; nil until the client has the quest's data, which is then asked for
--- (QUEST_DATA_LOAD_RESULT redraws the pane).
----@param questID integer
----@return string?
-local function questLink(questID)
-    local link = GetQuestLink(questID)
-    if not link and not requestedQuests[questID] and C_QuestLog.RequestLoadQuestByID then
-        requestedQuests[questID] = true
-        C_QuestLog.RequestLoadQuestByID(questID)
-    end
-    return link
-end
-
--- A reward's tooltip line: the item's icon and name, in its quality color. The client's cache when
--- it has the item, else the database row; an uncached item is requested for the next hover.
----@param itemID integer
----@return string text, ColorMixin color
-local function rewardLine(itemID)
-    local name, _, quality, _, _, _, _, _, _, icon = C_Item.GetItemInfo(itemID)
-    if not name then
-        C_Item.RequestLoadItemDataByID(itemID)
-        local row = app.data:GetItem(itemID)
-        name = app.data:GetItemName(itemID)
-        quality = row and row[app.data.ITEM.QUALITY]
-        icon = select(5, C_Item.GetItemInfoInstant(itemID)) or (row and row[app.data.ITEM.ICON])
-    end
-    local markup = CreateSimpleTextureMarkup(icon or "Interface\\Icons\\INV_Misc_QuestionMark", 16, 16)
-    return markup .. " " .. name, quality and ITEM_QUALITY_COLORS[quality] or HIGHLIGHT_FONT_COLOR
-end
-
--- A quest line's tooltip: the game's own quest tooltip from its link, else, while the client
--- doesn't have the quest (quests are server-side), the curated title, id, level and objective.
--- The curated rewards and experience follow either way.
 ---@param line Button|{ questID: integer }
 local function showQuestTooltip(line)
-    GameTooltip:SetOwner(line, "ANCHOR_RIGHT")
-    local quest = app.data:GetQuest(line.questID)
-    local link = questLink(line.questID)
-    if link then
-        GameTooltip:SetHyperlink(link)
-    else
-        GameTooltip:SetText(app.data:GetQuestName(line.questID), NORMAL_FONT_COLOR:GetRGB())
-        GameTooltip:AddLine(("Quest #%d"):format(line.questID), HIGHLIGHT_FONT_COLOR:GetRGB())
-        if quest and quest.requiredLevel then
-            GameTooltip:AddLine(("Required level %d"):format(quest.requiredLevel), HIGHLIGHT_FONT_COLOR:GetRGB())
-        end
-        if quest and quest.objective then
-            GameTooltip:AddLine(" ")
-            GameTooltip:AddLine(
-                quest.objective,
-                HIGHLIGHT_FONT_COLOR.r,
-                HIGHLIGHT_FONT_COLOR.g,
-                HIGHLIGHT_FONT_COLOR.b,
-                true
-            )
-        end
-    end
-    if quest and (#quest.items > 0 or quest.xp) then
-        GameTooltip:AddLine(" ")
-        GameTooltip:AddLine(QUEST_REWARDS or "Rewards", NORMAL_FONT_COLOR:GetRGB())
-        for _, row in ipairs(quest.items) do
-            local text, color = rewardLine(row[1])
-            GameTooltip:AddLine(text, color.r, color.g, color.b)
-        end
-        if quest.xp then
-            local xp = ("%s %s"):format(EXPERIENCE_COLON or "Experience:", BreakUpLargeNumbers(quest.xp))
-            GameTooltip:AddLine(xp, HIGHLIGHT_FONT_COLOR:GetRGB())
-        end
-    end
-    GameTooltip:Show()
+    Quests.ShowTooltip(line, line.questID)
 end
 
--- A modified click links the quest in chat, like a quest link there.
 ---@param line Button|{ questID: integer }
 local function linkQuest(line)
-    local link = questLink(line.questID)
-    if link then
-        HandleModifiedItemClick(link)
-    end
+    Quests.HandleModifiedClick(line.questID)
 end
 
 -- One line per quest the character can do: quests of the other faction and class quests of
 -- other classes are left out.
 ---@param questIDs integer[]
 function SpyglassInfoPaneMixin:AddQuests(questIDs)
-    local playerSide = UnitFactionGroup("player")
-    local _, playerClass = UnitClass("player")
     for _, questID in ipairs(questIDs) do
-        local quest = app.data:GetQuest(questID)
-        local side, class = quest and quest.side, quest and quest.class
-        local forSide = side ~= "Alliance" and side ~= "Horde" or side == playerSide
-        if forSide and (not class or class == playerClass) then
+        if Quests.IsForCharacter(questID) then
             local frame = self:Acquire("quest") --[[@as Button|{ Title: FontString, Status: FontString, questID: integer }]]
             frame.questID = questID
-            questLink(questID) -- loads the quest ahead of hover and click
+            Quests.Link(questID) -- loads the quest ahead of hover and click
             frame:SetScript("OnEnter", showQuestTooltip)
             frame:SetScript("OnLeave", GameTooltip_Hide)
             frame:SetScript("OnClick", linkQuest)
             frame.Title:SetText(app.data:GetQuestName(questID))
-            local text, color = questStatus(questID)
+            local text, color = Quests.Status(questID)
             frame.Status:SetText(text)
             frame.Status:SetTextColor(color:GetRGB())
             frame:SetHeight(math.max(14, frame.Title:GetStringHeight()))

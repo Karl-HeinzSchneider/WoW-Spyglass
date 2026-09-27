@@ -716,6 +716,89 @@ function SpyglassSubheaderMixin:UpdateText()
 end
 
 ----------------------------------------------------------------------------------------------------
+-- Quest banner (a quest spanning the list's width, its rewards below it)
+----------------------------------------------------------------------------------------------------
+
+---@class Spyglass.QuestBanner : Button
+---@field Backplate Texture
+---@field Icon Texture
+---@field Line Texture
+---@field Title FontString
+---@field Info FontString
+---@field Objective FontString
+---@field XP FontString
+---@field Status FontString
+---@field node Spyglass.Node
+---@field view Spyglass.View
+SpyglassQuestBannerMixin = {}
+app.ui.QuestBannerMixin = SpyglassQuestBannerMixin
+
+local NO_REWARDS = "No rewards recorded"
+
+---@param view Spyglass.View
+---@param node Spyglass.Node
+function SpyglassQuestBannerMixin:Init(view, node)
+    self.view = view
+    self.node = node
+    local Quests = app.questInfo
+    local questID = node.quest --[[@as integer]]
+    local quest = Data:GetQuest(questID)
+    Quests.Link(questID) -- loads the quest ahead of hover and click; its title may follow
+
+    self.Title:SetText(Data:GetQuestName(questID))
+    self.Info:SetText(node.info or "")
+    self.Objective:SetText(quest and quest.objective or "")
+    local status, color, icon = Quests.Status(questID)
+    self.Status:SetText(status)
+    self.Status:SetTextColor(color:GetRGB())
+    self.Icon:SetTexture(icon)
+    if quest and quest.xp then
+        self.XP:SetText(("%s %s"):format(Quests.FormatXP(quest.xp), NORMAL_FONT_COLOR:WrapTextInColorCode("XP")))
+        self.XP:SetTextColor(HIGHLIGHT_FONT_COLOR:GetRGB())
+    elseif not quest or #quest.items == 0 then
+        self.XP:SetText(NO_REWARDS)
+        self.XP:SetTextColor(GRAY_FONT_COLOR:GetRGB())
+    else
+        self.XP:SetText("")
+    end
+    self:UpdateTitle()
+end
+
+function SpyglassQuestBannerMixin:OnSizeChanged()
+    self:UpdateTitle()
+end
+
+-- Width 0 = size to the text, so the info follows the title; a title that would run into the
+-- experience on the right is truncated instead.
+function SpyglassQuestBannerMixin:UpdateTitle()
+    self.Title:SetWidth(0)
+    local left = select(4, self.Title:GetPoint(1)) or 0
+    local info = self.Info:GetText()
+    local infoWidth = info and info ~= "" and self.Info:GetStringWidth() + 10 or 0
+    local maximum = self:GetWidth() - left - infoWidth - self.XP:GetStringWidth() - 24
+    if maximum > 0 and self.Title:GetStringWidth() > maximum then
+        self.Title:SetWidth(maximum)
+    end
+end
+
+---@param button string
+function SpyglassQuestBannerMixin:OnClick(button)
+    if button == "RightButton" then
+        self.view:Back()
+    else
+        app.questInfo.HandleModifiedClick(self.node.quest --[[@as integer]])
+    end
+end
+
+function SpyglassQuestBannerMixin:OnEnter()
+    app.questInfo.ShowTooltip(self, self.node.quest --[[@as integer]])
+end
+
+function SpyglassQuestBannerMixin:OnLeave()
+    GameTooltip:Hide()
+end
+
+----------------------------------------------------------------------------------------------------
 -- Page header (section title on the character frame's category plate)
 ----------------------------------------------------------------------------------------------------
 
@@ -1013,6 +1096,8 @@ end
 ---@field headerGap number
 ---@field subheaderHeight number
 ---@field subheaderGap number
+---@field questHeight number
+---@field questGap number
 ---@field columnGap number
 ---@field pages Spyglass.PageRange[]  # layout result for the current node (into `layout`)
 ---@field path Spyglass.Node[]
@@ -1022,6 +1107,7 @@ end
 ---@field regroupItems table<integer, boolean>  # items grouped without their kind: true = waiting to regroup, false = done
 ---@field renderQueued? boolean  # a deferred Render is scheduled (item info arrived)
 ---@field refreshQueued? boolean  # the deferred redraw is a Refresh (an item to regroup arrived)
+---@field showsQuests? boolean  # the current list has quest banners, which redraw on quest events
 SpyglassViewMixin = {}
 app.ui.ViewMixin = SpyglassViewMixin
 
@@ -1032,15 +1118,16 @@ app.ui.ViewMixin = SpyglassViewMixin
 ---@field cardPool Spyglass.FramePool
 ---@field headerPool Spyglass.FramePool
 ---@field subheaderPool Spyglass.FramePool
+---@field questPool Spyglass.FramePool
 ---@field groupPool Spyglass.FramePool
 
 -- What a page displays. `kind` picks the template; new element kinds plug in here
 -- (BuildElements, LayoutPages, RenderPage). A `spacer` is one row of empty space: it takes
 -- part in the layout but draws nothing.
 ---@class Spyglass.Element
----@field kind "header"|"subheader"|"group"|"spacer"|"row"|"tile"|"card"
+---@field kind "header"|"subheader"|"quest"|"group"|"spacer"|"row"|"tile"|"card"
 ---@field text? string  # header, subheader, group
----@field node? Spyglass.Node  # row, tile, card
+---@field node? Spyglass.Node  # quest, row, tile, card
 
 -- Where every element of the current layout goes, as parallel arrays indexed by placement
 -- order; a page is a range of them. Shared by all views: only the shown view lays out and
@@ -1086,6 +1173,7 @@ function SpyglassViewMixin:OnLoad()
     page.cardPool = CreateFramePool("Button", page, "SpyglassCardTemplate") --[[@as Spyglass.FramePool]]
     page.headerPool = CreateFramePool("Frame", page, "SpyglassPageHeaderTemplate") --[[@as Spyglass.FramePool]]
     page.subheaderPool = CreateFramePool("Frame", page, "SpyglassSubheaderTemplate") --[[@as Spyglass.FramePool]]
+    page.questPool = CreateFramePool("Button", page, "SpyglassQuestBannerTemplate") --[[@as Spyglass.FramePool]]
     page.groupPool = CreateFramePool("Frame", page, "SpyglassGroupLabelTemplate") --[[@as Spyglass.FramePool]]
     self.pages = {}
     self.pendingItems = {}
@@ -1096,6 +1184,10 @@ function SpyglassViewMixin:OnLoad()
     self.classFilterMode = "fade"
     self.resultCount = 0
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
+    -- Quest banners show the character's progress and the client's quest title.
+    self:RegisterEvent("QUEST_LOG_UPDATE")
+    self:RegisterEvent("QUEST_TURNED_IN")
+    self:RegisterEvent("QUEST_DATA_LOAD_RESULT")
 
     -- The template's clear button sets the text programmatically (userInput = false), so the
     -- debounce never sees it; clear the query directly.
@@ -1170,26 +1262,34 @@ end
 ---@param event string
 ---@param itemID integer
 function SpyglassViewMixin:OnEvent(event, itemID)
-    if event == "GET_ITEM_INFO_RECEIVED" and self.pendingItems[itemID] then
+    if event == "GET_ITEM_INFO_RECEIVED" then
+        if not self.pendingItems[itemID] then
+            return
+        end
         self.pendingItems[itemID] = nil
         if self.regroupItems[itemID] then
             self.regroupItems[itemID] = false
             self.refreshQueued = true
         end
-        if self:IsShown() and not self.renderQueued then
-            self.renderQueued = true
-            C_Timer.After(0, function()
-                local refresh = self.refreshQueued
-                self.renderQueued, self.refreshQueued = nil, nil
-                if self:IsShown() then
-                    if refresh then
-                        self:Refresh()
-                    else
-                        self:Render()
-                    end
+    elseif not self.showsQuests then
+        -- A quest event: only quest banners show anything of it.
+        return
+    end
+    -- Never directly: drawing a quest banner asks the server for the quest, whose
+    -- QUEST_DATA_LOAD_RESULT can fire inside that call.
+    if self:IsShown() and not self.renderQueued then
+        self.renderQueued = true
+        C_Timer.After(0, function()
+            local refresh = self.refreshQueued
+            self.renderQueued, self.refreshQueued = nil, nil
+            if self:IsShown() then
+                if refresh then
+                    self:Refresh()
+                else
+                    self:Render()
                 end
-            end)
-        end
+            end
+        end)
     end
 end
 
@@ -2021,15 +2121,17 @@ end
 
 -- Turns the current node into the flat list of things to draw: its children (the folder's
 -- own title is the fixed `Title` frame above the pages). `header` nodes become section headers,
--- `subheader` nodes the smaller section titles under them, `group` nodes group labels (followed
--- by their `items`), `spacer` nodes an empty row, everything else a row (or a tile in a
--- `display = "tiles"` folder). If the folder has `groupBy`, runs of plain entries are bucketed
+-- `subheader` nodes the smaller section titles under them, `quest` nodes quest banners (followed
+-- by their `items`), `group` nodes group labels (followed by their `items`), `spacer` nodes an
+-- empty row, everything else a row (or a tile in a `display = "tiles"` folder). If the folder
+-- has `groupBy`, runs of plain entries are bucketed
 -- into auto groups (or as the info panel's `grouping` dropdown picked); explicit
 -- headers/subheaders/groups/spacers are kept as written.
 ---@param node Spyglass.Node?
 ---@return Spyglass.Element[]
 function SpyglassViewMixin:BuildElements(node)
     local elements = {}
+    self.showsQuests = false
     if not node then
         return elements
     end
@@ -2107,6 +2209,13 @@ function SpyglassViewMixin:BuildElements(node)
                 elements[#elements + 1] = { kind = "subheader", text = child.subheader }
                 addRows(child.items or {})
             end
+        elseif child.quest then
+            -- Always shown, even when the filters took all its rewards: the quest still has its
+            -- experience and its objective.
+            flush()
+            elements[#elements + 1] = { kind = "quest", node = child }
+            addRows(child.items or {})
+            self.showsQuests = true
         elseif child.group then
             flush()
             if hasKept(child.items) then
@@ -2194,6 +2303,16 @@ function SpyglassViewMixin:LayoutPages(elements, columns)
             end
             place(element, 0, pageWidth, self.subheaderHeight)
             y = y + self.subheaderHeight + self.subheaderGap
+        elseif element.kind == "quest" then
+            -- Full width; kept with its first reward row when it has rewards.
+            newLine()
+            local items = element.node.items
+            local needed = self.questHeight + self.questGap + (items and #items > 0 and self.rowHeight or 0)
+            if y > 0 and y + needed > pageHeight then
+                newPage()
+            end
+            place(element, 0, pageWidth, self.questHeight)
+            y = y + self.questHeight + self.questGap
         elseif element.kind == "group" then
             -- Row-sized, full width, on its own line, and never orphaned at a page bottom.
             newLine()
@@ -2242,6 +2361,7 @@ function SpyglassViewMixin:RenderPage(page, range)
     page.cardPool:ReleaseAll()
     page.headerPool:ReleaseAll()
     page.subheaderPool:ReleaseAll()
+    page.questPool:ReleaseAll()
     page.groupPool:ReleaseAll()
     for i = range and range.first or 1, range and range.last or 0 do
         local element = layout.element[i]
@@ -2252,6 +2372,9 @@ function SpyglassViewMixin:RenderPage(page, range)
         elseif element.kind == "subheader" then
             frame = page.subheaderPool:Acquire() --[[@as Spyglass.Subheader]]
             frame:Init(element.text or "")
+        elseif element.kind == "quest" then
+            frame = page.questPool:Acquire() --[[@as Spyglass.QuestBanner]]
+            frame:Init(self, element.node)
         elseif element.kind == "group" then
             frame = page.groupPool:Acquire() --[[@as Spyglass.GroupLabel]]
             frame:Init(element.text or "")

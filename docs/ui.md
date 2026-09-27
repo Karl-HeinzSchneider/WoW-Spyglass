@@ -137,12 +137,25 @@ open.
   `SetPortraitTextureFromCreatureDisplayID` into the same region), and the name and info beside
   it (boss level and type, drops of interest, a quest "!" for `quests`).
 
-### Headers, subheaders, groups, spacers
+### Headers, subheaders, quest banners, groups, spacers
 
 Section headers use the `UI-Character-Info-Title` plate. Subheaders are a step smaller: centered
 text with `UI-Character-Info-ScrollLine-Long` running out to both sides. Groups are row-sized
 labels. A `spacer` element is one row of empty space that takes part in the page layout but has
 no frame; it is dropped at the top of a page.
+
+A quest node (`{ quest = id }`) is drawn as `SpyglassQuestBannerTemplate`
+(`SpyglassQuestBannerMixin`), full width and `questHeight` high, over a darker row backplate with
+the group label's scroll line along its bottom. On the left is the progress icon
+(`Interface\GossipFrame\AvailableQuestIcon`, `IncompleteQuestIcon`, `ActiveQuestIcon`,
+`Interface\RaidFrame\ReadyCheck-Ready` once done), then the title in `GameFontNormalMed2` with the
+node's `info` right after it (the title is sized to its text and truncated before it reaches the
+right column) and the objective under both; on the right the experience over the progress text.
+Progress, hover, shift-click and the quest data request come from `app.questInfo` (`quests.lua`),
+shared with the info pane's quest lines. The layout keeps a banner together with its first reward
+row. While the list has banners (`view.showsQuests`), the view redraws the page on
+`QUEST_LOG_UPDATE`, `QUEST_TURNED_IN` and `QUEST_DATA_LOAD_RESULT`, deferred to the next frame
+like the item-info redraw.
 
 ### Info panel filters
 
@@ -178,9 +191,9 @@ registers itself with the character frame, so it can't be inherited): the title 
   `OpenWorldMap`.
 - `quests`: one `SpyglassInfoQuestTemplate` line per quest the character can take (side and
   class from `Data:GetQuest`), the title wrapped on the left, the progress on the right from
-  `C_QuestLog` (`IsQuestFlaggedCompleted`, `IsOnQuest`, `ReadyForTurnIn` / `IsComplete`).
-  Each line is a button that behaves like a quest link in chat: hover shows the game's quest
-  tooltip (`GameTooltip:SetHyperlink` with `GetQuestLink`), a modified click goes through
+  `C_QuestLog` (`IsQuestFlaggedCompleted`, `IsOnQuest`, `ReadyForTurnIn` / `IsComplete`), from
+  `app.questInfo` (`quests.lua`), which the list's quest banners use too. Each line is a button
+  that behaves like a quest link in chat: hover shows the game's quest tooltip (`GameTooltip:SetHyperlink` with `GetQuestLink`), a modified click goes through
   `HandleModifiedItemClick`. A quest the client hasn't loaded has no link yet; it is asked for
   once (`C_QuestLog.RequestLoadQuestByID`) and `QUEST_DATA_LOAD_RESULT` redraws the pane, until
   then the tooltip shows the curated title, id, `requiredLevel` and `objective` from
