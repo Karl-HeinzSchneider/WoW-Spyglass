@@ -1640,7 +1640,7 @@ function SpyglassViewMixin:GetFilterClass()
 end
 
 -- Changes the class filter; the arguments left nil keep their value. The list is filtered again
--- from page 1.
+-- on the page it was showing (Refresh clamps it when hiding items leaves fewer pages).
 ---@param on boolean?
 ---@param class string?
 ---@param mode ("hide"|"fade")?
@@ -1652,7 +1652,6 @@ function SpyglassViewMixin:SetClassFilter(on, class, mode)
     self.classFilterMode = mode or self.classFilterMode
     self.ClassFilter:Update()
     self.ClassFilterMode:Update()
-    self.PagingControls:SetCurrentPage(1)
     self:Refresh()
     -- Kept with the tabs across sessions.
     app.ui.mainWindow:SaveTabs()
