@@ -5,6 +5,7 @@
 ## Author: Karl-HeinzSchneider
 ## Version: |cff8080ff@project-version@|r
 ## Dependencies: Spyglass
+## LoadOnDemand: 1
 ## SavedVariables: SpyglassLocaleDB
 ## X-License: MIT
 ## X-Website: https://github.com/Karl-HeinzSchneider/WoW-Spyglass

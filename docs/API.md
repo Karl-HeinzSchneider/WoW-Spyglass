@@ -9,8 +9,9 @@ Load order: list `Spyglass` under `## Dependencies:` (or `## OptionalDeps:` and 
 
 The official `Spyglass_Database`, `Spyglass_Locale` and `Spyglass_Scraper` companion
 addons follow this same contract. They depend on the core and use only this public global; the
-core never depends on or reaches into any companion. See [architecture.md](architecture.md) for
-ownership boundaries.
+core never reaches into a companion. `Spyglass_Locale` is load-on-demand, and the core asks the
+client to load it on non-English clients; all integration after loading still goes through this
+public API. See [architecture.md](architecture.md) for ownership boundaries.
 
 ```lua
 -- MyAddon/MyAddon.toc

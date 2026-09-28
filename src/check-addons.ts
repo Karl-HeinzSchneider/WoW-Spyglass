@@ -43,10 +43,11 @@ const core = addons.find((addon) => addon.name === CORE);
 if (!core) failures.push(`missing required core addon ${CORE}`);
 else {
   const companionNames = addons.filter((addon) => addon.name.startsWith(`${CORE}_`)).map((addon) => addon.name);
+  const allowedCoreReferences = new Map([[resolve(core.path, "src/core/ace.lua"), new Set([`${CORE}_Locale`])]]);
   for (const path of walkFiles(core.path).filter((file) => /\.(lua|xml|toc)$/i.test(file))) {
     const content = readFileSync(path, "utf-8");
     for (const companion of companionNames) {
-      if (content.includes(companion))
+      if (content.includes(companion) && !allowedCoreReferences.get(path)?.has(companion))
         failures.push(`${relative(ROOT, path)}: core runtime references companion ${companion}`);
     }
   }

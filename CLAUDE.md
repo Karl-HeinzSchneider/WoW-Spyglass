@@ -88,12 +88,14 @@ Static checks also used ad hoc: `lua-language-server --check` (config in `.luarc
 
 Companions depend on the core (`## Dependencies: Spyglass`) and use **only** the documented
 public global `Spyglass` (`docs/API.md`); the scraper also depends on `Spyglass_Database`.
-The core must work with every companion absent and never references them — not even by name. No
-addon reads another addon's private table (the `...` table each file receives) or adds a
-cross-addon global. Built-in content modules use the same public API a third-party addon would;
-never give them private hooks. Late data goes in through the `Spyglass.Data:Add*` calls, which
-invalidate caches and fire `OnDataChanged`. A breaking API change bumps
-`Spyglass.API_VERSION` and updates `docs/API.md`. Full rules: `docs/architecture.md`.
+The core must work with every companion absent. Its only companion reference is the optional,
+load-on-demand `Spyglass_Locale`, which it asks the client to load outside `enUS` and `enGB`; it
+never reads that addon's private state. No addon reads another addon's private table (the `...` table each
+file receives) or adds a cross-addon global. Built-in content modules use the same public API a
+third-party addon would; never give them private hooks. Late data goes in through the
+`Spyglass.Data:Add*` calls, which invalidate caches and fire `OnDataChanged`. A breaking API
+change bumps `Spyglass.API_VERSION` and updates `docs/API.md`. Full rules:
+`docs/architecture.md`.
 
 ## WoW addon constraints
 

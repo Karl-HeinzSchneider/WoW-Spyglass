@@ -16,9 +16,9 @@ contributors write are in `docs/contributing.md`.
   `import [file]`. The pipeline order is in `docs/data-pipeline.md`.
 - `check-addons.ts` — discovers the addons; checks that every TOC load entry exists (a
   `[TextLocale]` entry for every one of `CLIENT_LOCALES`), that `Spyglass_*` addons declare
-  `## Dependencies: Spyglass`, that there are no dependency cycles, and that **no
-  `.lua`/`.xml`/`.toc` under `Spyglass/` contains a companion's name** (plain substring,
-  comments included).
+  `## Dependencies: Spyglass`, that there are no dependency cycles, and that no
+  `.lua`/`.xml`/`.toc` under `Spyglass/` contains a companion's name except the intentional
+  `Spyglass_Locale` load in `src/core/ace.lua` (plain substring, comments included).
 - `check-lua.ts` — `luac -p` on every `.lua` in every addon (requires Lua 5.1's `luac`).
 - `check-xml.ts` — validates every addon `.xml` against
   `../_data/BlizzardInterfaceCode/Interface/AddOns/Blizzard_SharedXML/UI.xsd` with python + lxml;

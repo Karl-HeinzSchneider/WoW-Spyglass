@@ -27,6 +27,10 @@ included, whose English names live in the core and the database addon) has all f
 comment-only placeholders where there are no names; `npm run check:addons` enforces it. Each file
 with names still starts with `if GetLocale() ~= "<locale>" then return end`.
 
+`Spyglass_Locale` is load-on-demand. During the core's `OnInitialize`, it asks the client to load
+the companion outside the English locales (`enUS` and `enGB`); an absent or disabled companion
+does not prevent the core from starting. On an English client, the companion remains unloaded.
+
 ## How the core resolves a name
 
 An item name: client locale → enUS → `C_Item.GetItemInfo` → `"Item #id"`. The other kinds stop at
@@ -56,8 +60,8 @@ so on a non-English client `app.itemNames` asks for them and keeps the answers i
   the progress or the saved counts; `/sg locale rescan` clears `missing` and asks for every
   learned item again too.
 
-English clients (`GetLocale() == "enUS"`) keep no state and run nothing; at login they get one
-`info` line saying the addon isn't needed there and can be disabled.
+If explicitly loaded on an `enUS` client, the addon keeps no state and runs no lookup; at login
+it emits one `info` line saying it is not needed there.
 
 ## Adding a locale
 

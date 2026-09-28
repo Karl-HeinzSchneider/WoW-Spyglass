@@ -3,9 +3,10 @@
 The distributable core: the public `Spyglass` API (`docs/API.md`), the item database API with
 filters and queries (but **no item rows**: those, and the `items` module, ship in
 `Spyglass_Database`), the built-in content modules, the browser window and user settings
-(`SpyglassDB`). It must work on its own; the companions are optional and **no `.lua`, `.xml`
-or `.toc` file in this directory may name them** — `npm run check:addons` fails on the bare
-string, comments included.
+(`SpyglassDB`). It must work on its own; the companions are optional. The sole permitted
+companion reference is `Spyglass_Locale` in `src/core/ace.lua`, where non-English clients ask
+the game to load that load-on-demand addon. `npm run check:addons` rejects every other companion
+reference in the core.
 
 ## Load order (`Spyglass.toc`)
 
@@ -49,9 +50,9 @@ be listed**. The order follows these rules:
   (`docs/API.md`, "Lists and favorites"). The `Open*Dialog` calls are added by `src/ui/listdialog.lua`.
 - `ace.lua` — `app.addon`, the AceAddon object (AceConsole, AceEvent). `OnInitialize` opens
   `app.db`, wires the profile callbacks to `OnProfileRefresh` (log level, views, modules'
-  `OnProfileRefresh`) and registers `/sg` + `/spyglass`; `OnSlashCommand` handles the reserved
-  commands and hands the rest to `app.commands:Run`. `OnEnable` preloads the tile pictures.
-  Register game events in `OnEnable`.
+  `OnProfileRefresh`), registers `/sg` + `/spyglass`, and loads the load-on-demand locale addon
+  outside `enUS` and `enGB`; `OnSlashCommand` handles the reserved commands and hands the rest to
+  `app.commands:Run`. `OnEnable` preloads the tile pictures. Register game events in `OnEnable`.
 - `minimapbutton.lua` — `app.minimapButton`, a LibDataBroker launcher + LibDBIcon that toggles
   the window and honors `profile.minimap`.
 - `options.lua` — `app.options`: the user options as **one** AceConfig table, registered in the

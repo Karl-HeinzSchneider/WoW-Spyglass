@@ -20,8 +20,9 @@ The core operates independently when any companion is absent or disabled.
 ## Runtime contract
 
 - `Spyglass` must work when any companion addon is absent or disabled. It retains an English
-  fallback for instance, boss and crafting names (item names come from the client) and cannot
-  reference companion files or private addon tables.
+  fallback for instance, boss and crafting names (item names come from the client). Its one
+  companion-specific action is asking the client to load the load-on-demand locale addon on a
+  non-English client; it never accesses companion files or private addon tables.
 - Companion addons declare `## Dependencies: Spyglass`, so the public global exists before they
   load. The scraper also depends on `Spyglass_Database`: it tells new items from known ones by
   the item rows (`Data:GetItem`).
@@ -38,11 +39,12 @@ The core operates independently when any companion is absent or disabled.
 
 The core owns locale selection, English fallback behavior, and the registration surface. It ships
 generated `enUS` instance, boss and crafting names so it remains useful without the companion;
-item names come from the client in its own language. The locale addon owns every non-fallback
-generated name table, the item names it learns in-game for the items those tables lack, and will
-own translated UI strings. The core searches an item's client-locale and English names both.
-Locale data registers after the core database loads; `OnDataChanged` refreshes visible data.
-Where each name table lives and how the locale addon loads only the client's language:
+item names come from the client in its own language. Outside `enUS` and `enGB`, the core loads the
+optional locale addon during `OnInitialize`. The locale addon owns every non-fallback generated
+name table, the item names it learns in-game for the items those tables lack, and will own
+translated UI strings. The core searches an item's client-locale and English names both. Locale
+data registers after the core database loads; `OnDataChanged` refreshes visible data. Where each
+name table lives and how the locale addon loads only the client's language:
 [localization.md](localization.md).
 
 ## Database boundary

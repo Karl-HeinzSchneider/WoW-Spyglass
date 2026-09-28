@@ -2,6 +2,8 @@
 local appName, app = ...
 
 local log = app.logger
+local LOCALE_ADDON = "Spyglass_Locale"
+local ENGLISH_LOCALES = { enUS = true, enGB = true }
 
 ---@class Spyglass.Addon : AceAddon, AceConsole-3.0, AceEvent-3.0
 ---@field db Spyglass.DB
@@ -23,6 +25,16 @@ function addon:OnInitialize()
     self:RegisterChatCommand("spyglass", "OnSlashCommand")
 
     self:OnProfileRefresh()
+
+    -- English is the built-in fallback. Other clients need the optional locale data before
+    -- PLAYER_LOGIN, when modules restore their views and begin any missing-name lookups.
+    if not ENGLISH_LOCALES[GetLocale()] then
+        local loaded, reason = C_AddOns.LoadAddOn(LOCALE_ADDON)
+        if not loaded then
+            log:debug("Locale addon was not loaded: %s", reason or "unknown reason")
+        end
+    end
+
     log:debug("Initialized (profile: %s)", db:GetCurrentProfile())
 end
 

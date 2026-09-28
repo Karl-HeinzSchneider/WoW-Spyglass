@@ -4,7 +4,8 @@ Owns every **non-English name table** (items, instances, bosses, professions, tr
 categories and tools): the generated ones, and on a non-English client the item names it learns
 in-game (`SpyglassLocaleDB`). Depends on `Spyglass` (`## Dependencies: Spyglass`) and
 talks to it only through the public API (`Data.names`, `Data:GetItemIDs`, `Data:AddNames`,
-`RegisterCommand`, `Log`/`LogAt`).
+`RegisterCommand`, `Log`/`LogAt`). It is load-on-demand; the core asks the client to load it at
+startup outside the English locales (`enUS` and `enGB`).
 
 Where each name comes from, how the core resolves names, the in-game lookup and adding a locale:
 **`docs/localization.md`** — read it before changing this addon.
