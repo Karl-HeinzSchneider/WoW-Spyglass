@@ -8,15 +8,6 @@
       "xp": 12375,
       "objective": "Defeat Twilight Lord Kelris and recover the Head of Kelris.",
       "requires": [1198],
-      "start": {
-        "npc": 4787,
-        "name": "Argent Guard Thaelrid"
-      },
-      "finish": {
-        "npc": 4783,
-        "name": "Dawnwatcher Selgorm",
-        "map": [1457, 56, 24]
-      },
       "items": [
         {
           "item": 7001,
@@ -43,15 +34,6 @@
       "requiredLevel": 18,
       "xp": 12375,
       "objective": "Defeat Twilight Lord Kelris and recover the Head of Kelris.",
-      "start": {
-        "npc": 4787,
-        "name": "Argent Guard Thaelrid"
-      },
-      "finish": {
-        "npc": 9087,
-        "name": "Bashana Runetotem",
-        "map": [1456, 71, 34]
-      },
       "items": [
         {
           "item": 7001,
@@ -78,16 +60,6 @@
       "requiredLevel": 20,
       "xp": 9563,
       "objective": "Collect 10 Twilight Pendants from Twilight's Hammer members in Blackfathom Deeps.",
-      "start": {
-        "npc": 4784,
-        "name": "Argent Guard Manados",
-        "map": [1457, 55, 24]
-      },
-      "finish": {
-        "npc": 4784,
-        "name": "Argent Guard Manados",
-        "map": [1457, 55, 24]
-      },
       "items": [
         {
           "item": 6998,
@@ -110,14 +82,6 @@
       "requiredLevel": 17,
       "xp": 1300,
       "objective": "Bring the Damp Note to Je'neu Sancrea in Ashenvale.",
-      "start": {
-        "name": "Damp Note"
-      },
-      "finish": {
-        "npc": 12736,
-        "name": "Je'neu Sancrea",
-        "map": [1440, 11, 34]
-      },
       "items": []
     },
     {
@@ -128,16 +92,6 @@
       "xp": 9938,
       "objective": "Defeat Lorgus Jett in Blackfathom Deeps.",
       "requires": [6564],
-      "start": {
-        "npc": 12736,
-        "name": "Je'neu Sancrea",
-        "map": [1440, 11, 34]
-      },
-      "finish": {
-        "npc": 12736,
-        "name": "Je'neu Sancrea",
-        "map": [1440, 11, 34]
-      },
       "items": [
         {
           "item": 17694,
@@ -156,17 +110,6 @@
       "requiredLevel": 18,
       "xp": 2400,
       "objective": "Collect 8 Corrupted Brain Stems from creatures in Blackfathom Deeps.",
-      "breadcrumbs": [3765],
-      "start": {
-        "npc": 8997,
-        "name": "Gershala Nightwhisper",
-        "map": [1439, 38, 43]
-      },
-      "finish": {
-        "npc": 8997,
-        "name": "Gershala Nightwhisper",
-        "map": [1439, 38, 43]
-      },
       "items": [
         {
           "item": 7003,
@@ -183,24 +126,6 @@
       ]
     },
     {
-      "id": 3765,
-      "name": "The Corruption Abroad",
-      "side": "Alliance",
-      "requiredLevel": 18,
-      "objective": "Travel to Gershala Nightwhisper in Auberdine.",
-      "start": {
-        "npc": 4984,
-        "name": "Argos Nightwhisper",
-        "map": [1453, 21, 55]
-      },
-      "finish": {
-        "npc": 8997,
-        "name": "Gershala Nightwhisper",
-        "map": [1439, 38, 43]
-      },
-      "items": []
-    },
-    {
       "id": 1740,
       "name": "The Orb of Soran'ruk",
       "side": "Both",
@@ -208,16 +133,6 @@
       "requiredLevel": 20,
       "xp": 2550,
       "objective": "Find 3 Soran'ruk Fragments and 1 Large Soran'ruk Fragment and return them to Doan Karhan.",
-      "start": {
-        "npc": 6247,
-        "name": "Doan Karhan",
-        "map": [1413, 49, 57]
-      },
-      "finish": {
-        "npc": 6247,
-        "name": "Doan Karhan",
-        "map": [1413, 49, 57]
-      },
       "items": [
         {
           "item": 6898,
@@ -236,16 +151,6 @@
       "requiredLevel": 10,
       "xp": 10313,
       "objective": "Recover the Lorgalis Manuscript from Blackfathom Deeps.",
-      "start": {
-        "npc": 2786,
-        "name": "Gerrig Bonegrip",
-        "map": [1455, 50, 5]
-      },
-      "finish": {
-        "npc": 2786,
-        "name": "Gerrig Bonegrip",
-        "map": [1455, 50, 5]
-      },
       "items": [
         {
           "item": 6743,
@@ -260,17 +165,7 @@
       "requiredLevel": 17,
       "xp": 1750,
       "objective": "Collect 20 Sapphires of Aku'Mai in Blackfathom Deeps.",
-      "breadcrumbs": [6562],
-      "start": {
-        "npc": 12736,
-        "name": "Je'neu Sancrea",
-        "map": [1440, 11, 34]
-      },
-      "finish": {
-        "npc": 12736,
-        "name": "Je'neu Sancrea",
-        "map": [1440, 11, 34]
-      },
+      "requires": [6562],
       "items": []
     },
     {
@@ -280,16 +175,6 @@
       "requiredLevel": 17,
       "xp": 435,
       "objective": "Speak to Je'neu Sancrea in Ashenvale.",
-      "start": {
-        "npc": 11862,
-        "name": "Tsunaman",
-        "map": [1442, 47, 64]
-      },
-      "finish": {
-        "npc": 12736,
-        "name": "Je'neu Sancrea",
-        "map": [1440, 11, 34]
-      },
       "items": []
     },
     {
@@ -299,15 +184,6 @@
       "requiredLevel": 18,
       "xp": 2400,
       "objective": "Find Argent Guard Thaelrid inside Blackfathom Deeps.",
-      "start": {
-        "npc": 4786,
-        "name": "Dawnwatcher Shaedlass",
-        "map": [1457, 55, 24]
-      },
-      "finish": {
-        "npc": 4787,
-        "name": "Argent Guard Thaelrid"
-      },
       "items": []
     },
     {
@@ -317,16 +193,6 @@
       "requiredLevel": 21,
       "xp": 10313,
       "objective": "Recover the Fathom Core from the Fathom Stone in Blackfathom Deeps.",
-      "start": {
-        "npc": 12736,
-        "name": "Je'neu Sancrea",
-        "map": [1440, 11, 34]
-      },
-      "finish": {
-        "npc": 12736,
-        "name": "Je'neu Sancrea",
-        "map": [1440, 11, 34]
-      },
       "items": []
     }
   ]

@@ -9,8 +9,6 @@ Data:AddQuestDefinitions({
         xp = 12375,
         objective = "Defeat Twilight Lord Kelris and recover the Head of Kelris.",
         requires = { 1198 },
-        start = { name = "Argent Guard Thaelrid", npc = 4787 },
-        finish = { map = { 1457, 56, 24 }, name = "Dawnwatcher Selgorm", npc = 4783 },
         items = {
             { 7001 }, -- Gravestone Scepter
             { 7002 }, -- Arctic Buckler
@@ -24,8 +22,6 @@ Data:AddQuestDefinitions({
         requiredLevel = 18,
         xp = 12375,
         objective = "Defeat Twilight Lord Kelris and recover the Head of Kelris.",
-        start = { name = "Argent Guard Thaelrid", npc = 4787 },
-        finish = { map = { 1456, 71, 34 }, name = "Bashana Runetotem", npc = 9087 },
         items = {
             { 7001 }, -- Gravestone Scepter
             { 7002 }, -- Arctic Buckler
@@ -39,8 +35,6 @@ Data:AddQuestDefinitions({
         requiredLevel = 20,
         xp = 9563,
         objective = "Collect 10 Twilight Pendants from Twilight's Hammer members in Blackfathom Deeps.",
-        start = { map = { 1457, 55, 24 }, name = "Argent Guard Manados", npc = 4784 },
-        finish = { map = { 1457, 55, 24 }, name = "Argent Guard Manados", npc = 4784 },
         items = {
             { 6998 }, -- Nimbus Boots
             { 7000 }, -- Heartwood Girdle
@@ -53,8 +47,6 @@ Data:AddQuestDefinitions({
         requiredLevel = 17,
         xp = 1300,
         objective = "Bring the Damp Note to Je'neu Sancrea in Ashenvale.",
-        start = { name = "Damp Note" },
-        finish = { map = { 1440, 11, 34 }, name = "Je'neu Sancrea", npc = 12736 },
         items = {},
     },
     [6565] = {
@@ -64,8 +56,6 @@ Data:AddQuestDefinitions({
         xp = 9938,
         objective = "Defeat Lorgus Jett in Blackfathom Deeps.",
         requires = { 6564 },
-        start = { map = { 1440, 11, 34 }, name = "Je'neu Sancrea", npc = 12736 },
-        finish = { map = { 1440, 11, 34 }, name = "Je'neu Sancrea", npc = 12736 },
         items = {
             { 17694 }, -- Band of the Fist
             { 17695 }, -- Chestnut Mantle
@@ -77,23 +67,11 @@ Data:AddQuestDefinitions({
         requiredLevel = 18,
         xp = 2400,
         objective = "Collect 8 Corrupted Brain Stems from creatures in Blackfathom Deeps.",
-        breadcrumbs = { 3765 },
-        start = { map = { 1439, 38, 43 }, name = "Gershala Nightwhisper", npc = 8997 },
-        finish = { map = { 1439, 38, 43 }, name = "Gershala Nightwhisper", npc = 8997 },
         items = {
             { 7003 }, -- Beetle Clasps
             { 7004 }, -- Prelacy Cape
             { 270021 }, -- Staghide Armguards
         },
-    },
-    [3765] = {
-        name = "The Corruption Abroad",
-        side = "Alliance",
-        requiredLevel = 18,
-        objective = "Travel to Gershala Nightwhisper in Auberdine.",
-        start = { map = { 1453, 21, 55 }, name = "Argos Nightwhisper", npc = 4984 },
-        finish = { map = { 1439, 38, 43 }, name = "Gershala Nightwhisper", npc = 8997 },
-        items = {},
     },
     [1740] = {
         name = "The Orb of Soran'ruk",
@@ -102,8 +80,6 @@ Data:AddQuestDefinitions({
         requiredLevel = 20,
         xp = 2550,
         objective = "Find 3 Soran'ruk Fragments and 1 Large Soran'ruk Fragment and return them to Doan Karhan.",
-        start = { map = { 1413, 49, 57 }, name = "Doan Karhan", npc = 6247 },
-        finish = { map = { 1413, 49, 57 }, name = "Doan Karhan", npc = 6247 },
         items = {
             { 6898 }, -- Orb of Soran'ruk
             { 15109 }, -- Staff of Soran'ruk
@@ -115,8 +91,6 @@ Data:AddQuestDefinitions({
         requiredLevel = 10,
         xp = 10313,
         objective = "Recover the Lorgalis Manuscript from Blackfathom Deeps.",
-        start = { map = { 1455, 50, 5 }, name = "Gerrig Bonegrip", npc = 2786 },
-        finish = { map = { 1455, 50, 5 }, name = "Gerrig Bonegrip", npc = 2786 },
         items = {
             { 6743 }, -- Sustaining Ring
         },
@@ -127,9 +101,7 @@ Data:AddQuestDefinitions({
         requiredLevel = 17,
         xp = 1750,
         objective = "Collect 20 Sapphires of Aku'Mai in Blackfathom Deeps.",
-        breadcrumbs = { 6562 },
-        start = { map = { 1440, 11, 34 }, name = "Je'neu Sancrea", npc = 12736 },
-        finish = { map = { 1440, 11, 34 }, name = "Je'neu Sancrea", npc = 12736 },
+        requires = { 6562 },
         items = {},
     },
     [6562] = {
@@ -138,8 +110,6 @@ Data:AddQuestDefinitions({
         requiredLevel = 17,
         xp = 435,
         objective = "Speak to Je'neu Sancrea in Ashenvale.",
-        start = { map = { 1442, 47, 64 }, name = "Tsunaman", npc = 11862 },
-        finish = { map = { 1440, 11, 34 }, name = "Je'neu Sancrea", npc = 12736 },
         items = {},
     },
     [1198] = {
@@ -148,8 +118,6 @@ Data:AddQuestDefinitions({
         requiredLevel = 18,
         xp = 2400,
         objective = "Find Argent Guard Thaelrid inside Blackfathom Deeps.",
-        start = { map = { 1457, 55, 24 }, name = "Dawnwatcher Shaedlass", npc = 4786 },
-        finish = { name = "Argent Guard Thaelrid", npc = 4787 },
         items = {},
     },
     [6921] = {
@@ -158,8 +126,6 @@ Data:AddQuestDefinitions({
         requiredLevel = 21,
         xp = 10313,
         objective = "Recover the Fathom Core from the Fathom Stone in Blackfathom Deeps.",
-        start = { map = { 1440, 11, 34 }, name = "Je'neu Sancrea", npc = 12736 },
-        finish = { map = { 1440, 11, 34 }, name = "Je'neu Sancrea", npc = 12736 },
         items = {},
     },
 })

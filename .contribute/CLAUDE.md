@@ -30,6 +30,9 @@ format of every file here (instance files with split dungeons, `displayName`, bo
   `npm run gen`; the JSON and all three regenerated trees are committed together
   (`npm run generate:check`, part of `npm run check`, fails when they are stale).
 - `items/*.json` is machine-written by `npm run import`; change it through a scan, not by hand.
+- `quests/*.json` contains contributor-owned data only. Add quest facts from contributor
+  submissions or direct in-game verification; never fill or reconcile it from Wowhead or another
+  third-party database.
 - Only ids matter: every `name` in an item row is informational and rewritten by `fix`. A boss's
   `name`, a split dungeon's `name`, `displayName` and quest titles are the exceptions `fix` leaves
   alone.

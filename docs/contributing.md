@@ -247,6 +247,9 @@ Quest definitions live in human-organized files under `data/quests/`, not in an 
 file is `{ "quests": [...] }`; its name is only for organization. Each quest id is defined once
 across the directory, so a class quest or chain can be reused by instances and other collections:
 
+Quest facts must come from contributor submissions or direct in-game verification. Do not fill
+or reconcile these files from Wowhead or another third-party database.
+
 ```json
 {
   "quests": [
