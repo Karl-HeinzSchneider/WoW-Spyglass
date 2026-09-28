@@ -624,17 +624,18 @@
 					<OnTextChanged inherit="prepend" method="OnTextChanged"/>
 				</Scripts>
 			</EditBox>
-			<!-- The current folder's title: fixed above the list, on every page. -->
+			<!-- Disabled: the current folder's title, fixed above the list on every page.
 			<Frame parentKey="Title" inherits="SpyglassPageHeaderTemplate">
 				<Anchors>
 					<Anchor point="TOPLEFT" x="14" y="-52"/>
 					<Anchor point="TOPRIGHT" x="-14" y="-52"/>
 				</Anchors>
 			</Frame>
+			-->
 			<!-- The list area; rows/headers are pooled children placed from its TOPLEFT. -->
 			<Frame parentKey="Content">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeKey="$parent.Title" relativePoint="BOTTOMLEFT" x="0" y="-6"/>
+					<Anchor point="TOPLEFT" x="14" y="-52"/>
 					<Anchor point="BOTTOMRIGHT" x="-14" y="52"/>
 				</Anchors>
 			</Frame>
@@ -676,7 +677,7 @@
 					</Anchors>
 				</Texture>
 				<!-- HeaderDivider mirrored: its bottom edge 44px over the view's bottom, the list
-				     ending 8px above that edge as the title starts 8px under HeaderDivider's top. -->
+				     ending 8px above that edge as it starts 8px under HeaderDivider's top. -->
 				<Texture parentKey="FooterDivider" atlas="UI-Character-Info-ScrollLine-Long" useAtlasSize="true">
 					<Anchors>
 						<Anchor point="BOTTOMLEFT" x="14" y="44"/>

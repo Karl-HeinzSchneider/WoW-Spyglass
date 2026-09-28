@@ -2097,7 +2097,7 @@ end
 -- Draws the current page plus the chrome around it.
 function SpyglassViewMixin:Render()
     local node = self:GetCurrentNode()
-    self.Title:Init(node and node.name or "")
+    -- self.Title:Init(node and node.name or "")
     self:RenderPage(self.Content, self.pages[self.PagingControls:GetCurrentPage()])
     local isOptions = node == OPTIONS_NODE
     if isOptions then
@@ -2118,8 +2118,7 @@ function SpyglassViewMixin:Render()
     self.ActiveList:GenerateMenu()
 end
 
--- Turns the current node into the flat list of things to draw: its children (the folder's
--- own title is the fixed `Title` frame above the pages). `header` nodes become section headers,
+-- Turns the current node into the flat list of things to draw: its children. `header` nodes become section headers,
 -- `subheader` nodes the smaller section titles under them, `quest` nodes quest banners (followed
 -- by their `items`), `group` nodes group labels (followed by their `items`), `spacer` nodes an
 -- empty row, everything else a row (or a tile in a `display = "tiles"` folder). If the folder
