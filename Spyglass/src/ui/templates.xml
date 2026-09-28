@@ -404,8 +404,8 @@
 		</Scripts>
 	</Frame>
 
-	<!-- Quest banner: a quest spanning the list's width, above the rewards that follow it.
-	         [!]  Title  Level 14 · Alliance ..................... 9,750 XP
+	<!-- Quest banner: a quest spanning the list's width, optionally above its rewards.
+	         [!]  Title  Level 14 ..................... Alliance/Horde  9,750 XP
 	              Objective, in one line ......................... Not started
 	     The icon is the gossip window's quest mark for the character's progress (the ready check's
 	     tick once done); the line under it ties the banner to its rewards like a group label.
@@ -441,6 +441,20 @@
 						<Anchor point="TOPRIGHT" x="-10" y="-8"/>
 					</Anchors>
 				</FontString>
+				<Texture parentKey="HordeLogo" file="Interface\Glues\CharacterCreate\CharacterCreateTest">
+					<Size x="30" y="30"/>
+					<Anchors>
+						<Anchor point="RIGHT" relativeKey="$parent.XP" relativePoint="LEFT" x="-7" y="-4"/>
+					</Anchors>
+					<TexCoords left="0.5996" right="0.6729" top="0.2129" bottom="0.3691"/>
+				</Texture>
+				<Texture parentKey="AllianceLogo" file="Interface\Glues\CharacterCreate\CharacterCreateTest">
+					<Size x="30" y="30"/>
+					<Anchors>
+						<Anchor point="RIGHT" relativeKey="$parent.HordeLogo" relativePoint="LEFT" x="-4" y="0"/>
+					</Anchors>
+					<TexCoords left="0.5996" right="0.6729" top="0.0195" bottom="0.1758"/>
+				</Texture>
 				<FontString parentKey="Status" inherits="GameFontHighlightSmall" justifyH="RIGHT" wordwrap="false">
 					<Anchors>
 						<Anchor point="BOTTOMRIGHT" x="-10" y="9"/>
@@ -460,7 +474,7 @@
 				<FontString parentKey="Objective" inherits="GameFontHighlightSmall" justifyH="LEFT" wordwrap="false">
 					<Anchors>
 						<Anchor point="BOTTOMLEFT" x="42" y="9"/>
-						<Anchor point="RIGHT" relativeKey="$parent.Status" relativePoint="LEFT" x="-16" y="0"/>
+						<Anchor point="RIGHT" relativeKey="$parent.AllianceLogo" relativePoint="LEFT" x="-8" y="0"/>
 					</Anchors>
 					<Color r="0.8" g="0.8" b="0.8"/>
 				</FontString>

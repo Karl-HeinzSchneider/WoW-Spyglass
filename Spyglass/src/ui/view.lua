@@ -728,6 +728,10 @@ end
 ---@field Objective FontString
 ---@field XP FontString
 ---@field Status FontString
+---@field AllianceLogo Texture
+---@field HordeLogo Texture
+---@field showAllianceLogo boolean
+---@field showHordeLogo boolean
 ---@field node Spyglass.Node
 ---@field view Spyglass.View
 SpyglassQuestBannerMixin = {}
@@ -748,6 +752,17 @@ function SpyglassQuestBannerMixin:Init(view, node)
     self.Title:SetText(Data:GetQuestName(questID))
     self.Info:SetText(node.info or "")
     self.Objective:SetText(quest and quest.objective or "")
+    local side = quest and quest.side
+    self.showAllianceLogo = side ~= "Horde"
+    self.showHordeLogo = side ~= "Alliance"
+    self.AllianceLogo:SetShown(self.showAllianceLogo)
+    self.HordeLogo:SetShown(self.showHordeLogo)
+    self.AllianceLogo:ClearAllPoints()
+    if self.showHordeLogo then
+        self.AllianceLogo:SetPoint("RIGHT", self.HordeLogo, "LEFT", -4, 0)
+    else
+        self.AllianceLogo:SetPoint("RIGHT", self.XP, "LEFT", -7, -4)
+    end
     local status, color, icon = Quests.Status(questID)
     self.Status:SetText(status)
     self.Status:SetTextColor(color:GetRGB())
@@ -769,13 +784,14 @@ function SpyglassQuestBannerMixin:OnSizeChanged()
 end
 
 -- Width 0 = size to the text, so the info follows the title; a title that would run into the
--- experience on the right is truncated instead.
+-- faction emblems and experience on the right is truncated instead.
 function SpyglassQuestBannerMixin:UpdateTitle()
     self.Title:SetWidth(0)
     local left = select(4, self.Title:GetPoint(1)) or 0
     local info = self.Info:GetText()
     local infoWidth = info and info ~= "" and self.Info:GetStringWidth() + 10 or 0
-    local maximum = self:GetWidth() - left - infoWidth - self.XP:GetStringWidth() - 24
+    local logosWidth = (self.showAllianceLogo and 34 or 0) + (self.showHordeLogo and 34 or 0)
+    local maximum = self:GetWidth() - left - infoWidth - self.XP:GetStringWidth() - logosWidth - 24
     if maximum > 0 and self.Title:GetStringWidth() > maximum then
         self.Title:SetWidth(maximum)
     end
@@ -785,6 +801,10 @@ end
 function SpyglassQuestBannerMixin:OnClick(button)
     if button == "RightButton" then
         self.view:Back()
+    elseif IsShiftKeyDown() then
+        app.questInfo.HandleModifiedClick(self.node.quest --[[@as integer]])
+    elseif app.api.IsFolder(self.node) then
+        self.view:Push(self.node)
     else
         app.questInfo.HandleModifiedClick(self.node.quest --[[@as integer]])
     end

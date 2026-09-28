@@ -203,7 +203,7 @@ Spyglass:RegisterModule({
 Inside a folder's `children`, from the biggest to the smallest:
 
 - `{ header = "Weapons" }` renders as a big section header (spellbook-style title with a
-  divider). The current folder's own name is always shown as the first header of its list.
+  divider).
 - `{ subheader = "Rare Drops", items = { ... } }` renders as a small centered section title with
   a line to either side, followed by `items` — one level under a header, for lists with enough
   sections that the group labels alone no longer structure them. Without `items` it just marks
@@ -213,8 +213,9 @@ Inside a folder's `children`, from the biggest to the smallest:
   beside it, the curated `objective` under it, its `xp` on the right ("No rewards recorded" when
   the database has neither `xp` nor items), and the character's progress ("Done", "Ready",
   "Active", "Not started", with the gossip window's quest mark to match). Hover shows the same
-  quest tooltip as the info panel's quest lines, shift-click links the quest in chat. Unlike a
-  subheader it stays when the filters remove all of its `items`.
+  quest tooltip as the info panel's quest lines, shift-click links the quest in chat. If the node
+  has `children`, clicking its banner opens them. Unlike a subheader it stays when the filters
+  remove all of its `items`.
 - `{ group = "Tier 2", items = { ... } }` renders as a row-sized group label followed by
   `items`. Without `items` it just marks where a group starts in the surrounding list.
 - `{ spacer = true }` is one empty row of space (as high as a list row, nothing drawn), e.g. to
@@ -265,11 +266,11 @@ Constructors (optional sugar):
   trash card and its drops: what the enemies between the bosses drop (`Data:GetTrashLoot`), auto-grouped
   like a boss's loot and with the drop count as `info`
 - `Spyglass.QuestFolder(instanceID)` / `Spyglass.InstanceQuestEntries(instanceID)` — the instance's
-  quest card and its contents: one `QuestEntry` per quest (its `info` is the `requiredLevel` as "Level 14", plus the
-  class of a class quest) followed by the items that quest rewards, sorted by `requiredLevel`, then title.
-  When the instance has quests of more than one side, they are split under a `Header` per side ("Both
-  factions", Alliance, Horde); otherwise `info` names the faction when the quest's `side` restricts it. The card carries the quest ids in
-  `quests`, so it shows the same "!" and title list a boss with quests does.
+  quest card and its contents: one clickable `QuestEntry` per quest, sorted by `requiredLevel`,
+  then title. Each banner shows Alliance and/or Horde emblems immediately before XP, plus level
+  and class in `info`, with no reward rows below it. Clicking opens a quest page with its title, description (or objective when
+  no description is recorded), and reward items. The card carries the quest ids in `quests`, so it
+  shows the same "!" and title list a boss with quests does.
 - `Spyglass.ListFolders(kind, opts?)` — folders for every curated list of `kind` (`"crafting"`, `"pvp"`,
   `"collections"`, `"reputation"`), by `order` then name; the built-in modules of those names are exactly this
 - `Spyglass.ListFolder(kind, id, opts?)` / `Spyglass.ListEntries(kind, id)` — one list as a two-column

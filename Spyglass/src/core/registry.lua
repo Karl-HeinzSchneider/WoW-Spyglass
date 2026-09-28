@@ -338,9 +338,9 @@ function api.Subheader(text, items)
 end
 
 -- A quest inside a folder's children: a full-width banner with the quest's title, `info` (e.g.
--- "Level 14 - Alliance"), objective, experience and the character's progress, from the quest
--- database; hover shows the quest's tooltip, shift-click links it. With `items` (what it
--- rewards), those entries follow it.
+-- "Level 14"), objective, experience and the character's progress, from the quest database;
+-- hover shows the quest's tooltip, shift-click links it. With `items` (what it rewards), those
+-- entries follow it. A quest node with `children` opens those children on click.
 ---@param questID integer
 ---@param items? Spyglass.Node[]
 ---@param info? string

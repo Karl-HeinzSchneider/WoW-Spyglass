@@ -119,35 +119,13 @@ function api.TrashFolder(instanceID)
     })
 end
 
--- A faction's name in the client's language and the faction's color; "Both factions" otherwise.
----@param side string
----@return string
-local function sideLabel(side)
-    if side ~= "Alliance" and side ~= "Horde" then
-        return "Both factions"
-    end
-    local label = side == "Alliance" and (FACTION_ALLIANCE or side) or (FACTION_HORDE or side)
-    local color = PLAYER_FACTION_COLORS and PLAYER_FACTION_COLORS[side == "Alliance" and 1 or 0]
-    if color and color.WrapTextInColorCode then
-        label = color:WrapTextInColorCode(label)
-    end
-    return label
-end
-
--- "Level 14 · Alliance · Warlock": what a quest's banner shows next to its title. The faction is
--- left out when a faction header above already names it; a class quest names the class in the
--- client's name and color for the class token.
+-- Level and class beside the quest title; the banner draws faction emblems separately.
 ---@param quest Spyglass.Quest
----@param withSide boolean
 ---@return string?
-local function questInfo(quest, withSide)
+local function questInfo(quest)
     local parts = {}
     if quest.requiredLevel then
         parts[#parts + 1] = ("%s %d"):format(LEVEL or "Level", quest.requiredLevel)
-    end
-    local side = quest.side
-    if withSide and (side == "Alliance" or side == "Horde") then
-        parts[#parts + 1] = sideLabel(side)
     end
     local class = quest.class
     if class then
@@ -160,10 +138,6 @@ local function questInfo(quest, withSide)
     end
     return #parts > 0 and table.concat(parts, " \194\183 ") or nil
 end
-
--- The sections of an instance's quest card, in order: quests for both factions, then each
--- faction's own.
-local QUEST_SIDES = { "Both", "Alliance", "Horde" }
 
 -- Quests by required level (unknown last), then title, then id.
 ---@param a Spyglass.Quest
@@ -181,39 +155,27 @@ local function questOrder(a, b)
     return a.id < b.id
 end
 
--- The instance's quests: one quest banner per quest (title, level, objective, experience and the
--- character's progress) with the items it rewards under it, sorted by level. When the instance
--- has quests of more than one side, they are split under one header per side (both factions,
--- Alliance, Horde).
+-- The dungeon's quest page: one clickable banner per quest, sorted by level. The reward items
+-- appear only after opening a quest; its full description is in that page's info pane.
 ---@param instanceID integer
 ---@return Spyglass.Node[]
 function api.InstanceQuestEntries(instanceID)
-    local bySide = { Both = {}, Alliance = {}, Horde = {} }
-    for _, quest in ipairs(Data:GetInstanceQuests(instanceID)) do
-        local list = bySide[quest.side] or bySide.Both
-        list[#list + 1] = quest
-    end
-    local sections = 0
-    for _, side in ipairs(QUEST_SIDES) do
-        if #bySide[side] > 0 then
-            sections = sections + 1
-        end
-    end
-
+    local quests = Data:GetInstanceQuests(instanceID)
+    table.sort(quests, questOrder)
     local entries = {}
-    for _, side in ipairs(QUEST_SIDES) do
-        local quests = bySide[side]
-        table.sort(quests, questOrder)
-        if #quests > 0 and sections > 1 then
-            entries[#entries + 1] = api.Header(sideLabel(side))
+    for _, quest in ipairs(quests) do
+        local info = questInfo(quest)
+        local items = {}
+        for _, row in ipairs(quest.items) do
+            items[#items + 1] = { itemID = row[1], chance = row[2] }
         end
-        for _, quest in ipairs(quests) do
-            local items = {}
-            for _, row in ipairs(quest.items) do
-                items[#items + 1] = { itemID = row[1], chance = row[2] }
-            end
-            entries[#entries + 1] = api.QuestEntry(quest.id, items, questInfo(quest, sections == 1))
-        end
+        local entry = api.QuestEntry(quest.id, nil, info)
+        entry.name = Data:GetQuestName(quest.id)
+        entry.description = quest.description or quest.objective or "No description recorded yet."
+        entry.columns = 2
+        entry.panel = { { description = true } }
+        entry.children = { api.QuestEntry(quest.id, items, info) }
+        entries[#entries + 1] = entry
     end
     if #entries == 0 then
         entries[1] = api.Custom({
