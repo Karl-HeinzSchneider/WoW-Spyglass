@@ -54,63 +54,35 @@
   "quests": [
     {
       "id": 2904,
-      "name": "A Fine Mess",
-      "side": "Both",
-      "items": [
-        {
-          "item": 9535,
-          "name": "Fire-welded Bracers"
-        },
-        {
-          "item": 9536,
-          "name": "Fairywing Mantle"
-        }
-      ]
+      "role": "inside"
     },
     {
       "id": 2928,
-      "name": "Gyrodrillmatic Excavationators",
-      "side": "Alliance",
-      "items": [
-        {
-          "item": 9608,
-          "name": "Shoni's Disarming Tool"
-        },
-        {
-          "item": 9609,
-          "name": "Shilly Mitts"
-        }
-      ]
+      "role": "inside"
     },
     {
       "id": 2922,
-      "name": "Save Techbot's Brain!",
-      "items": []
+      "role": "inside"
     },
     {
       "id": 2923,
-      "name": "Tinkmaster Overspark",
-      "items": []
+      "role": "inside"
     },
     {
       "id": 2926,
-      "name": "Gnogaine",
-      "items": []
+      "role": "inside"
     },
     {
       "id": 2927,
-      "name": "The Day After",
-      "items": []
+      "role": "inside"
     },
     {
       "id": 2842,
-      "name": "Chief Engineer Scooty",
-      "items": []
+      "role": "inside"
     },
     {
       "id": 2843,
-      "name": "Gnomer-gooooone!",
-      "items": []
+      "role": "inside"
     }
   ]
 }

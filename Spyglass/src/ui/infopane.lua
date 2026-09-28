@@ -303,24 +303,6 @@ end
 -- Buttons
 ----------------------------------------------------------------------------------------------------
 
--- Opens the world map at `mapID` with a waypoint at x, y (0..100, as the map shows them) where
--- the map takes one.
----@param mapID integer
----@param x number
----@param y number
-local function showOnMap(mapID, x, y)
-    if C_Map and C_Map.CanSetUserWaypointOnMap and C_Map.CanSetUserWaypointOnMap(mapID) then
-        -- The table UiMapPoint.CreateFromCoordinates builds; that helper isn't loaded in every client.
-        C_Map.SetUserWaypoint({ uiMapID = mapID, position = CreateVector2D(x / 100, y / 100) } --[[@as UiMapPoint]])
-        if C_SuperTrack and C_SuperTrack.SetSuperTrackedUserWaypoint then
-            C_SuperTrack.SetSuperTrackedUserWaypoint(true)
-        end
-    end
-    if OpenWorldMap then
-        OpenWorldMap(mapID)
-    end
-end
-
 -- A button's action: its own `onClick`, else open a collection, else show a point on the map.
 ---@param view Spyglass.View
 ---@param node Spyglass.Node
@@ -336,7 +318,7 @@ function SpyglassInfoPaneMixin:RunButton(view, node, widget)
     elseif type(widget.map) == "table" then
         local mapID, x, y = unpack(widget.map)
         if type(mapID) == "number" then
-            showOnMap(mapID, tonumber(x) or 50, tonumber(y) or 50)
+            app.questInfo.ShowOnMap({ mapID, tonumber(x) or 50, tonumber(y) or 50 })
         end
     end
 end

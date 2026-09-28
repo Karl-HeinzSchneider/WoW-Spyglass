@@ -105,88 +105,23 @@
   "quests": [
     {
       "id": 96393,
-      "name": "Old Ironforge Incursion",
-      "side": "Alliance",
-      "requiredLevel": 9,
-      "xp": 4930,
-      "objective": "Enter Hall of Thanes and claim Durgen Dirgehammer's Head.",
-      "items": [
-        {
-          "item": 279894,
-          "name": "Calibrated Blunderbuss"
-        },
-        {
-          "item": 279895,
-          "name": "Ironforge Greathammer"
-        },
-        {
-          "item": 279896,
-          "name": "Deepblaze"
-        }
-      ]
+      "role": "inside"
     },
     {
       "id": 96395,
-      "name": "An Ancient Grudge",
-      "side": "Both",
-      "requiredLevel": 10,
-      "xp": 3570,
-      "objective": "Put the spirit of Faldrim Anvilmar to rest.",
-      "items": [
-        {
-          "item": 279899,
-          "name": "Catacomb Cloak"
-        },
-        {
-          "item": 279900,
-          "name": "Deepgrave Trousers"
-        }
-      ]
+      "role": "inside"
     },
     {
       "id": 96403,
-      "name": "Important Heirlooms",
-      "side": "Both",
-      "requiredLevel": 10,
-      "xp": 4590,
-      "objective": "Collect 8 Dwarven Heirlooms from the Hall of Thanes.",
-      "items": [
-        {
-          "item": 279898,
-          "name": "Dwarven Tome"
-        },
-        {
-          "item": 280096,
-          "name": "Tomb Robber's Gloves"
-        }
-      ]
+      "role": "inside"
     },
     {
       "id": 96394,
-      "name": "The Restless Dead",
-      "side": "Alliance",
-      "requiredLevel": 10,
-      "xp": 3570,
-      "objective": "Kill 15 Enraged Apparitions and 10 Tormented Souls, then put Anvilmar's spirit to rest.",
-      "items": [
-        {
-          "item": 279897,
-          "name": "Dusty Belt"
-        },
-        {
-          "item": 280095,
-          "name": "Cryptwalker Bracers"
-        }
-      ]
+      "role": "inside"
     },
     {
       "id": 98423,
-      "name": "The Treaty of Understanding",
-      "side": "Alliance",
-      "requiredLevel": 9,
-      "xp": 3900,
-      "objective": "Deliver the Treaty of Understanding to Magni Bronzebeard in Ironforge.",
-      "items": []
+      "role": "inside"
     }
   ]
 }

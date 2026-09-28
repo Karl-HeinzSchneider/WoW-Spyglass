@@ -215,129 +215,43 @@
   "quests": [
     {
       "id": 914,
-      "name": "Leaders of the Fang",
-      "side": "Horde",
-      "requiredLevel": 10,
-      "xp": 6380,
-      "objective": "Bring the Gems of Cobrahn, Anacondra, Pythas and Serpentis to Nara Wildmane.",
-      "items": [
-        {
-          "item": 6505,
-          "name": "Crescent Staff"
-        },
-        {
-          "item": 6504,
-          "name": "Wingblade"
-        },
-        {
-          "item": 270018,
-          "name": "Hammerbone"
-        }
-      ]
+      "role": "inside"
     },
     {
       "id": 1486,
-      "name": "Deviate Hides",
-      "side": "Both",
-      "requiredLevel": 13,
-      "xp": 4640,
-      "objective": "Bring 20 Deviate Hides to Nalpak.",
-      "items": [
-        {
-          "item": 6480,
-          "name": "Slick Deviate Leggings"
-        },
-        {
-          "item": 918,
-          "name": "Deviate Hide Pack"
-        }
-      ]
+      "role": "inside"
     },
     {
       "id": 962,
-      "name": "Serpentbloom",
-      "side": "Horde",
-      "requiredLevel": 14,
-      "xp": 4930,
-      "objective": "Collect 10 Serpentbloom from Wailing Caverns.",
-      "items": [
-        {
-          "item": 10919,
-          "name": "Apothecary Gloves"
-        },
-        {
-          "item": 270008,
-          "name": "Heat Resistant Mitts"
-        },
-        {
-          "item": 270009,
-          "name": "Safety Boots"
-        }
-      ]
+      "role": "inside"
     },
     {
       "id": 1487,
-      "name": "Deviate Eradication",
-      "side": "Both",
-      "requiredLevel": 15,
-      "xp": 5945,
-      "objective": "Kill 7 Deviate Ravagers, 7 Deviate Vipers, 7 Deviate Shamblers and 7 Deviate Dreadfangs.",
-      "items": [
-        {
-          "item": 6476,
-          "name": "Pattern: Deviate Scale Belt"
-        },
-        {
-          "item": 8071,
-          "name": "Sizzle Stick"
-        },
-        {
-          "item": 6481,
-          "name": "Dagmire Gauntlets"
-        }
-      ]
+      "role": "inside"
     },
     {
       "id": 1489,
-      "name": "Hamuul Runetotem",
-      "items": []
+      "role": "inside"
     },
     {
       "id": 1490,
-      "name": "Nara Wildmane",
-      "items": []
+      "role": "inside"
     },
     {
       "id": 1491,
-      "name": "Smart Drinks",
-      "side": "Both",
-      "requiredLevel": 13,
-      "xp": 3915,
-      "objective": "Bring 6 Wailing Essence to Mebok Mizzyrix.",
-      "items": []
+      "role": "inside"
     },
     {
       "id": 959,
-      "name": "Trouble at the Docks",
-      "side": "Both",
-      "requiredLevel": 14,
-      "xp": 3915,
-      "objective": "Retrieve the 99-Year-Old Port from Mad Magglish in Wailing Caverns.",
-      "items": []
+      "role": "inside"
     },
     {
       "id": 3366,
-      "name": "The Glowing Shard",
-      "items": []
+      "role": "inside"
     },
     {
       "id": 6981,
-      "name": "The Glowing Shard",
-      "side": "Both",
-      "requiredLevel": 15,
-      "xp": 7685,
-      "objective": "Travel to Ratchet to find someone who can identify the Glowing Shard, then deliver it as directed.",
-      "items": []
+      "role": "inside"
     }
   ]
 }

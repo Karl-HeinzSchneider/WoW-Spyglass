@@ -3,7 +3,7 @@ local Data = Spyglass.Data
 
 -- Razorfen Kraul (map 47)
 
-Data:AddQuests(47, {
-    { id = 1144, name = "Willix the Importer", side = "Both", items = {} },
-    { id = 1221, name = "Blueleaf Tubers", items = {} },
+Data:AddInstanceQuests(47, {
+    { id = 1144, role = "inside" },
+    { id = 1221, role = "inside" },
 })

@@ -56,10 +56,10 @@ test("fix gives an instance without a trash list an empty one", () => {
   );
 });
 
-test("trash and quest rows resolve a name-only row and keep their shape through a fix rewrite", () => {
+test("trash rows resolve a name-only row and quest references keep their shape through a fix rewrite", () => {
   const file = dungeonFile({
     trash: [{ name: "Trash Trinket", chance: 0.02 }],
-    quests: [{ id: 26, name: "A Test Quest", side: "Alliance", items: [{ item: 200 }] }],
+    quests: [{ id: 26, role: "inside" }],
   });
   const checker = dungeonChecker(true);
   validate([file], checker);
@@ -69,9 +69,7 @@ test("trash and quest rows resolve a name-only row and keep their shape through 
   );
   const serialized = JSON.parse(serialize(file.data)) as Record<string, unknown>;
   assert.deepEqual(serialized.trash, [{ item: 100, name: "Trash Trinket", chance: 0.02 }]);
-  assert.deepEqual(serialized.quests, [
-    { id: 26, name: "A Test Quest", side: "Alliance", items: [{ item: 200, name: "Quest Reward" }] },
-  ]);
+  assert.deepEqual(serialized.quests, [{ id: 26, role: "inside" }]);
 });
 
 test("a displayName is kept through a fix rewrite and must not be empty", () => {
@@ -120,69 +118,6 @@ test("requiredLevel and zone are kept through a fix rewrite and must be a level 
   const errors = wrong.problems.filter((p) => !p.warning).map((p) => p.message);
   assert.ok(errors.some((m) => m.includes("requiredLevel")));
   assert.ok(errors.some((m) => m.includes("zone")));
-});
-
-test("a quest needs an id, a known side and no duplicate", () => {
-  const file = dungeonFile({
-    quests: [
-      { id: 0, items: [] },
-      { id: 26, name: "A Test Quest", side: "Neutral", items: [] },
-      { id: 26, name: "A Test Quest", items: [] },
-    ],
-  });
-  const checker = dungeonChecker(false);
-  validate([file], checker);
-  const errors = checker.problems.filter((p) => !p.fixable && !p.warning).map((p) => p.message);
-  assert.equal(errors.length, 3, errors.join("\n"));
-  assert.match(errors[0]!, /quest without a positive integer `id`/);
-  assert.match(errors[1]!, /quest 26: `side` must be one of Alliance, Horde, Both/);
-  assert.match(errors[2]!, /quest 26 listed twice/);
-});
-
-test("a quest without a name is only a warning: no game table can supply one", () => {
-  const file = dungeonFile({ trash: [], quests: [{ id: 26, items: [{ item: 200, name: "Quest Reward" }] }] });
-  const checker = dungeonChecker(false);
-  validate([file], checker);
-  assert.deepEqual(
-    checker.problems.filter((p) => !p.fixable && !p.warning),
-    [],
-  );
-  assert.equal(checker.problems.filter((p) => p.warning).length, 1);
-  assert.match(checker.problems.find((p) => p.warning)!.message, /quest 26: no `name`/);
-});
-
-test("a quest without an id is only a warning: the id is added by hand later", () => {
-  const file = dungeonFile({
-    trash: [],
-    quests: [{ name: "A Test Quest", items: [{ item: 200, name: "Quest Reward" }] }],
-  });
-  const checker = dungeonChecker(false);
-  validate([file], checker);
-  assert.deepEqual(
-    checker.problems.filter((p) => !p.fixable && !p.warning),
-    [],
-  );
-  assert.deepEqual(
-    checker.problems.filter((p) => p.warning).map((p) => p.message),
-    ['quest "A Test Quest": no `id`; it isn\'t shipped until it has one'],
-  );
-});
-
-test("a class quest names one of the classes, and keeps it through a fix rewrite", () => {
-  const file = dungeonFile({
-    trash: [],
-    quests: [
-      { id: 26, name: "A Test Quest", class: "Warlock", items: [] },
-      { id: 27, name: "Another Quest", class: "Necromancer", items: [] },
-    ],
-  });
-  const checker = dungeonChecker(false);
-  validate([file], checker);
-  const errors = checker.problems.filter((p) => !p.fixable && !p.warning).map((p) => p.message);
-  assert.equal(errors.length, 1, errors.join("\n"));
-  assert.match(errors[0]!, /quest 27: `class` must be one of Warrior, .*Warlock, Druid/);
-  const serialized = JSON.parse(serialize(file.data)) as { quests: unknown[] };
-  assert.deepEqual(serialized.quests[0], { id: 26, name: "A Test Quest", class: "Warlock", items: [] });
 });
 
 test("a split map: each file needs an id, a boss may be in one of them only, one in none is a warning", () => {

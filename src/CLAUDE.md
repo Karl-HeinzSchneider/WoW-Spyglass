@@ -48,8 +48,10 @@ contributors write are in `docs/contributing.md`.
   (the shipping rule the generator and the checker share), `linkRecipeItems`, `loadRecipes`.
 - `items.ts` — `ScannedItem` (field meanings = `Data.ITEM` in the core) and the
   `.contribute/data/items/` store.
-- `curated.ts` — the instance files (`CuratedInstance/Encounter/Loot/Quest`), `loadCurated`,
+- `curated.ts` — the instance files (`CuratedInstance/Encounter/Loot` plus quest references), `loadCurated`,
   `validate`, `serialize`, and the shared `Checker` with `checkItemRow`.
+- `quests.ts` — reusable quest definitions, relationship/contact validation, instance and boss
+  reference validation, and stable serialization of `.contribute/data/quests/`.
 - `lists.ts` — the item lists (`CuratedList/Row`, `ROWS_KEY`, `ROW_FIELDS`, `STANDINGS`),
   `rowsOf`, `validateLists`, `validateSections`, `serializeList`.
 - `savedvars.ts` — a parser for the Lua subset the client writes to SavedVariables; not a Lua

@@ -30,10 +30,10 @@ Data:AddTrashLoot(34, {
     { 274092 }, -- Sharpened Cutlery
 })
 
-Data:AddQuests(34, {
-    { id = 386, name = "What Comes Around...", side = "Alliance", items = {} },
-    { id = 377, name = "Crime and Punishment", side = "Alliance", items = {} },
-    { id = 387, name = "Quell the Uprising", items = {} },
-    { id = 388, name = "The Color of Blood", items = {} },
-    { id = 391, name = "The Stockade Riots", items = {} },
+Data:AddInstanceQuests(34, {
+    { id = 386, role = "inside" },
+    { id = 377, role = "inside" },
+    { id = 387, role = "inside" },
+    { id = 388, role = "inside" },
+    { id = 391, role = "inside" },
 })

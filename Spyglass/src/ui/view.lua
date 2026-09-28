@@ -721,6 +721,9 @@ end
 
 ---@class Spyglass.QuestBanner : Button
 ---@field Backplate Texture
+---@field ChainLine Texture
+---@field ChainStepBack Texture
+---@field ChainStep FontString
 ---@field Icon Texture
 ---@field Line Texture
 ---@field Title FontString
@@ -743,7 +746,30 @@ function SpyglassQuestBannerMixin:Init(view, node)
     local Quests = app.questInfo
     local questID = node.quest --[[@as integer]]
     local quest = Data:GetQuest(questID)
+    local meta = node.meta or {}
+    local chainStep = meta.questChainStep
     Quests.Link(questID) -- loads the quest ahead of hover and click; its title may follow
+
+    local inChain = type(chainStep) == "number"
+    local target = inChain and meta.questChainTarget == true
+    self.ChainLine:SetShown(inChain)
+    self.ChainStepBack:SetShown(inChain)
+    self.ChainStep:SetShown(inChain)
+    self.ChainStep:SetText(inChain and chainStep or "")
+    local red, green, blue = target and 1 or 0.55, target and 0.82 or 0.55, target and 0 or 0.55
+    self.ChainLine:SetColorTexture(red, green, blue, 0.65)
+    self.ChainStepBack:SetColorTexture(red, green, blue, 0.9)
+    self.ChainStep:SetTextColor(target and 0.1 or 0, target and 0.08 or 0, 0)
+    self.Backplate:SetColorTexture(target and 0.08 or 0, target and 0.055 or 0, 0, target and 0.58 or 0.45)
+
+    local iconLeft, textLeft = inChain and 38 or 8, inChain and 72 or 42
+    self.Icon:ClearAllPoints()
+    self.Icon:SetPoint("LEFT", self, "LEFT", iconLeft, 0)
+    self.Title:ClearAllPoints()
+    self.Title:SetPoint("TOPLEFT", self, "TOPLEFT", textLeft, -7)
+    self.Objective:ClearAllPoints()
+    self.Objective:SetPoint("BOTTOMLEFT", self, "BOTTOMLEFT", textLeft, 9)
+    self.Objective:SetPoint("RIGHT", self.Status, "LEFT", -16, 0)
 
     self.Title:SetText(Data:GetQuestName(questID))
     self.Info:SetText(node.info or "")

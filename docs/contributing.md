@@ -45,8 +45,9 @@ Never edit a generated tree by hand. Texture paths in JSON need doubled backslas
   data/
     config.json             pinned client build and generation settings
     items/items_<n>.json    the item database: in-game scans, one file per 10 000 ids (machine-written)
-    dungeons/<slug>.json    one file per dungeon: levels, art, bosses, drops, trash, quests
+    dungeons/<slug>.json    one file per dungeon: levels, art, bosses, drops, trash, quest references
     raids/<slug>.json       the same for raids
+    quests/<slug>.json      reusable quest definitions, chains and contact map points
     crafting/<slug>.json    one file per profession: its skill line, plus additions to the generated recipes
     pvp/<slug>.json         one file per reward source and its rewards
     collections/<slug>.json one file per collection and its items
@@ -136,14 +137,7 @@ Find or create the instance file; all it needs is the map id (the `-- Name` comm
     }
   ],
   "trash": [{ "item": 1935, "name": "Buzzer Blade", "chance": 0.01 }],
-  "quests": [
-    {
-      "id": 166,
-      "name": "Underground Assault",
-      "side": "Alliance",
-      "items": [{ "item": 6220, "name": "Silver-Thread Cape" }, { "name": "Gold-Flecked Gloves" }]
-    }
-  ]
+  "quests": [{ "id": 166, "role": "inside" }]
 }
 ```
 
@@ -161,7 +155,8 @@ The instance:
 | `icon`                           | Texture path.                                                                                                           |
 | `background`, `backgroundCoords` | The tile's picture: a texture path or fileID, and `[left, right, top, bottom]` in 0–1 of it (all of it when omitted).   |
 | `encounters`                     | The bosses. `fix` adds every encounter the game knows for the map that the file doesn't list yet, with an empty `loot`. |
-| `trash`, `quests`                | The instance's own two lists, see below.                                                                                |
+| `trash`                          | The instance's non-boss drops, see below.                                                                               |
+| `quests`                         | References to reusable definitions under `data/quests/`, see below.                                                     |
 
 A boss (`encounters[]`):
 
@@ -172,7 +167,7 @@ A boss (`encounters[]`):
 | `level`, `creatureType` | As the game shows them; the card says "20 Humanoid".                                                                                                                                                                                                              |
 | `portrait`, `displayID` | The boss's picture, see below.                                                                                                                                                                                                                                    |
 | `npc`                   | Where the `displayID` came from; not shipped.                                                                                                                                                                                                                     |
-| `quests`                | Ids of the quests the boss is involved in (the "!" on its card). The quests themselves are described in the instance's `quests`.                                                                                                                                  |
+| `quests`                | Ids of the quests the boss is involved in (the "!" on its card). Definitions live under `data/quests/`.                                                                                                                                                           |
 | `loot`                  | Item rows with an optional `chance` (0–1).                                                                                                                                                                                                                        |
 
 **Item rows**, everywhere in `.contribute/data/`: `item` is the item id, `name` is informational
@@ -246,32 +241,43 @@ contributions, as it does for a boss with no recorded loot. Trash is keyed by th
 by an encounter: an item found there matches the browser's _Instance_ filter, not its _Boss_
 filter.
 
-### `quests`: the instance's quests and what they reward
+### Quests: reusable definitions and instance references
 
-`quests` is a list of quest objects, in the order the info panel should list them (the _Quests_
-card sorts them itself, see below):
+Quest definitions live in human-organized files under `data/quests/`, not in an instance. A
+file is `{ "quests": [...] }`; its name is only for organization. Each quest id is defined once
+across the directory, so a class quest or chain can be reused by instances and other collections:
 
-| Field           | Type    | Meaning                                                                                                                                                             |
-| --------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `id`            | integer | The quest id, and the only field checked against anything: positive, and listed once per file. A quest without one is a warning and isn't shipped until it has one. |
-| `name`          | string  | The quest's title. Curated, because this client ships no quest table: `fix` never rewrites it, and a quest without one is a warning.                                |
-| `side`          | string  | `"Alliance"`, `"Horde"` or `"Both"`; omitting it means `"Both"`. Anything else is an error.                                                                         |
-| `class`         | string  | A class quest's class: `"Warrior"`, `"Paladin"`, `"Hunter"`, `"Rogue"`, `"Priest"`, `"Shaman"`, `"Mage"`, `"Warlock"` or `"Druid"`; omitted means any class.        |
-| `requiredLevel` | integer | The level a character needs to accept the quest; shown in the quest's tooltip in the info panel.                                                                    |
-| `xp`            | integer | The experience the quest rewards; shown in the quest's tooltip in the info panel.                                                                                   |
-| `objective`     | string  | What the quest asks for, in one English sentence; shown in the quest's tooltip in the info panel.                                                                   |
-| `items`         | array   | The items the quest rewards: item rows without a `chance`. May be empty.                                                                                            |
+```json
+{
+  "quests": [
+    {
+      "id": 166,
+      "name": "Underground Assault",
+      "side": "Alliance",
+      "requiredLevel": 14,
+      "objective": "Retrieve the Gnoam Sprecklesprocket from the Deadmines.",
+      "requires": [165],
+      "start": { "npc": 656, "name": "Wilder Thistlenettle", "map": [1436, 65.2, 69.8] },
+      "finish": { "npc": 656, "name": "Wilder Thistlenettle", "map": [1436, 65.2, 69.8] },
+      "items": [{ "item": 6220, "name": "Meteor Shard" }]
+    }
+  ]
+}
+```
 
-The quest ids are the ones a boss's `quests` field lists: a boss that hands out or is the
-objective of a quest names the id there, and the quest and its rewards are described once here.
-The same item may appear in several quests.
+Besides the existing `id`, `name`, `side`, `class`, `requiredLevel`, `xp`, `objective` and
+`items` fields, a definition accepts `requires` (every direct prerequisite), `requiresAny`
+(alternative direct prerequisites), `breadcrumbs` (optional lead-ins which do not lock the
+quest), and `start` / `finish`. A contact may have an NPC `id`, a display `name`, and
+`map: [uiMapID, x, y]`. All are curated manually. The validator rejects missing references,
+duplicate definitions, bad coordinates and relationship cycles.
 
-In the browser, the instance's _Quests_ card opens a page with one subheader per quest (its title
-and id, plus the class of a class quest) and the quest's reward items under it, sorted by
-`requiredLevel`, then title. An instance with quests of more than one `side` splits them under a
-header per side: both factions, Alliance, Horde. A quest that runs through several instances (the warlock quest "The Orb
-of Soran'ruk" needs Blackfathom Deeps and Shadowfang Keep) is listed in each of their files with
-the same id and fields; the addon keeps one definition per id, the one loaded last.
+An instance's `quests` contains only `{ "id": questID, "role": role }`. The optional role is
+`"inside"`, `"lead-in"`, `"turn-in"` or `"spans"`. A boss's `quests` continues to list quest ids.
+The browser derives each target's complete prerequisite and optional lead-in chain, splits targets
+by faction, and shows the related banners before them. Hover shows contacts; Alt-click opens the
+useful start or finish location on the map. A quest shared by several instances is still defined
+only once.
 
 ### Showing an instance in the browser
 

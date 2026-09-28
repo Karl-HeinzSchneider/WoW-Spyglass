@@ -14,9 +14,8 @@ local log = app.logger
 --   Data.bosses[bossID]     = { instanceID = 36, order = 6000 }   -- bossID = DungeonEncounter id
 --   Data.bossLoot[bossID]   = { { itemID, chance }, ... }
 --   Data.trashLoot[instID]  = { { itemID, chance }, ... }   -- what the instance's non-boss enemies drop
---   Data.quests[questID]    = { id = 26, name = "...", side = "Alliance", requiredLevel = 14, xp = 4688, objective = "...",
---                               instanceID = 36, items = { { itemID }, ... } }
---   Data.instanceQuests[id] = { questID, ... }              -- the instance's quests, in curated order
+--   Data.quests[questID]    = { id = 26, name = "...", requires = { 25 }, start = { name = "...", map = {...} }, ... }
+--   Data.instanceQuests[id] = { { id = questID, role = "inside" }, ... }
 --   Data.lists[kind][id]    = { name = "Argent Dawn", icon = ..., factionID = 529 }  -- curated item lists;
 --                             kind = "crafting" | "pvp" | "collections" | "reputation", id = the file's slug
 --   Data.listLoot[kind][id] = { { itemID, standing = "Honored", ... }, ... }    -- the list's rows
@@ -108,8 +107,21 @@ local RECIPE = {
 ---@field requiredLevel? integer  # the level a character needs to accept it
 ---@field xp? integer  # the experience it rewards
 ---@field objective? string  # what it asks for, in one sentence (English)
----@field instanceID? integer  # the (last) instance it was registered for, set by Data:AddQuests
+---@field requires? integer[]  # direct prerequisites which must all be complete
+---@field requiresAny? integer[]  # alternative direct prerequisites; one must be complete
+---@field breadcrumbs? integer[]  # optional lead-ins which point here but are not required
+---@field start? Spyglass.QuestContact  # quest giver and optional map point
+---@field finish? Spyglass.QuestContact  # turn-in contact and optional map point
 ---@field items Spyglass.LootRow[]  # the items it rewards
+
+---@class Spyglass.QuestContact
+---@field npc? integer
+---@field name? string
+---@field map? number[]  # { uiMapID, x, y }, x and y in 0..100
+
+---@class Spyglass.QuestAssociation
+---@field id integer
+---@field role? "inside"|"lead-in"|"turn-in"|"spans"
 
 ---@alias Spyglass.RecipeRow { [1]: integer, [2]: integer, [3]: integer|integer[], [4]: integer, [5]: integer, [6]: integer, [7]: integer, [8]: integer, [9]: integer[]?, [10]: integer[]?, [11]: boolean?, [12]: integer? }
 
@@ -173,7 +185,7 @@ local RECIPE = {
 ---@field bossLoot table<integer, Spyglass.LootRow[]>
 ---@field trashLoot table<integer, Spyglass.LootRow[]>  # keyed by instance id
 ---@field quests table<integer, Spyglass.Quest>  # keyed by quest id
----@field instanceQuests table<integer, integer[]>  # instance id -> quest ids in curated order
+---@field instanceQuests table<integer, Spyglass.QuestAssociation[]>  # instance id -> quest references in curated order
 ---@field lists table<Spyglass.ListKind, table<string, Spyglass.List>>
 ---@field listLoot table<Spyglass.ListKind, table<string, Spyglass.ListLootRow[]>>
 ---@field recipes table<integer, Spyglass.RecipeRow>
@@ -320,10 +332,55 @@ function Data:AddTrashLoot(instanceID, rows)
     invalidate()
 end
 
--- Appends quests to an instance: `{ { id = 26, name = "...", side = "Alliance", items = { { itemID }, ... } }, ... }`.
--- Each quest is stored by its id with `instanceID` filled in, and listed under the instance in
--- the order it was added; adding a quest id again replaces its definition. A quest that spans
--- several instances (a class quest through two dungeons) is listed under each that adds it.
+-- Adds or replaces reusable quest definitions, keyed by quest id.
+---@param quests table<integer, Spyglass.Quest>
+function Data:AddQuestDefinitions(quests)
+    if type(quests) ~= "table" then
+        log:error("Data.AddQuestDefinitions: expected table, got %s", type(quests))
+        return
+    end
+    for id, quest in pairs(quests) do
+        if type(id) ~= "number" or type(quest) ~= "table" then
+            log:error("Data.AddQuestDefinitions: bad definition for key %s", tostring(id))
+        else
+            quest.id = id
+            quest.items = quest.items or {}
+            self.quests[id] = quest
+        end
+    end
+    invalidate()
+end
+
+-- Associates globally defined quests with an instance, without taking ownership of their data.
+---@param instanceID integer
+---@param quests Spyglass.QuestAssociation[]
+function Data:AddInstanceQuests(instanceID, quests)
+    if type(instanceID) ~= "number" or type(quests) ~= "table" then
+        log:error("Data.AddInstanceQuests: expected (number, table), got (%s, %s)", type(instanceID), type(quests))
+        return
+    end
+    local associations = self.instanceQuests[instanceID]
+    if not associations then
+        associations = {}
+        self.instanceQuests[instanceID] = associations
+    end
+    for _, association in ipairs(quests) do
+        if type(association) ~= "table" or type(association.id) ~= "number" then
+            log:error("Data.AddInstanceQuests: quest without an id in instance %d", instanceID)
+        else
+            local listed = false
+            for _, known in ipairs(associations) do
+                listed = listed or known.id == association.id
+            end
+            if not listed then
+                associations[#associations + 1] = association
+            end
+        end
+    end
+    invalidate()
+end
+
+-- Compatibility API for addons using the old instance-owned quest format.
 ---@param instanceID integer
 ---@param quests Spyglass.Quest[]
 function Data:AddQuests(instanceID, quests)
@@ -331,28 +388,15 @@ function Data:AddQuests(instanceID, quests)
         log:error("Data.AddQuests: expected (number, table), got (%s, %s)", type(instanceID), type(quests))
         return
     end
-    local ids = self.instanceQuests[instanceID]
-    if not ids then
-        ids = {}
-        self.instanceQuests[instanceID] = ids
-    end
+    local definitions, associations = {}, {}
     for _, quest in ipairs(quests) do
-        if type(quest) ~= "table" or type(quest.id) ~= "number" then
-            log:error("Data.AddQuests: quest without an id in instance %d", instanceID)
-        else
-            quest.instanceID = instanceID
-            quest.items = quest.items or {}
-            local listed = false
-            for _, id in ipairs(ids) do
-                listed = listed or id == quest.id
-            end
-            if not listed then
-                ids[#ids + 1] = quest.id
-            end
-            self.quests[quest.id] = quest
+        if type(quest) == "table" and type(quest.id) == "number" then
+            definitions[quest.id] = quest
+            associations[#associations + 1] = { id = quest.id }
         end
     end
-    invalidate()
+    self:AddQuestDefinitions(definitions)
+    self:AddInstanceQuests(instanceID, associations)
 end
 
 -- Adds or replaces a curated item list; `kind` names the module it belongs to, `id` is unique
@@ -652,6 +696,38 @@ function Data:GetQuest(questID)
     return self.quests[questID]
 end
 
+-- A target quest and every transitive prerequisite or optional lead-in, in relationship-first order.
+---@param questIDs integer[]
+---@return Spyglass.Quest[]
+function Data:GetQuestChain(questIDs)
+    local chain, added, visiting = {}, {}, {}
+    local function add(questID)
+        if added[questID] or visiting[questID] then
+            return
+        end
+        visiting[questID] = true
+        local quest = self.quests[questID]
+        if quest then
+            for _, required in ipairs(quest.requires or NO_SOURCES) do
+                add(required)
+            end
+            for _, required in ipairs(quest.requiresAny or NO_SOURCES) do
+                add(required)
+            end
+            for _, breadcrumb in ipairs(quest.breadcrumbs or NO_SOURCES) do
+                add(breadcrumb)
+            end
+            chain[#chain + 1] = quest
+            added[questID] = true
+        end
+        visiting[questID] = nil
+    end
+    for _, questID in ipairs(questIDs or NO_SOURCES) do
+        add(questID)
+    end
+    return chain
+end
+
 -- A quest's title: the client's when it knows the quest, else the curated one, else "#id".
 ---@param questID integer
 ---@return string
@@ -672,10 +748,19 @@ end
 ---@return Spyglass.Quest[]
 function Data:GetInstanceQuests(instanceID)
     local quests = {}
-    for _, questID in ipairs(self.instanceQuests[instanceID] or NO_SOURCES) do
-        quests[#quests + 1] = self.quests[questID]
+    for _, association in ipairs(self.instanceQuests[instanceID] or NO_SOURCES) do
+        local quest = self.quests[association.id]
+        if quest then
+            quests[#quests + 1] = quest
+        end
     end
     return quests
+end
+
+---@param instanceID integer
+---@return Spyglass.QuestAssociation[]
+function Data:GetInstanceQuestAssociations(instanceID)
+    return self.instanceQuests[instanceID] or NO_SOURCES
 end
 
 ---@param kind Spyglass.ListKind
@@ -797,8 +882,9 @@ function Data:GetItemSources(itemID)
             end
         end
         -- Per instance, so a quest listed under two instances is a source in both.
-        for instanceID, questIDs in pairs(self.instanceQuests) do
-            for _, questID in ipairs(questIDs) do
+        for instanceID, associations in pairs(self.instanceQuests) do
+            for _, association in ipairs(associations) do
+                local questID = association.id
                 local quest = self.quests[questID]
                 for _, row in ipairs(quest and quest.items or NO_SOURCES) do
                     add(row[1], { kind = "quest", id = questID, instanceID = instanceID, side = quest.side })

@@ -164,6 +164,12 @@ end
 -- The sections of an instance's quest card, in order: quests for both factions, then each
 -- faction's own.
 local QUEST_SIDES = { "Both", "Alliance", "Horde" }
+local QUEST_ROLE_LABELS = {
+    ["inside"] = "Inside instance",
+    ["lead-in"] = "Lead-in",
+    ["turn-in"] = "Turn-in",
+    ["spans"] = "Multiple instances",
+}
 
 -- Quests by required level (unknown last), then title, then id.
 ---@param a Spyglass.Quest
@@ -181,17 +187,124 @@ local function questOrder(a, b)
     return a.id < b.id
 end
 
--- The instance's quests: one quest banner per quest (title, level, objective, experience and the
--- character's progress) with the items it rewards under it, sorted by level. When the instance
--- has quests of more than one side, they are split under one header per side (both factions,
--- Alliance, Horde).
+-- A reusable quest-chain presentation: direct prerequisites first, then the requested targets.
+-- `roles` optionally describes why a target belongs to its collection (inside, lead-in, ...).
+---@param questIDs integer[]
+---@param roles? table<integer, string>
+---@param withSide? boolean
+---@return Spyglass.Node[]
+function api.QuestChainEntries(questIDs, roles, withSide)
+    local targets = {}
+    local sorted = {}
+    for _, questID in ipairs(questIDs) do
+        local quest = Data:GetQuest(questID)
+        if quest then
+            targets[questID] = true
+            sorted[#sorted + 1] = quest
+        end
+    end
+    table.sort(sorted, questOrder)
+    local sortedIDs = {}
+    for i, quest in ipairs(sorted) do
+        sortedIDs[i] = quest.id
+    end
+
+    local chain = Data:GetQuestChain(sortedIDs)
+    local dependencies, requiredDependencies, leadIns = {}, {}, {}
+    for _, quest in ipairs(chain) do
+        for _, required in ipairs(quest.requires or {}) do
+            dependencies[required] = true
+            requiredDependencies[required] = true
+        end
+        for _, required in ipairs(quest.requiresAny or {}) do
+            dependencies[required] = true
+            requiredDependencies[required] = true
+        end
+        for _, breadcrumb in ipairs(quest.breadcrumbs or {}) do
+            dependencies[breadcrumb] = true
+            leadIns[breadcrumb] = true
+        end
+    end
+
+    -- The longest prerequisite path to a quest. Third-party data can arrive without the
+    -- contributor validator, so the visiting guard also makes this safe for accidental cycles.
+    local depths, visiting = {}, {}
+    local function depthOf(quest)
+        if depths[quest.id] then
+            return depths[quest.id]
+        end
+        if visiting[quest.id] then
+            return 1
+        end
+        visiting[quest.id] = true
+        local depth = 1
+        for _, required in ipairs(quest.requires or {}) do
+            local prerequisite = Data:GetQuest(required)
+            if prerequisite then
+                depth = math.max(depth, depthOf(prerequisite) + 1)
+            end
+        end
+        for _, required in ipairs(quest.requiresAny or {}) do
+            local prerequisite = Data:GetQuest(required)
+            if prerequisite then
+                depth = math.max(depth, depthOf(prerequisite) + 1)
+            end
+        end
+        for _, breadcrumb in ipairs(quest.breadcrumbs or {}) do
+            local leadIn = Data:GetQuest(breadcrumb)
+            if leadIn then
+                depth = math.max(depth, depthOf(leadIn) + 1)
+            end
+        end
+        visiting[quest.id] = nil
+        depths[quest.id] = depth
+        return depth
+    end
+
+    local entries = {}
+    for _, quest in ipairs(chain) do
+        local items = {}
+        for _, row in ipairs(quest.items) do
+            items[#items + 1] = { itemID = row[1], chance = row[2] }
+        end
+        local role = targets[quest.id] and roles and roles[quest.id]
+        local context = targets[quest.id] and (QUEST_ROLE_LABELS[role] or nil)
+            or (leadIns[quest.id] and not requiredDependencies[quest.id] and "Optional lead-in" or "Prerequisite")
+        local info = questInfo(quest, withSide or false)
+        if context then
+            info = info and (context .. " \194\183 " .. info) or context
+        end
+        local entry = api.QuestEntry(quest.id, items, info)
+        local connected = dependencies[quest.id]
+            or #(quest.requires or {}) > 0
+            or #(quest.requiresAny or {}) > 0
+            or #(quest.breadcrumbs or {}) > 0
+        entry.meta = {
+            questRole = role
+                or (targets[quest.id] and "target")
+                or (leadIns[quest.id] and not requiredDependencies[quest.id] and "breadcrumb" or "prerequisite"),
+            questChainStep = connected and depthOf(quest) or nil,
+            questChainTarget = targets[quest.id] or false,
+        }
+        entries[#entries + 1] = entry
+    end
+    return entries
+end
+
+-- The instance's target quests and their prerequisite chains. When the instance has quests of
+-- more than one side, they are split under one header per side.
 ---@param instanceID integer
 ---@return Spyglass.Node[]
 function api.InstanceQuestEntries(instanceID)
     local bySide = { Both = {}, Alliance = {}, Horde = {} }
-    for _, quest in ipairs(Data:GetInstanceQuests(instanceID)) do
-        local list = bySide[quest.side] or bySide.Both
-        list[#list + 1] = quest
+    local roles = {}
+    for _, association in ipairs(Data:GetInstanceQuestAssociations(instanceID)) do
+        local quest = Data:GetQuest(association.id)
+        if quest then
+            local list = bySide[quest.side] or bySide.Both
+            list[#list + 1] = quest.id
+            roles[quest.id] = association.role
+        end
     end
     local sections = 0
     for _, side in ipairs(QUEST_SIDES) do
@@ -202,17 +315,12 @@ function api.InstanceQuestEntries(instanceID)
 
     local entries = {}
     for _, side in ipairs(QUEST_SIDES) do
-        local quests = bySide[side]
-        table.sort(quests, questOrder)
-        if #quests > 0 and sections > 1 then
+        local questIDs = bySide[side]
+        if #questIDs > 0 and sections > 1 then
             entries[#entries + 1] = api.Header(sideLabel(side))
         end
-        for _, quest in ipairs(quests) do
-            local items = {}
-            for _, row in ipairs(quest.items) do
-                items[#items + 1] = { itemID = row[1], chance = row[2] }
-            end
-            entries[#entries + 1] = api.QuestEntry(quest.id, items, questInfo(quest, sections == 1))
+        for _, entry in ipairs(api.QuestChainEntries(questIDs, roles, sections == 1)) do
+            entries[#entries + 1] = entry
         end
     end
     if #entries == 0 then

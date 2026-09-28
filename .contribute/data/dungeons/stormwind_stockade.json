@@ -102,30 +102,23 @@
   "quests": [
     {
       "id": 386,
-      "name": "What Comes Around...",
-      "side": "Alliance",
-      "items": []
+      "role": "inside"
     },
     {
       "id": 377,
-      "name": "Crime and Punishment",
-      "side": "Alliance",
-      "items": []
+      "role": "inside"
     },
     {
       "id": 387,
-      "name": "Quell the Uprising",
-      "items": []
+      "role": "inside"
     },
     {
       "id": 388,
-      "name": "The Color of Blood",
-      "items": []
+      "role": "inside"
     },
     {
       "id": 391,
-      "name": "The Stockade Riots",
-      "items": []
+      "role": "inside"
     }
   ]
 }

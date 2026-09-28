@@ -30,6 +30,8 @@ export const LIST_DIRS = Object.fromEntries(LIST_KINDS.map((kind) => [kind, reso
 
 /** The item database's source: in-game scans, one JSON file per id range (see items.ts). */
 export const SCANNED_ITEMS_DIR = resolve(DATA_DIR, "items");
+/** Manually curated, reusable quest definitions, one human-sized JSON file per chain/group. */
+export const QUESTS_DIR = resolve(DATA_DIR, "quests");
 /** Drop folder for `npm run import` without a path: SavedVariables .lua and /sg export .json files (gitignored). */
 export const INBOX_DIR = resolve(CONTRIBUTE_DIR, "inbox");
 

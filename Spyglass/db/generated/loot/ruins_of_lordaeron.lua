@@ -49,40 +49,15 @@ Data:AddTrashLoot(2999, {
     { 268535 }, -- Bloodied Insignia
 })
 
-Data:AddQuests(2999, {
-    { id = 92422, name = "The Wrath of Rath'mael", side = "Horde", requiredLevel = 15, objective = "Kill Rath'mael in Ruins of Lordaeron.", items = {
-        { 251533 }, -- Forsaken Greataxe
-        { 251534 }, -- Gnarled Necromancer's Staff
-    } },
-    { id = 92415, name = "Remember That I Love You", side = "Alliance", requiredLevel = 15, xp = 9750, objective = "Bring the Blood-Stained Letter to Orphan Matron Nightingale.", items = {
-        { 279870 }, -- Tarnished Locket
-    } },
-    { id = 92421, name = "Light's Justice", side = "Horde", requiredLevel = 15, xp = 7040, objective = "Collect 25 Intact Limbs within Ruins of Lordaeron.", items = {
-        { 279874 }, -- The Stitcher
-        { 279875 }, -- Spare Part Bindings
-    } },
-    { id = 95250, name = "Abominable Creatures", side = "Alliance", requiredLevel = 16, xp = 6188, objective = "Collect the Head of the Baron in Ruins of Lordaeron.", items = {
-        { 279864 }, -- Monstrous Cleaver
-        { 279865 }, -- Grave Shroud
-        { 279867 }, -- Slain Baron's Signet
-    } },
-    { id = 95195, name = "Bloodied Insignia", side = "Alliance", requiredLevel = 16, xp = 9750, objective = "Collect 10 Bloodied Insignias.", items = {
-        { 279868 }, -- Duty Bound Leggings
-        { 279869 }, -- Remembrance Armor
-    } },
-    { id = 95216, name = "The New Plague", side = "Horde", requiredLevel = 16, xp = 8320, objective = "Collect the Highly Toxic Strain from Witherfang.", items = {
-        { 279876 }, -- Plaguefang
-        { 279877 }, -- Blight Gloves
-    } },
-    { id = 97288, name = "Unending Torment", side = "Horde", requiredLevel = 16, xp = 5280, objective = "Deliver the Abominable Head to the Undercity.", items = {} },
-    { id = 92401, name = "A Frightened Request", side = "Horde", requiredLevel = 15, xp = 7040, objective = "Investigate the disappearance of Edward Heartweaver in Ruins of Lordaeron.", items = {
-        { 251485 }, -- Edward's Knife
-        { 251486 }, -- Tabitha's Cuffs
-    } },
-    { id = 95189, name = "Crest of Lordaeron", side = "Alliance", requiredLevel = 16, xp = 9750, objective = "Return the Crest of Lordaeron to Stormwind.", items = {
-        { 280567 }, -- Small Sack of Gems
-    } },
-    { id = 95204, name = "Crest of Lordaeron", side = "Horde", requiredLevel = 16, xp = 8320, objective = "Bring the Crest of Lordaeron to the Undercity.", items = {
-        { 280567 }, -- Small Sack of Gems
-    } },
+Data:AddInstanceQuests(2999, {
+    { id = 92422, role = "inside" },
+    { id = 92415, role = "inside" },
+    { id = 92421, role = "inside" },
+    { id = 95250, role = "inside" },
+    { id = 95195, role = "inside" },
+    { id = 95216, role = "inside" },
+    { id = 97288, role = "inside" },
+    { id = 92401, role = "inside" },
+    { id = 95189, role = "inside" },
+    { id = 95204, role = "inside" },
 })

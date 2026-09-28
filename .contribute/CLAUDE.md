@@ -7,7 +7,7 @@ Everything under `data/` is input; the three generated trees (`Spyglass/db/gener
 
 **Before editing a data file, read the matching section of `docs/contributing.md`**: it has the
 format of every file here (instance files with split dungeons, `displayName`, boss pictures,
-`trash` and `quests`; the four kinds of item lists; crafting rows and `sections`; a list's info
+`trash` and quest references, reusable definitions under `data/quests/`; the four kinds of item lists; crafting rows and `sections`; a list's info
 `panel`) and what
 `npm run fix` checks and rewrites. Where the data comes from and how it is turned into Lua is in
 `docs/data-pipeline.md`; the tooling that reads this folder is `src/`.
@@ -18,7 +18,8 @@ format of every file here (instance files with split dungeons, `displayName`, bo
   data/
     config.json             pinned client build and generation settings
     items/items_<n>.json    the in-game scans, one file per 10 000 ids (machine-written)
-    dungeons/, raids/       one file per instance: levels, art, bosses, drops, trash, quests
+    dungeons/, raids/       one file per instance: levels, art, bosses, drops, trash, quest references
+    quests/                 reusable, manually curated quest definitions, relationships and contacts
     crafting/               one file per profession: its skill line, plus additions to the generated recipes
     pvp/, collections/, reputation/   one file per item list
 ```

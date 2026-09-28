@@ -70,22 +70,9 @@ Data:AddTrashLoot(33, {
     { 6641 }, -- Haunting Blade
 })
 
-Data:AddQuests(33, {
-    { id = 1098, name = "Deathstalkers in Shadowfang", side = "Horde", requiredLevel = 18, xp = 8700, objective = "Find Deathstalker Adamant and Deathstalker Vincent inside Shadowfang Keep.", items = {
-        { 3324 }, -- Ghostly Mantle
-        { 270023 }, -- Tanned Shoulderpads
-        { 270024 }, -- Bronzed Shoulderguards
-    } },
-    { id = 1014, name = "Arugal Must Die", side = "Horde", requiredLevel = 18, xp = 14355, objective = "Kill Archmage Arugal and bring his head to Dalar Dawnweaver.", items = {
-        { 6414 }, -- Seal of Sylvanas
-    } },
-    { id = 1013, name = "The Book of Ur", side = "Horde", requiredLevel = 16, xp = 9135, objective = "Bring the Book of Ur from Shadowfang Keep to Keeper Bel'dugur.", items = {
-        { 6335 }, -- Grizzled Boots
-        { 4534 }, -- #4534
-        { 270030 }, -- Tattered Mittens
-    } },
-    { id = 1740, name = "The Orb of Soran'ruk", side = "Both", class = "WARLOCK", requiredLevel = 20, xp = 2550, objective = "Find 3 Soran'ruk Fragments and 1 Large Soran'ruk Fragment and return them to Doan Karhan.", items = {
-        { 6898 }, -- Orb of Soran'ruk
-        { 15109 }, -- Staff of Soran'ruk
-    } },
+Data:AddInstanceQuests(33, {
+    { id = 1098, role = "inside" },
+    { id = 1014, role = "inside" },
+    { id = 1013, role = "inside" },
+    { id = 1740, role = "spans" },
 })

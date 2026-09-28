@@ -43,8 +43,8 @@ export interface CuratedInstance {
    * an empty list to files that don't have one yet.
    */
   trash?: CuratedLoot[];
-  /** The quests that take place in the instance and the items they reward. */
-  quests?: CuratedQuest[];
+  /** Reusable quest definitions associated with this instance. */
+  quests?: CuratedQuestAssociation[];
 }
 
 export interface CuratedEncounter {
@@ -73,39 +73,12 @@ export interface CuratedLoot extends CuratedItemRow {
   chance?: number;
 }
 
-/**
- * One quest of an instance and the items it rewards. This client ships no quest table, so both
- * the id and the title are curated: the id is what the game knows the quest by, `name` is what
- * the browser shows when the client cannot resolve the title itself.
- */
-export interface CuratedQuest {
-  /** Quest id. A quest without one is only warned about and not shipped until it has one. */
-  id?: number;
-  /** Quest title. Shipped, because no game table can supply it; `fix` never rewrites it. */
-  name?: string;
-  /** Faction the quest is available to: "Alliance", "Horde" or "Both"; omitted means both. */
-  side?: string;
-  /** The class a class quest is for ("Warlock"); omitted means any class. */
-  class?: string;
-  /** The level a character needs to accept the quest; the quest tooltip shows it. */
-  requiredLevel?: number;
-  /** The experience the quest rewards; the quest tooltip shows it. */
-  xp?: number;
-  /** What the quest asks for, in one sentence (English); the quest tooltip shows it. */
-  objective?: string;
-  /** The items the quest rewards. */
-  items: CuratedItemRow[];
-}
+export type QuestRole = "inside" | "lead-in" | "turn-in" | "spans";
 
-/** What `CuratedQuest.side` accepts; leaving it out means the same as "Both". */
-export const QUEST_SIDES = ["Alliance", "Horde", "Both"];
-
-/** What `CuratedQuest.class` accepts; shipped as the client's class token (`classToken`). */
-export const QUEST_CLASSES = ["Warrior", "Paladin", "Hunter", "Rogue", "Priest", "Shaman", "Mage", "Warlock", "Druid"];
-
-/** "Warlock" -> "WARLOCK", the key of the client's LOCALIZED_CLASS_NAMES_MALE and RAID_CLASS_COLORS. */
-export function classToken(name: string): string {
-  return name.toUpperCase().replace(/ /g, "");
+/** An instance's reference to one globally defined quest. */
+export interface CuratedQuestAssociation {
+  id: number;
+  role?: QuestRole;
 }
 
 /** The id the addon knows the instance by: its own `id` on a split map, else the map id. */
@@ -365,7 +338,6 @@ export function validate(files: CuratedFile[], checker: Checker): void {
     }
 
     validateTrash(file, checker);
-    validateQuests(file, checker);
 
     // Encounters the game knows but the file doesn't list yet: add empty skeletons in order. A
     // split map's are checked across all its files below, since `fix` can't know which part.
@@ -424,60 +396,6 @@ function validateTrash(file: CuratedFile, checker: Checker): void {
   }
 }
 
-/**
- * The instance's quests. Only the id is checked against anything (it must be a positive integer
- * and unique in the file) — this client has no quest table, so the title cannot be verified and
- * a quest without one is only a warning.
- */
-function validateQuests(file: CuratedFile, checker: Checker): void {
-  const d = file.data;
-  if (d.quests === undefined) return;
-  if (!Array.isArray(d.quests)) {
-    checker.report(file, "`quests` must be an array");
-    return;
-  }
-  const seenQuests = new Set<number>();
-  for (const quest of d.quests) {
-    if (quest.id === undefined) {
-      // Titles and rewards often come first; the id is added by hand later.
-      checker.warn(file, `quest "${quest.name ?? "?"}": no \`id\`; it isn't shipped until it has one`);
-      continue;
-    }
-    if (!Number.isInteger(quest.id) || quest.id <= 0) {
-      checker.report(file, "quest without a positive integer `id`");
-      continue;
-    }
-    if (seenQuests.has(quest.id)) checker.report(file, `quest ${quest.id} listed twice`);
-    seenQuests.add(quest.id);
-    if (quest.name === undefined || quest.name === "") {
-      checker.warn(file, `quest ${quest.id}: no \`name\`; the browser can only show its id`);
-    }
-    if (quest.side !== undefined && !QUEST_SIDES.includes(quest.side)) {
-      checker.report(file, `quest ${quest.id}: \`side\` must be one of ${QUEST_SIDES.join(", ")}`);
-    }
-    if (quest.class !== undefined && !QUEST_CLASSES.includes(quest.class)) {
-      checker.report(file, `quest ${quest.id}: \`class\` must be one of ${QUEST_CLASSES.join(", ")}`);
-    }
-    if (quest.requiredLevel !== undefined && (!Number.isInteger(quest.requiredLevel) || quest.requiredLevel < 1)) {
-      checker.report(file, `quest ${quest.id}: \`requiredLevel\` must be a level (an integer from 1)`);
-    }
-    if (quest.xp !== undefined && (!Number.isInteger(quest.xp) || quest.xp < 0)) {
-      checker.report(file, `quest ${quest.id}: \`xp\` must be a non-negative integer`);
-    }
-    if (quest.objective !== undefined && (typeof quest.objective !== "string" || quest.objective === "")) {
-      checker.report(file, `quest ${quest.id}: \`objective\` must be a non-empty string`);
-    }
-    if (!Array.isArray(quest.items)) {
-      checker.report(file, `quest ${quest.id}: \`items\` must be an array`, true);
-      if (checker.fix) quest.items = [];
-      else continue;
-    }
-    // Items may repeat across quests (a shared reward), so each quest counts on its own.
-    const seenItems = new Set<number>();
-    for (const row of quest.items) checker.checkItemRow(file, `quest ${quest.id}`, row, seenItems);
-  }
-}
-
 /** Stable key order so `fix` produces minimal diffs. */
 export function serialize(d: CuratedInstance): string {
   const ordered = {
@@ -505,16 +423,7 @@ export function serialize(d: CuratedInstance): string {
       loot: e.loot.map((r) => ({ item: r.item, name: r.name, chance: r.chance })),
     })),
     trash: d.trash?.map((r) => ({ item: r.item, name: r.name, chance: r.chance })),
-    quests: d.quests?.map((q) => ({
-      id: q.id,
-      name: q.name,
-      side: q.side,
-      class: q.class,
-      requiredLevel: q.requiredLevel,
-      xp: q.xp,
-      objective: q.objective,
-      items: (q.items ?? []).map((r) => ({ item: r.item, name: r.name })),
-    })),
+    quests: d.quests?.map((q) => ({ id: q.id, role: q.role })),
   };
   return JSON.stringify(ordered, null, 2) + "\n";
 }

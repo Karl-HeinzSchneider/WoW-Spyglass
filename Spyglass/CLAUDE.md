@@ -66,7 +66,8 @@ Nothing in here touches frames. The tables, calls and built-in filters are docum
 
 - `data.lua` — `app.data`: the normalized tables, the `Add*` calls (each invalidates caches, fires
   `OnDataChanged` and bumps `GetVersion()`), the getters, name resolution and `GetItemSources`
-  (a lazy inverted index). Item and recipe rows are positional: `Data.ITEM` must match
+  (a lazy inverted index). Quest definitions are global and reusable; instances hold only
+  associations, and `GetQuestChain` expands prerequisites and optional lead-ins. Item and recipe rows are positional: `Data.ITEM` must match
   `itemRow()` and `Data.RECIPE` must match `recipeRow()` in `src/generate.ts`.
 - `filters.lua` — `app.filters`: the filter registry and the built-in filters.
 - `query.lua` — `app.query`: `Query.Run(q)` over a plain query table. `search` matches
@@ -75,7 +76,7 @@ Nothing in here touches frames. The tables, calls and built-in filters are docum
   subclasses (the `USERS` table; edit it to tune the view's class filter), `CanUse(class,
 itemID)`. Private, not part of the public API.
 - `nodes.lua` — the DB-backed node constructors modules build their trees from
-  (`InstanceFolder(s)`, `BossFolder`, `TrashFolder`, `QuestFolder`, `ListFolder(s)`, …). Crafting
+  (`InstanceFolder(s)`, `BossFolder`, `TrashFolder`, `QuestFolder`, `QuestChainEntries`, `ListFolder(s)`, …). Crafting
   lists merge the generated recipes with the curated rows (`craftingEntries`) and split into
   category folders (`categoryFolders`), optionally under subheaders (`sectionedFolders`); see
   `ListFolder` in `docs/API.md`.
@@ -85,7 +86,7 @@ itemID)`. Private, not part of the public API.
 Written by `npm run gen` from `.contribute/data/`; the TOC lists only `db\generated\generated.xml`,
 which loads the rest. No item rows and no English item names (those are in the database
 companion). `instances.lua` (its `-- Name` comments are where to look up instance ids),
-`loot/<slug>.lua`, `<kind>/<slug>.lua` (the curated lists), `recipes/<profession>.lua` (its
+`quests/<slug>.lua`, `loot/<slug>.lua`, `<kind>/<slug>.lua` (the curated lists), `recipes/<profession>.lua` (its
 `-- Name` comments list recipe spell ids and category ids) and `locales/enUS/*.lua` (the
 standalone English names of instances, bosses and crafting). Excluded from LuaLS, StyLua and
 Prettier. What each file is made from: `docs/data-pipeline.md`.
@@ -119,14 +120,15 @@ the window.
 - `mainwindow.lua/.xml` — `SpyglassMainWindow` (`app.ui.mainWindow`): the frame, its two panes
   and the browser-style view tabs.
 - `quests.lua` — `app.questInfo`: a quest's progress (text, color, icon), chat link, tooltip and
-  modified click, shared by the info pane's quest lines and the view's quest banners. Loaded
+  modified click, prerequisite/lead-in details, plus curated contact map points shared by the info pane's
+  map buttons and the view's quest banners. Loaded
   before `view.lua`.
 - `infopane.lua/.xml` — `SpyglassInfoPaneMixin`, the right pane (`RightPane.Info`): the
   selected tab's info `panel`, drawn with the character frame's side-pane look. Its checkbox
   filter ids live in `view.lua` and must match `PANEL_FILTERS` in `src/lists.ts`.
 - `view.lua` + `templates.xml` — a view: header row, paged content, the navigation stack, rows,
-  tiles, cards, quest banners and headers, search box and filter dropdown, the footer's class
-  filter buttons.
+  tiles, cards, quest banners (including the numbered chain rail) and headers, search box and
+  filter dropdown, the footer's class filter buttons.
 - `recipepopup.lua/.xml` — `app.ui.recipePopup`, toggled by a click on a recipe row;
   `SpyglassPopupTemplate` / `SpyglassPopupMixin`, the shell both popups share
   (`app.ui.HidePopups()`); `SpyglassItemSlotTemplate` is the icon slot every slot uses.

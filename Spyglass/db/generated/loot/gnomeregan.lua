@@ -11,19 +11,13 @@ Data:AddBossLoot(2771, { -- Crowd Pummeler 9-60
     { 9449 }, -- Manual Crowd Pummeler
 })
 
-Data:AddQuests(90, {
-    { id = 2904, name = "A Fine Mess", side = "Both", items = {
-        { 9535 }, -- Fire-welded Bracers
-        { 9536 }, -- Fairywing Mantle
-    } },
-    { id = 2928, name = "Gyrodrillmatic Excavationators", side = "Alliance", items = {
-        { 9608 }, -- Shoni's Disarming Tool
-        { 9609 }, -- Shilly Mitts
-    } },
-    { id = 2922, name = "Save Techbot's Brain!", items = {} },
-    { id = 2923, name = "Tinkmaster Overspark", items = {} },
-    { id = 2926, name = "Gnogaine", items = {} },
-    { id = 2927, name = "The Day After", items = {} },
-    { id = 2842, name = "Chief Engineer Scooty", items = {} },
-    { id = 2843, name = "Gnomer-gooooone!", items = {} },
+Data:AddInstanceQuests(90, {
+    { id = 2904, role = "inside" },
+    { id = 2928, role = "inside" },
+    { id = 2922, role = "inside" },
+    { id = 2923, role = "inside" },
+    { id = 2926, role = "inside" },
+    { id = 2927, role = "inside" },
+    { id = 2842, role = "inside" },
+    { id = 2843, role = "inside" },
 })

@@ -151,9 +151,15 @@ the group label's scroll line along its bottom. On the left is the progress icon
 `Interface\RaidFrame\ReadyCheck-Ready` once done), then the title in `GameFontNormalMed2` with the
 node's `info` right after it (the title is sized to its text and truncated before it reaches the
 right column) and the objective under both; on the right the experience over the progress text.
-Progress, hover, shift-click and the quest data request come from `app.questInfo` (`quests.lua`),
-shared with the info pane's quest lines. The layout keeps a banner together with its first reward
-row. While the list has banners (`view.showsQuests`), the view redraws the page on
+Progress includes Done, Ready, Active, level-gated, Locked and Eligible (the latter two from the
+curated prerequisite graph). Hover, shift-click and the quest data request come from `app.questInfo` (`quests.lua`),
+shared with the info pane's quest lines. Curated start/finish contacts appear in the tooltip;
+Alt-click opens the contact useful for the current progress as a world-map waypoint. A chain
+labels prerequisite and optional lead-in banners and keeps them before their targets; connected
+banners gain a numbered step rail, with neutral relationship steps and gold target steps. The
+target's instance role is shown in `info`, and the tooltip distinguishes required quests from
+optional lead-ins (completed related quests are green).
+Standalone quests keep the ordinary banner. The layout keeps a banner together with its first reward row. While the list has banners (`view.showsQuests`), the view redraws the page on
 `QUEST_LOG_UPDATE`, `QUEST_TURNED_IN` and `QUEST_DATA_LOAD_RESULT`, deferred to the next frame
 like the item-info redraw.
 

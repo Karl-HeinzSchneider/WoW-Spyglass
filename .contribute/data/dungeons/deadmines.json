@@ -253,139 +253,31 @@
   "quests": [
     {
       "id": 166,
-      "name": "The Defias Brotherhood",
-      "side": "Alliance",
-      "requiredLevel": 14,
-      "xp": 9750,
-      "objective": "Defeat Edwin VanCleef and collect his head.",
-      "items": [
-        {
-          "item": 2041,
-          "name": "Tunic of Westfall"
-        },
-        {
-          "item": 2042,
-          "name": "Staff of Westfall"
-        },
-        {
-          "item": 6087,
-          "name": "Chausses of Westfall"
-        }
-      ]
+      "role": "inside"
     },
     {
       "id": 168,
-      "name": "Collecting Memories",
-      "side": "Alliance",
-      "requiredLevel": 14,
-      "xp": 1350,
-      "objective": "Collect 4 Miners' Union Cards from undead miners in the tunnels outside the instance.",
-      "items": [
-        {
-          "item": 2036,
-          "name": "Dusty Mining Gloves"
-        },
-        {
-          "item": 2037,
-          "name": "Tunneler's Boots"
-        },
-        {
-          "item": 270007,
-          "name": "Worn Miner's Waistcord"
-        }
-      ]
+      "role": "inside"
     },
     {
       "id": 167,
-      "name": "Oh Brother. . .",
-      "side": "Alliance",
-      "requiredLevel": 15,
-      "xp": 1550,
-      "objective": "Recover Thistlenettle's Badge from Foreman Thistlenettle in the undead side tunnel.",
-      "items": [
-        {
-          "item": 1893,
-          "name": "Miner's Revenge"
-        },
-        {
-          "item": 270012,
-          "name": "Miner's Workgloves"
-        },
-        {
-          "item": 270013,
-          "name": "Miner's Workboots"
-        }
-      ]
+      "role": "inside"
     },
     {
       "id": 214,
-      "name": "Red Silk Bandanas",
-      "side": "Alliance",
-      "requiredLevel": 14,
-      "xp": 4688,
-      "objective": "Collect 10 Red Silk Bandanas from Defias inside the Deadmines.",
-      "items": [
-        {
-          "item": 2074,
-          "name": "Solid Shortblade"
-        },
-        {
-          "item": 2089,
-          "name": "Scrimshaw Dagger"
-        },
-        {
-          "item": 6094,
-          "name": "Piercing Axe"
-        },
-        {
-          "item": 270005,
-          "name": "Monastic Hammer"
-        }
-      ]
+      "role": "inside"
     },
     {
       "id": 2040,
-      "name": "Underground Assault",
-      "side": "Alliance",
-      "requiredLevel": 15,
-      "xp": 5813,
-      "objective": "Recover the Gnoam Sprecklesprocket from Sneed's Shredder.",
-      "items": [
-        {
-          "item": 7606,
-          "name": "Polar Gauntlets"
-        },
-        {
-          "item": 7607,
-          "name": "Sable Wand"
-        },
-        {
-          "item": 270015,
-          "name": "Bravo's Armbands"
-        },
-        {
-          "item": 270016,
-          "name": "Dreamer's Leggings"
-        }
-      ]
+      "role": "inside"
     },
     {
       "id": 92753,
-      "name": "Destruction in Deadmines",
-      "side": "Alliance",
-      "requiredLevel": 9,
-      "xp": 1350,
-      "objective": "Place the explosives beside the forge in the Deadmines.",
-      "items": []
+      "role": "inside"
     },
     {
       "id": 373,
-      "name": "The Unsent Letter",
-      "side": "Alliance",
-      "requiredLevel": 16,
-      "xp": 870,
-      "objective": "Take the letter to the city architect in Stormwind.",
-      "items": []
+      "role": "inside"
     }
   ]
 }

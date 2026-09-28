@@ -60,30 +60,15 @@ Data:AddTrashLoot(43, {
     { 6632 }, -- Feyscale Cloak
 })
 
-Data:AddQuests(43, {
-    { id = 914, name = "Leaders of the Fang", side = "Horde", requiredLevel = 10, xp = 6380, objective = "Bring the Gems of Cobrahn, Anacondra, Pythas and Serpentis to Nara Wildmane.", items = {
-        { 6505 }, -- Crescent Staff
-        { 6504 }, -- Wingblade
-        { 270018 }, -- Hammerbone
-    } },
-    { id = 1486, name = "Deviate Hides", side = "Both", requiredLevel = 13, xp = 4640, objective = "Bring 20 Deviate Hides to Nalpak.", items = {
-        { 6480 }, -- Slick Deviate Leggings
-        { 918 }, -- Deviate Hide Pack
-    } },
-    { id = 962, name = "Serpentbloom", side = "Horde", requiredLevel = 14, xp = 4930, objective = "Collect 10 Serpentbloom from Wailing Caverns.", items = {
-        { 10919 }, -- Apothecary Gloves
-        { 270008 }, -- Heat Resistant Mitts
-        { 270009 }, -- Safety Boots
-    } },
-    { id = 1487, name = "Deviate Eradication", side = "Both", requiredLevel = 15, xp = 5945, objective = "Kill 7 Deviate Ravagers, 7 Deviate Vipers, 7 Deviate Shamblers and 7 Deviate Dreadfangs.", items = {
-        { 6476 }, -- Pattern: Deviate Scale Belt
-        { 8071 }, -- Sizzle Stick
-        { 6481 }, -- Dagmire Gauntlets
-    } },
-    { id = 1489, name = "Hamuul Runetotem", items = {} },
-    { id = 1490, name = "Nara Wildmane", items = {} },
-    { id = 1491, name = "Smart Drinks", side = "Both", requiredLevel = 13, xp = 3915, objective = "Bring 6 Wailing Essence to Mebok Mizzyrix.", items = {} },
-    { id = 959, name = "Trouble at the Docks", side = "Both", requiredLevel = 14, xp = 3915, objective = "Retrieve the 99-Year-Old Port from Mad Magglish in Wailing Caverns.", items = {} },
-    { id = 3366, name = "The Glowing Shard", items = {} },
-    { id = 6981, name = "The Glowing Shard", side = "Both", requiredLevel = 15, xp = 7685, objective = "Travel to Ratchet to find someone who can identify the Glowing Shard, then deliver it as directed.", items = {} },
+Data:AddInstanceQuests(43, {
+    { id = 914, role = "inside" },
+    { id = 1486, role = "inside" },
+    { id = 962, role = "inside" },
+    { id = 1487, role = "inside" },
+    { id = 1489, role = "inside" },
+    { id = 1490, role = "inside" },
+    { id = 1491, role = "inside" },
+    { id = 959, role = "inside" },
+    { id = 3366, role = "inside" },
+    { id = 6981, role = "inside" },
 })

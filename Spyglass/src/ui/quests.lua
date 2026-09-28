@@ -31,6 +31,32 @@ function Quests.Status(questID)
         end
         return "Active", HIGHLIGHT_FONT_COLOR, ICON_INCOMPLETE
     end
+    if not Quests.IsForCharacter(questID) then
+        return "Unavailable", GRAY_FONT_COLOR, ICON_AVAILABLE
+    end
+    local quest = app.data:GetQuest(questID)
+    if quest and quest.requiredLevel and UnitLevel("player") < quest.requiredLevel then
+        return ("Level %d"):format(quest.requiredLevel), GRAY_FONT_COLOR, ICON_AVAILABLE
+    end
+    local hasRequirements = quest and (#(quest.requires or {}) > 0 or #(quest.requiresAny or {}) > 0)
+    if hasRequirements then
+        for _, required in ipairs(quest.requires or {}) do
+            if not questLog.IsQuestFlaggedCompleted(required) then
+                return "Locked", GRAY_FONT_COLOR, ICON_AVAILABLE
+            end
+        end
+        local alternatives = quest.requiresAny or {}
+        if #alternatives > 0 then
+            local complete = false
+            for _, required in ipairs(alternatives) do
+                complete = complete or questLog.IsQuestFlaggedCompleted(required)
+            end
+            if not complete then
+                return "Locked", GRAY_FONT_COLOR, ICON_AVAILABLE
+            end
+        end
+        return "Eligible", HIGHLIGHT_FONT_COLOR, ICON_AVAILABLE
+    end
     return "Not started", GRAY_FONT_COLOR, ICON_AVAILABLE
 end
 
@@ -70,6 +96,41 @@ function Quests.FormatXP(xp)
     return BreakUpLargeNumbers and BreakUpLargeNumbers(xp) or tostring(xp)
 end
 
+-- Opens a curated { uiMapID, x, y } point and sets it as the user's waypoint where supported.
+---@param point number[]
+function Quests.ShowOnMap(point)
+    local mapID, x, y = unpack(point)
+    if type(mapID) ~= "number" then
+        return
+    end
+    x, y = tonumber(x) or 50, tonumber(y) or 50
+    if C_Map and C_Map.CanSetUserWaypointOnMap and C_Map.CanSetUserWaypointOnMap(mapID) then
+        C_Map.SetUserWaypoint({ uiMapID = mapID, position = CreateVector2D(x / 100, y / 100) } --[[@as UiMapPoint]])
+        if C_SuperTrack and C_SuperTrack.SetSuperTrackedUserWaypoint then
+            C_SuperTrack.SetSuperTrackedUserWaypoint(true)
+        end
+    end
+    if OpenWorldMap then
+        OpenWorldMap(mapID)
+    end
+end
+
+-- The most useful map point for the character's current progress: turn-in when ready/done,
+-- otherwise the quest giver. Falls back to whichever contact has a point.
+---@param questID integer
+---@return number[]?
+function Quests.MapPoint(questID)
+    local quest = app.data:GetQuest(questID)
+    if not quest then
+        return nil
+    end
+    local done = C_QuestLog.IsQuestFlaggedCompleted(questID)
+        or (C_QuestLog.IsOnQuest(questID) and (C_QuestLog.ReadyForTurnIn(questID) or C_QuestLog.IsComplete(questID)))
+    local preferred = done and quest.finish or quest.start
+    local fallback = done and quest.start or quest.finish
+    return preferred and preferred.map or fallback and fallback.map
+end
+
 -- A reward's tooltip line: the item's icon and name, in its quality color. The client's cache when
 -- it has the item, else the database row; an uncached item is requested for the next hover.
 ---@param itemID integer
@@ -85,6 +146,29 @@ local function rewardLine(itemID)
     end
     local markup = CreateSimpleTextureMarkup(icon or "Interface\\Icons\\INV_Misc_QuestionMark", 16, 16)
     return markup .. " " .. name, quality and ITEM_QUALITY_COLORS[quality] or HIGHLIGHT_FONT_COLOR
+end
+
+-- Adds one prerequisite row using client titles when available and curated fallbacks otherwise.
+---@param label string
+---@param questIDs integer[]
+local function addRequirements(label, questIDs)
+    if #questIDs == 0 then
+        return
+    end
+    local names = {}
+    for _, questID in ipairs(questIDs) do
+        local name = app.data:GetQuestName(questID)
+        if C_QuestLog.IsQuestFlaggedCompleted(questID) then
+            name = GREEN_FONT_COLOR:WrapTextInColorCode(name)
+        end
+        names[#names + 1] = name
+    end
+    GameTooltip:AddDoubleLine(
+        label,
+        table.concat(names, ", "),
+        NORMAL_FONT_COLOR:GetRGB(),
+        HIGHLIGHT_FONT_COLOR:GetRGB()
+    )
 end
 
 -- A quest's tooltip on `owner`: the game's own quest tooltip from its link, else, while the
@@ -127,12 +211,50 @@ function Quests.ShowTooltip(owner, questID)
             GameTooltip:AddLine(xp, HIGHLIGHT_FONT_COLOR:GetRGB())
         end
     end
+    if quest and (#(quest.requires or {}) > 0 or #(quest.requiresAny or {}) > 0) then
+        GameTooltip:AddLine(" ")
+        addRequirements("Requires", quest.requires or {})
+        addRequirements("Requires one of", quest.requiresAny or {})
+    end
+    if quest and #(quest.breadcrumbs or {}) > 0 then
+        GameTooltip:AddLine(" ")
+        addRequirements("Optional lead-in", quest.breadcrumbs)
+    end
+    if quest and (quest.start or quest.finish) then
+        GameTooltip:AddLine(" ")
+        if quest.start and quest.start.name then
+            GameTooltip:AddDoubleLine(
+                "Starts",
+                quest.start.name,
+                NORMAL_FONT_COLOR:GetRGB(),
+                HIGHLIGHT_FONT_COLOR:GetRGB()
+            )
+        end
+        if quest.finish and quest.finish.name then
+            GameTooltip:AddDoubleLine(
+                "Ends",
+                quest.finish.name,
+                NORMAL_FONT_COLOR:GetRGB(),
+                HIGHLIGHT_FONT_COLOR:GetRGB()
+            )
+        end
+        if Quests.MapPoint(questID) then
+            GameTooltip:AddLine("Alt-click to show on map", GREEN_FONT_COLOR:GetRGB())
+        end
+    end
     GameTooltip:Show()
 end
 
 -- A modified click links the quest in chat, like a quest link there.
 ---@param questID integer
 function Quests.HandleModifiedClick(questID)
+    if IsAltKeyDown and IsAltKeyDown() then
+        local point = Quests.MapPoint(questID)
+        if point then
+            Quests.ShowOnMap(point)
+            return
+        end
+    end
     local link = Quests.Link(questID)
     if link then
         HandleModifiedItemClick(link)

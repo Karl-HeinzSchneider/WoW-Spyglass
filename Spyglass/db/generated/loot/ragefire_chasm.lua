@@ -27,19 +27,11 @@ Data:AddBossLoot(2735, { -- Bazzalan
     { 273005 }, -- Satyrskin Cloak
 })
 
-Data:AddQuests(389, {
-    { id = 5728, name = "Hidden Enemies", side = "Horde", requiredLevel = 9, xp = 3507, objective = "Kill Bazzalan and Jergosh the Invoker inside Ragefire Chasm.", items = {} },
-    { id = 5725, name = "The Power to Destroy...", side = "Horde", requiredLevel = 9, xp = 4422, objective = "Collect Spells of Shadow and Incantations from the Nether inside Ragefire Chasm.", items = {
-        { 15449 }, -- Ghastly Trousers
-        { 15450 }, -- Dredgemire Leggings
-        { 15451 }, -- Gargoyle Leggings
-    } },
-    { id = 5724, name = "Returning the Lost Satchel", side = "Horde", requiredLevel = 9, xp = 4422, objective = "Take the Grimtotem Satchel to Rahauro in Thunder Bluff.", items = {
-        { 15452 }, -- Featherbead Bracers
-        { 15453 }, -- Savannah Bracers
-        { 270003 }, -- Garrison Cuffs
-    } },
-    { id = 5723, name = "Testing an Enemy's Strength", side = "Horde", requiredLevel = 9, xp = 3202, objective = "Kill 8 Ragefire Troggs and 8 Ragefire Shamans inside Ragefire Chasm.", items = {} },
-    { id = 5722, name = "Searching for the Lost Satchel", side = "Horde", requiredLevel = 9, xp = 880, objective = "Find Maur Grimtotem's corpse inside Ragefire Chasm and search it for anything of interest.", items = {} },
-    { id = 5761, name = "Slaying the Beast", side = "Horde", requiredLevel = 9, xp = 3507, objective = "Slay Taragaman the Hungerer and recover Taragaman the Hungerer's Heart.", items = {} },
+Data:AddInstanceQuests(389, {
+    { id = 5728, role = "inside" },
+    { id = 5725, role = "inside" },
+    { id = 5724, role = "inside" },
+    { id = 5723, role = "inside" },
+    { id = 5722, role = "inside" },
+    { id = 5761, role = "inside" },
 })

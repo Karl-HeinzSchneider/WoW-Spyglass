@@ -69,34 +69,12 @@ Data:AddTrashLoot(36, {
     { 5444 }, -- Miner's Cape
 })
 
-Data:AddQuests(36, {
-    { id = 166, name = "The Defias Brotherhood", side = "Alliance", requiredLevel = 14, xp = 9750, objective = "Defeat Edwin VanCleef and collect his head.", items = {
-        { 2041 }, -- Tunic of Westfall
-        { 2042 }, -- Staff of Westfall
-        { 6087 }, -- Chausses of Westfall
-    } },
-    { id = 168, name = "Collecting Memories", side = "Alliance", requiredLevel = 14, xp = 1350, objective = "Collect 4 Miners' Union Cards from undead miners in the tunnels outside the instance.", items = {
-        { 2036 }, -- Dusty Mining Gloves
-        { 2037 }, -- Tunneler's Boots
-        { 270007 }, -- Worn Miner's Waistcord
-    } },
-    { id = 167, name = "Oh Brother. . .", side = "Alliance", requiredLevel = 15, xp = 1550, objective = "Recover Thistlenettle's Badge from Foreman Thistlenettle in the undead side tunnel.", items = {
-        { 1893 }, -- Miner's Revenge
-        { 270012 }, -- Miner's Workgloves
-        { 270013 }, -- Miner's Workboots
-    } },
-    { id = 214, name = "Red Silk Bandanas", side = "Alliance", requiredLevel = 14, xp = 4688, objective = "Collect 10 Red Silk Bandanas from Defias inside the Deadmines.", items = {
-        { 2074 }, -- Solid Shortblade
-        { 2089 }, -- Scrimshaw Dagger
-        { 6094 }, -- Piercing Axe
-        { 270005 }, -- Monastic Hammer
-    } },
-    { id = 2040, name = "Underground Assault", side = "Alliance", requiredLevel = 15, xp = 5813, objective = "Recover the Gnoam Sprecklesprocket from Sneed's Shredder.", items = {
-        { 7606 }, -- Polar Gauntlets
-        { 7607 }, -- Sable Wand
-        { 270015 }, -- Bravo's Armbands
-        { 270016 }, -- Dreamer's Leggings
-    } },
-    { id = 92753, name = "Destruction in Deadmines", side = "Alliance", requiredLevel = 9, xp = 1350, objective = "Place the explosives beside the forge in the Deadmines.", items = {} },
-    { id = 373, name = "The Unsent Letter", side = "Alliance", requiredLevel = 16, xp = 870, objective = "Take the letter to the city architect in Stormwind.", items = {} },
+Data:AddInstanceQuests(36, {
+    { id = 166, role = "inside" },
+    { id = 168, role = "inside" },
+    { id = 167, role = "inside" },
+    { id = 214, role = "inside" },
+    { id = 2040, role = "inside" },
+    { id = 92753, role = "inside" },
+    { id = 373, role = "inside" },
 })
