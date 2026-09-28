@@ -173,6 +173,30 @@ export function hasLoot(file: CuratedFile): boolean {
   return d.encounters.some((e) => e.loot?.length) || !!d.trash?.length || !!d.quests?.length;
 }
 
+function emitQuest(quest: CuratedQuest, ref: Reference, questsByID: Map<number, CuratedQuest>): string {
+  const fields = luaFields(
+    {
+      ...quest,
+      class: quest.class && classToken(quest.class),
+      requires: quest.requires?.map((id) => ({ id, name: questsByID.get(id)?.name })),
+    },
+    ["id", "name", "side", "class", "requiredLevel", "xp", "objective", "description", "requires", "start", "turnIn"],
+    "",
+  ).join(" ");
+  const items = emitLootRows(quest.items ?? [], ref, "        ");
+  if (items.length === 0) return `    { ${fields} items = {} },\n`;
+  return [`    { ${fields} items = {\n`, ...items, "    } },\n"].join("");
+}
+
+function emitQuestDefinitions(quests: CuratedQuest[], ref: Reference, questsByID: Map<number, CuratedQuest>): string {
+  return [
+    header(".contribute/data/quests/dungeons (quests used only as prerequisites)"),
+    "local Data = Spyglass.Data\n\nData:AddQuestDefinitions({\n",
+    ...quests.map((quest) => emitQuest(quest, ref, questsByID)),
+    "})\n",
+  ].join("");
+}
+
 function emitLoot(file: CuratedFile, ref: Reference, questsByID: Map<number, CuratedQuest>): string {
   const rel = sourceLabel(file.path);
   const out = [header(rel), "local Data = Spyglass.Data\n"];
@@ -196,34 +220,7 @@ function emitLoot(file: CuratedFile, ref: Reference, questsByID: Map<number, Cur
   if (questIDs.length > 0) {
     out.push(`\nData:AddQuests(${id}, {\n`);
     for (const questID of questIDs) {
-      const quest = questsByID.get(questID)!;
-      const fields = luaFields(
-        {
-          ...quest,
-          class: quest.class && classToken(quest.class),
-          requires: quest.requires?.map((id) => ({ id, name: questsByID.get(id)?.name })),
-        },
-        [
-          "id",
-          "name",
-          "side",
-          "class",
-          "requiredLevel",
-          "xp",
-          "objective",
-          "description",
-          "requires",
-          "start",
-          "turnIn",
-        ],
-        "",
-      ).join(" ");
-      const items = emitLootRows(quest.items ?? [], ref, "        ");
-      if (items.length === 0) {
-        out.push(`    { ${fields} items = {} },\n`);
-        continue;
-      }
-      out.push(`    { ${fields} items = {\n`, ...items, "    } },\n");
+      out.push(emitQuest(questsByID.get(questID)!, ref, questsByID));
     }
     out.push("})\n");
   }
@@ -458,6 +455,14 @@ export function build(
       file.quests.filter((quest) => quest.id !== undefined).map((quest) => [quest.id!, quest] as const),
     ),
   );
+  const listedQuestIDs = new Set(curated.flatMap((file) => file.data.quests ?? []));
+  const prerequisiteIDs = new Set([...questsByID.values()].flatMap((quest) => quest.requires ?? []));
+  const unlistedQuests = [...questsByID.values()]
+    .filter((quest) => prerequisiteIDs.has(quest.id!) && !listedQuestIDs.has(quest.id!))
+    .sort((a, b) => a.id! - b.id!);
+  if (unlistedQuests.length > 0) {
+    addCore("quest-definitions.lua", emitQuestDefinitions(unlistedQuests, ref, questsByID));
+  }
   for (const file of [...curated].sort((a, b) => a.slug.localeCompare(b.slug))) {
     if (hasLoot(file)) addCore(`loot/${file.slug}.lua`, emitLoot(file, ref, questsByID));
   }

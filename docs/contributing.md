@@ -248,16 +248,25 @@ holds the quest definitions associated with that dungeon; it may be empty. The d
 have a definition in the quest file without being listed on the dungeon page. A quest spanning
 several dungeons is defined in just one quest file and its ID is listed in each dungeon file.
 
-For example, `.contribute/data/quests/dungeons/deadmines.json` may contain:
+For example, a quest file can contain these illustrative definitions:
 
 ```json
 {
   "quests": [
     {
-      "id": 166,
-      "name": "The Defias Brotherhood",
+      "id": 1,
+      "name": "Earlier quest",
+      "objective": "Complete the earlier task.",
+      "items": []
+    },
+    {
+      "id": 2,
+      "name": "Dungeon quest",
       "side": "Alliance",
-      "items": [{ "item": 2041, "name": "Tunic of Westfall" }]
+      "requires": [1],
+      "start": { "npc": "Quest Giver", "location": [1436, 43, 72] },
+      "turnIn": { "npc": "Quest Turn-in" },
+      "items": []
     }
   ]
 }
@@ -265,31 +274,34 @@ For example, `.contribute/data/quests/dungeons/deadmines.json` may contain:
 
 The definition fields are:
 
-| Field             | Type    | Meaning                                                                                                                                                      |
-| ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `id`              | integer | The quest id: positive and defined only once across all quest files. A quest without one is a warning and isn't shipped until it has one.                    |
-| `name`            | string  | The quest's title. Curated, because this client ships no quest table: `fix` never rewrites it, and a quest without one is a warning.                         |
-| `side`            | string  | `"Alliance"`, `"Horde"` or `"Both"`; omitting it means `"Both"`. Anything else is an error.                                                                  |
-| `class`           | string  | A class quest's class: `"Warrior"`, `"Paladin"`, `"Hunter"`, `"Rogue"`, `"Priest"`, `"Shaman"`, `"Mage"`, `"Warlock"` or `"Druid"`; omitted means any class. |
-| `requiredLevel`   | integer | The level a character needs to accept the quest; shown in the quest's tooltip in the info panel.                                                             |
-| `xp`              | integer | The experience the quest rewards; shown in the quest's tooltip in the info panel.                                                                            |
-| `objective`       | string  | What the quest asks for, in one English sentence; shown in the quest's tooltip in the info panel.                                                            |
-| `description`     | string  | Optional curated description, shown when the client has no quest tooltip yet.                                                                                |
-| `requires`        | array   | IDs of direct prerequisite quests. Each needs its own definition in a quest file, even if it is not shown on a dungeon page.                                 |
-| `start`, `turnIn` | object  | Optional giver and turn-in: `npc` name, `npcID`, starting `item` ID, and `location` as `[uiMapID, x, y]` (x/y in 0–100). Use only the fields known.          |
-| `items`           | array   | The items the quest rewards: item rows without a `chance`. May be empty.                                                                                     |
+| Field             | Type    | Meaning                                                                                                                                                       |
+| ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`              | integer | The quest id: positive and defined only once across all quest files. A quest without one is a warning and isn't shipped until it has one.                     |
+| `name`            | string  | The quest's title. Curated, because this client ships no quest table: `fix` never rewrites it, and a quest without one is a warning.                          |
+| `side`            | string  | `"Alliance"`, `"Horde"` or `"Both"`; omitting it means `"Both"`. Anything else is an error.                                                                   |
+| `class`           | string  | A class quest's class: `"Warrior"`, `"Paladin"`, `"Hunter"`, `"Rogue"`, `"Priest"`, `"Shaman"`, `"Mage"`, `"Warlock"` or `"Druid"`; omitted means any class.  |
+| `requiredLevel`   | integer | The level a character needs to accept the quest; shown beside its title and in its tooltip.                                                                   |
+| `xp`              | integer | The experience the quest rewards; shown on its banner and in its tooltip.                                                                                     |
+| `objective`       | string  | What the quest asks for, in one English sentence; shown on its page and in its tooltip.                                                                       |
+| `description`     | string  | Optional curated description, shown on its page and in its tooltip before the client has the quest.                                                           |
+| `requires`        | array   | IDs of direct prerequisite quests, in the order they should appear. Each needs its own definition in a quest file, even if it is not shown on a dungeon page. |
+| `start`, `turnIn` | object  | Optional giver and turn-in: `npc` name, `npcID`, starting `item` ID, and `location` as `[uiMapID, x, y]` (x/y in 0–100). Use only the fields known.           |
+| `items`           | array   | The items the quest rewards: item rows without a `chance`. May be empty.                                                                                      |
 
 The quest ids are also the ones a boss's `quests` field lists: a boss that hands out or is the
 objective of a quest names the id there. The same item may appear in several quests. `npm run
 check:data` reports duplicate quest definitions, unresolved dungeon quest IDs and unresolved
 prerequisites. `npm run fix` rewrites reward item names but leaves quest and NPC names alone.
 
-In the browser, the instance's _Quests_ card opens a page with one subheader per quest (its title
-and id, plus the class of a class quest) and the quest's reward items under it, sorted by
-`requiredLevel`, then title. An instance with quests of more than one `side` splits them under a
-header per side: both factions, Alliance, Horde. A quest that runs through several instances (the
-warlock quest "The Orb of Soran'ruk" needs Blackfathom Deeps and Shadowfang Keep) is referenced
-by each dungeon but defined once under `quests/dungeons/`.
+In the browser, the instance's _Quests_ card lists one clickable banner per quest, sorted by
+`requiredLevel`, then title. Each quest page shows the objective, known start and turn-in sources,
+map buttons for known locations, and rewards. Prerequisites are collapsed below the rewards;
+expanding them shows the complete chain, earliest quest first. A prerequisite opens its own page,
+and Back returns to the main quest without another nested prerequisite list. Quest definitions
+used only as prerequisites are shipped without adding them to a dungeon's quest list. A quest
+that runs through several instances (the warlock quest "The Orb of Soran'ruk" needs Blackfathom
+Deeps and Shadowfang Keep) is referenced by each dungeon but defined once under
+`quests/dungeons/`.
 
 ### Showing an instance in the browser
 

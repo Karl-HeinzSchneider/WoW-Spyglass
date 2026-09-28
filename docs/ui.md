@@ -155,7 +155,10 @@ Progress, hover, shift-click and the quest data request come from `app.questInfo
 shared with the info pane's quest lines. A banner with `children` opens those children on click.
 The dungeon's quest page shows one such banner per quest, with Alliance and/or Horde emblems
 directly left of XP; its reward rows appear on the opened quest page. That page shows the quest title and
-description in the right pane (falling back to the objective when no description is recorded).
+objective, start and turn-in sources, optional description, and map buttons for known endpoint
+locations in the right pane. Below the rewards, a row expands the ordered prerequisites. Each
+prerequisite opens a detail page with its own rewards and a button back to the main quest; it
+does not show another prerequisite list.
 The layout keeps a banner together with its first reward row when it has any. While the list has
 banners (`view.showsQuests`), the view redraws the page on
 `QUEST_LOG_UPDATE`, `QUEST_TURNED_IN` and `QUEST_DATA_LOAD_RESULT`, deferred to the next frame

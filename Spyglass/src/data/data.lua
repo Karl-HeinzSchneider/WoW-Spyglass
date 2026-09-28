@@ -369,6 +369,24 @@ function Data:AddQuests(instanceID, quests)
     invalidate()
 end
 
+-- Quests used only as prerequisites have definitions but no dungeon card of their own.
+---@param quests Spyglass.Quest[]
+function Data:AddQuestDefinitions(quests)
+    if type(quests) ~= "table" then
+        log:error("Data.AddQuestDefinitions: expected a table, got %s", type(quests))
+        return
+    end
+    for _, quest in ipairs(quests) do
+        if type(quest) ~= "table" or type(quest.id) ~= "number" then
+            log:error("Data.AddQuestDefinitions: quest without an id")
+        else
+            quest.items = quest.items or {}
+            self.quests[quest.id] = quest
+        end
+    end
+    invalidate()
+end
+
 -- Adds or replaces a curated item list; `kind` names the module it belongs to, `id` is unique
 -- within the kind (the file's slug for shipped lists; other addons should prefix theirs).
 ---@param kind Spyglass.ListKind

@@ -155,8 +155,136 @@ local function questOrder(a, b)
     return a.id < b.id
 end
 
+-- The right pane of a quest page: objective and the curated giver/turn-in details.
+---@param panel Spyglass.PanelWidget[]
+---@param title string
+---@param mapButton string
+---@param point Spyglass.QuestEndpoint?
+local function addQuestEndpoint(panel, title, mapButton, point)
+    panel[#panel + 1] = { header = title }
+    if not point then
+        panel[#panel + 1] = { text = "Not recorded yet." }
+        return
+    end
+    if point.npc or point.npcID then
+        local npc = point.npc or ("#" .. point.npcID)
+        if point.npc and point.npcID then
+            npc = npc .. " (#" .. point.npcID .. ")"
+        end
+        panel[#panel + 1] = { text = "NPC: " .. npc }
+    end
+    if point.item then
+        panel[#panel + 1] = { text = "Item: " .. Data:GetItemName(point.item) }
+    end
+    if point.location then
+        local mapID, x, y = unpack(point.location)
+        local map = C_Map and C_Map.GetMapInfo(mapID)
+        panel[#panel + 1] = {
+            text = ("%s (%.1f, %.1f)"):format(map and map.name or ("Map #" .. mapID), x, y),
+        }
+        panel[#panel + 1] = { button = mapButton, map = point.location }
+    end
+end
+
+---@param quest Spyglass.Quest
+---@param mainQuest? Spyglass.Quest
+---@return Spyglass.PanelWidget[]
+local function questPanel(quest, mainQuest)
+    local panel = {}
+    if mainQuest then
+        panel[#panel + 1] = {
+            button = "Back to main quest",
+            onClick = function(_, view)
+                view:Back()
+            end,
+        }
+    end
+    panel[#panel + 1] = { header = "Objective" }
+    panel[#panel + 1] = { text = quest.objective or "No objective recorded yet." }
+    addQuestEndpoint(panel, "Starts", "Show start on map", quest.start)
+    addQuestEndpoint(panel, "Ends", "Show turn-in on map", quest.turnIn)
+    if quest.description then
+        panel[#panel + 1] = { header = "Description" }
+        panel[#panel + 1] = { description = true }
+    end
+    return panel
+end
+
+-- Prerequisites before the quests that require them, keeping the order written in the catalog.
+---@param quest Spyglass.Quest
+---@return Spyglass.Quest[]
+local function questPrerequisites(quest)
+    local ordered, seen = {}, { [quest.id] = true }
+    local function visit(current)
+        for _, required in ipairs(current.requires or {}) do
+            local id = type(required) == "table" and required.id or required
+            if type(id) == "number" and not seen[id] then
+                seen[id] = true
+                local prerequisite = Data:GetQuest(id)
+                if prerequisite then
+                    visit(prerequisite)
+                    ordered[#ordered + 1] = prerequisite
+                end
+            end
+        end
+    end
+    visit(quest)
+    return ordered
+end
+
+-- A quest in the dungeon list, or a prerequisite linked from its main quest. Prerequisite pages
+-- show their own details and rewards but do not open another prerequisite list.
+---@param quest Spyglass.Quest
+---@param mainQuest? Spyglass.Quest
+---@return Spyglass.Node
+local function questPage(quest, mainQuest)
+    local info = questInfo(quest)
+    local items = {}
+    for _, row in ipairs(quest.items) do
+        items[#items + 1] = { itemID = row[1], chance = row[2] }
+    end
+    local entry = api.QuestEntry(quest.id, nil, info)
+    entry.name = Data:GetQuestName(quest.id)
+    entry.description = quest.description or quest.objective or "No description recorded yet."
+    entry.columns = 2
+    entry.panel = questPanel(quest, mainQuest)
+    local details = api.QuestEntry(quest.id, items, info)
+    if mainQuest then
+        entry.children = { details }
+        return entry
+    end
+
+    local prerequisites = questPrerequisites(quest)
+    if #prerequisites == 0 then
+        entry.children = { details, api.Custom({ name = "Prerequisites: none recorded", icon = ICON_QUEST }) }
+        return entry
+    end
+    local prerequisitePages = {}
+    for _, prerequisite in ipairs(prerequisites) do
+        prerequisitePages[#prerequisitePages + 1] = questPage(prerequisite, quest)
+    end
+    entry.getChildren = function(node, view)
+        local expanded = view:GetPanelValue(node, 0) == true
+        local children = { details }
+        children[#children + 1] = api.Custom({
+            name = ("%s Prerequisites (%d)"):format(expanded and "-" or "+", #prerequisitePages),
+            icon = ICON_QUEST,
+            onClick = function()
+                view:SetPanelValue(node, 0, not expanded)
+            end,
+        })
+        if expanded then
+            for _, prerequisite in ipairs(prerequisitePages) do
+                children[#children + 1] = prerequisite
+            end
+        end
+        return children
+    end
+    return entry
+end
+
 -- The dungeon's quest page: one clickable banner per quest, sorted by level. The reward items
--- appear only after opening a quest; its full description is in that page's info pane.
+-- appear only after opening a quest; its objective and endpoints are in that page's info pane.
 ---@param instanceID integer
 ---@return Spyglass.Node[]
 function api.InstanceQuestEntries(instanceID)
@@ -164,18 +292,7 @@ function api.InstanceQuestEntries(instanceID)
     table.sort(quests, questOrder)
     local entries = {}
     for _, quest in ipairs(quests) do
-        local info = questInfo(quest)
-        local items = {}
-        for _, row in ipairs(quest.items) do
-            items[#items + 1] = { itemID = row[1], chance = row[2] }
-        end
-        local entry = api.QuestEntry(quest.id, nil, info)
-        entry.name = Data:GetQuestName(quest.id)
-        entry.description = quest.description or quest.objective or "No description recorded yet."
-        entry.columns = 2
-        entry.panel = { { description = true } }
-        entry.children = { api.QuestEntry(quest.id, items, info) }
-        entries[#entries + 1] = entry
+        entries[#entries + 1] = questPage(quest)
     end
     if #entries == 0 then
         entries[1] = api.Custom({

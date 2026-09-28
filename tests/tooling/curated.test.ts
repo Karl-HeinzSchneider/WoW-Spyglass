@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { Checker, type CuratedFile, serialize, validate } from "../../src/curated.js";
+import { type Config } from "../../src/config.js";
+import { build } from "../../src/generate.js";
 import { type CuratedQuest, type QuestFile, serializeQuests, validateQuests } from "../../src/quests.js";
 import { type Reference } from "../../src/reference.js";
 
@@ -227,6 +229,46 @@ test("questline details survive a fix rewrite", () => {
   );
   const serialized = JSON.parse(serializeQuests(quests)) as { quests: CuratedQuest[] };
   assert.deepEqual(serialized.quests[1], quests.quests[1]);
+});
+
+test("a prerequisite-only quest ships without becoming a dungeon quest", () => {
+  const names = {
+    items: new Map(),
+    encounters: new Map(),
+    instances: new Map([[36, "Test Dungeon"]]),
+    skillLines: new Map(),
+    categories: new Map(),
+    tools: new Map(),
+  };
+  const ref = {
+    build: "test",
+    instances: new Map([[36, { id: 36, type: "dungeon", expansionID: 0, encounters: [] }]]),
+    encounters: new Map(),
+    items: new Map(),
+    itemLocales: [],
+    names: new Map([["enUS", names]]),
+    recipes: new Map(),
+    skillLines: new Map(),
+    categories: new Map(),
+  } as unknown as Reference;
+  const config: Config = { build: "test", locales: ["enUS"], excludeMaps: [], itemsPerFile: 100 };
+  const output = build(
+    ref,
+    [dungeonFile({ encounters: [], quests: [26] })],
+    [
+      questFile([
+        { id: 25, name: "Earlier Quest", items: [] },
+        { id: 26, name: "Dungeon Quest", requires: [25], items: [] },
+      ]),
+    ],
+    [],
+    config,
+  );
+  assert.match(output.core.get("quest-definitions.lua") ?? "", /Data:AddQuestDefinitions\(\{/);
+  assert.match(output.core.get("generated.xml") ?? "", /quest-definitions.lua/);
+  assert.match(output.core.get("quest-definitions.lua") ?? "", /^    \{ id = 25/m);
+  assert.doesNotMatch(output.core.get("loot/test_dungeon.lua") ?? "", /^    \{ id = 25/m);
+  assert.match(output.core.get("loot/test_dungeon.lua") ?? "", /^    \{ id = 26/m);
 });
 
 test("a split map: each file needs an id, a boss may be in one of them only, one in none is a warning", () => {

@@ -113,6 +113,9 @@ removes stale files and returns the number of changes. `npm run generate:check` 
   encounters that file lists; the English name of such a part is its file's `name`.
 - `loot/<slug>.lua` is written for every instance file `hasLoot` is true for: a boss's drops via
   `AddBossLoot`, the trash via `AddTrashLoot`, the quests via `AddQuests`.
+- `quest-definitions.lua` is written when quest files define prerequisites not listed on any
+  dungeon page. It registers those quests with `AddQuestDefinitions` so their details can open
+  without adding them to a dungeon's quest list.
 - A crafting list without an `icon` gets its skill line's `SpellIconFileID`; a crafting row
   without an item (an enchant) is emitted as `{ spell = id, ... }`.
 - `recipes/<profession>.lua` holds `AddCategories` + `AddRecipes`, rows in category order.

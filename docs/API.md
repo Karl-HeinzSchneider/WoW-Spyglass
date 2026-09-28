@@ -268,9 +268,12 @@ Constructors (optional sugar):
 - `Spyglass.QuestFolder(instanceID)` / `Spyglass.InstanceQuestEntries(instanceID)` — the instance's
   quest card and its contents: one clickable `QuestEntry` per quest, sorted by `requiredLevel`,
   then title. Each banner shows Alliance and/or Horde emblems immediately before XP, plus level
-  and class in `info`, with no reward rows below it. Clicking opens a quest page with its title, description (or objective when
-  no description is recorded), and reward items. The card carries the quest ids in `quests`, so it
-  shows the same "!" and title list a boss with quests does.
+  and class in `info`, with no reward rows below it. Clicking opens a quest page with its title,
+  objective, optional description, giver and turn-in details, map buttons where locations are
+  known, and reward items. An expandable prerequisite list follows the rewards. Each prerequisite
+  opens its own detail page, whose back button returns to the main quest; prerequisite pages do
+  not open further prerequisites. The card carries the quest ids in `quests`, so it shows the same
+  "!" and title list a boss with quests does.
 - `Spyglass.ListFolders(kind, opts?)` — folders for every curated list of `kind` (`"crafting"`, `"pvp"`,
   `"collections"`, `"reputation"`), by `order` then name; the built-in modules of those names are exactly this
 - `Spyglass.ListFolder(kind, id, opts?)` / `Spyglass.ListEntries(kind, id)` — one list as a two-column
@@ -546,6 +549,9 @@ Adding data (any call may be repeated; every one invalidates the caches and fire
   the last registration, so use `Data:GetInstanceQuests(instanceID)` for membership. Quest titles
   are curated data: this client ships no quest table, and `C_QuestLog` only knows quests the
   character has seen.
+- `Data:AddQuestDefinitions({ quest, ... })` — stores quests by id without listing them under an
+  instance. The generator uses this for quests defined only as prerequisites. Definitions use the
+  same fields as `AddQuests`.
 - `Data:AddList(kind, id, def)`, `Data:AddListLoot(kind, id, { { itemID, standing = "Honored" }, ... })`
 - `Data:AddRecipes({ [spellID] = { skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto, taughtBy }, ... })`,
   `Data:AddCategories({ [id] = { skillLineID = 164, order = 30 }, ... })`
