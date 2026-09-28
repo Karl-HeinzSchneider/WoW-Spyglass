@@ -47,17 +47,5 @@
     }
   ],
   "trash": [],
-  "quests": [
-    {
-      "id": 1144,
-      "name": "Willix the Importer",
-      "side": "Both",
-      "items": []
-    },
-    {
-      "id": 1221,
-      "name": "Blueleaf Tubers",
-      "items": []
-    }
-  ]
+  "quests": [1144, 1221]
 }

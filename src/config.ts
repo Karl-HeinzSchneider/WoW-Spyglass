@@ -16,6 +16,8 @@ export const CURATED_DIRS = {
   dungeon: resolve(DATA_DIR, "dungeons"),
   raid: resolve(DATA_DIR, "raids"),
 } as const;
+/** Human-edited quest definitions, one file per dungeon. */
+export const DUNGEON_QUESTS_DIR = resolve(DATA_DIR, "quests", "dungeons");
 
 /**
  * Curated item lists, one folder per built-in module and one file per list (a profession, a

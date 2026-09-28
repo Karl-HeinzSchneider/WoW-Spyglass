@@ -118,8 +118,8 @@ the window.
 
 - `mainwindow.lua/.xml` — `SpyglassMainWindow` (`app.ui.mainWindow`): the frame, its two panes
   and the browser-style view tabs.
-- `quests.lua` — `app.questInfo`: a quest's progress (text, color, icon), chat link, tooltip and
-  modified click, shared by the info pane's quest lines and the view's quest banners. Loaded
+- `quests.lua` — `app.questInfo`: a quest's progress (text, color, icon), chat link, tooltip
+  (including curated prerequisites and start/turn-in details) and modified click, shared by the info pane's quest lines and the view's quest banners. Loaded
   before `view.lua`.
 - `infopane.lua/.xml` — `SpyglassInfoPaneMixin`, the right pane (`RightPane.Info`): the
   selected tab's info `panel`, drawn with the character frame's side-pane look. Its checkbox

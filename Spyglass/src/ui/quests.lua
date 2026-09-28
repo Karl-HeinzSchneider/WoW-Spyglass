@@ -87,6 +87,21 @@ local function rewardLine(itemID)
     return markup .. " " .. name, quality and ITEM_QUALITY_COLORS[quality] or HIGHLIGHT_FONT_COLOR
 end
 
+-- A curated quest giver or turn-in, with a map location when one is known.
+---@param point Spyglass.QuestEndpoint
+---@return string?
+local function endpointText(point)
+    local source = point.npc or (point.item and app.data:GetItemName(point.item))
+    local location = point.location
+    if location then
+        local map = C_Map.GetMapInfo(location[1])
+        local place = map and map.name or ("Map #" .. location[1])
+        local where = ("%s (%.1f, %.1f)"):format(place, location[2], location[3])
+        return source and (source .. " - " .. where) or where
+    end
+    return source or (point.npcID and ("NPC #" .. point.npcID))
+end
+
 -- A quest's tooltip on `owner`: the game's own quest tooltip from its link, else, while the
 -- client doesn't have the quest (quests are server-side), the curated title, id, level and
 -- objective. The curated rewards and experience follow either way.
@@ -113,6 +128,35 @@ function Quests.ShowTooltip(owner, questID)
                 HIGHLIGHT_FONT_COLOR.b,
                 true
             )
+        end
+        if quest and quest.description then
+            GameTooltip:AddLine(" ")
+            GameTooltip:AddLine(
+                quest.description,
+                HIGHLIGHT_FONT_COLOR.r,
+                HIGHLIGHT_FONT_COLOR.g,
+                HIGHLIGHT_FONT_COLOR.b,
+                true
+            )
+        end
+    end
+    if quest then
+        local start = quest.start and endpointText(quest.start)
+        if start then
+            GameTooltip:AddLine("Starts: " .. start, HIGHLIGHT_FONT_COLOR:GetRGB())
+        end
+        local finish = quest.turnIn and endpointText(quest.turnIn)
+        if finish then
+            GameTooltip:AddLine("Ends: " .. finish, HIGHLIGHT_FONT_COLOR:GetRGB())
+        end
+        if quest.requires and #quest.requires > 0 then
+            GameTooltip:AddLine(" ")
+            GameTooltip:AddLine("Requires", NORMAL_FONT_COLOR:GetRGB())
+            for _, prerequisite in ipairs(quest.requires) do
+                local title = prerequisite.name or app.data:GetQuestName(prerequisite.id)
+                local status = C_QuestLog.IsQuestFlaggedCompleted(prerequisite.id) and "Done" or "Not done"
+                GameTooltip:AddLine(title .. " (" .. status .. ")", HIGHLIGHT_FONT_COLOR:GetRGB())
+            end
         end
     end
     if quest and (#quest.items > 0 or quest.xp) then
