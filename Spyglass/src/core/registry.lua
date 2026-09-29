@@ -53,6 +53,7 @@ local log = app.logger
 ---@field subheader? string  # small section header marker; `items` optionally holds the entries under it; see Spyglass.Subheader
 ---@field spacer? boolean  # spacer marker: one empty row of space; see Spyglass.Spacer
 ---@field quest? integer  # quest banner marker (a quest id); `items` optionally holds the entries under it (its rewards); see Spyglass.QuestEntry
+---@field hidden? boolean  # keep a node in the folder tree without drawing it in its parent's list
 ---@field prerequisiteIDs? integer[]  # quest banner: ids shown as completed/total prequest progress
 ---@field indent? number  # quest banner's left inset in its parent list, for nested quests
 ---@field panel? Spyglass.PanelWidget[]|fun(node: Spyglass.Node, view: Spyglass.View): Spyglass.PanelWidget[]?  # folders: the right pane while this node or one below it (without a panel of its own) is open

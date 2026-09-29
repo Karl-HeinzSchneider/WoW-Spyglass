@@ -2220,7 +2220,7 @@ function SpyglassViewMixin:BuildElements(node)
         filter = filter or classTest
     end
     local function keep(entry)
-        return not filter or app.api.IsFolder(entry) or filter(entry)
+        return not entry.hidden and (not filter or app.api.IsFolder(entry) or filter(entry))
     end
 
     local function addRows(entries)
@@ -2236,7 +2236,7 @@ function SpyglassViewMixin:BuildElements(node)
     ---@param items Spyglass.Node[]?
     ---@return boolean
     local function hasKept(items)
-        if not filter or not items or #items == 0 then
+        if not items or #items == 0 then
             return true
         end
         for _, entry in ipairs(items) do
@@ -2264,7 +2264,9 @@ function SpyglassViewMixin:BuildElements(node)
     end
 
     for _, child in ipairs(self:GetChildren(node)) do
-        if child.header then
+        if child.hidden then
+            flush()
+        elseif child.header then
             flush()
             elements[#elements + 1] = { kind = "header", text = child.header }
         elseif child.subheader then

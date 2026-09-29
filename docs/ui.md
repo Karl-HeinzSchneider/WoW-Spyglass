@@ -136,6 +136,8 @@ open.
   `portraitDisplayID` instead draws the creature's model through
   `SetPortraitTextureFromCreatureDisplayID` into the same region), and the name and info beside
   it (boss level and type, drops of interest, a quest "!" for `quests`).
+  An instance lists All Bosses, then trash loot, then its bosses. A button under the right
+  pane's quest list opens the quest folder.
 
 ### Headers, subheaders, quest banners, groups, spacers
 

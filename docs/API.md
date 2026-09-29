@@ -104,6 +104,8 @@ database (name, quality, item level) when it is in there (the core ships no item
 `Spyglass_Database` adds them), otherwise as "Item #id"; either way it is requested and
 redraws when the game's data arrives. `Spyglass.IsFolder(node)` tells whether a node
 opens (static, dynamic or query folder).
+Set `hidden = true` on a node to keep it available for navigation without drawing it in its
+parent's list.
 
 Any entry may carry `tooltip`: a list of extra lines, or a function `(node) -> lines` called
 each time the tooltip is shown (so names the client fetched in the meantime are used). On items
@@ -149,13 +151,12 @@ picture standing on its left, the name and the two info texts beside it, two car
 | `quests`            | integer[]        | Quest ids the entry is involved in: the card shows a quest "!" and the tooltip lists the quests' titles.                                                    |
 
 `InstanceFolder` nodes are card folders. The first card, "All Bosses", lists every item any of
-the instance's bosses drops (each item once), so the whole loot table reads at a glance. Then
-each `BossFolder(bossID)` carries what the database
+the instance's bosses drops (each item once), so the whole loot table reads at a glance. The
+trash card follows, then each `BossFolder(bossID)` carries what the database
 knows about the boss — portrait (a texture, or the model's display id for bosses without art), `info` as "<level> <creature type>" (e.g. "60 Beast"), `quests`,
 and `infoRight` reserved for its _drops of interest_ (hidden until the planned favorites
-system decides what counts). After the bosses come the instance's own two cards,
-`TrashFolder(instanceID)` and `QuestFolder(instanceID)` — both always present, both showing a
-contribution hint while the database has nothing for them.
+system decides what counts). The right pane lists quests and has a button beneath them to open
+`QuestFolder(instanceID)`; the quest folder is not a card in the instance list.
 
 ```lua
 Spyglass:RegisterModule({
@@ -267,7 +268,7 @@ Constructors (optional sugar):
   trash card and its drops: what the enemies between the bosses drop (`Data:GetTrashLoot`), auto-grouped
   like a boss's loot and with the drop count as `info`
 - `Spyglass.QuestFolder(instanceID)` / `Spyglass.InstanceQuestEntries(instanceID)` — the instance's
-  quest card and its contents: one clickable `QuestEntry` per quest, sorted by `requiredLevel`,
+  quest folder and its contents: one clickable `QuestEntry` per quest, sorted by `requiredLevel`,
   then title. The folder's right pane shows the dungeon name and filters the list to the
   character's faction by default;
   Alliance and Horde include shared quests, and Both shows all quests. Each banner shows

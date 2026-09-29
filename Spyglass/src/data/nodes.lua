@@ -381,8 +381,9 @@ end
 -- its entrance when the curated data has one, and its quests with the character's progress.
 ---@param instanceID integer
 ---@param instance Spyglass.Instance
+---@param questFolder Spyglass.Node
 ---@return Spyglass.PanelWidget[]
-local function instancePanel(instanceID, instance)
+local function instancePanel(instanceID, instance, questFolder)
     local panel = {}
     local zone = instance.zone and C_Map.GetMapInfo(instance.zone)
     if zone and zone.name and zone.name ~= "" then
@@ -407,15 +408,21 @@ local function instancePanel(instanceID, instance)
     for i, quest in ipairs(Data:GetInstanceQuests(instanceID)) do
         ids[i] = quest.id
     end
+    panel[#panel + 1] = { header = QUESTS_LABEL or "Quests" }
     if #ids > 0 then
-        panel[#panel + 1] = { header = QUESTS_LABEL or "Quests" }
         panel[#panel + 1] = { quests = ids }
     end
+    panel[#panel + 1] = {
+        button = "View quests",
+        onClick = function(_, view)
+            view:Push(questFolder)
+        end,
+    }
     return panel
 end
 
--- An instance folder with an "All Bosses" card, one boss folder per encounter and the instance's
--- own two categories (trash and quests), carrying the instance's metadata (`instanceID`, `minLevel`,
+-- An instance folder with "All Bosses" and trash cards before its boss cards. Quests open from
+-- the right pane. The folder carries the instance's metadata (`instanceID`, `minLevel`,
 -- `maxLevel`, `expansionID`) for sorting and filtering and its picture for lists that draw
 -- their entries as tiles. Named by the instance's curated `displayName` when it has one.
 ---@param instanceID integer
@@ -425,12 +432,13 @@ function api.InstanceFolder(instanceID)
     if not instance then
         return nil
     end
-    local entries = { allBossesFolder(instanceID, instance) }
+    local entries = { allBossesFolder(instanceID, instance), api.TrashFolder(instanceID) }
     for _, bossID in ipairs(instance.bosses) do
         entries[#entries + 1] = api.BossFolder(bossID)
     end
-    entries[#entries + 1] = api.TrashFolder(instanceID)
-    entries[#entries + 1] = api.QuestFolder(instanceID)
+    local questFolder = api.QuestFolder(instanceID)
+    questFolder.hidden = true
+    entries[#entries + 1] = questFolder
     local name = instance.displayName or Data:GetInstanceName(instanceID)
     return api.Folder(name, instance.icon or ICON_BOSS, entries, {
         display = "cards",
@@ -441,7 +449,7 @@ function api.InstanceFolder(instanceID)
         order = instance.minLevel,
         background = instance.background,
         backgroundCoords = instance.backgroundCoords,
-        panel = instancePanel(instanceID, instance),
+        panel = instancePanel(instanceID, instance, questFolder),
     })
 end
 
