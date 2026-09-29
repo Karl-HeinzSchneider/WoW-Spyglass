@@ -237,8 +237,8 @@ local function questPrerequisites(quest)
     return ordered
 end
 
--- A quest in the dungeon list, or a prerequisite linked from its main quest. Prerequisite pages
--- show their own details and rewards but do not open another prerequisite list.
+-- A quest in the dungeon list, or a linked quest from its main page. Linked pages show their own
+-- details and rewards without opening another prerequisite or follow-up list.
 ---@param quest Spyglass.Quest
 ---@param mainQuest? Spyglass.Quest
 ---@return Spyglass.Node
@@ -260,12 +260,21 @@ local function questPage(quest, mainQuest)
     end
 
     local prerequisites = questPrerequisites(quest)
-    if #prerequisites == 0 then
+    local followUps = {}
+    for _, id in ipairs(quest.followUps or {}) do
+        local followUp = Data:GetQuest(id)
+        if followUp then
+            followUps[#followUps + 1] = followUp
+        end
+    end
+    if #prerequisites == 0 and #followUps == 0 then
         entry.children = { details }
         return entry
     end
-    entry.prerequisiteIDs = {}
     local prerequisitePages = {}
+    if #prerequisites > 0 then
+        entry.prerequisiteIDs = {}
+    end
     for i, prerequisite in ipairs(prerequisites) do
         entry.prerequisiteIDs[i] = prerequisite.id
         local page = questPage(prerequisite, quest)
@@ -273,24 +282,37 @@ local function questPage(quest, mainQuest)
         page.info = ("Step %d/%d%s"):format(i, #prerequisites, page.info and (" \194\183 " .. page.info) or "")
         prerequisitePages[#prerequisitePages + 1] = page
     end
+    local followUpPages = {}
+    for i, followUp in ipairs(followUps) do
+        local page = questPage(followUp, quest)
+        page.indent = 28
+        page.info = ("Step %d/%d%s"):format(i, #followUps, page.info and (" \194\183 " .. page.info) or "")
+        followUpPages[#followUpPages + 1] = page
+    end
     entry.getChildren = function(node, view)
-        local expanded = view:GetPanelValue(node, 0) == true
         local children = { details }
-        local toggle =
-            api.Subheader(("Prerequisites (%d) - %s"):format(#prerequisitePages, expanded and "Hide" or "Show"))
-        toggle.onClick = function(_, button)
-            if button == "RightButton" then
-                view:Back()
-            else
-                view:SetPanelValue(node, 0, not expanded)
+        local function addSection(label, pages, stateIndex)
+            if #pages == 0 then
+                return
+            end
+            local expanded = view:GetPanelValue(node, stateIndex) == true
+            local toggle = api.Subheader(("%s (%d) - %s"):format(label, #pages, expanded and "Hide" or "Show"))
+            toggle.onClick = function(_, button)
+                if button == "RightButton" then
+                    view:Back()
+                else
+                    view:SetPanelValue(node, stateIndex, not expanded)
+                end
+            end
+            children[#children + 1] = toggle
+            if expanded then
+                for _, page in ipairs(pages) do
+                    children[#children + 1] = page
+                end
             end
         end
-        children[#children + 1] = toggle
-        if expanded then
-            for _, prerequisite in ipairs(prerequisitePages) do
-                children[#children + 1] = prerequisite
-            end
-        end
+        addSection("Prerequisites", prerequisitePages, 0)
+        addSection("Follow-ups", followUpPages, -1)
         return children
     end
     return entry

@@ -121,6 +121,7 @@ local RECIPE = {
 ---@field objective? string  # what it asks for, in one sentence (English)
 ---@field description? string  # optional curated description
 ---@field requires? Spyglass.QuestPrerequisite[]  # direct prerequisite quests
+---@field followUps? integer[]  # later quests in display order
 ---@field start? Spyglass.QuestEndpoint
 ---@field turnIn? Spyglass.QuestEndpoint
 ---@field instanceID? integer  # the (last) instance it was registered for, set by Data:AddQuests
@@ -370,7 +371,7 @@ function Data:AddQuests(instanceID, quests)
     invalidate()
 end
 
--- Quests used only as prerequisites have definitions but no dungeon card of their own.
+-- Quests used only as prerequisites or follow-ups have definitions but no dungeon card of their own.
 ---@param quests Spyglass.Quest[]
 function Data:AddQuestDefinitions(quests)
     if type(quests) ~= "table" then

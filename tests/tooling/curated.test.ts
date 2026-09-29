@@ -198,13 +198,14 @@ test("a shared quest has one definition and may appear in several dungeons", () 
   );
 });
 
-test("quest references and prerequisites must resolve to one catalog definition", () => {
+test("quest references, prerequisites and follow-ups must resolve to one catalog definition", () => {
   const file = dungeonFile({ quests: [26, 99] });
-  const quests = questFile([{ id: 26, name: "A Test Quest", requires: [98], items: [] }]);
+  const quests = questFile([{ id: 26, name: "A Test Quest", requires: [98], followUps: [97], items: [] }]);
   const checker = dungeonChecker(false);
   validateQuests([quests], [file], checker);
   const errors = checker.problems.filter((p) => !p.warning).map((p) => p.message);
   assert.ok(errors.some((m) => m.includes("prerequisite 98 has no quest definition")));
+  assert.ok(errors.some((m) => m.includes("follow-up 97 has no quest definition")));
   assert.ok(errors.some((m) => m.includes("quest 99 has no definition")));
 });
 
@@ -216,10 +217,12 @@ test("questline details survive a fix rewrite", () => {
       name: "Dungeon Quest",
       description: "More context",
       requires: [25],
+      followUps: [27],
       start: { npc: "Quest Giver", npcID: 123, location: [1436, 43, 72], description: "Upstairs." },
       turnIn: { npc: "Quest Turn-in", location: [1436, 50, 60], description: "Inside the inn." },
       items: [],
     },
+    { id: 27, name: "Later Quest", items: [] },
   ]);
   quests.npcs = { "Quest Giver": { location: [1436, 43, 72], description: "Upstairs." } };
   const checker = dungeonChecker(true);
@@ -233,7 +236,7 @@ test("questline details survive a fix rewrite", () => {
   assert.deepEqual(serialized.quests[1], quests.quests[1]);
 });
 
-test("a prerequisite-only quest ships without becoming a dungeon quest", () => {
+test("unlisted prerequisite and follow-up quests ship without becoming dungeon quests", () => {
   const names = {
     items: new Map(),
     encounters: new Map(),
@@ -260,18 +263,23 @@ test("a prerequisite-only quest ships without becoming a dungeon quest", () => {
       id: 26,
       name: "Dungeon Quest",
       requires: [25],
+      followUps: [27],
       start: { npc: "Quest Giver" },
       turnIn: { npc: "Quest Giver", description: "Outside." },
       items: [],
     },
+    { id: 27, name: "Later Quest", items: [] },
   ]);
   quests.npcs = { "Quest Giver": { location: [1436, 43, 72], description: "Upstairs." } };
   const output = build(ref, [dungeonFile({ encounters: [], quests: [26] })], [quests], [], config);
   assert.match(output.core.get("quest-definitions.lua") ?? "", /Data:AddQuestDefinitions\(\{/);
   assert.match(output.core.get("generated.xml") ?? "", /quest-definitions.lua/);
   assert.match(output.core.get("quest-definitions.lua") ?? "", /^    \{ id = 25/m);
+  assert.match(output.core.get("quest-definitions.lua") ?? "", /^    \{ id = 27/m);
   assert.doesNotMatch(output.core.get("loot/test_dungeon.lua") ?? "", /^    \{ id = 25/m);
+  assert.doesNotMatch(output.core.get("loot/test_dungeon.lua") ?? "", /^    \{ id = 27/m);
   assert.match(output.core.get("loot/test_dungeon.lua") ?? "", /^    \{ id = 26/m);
+  assert.match(output.core.get("loot/test_dungeon.lua") ?? "", /followUps = \{ 27 \}/);
   assert.match(
     output.core.get("loot/test_dungeon.lua") ?? "",
     /start = \{ description = "Upstairs\.", location = \{ 1436, 43, 72 \}, npc = "Quest Giver" \}/,

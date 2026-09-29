@@ -65,7 +65,7 @@ the scans and warns on unscanned ids.
   files with one `map`, each with its own `id`) every encounter must be in exactly one file:
   twice is an error, none a warning.
 - **Dungeon quests** (`validateQuests`, `src/quests.ts`): every quest ID is defined once across
-  `.contribute/data/quests/dungeons/`; dungeon quest IDs and direct prerequisites resolve to a
+  `.contribute/data/quests/dungeons/`; dungeon quest IDs, direct prerequisites and follow-ups resolve to a
   definition. It validates side, class, levels, rewards, and optional giver/turn-in details.
   Quest titles and NPC names are curated, so `fix` does not rewrite them. The generator uses the
   instance's quest ID list to place a shared definition in every dungeon where it appears.
@@ -115,8 +115,8 @@ removes stale files and returns the number of changes. `npm run generate:check` 
   encounters that file lists; the English name of such a part is its file's `name`.
 - `loot/<slug>.lua` is written for every instance file `hasLoot` is true for: a boss's drops via
   `AddBossLoot`, the trash via `AddTrashLoot`, the quests via `AddQuests`.
-- `quest-definitions.lua` is written when quest files define prerequisites not listed on any
-  dungeon page. It registers those quests with `AddQuestDefinitions` so their details can open
+- `quest-definitions.lua` is written when quest files define prerequisites or follow-ups not listed
+  on any dungeon page. It registers those quests with `AddQuestDefinitions` so their details can open
   without adding them to a dungeon's quest list.
 - A crafting list without an `icon` gets its skill line's `SpellIconFileID`; a crafting row
   without an item (an enchant) is emitted as `{ spell = id, ... }`.

@@ -276,9 +276,9 @@ Constructors (optional sugar):
   and class in `info`, with no reward rows below it. Clicking opens a quest page with its title,
   objective, optional description, giver and turn-in details (including item icons and tooltips
   for item starts), map buttons where locations are known, and reward items. When present, a clickable
-  subheader expands the ordered prerequisites
-  as indented, numbered quest banners. Each prerequisite opens its own detail page, whose back button returns
-  to the main quest; prerequisite pages do not open further prerequisites. The card carries the
+  subheader expands the ordered prerequisites. A second subheader expands ordered follow-ups.
+  Both use indented, numbered quest banners with their own detail pages and rewards. Their back
+  buttons return to the main quest without opening another linked list. The card carries the
   quest ids in `quests`, so it shows the same
   "!" and title list a boss with quests does.
 - `Spyglass.ListFolders(kind, opts?)` — folders for every curated list of `kind` (`"crafting"`, `"pvp"`,
@@ -509,7 +509,7 @@ Data.bossLoot[2747]  -- { { 5188, 0.9 }, { 5191 }, ... }   -- { itemID, chance 0
 Data.trashLoot[36]   -- { { 1935, 0.01 }, ... }   -- same rows, keyed by the instance: what its non-boss enemies drop
 Data.quests[166]     -- { id = 166, name = "The Defias Brotherhood", side = "Alliance", instanceID = 36, items = { { 2041 }, ... } }
                      -- a class quest also has class = "WARLOCK" (the client's class token);
-                     -- optional requiredLevel, xp, objective, description, requires, start, turnIn
+                     -- optional requiredLevel, xp, objective, description, requires, followUps, start, turnIn
 Data.instanceQuests[36] -- { 166, ... }   -- the instance's quest ids, in curated order
 Data.lists.reputation.argent_dawn      -- { name = "Argent Dawn", icon = "...", order = 1, factionID = 529 }
 Data.listLoot.reputation.argent_dawn   -- { { 13209, standing = "Friendly" }, ... }   -- { itemID, field = value, ... }
@@ -554,7 +554,8 @@ Adding data (any call may be repeated; every one invalidates the caches and fire
   the instance's quests. `side` is `"Alliance"`, `"Horde"` or `"Both"` (nil = both); `class` is a class
   token (`"WARLOCK"`) for a class quest (nil = any class). Optional `requiredLevel`, `xp`,
   `objective` and `description` feed the tooltip. `requires` is an array of direct prerequisites
-  as `{ id, name? }`; the tooltip shows each one's completion state. `start` and `turnIn` are optional
+  as `{ id, name? }`; the tooltip shows each one's completion state. `followUps` is an ordered
+  array of later quest IDs shown on the main quest page. `start` and `turnIn` are optional
   `{ npc?, npcID?, item?, location?, description? }` tables, where `location` is
   `{ uiMapID, x, y }` in map percentages and `description` is optional info text beside that
   endpoint. Each quest is stored by its id and listed under the instance in the order it was added.
@@ -563,7 +564,7 @@ Adding data (any call may be repeated; every one invalidates the caches and fire
   are curated data: this client ships no quest table, and `C_QuestLog` only knows quests the
   character has seen.
 - `Data:AddQuestDefinitions({ quest, ... })` — stores quests by id without listing them under an
-  instance. The generator uses this for quests defined only as prerequisites. Definitions use the
+  instance. The generator uses this for quests defined only as prerequisites or follow-ups. Definitions use the
   same fields as `AddQuests`.
 - `Data:AddList(kind, id, def)`, `Data:AddListLoot(kind, id, { { itemID, standing = "Honored" }, ... })`
 - `Data:AddRecipes({ [spellID] = { skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto, taughtBy }, ... })`,

@@ -167,9 +167,9 @@ example, `Prequests 1/2`). That page shows the quest title and objective, start 
 sources with optional endpoint info text, starting items with their icon and tooltip, optional
 quest description, and map buttons for known endpoint locations in the right pane. When prequests
 exist, a clickable subheader below the rewards
-expands them in order. Their banners are indented with a left rail and numbered steps. Each prerequisite
-opens a detail page with its own rewards and a button back to the main quest; it does not show
-another prerequisite list.
+expands them in order. Follow-ups have a separate collapsible section after prerequisites. Both
+use indented banners with a left rail and numbered steps. Each linked quest opens a detail page
+with its own rewards and a button back to the main quest; it does not show another linked list.
 The layout keeps a banner together with its first reward row when it has any. While the list has
 banners (`view.showsQuests`), the view redraws the page on
 `QUEST_LOG_UPDATE`, `QUEST_TURNED_IN` and `QUEST_DATA_LOAD_RESULT`, deferred to the next frame

@@ -180,7 +180,7 @@ function emitQuest(quest: CuratedQuest, ref: Reference, questsByID: Map<number, 
       class: quest.class && classToken(quest.class),
       requires: quest.requires?.map((id) => ({ id, name: questsByID.get(id)?.name })),
     },
-    ["id", "name", "side", "class", "requiredLevel", "xp", "objective", "description", "requires", "start", "turnIn"],
+    ["id", "name", "side", "class", "requiredLevel", "xp", "objective", "description", "requires", "followUps", "start", "turnIn"],
     "",
   ).join(" ");
   const items = emitLootRows(quest.items ?? [], ref, "        ");
@@ -190,7 +190,7 @@ function emitQuest(quest: CuratedQuest, ref: Reference, questsByID: Map<number, 
 
 function emitQuestDefinitions(quests: CuratedQuest[], ref: Reference, questsByID: Map<number, CuratedQuest>): string {
   return [
-    header(".contribute/data/quests/dungeons (quests used only as prerequisites)"),
+    header(".contribute/data/quests/dungeons (quest definitions not listed by a dungeon)"),
     "local Data = Spyglass.Data\n\nData:AddQuestDefinitions({\n",
     ...quests.map((quest) => emitQuest(quest, ref, questsByID)),
     "})\n",
@@ -472,9 +472,11 @@ export function build(
     ),
   );
   const listedQuestIDs = new Set(curated.flatMap((file) => file.data.quests ?? []));
-  const prerequisiteIDs = new Set([...questsByID.values()].flatMap((quest) => quest.requires ?? []));
+  const linkedQuestIDs = new Set(
+    [...questsByID.values()].flatMap((quest) => [...(quest.requires ?? []), ...(quest.followUps ?? [])]),
+  );
   const unlistedQuests = [...questsByID.values()]
-    .filter((quest) => prerequisiteIDs.has(quest.id!) && !listedQuestIDs.has(quest.id!))
+    .filter((quest) => linkedQuestIDs.has(quest.id!) && !listedQuestIDs.has(quest.id!))
     .sort((a, b) => a.id! - b.id!);
   if (unlistedQuests.length > 0) {
     addCore("quest-definitions.lua", emitQuestDefinitions(unlistedQuests, ref, questsByID));

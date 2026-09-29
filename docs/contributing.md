@@ -244,9 +244,9 @@ filter.
 
 Each dungeon has a `.contribute/data/quests/dungeons/<dungeon>.json` file. Its `quests` array
 holds the quest definitions associated with that dungeon; it may be empty. The dungeon file's
-`quests` field lists the IDs to show in its info panel, in that order. A prerequisite quest can
-have a definition in the quest file without being listed on the dungeon page. A quest spanning
-several dungeons is defined in just one quest file and its ID is listed in each dungeon file.
+`quests` field lists the IDs to show in its info panel, in that order. A prerequisite or follow-up
+quest can have a definition in the quest file without being listed on the dungeon page. A quest
+spanning several dungeons is defined in just one quest file and its ID is listed in each dungeon file.
 
 For example, a quest file can contain these illustrative definitions:
 
@@ -267,8 +267,15 @@ For example, a quest file can contain these illustrative definitions:
       "name": "Dungeon quest",
       "side": "Alliance",
       "requires": [1],
+      "followUps": [3],
       "start": { "npc": "Quest Giver" },
       "turnIn": { "npc": "Quest Giver", "description": "Inside the inn." },
+      "items": []
+    },
+    {
+      "id": 3,
+      "name": "Follow-up quest",
+      "requires": [2],
       "items": []
     }
   ]
@@ -293,21 +300,24 @@ The definition fields are:
 | `objective`       | string  | What the quest asks for, in one English sentence; shown on its page and in its tooltip.                                                                       |
 | `description`     | string  | Optional curated description, shown on its page and in its tooltip before the client has the quest.                                                           |
 | `requires`        | array   | IDs of direct prerequisite quests, in the order they should appear. Each needs its own definition in a quest file, even if it is not shown on a dungeon page. |
+| `followUps`       | array   | IDs of later quests, in the order they should appear after this quest. Each needs its own definition, even if it is not shown on a dungeon page.               |
 | `start`, `turnIn` | object  | Optional giver and turn-in: `npc` name, `npcID`, starting `item` ID, `location` as `[uiMapID, x, y]` (x/y in 0–100), and `description` for extra info shown beside that endpoint. Use only the fields known. |
 | `items`           | array   | The items the quest rewards: item rows without a `chance`. May be empty.                                                                                      |
 
 The quest ids are also the ones a boss's `quests` field lists: a boss that hands out or is the
 objective of a quest names the id there. The same item may appear in several quests. `npm run
-check:data` reports duplicate quest definitions, unresolved dungeon quest IDs and unresolved
-prerequisites. `npm run fix` rewrites reward item names but leaves quest and NPC names alone.
+check:data` reports duplicate quest definitions, unresolved dungeon quest IDs, prerequisites and
+follow-ups. `npm run fix` rewrites reward item names but leaves quest and NPC names alone.
 
 In the browser, the instance's _Quests_ card lists one clickable banner per quest, sorted by
 `requiredLevel`, then title. Each quest page shows the objective, known start and turn-in sources,
 map buttons for known locations, and rewards. Prerequisites are collapsed below the rewards;
 expanding them shows the complete chain, earliest quest first. A prerequisite opens its own page,
 and Back returns to the main quest without another nested prerequisite list. Quest definitions
-used only as prerequisites are shipped without adding them to a dungeon's quest list. A quest
-that runs through several instances (the warlock quest "The Orb of Soran'ruk" needs Blackfathom
+used only as prerequisites are shipped without adding them to a dungeon's quest list. Follow-ups
+appear in their own collapsible section below prerequisites, with the same indented quest pages
+and rewards; Back returns to the main quest. Follow-up definitions can also stay off the dungeon
+list. A quest that runs through several instances (the warlock quest "The Orb of Soran'ruk" needs Blackfathom
 Deeps and Shadowfang Keep) is referenced by each dungeon but defined once under
 `quests/dungeons/`.
 

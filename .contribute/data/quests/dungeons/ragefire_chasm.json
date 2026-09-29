@@ -57,6 +57,7 @@
       "xp": 3507,
       "objective": "Kill Bazzalan and Jergosh the Invoker inside Ragefire Chasm.",
       "requires": [5727],
+      "followUps": [5729, 5730],
       "start": {
         "npc": "Thrall"
       },
@@ -64,6 +65,57 @@
         "npc": "Thrall"
       },
       "items": []
+    },
+    {
+      "id": 5729,
+      "name": "Hidden Enemies",
+      "side": "Horde",
+      "requiredLevel": 9,
+      "xp": 110,
+      "objective": "Speak to Neeru Fireblade in Orgrimmar.",
+      "description": "Neeru is in the Cleft of Shadow near the Ragefire Chasm entrance.",
+      "requires": [5726],
+      "start": {
+        "npc": "Thrall"
+      },
+      "turnIn": {
+        "npc": "Neeru Fireblade"
+      },
+      "items": []
+    },
+    {
+      "id": 5730,
+      "name": "Hidden Enemies",
+      "side": "Horde",
+      "requiredLevel": 9,
+      "xp": 1450,
+      "objective": "Speak to Thrall in Orgrimmar and tell him what you've learned.",
+      "description": "Neeru is in the Cleft of Shadow near the Ragefire Chasm entrance.",
+      "requires": [5729],
+      "start": {
+        "npc": "Neeru Fireblade"
+      },
+      "turnIn": {
+        "npc": "Thrall"
+      },
+      "items": [
+        {
+          "item": 15443,
+          "name": "Kris of Orgrimmar"
+        },
+        {
+          "item": 15445,
+          "name": "Hammer of Orgrimmar"
+        },
+        {
+          "item": 15424,
+          "name": "Axe of Orgrimmar"
+        },
+        {
+          "item": 15444,
+          "name": "Staff of Orgrimmar"
+        }
+      ]
     },
     {
       "id": 5725,
@@ -145,6 +197,7 @@
       "requiredLevel": 9,
       "xp": 880,
       "objective": "Find Maur Grimtotem's corpse inside Ragefire Chasm and search it for anything of interest.",
+      "followUps": [5724],
       "start": {
         "npc": "Rahauro"
       },

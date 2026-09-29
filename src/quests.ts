@@ -27,6 +27,8 @@ export interface CuratedQuest {
   description?: string;
   /** Direct prerequisite quest ids; each has its own definition in the quest catalog. */
   requires?: number[];
+  /** Follow-up quest ids in the order they should appear after this quest. */
+  followUps?: number[];
   start?: QuestEndpoint;
   turnIn?: QuestEndpoint;
   items: CuratedItemRow[];
@@ -138,13 +140,15 @@ export function validateQuests(files: QuestFile[], instances: CuratedFile[], che
       for (const field of ["start", "turnIn"] as const) {
         if (quest[field] !== undefined) validateEndpoint(file, quest.id, field, quest[field], checker);
       }
-      if (quest.requires !== undefined) {
-        if (!Array.isArray(quest.requires)) checker.report(file, `quest ${quest.id}: \`requires\` must be an array`);
+      for (const [field, label] of [["requires", "prerequisite"], ["followUps", "follow-up"]] as const) {
+        const ids = quest[field];
+        if (ids === undefined) continue;
+        if (!Array.isArray(ids)) checker.report(file, `quest ${quest.id}: \`${field}\` must be an array`);
         else {
           const seen = new Set<number>();
-          for (const id of quest.requires) {
+          for (const id of ids) {
             if (!Number.isInteger(id) || id <= 0 || id === quest.id || seen.has(id)) {
-              checker.report(file, `quest ${quest.id}: invalid or repeated prerequisite ${id}`);
+              checker.report(file, `quest ${quest.id}: invalid or repeated ${label} ${id}`);
             }
             seen.add(id);
           }
@@ -164,10 +168,12 @@ export function validateQuests(files: QuestFile[], instances: CuratedFile[], che
     if (!Array.isArray(file.quests)) continue;
     for (const quest of file.quests) {
       if (!quest || typeof quest !== "object" || Array.isArray(quest)) continue;
-      if (!Array.isArray(quest.requires)) continue;
-      for (const id of quest.requires) {
-        if (Number.isInteger(id) && id > 0 && !byID.has(id)) {
-          checker.report(file, `quest ${quest.id ?? "?"}: prerequisite ${id} has no quest definition`);
+      for (const [field, label] of [["requires", "prerequisite"], ["followUps", "follow-up"]] as const) {
+        if (!Array.isArray(quest[field])) continue;
+        for (const id of quest[field]) {
+          if (Number.isInteger(id) && id > 0 && !byID.has(id)) {
+            checker.report(file, `quest ${quest.id ?? "?"}: ${label} ${id} has no quest definition`);
+          }
         }
       }
     }
@@ -255,6 +261,7 @@ export function serializeQuests(file: QuestFile): string {
           objective: q.objective,
           description: q.description,
           requires: q.requires,
+          followUps: q.followUps,
           start: q.start && {
             npc: q.start.npc,
             npcID: q.start.npcID,
