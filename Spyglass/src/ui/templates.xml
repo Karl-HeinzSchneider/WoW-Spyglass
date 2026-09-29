@@ -448,6 +448,7 @@
 				</Texture>
 				<!-- Right column first: the texts on the left stop short of it. -->
 				<FontString parentKey="XP" inherits="GameFontHighlight" justifyH="RIGHT" wordwrap="false">
+					<Size x="90" y="0"/>
 					<Anchors>
 						<Anchor point="TOPRIGHT" x="-10" y="-8"/>
 					</Anchors>
@@ -455,14 +456,14 @@
 				<Texture parentKey="HordeLogo" file="Interface\Glues\CharacterCreate\CharacterCreateTest">
 					<Size x="30" y="30"/>
 					<Anchors>
-						<Anchor point="RIGHT" relativeKey="$parent.XP" relativePoint="LEFT" x="-7" y="-4"/>
+						<Anchor point="RIGHT" relativeKey="$parent.XP" relativePoint="LEFT" x="-3" y="-4"/>
 					</Anchors>
 					<TexCoords left="0.5996" right="0.6729" top="0.2129" bottom="0.3691"/>
 				</Texture>
 				<Texture parentKey="AllianceLogo" file="Interface\Glues\CharacterCreate\CharacterCreateTest">
 					<Size x="30" y="30"/>
 					<Anchors>
-						<Anchor point="RIGHT" relativeKey="$parent.HordeLogo" relativePoint="LEFT" x="-4" y="0"/>
+						<Anchor point="RIGHT" relativeKey="$parent.HordeLogo" relativePoint="LEFT" x="-2" y="0"/>
 					</Anchors>
 					<TexCoords left="0.5996" right="0.6729" top="0.0195" bottom="0.1758"/>
 				</Texture>

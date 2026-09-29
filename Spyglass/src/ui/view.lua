@@ -761,7 +761,7 @@ end
 SpyglassQuestBannerMixin = {}
 app.ui.QuestBannerMixin = SpyglassQuestBannerMixin
 
-local NO_REWARDS = "No rewards recorded"
+local NO_REWARDS = "No rewards"
 
 ---@param view Spyglass.View
 ---@param node Spyglass.Node
@@ -784,16 +784,17 @@ function SpyglassQuestBannerMixin:Init(view, node)
     self.HordeLogo:SetShown(self.showHordeLogo)
     self.AllianceLogo:ClearAllPoints()
     if self.showHordeLogo then
-        self.AllianceLogo:SetPoint("RIGHT", self.HordeLogo, "LEFT", -4, 0)
+        self.AllianceLogo:SetPoint("RIGHT", self.HordeLogo, "LEFT", -2, 0)
     else
-        self.AllianceLogo:SetPoint("RIGHT", self.XP, "LEFT", -7, -4)
+        self.AllianceLogo:SetPoint("RIGHT", self.XP, "LEFT", -3, -4)
     end
     local status, color, icon = Quests.Status(questID)
     self.Status:SetText(status)
     self.Status:SetTextColor(color:GetRGB())
     self.Icon:SetTexture(icon)
     if quest and quest.xp then
-        self.XP:SetText(("%s %s"):format(Quests.FormatXP(quest.xp), NORMAL_FONT_COLOR:WrapTextInColorCode("XP")))
+        local xp = quest.xp >= 100000 and ("%dk"):format(math.floor(quest.xp / 1000)) or Quests.FormatXP(quest.xp)
+        self.XP:SetText(("%s %s"):format(xp, NORMAL_FONT_COLOR:WrapTextInColorCode("XP")))
         self.XP:SetTextColor(HIGHLIGHT_FONT_COLOR:GetRGB())
     elseif not quest or #quest.items == 0 then
         self.XP:SetText(NO_REWARDS)
@@ -815,8 +816,8 @@ function SpyglassQuestBannerMixin:UpdateTitle()
     local left = select(4, self.Title:GetPoint(1)) or 0
     local info = self.Info:GetText()
     local infoWidth = info and info ~= "" and self.Info:GetStringWidth() + 10 or 0
-    local logosWidth = (self.showAllianceLogo and 34 or 0) + (self.showHordeLogo and 34 or 0)
-    local maximum = self:GetWidth() - left - infoWidth - self.XP:GetStringWidth() - logosWidth - 24
+    local logosWidth = (self.showAllianceLogo and 32 or 0) + (self.showHordeLogo and 32 or 0)
+    local maximum = self:GetWidth() - left - infoWidth - self.XP:GetWidth() - logosWidth - 24
     if maximum > 0 and self.Title:GetStringWidth() > maximum then
         self.Title:SetWidth(maximum)
     end
