@@ -8,12 +8,14 @@ Data:AddBossLoot(585, { -- Lady Anacondra
     { 273088 }, -- Snake Eye Kaleidoscope
     { 10412 }, -- Belt of the Fang
     { 6446 }, -- Snakeskin Bag
+    { 9739 }, -- Gem of Anacondra
 })
 
 Data:AddBossLoot(586, { -- Lord Cobrahn
     { 6460 }, -- Cobrahn's Grasp
     { 6465 }, -- Robe of the Moccasin
     { 10410 }, -- Leggings of the Fang
+    { 9738 }, -- Gem of Cobrahn
 })
 
 Data:AddBossLoot(587, { -- Kresh
@@ -26,6 +28,7 @@ Data:AddBossLoot(588, { -- Lord Pythas
     { 6472 }, -- Stinging Viper
     { 6473 }, -- Armor of the Fang
     { 273089 }, -- Slither Cord
+    { 9740 }, -- Gem of Pythas
 })
 
 Data:AddBossLoot(589, { -- Skum
@@ -39,6 +42,7 @@ Data:AddBossLoot(590, { -- Lord Serpentis
     { 5970 }, -- Serpent Gloves
     { 6459 }, -- Savage Trodders
     { 10411 }, -- Footpads of the Fang
+    { 9741 }, -- Gem of Serpentis
 })
 
 Data:AddBossLoot(591, { -- Verdan the Everliving
@@ -80,8 +84,6 @@ Data:AddQuests(43, {
         { 8071 }, -- Sizzle Stick
         { 6481 }, -- Dagmire Gauntlets
     } },
-    { id = 1489, name = "Hamuul Runetotem", side = "Horde", requiredLevel = 10, objective = "Speak with Hamuul Runetotem on Elder Rise in Thunder Bluff.", description = "Tonga sends you to Hamuul after Altered Beings.", requires = { { id = 880, name = "Altered Beings" } }, start = { description = "The Crossroads.", location = { 1413, 52, 32 }, npc = "Tonga Runetotem" }, turnIn = { description = "Elder Rise, Thunder Bluff.", npc = "Hamuul Runetotem" }, items = {} },
-    { id = 1490, name = "Nara Wildmane", side = "Horde", requiredLevel = 10, objective = "Speak with Nara Wildmane in Thunder Bluff.", description = "Nara Wildmane is the final prerequisite before Leaders of the Fang becomes available.", requires = { { id = 1489, name = "Hamuul Runetotem" } }, start = { description = "Elder Rise, Thunder Bluff.", npc = "Hamuul Runetotem" }, turnIn = { description = "Thunder Bluff.", location = { 1456, 75.3, 31.3 }, npc = "Nara Wildmane" }, items = {} },
     { id = 1491, name = "Smart Drinks", side = "Both", requiredLevel = 13, xp = 3915, objective = "Bring 6 Wailing Essence to Mebok Mizzyrix.", requires = { { id = 865, name = "Raptor Horns" } }, start = { description = "Ratchet, The Barrens.", location = { 1413, 62.8, 36.7 }, npc = "Mebok Mizzyrix" }, turnIn = { description = "Ratchet, The Barrens.", location = { 1413, 62.8, 36.7 }, npc = "Mebok Mizzyrix" }, items = {} },
     { id = 959, name = "Trouble at the Docks", side = "Both", requiredLevel = 14, xp = 3915, objective = "Retrieve the 99-Year-Old Port from Mad Magglish in Wailing Caverns.", start = { description = "Ratchet, The Barrens.", location = { 1413, 63.9, 38.3 }, npc = "Crane Operator Bigglefuzz" }, turnIn = { description = "Ratchet, The Barrens.", location = { 1413, 63.9, 38.3 }, npc = "Crane Operator Bigglefuzz" }, items = {} },
     { id = 6981, name = "The Glowing Shard", side = "Both", requiredLevel = 15, xp = 7700, objective = "Travel to Ratchet to find someone who can identify the Glowing Shard, then deliver it as directed.", description = "Dropped by: Mutanus the Devourer.\nVisit Sputtervalve in Ratchet near the flight master at [63.0, 37.2].", start = { item = 10441 }, turnIn = { description = "Above the entrance to Wailing Caverns,, The Barrens.", location = { 1413, 48.2, 32.8 }, npc = "Falla Sagewind" }, items = {} },

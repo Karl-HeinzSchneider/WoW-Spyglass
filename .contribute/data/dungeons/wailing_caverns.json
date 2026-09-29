@@ -32,6 +32,10 @@
         {
           "item": 6446,
           "name": "Snakeskin Bag"
+        },
+        {
+          "item": 9739,
+          "name": "Gem of Anacondra"
         }
       ]
     },
@@ -54,6 +58,10 @@
         {
           "item": 10410,
           "name": "Leggings of the Fang"
+        },
+        {
+          "item": 9738,
+          "name": "Gem of Cobrahn"
         }
       ]
     },
@@ -98,6 +106,10 @@
         {
           "item": 273089,
           "name": "Slither Cord"
+        },
+        {
+          "item": 9740,
+          "name": "Gem of Pythas"
         }
       ]
     },
@@ -146,6 +158,10 @@
         {
           "item": 10411,
           "name": "Footpads of the Fang"
+        },
+        {
+          "item": 9741,
+          "name": "Gem of Serpentis"
         }
       ]
     },
@@ -212,5 +228,5 @@
       "name": "Feyscale Cloak"
     }
   ],
-  "quests": [914, 1486, 962, 1487, 1489, 1490, 1491, 959, 6981]
+  "quests": [914, 1486, 962, 1487, 1491, 959, 6981]
 }
