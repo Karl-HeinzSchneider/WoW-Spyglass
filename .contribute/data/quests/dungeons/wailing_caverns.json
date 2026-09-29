@@ -30,6 +30,14 @@
     "Tonga Runetotem": {
       "location": [1413, 52, 32],
       "description": "The Crossroads."
+    },
+    "Sputtervalve": {
+      "location": [1413, 63, 37.2],
+      "description": "Ratchet, The Barrens."
+    },
+    "Falla Sagewind": {
+      "location": [1413, 48.2, 32.8],
+      "description": "Above the entrance to Wailing Caverns,, The Barrens."
     }
   },
   "quests": [
@@ -206,24 +214,18 @@
       "items": []
     },
     {
-      "id": 3366,
-      "name": "The Glowing Shard",
-      "items": []
-    },
-    {
       "id": 6981,
       "name": "The Glowing Shard",
       "side": "Both",
       "requiredLevel": 15,
-      "xp": 7685,
+      "xp": 7700,
       "objective": "Travel to Ratchet to find someone who can identify the Glowing Shard, then deliver it as directed.",
-      "description": "Dropped by: Mutanus the Devourer",
+      "description": "Dropped by: Mutanus the Devourer.\nVisit Sputtervalve in Ratchet near the flight master at [63.0, 37.2].",
       "start": {
         "item": 10441
       },
       "turnIn": {
-        "npc": "Falla Sagewind",
-        "location": [1456, 70.6, 30]
+        "npc": "Falla Sagewind"
       },
       "items": []
     },
