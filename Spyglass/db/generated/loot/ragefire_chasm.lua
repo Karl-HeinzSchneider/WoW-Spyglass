@@ -28,7 +28,7 @@ Data:AddBossLoot(2735, { -- Bazzalan
 })
 
 Data:AddQuests(389, {
-    { id = 5728, name = "Hidden Enemies", side = "Horde", requiredLevel = 9, xp = 3507, objective = "Kill Bazzalan and Jergosh the Invoker inside Ragefire Chasm.", items = {} },
+    { id = 5728, name = "Hidden Enemies", side = "Horde", requiredLevel = 9, xp = 3507, objective = "Kill Bazzalan and Jergosh the Invoker inside Ragefire Chasm.", requires = { { id = 5727, name = "Hidden Enemies" } }, items = {} },
     { id = 5725, name = "The Power to Destroy...", side = "Horde", requiredLevel = 9, xp = 4422, objective = "Collect Spells of Shadow and Incantations from the Nether inside Ragefire Chasm.", items = {
         { 15449 }, -- Ghastly Trousers
         { 15450 }, -- Dredgemire Leggings

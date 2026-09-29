@@ -689,6 +689,7 @@ end
 ---@field Text FontString
 ---@field LineLeft Texture
 ---@field LineRight Texture
+---@field node? Spyglass.Node
 SpyglassSubheaderMixin = {}
 app.ui.SubheaderMixin = SpyglassSubheaderMixin
 
@@ -697,9 +698,31 @@ app.ui.SubheaderMixin = SpyglassSubheaderMixin
 local SUBHEADER_LINE_MIN = 20
 
 ---@param text string
-function SpyglassSubheaderMixin:Init(text)
+---@param node? Spyglass.Node
+function SpyglassSubheaderMixin:Init(text, node)
+    self.node = node
+    self:EnableMouse(node ~= nil and node.onClick ~= nil)
+    self.Text:SetFontObject(node and node.onClick and GameFontNormalMed2 or GameFontNormal)
+    self.Text:SetTextColor(NORMAL_FONT_COLOR:GetRGB())
     self.Text:SetText(text)
     self:UpdateText()
+end
+
+function SpyglassSubheaderMixin:OnEnter()
+    if self.node and self.node.onClick then
+        self.Text:SetTextColor(HIGHLIGHT_FONT_COLOR:GetRGB())
+    end
+end
+
+function SpyglassSubheaderMixin:OnLeave()
+    self.Text:SetTextColor(NORMAL_FONT_COLOR:GetRGB())
+end
+
+---@param button string
+function SpyglassSubheaderMixin:OnMouseUp(button)
+    if self.node and self.node.onClick then
+        self.node.onClick(self.node, button)
+    end
 end
 
 function SpyglassSubheaderMixin:OnSizeChanged()
@@ -721,6 +744,7 @@ end
 
 ---@class Spyglass.QuestBanner : Button
 ---@field Backplate Texture
+---@field TreeLine Texture
 ---@field Icon Texture
 ---@field Line Texture
 ---@field Title FontString
@@ -744,6 +768,7 @@ local NO_REWARDS = "No rewards recorded"
 function SpyglassQuestBannerMixin:Init(view, node)
     self.view = view
     self.node = node
+    self.TreeLine:SetShown((node.indent or 0) > 0)
     local Quests = app.questInfo
     local questID = node.quest --[[@as integer]]
     local quest = Data:GetQuest(questID)
@@ -1148,6 +1173,7 @@ app.ui.ViewMixin = SpyglassViewMixin
 ---@field kind "header"|"subheader"|"quest"|"group"|"spacer"|"row"|"tile"|"card"
 ---@field text? string  # header, subheader, group
 ---@field node? Spyglass.Node  # quest, row, tile, card
+---@field source? Spyglass.Node  # clickable subheader
 
 -- Where every element of the current layout goes, as parallel arrays indexed by placement
 -- order; a page is a range of them. Shared by all views: only the shown view lays out and
@@ -2224,7 +2250,7 @@ function SpyglassViewMixin:BuildElements(node)
         elseif child.subheader then
             flush()
             if hasKept(child.items) then
-                elements[#elements + 1] = { kind = "subheader", text = child.subheader }
+                elements[#elements + 1] = { kind = "subheader", text = child.subheader, source = child }
                 addRows(child.items or {})
             end
         elseif child.quest then
@@ -2315,12 +2341,13 @@ function SpyglassViewMixin:LayoutPages(elements, columns)
         elseif element.kind == "subheader" then
             -- Like a header, only smaller; also never left alone at a page bottom.
             newLine()
-            local needed = self.subheaderHeight + self.subheaderGap + self.rowHeight
+            local height = self.subheaderHeight + (element.source and element.source.onClick and 16 or 0)
+            local needed = height + self.subheaderGap + self.rowHeight
             if y > 0 and y + needed > pageHeight then
                 newPage()
             end
-            place(element, 0, pageWidth, self.subheaderHeight)
-            y = y + self.subheaderHeight + self.subheaderGap
+            place(element, 0, pageWidth, height)
+            y = y + height + self.subheaderGap
         elseif element.kind == "quest" then
             -- Full width; kept with its first reward row when it has rewards.
             newLine()
@@ -2329,7 +2356,8 @@ function SpyglassViewMixin:LayoutPages(elements, columns)
             if y > 0 and y + needed > pageHeight then
                 newPage()
             end
-            place(element, 0, pageWidth, self.questHeight)
+            local indent = math.max(0, math.min(element.node.indent or 0, pageWidth / 3))
+            place(element, indent, pageWidth - indent, self.questHeight)
             y = y + self.questHeight + self.questGap
         elseif element.kind == "group" then
             -- Row-sized, full width, on its own line, and never orphaned at a page bottom.
@@ -2389,7 +2417,7 @@ function SpyglassViewMixin:RenderPage(page, range)
             frame:Init(element.text or "")
         elseif element.kind == "subheader" then
             frame = page.subheaderPool:Acquire() --[[@as Spyglass.Subheader]]
-            frame:Init(element.text or "")
+            frame:Init(element.text or "", element.source)
         elseif element.kind == "quest" then
             frame = page.questPool:Acquire() --[[@as Spyglass.QuestBanner]]
             frame:Init(self, element.node)

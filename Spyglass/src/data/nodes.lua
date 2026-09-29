@@ -256,23 +256,29 @@ local function questPage(quest, mainQuest)
 
     local prerequisites = questPrerequisites(quest)
     if #prerequisites == 0 then
-        entry.children = { details, api.Custom({ name = "Prerequisites: none recorded", icon = ICON_QUEST }) }
+        entry.children = { details }
         return entry
     end
     local prerequisitePages = {}
-    for _, prerequisite in ipairs(prerequisites) do
-        prerequisitePages[#prerequisitePages + 1] = questPage(prerequisite, quest)
+    for i, prerequisite in ipairs(prerequisites) do
+        local page = questPage(prerequisite, quest)
+        page.indent = 28
+        page.info = ("Step %d/%d%s"):format(i, #prerequisites, page.info and (" \194\183 " .. page.info) or "")
+        prerequisitePages[#prerequisitePages + 1] = page
     end
     entry.getChildren = function(node, view)
         local expanded = view:GetPanelValue(node, 0) == true
         local children = { details }
-        children[#children + 1] = api.Custom({
-            name = ("%s Prerequisites (%d)"):format(expanded and "-" or "+", #prerequisitePages),
-            icon = ICON_QUEST,
-            onClick = function()
+        local toggle =
+            api.Subheader(("Prerequisites (%d) - %s"):format(#prerequisitePages, expanded and "Hide" or "Show"))
+        toggle.onClick = function(_, button)
+            if button == "RightButton" then
+                view:Back()
+            else
                 view:SetPanelValue(node, 0, not expanded)
-            end,
-        })
+            end
+        end
+        children[#children + 1] = toggle
         if expanded then
             for _, prerequisite in ipairs(prerequisitePages) do
                 children[#children + 1] = prerequisite

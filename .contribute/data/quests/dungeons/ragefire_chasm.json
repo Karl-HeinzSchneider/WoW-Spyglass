@@ -1,12 +1,26 @@
 {
   "quests": [
     {
+      "id": 5726,
+      "name": "Hidden Enemies",
+      "side": "Horde",
+      "items": []
+    },
+    {
+      "id": 5727,
+      "name": "Hidden Enemies",
+      "side": "Horde",
+      "requires": [5726],
+      "items": []
+    },
+    {
       "id": 5728,
       "name": "Hidden Enemies",
       "side": "Horde",
       "requiredLevel": 9,
       "xp": 3507,
       "objective": "Kill Bazzalan and Jergosh the Invoker inside Ragefire Chasm.",
+      "requires": [5727],
       "items": []
     },
     {

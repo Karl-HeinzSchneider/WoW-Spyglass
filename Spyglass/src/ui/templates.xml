@@ -400,6 +400,9 @@
 			</Layer>
 		</Layers>
 		<Scripts>
+			<OnEnter method="OnEnter"/>
+			<OnLeave method="OnLeave"/>
+			<OnMouseUp method="OnMouseUp"/>
 			<OnSizeChanged method="OnSizeChanged"/>
 		</Scripts>
 	</Frame>
@@ -423,6 +426,14 @@
 				</Texture>
 			</Layer>
 			<Layer level="ARTWORK">
+				<Texture parentKey="TreeLine">
+					<Size x="2" y="0"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" x="1" y="-2"/>
+						<Anchor point="BOTTOMLEFT" x="1" y="2"/>
+					</Anchors>
+					<Color r="0.7" g="0.52" b="0.2" a="0.65"/>
+				</Texture>
 				<Texture parentKey="Icon">
 					<Size x="24" y="24"/>
 					<Anchors>

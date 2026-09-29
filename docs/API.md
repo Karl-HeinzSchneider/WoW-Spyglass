@@ -207,15 +207,15 @@ Inside a folder's `children`, from the biggest to the smallest:
 - `{ subheader = "Rare Drops", items = { ... } }` renders as a small centered section title with
   a line to either side, followed by `items` — one level under a header, for lists with enough
   sections that the group labels alone no longer structure them. Without `items` it just marks
-  where the section starts.
+  where the section starts. Set `onClick = function(node, button) end` to make the title clickable.
 - `{ quest = questID, items = { ... }, info = "Level 14" }` renders as a full-width quest banner
   followed by `items` (what the quest rewards): the quest's title (`Data:GetQuestName`), `info`
   beside it, the curated `objective` under it, its `xp` on the right ("No rewards recorded" when
   the database has neither `xp` nor items), and the character's progress ("Done", "Ready",
   "Active", "Not started", with the gossip window's quest mark to match). Hover shows the same
   quest tooltip as the info panel's quest lines, shift-click links the quest in chat. If the node
-  has `children`, clicking its banner opens them. Unlike a subheader it stays when the filters
-  remove all of its `items`.
+  has `children`, clicking its banner opens them. Set `indent` to inset a nested quest banner
+  from the left. Unlike a subheader it stays when the filters remove all of its `items`.
 - `{ group = "Tier 2", items = { ... } }` renders as a row-sized group label followed by
   `items`. Without `items` it just marks where a group starts in the surrounding list.
 - `{ spacer = true }` is one empty row of space (as high as a list row, nothing drawn), e.g. to
@@ -270,9 +270,10 @@ Constructors (optional sugar):
   then title. Each banner shows Alliance and/or Horde emblems immediately before XP, plus level
   and class in `info`, with no reward rows below it. Clicking opens a quest page with its title,
   objective, optional description, giver and turn-in details, map buttons where locations are
-  known, and reward items. An expandable prerequisite list follows the rewards. Each prerequisite
-  opens its own detail page, whose back button returns to the main quest; prerequisite pages do
-  not open further prerequisites. The card carries the quest ids in `quests`, so it shows the same
+  known, and reward items. When present, a clickable subheader expands the ordered prerequisites
+  as indented, numbered quest banners. Each prerequisite opens its own detail page, whose back button returns
+  to the main quest; prerequisite pages do not open further prerequisites. The card carries the
+  quest ids in `quests`, so it shows the same
   "!" and title list a boss with quests does.
 - `Spyglass.ListFolders(kind, opts?)` — folders for every curated list of `kind` (`"crafting"`, `"pvp"`,
   `"collections"`, `"reputation"`), by `order` then name; the built-in modules of those names are exactly this

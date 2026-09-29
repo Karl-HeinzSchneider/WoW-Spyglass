@@ -140,8 +140,9 @@ open.
 ### Headers, subheaders, quest banners, groups, spacers
 
 Section headers use the `UI-Character-Info-Title` plate. Subheaders are a step smaller: centered
-text with `UI-Character-Info-ScrollLine-Long` running out to both sides. Groups are row-sized
-labels. A `spacer` element is one row of empty space that takes part in the page layout but has
+text with `UI-Character-Info-ScrollLine-Long` running out to both sides. Clickable subheaders
+use larger text and a 40-pixel-high hit area. Groups are row-sized labels. A `spacer` element
+is one row of empty space that takes part in the page layout but has
 no frame; it is dropped at the top of a page.
 
 A quest node (`{ quest = id }`) is drawn as `SpyglassQuestBannerTemplate`
@@ -156,9 +157,10 @@ shared with the info pane's quest lines. A banner with `children` opens those ch
 The dungeon's quest page shows one such banner per quest, with Alliance and/or Horde emblems
 directly left of XP; its reward rows appear on the opened quest page. That page shows the quest title and
 objective, start and turn-in sources, optional description, and map buttons for known endpoint
-locations in the right pane. Below the rewards, a row expands the ordered prerequisites. Each
-prerequisite opens a detail page with its own rewards and a button back to the main quest; it
-does not show another prerequisite list.
+locations in the right pane. When prequests exist, a clickable subheader below the rewards
+expands them in order. Their banners are indented with a left rail and numbered steps. Each prerequisite
+opens a detail page with its own rewards and a button back to the main quest; it does not show
+another prerequisite list.
 The layout keeps a banner together with its first reward row when it has any. While the list has
 banners (`view.showsQuests`), the view redraws the page on
 `QUEST_LOG_UPDATE`, `QUEST_TURNED_IN` and `QUEST_DATA_LOAD_RESULT`, deferred to the next frame
