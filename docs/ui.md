@@ -157,7 +157,8 @@ shared with the info pane's quest lines. A banner with `children` opens those ch
 The dungeon's quest page shows one such banner per quest, with Alliance and/or Horde emblems
 directly left of a compact, fixed-width XP display. Values below 100,000 keep their full number;
 larger values use `k` (for example, `100k`). Its reward rows appear on the opened quest page.
-That page shows the quest title and
+If a quest has prequests, its banner shows completed/total prequests before the objective (for
+example, `Prequests 1/2`). That page shows the quest title and
 objective, start and turn-in sources, optional description, and map buttons for known endpoint
 locations in the right pane. When prequests exist, a clickable subheader below the rewards
 expands them in order. Their banners are indented with a left rail and numbered steps. Each prerequisite

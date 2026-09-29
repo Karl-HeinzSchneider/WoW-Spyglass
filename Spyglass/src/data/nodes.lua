@@ -259,8 +259,10 @@ local function questPage(quest, mainQuest)
         entry.children = { details }
         return entry
     end
+    entry.prerequisiteIDs = {}
     local prerequisitePages = {}
     for i, prerequisite in ipairs(prerequisites) do
+        entry.prerequisiteIDs[i] = prerequisite.id
         local page = questPage(prerequisite, quest)
         page.indent = 28
         page.info = ("Step %d/%d%s"):format(i, #prerequisites, page.info and (" \194\183 " .. page.info) or "")

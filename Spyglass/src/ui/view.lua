@@ -776,7 +776,18 @@ function SpyglassQuestBannerMixin:Init(view, node)
 
     self.Title:SetText(Data:GetQuestName(questID))
     self.Info:SetText(node.info or "")
-    self.Objective:SetText(quest and quest.objective or "")
+    local objective = quest and quest.objective or ""
+    if node.prerequisiteIDs then
+        local done = 0
+        for _, id in ipairs(node.prerequisiteIDs) do
+            if C_QuestLog.IsQuestFlaggedCompleted(id) then
+                done = done + 1
+            end
+        end
+        local progress = ("Prequests %d/%d"):format(done, #node.prerequisiteIDs)
+        objective = objective ~= "" and (progress .. " \194\183 " .. objective) or progress
+    end
+    self.Objective:SetText(objective)
     local side = quest and quest.side
     self.showAllianceLogo = side ~= "Horde"
     self.showHordeLogo = side ~= "Alliance"

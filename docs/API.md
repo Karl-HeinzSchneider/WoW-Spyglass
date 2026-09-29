@@ -215,7 +215,8 @@ Inside a folder's `children`, from the biggest to the smallest:
   "Active", "Not started", with the gossip window's quest mark to match). Hover shows the same
   quest tooltip as the info panel's quest lines, shift-click links the quest in chat. If the node
   has `children`, clicking its banner opens them. Set `indent` to inset a nested quest banner
-  from the left. Unlike a subheader it stays when the filters remove all of its `items`.
+  from the left. `prerequisiteIDs` adds a completed/total prequest count before the objective.
+  Unlike a subheader it stays when the filters remove all of its `items`.
 - `{ group = "Tier 2", items = { ... } }` renders as a row-sized group label followed by
   `items`. Without `items` it just marks where a group starts in the surrounding list.
 - `{ spacer = true }` is one empty row of space (as high as a list row, nothing drawn), e.g. to
