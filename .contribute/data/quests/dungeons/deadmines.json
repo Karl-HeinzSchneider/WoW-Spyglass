@@ -1,4 +1,42 @@
 {
+  "npcs": {
+    "Alba Fairmoon": {
+      "location": [1436, 53, 53.3],
+      "description": "Sentinel Hill inn, Westfall."
+    },
+    "Gryan Stoutmantle": {
+      "location": [1436, 56.4, 47.5],
+      "description": "Sentinel Hill, Westfall."
+    },
+    "Master Mathias Shaw": {
+      "description": "Old Town, Stormwind."
+    },
+    "Scout Galiaan": {
+      "location": [1436, 56.6, 47.3],
+      "description": "Sentinel Hill, Westfall."
+    },
+    "Scout Riell": {
+      "location": [1436, 56.7, 47.4],
+      "description": "Sentinel Hill tower, Westfall."
+    },
+    "Shoni the Shilent": {
+      "location": [1453, 63, 34],
+      "description": "Stormwind."
+    },
+    "Sprite Jumpsprocket": {
+      "description": "Dwarven District, Stormwind."
+    },
+    "Stormwind Intelligence": {
+      "description": "Stormwind."
+    },
+    "Wilder Thistlenettle": {
+      "location": [1453, 66.8, 43.8],
+      "description": "Stormwind."
+    },
+    "Wiley the Black": {
+      "description": "Lakeshire, Redridge Mountains."
+    }
+  },
   "quests": [
     {
       "id": 166,
@@ -7,6 +45,13 @@
       "requiredLevel": 14,
       "xp": 9750,
       "objective": "Defeat Edwin VanCleef and collect his head.",
+      "requires": [155],
+      "start": {
+        "npc": "Gryan Stoutmantle"
+      },
+      "turnIn": {
+        "npc": "Gryan Stoutmantle"
+      },
       "items": [
         {
           "item": 2041,
@@ -29,6 +74,13 @@
       "requiredLevel": 14,
       "xp": 1350,
       "objective": "Collect 4 Miners' Union Cards from undead miners in the tunnels outside the instance.",
+      "description": "The undead side tunnel is before the instance portal.",
+      "start": {
+        "npc": "Wilder Thistlenettle"
+      },
+      "turnIn": {
+        "npc": "Wilder Thistlenettle"
+      },
       "items": [
         {
           "item": 2036,
@@ -51,6 +103,13 @@
       "requiredLevel": 15,
       "xp": 1550,
       "objective": "Recover Thistlenettle's Badge from Foreman Thistlenettle in the undead side tunnel.",
+      "description": "The foreman is in the tunnels before the instance portal.",
+      "start": {
+        "npc": "Wilder Thistlenettle"
+      },
+      "turnIn": {
+        "npc": "Wilder Thistlenettle"
+      },
       "items": [
         {
           "item": 1893,
@@ -73,6 +132,13 @@
       "requiredLevel": 14,
       "xp": 4688,
       "objective": "Collect 10 Red Silk Bandanas from Defias inside the Deadmines.",
+      "requires": [153, 155],
+      "start": {
+        "npc": "Scout Riell"
+      },
+      "turnIn": {
+        "npc": "Scout Riell"
+      },
       "items": [
         {
           "item": 2074,
@@ -99,6 +165,12 @@
       "requiredLevel": 15,
       "xp": 5813,
       "objective": "Recover the Gnoam Sprecklesprocket from Sneed's Shredder.",
+      "start": {
+        "npc": "Shoni the Shilent"
+      },
+      "turnIn": {
+        "npc": "Shoni the Shilent"
+      },
       "items": [
         {
           "item": 7606,
@@ -125,6 +197,14 @@
       "requiredLevel": 9,
       "xp": 1350,
       "objective": "Place the explosives beside the forge in the Deadmines.",
+      "description": "Use the Extra-Destructive Explosives to start this quest.",
+      "requires": [92752],
+      "start": {
+        "item": 254553
+      },
+      "turnIn": {
+        "npc": "Alba Fairmoon"
+      },
       "items": []
     },
     {
@@ -134,6 +214,269 @@
       "requiredLevel": 16,
       "xp": 870,
       "objective": "Take the letter to the city architect in Stormwind.",
+      "description": "Looted from Edwin VanCleef",
+      "start": {
+        "item": 2874
+      },
+      "turnIn": {
+        "npc": "Baros Alexston",
+        "description": "City Hall, Cathedral Square, Stormwind."
+      },
+      "items": []
+    },
+    {
+      "id": 65,
+      "name": "The Defias Brotherhood",
+      "side": "Alliance",
+      "requiredLevel": 14,
+      "objective": "Talk to Wiley the Black in Lakeshire.",
+      "description": "First step of the required Defias Brotherhood chain.",
+      "start": {
+        "npc": "Gryan Stoutmantle",
+        "location": [1436, 56.2, 47.6]
+      },
+      "turnIn": {
+        "npc": "Wiley the Black"
+      },
+      "items": []
+    },
+    {
+      "id": 132,
+      "name": "The Defias Brotherhood",
+      "side": "Alliance",
+      "requiredLevel": 14,
+      "objective": "Take Wiley's Note back to Gryan Stoutmantle in Westfall.",
+      "description": "Second step of the Defias Brotherhood chain.",
+      "requires": [65],
+      "start": {
+        "npc": "Wiley the Black"
+      },
+      "turnIn": {
+        "npc": "Gryan Stoutmantle"
+      },
+      "items": []
+    },
+    {
+      "id": 135,
+      "name": "The Defias Brotherhood",
+      "side": "Alliance",
+      "requiredLevel": 14,
+      "objective": "Take Wiley's Note to Master Mathias Shaw in Stormwind.",
+      "description": "Shaw investigates the connection between the Defias and the Stonemasons.",
+      "requires": [132],
+      "start": {
+        "npc": "Gryan Stoutmantle"
+      },
+      "turnIn": {
+        "npc": "Master Mathias Shaw"
+      },
+      "items": []
+    },
+    {
+      "id": 141,
+      "name": "The Defias Brotherhood",
+      "side": "Alliance",
+      "requiredLevel": 14,
+      "objective": "Take Shaw's Report to Gryan Stoutmantle in Westfall.",
+      "description": "Returns Shaw's findings about Edwin VanCleef to Gryan.",
+      "requires": [135],
+      "start": {
+        "npc": "Master Mathias Shaw"
+      },
+      "turnIn": {
+        "npc": "Gryan Stoutmantle"
+      },
+      "items": []
+    },
+    {
+      "id": 142,
+      "name": "The Defias Brotherhood",
+      "side": "Alliance",
+      "requiredLevel": 14,
+      "objective": "Track down the Defias Messenger in Westfall and bring his message to Gryan Stoutmantle.",
+      "description": "The messenger travels the roads between Moonbrook, Gold Coast Quarry and Jangolode Mine.",
+      "requires": [141],
+      "start": {
+        "npc": "Gryan Stoutmantle"
+      },
+      "turnIn": {
+        "npc": "Gryan Stoutmantle"
+      },
+      "items": []
+    },
+    {
+      "id": 153,
+      "name": "Red Leather Bandanas",
+      "side": "Alliance",
+      "requiredLevel": 9,
+      "objective": "Bring 15 Red Leather Bandanas to Scout Galiaan at Sentinel Hill.",
+      "description": "Required before Red Silk Bandanas.",
+      "start": {
+        "npc": "Scout Galiaan"
+      },
+      "turnIn": {
+        "npc": "Scout Galiaan"
+      },
+      "items": []
+    },
+    {
+      "id": 155,
+      "name": "The Defias Brotherhood",
+      "side": "Alliance",
+      "requiredLevel": 14,
+      "objective": "Escort the Defias Traitor until he reveals the Defias hideout, then return to Gryan Stoutmantle.",
+      "description": "Final prerequisite before the dungeon step of The Defias Brotherhood.",
+      "requires": [142],
+      "start": {
+        "npc": "Defias Traitor",
+        "description": "Sentinel Hill, Westfall."
+      },
+      "turnIn": {
+        "npc": "Gryan Stoutmantle"
+      },
+      "items": []
+    },
+    {
+      "id": 92742,
+      "name": "Testing the Wells",
+      "side": "Alliance",
+      "requiredLevel": 9,
+      "objective": "Use the Well Water Sample Kit at the Jansen Stead and Molsen Farm wells.",
+      "description": "First quest of the Toxic Soil chain.",
+      "start": {
+        "npc": "Alba Fairmoon"
+      },
+      "turnIn": {
+        "npc": "Alba Fairmoon"
+      },
+      "items": []
+    },
+    {
+      "id": 92744,
+      "name": "Murloc Gills",
+      "side": "Alliance",
+      "requiredLevel": 9,
+      "objective": "Collect 7 Longshore Murloc Gills along the Westfall shoreline.",
+      "description": "Second quest of the Toxic Soil chain.",
+      "requires": [92742],
+      "start": {
+        "npc": "Alba Fairmoon"
+      },
+      "turnIn": {
+        "npc": "Alba Fairmoon"
+      },
+      "items": []
+    },
+    {
+      "id": 92745,
+      "name": "The State of the Mines",
+      "side": "Alliance",
+      "requiredLevel": 9,
+      "objective": "Slay 4 Kobold Diggers in Jangolode Mine and 6 Riverpaw Miners in Gold Coast Quarry.",
+      "description": "Investigate whether Westfall's mines are causing the contamination.",
+      "requires": [92744],
+      "start": {
+        "npc": "Alba Fairmoon"
+      },
+      "turnIn": {
+        "npc": "Alba Fairmoon"
+      },
+      "items": []
+    },
+    {
+      "id": 92747,
+      "name": "Moonbrook Espionage",
+      "side": "Alliance",
+      "requiredLevel": 9,
+      "objective": "Collect 8 Suspicious Industrial Supplies from Moonbrook.",
+      "description": "The supplies are found in the caves leading toward the Deadmines entrance.",
+      "requires": [92745],
+      "start": {
+        "npc": "Alba Fairmoon"
+      },
+      "turnIn": {
+        "npc": "Alba Fairmoon"
+      },
+      "items": []
+    },
+    {
+      "id": 92748,
+      "name": "Explosive Consultation",
+      "side": "Alliance",
+      "requiredLevel": 9,
+      "objective": "Travel to the Dwarven District in Stormwind and find an engineer who can help with explosives.",
+      "description": "Begins the explosives portion of the Toxic Soil chain.",
+      "requires": [92747],
+      "start": {
+        "npc": "Alba Fairmoon"
+      },
+      "turnIn": {
+        "npc": "Sprite Jumpsprocket"
+      },
+      "items": []
+    },
+    {
+      "id": 92749,
+      "name": "A Dynamite Plan",
+      "side": "Alliance",
+      "requiredLevel": 9,
+      "objective": "Obtain 10 Coarse Dynamite, then return to Sprite Jumpsprocket in Stormwind.",
+      "description": "Coarse Dynamite can be crafted, traded or bought from the auction house.",
+      "requires": [92748],
+      "start": {
+        "npc": "Sprite Jumpsprocket"
+      },
+      "turnIn": {
+        "npc": "Sprite Jumpsprocket"
+      },
+      "items": []
+    },
+    {
+      "id": 92750,
+      "name": "Detonation at a Distance",
+      "side": "Alliance",
+      "requiredLevel": 9,
+      "objective": "Talk to Stormwind Intelligence about acquiring a remote detonator.",
+      "description": "You need a remote detonator for the planned explosion.",
+      "requires": [92749],
+      "start": {
+        "npc": "Sprite Jumpsprocket"
+      },
+      "turnIn": {
+        "npc": "Stormwind Intelligence"
+      },
+      "items": []
+    },
+    {
+      "id": 92751,
+      "name": "Detonation at a Distance",
+      "side": "Alliance",
+      "requiredLevel": 9,
+      "objective": "Bring the Remote Detonator Kit back to Sprite Jumpsprocket in the Dwarven District.",
+      "description": "Returns the remote detonator to the engineer.",
+      "requires": [92750],
+      "start": {
+        "npc": "Stormwind Intelligence"
+      },
+      "turnIn": {
+        "npc": "Sprite Jumpsprocket"
+      },
+      "items": []
+    },
+    {
+      "id": 92752,
+      "name": "Explosive Consultation",
+      "side": "Alliance",
+      "requiredLevel": 9,
+      "objective": "Return to Alba Fairmoon at the Sentinel Hill inn in Westfall with the completed explosives.",
+      "description": "Final preparation before Destruction in Deadmines.",
+      "requires": [92751],
+      "start": {
+        "npc": "Sprite Jumpsprocket"
+      },
+      "turnIn": {
+        "npc": "Alba Fairmoon"
+      },
       "items": []
     }
   ]

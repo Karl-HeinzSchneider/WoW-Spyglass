@@ -69,13 +69,14 @@ local log = app.logger
 ---@field items? Spyglass.Node[]
 
 -- One widget of a node's info panel (the window's right pane), top to bottom. The type is the
--- one type key it carries (header, text, description, row, bar, checkbox, dropdown, grouping,
+-- one type key it carries (header, text, description, row, item, bar, checkbox, dropdown, grouping,
 -- button, quests, spacer); the other fields are its options. See docs/API.md, "Info panel".
 ---@class Spyglass.PanelWidget
 ---@field header? string  # a section plate
 ---@field text? string  # wrapped text
 ---@field description? boolean  # the panel node's own `description`
 ---@field row? string  # label of a label/value line
+---@field item? integer  # item icon and name, with the game's item tooltip
 ---@field value? string|number  # row: the value; bar "value": the filled amount
 ---@field bar? "reputation"|"skill"|"value"  # the character's standing / skill, or `value` of `max`
 ---@field faction? integer  # bar "reputation": the faction; default the panel node's meta.factionID

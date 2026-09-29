@@ -174,7 +174,7 @@ local function addQuestEndpoint(panel, title, mapButton, point)
         panel[#panel + 1] = { text = "NPC: " .. npc }
     end
     if point.item then
-        panel[#panel + 1] = { text = "Item: " .. Data:GetItemName(point.item) }
+        panel[#panel + 1] = { item = point.item }
     end
     if point.location then
         local mapID, x, y = unpack(point.location)
@@ -182,6 +182,11 @@ local function addQuestEndpoint(panel, title, mapButton, point)
         panel[#panel + 1] = {
             text = ("%s (%.1f, %.1f)"):format(map and map.name or ("Map #" .. mapID), x, y),
         }
+    end
+    if point.description then
+        panel[#panel + 1] = { text = point.description }
+    end
+    if point.location then
         panel[#panel + 1] = { button = mapButton, map = point.location }
     end
 end

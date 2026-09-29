@@ -1,4 +1,37 @@
 {
+  "npcs": {
+    "Apothecary Zamah": {
+      "location": [1456, 23, 21],
+      "description": "Thunder Bluff."
+    },
+    "Crane Operator Bigglefuzz": {
+      "location": [1413, 63.9, 38.3],
+      "description": "Ratchet, The Barrens."
+    },
+    "Ebru": {
+      "location": [1413, 46.6, 35.7],
+      "description": "Above the entrance to Wailing Caverns, The Barrens."
+    },
+    "Hamuul Runetotem": {
+      "description": "Elder Rise, Thunder Bluff."
+    },
+    "Mebok Mizzyrix": {
+      "location": [1413, 62.8, 36.7],
+      "description": "Ratchet, The Barrens."
+    },
+    "Nalpak": {
+      "location": [1413, 46.6, 36.3],
+      "description": "Above the entrance to Wailing Caverns, The Barrens."
+    },
+    "Nara Wildmane": {
+      "location": [1456, 75.3, 31.3],
+      "description": "Thunder Bluff."
+    },
+    "Tonga Runetotem": {
+      "location": [1413, 52, 32],
+      "description": "The Crossroads."
+    }
+  },
   "quests": [
     {
       "id": 914,
@@ -7,6 +40,13 @@
       "requiredLevel": 10,
       "xp": 6380,
       "objective": "Bring the Gems of Cobrahn, Anacondra, Pythas and Serpentis to Nara Wildmane.",
+      "requires": [1490],
+      "start": {
+        "npc": "Nara Wildmane"
+      },
+      "turnIn": {
+        "npc": "Nara Wildmane"
+      },
       "items": [
         {
           "item": 6505,
@@ -29,6 +69,12 @@
       "requiredLevel": 13,
       "xp": 4640,
       "objective": "Bring 20 Deviate Hides to Nalpak.",
+      "start": {
+        "npc": "Nalpak"
+      },
+      "turnIn": {
+        "npc": "Nalpak"
+      },
       "items": [
         {
           "item": 6480,
@@ -47,6 +93,12 @@
       "requiredLevel": 14,
       "xp": 4930,
       "objective": "Collect 10 Serpentbloom from Wailing Caverns.",
+      "start": {
+        "npc": "Apothecary Zamah"
+      },
+      "turnIn": {
+        "npc": "Apothecary Zamah"
+      },
       "items": [
         {
           "item": 10919,
@@ -69,6 +121,12 @@
       "requiredLevel": 15,
       "xp": 5945,
       "objective": "Kill 7 Deviate Ravagers, 7 Deviate Vipers, 7 Deviate Shamblers and 7 Deviate Dreadfangs.",
+      "start": {
+        "npc": "Ebru"
+      },
+      "turnIn": {
+        "npc": "Ebru"
+      },
       "items": [
         {
           "item": 6476,
@@ -87,11 +145,33 @@
     {
       "id": 1489,
       "name": "Hamuul Runetotem",
+      "side": "Horde",
+      "requiredLevel": 10,
+      "objective": "Speak with Hamuul Runetotem on Elder Rise in Thunder Bluff.",
+      "description": "Tonga sends you to Hamuul after Altered Beings.",
+      "requires": [880],
+      "start": {
+        "npc": "Tonga Runetotem"
+      },
+      "turnIn": {
+        "npc": "Hamuul Runetotem"
+      },
       "items": []
     },
     {
       "id": 1490,
       "name": "Nara Wildmane",
+      "side": "Horde",
+      "requiredLevel": 10,
+      "objective": "Speak with Nara Wildmane in Thunder Bluff.",
+      "description": "Nara Wildmane is the final prerequisite before Leaders of the Fang becomes available.",
+      "requires": [1489],
+      "start": {
+        "npc": "Hamuul Runetotem"
+      },
+      "turnIn": {
+        "npc": "Nara Wildmane"
+      },
       "items": []
     },
     {
@@ -101,6 +181,13 @@
       "requiredLevel": 13,
       "xp": 3915,
       "objective": "Bring 6 Wailing Essence to Mebok Mizzyrix.",
+      "requires": [865],
+      "start": {
+        "npc": "Mebok Mizzyrix"
+      },
+      "turnIn": {
+        "npc": "Mebok Mizzyrix"
+      },
       "items": []
     },
     {
@@ -110,6 +197,12 @@
       "requiredLevel": 14,
       "xp": 3915,
       "objective": "Retrieve the 99-Year-Old Port from Mad Magglish in Wailing Caverns.",
+      "start": {
+        "npc": "Crane Operator Bigglefuzz"
+      },
+      "turnIn": {
+        "npc": "Crane Operator Bigglefuzz"
+      },
       "items": []
     },
     {
@@ -124,6 +217,76 @@
       "requiredLevel": 15,
       "xp": 7685,
       "objective": "Travel to Ratchet to find someone who can identify the Glowing Shard, then deliver it as directed.",
+      "description": "Dropped by: Mutanus the Devourer",
+      "start": {
+        "item": 10441
+      },
+      "turnIn": {
+        "npc": "Falla Sagewind",
+        "location": [1456, 70.6, 30]
+      },
+      "items": []
+    },
+    {
+      "id": 865,
+      "name": "Raptor Horns",
+      "side": "Both",
+      "requiredLevel": 13,
+      "objective": "Gather 5 Intact Raptor Horns from Sunscale Scytheclaws and bring them to Mebok Mizzyrix.",
+      "description": "Required before Smart Drinks becomes available.",
+      "start": {
+        "npc": "Mebok Mizzyrix"
+      },
+      "turnIn": {
+        "npc": "Mebok Mizzyrix"
+      },
+      "items": []
+    },
+    {
+      "id": 870,
+      "name": "The Forgotten Pools",
+      "side": "Horde",
+      "requiredLevel": 10,
+      "objective": "Explore the waters of the Forgotten Pools northwest of the Crossroads, then report back.",
+      "description": "Investigate the fissure beneath the Forgotten Pools.",
+      "start": {
+        "npc": "Tonga Runetotem"
+      },
+      "turnIn": {
+        "npc": "Tonga Runetotem"
+      },
+      "items": []
+    },
+    {
+      "id": 877,
+      "name": "The Stagnant Oasis",
+      "side": "Horde",
+      "requiredLevel": 10,
+      "objective": "Take the Dried Seeds to the Stagnant Oasis and test them at the fissure, then return to Tonga.",
+      "description": "The next required oasis investigation after The Forgotten Pools.",
+      "requires": [870],
+      "start": {
+        "npc": "Tonga Runetotem"
+      },
+      "turnIn": {
+        "npc": "Tonga Runetotem"
+      },
+      "items": []
+    },
+    {
+      "id": 880,
+      "name": "Altered Beings",
+      "side": "Horde",
+      "requiredLevel": 10,
+      "objective": "Bring 8 Altered Snapjaw Shells to Tonga Runetotem at the Crossroads.",
+      "description": "Completing Altered Beings unlocks Hamuul Runetotem.",
+      "requires": [877],
+      "start": {
+        "npc": "Tonga Runetotem"
+      },
+      "turnIn": {
+        "npc": "Tonga Runetotem"
+      },
       "items": []
     }
   ]

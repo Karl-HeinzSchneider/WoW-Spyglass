@@ -105,6 +105,7 @@ local RECIPE = {
 ---@field npcID? integer
 ---@field item? integer
 ---@field location? number[]  # [uiMapID, x, y], x/y in 0..100
+---@field description? string  # optional info text for this start or turn-in
 
 ---@class Spyglass.QuestPrerequisite
 ---@field id integer

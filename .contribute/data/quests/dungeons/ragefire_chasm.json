@@ -1,16 +1,52 @@
 {
+  "npcs": {
+    "Neeru Fireblade": {
+      "location": [1454, 49.6, 50.6],
+      "description": "Cleft of Shadow, Orgrimmar."
+    },
+    "Rahauro": {
+      "location": [1456, 70.4, 32.2],
+      "description": "Elder Rise, Thunder Bluff."
+    },
+    "Thrall": {
+      "location": [1454, 32, 37.8],
+      "description": "Valley of Wisdom, Orgrimmar."
+    },
+    "Varimathras": {
+      "location": [1458, 56.2, 92.6],
+      "description": "Royal Quarter, Undercity."
+    }
+  },
   "quests": [
     {
       "id": 5726,
       "name": "Hidden Enemies",
       "side": "Horde",
+      "requiredLevel": 9,
+      "objective": "Bring a Lieutenant's Insignia from the Burning Blade in Skull Rock to Thrall.",
+      "description": "First required Hidden Enemies step for the Ragefire Chasm chain.",
+      "start": {
+        "npc": "Thrall"
+      },
+      "turnIn": {
+        "npc": "Thrall"
+      },
       "items": []
     },
     {
       "id": 5727,
       "name": "Hidden Enemies",
       "side": "Horde",
+      "requiredLevel": 9,
+      "objective": "Speak with Neeru Fireblade in the Cleft of Shadow, then return to Thrall.",
+      "description": "Neeru is in the Cleft of Shadow near the Ragefire Chasm entrance.",
       "requires": [5726],
+      "start": {
+        "npc": "Thrall"
+      },
+      "turnIn": {
+        "npc": "Thrall"
+      },
       "items": []
     },
     {
@@ -21,6 +57,12 @@
       "xp": 3507,
       "objective": "Kill Bazzalan and Jergosh the Invoker inside Ragefire Chasm.",
       "requires": [5727],
+      "start": {
+        "npc": "Thrall"
+      },
+      "turnIn": {
+        "npc": "Thrall"
+      },
       "items": []
     },
     {
@@ -30,6 +72,12 @@
       "requiredLevel": 9,
       "xp": 4422,
       "objective": "Collect Spells of Shadow and Incantations from the Nether inside Ragefire Chasm.",
+      "start": {
+        "npc": "Varimathras"
+      },
+      "turnIn": {
+        "npc": "Varimathras"
+      },
       "items": [
         {
           "item": 15449,
@@ -52,6 +100,14 @@
       "requiredLevel": 9,
       "xp": 4422,
       "objective": "Take the Grimtotem Satchel to Rahauro in Thunder Bluff.",
+      "requires": [5722],
+      "start": {
+        "item": 14381,
+        "description": "The Grimtotem Satchel starts this quest after finding Maur Grimtotem's corpse in Ragefire Chasm."
+      },
+      "turnIn": {
+        "npc": "Rahauro"
+      },
       "items": [
         {
           "item": 15452,
@@ -74,6 +130,12 @@
       "requiredLevel": 9,
       "xp": 3202,
       "objective": "Kill 8 Ragefire Troggs and 8 Ragefire Shamans inside Ragefire Chasm.",
+      "start": {
+        "npc": "Rahauro"
+      },
+      "turnIn": {
+        "npc": "Rahauro"
+      },
       "items": []
     },
     {
@@ -83,6 +145,13 @@
       "requiredLevel": 9,
       "xp": 880,
       "objective": "Find Maur Grimtotem's corpse inside Ragefire Chasm and search it for anything of interest.",
+      "start": {
+        "npc": "Rahauro"
+      },
+      "turnIn": {
+        "npc": "Maur Grimtotem's corpse",
+        "description": "Inside Ragefire Chasm: up the right-hand tunnel from the first major junction, in a small side room on the left."
+      },
       "items": []
     },
     {
@@ -92,6 +161,12 @@
       "requiredLevel": 9,
       "xp": 3507,
       "objective": "Slay Taragaman the Hungerer and recover Taragaman the Hungerer's Heart.",
+      "start": {
+        "npc": "Neeru Fireblade"
+      },
+      "turnIn": {
+        "npc": "Neeru Fireblade"
+      },
       "items": []
     }
   ]

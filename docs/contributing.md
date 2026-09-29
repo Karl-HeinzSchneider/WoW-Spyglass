@@ -252,6 +252,9 @@ For example, a quest file can contain these illustrative definitions:
 
 ```json
 {
+  "npcs": {
+    "Quest Giver": { "location": [1436, 43, 72], "description": "Upstairs." }
+  },
   "quests": [
     {
       "id": 1,
@@ -264,13 +267,18 @@ For example, a quest file can contain these illustrative definitions:
       "name": "Dungeon quest",
       "side": "Alliance",
       "requires": [1],
-      "start": { "npc": "Quest Giver", "location": [1436, 43, 72] },
-      "turnIn": { "npc": "Quest Turn-in" },
+      "start": { "npc": "Quest Giver" },
+      "turnIn": { "npc": "Quest Giver", "description": "Inside the inn." },
       "items": []
     }
   ]
 }
 ```
+
+The optional top-level `npcs` map shares a location and description by NPC name within this file.
+Both `start` and `turnIn` use those details when their `npc` matches; fields written on an individual
+endpoint override the shared values. A turn-in at the same NPC therefore gets the same map button
+without repeating its coordinates. Keep quest-specific directions on the endpoint.
 
 The definition fields are:
 
@@ -285,7 +293,7 @@ The definition fields are:
 | `objective`       | string  | What the quest asks for, in one English sentence; shown on its page and in its tooltip.                                                                       |
 | `description`     | string  | Optional curated description, shown on its page and in its tooltip before the client has the quest.                                                           |
 | `requires`        | array   | IDs of direct prerequisite quests, in the order they should appear. Each needs its own definition in a quest file, even if it is not shown on a dungeon page. |
-| `start`, `turnIn` | object  | Optional giver and turn-in: `npc` name, `npcID`, starting `item` ID, and `location` as `[uiMapID, x, y]` (x/y in 0–100). Use only the fields known.           |
+| `start`, `turnIn` | object  | Optional giver and turn-in: `npc` name, `npcID`, starting `item` ID, `location` as `[uiMapID, x, y]` (x/y in 0–100), and `description` for extra info shown beside that endpoint. Use only the fields known. |
 | `items`           | array   | The items the quest rewards: item rows without a `chance`. May be empty.                                                                                      |
 
 The quest ids are also the ones a boss's `quests` field lists: a boss that hands out or is the

@@ -64,6 +64,27 @@
 		</Layers>
 	</Frame>
 
+	<!-- item: icon and name of a quest starting item; hover shows the game's item tooltip. -->
+	<Button name="SpyglassInfoItemTemplate" virtual="true">
+		<Size x="228" y="24"/>
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture parentKey="Icon">
+					<Size x="22" y="22"/>
+					<Anchors>
+						<Anchor point="LEFT" x="2"/>
+					</Anchors>
+				</Texture>
+				<FontString parentKey="Name" inherits="GameFontHighlight" justifyH="LEFT" wordwrap="false">
+					<Anchors>
+						<Anchor point="LEFT" relativeKey="$parent.Icon" relativePoint="RIGHT" x="6"/>
+						<Anchor point="RIGHT" x="-2"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Button>
+
 	<!-- bar: the skill / reputation bar of the character frame's detail panes. -->
 	<Frame name="SpyglassInfoBarTemplate" inherits="ColoredProgressBarTemplate" virtual="true">
 		<Size x="180" y="29"/>

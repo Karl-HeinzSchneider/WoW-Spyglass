@@ -16,7 +16,7 @@ import { type ListFile, type ListSection, ROW_FIELDS, rowsOf } from "./lists.js"
 import { header, luaFields, luaString, luaValue } from "./lua.js";
 import { type Recipe, type SkillLine, shipsRecipe } from "./recipes.js";
 import { type Instance, type Reference, nameOf } from "./reference.js";
-import { type CuratedQuest, type QuestFile, classToken } from "./quests.js";
+import { type CuratedQuest, type QuestEndpoint, type QuestFile, type QuestNpcDetails, classToken } from "./quests.js";
 
 const DEFAULT_ICONS = {
   dungeon: "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
@@ -450,9 +450,25 @@ export function build(
 
   addCore("instances.lua", emitInstances(ref, curated));
 
+  const withNpcDetails = (point: QuestEndpoint | undefined, npcs: Record<string, QuestNpcDetails> | undefined) => {
+    const shared = point?.npc && npcs?.[point.npc];
+    return shared ? { ...shared, ...point } : point;
+  };
   const questsByID = new Map(
     quests.flatMap((file) =>
-      file.quests.filter((quest) => quest.id !== undefined).map((quest) => [quest.id!, quest] as const),
+      file.quests
+        .filter((quest) => quest.id !== undefined)
+        .map(
+          (quest) =>
+            [
+              quest.id!,
+              {
+                ...quest,
+                start: withNpcDetails(quest.start, file.npcs),
+                turnIn: withNpcDetails(quest.turnIn, file.npcs),
+              },
+            ] as const,
+        ),
     ),
   );
   const listedQuestIDs = new Set(curated.flatMap((file) => file.data.quests ?? []));

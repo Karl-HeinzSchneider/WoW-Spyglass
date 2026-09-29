@@ -163,9 +163,10 @@ banner per visible quest, with Alliance and/or Horde emblems
 directly left of a compact, fixed-width XP display. Values below 100,000 keep their full number;
 larger values use `k` (for example, `100k`). Its reward rows appear on the opened quest page.
 If a quest has prequests, its banner shows completed/total prequests before the objective (for
-example, `Prequests 1/2`). That page shows the quest title and
-objective, start and turn-in sources, optional description, and map buttons for known endpoint
-locations in the right pane. When prequests exist, a clickable subheader below the rewards
+example, `Prequests 1/2`). That page shows the quest title and objective, start and turn-in
+sources with optional endpoint info text, starting items with their icon and tooltip, optional
+quest description, and map buttons for known endpoint locations in the right pane. When prequests
+exist, a clickable subheader below the rewards
 expands them in order. Their banners are indented with a left rail and numbered steps. Each prerequisite
 opens a detail page with its own rewards and a button back to the main quest; it does not show
 another prerequisite list.
@@ -197,7 +198,7 @@ registers itself with the character frame, so it can't be inherited): the title 
 `VerticalLayoutFrame` of fixed width. Each widget kind has a pooled template:
 
 - `header`: the `UI-Character-Info-Title` plate; `text`/`description`: wrapped white text;
-  `row`: gold label, white value; `spacer`: empty space.
+  `row`: gold label, white value; `item`: icon and name with an item tooltip; `spacer`: empty space.
 - `bar`: `ColoredProgressBarTemplate` (Blizzard_SharedXML, Camelot). Reputation as the
   reputation pane draws it (white fill tinted with `FACTION_BAR_COLORS`, standing and progress
   text), skill in the blue fill with "rank / max".

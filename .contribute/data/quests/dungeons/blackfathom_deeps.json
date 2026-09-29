@@ -1,4 +1,29 @@
 {
+  "npcs": {
+    "Argent Guard Manados": {
+      "location": [1457, 55, 24],
+      "description": "Craftsmen's Terrace, Darnassus."
+    },
+    "Argent Guard Thaelrid": {
+      "description": "Inside Blackfathom Deeps."
+    },
+    "Doan Karhan": {
+      "location": [1413, 49.3, 57.2],
+      "description": "The Barrens."
+    },
+    "Gerrig Bonegrip": {
+      "location": [1455, 50.8, 5.6],
+      "description": "Forlorn Cavern, Ironforge."
+    },
+    "Gershala Nightwhisper": {
+      "location": [1439, 38.3, 43.1],
+      "description": "Auberdine, Darkshore."
+    },
+    "Je'neu Sancrea": {
+      "location": [1440, 12, 34],
+      "description": "Zoram'gar Outpost, Ashenvale."
+    }
+  },
   "quests": [
     {
       "id": 1200,
@@ -7,6 +32,14 @@
       "requiredLevel": 18,
       "xp": 12375,
       "objective": "Defeat Twilight Lord Kelris and recover the Head of Kelris.",
+      "requires": [1198],
+      "start": {
+        "npc": "Argent Guard Thaelrid"
+      },
+      "turnIn": {
+        "npc": "Dawnwatcher Selgorm",
+        "description": "Darnassus."
+      },
       "items": [
         {
           "item": 7001,
@@ -33,6 +66,13 @@
       "requiredLevel": 18,
       "xp": 12375,
       "objective": "Defeat Twilight Lord Kelris and recover the Head of Kelris.",
+      "start": {
+        "npc": "Argent Guard Thaelrid"
+      },
+      "turnIn": {
+        "npc": "Bashana Runetotem",
+        "description": "Thunder Bluff."
+      },
       "items": [
         {
           "item": 7001,
@@ -59,6 +99,12 @@
       "requiredLevel": 20,
       "xp": 9563,
       "objective": "Collect 10 Twilight Pendants from Twilight's Hammer members in Blackfathom Deeps.",
+      "start": {
+        "npc": "Argent Guard Manados"
+      },
+      "turnIn": {
+        "npc": "Argent Guard Manados"
+      },
       "items": [
         {
           "item": 6998,
@@ -81,6 +127,13 @@
       "requiredLevel": 17,
       "xp": 1300,
       "objective": "Bring the Damp Note to Je'neu Sancrea in Ashenvale.",
+      "description": "Drops from Blackfathom Tide Priestess in the entrance tunnels leading to Blackfathom Deeps.",
+      "start": {
+        "item": 16790
+      },
+      "turnIn": {
+        "npc": "Je'neu Sancrea"
+      },
       "items": []
     },
     {
@@ -90,6 +143,13 @@
       "requiredLevel": 17,
       "xp": 9938,
       "objective": "Defeat Lorgus Jett in Blackfathom Deeps.",
+      "requires": [6564],
+      "start": {
+        "npc": "Je'neu Sancrea"
+      },
+      "turnIn": {
+        "npc": "Je'neu Sancrea"
+      },
       "items": [
         {
           "item": 17694,
@@ -108,6 +168,13 @@
       "requiredLevel": 18,
       "xp": 2400,
       "objective": "Collect 8 Corrupted Brain Stems from creatures in Blackfathom Deeps.",
+      "requires": [3765],
+      "start": {
+        "npc": "Gershala Nightwhisper"
+      },
+      "turnIn": {
+        "npc": "Gershala Nightwhisper"
+      },
       "items": [
         {
           "item": 7003,
@@ -131,6 +198,12 @@
       "requiredLevel": 20,
       "xp": 2550,
       "objective": "Find 3 Soran'ruk Fragments and 1 Large Soran'ruk Fragment and return them to Doan Karhan.",
+      "start": {
+        "npc": "Doan Karhan"
+      },
+      "turnIn": {
+        "npc": "Doan Karhan"
+      },
       "items": [
         {
           "item": 6898,
@@ -149,6 +222,13 @@
       "requiredLevel": 10,
       "xp": 10313,
       "objective": "Recover the Lorgalis Manuscript from Blackfathom Deeps.",
+      "description": "The Lorgalis Manuscript is inside a Pitted Iron Chest underwater in the Pool of Ask'ar, in the northern alcove just past Ghamoo-ra's turtle room.",
+      "start": {
+        "npc": "Gerrig Bonegrip"
+      },
+      "turnIn": {
+        "npc": "Gerrig Bonegrip"
+      },
       "items": [
         {
           "item": 6743,
@@ -163,6 +243,12 @@
       "requiredLevel": 17,
       "xp": 1750,
       "objective": "Collect 20 Sapphires of Aku'Mai in Blackfathom Deeps.",
+      "start": {
+        "npc": "Je'neu Sancrea"
+      },
+      "turnIn": {
+        "npc": "Je'neu Sancrea"
+      },
       "items": []
     },
     {
@@ -172,6 +258,13 @@
       "requiredLevel": 17,
       "xp": 435,
       "objective": "Speak to Je'neu Sancrea in Ashenvale.",
+      "start": {
+        "npc": "Tsunaman",
+        "location": [1442, 47.2, 64.2]
+      },
+      "turnIn": {
+        "npc": "Je'neu Sancrea"
+      },
       "items": []
     },
     {
@@ -181,6 +274,14 @@
       "requiredLevel": 18,
       "xp": 2400,
       "objective": "Find Argent Guard Thaelrid inside Blackfathom Deeps.",
+      "description": "Required before the Alliance version of Blackfathom Villainy.",
+      "start": {
+        "npc": "Dawnwatcher Shaedlass",
+        "location": [1457, 55, 24]
+      },
+      "turnIn": {
+        "npc": "Argent Guard Thaelrid"
+      },
       "items": []
     },
     {
@@ -190,6 +291,29 @@
       "requiredLevel": 21,
       "xp": 10313,
       "objective": "Recover the Fathom Core from the Fathom Stone in Blackfathom Deeps.",
+      "description": "The Fathom Stone is also associated with the optional Baron Aquanis encounter.",
+      "start": {
+        "npc": "Je'neu Sancrea"
+      },
+      "turnIn": {
+        "npc": "Je'neu Sancrea"
+      },
+      "items": []
+    },
+    {
+      "id": 3765,
+      "name": "The Corruption Abroad",
+      "side": "Alliance",
+      "requiredLevel": 18,
+      "objective": "Travel to Gershala Nightwhisper in Auberdine, Darkshore.",
+      "description": "Alliance breadcrumb required before Researching the Corruption.",
+      "start": {
+        "npc": "Argos Nightwhisper",
+        "location": [1453, 36.3, 67.4]
+      },
+      "turnIn": {
+        "npc": "Gershala Nightwhisper"
+      },
       "items": []
     }
   ]

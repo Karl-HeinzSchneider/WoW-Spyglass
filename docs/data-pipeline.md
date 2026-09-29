@@ -69,6 +69,8 @@ the scans and warns on unscanned ids.
   definition. It validates side, class, levels, rewards, and optional giver/turn-in details.
   Quest titles and NPC names are curated, so `fix` does not rewrite them. The generator uses the
   instance's quest ID list to place a shared definition in every dungeon where it appears.
+  Each quest file may define shared NPC locations and descriptions in `npcs`; generation fills
+  missing start and turn-in details from it while keeping per-quest overrides.
 - **Item lists** (`validateLists`, `src/lists.ts`): the rows key and row fields per kind
   (`ROWS_KEY`, `ROW_FIELDS`, per-field specs); reputation's standing-keyed object is flattened by
   `rowsOf`. A reputation `faction` must be in the `Faction` table, and fix rewrites `name` from

@@ -9,7 +9,11 @@ export interface QuestEndpoint {
   npcID?: number;
   item?: number;
   location?: [number, number, number];
+  description?: string;
 }
+
+/** Shared details for an NPC within one dungeon quest file. */
+export type QuestNpcDetails = Pick<QuestEndpoint, "location" | "description">;
 
 /** One quest definition, shared by every dungeon that lists its id. */
 export interface CuratedQuest {
@@ -31,6 +35,7 @@ export interface CuratedQuest {
 export interface QuestFile {
   path: string;
   slug: string;
+  npcs?: Record<string, QuestNpcDetails>;
   quests: CuratedQuest[];
 }
 
@@ -53,8 +58,11 @@ export function loadQuests(): QuestFile[] {
   }
   return entries.map((entry) => {
     const path = resolve(DUNGEON_QUESTS_DIR, entry);
-    const data = JSON.parse(readFileSync(path, "utf-8")) as { quests: CuratedQuest[] };
-    return { path, slug: basename(entry, ".json"), quests: data.quests };
+    const data = JSON.parse(readFileSync(path, "utf-8")) as {
+      npcs?: Record<string, QuestNpcDetails>;
+      quests: CuratedQuest[];
+    };
+    return { path, slug: basename(entry, ".json"), npcs: data.npcs, quests: data.quests };
   });
 }
 
@@ -62,6 +70,32 @@ export function loadQuests(): QuestFile[] {
 export function validateQuests(files: QuestFile[], instances: CuratedFile[], checker: Checker): void {
   const byID = new Map<number, QuestFile>();
   for (const file of files) {
+    if (file.npcs !== undefined) {
+      if (!file.npcs || typeof file.npcs !== "object" || Array.isArray(file.npcs)) {
+        checker.report(file, "`npcs` must be an object keyed by NPC name");
+      } else {
+        for (const [name, details] of Object.entries(file.npcs)) {
+          if (!name.trim()) checker.report(file, "`npcs` cannot have an empty NPC name");
+          if (!details || typeof details !== "object" || Array.isArray(details)) {
+            checker.report(file, `NPC "${name}": details must be an object`);
+            continue;
+          }
+          for (const key of Object.keys(details)) {
+            if (key !== "location" && key !== "description")
+              checker.report(file, `NPC "${name}": unknown field ${key}`);
+          }
+          if (
+            details.description !== undefined &&
+            (typeof details.description !== "string" || details.description === "")
+          ) {
+            checker.report(file, `NPC "${name}": \`description\` must be a non-empty string`);
+          }
+          if (details.location !== undefined && !validLocation(details.location)) {
+            checker.report(file, `NPC "${name}": \`location\` must be [uiMapID, x, y] with x/y in 0..100`);
+          }
+        }
+      }
+    }
     if (!Array.isArray(file.quests)) {
       checker.report(file, "`quests` must be an array");
       continue;
@@ -168,28 +202,34 @@ function validateEndpoint(
   if (endpoint.npc !== undefined && (typeof endpoint.npc !== "string" || endpoint.npc === "")) {
     checker.report(file, `quest ${questID}: \`${field}.npc\` must be a non-empty name`);
   }
+  if (endpoint.description !== undefined && (typeof endpoint.description !== "string" || endpoint.description === "")) {
+    checker.report(file, `quest ${questID}: \`${field}.description\` must be a non-empty string`);
+  }
   for (const key of ["npcID", "item"] as const) {
     if (endpoint[key] !== undefined && (!Number.isInteger(endpoint[key]) || endpoint[key]! <= 0)) {
       checker.report(file, `quest ${questID}: \`${field}.${key}\` must be a positive integer`);
     }
   }
   if (endpoint.location !== undefined) {
-    const loc = endpoint.location;
-    if (
-      !Array.isArray(loc) ||
-      loc.length !== 3 ||
-      !Number.isInteger(loc[0]) ||
-      loc[0] <= 0 ||
-      !Number.isFinite(loc[1]) ||
-      loc[1] < 0 ||
-      loc[1] > 100 ||
-      !Number.isFinite(loc[2]) ||
-      loc[2] < 0 ||
-      loc[2] > 100
-    ) {
+    if (!validLocation(endpoint.location)) {
       checker.report(file, `quest ${questID}: \`${field}.location\` must be [uiMapID, x, y] with x/y in 0..100`);
     }
   }
+}
+
+function validLocation(loc: unknown): loc is [number, number, number] {
+  return (
+    Array.isArray(loc) &&
+    loc.length === 3 &&
+    Number.isInteger(loc[0]) &&
+    loc[0] > 0 &&
+    Number.isFinite(loc[1]) &&
+    loc[1] >= 0 &&
+    loc[1] <= 100 &&
+    Number.isFinite(loc[2]) &&
+    loc[2] >= 0 &&
+    loc[2] <= 100
+  );
 }
 
 /** Stable field order for human-edited files and minimal `fix` diffs. */
@@ -197,6 +237,14 @@ export function serializeQuests(file: QuestFile): string {
   return (
     JSON.stringify(
       {
+        npcs:
+          file.npcs &&
+          Object.fromEntries(
+            Object.entries(file.npcs).map(([name, details]) => [
+              name,
+              { location: details.location, description: details.description },
+            ]),
+          ),
         quests: file.quests.map((q) => ({
           id: q.id,
           name: q.name,
@@ -207,12 +255,19 @@ export function serializeQuests(file: QuestFile): string {
           objective: q.objective,
           description: q.description,
           requires: q.requires,
-          start: q.start && { npc: q.start.npc, npcID: q.start.npcID, item: q.start.item, location: q.start.location },
+          start: q.start && {
+            npc: q.start.npc,
+            npcID: q.start.npcID,
+            item: q.start.item,
+            location: q.start.location,
+            description: q.start.description,
+          },
           turnIn: q.turnIn && {
             npc: q.turnIn.npc,
             npcID: q.turnIn.npcID,
             item: q.turnIn.item,
             location: q.turnIn.location,
+            description: q.turnIn.description,
           },
           items: (q.items ?? []).map((r) => ({ item: r.item, name: r.name })),
         })),

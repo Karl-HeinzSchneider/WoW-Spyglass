@@ -274,8 +274,9 @@ Constructors (optional sugar):
   Alliance and Horde include shared quests, and Both shows all quests. Each banner shows
   Alliance and/or Horde emblems immediately before XP, plus level
   and class in `info`, with no reward rows below it. Clicking opens a quest page with its title,
-  objective, optional description, giver and turn-in details, map buttons where locations are
-  known, and reward items. When present, a clickable subheader expands the ordered prerequisites
+  objective, optional description, giver and turn-in details (including item icons and tooltips
+  for item starts), map buttons where locations are known, and reward items. When present, a clickable
+  subheader expands the ordered prerequisites
   as indented, numbered quest banners. Each prerequisite opens its own detail page, whose back button returns
   to the main quest; prerequisite pages do not open further prerequisites. The card carries the
   quest ids in `quests`, so it shows the same
@@ -348,6 +349,9 @@ path, the pane shows the current node's name and `description`.
 `panel` is a list of widgets drawn top to bottom, or a function `(node, view) -> widgets` called
 each time the pane is drawn. Each widget has exactly one type key; the other fields are its
 options:
+
+An `{ item = itemID }` widget shows the item's icon and name. Hover shows its game tooltip;
+modified click links it in chat.
 
 | Widget                        | Options                                         | Notes                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | ----------------------------- | ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -551,9 +555,10 @@ Adding data (any call may be repeated; every one invalidates the caches and fire
   token (`"WARLOCK"`) for a class quest (nil = any class). Optional `requiredLevel`, `xp`,
   `objective` and `description` feed the tooltip. `requires` is an array of direct prerequisites
   as `{ id, name? }`; the tooltip shows each one's completion state. `start` and `turnIn` are optional
-  `{ npc?, npcID?, item?, location? }` tables, where `location` is `{ uiMapID, x, y }` in map
-  percentages. Each quest is stored by its id and listed under the instance in the order it was
-  added. A quest registered under several instances appears in each; its `instanceID` field is
+  `{ npc?, npcID?, item?, location?, description? }` tables, where `location` is
+  `{ uiMapID, x, y }` in map percentages and `description` is optional info text beside that
+  endpoint. Each quest is stored by its id and listed under the instance in the order it was added.
+  A quest registered under several instances appears in each; its `instanceID` field is
   the last registration, so use `Data:GetInstanceQuests(instanceID)` for membership. Quest titles
   are curated data: this client ships no quest table, and `C_QuestLog` only knows quests the
   character has seen.

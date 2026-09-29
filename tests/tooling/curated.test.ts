@@ -216,18 +216,20 @@ test("questline details survive a fix rewrite", () => {
       name: "Dungeon Quest",
       description: "More context",
       requires: [25],
-      start: { npc: "Quest Giver", npcID: 123, location: [1436, 43, 72] },
-      turnIn: { npc: "Quest Turn-in", location: [1436, 50, 60] },
+      start: { npc: "Quest Giver", npcID: 123, location: [1436, 43, 72], description: "Upstairs." },
+      turnIn: { npc: "Quest Turn-in", location: [1436, 50, 60], description: "Inside the inn." },
       items: [],
     },
   ]);
+  quests.npcs = { "Quest Giver": { location: [1436, 43, 72], description: "Upstairs." } };
   const checker = dungeonChecker(true);
   validateQuests([quests], [dungeonFile({ quests: [26] })], checker);
   assert.deepEqual(
     checker.problems.filter((p) => !p.warning),
     [],
   );
-  const serialized = JSON.parse(serializeQuests(quests)) as { quests: CuratedQuest[] };
+  const serialized = JSON.parse(serializeQuests(quests)) as { npcs: QuestFile["npcs"]; quests: CuratedQuest[] };
+  assert.deepEqual(serialized.npcs, quests.npcs);
   assert.deepEqual(serialized.quests[1], quests.quests[1]);
 });
 
@@ -252,23 +254,32 @@ test("a prerequisite-only quest ships without becoming a dungeon quest", () => {
     categories: new Map(),
   } as unknown as Reference;
   const config: Config = { build: "test", locales: ["enUS"], excludeMaps: [], itemsPerFile: 100 };
-  const output = build(
-    ref,
-    [dungeonFile({ encounters: [], quests: [26] })],
-    [
-      questFile([
-        { id: 25, name: "Earlier Quest", items: [] },
-        { id: 26, name: "Dungeon Quest", requires: [25], items: [] },
-      ]),
-    ],
-    [],
-    config,
-  );
+  const quests = questFile([
+    { id: 25, name: "Earlier Quest", items: [] },
+    {
+      id: 26,
+      name: "Dungeon Quest",
+      requires: [25],
+      start: { npc: "Quest Giver" },
+      turnIn: { npc: "Quest Giver", description: "Outside." },
+      items: [],
+    },
+  ]);
+  quests.npcs = { "Quest Giver": { location: [1436, 43, 72], description: "Upstairs." } };
+  const output = build(ref, [dungeonFile({ encounters: [], quests: [26] })], [quests], [], config);
   assert.match(output.core.get("quest-definitions.lua") ?? "", /Data:AddQuestDefinitions\(\{/);
   assert.match(output.core.get("generated.xml") ?? "", /quest-definitions.lua/);
   assert.match(output.core.get("quest-definitions.lua") ?? "", /^    \{ id = 25/m);
   assert.doesNotMatch(output.core.get("loot/test_dungeon.lua") ?? "", /^    \{ id = 25/m);
   assert.match(output.core.get("loot/test_dungeon.lua") ?? "", /^    \{ id = 26/m);
+  assert.match(
+    output.core.get("loot/test_dungeon.lua") ?? "",
+    /start = \{ description = "Upstairs\.", location = \{ 1436, 43, 72 \}, npc = "Quest Giver" \}/,
+  );
+  assert.match(
+    output.core.get("loot/test_dungeon.lua") ?? "",
+    /turnIn = \{ description = "Outside\.", location = \{ 1436, 43, 72 \}, npc = "Quest Giver" \}/,
+  );
 });
 
 test("a split map: each file needs an id, a boss may be in one of them only, one in none is a warning", () => {

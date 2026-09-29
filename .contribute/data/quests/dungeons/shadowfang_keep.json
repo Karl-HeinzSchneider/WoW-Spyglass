@@ -1,4 +1,14 @@
 {
+  "npcs": {
+    "Dalar Dawnweaver": {
+      "location": [1421, 44.2, 39.8],
+      "description": "The Sepulcher, Silverpine Forest."
+    },
+    "Keeper Bel'dugur": {
+      "location": [1458, 53.7, 54.5],
+      "description": "Apothecarium, Undercity."
+    }
+  },
   "quests": [
     {
       "id": 1098,
@@ -7,6 +17,14 @@
       "requiredLevel": 18,
       "xp": 8700,
       "objective": "Find Deathstalker Adamant and Deathstalker Vincent inside Shadowfang Keep.",
+      "start": {
+        "npc": "High Executor Hadrec",
+        "location": [1421, 43.4, 40.9]
+      },
+      "turnIn": {
+        "npc": "Deathstalker Vincent",
+        "description": "Inside Shadowfang Keep."
+      },
       "items": [
         {
           "item": 3324,
@@ -29,6 +47,12 @@
       "requiredLevel": 18,
       "xp": 14355,
       "objective": "Kill Archmage Arugal and bring his head to Dalar Dawnweaver.",
+      "start": {
+        "npc": "Dalar Dawnweaver"
+      },
+      "turnIn": {
+        "npc": "Dalar Dawnweaver"
+      },
       "items": [
         {
           "item": 6414,
@@ -43,6 +67,12 @@
       "requiredLevel": 16,
       "xp": 9135,
       "objective": "Bring the Book of Ur from Shadowfang Keep to Keeper Bel'dugur.",
+      "start": {
+        "npc": "Keeper Bel'dugur"
+      },
+      "turnIn": {
+        "npc": "Keeper Bel'dugur"
+      },
       "items": [
         {
           "item": 6335,

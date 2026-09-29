@@ -1,4 +1,21 @@
 {
+  "npcs": {
+    "Afadra Dunwall": {
+      "description": "Ironforge."
+    },
+    "Earthseer Farsen": {
+      "description": "Dun Morogh."
+    },
+    "Ghostly Attendant": {
+      "description": "Inside the dungeon."
+    },
+    "King Magni Bronzebeard": {
+      "description": "Ironforge."
+    },
+    "Thom Filch": {
+      "description": "Near the dungeon entrance."
+    }
+  },
   "quests": [
     {
       "id": 96393,
@@ -7,6 +24,15 @@
       "requiredLevel": 9,
       "xp": 4930,
       "objective": "Enter Hall of Thanes and claim Durgen Dirgehammer's Head.",
+      "description": "The chain begins by dropping Dark Iron Map from Dark Iron Spies in Dun Morogh.",
+      "requires": [96391],
+      "start": {
+        "npc": "Earthseer Farsen",
+        "description": "Dun Morogh (after Underground Map)."
+      },
+      "turnIn": {
+        "npc": "King Magni Bronzebeard"
+      },
       "items": [
         {
           "item": 279894,
@@ -29,6 +55,13 @@
       "requiredLevel": 10,
       "xp": 3570,
       "objective": "Put the spirit of Faldrim Anvilmar to rest.",
+      "start": {
+        "npc": "Ghostly Attendant",
+        "description": "Inside Hall of Thanes, after the first room."
+      },
+      "turnIn": {
+        "npc": "Ghostly Attendant"
+      },
       "items": [
         {
           "item": 279899,
@@ -47,6 +80,13 @@
       "requiredLevel": 10,
       "xp": 4590,
       "objective": "Collect 8 Dwarven Heirlooms from the Hall of Thanes.",
+      "start": {
+        "npc": "Thom Filch",
+        "description": "By the bridge / vault entrance in Ironforge."
+      },
+      "turnIn": {
+        "npc": "Thom Filch"
+      },
       "items": [
         {
           "item": 279898,
@@ -65,6 +105,12 @@
       "requiredLevel": 10,
       "xp": 3570,
       "objective": "Kill 15 Enraged Apparitions and 10 Tormented Souls, then put Anvilmar's spirit to rest.",
+      "start": {
+        "npc": "Afadra Dunwall"
+      },
+      "turnIn": {
+        "npc": "Afadra Dunwall"
+      },
       "items": [
         {
           "item": 279897,
@@ -83,6 +129,30 @@
       "requiredLevel": 9,
       "xp": 3900,
       "objective": "Deliver the Treaty of Understanding to Magni Bronzebeard in Ironforge.",
+      "description": "The quest starts from a stone tablet inside a vault in the Reliquary of Kings.",
+      "start": {
+        "npc": "Stone tablet",
+        "description": "Reliquary of Kings vault."
+      },
+      "turnIn": {
+        "npc": "King Magni Bronzebeard"
+      },
+      "items": []
+    },
+    {
+      "id": 96391,
+      "name": "Underground Map",
+      "side": "Alliance",
+      "requiredLevel": 9,
+      "objective": "Deliver the Dark Iron Map to Earthseer Farsen in Dun Morogh.",
+      "description": "The Dark Iron Map starts this quest and leads directly into Old Ironforge Incursion.",
+      "start": {
+        "item": 274268,
+        "location": [1426, 77, 60]
+      },
+      "turnIn": {
+        "npc": "Earthseer Farsen"
+      },
       "items": []
     }
   ]

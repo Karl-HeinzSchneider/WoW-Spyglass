@@ -145,9 +145,27 @@ function Quests.ShowTooltip(owner, questID)
         if start then
             GameTooltip:AddLine("Starts: " .. start, HIGHLIGHT_FONT_COLOR:GetRGB())
         end
+        if quest.start and quest.start.description then
+            GameTooltip:AddLine(
+                quest.start.description,
+                HIGHLIGHT_FONT_COLOR.r,
+                HIGHLIGHT_FONT_COLOR.g,
+                HIGHLIGHT_FONT_COLOR.b,
+                true
+            )
+        end
         local finish = quest.turnIn and endpointText(quest.turnIn)
         if finish then
             GameTooltip:AddLine("Ends: " .. finish, HIGHLIGHT_FONT_COLOR:GetRGB())
+        end
+        if quest.turnIn and quest.turnIn.description then
+            GameTooltip:AddLine(
+                quest.turnIn.description,
+                HIGHLIGHT_FONT_COLOR.r,
+                HIGHLIGHT_FONT_COLOR.g,
+                HIGHLIGHT_FONT_COLOR.b,
+                true
+            )
         end
         if quest.requires and #quest.requires > 0 then
             GameTooltip:AddLine(" ")
