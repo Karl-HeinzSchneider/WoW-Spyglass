@@ -1,9 +1,9 @@
 {
   "map": 47,
   "name": "Razorfen Kraul",
-  "minLevel": 32,
-  "maxLevel": 42,
-  "requiredLevel": 15,
+  "minLevel": 24,
+  "maxLevel": 27,
+  "requiredLevel": 25,
   "zone": 1413,
   "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-RazorfenKraul",
   "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],

@@ -2,7 +2,7 @@
   "map": 43,
   "name": "Wailing Caverns",
   "minLevel": 17,
-  "maxLevel": 27,
+  "maxLevel": 25,
   "requiredLevel": 10,
   "zone": 1413,
   "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-WailingCaverns",
