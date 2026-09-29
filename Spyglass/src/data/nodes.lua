@@ -318,6 +318,17 @@ end
 ---@return Spyglass.Node
 function api.QuestFolder(instanceID)
     local quests = Data:GetInstanceQuests(instanceID)
+    local instance = Data:GetInstance(instanceID)
+    local dungeonName = instance and instance.displayName or Data:GetInstanceName(instanceID)
+    local panel = {
+        { row = "Dungeon", value = dungeonName },
+        { description = true },
+        { factionDropdown = "Faction" },
+    }
+    if instance and type(instance.entrance) == "table" then
+        panel[#panel + 1] = { spacer = true }
+        panel[#panel + 1] = { button = "Show entrance", map = instance.entrance }
+    end
     local ids = {}
     for i, quest in ipairs(quests) do
         ids[i] = quest.id
@@ -328,6 +339,7 @@ function api.QuestFolder(instanceID)
         quests = #ids > 0 and ids or nil,
         description = "The quests that take place here and what they reward.",
         meta = { instanceID = instanceID, quests = true },
+        panel = panel,
     })
 end
 

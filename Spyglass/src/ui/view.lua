@@ -1646,17 +1646,17 @@ function SpyglassViewMixin:GetPanelGrouping()
 end
 
 -- The test the current panel's checkboxes and dropdowns put on the list's entries, or nil when
--- none is set. Folders always pass (BuildElements), so filters reach the entries inside them.
+-- none is set. BuildElements keeps ordinary folders but can hide quest banners by faction.
 ---@return (fun(entry: Spyglass.Node): boolean)?
 function SpyglassViewMixin:GetEntryFilter()
     local node, widgets = self:GetPanel()
     local state = node and self.panelState[node]
-    if not node or not widgets or not state then
+    if not node or not widgets then
         return nil
     end
     local tests = {}
     for index, widget in ipairs(widgets) do
-        local value = state[index]
+        local value = state and state[index]
         if widget.checkbox and value then
             local filter = widget.filter
             local test = type(filter) == "function" and filter or PANEL_FILTERS[filter]
@@ -1669,6 +1669,14 @@ function SpyglassViewMixin:GetEntryFilter()
             local field = widget.field
             tests[#tests + 1] = function(entry)
                 return entry.meta ~= nil and entry.meta[field] == value
+            end
+        elseif widget.factionDropdown then
+            local side = value or UnitFactionGroup("player")
+            if side ~= "Both" then
+                tests[#tests + 1] = function(entry)
+                    local quest = entry.quest and app.data:GetQuest(entry.quest)
+                    return not quest or not quest.side or quest.side == "Both" or quest.side == side
+                end
             end
         end
     end
@@ -2266,12 +2274,13 @@ function SpyglassViewMixin:BuildElements(node)
                 addRows(child.items or {})
             end
         elseif child.quest then
-            -- Always shown, even when the filters took all its rewards: the quest still has its
-            -- experience and its objective.
-            flush()
-            elements[#elements + 1] = { kind = "quest", node = child }
-            addRows(child.items or {})
-            self.showsQuests = true
+            -- The faction filter may hide a quest; reward filters only affect its item rows.
+            if not filter or filter(child) then
+                flush()
+                elements[#elements + 1] = { kind = "quest", node = child }
+                addRows(child.items or {})
+                self.showsQuests = true
+            end
         elseif child.group then
             flush()
             if hasKept(child.items) then
@@ -2291,6 +2300,9 @@ function SpyglassViewMixin:BuildElements(node)
         end
     end
     flush()
+    if #elements == 0 and node.meta and node.meta.quests then
+        elements[1] = { kind = "subheader", text = "No quests for this faction" }
+    end
     -- The query counted its result before the filters above removed entries from it: the count
     -- next to the search box is what is listed.
     if filter and node.query then

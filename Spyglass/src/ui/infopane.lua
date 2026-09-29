@@ -165,6 +165,18 @@ function SpyglassInfoPaneMixin:AddWidget(view, node, index, widget)
                 radio(option.label, option.value)
             end
         end)
+    elseif widget.factionDropdown then
+        local frame = self:Acquire("dropdown") --[[@as Frame|{ Label: FontString, Dropdown: WowStyle1FilterDropdownMixin }]]
+        frame.Label:SetText(widget.factionDropdown)
+        frame.Dropdown:SetupMenu(function(_, root)
+            for _, side in ipairs({ "Alliance", "Horde", "Both" }) do
+                root:CreateRadio(side, function()
+                    return (view:GetPanelValue(node, index) or UnitFactionGroup("player")) == side
+                end, function()
+                    view:SetPanelValue(node, index, side)
+                end)
+            end
+        end)
     elseif widget.grouping then
         -- The same dropdown, one radio per option; the first is picked until another is.
         local frame = self:Acquire("dropdown") --[[@as Frame|{ Label: FontString, Dropdown: WowStyle1FilterDropdownMixin }]]

@@ -154,7 +154,10 @@ node's `info` right after it (the title is sized to its text and truncated befor
 right column) and the objective under both; on the right the experience over the progress text.
 Progress, hover, shift-click and the quest data request come from `app.questInfo` (`quests.lua`),
 shared with the info pane's quest lines. A banner with `children` opens those children on click.
-The dungeon's quest page shows one such banner per quest, with Alliance and/or Horde emblems
+The dungeon's quest page shows the dungeon name and a right-pane dropdown for Alliance, Horde,
+or Both (all quests). It defaults to the character's faction; shared quests appear under either
+faction. It shows one
+banner per visible quest, with Alliance and/or Horde emblems
 directly left of a compact, fixed-width XP display. Values below 100,000 keep their full number;
 larger values use `k` (for example, `100k`). Its reward rows appear on the opened quest page.
 If a quest has prequests, its banner shows completed/total prequests before the objective (for
@@ -174,7 +177,8 @@ like the item-info redraw.
 A view keeps the state of the info panel's checkboxes, dropdowns and grouping in
 `view.panelState`, per panel node and widget index. `GetPanel()` finds the deepest node on the
 path with a `panel` (calling a function panel), `GetEntryFilter()` turns the set checkboxes and
-dropdowns into one test, and `BuildElements` drops the entries it rejects (never folders), along
+dropdowns into one test, and `BuildElements` drops the entries it rejects (quest banners can be
+filtered; other folders stay), along
 with a subheader or group label whose entries are all gone. `GetPanelGrouping()` returns the
 picked `grouping` option's `groupBy` (the option's index is the stored value, the first until
 one is picked), which `BuildElements` uses instead of the node's. `SetPanelValue` stores a value and refreshes from
@@ -197,7 +201,8 @@ registers itself with the character frame, so it can't be inherited): the title 
   text), skill in the blue fill with "rank / max".
 - `checkbox`: `checkbox-minimal` / `checkmark-minimal`, the label beside it inside the hit rect;
   `dropdown`: `WowStyle1DropdownTemplate` with an "All" radio and one per value; `grouping`:
-  the same dropdown with one radio per option.
+  the same dropdown with one radio per option. The quest list's `factionDropdown` uses that
+  dropdown for Alliance, Horde, and Both.
 - `button`: `SharedGoldRedButtonSmallTemplate`. A `map` button sets a user waypoint from a plain
   `{ uiMapID, position }` table (`UiMapPoint` isn't loaded in this client) and calls
   `OpenWorldMap`.
