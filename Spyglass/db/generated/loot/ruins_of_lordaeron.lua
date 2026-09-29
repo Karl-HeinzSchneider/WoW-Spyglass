@@ -74,7 +74,7 @@ Data:AddQuests(2999, {
         { 279876 }, -- Plaguefang
         { 279877 }, -- Blight Gloves
     } },
-    { id = 97288, name = "Unending Torment", side = "Horde", requiredLevel = 16, xp = 5280, objective = "Deliver the Abominable Head to the Undercity.", description = "Dropped by: The Baron", start = { item = 280438 }, turnIn = { description = "Undercity.", npc = "Master Apothecary Faranell" }, items = {} },
+    { id = 97288, name = "Unending Torment", side = "Horde", requiredLevel = 16, xp = 5300, objective = "Deliver the Abominable Head to the Undercity.", description = "Dropped by: The Baron", followUps = { 97289, 97290, 97291, 97292 }, start = { item = 280438 }, turnIn = { description = "Undercity.", location = { 1458, 48.6, 69.6 }, npc = "Master Apothecary Faranell" }, items = {} },
     { id = 92401, name = "A Frightened Request", side = "Horde", requiredLevel = 15, xp = 7040, objective = "Investigate the disappearance of Edward Heartweaver in Ruins of Lordaeron.", start = { description = "The Sepulcher, Silverpine Forest.", location = { 1421, 44.5, 43 }, npc = "Tabitha Heartweaver" }, turnIn = { description = "The Sepulcher, Silverpine Forest.", location = { 1421, 44.5, 43 }, npc = "Tabitha Heartweaver" }, items = {
         { 251485 }, -- Edward's Knife
         { 251486 }, -- Tabitha's Cuffs
@@ -82,7 +82,7 @@ Data:AddQuests(2999, {
     { id = 95189, name = "Crest of Lordaeron", side = "Alliance", requiredLevel = 16, xp = 9750, objective = "Return the Crest of Lordaeron to Stormwind.", description = "Community reports indicate the Crest can spawn at one of several locations inside the dungeon. Reported spots include upper floors of towers, side/crypt rooms near The Baron, and the area around Bjork.", start = { item = 268579 }, turnIn = { description = "Stormwind City.", npc = "Lady Dena Kennedy" }, items = {
         { 280567 }, -- Small Sack of Gems
     } },
-    { id = 95204, name = "Crest of Lordaeron", side = "Horde", requiredLevel = 16, xp = 8320, objective = "Bring the Crest of Lordaeron to the Undercity.", description = "Community reports indicate the Crest can spawn at one of several locations inside the dungeon. Reported spots include upper floors of towers, side/crypt rooms near The Baron, and the area around Bjork.", start = { item = 268579 }, turnIn = { description = "Undercity.", npc = "Oran Snakewrithe" }, items = {
+    { id = 95204, name = "Crest of Lordaeron", side = "Horde", requiredLevel = 16, xp = 8320, objective = "Bring the Crest of Lordaeron to the Undercity.", description = "Community reports indicate the Crest can spawn at one of several locations inside the dungeon. Reported spots include upper floors of towers, side/crypt rooms near The Baron, and the area around Bjork.", start = { item = 268579 }, turnIn = { description = "Undercity.", location = { 1458, 73.6, 32.6 }, npc = "Oran Snakewrithe" }, items = {
         { 280567 }, -- Small Sack of Gems
     } },
 })

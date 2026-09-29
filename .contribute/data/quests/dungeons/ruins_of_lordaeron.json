@@ -18,6 +18,18 @@
     "Theodore Griffs": {
       "location": [1458, 46.5, 71.6],
       "description": "Undercity."
+    },
+    "Oran Snakewrithe": {
+      "location": [1458, 73.6, 32.6],
+      "description": "Undercity."
+    },
+    "Master Apothecary Faranell": {
+      "location": [1458, 48.6, 69.6],
+      "description": "Undercity."
+    },
+    "Unfinished Abomination": {
+      "location": [1458, 46, 62.2],
+      "description": "Undercity."
     }
   },
   "quests": [
@@ -174,11 +186,93 @@
       "name": "Unending Torment",
       "side": "Horde",
       "requiredLevel": 16,
-      "xp": 5280,
+      "xp": 5300,
       "objective": "Deliver the Abominable Head to the Undercity.",
       "description": "Dropped by: The Baron",
+      "followUps": [97289, 97290, 97291, 97292],
       "start": {
         "item": 280438
+      },
+      "turnIn": {
+        "npc": "Master Apothecary Faranell",
+        "description": "Undercity."
+      },
+      "items": []
+    },
+    {
+      "id": 97289,
+      "name": "Unending Torment",
+      "side": "Horde",
+      "requiredLevel": 16,
+      "xp": 1650,
+      "objective": "Bring the Head of the Baron to the body of Othmar in the Undercity.",
+      "start": {
+        "npc": "Master Apothecary Faranell",
+        "description": "Undercity."
+      },
+      "turnIn": {
+        "npc": "Unfinished Abomination",
+        "description": "Undercity."
+      },
+      "items": []
+    },
+    {
+      "id": 97290,
+      "name": "Unending Torment",
+      "side": "Horde",
+      "requiredLevel": 16,
+      "xp": 1650,
+      "objective": "Report your findings to Master Apothecary Faranell in Undercity.",
+      "start": {
+        "npc": "Unfinished Abomination",
+        "description": "Undercity."
+      },
+      "turnIn": {
+        "npc": "Master Apothecary Faranell",
+        "description": "Undercity."
+      },
+      "items": [
+        {
+          "item": 279867,
+          "name": "Slain Baron's Signet"
+        },
+        {
+          "item": 279865,
+          "name": "Grave Shroud"
+        },
+        {
+          "item": 279864,
+          "name": "Monstrous Cleaver"
+        }
+      ]
+    },
+    {
+      "id": 97291,
+      "name": "Unending Torment",
+      "side": "Horde",
+      "requiredLevel": 16,
+      "xp": 1650,
+      "objective": "Collect a Toxic Skullcap from Tawny Grisette in the Trade Quarter, Blisterweed near the Herbalism Trainer, and Essence of Agony from the poison vendor in the Rogues' Quarter for Master Apothecary Faranell in Undercity.",
+      "start": {
+        "npc": "Master Apothecary Faranell",
+        "description": "Undercity."
+      },
+      "turnIn": {
+        "npc": "Master Apothecary Faranell",
+        "description": "Undercity."
+      },
+      "items": []
+    },
+    {
+      "id": 97292,
+      "name": "Unending Torment",
+      "side": "Horde",
+      "requiredLevel": 16,
+      "xp": 1650,
+      "objective": "Inject the Hissing Serum into the system above Othmar's body for Master Apothecary Faranell.",
+      "start": {
+        "npc": "Master Apothecary Faranell",
+        "description": "Undercity."
       },
       "turnIn": {
         "npc": "Master Apothecary Faranell",
