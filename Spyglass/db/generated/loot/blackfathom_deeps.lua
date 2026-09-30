@@ -61,13 +61,13 @@ Data:AddTrashLoot(48, {
 })
 
 Data:AddQuests(48, {
-    { id = 1200, name = "Blackfathom Villainy", side = "Alliance", requiredLevel = 18, xp = 12375, objective = "Defeat Twilight Lord Kelris and recover the Head of Kelris.", requires = { { id = 1198, name = "In Search of Thaelrid" } }, start = { description = "Inside Blackfathom Deeps.", npc = "Argent Guard Thaelrid" }, turnIn = { description = "Darnassus.", npc = "Dawnwatcher Selgorm" }, items = {
+    { id = 1200, name = "Blackfathom Villainy", side = "Alliance", requiredLevel = 18, xp = 12375, objective = "Defeat Twilight Lord Kelris and recover the Head of Kelris.", requires = { { id = 1198, name = "In Search of Thaelrid" } }, start = { description = "Inside Blackfathom Deeps.", npc = "Argent Guard Thaelrid" }, turnIn = { description = "Craftsmen's Terrace, Darnassus.", location = { 1457, 56, 24.6 }, npc = "Dawnwatcher Selgorm" }, items = {
         { 7001 }, -- Gravestone Scepter
         { 7002 }, -- Arctic Buckler
         { 270031 }, -- Dark Ritual Leggings
         { 270032 }, -- Cultist's Armguards
     } },
-    { id = 6561, name = "Blackfathom Villainy", side = "Horde", requiredLevel = 18, xp = 12375, objective = "Defeat Twilight Lord Kelris and recover the Head of Kelris.", start = { description = "Inside Blackfathom Deeps.", npc = "Argent Guard Thaelrid" }, turnIn = { description = "Thunder Bluff.", npc = "Bashana Runetotem" }, items = {
+    { id = 6561, name = "Blackfathom Villainy", side = "Horde", requiredLevel = 18, xp = 12375, objective = "Defeat Twilight Lord Kelris and recover the Head of Kelris.", start = { description = "Inside Blackfathom Deeps.", npc = "Argent Guard Thaelrid" }, turnIn = { description = "The Elder's Rise, Thunder Bluff.", location = { 1457, 70.8, 33.4 }, npc = "Bashana Runetotem" }, items = {
         { 7001 }, -- Gravestone Scepter
         { 7002 }, -- Arctic Buckler
         { 270031 }, -- Dark Ritual Leggings
@@ -78,7 +78,6 @@ Data:AddQuests(48, {
         { 7000 }, -- Heartwood Girdle
         { 270025 }, -- Silvered Gauntlets
     } },
-    { id = 6564, name = "Allegiance to the Old Gods", side = "Horde", requiredLevel = 17, xp = 1300, objective = "Bring the Damp Note to Je'neu Sancrea in Ashenvale.", description = "Drops from Blackfathom Tide Priestess in the entrance tunnels leading to Blackfathom Deeps.", start = { item = 16790 }, turnIn = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, items = {} },
     { id = 6565, name = "Allegiance to the Old Gods", side = "Horde", requiredLevel = 17, xp = 9938, objective = "Defeat Lorgus Jett in Blackfathom Deeps.", requires = { { id = 6564, name = "Allegiance to the Old Gods" } }, start = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, turnIn = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, items = {
         { 17694 }, -- Band of the Fist
         { 17695 }, -- Chestnut Mantle
@@ -97,6 +96,6 @@ Data:AddQuests(48, {
     } },
     { id = 6563, name = "The Essence of Aku'Mai", side = "Horde", requiredLevel = 17, xp = 1750, objective = "Collect 20 Sapphires of Aku'Mai in Blackfathom Deeps.", start = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, turnIn = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, items = {} },
     { id = 6562, name = "Trouble in the Deeps", side = "Horde", requiredLevel = 17, xp = 435, objective = "Speak to Je'neu Sancrea in Ashenvale.", start = { location = { 1442, 47.2, 64.2 }, npc = "Tsunaman" }, turnIn = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, items = {} },
-    { id = 1198, name = "In Search of Thaelrid", side = "Alliance", requiredLevel = 18, xp = 2400, objective = "Find Argent Guard Thaelrid inside Blackfathom Deeps.", description = "Required before the Alliance version of Blackfathom Villainy.", start = { location = { 1457, 55, 24 }, npc = "Dawnwatcher Shaedlass" }, turnIn = { description = "Inside Blackfathom Deeps.", npc = "Argent Guard Thaelrid" }, items = {} },
+    { id = 1198, name = "In Search of Thaelrid", side = "Alliance", requiredLevel = 18, xp = 2400, objective = "Find Argent Guard Thaelrid inside Blackfathom Deeps.", description = "Required before the Alliance version of Blackfathom Villainy.", start = { description = "Craftsmen's Terrace, Darnassus.", location = { 1457, 55, 24 }, npc = "Dawnwatcher Shaedlass" }, turnIn = { description = "Inside Blackfathom Deeps.", npc = "Argent Guard Thaelrid" }, items = {} },
     { id = 6921, name = "Amongst the Ruins", side = "Horde", requiredLevel = 21, xp = 10313, objective = "Recover the Fathom Core from the Fathom Stone in Blackfathom Deeps.", description = "The Fathom Stone is also associated with the optional Baron Aquanis encounter.", start = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, turnIn = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, items = {} },
 })

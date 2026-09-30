@@ -22,6 +22,18 @@
     "Je'neu Sancrea": {
       "location": [1440, 12, 34],
       "description": "Zoram'gar Outpost, Ashenvale."
+    },
+    "Dawnwatcher Selgorm": {
+      "location": [1457, 56.0, 24.6],
+      "description": "Craftsmen's Terrace, Darnassus."
+    },
+    "Bashana Runetotem": {
+      "location": [1457, 70.8, 33.4],
+      "description": "The Elder's Rise, Thunder Bluff."
+    },
+    "Dawnwatcher Shaedlass": {
+      "location": [1457, 55, 24],
+      "description": "Craftsmen's Terrace, Darnassus."
     }
   },
   "quests": [
@@ -37,8 +49,7 @@
         "npc": "Argent Guard Thaelrid"
       },
       "turnIn": {
-        "npc": "Dawnwatcher Selgorm",
-        "description": "Darnassus."
+        "npc": "Dawnwatcher Selgorm"
       },
       "items": [
         {
@@ -70,8 +81,7 @@
         "npc": "Argent Guard Thaelrid"
       },
       "turnIn": {
-        "npc": "Bashana Runetotem",
-        "description": "Thunder Bluff."
+        "npc": "Bashana Runetotem"
       },
       "items": [
         {
@@ -276,8 +286,7 @@
       "objective": "Find Argent Guard Thaelrid inside Blackfathom Deeps.",
       "description": "Required before the Alliance version of Blackfathom Villainy.",
       "start": {
-        "npc": "Dawnwatcher Shaedlass",
-        "location": [1457, 55, 24]
+        "npc": "Dawnwatcher Shaedlass"
       },
       "turnIn": {
         "npc": "Argent Guard Thaelrid"
