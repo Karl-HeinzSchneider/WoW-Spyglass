@@ -139,6 +139,11 @@ open.
   An instance lists All Bosses, then trash loot, then its bosses. A button under the right
   pane's quest list opens the quest folder.
 
+The dungeon info panel shows "Show loading screen art" above "Show entrance" when the dungeon
+has a tile picture. It opens a large, closeable preview of the entire source texture, including
+the loading screen's border and logo; the tile's `backgroundCoords` crop does not apply there.
+All loading screens are displayed at 16:9. Dungeons without a picture have no preview button.
+
 ### Headers, subheaders, quest banners, groups, spacers
 
 Section headers use the `UI-Character-Info-Title` plate. Subheaders are a step smaller: centered

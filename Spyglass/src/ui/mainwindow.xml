@@ -104,4 +104,43 @@
 			<OnDragStop method="OnDragStop"/>
 		</Scripts>
 	</Frame>
+
+	<!-- Large, uncropped preview of the loading screen used by a dungeon tile. -->
+	<Frame name="SpyglassLoadingArtPreview" mixin="SpyglassLoadingArtPreviewMixin"
+		inherits="TooltipBorderedFrameTemplate" parent="SpyglassMainWindow" frameStrata="DIALOG"
+		clampedToScreen="true" enableMouse="true" hidden="true">
+		<Size x="900" y="680"/>
+		<KeyValues>
+			<KeyValue key="backdropColorAlpha" value="0" type="number"/>
+		</KeyValues>
+		<Anchors>
+			<Anchor point="CENTER" relativeTo="UIParent"/>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture atlas="UI-Character-Info-General-BG" setAllPoints="true"/>
+			</Layer>
+			<Layer level="ARTWORK">
+				<Texture parentKey="Art">
+					<Size x="800" y="600"/>
+					<Anchors>
+						<Anchor point="TOP" x="0" y="-48"/>
+					</Anchors>
+				</Texture>
+				<FontString parentKey="Title" inherits="GameFontNormalLarge" justifyH="CENTER" wordwrap="false">
+					<Anchors>
+						<Anchor point="TOPLEFT" x="18" y="-17"/>
+						<Anchor point="TOPRIGHT" x="-36" y="-17"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button parentKey="CloseButton" inherits="UIPanelCloseButton">
+				<Anchors>
+					<Anchor point="TOPRIGHT" x="4" y="4"/>
+				</Anchors>
+			</Button>
+		</Frames>
+	</Frame>
 </Ui>

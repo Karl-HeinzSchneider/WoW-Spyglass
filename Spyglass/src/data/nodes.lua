@@ -404,8 +404,8 @@ local function allBossesFolder(instanceID, instance)
 end
 
 -- The right pane of an instance: the zone its entrance is in (the client's name for the map, so
--- it is localized), its level range, the level needed to enter and its boss count, a button to
--- its entrance when the curated data has one, and its quests with the character's progress.
+-- it is localized), its level range, the level needed to enter and its boss count, the dungeon
+-- loading screen when available, a button to its entrance, and its quests with progress.
 ---@param instanceID integer
 ---@param instance Spyglass.Instance
 ---@param questFolder Spyglass.Node
@@ -427,8 +427,19 @@ local function instancePanel(instanceID, instance, questFolder)
         panel[#panel + 1] = { row = "Required level", value = instance.requiredLevel }
     end
     panel[#panel + 1] = { row = "Bosses", value = #instance.bosses }
-    if type(instance.entrance) == "table" then
+    if instance.type == "dungeon" and instance.background then
         panel[#panel + 1] = { spacer = true }
+        panel[#panel + 1] = {
+            button = "Show loading screen art",
+            onClick = function(node)
+                SpyglassLoadingArtPreview:ShowArt(node)
+            end,
+        }
+    end
+    if type(instance.entrance) == "table" then
+        if not (instance.type == "dungeon" and instance.background) then
+            panel[#panel + 1] = { spacer = true }
+        end
         panel[#panel + 1] = { button = "Show entrance", map = instance.entrance }
     end
     local ids = {}

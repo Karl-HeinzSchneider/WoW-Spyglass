@@ -372,3 +372,28 @@ function SpyglassInfoPaneMixin:RunButton(view, node, widget)
         end
     end
 end
+
+-- The full loading screen texture, separate from the cropped picture used on dungeon tiles.
+---@class Spyglass.LoadingArtPreview : Frame
+---@field Art Texture
+---@field Title FontString
+SpyglassLoadingArtPreviewMixin = {}
+
+---@param node Spyglass.Node
+function SpyglassLoadingArtPreviewMixin:ShowArt(node)
+    if not node.background then
+        return
+    end
+    self.Title:SetText(node.name or "Loading screen art")
+    self.Art:SetTexture(node.background)
+    self.Art:SetTexCoord(0, 1, 0, 1)
+
+    local aspect = 16 / 9
+    local maxWidth = math.min(1200, UIParent:GetWidth() - 32)
+    local maxHeight = math.min(900, UIParent:GetHeight() - 32)
+    local width = math.min(maxWidth - 32, (maxHeight - 72) * aspect)
+    local height = width / aspect
+    self.Art:SetSize(width, height)
+    self:SetSize(width + 32, height + 72)
+    self:Show()
+end
