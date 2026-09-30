@@ -512,7 +512,6 @@ end
 ---@field BottomShade Texture
 ---@field InfoBox Texture
 ---@field InfoRightBox Texture
----@field Mask MaskTexture
 ---@field Icon Texture
 ---@field IconMask MaskTexture
 ---@field IconRing Texture

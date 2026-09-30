@@ -120,8 +120,7 @@
 
 	<!-- A tile: an entry drawn as a picture card in lists with `display = "tiles"`. The card is
 	     the client's bevelled dark list button (common-button-list-large, stretched to the tile);
-	     the picture sits inside the bevel and is cut to the button's own silhouette by using the
-	     same atlas as a mask, so its corners follow the bevel. The name sits at the top left in a
+	     the picture sits inside the bevel without a mask. The name sits at the top left in a
 	     dark box and two small texts (info / infoRight) in the bottom corners, each in a small
 	     dark box of its own, so they read on any picture. Without a background the card stays
 	     plain and shows the entry's icon in the middle; with one, `showIcon` puts the icon at the
@@ -192,21 +191,6 @@
 					</Anchors>
 					<Color r="0" g="0" b="0" a="0.6"/>
 				</Texture>
-				<!-- The card's silhouette, shrunk to the picture rect, clips the picture and shades. -->
-				<MaskTexture parentKey="Mask" atlas="common-button-list-large" hWrapMode="CLAMPTOBLACKADDITIVE" vWrapMode="CLAMPTOBLACKADDITIVE">
-					<Anchors>
-						<Anchor point="TOPLEFT" relativeKey="$parent.Background"/>
-						<Anchor point="BOTTOMRIGHT" relativeKey="$parent.Background"/>
-					</Anchors>
-					<MaskedTextures>
-						<MaskedTexture childKey="Background"/>
-						<MaskedTexture childKey="Boost"/>
-						<MaskedTexture childKey="TopShade"/>
-						<MaskedTexture childKey="BottomShade"/>
-						<MaskedTexture childKey="InfoBox"/>
-						<MaskedTexture childKey="InfoRightBox"/>
-					</MaskedTextures>
-				</MaskTexture>
 			</Layer>
 			<Layer level="ARTWORK">
 				<Texture parentKey="Icon" hidden="true">

@@ -126,11 +126,11 @@ open.
 
 - **`display = "tiles"`** (raids, dungeons, crafting) draws `SpyglassTileTemplate` cards, three
   per line: the `background` / `backgroundCoords` picture (a texture, or an atlas resolved through
-  `C_Texture.GetAtlasInfo` with the coords cut from its region), the name on top, `info` (the
-  level range by default) and `infoRight` in the bottom corners. `addon:OnEnable` (still behind
-  the loading screen) preloads the pictures of the root's tile folders onto textures of their
-  own, set once on an alpha-0 frame, so the files are loaded before the first visit and never
-  drop out.
+  `C_Texture.GetAtlasInfo` with the coords cut from its region) inside the card's bevel without
+  a mask, the name on top, `info` (the level range by default) and `infoRight` in the bottom
+  corners. `addon:OnEnable` (still behind the loading screen) preloads the pictures of the root's
+  tile folders onto textures of their own, set once on an alpha-0 frame, so the files are loaded
+  before the first visit and never drop out.
 - **`display = "cards"`** (an instance's boss list) draws `SpyglassCardTemplate`, two per line:
   the same bevelled list-button atlas with the entry's `portrait` standing on the left (a
   `portraitDisplayID` instead draws the creature's model through
