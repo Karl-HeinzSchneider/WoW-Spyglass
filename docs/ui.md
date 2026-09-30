@@ -47,8 +47,8 @@ The root node comes from `app.api:GetRootNode()`; the window listens to `OnModul
 
 ## Views (`view.lua` + `templates.xml`)
 
-A view fills the left column: a header row (breadcrumbs on the left, starting right of the
-window portrait; search box and filter dropdown on the right) over a divider, then one `Content`
+A view fills the left column: a header row (breadcrumbs starting right of the
+window portrait) over a divider, then one `Content`
 page of rows, then under a second divider (`FooterDivider`) a footer row as high as the header
 row (44px) with the two class filter buttons on the left, then the active list dropdown
 (`ActiveList`, see [Item lists](#item-lists)), and Blizzard's `PagingControls` on the right.
@@ -60,8 +60,13 @@ row (44px) with the two class filter buttons on the left, then the active list d
   and keeps the current page; **`Render()`** only redraws it (page flips, item info arriving).
 - **Children** come from `view:GetChildren(node)`: static `children`, dynamic `getChildren`, or a
   `query` folder whose entries are `Query.Run` over the database with per-node query state
-  (`view.queries`). Query folders show the debounced `SearchBox` and the `FilterDropdown`
-  (Blizzard_Menu `WowStyle1FilterDropdownTemplate`, its menu generated from the filter registry).
+  (`view.queries`). The right pane shows a debounced search box, dropdowns for the visible
+  filters (including Stats, which requires every selected stat), paired minimum and maximum inputs
+  for item and required level, a sort dropdown and Reset.
+  Empty bounds are open-ended; clearing both removes that level filter. The boss filter is
+  available to queries through the API but has no control in the pane. Search text and
+  filters stay with the query in that tab while navigating. Each active filter and a non-default
+  sort shows a red X that resets just that control; Reset clears all filters and sorting.
 - **Regrouping.** Items the grouping couldn't place (`app.unknownItemKinds`, filled by
   `registry.lua` and cleared before each build: no database row and not fetched yet) are all
   requested after the build and marked in `view.regroupItems`. When one arrives the deferred
@@ -73,9 +78,8 @@ row (44px) with the two class filter buttons on the left, then the active list d
   on). `ClassFilterMode` next to it switches with a click whether the armor and weapons that
   class can't use are _faded_ (the default; `IsFaded`: `RenderPage` draws the row, tile or card
   at `FADED_ALPHA` with a grey icon) or _hidden_ (`GetClassFilterTest`, joined with the info
-  panel's filters in `BuildElements`). On query folders the `FilterDropdown` menu has the same
-  state as a "Class" submenu (Off / a class / fade out or hide); its red X shows while the
-  class filter is on, and its reset (`ResetFilters`) turns it off. The state is per tab (`classFilterOn`, `classFilterMode`,
+  panel's filters in `BuildElements`). The right pane's Reset button on query folders also turns
+  the class filter off. The state is per tab (`classFilterOn`, `classFilterMode`,
   `filterClass`, nil = the character's class) and saved with the tabs (`char.tabs.classFilters`). Which class can use what is the
   table in `src/data/classfilter.lua` (`app.classFilter:CanUse(class, itemID)`): per armor and
   weapon subclass the classes that can use it, turned around at load into a per-class set of

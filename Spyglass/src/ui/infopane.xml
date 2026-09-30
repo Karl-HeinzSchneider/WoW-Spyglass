@@ -139,6 +139,89 @@
 		</Layers>
 	</Frame>
 
+	<!-- Query dropdowns show their selection and a reset X when changed. -->
+	<Frame name="SpyglassInfoQueryDropdownTemplate" virtual="true">
+		<Size x="228" y="30"/>
+		<Frames>
+			<DropdownButton parentKey="Dropdown" inherits="WowStyle1DropdownTemplate">
+				<Size x="130" y="26"/>
+				<Anchors><Anchor point="RIGHT" x="-2"/></Anchors>
+				<Frames>
+					<Button parentKey="ResetButton" inherits="UIResetButtonTemplate" hidden="true">
+						<Anchors><Anchor point="CENTER" relativePoint="TOPRIGHT" x="-3" y="-5"/></Anchors>
+					</Button>
+				</Frames>
+			</DropdownButton>
+		</Frames>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString parentKey="Label" inherits="GameFontNormal" justifyH="LEFT" wordwrap="false">
+					<Size x="88" y="0"/>
+					<Anchors><Anchor point="LEFT" x="2"/></Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Frame>
+
+	<!-- Search and result count for a query folder. -->
+	<Frame name="SpyglassInfoSearchTemplate" virtual="true">
+		<Size x="228" y="50"/>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString parentKey="Label" inherits="GameFontNormal" text="Search">
+					<Anchors><Anchor point="TOPLEFT" x="2" y="-2"/></Anchors>
+				</FontString>
+				<FontString parentKey="Count" inherits="GameFontHighlightSmall" justifyH="RIGHT">
+					<Anchors><Anchor point="TOPRIGHT" x="-2" y="-3"/></Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<EditBox parentKey="Box" inherits="SearchBoxTemplate" mixin="SpyglassSearchBoxMixin" letters="40" autoFocus="false">
+				<Size x="220" y="22"/>
+				<Anchors><Anchor point="BOTTOM" y="2"/></Anchors>
+				<Scripts><OnTextChanged inherit="prepend" method="OnTextChanged"/></Scripts>
+			</EditBox>
+		</Frames>
+	</Frame>
+
+	<!-- Range label and Min/Max captions sit above the two inputs. -->
+	<Frame name="SpyglassInfoRangeTemplate" virtual="true">
+		<Size x="228" y="42"/>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString parentKey="Label" inherits="GameFontNormal" justifyH="LEFT" wordwrap="false">
+					<Size x="106" y="0"/>
+					<Anchors><Anchor point="TOPLEFT" x="2" y="-2"/></Anchors>
+				</FontString>
+				<FontString inherits="GameFontHighlight" text="–">
+					<Anchors><Anchor point="CENTER" x="50" y="-7"/></Anchors>
+				</FontString>
+				<FontString inherits="GameFontHighlightSmall" text="Min" justifyH="CENTER">
+					<Size x="48" y="0"/>
+					<Anchors><Anchor point="TOPLEFT" x="102" y="-2"/></Anchors>
+				</FontString>
+				<FontString inherits="GameFontHighlightSmall" text="Max" justifyH="CENTER">
+					<Size x="48" y="0"/>
+					<Anchors><Anchor point="TOPRIGHT" x="-2" y="-2"/></Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<EditBox parentKey="Min" inherits="InputBoxTemplate" autoFocus="false" letters="4">
+				<Size x="48" y="22"/>
+				<Anchors><Anchor point="LEFT" x="102" y="-7"/></Anchors>
+			</EditBox>
+			<EditBox parentKey="Max" inherits="InputBoxTemplate" autoFocus="false" letters="4">
+				<Size x="48" y="22"/>
+				<Anchors><Anchor point="RIGHT" x="-2" y="-7"/></Anchors>
+			</EditBox>
+			<Button parentKey="ResetButton" inherits="UIResetButtonTemplate" hidden="true">
+				<Anchors><Anchor point="CENTER" relativeKey="$parent.Max" relativePoint="TOPRIGHT" x="-3" y="-8"/></Anchors>
+			</Button>
+		</Frames>
+	</Frame>
+
 	<!-- button: the reputation detail pane's small gold button. -->
 	<Button name="SpyglassInfoButtonTemplate" inherits="SharedGoldRedButtonSmallTemplate" virtual="true">
 		<Size x="180" y="22"/>

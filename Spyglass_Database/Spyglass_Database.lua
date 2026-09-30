@@ -1,6 +1,6 @@
 -- The Items module: the whole item database (Spyglass.Data, filled by the generated files
--- loaded before this one) as one flat, filterable list; the view shows a search box and a filter
--- dropdown on `query` modules. Uses only the public Spyglass API.
+-- loaded before this one) as one flat, filterable list; the right pane shows query controls.
+-- Uses only the public Spyglass API.
 local SG = Spyglass
 
 SG:RegisterModule({

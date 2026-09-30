@@ -589,8 +589,7 @@
 		</Scripts>
 	</Button>
 
-	<!-- A view fills the window's left column: a header row (breadcrumbs on the
-	     left, search box + filter on the right) over a divider, the list below it, and under
+	<!-- A view fills the window's left column: a header row (breadcrumbs) over a divider, the list below it, and under
 	     another divider a footer row with the class filter buttons on the left and the page controls
 	     on the right. Mouse wheel turns pages; right-click anywhere goes one level back. -->
 	<Frame name="SpyglassViewTemplate" mixin="SpyglassViewMixin" enableMouse="true" virtual="true">
@@ -618,22 +617,6 @@
 					<Anchor point="TOPLEFT" x="66" y="-12"/>
 				</Anchors>
 			</Frame>
-			<!-- Query toolbar, only shown on item-DB folders. -->
-			<DropdownButton parentKey="FilterDropdown" inherits="WowStyle1FilterDropdownTemplate" hidden="true">
-				<Anchors>
-					<Anchor point="TOPRIGHT" x="-14" y="-13"/>
-				</Anchors>
-			</DropdownButton>
-			<EditBox parentKey="SearchBox" inherits="SearchBoxTemplate" mixin="SpyglassSearchBoxMixin" letters="40" hidden="true">
-				<Size x="180" y="22"/>
-				<Anchors>
-					<Anchor point="RIGHT" relativeKey="$parent.FilterDropdown" relativePoint="LEFT" x="-8" y="0"/>
-				</Anchors>
-				<Scripts>
-					<!-- prepend: the template's handler (clear button, instructions) runs first. -->
-					<OnTextChanged inherit="prepend" method="OnTextChanged"/>
-				</Scripts>
-			</EditBox>
 			<!-- Disabled: the current folder's title, fixed above the list on every page.
 			<Frame parentKey="Title" inherits="SpyglassPageHeaderTemplate">
 				<Anchors>
@@ -694,11 +677,6 @@
 						<Anchor point="BOTTOMRIGHT" x="-14" y="44"/>
 					</Anchors>
 				</Texture>
-				<FontString parentKey="ResultCount" inherits="GameFontNormalSmall" justifyH="RIGHT" hidden="true">
-					<Anchors>
-						<Anchor point="RIGHT" relativeKey="$parent.SearchBox" relativePoint="LEFT" x="-10" y="0"/>
-					</Anchors>
-				</FontString>
 			</Layer>
 		</Layers>
 		<Scripts>

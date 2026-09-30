@@ -76,7 +76,7 @@ if the definition is invalid; it never throws.
 | `getChildren`                             | fun(def) -> Node[]        | one of   | Lazy alternative; called once, the first time the tree is built. Errors are caught and logged.                                                                                                |
 | `getEntries`                              | fun(node, view) -> Node[] | no       | The module's own list, built each time it is drawn, as a dynamic folder's `getChildren`; takes the place of `children` (which may be `{}`). The `lists` module uses it.                       |
 | `sortChildren`                            | boolean \| fun(a, b)      | no       | `true` sorts children by node `order` (default 100), then `name`; a function is used as the comparator and receives the full nodes (metadata included). Applies to `AddToModule` entries too. |
-| `query`                                   | boolean                   | no       | The module's own list is the item database, filtered by the view's search box and filter menu (see [Item database](#item-database)). `children` may be `{}`.                                  |
+| `query`                                   | boolean                   | no       | The module's own list is the item database, filtered by the right pane's search and filter controls (see [Item database](#item-database)). `children` may be `{}`.                            |
 | `columns`, `display`, `groupBy`           |                           | no       | Layout of the module's own list, as on folder nodes (see [Tiles](#tiles) and [Cards](#cards)).                                                                                                |
 | `panel`                                   | table \| function         | no       | The window's right pane inside the module, as on folder nodes (see [Info panel](#info-panel)).                                                                                                |
 | `expansionID`, `seasonID`, `tags`, `meta` | various                   | no       | Metadata; see below.                                                                                                                                                                          |
@@ -89,7 +89,7 @@ A node is a plain table; the fields set decide what it displays as:
 { name = "Boss", icon = "...", children = { ... } }         -- folder (navigable)
 { name = "Live", icon = "...", getChildren = function(node, view) return { ... } end }
                                                             -- dynamic folder: entries computed every time it is opened
-{ name = "All", icon = "...", query = true }                -- query folder: the item DB, filtered per view (search box + filter menu)
+{ name = "All", icon = "...", query = true }                -- query folder: the item DB, filtered per view from the right pane
 { itemID = 17070 }                                          -- item: name/icon/quality/ilvl from the game, item tooltip, shift-click links
 { itemID = 17070, chance = 0.18 }                           -- item with a drop chance (0..1), shown as "18%"
 { itemID = 2851, infoRight = "|cffffff00 70|r", tooltip = fn } -- item with its own top-right text and extra tooltip lines
@@ -599,7 +599,7 @@ Reading:
 
 ### Filters
 
-`Spyglass.Filters` is the registry behind the filter menu on query folders. Register your
+`Spyglass.Filters` is the registry behind the filter dropdowns in the right pane of query folders. Register your
 own to make it appear there:
 
 ```lua
@@ -607,17 +607,23 @@ Spyglass.Filters:Register({
     id = "myaddon-usable",          -- prefix with your addon name
     name = "Usable by me",
     order = 100,                    -- menu position, lower first (built-ins use 5..90)
-    kind = "multi",                 -- "multi" = checkboxes (values OR-ed) | "single" = radios (one value or nil)
+    kind = "multi",                 -- "multi" = checkboxes | "single" = radios (one value or nil)
+    combine = "any",               -- optional: "any" (default) or "all" selected values must match
     options = { { value = 1, label = "Yes" } },  -- or a function returning that list (re-evaluated when the data changes)
     match = function(itemID, row, value) return ... end,   -- row = Data.items[itemID]
-    index = function(itemID, row) return key end,          -- optional: option value(s) of the item -> precomputed buckets
+    index = function(itemID, row) return key end,          -- optional: option value(s) of the item -> precomputed buckets (used with "any")
 })
 ```
 
 Built-in ids: `type` (the item class, value = its `Enum.ItemClass` id; mounts and companion
-pets are split out of Miscellaneous as `"15:5"` and `"15:2"`), `quality`, `slot`, `armorType`, `weaponType`, `itemLevel`, `reqLevel`, `instance`
+pets are split out of Miscellaneous as `"15:5"` and `"15:2"`), `quality`, `slot`, `armorType`, `weaponType`, `stats`, `itemLevel`, `reqLevel`, `instance`
 (anything the instance drops or rewards: a boss's loot, its trash and its quests), `boss`,
 `profession` (items made by a profession's recipes; one option per crafting list with a `skillLineID`).
+`stats` uses the keys returned by `Data:GetItemStats` (for example, `"INTELLECT"`) and requires
+every selected stat to be present. Its options reflect the currently loaded item data and use the
+game's stat labels. `itemLevel` and `reqLevel` accept any inclusive `"min-max"` range or `"min+"`; the right pane
+uses paired minimum and maximum inputs for each. An empty bound is open-ended. The `boss`
+filter remains available in queries but has no control in the right pane.
 Other calls: `Filters:Get(id)`, `Filters:GetAll()`, `Filters:GetOptions(id)`, `Filters:GetBucket(id, value)`,
 `Filters:Unregister(id)`. Registering fires `OnFiltersChanged`.
 
@@ -633,7 +639,8 @@ local ids = Spyglass.Query.Run({
 })
 ```
 
-Different filters are AND-ed, the values of one filter OR-ed. `Query.New()`, `Query.Copy(q)`
+Different filters are AND-ed. Values of one filter are OR-ed by default; filters registered with
+`combine = "all"` require every selected value. `Query.New()`, `Query.Copy(q)`
 and `Query.IsEmpty(q)` are helpers. Each view (tab) keeps its own query per query folder.
 
 ## Events

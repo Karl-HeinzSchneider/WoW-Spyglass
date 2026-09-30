@@ -10,7 +10,8 @@ local ITEM = Data.ITEM
 --
 --   { search = "defias", filters = { quality = { 3, 4 }, slot = { "INVTYPE_CHEST" }, itemLevel = "20-29" }, sort = "name" }
 --
--- Values of one filter are OR-ed, different filters AND-ed, then the name search applies.
+-- Values of one filter are OR-ed by default (or AND-ed with `combine = "all"`);
+-- different filters are AND-ed, then the name search applies.
 
 ---@alias Spyglass.QuerySort "name"|"ilvl"|"quality"|"id"
 
@@ -182,7 +183,7 @@ local unionVersion = -1
 ---@return { list: integer[], set: table<integer, true> }?
 local function candidateSet(entry)
     local def = entry.def
-    if not def.index then
+    if not def.index or def.combine == "all" then
         return nil
     end
     local v = Data:GetVersion()
@@ -216,8 +217,16 @@ end
 ---@param itemID integer
 ---@param row Spyglass.ItemRow
 ---@return boolean
-local function matchesAny(entry, itemID, row)
+local function matchesValues(entry, itemID, row)
     local match = entry.def.match
+    if entry.def.combine == "all" then
+        for _, value in ipairs(entry.values) do
+            if not match(itemID, row, value) then
+                return false
+            end
+        end
+        return true
+    end
     for _, value in ipairs(entry.values) do
         if match(itemID, row, value) then
             return true
@@ -282,7 +291,7 @@ function Query.Run(q)
             if not ok then
                 break
             end
-            ok = matchesAny(checks[j], itemID, row)
+            ok = matchesValues(checks[j], itemID, row)
         end
         if ok and search ~= "" then
             ok = itemID == searchID or Data:GetSearchName(itemID):find(search, 1, true) ~= nil
