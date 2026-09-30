@@ -8,7 +8,7 @@ How `Spyglass_Scraper` records the data the repository is built from. The contri
 Everything lives in `src/discovery.lua` (`app.discovery`), apart from the two windows at the end.
 Scans and loot observations are both written to `SpyglassScraperDB.global.discovered` and
 merged into `Spyglass.Data` right away (`MergeIntoData`, tracked in `module.merged`), so a
-scanned item is browsable immediately.
+scanned item is browsable immediately. Trainer snapshots are saved alongside them for import.
 
 ## Scanning (`/sg scan`)
 
@@ -48,10 +48,27 @@ matches dungeon activities and writes `.contribute/data/dungeon-levels.json`.
   tool only suggests a `chance` from them. Importing observed boss drops requires
   `npm run import -- --loot`; the default import merges scanned items only.
 
+## Trainer snapshots (`/sg trainer`)
+
+Open a trainer window, enable Available, Unavailable and Already Known in its filter, then run
+`/sg trainer`. The command records the trainer's NPC ID, name, zone,
+faction, locale, build and recording character's level and class, plus every service's name,
+category, status, icon, required character level,
+required profession skill and rank, prerequisite abilities, cost, description and item link.
+Each service carries `source = "trainer"`. The snapshot is saved under
+`SpyglassScraperDB.global.discovered.trainers[NPC ID]`; scanning the same NPC again replaces its
+previous snapshot. `/sg export` includes all trainer snapshots.
+
+`npm run import` matches services by localized `SpellName` and required profession to exactly
+one recipe that ships. It adds or updates that recipe's curated `skill` and `source` ("Trainer")
+in `.contribute/data/crafting/`. Ambiguous names are skipped. Character-level and prerequisite
+requirements remain in the snapshot because crafting rows do not currently display them.
+
 ## Export (`/sg export`)
 
 `ExportTable` marks item records `exported`, and the next export holds only new ones (`all`
-repeats everything; loot is always included). The JSON (`{ version, build, locale, items, loot }`)
+repeats everything; loot and trainer snapshots are always included). The JSON
+(`{ version, build, locale, items, loot, trainers }`)
 is the same `discovered` table the SavedVariables file holds, and `src/discovered.ts` reads
 either. `src/json.lua` is a minimal encoder for it: every table becomes an object with sorted
 string keys (numbers sorted numerically) — there are no arrays, so tables keyed by item ids that

@@ -602,6 +602,88 @@ end
 -- Export
 ----------------------------------------------------------------------------------------------------
 
+-- `/sg trainer`: capture the currently open trainer's complete visible service list. The
+-- requirements come from the server, including services this character cannot learn yet.
+function module:TrainerCommand()
+    if not (ClassTrainerFrame and ClassTrainerFrame:IsShown() and UnitExists("npc")) then
+        log:chat("Open a trainer window, then use /sg trainer.")
+        return
+    end
+    for _, filter in ipairs({ "available", "unavailable", "used" }) do
+        if not GetTrainerServiceTypeFilter(filter) then
+            log:chat("Enable Available, Unavailable, and Already Known in the trainer filter, then use /sg trainer again.")
+            return
+        end
+    end
+    local guid = UnitGUID("npc")
+    local trainerID = guid and tonumber((select(6, strsplit("-", guid))))
+    if not trainerID or trainerID <= 0 then
+        log:chat("Could not identify this trainer's NPC ID; no data was recorded.")
+        return
+    end
+    local services, count = {}, 0
+    for index = 1, GetNumTrainerServices() do
+        local name, second, third, fourth, fifth, sixth = GetTrainerServiceInfo(index)
+        local oldLayout = second ~= "available" and second ~= "unavailable" and second ~= "used" and second ~= "header"
+        local serviceType = oldLayout and third or second
+        if serviceType == "header" then
+            if oldLayout and not fourth then
+                log:chat("Expand every trainer category, then use /sg trainer again.")
+                return
+            end
+        elseif name and serviceType then
+            local skillName, skillRank = GetTrainerServiceSkillReq(index)
+            local cost, isProfession = GetTrainerServiceCost(index)
+            local requirements = {}
+            for reqIndex = 1, (GetTrainerServiceNumAbilityReq(index) or 0) do
+                local ability = GetTrainerServiceAbilityReq(index, reqIndex)
+                if ability then
+                    requirements[reqIndex] = ability
+                end
+            end
+            ---@type SpyglassScraper.TrainerService
+            services[index] = {
+                name = name,
+                type = serviceType,
+                subText = oldLayout and second or fifth,
+                category = not oldLayout and sixth or nil,
+                icon = oldLayout and GetTrainerServiceIcon(index) or third,
+                requiredLevel = oldLayout and GetTrainerServiceLevelReq(index) or fourth,
+                skillName = skillName,
+                skillRank = skillRank,
+                abilityRequirements = next(requirements) and requirements or nil,
+                cost = cost,
+                isProfession = isProfession and true or false,
+                skillLineName = GetTrainerServiceSkillLine(index),
+                description = GetTrainerServiceDescription(index),
+                itemLink = GetTrainerServiceItemLink(index),
+                source = "trainer",
+            }
+            count = count + 1
+        end
+    end
+    if count == 0 then
+        log:chat("No trainer services were visible; nothing was recorded.")
+        return
+    end
+    local version, build = GetBuildInfo()
+    local d = discovered()
+    d.trainers = d.trainers or {}
+    d.trainers[trainerID] = {
+        id = trainerID,
+        name = UnitName("npc") or "",
+        locale = GetLocale(),
+        build = version .. "." .. build,
+        zone = GetZoneText(),
+        faction = UnitFactionGroup("player"),
+        playerLevel = UnitLevel("player"),
+        playerClass = select(2, UnitClass("player")),
+        trainerType = C_Trainer and C_Trainer.GetTrainerType and C_Trainer.GetTrainerType() or nil,
+        services = services,
+    }
+    log:chat("Recorded %d services from %s (%d). Use /sg export or /reload to save them.", count, d.trainers[trainerID].name, trainerID)
+end
+
 -- The listing window gets its dungeon level range from these activity suggestions. Query activity
 -- IDs directly, since the available-activity lists can omit dungeons for this character.
 function module:LevelsCommand()
@@ -653,7 +735,7 @@ end
 -- with every scan; instead an export marks its item records and the next one only holds new
 -- ones (`all` = everything again). Loot is small and always included.
 ---@param all? boolean
----@return table export, integer count  # item records in it
+---@return table export, integer count, integer trainerCount
 function module:ExportTable(all)
     local d = discovered()
     local items, count = {}, 0
@@ -666,16 +748,22 @@ function module:ExportTable(all)
     for _, item in pairs(items) do
         item.exported = true
     end
-    return { version = 1, build = d.build, locale = d.locale or GetLocale(), items = items, loot = d.loot }, count
+    local trainers = d.trainers or {}
+    local trainerCount = 0
+    for _ in pairs(trainers) do
+        trainerCount = trainerCount + 1
+    end
+    return { version = 1, build = d.build, locale = d.locale or GetLocale(), items = items, loot = d.loot, trainers = trainers }, count, trainerCount
 end
 
 -- `/sg export [all]`: opens the window with the JSON to copy.
 ---@param what? string
 function module:ExportCommand(what)
-    local export, count = self:ExportTable(what == "all")
+    local export, count, trainerCount = self:ExportTable(what == "all")
     log:chat(
-        "%d item record(s) in this export%s",
+        "%d item record(s), %d trainer snapshot(s) in this export%s",
         count,
+        trainerCount,
         what == "all" and "" or "; /sg export all repeats earlier ones"
     )
     app.exportFrame:ShowText(app.json.encode(export))
