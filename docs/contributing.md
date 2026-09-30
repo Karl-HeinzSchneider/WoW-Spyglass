@@ -123,8 +123,8 @@ Find or create the instance file; all it needs is the map id (the `-- Name` comm
   "minLevel": 15,
   "maxLevel": 21,
   "icon": "Interface\\Icons\\INV_Misc_Key_13",
-  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Deadmines",
-  "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],
+  "background": "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenDeadmines",
+  "backgroundCoords": [0, 1, 0.305, 0.695],
   "encounters": [
     {
       "id": 2747,

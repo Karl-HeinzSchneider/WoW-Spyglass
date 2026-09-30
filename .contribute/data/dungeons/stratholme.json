@@ -5,8 +5,8 @@
   "maxLevel": 58,
   "requiredLevel": 45,
   "zone": 1423,
-  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Stratholme",
-  "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],
+  "background": "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenStrathome",
+  "backgroundCoords": [0, 1, 0.305, 0.695],
   "entrance": [1423, 31, 16],
   "encounters": [
     {

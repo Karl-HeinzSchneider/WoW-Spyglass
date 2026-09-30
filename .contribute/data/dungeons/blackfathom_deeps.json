@@ -5,8 +5,8 @@
   "maxLevel": 32,
   "requiredLevel": 15,
   "zone": 1440,
-  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-BlackfathomDeeps",
-  "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],
+  "background": "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenBlackFathomDeeps",
+  "backgroundCoords": [0, 1, 0.305, 0.695],
   "entrance": [1440, 15, 14],
   "encounters": [
     {

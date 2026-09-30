@@ -5,8 +5,8 @@
   "maxLevel": 30,
   "requiredLevel": 11,
   "zone": 1421,
-  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-ShadowFangKeep",
-  "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],
+  "background": "Interface\\GLUES\\LOADINGSCREENS\\LOADSCREENSHADOWFANGKEEP",
+  "backgroundCoords": [0, 1, 0.305, 0.695],
   "entrance": [1421, 45, 68],
   "encounters": [
     {

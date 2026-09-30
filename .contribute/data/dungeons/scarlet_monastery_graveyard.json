@@ -7,8 +7,8 @@
   "maxLevel": 38,
   "requiredLevel": 20,
   "zone": 1420,
-  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-ScarletMonastery",
-  "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],
+  "background": "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenScarletMonastery2",
+  "backgroundCoords": [0, 1, 0.305, 0.695],
   "entrance": [1420, 83, 34],
   "encounters": [
     {

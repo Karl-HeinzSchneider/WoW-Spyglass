@@ -4,8 +4,8 @@
   "minLevel": 15,
   "maxLevel": 22,
   "zone": 1420,
-  "background": 7963782,
-  "backgroundCoords": [0.0445, 0.9552, 0.158, 0.842],
+  "background": "Interface\\GLUES\\LOADINGSCREENS\\Camelot160\\Main\\LoadScreen_Camelot_RuinsofLordaeron",
+  "backgroundCoords": [0, 1, 0.154, 0.846],
   "entrance": [1420, 62, 69],
   "encounters": [
     {

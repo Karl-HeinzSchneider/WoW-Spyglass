@@ -4,6 +4,8 @@
   "minLevel": 28,
   "maxLevel": 35,
   "zone": 1416,
+  "background": "Interface\\GLUES\\LOADINGSCREENS\\Camelot160\\Main\\LoadScreen_Camelot_Dalaran",
+  "backgroundCoords": [0, 1, 0.154, 0.846],
   "entrance": [1416, 17, 67],
   "encounters": [
     {

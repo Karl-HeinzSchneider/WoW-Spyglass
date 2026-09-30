@@ -5,8 +5,8 @@
   "maxLevel": 60,
   "requiredLevel": 45,
   "zone": 1422,
-  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Scholomance",
-  "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],
+  "background": "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenScholomance",
+  "backgroundCoords": [0, 1, 0.305, 0.695],
   "entrance": [1422, 70, 73],
   "encounters": [
     {

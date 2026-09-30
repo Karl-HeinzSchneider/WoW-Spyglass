@@ -5,8 +5,8 @@
   "maxLevel": 24,
   "requiredLevel": 10,
   "zone": 1413,
-  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-WailingCaverns",
-  "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],
+  "background": "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenWailingCaverns",
+  "backgroundCoords": [0, 1, 0.305, 0.695],
   "entrance": [1413, 46, 36],
   "encounters": [
     {

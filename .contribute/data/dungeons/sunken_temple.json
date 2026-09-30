@@ -5,8 +5,8 @@
   "maxLevel": 60,
   "requiredLevel": 35,
   "zone": 1435,
-  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-SunkenTemple",
-  "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],
+  "background": "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenSunkenTemple",
+  "backgroundCoords": [0, 1, 0.305, 0.695],
   "entrance": [1435, 70, 54],
   "encounters": [
     {

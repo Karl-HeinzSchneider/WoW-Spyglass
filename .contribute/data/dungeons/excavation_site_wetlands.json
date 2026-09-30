@@ -4,6 +4,8 @@
   "minLevel": 26,
   "maxLevel": 33,
   "zone": 1437,
+  "background": "Interface\\GLUES\\LOADINGSCREENS\\Camelot160\\Main\\LoadScreen_Camelot_Excavation",
+  "backgroundCoords": [0, 1, 0.154, 0.846],
   "entrance": [1437, 42, 60],
   "encounters": [
     {

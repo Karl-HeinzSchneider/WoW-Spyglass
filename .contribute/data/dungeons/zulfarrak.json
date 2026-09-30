@@ -5,8 +5,8 @@
   "maxLevel": 54,
   "requiredLevel": 35,
   "zone": 1446,
-  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-ZulFarrak",
-  "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],
+  "background": "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenZulFarrak",
+  "backgroundCoords": [0, 1, 0.305, 0.695],
   "entrance": [1446, 39, 20],
   "encounters": [
     {

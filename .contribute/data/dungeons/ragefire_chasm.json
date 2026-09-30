@@ -5,8 +5,8 @@
   "maxLevel": 18,
   "requiredLevel": 10,
   "zone": 1454,
-  "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-RagefireChasm",
-  "backgroundCoords": [0.0156, 0.6641, 0.0703, 0.6797],
+  "background": "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenRagefireChasm",
+  "backgroundCoords": [0, 1, 0.305, 0.695],
   "entrance": [1454, 53, 49],
   "encounters": [
     {
