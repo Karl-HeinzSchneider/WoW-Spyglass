@@ -60,7 +60,7 @@ Data:AddInstance(36, {
 })
 Data:AddBoss(2741, { instanceID = 36, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-RhahkZor", displayID = 14403, level = 19 }) -- Rhahk'Zor
 Data:AddBoss(2742, { instanceID = 36, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Sneed", displayID = 7125, level = 20 }) -- Sneed
-Data:AddBoss(3676, { instanceID = 36, order = 1500 }) -- Miner Johnson
+Data:AddBoss(3676, { instanceID = 36, order = 1500, displayID = 556, level = 19 }) -- Miner Johnson
 Data:AddBoss(2743, { instanceID = 36, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Gilnid", displayID = 7124, level = 20 }) -- Gilnid
 Data:AddBoss(2744, { instanceID = 36, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-CaptainGreenskin", displayID = 7113, level = 20 }) -- Captain Greenskin
 Data:AddBoss(2745, { instanceID = 36, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-MrSmite", displayID = 2026, level = 20 }) -- Mr. Smite

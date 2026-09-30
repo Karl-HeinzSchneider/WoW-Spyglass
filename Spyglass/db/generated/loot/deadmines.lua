@@ -19,6 +19,11 @@ Data:AddBossLoot(2742, { -- Sneed
     { 273092 }, -- Blueprint: Repair Bot
 })
 
+Data:AddBossLoot(3676, { -- Miner Johnson
+    { 5444 }, -- Miner's Cape
+    { 5443 }, -- Gold-plated Buckler
+})
+
 Data:AddBossLoot(2743, { -- Gilnid
     { 273297 }, -- Goblin Hammer
     { 1156 }, -- Lavishly Jeweled Ring
@@ -65,8 +70,6 @@ Data:AddTrashLoot(36, {
     { 1944 }, -- Metalworking Gloves
     { 1945 }, -- Woodworking Gloves
     { 1925 }, -- Defias Rapier
-    { 5443 }, -- Gold-plated Buckler
-    { 5444 }, -- Miner's Cape
 })
 
 Data:AddQuests(36, {

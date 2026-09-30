@@ -72,7 +72,18 @@
     {
       "id": 3676,
       "name": "Miner Johnson",
-      "loot": []
+      "displayID": 556,
+      "level": 19,
+      "loot": [
+        {
+          "item": 5444,
+          "name": "Miner's Cape"
+        },
+        {
+          "item": 5443,
+          "name": "Gold-plated Buckler"
+        }
+      ]
     },
     {
       "id": 2743,
@@ -245,14 +256,6 @@
     {
       "item": 1925,
       "name": "Defias Rapier"
-    },
-    {
-      "item": 5443,
-      "name": "Gold-plated Buckler"
-    },
-    {
-      "item": 5444,
-      "name": "Miner's Cape"
     }
   ],
   "quests": [166, 168, 167, 214, 2040, 92753, 373]
