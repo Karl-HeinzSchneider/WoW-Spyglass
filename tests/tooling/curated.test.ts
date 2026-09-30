@@ -157,6 +157,39 @@ test("a rare encounter keeps its flag through fix and generation, and rejects no
   assert.ok(wrong.problems.some((p) => !p.warning && p.message.includes("`rare` must be a boolean")));
 });
 
+test("a curated boss uses its negative NPC id for its card, loot and English name", () => {
+  const file = dungeonFile({
+    encounters: [
+      { id: 2747, name: "Test Boss", loot: [] },
+      { id: -3864, name: "Fel Steed", npc: 3864, displayID: 1951, loot: [{ item: 100 }] },
+    ],
+    trash: [],
+  });
+  const checker = dungeonChecker(true, [2747, 2748]);
+  validate([file], checker);
+  assert.deepEqual(
+    checker.problems.filter((p) => !p.fixable && !p.warning),
+    [],
+  );
+  assert.equal(file.data.encounters[1]?.id, -3864);
+  assert.equal((JSON.parse(serialize(file.data)) as CuratedFile["data"]).encounters[1]?.npc, 3864);
+
+  const ref = { ...checker.ref, recipes: new Map(), skillLines: new Map(), categories: new Map() } as Reference;
+  const config: Config = { build: "test", locales: ["enUS"], excludeMaps: [], itemsPerFile: 100 };
+  const output = build(ref, [file], [], [], config).core;
+  assert.match(output.get("instances.lua") ?? "", /bosses = \{ 2747, -3864, 2748 \}/);
+  assert.match(output.get("instances.lua") ?? "", /Data:AddBoss\(-3864, \{ instanceID = 36, displayID = 1951 \}\)/);
+  assert.match(output.get("loot/test_dungeon.lua") ?? "", /Data:AddBossLoot\(-3864, \{/);
+  assert.match(output.get("locales/enUS/bosses.lua") ?? "", /\[-3864\] = "Fel Steed"/);
+
+  const invalid = dungeonFile({ encounters: [{ id: -3864, npc: 3865, loot: [] }] });
+  const wrong = dungeonChecker(false);
+  validate([invalid], wrong);
+  const errors = wrong.problems.filter((p) => !p.warning).map((p) => p.message);
+  assert.ok(errors.some((message) => message.includes("id = -npc")));
+  assert.ok(errors.some((message) => message.includes("needs a `name`")));
+});
+
 test("a quest needs an id, a known side and no duplicate", () => {
   const quests = questFile([
     { id: 0, items: [] },

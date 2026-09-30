@@ -64,7 +64,8 @@ function emitInstances(ref: Reference, curated: CuratedFile[]): string {
     const files = curated.filter((f) => f.data.map === map);
     const parts = files.filter((f) => f.data.id !== undefined).sort((a, b) => a.data.id! - b.data.id!);
     if (parts.length === 0) {
-      out.push(...emitInstance(ref, map, inst, inst.encounters, files[0]?.data));
+      const data = files[0]?.data;
+      out.push(...emitInstance(ref, map, inst, withCuratedBosses(inst.encounters, data), data));
       continue;
     }
     // A map players see as several dungeons: one instance per file, with the encounters it lists.
@@ -75,13 +76,25 @@ function emitInstances(ref: Reference, curated: CuratedFile[]): string {
           ref,
           file.data.id!,
           inst,
-          inst.encounters.filter((id) => listed.has(id)),
+          withCuratedBosses(
+            inst.encounters.filter((id) => listed.has(id)),
+            file.data,
+          ),
           file.data,
         ),
       );
     }
   }
   return out.join("");
+}
+
+/** A file with local bosses gives their position among the game's encounters. */
+function withCuratedBosses(encounters: number[], cur: CuratedInstance | undefined): number[] {
+  if (!cur?.encounters.some((enc) => enc.id < 0)) return encounters;
+  const known = new Set(encounters);
+  const ordered = cur.encounters.map((enc) => enc.id).filter((id) => id < 0 || known.has(id));
+  const listed = new Set(ordered);
+  return [...ordered, ...encounters.filter((id) => !listed.has(id))];
 }
 
 function emitInstance(
@@ -126,12 +139,12 @@ function emitInstance(
   );
   out.push(`    bosses = ${luaValue(encounters)},\n})\n`);
   for (const encID of encounters) {
-    const enc = ref.encounters.get(encID)!;
+    const enc = ref.encounters.get(encID);
     const c = cur?.encounters.find((e) => e.id === encID);
     const fields = luaFields(
       {
         instanceID: id,
-        order: enc.order,
+        order: enc?.order,
         portrait: c?.portrait,
         displayID: c?.displayID,
         level: c?.level,

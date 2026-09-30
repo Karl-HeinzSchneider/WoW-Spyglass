@@ -54,6 +54,23 @@
       ]
     },
     {
+      "id": -3864,
+      "name": "Fel Steed",
+      "displayID": 1951,
+      "npc": 3864,
+      "level": 19,
+      "loot": [
+        {
+          "item": 932,
+          "name": "Fel Steed Saddlebags"
+        },
+        {
+          "item": 6341,
+          "name": "Eerie Stable Lantern"
+        }
+      ]
+    },
+    {
       "id": 2750,
       "name": "Baron Silverlaine",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Baron Silverlaine",
@@ -120,6 +137,24 @@
       ]
     },
     {
+      "id": -3872,
+      "name": "Deathsworn Captain",
+      "displayID": 3224,
+      "npc": 3872,
+      "rare": true,
+      "level": 25,
+      "loot": [
+        {
+          "item": 6641,
+          "name": "Haunting Blade"
+        },
+        {
+          "item": 6642,
+          "name": "Phantom Armor"
+        }
+      ]
+    },
+    {
       "id": 2753,
       "name": "Fenrus the Devourer",
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\fenrus_the_devourer.blp",
@@ -142,6 +177,19 @@
       ]
     },
     {
+      "id": -4627,
+      "name": "Arugal's Voidwalker",
+      "displayID": 1131,
+      "npc": 4627,
+      "level": 24,
+      "loot": [
+        {
+          "item": 5943,
+          "name": "Rift Bracers"
+        }
+      ]
+    },
+    {
       "id": 2754,
       "name": "Wolf Master Nandos",
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\wolf_master_nandos.blp",
@@ -158,8 +206,12 @@
           "name": "Wolfmaster Cape"
         },
         {
-          "item": 273647,
-          "name": "Worgpelt Leggings"
+          "item": 1318,
+          "name": "Night Reaver"
+        },
+        {
+          "item": 2292,
+          "name": "Necrology Robes"
         }
       ]
     },

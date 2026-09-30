@@ -10,7 +10,7 @@ the tools do with it.
 | Data                      | Source                                                                                                                                                                                                                                                      |
 | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Items                     | **Only the in-game scans** (`.contribute/data/items/`). WoW Forever's items are server-side: wago.tools' item tables are incomplete and wrong for this client, and item ids from Classic or wowhead don't match. Only scanned items exist in the database.  |
-| Instances, encounters     | wago.tools `Map` + `DungeonEncounter` for the build pinned in `config.json`. Instance ids are `Map.ID` (a split dungeon's parts: the file's own `id`), boss ids are `DungeonEncounter.ID`.                                                                  |
+| Instances, encounters     | wago.tools `Map` + `DungeonEncounter` for the build pinned in `config.json`. Instance ids are `Map.ID` (a split dungeon's parts: the file's own `id`); curated bosses absent from `DungeonEncounter` use a negative NPC id.                                 |
 | Profession recipes        | wago.tools `SkillLine`, `SkillLineAbility`, `SpellReagents`, `SpellEffect`, `SpellTotems`, `TradeSkillCategory`, `TotemCategory`, `SpellName`. Recipe ids are spell ids, profession ids `SkillLine.ID`. Shipped only when the scans confirm what they make. |
 | Factions                  | wago.tools `Faction`, the rows with a reputation bar; reputation files are checked against it.                                                                                                                                                              |
 | Non-English item names    | wago.tools `ItemSparse`, for a scanned item whose English name there is the scanned one; a name scanned on a client of that language wins.                                                                                                                  |
@@ -64,7 +64,9 @@ the scans and warns on unscanned ids.
   map's `InstanceType`, duplicates, the chance range; missing encounters are added on fix (not on
   a split map). Each file gets a `trash` list on fix. On a split map (several
   files with one `map`, each with its own `id`) every encounter must be in exactly one file:
-  twice is an error, none a warning.
+  twice is an error, none a warning. A negative boss id is accepted only with a matching positive
+  `npc` and a curated `name`; `fix` keeps it in place, and generation interleaves it with the
+  table's encounters in the file's order.
 - **Dungeon levels** (`src/dungeon-levels.ts`): an optional in-game group finder snapshot at
   `.contribute/data/dungeon-levels.json` records the suggested minimum and maximum per dungeon.
   Once imported, `check` requires each scanned dungeon to match it; `fix` copies its ranges into
@@ -117,8 +119,8 @@ removes stale files and returns the number of changes. `npm run generate:check` 
   `Spyglass/src/data/data.lua`; both rows are positional. A recipe's `minSkill` is
   `learnSkillOf()`: the recipe item's requirement when one is known.
 - `instances.lua` has one instance per map, or per file with its own `id` on a split map, with the
-  encounters that file lists; the English name of such a part is its file's `name`. A curated
-  encounter's `rare` flag is emitted with its boss metadata.
+  encounters that file lists; the English name of such a part is its file's `name`. Curated-only
+  bosses use their negative NPC ids, and a curated encounter's `rare` flag is emitted with its boss metadata.
 - `loot/<slug>.lua` is written for every instance file `hasLoot` is true for: a boss's drops via
   `AddBossLoot`, the trash via `AddTrashLoot`, the quests via `AddQuests`.
 - `quest-definitions.lua` is written when quest files define prerequisites or follow-ups not listed

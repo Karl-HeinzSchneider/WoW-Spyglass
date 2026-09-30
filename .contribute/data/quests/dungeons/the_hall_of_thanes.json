@@ -1,7 +1,7 @@
 {
   "npcs": {
     "Afadra Dunwall": {
-      "location": [1455, 33.6, 48.0],
+      "location": [1455, 33.6, 48],
       "description": "Ironforge."
     },
     "Earthseer Farsen": {
@@ -12,7 +12,7 @@
       "description": "Inside the dungeon."
     },
     "King Magni Bronzebeard": {
-      "location": [1455, 40.0, 55.2],
+      "location": [1455, 40, 55.2],
       "description": "Ironforge."
     },
     "Thom Filch": {

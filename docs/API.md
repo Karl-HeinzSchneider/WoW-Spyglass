@@ -496,7 +496,8 @@ locale companion looks up the names of the items the generated files don't name 
 them with `AddNames` (`SpyglassLocaleDB`, see `Spyglass_Locale/src/itemnames.lua`).
 Instance ids are `Map` ids, except for a map players see as several dungeons (Scarlet Monastery's
 wings, Upper/Lower Blackrock Spire, Dire Maul's parts): each part has its own id, by convention
-map × 100 + n (`18901` = Scarlet Monastery: Graveyard). Boss ids are `DungeonEncounter` ids.
+map × 100 + n (`18901` = Scarlet Monastery: Graveyard). Boss ids are `DungeonEncounter` ids,
+or negative NPC ids for curated bosses absent from that table (for example, Fel Steed is `-3864`).
 Tables are integer-keyed:
 
 ```lua

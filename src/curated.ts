@@ -48,7 +48,7 @@ export interface CuratedInstance {
 }
 
 export interface CuratedEncounter {
-  /** DungeonEncounter.ID */
+  /** DungeonEncounter.ID, or -npc for a curated boss absent from DungeonEncounter. */
   id: number;
   name?: string;
   /** Picture of the boss for its card in the browser (texture path or fileID). */
@@ -284,17 +284,24 @@ export function validate(files: CuratedFile[], checker: Checker): void {
 
     const seenEncounters = new Set<number>();
     for (const enc of d.encounters) {
-      if (!Number.isInteger(enc.id)) {
-        report(file, "encounter without an `id`");
+      if (!Number.isInteger(enc.id) || enc.id === 0) {
+        report(file, "encounter without a nonzero integer `id`");
         continue;
       }
-      const known = ref.encounters.get(enc.id);
-      if (!known) {
-        report(file, `encounter ${enc.id} does not exist`);
-        continue;
-      }
-      if (known.mapID !== d.map) {
-        report(file, `encounter ${enc.id} (${nameOf(ref, "encounters", enc.id)}) belongs to map ${known.mapID}`);
+      const custom = enc.id < 0;
+      if (custom) {
+        if (enc.npc !== -enc.id) {
+          report(file, `encounter ${enc.id}: a curated boss needs \`npc\` ${-enc.id} (id = -npc)`);
+        }
+      } else {
+        const known = ref.encounters.get(enc.id);
+        if (!known) {
+          report(file, `encounter ${enc.id} does not exist`);
+          continue;
+        }
+        if (known.mapID !== d.map) {
+          report(file, `encounter ${enc.id} (${nameOf(ref, "encounters", enc.id)}) belongs to map ${known.mapID}`);
+        }
       }
       if (seenEncounters.has(enc.id)) report(file, `encounter ${enc.id} listed twice`);
       else if (listedIn.has(enc.id))
@@ -307,6 +314,10 @@ export function validate(files: CuratedFile[], checker: Checker): void {
       // The file's name wins: the server may have renamed a boss the client's table still knows by
       // an old name (Hall of Thanes' Magmatus is "Infurnus" there). `fix` only fills in a missing one.
       if (typeof enc.name !== "string" || enc.name === "") {
+        if (custom) {
+          report(file, `encounter ${enc.id}: a curated boss needs a \`name\``);
+          continue;
+        }
         const encName = nameOf(ref, "encounters", enc.id);
         report(file, `encounter ${enc.id}: name -> "${encName}"`, true);
         if (fix) enc.name = encName;

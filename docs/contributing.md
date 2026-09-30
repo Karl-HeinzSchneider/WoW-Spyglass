@@ -171,16 +171,23 @@ need activity names that match the curated English names.
 
 A boss (`encounters[]`):
 
-| Field                   | Meaning                                                                                                                                                                                                                                                           |
-| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `id`                    | The encounter id. Required.                                                                                                                                                                                                                                       |
-| `name`                  | Filled in by `fix` when missing, otherwise left alone. When it differs from the game table's, it is the name shown in every language: the server renamed the boss and the client's table still has the old name (Hall of Thanes' "Magmatus" is "Infurnus" there). |
-| `level`, `creatureType` | As the game shows them; the card says "20 Humanoid".                                                                                                                                                                                                              |
-| `rare`                  | Set to `true` for a boss that does not spawn on every visit; the card says "19 rare" after its level.                                                                                                                                                             |
-| `portrait`, `displayID` | The boss's picture, see below.                                                                                                                                                                                                                                    |
-| `npc`                   | Where the `displayID` came from; not shipped.                                                                                                                                                                                                                     |
-| `quests`                | Ids of the quests the boss is involved in (the "!" on its card). Definitions live under `.contribute/data/quests/dungeons/`.                                                                                                                                      |
-| `loot`                  | Item rows with an optional `chance` (0–1).                                                                                                                                                                                                                        |
+| Field                   | Meaning                                                                                                                                                                                                             |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                    | The `DungeonEncounter` id. For a boss absent from that table, use the negative NPC id (`-3864` for Fel Steed); it stays unique among boss ids.                                                                      |
+| `name`                  | Required for a boss with a negative id. Otherwise `fix` fills it in when missing. A curated name is shown in every language when it differs from the game table's (Hall of Thanes' "Magmatus" is "Infurnus" there). |
+| `level`, `creatureType` | As the game shows them; the card says "20 Humanoid".                                                                                                                                                                |
+| `rare`                  | Set to `true` for a boss that does not spawn on every visit; the card says "19 rare" after its level.                                                                                                               |
+| `portrait`, `displayID` | The boss's picture, see below.                                                                                                                                                                                      |
+| `npc`                   | The positive NPC id. Required for a negative `id` and must equal its absolute value; otherwise an optional note of where `displayID` came from. Not shipped.                                                        |
+| `quests`                | Ids of the quests the boss is involved in (the "!" on its card). Definitions live under `.contribute/data/quests/dungeons/`.                                                                                        |
+| `loot`                  | Item rows with an optional `chance` (0–1).                                                                                                                                                                          |
+
+A boss without a `DungeonEncounter` row still gets its own card and loot source. Use the negative
+NPC id as a local boss id; its place in `encounters` sets its card order among the regular bosses.
+For example, Fel Steed in Shadowfang Keep uses `"id": -3864`, `"npc": 3864` and
+`"name": "Fel Steed"`. Its English name ships with the core and is the fallback on other locales.
+The negative id is an internal key, not an in-game encounter id. The scraper cannot attribute
+encounter kills to it through `ENCOUNTER_END`.
 
 **Item rows**, everywhere in `.contribute/data/`: `item` is the item id, `name` is informational
 and rewritten by `fix`. A row with only a `name` gets its `item` filled in when exactly one

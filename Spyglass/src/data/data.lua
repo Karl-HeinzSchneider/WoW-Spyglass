@@ -11,7 +11,7 @@ local log = app.logger
 --   Data.items[itemID]      = { quality, itemLevel, reqLevel, classID, subclassID, equipLoc, bindType,
 --                               icon, stats, sellPrice, stackCount, setID, expansionID, craftingReagent }
 --   Data.instances[id]      = { type = "dungeon", bosses = { bossID, ... }, minLevel = 15, ... }
---   Data.bosses[bossID]     = { instanceID = 36, order = 6000 }   -- bossID = DungeonEncounter id
+--   Data.bosses[bossID]     = { instanceID = 36, order = 6000 }   -- DungeonEncounter id, or -npc for a curated boss
 --   Data.bossLoot[bossID]   = { { itemID, chance }, ... }
 --   Data.trashLoot[instID]  = { { itemID, chance }, ... }   -- what the instance's non-boss enemies drop
 --   Data.quests[questID]    = { id = 26, name = "...", side = "Alliance", requiredLevel = 14, xp = 4688, objective = "...",

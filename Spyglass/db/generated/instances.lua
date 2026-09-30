@@ -13,14 +13,17 @@ Data:AddInstance(33, {
     background = "Interface\\GLUES\\LOADINGSCREENS\\LOADSCREENSHADOWFANGKEEP",
     backgroundCoords = { 0, 1, 0.305, 0.695 },
     entrance = { 1421, 45, 68 },
-    bosses = { 2748, 2749, 2750, 2751, 2752, 2753, 2754, 2755 },
+    bosses = { 2748, 2749, -3864, 2750, 2751, 2752, -3872, 2753, -4627, 2754, 2755 },
 })
 Data:AddBoss(2748, { instanceID = 33, order = 0, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\rethilgore.blp", displayID = 524, level = 20 }) -- Rethilgore
 Data:AddBoss(2749, { instanceID = 33, order = 1000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\rethilgore.blp", displayID = 524, level = 22 }) -- Razorclaw the Butcher
+Data:AddBoss(-3864, { instanceID = 33, displayID = 1951, level = 19 }) -- Fel Steed
 Data:AddBoss(2750, { instanceID = 33, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Baron Silverlaine", displayID = 3222, level = 24 }) -- Baron Silverlaine
 Data:AddBoss(2751, { instanceID = 33, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Commander Springvale", displayID = 3223, level = 24 }) -- Commander Springvale
 Data:AddBoss(2752, { instanceID = 33, order = 4000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\odo_the_blindwatcher.blp", displayID = 522, level = 24 }) -- Odo the Blindwatcher
+Data:AddBoss(-3872, { instanceID = 33, displayID = 3224, level = 25, rare = true }) -- Deathsworn Captain
 Data:AddBoss(2753, { instanceID = 33, order = 5000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\fenrus_the_devourer.blp", displayID = 2352, level = 25 }) -- Fenrus the Devourer
+Data:AddBoss(-4627, { instanceID = 33, displayID = 1131, level = 24 }) -- Arugal's Voidwalker
 Data:AddBoss(2754, { instanceID = 33, order = 6000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\wolf_master_nandos.blp", displayID = 11179, level = 25 }) -- Wolf Master Nandos
 Data:AddBoss(2755, { instanceID = 33, order = 7000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\archmage_arugal.blp", displayID = 2353, level = 26 }) -- Archmage Arugal
 

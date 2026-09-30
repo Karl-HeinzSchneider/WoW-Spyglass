@@ -15,6 +15,11 @@ Data:AddBossLoot(2749, { -- Razorclaw the Butcher
     { 6633 }, -- Butcher's Slicer
 })
 
+Data:AddBossLoot(-3864, { -- Fel Steed
+    { 932 }, -- Fel Steed Saddlebags
+    { 6341 }, -- Eerie Stable Lantern
+})
+
 Data:AddBossLoot(2750, { -- Baron Silverlaine
     { 6321 }, -- Silverlaine's Family Seal
     { 6323 }, -- Baron's Scepter
@@ -33,16 +38,26 @@ Data:AddBossLoot(2752, { -- Odo the Blindwatcher
     { 273645 }, -- Blindwatcher's Sight
 })
 
+Data:AddBossLoot(-3872, { -- Deathsworn Captain
+    { 6641 }, -- Haunting Blade
+    { 6642 }, -- Phantom Armor
+})
+
 Data:AddBossLoot(2753, { -- Fenrus the Devourer
     { 3230 }, -- Black Wolf Bracers
     { 6340 }, -- Fenrus' Hide
     { 273646 }, -- Half-Eaten Boots
 })
 
+Data:AddBossLoot(-4627, { -- Arugal's Voidwalker
+    { 5943 }, -- Rift Bracers
+})
+
 Data:AddBossLoot(2754, { -- Wolf Master Nandos
     { 3748 }, -- Feline Mantle
     { 6314 }, -- Wolfmaster Cape
-    { 273647 }, -- Worgpelt Leggings
+    { 1318 }, -- Night Reaver
+    { 2292 }, -- Necrology Robes
 })
 
 Data:AddBossLoot(2755, { -- Archmage Arugal
