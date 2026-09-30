@@ -3,6 +3,7 @@ local Data = Spyglass.Data
 
 -- { quality, itemLevel, reqLevel, classID, subclassID, slot, bind, icon, stats, sellPrice, stackCount, setID, expansionID, craftingReagent }; see Data.ITEM.
 Data:AddItems({
+    [264046] = { 3, 1, 10, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 0, 134327, nil, 1, 1, 0, 0, false },
     [264047] = { 3, 1, 10, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 0, 134327, nil, 1, 1, 0, 0, false },
     [264048] = { 3, 1, 10, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 0, 134327, nil, 1, 1, 0, 0, false },
     [264049] = { 3, 1, 10, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 0, 134327, nil, 1, 1, 0, 0, false },
@@ -1824,6 +1825,7 @@ Data:AddItems({
     [274155] = { 3, 30, 25, 4, 2, "INVTYPE_HEAD", 1, 133116, { NATURE_RESISTANCE = 7, RESISTANCE0_NAME = 84, RESISTANCE3_NAME = 7, SPIRIT = 12, STAMINA = 8 }, 2025, 1, 0, 0, false },
     [274158] = { 3, 31, 26, 2, 10, "INVTYPE_2HWEAPON", 1, 135154, { DAMAGE_PER_SECOND = 18.93, MANA_REGENERATION = 5, SPELL_POWER = 34, STAMINA = 11 }, 7487, 1, 0, 0, false },
     [274159] = { 3, 33, 27, 4, 2, "INVTYPE_HAND", 1, 132939, { ATTACK_POWER = 18, RESISTANCE0_NAME = 68 }, 1833, 1, 0, 0, false },
+    [274161] = { 3, 34, 29, 4, 3, "INVTYPE_LEGS", 1, 134590, { BLOCK_RATING = 10, RESISTANCE0_NAME = 202, SPIRIT = 8, STAMINA = 11 }, 4836, 1, 0, 0, false },
     [274162] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 4, 237415, nil, 0, 20, 0, 0, false },
     [274163] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 4, 237414, nil, 0, 20, 0, 0, false },
     [274165] = { 1, 60, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 1, 132900, nil, 0, 20, 0, 0, false },
@@ -1920,6 +1922,7 @@ Data:AddItems({
     [274287] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 4, 132925, nil, 0, 20, 0, 0, false },
     [274288] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 4, 134322, nil, 0, 20, 0, 0, false },
     [274289] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 4, 463488, nil, 0, 20, 0, 0, false },
+    [274290] = { 3, 34, 29, 4, 6, "INVTYPE_SHIELD", 1, 134953, { RESISTANCE0_NAME = 738, SPELL_DAMAGE_DONE = 5, SPELL_HEALING_DONE = 13, STAMINA = 6 }, 5083, 1, 0, 0, false },
     [274373] = { 1, 55, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 4, 134713, nil, 0, 1, 0, 0, false },
     [274379] = { 2, 1, 60, 15, 4, "INVTYPE_NON_EQUIP_IGNORE", 1, 656440, nil, 25000, 1, 0, 0, false },
     [274383] = { 2, 58, 0, 2, 15, "INVTYPE_WEAPON", 1, 135651, { AGILITY = 9, ATTACK_POWER = 10, DAMAGE_PER_SECOND = 34.71 }, 37846, 1, 0, 0, false },
@@ -1963,6 +1966,7 @@ Data:AddItems({
     [274490] = { 2, 40, 35, 4, 2, "INVTYPE_FEET", 2, 132539, { AGILITY = 4, RESISTANCE0_NAME = 76, STAMINA = 10 }, 4082, 1, 0, 0, false },
     [274491] = { 2, 44, 0, 9, 1, "INVTYPE_NON_EQUIP_IGNORE", 1, 134942, nil, 1250, 1, 0, 0, false },
     [274501] = { 0, 1, 1, 2, 7, "INVTYPE_WEAPON", 0, 135277, { DAMAGE_PER_SECOND = 0.75 }, 2, 1, 0, 0, false },
+    [274517] = { 2, 56, 56, 2, 7, "INVTYPE_WEAPON", 2, 135321, { ATTACK_POWER = 16, DAMAGE_PER_SECOND = 33.39, STRENGTH = 5 }, 2, 1, 0, 0, false },
     [274559] = { 3, 1, 0, 15, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 133628, nil, 0, 1, 0, 0, false },
     [274560] = { 0, 60, 0, 2, 10, "INVTYPE_2HWEAPON", 1, 135150, { DAMAGE_PER_SECOND = 27.86 }, 52747, 1, 0, 0, false },
     [274561] = { 3, 1, 0, 15, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 133628, nil, 0, 1, 0, 0, false },
@@ -2499,8 +2503,4 @@ Data:AddItems({
     [277061] = { 2, 10, 5, 4, 3, "INVTYPE_FEET", 1, 7737712, { RESISTANCE0_NAME = 74, STRENGTH = 1 }, 112, 1, 0, 0, false },
     [277062] = { 2, 11, 6, 4, 2, "INVTYPE_CHEST", 1, 7731374, { RESISTANCE0_NAME = 58, STAMINA = 2 }, 150, 1, 0, 0, false },
     [277063] = { 2, 9, 4, 4, 2, "INVTYPE_WRIST", 1, 7731372, { AGILITY = 1, RESISTANCE0_NAME = 22 }, 45, 1, 0, 0, false },
-    [277064] = { 2, 10, 5, 4, 2, "INVTYPE_HAND", 1, 7731375, { RESISTANCE0_NAME = 34, STAMINA = 1 }, 58, 1, 0, 0, false },
-    [277065] = { 2, 9, 4, 4, 2, "INVTYPE_WAIST", 1, 7731370, { RESISTANCE0_NAME = 29, STRENGTH = 1 }, 45, 1, 0, 0, false },
-    [277066] = { 2, 11, 6, 4, 2, "INVTYPE_LEGS", 1, 7731377, { AGILITY = 2, RESISTANCE0_NAME = 51 }, 153, 1, 0, 0, false },
-    [277067] = { 2, 10, 5, 4, 2, "INVTYPE_FEET", 1, 7731371, { RESISTANCE0_NAME = 38, STRENGTH = 1 }, 88, 1, 0, 0, false },
 })

@@ -3,6 +3,7 @@ local Data = Spyglass.Data
 
 -- { quality, itemLevel, reqLevel, classID, subclassID, slot, bind, icon, stats, sellPrice, stackCount, setID, expansionID, craftingReagent }; see Data.ITEM.
 Data:AddItems({
+    [231541] = { 4, 71, 60, 4, 4, "INVTYPE_HAND", 1, 132963, { CRIT_RATING = 14, RESISTANCE0_NAME = 532, STAMINA = 34, STRENGTH = 20 }, 11135, 1, 1747, 0, false },
     [231543] = { 4, 74, 60, 4, 2, "INVTYPE_CHEST", 1, 132648, { AGILITY = 26, CRIT_RATING = 14, HIT_RATING = 10, RESISTANCE0_NAME = 260, STAMINA = 46 }, 33324, 1, 1743, 0, false },
     [231544] = { 4, 71, 60, 4, 2, "INVTYPE_HAND", 1, 132955, { AGILITY = 20, CRIT_RATING = 14, RESISTANCE0_NAME = 193, STAMINA = 34 }, 14444, 1, 1743, 0, false },
     [231545] = { 4, 74, 60, 4, 2, "INVTYPE_HEAD", 1, 133143, { AGILITY = 27, CRIT_RATING = 14, HIT_RATING = 10, RESISTANCE0_NAME = 229, STAMINA = 46 }, 25172, 1, 1743, 0, false },
@@ -2502,5 +2503,4 @@ Data:AddItems({
     [264043] = { 3, 1, 10, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 0, 134327, nil, 1, 1, 0, 0, false },
     [264044] = { 3, 1, 10, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 0, 134327, nil, 1, 1, 0, 0, false },
     [264045] = { 3, 1, 10, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 0, 134327, nil, 1, 1, 0, 0, false },
-    [264046] = { 3, 1, 10, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 0, 134327, nil, 1, 1, 0, 0, false },
 })
