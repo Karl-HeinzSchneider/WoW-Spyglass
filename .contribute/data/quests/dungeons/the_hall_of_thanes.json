@@ -1,18 +1,22 @@
 {
   "npcs": {
     "Afadra Dunwall": {
+      "location": [1455, 33.6, 48.0],
       "description": "Ironforge."
     },
     "Earthseer Farsen": {
+      "location": [1426, 64.8, 58.4],
       "description": "Dun Morogh."
     },
     "Ghostly Attendant": {
       "description": "Inside the dungeon."
     },
     "King Magni Bronzebeard": {
+      "location": [1455, 40.0, 55.2],
       "description": "Ironforge."
     },
     "Thom Filch": {
+      "location": [1455, 32.6, 44.6],
       "description": "Near the dungeon entrance."
     }
   },
