@@ -51,6 +51,8 @@ scan import per file, then
 `saveScannedItems` → `Checker` + `validateDungeonLevels` + `validate` + `validateQuests` + `validateLists` → for `fix` and `import`: rewrite
 the JSON → `build` + `write`. Errors stop generation; fixable problems and warnings don't.
 `import` always fixes, since it writes the curated files anyway.
+`check` and `fix` load only English game-table names and the scanned item names; translation
+tables are needed only by `gen` and `import`.
 
 ## Validation
 

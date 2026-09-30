@@ -69,15 +69,16 @@ if (command === "import") {
 const fix = values.fix || command === "import";
 
 const config = loadConfig();
-const ref = await loadReference(config);
+const ref = await loadReference(config, { includeTranslations: command !== "check" });
 const curated = loadCurated();
 let dungeonLevels = loadDungeonLevels();
 const quests = loadQuests();
 const lists = loadLists();
 const shippedRecipes = [...ref.recipes.values()].filter((r) => shipsRecipe(r, ref.items)).length;
+const reportedLocales = command === "check" ? config.locales : ref.itemLocales;
 console.log(
   `build ${ref.build}: ${ref.instances.size} instances, ${ref.encounters.size} encounters; ` +
-    `${ref.items.size} scanned items (${ref.itemLocales.join("/") || "no names"}); ` +
+    `${ref.items.size} scanned items (${reportedLocales.join("/") || "no names"}); ` +
     `${ref.recipes.size} recipes of ${ref.skillLines.size} professions, ${shippedRecipes} with scanned items; ` +
     `${curated.length} curated instance(s), ${quests.length} dungeon quest file(s), ${lists.length} list(s)`,
 );

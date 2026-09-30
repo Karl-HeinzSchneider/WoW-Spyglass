@@ -83,13 +83,17 @@ const INSTANCE_TYPES: Record<string, InstanceType> = { "1": "dungeon", "2": "rai
  */
 const ENCOUNTER_DIFFICULTIES = [0, 1, 201];
 
-export async function loadReference(config: Config): Promise<Reference> {
+export async function loadReference(
+  config: Config,
+  { includeTranslations = true }: { includeTranslations?: boolean } = {},
+): Promise<Reference> {
   const { build } = config;
+  const locales = includeTranslations ? config.locales : [FALLBACK_LOCALE];
   const [maps, dungeonEncounters, factionRows, recipeTables] = await Promise.all([
     fetchTable("Map", build, FALLBACK_LOCALE),
     fetchTable("DungeonEncounter", build, FALLBACK_LOCALE),
     fetchTable("Faction", build, FALLBACK_LOCALE),
-    loadRecipes(config),
+    loadRecipes(config, locales),
   ]);
 
   const factions = new Map<number, Faction>();
@@ -131,7 +135,7 @@ export async function loadReference(config: Config): Promise<Reference> {
   }
 
   const names = new Map<string, LocaleNames>();
-  for (const locale of config.locales) {
+  for (const locale of locales) {
     const [lMaps, lEnc] =
       locale === FALLBACK_LOCALE
         ? [maps, dungeonEncounters]
@@ -150,14 +154,16 @@ export async function loadReference(config: Config): Promise<Reference> {
     names.set(locale, table);
   }
 
-  // One locale at a time: each ItemSparse table is a large CSV and only its names are kept.
+  // Validation uses names from the scans. Only generation and import need ItemSparse translations.
   const wagoItemNames = new Map<string, Map<number, string>>();
-  for (const locale of config.locales) {
-    const table = new Map<number, string>();
-    for (const row of await fetchTable("ItemSparse", build, locale, ["ID", "Display_lang"])) {
-      if (row.Display_lang) table.set(int(row.ID), row.Display_lang);
+  if (includeTranslations) {
+    for (const locale of locales) {
+      const table = new Map<number, string>();
+      for (const row of await fetchTable("ItemSparse", build, locale, ["ID", "Display_lang"])) {
+        if (row.Display_lang) table.set(int(row.ID), row.Display_lang);
+      }
+      wagoItemNames.set(locale, table);
     }
-    wagoItemNames.set(locale, table);
   }
 
   const ref: Reference = {

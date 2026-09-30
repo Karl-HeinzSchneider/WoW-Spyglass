@@ -295,7 +295,7 @@ export function shipsRecipe(recipe: Recipe, items: Map<number, ScannedItem>): bo
   return recipe.reagents.every(([itemID]) => items.has(itemID));
 }
 
-export async function loadRecipes(config: Config): Promise<RecipeTables> {
+export async function loadRecipes(config: Config, locales = config.locales): Promise<RecipeTables> {
   const { build } = config;
   const table = (name: string, locale = FALLBACK_LOCALE) => fetchTable(name, build, locale);
   const [
@@ -332,7 +332,7 @@ export async function loadRecipes(config: Config): Promise<RecipeTables> {
   };
 
   const localeNames = new Map<string, Pick<RecipeSource, "skillLine" | "tradeSkillCategory" | "totemCategory">>();
-  for (const locale of config.locales) {
+  for (const locale of locales) {
     if (locale === FALLBACK_LOCALE) {
       localeNames.set(locale, { skillLine, tradeSkillCategory, totemCategory });
       continue;
