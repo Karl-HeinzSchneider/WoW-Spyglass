@@ -81,7 +81,7 @@ Data:AddQuests(33, {
     } },
     { id = 1013, name = "The Book of Ur", side = "Horde", requiredLevel = 16, xp = 9135, objective = "Bring the Book of Ur from Shadowfang Keep to Keeper Bel'dugur.", start = { description = "Apothecarium, Undercity.", location = { 1458, 53.7, 54.5 }, npc = "Keeper Bel'dugur" }, turnIn = { description = "Apothecarium, Undercity.", location = { 1458, 53.7, 54.5 }, npc = "Keeper Bel'dugur" }, items = {
         { 6335 }, -- Grizzled Boots
-        { 4534 }, -- #4534
+        { 4534 }, -- Steel-clasped Bracers
         { 270030 }, -- Tattered Mittens
     } },
     { id = 1740, name = "The Orb of Soran'ruk", side = "Both", class = "WARLOCK", requiredLevel = 20, xp = 2550, objective = "Find 3 Soran'ruk Fragments and 1 Large Soran'ruk Fragment and return them to Doan Karhan.", start = { description = "The Barrens.", location = { 1413, 49.3, 57.2 }, npc = "Doan Karhan" }, turnIn = { description = "The Barrens.", location = { 1413, 49.3, 57.2 }, npc = "Doan Karhan" }, items = {

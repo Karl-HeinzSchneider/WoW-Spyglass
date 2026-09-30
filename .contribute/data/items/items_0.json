@@ -14407,7 +14407,8 @@
     "craftingReagent": false,
     "stats": {
       "RESISTANCE0_NAME": 411,
-      "SPIRIT": 3
+      "SPELL_POWER": 2,
+      "SPIRIT": 2
     }
   },
   "1559": {
@@ -14470,8 +14471,8 @@
     "craftingReagent": false,
     "stats": {
       "RESISTANCE0_NAME": 28,
-      "SPIRIT": 2,
-      "STAMINA": 2
+      "SPELL_POWER": 2,
+      "SPIRIT": 2
     }
   },
   "1566": {
@@ -19125,7 +19126,7 @@
     "names": {
       "enUS": "Silk-threaded Trousers"
     },
-    "quality": 2,
+    "quality": 3,
     "itemLevel": 18,
     "reqLevel": 13,
     "classID": 4,
@@ -19133,15 +19134,15 @@
     "slot": "INVTYPE_LEGS",
     "bind": 2,
     "icon": 134582,
-    "sellPrice": 430,
+    "sellPrice": 516,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "AGILITY": 3,
-      "RESISTANCE0_NAME": 28,
-      "SPELL_POWER": 4
+      "AGILITY": 5,
+      "RESISTANCE0_NAME": 31,
+      "SPELL_POWER": 7
     }
   },
   "1930": {
@@ -19210,7 +19211,7 @@
     "names": {
       "enUS": "Stonemason Trousers"
     },
-    "quality": 2,
+    "quality": 3,
     "itemLevel": 20,
     "reqLevel": 15,
     "classID": 4,
@@ -19218,15 +19219,15 @@
     "slot": "INVTYPE_LEGS",
     "bind": 2,
     "icon": 134582,
-    "sellPrice": 711,
+    "sellPrice": 853,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "AGILITY": 4,
-      "RESISTANCE0_NAME": 68,
-      "SPIRIT": 4
+      "AGILITY": 7,
+      "RESISTANCE0_NAME": 75,
+      "SPIRIT": 7
     }
   },
   "1935": {
@@ -19256,7 +19257,7 @@
     "names": {
       "enUS": "Goblin Screwdriver"
     },
-    "quality": 2,
+    "quality": 3,
     "itemLevel": 18,
     "reqLevel": 13,
     "classID": 2,
@@ -19264,14 +19265,14 @@
     "slot": "INVTYPE_WEAPON",
     "bind": 2,
     "icon": 135641,
-    "sellPrice": 1076,
+    "sellPrice": 1291,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "AGILITY": 2,
-      "DAMAGE_PER_SECOND": 8.93
+      "AGILITY": 4,
+      "DAMAGE_PER_SECOND": 12.14
     }
   },
   "1937": {
@@ -19521,7 +19522,7 @@
     "names": {
       "enUS": "Blackwater Cutlass"
     },
-    "quality": 2,
+    "quality": 3,
     "itemLevel": 19,
     "reqLevel": 14,
     "classID": 2,
@@ -19529,14 +19530,14 @@
     "slot": "INVTYPE_WEAPON",
     "bind": 2,
     "icon": 135325,
-    "sellPrice": 1237,
+    "sellPrice": 1484,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "AGILITY": 2,
-      "DAMAGE_PER_SECOND": 9.47
+      "AGILITY": 4,
+      "DAMAGE_PER_SECOND": 12.89
     }
   },
   "1955": {
@@ -37483,8 +37484,8 @@
       "enUS": "Noble's Robe"
     },
     "quality": 2,
-    "itemLevel": 18,
-    "reqLevel": 13,
+    "itemLevel": 20,
+    "reqLevel": 15,
     "classID": 4,
     "subclassID": 1,
     "slot": "INVTYPE_ROBE",
@@ -37496,9 +37497,9 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 32,
-      "SPIRIT": 3,
-      "STAMINA": 3,
+      "RESISTANCE0_NAME": 34,
+      "SPIRIT": 4,
+      "STAMINA": 4,
       "STRENGTH": 1
     }
   },
@@ -40184,7 +40185,7 @@
     "craftingReagent": false,
     "stats": {
       "RESISTANCE0_NAME": 328,
-      "SPIRIT": 2
+      "SPELL_POWER": 2
     }
   },
   "3161": {
@@ -40445,7 +40446,7 @@
     "stackCount": 10,
     "setID": 0,
     "expansionID": 0,
-    "craftingReagent": false
+    "craftingReagent": true
   },
   "3175": {
     "names": {
@@ -45447,8 +45448,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DAMAGE_PER_SECOND": 20.17,
-      "HIT_RATING": 6
+      "DAMAGE_PER_SECOND": 20.17
     }
   },
   "3431": {
@@ -54604,8 +54604,8 @@
       "enUS": "Staff of Nobles"
     },
     "quality": 2,
-    "itemLevel": 18,
-    "reqLevel": 13,
+    "itemLevel": 20,
+    "reqLevel": 15,
     "classID": 2,
     "subclassID": 10,
     "slot": "INVTYPE_2HWEAPON",
@@ -54617,10 +54617,10 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DAMAGE_PER_SECOND": 8.75,
-      "SPELL_DAMAGE_DONE": 6,
-      "SPELL_HEALING_DONE": 18,
-      "SPIRIT": 4,
+      "DAMAGE_PER_SECOND": 9.84,
+      "SPELL_DAMAGE_DONE": 7,
+      "SPELL_HEALING_DONE": 22,
+      "SPIRIT": 5,
       "STAMINA": 2
     }
   },
@@ -58439,7 +58439,6 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "AGILITY": 5,
       "DAMAGE_PER_SECOND": 18.16
     }
   },
@@ -58482,8 +58481,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DAMAGE_PER_SECOND": 22.39,
-      "PARRY_RATING": 6
+      "DAMAGE_PER_SECOND": 22.39
     }
   },
   "4090": {
@@ -68017,7 +68015,7 @@
     "stackCount": 10,
     "setID": 0,
     "expansionID": 0,
-    "craftingReagent": false
+    "craftingReagent": true
   },
   "4590": {
     "names": {
@@ -69202,8 +69200,8 @@
       "enUS": "Walking Boots"
     },
     "quality": 2,
-    "itemLevel": 18,
-    "reqLevel": 13,
+    "itemLevel": 20,
+    "reqLevel": 15,
     "classID": 4,
     "subclassID": 1,
     "slot": "INVTYPE_FEET",
@@ -69215,9 +69213,9 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "AGILITY": 2,
-      "INTELLECT": 3,
-      "RESISTANCE0_NAME": 22
+      "AGILITY": 3,
+      "INTELLECT": 4,
+      "RESISTANCE0_NAME": 23
     }
   },
   "4661": {
@@ -78055,7 +78053,7 @@
     "stackCount": 10,
     "setID": 0,
     "expansionID": 0,
-    "craftingReagent": false
+    "craftingReagent": true
   },
   "5117": {
     "names": {
@@ -79933,8 +79931,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DAMAGE_PER_SECOND": 33.67,
-      "FIRE_DAMAGE_DONE": 7
+      "DAMAGE_PER_SECOND": 33.67
     }
   },
   "5216": {
@@ -79955,8 +79952,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DAMAGE_PER_SECOND": 35.67,
-      "SHADOW_DAMAGE_DONE": 9
+      "DAMAGE_PER_SECOND": 35.67
     }
   },
   "5217": {
@@ -83950,8 +83946,8 @@
       "enUS": "Brambleweed Leggings"
     },
     "quality": 2,
-    "itemLevel": 20,
-    "reqLevel": 15,
+    "itemLevel": 22,
+    "reqLevel": 17,
     "classID": 4,
     "subclassID": 2,
     "slot": "INVTYPE_LEGS",
@@ -83963,9 +83959,9 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "AGILITY": 4,
-      "RESISTANCE0_NAME": 68,
-      "SPIRIT": 4
+      "AGILITY": 5,
+      "RESISTANCE0_NAME": 71,
+      "SPIRIT": 5
     }
   },
   "5423": {
@@ -83973,8 +83969,8 @@
       "enUS": "Boahn's Fang"
     },
     "quality": 3,
-    "itemLevel": 20,
-    "reqLevel": 15,
+    "itemLevel": 22,
+    "reqLevel": 17,
     "classID": 2,
     "subclassID": 1,
     "slot": "INVTYPE_2HWEAPON",
@@ -83986,9 +83982,9 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DAMAGE_PER_SECOND": 17.6,
+      "DAMAGE_PER_SECOND": 19,
       "SPIRIT": 4,
-      "STRENGTH": 9
+      "STRENGTH": 10
     }
   },
   "5424": {
@@ -84014,8 +84010,8 @@
       "enUS": "Runescale Girdle"
     },
     "quality": 2,
-    "itemLevel": 20,
-    "reqLevel": 15,
+    "itemLevel": 21,
+    "reqLevel": 16,
     "classID": 4,
     "subclassID": 3,
     "slot": "INVTYPE_WAIST",
@@ -84027,7 +84023,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 94,
+      "RESISTANCE0_NAME": 96,
       "STRENGTH": 5
     }
   },
@@ -84036,20 +84032,20 @@
       "enUS": "Serpent's Kiss"
     },
     "quality": 3,
-    "itemLevel": 20,
-    "reqLevel": 15,
+    "itemLevel": 21,
+    "reqLevel": 16,
     "classID": 2,
     "subclassID": 0,
     "slot": "INVTYPE_WEAPON",
     "bind": 2,
     "icon": 132417,
-    "sellPrice": 1707,
+    "sellPrice": 1963,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DAMAGE_PER_SECOND": 13.4
+      "DAMAGE_PER_SECOND": 14
     }
   },
   "5427": {
@@ -93078,8 +93074,8 @@
       "enUS": "Girdle of Nobility"
     },
     "quality": 2,
-    "itemLevel": 18,
-    "reqLevel": 13,
+    "itemLevel": 20,
+    "reqLevel": 15,
     "classID": 4,
     "subclassID": 1,
     "slot": "INVTYPE_WAIST",
@@ -93091,9 +93087,9 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "INTELLECT": 3,
-      "RESISTANCE0_NAME": 18,
-      "STAMINA": 2
+      "INTELLECT": 4,
+      "RESISTANCE0_NAME": 19,
+      "STAMINA": 3
     }
   },
   "5969": {
@@ -121602,7 +121598,7 @@
     "stackCount": 20,
     "setID": 0,
     "expansionID": 0,
-    "craftingReagent": false
+    "craftingReagent": true
   },
   "8152": {
     "names": {
@@ -121620,7 +121616,7 @@
     "stackCount": 20,
     "setID": 0,
     "expansionID": 0,
-    "craftingReagent": false
+    "craftingReagent": true
   },
   "8153": {
     "names": {
@@ -121930,7 +121926,7 @@
     "stackCount": 20,
     "setID": 0,
     "expansionID": 0,
-    "craftingReagent": false
+    "craftingReagent": true
   },
   "8169": {
     "names": {
@@ -135559,7 +135555,7 @@
   },
   "9224": {
     "names": {
-      "enUS": "Potion of Demonslaying"
+      "enUS": "Potion of Demon Slaying"
     },
     "quality": 1,
     "itemLevel": 50,
@@ -136753,7 +136749,7 @@
   },
   "9300": {
     "names": {
-      "enUS": "Recipe: Potion of Demonslaying"
+      "enUS": "Recipe: Potion of Demon Slaying"
     },
     "quality": 1,
     "itemLevel": 50,
@@ -141411,8 +141407,8 @@
     "quality": 3,
     "itemLevel": 38,
     "reqLevel": 0,
-    "classID": 7,
-    "subclassID": 11,
+    "classID": 15,
+    "subclassID": 4,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 0,
     "icon": 135280,

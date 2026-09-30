@@ -15913,7 +15913,7 @@
     "classID": 2,
     "subclassID": 16,
     "slot": "INVTYPE_THROWN",
-    "bind": 0,
+    "bind": 1,
     "icon": 135424,
     "sellPrice": 1,
     "stackCount": 1,
@@ -43566,7 +43566,7 @@
   },
   "23567": {
     "names": {
-      "enUS": "[PH] Silithus PvP Dust [DEP]"
+      "enUS": "DEPRECATED ITEM"
     },
     "quality": 1,
     "itemLevel": 1,

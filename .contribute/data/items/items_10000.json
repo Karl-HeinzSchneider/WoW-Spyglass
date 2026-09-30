@@ -8654,8 +8654,8 @@
     "craftingReagent": false,
     "stats": {
       "RESISTANCE0_NAME": 20,
-      "SPIRIT": 1,
-      "STAMINA": 1
+      "SPELL_POWER": 1,
+      "SPIRIT": 1
     }
   },
   "10550": {
@@ -8839,7 +8839,7 @@
     "bind": 0,
     "icon": 134535,
     "sellPrice": 750,
-    "stackCount": 10,
+    "stackCount": 20,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": true
@@ -8857,7 +8857,7 @@
     "bind": 0,
     "icon": 132488,
     "sellPrice": 1000,
-    "stackCount": 10,
+    "stackCount": 20,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": true
@@ -8875,7 +8875,7 @@
     "bind": 0,
     "icon": 133021,
     "sellPrice": 1000,
-    "stackCount": 10,
+    "stackCount": 20,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": true
@@ -19817,7 +19817,7 @@
     "names": {
       "enUS": "Linken's Sword of Mastery"
     },
-    "quality": 2,
+    "quality": 3,
     "itemLevel": 56,
     "reqLevel": 0,
     "classID": 2,
@@ -19825,13 +19825,13 @@
     "slot": "INVTYPE_WEAPONMAINHAND",
     "bind": 1,
     "icon": 135349,
-    "sellPrice": 34194,
+    "sellPrice": 40154,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DAMAGE_PER_SECOND": 33.33
+      "DAMAGE_PER_SECOND": 36.94
     }
   },
   "11903": {
@@ -19856,7 +19856,7 @@
     "names": {
       "enUS": "Spirit of Aquementas"
     },
-    "quality": 2,
+    "quality": 3,
     "itemLevel": 56,
     "reqLevel": 0,
     "classID": 4,
@@ -19864,13 +19864,13 @@
     "slot": "INVTYPE_HOLDABLE",
     "bind": 1,
     "icon": 134564,
-    "sellPrice": 13815,
+    "sellPrice": 16061,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "SPELL_POWER": 20
+      "SPELL_POWER": 21
     }
   },
   "11905": {
@@ -24170,7 +24170,7 @@
     "craftingReagent": false,
     "stats": {
       "RESISTANCE0_NAME": 24,
-      "SPIRIT": 2,
+      "SPELL_POWER": 2,
       "STRENGTH": 2
     }
   },
@@ -39019,7 +39019,7 @@
     "bind": 0,
     "icon": 134806,
     "sellPrice": 5000,
-    "stackCount": 5,
+    "stackCount": 20,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
@@ -39073,7 +39073,7 @@
     "bind": 0,
     "icon": 134842,
     "sellPrice": 5000,
-    "stackCount": 5,
+    "stackCount": 20,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
@@ -39091,7 +39091,7 @@
     "bind": 0,
     "icon": 134877,
     "sellPrice": 5000,
-    "stackCount": 5,
+    "stackCount": 20,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
@@ -39109,7 +39109,7 @@
     "bind": 0,
     "icon": 134821,
     "sellPrice": 5000,
-    "stackCount": 5,
+    "stackCount": 20,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
@@ -39127,7 +39127,7 @@
     "bind": 0,
     "icon": 134828,
     "sellPrice": 5000,
-    "stackCount": 5,
+    "stackCount": 20,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
@@ -68182,9 +68182,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DAMAGE_PER_SECOND": 42.14,
-      "SPELL_HEALING_DONE": 15,
-      "STAMINA": 5
+      "DAMAGE_PER_SECOND": 42.14
     }
   },
   "15280": {
@@ -68205,7 +68203,6 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "ARCANE_DAMAGE_DONE": 10,
       "DAMAGE_PER_SECOND": 44.44
     }
   },
@@ -68227,8 +68224,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DAMAGE_PER_SECOND": 50,
-      "HOLY_DAMAGE_DONE": 11
+      "DAMAGE_PER_SECOND": 50
     }
   },
   "15282": {
@@ -68249,8 +68245,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DAMAGE_PER_SECOND": 53.21,
-      "INTELLECT": 8
+      "DAMAGE_PER_SECOND": 53.21
     }
   },
   "15283": {
@@ -68271,8 +68266,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DAMAGE_PER_SECOND": 56.76,
-      "INTELLECT": 9
+      "DAMAGE_PER_SECOND": 56.76
     }
   },
   "15284": {
@@ -68359,8 +68353,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DAMAGE_PER_SECOND": 20.91,
-      "STRENGTH": 6
+      "DAMAGE_PER_SECOND": 20.91
     }
   },
   "15288": {
@@ -68381,7 +68374,6 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "AGILITY": 8,
       "DAMAGE_PER_SECOND": 28.27
     }
   },
@@ -68403,8 +68395,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DAMAGE_PER_SECOND": 30.22,
-      "RANGED_ATTACK_POWER": 20
+      "DAMAGE_PER_SECOND": 30.22
     }
   },
   "15290": {
@@ -68443,9 +68434,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "ATTACK_POWER_VS_HUMANOID": 14,
-      "DAMAGE_PER_SECOND": 23.7,
-      "SPIRIT": 5
+      "DAMAGE_PER_SECOND": 23.7
     }
   },
   "15292": {
@@ -68502,9 +68491,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DAMAGE_PER_SECOND": 24.64,
-      "HEALTH_REGEN": 8,
-      "SPIRIT": 5
+      "DAMAGE_PER_SECOND": 24.64
     }
   },
   "15295": {
@@ -68525,7 +68512,6 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "AGILITY": 7,
       "DAMAGE_PER_SECOND": 25.65
     }
   },
@@ -68547,9 +68533,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DAMAGE_PER_SECOND": 29.41,
-      "HIT_RATING": 6,
-      "SPIRIT": 6
+      "DAMAGE_PER_SECOND": 29.41
     }
   },
   "15297": {
@@ -68967,9 +68951,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DAMAGE_PER_SECOND": 23.26,
-      "SPIRIT": 5,
-      "STRENGTH": 5
+      "DAMAGE_PER_SECOND": 23.26
     }
   },
   "15324": {
@@ -68990,8 +68972,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DAMAGE_PER_SECOND": 26,
-      "STRENGTH": 8
+      "DAMAGE_PER_SECOND": 26
     }
   },
   "15325": {
@@ -69012,8 +68993,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DAMAGE_PER_SECOND": 27.95,
-      "HIT_RATING": 8
+      "DAMAGE_PER_SECOND": 27.95
     }
   },
   "15326": {
@@ -70925,7 +70905,7 @@
     "stackCount": 50,
     "setID": 0,
     "expansionID": 0,
-    "craftingReagent": false
+    "craftingReagent": true
   },
   "15422": {
     "names": {
@@ -81220,7 +81200,7 @@
     "bind": 0,
     "icon": 132998,
     "sellPrice": 2500,
-    "stackCount": 10,
+    "stackCount": 20,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": true
@@ -81339,7 +81319,7 @@
     "bind": 0,
     "icon": 133027,
     "sellPrice": 3750,
-    "stackCount": 10,
+    "stackCount": 20,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": true
@@ -81450,7 +81430,7 @@
     "bind": 0,
     "icon": 133001,
     "sellPrice": 10000,
-    "stackCount": 10,
+    "stackCount": 20,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": true
@@ -94251,7 +94231,7 @@
     "icon": 132590,
     "sellPrice": 32653,
     "stackCount": 1,
-    "setID": 489,
+    "setID": 0,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
@@ -105166,7 +105146,7 @@
     "stackCount": 5,
     "setID": 0,
     "expansionID": 0,
-    "craftingReagent": false
+    "craftingReagent": true
   },
   "18513": {
     "names": {
@@ -106255,7 +106235,7 @@
     "bind": 0,
     "icon": 135155,
     "sellPrice": 3000,
-    "stackCount": 10,
+    "stackCount": 20,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": true
@@ -106975,8 +106955,8 @@
       "enUS": "Frigid Ring"
     },
     "quality": 2,
-    "itemLevel": 61,
-    "reqLevel": 56,
+    "itemLevel": 62,
+    "reqLevel": 57,
     "classID": 4,
     "subclassID": 0,
     "slot": "INVTYPE_FINGER",
@@ -110188,8 +110168,8 @@
     "quality": 2,
     "itemLevel": 55,
     "reqLevel": 0,
-    "classID": 4,
-    "subclassID": 0,
+    "classID": 15,
+    "subclassID": 4,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 3,
     "icon": 133865,
@@ -110227,8 +110207,8 @@
     "quality": 2,
     "itemLevel": 52,
     "reqLevel": 0,
-    "classID": 4,
-    "subclassID": 0,
+    "classID": 15,
+    "subclassID": 4,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 3,
     "icon": 133870,
@@ -121264,7 +121244,7 @@
     "stackCount": 20,
     "setID": 0,
     "expansionID": 0,
-    "craftingReagent": false
+    "craftingReagent": true
   },
   "19775": {
     "names": {
