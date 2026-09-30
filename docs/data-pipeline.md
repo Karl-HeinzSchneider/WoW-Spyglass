@@ -117,7 +117,8 @@ removes stale files and returns the number of changes. `npm run generate:check` 
   `Spyglass/src/data/data.lua`; both rows are positional. A recipe's `minSkill` is
   `learnSkillOf()`: the recipe item's requirement when one is known.
 - `instances.lua` has one instance per map, or per file with its own `id` on a split map, with the
-  encounters that file lists; the English name of such a part is its file's `name`.
+  encounters that file lists; the English name of such a part is its file's `name`. A curated
+  encounter's `rare` flag is emitted with its boss metadata.
 - `loot/<slug>.lua` is written for every instance file `hasLoot` is true for: a boss's drops via
   `AddBossLoot`, the trash via `AddTrashLoot`, the quests via `AddQuests`.
 - `quest-definitions.lua` is written when quest files define prerequisites or follow-ups not listed

@@ -62,6 +62,8 @@ export interface CuratedEncounter {
   npc?: number;
   /** Boss level and creature type ("Beast", "Undead", ...) as the game shows them; the card says "60 Beast". */
   level?: number;
+  /** True when this boss does not spawn on every visit; the card says "19 rare". */
+  rare?: boolean;
   creatureType?: string;
   /** Quest ids the boss is involved in (objective or starts one); the card gets a "!" and the tooltip lists them. */
   quests?: number[];
@@ -315,6 +317,9 @@ export function validate(files: CuratedFile[], checker: Checker): void {
           report(file, `encounter ${enc.id}: \`${field}\` must be a positive integer id`);
         }
       }
+      if (enc.rare !== undefined && typeof enc.rare !== "boolean") {
+        report(file, `encounter ${enc.id}: \`rare\` must be a boolean`);
+      }
       if (!Array.isArray(enc.loot)) {
         report(file, `encounter ${enc.id}: \`loot\` must be an array`, true);
         if (fix) enc.loot = [];
@@ -410,6 +415,7 @@ export function serialize(d: CuratedInstance): string {
       displayID: e.displayID,
       npc: e.npc,
       level: e.level,
+      rare: e.rare,
       creatureType: e.creatureType,
       quests: e.quests,
       loot: e.loot.map((r) => ({ item: r.item, name: r.name, chance: r.chance })),

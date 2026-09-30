@@ -132,6 +132,31 @@ test("requiredLevel and zone are kept through a fix rewrite and must be a level 
   assert.ok(errors.some((m) => m.includes("zone")));
 });
 
+test("a rare encounter keeps its flag through fix and generation, and rejects non-booleans", () => {
+  const file = dungeonFile({
+    encounters: [{ id: 2747, name: "Test Boss", level: 19, rare: true, loot: [] }],
+  });
+  const checker = dungeonChecker(true);
+  validate([file], checker);
+  assert.deepEqual(
+    checker.problems.filter((p) => !p.fixable && !p.warning),
+    [],
+  );
+  assert.equal((JSON.parse(serialize(file.data)) as CuratedFile["data"]).encounters[0]?.rare, true);
+
+  const ref = { ...checker.ref, recipes: new Map(), skillLines: new Map(), categories: new Map() } as Reference;
+  const config: Config = { build: "test", locales: ["enUS"], excludeMaps: [], itemsPerFile: 100 };
+  const generated = build(ref, [file], [], [], config).core.get("instances.lua") ?? "";
+  assert.match(generated, /Data:AddBoss\(2747, \{[^}]*level = 19, rare = true/);
+
+  const invalid = dungeonFile({
+    encounters: [{ id: 2747, name: "Test Boss", rare: "yes" as unknown as boolean, loot: [] }],
+  });
+  const wrong = dungeonChecker(false);
+  validate([invalid], wrong);
+  assert.ok(wrong.problems.some((p) => !p.warning && p.message.includes("`rare` must be a boolean")));
+});
+
 test("a quest needs an id, a known side and no duplicate", () => {
   const quests = questFile([
     { id: 0, items: [] },

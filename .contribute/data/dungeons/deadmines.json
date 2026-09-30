@@ -74,6 +74,7 @@
       "name": "Miner Johnson",
       "displayID": 556,
       "level": 19,
+      "rare": true,
       "loot": [
         {
           "item": 5444,

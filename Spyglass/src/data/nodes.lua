@@ -51,17 +51,24 @@ local function bossInterestText(bossID)
 end
 app.bossInterestText = bossInterestText
 
--- "60 Beast": what the curated data knows about the boss; nil when it knows nothing.
+-- "19 rare" or "60 Beast": what the curated data knows about the boss.
 ---@param boss Spyglass.Boss?
 ---@return string?
 local function bossInfo(boss)
-    if not boss or (not boss.level and not boss.creatureType) then
+    if not boss then
         return nil
     end
-    if boss.level and boss.creatureType then
-        return ("%d %s"):format(boss.level, boss.creatureType)
+    local parts = {}
+    if boss.level then
+        parts[#parts + 1] = tostring(boss.level)
     end
-    return boss.creatureType or tostring(boss.level)
+    if boss.rare then
+        parts[#parts + 1] = "rare"
+    end
+    if boss.creatureType then
+        parts[#parts + 1] = boss.creatureType
+    end
+    return #parts > 0 and table.concat(parts, " ") or nil
 end
 
 -- A boss folder: its loot in two auto-grouped columns. For lists that draw their entries as

@@ -60,7 +60,7 @@ Data:AddInstance(36, {
 })
 Data:AddBoss(2741, { instanceID = 36, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-RhahkZor", displayID = 14403, level = 19 }) -- Rhahk'Zor
 Data:AddBoss(2742, { instanceID = 36, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Sneed", displayID = 7125, level = 20 }) -- Sneed
-Data:AddBoss(3676, { instanceID = 36, order = 1500, displayID = 556, level = 19 }) -- Miner Johnson
+Data:AddBoss(3676, { instanceID = 36, order = 1500, displayID = 556, level = 19, rare = true }) -- Miner Johnson
 Data:AddBoss(2743, { instanceID = 36, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Gilnid", displayID = 7124, level = 20 }) -- Gilnid
 Data:AddBoss(2744, { instanceID = 36, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-CaptainGreenskin", displayID = 7113, level = 20 }) -- Captain Greenskin
 Data:AddBoss(2745, { instanceID = 36, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-MrSmite", displayID = 2026, level = 20 }) -- Mr. Smite
@@ -856,7 +856,7 @@ Data:AddBoss(3353, { instanceID = 2999, order = 0, portrait = "Interface\\AddOns
 Data:AddBoss(3357, { instanceID = 2999, order = 250, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\the_abandoned.blp", displayID = 138667, level = 18 }) -- The Abandoned
 Data:AddBoss(3355, { instanceID = 2999, order = 500, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\the_butcher.blp", displayID = 144188, level = 17 }) -- The Baron
 Data:AddBoss(3354, { instanceID = 2999, order = 1000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\rathmael.blp", displayID = 144175, level = 20 }) -- Rath'mael
-Data:AddBoss(3408, { instanceID = 2999, order = 2000, level = 19 }) -- Lordaeron Captain
+Data:AddBoss(3408, { instanceID = 2999, order = 2000, displayID = 139050, level = 19, rare = true }) -- Lordaeron Captain
 Data:AddBoss(3411, { instanceID = 2999, order = 3000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\viktor_the_vile.blp", displayID = 139455, level = 19 }) -- Viktor the Vile
 Data:AddBoss(3412, { instanceID = 2999, order = 4000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\bjork.blp", displayID = 144170, level = 19 }) -- Bjork
 

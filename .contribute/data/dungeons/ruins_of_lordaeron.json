@@ -104,7 +104,10 @@
     {
       "id": 3408,
       "name": "Lordaeron Captain",
+      "displayID": 139050,
+      "npc": 255699,
       "level": 19,
+      "rare": true,
       "loot": [
         {
           "item": 6641,

@@ -153,7 +153,7 @@ picture standing on its left, the name and the two info texts beside it, two car
 `InstanceFolder` nodes are card folders. The first card, "All Bosses", lists every item any of
 the instance's bosses drops (each item once), so the whole loot table reads at a glance. The
 trash card follows, then each `BossFolder(bossID)` carries what the database
-knows about the boss — portrait (a texture, or the model's display id for bosses without art), `info` as "<level> <creature type>" (e.g. "60 Beast"), `quests`,
+knows about the boss — portrait (a texture, or the model's display id for bosses without art), `info` as "<level> [rare] <creature type>" (e.g. "19 rare" or "60 Beast"), `quests`,
 and `infoRight` showing "1 drop on your lists" or "N drops on your lists" for distinct drops
 saved in Favorites or any other item list (hidden when none are saved). The right pane lists
 quests and has a button beneath them to open
@@ -505,7 +505,7 @@ Data.items[5188]     -- { quality, itemLevel, reqLevel, classID, subclassID, equ
                      --   stats, sellPrice, stackCount, setID, expansionID, craftingReagent }; indices in Data.ITEM
                      -- stats = { INTELLECT = 4, SPELL_POWER = 18 } (GetItemStats keys without ITEM_MOD_/_SHORT) or nil
 Data.instances[36]   -- { type = "dungeon", bosses = { 2741, ... }, minLevel = 15, maxLevel = 21, expansionID = 0, icon = "..." }
-Data.bosses[2747]    -- { instanceID = 36, order = 6000 }
+Data.bosses[3676]    -- { instanceID = 36, order = 1500, level = 19, rare = true, ... } for a rare spawn
 Data.bossLoot[2747]  -- { { 5188, 0.9 }, { 5191 }, ... }   -- { itemID, chance 0..1 or nil }
 Data.trashLoot[36]   -- { { 1935, 0.01 }, ... }   -- same rows, keyed by the instance: what its non-boss enemies drop
 Data.quests[166]     -- { id = 166, name = "The Defias Brotherhood", side = "Alliance", instanceID = 36, items = { { 2041 }, ... } }

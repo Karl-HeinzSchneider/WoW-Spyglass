@@ -66,8 +66,6 @@ Data:AddTrashLoot(33, {
     { 3194 }, -- Black Malice
     { 6341 }, -- Eerie Stable Lantern
     { 932 }, -- Fel Steed Saddlebags
-    { 6642 }, -- Phantom Armor
-    { 6641 }, -- Haunting Blade
 })
 
 Data:AddQuests(33, {

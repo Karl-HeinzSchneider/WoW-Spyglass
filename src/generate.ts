@@ -135,10 +135,11 @@ function emitInstance(
         portrait: c?.portrait,
         displayID: c?.displayID,
         level: c?.level,
+        rare: c?.rare,
         creatureType: c?.creatureType,
         quests: c?.quests,
       },
-      ["instanceID", "order", "portrait", "displayID", "level", "creatureType", "quests"],
+      ["instanceID", "order", "portrait", "displayID", "level", "rare", "creatureType", "quests"],
       "",
     )
       .join(" ")

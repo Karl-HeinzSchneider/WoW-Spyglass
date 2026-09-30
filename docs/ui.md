@@ -135,7 +135,7 @@ open.
   the same bevelled list-button atlas with the entry's `portrait` standing on the left (a
   `portraitDisplayID` instead draws the creature's model through
   `SetPortraitTextureFromCreatureDisplayID` into the same region), and the name and info beside
-  it (boss level and type, "N drops on your lists" for distinct drops saved in Favorites or
+  it (boss level, optional "rare", creature type, "N drops on your lists" for distinct drops saved in Favorites or
   any other item list, a quest "!" for `quests`). The count updates when lists change and stays hidden
   when no drops are saved.
   An instance lists All Bosses, then trash loot, then its bosses. A button under the right
