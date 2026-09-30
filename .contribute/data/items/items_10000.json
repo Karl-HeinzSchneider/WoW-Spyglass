@@ -32634,6 +32634,28 @@
       "SPIRIT": 22
     }
   },
+  "13002": {
+    "names": {
+      "enUS": "Lady Alizabeth's Pendant"
+    },
+    "quality": 3,
+    "itemLevel": 59,
+    "reqLevel": 54,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_NECK",
+    "bind": 2,
+    "icon": 133278,
+    "sellPrice": 14617,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "SPIRIT": 15,
+      "STAMINA": 8
+    }
+  },
   "13003": {
     "names": {
       "enUS": "Lord Alexander's Battle Axe"
@@ -32702,6 +32724,29 @@
       "RESISTANCE0_NAME": 23,
       "SPIRIT": 7,
       "STAMINA": 3
+    }
+  },
+  "13006": {
+    "names": {
+      "enUS": "Mass of McGowan"
+    },
+    "quality": 3,
+    "itemLevel": 62,
+    "reqLevel": 57,
+    "classID": 2,
+    "subclassID": 4,
+    "slot": "INVTYPE_WEAPONMAINHAND",
+    "bind": 2,
+    "icon": 133054,
+    "sellPrice": 54840,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 40.89,
+      "STAMINA": 10,
+      "STRENGTH": 10
     }
   },
   "13007": {
@@ -33035,6 +33080,29 @@
       "AGILITY": 5,
       "DAMAGE_PER_SECOND": 20.71,
       "INTELLECT": 5
+    }
+  },
+  "13021": {
+    "names": {
+      "enUS": "Needle Threader"
+    },
+    "quality": 3,
+    "itemLevel": 47,
+    "reqLevel": 42,
+    "classID": 2,
+    "subclassID": 2,
+    "slot": "INVTYPE_RANGED",
+    "bind": 2,
+    "icon": 135496,
+    "sellPrice": 16694,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 24.5,
+      "SPIRIT": 4,
+      "STAMINA": 6
     }
   },
   "13022": {
@@ -33430,6 +33498,29 @@
     "stats": {
       "AGILITY": 7,
       "DAMAGE_PER_SECOND": 21.25
+    }
+  },
+  "13039": {
+    "names": {
+      "enUS": "Skull Splitting Crossbow"
+    },
+    "quality": 3,
+    "itemLevel": 48,
+    "reqLevel": 43,
+    "classID": 2,
+    "subclassID": 18,
+    "slot": "INVTYPE_RANGEDRIGHT",
+    "bind": 2,
+    "icon": 135533,
+    "sellPrice": 17892,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ATTACK_POWER": 14,
+      "DAMAGE_PER_SECOND": 25.19,
+      "STRENGTH": 3
     }
   },
   "13040": {
@@ -34118,6 +34209,30 @@
       "DAMAGE_PER_SECOND": 0.75
     }
   },
+  "13070": {
+    "names": {
+      "enUS": "Sapphiron's Scale Boots"
+    },
+    "quality": 3,
+    "itemLevel": 58,
+    "reqLevel": 53,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_FEET",
+    "bind": 2,
+    "icon": 132586,
+    "sellPrice": 14087,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 9,
+      "RESISTANCE0_NAME": 417,
+      "STAMINA": 14,
+      "STRENGTH": 14
+    }
+  },
   "13071": {
     "names": {
       "enUS": "Plated Fist of Hakoo"
@@ -34187,6 +34302,53 @@
       "RESISTANCE0_NAME": 445,
       "SPIRIT": 17,
       "STAMINA": 17,
+      "STRENGTH": 10
+    }
+  },
+  "13074": {
+    "names": {
+      "enUS": "Golem Shard Leggings"
+    },
+    "quality": 3,
+    "itemLevel": 46,
+    "reqLevel": 41,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_LEGS",
+    "bind": 2,
+    "icon": 134584,
+    "sellPrice": 8024,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DEFENSE_SKILL_RATING": 6,
+      "RESISTANCE0_NAME": 429,
+      "STRENGTH": 22
+    }
+  },
+  "13076": {
+    "names": {
+      "enUS": "Giantslayer Bracers"
+    },
+    "quality": 3,
+    "itemLevel": 48,
+    "reqLevel": 43,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_WRIST",
+    "bind": 2,
+    "icon": 132616,
+    "sellPrice": 4715,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 5,
+      "RESISTANCE0_NAME": 223,
+      "STAMINA": 6,
       "STRENGTH": 10
     }
   },
@@ -34467,6 +34629,29 @@
       "STRENGTH": 4
     }
   },
+  "13089": {
+    "names": {
+      "enUS": "Skibi's Pendant"
+    },
+    "quality": 3,
+    "itemLevel": 49,
+    "reqLevel": 44,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_NECK",
+    "bind": 2,
+    "icon": 133282,
+    "sellPrice": 8039,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 13,
+      "SPIRIT": 3,
+      "STRENGTH": 5
+    }
+  },
   "13090": {
     "names": {
       "enUS": "Breastplate of the Chosen"
@@ -34491,6 +34676,28 @@
       "SPIRIT": 14,
       "STAMINA": 14,
       "STRENGTH": 14
+    }
+  },
+  "13091": {
+    "names": {
+      "enUS": "Medallion of Grand Marshal Morris"
+    },
+    "quality": 3,
+    "itemLevel": 57,
+    "reqLevel": 52,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_NECK",
+    "bind": 2,
+    "icon": 133441,
+    "sellPrice": 10637,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DEFENSE_SKILL_RATING": 10,
+      "STAMINA": 7
     }
   },
   "13092": {
@@ -34583,6 +34790,29 @@
     "stats": {
       "ATTACK_POWER": 20,
       "SPIRIT": 5,
+      "STAMINA": 7
+    }
+  },
+  "13096": {
+    "names": {
+      "enUS": "Band of the Hierophant"
+    },
+    "quality": 3,
+    "itemLevel": 60,
+    "reqLevel": 55,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_FINGER",
+    "bind": 2,
+    "icon": 133359,
+    "sellPrice": 7913,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 10,
+      "SPIRIT": 11,
       "STAMINA": 7
     }
   },
@@ -34797,6 +35027,29 @@
       "STRENGTH": 3
     }
   },
+  "13107": {
+    "names": {
+      "enUS": "Magiskull Cuffs"
+    },
+    "quality": 3,
+    "itemLevel": 62,
+    "reqLevel": 57,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_WRIST",
+    "bind": 2,
+    "icon": 132612,
+    "sellPrice": 11291,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 17,
+      "RESISTANCE0_NAME": 38,
+      "STAMINA": 7
+    }
+  },
   "13108": {
     "names": {
       "enUS": "Tigerstrike Mantle"
@@ -34986,6 +35239,30 @@
       "RESISTANCE0_NAME": 100,
       "SPIRIT": 6,
       "STAMINA": 3
+    }
+  },
+  "13116": {
+    "names": {
+      "enUS": "Spaulders of the Unseen"
+    },
+    "quality": 3,
+    "itemLevel": 61,
+    "reqLevel": 56,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_SHOULDER",
+    "bind": 2,
+    "icon": 135049,
+    "sellPrice": 19370,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 22,
+      "INTELLECT": 4,
+      "RESISTANCE0_NAME": 129,
+      "STAMINA": 7
     }
   },
   "13117": {
@@ -121384,6 +121661,28 @@
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
+  },
+  "19808": {
+    "names": {
+      "enUS": "Rockhide Strongfish"
+    },
+    "quality": 2,
+    "itemLevel": 45,
+    "reqLevel": 40,
+    "classID": 2,
+    "subclassID": 4,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 2,
+    "icon": 133913,
+    "sellPrice": 15556,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 26.6,
+      "STAMINA": 8
+    }
   },
   "19809": {
     "names": {

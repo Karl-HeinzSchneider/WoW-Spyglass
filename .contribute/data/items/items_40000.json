@@ -52,5 +52,44 @@
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
+  },
+  "49311": {
+    "names": {
+      "enUS": "Monster - Staff, Jeweled D01 Blue (Med Blue Glow)"
+    },
+    "quality": 0,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 2,
+    "subclassID": 10,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 0,
+    "icon": 135145,
+    "sellPrice": 3,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 0.83
+    }
+  },
+  "49715": {
+    "names": {
+      "enUS": "Forever-Lovely Rose"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_HEAD",
+    "bind": 1,
+    "icon": 133436,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
   }
 }
