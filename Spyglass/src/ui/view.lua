@@ -638,6 +638,10 @@ function SpyglassCardMixin:Init(view, node)
     local color = node.quality and ITEM_QUALITY_COLORS[node.quality] or HIGHLIGHT_FONT_COLOR
     self.Name:SetTextColor(color.r, color.g, color.b)
     self.Info:SetText(node.info or levelRangeText(node) or "")
+    -- A boss's saved-drop count can change while its folder node remains open.
+    if node.meta and node.meta.bossID then
+        node.infoRight = app.bossInterestText(node.meta.bossID)
+    end
     self.InfoRight:SetText(node.infoRight or "")
     self.Arrow:SetShown(app.api.IsFolder(node))
     self.QuestIcon:SetShown(node.quests ~= nil and #node.quests > 0)

@@ -33,14 +33,23 @@ function api.BossLootEntries(bossID)
     return entries
 end
 
--- Drops worth a look on a boss card ("3 of interest"). Not decided yet what counts — a
--- favorites system (the player's marked items), maybe an automatic rule on top — so until
--- then nothing does and the text stays hidden.
+-- Count each boss drop saved in Favorites or any other list once, even when it is in several lists.
 ---@param bossID integer
----@return integer
-local function dropsOfInterest(bossID)
-    return 0
+---@return string?
+local function bossInterestText(bossID)
+    local count, seen = 0, {}
+    for _, row in ipairs(Data:GetBossLoot(bossID)) do
+        local itemID = row[1]
+        if not seen[itemID] then
+            seen[itemID] = true
+            if #app.lists:GetListsOf(itemID) > 0 then
+                count = count + 1
+            end
+        end
+    end
+    return count > 0 and ("%d %s on your lists"):format(count, count == 1 and "drop" or "drops") or nil
 end
+app.bossInterestText = bossInterestText
 
 -- "60 Beast": what the curated data knows about the boss; nil when it knows nothing.
 ---@param boss Spyglass.Boss?
@@ -61,14 +70,13 @@ end
 ---@return Spyglass.Node
 function api.BossFolder(bossID)
     local boss = Data:GetBoss(bossID)
-    local interesting = dropsOfInterest(bossID)
     return api.Folder(Data:GetBossName(bossID), ICON_BOSS, api.BossLootEntries(bossID), {
         columns = 2,
         groupBy = "auto",
         portrait = boss and boss.portrait,
         portraitDisplayID = boss and boss.displayID,
         info = bossInfo(boss),
-        infoRight = interesting > 0 and ("%d of interest"):format(interesting) or nil,
+        infoRight = bossInterestText(bossID),
         quests = boss and boss.quests,
         meta = { bossID = bossID },
     })

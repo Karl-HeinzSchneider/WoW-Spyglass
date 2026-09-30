@@ -18,6 +18,7 @@
 ---@field filters Spyglass.Filters  # filter registry; also `Spyglass.Filters`
 ---@field query Spyglass.QueryAPI  # query runner; also `Spyglass.Query`
 ---@field lists Spyglass.Lists  # the user's item lists, Favorites first; also `Spyglass.Lists`
+---@field bossInterestText fun(bossID: integer): string?  # saved boss drops shown on cards (nodes.lua)
 ---@field commands Spyglass.CommandRegistry  # private dispatcher; registration is public API
 ---@field unknownItemKinds table<integer, true>  # items grouped without knowing their kind (registry.lua; the view regroups them)
 ---@field itemKind fun(itemID: integer): integer?, integer?, string?  # class id, subclass id, equip loc; nil when unknown (registry.lua)

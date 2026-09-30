@@ -154,8 +154,9 @@ picture standing on its left, the name and the two info texts beside it, two car
 the instance's bosses drops (each item once), so the whole loot table reads at a glance. The
 trash card follows, then each `BossFolder(bossID)` carries what the database
 knows about the boss — portrait (a texture, or the model's display id for bosses without art), `info` as "<level> <creature type>" (e.g. "60 Beast"), `quests`,
-and `infoRight` reserved for its _drops of interest_ (hidden until the planned favorites
-system decides what counts). The right pane lists quests and has a button beneath them to open
+and `infoRight` showing "1 drop on your lists" or "N drops on your lists" for distinct drops
+saved in Favorites or any other item list (hidden when none are saved). The right pane lists
+quests and has a button beneath them to open
 `QuestFolder(instanceID)`; the quest folder is not a card in the instance list.
 
 ```lua
