@@ -30920,6 +30920,30 @@
       "RESISTANCE0_NAME": 68
     }
   },
+  "274161": {
+    "names": {
+      "enUS": "Quillord Mail Leggings"
+    },
+    "quality": 3,
+    "itemLevel": 34,
+    "reqLevel": 29,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_LEGS",
+    "bind": 1,
+    "icon": 134590,
+    "sellPrice": 4836,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "BLOCK_RATING": 10,
+      "RESISTANCE0_NAME": 202,
+      "SPIRIT": 8,
+      "STAMINA": 11
+    }
+  },
   "274162": {
     "names": {
       "enUS": "Venom-dripping Heart"
@@ -33218,6 +33242,30 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "274290": {
+    "names": {
+      "enUS": "Painwalker Buckler"
+    },
+    "quality": 3,
+    "itemLevel": 34,
+    "reqLevel": 29,
+    "classID": 4,
+    "subclassID": 6,
+    "slot": "INVTYPE_SHIELD",
+    "bind": 1,
+    "icon": 134953,
+    "sellPrice": 5083,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 738,
+      "SPELL_DAMAGE_DONE": 5,
+      "SPELL_HEALING_DONE": 13,
+      "STAMINA": 6
+    }
+  },
   "274373": {
     "names": {
       "enUS": "Leather-bound Flask"
@@ -34054,6 +34102,29 @@
     "craftingReagent": false,
     "stats": {
       "DAMAGE_PER_SECOND": 0.75
+    }
+  },
+  "274517": {
+    "names": {
+      "enUS": "Unerring Purpose"
+    },
+    "quality": 2,
+    "itemLevel": 56,
+    "reqLevel": 56,
+    "classID": 2,
+    "subclassID": 7,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 2,
+    "icon": 135321,
+    "sellPrice": 2,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ATTACK_POWER": 16,
+      "DAMAGE_PER_SECOND": 33.39,
+      "STRENGTH": 5
     }
   },
   "274559": {

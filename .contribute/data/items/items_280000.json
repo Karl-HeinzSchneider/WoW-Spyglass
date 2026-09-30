@@ -4556,6 +4556,29 @@
       "STAMINA": 26
     }
   },
+  "281600": {
+    "names": {
+      "enUS": "Wail of Death"
+    },
+    "quality": 2,
+    "itemLevel": 61,
+    "reqLevel": 56,
+    "classID": 2,
+    "subclassID": 19,
+    "slot": "INVTYPE_RANGEDRIGHT",
+    "bind": 2,
+    "icon": 135474,
+    "sellPrice": 31921,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 54.17,
+      "SPIRIT": 4,
+      "STAMINA": 6
+    }
+  },
   "281628": {
     "names": {
       "enUS": "Blade of Bandarion"
@@ -5875,6 +5898,30 @@
       "DAMAGE_PER_SECOND": 2.65
     }
   },
+  "281891": {
+    "names": {
+      "enUS": "Fishscale Hauberk"
+    },
+    "quality": 2,
+    "itemLevel": 46,
+    "reqLevel": 41,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_CHEST",
+    "bind": 2,
+    "icon": 132624,
+    "sellPrice": 10734,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 11,
+      "RESISTANCE0_NAME": 254,
+      "SPIRIT": 5,
+      "STAMINA": 13
+    }
+  },
   "281925": {
     "names": {
       "enUS": "Whelpfire Wand"
@@ -6369,6 +6416,30 @@
       "SPIRIT": 11,
       "STAMINA": 13,
       "STRENGTH": 18
+    }
+  },
+  "282074": {
+    "names": {
+      "enUS": "Ogre Sorcerer Belt"
+    },
+    "quality": 2,
+    "itemLevel": 56,
+    "reqLevel": 51,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_WAIST",
+    "bind": 2,
+    "icon": 132499,
+    "sellPrice": 221,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 13,
+      "RESISTANCE0_NAME": 41,
+      "SPELL_POWER": 9,
+      "STRENGTH": 5
     }
   },
   "282080": {
@@ -6988,6 +7059,27 @@
       "STRENGTH": 7
     }
   },
+  "282703": {
+    "names": {
+      "enUS": "Needletooth's Needletooth"
+    },
+    "quality": 2,
+    "itemLevel": 37,
+    "reqLevel": 32,
+    "classID": 2,
+    "subclassID": 15,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 2,
+    "icon": 134298,
+    "sellPrice": 703,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 19.71
+    }
+  },
   "282711": {
     "names": {
       "enUS": "Naga Maiden's Gown"
@@ -7009,6 +7101,29 @@
       "INTELLECT": 9,
       "RESISTANCE0_NAME": 46,
       "STAMINA": 9
+    }
+  },
+  "282713": {
+    "names": {
+      "enUS": "Bloodstained Pants"
+    },
+    "quality": 2,
+    "itemLevel": 36,
+    "reqLevel": 31,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_LEGS",
+    "bind": 2,
+    "icon": 134586,
+    "sellPrice": 3935,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "HEALTH_REGEN": 8,
+      "RESISTANCE0_NAME": 90,
+      "STRENGTH": 12
     }
   },
   "282717": {
@@ -7115,6 +7230,29 @@
     "craftingReagent": false,
     "stats": {
       "ATTACK_POWER_VS_DRAGONKIN": 12
+    }
+  },
+  "283253": {
+    "names": {
+      "enUS": "Denmother's Hide"
+    },
+    "quality": 2,
+    "itemLevel": 37,
+    "reqLevel": 32,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_CLOAK",
+    "bind": 2,
+    "icon": 133762,
+    "sellPrice": 2549,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 24,
+      "SPIRIT": 5,
+      "STRENGTH": 5
     }
   },
   "283254": {
@@ -7336,6 +7474,28 @@
       "SPIRIT": 3
     }
   },
+  "284041": {
+    "names": {
+      "enUS": "Ironback Signet"
+    },
+    "quality": 2,
+    "itemLevel": 53,
+    "reqLevel": 48,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_FINGER",
+    "bind": 2,
+    "icon": 133359,
+    "sellPrice": 10786,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DEFENSE_SKILL_RATING": 4,
+      "STAMINA": 10
+    }
+  },
   "284067": {
     "names": {
       "enUS": "Rusted Family Memento"
@@ -7447,6 +7607,28 @@
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
+  },
+  "284154": {
+    "names": {
+      "enUS": "Unmovable Sabatons"
+    },
+    "quality": 2,
+    "itemLevel": 58,
+    "reqLevel": 53,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_FEET",
+    "bind": 2,
+    "icon": 132586,
+    "sellPrice": 14087,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 485,
+      "STAMINA": 14
+    }
   },
   "284165": {
     "names": {
@@ -7728,6 +7910,29 @@
     "stats": {
       "DAMAGE_PER_SECOND": 31.54,
       "STRENGTH": 9
+    }
+  },
+  "284253": {
+    "names": {
+      "enUS": "Eternally Frozen Band"
+    },
+    "quality": 3,
+    "itemLevel": 62,
+    "reqLevel": 57,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_FINGER",
+    "bind": 1,
+    "icon": 133370,
+    "sellPrice": 21539,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "FROST_DAMAGE_DONE": 16,
+      "FROST_RESISTANCE": 15,
+      "RESISTANCE4_NAME": 15
     }
   },
   "284257": {
@@ -8069,6 +8274,54 @@
       "STRENGTH": 3
     }
   },
+  "284382": {
+    "names": {
+      "enUS": "Budding Leaf Belt"
+    },
+    "quality": 2,
+    "itemLevel": 32,
+    "reqLevel": 27,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_WAIST",
+    "bind": 2,
+    "icon": 132492,
+    "sellPrice": 1324,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 54,
+      "SPELL_DAMAGE_DONE": 6,
+      "SPELL_HEALING_DONE": 13,
+      "STAMINA": 6
+    }
+  },
+  "284383": {
+    "names": {
+      "enUS": "Faerie Dragon's Skin"
+    },
+    "quality": 3,
+    "itemLevel": 32,
+    "reqLevel": 27,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_CLOAK",
+    "bind": 1,
+    "icon": 133769,
+    "sellPrice": 1899,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "NATURE_DAMAGE_DONE": 8,
+      "RESISTANCE0_NAME": 24,
+      "SPIRIT": 5,
+      "STAMINA": 5
+    }
+  },
   "284386": {
     "names": {
       "enUS": "Whipfang's Skinsearer"
@@ -8184,6 +8437,52 @@
       "AGILITY": 8,
       "ATTACK_POWER": 16,
       "RESISTANCE0_NAME": 70
+    }
+  },
+  "284573": {
+    "names": {
+      "enUS": "Ursol'lok's Paws"
+    },
+    "quality": 2,
+    "itemLevel": 33,
+    "reqLevel": 28,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_HAND",
+    "bind": 2,
+    "icon": 132952,
+    "sellPrice": 1485,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ATTACK_POWER_VS_BEAST": 18,
+      "RESISTANCE0_NAME": 61,
+      "STAMINA": 6
+    }
+  },
+  "284574": {
+    "names": {
+      "enUS": "Snapped Branch Wand"
+    },
+    "quality": 2,
+    "itemLevel": 27,
+    "reqLevel": 22,
+    "classID": 2,
+    "subclassID": 19,
+    "slot": "INVTYPE_RANGEDRIGHT",
+    "bind": 2,
+    "icon": 135139,
+    "sellPrice": 1535,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 21.18,
+      "NATURE_RESISTANCE": 3,
+      "RESISTANCE3_NAME": 3
     }
   },
   "284583": {
@@ -8359,6 +8658,50 @@
       "AGILITY": 2,
       "DAMAGE_PER_SECOND": 13.68,
       "STRENGTH": 2
+    }
+  },
+  "284697": {
+    "names": {
+      "enUS": "Arcane Charged Robes"
+    },
+    "quality": 2,
+    "itemLevel": 34,
+    "reqLevel": 29,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_CHEST",
+    "bind": 2,
+    "icon": 132665,
+    "sellPrice": 2506,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ARCANE_DAMAGE_DONE": 12,
+      "INTELLECT": 9,
+      "RESISTANCE0_NAME": 46
+    }
+  },
+  "284699": {
+    "names": {
+      "enUS": "Still Water Band"
+    },
+    "quality": 2,
+    "itemLevel": 29,
+    "reqLevel": 24,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_FINGER",
+    "bind": 2,
+    "icon": 133352,
+    "sellPrice": 1567,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "STAMINA": 4
     }
   },
   "284700": {
@@ -8748,6 +9091,29 @@
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
+  },
+  "285190": {
+    "names": {
+      "enUS": "Wyvern Heart Band"
+    },
+    "quality": 3,
+    "itemLevel": 34,
+    "reqLevel": 29,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_FINGER",
+    "bind": 1,
+    "icon": 133367,
+    "sellPrice": 3017,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 5,
+      "ATTACK_POWER": 15,
+      "STAMINA": 5
+    }
   },
   "285191": {
     "names": {
@@ -12008,6 +12374,29 @@
     "stats": {
       "STAMINA": 6,
       "STRENGTH": 12
+    }
+  },
+  "286556": {
+    "names": {
+      "enUS": "Winds of Tanaris"
+    },
+    "quality": 3,
+    "itemLevel": 53,
+    "reqLevel": 48,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_TRINKET",
+    "bind": 1,
+    "icon": 796638,
+    "sellPrice": 13744,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ATTACK_POWER": 16,
+      "NATURE_RESISTANCE": 12,
+      "RESISTANCE3_NAME": 12
     }
   },
   "286647": {

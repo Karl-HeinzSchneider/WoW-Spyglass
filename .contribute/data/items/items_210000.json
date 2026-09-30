@@ -6085,6 +6085,27 @@
       "DAMAGE_PER_SECOND": 19.84
     }
   },
+  "215375": {
+    "names": {
+      "enUS": "Tactician's Staff"
+    },
+    "quality": 1,
+    "itemLevel": 31,
+    "reqLevel": 26,
+    "classID": 2,
+    "subclassID": 10,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 0,
+    "icon": 135175,
+    "sellPrice": 1257,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 19.71
+    }
+  },
   "215376": {
     "names": {
       "enUS": "Crusader's Mace"
