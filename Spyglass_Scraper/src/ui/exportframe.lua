@@ -5,7 +5,7 @@ local _, app = ...
 -- Ctrl+C is yours). The text goes into a file for `npm run import` or into an issue.
 
 local HINT =
-    "Ctrl+C copies the selection. Save it as a .json file in .contribute/inbox/ and run `npm run import`, or attach it to an issue. Only records new since the last export are shown; /sg export all shows everything."
+    "Ctrl+C copies the selection. Save it as a .json file in .contribute/inbox/ and run `npm run import`, or attach it to an issue. Item records are new since the last export; trainer snapshots are always included. /sg export all repeats every item."
 
 ---@class SpyglassScraper.ExportFrame : Frame
 ---@field TitleText FontString

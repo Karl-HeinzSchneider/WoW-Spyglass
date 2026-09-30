@@ -5,5 +5,83 @@
   "backgroundCoords": [0.04, 0.96, 0.4, 0.6995],
   "order": 110,
   "skillLine": 129,
-  "recipes": []
+  "recipes": [
+    {
+      "item": 118,
+      "name": "Minor Healing Potion",
+      "spell": 1244431,
+      "skill": 1,
+      "source": "Trainer"
+    },
+    {
+      "item": 279968,
+      "name": "First Aid Kit",
+      "spell": 1230117,
+      "skill": 20,
+      "source": "Trainer"
+    },
+    {
+      "item": 2581,
+      "name": "Heavy Linen Bandage",
+      "spell": 3276,
+      "skill": 40,
+      "source": "Trainer"
+    },
+    {
+      "item": 858,
+      "name": "Lesser Healing Potion",
+      "spell": 1244432,
+      "skill": 55,
+      "source": "Trainer"
+    },
+    {
+      "item": 6452,
+      "name": "Anti-Venom",
+      "spell": 7934,
+      "skill": 80,
+      "source": "Trainer"
+    },
+    {
+      "item": 3530,
+      "name": "Wool Bandage",
+      "spell": 3277,
+      "skill": 80,
+      "source": "Trainer"
+    },
+    {
+      "item": 255716,
+      "name": "Simple Poultice",
+      "spell": 1259342,
+      "skill": 90,
+      "source": "Trainer"
+    },
+    {
+      "item": 929,
+      "name": "Healing Potion",
+      "spell": 1244433,
+      "skill": 110,
+      "source": "Trainer"
+    },
+    {
+      "item": 3531,
+      "name": "Heavy Wool Bandage",
+      "spell": 3278,
+      "skill": 115,
+      "source": "Trainer"
+    },
+    {
+      "item": 255720,
+      "name": "Woolen Tourniquet",
+      "spell": 1259347,
+      "skill": 120,
+      "source": "Trainer"
+    },
+    {
+      "item": 6450,
+      "name": "Silk Bandage",
+      "spell": 7928,
+      "skill": 150,
+      "source": "Trainer"
+    }
+  ]
 }

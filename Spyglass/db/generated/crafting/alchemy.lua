@@ -10,3 +10,13 @@ Data:AddList("crafting", "alchemy", {
     order = 10,
     skillLineID = 171,
 })
+Data:AddListLoot("crafting", "alchemy", {
+    { 2454, spell = 2329, skill = 15, source = "Trainer" }, -- Elixir of Minor Strength
+    { 3382, spell = 3170, skill = 15, source = "Trainer" }, -- Minor Troll's Blood Elixir
+    { 279956, spell = 1230564, skill = 20, source = "Trainer" }, -- Mana Well
+    { 2455, spell = 2331, skill = 25, source = "Trainer" }, -- Minor Mana Potion
+    { 249409, spell = 1249630, skill = 40, source = "Trainer" }, -- Cerulean Dye
+    { 2456, spell = 2332, skill = 40, source = "Trainer" }, -- Minor Rejuvenation Potion
+    { 249410, spell = 1249633, skill = 40, source = "Trainer" }, -- Sulfuric Acid
+    { 2458, spell = 2334, skill = 50, source = "Trainer" }, -- Elixir of Minor Fortitude
+})

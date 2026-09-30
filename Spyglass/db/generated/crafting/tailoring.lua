@@ -15,3 +15,28 @@ Data:AddList("crafting", "tailoring", {
         { name = "Clothing", categories = { 2589, 2590 } }, -- Shirts, Dressed for the Occasion
     },
 })
+Data:AddListLoot("crafting", "tailoring", {
+    { 2576, spell = 2393, skill = 1, source = "Trainer" }, -- White Linen Shirt
+    { 4238, spell = 3755, skill = 5, source = "Trainer" }, -- Linen Bag
+    { 2568, spell = 2385, skill = 10, source = "Trainer" }, -- Brown Linen Vest
+    { 7026, spell = 8776, skill = 15, source = "Trainer" }, -- Linen Belt
+    { 10046, spell = 12045, skill = 20, source = "Trainer" }, -- Simple Linen Boots
+    { 2577, spell = 2394, skill = 25, source = "Trainer" }, -- Blue Linen Shirt
+    { 4343, spell = 3914, skill = 25, source = "Trainer" }, -- Brown Linen Pants
+    { 6238, spell = 7623, skill = 25, source = "Trainer" }, -- Brown Linen Robe
+    { 2575, spell = 2392, skill = 25, source = "Trainer" }, -- Red Linen Shirt
+    { 6786, spell = 8465, skill = 25, source = "Trainer" }, -- Simple Dress
+    { 6241, spell = 7624, skill = 25, source = "Trainer" }, -- White Linen Robe
+    { 4307, spell = 3840, skill = 25, source = "Trainer" }, -- Heavy Linen Gloves
+    { 253885, spell = 1257368, skill = 35, source = "Trainer" }, -- Novice Arcanist's Sash
+    { 253887, spell = 1257369, skill = 35, source = "Trainer" }, -- Novice Ardent's Sash
+    { 4308, spell = 3841, skill = 35, source = "Trainer" }, -- Green Linen Bracers
+    { 2580, spell = 2397, skill = 35, source = "Trainer" }, -- Reinforced Linen Cape
+    { 2579, spell = 2396, skill = 40, source = "Trainer" }, -- Green Linen Shirt
+    { 2569, spell = 2386, skill = 40, source = "Trainer" }, -- Linen Boots
+    { 2578, spell = 2395, skill = 40, source = "Trainer" }, -- Barbaric Linen Vest
+    { 4309, spell = 3842, skill = 45, source = "Trainer" }, -- Handstitched Linen Britches
+    { 10047, spell = 12046, skill = 50, source = "Trainer" }, -- Simple Kilt
+    { 2997, spell = 2964, skill = 55, source = "Trainer" }, -- Bolt of Woolen Cloth
+    { 2584, spell = 2402, skill = 55, source = "Trainer" }, -- Woolen Cape
+})

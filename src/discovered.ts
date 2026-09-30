@@ -7,9 +7,8 @@ import { type LuaValue, luaGet, parseSavedVariables } from "./savedvars.js";
 /**
  * What the scraper recorded in-game (`SpyglassScraperDB.global.discovered`, see
  * Spyglass_Scraper/src/discovery.lua):
- * scanned items with everything GetItemInfo/GetItemStats return, and per boss (DungeonEncounter
- * id) how often it was killed and which items were seen dropping. `/sg export` writes the same
- * shape as JSON.
+ * scanned items, observed boss loot and trainer services. `/sg export` writes the same shape as
+ * JSON.
  */
 export interface Discovered {
   build?: string;
@@ -17,6 +16,7 @@ export interface Discovered {
   locale: string;
   items: Map<number, DiscoveredItem>;
   loot: Map<number, DiscoveredLoot>;
+  trainers: Map<number, DiscoveredTrainer>;
 }
 
 /** A scanned item as recorded: one name, in `Discovered.locale`, and its own id. */
@@ -26,6 +26,37 @@ export interface DiscoveredLoot {
   kills: number;
   /** itemID -> kills in which it was seen */
   items: Map<number, number>;
+}
+
+export interface DiscoveredTrainer {
+  id: number;
+  name: string;
+  locale: string;
+  build?: string;
+  zone?: string;
+  faction?: string;
+  trainerType?: number;
+  playerLevel?: number;
+  playerClass?: string;
+  services: Map<number, DiscoveredTrainerService>;
+}
+
+export interface DiscoveredTrainerService {
+  name: string;
+  type: string;
+  subText?: string;
+  category?: string;
+  icon?: number | string;
+  requiredLevel?: number;
+  skillName?: string;
+  skillRank?: number;
+  abilityRequirements: Map<number, string>;
+  cost?: number;
+  isProfession?: boolean;
+  skillLineName?: string;
+  description?: string;
+  itemLink?: string;
+  source: "trainer";
 }
 
 /**
@@ -60,6 +91,10 @@ function field(value: unknown, key: string): unknown {
 
 function num(value: unknown, fallback = 0): number {
   return typeof value === "number" && Number.isFinite(value) ? value : fallback;
+}
+
+function string(value: unknown): string | undefined {
+  return typeof value === "string" && value !== "" ? value : undefined;
 }
 
 function stats(value: unknown): Record<string, number> | undefined {
@@ -110,7 +145,54 @@ function normalize(root: unknown, source: string): Discovered {
     }
     loot.set(encounterID, { kills: num(field(entry, "kills")), items: seen });
   }
-  if (items.size === 0 && loot.size === 0) throw new Error(`${source}: nothing recorded in it`);
+  const trainers = new Map<number, DiscoveredTrainer>();
+  for (const [id, entry] of numericEntries(field(root, "trainers"))) {
+    const services = new Map<number, DiscoveredTrainerService>();
+    for (const [index, service] of numericEntries(field(entry, "services"))) {
+      const name = string(field(service, "name"));
+      const type = string(field(service, "type"));
+      if (!name || !type) continue;
+      const abilityRequirements = new Map<number, string>();
+      for (const [reqIndex, value] of numericEntries(field(service, "abilityRequirements"))) {
+        const requirement = string(value);
+        if (requirement) abilityRequirements.set(reqIndex, requirement);
+      }
+      services.set(index, {
+        name,
+        type,
+        subText: string(field(service, "subText")),
+        category: string(field(service, "category")),
+        icon:
+          typeof field(service, "icon") === "number" || typeof field(service, "icon") === "string"
+            ? (field(service, "icon") as number | string)
+            : undefined,
+        requiredLevel: num(field(service, "requiredLevel")),
+        skillName: string(field(service, "skillName")),
+        skillRank: num(field(service, "skillRank")),
+        abilityRequirements,
+        cost: num(field(service, "cost")),
+        isProfession: field(service, "isProfession") === true,
+        skillLineName: string(field(service, "skillLineName")),
+        description: string(field(service, "description")),
+        itemLink: string(field(service, "itemLink")),
+        source: "trainer",
+      });
+    }
+    if (!services.size) continue;
+    trainers.set(id, {
+      id,
+      name: string(field(entry, "name")) ?? "",
+      locale: string(field(entry, "locale")) ?? FALLBACK_LOCALE,
+      build: string(field(entry, "build")),
+      zone: string(field(entry, "zone")),
+      faction: string(field(entry, "faction")),
+      trainerType: num(field(entry, "trainerType")),
+      playerLevel: num(field(entry, "playerLevel")),
+      playerClass: string(field(entry, "playerClass")),
+      services,
+    });
+  }
+  if (items.size === 0 && loot.size === 0 && trainers.size === 0) throw new Error(`${source}: nothing recorded in it`);
   const build = field(root, "build");
   const locale = field(root, "locale");
   return {
@@ -118,6 +200,7 @@ function normalize(root: unknown, source: string): Discovered {
     locale: typeof locale === "string" && locale !== "" ? locale : FALLBACK_LOCALE,
     items,
     loot,
+    trainers,
   };
 }
 

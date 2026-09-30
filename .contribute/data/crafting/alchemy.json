@@ -5,5 +5,62 @@
   "backgroundCoords": [0.57, 1, 0.2, 1],
   "order": 10,
   "skillLine": 171,
-  "recipes": []
+  "recipes": [
+    {
+      "item": 2454,
+      "name": "Elixir of Minor Strength",
+      "spell": 2329,
+      "skill": 15,
+      "source": "Trainer"
+    },
+    {
+      "item": 3382,
+      "name": "Minor Troll's Blood Elixir",
+      "spell": 3170,
+      "skill": 15,
+      "source": "Trainer"
+    },
+    {
+      "item": 279956,
+      "name": "Mana Well",
+      "spell": 1230564,
+      "skill": 20,
+      "source": "Trainer"
+    },
+    {
+      "item": 2455,
+      "name": "Minor Mana Potion",
+      "spell": 2331,
+      "skill": 25,
+      "source": "Trainer"
+    },
+    {
+      "item": 249409,
+      "name": "Cerulean Dye",
+      "spell": 1249630,
+      "skill": 40,
+      "source": "Trainer"
+    },
+    {
+      "item": 2456,
+      "name": "Minor Rejuvenation Potion",
+      "spell": 2332,
+      "skill": 40,
+      "source": "Trainer"
+    },
+    {
+      "item": 249410,
+      "name": "Sulfuric Acid",
+      "spell": 1249633,
+      "skill": 40,
+      "source": "Trainer"
+    },
+    {
+      "item": 2458,
+      "name": "Elixir of Minor Fortitude",
+      "spell": 2334,
+      "skill": 50,
+      "source": "Trainer"
+    }
+  ]
 }

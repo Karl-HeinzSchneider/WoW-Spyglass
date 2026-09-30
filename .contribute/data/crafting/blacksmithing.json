@@ -27,5 +27,160 @@
       "categories": [2460, 2459, 2488]
     }
   ],
-  "recipes": []
+  "recipes": [
+    {
+      "item": 2852,
+      "name": "Copper Chain Pants",
+      "spell": 2662,
+      "skill": 15,
+      "source": "Trainer"
+    },
+    {
+      "item": 2844,
+      "name": "Copper Mace",
+      "spell": 2737,
+      "skill": 15,
+      "source": "Trainer"
+    },
+    {
+      "item": 2845,
+      "name": "Copper Axe",
+      "spell": 2738,
+      "skill": 20,
+      "source": "Trainer"
+    },
+    {
+      "item": 3469,
+      "name": "Copper Chain Boots",
+      "spell": 3319,
+      "skill": 20,
+      "source": "Trainer"
+    },
+    {
+      "item": 279944,
+      "name": "Sharpening Wheel",
+      "spell": 1230171,
+      "skill": 20,
+      "source": "Trainer"
+    },
+    {
+      "item": 2847,
+      "name": "Copper Shortsword",
+      "spell": 2739,
+      "skill": 25,
+      "source": "Trainer"
+    },
+    {
+      "item": 7955,
+      "name": "Copper Claymore",
+      "spell": 9983,
+      "skill": 25,
+      "source": "Trainer"
+    },
+    {
+      "item": 7166,
+      "name": "Copper Dagger",
+      "spell": 8880,
+      "skill": 25,
+      "source": "Trainer"
+    },
+    {
+      "item": 3470,
+      "name": "Rough Grinding Stone",
+      "spell": 3320,
+      "skill": 25,
+      "source": "Trainer"
+    },
+    {
+      "item": 2851,
+      "name": "Copper Chain Belt",
+      "spell": 2661,
+      "skill": 30,
+      "source": "Trainer"
+    },
+    {
+      "item": 3488,
+      "name": "Copper Battle Axe",
+      "spell": 3293,
+      "skill": 30,
+      "source": "Trainer"
+    },
+    {
+      "item": 250620,
+      "name": "Gemmed Copper Boots",
+      "spell": 1252229,
+      "skill": 35,
+      "source": "Trainer"
+    },
+    {
+      "item": 250482,
+      "name": "Glowing Copper Boots",
+      "spell": 1252231,
+      "skill": 35,
+      "source": "Trainer"
+    },
+    {
+      "item": 3472,
+      "name": "Runed Copper Gauntlets",
+      "spell": 3323,
+      "skill": 35,
+      "source": "Trainer"
+    },
+    {
+      "item": 250621,
+      "name": "Strange Copper Boots",
+      "spell": 1252230,
+      "skill": 35,
+      "source": "Trainer"
+    },
+    {
+      "item": 3473,
+      "name": "Runed Copper Pants",
+      "spell": 3324,
+      "skill": 35,
+      "source": "Trainer"
+    },
+    {
+      "item": 2863,
+      "name": "Coarse Sharpening Stone",
+      "spell": 2665,
+      "skill": 40,
+      "source": "Trainer"
+    },
+    {
+      "item": 3240,
+      "name": "Coarse Weightstone",
+      "spell": 3116,
+      "skill": 40,
+      "source": "Trainer"
+    },
+    {
+      "item": 6214,
+      "name": "Heavy Copper Maul",
+      "spell": 7408,
+      "skill": 40,
+      "source": "Trainer"
+    },
+    {
+      "item": 2857,
+      "name": "Runed Copper Belt",
+      "spell": 2666,
+      "skill": 45,
+      "source": "Trainer"
+    },
+    {
+      "item": 3489,
+      "name": "Thick War Axe",
+      "spell": 3294,
+      "skill": 45,
+      "source": "Trainer"
+    },
+    {
+      "item": 3478,
+      "name": "Coarse Grinding Stone",
+      "spell": 3326,
+      "skill": 50,
+      "source": "Trainer"
+    }
+  ]
 }

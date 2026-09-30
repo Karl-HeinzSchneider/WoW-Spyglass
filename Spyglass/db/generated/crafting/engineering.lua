@@ -10,3 +10,16 @@ Data:AddList("crafting", "engineering", {
     order = 40,
     skillLineID = 202,
 })
+Data:AddListLoot("crafting", "engineering", {
+    { 279950, spell = 1230656, skill = 20, source = "Trainer" }, -- Reagent Bot
+    { 4359, spell = 3922, skill = 30, source = "Trainer" }, -- Handful of Copper Bolts
+    { 4360, spell = 3923, skill = 30, source = "Trainer" }, -- Rough Copper Bomb
+    { 6219, spell = 7430, skill = 50, source = "Trainer" }, -- Arclight Spanner
+    { 4361, spell = 3924, skill = 50, source = "Trainer" }, -- Copper Tube
+    { 4362, spell = 3925, skill = 50, source = "Trainer" }, -- Rough Boomstick
+    { 4405, spell = 3977, skill = 60, source = "Trainer" }, -- Crude Scope
+    { 4363, spell = 3926, skill = 65, source = "Trainer" }, -- Copper Modulator
+    { 4364, spell = 3929, skill = 75, source = "Trainer" }, -- Coarse Blasting Powder
+    { 4365, spell = 3931, skill = 75, source = "Trainer" }, -- Coarse Dynamite
+    { 8068, spell = 3930, skill = 75, source = "Trainer" }, -- Crafted Heavy Shot
+})

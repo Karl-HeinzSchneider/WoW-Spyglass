@@ -13,6 +13,11 @@ const discovered = `{
   ["loot"] = {
     [7] = { ["id"] = 7, ["kills"] = 4, ["items"] = { [101] = 2 } },
   },
+  ["trainers"] = {
+    [42] = { ["id"] = 42, ["name"] = "Teacher", ["locale"] = "deDE", ["build"] = "test", ["services"] = {
+      [1] = { ["name"] = "Copper Belt", ["type"] = "unavailable", ["skillName"] = "Schmiedekunst", ["skillRank"] = 75, ["requiredLevel"] = 10, ["source"] = "trainer", ["abilityRequirements"] = { [1] = "Apprentice Blacksmithing" } },
+    } },
+  },
 }`;
 
 test("loads SpyglassScraperDB discovered data", () => {
@@ -25,6 +30,9 @@ test("loads SpyglassScraperDB discovered data", () => {
     assert.equal(result.items.get(101)?.name, "Test");
     assert.equal(result.loot.get(7)?.kills, 4);
     assert.equal(result.loot.get(7)?.items.get(101), 2);
+    assert.equal(result.trainers.get(42)?.services.get(1)?.skillRank, 75);
+    assert.equal(result.trainers.get(42)?.services.get(1)?.requiredLevel, 10);
+    assert.equal(result.trainers.get(42)?.services.get(1)?.abilityRequirements.get(1), "Apprentice Blacksmithing");
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }

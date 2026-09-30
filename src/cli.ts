@@ -8,8 +8,8 @@
  *   npm run check            validate the curated files (instances and item lists) against the
  *                            game data and the scans
  *   npm run fix              same, and rewrite names / add missing encounters
- *   npm run import           merge scanned items recorded in-game (SavedVariables,
- *                            /sg export and /sg levels JSON files in .contribute/inbox/)
+ *   npm run import           merge scanned items and trainer snapshots recorded in-game
+ *                            (SavedVariables, /sg export and /sg levels JSON files in .contribute/inbox/)
  *                            into the curated data
  *   npm run import -- FILE   same for one file anywhere
  *   npm run import -- --loot [FILE]   also import observed boss drops
@@ -35,6 +35,8 @@ import { type ListFile, loadLists, serializeList, validateLists } from "./lists.
 import { shipsRecipe } from "./recipes.js";
 import { loadReference, relinkRecipes } from "./reference.js";
 import { type QuestFile, loadQuests, serializeQuests, validateQuests } from "./quests.js";
+import { importTrainers } from "./trainers.js";
+import { fetchTable, int } from "./wago.js";
 
 const { positionals, values } = parseArgs({
   allowPositionals: true,
@@ -84,6 +86,7 @@ console.log(
 );
 
 let importedDiscovered = false;
+const trainerSpellNames = new Map<string, Map<number, string>>();
 for (const path of importPaths) {
   const json = path.toLowerCase().endsWith(".json") ? JSON.parse(readFileSync(path, "utf-8")) : undefined;
   if (json?.kind === "dungeon-levels") {
@@ -98,9 +101,20 @@ for (const path of importPaths) {
     continue;
   }
   const discovered = loadDiscovered(path);
-  importedDiscovered = true;
+  importedDiscovered ||= discovered.items.size > 0;
   console.log(`importing ${relative(ROOT, path)}${discovered.build ? ` (recorded on build ${discovered.build})` : ""}`);
   for (const line of importDiscovered(discovered, ref, curated, values.loot)) console.log(`  ${line}`);
+  if (discovered.trainers.size > 0) {
+    for (const trainer of discovered.trainers.values()) {
+      if (trainer.build !== ref.build) continue;
+      const locale = trainer.locale === "enGB" ? "enUS" : trainer.locale;
+      if (trainerSpellNames.has(locale)) continue;
+      const names = new Map<number, string>();
+      for (const row of await fetchTable("SpellName", ref.build, locale)) names.set(int(row.ID), row.Name_lang ?? "");
+      trainerSpellNames.set(locale, names);
+    }
+    for (const line of importTrainers(discovered, ref, lists, trainerSpellNames)) console.log(`  ${line}`);
+  }
 }
 if (importedDiscovered) {
   await saveScannedItems(ref.items);

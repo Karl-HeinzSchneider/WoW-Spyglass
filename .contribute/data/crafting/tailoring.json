@@ -19,5 +19,167 @@
       "categories": [2589, 2590]
     }
   ],
-  "recipes": []
+  "recipes": [
+    {
+      "item": 2576,
+      "name": "White Linen Shirt",
+      "spell": 2393,
+      "skill": 1,
+      "source": "Trainer"
+    },
+    {
+      "item": 4238,
+      "name": "Linen Bag",
+      "spell": 3755,
+      "skill": 5,
+      "source": "Trainer"
+    },
+    {
+      "item": 2568,
+      "name": "Brown Linen Vest",
+      "spell": 2385,
+      "skill": 10,
+      "source": "Trainer"
+    },
+    {
+      "item": 7026,
+      "name": "Linen Belt",
+      "spell": 8776,
+      "skill": 15,
+      "source": "Trainer"
+    },
+    {
+      "item": 10046,
+      "name": "Simple Linen Boots",
+      "spell": 12045,
+      "skill": 20,
+      "source": "Trainer"
+    },
+    {
+      "item": 2577,
+      "name": "Blue Linen Shirt",
+      "spell": 2394,
+      "skill": 25,
+      "source": "Trainer"
+    },
+    {
+      "item": 4343,
+      "name": "Brown Linen Pants",
+      "spell": 3914,
+      "skill": 25,
+      "source": "Trainer"
+    },
+    {
+      "item": 6238,
+      "name": "Brown Linen Robe",
+      "spell": 7623,
+      "skill": 25,
+      "source": "Trainer"
+    },
+    {
+      "item": 2575,
+      "name": "Red Linen Shirt",
+      "spell": 2392,
+      "skill": 25,
+      "source": "Trainer"
+    },
+    {
+      "item": 6786,
+      "name": "Simple Dress",
+      "spell": 8465,
+      "skill": 25,
+      "source": "Trainer"
+    },
+    {
+      "item": 6241,
+      "name": "White Linen Robe",
+      "spell": 7624,
+      "skill": 25,
+      "source": "Trainer"
+    },
+    {
+      "item": 4307,
+      "name": "Heavy Linen Gloves",
+      "spell": 3840,
+      "skill": 25,
+      "source": "Trainer"
+    },
+    {
+      "item": 253885,
+      "name": "Novice Arcanist's Sash",
+      "spell": 1257368,
+      "skill": 35,
+      "source": "Trainer"
+    },
+    {
+      "item": 253887,
+      "name": "Novice Ardent's Sash",
+      "spell": 1257369,
+      "skill": 35,
+      "source": "Trainer"
+    },
+    {
+      "item": 4308,
+      "name": "Green Linen Bracers",
+      "spell": 3841,
+      "skill": 35,
+      "source": "Trainer"
+    },
+    {
+      "item": 2580,
+      "name": "Reinforced Linen Cape",
+      "spell": 2397,
+      "skill": 35,
+      "source": "Trainer"
+    },
+    {
+      "item": 2579,
+      "name": "Green Linen Shirt",
+      "spell": 2396,
+      "skill": 40,
+      "source": "Trainer"
+    },
+    {
+      "item": 2569,
+      "name": "Linen Boots",
+      "spell": 2386,
+      "skill": 40,
+      "source": "Trainer"
+    },
+    {
+      "item": 2578,
+      "name": "Barbaric Linen Vest",
+      "spell": 2395,
+      "skill": 40,
+      "source": "Trainer"
+    },
+    {
+      "item": 4309,
+      "name": "Handstitched Linen Britches",
+      "spell": 3842,
+      "skill": 45,
+      "source": "Trainer"
+    },
+    {
+      "item": 10047,
+      "name": "Simple Kilt",
+      "spell": 12046,
+      "skill": 50,
+      "source": "Trainer"
+    },
+    {
+      "item": 2997,
+      "name": "Bolt of Woolen Cloth",
+      "spell": 2964,
+      "skill": 55,
+      "source": "Trainer"
+    },
+    {
+      "item": 2584,
+      "name": "Woolen Cape",
+      "spell": 2402,
+      "skill": 55,
+      "source": "Trainer"
+    }
+  ]
 }

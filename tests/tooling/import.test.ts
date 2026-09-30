@@ -10,6 +10,7 @@ function fixture(): { discovered: Discovered; ref: Reference; files: CuratedFile
     locale: "enUS",
     items: new Map([[101, { id: 101, name: "Scanned Item", quality: 2 } as DiscoveredItem]]),
     loot: new Map([[7, { kills: 12, items: new Map([[101, 3]]) }]]),
+    trainers: new Map(),
   };
   const ref = {
     build: "test",

@@ -15,6 +15,7 @@ the tools do with it.
 | Factions                  | wago.tools `Faction`, the rows with a reputation bar; reputation files are checked against it.                                                                                                                                                              |
 | Non-English item names    | wago.tools `ItemSparse`, for a scanned item whose English name there is the scanned one; a name scanned on a client of that language wins.                                                                                                                  |
 | Drops, quests, item lists | Hand-curated JSON; it meets the scans only through item ids. A curated row may reference an unscanned id (a warning, not an error).                                                                                                                         |
+| Trainer requirements      | `/sg trainer` snapshots of the server's trainer window, imported into matching crafting rows.                                                                                                                                                               |
 
 `ItemSparse` agrees with the scans on the items it has but lacks thousands of this server's
 items, so it is read for exactly two things: the skill a scanned recipe item requires, and the
@@ -46,11 +47,15 @@ wago.tools tables are downloaded as CSV and cached in `.cache/<build>/` (`src/wa
 ## The run (`src/cli.ts`)
 
 `loadConfig()` → `loadReference()` (the game tables and the scans) → `loadCurated()` +
-`loadQuests()` + `loadLists()` → for `import`: `loadDiscovered` + `importDiscovered` or dungeon-level
-scan import per file, then
+`loadQuests()` + `loadLists()` → for `import`: `loadDiscovered` + `importDiscovered` +
+`importTrainers` or dungeon-level scan import per file, then
 `saveScannedItems` → `Checker` + `validateDungeonLevels` + `validate` + `validateQuests` + `validateLists` → for `fix` and `import`: rewrite
 the JSON → `build` + `write`. Errors stop generation; fixable problems and warnings don't.
 `import` always fixes, since it writes the curated files anyway.
+Trainer services are matched against the pinned build's localized `SpellName` table and the
+required profession; only one-to-one matches to recipes confirmed by item scans are imported.
+The importer writes `skill` and `source` in the crafting list. Snapshots from another build are
+skipped, and the raw snapshot retains character-level, cost and prerequisite details.
 `check` and `fix` load only English game-table names and the scanned item names; translation
 tables are needed only by `gen` and `import`.
 

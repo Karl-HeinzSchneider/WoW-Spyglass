@@ -5,5 +5,13 @@
   "backgroundCoords": [0.04, 0.96, 0.4, 0.6995],
   "order": 120,
   "skillLine": 356,
-  "recipes": []
+  "recipes": [
+    {
+      "item": 279967,
+      "name": "Fish Bowl",
+      "spell": 1229745,
+      "skill": 20,
+      "source": "Trainer"
+    }
+  ]
 }

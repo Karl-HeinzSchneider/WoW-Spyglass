@@ -21,15 +21,17 @@ read it before changing this addon. The contributor workflow it feeds is in
   `Spyglass.LogAt`, so output shares the core's prefix and level setting.
 - `src/db.lua` — `app.dbDefaults` for AceDB: `global.dbVersion`,
   `global.discovered = { build?, locale?, items = { [id] = DiscoveredItem }, loot = { [encounterID] = { id, kills, items = { [itemID] = count } } } }`,
-  `global.scan = { next?, to?, limit? }` (progress that survives `/reload`). The Lua classes
-  `DiscoveredItem/DiscoveredLoot/Discovered/ScanProgress` are the shape `src/discovered.ts` reads.
+  `global.discovered.trainers = { [npcID] = trainer snapshot }`, `global.scan = { next?, to?, limit? }`
+  (progress that survives `/reload`). The Lua classes
+  `DiscoveredItem/DiscoveredLoot/DiscoveredTrainer/Discovered/ScanProgress` are the shape
+  `src/discovered.ts` reads.
 - `src/json.lua` — `app.json.encode`, a minimal encoder for `/sg export` (objects only, no arrays).
 - `src/ace.lua` — `app.addon`, the AceAddon object (AceEvent). `OnInitialize` opens
-  `SpyglassScraperDB`; `OnEnable` registers `scan`, `export`, `levels` and `portrait` through
+  `SpyglassScraperDB`; `OnEnable` registers `scan`, `export`, `levels`, `trainer` and `portrait` through
   `Spyglass:RegisterCommand`, `OnDisable` unregisters them. The handlers are stored on the
   object so unregistering matches.
 - `src/discovery.lua` — `app.discovery`, the Ace module doing the scanning, loot observation and
-  export, including the group finder level snapshot.
+  export, including group finder and trainer snapshots.
 - `src/ui/exportframe.lua/.xml` — `SpyglassScraperExportFrameMixin` / `app.exportFrame`: the
   window that shows the export JSON.
 - `src/ui/portraitframe.lua/.xml` — `SpyglassScraperPortraitFrameMixin` / `app.portraitFrame`:

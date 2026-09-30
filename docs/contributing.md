@@ -410,6 +410,13 @@ game's tables can't say:
 - Rows for recipes the client's tables don't know (server-side ones): a plain item row, allowed
   with a warning on `spell`.
 
+To fill trainer requirements, open a trainer in game, enable all three service filters and use
+`/sg trainer`. Then `/sg export`, save the JSON in `.contribute/inbox/`
+and run `npm run import`. A service that matches exactly one shipped recipe by localized name
+and required profession updates its `skill` and adds `Trainer` to `source`. The full trainer
+snapshot, including character-level and prerequisite requirements, remains in the export and
+SavedVariables; ambiguous matches are reported and left for review.
+
 A row names its recipe by `spell` (the recipe's spell id, as in the `-- Copper Chain Belt`
 comments of the generated file) or just by the item: `fix` fills in the other when exactly one
 recipe of the profession makes that item. A recipe that makes no item (an enchant) is named by

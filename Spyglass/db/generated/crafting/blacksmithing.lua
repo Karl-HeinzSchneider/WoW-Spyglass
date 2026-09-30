@@ -17,3 +17,27 @@ Data:AddList("crafting", "blacksmithing", {
         { name = "Stones, Rods & Reagents", categories = { 2460, 2459, 2488 } }, -- Weapon Stones, Reagents, Inert Enchanting Rods
     },
 })
+Data:AddListLoot("crafting", "blacksmithing", {
+    { 2852, spell = 2662, skill = 15, source = "Trainer" }, -- Copper Chain Pants
+    { 2844, spell = 2737, skill = 15, source = "Trainer" }, -- Copper Mace
+    { 2845, spell = 2738, skill = 20, source = "Trainer" }, -- Copper Axe
+    { 3469, spell = 3319, skill = 20, source = "Trainer" }, -- Copper Chain Boots
+    { 279944, spell = 1230171, skill = 20, source = "Trainer" }, -- Sharpening Wheel
+    { 2847, spell = 2739, skill = 25, source = "Trainer" }, -- Copper Shortsword
+    { 7955, spell = 9983, skill = 25, source = "Trainer" }, -- Copper Claymore
+    { 7166, spell = 8880, skill = 25, source = "Trainer" }, -- Copper Dagger
+    { 3470, spell = 3320, skill = 25, source = "Trainer" }, -- Rough Grinding Stone
+    { 2851, spell = 2661, skill = 30, source = "Trainer" }, -- Copper Chain Belt
+    { 3488, spell = 3293, skill = 30, source = "Trainer" }, -- Copper Battle Axe
+    { 250620, spell = 1252229, skill = 35, source = "Trainer" }, -- Gemmed Copper Boots
+    { 250482, spell = 1252231, skill = 35, source = "Trainer" }, -- Glowing Copper Boots
+    { 3472, spell = 3323, skill = 35, source = "Trainer" }, -- Runed Copper Gauntlets
+    { 250621, spell = 1252230, skill = 35, source = "Trainer" }, -- Strange Copper Boots
+    { 3473, spell = 3324, skill = 35, source = "Trainer" }, -- Runed Copper Pants
+    { 2863, spell = 2665, skill = 40, source = "Trainer" }, -- Coarse Sharpening Stone
+    { 3240, spell = 3116, skill = 40, source = "Trainer" }, -- Coarse Weightstone
+    { 6214, spell = 7408, skill = 40, source = "Trainer" }, -- Heavy Copper Maul
+    { 2857, spell = 2666, skill = 45, source = "Trainer" }, -- Runed Copper Belt
+    { 3489, spell = 3294, skill = 45, source = "Trainer" }, -- Thick War Axe
+    { 3478, spell = 3326, skill = 50, source = "Trainer" }, -- Coarse Grinding Stone
+})
