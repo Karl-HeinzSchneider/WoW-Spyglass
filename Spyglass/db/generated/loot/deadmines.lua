@@ -101,5 +101,5 @@ Data:AddQuests(36, {
         { 270016 }, -- Dreamer's Leggings
     } },
     { id = 92753, name = "Destruction in Deadmines", side = "Alliance", requiredLevel = 9, xp = 1350, objective = "Place the explosives beside the forge in the Deadmines.", description = "Use the Extra-Destructive Explosives to start this quest.", requires = { { id = 92752, name = "Explosive Consultation" } }, start = { item = 254553 }, turnIn = { description = "Sentinel Hill inn, Westfall.", location = { 1436, 53, 53.3 }, npc = "Alba Fairmoon" }, items = {} },
-    { id = 373, name = "The Unsent Letter", side = "Alliance", requiredLevel = 16, xp = 870, objective = "Take the letter to the city architect in Stormwind.", description = "Looted from Edwin VanCleef", start = { item = 2874 }, turnIn = { description = "City Hall, Cathedral Square, Stormwind.", npc = "Baros Alexston" }, items = {} },
+    { id = 373, name = "The Unsent Letter", side = "Alliance", requiredLevel = 16, xp = 870, objective = "Take the letter to the city architect in Stormwind.", description = "Looted from Edwin VanCleef", start = { item = 2874 }, turnIn = { description = "Stormwind.", location = { 1453, 57.6, 47.8 }, npc = "Baros Alexston" }, items = {} },
 })

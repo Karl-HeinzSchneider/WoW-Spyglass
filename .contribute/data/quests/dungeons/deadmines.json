@@ -9,6 +9,7 @@
       "description": "Sentinel Hill, Westfall."
     },
     "Master Mathias Shaw": {
+      "location": [1453, 78.4, 70.6],
       "description": "Old Town, Stormwind."
     },
     "Scout Galiaan": {
@@ -24,9 +25,11 @@
       "description": "Stormwind."
     },
     "Sprite Jumpsprocket": {
+      "location": [1453, 61.8, 30.8],
       "description": "Dwarven District, Stormwind."
     },
-    "Stormwind Intelligence": {
+    "Jasper Fel": {
+      "location": [1453, 80.0, 70.0],
       "description": "Stormwind."
     },
     "Wilder Thistlenettle": {
@@ -34,7 +37,12 @@
       "description": "Stormwind."
     },
     "Wiley the Black": {
+      "location": [1433, 21.4, 45.2],
       "description": "Lakeshire, Redridge Mountains."
+    },
+    "Baros Alexston": {
+      "location": [1453, 57.6, 47.8],
+      "description": "Stormwind."
     }
   },
   "quests": [
@@ -219,8 +227,7 @@
         "item": 2874
       },
       "turnIn": {
-        "npc": "Baros Alexston",
-        "description": "City Hall, Cathedral Square, Stormwind."
+        "npc": "Baros Alexston"
       },
       "items": []
     },
@@ -436,14 +443,14 @@
       "name": "Detonation at a Distance",
       "side": "Alliance",
       "requiredLevel": 9,
-      "objective": "Talk to Stormwind Intelligence about acquiring a remote detonator.",
+      "objective": "Talk to someone in Stormwind Intelligence about acquiring a remote detonator.",
       "description": "You need a remote detonator for the planned explosion.",
       "requires": [92749],
       "start": {
         "npc": "Sprite Jumpsprocket"
       },
       "turnIn": {
-        "npc": "Stormwind Intelligence"
+        "npc": "Jasper Fel"
       },
       "items": []
     },
@@ -456,7 +463,7 @@
       "description": "Returns the remote detonator to the engineer.",
       "requires": [92750],
       "start": {
-        "npc": "Stormwind Intelligence"
+        "npc": "Jasper Fel"
       },
       "turnIn": {
         "npc": "Sprite Jumpsprocket"
