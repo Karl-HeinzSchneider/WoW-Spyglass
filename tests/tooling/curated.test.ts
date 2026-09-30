@@ -1,6 +1,9 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { Checker, type CuratedFile, serialize, validate } from "../../src/curated.js";
+import { type Config } from "../../src/config.js";
+import { build } from "../../src/generate.js";
+import { type CuratedQuest, type QuestFile, serializeQuests, validateQuests } from "../../src/quests.js";
 import { type Reference } from "../../src/reference.js";
 
 /** A one-boss dungeon file; `data` is spread over the defaults so a test only states what it cares about. */
@@ -11,6 +14,10 @@ function dungeonFile(data: Partial<CuratedFile["data"]> = {}): CuratedFile {
     slug: "test_dungeon",
     data: { map: 36, name: "Test Dungeon", encounters: [{ id: 2747, name: "Test Boss", loot: [] }], ...data },
   };
+}
+
+function questFile(quests: CuratedQuest[]): QuestFile {
+  return { path: ".contribute/data/quests/dungeons/test_dungeon.json", slug: "test_dungeon", quests };
 }
 
 /** The game tables and scans the file above is checked against: one map, its encounters (one by default), two items. */
@@ -59,17 +66,20 @@ test("fix gives an instance without a trash list an empty one", () => {
 test("trash and quest rows resolve a name-only row and keep their shape through a fix rewrite", () => {
   const file = dungeonFile({
     trash: [{ name: "Trash Trinket", chance: 0.02 }],
-    quests: [{ id: 26, name: "A Test Quest", side: "Alliance", items: [{ item: 200 }] }],
+    quests: [26],
   });
+  const quests = questFile([{ id: 26, name: "A Test Quest", side: "Alliance", items: [{ item: 200 }] }]);
   const checker = dungeonChecker(true);
   validate([file], checker);
+  validateQuests([quests], [file], checker);
   assert.deepEqual(
     checker.problems.filter((p) => !p.fixable && !p.warning),
     [],
   );
   const serialized = JSON.parse(serialize(file.data)) as Record<string, unknown>;
   assert.deepEqual(serialized.trash, [{ item: 100, name: "Trash Trinket", chance: 0.02 }]);
-  assert.deepEqual(serialized.quests, [
+  assert.deepEqual(serialized.quests, [26]);
+  assert.deepEqual((JSON.parse(serializeQuests(quests)) as { quests: unknown[] }).quests, [
     { id: 26, name: "A Test Quest", side: "Alliance", items: [{ item: 200, name: "Quest Reward" }] },
   ]);
 });
@@ -123,26 +133,24 @@ test("requiredLevel and zone are kept through a fix rewrite and must be a level 
 });
 
 test("a quest needs an id, a known side and no duplicate", () => {
-  const file = dungeonFile({
-    quests: [
-      { id: 0, items: [] },
-      { id: 26, name: "A Test Quest", side: "Neutral", items: [] },
-      { id: 26, name: "A Test Quest", items: [] },
-    ],
-  });
+  const quests = questFile([
+    { id: 0, items: [] },
+    { id: 26, name: "A Test Quest", side: "Neutral", items: [] },
+    { id: 26, name: "A Test Quest", items: [] },
+  ]);
   const checker = dungeonChecker(false);
-  validate([file], checker);
+  validateQuests([quests], [], checker);
   const errors = checker.problems.filter((p) => !p.fixable && !p.warning).map((p) => p.message);
   assert.equal(errors.length, 3, errors.join("\n"));
   assert.match(errors[0]!, /quest without a positive integer `id`/);
   assert.match(errors[1]!, /quest 26: `side` must be one of Alliance, Horde, Both/);
-  assert.match(errors[2]!, /quest 26 listed twice/);
+  assert.match(errors[2]!, /quest 26 is also defined/);
 });
 
 test("a quest without a name is only a warning: no game table can supply one", () => {
-  const file = dungeonFile({ trash: [], quests: [{ id: 26, items: [{ item: 200, name: "Quest Reward" }] }] });
+  const quests = questFile([{ id: 26, items: [{ item: 200, name: "Quest Reward" }] }]);
   const checker = dungeonChecker(false);
-  validate([file], checker);
+  validateQuests([quests], [], checker);
   assert.deepEqual(
     checker.problems.filter((p) => !p.fixable && !p.warning),
     [],
@@ -152,12 +160,9 @@ test("a quest without a name is only a warning: no game table can supply one", (
 });
 
 test("a quest without an id is only a warning: the id is added by hand later", () => {
-  const file = dungeonFile({
-    trash: [],
-    quests: [{ name: "A Test Quest", items: [{ item: 200, name: "Quest Reward" }] }],
-  });
+  const quests = questFile([{ name: "A Test Quest", items: [{ item: 200, name: "Quest Reward" }] }]);
   const checker = dungeonChecker(false);
-  validate([file], checker);
+  validateQuests([quests], [], checker);
   assert.deepEqual(
     checker.problems.filter((p) => !p.fixable && !p.warning),
     [],
@@ -169,20 +174,120 @@ test("a quest without an id is only a warning: the id is added by hand later", (
 });
 
 test("a class quest names one of the classes, and keeps it through a fix rewrite", () => {
-  const file = dungeonFile({
-    trash: [],
-    quests: [
-      { id: 26, name: "A Test Quest", class: "Warlock", items: [] },
-      { id: 27, name: "Another Quest", class: "Necromancer", items: [] },
-    ],
-  });
+  const quests = questFile([
+    { id: 26, name: "A Test Quest", class: "Warlock", items: [] },
+    { id: 27, name: "Another Quest", class: "Necromancer", items: [] },
+  ]);
   const checker = dungeonChecker(false);
-  validate([file], checker);
+  validateQuests([quests], [], checker);
   const errors = checker.problems.filter((p) => !p.fixable && !p.warning).map((p) => p.message);
   assert.equal(errors.length, 1, errors.join("\n"));
   assert.match(errors[0]!, /quest 27: `class` must be one of Warrior, .*Warlock, Druid/);
-  const serialized = JSON.parse(serialize(file.data)) as { quests: unknown[] };
+  const serialized = JSON.parse(serializeQuests(quests)) as { quests: unknown[] };
   assert.deepEqual(serialized.quests[0], { id: 26, name: "A Test Quest", class: "Warlock", items: [] });
+});
+
+test("a shared quest has one definition and may appear in several dungeons", () => {
+  const first = dungeonFile({ quests: [26] });
+  const second = { ...dungeonFile({ quests: [26] }), path: ".contribute/data/dungeons/other.json" };
+  const checker = dungeonChecker(false);
+  validateQuests([questFile([{ id: 26, name: "Shared Quest", items: [] }])], [first, second], checker);
+  assert.deepEqual(
+    checker.problems.filter((p) => !p.warning),
+    [],
+  );
+});
+
+test("quest references, prerequisites and follow-ups must resolve to one catalog definition", () => {
+  const file = dungeonFile({ quests: [26, 99] });
+  const quests = questFile([{ id: 26, name: "A Test Quest", requires: [98], followUps: [97], items: [] }]);
+  const checker = dungeonChecker(false);
+  validateQuests([quests], [file], checker);
+  const errors = checker.problems.filter((p) => !p.warning).map((p) => p.message);
+  assert.ok(errors.some((m) => m.includes("prerequisite 98 has no quest definition")));
+  assert.ok(errors.some((m) => m.includes("follow-up 97 has no quest definition")));
+  assert.ok(errors.some((m) => m.includes("quest 99 has no definition")));
+});
+
+test("questline details survive a fix rewrite", () => {
+  const quests = questFile([
+    { id: 25, name: "Earlier Quest", items: [] },
+    {
+      id: 26,
+      name: "Dungeon Quest",
+      description: "More context",
+      requires: [25],
+      followUps: [27],
+      start: { npc: "Quest Giver", npcID: 123, location: [1436, 43, 72], description: "Upstairs." },
+      turnIn: { npc: "Quest Turn-in", location: [1436, 50, 60], description: "Inside the inn." },
+      items: [],
+    },
+    { id: 27, name: "Later Quest", items: [] },
+  ]);
+  quests.npcs = { "Quest Giver": { location: [1436, 43, 72], description: "Upstairs." } };
+  const checker = dungeonChecker(true);
+  validateQuests([quests], [dungeonFile({ quests: [26] })], checker);
+  assert.deepEqual(
+    checker.problems.filter((p) => !p.warning),
+    [],
+  );
+  const serialized = JSON.parse(serializeQuests(quests)) as { npcs: QuestFile["npcs"]; quests: CuratedQuest[] };
+  assert.deepEqual(serialized.npcs, quests.npcs);
+  assert.deepEqual(serialized.quests[1], quests.quests[1]);
+});
+
+test("unlisted prerequisite and follow-up quests ship without becoming dungeon quests", () => {
+  const names = {
+    items: new Map(),
+    encounters: new Map(),
+    instances: new Map([[36, "Test Dungeon"]]),
+    skillLines: new Map(),
+    categories: new Map(),
+    tools: new Map(),
+  };
+  const ref = {
+    build: "test",
+    instances: new Map([[36, { id: 36, type: "dungeon", expansionID: 0, encounters: [] }]]),
+    encounters: new Map(),
+    items: new Map(),
+    itemLocales: [],
+    names: new Map([["enUS", names]]),
+    recipes: new Map(),
+    skillLines: new Map(),
+    categories: new Map(),
+  } as unknown as Reference;
+  const config: Config = { build: "test", locales: ["enUS"], excludeMaps: [], itemsPerFile: 100 };
+  const quests = questFile([
+    { id: 25, name: "Earlier Quest", items: [] },
+    {
+      id: 26,
+      name: "Dungeon Quest",
+      requires: [25],
+      followUps: [27],
+      start: { npc: "Quest Giver" },
+      turnIn: { npc: "Quest Giver", description: "Outside." },
+      items: [],
+    },
+    { id: 27, name: "Later Quest", items: [] },
+  ]);
+  quests.npcs = { "Quest Giver": { location: [1436, 43, 72], description: "Upstairs." } };
+  const output = build(ref, [dungeonFile({ encounters: [], quests: [26] })], [quests], [], config);
+  assert.match(output.core.get("quest-definitions.lua") ?? "", /Data:AddQuestDefinitions\(\{/);
+  assert.match(output.core.get("generated.xml") ?? "", /quest-definitions.lua/);
+  assert.match(output.core.get("quest-definitions.lua") ?? "", /^    \{ id = 25/m);
+  assert.match(output.core.get("quest-definitions.lua") ?? "", /^    \{ id = 27/m);
+  assert.doesNotMatch(output.core.get("loot/test_dungeon.lua") ?? "", /^    \{ id = 25/m);
+  assert.doesNotMatch(output.core.get("loot/test_dungeon.lua") ?? "", /^    \{ id = 27/m);
+  assert.match(output.core.get("loot/test_dungeon.lua") ?? "", /^    \{ id = 26/m);
+  assert.match(output.core.get("loot/test_dungeon.lua") ?? "", /followUps = \{ 27 \}/);
+  assert.match(
+    output.core.get("loot/test_dungeon.lua") ?? "",
+    /start = \{ description = "Upstairs\.", location = \{ 1436, 43, 72 \}, npc = "Quest Giver" \}/,
+  );
+  assert.match(
+    output.core.get("loot/test_dungeon.lua") ?? "",
+    /turnIn = \{ description = "Outside\.", location = \{ 1436, 43, 72 \}, npc = "Quest Giver" \}/,
+  );
 });
 
 test("a split map: each file needs an id, a boss may be in one of them only, one in none is a warning", () => {

@@ -7,14 +7,14 @@ the tools do with it.
 
 ## Where the data comes from
 
-| Data                   | Source                                                                                                                                                                                                                                                      |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Items                  | **Only the in-game scans** (`.contribute/data/items/`). WoW Forever's items are server-side: wago.tools' item tables are incomplete and wrong for this client, and item ids from Classic or wowhead don't match. Only scanned items exist in the database.  |
-| Instances, encounters  | wago.tools `Map` + `DungeonEncounter` for the build pinned in `config.json`. Instance ids are `Map.ID` (a split dungeon's parts: the file's own `id`), boss ids are `DungeonEncounter.ID`.                                                                  |
-| Profession recipes     | wago.tools `SkillLine`, `SkillLineAbility`, `SpellReagents`, `SpellEffect`, `SpellTotems`, `TradeSkillCategory`, `TotemCategory`, `SpellName`. Recipe ids are spell ids, profession ids `SkillLine.ID`. Shipped only when the scans confirm what they make. |
-| Factions               | wago.tools `Faction`, the rows with a reputation bar; reputation files are checked against it.                                                                                                                                                              |
-| Non-English item names | wago.tools `ItemSparse`, for a scanned item whose English name there is the scanned one; a name scanned on a client of that language wins.                                                                                                                  |
-| Drops, item lists      | Hand-curated JSON; it meets the scans only through item ids. A curated row may reference an unscanned id (a warning, not an error).                                                                                                                         |
+| Data                      | Source                                                                                                                                                                                                                                                      |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Items                     | **Only the in-game scans** (`.contribute/data/items/`). WoW Forever's items are server-side: wago.tools' item tables are incomplete and wrong for this client, and item ids from Classic or wowhead don't match. Only scanned items exist in the database.  |
+| Instances, encounters     | wago.tools `Map` + `DungeonEncounter` for the build pinned in `config.json`. Instance ids are `Map.ID` (a split dungeon's parts: the file's own `id`), boss ids are `DungeonEncounter.ID`.                                                                  |
+| Profession recipes        | wago.tools `SkillLine`, `SkillLineAbility`, `SpellReagents`, `SpellEffect`, `SpellTotems`, `TradeSkillCategory`, `TotemCategory`, `SpellName`. Recipe ids are spell ids, profession ids `SkillLine.ID`. Shipped only when the scans confirm what they make. |
+| Factions                  | wago.tools `Faction`, the rows with a reputation bar; reputation files are checked against it.                                                                                                                                                              |
+| Non-English item names    | wago.tools `ItemSparse`, for a scanned item whose English name there is the scanned one; a name scanned on a client of that language wins.                                                                                                                  |
+| Drops, quests, item lists | Hand-curated JSON; it meets the scans only through item ids. A curated row may reference an unscanned id (a warning, not an error).                                                                                                                         |
 
 `ItemSparse` agrees with the scans on the items it has but lacks thousands of this server's
 items, so it is read for exactly two things: the skill a scanned recipe item requires, and the
@@ -35,7 +35,7 @@ wago.tools tables are downloaded as CSV and cached in `.cache/<build>/` (`src/wa
 | `Spyglass_Database/db/generated/items/items_NNN.lua`                                        | the scans, `itemsPerFile` rows per file                                                                                                |
 | `Spyglass_Database/db/generated/locales/enUS/items.lua`                                     | the scanned items' English names                                                                                                       |
 | `Spyglass/db/generated/instances.lua`                                                       | `Map` + `DungeonEncounter` (only maps with encounters), levels/icons/portraits from `dungeons/` and `raids/`                           |
-| `Spyglass/db/generated/loot/<slug>.lua`                                                     | the boss loot, trash and quests of every instance file that has any                                                                    |
+| `Spyglass/db/generated/loot/<slug>.lua`                                                     | boss loot and trash from each instance file, plus its quest IDs resolved from `quests/dungeons/`                                       |
 | `Spyglass/db/generated/<kind>/<slug>.lua` (crafting, pvp, collections, reputation)          | the item lists, one file each, rows or not                                                                                             |
 | `Spyglass/db/generated/recipes/<profession>.lua`                                            | the recipe tables, one file per profession, only recipes whose product (enchants: every reagent) is scanned                            |
 | `Spyglass/db/generated/locales/enUS/*.lua`                                                  | the English fallback names: `instances`, `bosses`, `crafting` (profession, trade skill category and tool names)                        |
@@ -46,8 +46,9 @@ wago.tools tables are downloaded as CSV and cached in `.cache/<build>/` (`src/wa
 ## The run (`src/cli.ts`)
 
 `loadConfig()` → `loadReference()` (the game tables and the scans) → `loadCurated()` +
-`loadLists()` → for `import`: `loadDiscovered` + `importDiscovered` per file, then
-`saveScannedItems` → `Checker` + `validate` + `validateLists` → for `fix` and `import`: rewrite
+`loadQuests()` + `loadLists()` → for `import`: `loadDiscovered` + `importDiscovered` or dungeon-level
+scan import per file, then
+`saveScannedItems` → `Checker` + `validateDungeonLevels` + `validate` + `validateQuests` + `validateLists` → for `fix` and `import`: rewrite
 the JSON → `build` + `write`. Errors stop generation; fixable problems and warnings don't.
 `import` always fixes, since it writes the curated files anyway.
 
@@ -61,11 +62,20 @@ the scans and warns on unscanned ids.
 
 - **Instance files** (`validate`): ids against the game tables, the file's folder against the
   map's `InstanceType`, duplicates, the chance range; missing encounters are added on fix (not on
-  a split map). Each file gets a `trash` list on fix. Quest ids must be positive and unique (a
-  missing one is a warning and the quest isn't shipped), `side` one of `QUEST_SIDES`, `class` one
-  of `QUEST_CLASSES`, shipped as the client's class token (`classToken`). On a split map (several
+  a split map). Each file gets a `trash` list on fix. On a split map (several
   files with one `map`, each with its own `id`) every encounter must be in exactly one file:
   twice is an error, none a warning.
+- **Dungeon levels** (`src/dungeon-levels.ts`): an optional in-game group finder snapshot at
+  `.contribute/data/dungeon-levels.json` records the suggested minimum and maximum per dungeon.
+  Once imported, `check` requires each scanned dungeon to match it; `fix` copies its ranges into
+  the dungeon files. Unscanned dungeons retain curated ranges. Entry requirements stay curated separately.
+- **Dungeon quests** (`validateQuests`, `src/quests.ts`): every quest ID is defined once across
+  `.contribute/data/quests/dungeons/`; dungeon quest IDs, direct prerequisites and follow-ups resolve to a
+  definition. It validates side, class, levels, rewards, and optional giver/turn-in details.
+  Quest titles and NPC names are curated, so `fix` does not rewrite them. The generator uses the
+  instance's quest ID list to place a shared definition in every dungeon where it appears.
+  Each quest file may define shared NPC locations and descriptions in `npcs`; generation fills
+  missing start and turn-in details from it while keeping per-quest overrides.
 - **Item lists** (`validateLists`, `src/lists.ts`): the rows key and row fields per kind
   (`ROWS_KEY`, `ROW_FIELDS`, per-field specs); reputation's standing-keyed object is flattened by
   `rowsOf`. A reputation `faction` must be in the `Faction` table, and fix rewrites `name` from
@@ -110,6 +120,9 @@ removes stale files and returns the number of changes. `npm run generate:check` 
   encounters that file lists; the English name of such a part is its file's `name`.
 - `loot/<slug>.lua` is written for every instance file `hasLoot` is true for: a boss's drops via
   `AddBossLoot`, the trash via `AddTrashLoot`, the quests via `AddQuests`.
+- `quest-definitions.lua` is written when quest files define prerequisites or follow-ups not listed
+  on any dungeon page. It registers those quests with `AddQuestDefinitions` so their details can open
+  without adding them to a dungeon's quest list.
 - A crafting list without an `icon` gets its skill line's `SpellIconFileID`; a crafting row
   without an item (an enchant) is emitted as `{ spell = id, ... }`.
 - `recipes/<profession>.lua` holds `AddCategories` + `AddRecipes`, rows in category order.

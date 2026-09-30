@@ -400,12 +400,15 @@
 			</Layer>
 		</Layers>
 		<Scripts>
+			<OnEnter method="OnEnter"/>
+			<OnLeave method="OnLeave"/>
+			<OnMouseUp method="OnMouseUp"/>
 			<OnSizeChanged method="OnSizeChanged"/>
 		</Scripts>
 	</Frame>
 
-	<!-- Quest banner: a quest spanning the list's width, above the rewards that follow it.
-	         [!]  Title  Level 14 · Alliance ..................... 9,750 XP
+	<!-- Quest banner: a quest spanning the list's width, optionally above its rewards.
+	         [!]  Title  Level 14 ..................... Alliance/Horde  9,750 XP
 	              Objective, in one line ......................... Not started
 	     The icon is the gossip window's quest mark for the character's progress (the ready check's
 	     tick once done); the line under it ties the banner to its rewards like a group label.
@@ -423,6 +426,14 @@
 				</Texture>
 			</Layer>
 			<Layer level="ARTWORK">
+				<Texture parentKey="TreeLine">
+					<Size x="2" y="0"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" x="1" y="-2"/>
+						<Anchor point="BOTTOMLEFT" x="1" y="2"/>
+					</Anchors>
+					<Color r="0.7" g="0.52" b="0.2" a="0.65"/>
+				</Texture>
 				<Texture parentKey="Icon">
 					<Size x="24" y="24"/>
 					<Anchors>
@@ -437,10 +448,25 @@
 				</Texture>
 				<!-- Right column first: the texts on the left stop short of it. -->
 				<FontString parentKey="XP" inherits="GameFontHighlight" justifyH="RIGHT" wordwrap="false">
+					<Size x="90" y="0"/>
 					<Anchors>
 						<Anchor point="TOPRIGHT" x="-10" y="-8"/>
 					</Anchors>
 				</FontString>
+				<Texture parentKey="HordeLogo" file="Interface\Glues\CharacterCreate\CharacterCreateTest">
+					<Size x="30" y="30"/>
+					<Anchors>
+						<Anchor point="RIGHT" relativeKey="$parent.XP" relativePoint="LEFT" x="-3" y="-4"/>
+					</Anchors>
+					<TexCoords left="0.5996" right="0.6729" top="0.2129" bottom="0.3691"/>
+				</Texture>
+				<Texture parentKey="AllianceLogo" file="Interface\Glues\CharacterCreate\CharacterCreateTest">
+					<Size x="30" y="30"/>
+					<Anchors>
+						<Anchor point="RIGHT" relativeKey="$parent.HordeLogo" relativePoint="LEFT" x="-2" y="0"/>
+					</Anchors>
+					<TexCoords left="0.5996" right="0.6729" top="0.0195" bottom="0.1758"/>
+				</Texture>
 				<FontString parentKey="Status" inherits="GameFontHighlightSmall" justifyH="RIGHT" wordwrap="false">
 					<Anchors>
 						<Anchor point="BOTTOMRIGHT" x="-10" y="9"/>
@@ -460,7 +486,7 @@
 				<FontString parentKey="Objective" inherits="GameFontHighlightSmall" justifyH="LEFT" wordwrap="false">
 					<Anchors>
 						<Anchor point="BOTTOMLEFT" x="42" y="9"/>
-						<Anchor point="RIGHT" relativeKey="$parent.Status" relativePoint="LEFT" x="-16" y="0"/>
+						<Anchor point="RIGHT" relativeKey="$parent.AllianceLogo" relativePoint="LEFT" x="-8" y="0"/>
 					</Anchors>
 					<Color r="0.8" g="0.8" b="0.8"/>
 				</FontString>
@@ -624,17 +650,18 @@
 					<OnTextChanged inherit="prepend" method="OnTextChanged"/>
 				</Scripts>
 			</EditBox>
-			<!-- The current folder's title: fixed above the list, on every page. -->
+			<!-- Disabled: the current folder's title, fixed above the list on every page.
 			<Frame parentKey="Title" inherits="SpyglassPageHeaderTemplate">
 				<Anchors>
 					<Anchor point="TOPLEFT" x="14" y="-52"/>
 					<Anchor point="TOPRIGHT" x="-14" y="-52"/>
 				</Anchors>
 			</Frame>
+			-->
 			<!-- The list area; rows/headers are pooled children placed from its TOPLEFT. -->
 			<Frame parentKey="Content">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeKey="$parent.Title" relativePoint="BOTTOMLEFT" x="0" y="-6"/>
+					<Anchor point="TOPLEFT" x="14" y="-52"/>
 					<Anchor point="BOTTOMRIGHT" x="-14" y="52"/>
 				</Anchors>
 			</Frame>
@@ -676,7 +703,7 @@
 					</Anchors>
 				</Texture>
 				<!-- HeaderDivider mirrored: its bottom edge 44px over the view's bottom, the list
-				     ending 8px above that edge as the title starts 8px under HeaderDivider's top. -->
+				     ending 8px above that edge as it starts 8px under HeaderDivider's top. -->
 				<Texture parentKey="FooterDivider" atlas="UI-Character-Info-ScrollLine-Long" useAtlasSize="true">
 					<Anchors>
 						<Anchor point="BOTTOMLEFT" x="14" y="44"/>

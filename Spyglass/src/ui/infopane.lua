@@ -13,6 +13,7 @@ local WIDGETS = {
     header = { "Frame", "SpyglassInfoHeaderTemplate" },
     text = { "Frame", "SpyglassInfoTextTemplate" },
     row = { "Frame", "SpyglassInfoRowTemplate" },
+    item = { "Button", "SpyglassInfoItemTemplate" },
     bar = { "Frame", "SpyglassInfoBarTemplate" },
     checkbox = { "CheckButton", "SpyglassInfoCheckboxTemplate" },
     dropdown = { "Frame", "SpyglassInfoDropdownTemplate" },
@@ -140,6 +141,25 @@ function SpyglassInfoPaneMixin:AddWidget(view, node, index, widget)
         local frame = self:Acquire("row") --[[@as Frame|{ Label: FontString, Value: FontString }]]
         frame.Label:SetText(widget.row)
         frame.Value:SetText(widget.value ~= nil and tostring(widget.value) or "")
+    elseif widget.item then
+        local itemID = widget.item
+        local frame = self:Acquire("item") --[[@as Button|{ Icon: Texture, Name: FontString }]]
+        local row = app.data:GetItem(itemID)
+        local icon = select(5, C_Item.GetItemInfoInstant(itemID)) or (row and row[app.data.ITEM.ICON])
+        frame.Icon:SetTexture(icon or "Interface\\Icons\\INV_Misc_QuestionMark")
+        frame.Name:SetText(app.data:GetItemName(itemID))
+        frame:SetScript("OnEnter", function(button)
+            GameTooltip:SetOwner(button, "ANCHOR_RIGHT")
+            GameTooltip:SetItemByID(itemID)
+            GameTooltip:Show()
+        end)
+        frame:SetScript("OnLeave", GameTooltip_Hide)
+        frame:SetScript("OnClick", function()
+            local link = select(2, C_Item.GetItemInfo(itemID))
+            if link then
+                HandleModifiedItemClick(link)
+            end
+        end)
     elseif widget.bar then
         self:SetBar(self:Acquire("bar") --[[@as ColoredProgressBarMixin]], node, widget)
     elseif widget.checkbox then
@@ -163,6 +183,18 @@ function SpyglassInfoPaneMixin:AddWidget(view, node, index, widget)
             radio(ALL or "All", nil)
             for _, option in ipairs(view:GetFieldValues(widget.field)) do
                 radio(option.label, option.value)
+            end
+        end)
+    elseif widget.factionDropdown then
+        local frame = self:Acquire("dropdown") --[[@as Frame|{ Label: FontString, Dropdown: WowStyle1FilterDropdownMixin }]]
+        frame.Label:SetText(widget.factionDropdown)
+        frame.Dropdown:SetupMenu(function(_, root)
+            for _, side in ipairs({ "Alliance", "Horde", "Both" }) do
+                root:CreateRadio(side, function()
+                    return (view:GetPanelValue(node, index) or UnitFactionGroup("player")) == side
+                end, function()
+                    view:SetPanelValue(node, index, side)
+                end)
             end
         end)
     elseif widget.grouping then

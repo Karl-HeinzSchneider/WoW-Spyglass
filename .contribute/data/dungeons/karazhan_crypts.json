@@ -1,6 +1,8 @@
 {
   "map": 2875,
   "name": "Karazhan Crypts",
+  "minLevel": 60,
+  "maxLevel": 60,
   "zone": 1430,
   "entrance": [1430, 46, 75],
   "encounters": [

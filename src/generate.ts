@@ -10,19 +10,13 @@ import {
   OUTPUT_DIR,
   ROOT,
 } from "./config.js";
-import {
-  type CuratedFile,
-  type CuratedInstance,
-  type CuratedLoot,
-  type CuratedQuest,
-  classToken,
-  instanceIDOf,
-} from "./curated.js";
+import { type CuratedFile, type CuratedInstance, type CuratedLoot, instanceIDOf } from "./curated.js";
 import { type ScannedItem } from "./items.js";
 import { type ListFile, type ListSection, ROW_FIELDS, rowsOf } from "./lists.js";
 import { header, luaFields, luaString, luaValue } from "./lua.js";
 import { type Recipe, type SkillLine, shipsRecipe } from "./recipes.js";
 import { type Instance, type Reference, nameOf } from "./reference.js";
+import { type CuratedQuest, type QuestEndpoint, type QuestFile, type QuestNpcDetails, classToken } from "./quests.js";
 
 const DEFAULT_ICONS = {
   dungeon: "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
@@ -173,18 +167,37 @@ function emitLootRows(rows: CuratedLoot[], ref: Reference, indent: string): stri
   return out;
 }
 
-/** The quests that can ship: the addon keeps quests by id, one without is left out until it has one. */
-function shippedQuests(file: CuratedFile): CuratedQuest[] {
-  return (file.data.quests ?? []).filter((q) => q.id !== undefined);
-}
-
 /** True when the file has anything to ship: a boss's drops, the instance's trash or a quest. */
 export function hasLoot(file: CuratedFile): boolean {
   const d = file.data;
-  return d.encounters.some((e) => e.loot?.length) || !!d.trash?.length || shippedQuests(file).length > 0;
+  return d.encounters.some((e) => e.loot?.length) || !!d.trash?.length || !!d.quests?.length;
 }
 
-function emitLoot(file: CuratedFile, ref: Reference): string {
+function emitQuest(quest: CuratedQuest, ref: Reference, questsByID: Map<number, CuratedQuest>): string {
+  const fields = luaFields(
+    {
+      ...quest,
+      class: quest.class && classToken(quest.class),
+      requires: quest.requires?.map((id) => ({ id, name: questsByID.get(id)?.name })),
+    },
+    ["id", "name", "side", "class", "requiredLevel", "xp", "objective", "description", "requires", "followUps", "start", "turnIn"],
+    "",
+  ).join(" ");
+  const items = emitLootRows(quest.items ?? [], ref, "        ");
+  if (items.length === 0) return `    { ${fields} items = {} },\n`;
+  return [`    { ${fields} items = {\n`, ...items, "    } },\n"].join("");
+}
+
+function emitQuestDefinitions(quests: CuratedQuest[], ref: Reference, questsByID: Map<number, CuratedQuest>): string {
+  return [
+    header(".contribute/data/quests/dungeons (quest definitions not listed by a dungeon)"),
+    "local Data = Spyglass.Data\n\nData:AddQuestDefinitions({\n",
+    ...quests.map((quest) => emitQuest(quest, ref, questsByID)),
+    "})\n",
+  ].join("");
+}
+
+function emitLoot(file: CuratedFile, ref: Reference, questsByID: Map<number, CuratedQuest>): string {
   const rel = sourceLabel(file.path);
   const out = [header(rel), "local Data = Spyglass.Data\n"];
   const id = instanceIDOf(file.data);
@@ -203,21 +216,11 @@ function emitLoot(file: CuratedFile, ref: Reference): string {
     out.push(...emitLootRows(file.data.trash, ref, "    "));
     out.push("})\n");
   }
-  const quests = shippedQuests(file);
-  if (quests.length > 0) {
+  const questIDs = file.data.quests ?? [];
+  if (questIDs.length > 0) {
     out.push(`\nData:AddQuests(${id}, {\n`);
-    for (const quest of quests) {
-      const fields = luaFields(
-        { ...quest, class: quest.class && classToken(quest.class) },
-        ["id", "name", "side", "class", "requiredLevel", "xp", "objective"],
-        "",
-      ).join(" ");
-      const items = emitLootRows(quest.items ?? [], ref, "        ");
-      if (items.length === 0) {
-        out.push(`    { ${fields} items = {} },\n`);
-        continue;
-      }
-      out.push(`    { ${fields} items = {\n`, ...items, "    } },\n");
+    for (const questID of questIDs) {
+      out.push(emitQuest(questsByID.get(questID)!, ref, questsByID));
     }
     out.push("})\n");
   }
@@ -412,7 +415,13 @@ export interface GeneratedFiles {
 }
 
 /** Builds the three generated addon trees in memory, keyed by paths relative to their generated directory. */
-export function build(ref: Reference, curated: CuratedFile[], lists: ListFile[], config: Config): GeneratedFiles {
+export function build(
+  ref: Reference,
+  curated: CuratedFile[],
+  quests: QuestFile[],
+  lists: ListFile[],
+  config: Config,
+): GeneratedFiles {
   const core = new Map<string, string>();
   const locale = new Map<string, string>();
   const database = new Map<string, string>();
@@ -441,8 +450,39 @@ export function build(ref: Reference, curated: CuratedFile[], lists: ListFile[],
 
   addCore("instances.lua", emitInstances(ref, curated));
 
+  const withNpcDetails = (point: QuestEndpoint | undefined, npcs: Record<string, QuestNpcDetails> | undefined) => {
+    const shared = point?.npc && npcs?.[point.npc];
+    return shared ? { ...shared, ...point } : point;
+  };
+  const questsByID = new Map(
+    quests.flatMap((file) =>
+      file.quests
+        .filter((quest) => quest.id !== undefined)
+        .map(
+          (quest) =>
+            [
+              quest.id!,
+              {
+                ...quest,
+                start: withNpcDetails(quest.start, file.npcs),
+                turnIn: withNpcDetails(quest.turnIn, file.npcs),
+              },
+            ] as const,
+        ),
+    ),
+  );
+  const listedQuestIDs = new Set(curated.flatMap((file) => file.data.quests ?? []));
+  const linkedQuestIDs = new Set(
+    [...questsByID.values()].flatMap((quest) => [...(quest.requires ?? []), ...(quest.followUps ?? [])]),
+  );
+  const unlistedQuests = [...questsByID.values()]
+    .filter((quest) => linkedQuestIDs.has(quest.id!) && !listedQuestIDs.has(quest.id!))
+    .sort((a, b) => a.id! - b.id!);
+  if (unlistedQuests.length > 0) {
+    addCore("quest-definitions.lua", emitQuestDefinitions(unlistedQuests, ref, questsByID));
+  }
   for (const file of [...curated].sort((a, b) => a.slug.localeCompare(b.slug))) {
-    if (hasLoot(file)) addCore(`loot/${file.slug}.lua`, emitLoot(file, ref));
+    if (hasLoot(file)) addCore(`loot/${file.slug}.lua`, emitLoot(file, ref, questsByID));
   }
 
   // Every list file becomes a tile in its module, rows or not (an empty one asks for contributions).

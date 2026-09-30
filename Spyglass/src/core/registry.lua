@@ -53,6 +53,9 @@ local log = app.logger
 ---@field subheader? string  # small section header marker; `items` optionally holds the entries under it; see Spyglass.Subheader
 ---@field spacer? boolean  # spacer marker: one empty row of space; see Spyglass.Spacer
 ---@field quest? integer  # quest banner marker (a quest id); `items` optionally holds the entries under it (its rewards); see Spyglass.QuestEntry
+---@field hidden? boolean  # keep a node in the folder tree without drawing it in its parent's list
+---@field prerequisiteIDs? integer[]  # quest banner: ids shown as completed/total prequest progress
+---@field indent? number  # quest banner's left inset in its parent list, for nested quests
 ---@field panel? Spyglass.PanelWidget[]|fun(node: Spyglass.Node, view: Spyglass.View): Spyglass.PanelWidget[]?  # folders: the right pane while this node or one below it (without a panel of its own) is open
 --- Optional metadata, free for modules and custom sort functions to use:
 ---@field expansionID? integer  # e.g. LE_EXPANSION_CLASSIC
@@ -66,13 +69,14 @@ local log = app.logger
 ---@field items? Spyglass.Node[]
 
 -- One widget of a node's info panel (the window's right pane), top to bottom. The type is the
--- one type key it carries (header, text, description, row, bar, checkbox, dropdown, grouping,
+-- one type key it carries (header, text, description, row, item, bar, checkbox, dropdown, grouping,
 -- button, quests, spacer); the other fields are its options. See docs/API.md, "Info panel".
 ---@class Spyglass.PanelWidget
 ---@field header? string  # a section plate
 ---@field text? string  # wrapped text
 ---@field description? boolean  # the panel node's own `description`
 ---@field row? string  # label of a label/value line
+---@field item? integer  # item icon and name, with the game's item tooltip
 ---@field value? string|number  # row: the value; bar "value": the filled amount
 ---@field bar? "reputation"|"skill"|"value"  # the character's standing / skill, or `value` of `max`
 ---@field faction? integer  # bar "reputation": the faction; default the panel node's meta.factionID
@@ -82,6 +86,7 @@ local log = app.logger
 ---@field checkbox? string  # label of a checkbox that switches `filter` on
 ---@field filter? string|fun(entry: Spyglass.Node, node: Spyglass.Node): boolean  # checkbox: a built-in filter id ("side", "standing") or a test; false hides the entry
 ---@field dropdown? string  # label of a dropdown that shows only entries with the picked `meta[field]`
+---@field factionDropdown? string  # quest-list dropdown: Alliance, Horde, or Both (default: player's faction)
 ---@field field? string  # dropdown: the entry `meta` field it offers the values of
 ---@field grouping? string  # label of a dropdown that picks how the list is grouped, among `options`
 ---@field options? Spyglass.GroupingOption[]  # grouping: the choices, the first one until another is picked
@@ -338,9 +343,9 @@ function api.Subheader(text, items)
 end
 
 -- A quest inside a folder's children: a full-width banner with the quest's title, `info` (e.g.
--- "Level 14 - Alliance"), objective, experience and the character's progress, from the quest
--- database; hover shows the quest's tooltip, shift-click links it. With `items` (what it
--- rewards), those entries follow it.
+-- "Level 14"), objective, experience and the character's progress, from the quest database;
+-- hover shows the quest's tooltip, shift-click links it. With `items` (what it rewards), those
+-- entries follow it. A quest node with `children` opens those children on click.
 ---@param questID integer
 ---@param items? Spyglass.Node[]
 ---@param info? string

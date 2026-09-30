@@ -61,42 +61,42 @@ Data:AddTrashLoot(48, {
 })
 
 Data:AddQuests(48, {
-    { id = 1200, name = "Blackfathom Villainy", side = "Alliance", requiredLevel = 18, xp = 12375, objective = "Defeat Twilight Lord Kelris and recover the Head of Kelris.", items = {
+    { id = 1200, name = "Blackfathom Villainy", side = "Alliance", requiredLevel = 18, xp = 12375, objective = "Defeat Twilight Lord Kelris and recover the Head of Kelris.", requires = { { id = 1198, name = "In Search of Thaelrid" } }, start = { description = "Inside Blackfathom Deeps.", npc = "Argent Guard Thaelrid" }, turnIn = { description = "Darnassus.", npc = "Dawnwatcher Selgorm" }, items = {
         { 7001 }, -- Gravestone Scepter
         { 7002 }, -- Arctic Buckler
         { 270031 }, -- Dark Ritual Leggings
         { 270032 }, -- Cultist's Armguards
     } },
-    { id = 6561, name = "Blackfathom Villainy", side = "Horde", requiredLevel = 18, xp = 12375, objective = "Defeat Twilight Lord Kelris and recover the Head of Kelris.", items = {
+    { id = 6561, name = "Blackfathom Villainy", side = "Horde", requiredLevel = 18, xp = 12375, objective = "Defeat Twilight Lord Kelris and recover the Head of Kelris.", start = { description = "Inside Blackfathom Deeps.", npc = "Argent Guard Thaelrid" }, turnIn = { description = "Thunder Bluff.", npc = "Bashana Runetotem" }, items = {
         { 7001 }, -- Gravestone Scepter
         { 7002 }, -- Arctic Buckler
         { 270031 }, -- Dark Ritual Leggings
         { 270032 }, -- Cultist's Armguards
     } },
-    { id = 1199, name = "Twilight Falls", side = "Alliance", requiredLevel = 20, xp = 9563, objective = "Collect 10 Twilight Pendants from Twilight's Hammer members in Blackfathom Deeps.", items = {
+    { id = 1199, name = "Twilight Falls", side = "Alliance", requiredLevel = 20, xp = 9563, objective = "Collect 10 Twilight Pendants from Twilight's Hammer members in Blackfathom Deeps.", start = { description = "Craftsmen's Terrace, Darnassus.", location = { 1457, 55, 24 }, npc = "Argent Guard Manados" }, turnIn = { description = "Craftsmen's Terrace, Darnassus.", location = { 1457, 55, 24 }, npc = "Argent Guard Manados" }, items = {
         { 6998 }, -- Nimbus Boots
         { 7000 }, -- Heartwood Girdle
         { 270025 }, -- Silvered Gauntlets
     } },
-    { id = 6564, name = "Allegiance to the Old Gods", side = "Horde", requiredLevel = 17, xp = 1300, objective = "Bring the Damp Note to Je'neu Sancrea in Ashenvale.", items = {} },
-    { id = 6565, name = "Allegiance to the Old Gods", side = "Horde", requiredLevel = 17, xp = 9938, objective = "Defeat Lorgus Jett in Blackfathom Deeps.", items = {
+    { id = 6564, name = "Allegiance to the Old Gods", side = "Horde", requiredLevel = 17, xp = 1300, objective = "Bring the Damp Note to Je'neu Sancrea in Ashenvale.", description = "Drops from Blackfathom Tide Priestess in the entrance tunnels leading to Blackfathom Deeps.", start = { item = 16790 }, turnIn = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, items = {} },
+    { id = 6565, name = "Allegiance to the Old Gods", side = "Horde", requiredLevel = 17, xp = 9938, objective = "Defeat Lorgus Jett in Blackfathom Deeps.", requires = { { id = 6564, name = "Allegiance to the Old Gods" } }, start = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, turnIn = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, items = {
         { 17694 }, -- Band of the Fist
         { 17695 }, -- Chestnut Mantle
     } },
-    { id = 1275, name = "Researching the Corruption", side = "Alliance", requiredLevel = 18, xp = 2400, objective = "Collect 8 Corrupted Brain Stems from creatures in Blackfathom Deeps.", items = {
+    { id = 1275, name = "Researching the Corruption", side = "Alliance", requiredLevel = 18, xp = 2400, objective = "Collect 8 Corrupted Brain Stems from creatures in Blackfathom Deeps.", requires = { { id = 3765, name = "The Corruption Abroad" } }, start = { description = "Auberdine, Darkshore.", location = { 1439, 38.3, 43.1 }, npc = "Gershala Nightwhisper" }, turnIn = { description = "Auberdine, Darkshore.", location = { 1439, 38.3, 43.1 }, npc = "Gershala Nightwhisper" }, items = {
         { 7003 }, -- Beetle Clasps
         { 7004 }, -- Prelacy Cape
         { 270021 }, -- Staghide Armguards
     } },
-    { id = 1740, name = "The Orb of Soran'ruk", side = "Both", class = "WARLOCK", requiredLevel = 20, xp = 2550, objective = "Find 3 Soran'ruk Fragments and 1 Large Soran'ruk Fragment and return them to Doan Karhan.", items = {
+    { id = 1740, name = "The Orb of Soran'ruk", side = "Both", class = "WARLOCK", requiredLevel = 20, xp = 2550, objective = "Find 3 Soran'ruk Fragments and 1 Large Soran'ruk Fragment and return them to Doan Karhan.", start = { description = "The Barrens.", location = { 1413, 49.3, 57.2 }, npc = "Doan Karhan" }, turnIn = { description = "The Barrens.", location = { 1413, 49.3, 57.2 }, npc = "Doan Karhan" }, items = {
         { 6898 }, -- Orb of Soran'ruk
         { 15109 }, -- Staff of Soran'ruk
     } },
-    { id = 971, name = "Knowledge in the Deeps", side = "Alliance", requiredLevel = 10, xp = 10313, objective = "Recover the Lorgalis Manuscript from Blackfathom Deeps.", items = {
+    { id = 971, name = "Knowledge in the Deeps", side = "Alliance", requiredLevel = 10, xp = 10313, objective = "Recover the Lorgalis Manuscript from Blackfathom Deeps.", description = "The Lorgalis Manuscript is inside a Pitted Iron Chest underwater in the Pool of Ask'ar, in the northern alcove just past Ghamoo-ra's turtle room.", start = { description = "Forlorn Cavern, Ironforge.", location = { 1455, 50.8, 5.6 }, npc = "Gerrig Bonegrip" }, turnIn = { description = "Forlorn Cavern, Ironforge.", location = { 1455, 50.8, 5.6 }, npc = "Gerrig Bonegrip" }, items = {
         { 6743 }, -- Sustaining Ring
     } },
-    { id = 6563, name = "The Essence of Aku'Mai", side = "Horde", requiredLevel = 17, xp = 1750, objective = "Collect 20 Sapphires of Aku'Mai in Blackfathom Deeps.", items = {} },
-    { id = 6562, name = "Trouble in the Deeps", side = "Horde", requiredLevel = 17, xp = 435, objective = "Speak to Je'neu Sancrea in Ashenvale.", items = {} },
-    { id = 1198, name = "In Search of Thaelrid", side = "Alliance", requiredLevel = 18, xp = 2400, objective = "Find Argent Guard Thaelrid inside Blackfathom Deeps.", items = {} },
-    { id = 6921, name = "Amongst the Ruins", side = "Horde", requiredLevel = 21, xp = 10313, objective = "Recover the Fathom Core from the Fathom Stone in Blackfathom Deeps.", items = {} },
+    { id = 6563, name = "The Essence of Aku'Mai", side = "Horde", requiredLevel = 17, xp = 1750, objective = "Collect 20 Sapphires of Aku'Mai in Blackfathom Deeps.", start = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, turnIn = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, items = {} },
+    { id = 6562, name = "Trouble in the Deeps", side = "Horde", requiredLevel = 17, xp = 435, objective = "Speak to Je'neu Sancrea in Ashenvale.", start = { location = { 1442, 47.2, 64.2 }, npc = "Tsunaman" }, turnIn = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, items = {} },
+    { id = 1198, name = "In Search of Thaelrid", side = "Alliance", requiredLevel = 18, xp = 2400, objective = "Find Argent Guard Thaelrid inside Blackfathom Deeps.", description = "Required before the Alliance version of Blackfathom Villainy.", start = { location = { 1457, 55, 24 }, npc = "Dawnwatcher Shaedlass" }, turnIn = { description = "Inside Blackfathom Deeps.", npc = "Argent Guard Thaelrid" }, items = {} },
+    { id = 6921, name = "Amongst the Ruins", side = "Horde", requiredLevel = 21, xp = 10313, objective = "Recover the Fathom Core from the Fathom Stone in Blackfathom Deeps.", description = "The Fathom Stone is also associated with the optional Baron Aquanis encounter.", start = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, turnIn = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, items = {} },
 })

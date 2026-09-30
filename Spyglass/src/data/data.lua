@@ -100,6 +100,17 @@ local RECIPE = {
 
 -- A quest of an instance and what it rewards. This client ships no quest table, so the title is
 -- curated data: `C_QuestLog` only knows quests the character has seen.
+---@class Spyglass.QuestEndpoint
+---@field npc? string
+---@field npcID? integer
+---@field item? integer
+---@field location? number[]  # [uiMapID, x, y], x/y in 0..100
+---@field description? string  # optional info text for this start or turn-in
+
+---@class Spyglass.QuestPrerequisite
+---@field id integer
+---@field name? string
+
 ---@class Spyglass.Quest
 ---@field id integer  # quest id
 ---@field name? string  # quest title, as curated
@@ -108,6 +119,11 @@ local RECIPE = {
 ---@field requiredLevel? integer  # the level a character needs to accept it
 ---@field xp? integer  # the experience it rewards
 ---@field objective? string  # what it asks for, in one sentence (English)
+---@field description? string  # optional curated description
+---@field requires? Spyglass.QuestPrerequisite[]  # direct prerequisite quests
+---@field followUps? integer[]  # later quests in display order
+---@field start? Spyglass.QuestEndpoint
+---@field turnIn? Spyglass.QuestEndpoint
 ---@field instanceID? integer  # the (last) instance it was registered for, set by Data:AddQuests
 ---@field items Spyglass.LootRow[]  # the items it rewards
 
@@ -349,6 +365,24 @@ function Data:AddQuests(instanceID, quests)
             if not listed then
                 ids[#ids + 1] = quest.id
             end
+            self.quests[quest.id] = quest
+        end
+    end
+    invalidate()
+end
+
+-- Quests used only as prerequisites or follow-ups have definitions but no dungeon card of their own.
+---@param quests Spyglass.Quest[]
+function Data:AddQuestDefinitions(quests)
+    if type(quests) ~= "table" then
+        log:error("Data.AddQuestDefinitions: expected a table, got %s", type(quests))
+        return
+    end
+    for _, quest in ipairs(quests) do
+        if type(quest) ~= "table" or type(quest.id) ~= "number" then
+            log:error("Data.AddQuestDefinitions: quest without an id")
+        else
+            quest.items = quest.items or {}
             self.quests[quest.id] = quest
         end
     end

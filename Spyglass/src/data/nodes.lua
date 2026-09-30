@@ -119,35 +119,13 @@ function api.TrashFolder(instanceID)
     })
 end
 
--- A faction's name in the client's language and the faction's color; "Both factions" otherwise.
----@param side string
----@return string
-local function sideLabel(side)
-    if side ~= "Alliance" and side ~= "Horde" then
-        return "Both factions"
-    end
-    local label = side == "Alliance" and (FACTION_ALLIANCE or side) or (FACTION_HORDE or side)
-    local color = PLAYER_FACTION_COLORS and PLAYER_FACTION_COLORS[side == "Alliance" and 1 or 0]
-    if color and color.WrapTextInColorCode then
-        label = color:WrapTextInColorCode(label)
-    end
-    return label
-end
-
--- "Level 14 · Alliance · Warlock": what a quest's banner shows next to its title. The faction is
--- left out when a faction header above already names it; a class quest names the class in the
--- client's name and color for the class token.
+-- Level and class beside the quest title; the banner draws faction emblems separately.
 ---@param quest Spyglass.Quest
----@param withSide boolean
 ---@return string?
-local function questInfo(quest, withSide)
+local function questInfo(quest)
     local parts = {}
     if quest.requiredLevel then
         parts[#parts + 1] = ("%s %d"):format(LEVEL or "Level", quest.requiredLevel)
-    end
-    local side = quest.side
-    if withSide and (side == "Alliance" or side == "Horde") then
-        parts[#parts + 1] = sideLabel(side)
     end
     local class = quest.class
     if class then
@@ -160,10 +138,6 @@ local function questInfo(quest, withSide)
     end
     return #parts > 0 and table.concat(parts, " \194\183 ") or nil
 end
-
--- The sections of an instance's quest card, in order: quests for both factions, then each
--- faction's own.
-local QUEST_SIDES = { "Both", "Alliance", "Horde" }
 
 -- Quests by required level (unknown last), then title, then id.
 ---@param a Spyglass.Quest
@@ -181,39 +155,179 @@ local function questOrder(a, b)
     return a.id < b.id
 end
 
--- The instance's quests: one quest banner per quest (title, level, objective, experience and the
--- character's progress) with the items it rewards under it, sorted by level. When the instance
--- has quests of more than one side, they are split under one header per side (both factions,
--- Alliance, Horde).
+-- The right pane of a quest page: objective and the curated giver/turn-in details.
+---@param panel Spyglass.PanelWidget[]
+---@param title string
+---@param mapButton string
+---@param point Spyglass.QuestEndpoint?
+local function addQuestEndpoint(panel, title, mapButton, point)
+    panel[#panel + 1] = { header = title }
+    if not point then
+        panel[#panel + 1] = { text = "Not recorded yet." }
+        return
+    end
+    if point.npc or point.npcID then
+        local npc = point.npc or ("#" .. point.npcID)
+        if point.npc and point.npcID then
+            npc = npc .. " (#" .. point.npcID .. ")"
+        end
+        panel[#panel + 1] = { text = "NPC: " .. npc }
+    end
+    if point.item then
+        panel[#panel + 1] = { item = point.item }
+    end
+    if point.location then
+        local mapID, x, y = unpack(point.location)
+        local map = C_Map and C_Map.GetMapInfo(mapID)
+        panel[#panel + 1] = {
+            text = ("%s (%.1f, %.1f)"):format(map and map.name or ("Map #" .. mapID), x, y),
+        }
+    end
+    if point.description then
+        panel[#panel + 1] = { text = point.description }
+    end
+    if point.location then
+        panel[#panel + 1] = { button = mapButton, map = point.location }
+    end
+end
+
+---@param quest Spyglass.Quest
+---@param mainQuest? Spyglass.Quest
+---@return Spyglass.PanelWidget[]
+local function questPanel(quest, mainQuest)
+    local panel = {}
+    if mainQuest then
+        panel[#panel + 1] = {
+            button = "Back to main quest",
+            onClick = function(_, view)
+                view:Back()
+            end,
+        }
+    end
+    panel[#panel + 1] = { header = "Objective" }
+    panel[#panel + 1] = { text = quest.objective or "No objective recorded yet." }
+    addQuestEndpoint(panel, "Starts", "Show start on map", quest.start)
+    addQuestEndpoint(panel, "Ends", "Show turn-in on map", quest.turnIn)
+    if quest.description then
+        panel[#panel + 1] = { header = "Description" }
+        panel[#panel + 1] = { description = true }
+    end
+    return panel
+end
+
+-- Prerequisites before the quests that require them, keeping the order written in the catalog.
+---@param quest Spyglass.Quest
+---@return Spyglass.Quest[]
+local function questPrerequisites(quest)
+    local ordered, seen = {}, { [quest.id] = true }
+    local function visit(current)
+        for _, required in ipairs(current.requires or {}) do
+            local id = type(required) == "table" and required.id or required
+            if type(id) == "number" and not seen[id] then
+                seen[id] = true
+                local prerequisite = Data:GetQuest(id)
+                if prerequisite then
+                    visit(prerequisite)
+                    ordered[#ordered + 1] = prerequisite
+                end
+            end
+        end
+    end
+    visit(quest)
+    return ordered
+end
+
+-- A quest in the dungeon list, or a linked quest from its main page. Linked pages show their own
+-- details and rewards without opening another prerequisite or follow-up list.
+---@param quest Spyglass.Quest
+---@param mainQuest? Spyglass.Quest
+---@return Spyglass.Node
+local function questPage(quest, mainQuest)
+    local info = questInfo(quest)
+    local items = {}
+    for _, row in ipairs(quest.items) do
+        items[#items + 1] = { itemID = row[1], chance = row[2] }
+    end
+    local entry = api.QuestEntry(quest.id, nil, info)
+    entry.name = Data:GetQuestName(quest.id)
+    entry.description = quest.description or quest.objective or "No description recorded yet."
+    entry.columns = 2
+    entry.panel = questPanel(quest, mainQuest)
+    local details = api.QuestEntry(quest.id, items, info)
+    if mainQuest then
+        entry.children = { details }
+        return entry
+    end
+
+    local prerequisites = questPrerequisites(quest)
+    local followUps = {}
+    for _, id in ipairs(quest.followUps or {}) do
+        local followUp = Data:GetQuest(id)
+        if followUp then
+            followUps[#followUps + 1] = followUp
+        end
+    end
+    if #prerequisites == 0 and #followUps == 0 then
+        entry.children = { details }
+        return entry
+    end
+    local prerequisitePages = {}
+    if #prerequisites > 0 then
+        entry.prerequisiteIDs = {}
+    end
+    for i, prerequisite in ipairs(prerequisites) do
+        entry.prerequisiteIDs[i] = prerequisite.id
+        local page = questPage(prerequisite, quest)
+        page.indent = 28
+        page.info = ("Step %d/%d%s"):format(i, #prerequisites, page.info and (" \194\183 " .. page.info) or "")
+        prerequisitePages[#prerequisitePages + 1] = page
+    end
+    local followUpPages = {}
+    for i, followUp in ipairs(followUps) do
+        local page = questPage(followUp, quest)
+        page.indent = 28
+        page.info = ("Step %d/%d%s"):format(i, #followUps, page.info and (" \194\183 " .. page.info) or "")
+        followUpPages[#followUpPages + 1] = page
+    end
+    entry.getChildren = function(node, view)
+        local children = { details }
+        local function addSection(label, pages, stateIndex)
+            if #pages == 0 then
+                return
+            end
+            local expanded = view:GetPanelValue(node, stateIndex) == true
+            local toggle = api.Subheader(("%s (%d) - %s"):format(label, #pages, expanded and "Hide" or "Show"))
+            toggle.onClick = function(_, button)
+                if button == "RightButton" then
+                    view:Back()
+                else
+                    view:SetPanelValue(node, stateIndex, not expanded)
+                end
+            end
+            children[#children + 1] = toggle
+            if expanded then
+                for _, page in ipairs(pages) do
+                    children[#children + 1] = page
+                end
+            end
+        end
+        addSection("Prerequisites", prerequisitePages, 0)
+        addSection("Follow-ups", followUpPages, -1)
+        return children
+    end
+    return entry
+end
+
+-- The dungeon's quest page: one clickable banner per quest, sorted by level. The reward items
+-- appear only after opening a quest; its objective and endpoints are in that page's info pane.
 ---@param instanceID integer
 ---@return Spyglass.Node[]
 function api.InstanceQuestEntries(instanceID)
-    local bySide = { Both = {}, Alliance = {}, Horde = {} }
-    for _, quest in ipairs(Data:GetInstanceQuests(instanceID)) do
-        local list = bySide[quest.side] or bySide.Both
-        list[#list + 1] = quest
-    end
-    local sections = 0
-    for _, side in ipairs(QUEST_SIDES) do
-        if #bySide[side] > 0 then
-            sections = sections + 1
-        end
-    end
-
+    local quests = Data:GetInstanceQuests(instanceID)
+    table.sort(quests, questOrder)
     local entries = {}
-    for _, side in ipairs(QUEST_SIDES) do
-        local quests = bySide[side]
-        table.sort(quests, questOrder)
-        if #quests > 0 and sections > 1 then
-            entries[#entries + 1] = api.Header(sideLabel(side))
-        end
-        for _, quest in ipairs(quests) do
-            local items = {}
-            for _, row in ipairs(quest.items) do
-                items[#items + 1] = { itemID = row[1], chance = row[2] }
-            end
-            entries[#entries + 1] = api.QuestEntry(quest.id, items, questInfo(quest, sections == 1))
-        end
+    for _, quest in ipairs(quests) do
+        entries[#entries + 1] = questPage(quest)
     end
     if #entries == 0 then
         entries[1] = api.Custom({
@@ -231,6 +345,17 @@ end
 ---@return Spyglass.Node
 function api.QuestFolder(instanceID)
     local quests = Data:GetInstanceQuests(instanceID)
+    local instance = Data:GetInstance(instanceID)
+    local dungeonName = instance and instance.displayName or Data:GetInstanceName(instanceID)
+    local panel = {
+        { row = "Dungeon", value = dungeonName },
+        { description = true },
+        { factionDropdown = "Faction" },
+    }
+    if instance and type(instance.entrance) == "table" then
+        panel[#panel + 1] = { spacer = true }
+        panel[#panel + 1] = { button = "Show entrance", map = instance.entrance }
+    end
     local ids = {}
     for i, quest in ipairs(quests) do
         ids[i] = quest.id
@@ -241,6 +366,7 @@ function api.QuestFolder(instanceID)
         quests = #ids > 0 and ids or nil,
         description = "The quests that take place here and what they reward.",
         meta = { instanceID = instanceID, quests = true },
+        panel = panel,
     })
 end
 
@@ -282,8 +408,9 @@ end
 -- its entrance when the curated data has one, and its quests with the character's progress.
 ---@param instanceID integer
 ---@param instance Spyglass.Instance
+---@param questFolder Spyglass.Node
 ---@return Spyglass.PanelWidget[]
-local function instancePanel(instanceID, instance)
+local function instancePanel(instanceID, instance, questFolder)
     local panel = {}
     local zone = instance.zone and C_Map.GetMapInfo(instance.zone)
     if zone and zone.name and zone.name ~= "" then
@@ -308,15 +435,21 @@ local function instancePanel(instanceID, instance)
     for i, quest in ipairs(Data:GetInstanceQuests(instanceID)) do
         ids[i] = quest.id
     end
+    panel[#panel + 1] = { header = QUESTS_LABEL or "Quests" }
     if #ids > 0 then
-        panel[#panel + 1] = { header = QUESTS_LABEL or "Quests" }
         panel[#panel + 1] = { quests = ids }
     end
+    panel[#panel + 1] = {
+        button = "View quests",
+        onClick = function(_, view)
+            view:Push(questFolder)
+        end,
+    }
     return panel
 end
 
--- An instance folder with an "All Bosses" card, one boss folder per encounter and the instance's
--- own two categories (trash and quests), carrying the instance's metadata (`instanceID`, `minLevel`,
+-- An instance folder with "All Bosses" and trash cards before its boss cards. Quests open from
+-- the right pane. The folder carries the instance's metadata (`instanceID`, `minLevel`,
 -- `maxLevel`, `expansionID`) for sorting and filtering and its picture for lists that draw
 -- their entries as tiles. Named by the instance's curated `displayName` when it has one.
 ---@param instanceID integer
@@ -326,12 +459,13 @@ function api.InstanceFolder(instanceID)
     if not instance then
         return nil
     end
-    local entries = { allBossesFolder(instanceID, instance) }
+    local entries = { allBossesFolder(instanceID, instance), api.TrashFolder(instanceID) }
     for _, bossID in ipairs(instance.bosses) do
         entries[#entries + 1] = api.BossFolder(bossID)
     end
-    entries[#entries + 1] = api.TrashFolder(instanceID)
-    entries[#entries + 1] = api.QuestFolder(instanceID)
+    local questFolder = api.QuestFolder(instanceID)
+    questFolder.hidden = true
+    entries[#entries + 1] = questFolder
     local name = instance.displayName or Data:GetInstanceName(instanceID)
     return api.Folder(name, instance.icon or ICON_BOSS, entries, {
         display = "cards",
@@ -342,7 +476,7 @@ function api.InstanceFolder(instanceID)
         order = instance.minLevel,
         background = instance.background,
         backgroundCoords = instance.backgroundCoords,
-        panel = instancePanel(instanceID, instance),
+        panel = instancePanel(instanceID, instance, questFolder),
     })
 end
 

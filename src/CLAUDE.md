@@ -48,8 +48,10 @@ contributors write are in `docs/contributing.md`.
   (the shipping rule the generator and the checker share), `linkRecipeItems`, `loadRecipes`.
 - `items.ts` — `ScannedItem` (field meanings = `Data.ITEM` in the core) and the
   `.contribute/data/items/` store.
-- `curated.ts` — the instance files (`CuratedInstance/Encounter/Loot/Quest`), `loadCurated`,
+- `curated.ts` — the instance files (`CuratedInstance/Encounter/Loot`), `loadCurated`,
   `validate`, `serialize`, and the shared `Checker` with `checkItemRow`.
+- `quests.ts` — one quest catalog file per dungeon, shared quest definitions, quest reference
+  validation and serialization.
 - `lists.ts` — the item lists (`CuratedList/Row`, `ROWS_KEY`, `ROW_FIELDS`, `STANDINGS`),
   `rowsOf`, `validateLists`, `validateSections`, `serializeList`.
 - `savedvars.ts` — a parser for the Lua subset the client writes to SavedVariables; not a Lua
@@ -58,6 +60,8 @@ contributors write are in `docs/contributing.md`.
   `/sg export` `.json` or a SavedVariables `.lua`.
 - `import.ts` — `importDiscovered`: merges items into the scans and observed drops into the
   instance files.
+- `dungeon-levels.ts` — parses `/sg levels`, matches activities to dungeon files and checks
+  their ranges against the imported snapshot.
 - `generate.ts` — `build()` (the three trees in memory) and `write()`. `itemRow()` **must match
   `Data.ITEM`** and `recipeRow()` **`Data.RECIPE`** in `Spyglass/src/data/data.lua`.
 - `lua.ts` — Lua serialization and the provenance `header()`, which deliberately still says

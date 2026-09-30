@@ -29,22 +29,22 @@ Data:AddBossLoot(3496, { -- Durgen Dirgehammer
 })
 
 Data:AddQuests(3065, {
-    { id = 96393, name = "Old Ironforge Incursion", side = "Alliance", requiredLevel = 9, xp = 4930, objective = "Enter Hall of Thanes and claim Durgen Dirgehammer's Head.", items = {
+    { id = 96393, name = "Old Ironforge Incursion", side = "Alliance", requiredLevel = 9, xp = 4930, objective = "Enter Hall of Thanes and claim Durgen Dirgehammer's Head.", description = "The chain begins by dropping Dark Iron Map from Dark Iron Spies in Dun Morogh.", requires = { { id = 96391, name = "Underground Map" } }, start = { description = "Dun Morogh (after Underground Map).", npc = "Earthseer Farsen" }, turnIn = { description = "Ironforge.", npc = "King Magni Bronzebeard" }, items = {
         { 279894 }, -- Calibrated Blunderbuss
         { 279895 }, -- Ironforge Greathammer
         { 279896 }, -- Deepblaze
     } },
-    { id = 96395, name = "An Ancient Grudge", side = "Both", requiredLevel = 10, xp = 3570, objective = "Put the spirit of Faldrim Anvilmar to rest.", items = {
+    { id = 96395, name = "An Ancient Grudge", side = "Both", requiredLevel = 10, xp = 3570, objective = "Put the spirit of Faldrim Anvilmar to rest.", start = { description = "Inside Hall of Thanes, after the first room.", npc = "Ghostly Attendant" }, turnIn = { description = "Inside the dungeon.", npc = "Ghostly Attendant" }, items = {
         { 279899 }, -- Catacomb Cloak
         { 279900 }, -- Deepgrave Trousers
     } },
-    { id = 96403, name = "Important Heirlooms", side = "Both", requiredLevel = 10, xp = 4590, objective = "Collect 8 Dwarven Heirlooms from the Hall of Thanes.", items = {
+    { id = 96403, name = "Important Heirlooms", side = "Both", requiredLevel = 10, xp = 4590, objective = "Collect 8 Dwarven Heirlooms from the Hall of Thanes.", start = { description = "By the bridge / vault entrance in Ironforge.", npc = "Thom Filch" }, turnIn = { description = "Near the dungeon entrance.", npc = "Thom Filch" }, items = {
         { 279898 }, -- Dwarven Tome
         { 280096 }, -- Tomb Robber's Gloves
     } },
-    { id = 96394, name = "The Restless Dead", side = "Alliance", requiredLevel = 10, xp = 3570, objective = "Kill 15 Enraged Apparitions and 10 Tormented Souls, then put Anvilmar's spirit to rest.", items = {
+    { id = 96394, name = "The Restless Dead", side = "Alliance", requiredLevel = 10, xp = 3570, objective = "Kill 15 Enraged Apparitions and 10 Tormented Souls, then put Anvilmar's spirit to rest.", start = { description = "Ironforge.", npc = "Afadra Dunwall" }, turnIn = { description = "Ironforge.", npc = "Afadra Dunwall" }, items = {
         { 279897 }, -- Dusty Belt
         { 280095 }, -- Cryptwalker Bracers
     } },
-    { id = 98423, name = "The Treaty of Understanding", side = "Alliance", requiredLevel = 9, xp = 3900, objective = "Deliver the Treaty of Understanding to Magni Bronzebeard in Ironforge.", items = {} },
+    { id = 98423, name = "The Treaty of Understanding", side = "Alliance", requiredLevel = 9, xp = 3900, objective = "Deliver the Treaty of Understanding to Magni Bronzebeard in Ironforge.", description = "The quest starts from a stone tablet inside a vault in the Reliquary of Kings.", start = { description = "Reliquary of Kings vault.", npc = "Stone tablet" }, turnIn = { description = "Ironforge.", npc = "King Magni Bronzebeard" }, items = {} },
 })

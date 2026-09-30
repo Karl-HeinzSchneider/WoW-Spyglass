@@ -25,11 +25,11 @@ read it before changing this addon. The contributor workflow it feeds is in
   `DiscoveredItem/DiscoveredLoot/Discovered/ScanProgress` are the shape `src/discovered.ts` reads.
 - `src/json.lua` — `app.json.encode`, a minimal encoder for `/sg export` (objects only, no arrays).
 - `src/ace.lua` — `app.addon`, the AceAddon object (AceEvent). `OnInitialize` opens
-  `SpyglassScraperDB`; `OnEnable` registers `scan`, `export` and `portrait` through
+  `SpyglassScraperDB`; `OnEnable` registers `scan`, `export`, `levels` and `portrait` through
   `Spyglass:RegisterCommand`, `OnDisable` unregisters them. The handlers are stored on the
   object so unregistering matches.
 - `src/discovery.lua` — `app.discovery`, the Ace module doing the scanning, loot observation and
-  export.
+  export, including the group finder level snapshot.
 - `src/ui/exportframe.lua/.xml` — `SpyglassScraperExportFrameMixin` / `app.exportFrame`: the
   window that shows the export JSON.
 - `src/ui/portraitframe.lua/.xml` — `SpyglassScraperPortraitFrameMixin` / `app.portraitFrame`:

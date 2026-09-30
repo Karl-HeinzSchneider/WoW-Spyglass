@@ -50,39 +50,39 @@ Data:AddTrashLoot(2999, {
 })
 
 Data:AddQuests(2999, {
-    { id = 92422, name = "The Wrath of Rath'mael", side = "Horde", requiredLevel = 15, objective = "Kill Rath'mael in Ruins of Lordaeron.", items = {
+    { id = 92422, name = "The Wrath of Rath'mael", side = "Horde", requiredLevel = 15, objective = "Kill Rath'mael in Ruins of Lordaeron.", start = { description = "Brill.", location = { 1420, 65.2, 60.2 }, npc = "Deathguard Kristof" }, turnIn = { description = "Brill.", location = { 1420, 65.2, 60.2 }, npc = "Deathguard Kristof" }, items = {
         { 251533 }, -- Forsaken Greataxe
         { 251534 }, -- Gnarled Necromancer's Staff
     } },
-    { id = 92415, name = "Remember That I Love You", side = "Alliance", requiredLevel = 15, xp = 9750, objective = "Bring the Blood-Stained Letter to Orphan Matron Nightingale.", items = {
+    { id = 92415, name = "Remember That I Love You", side = "Alliance", requiredLevel = 15, xp = 9750, objective = "Bring the Blood-Stained Letter to Orphan Matron Nightingale.", description = "Found in the graveyard inside Ruins of Lordaeron", start = { item = 251522 }, turnIn = { description = "Stormwind City.", npc = "Orphan Matron Nightingale" }, items = {
         { 279870 }, -- Tarnished Locket
     } },
-    { id = 92421, name = "Light's Justice", side = "Horde", requiredLevel = 15, xp = 7040, objective = "Collect 25 Intact Limbs within Ruins of Lordaeron.", items = {
+    { id = 92421, name = "Light's Justice", side = "Horde", requiredLevel = 15, xp = 7040, objective = "Collect 25 Intact Limbs within Ruins of Lordaeron.", start = { description = "Undercity.", location = { 1458, 57.9, 89.5 }, npc = "Morbin Lightbane" }, turnIn = { description = "Undercity.", location = { 1458, 57.9, 89.5 }, npc = "Morbin Lightbane" }, items = {
         { 279874 }, -- The Stitcher
         { 279875 }, -- Spare Part Bindings
     } },
-    { id = 95250, name = "Abominable Creatures", side = "Alliance", requiredLevel = 16, xp = 6188, objective = "Collect the Head of the Baron in Ruins of Lordaeron.", items = {
+    { id = 95250, name = "Abominable Creatures", side = "Alliance", requiredLevel = 16, xp = 6188, objective = "Collect the Head of the Baron in Ruins of Lordaeron.", start = { description = "Just inside Ruins of Lordaeron (left of the entrance).", npc = "Captain Truman" }, turnIn = { description = "Just inside Ruins of Lordaeron.", npc = "Captain Truman" }, items = {
         { 279864 }, -- Monstrous Cleaver
         { 279865 }, -- Grave Shroud
         { 279867 }, -- Slain Baron's Signet
     } },
-    { id = 95195, name = "Bloodied Insignia", side = "Alliance", requiredLevel = 16, xp = 9750, objective = "Collect 10 Bloodied Insignias.", items = {
+    { id = 95195, name = "Bloodied Insignia", side = "Alliance", requiredLevel = 16, xp = 9750, objective = "Collect 10 Bloodied Insignias.", description = "Dropped by: undead enemies inside Ruins of Lordaeron", start = { item = 268535 }, turnIn = { description = "Stormwind City.", npc = "General Marcus Jonathan" }, items = {
         { 279868 }, -- Duty Bound Leggings
         { 279869 }, -- Remembrance Armor
     } },
-    { id = 95216, name = "The New Plague", side = "Horde", requiredLevel = 16, xp = 8320, objective = "Collect the Highly Toxic Strain from Witherfang.", items = {
+    { id = 95216, name = "The New Plague", side = "Horde", requiredLevel = 16, xp = 8320, objective = "Collect the Highly Toxic Strain from Witherfang.", start = { description = "Undercity.", location = { 1458, 46.5, 71.6 }, npc = "Theodore Griffs" }, turnIn = { description = "Undercity.", location = { 1458, 46.5, 71.6 }, npc = "Theodore Griffs" }, items = {
         { 279876 }, -- Plaguefang
         { 279877 }, -- Blight Gloves
     } },
-    { id = 97288, name = "Unending Torment", side = "Horde", requiredLevel = 16, xp = 5280, objective = "Deliver the Abominable Head to the Undercity.", items = {} },
-    { id = 92401, name = "A Frightened Request", side = "Horde", requiredLevel = 15, xp = 7040, objective = "Investigate the disappearance of Edward Heartweaver in Ruins of Lordaeron.", items = {
+    { id = 97288, name = "Unending Torment", side = "Horde", requiredLevel = 16, xp = 5300, objective = "Deliver the Abominable Head to the Undercity.", description = "Dropped by: The Baron", followUps = { 97289, 97290, 97291, 97292 }, start = { item = 280438 }, turnIn = { description = "Undercity.", location = { 1458, 48.6, 69.6 }, npc = "Master Apothecary Faranell" }, items = {} },
+    { id = 92401, name = "A Frightened Request", side = "Horde", requiredLevel = 15, xp = 7040, objective = "Investigate the disappearance of Edward Heartweaver in Ruins of Lordaeron.", start = { description = "The Sepulcher, Silverpine Forest.", location = { 1421, 44.5, 43 }, npc = "Tabitha Heartweaver" }, turnIn = { description = "The Sepulcher, Silverpine Forest.", location = { 1421, 44.5, 43 }, npc = "Tabitha Heartweaver" }, items = {
         { 251485 }, -- Edward's Knife
         { 251486 }, -- Tabitha's Cuffs
     } },
-    { id = 95189, name = "Crest of Lordaeron", side = "Alliance", requiredLevel = 16, xp = 9750, objective = "Return the Crest of Lordaeron to Stormwind.", items = {
+    { id = 95189, name = "Crest of Lordaeron", side = "Alliance", requiredLevel = 16, xp = 9750, objective = "Return the Crest of Lordaeron to Stormwind.", description = "Community reports indicate the Crest can spawn at one of several locations inside the dungeon. Reported spots include upper floors of towers, side/crypt rooms near The Baron, and the area around Bjork.", start = { item = 268579 }, turnIn = { description = "Stormwind City.", npc = "Lady Dena Kennedy" }, items = {
         { 280567 }, -- Small Sack of Gems
     } },
-    { id = 95204, name = "Crest of Lordaeron", side = "Horde", requiredLevel = 16, xp = 8320, objective = "Bring the Crest of Lordaeron to the Undercity.", items = {
+    { id = 95204, name = "Crest of Lordaeron", side = "Horde", requiredLevel = 16, xp = 8320, objective = "Bring the Crest of Lordaeron to the Undercity.", description = "Community reports indicate the Crest can spawn at one of several locations inside the dungeon. Reported spots include upper floors of towers, side/crypt rooms near The Baron, and the area around Bjork.", start = { item = 268579 }, turnIn = { description = "Undercity.", location = { 1458, 73.6, 32.6 }, npc = "Oran Snakewrithe" }, items = {
         { 280567 }, -- Small Sack of Gems
     } },
 })

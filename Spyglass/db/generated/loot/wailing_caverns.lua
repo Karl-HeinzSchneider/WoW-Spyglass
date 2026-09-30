@@ -8,12 +8,14 @@ Data:AddBossLoot(585, { -- Lady Anacondra
     { 273088 }, -- Snake Eye Kaleidoscope
     { 10412 }, -- Belt of the Fang
     { 6446 }, -- Snakeskin Bag
+    { 9739 }, -- Gem of Anacondra
 })
 
 Data:AddBossLoot(586, { -- Lord Cobrahn
     { 6460 }, -- Cobrahn's Grasp
     { 6465 }, -- Robe of the Moccasin
     { 10410 }, -- Leggings of the Fang
+    { 9738 }, -- Gem of Cobrahn
 })
 
 Data:AddBossLoot(587, { -- Kresh
@@ -26,6 +28,7 @@ Data:AddBossLoot(588, { -- Lord Pythas
     { 6472 }, -- Stinging Viper
     { 6473 }, -- Armor of the Fang
     { 273089 }, -- Slither Cord
+    { 9740 }, -- Gem of Pythas
 })
 
 Data:AddBossLoot(589, { -- Skum
@@ -39,6 +42,7 @@ Data:AddBossLoot(590, { -- Lord Serpentis
     { 5970 }, -- Serpent Gloves
     { 6459 }, -- Savage Trodders
     { 10411 }, -- Footpads of the Fang
+    { 9741 }, -- Gem of Serpentis
 })
 
 Data:AddBossLoot(591, { -- Verdan the Everliving
@@ -61,29 +65,26 @@ Data:AddTrashLoot(43, {
 })
 
 Data:AddQuests(43, {
-    { id = 914, name = "Leaders of the Fang", side = "Horde", requiredLevel = 10, xp = 6380, objective = "Bring the Gems of Cobrahn, Anacondra, Pythas and Serpentis to Nara Wildmane.", items = {
+    { id = 914, name = "Leaders of the Fang", side = "Horde", requiredLevel = 10, xp = 6380, objective = "Bring the Gems of Cobrahn, Anacondra, Pythas and Serpentis to Nara Wildmane.", requires = { { id = 1490, name = "Nara Wildmane" } }, start = { description = "Thunder Bluff.", location = { 1456, 75.3, 31.3 }, npc = "Nara Wildmane" }, turnIn = { description = "Thunder Bluff.", location = { 1456, 75.3, 31.3 }, npc = "Nara Wildmane" }, items = {
         { 6505 }, -- Crescent Staff
         { 6504 }, -- Wingblade
         { 270018 }, -- Hammerbone
     } },
-    { id = 1486, name = "Deviate Hides", side = "Both", requiredLevel = 13, xp = 4640, objective = "Bring 20 Deviate Hides to Nalpak.", items = {
+    { id = 1486, name = "Deviate Hides", side = "Both", requiredLevel = 13, xp = 4640, objective = "Bring 20 Deviate Hides to Nalpak.", start = { description = "Above the entrance to Wailing Caverns, The Barrens.", location = { 1413, 46.6, 36.3 }, npc = "Nalpak" }, turnIn = { description = "Above the entrance to Wailing Caverns, The Barrens.", location = { 1413, 46.6, 36.3 }, npc = "Nalpak" }, items = {
         { 6480 }, -- Slick Deviate Leggings
         { 918 }, -- Deviate Hide Pack
     } },
-    { id = 962, name = "Serpentbloom", side = "Horde", requiredLevel = 14, xp = 4930, objective = "Collect 10 Serpentbloom from Wailing Caverns.", items = {
+    { id = 962, name = "Serpentbloom", side = "Horde", requiredLevel = 14, xp = 4930, objective = "Collect 10 Serpentbloom from Wailing Caverns.", start = { description = "Thunder Bluff.", location = { 1456, 23, 21 }, npc = "Apothecary Zamah" }, turnIn = { description = "Thunder Bluff.", location = { 1456, 23, 21 }, npc = "Apothecary Zamah" }, items = {
         { 10919 }, -- Apothecary Gloves
         { 270008 }, -- Heat Resistant Mitts
         { 270009 }, -- Safety Boots
     } },
-    { id = 1487, name = "Deviate Eradication", side = "Both", requiredLevel = 15, xp = 5945, objective = "Kill 7 Deviate Ravagers, 7 Deviate Vipers, 7 Deviate Shamblers and 7 Deviate Dreadfangs.", items = {
+    { id = 1487, name = "Deviate Eradication", side = "Both", requiredLevel = 15, xp = 5945, objective = "Kill 7 Deviate Ravagers, 7 Deviate Vipers, 7 Deviate Shamblers and 7 Deviate Dreadfangs.", start = { description = "Above the entrance to Wailing Caverns, The Barrens.", location = { 1413, 46.6, 35.7 }, npc = "Ebru" }, turnIn = { description = "Above the entrance to Wailing Caverns, The Barrens.", location = { 1413, 46.6, 35.7 }, npc = "Ebru" }, items = {
         { 6476 }, -- Pattern: Deviate Scale Belt
         { 8071 }, -- Sizzle Stick
         { 6481 }, -- Dagmire Gauntlets
     } },
-    { id = 1489, name = "Hamuul Runetotem", items = {} },
-    { id = 1490, name = "Nara Wildmane", items = {} },
-    { id = 1491, name = "Smart Drinks", side = "Both", requiredLevel = 13, xp = 3915, objective = "Bring 6 Wailing Essence to Mebok Mizzyrix.", items = {} },
-    { id = 959, name = "Trouble at the Docks", side = "Both", requiredLevel = 14, xp = 3915, objective = "Retrieve the 99-Year-Old Port from Mad Magglish in Wailing Caverns.", items = {} },
-    { id = 3366, name = "The Glowing Shard", items = {} },
-    { id = 6981, name = "The Glowing Shard", side = "Both", requiredLevel = 15, xp = 7685, objective = "Travel to Ratchet to find someone who can identify the Glowing Shard, then deliver it as directed.", items = {} },
+    { id = 1491, name = "Smart Drinks", side = "Both", requiredLevel = 13, xp = 3915, objective = "Bring 6 Wailing Essence to Mebok Mizzyrix.", requires = { { id = 865, name = "Raptor Horns" } }, start = { description = "Ratchet, The Barrens.", location = { 1413, 62.8, 36.7 }, npc = "Mebok Mizzyrix" }, turnIn = { description = "Ratchet, The Barrens.", location = { 1413, 62.8, 36.7 }, npc = "Mebok Mizzyrix" }, items = {} },
+    { id = 959, name = "Trouble at the Docks", side = "Both", requiredLevel = 14, xp = 3915, objective = "Retrieve the 99-Year-Old Port from Mad Magglish in Wailing Caverns.", start = { description = "Ratchet, The Barrens.", location = { 1413, 63.9, 38.3 }, npc = "Crane Operator Bigglefuzz" }, turnIn = { description = "Ratchet, The Barrens.", location = { 1413, 63.9, 38.3 }, npc = "Crane Operator Bigglefuzz" }, items = {} },
+    { id = 6981, name = "The Glowing Shard", side = "Both", requiredLevel = 15, xp = 7700, objective = "Travel to Ratchet to find someone who can identify the Glowing Shard, then deliver it as directed.", description = "Dropped by: Mutanus the Devourer.\nVisit Sputtervalve in Ratchet near the flight master at [63.0, 37.2].", start = { item = 10441 }, turnIn = { description = "Above the entrance to Wailing Caverns,, The Barrens.", location = { 1413, 48.2, 32.8 }, npc = "Falla Sagewind" }, items = {} },
 })

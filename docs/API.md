@@ -104,6 +104,8 @@ database (name, quality, item level) when it is in there (the core ships no item
 `Spyglass_Database` adds them), otherwise as "Item #id"; either way it is requested and
 redraws when the game's data arrives. `Spyglass.IsFolder(node)` tells whether a node
 opens (static, dynamic or query folder).
+Set `hidden = true` on a node to keep it available for navigation without drawing it in its
+parent's list.
 
 Any entry may carry `tooltip`: a list of extra lines, or a function `(node) -> lines` called
 each time the tooltip is shown (so names the client fetched in the meantime are used). On items
@@ -149,13 +151,12 @@ picture standing on its left, the name and the two info texts beside it, two car
 | `quests`            | integer[]        | Quest ids the entry is involved in: the card shows a quest "!" and the tooltip lists the quests' titles.                                                    |
 
 `InstanceFolder` nodes are card folders. The first card, "All Bosses", lists every item any of
-the instance's bosses drops (each item once), so the whole loot table reads at a glance. Then
-each `BossFolder(bossID)` carries what the database
+the instance's bosses drops (each item once), so the whole loot table reads at a glance. The
+trash card follows, then each `BossFolder(bossID)` carries what the database
 knows about the boss — portrait (a texture, or the model's display id for bosses without art), `info` as "<level> <creature type>" (e.g. "60 Beast"), `quests`,
 and `infoRight` reserved for its _drops of interest_ (hidden until the planned favorites
-system decides what counts). After the bosses come the instance's own two cards,
-`TrashFolder(instanceID)` and `QuestFolder(instanceID)` — both always present, both showing a
-contribution hint while the database has nothing for them.
+system decides what counts). The right pane lists quests and has a button beneath them to open
+`QuestFolder(instanceID)`; the quest folder is not a card in the instance list.
 
 ```lua
 Spyglass:RegisterModule({
@@ -203,18 +204,20 @@ Spyglass:RegisterModule({
 Inside a folder's `children`, from the biggest to the smallest:
 
 - `{ header = "Weapons" }` renders as a big section header (spellbook-style title with a
-  divider). The current folder's own name is always shown as the first header of its list.
+  divider).
 - `{ subheader = "Rare Drops", items = { ... } }` renders as a small centered section title with
   a line to either side, followed by `items` — one level under a header, for lists with enough
   sections that the group labels alone no longer structure them. Without `items` it just marks
-  where the section starts.
+  where the section starts. Set `onClick = function(node, button) end` to make the title clickable.
 - `{ quest = questID, items = { ... }, info = "Level 14" }` renders as a full-width quest banner
   followed by `items` (what the quest rewards): the quest's title (`Data:GetQuestName`), `info`
   beside it, the curated `objective` under it, its `xp` on the right ("No rewards recorded" when
   the database has neither `xp` nor items), and the character's progress ("Done", "Ready",
   "Active", "Not started", with the gossip window's quest mark to match). Hover shows the same
-  quest tooltip as the info panel's quest lines, shift-click links the quest in chat. Unlike a
-  subheader it stays when the filters remove all of its `items`.
+  quest tooltip as the info panel's quest lines, shift-click links the quest in chat. If the node
+  has `children`, clicking its banner opens them. Set `indent` to inset a nested quest banner
+  from the left. `prerequisiteIDs` adds a completed/total prequest count before the objective.
+  Unlike a subheader it stays when the filters remove all of its `items`.
 - `{ group = "Tier 2", items = { ... } }` renders as a row-sized group label followed by
   `items`. Without `items` it just marks where a group starts in the surrounding list.
 - `{ spacer = true }` is one empty row of space (as high as a list row, nothing drawn), e.g. to
@@ -265,11 +268,19 @@ Constructors (optional sugar):
   trash card and its drops: what the enemies between the bosses drop (`Data:GetTrashLoot`), auto-grouped
   like a boss's loot and with the drop count as `info`
 - `Spyglass.QuestFolder(instanceID)` / `Spyglass.InstanceQuestEntries(instanceID)` — the instance's
-  quest card and its contents: one `QuestEntry` per quest (its `info` is the `requiredLevel` as "Level 14", plus the
-  class of a class quest) followed by the items that quest rewards, sorted by `requiredLevel`, then title.
-  When the instance has quests of more than one side, they are split under a `Header` per side ("Both
-  factions", Alliance, Horde); otherwise `info` names the faction when the quest's `side` restricts it. The card carries the quest ids in
-  `quests`, so it shows the same "!" and title list a boss with quests does.
+  quest folder and its contents: one clickable `QuestEntry` per quest, sorted by `requiredLevel`,
+  then title. The folder's right pane shows the dungeon name and filters the list to the
+  character's faction by default;
+  Alliance and Horde include shared quests, and Both shows all quests. Each banner shows
+  Alliance and/or Horde emblems immediately before XP, plus level
+  and class in `info`, with no reward rows below it. Clicking opens a quest page with its title,
+  objective, optional description, giver and turn-in details (including item icons and tooltips
+  for item starts), map buttons where locations are known, and reward items. When present, a clickable
+  subheader expands the ordered prerequisites. A second subheader expands ordered follow-ups.
+  Both use indented, numbered quest banners with their own detail pages and rewards. Their back
+  buttons return to the main quest without opening another linked list. The card carries the
+  quest ids in `quests`, so it shows the same
+  "!" and title list a boss with quests does.
 - `Spyglass.ListFolders(kind, opts?)` — folders for every curated list of `kind` (`"crafting"`, `"pvp"`,
   `"collections"`, `"reputation"`), by `order` then name; the built-in modules of those names are exactly this
 - `Spyglass.ListFolder(kind, id, opts?)` / `Spyglass.ListEntries(kind, id)` — one list as a two-column
@@ -339,22 +350,27 @@ path, the pane shows the current node's name and `description`.
 each time the pane is drawn. Each widget has exactly one type key; the other fields are its
 options:
 
-| Widget                   | Options                                         | Notes                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| ------------------------ | ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `{ header = text }`      |                                                 | Section plate.                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| `{ text = text }`        |                                                 | Wrapped text.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `{ description = true }` |                                                 | The panel node's `description`.                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| `{ row = label }`        | `value`                                         | Label left, value right.                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| `{ bar = kind }`         | `faction`, `skillLine`; `value`, `max`, `label` | `"reputation"`: the character's standing with `faction` (default `meta.factionID` of the panel node); `"skill"`: the rank in `skillLine` (default `meta.skillLineID`); `"value"`: `value` of `max`, `label` on the bar.                                                                                                                                                                                                                                                           |
-| `{ checkbox = label }`   | `filter`                                        | While checked, hides the list's entries `filter` rejects: a built-in id (`"side"`: rows whose `meta.side` is the other faction; `"standing"`: rows whose `meta.standing` is above the character's standing with the panel node's faction) or a function `(entry, node) -> boolean`.                                                                                                                                                                                               |
-| `{ dropdown = label }`   | `field`                                         | Offers every value of `meta[field]` among the current list's entries; picking one shows only entries with that value.                                                                                                                                                                                                                                                                                                                                                             |
-| `{ grouping = label }`   | `options`                                       | A dropdown of `options`, each `{ label = text, groupBy = ... }`; the picked one's `groupBy` (as on folder nodes, `false` = no groups) replaces the list's own. The first option is picked until another is.                                                                                                                                                                                                                                                                       |
-| `{ button = label }`     | `onClick`, `open` or `map`                      | `onClick(node, view)`; `open`: a path from the root (`"crafting/cooking"`, see below); `map`: `{ uiMapID, x, y }` opens the world map there with a waypoint (x, y in 0..100).                                                                                                                                                                                                                                                                                                     |
-| `{ quests = ids }`       |                                                 | One line per quest id: the title (`Data:GetQuestName`) and the character's progress, "Done", "Ready" (objectives complete), "Active" or "Not started". Quests the database marks for the other faction or another class are left out. Hover shows the quest tooltip (the game's when the client has the quest, else the curated title, `requiredLevel` and `objective`), followed by the quest's reward items with their icons and its `xp`; shift-click links the quest in chat. |
-| `{ spacer = true }`      |                                                 | Empty space; a number is its height.                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+An `{ item = itemID }` widget shows the item's icon and name. Hover shows its game tooltip;
+modified click links it in chat.
+
+| Widget                        | Options                                         | Notes                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ----------------------------- | ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `{ header = text }`           |                                                 | Section plate.                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `{ text = text }`             |                                                 | Wrapped text.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `{ description = true }`      |                                                 | The panel node's `description`.                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `{ row = label }`             | `value`                                         | Label left, value right.                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `{ bar = kind }`              | `faction`, `skillLine`; `value`, `max`, `label` | `"reputation"`: the character's standing with `faction` (default `meta.factionID` of the panel node); `"skill"`: the rank in `skillLine` (default `meta.skillLineID`); `"value"`: `value` of `max`, `label` on the bar.                                                                                                                                                                                                                                                           |
+| `{ checkbox = label }`        | `filter`                                        | While checked, hides the list's entries `filter` rejects: a built-in id (`"side"`: rows whose `meta.side` is the other faction; `"standing"`: rows whose `meta.standing` is above the character's standing with the panel node's faction) or a function `(entry, node) -> boolean`.                                                                                                                                                                                               |
+| `{ dropdown = label }`        | `field`                                         | Offers every value of `meta[field]` among the current list's entries; picking one shows only entries with that value.                                                                                                                                                                                                                                                                                                                                                             |
+| `{ factionDropdown = label }` |                                                 | Quest-list selector for Alliance, Horde, or Both; defaults to the character's faction.                                                                                                                                                                                                                                                                                                                                                                                            |
+| `{ grouping = label }`        | `options`                                       | A dropdown of `options`, each `{ label = text, groupBy = ... }`; the picked one's `groupBy` (as on folder nodes, `false` = no groups) replaces the list's own. The first option is picked until another is.                                                                                                                                                                                                                                                                       |
+| `{ button = label }`          | `onClick`, `open` or `map`                      | `onClick(node, view)`; `open`: a path from the root (`"crafting/cooking"`, see below); `map`: `{ uiMapID, x, y }` opens the world map there with a waypoint (x, y in 0..100).                                                                                                                                                                                                                                                                                                     |
+| `{ quests = ids }`            |                                                 | One line per quest id: the title (`Data:GetQuestName`) and the character's progress, "Done", "Ready" (objectives complete), "Active" or "Not started". Quests the database marks for the other faction or another class are left out. Hover shows the quest tooltip (the game's when the client has the quest, else the curated title, `requiredLevel` and `objective`), followed by the quest's reward items with their icons and its `xp`; shift-click links the quest in chat. |
+| `{ spacer = true }`           |                                                 | Empty space; a number is its height.                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
 Checkbox and dropdown filters and the grouping apply to the entries of whatever list the tab
-shows below the panel's node (folders are never hidden) and are kept per tab and panel node until
+shows below the panel's node (folders remain visible except quest banners under the faction
+selector) and are kept per tab and panel node until
 the tab is closed. An `open` path is `/`-separated: each segment picks a folder among the entries of the
 one before it, starting at the root, by module id, list id (`meta.listID`), crafting category id
 or curated group label (category folders), `instanceID`, or name. The tab navigates there as if
@@ -491,9 +507,9 @@ Data.instances[36]   -- { type = "dungeon", bosses = { 2741, ... }, minLevel = 1
 Data.bosses[2747]    -- { instanceID = 36, order = 6000 }
 Data.bossLoot[2747]  -- { { 5188, 0.9 }, { 5191 }, ... }   -- { itemID, chance 0..1 or nil }
 Data.trashLoot[36]   -- { { 1935, 0.01 }, ... }   -- same rows, keyed by the instance: what its non-boss enemies drop
-Data.quests[166]     -- { id = 166, name = "Underground Assault", side = "Alliance", instanceID = 36, items = { { 6220 }, ... } }
+Data.quests[166]     -- { id = 166, name = "The Defias Brotherhood", side = "Alliance", instanceID = 36, items = { { 2041 }, ... } }
                      -- a class quest also has class = "WARLOCK" (the client's class token);
-                     -- optional requiredLevel = 14, xp = 4688, objective = "..."
+                     -- optional requiredLevel, xp, objective, description, requires, followUps, start, turnIn
 Data.instanceQuests[36] -- { 166, ... }   -- the instance's quest ids, in curated order
 Data.lists.reputation.argent_dawn      -- { name = "Argent Dawn", icon = "...", order = 1, factionID = 529 }
 Data.listLoot.reputation.argent_dawn   -- { { 13209, standing = "Friendly" }, ... }   -- { itemID, field = value, ... }
@@ -536,12 +552,20 @@ Adding data (any call may be repeated; every one invalidates the caches and fire
   non-boss enemies drop; keyed by the instance, because trash belongs to no encounter
 - `Data:AddQuests(instanceID, { { id = 166, name = "...", side = "Alliance", items = { { itemID }, ... } }, ... })` —
   the instance's quests. `side` is `"Alliance"`, `"Horde"` or `"Both"` (nil = both); `class` is a class
-  token (`"WARLOCK"`) for a class quest (nil = any class). Optional `requiredLevel`, `xp` and
-  `objective` (an English sentence) feed the quest's tooltip in the info panel. Each quest is stored by its id with
-  `instanceID` filled in and listed under the instance in the order it was added; adding a quest id
-  again replaces its definition, and a quest added by several instances (one that runs through two
-  dungeons) is listed under each of them and is a source of its rewards in each. Quest titles are curated data: this client ships no quest table, and
-  `C_QuestLog` only knows quests the character has seen
+  token (`"WARLOCK"`) for a class quest (nil = any class). Optional `requiredLevel`, `xp`,
+  `objective` and `description` feed the tooltip. `requires` is an array of direct prerequisites
+  as `{ id, name? }`; the tooltip shows each one's completion state. `followUps` is an ordered
+  array of later quest IDs shown on the main quest page. `start` and `turnIn` are optional
+  `{ npc?, npcID?, item?, location?, description? }` tables, where `location` is
+  `{ uiMapID, x, y }` in map percentages and `description` is optional info text beside that
+  endpoint. Each quest is stored by its id and listed under the instance in the order it was added.
+  A quest registered under several instances appears in each; its `instanceID` field is
+  the last registration, so use `Data:GetInstanceQuests(instanceID)` for membership. Quest titles
+  are curated data: this client ships no quest table, and `C_QuestLog` only knows quests the
+  character has seen.
+- `Data:AddQuestDefinitions({ quest, ... })` — stores quests by id without listing them under an
+  instance. The generator uses this for quests defined only as prerequisites or follow-ups. Definitions use the
+  same fields as `AddQuests`.
 - `Data:AddList(kind, id, def)`, `Data:AddListLoot(kind, id, { { itemID, standing = "Honored" }, ... })`
 - `Data:AddRecipes({ [spellID] = { skillLineID, itemID, count, minSkill, yellow, green, grey, categoryID, reagents, tools, auto, taughtBy }, ... })`,
   `Data:AddCategories({ [id] = { skillLineID = 164, order = 30 }, ... })`

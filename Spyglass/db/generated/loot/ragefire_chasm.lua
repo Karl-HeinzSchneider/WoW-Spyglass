@@ -28,18 +28,18 @@ Data:AddBossLoot(2735, { -- Bazzalan
 })
 
 Data:AddQuests(389, {
-    { id = 5728, name = "Hidden Enemies", side = "Horde", requiredLevel = 9, xp = 3507, objective = "Kill Bazzalan and Jergosh the Invoker inside Ragefire Chasm.", items = {} },
-    { id = 5725, name = "The Power to Destroy...", side = "Horde", requiredLevel = 9, xp = 4422, objective = "Collect Spells of Shadow and Incantations from the Nether inside Ragefire Chasm.", items = {
+    { id = 5728, name = "Hidden Enemies", side = "Horde", requiredLevel = 9, xp = 3507, objective = "Kill Bazzalan and Jergosh the Invoker inside Ragefire Chasm.", requires = { { id = 5727, name = "Hidden Enemies" } }, followUps = { 5729, 5730 }, start = { description = "Valley of Wisdom, Orgrimmar.", location = { 1454, 32, 37.8 }, npc = "Thrall" }, turnIn = { description = "Valley of Wisdom, Orgrimmar.", location = { 1454, 32, 37.8 }, npc = "Thrall" }, items = {} },
+    { id = 5725, name = "The Power to Destroy...", side = "Horde", requiredLevel = 9, xp = 4422, objective = "Collect Spells of Shadow and Incantations from the Nether inside Ragefire Chasm.", start = { description = "Royal Quarter, Undercity.", location = { 1458, 56.2, 92.6 }, npc = "Varimathras" }, turnIn = { description = "Royal Quarter, Undercity.", location = { 1458, 56.2, 92.6 }, npc = "Varimathras" }, items = {
         { 15449 }, -- Ghastly Trousers
         { 15450 }, -- Dredgemire Leggings
         { 15451 }, -- Gargoyle Leggings
     } },
-    { id = 5724, name = "Returning the Lost Satchel", side = "Horde", requiredLevel = 9, xp = 4422, objective = "Take the Grimtotem Satchel to Rahauro in Thunder Bluff.", items = {
+    { id = 5724, name = "Returning the Lost Satchel", side = "Horde", requiredLevel = 9, xp = 4422, objective = "Take the Grimtotem Satchel to Rahauro in Thunder Bluff.", requires = { { id = 5722, name = "Searching for the Lost Satchel" } }, start = { description = "The Grimtotem Satchel starts this quest after finding Maur Grimtotem's corpse in Ragefire Chasm.", item = 14381 }, turnIn = { description = "Elder Rise, Thunder Bluff.", location = { 1456, 70.4, 32.2 }, npc = "Rahauro" }, items = {
         { 15452 }, -- Featherbead Bracers
         { 15453 }, -- Savannah Bracers
         { 270003 }, -- Garrison Cuffs
     } },
-    { id = 5723, name = "Testing an Enemy's Strength", side = "Horde", requiredLevel = 9, xp = 3202, objective = "Kill 8 Ragefire Troggs and 8 Ragefire Shamans inside Ragefire Chasm.", items = {} },
-    { id = 5722, name = "Searching for the Lost Satchel", side = "Horde", requiredLevel = 9, xp = 880, objective = "Find Maur Grimtotem's corpse inside Ragefire Chasm and search it for anything of interest.", items = {} },
-    { id = 5761, name = "Slaying the Beast", side = "Horde", requiredLevel = 9, xp = 3507, objective = "Slay Taragaman the Hungerer and recover Taragaman the Hungerer's Heart.", items = {} },
+    { id = 5723, name = "Testing an Enemy's Strength", side = "Horde", requiredLevel = 9, xp = 3202, objective = "Kill 8 Ragefire Troggs and 8 Ragefire Shamans inside Ragefire Chasm.", start = { description = "Elder Rise, Thunder Bluff.", location = { 1456, 70.4, 32.2 }, npc = "Rahauro" }, turnIn = { description = "Elder Rise, Thunder Bluff.", location = { 1456, 70.4, 32.2 }, npc = "Rahauro" }, items = {} },
+    { id = 5722, name = "Searching for the Lost Satchel", side = "Horde", requiredLevel = 9, xp = 880, objective = "Find Maur Grimtotem's corpse inside Ragefire Chasm and search it for anything of interest.", followUps = { 5724 }, start = { description = "Elder Rise, Thunder Bluff.", location = { 1456, 70.4, 32.2 }, npc = "Rahauro" }, turnIn = { description = "Inside Ragefire Chasm: up the right-hand tunnel from the first major junction, in a small side room on the left.", npc = "Maur Grimtotem's corpse" }, items = {} },
+    { id = 5761, name = "Slaying the Beast", side = "Horde", requiredLevel = 9, xp = 3507, objective = "Slay Taragaman the Hungerer and recover Taragaman the Hungerer's Heart.", start = { description = "Cleft of Shadow, Orgrimmar.", location = { 1454, 49.6, 50.6 }, npc = "Neeru Fireblade" }, turnIn = { description = "Cleft of Shadow, Orgrimmar.", location = { 1454, 49.6, 50.6 }, npc = "Neeru Fireblade" }, items = {} },
 })

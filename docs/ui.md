@@ -136,12 +136,15 @@ open.
   `portraitDisplayID` instead draws the creature's model through
   `SetPortraitTextureFromCreatureDisplayID` into the same region), and the name and info beside
   it (boss level and type, drops of interest, a quest "!" for `quests`).
+  An instance lists All Bosses, then trash loot, then its bosses. A button under the right
+  pane's quest list opens the quest folder.
 
 ### Headers, subheaders, quest banners, groups, spacers
 
 Section headers use the `UI-Character-Info-Title` plate. Subheaders are a step smaller: centered
-text with `UI-Character-Info-ScrollLine-Long` running out to both sides. Groups are row-sized
-labels. A `spacer` element is one row of empty space that takes part in the page layout but has
+text with `UI-Character-Info-ScrollLine-Long` running out to both sides. Clickable subheaders
+use larger text and a 40-pixel-high hit area. Groups are row-sized labels. A `spacer` element
+is one row of empty space that takes part in the page layout but has
 no frame; it is dropped at the top of a page.
 
 A quest node (`{ quest = id }`) is drawn as `SpyglassQuestBannerTemplate`
@@ -152,8 +155,23 @@ the group label's scroll line along its bottom. On the left is the progress icon
 node's `info` right after it (the title is sized to its text and truncated before it reaches the
 right column) and the objective under both; on the right the experience over the progress text.
 Progress, hover, shift-click and the quest data request come from `app.questInfo` (`quests.lua`),
-shared with the info pane's quest lines. The layout keeps a banner together with its first reward
-row. While the list has banners (`view.showsQuests`), the view redraws the page on
+shared with the info pane's quest lines. A banner with `children` opens those children on click.
+The dungeon's quest page shows the dungeon name and a right-pane dropdown for Alliance, Horde,
+or Both (all quests). It defaults to the character's faction; shared quests appear under either
+faction. It shows one
+banner per visible quest, with Alliance and/or Horde emblems
+directly left of a compact, fixed-width XP display. Values below 100,000 keep their full number;
+larger values use `k` (for example, `100k`). Its reward rows appear on the opened quest page.
+If a quest has prequests, its banner shows completed/total prequests before the objective (for
+example, `Prequests 1/2`). That page shows the quest title and objective, start and turn-in
+sources with optional endpoint info text, starting items with their icon and tooltip, optional
+quest description, and map buttons for known endpoint locations in the right pane. When prequests
+exist, a clickable subheader below the rewards
+expands them in order. Follow-ups have a separate collapsible section after prerequisites. Both
+use indented banners with a left rail and numbered steps. Each linked quest opens a detail page
+with its own rewards and a button back to the main quest; it does not show another linked list.
+The layout keeps a banner together with its first reward row when it has any. While the list has
+banners (`view.showsQuests`), the view redraws the page on
 `QUEST_LOG_UPDATE`, `QUEST_TURNED_IN` and `QUEST_DATA_LOAD_RESULT`, deferred to the next frame
 like the item-info redraw.
 
@@ -162,7 +180,8 @@ like the item-info redraw.
 A view keeps the state of the info panel's checkboxes, dropdowns and grouping in
 `view.panelState`, per panel node and widget index. `GetPanel()` finds the deepest node on the
 path with a `panel` (calling a function panel), `GetEntryFilter()` turns the set checkboxes and
-dropdowns into one test, and `BuildElements` drops the entries it rejects (never folders), along
+dropdowns into one test, and `BuildElements` drops the entries it rejects (quest banners can be
+filtered; other folders stay), along
 with a subheader or group label whose entries are all gone. `GetPanelGrouping()` returns the
 picked `grouping` option's `groupBy` (the option's index is the stored value, the first until
 one is picked), which `BuildElements` uses instead of the node's. `SetPanelValue` stores a value and refreshes from
@@ -179,13 +198,14 @@ registers itself with the character frame, so it can't be inherited): the title 
 `VerticalLayoutFrame` of fixed width. Each widget kind has a pooled template:
 
 - `header`: the `UI-Character-Info-Title` plate; `text`/`description`: wrapped white text;
-  `row`: gold label, white value; `spacer`: empty space.
+  `row`: gold label, white value; `item`: icon and name with an item tooltip; `spacer`: empty space.
 - `bar`: `ColoredProgressBarTemplate` (Blizzard_SharedXML, Camelot). Reputation as the
   reputation pane draws it (white fill tinted with `FACTION_BAR_COLORS`, standing and progress
   text), skill in the blue fill with "rank / max".
 - `checkbox`: `checkbox-minimal` / `checkmark-minimal`, the label beside it inside the hit rect;
   `dropdown`: `WowStyle1DropdownTemplate` with an "All" radio and one per value; `grouping`:
-  the same dropdown with one radio per option.
+  the same dropdown with one radio per option. The quest list's `factionDropdown` uses that
+  dropdown for Alliance, Horde, and Both.
 - `button`: `SharedGoldRedButtonSmallTemplate`. A `map` button sets a user waypoint from a plain
   `{ uiMapID, position }` table (`UiMapPoint` isn't loaded in this client) and calls
   `OpenWorldMap`.
@@ -196,8 +216,10 @@ registers itself with the character frame, so it can't be inherited): the title 
   that behaves like a quest link in chat: hover shows the game's quest tooltip (`GameTooltip:SetHyperlink` with `GetQuestLink`), a modified click goes through
   `HandleModifiedItemClick`. A quest the client hasn't loaded has no link yet; it is asked for
   once (`C_QuestLog.RequestLoadQuestByID`) and `QUEST_DATA_LOAD_RESULT` redraws the pane, until
-  then the tooltip shows the curated title, id, `requiredLevel` and `objective` from
-  `Data:GetQuest`. Either tooltip ends with the curated rewards: each of the quest's `items` as
+  then the tooltip shows the curated title, id, `requiredLevel`, `objective` and optional
+  `description` from `Data:GetQuest`. Curated start and turn-in details and prerequisite quests
+  follow either tooltip, with each prerequisite's completion state. Either tooltip ends with
+  the curated rewards: each of the quest's `items` as
   its icon and name in its quality color (the item cache, else the database row; an uncached item
   is requested for the next hover), then the `xp`.
 
