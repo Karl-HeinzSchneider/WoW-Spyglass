@@ -20,13 +20,13 @@ function slugOf(name: string): string {
  * Merges what the addon recorded into the repository data, in memory:
  * - every recorded item goes into the scanned items (`ref.items`, saved to .contribute/data/items/):
  *   the newer observation replaces the old, except that names of other locales are kept,
- * - each observed boss drop becomes a loot row in the boss's instance file (created when
- *   missing; `validate(..., fix)` afterwards fills its name and encounter list as usual),
+ * - with `includeLoot`, each observed boss drop becomes a loot row in the boss's instance file
+ *   (created when missing; `validate(..., fix)` afterwards fills its name and encounter list),
  *   with a `chance` only when the row is new and the boss was killed often enough.
  * Existing loot rows and chances are never changed; their observed ratios are printed so a
  * human can judge them. Returns the report lines.
  */
-export function importDiscovered(d: Discovered, ref: Reference, files: CuratedFile[]): string[] {
+export function importDiscovered(d: Discovered, ref: Reference, files: CuratedFile[], includeLoot = false): string[] {
   const lines: string[] = [];
 
   let added = 0;
@@ -45,7 +45,8 @@ export function importDiscovered(d: Discovered, ref: Reference, files: CuratedFi
     const ranges = [...touchedRanges].sort((a, b) => a - b).map((start) => `items_${start}.json`);
     lines.push(`items (${d.locale}): ${added} new, ${updated} updated -> ${ranges.join(", ")}`);
   }
-  refreshItemNames(ref); // so the loot rows below resolve and get their names
+  refreshItemNames(ref);
+  if (!includeLoot) return lines;
 
   const byMap = new Map(files.map((f) => [f.data.map, f]));
   for (const [encounterID, observed] of [...d.loot].sort(([a], [b]) => a - b)) {

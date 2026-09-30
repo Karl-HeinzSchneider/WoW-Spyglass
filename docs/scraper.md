@@ -45,7 +45,8 @@ matches dungeon activities and writes `.contribute/data/dungeon-levels.json`.
   chests looted after the kill don't count) and `START_LOOT_ROLL` count each item once per kill
   into `loot[encounterID].items`.
 - Kills are counted even when nothing was looted or rolled, so the ratios err low; the import
-  tool only suggests a `chance` from them.
+  tool only suggests a `chance` from them. Importing observed boss drops requires
+  `npm run import -- --loot`; the default import merges scanned items only.
 
 ## Export (`/sg export`)
 

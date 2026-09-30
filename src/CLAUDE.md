@@ -58,8 +58,8 @@ contributors write are in `docs/contributing.md`.
   interpreter.
 - `discovered.ts` — `Discovered` (what the scraper recorded) and `loadDiscovered(path)` for a
   `/sg export` `.json` or a SavedVariables `.lua`.
-- `import.ts` — `importDiscovered`: merges items into the scans and observed drops into the
-  instance files.
+- `import.ts` — `importDiscovered`: merges items into the scans and, with `--loot`, observed
+  drops into the instance files.
 - `dungeon-levels.ts` — parses `/sg levels`, matches activities to dungeon files and checks
   their ranges against the imported snapshot.
 - `generate.ts` — `build()` (the three trees in memory) and `write()`. `itemRow()` **must match

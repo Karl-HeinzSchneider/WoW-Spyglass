@@ -8,10 +8,11 @@
  *   npm run check            validate the curated files (instances and item lists) against the
  *                            game data and the scans
  *   npm run fix              same, and rewrite names / add missing encounters
- *   npm run import           merge what the addon recorded in-game (SavedVariables,
+ *   npm run import           merge scanned items recorded in-game (SavedVariables,
  *                            /sg export and /sg levels JSON files in .contribute/inbox/)
  *                            into the curated data
  *   npm run import -- FILE   same for one file anywhere
+ *   npm run import -- --loot [FILE]   also import observed boss drops
  */
 import { existsSync, mkdirSync, readFileSync, readdirSync } from "node:fs";
 import { parseArgs } from "node:util";
@@ -37,7 +38,11 @@ import { type QuestFile, loadQuests, serializeQuests, validateQuests } from "./q
 
 const { positionals, values } = parseArgs({
   allowPositionals: true,
-  options: { check: { type: "boolean", default: false }, fix: { type: "boolean", default: false } },
+  options: {
+    check: { type: "boolean", default: false },
+    fix: { type: "boolean", default: false },
+    loot: { type: "boolean", default: false },
+  },
 });
 const command = positionals[0] ?? "generate";
 if (!["generate", "check", "import"].includes(command)) {
@@ -94,7 +99,7 @@ for (const path of importPaths) {
   const discovered = loadDiscovered(path);
   importedDiscovered = true;
   console.log(`importing ${relative(ROOT, path)}${discovered.build ? ` (recorded on build ${discovered.build})` : ""}`);
-  for (const line of importDiscovered(discovered, ref, curated)) console.log(`  ${line}`);
+  for (const line of importDiscovered(discovered, ref, curated, values.loot)) console.log(`  ${line}`);
 }
 if (importedDiscovered) {
   await saveScannedItems(ref.items);

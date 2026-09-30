@@ -107,7 +107,7 @@ they are imported.
 
 The scraper also records loot: every item seen dropping that the database lacks, and per boss
 (`ENCOUNTER_END`) how often you killed it and which items were seen dropping (your own loot
-windows and the group's rolls). `npm run import` turns that into loot rows in the boss's instance
+windows and the group's rolls). `npm run import -- --loot` turns that into loot rows in the boss's instance
 file, creating the file when needed, and prints what it saw as `seen/kills`. It never changes
 existing rows, and only writes a `chance` for a new row after 10 or more kills. Kills without any
 loot or roll still count, so the ratios err low. Review the diff before committing.

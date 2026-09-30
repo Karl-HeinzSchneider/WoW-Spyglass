@@ -145,7 +145,8 @@ layout; `src/savedvars.ts` parses the Lua subset the client writes, it is not a 
 Records carry their own `id`, which wins over the container key.
 
 `importDiscovered` merges items into the scans (the newest observation wins, names are kept per
-locale) and observed drops into the instance files: it creates a file when needed (slug from the
+locale). Observed drops are imported only with `npm run import -- --loot` (or
+`npm run import -- --loot <path>`). The loot import creates an instance file when needed (slug from the
 instance name) and, on a split map, uses the file that lists the encounter, else skips it. New
 rows get a `chance` only after `MIN_KILLS_FOR_CHANCE` = 10 kills; existing rows are never
 changed, only reported.
