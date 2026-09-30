@@ -431,6 +431,12 @@ end
 
 -- Query controls belong to the current query folder, while its optional info widgets still
 -- belong to the deepest panel node. All state lives on the view's per-folder query.
+---@param value any
+---@return boolean
+local function filterIsActive(value)
+    return value ~= nil and (type(value) ~= "table" or #value > 0)
+end
+
 ---@param view Spyglass.View
 ---@param node Spyglass.Node
 function SpyglassInfoPaneMixin:AddQueryControls(view, node)
@@ -485,6 +491,13 @@ function SpyglassInfoPaneMixin:AddQueryControls(view, node)
                 view:SetSort(q, option[1])
             end)
         end
+    end)
+    sort.Dropdown.queryIsDefault = function()
+        return (q.sort or "name") == "name"
+    end
+    sort.Dropdown.ResetButton:SetShown(not sort.Dropdown.queryIsDefault())
+    sort.Dropdown.ResetButton:SetScript("OnClick", function()
+        view:SetSort(q, "name")
     end)
 
     local reset = self:Acquire("button") --[[@as Button]]
@@ -548,6 +561,13 @@ function SpyglassInfoPaneMixin:AddQueryFilter(view, q, def)
             root:SetScrollMode(400)
         end
     end)
+    frame.Dropdown.queryIsDefault = function()
+        return not filterIsActive(q.filters[def.id])
+    end
+    frame.Dropdown.ResetButton:SetShown(not frame.Dropdown.queryIsDefault())
+    frame.Dropdown.ResetButton:SetScript("OnClick", function()
+        view:SetFilterValue(q, def.id, nil)
+    end)
 end
 
 ---@param value any
@@ -586,8 +606,10 @@ function SpyglassInfoPaneMixin:SyncQueryControls()
     end
     for _, dropdown in ipairs(self.queryDropdowns or {}) do
         dropdown:Update()
+        dropdown.ResetButton:SetShown(not dropdown.queryIsDefault())
     end
     for id, range in pairs(self.queryRanges or {}) do
+        range.ResetButton:SetShown(filterIsActive(q.filters[id]))
         if not range.Min:HasFocus() and not range.Max:HasFocus() then
             local min, max = rangeBounds(q.filters[id])
             range.Min:SetText(min or "")
@@ -608,6 +630,12 @@ function SpyglassInfoPaneMixin:AddLevelRange(view, q, def)
     frame.Max:SetText(max or "")
     frame.Min:SetNumeric(true)
     frame.Max:SetNumeric(true)
+    frame.ResetButton:SetShown(filterIsActive(q.filters[def.id]))
+    frame.ResetButton:SetScript("OnClick", function()
+        frame.Min:ClearFocus()
+        frame.Max:ClearFocus()
+        view:SetFilterValue(q, def.id, nil)
+    end)
     local function apply()
         if view:GetCurrentQuery() ~= q then
             return

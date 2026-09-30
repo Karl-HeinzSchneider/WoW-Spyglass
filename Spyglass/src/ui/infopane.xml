@@ -139,13 +139,18 @@
 		</Layers>
 	</Frame>
 
-	<!-- Query dropdowns use the selection-text style, so the chosen value stays visible. -->
+	<!-- Query dropdowns show their selection and a reset X when changed. -->
 	<Frame name="SpyglassInfoQueryDropdownTemplate" virtual="true">
 		<Size x="228" y="30"/>
 		<Frames>
 			<DropdownButton parentKey="Dropdown" inherits="WowStyle1DropdownTemplate">
 				<Size x="130" y="26"/>
 				<Anchors><Anchor point="RIGHT" x="-2"/></Anchors>
+				<Frames>
+					<Button parentKey="ResetButton" inherits="UIResetButtonTemplate" hidden="true">
+						<Anchors><Anchor point="CENTER" relativePoint="TOPRIGHT" x="-3" y="-5"/></Anchors>
+					</Button>
+				</Frames>
 			</DropdownButton>
 		</Frames>
 		<Layers>
@@ -211,6 +216,9 @@
 				<Size x="48" y="22"/>
 				<Anchors><Anchor point="RIGHT" x="-2" y="-7"/></Anchors>
 			</EditBox>
+			<Button parentKey="ResetButton" inherits="UIResetButtonTemplate" hidden="true">
+				<Anchors><Anchor point="CENTER" relativeKey="$parent.Max" relativePoint="TOPRIGHT" x="-3" y="-8"/></Anchors>
+			</Button>
 		</Frames>
 	</Frame>
 

@@ -64,7 +64,8 @@ row (44px) with the two class filter buttons on the left, then the active list d
   filters, paired minimum and maximum inputs for item and required level, a sort dropdown and Reset.
   Empty bounds are open-ended; clearing both removes that level filter. The boss filter is
   available to queries through the API but has no control in the pane. Search text and
-  filters stay with the query in that tab while navigating.
+  filters stay with the query in that tab while navigating. Each active filter and a non-default
+  sort shows a red X that resets just that control; Reset clears all filters and sorting.
 - **Regrouping.** Items the grouping couldn't place (`app.unknownItemKinds`, filled by
   `registry.lua` and cleared before each build: no database row and not fetched yet) are all
   requested after the build and marked in `view.regroupItems`. When one arrives the deferred
