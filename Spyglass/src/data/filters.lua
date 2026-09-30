@@ -9,8 +9,8 @@ local ITEM = Data.ITEM
 -- with a fixed set of selectable options; the query (query.lua) combines them. Third-party
 -- addons register their own the same way (e.g. "usable by my class"). Contract in docs/API.md.
 --
--- Semantics: values of one filter are OR-ed, different filters AND-ed. `kind` decides the menu
--- widget and the value shape in a query:
+-- Semantics: values of one filter are OR-ed by default (`combine = "all"` requires every value);
+-- different filters are AND-ed. `kind` decides the menu widget and the value shape in a query:
 --   "multi"  -> checkboxes, query value = array of option values
 --   "single" -> radios,     query value = one option value (nil = any)
 
@@ -23,6 +23,7 @@ local ITEM = Data.ITEM
 ---@field name string  # menu label
 ---@field order? number  # menu position, lower first (default 100)
 ---@field kind "multi"|"single"
+---@field combine? "any"|"all"  # how selected values combine (default "any")
 ---@field options Spyglass.FilterOption[]|fun(): Spyglass.FilterOption[]  # a function is re-evaluated when the data changes
 ---@field match fun(itemID: integer, row: Spyglass.ItemRow, value: string|number): boolean
 ---@field index? fun(itemID: integer, row: Spyglass.ItemRow): string|number|(string|number)[]|nil  # option value(s) the item belongs to; enables precomputed buckets
@@ -71,6 +72,9 @@ local function validate(def)
     end
     if def.kind ~= "multi" and def.kind ~= "single" then
         return false, 'field `kind` must be "multi" or "single"'
+    end
+    if def.combine ~= nil and def.combine ~= "any" and def.combine ~= "all" then
+        return false, 'field `combine` must be "any" or "all"'
     end
     if type(def.options) ~= "table" and type(def.options) ~= "function" then
         return false, "field `options` must be a table or a function"
@@ -506,6 +510,38 @@ Filters:Register({
     end,
     index = function(_, row)
         return row[ITEM.CLASS] == ITEM_CLASS_WEAPON and row[ITEM.SUBCLASS] or nil
+    end,
+})
+
+Filters:Register({
+    id = "stats",
+    name = "Stats",
+    order = 45,
+    kind = "multi",
+    combine = "all",
+    options = function()
+        local present, options = {}, {}
+        for _, row in Data:EachItem() do
+            for key, amount in pairs(row[ITEM.STATS] or {}) do
+                if amount ~= 0 then
+                    present[key] = true
+                end
+            end
+        end
+        for key in pairs(present) do
+            options[#options + 1] = { value = key, label = Data.StatLabel(key) }
+        end
+        table.sort(options, function(a, b)
+            if a.label ~= b.label then
+                return a.label < b.label
+            end
+            return a.value < b.value
+        end)
+        return options
+    end,
+    match = function(_, row, value)
+        local stats = row[ITEM.STATS]
+        return stats ~= nil and stats[value] ~= nil and stats[value] ~= 0
     end,
 })
 

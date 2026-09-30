@@ -607,18 +607,21 @@ Spyglass.Filters:Register({
     id = "myaddon-usable",          -- prefix with your addon name
     name = "Usable by me",
     order = 100,                    -- menu position, lower first (built-ins use 5..90)
-    kind = "multi",                 -- "multi" = checkboxes (values OR-ed) | "single" = radios (one value or nil)
+    kind = "multi",                 -- "multi" = checkboxes | "single" = radios (one value or nil)
+    combine = "any",               -- optional: "any" (default) or "all" selected values must match
     options = { { value = 1, label = "Yes" } },  -- or a function returning that list (re-evaluated when the data changes)
     match = function(itemID, row, value) return ... end,   -- row = Data.items[itemID]
-    index = function(itemID, row) return key end,          -- optional: option value(s) of the item -> precomputed buckets
+    index = function(itemID, row) return key end,          -- optional: option value(s) of the item -> precomputed buckets (used with "any")
 })
 ```
 
 Built-in ids: `type` (the item class, value = its `Enum.ItemClass` id; mounts and companion
-pets are split out of Miscellaneous as `"15:5"` and `"15:2"`), `quality`, `slot`, `armorType`, `weaponType`, `itemLevel`, `reqLevel`, `instance`
+pets are split out of Miscellaneous as `"15:5"` and `"15:2"`), `quality`, `slot`, `armorType`, `weaponType`, `stats`, `itemLevel`, `reqLevel`, `instance`
 (anything the instance drops or rewards: a boss's loot, its trash and its quests), `boss`,
 `profession` (items made by a profession's recipes; one option per crafting list with a `skillLineID`).
-`itemLevel` and `reqLevel` accept any inclusive `"min-max"` range or `"min+"`; the right pane
+`stats` uses the keys returned by `Data:GetItemStats` (for example, `"INTELLECT"`) and requires
+every selected stat to be present. Its options reflect the currently loaded item data and use the
+game's stat labels. `itemLevel` and `reqLevel` accept any inclusive `"min-max"` range or `"min+"`; the right pane
 uses paired minimum and maximum inputs for each. An empty bound is open-ended. The `boss`
 filter remains available in queries but has no control in the right pane.
 Other calls: `Filters:Get(id)`, `Filters:GetAll()`, `Filters:GetOptions(id)`, `Filters:GetBucket(id, value)`,
@@ -636,7 +639,8 @@ local ids = Spyglass.Query.Run({
 })
 ```
 
-Different filters are AND-ed, the values of one filter OR-ed. `Query.New()`, `Query.Copy(q)`
+Different filters are AND-ed. Values of one filter are OR-ed by default; filters registered with
+`combine = "all"` require every selected value. `Query.New()`, `Query.Copy(q)`
 and `Query.IsEmpty(q)` are helpers. Each view (tab) keeps its own query per query folder.
 
 ## Events

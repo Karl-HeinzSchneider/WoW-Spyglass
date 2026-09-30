@@ -61,7 +61,8 @@ row (44px) with the two class filter buttons on the left, then the active list d
 - **Children** come from `view:GetChildren(node)`: static `children`, dynamic `getChildren`, or a
   `query` folder whose entries are `Query.Run` over the database with per-node query state
   (`view.queries`). The right pane shows a debounced search box, dropdowns for the visible
-  filters, paired minimum and maximum inputs for item and required level, a sort dropdown and Reset.
+  filters (including Stats, which requires every selected stat), paired minimum and maximum inputs
+  for item and required level, a sort dropdown and Reset.
   Empty bounds are open-ended; clearing both removes that level filter. The boss filter is
   available to queries through the API but has no control in the pane. Search text and
   filters stay with the query in that tab while navigating. Each active filter and a non-default
