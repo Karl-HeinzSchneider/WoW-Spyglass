@@ -26,6 +26,10 @@ Data:AddBossLoot(2913, { -- Lorgus Jett
     { 273843 }, -- Fallenroot Longbow
 })
 
+Data:AddBossLoot(-12876, { -- Baron Aquanis
+    { 16782 }, -- Strange Water Globe
+})
+
 Data:AddBossLoot(2912, { -- Old Serra'kis
     { 6901 }, -- Glowing Thresher Cape
     { 6904 }, -- Bite of Serra'kis
@@ -57,7 +61,6 @@ Data:AddTrashLoot(48, {
     { 2034 }, -- Scholarly Robes
     { 2271 }, -- Staff of the Blessed Seer
     { 2567 }, -- Evocator's Blade
-    { 16782 }, -- Strange Water Globe
 })
 
 Data:AddQuests(48, {
@@ -98,4 +101,9 @@ Data:AddQuests(48, {
     { id = 6562, name = "Trouble in the Deeps", side = "Horde", requiredLevel = 17, xp = 435, objective = "Speak to Je'neu Sancrea in Ashenvale.", start = { location = { 1442, 47.2, 64.2 }, npc = "Tsunaman" }, turnIn = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, items = {} },
     { id = 1198, name = "In Search of Thaelrid", side = "Alliance", requiredLevel = 18, xp = 2400, objective = "Find Argent Guard Thaelrid inside Blackfathom Deeps.", description = "Required before the Alliance version of Blackfathom Villainy.", start = { description = "Craftsmen's Terrace, Darnassus.", location = { 1457, 55, 24 }, npc = "Dawnwatcher Shaedlass" }, turnIn = { description = "Inside Blackfathom Deeps.", npc = "Argent Guard Thaelrid" }, items = {} },
     { id = 6921, name = "Amongst the Ruins", side = "Horde", requiredLevel = 21, xp = 10313, objective = "Recover the Fathom Core from the Fathom Stone in Blackfathom Deeps.", description = "The Fathom Stone is also associated with the optional Baron Aquanis encounter.", start = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, turnIn = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, items = {} },
+    { id = 6922, name = "Baron Aquanis", side = "Horde", requiredLevel = 21, xp = 11450, objective = "Bring the Strange Water Globe to Je'neu Sancrea at Zoram'gar Outpost, Ashenvale.", description = "Drops from Baron Aquanis.", start = { item = 16782 }, turnIn = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, items = {
+        { 16886 }, -- #16886
+        { 16887 }, -- #16887
+        { 270043 }, -- #270043
+    } },
 })

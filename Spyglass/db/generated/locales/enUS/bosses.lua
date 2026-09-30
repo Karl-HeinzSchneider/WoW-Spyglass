@@ -2,6 +2,7 @@
 local Data = Spyglass.Data
 
 Data:AddNames("enUS", "bosses", {
+    [-12876] = "Baron Aquanis",
     [-4627] = "Arugal's Voidwalker",
     [-3872] = "Deathsworn Captain",
     [-3864] = "Fel Steed",

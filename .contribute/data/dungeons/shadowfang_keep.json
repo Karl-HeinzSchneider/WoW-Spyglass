@@ -141,8 +141,8 @@
       "name": "Deathsworn Captain",
       "displayID": 3224,
       "npc": 3872,
-      "rare": true,
       "level": 25,
+      "rare": true,
       "loot": [
         {
           "item": 6641,

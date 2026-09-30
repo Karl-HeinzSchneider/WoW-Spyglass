@@ -126,12 +126,13 @@ Data:AddInstance(48, {
     background = "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenBlackFathomDeeps",
     backgroundCoords = { 0, 1, 0.305, 0.695 },
     entrance = { 1440, 15, 14 },
-    bosses = { 2916, 2915, 2914, 2913, 2912, 2911, 2910 },
+    bosses = { 2916, 2915, 2914, 2913, -12876, 2912, 2911, 2910 },
 })
 Data:AddBoss(2916, { instanceID = 48, order = -6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ghamoo Ra", displayID = 5027, level = 25 }) -- Ghamoo-ra
 Data:AddBoss(2915, { instanceID = 48, order = -5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lady Sarevess", displayID = 4979, level = 25 }) -- Lady Sarevess
 Data:AddBoss(2914, { instanceID = 48, order = -4000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\geilhast.blp", displayID = 1773, level = 26 }) -- Geilhast
 Data:AddBoss(2913, { instanceID = 48, order = -3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lorgus Jett", displayID = 12822, level = 26 }) -- Lorgus Jett
+Data:AddBoss(-12876, { instanceID = 48, displayID = 110, level = 28 }) -- Baron Aquanis
 Data:AddBoss(2912, { instanceID = 48, order = -2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Old Serrakis", displayID = 1816, level = 26 }) -- Old Serra'kis
 Data:AddBoss(2911, { instanceID = 48, order = -1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Twilight Lord Kelris", displayID = 4939, level = 27 }) -- Twilight Lord Kelris
 Data:AddBoss(2910, { instanceID = 48, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Akumai", displayID = 2837, level = 28 }) -- Aku'mai

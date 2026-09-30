@@ -94,6 +94,19 @@
       ]
     },
     {
+      "id": -12876,
+      "name": "Baron Aquanis",
+      "displayID": 110,
+      "npc": 12876,
+      "level": 28,
+      "loot": [
+        {
+          "item": 16782,
+          "name": "Strange Water Globe"
+        }
+      ]
+    },
+    {
       "id": 2912,
       "name": "Old Serra'kis",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Old Serrakis",
@@ -208,11 +221,7 @@
     {
       "item": 2567,
       "name": "Evocator's Blade"
-    },
-    {
-      "item": 16782,
-      "name": "Strange Water Globe"
     }
   ],
-  "quests": [1200, 6561, 1199, 6565, 1275, 1740, 971, 6563, 6562, 1198, 6921]
+  "quests": [1200, 6561, 1199, 6565, 1275, 1740, 971, 6563, 6562, 1198, 6921, 6922]
 }

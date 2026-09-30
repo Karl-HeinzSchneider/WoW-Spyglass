@@ -24,7 +24,7 @@
       "description": "Zoram'gar Outpost, Ashenvale."
     },
     "Dawnwatcher Selgorm": {
-      "location": [1457, 56.0, 24.6],
+      "location": [1457, 56, 24.6],
       "description": "Craftsmen's Terrace, Darnassus."
     },
     "Bashana Runetotem": {
@@ -324,6 +324,32 @@
         "npc": "Gershala Nightwhisper"
       },
       "items": []
+    },
+    {
+      "id": 6922,
+      "name": "Baron Aquanis",
+      "side": "Horde",
+      "requiredLevel": 21,
+      "xp": 11450,
+      "objective": "Bring the Strange Water Globe to Je'neu Sancrea at Zoram'gar Outpost, Ashenvale.",
+      "description": "Drops from Baron Aquanis.",
+      "start": {
+        "item": 16782
+      },
+      "turnIn": {
+        "npc": "Je'neu Sancrea"
+      },
+      "items": [
+        {
+          "item": 16886
+        },
+        {
+          "item": 16887
+        },
+        {
+          "item": 270043
+        }
+      ]
     }
   ]
 }
