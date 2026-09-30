@@ -62,6 +62,27 @@
       ]
     },
     {
+      "id": -1720,
+      "name": "Bruegal Ironknuckle",
+      "displayID": 2142,
+      "npc": 1720,
+      "rare": true,
+      "loot": [
+        {
+          "item": 3228,
+          "name": "Jimmied Handcuffs"
+        },
+        {
+          "item": 2942,
+          "name": "Iron Knuckles"
+        },
+        {
+          "item": 2941,
+          "name": "Prison Shank"
+        }
+      ]
+    },
+    {
       "id": 2759,
       "name": "Dextren Ward",
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\dextren_ward.blp",

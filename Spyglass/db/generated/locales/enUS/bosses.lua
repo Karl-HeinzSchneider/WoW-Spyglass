@@ -6,6 +6,7 @@ Data:AddNames("enUS", "bosses", {
     [-4627] = "Arugal's Voidwalker",
     [-3872] = "Deathsworn Captain",
     [-3864] = "Fel Steed",
+    [-1720] = "Bruegal Ironknuckle",
     [227] = "High Interrogator Gerstahn",
     [228] = "Lord Roccor",
     [229] = "Houndmaster Grebmar",

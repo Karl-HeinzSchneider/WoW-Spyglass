@@ -19,6 +19,12 @@ Data:AddBossLoot(2758, { -- Hamhock
     { 273810 }, -- Ogre Grips
 })
 
+Data:AddBossLoot(-1720, { -- Bruegal Ironknuckle
+    { 3228 }, -- Jimmied Handcuffs
+    { 2942 }, -- Iron Knuckles
+    { 2941 }, -- Prison Shank
+})
+
 Data:AddBossLoot(2760, { -- Bazil Thredd
     { 273824 }, -- Defias Jailbreakers
     { 273825 }, -- Red Wool Cloak

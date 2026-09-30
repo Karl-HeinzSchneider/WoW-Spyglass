@@ -39,11 +39,12 @@ Data:AddInstance(34, {
     background = "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenStormwindStockade",
     backgroundCoords = { 0, 1, 0.305, 0.695 },
     entrance = { 1453, 52, 70 },
-    bosses = { 2756, 2757, 2758, 2759, 2760 },
+    bosses = { 2756, 2757, 2758, -1720, 2759, 2760 },
 })
 Data:AddBoss(2756, { instanceID = 34, order = 0, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\targorr_the_dread.blp", displayID = 517 }) -- Targorr the Dread
 Data:AddBoss(2757, { instanceID = 34, order = 1000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\kam_deepfury.blp", displayID = 825 }) -- Kam Deepfury
 Data:AddBoss(2758, { instanceID = 34, order = 2000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\hamhock.blp", displayID = 3250 }) -- Hamhock
+Data:AddBoss(-1720, { instanceID = 34, displayID = 2142, rare = true }) -- Bruegal Ironknuckle
 Data:AddBoss(2759, { instanceID = 34, order = 3000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\dextren_ward.blp", displayID = 2149 }) -- Dextren Ward
 Data:AddBoss(2760, { instanceID = 34, order = 4000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\bazil_thredd.blp", displayID = 1621 }) -- Bazil Thredd
 
