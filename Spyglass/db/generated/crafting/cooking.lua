@@ -10,3 +10,12 @@ Data:AddList("crafting", "cooking", {
     order = 100,
     skillLineID = 185,
 })
+Data:AddListLoot("crafting", "cooking", {
+    { 2680, spell = 2539, skill = 10, source = "Trainer" }, -- Spiced Wolf Meat
+    { 5525, spell = 6499, skill = 50, source = "Trainer" }, -- Boiled Clams
+    { 2684, spell = 2541, skill = 50, source = "Trainer" }, -- Coyote Steak
+    { 2683, spell = 2544, skill = 75, source = "Trainer" }, -- Crab Cake
+    { 2687, spell = 2546, skill = 80, source = "Trainer" }, -- Dry Pork Ribs
+    { 5527, spell = 6500, skill = 125, source = "Trainer" }, -- Goblin Deviled Clams
+    { 17222, spell = 21175, skill = 200, source = "Trainer" }, -- Spider Sausage
+})

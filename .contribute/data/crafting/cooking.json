@@ -5,5 +5,55 @@
   "backgroundCoords": [0.04, 0.96, 0.4, 0.6995],
   "order": 100,
   "skillLine": 185,
-  "recipes": []
+  "recipes": [
+    {
+      "item": 2680,
+      "name": "Spiced Wolf Meat",
+      "spell": 2539,
+      "skill": 10,
+      "source": "Trainer"
+    },
+    {
+      "item": 5525,
+      "name": "Boiled Clams",
+      "spell": 6499,
+      "skill": 50,
+      "source": "Trainer"
+    },
+    {
+      "item": 2684,
+      "name": "Coyote Steak",
+      "spell": 2541,
+      "skill": 50,
+      "source": "Trainer"
+    },
+    {
+      "item": 2683,
+      "name": "Crab Cake",
+      "spell": 2544,
+      "skill": 75,
+      "source": "Trainer"
+    },
+    {
+      "item": 2687,
+      "name": "Dry Pork Ribs",
+      "spell": 2546,
+      "skill": 80,
+      "source": "Trainer"
+    },
+    {
+      "item": 5527,
+      "name": "Goblin Deviled Clams",
+      "spell": 6500,
+      "skill": 125,
+      "source": "Trainer"
+    },
+    {
+      "item": 17222,
+      "name": "Spider Sausage",
+      "spell": 21175,
+      "skill": 200,
+      "source": "Trainer"
+    }
+  ]
 }

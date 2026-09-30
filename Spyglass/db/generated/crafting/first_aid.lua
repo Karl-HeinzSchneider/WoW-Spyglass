@@ -10,3 +10,16 @@ Data:AddList("crafting", "first_aid", {
     order = 110,
     skillLineID = 129,
 })
+Data:AddListLoot("crafting", "first_aid", {
+    { 118, spell = 1244431, skill = 1, source = "Trainer" }, -- Minor Healing Potion
+    { 279968, spell = 1230117, skill = 20, source = "Trainer" }, -- First Aid Kit
+    { 2581, spell = 3276, skill = 40, source = "Trainer" }, -- Heavy Linen Bandage
+    { 858, spell = 1244432, skill = 55, source = "Trainer" }, -- Lesser Healing Potion
+    { 6452, spell = 7934, skill = 80, source = "Trainer" }, -- Anti-Venom
+    { 3530, spell = 3277, skill = 80, source = "Trainer" }, -- Wool Bandage
+    { 255716, spell = 1259342, skill = 90, source = "Trainer" }, -- Simple Poultice
+    { 929, spell = 1244433, skill = 110, source = "Trainer" }, -- Healing Potion
+    { 3531, spell = 3278, skill = 115, source = "Trainer" }, -- Heavy Wool Bandage
+    { 255720, spell = 1259347, skill = 120, source = "Trainer" }, -- Woolen Tourniquet
+    { 6450, spell = 7928, skill = 150, source = "Trainer" }, -- Silk Bandage
+})
