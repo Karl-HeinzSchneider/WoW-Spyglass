@@ -3,6 +3,7 @@
   "name": "Ruins of Lordaeron",
   "minLevel": 15,
   "maxLevel": 22,
+  "requiredLevel": 10,
   "zone": 1420,
   "background": "Interface\\GLUES\\LOADINGSCREENS\\Camelot160\\Main\\LoadScreen_Camelot_RuinsofLordaeron",
   "backgroundCoords": [0, 1, 0.154, 0.846],

@@ -844,6 +844,7 @@ Data:AddInstance(2999, {
     expansionID = 0,
     minLevel = 15,
     maxLevel = 22,
+    requiredLevel = 10,
     zone = 1420,
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\GLUES\\LOADINGSCREENS\\Camelot160\\Main\\LoadScreen_Camelot_RuinsofLordaeron",
