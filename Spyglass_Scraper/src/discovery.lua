@@ -602,6 +602,52 @@ end
 -- Export
 ----------------------------------------------------------------------------------------------------
 
+-- The listing window gets its dungeon level range from these activity suggestions. Query activity
+-- IDs directly, since the available-activity lists can omit dungeons for this character.
+function module:LevelsCommand()
+    local lfg = C_LFGList
+    if not (lfg and lfg.GetActivityInfoTable) then
+        log:chat("Group finder activity data is unavailable in this client.")
+        return
+    end
+    local activities, count = {}, 0
+    local nextID = 1
+    local function scanBatch()
+        local lastID = math.min(nextID + 127, 8192)
+        for activityID = nextID, lastID do
+            local info = lfg.GetActivityInfoTable(activityID)
+            if info and type(info.mapID) == "number" and info.mapID > 0 then
+                activities[activityID] = {
+                    id = activityID,
+                    name = info.fullName,
+                    mapID = info.mapID,
+                    difficultyID = info.difficultyID,
+                    minLevelSuggestion = info.minLevelSuggestion,
+                    maxLevelSuggestion = info.maxLevelSuggestion,
+                }
+                count = count + 1
+            end
+        end
+        nextID = lastID + 1
+        if nextID <= 8192 then
+            C_Timer.After(0, scanBatch)
+            return
+        end
+        if count == 0 then
+            log:chat("No group finder activities with a map ID were available.")
+            return
+        end
+        local version, build = GetBuildInfo()
+        app.exportFrame:ShowText(
+            app.json.encode({ kind = "dungeon-levels", build = version .. "." .. build, activities = activities }),
+            "Spyglass - Dungeon levels",
+            "Ctrl+C copies the selection. Save it as a .json file in .contribute/inbox/ and run `npm run import`."
+        )
+        log:chat("Captured %d group finder activities with map IDs.", count)
+    end
+    scanBatch()
+end
+
 -- The recorded data as one plain table, the shape the root `npm run import` command reads. Records
 -- stay in the SavedVariables until the shipped database has them, so each export would grow
 -- with every scan; instead an export marks its item records and the next one only holds new

@@ -1,8 +1,8 @@
 {
   "map": 48,
   "name": "Blackfathom Deeps",
-  "minLevel": 22,
-  "maxLevel": 31,
+  "minLevel": 24,
+  "maxLevel": 32,
   "requiredLevel": 15,
   "zone": 1440,
   "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-BlackfathomDeeps",

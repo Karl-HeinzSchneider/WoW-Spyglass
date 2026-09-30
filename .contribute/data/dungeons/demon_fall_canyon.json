@@ -1,6 +1,8 @@
 {
   "map": 2784,
   "name": "Demon Fall Canyon",
+  "minLevel": 60,
+  "maxLevel": 60,
   "encounters": [
     {
       "id": 3023,

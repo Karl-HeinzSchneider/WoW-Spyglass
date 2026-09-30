@@ -1,0 +1,185 @@
+{
+  "build": "1.60.1.70058",
+  "dungeons": {
+    "33": {
+      "activityID": 800,
+      "name": "Shadowfang Keep",
+      "minLevel": 20,
+      "maxLevel": 30
+    },
+    "34": {
+      "activityID": 802,
+      "name": "Stormwind Stockades",
+      "minLevel": 24,
+      "maxLevel": 32
+    },
+    "36": {
+      "activityID": 799,
+      "name": "Deadmines",
+      "minLevel": 17,
+      "maxLevel": 26
+    },
+    "43": {
+      "activityID": 796,
+      "name": "Wailing Caverns",
+      "minLevel": 15,
+      "maxLevel": 24
+    },
+    "47": {
+      "activityID": 804,
+      "name": "Razorfen Kraul",
+      "minLevel": 29,
+      "maxLevel": 38
+    },
+    "48": {
+      "activityID": 801,
+      "name": "Blackfathom Deeps",
+      "minLevel": 24,
+      "maxLevel": 32
+    },
+    "70": {
+      "activityID": 807,
+      "name": "Uldaman",
+      "minLevel": 41,
+      "maxLevel": 51
+    },
+    "90": {
+      "activityID": 803,
+      "name": "Gnomeregan",
+      "minLevel": 29,
+      "maxLevel": 38
+    },
+    "109": {
+      "activityID": 810,
+      "name": "Sunken Temple",
+      "minLevel": 50,
+      "maxLevel": 60
+    },
+    "129": {
+      "activityID": 806,
+      "name": "Razorfen Downs",
+      "minLevel": 37,
+      "maxLevel": 46
+    },
+    "209": {
+      "activityID": 808,
+      "name": "Zul'Farrak",
+      "minLevel": 44,
+      "maxLevel": 54
+    },
+    "230": {
+      "activityID": 811,
+      "name": "Blackrock Depths",
+      "minLevel": 52,
+      "maxLevel": 60
+    },
+    "289": {
+      "activityID": 797,
+      "name": "Scholomance",
+      "minLevel": 58,
+      "maxLevel": 60
+    },
+    "349": {
+      "activityID": 809,
+      "name": "Maraudon",
+      "minLevel": 46,
+      "maxLevel": 55
+    },
+    "389": {
+      "activityID": 798,
+      "name": "Ragefire Chasm",
+      "minLevel": 13,
+      "maxLevel": 18
+    },
+    "2784": {
+      "activityID": 1607,
+      "name": "Demon Fall Canyon",
+      "minLevel": 60,
+      "maxLevel": 60
+    },
+    "2875": {
+      "activityID": 1693,
+      "name": "Karazhan Crypts",
+      "minLevel": 60,
+      "maxLevel": 60
+    },
+    "2959": {
+      "activityID": 1983,
+      "name": "City of Dalaran",
+      "minLevel": 28,
+      "maxLevel": 35
+    },
+    "2998": {
+      "activityID": 1981,
+      "name": "Excavation Site: Wetlands",
+      "minLevel": 26,
+      "maxLevel": 33
+    },
+    "2999": {
+      "activityID": 1982,
+      "name": "Ruins of Lordaeron",
+      "minLevel": 15,
+      "maxLevel": 22
+    },
+    "3065": {
+      "activityID": 1984,
+      "name": "Hall of Thanes",
+      "minLevel": 13,
+      "maxLevel": 20
+    },
+    "18901": {
+      "activityID": 805,
+      "name": "Scarlet Monastery - Graveyard",
+      "minLevel": 30,
+      "maxLevel": 38
+    },
+    "18902": {
+      "activityID": 829,
+      "name": "Scarlet Monastery - Library",
+      "minLevel": 33,
+      "maxLevel": 41
+    },
+    "18903": {
+      "activityID": 827,
+      "name": "Scarlet Monastery - Armory",
+      "minLevel": 36,
+      "maxLevel": 44
+    },
+    "18904": {
+      "activityID": 828,
+      "name": "Scarlet Monastery - Cathedral",
+      "minLevel": 38,
+      "maxLevel": 46
+    },
+    "22901": {
+      "activityID": 812,
+      "name": "Lower Blackrock Spire",
+      "minLevel": 55,
+      "maxLevel": 60
+    },
+    "22902": {
+      "activityID": 837,
+      "name": "Upper Blackrock Spire",
+      "minLevel": 59,
+      "maxLevel": 60
+    },
+    "42901": {
+      "activityID": 813,
+      "name": "Dire Maul (East)",
+      "minLevel": 54,
+      "maxLevel": 60
+    },
+    "42902": {
+      "activityID": 814,
+      "name": "Dire Maul (West)",
+      "minLevel": 56,
+      "maxLevel": 60
+    },
+    "42903": {
+      "activityID": 815,
+      "name": "Dire Maul (North)",
+      "minLevel": 56,
+      "maxLevel": 60
+    }
+  }
+}

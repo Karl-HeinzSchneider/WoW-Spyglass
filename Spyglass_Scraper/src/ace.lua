@@ -9,6 +9,7 @@ local log = app.log
 ---@field scanHandler function
 ---@field exportHandler function
 ---@field portraitHandler function
+---@field levelsHandler function
 local addon = {}
 LibStub("AceAddon-3.0"):NewAddon(addon, appName, "AceEvent-3.0")
 app.addon = addon
@@ -27,12 +28,16 @@ function addon:OnInitialize()
     self.portraitHandler = function(a)
         app.portraitFrame:Command(a)
     end
+    self.levelsHandler = function()
+        app.discovery:LevelsCommand()
+    end
 end
 
 function addon:OnEnable()
     SG:RegisterCommand("scan", self.scanHandler, "/sg scan <from> [to] | resume | stop | limit <n|off>")
     SG:RegisterCommand("export", self.exportHandler, "/sg export [all]")
     SG:RegisterCommand("portrait", self.portraitHandler, "/sg portrait [displayID]")
+    SG:RegisterCommand("levels", self.levelsHandler, "/sg levels")
     log:debug("Enabled")
 end
 
@@ -40,5 +45,6 @@ function addon:OnDisable()
     SG:UnregisterCommand("scan", self.scanHandler)
     SG:UnregisterCommand("export", self.exportHandler)
     SG:UnregisterCommand("portrait", self.portraitHandler)
+    SG:UnregisterCommand("levels", self.levelsHandler)
     log:debug("Disabled")
 end

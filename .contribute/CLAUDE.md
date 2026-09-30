@@ -17,6 +17,7 @@ format of every file here (instance files with split dungeons, `displayName`, bo
   inbox/                    SavedVariables / export files for `npm run import` (gitignored)
   data/
     config.json             pinned client build and generation settings
+    dungeon-levels.json     imported in-game group finder level snapshot, when recorded
     items/items_<n>.json    the in-game scans, one file per 10 000 ids (machine-written)
     dungeons/, raids/       one file per instance: levels, art, bosses, drops, trash, quest IDs
     quests/dungeons/        one file per dungeon: quest definitions and questline details

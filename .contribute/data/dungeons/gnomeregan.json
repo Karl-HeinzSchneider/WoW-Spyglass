@@ -1,8 +1,8 @@
 {
   "map": 90,
   "name": "Gnomeregan",
-  "minLevel": 25,
-  "maxLevel": 28,
+  "minLevel": 29,
+  "maxLevel": 38,
   "requiredLevel": 19,
   "zone": 1426,
   "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Gnomeregan",

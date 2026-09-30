@@ -46,8 +46,9 @@ wago.tools tables are downloaded as CSV and cached in `.cache/<build>/` (`src/wa
 ## The run (`src/cli.ts`)
 
 `loadConfig()` → `loadReference()` (the game tables and the scans) → `loadCurated()` +
-`loadQuests()` + `loadLists()` → for `import`: `loadDiscovered` + `importDiscovered` per file, then
-`saveScannedItems` → `Checker` + `validate` + `validateQuests` + `validateLists` → for `fix` and `import`: rewrite
+`loadQuests()` + `loadLists()` → for `import`: `loadDiscovered` + `importDiscovered` or dungeon-level
+scan import per file, then
+`saveScannedItems` → `Checker` + `validateDungeonLevels` + `validate` + `validateQuests` + `validateLists` → for `fix` and `import`: rewrite
 the JSON → `build` + `write`. Errors stop generation; fixable problems and warnings don't.
 `import` always fixes, since it writes the curated files anyway.
 
@@ -64,6 +65,10 @@ the scans and warns on unscanned ids.
   a split map). Each file gets a `trash` list on fix. On a split map (several
   files with one `map`, each with its own `id`) every encounter must be in exactly one file:
   twice is an error, none a warning.
+- **Dungeon levels** (`src/dungeon-levels.ts`): an optional in-game group finder snapshot at
+  `.contribute/data/dungeon-levels.json` records the suggested minimum and maximum per dungeon.
+  Once imported, `check` requires each scanned dungeon to match it; `fix` copies its ranges into
+  the dungeon files. Unscanned dungeons retain curated ranges. Entry requirements stay curated separately.
 - **Dungeon quests** (`validateQuests`, `src/quests.ts`): every quest ID is defined once across
   `.contribute/data/quests/dungeons/`; dungeon quest IDs, direct prerequisites and follow-ups resolve to a
   definition. It validates side, class, levels, rewards, and optional giver/turn-in details.

@@ -1,8 +1,8 @@
 {
   "map": 349,
   "name": "Maraudon",
-  "minLevel": 42,
-  "maxLevel": 52,
+  "minLevel": 46,
+  "maxLevel": 55,
   "requiredLevel": 30,
   "zone": 1443,
   "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Maraudon",

@@ -1,8 +1,8 @@
 {
   "map": 36,
   "name": "Deadmines",
-  "minLevel": 16,
-  "maxLevel": 24,
+  "minLevel": 17,
+  "maxLevel": 26,
   "requiredLevel": 10,
   "zone": 1436,
   "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Deadmines",

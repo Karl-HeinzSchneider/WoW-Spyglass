@@ -28,6 +28,14 @@ scanned item is browsable immediately.
   identical to the shipped row is dropped, the rest are added to `Data`. So after an import and a
   `/reload`, `resume` starts clean.
 
+## Dungeon levels (`/sg levels`)
+
+`/sg levels` queries activity IDs in batches so it can include dungeons omitted from the
+current character's available-activity list. The copy window opens when scanning finishes. It
+exports activity ID, name, map ID, difficulty ID, and `minLevelSuggestion`/`maxLevelSuggestion` through the same copy window
+as `/sg export`. Copy the JSON to `.contribute/inbox/` and run `npm run import`; the importer
+matches dungeon activities and writes `.contribute/data/dungeon-levels.json`.
+
 ## Loot observation
 
 - `NoteItem` records any item seen dropping that the database lacks.

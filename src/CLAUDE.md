@@ -60,6 +60,8 @@ contributors write are in `docs/contributing.md`.
   `/sg export` `.json` or a SavedVariables `.lua`.
 - `import.ts` — `importDiscovered`: merges items into the scans and observed drops into the
   instance files.
+- `dungeon-levels.ts` — parses `/sg levels`, matches activities to dungeon files and checks
+  their ranges against the imported snapshot.
 - `generate.ts` — `build()` (the three trees in memory) and `write()`. `itemRow()` **must match
   `Data.ITEM`** and `recipeRow()` **`Data.RECIPE`** in `Spyglass/src/data/data.lua`.
 - `lua.ts` — Lua serialization and the provenance `header()`, which deliberately still says

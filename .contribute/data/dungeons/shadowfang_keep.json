@@ -1,8 +1,8 @@
 {
   "map": 33,
   "name": "Shadowfang Keep",
-  "minLevel": 18,
-  "maxLevel": 29,
+  "minLevel": 20,
+  "maxLevel": 30,
   "requiredLevel": 11,
   "zone": 1421,
   "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-ShadowFangKeep",

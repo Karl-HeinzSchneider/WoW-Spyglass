@@ -33,8 +33,12 @@ end
 
 -- Shows the window with `text` selected, ready to copy.
 ---@param text string
-function SpyglassScraperExportFrameMixin:ShowText(text)
+---@param title? string
+---@param hint? string
+function SpyglassScraperExportFrameMixin:ShowText(text, title, hint)
     local editBox = self.Scroll.EditBox
+    self.TitleText:SetText(title or "Spyglass - Export")
+    self.Hint:SetText(hint or HINT)
     editBox:SetText(text)
     self:Show()
     editBox:SetFocus()

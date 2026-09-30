@@ -157,6 +157,18 @@ The instance:
 | `encounters`                     | The bosses. `fix` adds every encounter the game knows for the map that the file doesn't list yet, with an empty `loot`. |
 | `trash`, `quests`                | Trash loot and quest IDs; quest definitions live under `.contribute/data/quests/dungeons/`.                             |
 
+Dungeon level ranges can be scanned in-game with `/sg levels`. Copy the JSON into
+`.contribute/inbox/dungeon-levels.json` and run `npm run import`, then `npm run gen`. The import
+writes one `.contribute/data/dungeon-levels.json` snapshot and updates `minLevel`/`maxLevel` in
+the matched dungeon files; there is nothing to set manually in those files. `npm run check` compares
+those ranges against the snapshot once it exists. Unscanned dungeons keep their curated levels.
+`requiredLevel` is separate and is
+not changed by this scan. The importer matches normal dungeons by map ID and split wings by their
+activity names; an ambiguous or missing match is reported for review.
+
+The scan records its client build; it can differ from the pinned reference-table build. Split wings
+need activity names that match the curated English names.
+
 A boss (`encounters[]`):
 
 | Field                   | Meaning                                                                                                                                                                                                                                                           |
@@ -289,20 +301,20 @@ without repeating its coordinates. Keep quest-specific directions on the endpoin
 
 The definition fields are:
 
-| Field             | Type    | Meaning                                                                                                                                                       |
-| ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `id`              | integer | The quest id: positive and defined only once across all quest files. A quest without one is a warning and isn't shipped until it has one.                     |
-| `name`            | string  | The quest's title. Curated, because this client ships no quest table: `fix` never rewrites it, and a quest without one is a warning.                          |
-| `side`            | string  | `"Alliance"`, `"Horde"` or `"Both"`; omitting it means `"Both"`. Anything else is an error.                                                                   |
-| `class`           | string  | A class quest's class: `"Warrior"`, `"Paladin"`, `"Hunter"`, `"Rogue"`, `"Priest"`, `"Shaman"`, `"Mage"`, `"Warlock"` or `"Druid"`; omitted means any class.  |
-| `requiredLevel`   | integer | The level a character needs to accept the quest; shown beside its title and in its tooltip.                                                                   |
-| `xp`              | integer | The experience the quest rewards; shown on its banner and in its tooltip.                                                                                     |
-| `objective`       | string  | What the quest asks for, in one English sentence; shown on its page and in its tooltip.                                                                       |
-| `description`     | string  | Optional curated description, shown on its page and in its tooltip before the client has the quest.                                                           |
-| `requires`        | array   | IDs of direct prerequisite quests, in the order they should appear. Each needs its own definition in a quest file, even if it is not shown on a dungeon page. |
-| `followUps`       | array   | IDs of later quests, in the order they should appear after this quest. Each needs its own definition, even if it is not shown on a dungeon page.               |
+| Field             | Type    | Meaning                                                                                                                                                                                                      |
+| ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`              | integer | The quest id: positive and defined only once across all quest files. A quest without one is a warning and isn't shipped until it has one.                                                                    |
+| `name`            | string  | The quest's title. Curated, because this client ships no quest table: `fix` never rewrites it, and a quest without one is a warning.                                                                         |
+| `side`            | string  | `"Alliance"`, `"Horde"` or `"Both"`; omitting it means `"Both"`. Anything else is an error.                                                                                                                  |
+| `class`           | string  | A class quest's class: `"Warrior"`, `"Paladin"`, `"Hunter"`, `"Rogue"`, `"Priest"`, `"Shaman"`, `"Mage"`, `"Warlock"` or `"Druid"`; omitted means any class.                                                 |
+| `requiredLevel`   | integer | The level a character needs to accept the quest; shown beside its title and in its tooltip.                                                                                                                  |
+| `xp`              | integer | The experience the quest rewards; shown on its banner and in its tooltip.                                                                                                                                    |
+| `objective`       | string  | What the quest asks for, in one English sentence; shown on its page and in its tooltip.                                                                                                                      |
+| `description`     | string  | Optional curated description, shown on its page and in its tooltip before the client has the quest.                                                                                                          |
+| `requires`        | array   | IDs of direct prerequisite quests, in the order they should appear. Each needs its own definition in a quest file, even if it is not shown on a dungeon page.                                                |
+| `followUps`       | array   | IDs of later quests, in the order they should appear after this quest. Each needs its own definition, even if it is not shown on a dungeon page.                                                             |
 | `start`, `turnIn` | object  | Optional giver and turn-in: `npc` name, `npcID`, starting `item` ID, `location` as `[uiMapID, x, y]` (x/y in 0–100), and `description` for extra info shown beside that endpoint. Use only the fields known. |
-| `items`           | array   | The items the quest rewards: item rows without a `chance`. May be empty.                                                                                      |
+| `items`           | array   | The items the quest rewards: item rows without a `chance`. May be empty.                                                                                                                                     |
 
 The quest ids are also the ones a boss's `quests` field lists: a boss that hands out or is the
 objective of a quest names the id there. The same item may appear in several quests. `npm run

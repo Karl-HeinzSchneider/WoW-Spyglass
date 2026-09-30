@@ -1,8 +1,8 @@
 {
   "map": 70,
   "name": "Uldaman",
-  "minLevel": 42,
-  "maxLevel": 52,
+  "minLevel": 41,
+  "maxLevel": 51,
   "requiredLevel": 30,
   "zone": 1418,
   "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-Uldaman",

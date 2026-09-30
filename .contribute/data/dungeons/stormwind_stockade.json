@@ -1,8 +1,8 @@
 {
   "map": 34,
   "name": "Stormwind Stockade",
-  "minLevel": 23,
-  "maxLevel": 29,
+  "minLevel": 24,
+  "maxLevel": 32,
   "requiredLevel": 15,
   "zone": 1453,
   "background": "Interface\\EncounterJournal\\UI-EJ-DUNGEONBUTTON-TheStockade",
