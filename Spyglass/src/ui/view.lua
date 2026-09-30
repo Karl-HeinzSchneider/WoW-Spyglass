@@ -916,13 +916,16 @@ function SpyglassBreadcrumbButtonMixin:OnClick()
 end
 
 ----------------------------------------------------------------------------------------------------
--- Search box (query toolbar)
+-- Search box (right-pane query controls)
 ----------------------------------------------------------------------------------------------------
 
 ---@class Spyglass.SearchBox : EditBox
 ---@field Instructions FontString
 ---@field clearButton Button
 ---@field debounce? FunctionContainer  # C_Timer handle
+---@field view? Spyglass.View
+---@field queryNode? Spyglass.Node
+---@field queryClearHooked? boolean
 SpyglassSearchBoxMixin = {}
 app.ui.SearchBoxMixin = SpyglassSearchBoxMixin
 
@@ -938,8 +941,10 @@ function SpyglassSearchBoxMixin:OnTextChanged(userInput)
     end
     self.debounce = C_Timer.NewTimer(SEARCH_DEBOUNCE, function()
         self.debounce = nil
-        local view = self:GetParent() --[[@as Spyglass.View]]
-        view:SetSearch(self:GetText())
+        local view = self.view --[[@as Spyglass.View?]]
+        if view and view:GetCurrentNode() == self.queryNode then
+            view:SetSearch(self:GetText())
+        end
     end)
 end
 
@@ -1124,8 +1129,6 @@ end
 -- View: breadcrumb bar + one page of rows
 ----------------------------------------------------------------------------------------------------
 
----@class Spyglass.FilterDropdown : Frame, WowStyle1FilterDropdownMixin
-
 ---@class Spyglass.PagingControls : Frame, PagingControlsMixin
 
 ---@class Spyglass.View : Frame
@@ -1135,9 +1138,6 @@ end
 ---@field Title Spyglass.PageHeader
 ---@field Content Spyglass.Page
 ---@field PagingControls Spyglass.PagingControls
----@field SearchBox Spyglass.SearchBox
----@field FilterDropdown Spyglass.FilterDropdown
----@field ResultCount FontString
 ---@field ClassFilter Spyglass.ClassFilterButton
 ---@field ClassFilterMode Spyglass.ClassFilterModeButton
 ---@field ActiveList WowStyle1FilterDropdownMixin|Frame  # the footer's active list dropdown
@@ -1249,27 +1249,6 @@ function SpyglassViewMixin:OnLoad()
     self:RegisterEvent("QUEST_LOG_UPDATE")
     self:RegisterEvent("QUEST_TURNED_IN")
     self:RegisterEvent("QUEST_DATA_LOAD_RESULT")
-
-    -- The template's clear button sets the text programmatically (userInput = false), so the
-    -- debounce never sees it; clear the query directly.
-    self.SearchBox.clearButton:HookScript("OnClick", function()
-        self:SetSearch("")
-    end)
-    self.FilterDropdown:SetupMenu(function(_, rootDescription)
-        self:BuildFilterMenu(rootDescription)
-    end)
-    -- The template's red X over the button's corner: shown while filters or sort differ from
-    -- the defaults or the class filter is on, a click resets them.
-    self.FilterDropdown:SetIsDefaultCallback(function()
-        local q = self:GetCurrentQuery()
-        return not q or (self:IsDefaultQuery(q) and not self.classFilterOn)
-    end)
-    self.FilterDropdown:SetDefaultCallback(function()
-        local q = self:GetCurrentQuery()
-        if q then
-            self:ResetFilters(q)
-        end
-    end)
 
     -- The footer's active list: every list with its marker, the active one picked. The text
     -- follows changes made elsewhere (Render).
@@ -1900,7 +1879,7 @@ end
 ---@param filterID string
 ---@param value string|number
 ---@return boolean
-local function hasFilterValue(q, filterID, value)
+function SpyglassViewMixin:HasFilterValue(q, filterID, value)
     local values = q.filters[filterID]
     if type(values) ~= "table" then
         return values == value
@@ -1966,140 +1945,6 @@ function SpyglassViewMixin:ResetFilters(q)
     app.ui.mainWindow:SaveTabs()
 end
 
--- Filters and sort as ResetFilters leaves them (the search text doesn't count). A multi filter
--- whose last value was unticked is left as an empty table.
----@param q Spyglass.Query
----@return boolean
-function SpyglassViewMixin:IsDefaultQuery(q)
-    if (q.sort or "name") ~= "name" then
-        return false
-    end
-    for _, values in pairs(q.filters) do
-        if type(values) ~= "table" or #values > 0 then
-            return false
-        end
-    end
-    return true
-end
-
-local SORT_OPTIONS = {
-    { value = "name", label = NAME or "Name" },
-    { value = "ilvl", label = ITEM_LEVEL_ABBR or "Item Level" },
-    { value = "quality", label = QUALITY or "Quality" },
-    { value = "id", label = "ID" },
-}
-local SCROLL_AFTER = 20 -- options; longer submenus scroll
-
--- Generator for FilterDropdown (Blizzard_Menu): one submenu per registered filter, sort, reset.
--- Handlers return MenuResponse.Refresh so the menu stays open and re-checks its boxes.
----@param root RootMenuDescriptionProxy
-function SpyglassViewMixin:BuildFilterMenu(root)
-    local q = self:GetCurrentQuery()
-    if not q then
-        root:CreateTitle("No item list")
-        return
-    end
-
-    for _, def in ipairs(app.filters:GetAll()) do
-        local submenu = root:CreateButton(def.name)
-        local options = app.filters:GetOptions(def.id)
-        if def.kind == "multi" then
-            for _, option in ipairs(options) do
-                submenu:CreateCheckbox(option.label, function()
-                    return hasFilterValue(q, def.id, option.value)
-                end, function()
-                    self:ToggleFilterValue(q, def.id, option.value)
-                    return MenuResponse.Refresh
-                end)
-            end
-        else
-            submenu:CreateRadio(ALL or "Any", function()
-                return q.filters[def.id] == nil
-            end, function()
-                self:SetFilterValue(q, def.id, nil)
-                return MenuResponse.Refresh
-            end)
-            for _, option in ipairs(options) do
-                submenu:CreateRadio(option.label, function()
-                    return q.filters[def.id] == option.value
-                end, function()
-                    self:SetFilterValue(q, def.id, option.value)
-                    return MenuResponse.Refresh
-                end)
-            end
-        end
-        if #options > SCROLL_AFTER then
-            submenu:SetScrollMode(20 * SCROLL_AFTER)
-        end
-    end
-
-    -- The footer's class filter, the same state as its two buttons: "Off" or a class (which
-    -- turns it on), then fade out or hide.
-    local classMenu = root:CreateButton("Class")
-    classMenu:CreateRadio(OFF or "Off", function()
-        return not self.classFilterOn
-    end, function()
-        self:SetClassFilter(false)
-        return MenuResponse.Refresh
-    end)
-    for _, class in ipairs(app.classFilter:GetClasses()) do
-        classMenu:CreateRadio(classMenuLabel(class), function()
-            return self.classFilterOn and class == self:GetFilterClass()
-        end, function()
-            self:SetClassFilter(true, class)
-            return MenuResponse.Refresh
-        end)
-    end
-    classMenu:CreateDivider()
-    classMenu:CreateRadio("Fade out", function()
-        return self.classFilterMode == "fade"
-    end, function()
-        self:SetClassFilter(nil, nil, "fade")
-        return MenuResponse.Refresh
-    end)
-    classMenu:CreateRadio("Hide", function()
-        return self.classFilterMode == "hide"
-    end, function()
-        self:SetClassFilter(nil, nil, "hide")
-        return MenuResponse.Refresh
-    end)
-
-    root:CreateDivider()
-    local sortMenu = root:CreateButton("Sort by")
-    for _, option in ipairs(SORT_OPTIONS) do
-        sortMenu:CreateRadio(option.label, function()
-            return (q.sort or "name") == option.value
-        end, function()
-            self:SetSort(q, option.value)
-            return MenuResponse.Refresh
-        end)
-    end
-
-    root:CreateDivider()
-    root:CreateButton(RESET or "Reset", function()
-        self:ResetFilters(q)
-        return MenuResponse.Refresh
-    end)
-end
-
--- Shows the search box / filter button on query folders and syncs them with the query.
-function SpyglassViewMixin:UpdateToolbar()
-    local q = self:GetCurrentQuery()
-    local shown = q ~= nil
-    self.SearchBox:SetShown(shown)
-    self.FilterDropdown:SetShown(shown)
-    self.ResultCount:SetShown(shown)
-    if not q then
-        return
-    end
-    -- Sync the box to the query unless the user is typing (the debounce hasn't fired yet).
-    if not self.SearchBox:HasFocus() and self.SearchBox:GetText() ~= q.search then
-        self.SearchBox:SetText(q.search or "") -- userInput = false: no query re-run
-    end
-    self.ResultCount:SetText(("%d items"):format(self.resultCount))
-    self.FilterDropdown:ValidateResetState()
-end
-
 -- The element kind a folder's entries are drawn as: "row" (default), "tile" or "card".
 ---@param node Spyglass.Node?
 ---@return "row"|"tile"|"card"
@@ -2161,6 +2006,10 @@ function SpyglassViewMixin:Refresh()
     self.PagingControls:SetShown(maxPages > 1)
 
     self:Render()
+    local window = app.ui.mainWindow
+    if window and window.selectedView == self and window.RightPane.Info.view == self then
+        window.RightPane.Info:SyncQueryControls()
+    end
 end
 
 -- Draws the current page plus the chrome around it.
@@ -2176,7 +2025,6 @@ function SpyglassViewMixin:Render()
     end
 
     self:RefreshBreadcrumbs()
-    self:UpdateToolbar()
     -- The footer's class filter and active list act on items; the options page has none.
     self.ClassFilter:SetShown(not isOptions)
     self.ClassFilterMode:SetShown(not isOptions)

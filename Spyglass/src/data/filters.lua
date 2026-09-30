@@ -327,21 +327,6 @@ local function inBracket(level, value)
     return lo ~= nil and level >= tonumber(lo)
 end
 
----@param level integer?
----@param step integer
----@param max integer
----@return string?
-local function bracketOf(level, step, max)
-    if not level or level < 1 then
-        return nil
-    end
-    if level > max then
-        return ("%d+"):format(max + 1)
-    end
-    local lo = level - ((level - 1) % step)
-    return ("%d-%d"):format(lo, lo + step - 1)
-end
-
 -- Instance/boss ids an item drops in, or the professions that make it, for the indexed
 -- source filters.
 ---@param itemID integer
@@ -534,9 +519,7 @@ Filters:Register({
     match = function(_, row, value)
         return inBracket(row[ITEM.ILVL], value)
     end,
-    index = function(_, row)
-        return bracketOf(row[ITEM.ILVL], ILVL_STEP, ILVL_MAX)
-    end,
+    -- The right pane accepts arbitrary bounds, so preset-bracket buckets cannot cover every value.
 })
 
 local REQ_STEP, REQ_MAX = 10, 59
@@ -549,9 +532,7 @@ Filters:Register({
     match = function(_, row, value)
         return inBracket(row[ITEM.REQ_LEVEL], value)
     end,
-    index = function(_, row)
-        return bracketOf(row[ITEM.REQ_LEVEL], REQ_STEP, REQ_MAX)
-    end,
+    -- Arbitrary bounds from the right pane cannot use preset-bracket buckets.
 })
 
 Filters:Register({

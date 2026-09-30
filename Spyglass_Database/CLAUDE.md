@@ -18,7 +18,7 @@ tells new items from known ones by these rows). Ownership rules: `docs/architect
   `Spyglass_Locale`. Excluded from LuaLS, StyLua and Prettier.
 - `Spyglass_Database.lua` — registers the `items` module (`order = 1000`, `spacerBefore`,
   `query = true`, `columns = 2`, no children: the view runs `Spyglass.Query` over the whole
-  DB and shows the search box and filter dropdown) and, at `PLAYER_LOGIN` (still behind the
+  DB and the right pane shows its search and filter controls) and, at `PLAYER_LOGIN` (still behind the
   loading screen, after every addon's names have registered), runs one empty query so the sort
   order and search names are built before the first click on Items. It uses only the global
   `Spyglass`, not the private table.

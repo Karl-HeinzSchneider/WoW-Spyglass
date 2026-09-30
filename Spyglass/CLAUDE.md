@@ -125,7 +125,7 @@ the window.
   selected tab's info `panel`, drawn with the character frame's side-pane look. Its checkbox
   filter ids live in `view.lua` and must match `PANEL_FILTERS` in `src/lists.ts`.
 - `view.lua` + `templates.xml` — a view: header row, paged content, the navigation stack, rows,
-  tiles, cards, quest banners and headers, search box and filter dropdown, the footer's class
+  tiles, cards, quest banners and headers, query state, the footer's class
   filter buttons.
 - `recipepopup.lua/.xml` — `app.ui.recipePopup`, toggled by a click on a recipe row;
   `SpyglassPopupTemplate` / `SpyglassPopupMixin`, the shell both popups share

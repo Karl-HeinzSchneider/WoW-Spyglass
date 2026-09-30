@@ -321,7 +321,6 @@ end
 ---@param view Spyglass.View
 function SpyglassMainWindowMixin:SelectView(view)
     self.selectedView = view
-    self.RightPane.Info:SetView(view)
     for _, v in ipairs(self.views) do
         v:SetShown(v == view)
         local tab = self.viewToTab[v]
@@ -329,6 +328,7 @@ function SpyglassMainWindowMixin:SelectView(view)
             tab:SetChecked(v == view)
         end
     end
+    self.RightPane.Info:SetView(view)
     self:UpdateOptionsButton()
     self:SaveTabs()
 end

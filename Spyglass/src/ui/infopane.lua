@@ -17,6 +17,9 @@ local WIDGETS = {
     bar = { "Frame", "SpyglassInfoBarTemplate" },
     checkbox = { "CheckButton", "SpyglassInfoCheckboxTemplate" },
     dropdown = { "Frame", "SpyglassInfoDropdownTemplate" },
+    queryDropdown = { "Frame", "SpyglassInfoQueryDropdownTemplate" },
+    querySearch = { "Frame", "SpyglassInfoSearchTemplate" },
+    queryRange = { "Frame", "SpyglassInfoRangeTemplate" },
     button = { "Button", "SpyglassInfoButtonTemplate" },
     quest = { "Button", "SpyglassInfoQuestTemplate" },
     spacer = { "Frame", "SpyglassInfoSpacerTemplate" },
@@ -58,6 +61,10 @@ end
 -- lines asks the server for quests, whose QUEST_DATA_LOAD_RESULT can fire inside that call, and
 -- a Refresh inside a Refresh releases the lines the outer one is still filling.
 function SpyglassInfoPaneMixin:OnEvent()
+    self:QueueRefresh()
+end
+
+function SpyglassInfoPaneMixin:QueueRefresh()
     if self:IsVisible() and not self.refreshQueued then
         self.refreshQueued = true
         C_Timer.After(0, function()
@@ -79,6 +86,35 @@ end
 -- Draws the panel of the deepest node on the view's path that has one; without any, the
 -- current node's name and description.
 function SpyglassInfoPaneMixin:Refresh()
+    local focused, focusRangeID, focusView, focusNode, focusText, cursor
+    if self.querySearchBox and self.querySearchBox:HasFocus() then
+        focused = "Search"
+        focusView, focusNode = self.querySearchBox.view, self.querySearchBox.queryNode
+        focusText, cursor = self.querySearchBox:GetText(), self.querySearchBox:GetCursorPosition()
+    elseif self.queryRanges then
+        for id, range in pairs(self.queryRanges) do
+            for _, kind in ipairs({ "Min", "Max" }) do
+                local input = range[kind]
+                if input:HasFocus() then
+                    focused, focusRangeID = kind, id
+                    focusView, focusNode = self.view, self.view:GetCurrentNode()
+                    focusText, cursor = input:GetText(), input:GetCursorPosition()
+                    break
+                end
+            end
+            if focused then
+                break
+            end
+        end
+    end
+    if self.querySearchBox and self.querySearchBox.debounce then
+        self.querySearchBox.debounce:Cancel()
+        self.querySearchBox.debounce = nil
+    end
+    self.querySearchBox = nil
+    self.queryRanges = {}
+    self.queryDropdowns = {}
+    self.queryNode = nil
     for _, pool in pairs(self.pools) do
         pool:ReleaseAll()
     end
@@ -89,11 +125,16 @@ function SpyglassInfoPaneMixin:Refresh()
     if view then
         node, widgets = view:GetPanel()
         if not node then
-            node, widgets = view:GetCurrentNode(), { { description = true } }
+            node = view:GetCurrentNode()
+            widgets = node and node.query and {} or { { description = true } }
         end
     end
     self.Title:SetText(node and node.name or "")
     if node and view then
+        local current = view:GetCurrentNode()
+        if current and current.query then
+            self:AddQueryControls(view, current)
+        end
         for index, widget in ipairs(widgets or {}) do
             local ok, err = pcall(self.AddWidget, self, view, node, index, widget)
             if not ok then
@@ -102,6 +143,21 @@ function SpyglassInfoPaneMixin:Refresh()
         end
     end
     self.Content:Layout()
+    if focused and self.view == focusView and self.view:GetCurrentNode() == focusNode then
+        local range = focusRangeID and self.queryRanges[focusRangeID]
+        local input = focused == "Search" and self.querySearchBox or range and range[focused]
+        if input then
+            input:SetText(focusText)
+            input:SetFocus()
+            input:SetCursorPosition(cursor)
+            if focused == "Search" then
+                local q = input.view:GetCurrentQuery()
+                if q and q.search ~= focusText then
+                    input:OnTextChanged(true)
+                end
+            end
+        end
+    end
 end
 
 ---@param kind string
@@ -370,6 +426,213 @@ function SpyglassInfoPaneMixin:RunButton(view, node, widget)
         if type(mapID) == "number" then
             showOnMap(mapID, tonumber(x) or 50, tonumber(y) or 50)
         end
+    end
+end
+
+-- Query controls belong to the current query folder, while its optional info widgets still
+-- belong to the deepest panel node. All state lives on the view's per-folder query.
+---@param view Spyglass.View
+---@param node Spyglass.Node
+function SpyglassInfoPaneMixin:AddQueryControls(view, node)
+    local q = view:GetQuery(node)
+    self.queryNode = node
+    local search = self:Acquire("querySearch") --[[@as Frame|{ Box: Spyglass.SearchBox, Count: FontString }]]
+    local box = search.Box
+    self.querySearchBox = box
+    self.queryCount = search.Count
+    box.view, box.queryNode = view, node
+    box:SetText(q.search or "")
+    search.Count:SetText(("%d items"):format(view.resultCount))
+    if not box.queryClearHooked then
+        box.queryClearHooked = true
+        box.clearButton:HookScript("OnClick", function()
+            if box.view and box.view:GetCurrentNode() == box.queryNode then
+                box.view:SetSearch("")
+            end
+        end)
+    end
+
+    local header = self:Acquire("header") --[[@as Frame|{ Text: FontString }]]
+    header.Text:SetText("Filters")
+
+    for _, def in ipairs(app.filters:GetAll()) do
+        if def.id == "itemLevel" or def.id == "reqLevel" then
+            self:AddLevelRange(view, q, def)
+        elseif def.id ~= "boss" then
+            self:AddQueryFilter(view, q, def)
+        end
+    end
+
+    local sort = self:Acquire("queryDropdown") --[[@as Frame|{ Label: FontString, Dropdown: WowStyle1DropdownMixin }]]
+    self.queryDropdowns[#self.queryDropdowns + 1] = sort.Dropdown
+    sort.Label:SetText("Sort by")
+    sort.Dropdown:SetDefaultText(NAME or "Name")
+    sort.Dropdown:SetSelectionText(function()
+        local labels =
+            { name = NAME or "Name", ilvl = ITEM_LEVEL_ABBR or "Item Level", quality = QUALITY or "Quality", id = "ID" }
+        return labels[q.sort or "name"]
+    end)
+    sort.Dropdown:SetupMenu(function(_, root)
+        for _, option in ipairs({
+            { "name", NAME or "Name" },
+            { "ilvl", ITEM_LEVEL_ABBR or "Item Level" },
+            { "quality", QUALITY or "Quality" },
+            { "id", "ID" },
+        }) do
+            root:CreateRadio(option[2], function()
+                return (q.sort or "name") == option[1]
+            end, function()
+                view:SetSort(q, option[1])
+            end)
+        end
+    end)
+
+    local reset = self:Acquire("button") --[[@as Button]]
+    reset:SetText("Reset filters")
+    reset:SetScript("OnClick", function()
+        view:ResetFilters(q)
+    end)
+end
+
+---@param view Spyglass.View
+---@param q Spyglass.Query
+---@param def Spyglass.FilterDef
+function SpyglassInfoPaneMixin:AddQueryFilter(view, q, def)
+    local frame = self:Acquire("queryDropdown") --[[@as Frame|{ Label: FontString, Dropdown: WowStyle1DropdownMixin }]]
+    self.queryDropdowns[#self.queryDropdowns + 1] = frame.Dropdown
+    frame.Label:SetText(def.name)
+    frame.Dropdown:SetDefaultText(ALL or "Any")
+    frame.Dropdown:SetSelectionText(function()
+        local value = q.filters[def.id]
+        if value == nil or (type(value) == "table" and #value == 0) then
+            return nil
+        end
+        if type(value) == "table" and #value > 1 then
+            return ("%d selected"):format(#value)
+        end
+        local selected = type(value) == "table" and value[1] or value
+        for _, option in ipairs(app.filters:GetOptions(def.id)) do
+            if option.value == selected then
+                return option.label
+            end
+        end
+        return tostring(selected)
+    end)
+    frame.Dropdown:SetupMenu(function(_, root)
+        if def.kind == "multi" then
+            for _, option in ipairs(app.filters:GetOptions(def.id)) do
+                root:CreateCheckbox(option.label, function()
+                    return view:HasFilterValue(q, def.id, option.value)
+                end, function()
+                    view:ToggleFilterValue(q, def.id, option.value)
+                    return MenuResponse.Refresh
+                end)
+            end
+        else
+            root:CreateRadio(ALL or "Any", function()
+                return q.filters[def.id] == nil
+            end, function()
+                view:SetFilterValue(q, def.id, nil)
+                return MenuResponse.Refresh
+            end)
+            for _, option in ipairs(app.filters:GetOptions(def.id)) do
+                root:CreateRadio(option.label, function()
+                    return q.filters[def.id] == option.value
+                end, function()
+                    view:SetFilterValue(q, def.id, option.value)
+                    return MenuResponse.Refresh
+                end)
+            end
+        end
+        if #app.filters:GetOptions(def.id) > 20 then
+            root:SetScrollMode(400)
+        end
+    end)
+end
+
+---@param value any
+---@return string?, string?
+local function rangeBounds(value)
+    local min, max
+    if type(value) == "string" then
+        min, max = value:match("^(%d+)%-(%d+)$")
+        if not min then
+            min = value:match("^(%d+)%+$")
+        end
+    end
+    if min == "0" and max then
+        min = nil
+    end
+    return min, max
+end
+
+-- Keep query controls in place while a dropdown is open or an edit box has focus.
+function SpyglassInfoPaneMixin:SyncQueryControls()
+    local view = self.view
+    local q, node
+    if view then
+        q, node = view:GetCurrentQuery()
+    end
+    if not q or node ~= self.queryNode then
+        self:QueueRefresh()
+        return
+    end
+    if self.queryCount then
+        self.queryCount:SetText(("%d items"):format(view.resultCount))
+    end
+    local box = self.querySearchBox
+    if box and not box:HasFocus() and box:GetText() ~= q.search then
+        box:SetText(q.search or "")
+    end
+    for _, dropdown in ipairs(self.queryDropdowns or {}) do
+        dropdown:Update()
+    end
+    for id, range in pairs(self.queryRanges or {}) do
+        if not range.Min:HasFocus() and not range.Max:HasFocus() then
+            local min, max = rangeBounds(q.filters[id])
+            range.Min:SetText(min or "")
+            range.Max:SetText(max or "")
+        end
+    end
+end
+
+---@param view Spyglass.View
+---@param q Spyglass.Query
+---@param def Spyglass.FilterDef
+function SpyglassInfoPaneMixin:AddLevelRange(view, q, def)
+    local frame = self:Acquire("queryRange") --[[@as Frame|{ Min: EditBox, Max: EditBox }]]
+    self.queryRanges[def.id] = frame
+    frame.Label:SetText(def.name)
+    local min, max = rangeBounds(q.filters[def.id])
+    frame.Min:SetText(min or "")
+    frame.Max:SetText(max or "")
+    frame.Min:SetNumeric(true)
+    frame.Max:SetNumeric(true)
+    local function apply()
+        if view:GetCurrentQuery() ~= q then
+            return
+        end
+        local low, high = frame.Min:GetText(), frame.Max:GetText()
+        local nextValue
+        if low ~= "" and high ~= "" then
+            nextValue = ("%d-%d"):format(tonumber(low), tonumber(high))
+        elseif low ~= "" then
+            nextValue = ("%d+"):format(tonumber(low))
+        elseif high ~= "" then
+            nextValue = ("0-%d"):format(tonumber(high))
+        end
+        view:SetFilterValue(q, def.id, nextValue)
+    end
+    for _, input in ipairs({ frame.Min, frame.Max }) do
+        input:SetScript("OnEnterPressed", function(self)
+            self:ClearFocus()
+        end)
+        input:SetScript("OnEscapePressed", function(self)
+            frame.Min:SetText(min or "")
+            frame.Max:SetText(max or "")
+            self:ClearFocus()
+        end)
+        input:SetScript("OnEditFocusLost", apply)
     end
 end
 
