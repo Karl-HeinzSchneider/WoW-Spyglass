@@ -23,5 +23,57 @@
       "categories": [2511, 2512, 2513, 2509, 2510, 2492, 2491]
     }
   ],
-  "recipes": []
+  "recipes": [
+    {
+      "item": 11287,
+      "name": "Lesser Magic Wand",
+      "spell": 14293,
+      "skill": 10,
+      "source": "Trainer"
+    },
+    {
+      "spell": 7420,
+      "skill": 15,
+      "source": "Trainer"
+    },
+    {
+      "item": 279976,
+      "name": "Enchanted Lute",
+      "spell": 1230643,
+      "skill": 20,
+      "source": "Trainer"
+    },
+    {
+      "spell": 7426,
+      "skill": 40,
+      "source": "Trainer"
+    },
+    {
+      "spell": 7454,
+      "skill": 45,
+      "source": "Trainer"
+    },
+    {
+      "spell": 7457,
+      "skill": 50,
+      "source": "Trainer"
+    },
+    {
+      "spell": 7748,
+      "skill": 60,
+      "source": "Trainer"
+    },
+    {
+      "spell": 7771,
+      "skill": 70,
+      "source": "Trainer"
+    },
+    {
+      "item": 11288,
+      "name": "Greater Magic Wand",
+      "spell": 14807,
+      "skill": 70,
+      "source": "Trainer"
+    }
+  ]
 }

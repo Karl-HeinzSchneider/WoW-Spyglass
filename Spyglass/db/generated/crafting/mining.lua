@@ -10,3 +10,6 @@ Data:AddList("crafting", "mining", {
     order = 80,
     skillLineID = 186,
 })
+Data:AddListLoot("crafting", "mining", {
+    { 279960, spell = 1230161, skill = 20, source = "Trainer" }, -- Lodestone
+})

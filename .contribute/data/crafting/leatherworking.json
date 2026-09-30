@@ -27,5 +27,111 @@
       "categories": [2572, 2573]
     }
   ],
-  "recipes": []
+  "recipes": [
+    {
+      "item": 2303,
+      "name": "Handstitched Leather Pants",
+      "spell": 2153,
+      "skill": 15,
+      "source": "Trainer"
+    },
+    {
+      "item": 279978,
+      "name": "Camp Tent",
+      "spell": 1229432,
+      "skill": 20,
+      "source": "Trainer"
+    },
+    {
+      "item": 4237,
+      "name": "Handstitched Leather Belt",
+      "spell": 3753,
+      "skill": 25,
+      "source": "Trainer"
+    },
+    {
+      "item": 7278,
+      "name": "Light Leather Quiver",
+      "spell": 9060,
+      "skill": 25,
+      "source": "Trainer"
+    },
+    {
+      "item": 7279,
+      "name": "Small Leather Ammo Pouch",
+      "spell": 9062,
+      "skill": 25,
+      "source": "Trainer"
+    },
+    {
+      "item": 4231,
+      "name": "Cured Light Hide",
+      "spell": 3816,
+      "skill": 30,
+      "source": "Trainer"
+    },
+    {
+      "item": 2300,
+      "name": "Embossed Leather Vest",
+      "spell": 2160,
+      "skill": 35,
+      "source": "Trainer"
+    },
+    {
+      "item": 252424,
+      "name": "Black Whelp Slippers",
+      "spell": 1255146,
+      "skill": 35,
+      "source": "Trainer"
+    },
+    {
+      "item": 252427,
+      "name": "Moonglow Boots",
+      "spell": 1255143,
+      "skill": 35,
+      "source": "Trainer"
+    },
+    {
+      "item": 252426,
+      "name": "Murloc Scale Shoes",
+      "spell": 1255144,
+      "skill": 35,
+      "source": "Trainer"
+    },
+    {
+      "item": 2310,
+      "name": "Embossed Leather Cloak",
+      "spell": 2162,
+      "skill": 40,
+      "source": "Trainer"
+    },
+    {
+      "item": 4239,
+      "name": "Embossed Leather Gloves",
+      "spell": 3756,
+      "skill": 40,
+      "source": "Trainer"
+    },
+    {
+      "item": 7281,
+      "name": "Light Leather Bracers",
+      "spell": 9065,
+      "skill": 45,
+      "source": "Trainer"
+    },
+    {
+      "item": 2309,
+      "name": "Embossed Leather Boots",
+      "spell": 2161,
+      "skill": 50,
+      "source": "Trainer"
+    },
+    {
+      "item": 4242,
+      "name": "Embossed Leather Pants",
+      "spell": 3759,
+      "skill": 50,
+      "source": "Trainer"
+    }
+  ]
 }

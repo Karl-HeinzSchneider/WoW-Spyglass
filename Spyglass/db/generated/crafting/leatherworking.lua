@@ -17,3 +17,20 @@ Data:AddList("crafting", "leatherworking", {
         { name = "Ranged Weapons", categories = { 2572, 2573 } }, -- Crossbows, Arrows
     },
 })
+Data:AddListLoot("crafting", "leatherworking", {
+    { 2303, spell = 2153, skill = 15, source = "Trainer" }, -- Handstitched Leather Pants
+    { 279978, spell = 1229432, skill = 20, source = "Trainer" }, -- Camp Tent
+    { 4237, spell = 3753, skill = 25, source = "Trainer" }, -- Handstitched Leather Belt
+    { 7278, spell = 9060, skill = 25, source = "Trainer" }, -- Light Leather Quiver
+    { 7279, spell = 9062, skill = 25, source = "Trainer" }, -- Small Leather Ammo Pouch
+    { 4231, spell = 3816, skill = 30, source = "Trainer" }, -- Cured Light Hide
+    { 2300, spell = 2160, skill = 35, source = "Trainer" }, -- Embossed Leather Vest
+    { 252424, spell = 1255146, skill = 35, source = "Trainer" }, -- Black Whelp Slippers
+    { 252427, spell = 1255143, skill = 35, source = "Trainer" }, -- Moonglow Boots
+    { 252426, spell = 1255144, skill = 35, source = "Trainer" }, -- Murloc Scale Shoes
+    { 2310, spell = 2162, skill = 40, source = "Trainer" }, -- Embossed Leather Cloak
+    { 4239, spell = 3756, skill = 40, source = "Trainer" }, -- Embossed Leather Gloves
+    { 7281, spell = 9065, skill = 45, source = "Trainer" }, -- Light Leather Bracers
+    { 2309, spell = 2161, skill = 50, source = "Trainer" }, -- Embossed Leather Boots
+    { 4242, spell = 3759, skill = 50, source = "Trainer" }, -- Embossed Leather Pants
+})

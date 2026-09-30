@@ -16,3 +16,14 @@ Data:AddList("crafting", "enchanting", {
         { name = "Crafted Items", categories = { 2511, 2512, 2513, 2509, 2510, 2492, 2491 } }, -- Staves, Wands, Off-Hands, Relics, Curios, Wizard Oils, Runed Enchanting Rods
     },
 })
+Data:AddListLoot("crafting", "enchanting", {
+    { 11287, spell = 14293, skill = 10, source = "Trainer" }, -- Lesser Magic Wand
+    { spell = 7420, skill = 15, source = "Trainer" }, -- Enchant Chest - Inferior Stamina
+    { 279976, spell = 1230643, skill = 20, source = "Trainer" }, -- Enchanted Lute
+    { spell = 7426, skill = 40, source = "Trainer" }, -- Enchant Chest - Minor Absorption
+    { spell = 7454, skill = 45, source = "Trainer" }, -- Enchant Cloak - Minor Resistance
+    { spell = 7457, skill = 50, source = "Trainer" }, -- Enchant Bracer - Minor Stamina
+    { spell = 7748, skill = 60, source = "Trainer" }, -- Enchant Chest - Lesser Stamina
+    { spell = 7771, skill = 70, source = "Trainer" }, -- Enchant Cloak - Minor Protection
+    { 11288, spell = 14807, skill = 70, source = "Trainer" }, -- Greater Magic Wand
+})

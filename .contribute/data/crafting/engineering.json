@@ -5,5 +5,83 @@
   "backgroundCoords": [0.57, 1, 0.2, 1],
   "order": 40,
   "skillLine": 202,
-  "recipes": []
+  "recipes": [
+    {
+      "item": 279950,
+      "name": "Reagent Bot",
+      "spell": 1230656,
+      "skill": 20,
+      "source": "Trainer"
+    },
+    {
+      "item": 4359,
+      "name": "Handful of Copper Bolts",
+      "spell": 3922,
+      "skill": 30,
+      "source": "Trainer"
+    },
+    {
+      "item": 4360,
+      "name": "Rough Copper Bomb",
+      "spell": 3923,
+      "skill": 30,
+      "source": "Trainer"
+    },
+    {
+      "item": 6219,
+      "name": "Arclight Spanner",
+      "spell": 7430,
+      "skill": 50,
+      "source": "Trainer"
+    },
+    {
+      "item": 4361,
+      "name": "Copper Tube",
+      "spell": 3924,
+      "skill": 50,
+      "source": "Trainer"
+    },
+    {
+      "item": 4362,
+      "name": "Rough Boomstick",
+      "spell": 3925,
+      "skill": 50,
+      "source": "Trainer"
+    },
+    {
+      "item": 4405,
+      "name": "Crude Scope",
+      "spell": 3977,
+      "skill": 60,
+      "source": "Trainer"
+    },
+    {
+      "item": 4363,
+      "name": "Copper Modulator",
+      "spell": 3926,
+      "skill": 65,
+      "source": "Trainer"
+    },
+    {
+      "item": 4364,
+      "name": "Coarse Blasting Powder",
+      "spell": 3929,
+      "skill": 75,
+      "source": "Trainer"
+    },
+    {
+      "item": 4365,
+      "name": "Coarse Dynamite",
+      "spell": 3931,
+      "skill": 75,
+      "source": "Trainer"
+    },
+    {
+      "item": 8068,
+      "name": "Crafted Heavy Shot",
+      "spell": 3930,
+      "skill": 75,
+      "source": "Trainer"
+    }
+  ]
 }

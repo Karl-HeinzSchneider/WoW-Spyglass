@@ -10,3 +10,6 @@ Data:AddList("crafting", "fishing", {
     order = 120,
     skillLineID = 356,
 })
+Data:AddListLoot("crafting", "fishing", {
+    { 279967, spell = 1229745, skill = 20, source = "Trainer" }, -- Fish Bowl
+})

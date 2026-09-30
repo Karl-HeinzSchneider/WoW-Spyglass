@@ -5,5 +5,13 @@
   "backgroundCoords": [0.57, 1, 0.2, 1],
   "order": 80,
   "skillLine": 186,
-  "recipes": []
+  "recipes": [
+    {
+      "item": 279960,
+      "name": "Lodestone",
+      "spell": 1230161,
+      "skill": 20,
+      "source": "Trainer"
+    }
+  ]
 }
