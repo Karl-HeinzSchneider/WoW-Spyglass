@@ -317,7 +317,7 @@ export async function loadRecipes(config: Config): Promise<RecipeTables> {
     table("TradeSkillCategory"),
     table("SpellName"),
     table("TotemCategory"),
-    table("ItemSparse"),
+    fetchTable("ItemSparse", build, FALLBACK_LOCALE, ["ID", "RequiredSkill", "RequiredSkillRank"]),
   ]);
   const source: RecipeSource = {
     skillLine,

@@ -154,7 +154,7 @@ export async function loadReference(config: Config): Promise<Reference> {
   const wagoItemNames = new Map<string, Map<number, string>>();
   for (const locale of config.locales) {
     const table = new Map<number, string>();
-    for (const row of await fetchTable("ItemSparse", build, locale)) {
+    for (const row of await fetchTable("ItemSparse", build, locale, ["ID", "Display_lang"])) {
       if (row.Display_lang) table.set(int(row.ID), row.Display_lang);
     }
     wagoItemNames.set(locale, table);

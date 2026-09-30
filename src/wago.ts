@@ -8,9 +8,15 @@ export type Table = Record<string, string>[];
 
 /**
  * Downloads a DB2 table as CSV from wago.tools for the given build and locale, cached under
- * .cache/<build>/ so repeated runs are offline. Delete the cache to refresh.
+ * .cache/<build>/ so repeated runs are offline. Delete the cache to refresh. Pass `fields` when
+ * a caller needs only a few columns from a wide table such as ItemSparse.
  */
-export async function fetchTable(table: string, build: string, locale: string): Promise<Table> {
+export async function fetchTable(
+  table: string,
+  build: string,
+  locale: string,
+  fields?: readonly string[],
+): Promise<Table> {
   const dir = resolve(CACHE_DIR, build);
   const file = resolve(dir, `${table}.${locale}.csv`);
   if (!existsSync(file)) {
@@ -25,7 +31,8 @@ export async function fetchTable(table: string, build: string, locale: string): 
     mkdirSync(dir, { recursive: true });
     writeFileSync(file, text, "utf-8");
   }
-  return parse(readFileSync(file, "utf-8"), { columns: true, skip_empty_lines: true }) as Table;
+  const columns = fields ? (headers: string[]) => headers.map((name) => (fields.includes(name) ? name : false)) : true;
+  return parse(readFileSync(file, "utf-8"), { columns, skip_empty_lines: true }) as Table;
 }
 
 export function int(value: string | undefined, fallback = 0): number {
