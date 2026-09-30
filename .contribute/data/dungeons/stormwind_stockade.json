@@ -64,6 +64,7 @@
     {
       "id": -1720,
       "name": "Bruegal Ironknuckle",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\bruegal_ironknuckle.blp",
       "displayID": 2142,
       "npc": 1720,
       "rare": true,

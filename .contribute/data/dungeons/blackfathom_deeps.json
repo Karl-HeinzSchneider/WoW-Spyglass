@@ -96,6 +96,7 @@
     {
       "id": -12876,
       "name": "Baron Aquanis",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\baron_aquanis.blp",
       "displayID": 110,
       "npc": 12876,
       "level": 28,

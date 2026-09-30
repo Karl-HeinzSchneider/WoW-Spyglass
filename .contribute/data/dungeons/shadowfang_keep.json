@@ -56,6 +56,7 @@
     {
       "id": -3864,
       "name": "Fel Steed",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\fel_steed.blp",
       "displayID": 1951,
       "npc": 3864,
       "level": 19,
@@ -139,6 +140,7 @@
     {
       "id": -3872,
       "name": "Deathsworn Captain",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\deathsworn_captain.blp",
       "displayID": 3224,
       "npc": 3872,
       "level": 25,
@@ -179,6 +181,7 @@
     {
       "id": -4627,
       "name": "Arugal's Voidwalker",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\arugals_voidwalker.blp",
       "displayID": 1131,
       "npc": 4627,
       "level": 24,

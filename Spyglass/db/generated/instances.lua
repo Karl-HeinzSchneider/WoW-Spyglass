@@ -17,13 +17,13 @@ Data:AddInstance(33, {
 })
 Data:AddBoss(2748, { instanceID = 33, order = 0, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\rethilgore.blp", displayID = 524, level = 20 }) -- Rethilgore
 Data:AddBoss(2749, { instanceID = 33, order = 1000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\rethilgore.blp", displayID = 524, level = 22 }) -- Razorclaw the Butcher
-Data:AddBoss(-3864, { instanceID = 33, displayID = 1951, level = 19 }) -- Fel Steed
+Data:AddBoss(-3864, { instanceID = 33, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\fel_steed.blp", displayID = 1951, level = 19 }) -- Fel Steed
 Data:AddBoss(2750, { instanceID = 33, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Baron Silverlaine", displayID = 3222, level = 24 }) -- Baron Silverlaine
 Data:AddBoss(2751, { instanceID = 33, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Commander Springvale", displayID = 3223, level = 24 }) -- Commander Springvale
 Data:AddBoss(2752, { instanceID = 33, order = 4000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\odo_the_blindwatcher.blp", displayID = 522, level = 24 }) -- Odo the Blindwatcher
-Data:AddBoss(-3872, { instanceID = 33, displayID = 3224, level = 25, rare = true }) -- Deathsworn Captain
+Data:AddBoss(-3872, { instanceID = 33, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\deathsworn_captain.blp", displayID = 3224, level = 25, rare = true }) -- Deathsworn Captain
 Data:AddBoss(2753, { instanceID = 33, order = 5000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\fenrus_the_devourer.blp", displayID = 2352, level = 25 }) -- Fenrus the Devourer
-Data:AddBoss(-4627, { instanceID = 33, displayID = 1131, level = 24 }) -- Arugal's Voidwalker
+Data:AddBoss(-4627, { instanceID = 33, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\arugals_voidwalker.blp", displayID = 1131, level = 24 }) -- Arugal's Voidwalker
 Data:AddBoss(2754, { instanceID = 33, order = 6000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\wolf_master_nandos.blp", displayID = 11179, level = 25 }) -- Wolf Master Nandos
 Data:AddBoss(2755, { instanceID = 33, order = 7000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\archmage_arugal.blp", displayID = 2353, level = 26 }) -- Archmage Arugal
 
@@ -44,7 +44,7 @@ Data:AddInstance(34, {
 Data:AddBoss(2756, { instanceID = 34, order = 0, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\targorr_the_dread.blp", displayID = 517 }) -- Targorr the Dread
 Data:AddBoss(2757, { instanceID = 34, order = 1000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\kam_deepfury.blp", displayID = 825 }) -- Kam Deepfury
 Data:AddBoss(2758, { instanceID = 34, order = 2000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\hamhock.blp", displayID = 3250 }) -- Hamhock
-Data:AddBoss(-1720, { instanceID = 34, displayID = 2142, rare = true }) -- Bruegal Ironknuckle
+Data:AddBoss(-1720, { instanceID = 34, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\bruegal_ironknuckle.blp", displayID = 2142, rare = true }) -- Bruegal Ironknuckle
 Data:AddBoss(2759, { instanceID = 34, order = 3000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\dextren_ward.blp", displayID = 2149 }) -- Dextren Ward
 Data:AddBoss(2760, { instanceID = 34, order = 4000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\bazil_thredd.blp", displayID = 1621 }) -- Bazil Thredd
 
@@ -64,7 +64,7 @@ Data:AddInstance(36, {
 })
 Data:AddBoss(2741, { instanceID = 36, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-RhahkZor", displayID = 14403, level = 19 }) -- Rhahk'Zor
 Data:AddBoss(2742, { instanceID = 36, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Sneed", displayID = 7125, level = 20 }) -- Sneed
-Data:AddBoss(3676, { instanceID = 36, order = 1500, displayID = 556, level = 19, rare = true }) -- Miner Johnson
+Data:AddBoss(3676, { instanceID = 36, order = 1500, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\miner_johnson.blp", displayID = 556, level = 19, rare = true }) -- Miner Johnson
 Data:AddBoss(2743, { instanceID = 36, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Gilnid", displayID = 7124, level = 20 }) -- Gilnid
 Data:AddBoss(2744, { instanceID = 36, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-CaptainGreenskin", displayID = 7113, level = 20 }) -- Captain Greenskin
 Data:AddBoss(2745, { instanceID = 36, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-MrSmite", displayID = 2026, level = 20 }) -- Mr. Smite
@@ -133,7 +133,7 @@ Data:AddBoss(2916, { instanceID = 48, order = -6000, portrait = "Interface\\Enco
 Data:AddBoss(2915, { instanceID = 48, order = -5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lady Sarevess", displayID = 4979, level = 25 }) -- Lady Sarevess
 Data:AddBoss(2914, { instanceID = 48, order = -4000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\geilhast.blp", displayID = 1773, level = 26 }) -- Geilhast
 Data:AddBoss(2913, { instanceID = 48, order = -3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lorgus Jett", displayID = 12822, level = 26 }) -- Lorgus Jett
-Data:AddBoss(-12876, { instanceID = 48, displayID = 110, level = 28 }) -- Baron Aquanis
+Data:AddBoss(-12876, { instanceID = 48, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\baron_aquanis.blp", displayID = 110, level = 28 }) -- Baron Aquanis
 Data:AddBoss(2912, { instanceID = 48, order = -2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Old Serrakis", displayID = 1816, level = 26 }) -- Old Serra'kis
 Data:AddBoss(2911, { instanceID = 48, order = -1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Twilight Lord Kelris", displayID = 4939, level = 27 }) -- Twilight Lord Kelris
 Data:AddBoss(2910, { instanceID = 48, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Akumai", displayID = 2837, level = 28 }) -- Aku'mai
@@ -861,7 +861,7 @@ Data:AddBoss(3353, { instanceID = 2999, order = 0, portrait = "Interface\\AddOns
 Data:AddBoss(3357, { instanceID = 2999, order = 250, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\the_abandoned.blp", displayID = 138667, level = 18 }) -- The Abandoned
 Data:AddBoss(3355, { instanceID = 2999, order = 500, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\the_butcher.blp", displayID = 144188, level = 17 }) -- The Baron
 Data:AddBoss(3354, { instanceID = 2999, order = 1000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\rathmael.blp", displayID = 144175, level = 20 }) -- Rath'mael
-Data:AddBoss(3408, { instanceID = 2999, order = 2000, displayID = 139050, level = 19, rare = true }) -- Lordaeron Captain
+Data:AddBoss(3408, { instanceID = 2999, order = 2000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\lordaeron_captain.blp", displayID = 139050, level = 19, rare = true }) -- Lordaeron Captain
 Data:AddBoss(3411, { instanceID = 2999, order = 3000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\viktor_the_vile.blp", displayID = 139455, level = 19 }) -- Viktor the Vile
 Data:AddBoss(3412, { instanceID = 2999, order = 4000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\bjork.blp", displayID = 144170, level = 19 }) -- Bjork
 

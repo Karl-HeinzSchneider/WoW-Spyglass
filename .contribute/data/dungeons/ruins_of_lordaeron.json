@@ -104,6 +104,7 @@
     {
       "id": 3408,
       "name": "Lordaeron Captain",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\lordaeron_captain.blp",
       "displayID": 139050,
       "npc": 255699,
       "level": 19,
