@@ -4,6 +4,13 @@ Guidance for Claude Code when working in this repository. This file holds the ma
 that apply everywhere; each part of the repo has its own `CLAUDE.md` with its rules and file map,
 and the detailed descriptions live in `docs/`.
 
+## General working rules
+
+- Keep responses concise.
+- Prefer simple solutions; avoid unnecessary complexity.
+- Make small, focused changes limited to what was asked.
+- Read each request carefully and account for its details and constraints.
+
 ## What this is
 
 Spyglass is a World of Warcraft addon for the _WoW Forever_ Classic client
