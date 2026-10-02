@@ -3854,6 +3854,24 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "212982": {
+    "names": {
+      "enUS": "Squall-breakers Potion"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 30,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134800,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
   "213074": {
     "names": {
       "enUS": "Rune of Nourishing"
@@ -5169,7 +5187,7 @@
     "subclassID": 4,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 0,
-    "icon": 134937,
+    "icon": 4549171,
     "sellPrice": 37,
     "stackCount": 5,
     "setID": 0,
@@ -5205,7 +5223,7 @@
     "subclassID": 8,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 1,
-    "icon": 134937,
+    "icon": 4549172,
     "sellPrice": 37,
     "stackCount": 5,
     "setID": 0,
@@ -5349,7 +5367,7 @@
     "subclassID": 4,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 0,
-    "icon": 134937,
+    "icon": 4549171,
     "sellPrice": 37,
     "stackCount": 5,
     "setID": 0,
@@ -5939,7 +5957,7 @@
     "subclassID": 4,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 0,
-    "icon": 134937,
+    "icon": 4549171,
     "sellPrice": 37,
     "stackCount": 5,
     "setID": 0,
@@ -6063,6 +6081,27 @@
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
+  },
+  "215373": {
+    "names": {
+      "enUS": "Silver Hand Training Hammer"
+    },
+    "quality": 1,
+    "itemLevel": 31,
+    "reqLevel": 26,
+    "classID": 2,
+    "subclassID": 5,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 0,
+    "icon": 133042,
+    "sellPrice": 1257,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 19.71
+    }
   },
   "215374": {
     "names": {
@@ -8256,7 +8295,7 @@
     "slot": "INVTYPE_RANGEDRIGHT",
     "bind": 2,
     "icon": 135469,
-    "sellPrice": 5263,
+    "sellPrice": 1,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -8504,7 +8543,7 @@
     "subclassID": 4,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 0,
-    "icon": 254300,
+    "icon": 4549168,
     "sellPrice": 200,
     "stackCount": 5,
     "setID": 0,
@@ -8522,7 +8561,7 @@
     "subclassID": 8,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 1,
-    "icon": 134937,
+    "icon": 4549173,
     "sellPrice": 37,
     "stackCount": 5,
     "setID": 0,

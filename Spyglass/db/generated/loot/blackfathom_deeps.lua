@@ -102,8 +102,8 @@ Data:AddQuests(48, {
     { id = 1198, name = "In Search of Thaelrid", side = "Alliance", requiredLevel = 18, xp = 2400, objective = "Find Argent Guard Thaelrid inside Blackfathom Deeps.", description = "Required before the Alliance version of Blackfathom Villainy.", start = { description = "Craftsmen's Terrace, Darnassus.", location = { 1457, 55, 24 }, npc = "Dawnwatcher Shaedlass" }, turnIn = { description = "Inside Blackfathom Deeps.", npc = "Argent Guard Thaelrid" }, items = {} },
     { id = 6921, name = "Amongst the Ruins", side = "Horde", requiredLevel = 21, xp = 10313, objective = "Recover the Fathom Core from the Fathom Stone in Blackfathom Deeps.", description = "The Fathom Stone is also associated with the optional Baron Aquanis encounter.", start = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, turnIn = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, items = {} },
     { id = 6922, name = "Baron Aquanis", side = "Horde", requiredLevel = 21, xp = 11450, objective = "Bring the Strange Water Globe to Je'neu Sancrea at Zoram'gar Outpost, Ashenvale.", description = "Drops from Baron Aquanis.", start = { item = 16782 }, turnIn = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, items = {
-        { 16886 }, -- #16886
-        { 16887 }, -- #16887
-        { 270043 }, -- #270043
+        { 16886 }, -- Outlaw Sabre
+        { 16887 }, -- Witch's Finger
+        { 270043 }, -- Dreamer's Chestguard
     } },
 })

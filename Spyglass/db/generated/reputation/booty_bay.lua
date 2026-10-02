@@ -19,6 +19,6 @@ Data:AddListLoot("reputation", "booty_bay", {
     { 274746, standing = "Friendly" }, -- Sea Giant's Toe Ring
     { 274747, standing = "Friendly" }, -- Soggy Boots
     { 274748, standing = "Honored" }, -- Booty Bay Bruiser's Buckshot
-    { 274749, standing = "Honored" }, -- Souvenier Sea Shell
+    { 274749, standing = "Honored" }, -- Souvenir Sea Shell
     { 274022, standing = "Revered" }, -- Tough Guy's Eyepatch
 })

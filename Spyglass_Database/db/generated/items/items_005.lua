@@ -1937,6 +1937,8 @@ Data:AddItems({
     [16883] = { 1, 30, 0, 15, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 132594, nil, 0, 1, 0, 0, false },
     [16884] = { 1, 40, 0, 15, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 132596, nil, 0, 1, 0, 0, false },
     [16885] = { 1, 50, 0, 15, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 132596, nil, 0, 1, 0, 0, false },
+    [16886] = { 3, 32, 0, 2, 7, "INVTYPE_WEAPON", 1, 135343, { ATTACK_POWER = 16, DAMAGE_PER_SECOND = 20.37 }, 6522, 1, 0, 0, false },
+    [16887] = { 3, 32, 0, 4, 0, "INVTYPE_HOLDABLE", 1, 135474, { INTELLECT = 8, STAMINA = 4 }, 2609, 1, 0, 0, false },
     [16888] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 4, 133444, nil, 0, 1, 0, 0, false },
     [16889] = { 2, 24, 0, 2, 10, "INVTYPE_2HWEAPON", 1, 135157, { DAMAGE_PER_SECOND = 11.73, INTELLECT = 7, SPELL_POWER = 16, STAMINA = 3 }, 3093, 1, 0, 0, false },
     [16890] = { 2, 24, 0, 2, 7, "INVTYPE_WEAPON", 1, 135343, { AGILITY = 2, DAMAGE_PER_SECOND = 12.27, STRENGTH = 2 }, 2483, 1, 0, 0, false },
@@ -2501,6 +2503,4 @@ Data:AddItems({
     [18487] = { 1, 61, 0, 9, 2, "INVTYPE_NON_EQUIP_IGNORE", 0, 134939, nil, 10000, 1, 0, 0, false },
     [18488] = { 4, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 4, 135279, nil, 0, 1, 0, 0, false },
     [18489] = { 4, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 1, 135357, nil, 0, 1, 0, 0, false },
-    [18492] = { 4, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 4, 135329, nil, 0, 1, 0, 0, false },
-    [18501] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 1, 132884, nil, 0, 1, 0, 0, false },
 })

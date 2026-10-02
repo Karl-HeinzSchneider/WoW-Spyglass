@@ -341,13 +341,16 @@
       },
       "items": [
         {
-          "item": 16886
+          "item": 16886,
+          "name": "Outlaw Sabre"
         },
         {
-          "item": 16887
+          "item": 16887,
+          "name": "Witch's Finger"
         },
         {
-          "item": 270043
+          "item": 270043,
+          "name": "Dreamer's Chestguard"
         }
       ]
     }

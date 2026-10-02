@@ -93678,6 +93678,50 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "16886": {
+    "names": {
+      "enUS": "Outlaw Sabre"
+    },
+    "quality": 3,
+    "itemLevel": 32,
+    "reqLevel": 0,
+    "classID": 2,
+    "subclassID": 7,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 1,
+    "icon": 135343,
+    "sellPrice": 6522,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ATTACK_POWER": 16,
+      "DAMAGE_PER_SECOND": 20.37
+    }
+  },
+  "16887": {
+    "names": {
+      "enUS": "Witch's Finger"
+    },
+    "quality": 3,
+    "itemLevel": 32,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_HOLDABLE",
+    "bind": 1,
+    "icon": 135474,
+    "sellPrice": 2609,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 8,
+      "STAMINA": 4
+    }
+  },
   "16888": {
     "names": {
       "enUS": "Dull Drakefire Amulet"

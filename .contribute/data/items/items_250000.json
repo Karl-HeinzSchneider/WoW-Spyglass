@@ -6006,7 +6006,7 @@
   },
   "251320": {
     "names": {
-      "enUS": "Satchet of Spirit Powder"
+      "enUS": "Sachet of Spirit Powder"
     },
     "quality": 1,
     "itemLevel": 60,
@@ -8276,7 +8276,7 @@
     "names": {
       "enUS": "Edward's Knife"
     },
-    "quality": 3,
+    "quality": 2,
     "itemLevel": 24,
     "reqLevel": 0,
     "classID": 2,
@@ -8284,22 +8284,22 @@
     "slot": "INVTYPE_WEAPON",
     "bind": 1,
     "icon": 135650,
-    "sellPrice": 2743,
+    "sellPrice": 2285,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "AGILITY": 4,
-      "DAMAGE_PER_SECOND": 15.63,
-      "STAMINA": 4
+      "AGILITY": 2,
+      "DAMAGE_PER_SECOND": 12.19,
+      "STAMINA": 2
     }
   },
   "251486": {
     "names": {
       "enUS": "Tabitha's Cuffs"
     },
-    "quality": 3,
+    "quality": 2,
     "itemLevel": 24,
     "reqLevel": 0,
     "classID": 4,
@@ -8307,15 +8307,15 @@
     "slot": "INVTYPE_WRIST",
     "bind": 1,
     "icon": 132609,
-    "sellPrice": 550,
+    "sellPrice": 458,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "INTELLECT": 6,
-      "RESISTANCE0_NAME": 18,
-      "STAMINA": 3
+      "RESISTANCE0_NAME": 17,
+      "SPELL_POWER": 3,
+      "STAMINA": 4
     }
   },
   "251520": {
@@ -8468,8 +8468,8 @@
     "craftingReagent": false,
     "stats": {
       "DAMAGE_PER_SECOND": 15.18,
-      "INTELLECT": 10,
-      "SPELL_POWER": 26
+      "SPELL_POWER": 26,
+      "SPIRIT": 10
     }
   },
   "251641": {
@@ -9271,6 +9271,77 @@
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
+  },
+  "251962": {
+    "names": {
+      "enUS": "Violet Sash"
+    },
+    "quality": 3,
+    "itemLevel": 36,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_WAIST",
+    "bind": 1,
+    "icon": 132493,
+    "sellPrice": 1902,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 12,
+      "RESISTANCE0_NAME": 29,
+      "SPIRIT": 7
+    }
+  },
+  "251963": {
+    "names": {
+      "enUS": "Gravewalker Boots"
+    },
+    "quality": 3,
+    "itemLevel": 36,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_FEET",
+    "bind": 1,
+    "icon": 132542,
+    "sellPrice": 469,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 7,
+      "RESISTANCE0_NAME": 78,
+      "SPIRIT": 7,
+      "STAMINA": 10
+    }
+  },
+  "251965": {
+    "names": {
+      "enUS": "Undead Knight's Bracers"
+    },
+    "quality": 3,
+    "itemLevel": 36,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_WRIST",
+    "bind": 1,
+    "icon": 132615,
+    "sellPrice": 2884,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 4,
+      "RESISTANCE0_NAME": 104,
+      "STAMINA": 8,
+      "STRENGTH": 4
+    }
   },
   "251983": {
     "names": {
@@ -23222,7 +23293,7 @@
   },
   "254696": {
     "names": {
-      "enUS": "Reverance"
+      "enUS": "Reverence"
     },
     "quality": 0,
     "itemLevel": 75,

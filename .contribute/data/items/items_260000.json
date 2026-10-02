@@ -3210,17 +3210,17 @@
   },
   "263411": {
     "names": {
-      "enUS": "Windcharged Leaf"
+      "enUS": "Idol of Shifting Tides"
     },
-    "quality": 1,
-    "itemLevel": 6,
+    "quality": 2,
+    "itemLevel": 16,
     "reqLevel": 0,
     "classID": 4,
     "subclassID": 8,
     "slot": "INVTYPE_RELIC",
     "bind": 1,
     "icon": 134914,
-    "sellPrice": 10,
+    "sellPrice": 234,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -3228,17 +3228,17 @@
   },
   "263412": {
     "names": {
-      "enUS": "Windcarved Effigy"
+      "enUS": "Totem of Charged Flames"
     },
-    "quality": 1,
-    "itemLevel": 6,
+    "quality": 2,
+    "itemLevel": 10,
     "reqLevel": 0,
     "classID": 4,
     "subclassID": 9,
     "slot": "INVTYPE_RELIC",
     "bind": 1,
-    "icon": 538570,
-    "sellPrice": 10,
+    "icon": 134919,
+    "sellPrice": 69,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -9760,9 +9760,9 @@
     },
     "quality": 1,
     "itemLevel": 1,
-    "reqLevel": 0,
-    "classID": 15,
-    "subclassID": 4,
+    "reqLevel": 16,
+    "classID": 12,
+    "subclassID": 0,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 1,
     "icon": 133328,
