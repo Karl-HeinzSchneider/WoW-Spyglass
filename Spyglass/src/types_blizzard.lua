@@ -89,6 +89,12 @@ ColoredProgressBarMixin = {} --[[@as ColoredProgressBarMixin]]
 
 -- Blizzard_Menu (11.0-style menus): DropdownButton intrinsic + the description proxies the
 -- generator receives. Only the element kinds we build are listed.
+---@class WowStyle1DropdownMixin
+---@field SetupMenu fun(self: WowStyle1DropdownMixin, generator: fun(dropdown: WowStyle1DropdownMixin, rootDescription: RootMenuDescriptionProxy))
+---@field SetDefaultText fun(self: WowStyle1DropdownMixin, text: string)
+---@field SetSelectionText fun(self: WowStyle1DropdownMixin, selectionFunc: fun(): string?)
+---@field Update fun(self: WowStyle1DropdownMixin)
+
 ---@class WowStyle1FilterDropdownMixin
 ---@field SetupMenu fun(self: WowStyle1FilterDropdownMixin, generator: fun(dropdown: WowStyle1FilterDropdownMixin, rootDescription: RootMenuDescriptionProxy))
 ---@field GenerateMenu fun(self: WowStyle1FilterDropdownMixin)
