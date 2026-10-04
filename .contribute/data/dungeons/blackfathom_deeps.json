@@ -76,6 +76,10 @@
         {
           "item": 1470,
           "name": "Murloc Skin Bag"
+        },
+        {
+          "item": 273840,
+          "name": "Cursed Murloc Eye"
         }
       ]
     },
@@ -90,6 +94,14 @@
         {
           "item": 273843,
           "name": "Fallenroot Longbow"
+        },
+        {
+          "item": 273841,
+          "name": "Twilight Maul"
+        },
+        {
+          "item": 273842,
+          "name": "Treacherous Treads"
         }
       ]
     },

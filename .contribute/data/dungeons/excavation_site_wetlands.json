@@ -11,12 +11,38 @@
     {
       "id": 3480,
       "name": "Saltspine",
-      "loot": []
+      "loot": [
+        {
+          "item": 273022,
+          "name": "Supple Bellyskin Leggings"
+        },
+        {
+          "item": 273023,
+          "name": "Saltscale Girdle"
+        },
+        {
+          "item": 273024,
+          "name": "Glinteye Slippers"
+        }
+      ]
     },
     {
       "id": 3481,
       "name": "Shadetooth",
-      "loot": []
+      "loot": [
+        {
+          "item": 273025,
+          "name": "Raptorclaw Greaves"
+        },
+        {
+          "item": 273026,
+          "name": "Garb of Florid Feathers"
+        },
+        {
+          "item": 273027,
+          "name": "Raptor's Gaze"
+        }
+      ]
     },
     {
       "id": 3644,
@@ -26,7 +52,20 @@
     {
       "id": 3482,
       "name": "Relic Guardian",
-      "loot": []
+      "loot": [
+        {
+          "item": 273028,
+          "name": "Reliquary Mantle"
+        },
+        {
+          "item": 273029,
+          "name": "Golemsight Long Gun"
+        },
+        {
+          "item": 273030,
+          "name": "Ring of Power Regulation"
+        }
+      ]
     }
   ],
   "trash": []

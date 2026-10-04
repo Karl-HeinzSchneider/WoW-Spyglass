@@ -6,6 +6,7 @@
 	<Script file="loot\blackrock_spire_lower.lua" />
 	<Script file="loot\blackrock_spire_upper.lua" />
 	<Script file="loot\deadmines.lua" />
+	<Script file="loot\excavation_site_wetlands.lua" />
 	<Script file="loot\gnomeregan.lua" />
 	<Script file="loot\ragefire_chasm.lua" />
 	<Script file="loot\razorfen_kraul.lua" />
