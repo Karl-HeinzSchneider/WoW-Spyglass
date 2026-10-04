@@ -6147,6 +6147,29 @@
       "STRENGTH": 9
     }
   },
+  "282010": {
+    "names": {
+      "enUS": "Tusk of Grunter"
+    },
+    "quality": 2,
+    "itemLevel": 52,
+    "reqLevel": 47,
+    "classID": 2,
+    "subclassID": 15,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 2,
+    "icon": 133723,
+    "sellPrice": 3386,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 4,
+      "DAMAGE_PER_SECOND": 31.18,
+      "STRENGTH": 7
+    }
+  },
   "282011": {
     "names": {
       "enUS": "Restored Healing Potion"
@@ -6423,6 +6446,31 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "282048": {
+    "names": {
+      "enUS": "Ragged Dark Iron Cuffs"
+    },
+    "quality": 2,
+    "itemLevel": 59,
+    "reqLevel": 54,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_WRIST",
+    "bind": 2,
+    "icon": 132603,
+    "sellPrice": 703,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 9,
+      "FIRE_RESISTANCE": 5,
+      "RESISTANCE0_NAME": 67,
+      "RESISTANCE2_NAME": 5,
+      "STAMINA": 7
+    }
+  },
   "282064": {
     "names": {
       "enUS": "Tim's Lost Rib"
@@ -6532,6 +6580,28 @@
     "stats": {
       "SPELL_POWER": 6,
       "STAMINA": 8
+    }
+  },
+  "282097": {
+    "names": {
+      "enUS": "Unbreakable Golem Grips"
+    },
+    "quality": 2,
+    "itemLevel": 48,
+    "reqLevel": 43,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_HAND",
+    "bind": 2,
+    "icon": 132963,
+    "sellPrice": 7346,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 389,
+      "STAMINA": 10
     }
   },
   "282283": {
@@ -7175,6 +7245,28 @@
       "STRENGTH": 7
     }
   },
+  "282702": {
+    "names": {
+      "enUS": "Molok's Masher"
+    },
+    "quality": 2,
+    "itemLevel": 41,
+    "reqLevel": 36,
+    "classID": 2,
+    "subclassID": 5,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 2,
+    "icon": 133046,
+    "sellPrice": 15217,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 30.14,
+      "STAMINA": 17
+    }
+  },
   "282703": {
     "names": {
       "enUS": "Needletooth's Needletooth"
@@ -7194,6 +7286,29 @@
     "craftingReagent": false,
     "stats": {
       "DAMAGE_PER_SECOND": 19.71
+    }
+  },
+  "282704": {
+    "names": {
+      "enUS": "Shadow Council Apprentice's Mantle"
+    },
+    "quality": 3,
+    "itemLevel": 41,
+    "reqLevel": 36,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_SHOULDER",
+    "bind": 1,
+    "icon": 135036,
+    "sellPrice": 2223,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "HIT_RATING": 10,
+      "INTELLECT": 12,
+      "RESISTANCE0_NAME": 44
     }
   },
   "282710": {
@@ -7658,6 +7773,29 @@
       "STAMINA": 10
     }
   },
+  "284063": {
+    "names": {
+      "enUS": "Witherbark Hatecleaver"
+    },
+    "quality": 2,
+    "itemLevel": 45,
+    "reqLevel": 40,
+    "classID": 2,
+    "subclassID": 1,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 2,
+    "icon": 132395,
+    "sellPrice": 19585,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 34.59,
+      "SPELL_POWER": 15,
+      "STRENGTH": 13
+    }
+  },
   "284067": {
     "names": {
       "enUS": "Rusted Family Memento"
@@ -7715,6 +7853,76 @@
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
+  },
+  "284100": {
+    "names": {
+      "enUS": "Horseman's Unyielding Shroud"
+    },
+    "quality": 3,
+    "itemLevel": 62,
+    "reqLevel": 57,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_CLOAK",
+    "bind": 1,
+    "icon": 133772,
+    "sellPrice": 15723,
+    "stackCount": 1,
+    "setID": 2130,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ATTACK_POWER": 27,
+      "RESISTANCE0_NAME": 44,
+      "STAMINA": 13
+    }
+  },
+  "284101": {
+    "names": {
+      "enUS": "Blade of Senseless Slaughter"
+    },
+    "quality": 3,
+    "itemLevel": 62,
+    "reqLevel": 57,
+    "classID": 2,
+    "subclassID": 7,
+    "slot": "INVTYPE_WEAPONMAINHAND",
+    "bind": 1,
+    "icon": 135302,
+    "sellPrice": 52614,
+    "stackCount": 1,
+    "setID": 2130,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 4,
+      "DAMAGE_PER_SECOND": 40.74,
+      "STAMINA": 5,
+      "STRENGTH": 11
+    }
+  },
+  "284102": {
+    "names": {
+      "enUS": "Signet of the Soulless Rider"
+    },
+    "quality": 3,
+    "itemLevel": 62,
+    "reqLevel": 57,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_FINGER",
+    "bind": 1,
+    "icon": 133359,
+    "sellPrice": 21708,
+    "stackCount": 1,
+    "setID": 2130,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "HIT_RATING": 5,
+      "SPIRIT": 9,
+      "STRENGTH": 14
+    }
   },
   "284146": {
     "names": {
@@ -9019,6 +9227,28 @@
       "STAMINA": 7
     }
   },
+  "284712": {
+    "names": {
+      "enUS": "Hyena Hide Helm"
+    },
+    "quality": 2,
+    "itemLevel": 36,
+    "reqLevel": 31,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_HEAD",
+    "bind": 2,
+    "icon": 133111,
+    "sellPrice": 3015,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 166,
+      "STRENGTH": 10
+    }
+  },
   "284715": {
     "names": {
       "enUS": "First Mate Band"
@@ -9218,6 +9448,49 @@
       "STAMINA": 6
     }
   },
+  "285089": {
+    "names": {
+      "enUS": "Swamp Roamer's Band"
+    },
+    "quality": 2,
+    "itemLevel": 39,
+    "reqLevel": 34,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_FINGER",
+    "bind": 2,
+    "icon": 133350,
+    "sellPrice": 4192,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "STAMINA": 6
+    }
+  },
+  "285094": {
+    "names": {
+      "enUS": "Ravaged Fishing Pole"
+    },
+    "quality": 1,
+    "itemLevel": 30,
+    "reqLevel": 20,
+    "classID": 2,
+    "subclassID": 20,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 2,
+    "icon": 132932,
+    "sellPrice": 3520,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 19,
+      "FISHING": 15
+    }
+  },
   "285095": {
     "names": {
       "enUS": "Twitching Eye"
@@ -9365,6 +9638,30 @@
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
+  },
+  "285177": {
+    "names": {
+      "enUS": "Nature's Sting Legguards"
+    },
+    "quality": 3,
+    "itemLevel": 37,
+    "reqLevel": 32,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_LEGS",
+    "bind": 1,
+    "icon": 134626,
+    "sellPrice": 5157,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 10,
+      "RESISTANCE0_NAME": 101,
+      "SPELL_POWER": 8,
+      "STAMINA": 15
+    }
   },
   "285190": {
     "names": {
@@ -13450,6 +13747,42 @@
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 4,
     "icon": 134028,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287958": {
+    "names": {
+      "enUS": "Titan Relic"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 294481,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287959": {
+    "names": {
+      "enUS": "Titan Relic"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 294481,
     "sellPrice": 0,
     "stackCount": 1,
     "setID": 0,

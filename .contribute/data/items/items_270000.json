@@ -1263,6 +1263,54 @@
       "STRENGTH": 8
     }
   },
+  "270059": {
+    "names": {
+      "enUS": "Restorer's Fine Gloves"
+    },
+    "quality": 3,
+    "itemLevel": 40,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_HAND",
+    "bind": 1,
+    "icon": 132955,
+    "sellPrice": 2691,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 36,
+      "SPELL_DAMAGE_DONE": 6,
+      "SPELL_HEALING_DONE": 15,
+      "SPIRIT": 11,
+      "STAMINA": 8
+    }
+  },
+  "270060": {
+    "names": {
+      "enUS": "Excavator Gauntlets"
+    },
+    "quality": 3,
+    "itemLevel": 40,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_HAND",
+    "bind": 1,
+    "icon": 132962,
+    "sellPrice": 4052,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 159,
+      "SPIRIT": 11,
+      "STRENGTH": 11
+    }
+  },
   "270065": {
     "names": {
       "enUS": "Farseer's Forgotten Shield"
@@ -1467,6 +1515,52 @@
       "RESISTANCE0_NAME": 101,
       "STAMINA": 3,
       "STRENGTH": 8
+    }
+  },
+  "270074": {
+    "names": {
+      "enUS": "Doomcaller's Pants"
+    },
+    "quality": 3,
+    "itemLevel": 42,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_LEGS",
+    "bind": 1,
+    "icon": 134594,
+    "sellPrice": 7706,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 111,
+      "SPIRIT": 12,
+      "STRENGTH": 18
+    }
+  },
+  "270075": {
+    "names": {
+      "enUS": "Fists of Impending Doom"
+    },
+    "quality": 3,
+    "itemLevel": 42,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_HAND",
+    "bind": 1,
+    "icon": 132946,
+    "sellPrice": 4641,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ATTACK_POWER": 28,
+      "INTELLECT": 9,
+      "RESISTANCE0_NAME": 164
     }
   },
   "270076": {
@@ -30977,6 +31071,30 @@
       "SPIRIT": 7
     }
   },
+  "274043": {
+    "names": {
+      "enUS": "Irradiated Shield"
+    },
+    "quality": 3,
+    "itemLevel": 34,
+    "reqLevel": 29,
+    "classID": 4,
+    "subclassID": 6,
+    "slot": "INVTYPE_SHIELD",
+    "bind": 1,
+    "icon": 134949,
+    "sellPrice": 5065,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "NATURE_DAMAGE_DONE": 14,
+      "RESISTANCE0_NAME": 738,
+      "SPIRIT": 9,
+      "STAMINA": -10
+    }
+  },
   "274044": {
     "names": {
       "enUS": "Twisted Fire Totem"
@@ -33738,6 +33856,52 @@
       "STRENGTH": 7
     }
   },
+  "274292": {
+    "names": {
+      "enUS": "Houndmaster Boomerang"
+    },
+    "quality": 3,
+    "itemLevel": 36,
+    "reqLevel": 31,
+    "classID": 2,
+    "subclassID": 16,
+    "slot": "INVTYPE_THROWN",
+    "bind": 1,
+    "icon": 135646,
+    "sellPrice": 1,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ATTACK_POWER": 4,
+      "ATTACK_POWER_VS_BEAST": 9,
+      "DAMAGE_PER_SECOND": 21.67,
+      "STAMINA": 4
+    }
+  },
+  "274293": {
+    "names": {
+      "enUS": "Spellsever Crossbow"
+    },
+    "quality": 3,
+    "itemLevel": 39,
+    "reqLevel": 34,
+    "classID": 2,
+    "subclassID": 18,
+    "slot": "INVTYPE_RANGEDRIGHT",
+    "bind": 1,
+    "icon": 135536,
+    "sellPrice": 9350,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ATTACK_POWER": 8,
+      "DAMAGE_PER_SECOND": 20.83
+    }
+  },
   "274294": {
     "names": {
       "enUS": "Library Walkers"
@@ -33760,6 +33924,29 @@
       "RESISTANCE0_NAME": 35,
       "SPELL_DAMAGE_DONE": 5,
       "SPELL_HEALING_DONE": 13
+    }
+  },
+  "274295": {
+    "names": {
+      "enUS": "Band of Crimson Light"
+    },
+    "quality": 3,
+    "itemLevel": 42,
+    "reqLevel": 37,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_FINGER",
+    "bind": 1,
+    "icon": 133367,
+    "sellPrice": 6327,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "SPELL_DAMAGE_DONE": 6,
+      "SPELL_HEALING_DONE": 18,
+      "SPELL_PENETRATION": 3
     }
   },
   "274373": {
@@ -34343,6 +34530,28 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "274425": {
+    "names": {
+      "enUS": "White Obsidian Wand"
+    },
+    "quality": 3,
+    "itemLevel": 44,
+    "reqLevel": 39,
+    "classID": 2,
+    "subclassID": 19,
+    "slot": "INVTYPE_RANGEDRIGHT",
+    "bind": 1,
+    "icon": 135469,
+    "sellPrice": 13687,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 41.47,
+      "SPELL_POWER": 6
+    }
+  },
   "274426": {
     "names": {
       "enUS": "Enchant Gloves - Lotus Claw"
@@ -34360,6 +34569,30 @@
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
+  },
+  "274428": {
+    "names": {
+      "enUS": "Dark Golem Breastplate"
+    },
+    "quality": 3,
+    "itemLevel": 44,
+    "reqLevel": 39,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_CHEST",
+    "bind": 1,
+    "icon": 132745,
+    "sellPrice": 11986,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "PARRY_RATING": 15,
+      "RESISTANCE0_NAME": 471,
+      "STAMINA": 10,
+      "STRENGTH": 5
+    }
   },
   "274429": {
     "names": {
@@ -34380,6 +34613,30 @@
     "craftingReagent": false,
     "stats": {
       "DAMAGE_PER_SECOND": 0.94
+    }
+  },
+  "274430": {
+    "names": {
+      "enUS": "Rock Sentinel Slicer"
+    },
+    "quality": 3,
+    "itemLevel": 44,
+    "reqLevel": 39,
+    "classID": 2,
+    "subclassID": 1,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 1,
+    "icon": 132395,
+    "sellPrice": 21568,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 28.75,
+      "INTELLECT": 12,
+      "SPELL_DAMAGE_DONE": 31,
+      "SPELL_HEALING_DONE": 94
     }
   },
   "274444": {
@@ -53758,6 +54015,78 @@
       "DAMAGE_PER_SECOND": 31.21,
       "STAMINA": 13,
       "STRENGTH": 9
+    }
+  },
+  "279842": {
+    "names": {
+      "enUS": "Battle Spaulders"
+    },
+    "quality": 3,
+    "itemLevel": 36,
+    "reqLevel": 1,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_SHOULDER",
+    "bind": 1,
+    "icon": 135054,
+    "sellPrice": 4378,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 178,
+      "SPIRIT": 7,
+      "STAMINA": 11,
+      "STRENGTH": 4
+    }
+  },
+  "279843": {
+    "names": {
+      "enUS": "Enchanted Sandals"
+    },
+    "quality": 3,
+    "itemLevel": 36,
+    "reqLevel": 1,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_FEET",
+    "bind": 1,
+    "icon": 132539,
+    "sellPrice": 2992,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 5,
+      "INTELLECT": 8,
+      "RESISTANCE0_NAME": 36,
+      "STAMINA": 10
+    }
+  },
+  "279844": {
+    "names": {
+      "enUS": "Striking Staff"
+    },
+    "quality": 3,
+    "itemLevel": 36,
+    "reqLevel": 1,
+    "classID": 2,
+    "subclassID": 10,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 1,
+    "icon": 135165,
+    "sellPrice": 12512,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 31.29,
+      "SPIRIT": 9,
+      "STAMINA": 6,
+      "STRENGTH": 14
     }
   },
   "279847": {
