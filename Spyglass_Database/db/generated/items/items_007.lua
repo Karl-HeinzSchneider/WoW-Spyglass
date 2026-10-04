@@ -975,6 +975,7 @@ Data:AddItems({
     [211269] = { 1, 1, 1, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 1, 237388, nil, 0, 1, 0, 0, false },
     [211272] = { 1, 1, 1, 15, 0, "INVTYPE_NON_EQUIP_IGNORE", 1, 132599, nil, 0, 1, 0, 0, false },
     [211273] = { 1, 1, 1, 15, 0, "INVTYPE_NON_EQUIP_IGNORE", 1, 132599, nil, 0, 1, 0, 0, false },
+    [211293] = { 1, 40, 1, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 4, 132919, nil, 0, 1, 0, 0, false },
     [211301] = { 2, 40, 0, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 1, 134419, nil, 0, 1, 0, 0, false },
     [211315] = { 2, 10, 1, 7, 11, "INVTYPE_NON_EQUIP_IGNORE", 1, 132761, nil, 100, 1, 0, 0, false },
     [211316] = { 2, 10, 1, 7, 11, "INVTYPE_NON_EQUIP_IGNORE", 1, 132761, nil, 100, 1, 0, 0, false },
@@ -1082,6 +1083,7 @@ Data:AddItems({
     [212160] = { 1, 60, 0, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 0, 133879, nil, 250, 10, 0, 0, false },
     [212225] = { 3, 30, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 1, 133254, nil, 0, 1, 0, 0, false },
     [212230] = { 3, 41, 0, 9, 3, "INVTYPE_NON_EQUIP_IGNORE", 1, 134942, nil, 675, 1, 0, 0, false },
+    [212347] = { 1, 1, 0, 13, 0, "INVTYPE_NON_EQUIP_IGNORE", 1, 134236, nil, 0, 1, 0, 0, false },
     [212548] = { 2, 40, 1, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 1, 134419, nil, 0, 1, 0, 0, false },
     [212549] = { 2, 40, 1, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 1, 134419, nil, 0, 1, 0, 0, false },
     [212551] = { 2, 40, 1, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 1, 134419, nil, 0, 1, 0, 0, false },
@@ -2501,6 +2503,4 @@ Data:AddItems({
     [231532] = { 4, 71, 60, 4, 4, "INVTYPE_HAND", 1, 132944, { CRIT_RATING = 14, RESISTANCE0_NAME = 532, STAMINA = 34, STRENGTH = 20 }, 11598, 1, 1721, 0, false },
     [231533] = { 4, 71, 60, 4, 4, "INVTYPE_LEGS", 1, 134584, { CRIT_RATING = 28, HIT_RATING = 10, RESISTANCE0_NAME = 743, STAMINA = 42, STRENGTH = 20 }, 22782, 1, 1721, 0, false },
     [231534] = { 4, 74, 60, 4, 4, "INVTYPE_SHOULDER", 1, 135042, { AGILITY = 16, HIT_RATING = 10, RESISTANCE0_NAME = 626, STAMINA = 34, STRENGTH = 18 }, 19850, 1, 1721, 0, false },
-    [231535] = { 4, 74, 60, 4, 4, "INVTYPE_HEAD", 1, 133077, { CRIT_RATING = 14, RESISTANCE0_NAME = 719, STAMINA = 51, STRENGTH = 28 }, 19707, 1, 1721, 0, false },
-    [231536] = { 4, 74, 60, 4, 4, "INVTYPE_CHEST", 1, 132738, { AGILITY = 14, CRIT_RATING = 14, RESISTANCE0_NAME = 875, STAMINA = 49, STRENGTH = 16 }, 25107, 1, 1747, 0, false },
 })
