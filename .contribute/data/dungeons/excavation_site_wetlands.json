@@ -11,12 +11,46 @@
     {
       "id": 3480,
       "name": "Saltspine",
-      "loot": []
+      "displayID": 144209,
+      "npc": 260322,
+      "loot": [
+        {
+          "item": 273022,
+          "name": "Supple Bellyskin Leggings"
+        },
+        {
+          "item": 273023,
+          "name": "Saltscale Girdle"
+        },
+        {
+          "item": 273024,
+          "name": "Glinteye Slippers"
+        }
+      ]
     },
     {
       "id": 3481,
       "name": "Shadetooth",
-      "loot": []
+      "displayID": 144210,
+      "npc": 260325,
+      "loot": [
+        {
+          "item": 273025,
+          "name": "Raptorclaw Greaves"
+        },
+        {
+          "item": 273026,
+          "name": "Garb of Florid Feathers"
+        },
+        {
+          "item": 273027,
+          "name": "Raptor's Gaze"
+        },
+        {
+          "item": 273106,
+          "name": "Blueprint: Greenhouse"
+        }
+      ]
     },
     {
       "id": 3644,
@@ -26,7 +60,34 @@
     {
       "id": 3482,
       "name": "Relic Guardian",
-      "loot": []
+      "displayID": 144224,
+      "npc": 260326,
+      "loot": [
+        {
+          "item": 273028,
+          "name": "Reliquary Mantle"
+        },
+        {
+          "item": 273029,
+          "name": "Golemsight Long Gun"
+        },
+        {
+          "item": 273030,
+          "name": "Ring of Power Regulation"
+        },
+        {
+          "item": 270866,
+          "name": "Titan Relic"
+        },
+        {
+          "item": 270865,
+          "name": "Titan Relic"
+        },
+        {
+          "item": 273097,
+          "name": "Blueprint: Rock Garden"
+        }
+      ]
     }
   ],
   "trash": []

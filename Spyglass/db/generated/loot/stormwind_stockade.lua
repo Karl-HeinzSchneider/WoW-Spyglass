@@ -12,17 +12,25 @@ Data:AddBossLoot(2756, { -- Targorr the Dread
 Data:AddBossLoot(2757, { -- Kam Deepfury
     { 2280 }, -- Kam's Walking Stick
     { 273808 }, -- Bridgebreaker Bindings
+    { 273807 }, -- Demolition Girdle
 })
 
 Data:AddBossLoot(2758, { -- Hamhock
     { 273809 }, -- Hamhock's Cleaver
     { 273810 }, -- Ogre Grips
+    { 273811 }, -- Repurposed Rack
 })
 
 Data:AddBossLoot(-1720, { -- Bruegal Ironknuckle
     { 3228 }, -- Jimmied Handcuffs
     { 2942 }, -- Iron Knuckles
     { 2941 }, -- Prison Shank
+})
+
+Data:AddBossLoot(2759, { -- Dextren Ward
+    { 273817 }, -- Graverobber's Shovel
+    { 273819 }, -- Boneslicer
+    { 273820 }, -- Nightskulker Ring
 })
 
 Data:AddBossLoot(2760, { -- Bazil Thredd

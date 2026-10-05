@@ -20,10 +20,13 @@ Data:AddBossLoot(2914, { -- Geilhast
     { 6906 }, -- Algae Fists
     { 6905 }, -- Reef Axe
     { 1470 }, -- Murloc Skin Bag
+    { 273840 }, -- Cursed Murloc Eye
 })
 
 Data:AddBossLoot(2913, { -- Lorgus Jett
     { 273843 }, -- Fallenroot Longbow
+    { 273841 }, -- Twilight Maul
+    { 273842 }, -- Treacherous Treads
 })
 
 Data:AddBossLoot(-12876, { -- Baron Aquanis

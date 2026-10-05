@@ -58,6 +58,7 @@ Data:AddBossLoot(2754, { -- Wolf Master Nandos
     { 6314 }, -- Wolfmaster Cape
     { 1318 }, -- Night Reaver
     { 2292 }, -- Necrology Robes
+    { 273647 }, -- Worgpelt Leggings
 })
 
 Data:AddBossLoot(2755, { -- Archmage Arugal
