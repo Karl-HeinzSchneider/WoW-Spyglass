@@ -11,6 +11,8 @@
     {
       "id": 3480,
       "name": "Saltspine",
+      "displayID": 144209,
+      "npc": 260322,
       "loot": [
         {
           "item": 273022,
@@ -29,6 +31,8 @@
     {
       "id": 3481,
       "name": "Shadetooth",
+      "displayID": 144210,
+      "npc": 260325,
       "loot": [
         {
           "item": 273025,
@@ -41,6 +45,10 @@
         {
           "item": 273027,
           "name": "Raptor's Gaze"
+        },
+        {
+          "item": 273106,
+          "name": "Blueprint: Greenhouse"
         }
       ]
     },
@@ -52,6 +60,8 @@
     {
       "id": 3482,
       "name": "Relic Guardian",
+      "displayID": 144224,
+      "npc": 260326,
       "loot": [
         {
           "item": 273028,
@@ -64,6 +74,18 @@
         {
           "item": 273030,
           "name": "Ring of Power Regulation"
+        },
+        {
+          "item": 270866,
+          "name": "Titan Relic"
+        },
+        {
+          "item": 270865,
+          "name": "Titan Relic"
+        },
+        {
+          "item": 273097,
+          "name": "Blueprint: Rock Garden"
         }
       ]
     }

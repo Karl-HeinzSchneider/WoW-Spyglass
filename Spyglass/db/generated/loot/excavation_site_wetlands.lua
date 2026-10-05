@@ -13,10 +13,14 @@ Data:AddBossLoot(3481, { -- Shadetooth
     { 273025 }, -- Raptorclaw Greaves
     { 273026 }, -- Garb of Florid Feathers
     { 273027 }, -- Raptor's Gaze
+    { 273106 }, -- Blueprint: Greenhouse
 })
 
 Data:AddBossLoot(3482, { -- Relic Guardian
     { 273028 }, -- Reliquary Mantle
     { 273029 }, -- Golemsight Long Gun
     { 273030 }, -- Ring of Power Regulation
+    { 270866 }, -- Titan Relic
+    { 270865 }, -- Titan Relic
+    { 273097 }, -- Blueprint: Rock Garden
 })

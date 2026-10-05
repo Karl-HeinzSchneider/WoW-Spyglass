@@ -11,46 +11,64 @@
     {
       "id": 3298,
       "name": "Arcane Anomaly",
+      "displayID": 129891,
+      "npc": 245999,
       "loot": []
     },
     {
       "id": 3299,
       "name": "Fel Ancient",
+      "displayID": 129894,
+      "npc": 246003,
       "loot": []
     },
     {
       "id": 3300,
       "name": "Mana Devourer",
+      "displayID": 129895,
+      "npc": 246008,
       "loot": []
     },
     {
       "id": 3301,
       "name": "Mana Elemental",
+      "displayID": 14253,
+      "npc": 14689,
       "loot": []
     },
     {
       "id": 3302,
       "name": "Unstable Sentinel",
+      "displayID": 129954,
+      "npc": 246017,
       "loot": []
     },
     {
       "id": 3303,
       "name": "Shade of the Archmage",
+      "displayID": 130061,
+      "npc": 246020,
       "loot": []
     },
     {
       "id": 3310,
       "name": "Lyn the Ignored",
+      "displayID": 130235,
+      "npc": 247032,
       "loot": []
     },
     {
       "id": 3311,
       "name": "Atrexis the Grave Knight",
+      "displayID": 145787,
+      "npc": 247126,
       "loot": []
     },
     {
       "id": 3312,
       "name": "Mana Wraith",
+      "displayID": 130220,
+      "npc": 246931,
       "loot": []
     }
   ],

@@ -815,15 +815,15 @@ Data:AddInstance(2959, {
     entrance = { 1416, 17, 67 },
     bosses = { 3298, 3299, 3300, 3301, 3302, 3303, 3310, 3311, 3312 },
 })
-Data:AddBoss(3298, { instanceID = 2959, order = 0 }) -- Arcane Anomaly
-Data:AddBoss(3299, { instanceID = 2959, order = 1000 }) -- Fel Ancient
-Data:AddBoss(3300, { instanceID = 2959, order = 2000 }) -- Mana Devourer
-Data:AddBoss(3301, { instanceID = 2959, order = 3000 }) -- Mana Elemental
-Data:AddBoss(3302, { instanceID = 2959, order = 4000 }) -- Unstable Sentinel
-Data:AddBoss(3303, { instanceID = 2959, order = 5000 }) -- Shade of the Archmage
-Data:AddBoss(3310, { instanceID = 2959, order = 6000 }) -- Lyn the Ignored
-Data:AddBoss(3311, { instanceID = 2959, order = 7000 }) -- Atrexis the Grave Knight
-Data:AddBoss(3312, { instanceID = 2959, order = 8000 }) -- Mana Wraith
+Data:AddBoss(3298, { instanceID = 2959, order = 0, displayID = 129891 }) -- Arcane Anomaly
+Data:AddBoss(3299, { instanceID = 2959, order = 1000, displayID = 129894 }) -- Fel Ancient
+Data:AddBoss(3300, { instanceID = 2959, order = 2000, displayID = 129895 }) -- Mana Devourer
+Data:AddBoss(3301, { instanceID = 2959, order = 3000, displayID = 14253 }) -- Mana Elemental
+Data:AddBoss(3302, { instanceID = 2959, order = 4000, displayID = 129954 }) -- Unstable Sentinel
+Data:AddBoss(3303, { instanceID = 2959, order = 5000, displayID = 130061 }) -- Shade of the Archmage
+Data:AddBoss(3310, { instanceID = 2959, order = 6000, displayID = 130235 }) -- Lyn the Ignored
+Data:AddBoss(3311, { instanceID = 2959, order = 7000, displayID = 145787 }) -- Atrexis the Grave Knight
+Data:AddBoss(3312, { instanceID = 2959, order = 8000, displayID = 130220 }) -- Mana Wraith
 
 -- Excavation Site: Wetlands
 Data:AddInstance(2998, {
@@ -838,10 +838,10 @@ Data:AddInstance(2998, {
     entrance = { 1437, 42, 60 },
     bosses = { 3480, 3481, 3644, 3482 },
 })
-Data:AddBoss(3480, { instanceID = 2998, order = 0 }) -- Saltspine
-Data:AddBoss(3481, { instanceID = 2998, order = 1000 }) -- Shadetooth
+Data:AddBoss(3480, { instanceID = 2998, order = 0, displayID = 144209 }) -- Saltspine
+Data:AddBoss(3481, { instanceID = 2998, order = 1000, displayID = 144210 }) -- Shadetooth
 Data:AddBoss(3644, { instanceID = 2998, order = 1500 }) -- Highland Horror
-Data:AddBoss(3482, { instanceID = 2998, order = 2000 }) -- Relic Guardian
+Data:AddBoss(3482, { instanceID = 2998, order = 2000, displayID = 144224 }) -- Relic Guardian
 
 -- Ruins of Lordaeron
 Data:AddInstance(2999, {
