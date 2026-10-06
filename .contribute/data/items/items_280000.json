@@ -5920,6 +5920,29 @@
       "DAMAGE_PER_SECOND": 2.65
     }
   },
+  "281746": {
+    "names": {
+      "enUS": "Kurmokk's Pelt"
+    },
+    "quality": 2,
+    "itemLevel": 42,
+    "reqLevel": 37,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_CLOAK",
+    "bind": 1,
+    "icon": 134354,
+    "sellPrice": 3673,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DEFENSE_SKILL_RATING": 4,
+      "RESISTANCE0_NAME": 28,
+      "STRENGTH": 7
+    }
+  },
   "281750": {
     "names": {
       "enUS": "Murloc Oracle's Dagger"
@@ -6958,6 +6981,29 @@
       "DAMAGE_PER_SECOND": 20.42
     }
   },
+  "282555": {
+    "names": {
+      "enUS": "Shadowforge Shield"
+    },
+    "quality": 2,
+    "itemLevel": 42,
+    "reqLevel": 37,
+    "classID": 4,
+    "subclassID": 6,
+    "slot": "INVTYPE_SHIELD",
+    "bind": 2,
+    "icon": 134949,
+    "sellPrice": 8598,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 1148,
+      "SPELL_POWER": 8,
+      "STAMINA": 7
+    }
+  },
   "282557": {
     "names": {
       "enUS": "Broken Tooth's Flayed Hide"
@@ -7309,6 +7355,30 @@
       "HIT_RATING": 10,
       "INTELLECT": 12,
       "RESISTANCE0_NAME": 44
+    }
+  },
+  "282706": {
+    "names": {
+      "enUS": "Rotting Meat"
+    },
+    "quality": 3,
+    "itemLevel": 44,
+    "reqLevel": 39,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_HOLDABLE",
+    "bind": 1,
+    "icon": 133974,
+    "sellPrice": 6937,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "NATURE_RESISTANCE": -5,
+      "RESISTANCE3_NAME": -5,
+      "SPELL_DAMAGE_DONE": 8,
+      "STAMINA": 12
     }
   },
   "282710": {
@@ -9469,6 +9539,29 @@
       "STAMINA": 6
     }
   },
+  "285093": {
+    "names": {
+      "enUS": "Ripscaled Cuffs"
+    },
+    "quality": 2,
+    "itemLevel": 41,
+    "reqLevel": 36,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_WRIST",
+    "bind": 2,
+    "icon": 132605,
+    "sellPrice": 3124,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 6,
+      "RESISTANCE0_NAME": 49,
+      "STAMINA": 6
+    }
+  },
   "285094": {
     "names": {
       "enUS": "Ravaged Fishing Pole"
@@ -9511,6 +9604,52 @@
     "stats": {
       "ATTACK_POWER_VS_HUMANOID": 18,
       "STAMINA": 6
+    }
+  },
+  "285100": {
+    "names": {
+      "enUS": "Serrated Raptor Teeth"
+    },
+    "quality": 2,
+    "itemLevel": 40,
+    "reqLevel": 35,
+    "classID": 2,
+    "subclassID": 16,
+    "slot": "INVTYPE_THROWN",
+    "bind": 2,
+    "icon": 133724,
+    "sellPrice": 9,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 4,
+      "ATTACK_POWER_VS_BEAST": 6,
+      "DAMAGE_PER_SECOND": 19.71
+    }
+  },
+  "285102": {
+    "names": {
+      "enUS": "Darkmist Dirk"
+    },
+    "quality": 2,
+    "itemLevel": 42,
+    "reqLevel": 37,
+    "classID": 2,
+    "subclassID": 15,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 2,
+    "icon": 134298,
+    "sellPrice": 12871,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ATTACK_POWER": 8,
+      "DAMAGE_PER_SECOND": 24.06,
+      "STAMINA": 5
     }
   },
   "285104": {
@@ -13011,6 +13150,29 @@
     "stats": {
       "ATTACK_POWER_VS_BEAST": 20,
       "ATTACK_POWER_VS_HUMANOID": 20
+    }
+  },
+  "286572": {
+    "names": {
+      "enUS": "Ogre Casting Cloak"
+    },
+    "quality": 2,
+    "itemLevel": 51,
+    "reqLevel": 46,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_CLOAK",
+    "bind": 2,
+    "icon": 133764,
+    "sellPrice": 7534,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 33,
+      "SPELL_POWER": 5,
+      "STRENGTH": 10
     }
   },
   "286639": {

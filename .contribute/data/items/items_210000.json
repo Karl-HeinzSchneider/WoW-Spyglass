@@ -8604,6 +8604,29 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "217497": {
+    "names": {
+      "enUS": "Narpas Sword"
+    },
+    "quality": 3,
+    "itemLevel": 42,
+    "reqLevel": 34,
+    "classID": 2,
+    "subclassID": 7,
+    "slot": "INVTYPE_WEAPONMAINHAND",
+    "bind": 1,
+    "icon": 135714,
+    "sellPrice": 14786,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 19,
+      "HIT_RATING": 10,
+      "SPELL_POWER": 48
+    }
+  },
   "217609": {
     "names": {
       "enUS": "Talisman of Kazdor"

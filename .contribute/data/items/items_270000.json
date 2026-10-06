@@ -34795,6 +34795,29 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "274485": {
+    "names": {
+      "enUS": "Axe of Lingering Dread"
+    },
+    "quality": 3,
+    "itemLevel": 44,
+    "reqLevel": 39,
+    "classID": 2,
+    "subclassID": 1,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 1,
+    "icon": 132392,
+    "sellPrice": 23400,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 38.83,
+      "DODGE_RATING": 12,
+      "PARRY_RATING": 15
+    }
+  },
   "274490": {
     "names": {
       "enUS": "Centaur Hoofwarmers"

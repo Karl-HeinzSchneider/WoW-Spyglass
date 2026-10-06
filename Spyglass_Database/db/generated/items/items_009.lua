@@ -3,6 +3,7 @@ local Data = Spyglass.Data
 
 -- { quality, itemLevel, reqLevel, classID, subclassID, slot, bind, icon, stats, sellPrice, stackCount, setID, expansionID, craftingReagent }; see Data.ITEM.
 Data:AddItems({
+    [264036] = { 3, 1, 10, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 0, 134327, nil, 1, 1, 0, 0, false },
     [264037] = { 3, 1, 10, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 0, 134327, nil, 1, 1, 0, 0, false },
     [264038] = { 3, 1, 10, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 0, 134327, nil, 1, 1, 0, 0, false },
     [264039] = { 3, 1, 10, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 0, 134327, nil, 1, 1, 0, 0, false },
@@ -2005,6 +2006,7 @@ Data:AddItems({
     [274466] = { 0, 1, 1, 2, 6, "INVTYPE_2HWEAPON", 0, 135128, { DAMAGE_PER_SECOND = 0.88 }, 2, 1, 0, 0, false },
     [274480] = { 0, 1, 1, 2, 10, "INVTYPE_2HWEAPON", 0, 135138, { DAMAGE_PER_SECOND = 0.88 }, 2, 1, 0, 0, false },
     [274483] = { 1, 1, 0, 15, 4, "INVTYPE_NON_EQUIP_IGNORE", 1, 133743, nil, 0, 1, 0, 0, false },
+    [274485] = { 3, 44, 39, 2, 1, "INVTYPE_2HWEAPON", 1, 132392, { DAMAGE_PER_SECOND = 38.83, DODGE_RATING = 12, PARRY_RATING = 15 }, 23400, 1, 0, 0, false },
     [274490] = { 2, 40, 35, 4, 2, "INVTYPE_FEET", 2, 132539, { AGILITY = 4, RESISTANCE0_NAME = 76, STAMINA = 10 }, 4082, 1, 0, 0, false },
     [274491] = { 2, 44, 0, 9, 1, "INVTYPE_NON_EQUIP_IGNORE", 1, 134942, nil, 1250, 1, 0, 0, false },
     [274501] = { 0, 1, 1, 2, 7, "INVTYPE_WEAPON", 0, 135277, { DAMAGE_PER_SECOND = 0.75 }, 2, 1, 0, 0, false },
@@ -2501,6 +2503,4 @@ Data:AddItems({
     [277017] = { 2, 10, 5, 4, 3, "INVTYPE_WRIST", 2, 7737713, { RESISTANCE0_NAME = 47, STRENGTH = 1 }, 73, 1, 0, 0, false },
     [277018] = { 2, 11, 6, 4, 3, "INVTYPE_HAND", 2, 7737716, { AGILITY = 1, RESISTANCE0_NAME = 72 }, 96, 1, 0, 0, false },
     [277019] = { 2, 10, 5, 4, 3, "INVTYPE_WAIST", 2, 7737711, { RESISTANCE0_NAME = 61, STAMINA = 1 }, 74, 1, 0, 0, false },
-    [277020] = { 2, 12, 7, 4, 3, "INVTYPE_LEGS", 2, 7737718, { RESISTANCE0_NAME = 107, STAMINA = 2 }, 241, 1, 0, 0, false },
-    [277021] = { 2, 11, 6, 4, 3, "INVTYPE_FEET", 2, 7737712, { AGILITY = 1, RESISTANCE0_NAME = 79 }, 146, 1, 0, 0, false },
 })
