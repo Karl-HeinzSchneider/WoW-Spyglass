@@ -36,7 +36,7 @@ import { shipsRecipe } from "./recipes.js";
 import { loadReference, relinkRecipes } from "./reference.js";
 import { type QuestFile, loadQuests, serializeQuests, validateQuests } from "./quests.js";
 import { importTrainers } from "./trainers.js";
-import { fetchTable, int } from "./wago.js";
+import { fetchTable, int, WagoUnavailableError } from "./wago.js";
 
 const { positionals, values } = parseArgs({
   allowPositionals: true,
@@ -71,7 +71,7 @@ if (command === "import") {
 const fix = values.fix || command === "import";
 
 const config = loadConfig();
-const ref = await loadReference(config, { includeTranslations: command !== "check" });
+const ref = await loadReference(config, { includeTranslations: command !== "check" }).catch(handleWagoError);
 const curated = loadCurated();
 let dungeonLevels = loadDungeonLevels();
 const quests = loadQuests();
@@ -110,7 +110,8 @@ for (const path of importPaths) {
       const locale = trainer.locale === "enGB" ? "enUS" : trainer.locale;
       if (trainerSpellNames.has(locale)) continue;
       const names = new Map<number, string>();
-      for (const row of await fetchTable("SpellName", ref.build, locale)) names.set(int(row.ID), row.Name_lang ?? "");
+      for (const row of await fetchTable("SpellName", ref.build, locale).catch(handleWagoError))
+        names.set(int(row.ID), row.Name_lang ?? "");
       trainerSpellNames.set(locale, names);
     }
     for (const line of importTrainers(discovered, ref, lists, trainerSpellNames)) console.log(`  ${line}`);
@@ -154,6 +155,12 @@ if (values.check) {
   process.exit(changed ? 1 : 0);
 }
 console.log(changed ? `${changed} file(s) written` : "generated addon data unchanged");
+
+function handleWagoError(error: unknown): never {
+  if (!(error instanceof WagoUnavailableError)) throw error;
+  console.error(`info: ${error.message}`);
+  process.exit(1);
+}
 
 async function writeCurated(files: CuratedFile[], quests: QuestFile[], lists: ListFile[]): Promise<void> {
   for (const file of files) {

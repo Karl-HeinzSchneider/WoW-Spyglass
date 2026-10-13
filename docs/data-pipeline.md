@@ -28,6 +28,10 @@ difficulty in `ENCOUNTER_DIFFICULTIES` (`src/reference.ts`: 0, 1, 201) the map h
 the other ids are unknown to the tooling.
 
 wago.tools tables are downloaded as CSV and cached in `.cache/<build>/` (`src/wago.ts`).
+If a required download returns HTTP 5xx, the CLI prints an informational message that
+wago.tools may be undergoing maintenance and asks you to try again later, without a stack
+trace. The command exits with status 1; failed responses are never cached. Already cached
+tables remain usable while the service is unavailable.
 
 ## What each generated file comes from
 

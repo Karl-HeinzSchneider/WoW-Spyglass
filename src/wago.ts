@@ -6,6 +6,17 @@ import { CACHE_DIR } from "./config.js";
 /** One DB2 table as rows keyed by column name (all values are strings). */
 export type Table = Record<string, string>[];
 
+/** A temporary server outage, reported by the CLI without a stack trace. */
+export class WagoUnavailableError extends Error {
+  constructor(status: number) {
+    super(
+      `wago.tools is temporarily unavailable (HTTP ${status}), possibly due to maintenance. ` +
+        "Required game data could not be downloaded; please try again later.",
+    );
+    this.name = "WagoUnavailableError";
+  }
+}
+
 /**
  * Downloads a DB2 table as CSV from wago.tools for the given build and locale, cached under
  * .cache/<build>/ so repeated runs are offline. Delete the cache to refresh. Pass `fields` when
@@ -23,6 +34,7 @@ export async function fetchTable(
     const url = `https://wago.tools/db2/${table}/csv?build=${build}&locale=${locale}`;
     process.stderr.write(`downloading ${table} (${locale}) ...\n`);
     const res = await fetch(url);
+    if (res.status >= 500 && res.status <= 599) throw new WagoUnavailableError(res.status);
     if (!res.ok) throw new Error(`${url}: HTTP ${res.status}`);
     const text = await res.text();
     if (!text.startsWith("ID,") && !text.includes(",ID,")) {
