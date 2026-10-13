@@ -116,6 +116,8 @@ export interface Problem {
   fixable: boolean;
   /** Warnings are printed but don't fail the run or stop generation. */
   warning?: boolean;
+  /** Informational notices use the non-failing warning path, with an INFO label. */
+  info?: boolean;
 }
 
 /** An item row as every curated file has them: an id, or a name that resolves to one. */
@@ -141,6 +143,10 @@ export class Checker {
 
   warn(file: { path: string }, message: string): void {
     this.problems.push({ file: file.path, message, fixable: false, warning: true });
+  }
+
+  info(file: { path: string }, message: string): void {
+    this.problems.push({ file: file.path, message, fixable: false, warning: true, info: true });
   }
 
   /** enUS item name (case-insensitive) -> ids, built on first use for rows that only give a name. */
@@ -296,7 +302,10 @@ export function validate(files: CuratedFile[], checker: Checker): void {
       } else {
         const known = ref.encounters.get(enc.id);
         if (!known) {
-          report(file, `encounter ${enc.id} does not exist`);
+          checker.info(
+            file,
+            `encounter ${enc.id} is not available in build ${ref.build} (may belong to another WoW version)`,
+          );
           continue;
         }
         if (known.mapID !== d.map) {

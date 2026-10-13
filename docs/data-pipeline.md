@@ -25,7 +25,9 @@ Several maps (Blackfathom Deeps, Gnomeregan, Sunken Temple) carry the same bosse
 for other difficulties (Season of Discovery raids, a second 5-player set). The client has one
 version of each dungeon, the normal 5-player one: per map, only the encounters of the first
 difficulty in `ENCOUNTER_DIFFICULTIES` (`src/reference.ts`: 0, 1, 201) the map has are kept, and
-the other ids are unknown to the tooling.
+the other ids are unknown to the tooling. Curated encounter ids absent from the selected build
+are reported as `INFO` because they may belong to another WoW version; they do not block validation
+or generation.
 
 wago.tools tables are downloaded as CSV and cached in `.cache/<build>/` (`src/wago.ts`).
 If a required download returns HTTP 5xx, the CLI prints an informational message that

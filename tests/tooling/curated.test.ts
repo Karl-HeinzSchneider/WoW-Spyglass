@@ -52,6 +52,20 @@ function dungeonChecker(fix: boolean, encounters = [2747]): Checker {
   return new Checker(ref, fix);
 }
 
+test("encounters from other builds are informational in check and fix mode", () => {
+  for (const fix of [false, true]) {
+    const file = dungeonFile({ trash: [], encounters: [{ id: 2912, name: "Other Version Boss", loot: [] }] });
+    const checker = dungeonChecker(fix, []);
+    validate([file], checker);
+    assert.equal(checker.problems.length, 1);
+    assert.equal(checker.problems[0].info, true);
+    assert.equal(checker.problems[0].warning, true);
+    assert.match(checker.problems[0].message, /encounter 2912.*build 1\.0\.0/);
+    assert.equal(checker.problems.filter((p) => !p.fixable && !p.warning).length, 0);
+    assert.equal(file.data.encounters[0].id, 2912);
+  }
+});
+
 test("fix gives an instance without a trash list an empty one", () => {
   const file = dungeonFile();
   const checker = dungeonChecker(true);

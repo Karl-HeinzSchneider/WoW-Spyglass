@@ -130,7 +130,7 @@ validateLists(lists, checker);
 const problems = checker.problems;
 for (const p of problems)
   console.log(
-    `${p.warning ? "warning" : p.fixable ? (fix ? "fixed" : "fixable") : "ERROR"}  ${relative(ROOT, p.file)}: ${p.message}`,
+    `${p.info ? "INFO" : p.warning ? "warning" : p.fixable ? (fix ? "fixed" : "fixable") : "ERROR"}  ${relative(ROOT, p.file)}: ${p.message}`,
   );
 const errors = problems.filter((p) => !p.fixable && !p.warning);
 if (fix) await writeCurated(curated, quests, lists);
