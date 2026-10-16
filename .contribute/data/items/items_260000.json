@@ -686,7 +686,7 @@
       "enUS": "Hyjal Postal Satchel"
     },
     "quality": 1,
-    "itemLevel": 60,
+    "itemLevel": 58,
     "reqLevel": 0,
     "classID": 1,
     "subclassID": 0,
@@ -1811,7 +1811,7 @@
     "itemLevel": 60,
     "reqLevel": 55,
     "classID": 4,
-    "subclassID": 0,
+    "subclassID": 1,
     "slot": "INVTYPE_WAIST",
     "bind": 2,
     "icon": 133031,
@@ -1819,7 +1819,10 @@
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
-    "craftingReagent": false
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 44
+    }
   },
   "260829": {
     "names": {
@@ -1829,7 +1832,7 @@
     "itemLevel": 60,
     "reqLevel": 55,
     "classID": 4,
-    "subclassID": 0,
+    "subclassID": 1,
     "slot": "INVTYPE_WAIST",
     "bind": 2,
     "icon": 3694922,
@@ -1837,7 +1840,10 @@
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
-    "craftingReagent": false
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 44
+    }
   },
   "260830": {
     "names": {
@@ -1846,10 +1852,10 @@
     "quality": 2,
     "itemLevel": 60,
     "reqLevel": 55,
-    "classID": 4,
+    "classID": 0,
     "subclassID": 0,
-    "slot": "INVTYPE_WAIST",
-    "bind": 2,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
     "icon": 133874,
     "sellPrice": 1250,
     "stackCount": 1,
@@ -7597,7 +7603,7 @@
     "names": {
       "enUS": "Novice's Robe"
     },
-    "quality": 1,
+    "quality": 0,
     "itemLevel": 1,
     "reqLevel": 1,
     "classID": 4,
@@ -7618,7 +7624,7 @@
     "names": {
       "enUS": "Novice's Pants"
     },
-    "quality": 1,
+    "quality": 0,
     "itemLevel": 1,
     "reqLevel": 1,
     "classID": 4,
@@ -8519,16 +8525,16 @@
   },
   "267079": {
     "names": {
-      "enUS": "Concoction of Cleansing"
+      "enUS": "Staff of the Mountain"
     },
-    "quality": 1,
+    "quality": 2,
     "itemLevel": 60,
     "reqLevel": 0,
     "classID": 12,
     "subclassID": 0,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 4,
-    "icon": 2057575,
+    "icon": 135162,
     "sellPrice": 0,
     "stackCount": 1,
     "setID": 0,
@@ -9947,7 +9953,7 @@
     "bind": 4,
     "icon": 458717,
     "sellPrice": 0,
-    "stackCount": 20,
+    "stackCount": 25,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false

@@ -4,45 +4,45 @@ local Data = Spyglass.Data
 -- Scarlet Monastery: Library (map 189)
 
 Data:AddBossLoot(446, { -- Houndmaster Loksey
-    { 7756 }, -- #7756
-    { 3456 }, -- #3456
-    { 7710 }, -- #7710
+    { 7756 }, -- Dog Training Gloves
+    { 3456 }, -- Dog Whistle
+    { 7710 }, -- Loksey's Training Stick
 })
 
 Data:AddBossLoot(447, { -- Arcanist Doan
-    { 7714 }, -- #7714
-    { 7713 }, -- #7713
+    { 7714 }, -- Hypnotic Blade
+    { 7713 }, -- Illusionary Rod
     { 274293 }, -- Spellsever Crossbow
-    { 7712 }, -- #7712
-    { 7711 }, -- #7711
+    { 7712 }, -- Mantle of Doan
+    { 7711 }, -- Robe of Doan
     { 7146 }, -- The Scarlet Key
 })
 
 Data:AddTrashLoot(18902, {
-    { 10332 }, -- #10332
-    { 5819 }, -- #5819
+    { 10332 }, -- Scarlet Boots
+    { 5819 }, -- Sunblaze Coif
     { 7730 }, -- Cobalt Crusher
-    { 7757 }, -- #7757
-    { 7761 }, -- #7761
-    { 7787 }, -- #7787
+    { 7757 }, -- Windweaver Staff
+    { 7761 }, -- Steelclaw Reaver
+    { 7787 }, -- Resplendent Guardian
 })
 
 Data:AddQuests(18902, {
     { id = 1050, name = "Mythology of the Titans", side = "Alliance", requiredLevel = 28, xp = 3550, objective = "Retrieve Mythology of the Titans from the Monastery and bring it to Librarian Mae Paledust in Ironforge.", start = { description = "Ironforge.", location = { 1455, 74.4, 12.8 }, npc = "Librarian Mae Paledust" }, turnIn = { description = "Ironforge.", npc = "Librarian Mae Paledust" }, items = {
-        { 7746 }, -- #7746
+        { 7746 }, -- Explorers' League Commendation
     } },
     { id = 96800, name = "Past Due", side = "Alliance", requiredLevel = 30, xp = 6750, objective = "Retrieve The Lost Magic of the Runemasters from the Scarlet Monastery.", description = "The book is held by Arcanist Doan.", start = { description = "Dalaran, Alterac Mountains.", location = { 1416, 9.7, 61.9 }, npc = "Magus Olvek" }, turnIn = { description = "Dalaran, Alterac Mountains.", npc = "Magus Olvek" }, items = {
         { 276898 }, -- Salve and Salvation
         { 276899 }, -- Knucklebound Thimble
     } },
     { id = 1049, name = "Compendium of the Fallen", side = "Horde", requiredLevel = 28, xp = 3550, objective = "Retrieve the Compendium of the Fallen from the Monastery and return to Sage Truthseeker in Thunder Bluff.", description = "Undead cannot take this quest.", start = { description = "Thunder Bluff.", location = { 1456, 34.6, 47.6 }, npc = "Sage Truthseeker" }, turnIn = { description = "Thunder Bluff.", npc = "Sage Truthseeker" }, items = {
-        { 7747 }, -- #7747
-        { 17508 }, -- #17508
-        { 7749 }, -- #7749
+        { 7747 }, -- Vile Protector
+        { 17508 }, -- Forcestone Buckler
+        { 7749 }, -- Omega Orb
     } },
     { id = 1394, name = "Final Passage", side = "Horde", requiredLevel = 25, xp = 4200, objective = "Speak to Dorn Plainstalker in Thousand Needles.", description = "This is a long chain that has a step in the Library.", requires = { { id = 6628, name = "Test of Lore" } }, start = { description = "Undercity.", npc = "Parqual Fintallas" }, turnIn = { description = "Thousand Needles.", npc = "Dorn Plainstalker" }, items = {
-        { 6804 }, -- #6804
-        { 6806 }, -- #6806
+        { 6804 }, -- Windstorm Hammer
+        { 6806 }, -- Dancing Flame
     } },
     { id = 1113, name = "Hearts of Zeal", side = "Horde", requiredLevel = 30, xp = 3300, objective = "Bring 20 Hearts of Zeal from the Scarlet Monastery to Master Apothecary Faranell.", requires = { { id = 1109, name = "Going, Going, Guano!" } }, start = { description = "Undercity.", location = { 1458, 48, 69 }, npc = "Master Apothecary Faranell" }, turnIn = { description = "Undercity.", npc = "Master Apothecary Faranell" }, items = {} },
 })

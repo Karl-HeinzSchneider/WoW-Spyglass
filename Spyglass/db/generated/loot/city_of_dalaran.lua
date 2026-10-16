@@ -4,53 +4,53 @@ local Data = Spyglass.Data
 -- City of Dalaran (map 2959)
 
 Data:AddBossLoot(3298, { -- Arcane Anomaly
-    { 273034 }, -- #273034
-    { 273031 }, -- #273031
-    { 273035 }, -- #273035
+    { 273034 }, -- Ephemeral Grips
+    { 273031 }, -- Runemender's Seal
+    { 273035 }, -- Mana-Warped Chain Shirt
 })
 
 Data:AddBossLoot(3299, { -- Fel Ancient
-    { 273037 }, -- #273037
-    { 273039 }, -- #273039
-    { 273038 }, -- #273038
+    { 273037 }, -- Felbough Arm
+    { 273039 }, -- Blightleaf Rope
+    { 273038 }, -- Garb of Fallen Felbark
 })
 
 Data:AddBossLoot(3300, { -- Mana Devourer
-    { 273041 }, -- #273041
-    { 273040 }, -- #273040
-    { 273042 }, -- #273042
+    { 273041 }, -- Slitherwrap Girdle
+    { 273040 }, -- Spine of the Devourer
+    { 273042 }, -- Manascale Treads
 })
 
 Data:AddBossLoot(3301, { -- Mana Elemental
-    { 273045 }, -- #273045
-    { 273044 }, -- #273044
-    { 273043 }, -- #273043
+    { 273045 }, -- Drape of Shifting Energy
+    { 273044 }, -- Violet Sorcerer's Robes
+    { 273043 }, -- Wand of Mana Concentration
 })
 
 Data:AddBossLoot(3302, { -- Unstable Sentinel
-    { 273046 }, -- #273046
-    { 273047 }, -- #273047
-    { 273048 }, -- #273048
+    { 273046 }, -- Guardian's Dualblade
+    { 273047 }, -- Unstable Crystalline Shoulderpads
+    { 273048 }, -- Refractory Scaleguards
     { 273099 }, -- Blueprint: Spinning Wheel
 })
 
 Data:AddBossLoot(3303, { -- Shade of the Archmage
-    { 273052 }, -- #273052
-    { 273049 }, -- #273049
-    { 273051 }, -- #273051
+    { 273052 }, -- Ponderous Orb
+    { 273049 }, -- Archmagister's Faceted Pendant
+    { 273051 }, -- Violet Sorcerer's Mantle
     { 273103 }, -- Blueprint: Arcane Salvager
 })
 
 Data:AddBossLoot(3310, { -- Lyn the Ignored
-    { 273055 }, -- #273055
-    { 273054 }, -- #273054
-    { 273053 }, -- #273053
+    { 273055 }, -- Bonepile Gaze
+    { 273054 }, -- Cartilage Shapers
+    { 273053 }, -- Tendonscraper Dagger
 })
 
 Data:AddBossLoot(3311, { -- Atrexis the Grave Knight
-    { 273032 }, -- #273032
-    { 273036 }, -- #273036
-    { 273033 }, -- #273033
+    { 273032 }, -- Bonebinder's Signet
+    { 273036 }, -- Graveweave Bindings
+    { 273033 }, -- Gravespike Repeater
 })
 
 Data:AddQuests(2959, {
@@ -77,8 +77,8 @@ Data:AddQuests(2959, {
         { 279844 }, -- Striking Staff
     } },
     { id = 96987, name = "Opportunistic Education", side = "Horde", requiredLevel = 24, xp = 3950, objective = "Recover The Founding of Dalaran and deliver it to Rexxie Copperclutch.", start = { description = "Inside the dungeon, near the sewer entrance.", npc = "Rexxie Copperclutch" }, turnIn = { description = "Inside the dungeon, near the sewer entrance.", npc = "Rexxie Copperclutch" }, items = {
-        { 279845 }, -- #279845
-        { 279846 }, -- #279846
+        { 279845 }, -- Solid Gold Band
+        { 279846 }, -- Larcenist's Belt
     } },
     { id = 96988, name = "Source of Power", side = "Horde", requiredLevel = 24, xp = 3950, objective = "Collect 6 Cracked Sentry Cores from the constructs in Dalaran.", start = { description = "Undercity.", location = { 1458, 46.6, 74.1 }, npc = "Doctor Martin Felben" }, turnIn = { description = "Undercity.", npc = "Doctor Martin Felben" }, items = {
         { 279847 }, -- Unstable Power Core

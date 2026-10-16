@@ -77,8 +77,8 @@ Data:AddQuests(34, {
     { id = 388, name = "The Color of Blood", items = {} },
     { id = 391, name = "The Stockade Riots", requires = { { id = 389, name = "Bazil Thredd" } }, items = {} },
     { id = 378, name = "The Fury Runs Deep", side = "Alliance", requiredLevel = 25, xp = 5750, objective = "Kill Kam Deepfury in The Stockade and bring his head to Motley Garmason.", description = "Requires The Dark Iron War before this quest becomes available.", requires = { { id = 303, name = "The Dark Iron War" } }, start = { description = "Dun Modr, Wetlands.", location = { 1437, 49.6, 18.2 }, npc = "Motley Garmason" }, turnIn = { description = "Dun Modr, Wetlands.", npc = "Motley Garmason" }, items = {
-        { 3562 }, -- #3562
-        { 1264 }, -- #1264
+        { 3562 }, -- Belt of Vindication
+        { 1264 }, -- Headbasher
         { 270036 }, -- Magistrate's Pantaloons
     } },
 })

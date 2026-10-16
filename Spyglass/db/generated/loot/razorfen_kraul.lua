@@ -40,7 +40,7 @@ Data:AddBossLoot(2776, { -- Overlord Ramtusk
 
 Data:AddBossLoot(2777, { -- Agathelos the Raging
     { 6691 }, -- Swinetusk Shank
-    { 6690 }, -- #6690
+    { 6690 }, -- Ferine Leggings
     { 274160 }, -- Quilrager Throwing Axe
     { 251378 }, -- Plans: Acolyte's Silvered Chain Leggings
     { 252512 }, -- Brawler's Leather Helm
@@ -50,8 +50,8 @@ Data:AddBossLoot(2777, { -- Agathelos the Raging
 
 Data:AddBossLoot(2778, { -- Charlga Razorflank
     { 6693 }, -- Agamaggan's Clutch
-    { 6694 }, -- #6694
-    { 6692 }, -- #6692
+    { 6694 }, -- Heart of Agamaggan
+    { 6692 }, -- Pronged Reaver
     { 273103 }, -- Blueprint: Arcane Salvager
     { 252512 }, -- Brawler's Leather Helm
     { 252455 }, -- Defender's Leather Helm
@@ -60,13 +60,13 @@ Data:AddBossLoot(2778, { -- Charlga Razorflank
 })
 
 Data:AddBossLoot(-4425, { -- Blind Hunter
-    { 6695 }, -- #6695
-    { 6697 }, -- #6697
-    { 6696 }, -- #6696
+    { 6695 }, -- Stygian Bone Amulet
+    { 6697 }, -- Batwing Mantle
+    { 6696 }, -- Nightstalker Bow
 })
 
 Data:AddBossLoot(-4842, { -- Earthcaller Halmgar
-    { 6689 }, -- #6689
+    { 6689 }, -- Wind Spirit Staff
     { 6688 }, -- Whisperwind Headdress
     { 252455 }, -- Defender's Leather Helm
     { 252514 }, -- Stormrider's Leather Helm
@@ -74,13 +74,13 @@ Data:AddBossLoot(-4842, { -- Earthcaller Halmgar
 
 Data:AddTrashLoot(47, {
     { 776 }, -- Vendetta
-    { 1727 }, -- #1727
-    { 1975 }, -- #1975
+    { 1727 }, -- Sword of Decay
+    { 1975 }, -- Pysan's Old Greatsword
     { 1976 }, -- Slaghammer
     { 2549 }, -- Staff of the Shade
     { 1978 }, -- Wolfclaw Gloves
     { 2264 }, -- Mantle of Thieves
-    { 4438 }, -- #4438
+    { 4438 }, -- Pugilist Bracers
     { 2039 }, -- Plains Ring
 })
 
@@ -88,26 +88,26 @@ Data:AddQuests(47, {
     { id = 1144, name = "Willix the Importer", side = "Both", items = {} },
     { id = 1221, name = "Blueleaf Tubers", items = {} },
     { id = 1142, name = "Mortality Wanes", side = "Alliance", requiredLevel = 25, xp = 3050, objective = "Find Treshala's Pendant and return it to Treshala Fallowbrook in Darnassus.", start = { description = "Inside Razorfen Kraul.", npc = "Heralath Fallowbrook" }, turnIn = { description = "Darnassus.", npc = "Treshala Fallowbrook" }, items = {
-        { 6751 }, -- #6751
-        { 6752 }, -- #6752
+        { 6751 }, -- Mourning Shawl
+        { 6752 }, -- Lancer Boots
         { 270047 }, -- Sentinel's Boots
     } },
     { id = 1101, name = "The Crone of the Kraul", side = "Alliance", requiredLevel = 29, xp = 3350, objective = "Bring Razorflank's Medallion to Falfindel Waywarder in Thalanaar.", requires = { { id = 1100, name = "Lonebrow's Journal" } }, start = { description = "Thalanaar, Feralas.", location = { 1444, 89, 46 }, npc = "Falfindel Waywarder" }, turnIn = { description = "Thalanaar, Feralas.", npc = "Falfindel Waywarder" }, items = {
-        { 4197 }, -- #4197
-        { 6742 }, -- #6742
-        { 6725 }, -- #6725
+        { 4197 }, -- Berylline Pads
+        { 6742 }, -- Stonefist Girdle
+        { 6725 }, -- Marbled Buckler
     } },
     { id = 1102, name = "A Vengeful Fate", side = "Horde", requiredLevel = 29, xp = 4050, objective = "Bring Razorflank's Heart to Auld Stonespire in Thunder Bluff.", start = { description = "Thunder Bluff.", location = { 1456, 36, 59 }, npc = "Auld Stonespire" }, turnIn = { description = "Thunder Bluff.", npc = "Auld Stonespire" }, items = {
-        { 4197 }, -- #4197
-        { 6742 }, -- #6742
-        { 6725 }, -- #6725
+        { 4197 }, -- Berylline Pads
+        { 6742 }, -- Stonefist Girdle
+        { 6725 }, -- Marbled Buckler
         { 274084 }, -- Quilboar Blaster
     } },
     { id = 1109, name = "Going, Going, Guano!", requiredLevel = 30, objective = "Bring 1 pile of Kraul Guano to Master Apothecary Faranell in the Undercity.", description = "Required before Hearts of Zeal.", start = { description = "Apothecarium, Undercity.", location = { 1458, 48, 69 }, npc = "Master Apothecary Faranell" }, turnIn = { description = "Apothecarium, Undercity.", npc = "Master Apothecary Faranell" }, items = {} },
     { id = 6521, name = "An Unholy Alliance", side = "Horde", requiredLevel = 28, xp = 3500, objective = "Bring Ambassador Malcin's Head to Varimathras in the Undercity.", description = "This quest is completed in the area OUTSIDE Razorfen Downs.", requires = { { id = 6522, name = "An Unholy Alliance" } }, start = { description = "Royal Quarter, Undercity.", npc = "Varimathras" }, turnIn = { description = "Royal Quarter, Undercity.", npc = "Varimathras" }, items = {
-        { 17039 }, -- #17039
-        { 17042 }, -- #17042
-        { 17043 }, -- #17043
+        { 17039 }, -- Skullbreaker
+        { 17042 }, -- Nail Spitter
+        { 17043 }, -- Zealot's Robe
         { 270054 }, -- Cultist's Chestguard
     } },
 })

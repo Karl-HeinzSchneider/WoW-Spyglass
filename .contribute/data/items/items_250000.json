@@ -338,7 +338,7 @@
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 1,
     "icon": 134939,
-    "sellPrice": 0,
+    "sellPrice": 5000,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -655,7 +655,7 @@
   },
   "250327": {
     "names": {
-      "enUS": "Draught of Predatory Senses"
+      "enUS": "Potion of Predatory Senses"
     },
     "quality": 1,
     "itemLevel": 45,
@@ -1141,7 +1141,7 @@
   },
   "250363": {
     "names": {
-      "enUS": "Recipe: Draught of Predatory Senses"
+      "enUS": "Recipe: Potion of Predatory Senses"
     },
     "quality": 1,
     "itemLevel": 1,
@@ -1637,7 +1637,7 @@
     "slot": "INVTYPE_FEET",
     "bind": 1,
     "icon": 132535,
-    "sellPrice": 394,
+    "sellPrice": 256,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -1733,7 +1733,7 @@
     "slot": "INVTYPE_SHOULDER",
     "bind": 2,
     "icon": 135040,
-    "sellPrice": 1592,
+    "sellPrice": 490,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -1757,7 +1757,7 @@
     "slot": "INVTYPE_CHEST",
     "bind": 2,
     "icon": 132631,
-    "sellPrice": 2823,
+    "sellPrice": 485,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -1829,13 +1829,13 @@
     "slot": "INVTYPE_CHEST",
     "bind": 1,
     "icon": 132629,
-    "sellPrice": 982,
+    "sellPrice": 488,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DEFENSE_SKILL_RATING": 5,
+      "DEFENSE_SKILL_RATING": 3,
       "RESISTANCE0_NAME": 184,
       "SPELL_POWER": 5,
       "STAMINA": 7
@@ -1853,7 +1853,7 @@
     "slot": "INVTYPE_CHEST",
     "bind": 1,
     "icon": 132630,
-    "sellPrice": 985,
+    "sellPrice": 313,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -1878,7 +1878,7 @@
     "slot": "INVTYPE_CHEST",
     "bind": 1,
     "icon": 132631,
-    "sellPrice": 989,
+    "sellPrice": 456,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -1950,13 +1950,13 @@
     "slot": "INVTYPE_LEGS",
     "bind": 1,
     "icon": 134657,
-    "sellPrice": 1961,
+    "sellPrice": 788,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DEFENSE_SKILL_RATING": 7,
+      "DEFENSE_SKILL_RATING": 5,
       "RESISTANCE0_NAME": 176,
       "SPELL_POWER": 6,
       "STAMINA": 9
@@ -1974,7 +1974,7 @@
     "slot": "INVTYPE_LEGS",
     "bind": 1,
     "icon": 134669,
-    "sellPrice": 1968,
+    "sellPrice": 781,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -1999,7 +1999,7 @@
     "slot": "INVTYPE_LEGS",
     "bind": 1,
     "icon": 134665,
-    "sellPrice": 1975,
+    "sellPrice": 801,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -2008,7 +2008,7 @@
       "RESISTANCE0_NAME": 176,
       "SPELL_POWER": 11,
       "STAMINA": 7,
-      "STRENGTH": 5
+      "STRENGTH": 3
     }
   },
   "250498": {
@@ -2069,13 +2069,13 @@
     "slot": "INVTYPE_HEAD",
     "bind": 1,
     "icon": 133141,
-    "sellPrice": 2489,
+    "sellPrice": 1101,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DEFENSE_SKILL_RATING": 8,
+      "DEFENSE_SKILL_RATING": 7,
       "RESISTANCE0_NAME": 177,
       "STAMINA": 11
     }
@@ -2092,7 +2092,7 @@
     "slot": "INVTYPE_HEAD",
     "bind": 1,
     "icon": 133138,
-    "sellPrice": 2498,
+    "sellPrice": 1088,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -2116,7 +2116,7 @@
     "slot": "INVTYPE_HEAD",
     "bind": 1,
     "icon": 133139,
-    "sellPrice": 2507,
+    "sellPrice": 1024,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -2435,7 +2435,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DEFENSE_SKILL_RATING": 3,
+      "DEFENSE_SKILL_RATING": 2,
       "RESISTANCE0_NAME": 98,
       "SPELL_POWER": 5,
       "STAMINA": 4
@@ -3159,7 +3159,7 @@
     "slot": "INVTYPE_FEET",
     "bind": 1,
     "icon": 457761,
-    "sellPrice": 9881,
+    "sellPrice": 3321,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -3183,7 +3183,7 @@
     "slot": "INVTYPE_FEET",
     "bind": 1,
     "icon": 457763,
-    "sellPrice": 9919,
+    "sellPrice": 3351,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -3207,7 +3207,7 @@
     "slot": "INVTYPE_FEET",
     "bind": 1,
     "icon": 457760,
-    "sellPrice": 9957,
+    "sellPrice": 3357,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -3256,7 +3256,7 @@
     "slot": "INVTYPE_FEET",
     "bind": 1,
     "icon": 132586,
-    "sellPrice": 10031,
+    "sellPrice": 3388,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -4535,7 +4535,7 @@
     "slot": "INVTYPE_2HWEAPON",
     "bind": 2,
     "icon": 135128,
-    "sellPrice": 3253,
+    "sellPrice": 488,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -4580,7 +4580,7 @@
     "slot": "INVTYPE_2HWEAPON",
     "bind": 2,
     "icon": 135131,
-    "sellPrice": 10569,
+    "sellPrice": 2501,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -4648,7 +4648,7 @@
     "slot": "INVTYPE_2HWEAPON",
     "bind": 2,
     "icon": 133040,
-    "sellPrice": 17423,
+    "sellPrice": 4356,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -4671,7 +4671,7 @@
     "slot": "INVTYPE_WEAPON",
     "bind": 2,
     "icon": 134295,
-    "sellPrice": 16318,
+    "sellPrice": 4079,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -4717,7 +4717,7 @@
     "slot": "INVTYPE_WEAPON",
     "bind": 2,
     "icon": 135641,
-    "sellPrice": 19171,
+    "sellPrice": 4133,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -4739,7 +4739,7 @@
     "slot": "INVTYPE_2HWEAPON",
     "bind": 2,
     "icon": 132400,
-    "sellPrice": 25975,
+    "sellPrice": 10273,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -4825,22 +4825,22 @@
       "enUS": "Bold Dirk"
     },
     "quality": 2,
-    "itemLevel": 59,
-    "reqLevel": 54,
+    "itemLevel": 57,
+    "reqLevel": 52,
     "classID": 2,
     "subclassID": 15,
     "slot": "INVTYPE_WEAPON",
     "bind": 2,
     "icon": 135637,
-    "sellPrice": 40772,
+    "sellPrice": 36633,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "AGILITY": 7,
+      "AGILITY": 6,
       "ATTACK_POWER": 16,
-      "DAMAGE_PER_SECOND": 35.28
+      "DAMAGE_PER_SECOND": 33.89
     }
   },
   "250617": {
@@ -4949,7 +4949,7 @@
     "slot": "INVTYPE_FEET",
     "bind": 1,
     "icon": 132582,
-    "sellPrice": 364,
+    "sellPrice": 243,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -5734,6 +5734,24 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "250991": {
+    "names": {
+      "enUS": "Recipe: Greater Mender's Potion"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 9,
+    "subclassID": 6,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 2500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
   "250992": {
     "names": {
       "enUS": "Recipe: Superior Mender's Potion"
@@ -5870,9 +5888,9 @@
     "classID": 9,
     "subclassID": 6,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 0,
+    "bind": 1,
     "icon": 134939,
-    "sellPrice": 0,
+    "sellPrice": 2500,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -5998,7 +6016,7 @@
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 0,
     "icon": 348540,
-    "sellPrice": 2500,
+    "sellPrice": 1500,
     "stackCount": 20,
     "setID": 0,
     "expansionID": 0,
@@ -8205,7 +8223,7 @@
       "enUS": "Plans: Bold Dirk"
     },
     "quality": 3,
-    "itemLevel": 59,
+    "itemLevel": 57,
     "reqLevel": 0,
     "classID": 9,
     "subclassID": 4,
@@ -9276,7 +9294,7 @@
     "names": {
       "enUS": "Violet Sash"
     },
-    "quality": 3,
+    "quality": 2,
     "itemLevel": 36,
     "reqLevel": 0,
     "classID": 4,
@@ -9284,22 +9302,22 @@
     "slot": "INVTYPE_WAIST",
     "bind": 1,
     "icon": 132493,
-    "sellPrice": 1902,
+    "sellPrice": 1585,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "INTELLECT": 12,
-      "RESISTANCE0_NAME": 29,
-      "SPIRIT": 7
+      "INTELLECT": 9,
+      "RESISTANCE0_NAME": 27,
+      "SPELL_POWER": 6
     }
   },
   "251963": {
     "names": {
       "enUS": "Gravewalker Boots"
     },
-    "quality": 3,
+    "quality": 2,
     "itemLevel": 36,
     "reqLevel": 0,
     "classID": 4,
@@ -9313,17 +9331,17 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "AGILITY": 7,
-      "RESISTANCE0_NAME": 78,
-      "SPIRIT": 7,
-      "STAMINA": 10
+      "AGILITY": 5,
+      "RESISTANCE0_NAME": 71,
+      "SPIRIT": 5,
+      "STAMINA": 7
     }
   },
   "251965": {
     "names": {
       "enUS": "Undead Knight's Bracers"
     },
-    "quality": 3,
+    "quality": 2,
     "itemLevel": 36,
     "reqLevel": 0,
     "classID": 4,
@@ -9331,16 +9349,16 @@
     "slot": "INVTYPE_WRIST",
     "bind": 1,
     "icon": 132615,
-    "sellPrice": 2884,
+    "sellPrice": 2404,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "AGILITY": 4,
-      "RESISTANCE0_NAME": 104,
-      "STAMINA": 8,
-      "STRENGTH": 4
+      "INTELLECT": 3,
+      "RESISTANCE0_NAME": 95,
+      "STAMINA": 6,
+      "STRENGTH": 3
     }
   },
   "251983": {
@@ -12060,7 +12078,7 @@
   },
   "252534": {
     "names": {
-      "enUS": "Prowler's Leather Shoulder"
+      "enUS": "Prowler's Leather Shoulders"
     },
     "quality": 3,
     "itemLevel": 47,
@@ -12110,7 +12128,7 @@
   },
   "252536": {
     "names": {
-      "enUS": "Warden's Leather Shoulder"
+      "enUS": "Warden's Leather Shoulders"
     },
     "quality": 3,
     "itemLevel": 47,
@@ -12134,7 +12152,7 @@
   },
   "252537": {
     "names": {
-      "enUS": "Skycaller's Leather Shoulder"
+      "enUS": "Skycaller's Leather Shoulders"
     },
     "quality": 3,
     "itemLevel": 47,
@@ -12159,7 +12177,7 @@
   },
   "252538": {
     "names": {
-      "enUS": "Mender's Leather Shoulder"
+      "enUS": "Mender's Leather Shoulders"
     },
     "quality": 3,
     "itemLevel": 47,
@@ -12555,7 +12573,7 @@
   },
   "252554": {
     "names": {
-      "enUS": "Blue Suede Shoulder"
+      "enUS": "Blue Suede Shoulders"
     },
     "quality": 2,
     "itemLevel": 57,
@@ -12603,7 +12621,7 @@
   },
   "252556": {
     "names": {
-      "enUS": "Wicked Leather Shoulder"
+      "enUS": "Wicked Leather Shoulders"
     },
     "quality": 2,
     "itemLevel": 59,
@@ -12848,7 +12866,7 @@
   },
   "252566": {
     "names": {
-      "enUS": "Stalker's Mail Shoulder"
+      "enUS": "Stalker's Mail Shoulders"
     },
     "quality": 3,
     "itemLevel": 47,
@@ -12873,7 +12891,7 @@
   },
   "252567": {
     "names": {
-      "enUS": "Skycaller's Mail Shoulder"
+      "enUS": "Skycaller's Mail Shoulders"
     },
     "quality": 3,
     "itemLevel": 47,
@@ -12898,7 +12916,7 @@
   },
   "252568": {
     "names": {
-      "enUS": "Skirmisher's Mail Shoulder"
+      "enUS": "Skirmisher's Mail Shoulders"
     },
     "quality": 3,
     "itemLevel": 47,
@@ -12923,7 +12941,7 @@
   },
   "252569": {
     "names": {
-      "enUS": "Mender's Mail Shoulder"
+      "enUS": "Mender's Mail Shoulders"
     },
     "quality": 3,
     "itemLevel": 47,
@@ -13267,7 +13285,7 @@
   },
   "252583": {
     "names": {
-      "enUS": "Charged Scorpid Shoulder"
+      "enUS": "Charged Scorpid Shoulders"
     },
     "quality": 2,
     "itemLevel": 55,
@@ -13489,7 +13507,7 @@
   },
   "252592": {
     "names": {
-      "enUS": "Supple Scorpid Shoulder"
+      "enUS": "Supple Scorpid Shoulders"
     },
     "quality": 2,
     "itemLevel": 56,
@@ -15196,7 +15214,7 @@
   },
   "252848": {
     "names": {
-      "enUS": "Pattern: Prowler's Leather Shoulder"
+      "enUS": "Pattern: Prowler's Leather Shoulders"
     },
     "quality": 3,
     "itemLevel": 47,
@@ -15232,7 +15250,7 @@
   },
   "252850": {
     "names": {
-      "enUS": "Pattern: Warden's Leather Shoulder"
+      "enUS": "Pattern: Warden's Leather Shoulders"
     },
     "quality": 3,
     "itemLevel": 47,
@@ -15250,7 +15268,7 @@
   },
   "252851": {
     "names": {
-      "enUS": "Pattern: Skycaller's Leather Shoulder"
+      "enUS": "Pattern: Skycaller's Leather Shoulders"
     },
     "quality": 3,
     "itemLevel": 47,
@@ -15268,7 +15286,7 @@
   },
   "252852": {
     "names": {
-      "enUS": "Pattern: Mender's Leather Shoulder"
+      "enUS": "Pattern: Mender's Leather Shoulders"
     },
     "quality": 3,
     "itemLevel": 47,
@@ -15790,7 +15808,7 @@
   },
   "252881": {
     "names": {
-      "enUS": "Pattern: Blue Suede Shoulder"
+      "enUS": "Pattern: Blue Suede Shoulders"
     },
     "quality": 2,
     "itemLevel": 57,
@@ -15844,7 +15862,7 @@
   },
   "252884": {
     "names": {
-      "enUS": "Pattern: Wicked Leather Shoulder"
+      "enUS": "Pattern: Wicked Leather Shoulders"
     },
     "quality": 2,
     "itemLevel": 59,
@@ -16132,7 +16150,7 @@
   },
   "252900": {
     "names": {
-      "enUS": "Pattern: Stalker's Mail Shoulder"
+      "enUS": "Pattern: Stalker's Mail Shoulders"
     },
     "quality": 3,
     "itemLevel": 47,
@@ -16150,7 +16168,7 @@
   },
   "252901": {
     "names": {
-      "enUS": "Pattern: Skycaller's Mail Shoulder"
+      "enUS": "Pattern: Skycaller's Mail Shoulders"
     },
     "quality": 3,
     "itemLevel": 47,
@@ -16168,7 +16186,7 @@
   },
   "252902": {
     "names": {
-      "enUS": "Pattern: Skirmisher's Mail Shoulder"
+      "enUS": "Pattern: Skirmisher's Mail Shoulders"
     },
     "quality": 3,
     "itemLevel": 47,
@@ -16186,7 +16204,7 @@
   },
   "252903": {
     "names": {
-      "enUS": "Pattern: Mender's Mail Shoulder"
+      "enUS": "Pattern: Mender's Mail Shoulders"
     },
     "quality": 3,
     "itemLevel": 47,
@@ -16438,7 +16456,7 @@
   },
   "252917": {
     "names": {
-      "enUS": "Pattern: Charged Scorpid Shoulder"
+      "enUS": "Pattern: Charged Scorpid Shoulders"
     },
     "quality": 2,
     "itemLevel": 55,
@@ -16600,7 +16618,7 @@
   },
   "252926": {
     "names": {
-      "enUS": "Pattern: Supple Scorpid Shoulder"
+      "enUS": "Pattern: Supple Scorpid Shoulders"
     },
     "quality": 2,
     "itemLevel": 56,
@@ -17294,7 +17312,7 @@
     "slot": "INVTYPE_BAG",
     "bind": 2,
     "icon": 348520,
-    "sellPrice": 5000,
+    "sellPrice": 1250,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -22419,21 +22437,21 @@
       "enUS": "Runecloth Cuffs"
     },
     "quality": 2,
-    "itemLevel": 59,
-    "reqLevel": 54,
+    "itemLevel": 57,
+    "reqLevel": 52,
     "classID": 4,
     "subclassID": 1,
     "slot": "INVTYPE_WRIST",
     "bind": 2,
     "icon": 132612,
-    "sellPrice": 7688,
+    "sellPrice": 6908,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
       "INTELLECT": 10,
-      "RESISTANCE0_NAME": 33,
+      "RESISTANCE0_NAME": 32,
       "SPELL_POWER": 11
     }
   },
@@ -22442,7 +22460,7 @@
       "enUS": "Pattern: Runecloth Cuffs"
     },
     "quality": 2,
-    "itemLevel": 59,
+    "itemLevel": 57,
     "reqLevel": 1,
     "classID": 9,
     "subclassID": 2,
@@ -23032,7 +23050,7 @@
     "names": {
       "enUS": "Index Esoteria"
     },
-    "quality": 2,
+    "quality": 1,
     "itemLevel": 1,
     "reqLevel": 1,
     "classID": 12,
@@ -23508,12 +23526,12 @@
     "quality": 1,
     "itemLevel": 1,
     "reqLevel": 0,
-    "classID": 7,
-    "subclassID": 1,
+    "classID": 12,
+    "subclassID": 0,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 0,
+    "bind": 4,
     "icon": 132995,
-    "sellPrice": 31,
+    "sellPrice": 0,
     "stackCount": 20,
     "setID": 0,
     "expansionID": 0,
@@ -25497,7 +25515,7 @@
     "classID": 12,
     "subclassID": 0,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 1,
+    "bind": 4,
     "icon": 970852,
     "sellPrice": 0,
     "stackCount": 1,
@@ -25561,7 +25579,7 @@
   },
   "258771": {
     "names": {
-      "enUS": "Al'Alketh Cultist's Ear"
+      "enUS": "Al'Aketh Cultist's Ear"
     },
     "quality": 1,
     "itemLevel": 1,
