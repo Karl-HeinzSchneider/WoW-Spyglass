@@ -14991,6 +14991,207 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "287620": {
+    "names": {
+      "enUS": "Rugged Totemic Backpack"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_CLOAK",
+    "bind": 1,
+    "icon": 8392824,
+    "sellPrice": 2,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287621": {
+    "names": {
+      "enUS": "Gilded Blademaster's Chestpiece"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_CHEST",
+    "bind": 1,
+    "icon": 8382584,
+    "sellPrice": 2,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287622": {
+    "names": {
+      "enUS": "Gilded Blademaster's Belt"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_WAIST",
+    "bind": 1,
+    "icon": 8382581,
+    "sellPrice": 3,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287623": {
+    "names": {
+      "enUS": "Gilded Blademaster's Legguards"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_LEGS",
+    "bind": 1,
+    "icon": 8382587,
+    "sellPrice": 3,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287624": {
+    "names": {
+      "enUS": "Gilded Blademaster's Boots"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_FEET",
+    "bind": 1,
+    "icon": 8382582,
+    "sellPrice": 3,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287625": {
+    "names": {
+      "enUS": "Gilded Blademaster's Gloves"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_HAND",
+    "bind": 1,
+    "icon": 8382585,
+    "sellPrice": 3,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287626": {
+    "names": {
+      "enUS": "Gilded Blademaster's Banner"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_CLOAK",
+    "bind": 1,
+    "icon": 8382583,
+    "sellPrice": 3,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287627": {
+    "names": {
+      "enUS": "Gilded Blademaster's Collar"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_HEAD",
+    "bind": 1,
+    "icon": 8382586,
+    "sellPrice": 3,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287628": {
+    "names": {
+      "enUS": "Gilded Blademaster's Shoulders"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 4,
+    "subclassID": 5,
+    "slot": "INVTYPE_SHOULDER",
+    "bind": 1,
+    "icon": 8382588,
+    "sellPrice": 3,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287647": {
+    "names": {
+      "enUS": "Ensemble: Gilded Blademaster's Armor"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 8382586,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287648": {
+    "names": {
+      "enUS": "Gilded Blademaster's Greatsword"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 2,
+    "subclassID": 8,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 1,
+    "icon": 8422168,
+    "sellPrice": 9,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 5
+    }
+  },
   "287958": {
     "names": {
       "enUS": "Titan Relic"
@@ -15023,6 +15224,420 @@
     "icon": 294481,
     "sellPrice": 0,
     "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287963": {
+    "names": {
+      "enUS": "Roasted Quail"
+    },
+    "quality": 1,
+    "itemLevel": 55,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133971,
+    "sellPrice": 200,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287964": {
+    "names": {
+      "enUS": "Morning Glory Dew"
+    },
+    "quality": 1,
+    "itemLevel": 55,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134712,
+    "sellPrice": 200,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287966": {
+    "names": {
+      "enUS": "Minor Healing Potion"
+    },
+    "quality": 1,
+    "itemLevel": 5,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134829,
+    "sellPrice": 5,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287967": {
+    "names": {
+      "enUS": "Lesser Healing Potion"
+    },
+    "quality": 1,
+    "itemLevel": 13,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134830,
+    "sellPrice": 25,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287968": {
+    "names": {
+      "enUS": "Minor Mana Potion"
+    },
+    "quality": 1,
+    "itemLevel": 15,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134850,
+    "sellPrice": 10,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287969": {
+    "names": {
+      "enUS": "Lesser Mana Potion"
+    },
+    "quality": 1,
+    "itemLevel": 24,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134851,
+    "sellPrice": 30,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287971": {
+    "names": {
+      "enUS": "Woolen Bag"
+    },
+    "quality": 1,
+    "itemLevel": 15,
+    "reqLevel": 1,
+    "classID": 1,
+    "subclassID": 0,
+    "slot": "INVTYPE_BAG",
+    "bind": 1,
+    "icon": 133639,
+    "sellPrice": 300,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287972": {
+    "names": {
+      "enUS": "Rumsey Rum Dark"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 132791,
+    "sellPrice": 50,
+    "stackCount": 10,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287973": {
+    "names": {
+      "enUS": "Tender Wolf Steak"
+    },
+    "quality": 1,
+    "itemLevel": 45,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134003,
+    "sellPrice": 300,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287974": {
+    "names": {
+      "enUS": "Grilled Squid"
+    },
+    "quality": 1,
+    "itemLevel": 45,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 5,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133899,
+    "sellPrice": 8,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287975": {
+    "names": {
+      "enUS": "Swiftness Potion"
+    },
+    "quality": 1,
+    "itemLevel": 15,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134875,
+    "sellPrice": 25,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287976": {
+    "names": {
+      "enUS": "Free Action Potion"
+    },
+    "quality": 1,
+    "itemLevel": 30,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134715,
+    "sellPrice": 75,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287977": {
+    "names": {
+      "enUS": "Greater Healing Potion"
+    },
+    "quality": 1,
+    "itemLevel": 31,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134832,
+    "sellPrice": 125,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287978": {
+    "names": {
+      "enUS": "Rough Sharpening Stone"
+    },
+    "quality": 1,
+    "itemLevel": 5,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 135248,
+    "sellPrice": 3,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287979": {
+    "names": {
+      "enUS": "Lesser Wizard Oil"
+    },
+    "quality": 1,
+    "itemLevel": 40,
+    "reqLevel": 1,
+    "classID": 7,
+    "subclassID": 12,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134725,
+    "sellPrice": 1000,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287980": {
+    "names": {
+      "enUS": "Elemental Sharpening Stone"
+    },
+    "quality": 2,
+    "itemLevel": 60,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 135228,
+    "sellPrice": 1250,
+    "stackCount": 20,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "287992": {
+    "names": {
+      "enUS": "Old Key"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 35,
+    "classID": 13,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 134239,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "288185": {
+    "names": {
+      "enUS": "Adventurer's Tent"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 15,
+    "subclassID": 4,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 4624631,
+    "sellPrice": 750000,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "288336": {
+    "names": {
+      "enUS": "Blue Firework"
+    },
+    "quality": 1,
+    "itemLevel": 20,
+    "reqLevel": 0,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 135989,
+    "sellPrice": 5,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "288337": {
+    "names": {
+      "enUS": "Green Firework"
+    },
+    "quality": 1,
+    "itemLevel": 20,
+    "reqLevel": 0,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 136006,
+    "sellPrice": 5,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "288338": {
+    "names": {
+      "enUS": "Red Firework"
+    },
+    "quality": 1,
+    "itemLevel": 20,
+    "reqLevel": 0,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 135808,
+    "sellPrice": 5,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "288339": {
+    "names": {
+      "enUS": "Red Streaks Firework"
+    },
+    "quality": 1,
+    "itemLevel": 20,
+    "reqLevel": 0,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 135815,
+    "sellPrice": 12,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "288340": {
+    "names": {
+      "enUS": "Yellow Rose Firework"
+    },
+    "quality": 1,
+    "itemLevel": 20,
+    "reqLevel": 0,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 135920,
+    "sellPrice": 10,
+    "stackCount": 5,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
