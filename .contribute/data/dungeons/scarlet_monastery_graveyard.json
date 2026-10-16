@@ -15,15 +15,180 @@
       "id": 444,
       "name": "Interrogator Vishas",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Interrogator Vishas",
-      "loot": []
+      "loot": [
+        {
+          "item": 7682,
+          "name": "Torturing Poker"
+        },
+        {
+          "item": 7683,
+          "name": "Bloody Brass Knuckles"
+        },
+        {
+          "item": 274290,
+          "name": "Painwalker Buckler"
+        },
+        {
+          "item": 252513,
+          "name": "Trapper's Leather Helm"
+        },
+        {
+          "item": 252455,
+          "name": "Defender's Leather Helm"
+        }
+      ]
+    },
+    {
+      "id": -6490,
+      "name": "Azshir the Sleepless",
+      "displayID": 5534,
+      "npc": 6490,
+      "level": 33,
+      "rare": true,
+      "loot": [
+        {
+          "item": 7709,
+          "name": "Blighted Leggings"
+        },
+        {
+          "item": 7708,
+          "name": "Necrotic Wand"
+        },
+        {
+          "item": 7731,
+          "name": "Ghostshard Talisman"
+        },
+        {
+          "item": 252512,
+          "name": "Brawler's Leather Helm"
+        },
+        {
+          "item": 252456,
+          "name": "Totemic Leather Helm"
+        }
+      ]
+    },
+    {
+      "id": -6488,
+      "name": "Fallen Champion",
+      "displayID": 5230,
+      "npc": 6488,
+      "level": 33,
+      "rare": true,
+      "loot": [
+        {
+          "item": 7691,
+          "name": "Embalmed Shroud"
+        },
+        {
+          "item": 7690,
+          "name": "Ebon Vise"
+        },
+        {
+          "item": 7689,
+          "name": "Morbid Dawn"
+        },
+        {
+          "item": 252513,
+          "name": "Trapper's Leather Helm"
+        }
+      ]
+    },
+    {
+      "id": -6489,
+      "name": "Ironspine",
+      "displayID": 5231,
+      "npc": 6489,
+      "level": 33,
+      "rare": true,
+      "loot": [
+        {
+          "item": 7688,
+          "name": "Ironspine's Ribcage"
+        },
+        {
+          "item": 7687,
+          "name": "Ironspine's Fist"
+        },
+        {
+          "item": 7686,
+          "name": "Ironspine's Eye"
+        }
+      ]
     },
     {
       "id": 2779,
       "name": "Bloodmage Thalnos",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Bloodmage Thalnos",
-      "loot": []
+      "loot": [
+        {
+          "item": 7685,
+          "name": "Orb of the Forgotten Seer"
+        },
+        {
+          "item": 7684,
+          "name": "Bloodmage Mantle"
+        },
+        {
+          "item": 274291,
+          "name": "Polished Skullcap"
+        },
+        {
+          "item": 252822,
+          "name": "Pattern: Defender's Leather Kilt"
+        },
+        {
+          "item": 252513,
+          "name": "Trapper's Leather Helm"
+        },
+        {
+          "item": 252455,
+          "name": "Defender's Leather Helm"
+        }
+      ]
     }
   ],
-  "trash": [],
+  "trash": [
+    {
+      "item": 10328,
+      "name": "Scarlet Chestpiece"
+    },
+    {
+      "item": 10329,
+      "name": "Scarlet Belt"
+    },
+    {
+      "item": 10330,
+      "name": "Scarlet Leggings"
+    },
+    {
+      "item": 10331,
+      "name": "Scarlet Gauntlets"
+    },
+    {
+      "item": 10333,
+      "name": "Scarlet Wristguards"
+    },
+    {
+      "item": 10332,
+      "name": "Scarlet Boots"
+    },
+    {
+      "item": 5819,
+      "name": "Sunblaze Coif"
+    },
+    {
+      "item": 7730,
+      "name": "Cobalt Crusher"
+    },
+    {
+      "item": 7761,
+      "name": "Steelclaw Reaver"
+    },
+    {
+      "item": 7787,
+      "name": "Resplendent Guardian"
+    }
+  ],
   "quests": []
 }

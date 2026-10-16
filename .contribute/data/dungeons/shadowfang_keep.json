@@ -68,6 +68,86 @@
         {
           "item": 6341,
           "name": "Eerie Stable Lantern"
+        },
+        {
+          "item": 251341,
+          "name": "Plans: Guard's Chain Shirt"
+        },
+        {
+          "item": 251362,
+          "name": "Plans: Protector's Gloves"
+        },
+        {
+          "item": 251363,
+          "name": "Plans: Acolyte's Gloves"
+        },
+        {
+          "item": 251364,
+          "name": "Plans: Crusader's Gloves"
+        },
+        {
+          "item": 252781,
+          "name": "Pattern: Stormrider's Leather Gloves"
+        },
+        {
+          "item": 252782,
+          "name": "Pattern: Wisdom's Leather Gloves"
+        },
+        {
+          "item": 253902,
+          "name": "Pattern: Filigreed Pristine Gown"
+        },
+        {
+          "item": 253904,
+          "name": "Pattern: Filigreed Silky Gown"
+        },
+        {
+          "item": 253906,
+          "name": "Pattern: Filigreed Flame Gown"
+        },
+        {
+          "item": 253908,
+          "name": "Pattern: Filigreed Shadow Gown"
+        },
+        {
+          "item": 253910,
+          "name": "Pattern: Filigreed Pearly Gown"
+        },
+        {
+          "item": 253912,
+          "name": "Pattern: Filigreed Shining Gown"
+        },
+        {
+          "item": 251381,
+          "name": "Plans: Guard's Silvered Chain Helm"
+        },
+        {
+          "item": 251382,
+          "name": "Plans: Protector's Silvered Chain Helm"
+        },
+        {
+          "item": 252799,
+          "name": "Pattern: Trapper's Leather Hood"
+        },
+        {
+          "item": 252801,
+          "name": "Pattern: Totemic Leather Hood"
+        },
+        {
+          "item": 252803,
+          "name": "Pattern: Wisdom's Leather Hood"
+        },
+        {
+          "item": 253940,
+          "name": "Pattern: Filigreed Silky Leggings"
+        },
+        {
+          "item": 253946,
+          "name": "Pattern: Filigreed Pearly Leggings"
+        },
+        {
+          "item": 253948,
+          "name": "Pattern: Filigreed Shining Leggings"
         }
       ]
     },
@@ -112,6 +192,14 @@
         {
           "item": 273643,
           "name": "Worgenbane Talisman"
+        },
+        {
+          "item": 273105,
+          "name": "Blueprint: Toxin Study"
+        },
+        {
+          "item": 6341,
+          "name": "Eerie Stable Lantern"
         }
       ]
     },
@@ -175,6 +263,10 @@
         {
           "item": 273646,
           "name": "Half-Eaten Boots"
+        },
+        {
+          "item": 251380,
+          "name": "Plans: Veteran's Silvered Chain Helm"
         }
       ]
     },

@@ -60,9 +60,10 @@ Data:AddInstance(36, {
     background = "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenDeadmines",
     backgroundCoords = { 0, 1, 0.305, 0.695 },
     entrance = { 1436, 43, 72 },
-    bosses = { 2741, 2742, 3676, 2743, 2744, 2745, 2746, 2747 },
+    bosses = { 2741, -642, 2742, 3676, 2743, 2744, 2745, 2746, 2747 },
 })
 Data:AddBoss(2741, { instanceID = 36, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-RhahkZor", displayID = 14403, level = 19 }) -- Rhahk'Zor
+Data:AddBoss(-642, { instanceID = 36, displayID = 1269, level = 20 }) -- Sneed's Shredder
 Data:AddBoss(2742, { instanceID = 36, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Sneed", displayID = 7125, level = 20 }) -- Sneed
 Data:AddBoss(3676, { instanceID = 36, order = 1500, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\miner_johnson.blp", displayID = 556, level = 19, rare = true }) -- Miner Johnson
 Data:AddBoss(2743, { instanceID = 36, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Gilnid", displayID = 7124, level = 20 }) -- Gilnid
@@ -83,7 +84,7 @@ Data:AddInstance(43, {
     background = "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenWailingCaverns",
     backgroundCoords = { 0, 1, 0.305, 0.695 },
     entrance = { 1413, 46, 36 },
-    bosses = { 585, 586, 587, 588, 589, 590, 591, 592 },
+    bosses = { 585, 586, 587, 588, 589, 590, 591, 592, -5912 },
 })
 Data:AddBoss(585, { instanceID = 43, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lady Anacondra", displayID = 4313, level = 20 }) -- Lady Anacondra
 Data:AddBoss(586, { instanceID = 43, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Cobrahn", displayID = 4213, level = 20 }) -- Lord Cobrahn
@@ -93,6 +94,7 @@ Data:AddBoss(589, { instanceID = 43, order = 4000, portrait = "Interface\\Encoun
 Data:AddBoss(590, { instanceID = 43, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Serpentis", displayID = 4215, level = 21 }) -- Lord Serpentis
 Data:AddBoss(591, { instanceID = 43, order = 6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Verdan the Everliving", displayID = 4256, level = 21 }) -- Verdan the Everliving
 Data:AddBoss(592, { instanceID = 43, order = 7000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Mutanus the Devourer", displayID = 4088, level = 22 }) -- Mutanus the Devourer
+Data:AddBoss(-5912, { instanceID = 43, displayID = 1267, level = 20, rare = true }) -- Deviate Faerie Dragon
 
 -- Razorfen Kraul
 Data:AddInstance(47, {
@@ -106,7 +108,7 @@ Data:AddInstance(47, {
     background = "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenRazorfenKraul",
     backgroundCoords = { 0, 1, 0.305, 0.695 },
     entrance = { 1413, 43, 90 },
-    bosses = { 2773, 2774, 2775, 2776, 2777, 2778 },
+    bosses = { 2773, 2774, 2775, 2776, 2777, 2778, -4425, -4842 },
 })
 Data:AddBoss(2773, { instanceID = 47, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Roogug" }) -- Roogug
 Data:AddBoss(2774, { instanceID = 47, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Aggem Thorncurse" }) -- Aggem Thorncurse
@@ -114,6 +116,8 @@ Data:AddBoss(2775, { instanceID = 47, order = 2000, portrait = "Interface\\Encou
 Data:AddBoss(2776, { instanceID = 47, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Overlord Ramtusk" }) -- Overlord Ramtusk
 Data:AddBoss(2777, { instanceID = 47, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Agathelos the Raging" }) -- Agathelos the Raging
 Data:AddBoss(2778, { instanceID = 47, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Charlga Razorflank" }) -- Charlga Razorflank
+Data:AddBoss(-4425, { instanceID = 47, displayID = 4735, level = 32, rare = true }) -- Blind Hunter
+Data:AddBoss(-4842, { instanceID = 47, displayID = 6102, level = 32, rare = true }) -- Earthcaller Halmgar
 
 -- Blackfathom Deeps
 Data:AddInstance(48, {
@@ -170,12 +174,13 @@ Data:AddInstance(90, {
     background = "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenGnomeregan",
     backgroundCoords = { 0, 1, 0.305, 0.695 },
     entrance = { 1426, 24, 40 },
-    bosses = { 2769, 2770, 2771, 2772 },
+    bosses = { 2769, 2770, 2771, 2772, -6228 },
 })
 Data:AddBoss(2769, { instanceID = 90, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Viscous Fallout" }) -- Viscous Fallout
 Data:AddBoss(2770, { instanceID = 90, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Electrocutioner 6000" }) -- Electrocutioner 6000
 Data:AddBoss(2771, { instanceID = 90, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Crowd Pummeler 9-60" }) -- Crowd Pummeler 9-60
 Data:AddBoss(2772, { instanceID = 90, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Mekgineer Thermaplugg" }) -- Mekgineer Thermaplugg
+Data:AddBoss(-6228, { instanceID = 90, displayID = 6669, level = 33, rare = true }) -- Dark Iron Ambassador
 
 -- Sunken Temple
 Data:AddInstance(109, {
@@ -234,9 +239,12 @@ Data:AddInstance(18901, {
     background = "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenScarletMonastery2",
     backgroundCoords = { 0, 1, 0.305, 0.695 },
     entrance = { 1420, 83, 34 },
-    bosses = { 444, 2779 },
+    bosses = { 444, -6490, -6488, -6489, 2779 },
 })
 Data:AddBoss(444, { instanceID = 18901, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Interrogator Vishas" }) -- Interrogator Vishas
+Data:AddBoss(-6490, { instanceID = 18901, displayID = 5534, level = 33, rare = true }) -- Azshir the Sleepless
+Data:AddBoss(-6488, { instanceID = 18901, displayID = 5230, level = 33, rare = true }) -- Fallen Champion
+Data:AddBoss(-6489, { instanceID = 18901, displayID = 5231, level = 33, rare = true }) -- Ironspine
 Data:AddBoss(2779, { instanceID = 18901, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Bloodmage Thalnos" }) -- Bloodmage Thalnos
 
 -- Scarlet Monastery: Library

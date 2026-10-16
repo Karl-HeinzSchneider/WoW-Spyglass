@@ -28,6 +28,14 @@
         {
           "item": 272999,
           "name": "Barbaric Crossbow"
+        },
+        {
+          "item": 252781,
+          "name": "Pattern: Stormrider's Leather Gloves"
+        },
+        {
+          "item": 252782,
+          "name": "Pattern: Wisdom's Leather Gloves"
         }
       ]
     },
@@ -50,6 +58,22 @@
         {
           "item": 14149,
           "name": "Subterranean Cape"
+        },
+        {
+          "item": 251361,
+          "name": "Plans: Guard's Gloves"
+        },
+        {
+          "item": 251362,
+          "name": "Plans: Protector's Gloves"
+        },
+        {
+          "item": 251363,
+          "name": "Plans: Acolyte's Gloves"
+        },
+        {
+          "item": 252782,
+          "name": "Pattern: Wisdom's Leather Gloves"
         }
       ]
     },
@@ -72,6 +96,14 @@
         {
           "item": 14151,
           "name": "Chanting Blade"
+        },
+        {
+          "item": 251360,
+          "name": "Plans: Veteran's Gloves"
+        },
+        {
+          "item": 253906,
+          "name": "Pattern: Filigreed Flame Gown"
         }
       ]
     },
@@ -94,6 +126,22 @@
         {
           "item": 273005,
           "name": "Satyrskin Cloak"
+        },
+        {
+          "item": 252780,
+          "name": "Pattern: Totemic Leather Gloves"
+        },
+        {
+          "item": 252782,
+          "name": "Pattern: Wisdom's Leather Gloves"
+        },
+        {
+          "item": 253908,
+          "name": "Pattern: Filigreed Shadow Gown"
+        },
+        {
+          "item": 253910,
+          "name": "Pattern: Filigreed Pearly Gown"
         }
       ]
     }

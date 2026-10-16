@@ -7,16 +7,25 @@ Data:AddBossLoot(2741, { -- Rhahk'Zor
     { 872 }, -- Rockslicer
     { 273289 }, -- Ogre Loincloth
     { 5187 }, -- Rhahk'Zor's Hammer
+    { 251362 }, -- Plans: Protector's Gloves
+    { 251364 }, -- Plans: Crusader's Gloves
+    { 253906 }, -- Pattern: Filigreed Flame Gown
+})
+
+Data:AddBossLoot(-642, { -- Sneed's Shredder
+    { 1937 }, -- Buzz Saw
+    { 2169 }, -- Buzzer Blade
+    { 285292 }, -- Dull Sawblade
 })
 
 Data:AddBossLoot(2742, { -- Sneed
     { 5194 }, -- Taskmaster Axe
     { 5195 }, -- Gold-flecked Gloves
     { 273293 }, -- Bandsaw Wristbands
-    { 1937 }, -- Buzz Saw
-    { 2169 }, -- Buzzer Blade
-    { 285292 }, -- Dull Sawblade
     { 273092 }, -- Blueprint: Repair Bot
+    { 251360 }, -- Plans: Veteran's Gloves
+    { 251364 }, -- Plans: Crusader's Gloves
+    { 253902 }, -- Pattern: Filigreed Pristine Gown
 })
 
 Data:AddBossLoot(3676, { -- Miner Johnson
@@ -28,6 +37,13 @@ Data:AddBossLoot(2743, { -- Gilnid
     { 273297 }, -- Goblin Hammer
     { 1156 }, -- Lavishly Jeweled Ring
     { 5199 }, -- Smelting Pants
+    { 252777 }, -- Pattern: Brawler's Leather Gloves
+    { 252778 }, -- Pattern: Trapper's Leather Gloves
+    { 252780 }, -- Pattern: Totemic Leather Gloves
+    { 252782 }, -- Pattern: Wisdom's Leather Gloves
+    { 253904 }, -- Pattern: Filigreed Silky Gown
+    { 253906 }, -- Pattern: Filigreed Flame Gown
+    { 273086 }, -- Blueprint: Anvil
 })
 
 Data:AddBossLoot(2744, { -- Captain Greenskin
@@ -41,12 +57,23 @@ Data:AddBossLoot(2745, { -- Mr. Smite
     { 5192 }, -- Thief's Blade
     { 284715 }, -- First Mate Band
     { 5196 }, -- Smite's Reaver
+    { 251362 }, -- Plans: Protector's Gloves
+    { 252779 }, -- Pattern: Defender's Leather Gloves
+    { 252780 }, -- Pattern: Totemic Leather Gloves
+    { 252781 }, -- Pattern: Stormrider's Leather Gloves
+    { 252782 }, -- Pattern: Wisdom's Leather Gloves
 })
 
 Data:AddBossLoot(2746, { -- Cookie
     { 273298 }, -- Lookie's Spyglass
     { 5198 }, -- Cookie's Stirring Rod
     { 5197 }, -- Cookie's Tenderizer
+    { 251360 }, -- Plans: Veteran's Gloves
+    { 252778 }, -- Pattern: Trapper's Leather Gloves
+    { 252779 }, -- Pattern: Defender's Leather Gloves
+    { 253910 }, -- Pattern: Filigreed Pearly Gown
+    { 253912 }, -- Pattern: Filigreed Shining Gown
+    { 273102 }, -- Blueprint: Cookie's Feast
 })
 
 Data:AddBossLoot(2747, { -- Edwin VanCleef
@@ -55,6 +82,12 @@ Data:AddBossLoot(2747, { -- Edwin VanCleef
     { 5202 }, -- Corsair's Overshirt
     { 10399 }, -- Blackened Defias Armor
     { 2874 }, -- An Unsent Letter
+    { 252799 }, -- Pattern: Trapper's Leather Hood
+    { 252800 }, -- Pattern: Defender's Leather Hood
+    { 252801 }, -- Pattern: Totemic Leather Hood
+    { 252803 }, -- Pattern: Wisdom's Leather Hood
+    { 253938 }, -- Pattern: Filigreed Pristine Leggings
+    { 253948 }, -- Pattern: Filigreed Shining Leggings
 })
 
 Data:AddTrashLoot(36, {

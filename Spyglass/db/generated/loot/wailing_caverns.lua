@@ -58,6 +58,12 @@ Data:AddBossLoot(592, { -- Mutanus the Devourer
     { 10441 }, -- Glowing Shard
 })
 
+Data:AddBossLoot(-5912, { -- Deviate Faerie Dragon
+    { 5243 }, -- Firebelcher
+    { 6632 }, -- Feyscale Cloak
+    { 252781 }, -- Pattern: Stormrider's Leather Gloves
+})
+
 Data:AddTrashLoot(43, {
     { 10413 }, -- Gloves of the Fang
     { 5243 }, -- Firebelcher

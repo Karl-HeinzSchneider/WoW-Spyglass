@@ -18,6 +18,26 @@ Data:AddBossLoot(2749, { -- Razorclaw the Butcher
 Data:AddBossLoot(-3864, { -- Fel Steed
     { 932 }, -- Fel Steed Saddlebags
     { 6341 }, -- Eerie Stable Lantern
+    { 251341 }, -- Plans: Guard's Chain Shirt
+    { 251362 }, -- Plans: Protector's Gloves
+    { 251363 }, -- Plans: Acolyte's Gloves
+    { 251364 }, -- Plans: Crusader's Gloves
+    { 252781 }, -- Pattern: Stormrider's Leather Gloves
+    { 252782 }, -- Pattern: Wisdom's Leather Gloves
+    { 253902 }, -- Pattern: Filigreed Pristine Gown
+    { 253904 }, -- Pattern: Filigreed Silky Gown
+    { 253906 }, -- Pattern: Filigreed Flame Gown
+    { 253908 }, -- Pattern: Filigreed Shadow Gown
+    { 253910 }, -- Pattern: Filigreed Pearly Gown
+    { 253912 }, -- Pattern: Filigreed Shining Gown
+    { 251381 }, -- Plans: Guard's Silvered Chain Helm
+    { 251382 }, -- Plans: Protector's Silvered Chain Helm
+    { 252799 }, -- Pattern: Trapper's Leather Hood
+    { 252801 }, -- Pattern: Totemic Leather Hood
+    { 252803 }, -- Pattern: Wisdom's Leather Hood
+    { 253940 }, -- Pattern: Filigreed Silky Leggings
+    { 253946 }, -- Pattern: Filigreed Pearly Leggings
+    { 253948 }, -- Pattern: Filigreed Shining Leggings
 })
 
 Data:AddBossLoot(2750, { -- Baron Silverlaine
@@ -30,6 +50,8 @@ Data:AddBossLoot(2751, { -- Commander Springvale
     { 3191 }, -- Arced War Axe
     { 6320 }, -- Commander's Crest
     { 273643 }, -- Worgenbane Talisman
+    { 273105 }, -- Blueprint: Toxin Study
+    { 6341 }, -- Eerie Stable Lantern
 })
 
 Data:AddBossLoot(2752, { -- Odo the Blindwatcher
@@ -47,6 +69,7 @@ Data:AddBossLoot(2753, { -- Fenrus the Devourer
     { 3230 }, -- Black Wolf Bracers
     { 6340 }, -- Fenrus' Hide
     { 273646 }, -- Half-Eaten Boots
+    { 251380 }, -- Plans: Veteran's Silvered Chain Helm
 })
 
 Data:AddBossLoot(-4627, { -- Arugal's Voidwalker

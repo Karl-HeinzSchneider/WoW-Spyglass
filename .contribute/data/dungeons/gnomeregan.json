@@ -13,7 +13,20 @@
       "id": 2768,
       "name": "Grubbis",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Grubbis",
-      "loot": []
+      "loot": [
+        {
+          "item": 9445,
+          "name": "Grubbis Paws"
+        },
+        {
+          "item": 274043,
+          "name": "Irradiated Shield"
+        },
+        {
+          "item": 274042,
+          "name": "Skullduggery Belt"
+        }
+      ]
     },
     {
       "id": 2769,
@@ -23,6 +36,14 @@
         {
           "item": 9453,
           "name": "Toxic Revenger"
+        },
+        {
+          "item": 9452,
+          "name": "Hydrocane"
+        },
+        {
+          "item": 9454,
+          "name": "Acidic Walkers"
         }
       ]
     },
@@ -30,7 +51,20 @@
       "id": 2770,
       "name": "Electrocutioner 6000",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Electrocutioner 6000",
-      "loot": []
+      "loot": [
+        {
+          "item": 9446,
+          "name": "Electrocutioner Leg"
+        },
+        {
+          "item": 9447,
+          "name": "Electrocutioner Lagnut"
+        },
+        {
+          "item": 9448,
+          "name": "Spidertank Oilrag"
+        }
+      ]
     },
     {
       "id": 2771,
@@ -40,6 +74,14 @@
         {
           "item": 9449,
           "name": "Manual Crowd Pummeler"
+        },
+        {
+          "item": 9450,
+          "name": "Gnomebot Operating Boots"
+        },
+        {
+          "item": 274068,
+          "name": "Thermaplugg Medal of Honor"
         }
       ]
     },
@@ -47,9 +89,89 @@
       "id": 2772,
       "name": "Mekgineer Thermaplugg",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Mekgineer Thermaplugg",
-      "loot": []
+      "loot": [
+        {
+          "item": 9458,
+          "name": "Thermaplugg's Central Core"
+        },
+        {
+          "item": 9459,
+          "name": "Thermaplugg's Left Arm"
+        },
+        {
+          "item": 9461,
+          "name": "Charged Gear"
+        },
+        {
+          "item": 9492,
+          "name": "Electromagnetic Gigaflux Reactivator"
+        }
+      ]
+    },
+    {
+      "id": -6228,
+      "name": "Dark Iron Ambassador",
+      "displayID": 6669,
+      "npc": 6228,
+      "level": 33,
+      "rare": true,
+      "loot": [
+        {
+          "item": 9455,
+          "name": "Emissary Cuffs"
+        },
+        {
+          "item": 9456,
+          "name": "Glass Shooter"
+        },
+        {
+          "item": 9457,
+          "name": "Royal Diplomatic Scepter"
+        }
+      ]
     }
   ],
-  "trash": [],
+  "trash": [
+    {
+      "item": 9508,
+      "name": "Mechbuilder's Overalls"
+    },
+    {
+      "item": 9491,
+      "name": "Hotshot Pilot's Gloves"
+    },
+    {
+      "item": 9509,
+      "name": "Petrolspill Leggings"
+    },
+    {
+      "item": 9510,
+      "name": "Caverndeep Trudgers"
+    },
+    {
+      "item": 9487,
+      "name": "Hi-tech Supergun"
+    },
+    {
+      "item": 9485,
+      "name": "Vibroblade"
+    },
+    {
+      "item": 9488,
+      "name": "Oscillating Power Hammer"
+    },
+    {
+      "item": 9486,
+      "name": "Supercharger Battle Axe"
+    },
+    {
+      "item": 9490,
+      "name": "Gizmotron Megachopper"
+    },
+    {
+      "item": 9489,
+      "name": "Gyromatic Icemaker"
+    }
+  ],
   "quests": [2904, 2928, 2922, 2923, 2926, 2927, 2842, 2843]
 }

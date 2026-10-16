@@ -15,15 +15,78 @@
       "id": 446,
       "name": "Houndmaster Loksey",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Houndmaster Loksey",
-      "loot": []
+      "loot": [
+        {
+          "item": 7756,
+          "name": "Dog Training Gloves"
+        },
+        {
+          "item": 3456,
+          "name": "Dog Whistle"
+        },
+        {
+          "item": 7710,
+          "name": "Loksey's Training Stick"
+        }
+      ]
     },
     {
       "id": 447,
       "name": "Arcanist Doan",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Arcanist Doan",
-      "loot": []
+      "loot": [
+        {
+          "item": 7714,
+          "name": "Hypnotic Blade"
+        },
+        {
+          "item": 7713,
+          "name": "Illusionary Rod"
+        },
+        {
+          "item": 274293,
+          "name": "Spellsever Crossbow"
+        },
+        {
+          "item": 7712,
+          "name": "Mantle of Doan"
+        },
+        {
+          "item": 7711,
+          "name": "Robe of Doan"
+        },
+        {
+          "item": 7146,
+          "name": "The Scarlet Key"
+        }
+      ]
     }
   ],
-  "trash": [],
+  "trash": [
+    {
+      "item": 10332,
+      "name": "Scarlet Boots"
+    },
+    {
+      "item": 5819,
+      "name": "Sunblaze Coif"
+    },
+    {
+      "item": 7730,
+      "name": "Cobalt Crusher"
+    },
+    {
+      "item": 7757,
+      "name": "Windweaver Staff"
+    },
+    {
+      "item": 7761,
+      "name": "Steelclaw Reaver"
+    },
+    {
+      "item": 7787,
+      "name": "Resplendent Guardian"
+    }
+  ],
   "quests": []
 }

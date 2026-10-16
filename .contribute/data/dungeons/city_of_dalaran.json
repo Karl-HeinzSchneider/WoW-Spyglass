@@ -13,56 +13,168 @@
       "name": "Arcane Anomaly",
       "displayID": 129891,
       "npc": 245999,
-      "loot": []
+      "loot": [
+        {
+          "item": 273034,
+          "name": "Ephemeral Grips"
+        },
+        {
+          "item": 273031,
+          "name": "Runemender's Seal"
+        },
+        {
+          "item": 273035,
+          "name": "Mana-Warped Chain Shirt"
+        }
+      ]
     },
     {
       "id": 3299,
       "name": "Fel Ancient",
       "displayID": 129894,
       "npc": 246003,
-      "loot": []
+      "loot": [
+        {
+          "item": 273037,
+          "name": "Felbough Arm"
+        },
+        {
+          "item": 273039,
+          "name": "Blightleaf Rope"
+        },
+        {
+          "item": 273038,
+          "name": "Garb of Fallen Felbark"
+        }
+      ]
     },
     {
       "id": 3300,
       "name": "Mana Devourer",
       "displayID": 129895,
       "npc": 246008,
-      "loot": []
+      "loot": [
+        {
+          "item": 273041,
+          "name": "Slitherwrap Girdle"
+        },
+        {
+          "item": 273040,
+          "name": "Spine of the Devourer"
+        },
+        {
+          "item": 273042,
+          "name": "Manascale Treads"
+        }
+      ]
     },
     {
       "id": 3301,
       "name": "Mana Elemental",
       "displayID": 14253,
       "npc": 14689,
-      "loot": []
+      "loot": [
+        {
+          "item": 273045,
+          "name": "Drape of Shifting Energy"
+        },
+        {
+          "item": 273044,
+          "name": "Violet Sorcerer's Robes"
+        },
+        {
+          "item": 273043,
+          "name": "Wand of Mana Concentration"
+        }
+      ]
     },
     {
       "id": 3302,
       "name": "Unstable Sentinel",
       "displayID": 129954,
       "npc": 246017,
-      "loot": []
+      "loot": [
+        {
+          "item": 273046,
+          "name": "Guardian's Dualblade"
+        },
+        {
+          "item": 273047,
+          "name": "Unstable Crystalline Shoulderpads"
+        },
+        {
+          "item": 273048,
+          "name": "Refractory Scaleguards"
+        },
+        {
+          "item": 273099,
+          "name": "Blueprint: Spinning Wheel"
+        }
+      ]
     },
     {
       "id": 3303,
       "name": "Shade of the Archmage",
       "displayID": 130061,
       "npc": 246020,
-      "loot": []
+      "loot": [
+        {
+          "item": 273052,
+          "name": "Ponderous Orb"
+        },
+        {
+          "item": 273049,
+          "name": "Archmagister's Faceted Pendant"
+        },
+        {
+          "item": 273051,
+          "name": "Violet Sorcerer's Mantle"
+        },
+        {
+          "item": 273103,
+          "name": "Blueprint: Arcane Salvager"
+        }
+      ]
     },
     {
       "id": 3310,
       "name": "Lyn the Ignored",
       "displayID": 130235,
       "npc": 247032,
-      "loot": []
+      "loot": [
+        {
+          "item": 273055,
+          "name": "Bonepile Gaze"
+        },
+        {
+          "item": 273054,
+          "name": "Cartilage Shapers"
+        },
+        {
+          "item": 273053,
+          "name": "Tendonscraper Dagger"
+        }
+      ]
     },
     {
       "id": 3311,
       "name": "Atrexis the Grave Knight",
       "displayID": 145787,
       "npc": 247126,
-      "loot": []
+      "loot": [
+        {
+          "item": 273032,
+          "name": "Bonebinder's Signet"
+        },
+        {
+          "item": 273036,
+          "name": "Graveweave Bindings"
+        },
+        {
+          "item": 273033,
+          "name": "Gravespike Repeater"
+        }
+      ]
     },
     {
       "id": 3312,

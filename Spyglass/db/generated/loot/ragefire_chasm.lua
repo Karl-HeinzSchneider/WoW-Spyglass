@@ -7,24 +7,36 @@ Data:AddBossLoot(2732, { -- Oggleflint
     { 272996 }, -- Trogg Scepter
     { 272998 }, -- Bone Knuckles
     { 272999 }, -- Barbaric Crossbow
+    { 252781 }, -- Pattern: Stormrider's Leather Gloves
+    { 252782 }, -- Pattern: Wisdom's Leather Gloves
 })
 
 Data:AddBossLoot(2733, { -- Taragaman the Hungerer
     { 14145 }, -- Cursed Felblade
     { 14148 }, -- Crystalline Cuffs
     { 14149 }, -- Subterranean Cape
+    { 251361 }, -- Plans: Guard's Gloves
+    { 251362 }, -- Plans: Protector's Gloves
+    { 251363 }, -- Plans: Acolyte's Gloves
+    { 252782 }, -- Pattern: Wisdom's Leather Gloves
 })
 
 Data:AddBossLoot(2734, { -- Jergosh the Invoker
     { 14147 }, -- Cavedweller Bracers
     { 14150 }, -- Robe of Evocation
     { 14151 }, -- Chanting Blade
+    { 251360 }, -- Plans: Veteran's Gloves
+    { 253906 }, -- Pattern: Filigreed Flame Gown
 })
 
 Data:AddBossLoot(2735, { -- Bazzalan
     { 273003 }, -- Searing Dagger
     { 273007 }, -- Chasm Walkers
     { 273005 }, -- Satyrskin Cloak
+    { 252780 }, -- Pattern: Totemic Leather Gloves
+    { 252782 }, -- Pattern: Wisdom's Leather Gloves
+    { 253908 }, -- Pattern: Filigreed Shadow Gown
+    { 253910 }, -- Pattern: Filigreed Pearly Gown
 })
 
 Data:AddQuests(389, {

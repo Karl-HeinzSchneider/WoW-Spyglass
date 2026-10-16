@@ -28,6 +28,22 @@
         {
           "item": 273839,
           "name": "Spiked Shell Band"
+        },
+        {
+          "item": 251382,
+          "name": "Plans: Protector's Silvered Chain Helm"
+        },
+        {
+          "item": 252801,
+          "name": "Pattern: Totemic Leather Hood"
+        },
+        {
+          "item": 253940,
+          "name": "Pattern: Filigreed Silky Leggings"
+        },
+        {
+          "item": 253942,
+          "name": "Pattern: Filigreed Flame Leggings"
         }
       ]
     },
@@ -54,6 +70,18 @@
         {
           "item": 252798,
           "name": "Pattern: Brawler's Leather Hood"
+        },
+        {
+          "item": 251382,
+          "name": "Plans: Protector's Silvered Chain Helm"
+        },
+        {
+          "item": 251383,
+          "name": "Plans: Acolyte's Silvered Chain Helm"
+        },
+        {
+          "item": 253944,
+          "name": "Pattern: Filigreed Shadow Leggings"
         }
       ]
     },
@@ -80,6 +108,58 @@
         {
           "item": 273840,
           "name": "Cursed Murloc Eye"
+        },
+        {
+          "item": 251375,
+          "name": "Plans: Veteran's Silvered Chain Leggings"
+        },
+        {
+          "item": 251377,
+          "name": "Plans: Protector's Silvered Chain Leggings"
+        },
+        {
+          "item": 252820,
+          "name": "Pattern: Brawler's Leather Legguards"
+        },
+        {
+          "item": 252821,
+          "name": "Pattern: Trapper's Leather Legguards"
+        },
+        {
+          "item": 252825,
+          "name": "Pattern: Wisdom's Leather Leggings"
+        },
+        {
+          "item": 253978,
+          "name": "Pattern: Filigreed Silky Circlet"
+        },
+        {
+          "item": 253980,
+          "name": "Pattern: Filigreed Flame Circlet"
+        },
+        {
+          "item": 273141,
+          "name": "Blueprint: Fishing Rack"
+        },
+        {
+          "item": 252512,
+          "name": "Brawler's Leather Helm"
+        },
+        {
+          "item": 252513,
+          "name": "Trapper's Leather Helm"
+        },
+        {
+          "item": 252456,
+          "name": "Totemic Leather Helm"
+        },
+        {
+          "item": 252514,
+          "name": "Stormrider's Leather Helm"
+        },
+        {
+          "item": 252515,
+          "name": "Wisdom's Leather Helm"
         }
       ]
     },
@@ -102,6 +182,30 @@
         {
           "item": 273842,
           "name": "Treacherous Treads"
+        },
+        {
+          "item": 253978,
+          "name": "Pattern: Filigreed Silky Circlet"
+        },
+        {
+          "item": 253982,
+          "name": "Pattern: Filigreed Shadow Circlet"
+        },
+        {
+          "item": 251377,
+          "name": "Plans: Protector's Silvered Chain Leggings"
+        },
+        {
+          "item": 252512,
+          "name": "Brawler's Leather Helm"
+        },
+        {
+          "item": 252513,
+          "name": "Trapper's Leather Helm"
+        },
+        {
+          "item": 252455,
+          "name": "Defender's Leather Helm"
         }
       ]
     },
@@ -138,6 +242,30 @@
         {
           "item": 6902,
           "name": "Bands of Serra'kis"
+        },
+        {
+          "item": 251375,
+          "name": "Plans: Veteran's Silvered Chain Leggings"
+        },
+        {
+          "item": 252825,
+          "name": "Pattern: Wisdom's Leather Leggings"
+        },
+        {
+          "item": 253978,
+          "name": "Pattern: Filigreed Silky Circlet"
+        },
+        {
+          "item": 253982,
+          "name": "Pattern: Filigreed Shadow Circlet"
+        },
+        {
+          "item": 252455,
+          "name": "Defender's Leather Helm"
+        },
+        {
+          "item": 252456,
+          "name": "Totemic Leather Helm"
         }
       ]
     },
@@ -160,6 +288,46 @@
         {
           "item": 273846,
           "name": "Twilight Lord Girdle"
+        },
+        {
+          "item": 252820,
+          "name": "Pattern: Brawler's Leather Legguards"
+        },
+        {
+          "item": 252821,
+          "name": "Pattern: Trapper's Leather Legguards"
+        },
+        {
+          "item": 252822,
+          "name": "Pattern: Defender's Leather Kilt"
+        },
+        {
+          "item": 252823,
+          "name": "Pattern: Totemic Leather Leggings"
+        },
+        {
+          "item": 252825,
+          "name": "Pattern: Wisdom's Leather Leggings"
+        },
+        {
+          "item": 253982,
+          "name": "Pattern: Filigreed Shadow Circlet"
+        },
+        {
+          "item": 252513,
+          "name": "Trapper's Leather Helm"
+        },
+        {
+          "item": 252455,
+          "name": "Defender's Leather Helm"
+        },
+        {
+          "item": 252456,
+          "name": "Totemic Leather Helm"
+        },
+        {
+          "item": 252515,
+          "name": "Wisdom's Leather Helm"
         }
       ]
     },
@@ -182,6 +350,54 @@
         {
           "item": 6910,
           "name": "Leech Pants"
+        },
+        {
+          "item": 251376,
+          "name": "Plans: Guard's Silvered Chain Leggings"
+        },
+        {
+          "item": 251377,
+          "name": "Plans: Protector's Silvered Chain Leggings"
+        },
+        {
+          "item": 251378,
+          "name": "Plans: Acolyte's Silvered Chain Leggings"
+        },
+        {
+          "item": 252821,
+          "name": "Pattern: Trapper's Leather Legguards"
+        },
+        {
+          "item": 252824,
+          "name": "Pattern: Stormrider's Leather Kilt"
+        },
+        {
+          "item": 253980,
+          "name": "Pattern: Filigreed Flame Circlet"
+        },
+        {
+          "item": 253984,
+          "name": "Pattern: Filigreed Pearly Circlet"
+        },
+        {
+          "item": 252512,
+          "name": "Brawler's Leather Helm"
+        },
+        {
+          "item": 252455,
+          "name": "Defender's Leather Helm"
+        },
+        {
+          "item": 252456,
+          "name": "Totemic Leather Helm"
+        },
+        {
+          "item": 252514,
+          "name": "Stormrider's Leather Helm"
+        },
+        {
+          "item": 252515,
+          "name": "Wisdom's Leather Helm"
         }
       ]
     }

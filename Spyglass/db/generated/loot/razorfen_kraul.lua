@@ -3,6 +3,87 @@ local Data = Spyglass.Data
 
 -- Razorfen Kraul (map 47)
 
+Data:AddBossLoot(2773, { -- Roogug
+    { 274155 }, -- Geomancer Headdress
+    { 274149 }, -- Thornweaver Drape
+    { 274152 }, -- Roogug's Severed Head
+    { 252512 }, -- Brawler's Leather Helm
+})
+
+Data:AddBossLoot(2774, { -- Aggem Thorncurse
+    { 6681 }, -- Thornspike
+    { 274158 }, -- Death Prophet Spine
+    { 274159 }, -- Thorncursed Grips
+    { 252820 }, -- Pattern: Brawler's Leather Legguards
+    { 252512 }, -- Brawler's Leather Helm
+    { 252455 }, -- Defender's Leather Helm
+})
+
+Data:AddBossLoot(2775, { -- Death Speaker Jargba
+    { 2816 }, -- Death Speaker Scepter
+    { 6685 }, -- Death Speaker Mantle
+    { 6682 }, -- Death Speaker Robes
+    { 252512 }, -- Brawler's Leather Helm
+    { 252515 }, -- Wisdom's Leather Helm
+})
+
+Data:AddBossLoot(2776, { -- Overlord Ramtusk
+    { 6687 }, -- Corpsemaker
+    { 6686 }, -- Tusken Helm
+    { 274161 }, -- Quillord Mail Leggings
+    { 251379 }, -- Plans: Crusader's Silvered Chain Leggings
+    { 252821 }, -- Pattern: Trapper's Leather Legguards
+    { 252512 }, -- Brawler's Leather Helm
+    { 252513 }, -- Trapper's Leather Helm
+    { 252515 }, -- Wisdom's Leather Helm
+})
+
+Data:AddBossLoot(2777, { -- Agathelos the Raging
+    { 6691 }, -- Swinetusk Shank
+    { 6690 }, -- #6690
+    { 274160 }, -- Quilrager Throwing Axe
+    { 251378 }, -- Plans: Acolyte's Silvered Chain Leggings
+    { 252512 }, -- Brawler's Leather Helm
+    { 252513 }, -- Trapper's Leather Helm
+    { 252455 }, -- Defender's Leather Helm
+})
+
+Data:AddBossLoot(2778, { -- Charlga Razorflank
+    { 6693 }, -- Agamaggan's Clutch
+    { 6694 }, -- #6694
+    { 6692 }, -- #6692
+    { 273103 }, -- Blueprint: Arcane Salvager
+    { 252512 }, -- Brawler's Leather Helm
+    { 252455 }, -- Defender's Leather Helm
+    { 252456 }, -- Totemic Leather Helm
+    { 252515 }, -- Wisdom's Leather Helm
+})
+
+Data:AddBossLoot(-4425, { -- Blind Hunter
+    { 6695 }, -- #6695
+    { 6697 }, -- #6697
+    { 6696 }, -- #6696
+})
+
+Data:AddBossLoot(-4842, { -- Earthcaller Halmgar
+    { 6689 }, -- #6689
+    { 6688 }, -- Whisperwind Headdress
+    { 252455 }, -- Defender's Leather Helm
+    { 252514 }, -- Stormrider's Leather Helm
+})
+
+Data:AddTrashLoot(47, {
+    { 776 }, -- Vendetta
+    { 1727 }, -- #1727
+    { 1975 }, -- #1975
+    { 1976 }, -- Slaghammer
+    { 2549 }, -- Staff of the Shade
+    { 1978 }, -- Wolfclaw Gloves
+    { 2264 }, -- Mantle of Thieves
+    { 4438 }, -- #4438
+    { 2039 }, -- Plains Ring
+})
+
 Data:AddQuests(47, {
     { id = 1144, name = "Willix the Importer", side = "Both", items = {} },
     { id = 1221, name = "Blueleaf Tubers", items = {} },

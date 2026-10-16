@@ -7,6 +7,10 @@ Data:AddBossLoot(2916, { -- Ghamoo-ra
     { 6907 }, -- Tortoise Armor
     { 6908 }, -- Ghamoo-ra's Bind
     { 273839 }, -- Spiked Shell Band
+    { 251382 }, -- Plans: Protector's Silvered Chain Helm
+    { 252801 }, -- Pattern: Totemic Leather Hood
+    { 253940 }, -- Pattern: Filigreed Silky Leggings
+    { 253942 }, -- Pattern: Filigreed Flame Leggings
 })
 
 Data:AddBossLoot(2915, { -- Lady Sarevess
@@ -14,6 +18,9 @@ Data:AddBossLoot(2915, { -- Lady Sarevess
     { 3078 }, -- Naga Heartpiercer
     { 11121 }, -- Darkwater Talwar
     { 252798 }, -- Pattern: Brawler's Leather Hood
+    { 251382 }, -- Plans: Protector's Silvered Chain Helm
+    { 251383 }, -- Plans: Acolyte's Silvered Chain Helm
+    { 253944 }, -- Pattern: Filigreed Shadow Leggings
 })
 
 Data:AddBossLoot(2914, { -- Geilhast
@@ -21,12 +28,31 @@ Data:AddBossLoot(2914, { -- Geilhast
     { 6905 }, -- Reef Axe
     { 1470 }, -- Murloc Skin Bag
     { 273840 }, -- Cursed Murloc Eye
+    { 251375 }, -- Plans: Veteran's Silvered Chain Leggings
+    { 251377 }, -- Plans: Protector's Silvered Chain Leggings
+    { 252820 }, -- Pattern: Brawler's Leather Legguards
+    { 252821 }, -- Pattern: Trapper's Leather Legguards
+    { 252825 }, -- Pattern: Wisdom's Leather Leggings
+    { 253978 }, -- Pattern: Filigreed Silky Circlet
+    { 253980 }, -- Pattern: Filigreed Flame Circlet
+    { 273141 }, -- Blueprint: Fishing Rack
+    { 252512 }, -- Brawler's Leather Helm
+    { 252513 }, -- Trapper's Leather Helm
+    { 252456 }, -- Totemic Leather Helm
+    { 252514 }, -- Stormrider's Leather Helm
+    { 252515 }, -- Wisdom's Leather Helm
 })
 
 Data:AddBossLoot(2913, { -- Lorgus Jett
     { 273843 }, -- Fallenroot Longbow
     { 273841 }, -- Twilight Maul
     { 273842 }, -- Treacherous Treads
+    { 253978 }, -- Pattern: Filigreed Silky Circlet
+    { 253982 }, -- Pattern: Filigreed Shadow Circlet
+    { 251377 }, -- Plans: Protector's Silvered Chain Leggings
+    { 252512 }, -- Brawler's Leather Helm
+    { 252513 }, -- Trapper's Leather Helm
+    { 252455 }, -- Defender's Leather Helm
 })
 
 Data:AddBossLoot(-12876, { -- Baron Aquanis
@@ -37,18 +63,46 @@ Data:AddBossLoot(2912, { -- Old Serra'kis
     { 6901 }, -- Glowing Thresher Cape
     { 6904 }, -- Bite of Serra'kis
     { 6902 }, -- Bands of Serra'kis
+    { 251375 }, -- Plans: Veteran's Silvered Chain Leggings
+    { 252825 }, -- Pattern: Wisdom's Leather Leggings
+    { 253978 }, -- Pattern: Filigreed Silky Circlet
+    { 253982 }, -- Pattern: Filigreed Shadow Circlet
+    { 252455 }, -- Defender's Leather Helm
+    { 252456 }, -- Totemic Leather Helm
 })
 
 Data:AddBossLoot(2911, { -- Twilight Lord Kelris
     { 1155 }, -- Rod of the Sleepwalker
     { 6903 }, -- Gaze Dreamer Pants
     { 273846 }, -- Twilight Lord Girdle
+    { 252820 }, -- Pattern: Brawler's Leather Legguards
+    { 252821 }, -- Pattern: Trapper's Leather Legguards
+    { 252822 }, -- Pattern: Defender's Leather Kilt
+    { 252823 }, -- Pattern: Totemic Leather Leggings
+    { 252825 }, -- Pattern: Wisdom's Leather Leggings
+    { 253982 }, -- Pattern: Filigreed Shadow Circlet
+    { 252513 }, -- Trapper's Leather Helm
+    { 252455 }, -- Defender's Leather Helm
+    { 252456 }, -- Totemic Leather Helm
+    { 252515 }, -- Wisdom's Leather Helm
 })
 
 Data:AddBossLoot(2910, { -- Aku'mai
     { 6909 }, -- Strike of the Hydra
     { 6911 }, -- Moss Cinch
     { 6910 }, -- Leech Pants
+    { 251376 }, -- Plans: Guard's Silvered Chain Leggings
+    { 251377 }, -- Plans: Protector's Silvered Chain Leggings
+    { 251378 }, -- Plans: Acolyte's Silvered Chain Leggings
+    { 252821 }, -- Pattern: Trapper's Leather Legguards
+    { 252824 }, -- Pattern: Stormrider's Leather Kilt
+    { 253980 }, -- Pattern: Filigreed Flame Circlet
+    { 253984 }, -- Pattern: Filigreed Pearly Circlet
+    { 252512 }, -- Brawler's Leather Helm
+    { 252455 }, -- Defender's Leather Helm
+    { 252456 }, -- Totemic Leather Helm
+    { 252514 }, -- Stormrider's Leather Helm
+    { 252515 }, -- Wisdom's Leather Helm
 })
 
 Data:AddTrashLoot(48, {

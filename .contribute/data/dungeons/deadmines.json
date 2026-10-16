@@ -28,6 +28,39 @@
         {
           "item": 5187,
           "name": "Rhahk'Zor's Hammer"
+        },
+        {
+          "item": 251362,
+          "name": "Plans: Protector's Gloves"
+        },
+        {
+          "item": 251364,
+          "name": "Plans: Crusader's Gloves"
+        },
+        {
+          "item": 253906,
+          "name": "Pattern: Filigreed Flame Gown"
+        }
+      ]
+    },
+    {
+      "id": -642,
+      "name": "Sneed's Shredder",
+      "displayID": 1269,
+      "npc": 642,
+      "level": 20,
+      "loot": [
+        {
+          "item": 1937,
+          "name": "Buzz Saw"
+        },
+        {
+          "item": 2169,
+          "name": "Buzzer Blade"
+        },
+        {
+          "item": 285292,
+          "name": "Dull Sawblade"
         }
       ]
     },
@@ -52,20 +85,20 @@
           "name": "Bandsaw Wristbands"
         },
         {
-          "item": 1937,
-          "name": "Buzz Saw"
-        },
-        {
-          "item": 2169,
-          "name": "Buzzer Blade"
-        },
-        {
-          "item": 285292,
-          "name": "Dull Sawblade"
-        },
-        {
           "item": 273092,
           "name": "Blueprint: Repair Bot"
+        },
+        {
+          "item": 251360,
+          "name": "Plans: Veteran's Gloves"
+        },
+        {
+          "item": 251364,
+          "name": "Plans: Crusader's Gloves"
+        },
+        {
+          "item": 253902,
+          "name": "Pattern: Filigreed Pristine Gown"
         }
       ]
     },
@@ -106,6 +139,34 @@
         {
           "item": 5199,
           "name": "Smelting Pants"
+        },
+        {
+          "item": 252777,
+          "name": "Pattern: Brawler's Leather Gloves"
+        },
+        {
+          "item": 252778,
+          "name": "Pattern: Trapper's Leather Gloves"
+        },
+        {
+          "item": 252780,
+          "name": "Pattern: Totemic Leather Gloves"
+        },
+        {
+          "item": 252782,
+          "name": "Pattern: Wisdom's Leather Gloves"
+        },
+        {
+          "item": 253904,
+          "name": "Pattern: Filigreed Silky Gown"
+        },
+        {
+          "item": 253906,
+          "name": "Pattern: Filigreed Flame Gown"
+        },
+        {
+          "item": 273086,
+          "name": "Blueprint: Anvil"
         }
       ]
     },
@@ -154,6 +215,26 @@
         {
           "item": 5196,
           "name": "Smite's Reaver"
+        },
+        {
+          "item": 251362,
+          "name": "Plans: Protector's Gloves"
+        },
+        {
+          "item": 252779,
+          "name": "Pattern: Defender's Leather Gloves"
+        },
+        {
+          "item": 252780,
+          "name": "Pattern: Totemic Leather Gloves"
+        },
+        {
+          "item": 252781,
+          "name": "Pattern: Stormrider's Leather Gloves"
+        },
+        {
+          "item": 252782,
+          "name": "Pattern: Wisdom's Leather Gloves"
         }
       ]
     },
@@ -176,6 +257,30 @@
         {
           "item": 5197,
           "name": "Cookie's Tenderizer"
+        },
+        {
+          "item": 251360,
+          "name": "Plans: Veteran's Gloves"
+        },
+        {
+          "item": 252778,
+          "name": "Pattern: Trapper's Leather Gloves"
+        },
+        {
+          "item": 252779,
+          "name": "Pattern: Defender's Leather Gloves"
+        },
+        {
+          "item": 253910,
+          "name": "Pattern: Filigreed Pearly Gown"
+        },
+        {
+          "item": 253912,
+          "name": "Pattern: Filigreed Shining Gown"
+        },
+        {
+          "item": 273102,
+          "name": "Blueprint: Cookie's Feast"
         }
       ]
     },
@@ -206,6 +311,30 @@
         {
           "item": 2874,
           "name": "An Unsent Letter"
+        },
+        {
+          "item": 252799,
+          "name": "Pattern: Trapper's Leather Hood"
+        },
+        {
+          "item": 252800,
+          "name": "Pattern: Defender's Leather Hood"
+        },
+        {
+          "item": 252801,
+          "name": "Pattern: Totemic Leather Hood"
+        },
+        {
+          "item": 252803,
+          "name": "Pattern: Wisdom's Leather Hood"
+        },
+        {
+          "item": 253938,
+          "name": "Pattern: Filigreed Pristine Leggings"
+        },
+        {
+          "item": 253948,
+          "name": "Pattern: Filigreed Shining Leggings"
         }
       ]
     }

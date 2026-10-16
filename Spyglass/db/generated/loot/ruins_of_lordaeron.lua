@@ -26,6 +26,8 @@ Data:AddBossLoot(3354, { -- Rath'mael
     { 271213 }, -- Mirror of Rath'mael
     { 271214 }, -- Rotmender's Treads
     { 271215 }, -- Coldspire Staff
+    { 273085 }, -- Blueprint: Fermenter
+    { 273103 }, -- Blueprint: Arcane Salvager
 })
 
 Data:AddBossLoot(3408, { -- Lordaeron Captain
@@ -47,6 +49,11 @@ Data:AddBossLoot(3412, { -- Bjork
 
 Data:AddTrashLoot(2999, {
     { 268535 }, -- Bloodied Insignia
+    { 286981 }, -- Death Bindings
+    { 286977 }, -- Sword of the Fallen
+    { 286978 }, -- Rotmender's Garb
+    { 286979 }, -- Rotmender's Gloves
+    { 286980 }, -- Rotmender's Sash
 })
 
 Data:AddQuests(2999, {

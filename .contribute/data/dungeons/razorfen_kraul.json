@@ -13,39 +13,282 @@
       "id": 2773,
       "name": "Roogug",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Roogug",
-      "loot": []
+      "loot": [
+        {
+          "item": 274155,
+          "name": "Geomancer Headdress"
+        },
+        {
+          "item": 274149,
+          "name": "Thornweaver Drape"
+        },
+        {
+          "item": 274152,
+          "name": "Roogug's Severed Head"
+        },
+        {
+          "item": 252512,
+          "name": "Brawler's Leather Helm"
+        }
+      ]
     },
     {
       "id": 2774,
       "name": "Aggem Thorncurse",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Aggem Thorncurse",
-      "loot": []
+      "loot": [
+        {
+          "item": 6681,
+          "name": "Thornspike"
+        },
+        {
+          "item": 274158,
+          "name": "Death Prophet Spine"
+        },
+        {
+          "item": 274159,
+          "name": "Thorncursed Grips"
+        },
+        {
+          "item": 252820,
+          "name": "Pattern: Brawler's Leather Legguards"
+        },
+        {
+          "item": 252512,
+          "name": "Brawler's Leather Helm"
+        },
+        {
+          "item": 252455,
+          "name": "Defender's Leather Helm"
+        }
+      ]
     },
     {
       "id": 2775,
       "name": "Death Speaker Jargba",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Death Speaker Jargba",
-      "loot": []
+      "loot": [
+        {
+          "item": 2816,
+          "name": "Death Speaker Scepter"
+        },
+        {
+          "item": 6685,
+          "name": "Death Speaker Mantle"
+        },
+        {
+          "item": 6682,
+          "name": "Death Speaker Robes"
+        },
+        {
+          "item": 252512,
+          "name": "Brawler's Leather Helm"
+        },
+        {
+          "item": 252515,
+          "name": "Wisdom's Leather Helm"
+        }
+      ]
     },
     {
       "id": 2776,
       "name": "Overlord Ramtusk",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Overlord Ramtusk",
-      "loot": []
+      "loot": [
+        {
+          "item": 6687,
+          "name": "Corpsemaker"
+        },
+        {
+          "item": 6686,
+          "name": "Tusken Helm"
+        },
+        {
+          "item": 274161,
+          "name": "Quillord Mail Leggings"
+        },
+        {
+          "item": 251379,
+          "name": "Plans: Crusader's Silvered Chain Leggings"
+        },
+        {
+          "item": 252821,
+          "name": "Pattern: Trapper's Leather Legguards"
+        },
+        {
+          "item": 252512,
+          "name": "Brawler's Leather Helm"
+        },
+        {
+          "item": 252513,
+          "name": "Trapper's Leather Helm"
+        },
+        {
+          "item": 252515,
+          "name": "Wisdom's Leather Helm"
+        }
+      ]
     },
     {
       "id": 2777,
       "name": "Agathelos the Raging",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Agathelos the Raging",
-      "loot": []
+      "loot": [
+        {
+          "item": 6691,
+          "name": "Swinetusk Shank"
+        },
+        {
+          "item": 6690,
+          "name": "Ferine Leggings"
+        },
+        {
+          "item": 274160,
+          "name": "Quilrager Throwing Axe"
+        },
+        {
+          "item": 251378,
+          "name": "Plans: Acolyte's Silvered Chain Leggings"
+        },
+        {
+          "item": 252512,
+          "name": "Brawler's Leather Helm"
+        },
+        {
+          "item": 252513,
+          "name": "Trapper's Leather Helm"
+        },
+        {
+          "item": 252455,
+          "name": "Defender's Leather Helm"
+        }
+      ]
     },
     {
       "id": 2778,
       "name": "Charlga Razorflank",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Charlga Razorflank",
-      "loot": []
+      "loot": [
+        {
+          "item": 6693,
+          "name": "Agamaggan's Clutch"
+        },
+        {
+          "item": 6694,
+          "name": "Heart of Agamaggan"
+        },
+        {
+          "item": 6692,
+          "name": "Pronged Reaver"
+        },
+        {
+          "item": 273103,
+          "name": "Blueprint: Arcane Salvager"
+        },
+        {
+          "item": 252512,
+          "name": "Brawler's Leather Helm"
+        },
+        {
+          "item": 252455,
+          "name": "Defender's Leather Helm"
+        },
+        {
+          "item": 252456,
+          "name": "Totemic Leather Helm"
+        },
+        {
+          "item": 252515,
+          "name": "Wisdom's Leather Helm"
+        }
+      ]
+    },
+    {
+      "id": -4425,
+      "name": "Blind Hunter",
+      "displayID": 4735,
+      "npc": 4425,
+      "level": 32,
+      "rare": true,
+      "loot": [
+        {
+          "item": 6695,
+          "name": "Stygian Bone Amulet"
+        },
+        {
+          "item": 6697,
+          "name": "Batwing Mantle"
+        },
+        {
+          "item": 6696,
+          "name": "Nightstalker Bow"
+        }
+      ]
+    },
+    {
+      "id": -4842,
+      "name": "Earthcaller Halmgar",
+      "displayID": 6102,
+      "npc": 4842,
+      "level": 32,
+      "rare": true,
+      "loot": [
+        {
+          "item": 6689,
+          "name": "Wind Spirit Staff"
+        },
+        {
+          "item": 6688,
+          "name": "Whisperwind Headdress"
+        },
+        {
+          "item": 252455,
+          "name": "Defender's Leather Helm"
+        },
+        {
+          "item": 252514,
+          "name": "Stormrider's Leather Helm"
+        }
+      ]
     }
   ],
-  "trash": [],
+  "trash": [
+    {
+      "item": 776,
+      "name": "Vendetta"
+    },
+    {
+      "item": 1727,
+      "name": "Sword of Decay"
+    },
+    {
+      "item": 1975,
+      "name": "Pysan's Old Greatsword"
+    },
+    {
+      "item": 1976,
+      "name": "Slaghammer"
+    },
+    {
+      "item": 2549,
+      "name": "Staff of the Shade"
+    },
+    {
+      "item": 1978,
+      "name": "Wolfclaw Gloves"
+    },
+    {
+      "item": 2264,
+      "name": "Mantle of Thieves"
+    },
+    {
+      "item": 4438,
+      "name": "Pugilist Bracers"
+    },
+    {
+      "item": 2039,
+      "name": "Plains Ring"
+    }
+  ],
   "quests": [1144, 1221]
 }

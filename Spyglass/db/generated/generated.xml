@@ -5,6 +5,7 @@
 	<Script file="loot\blackfathom_deeps.lua" />
 	<Script file="loot\blackrock_spire_lower.lua" />
 	<Script file="loot\blackrock_spire_upper.lua" />
+	<Script file="loot\city_of_dalaran.lua" />
 	<Script file="loot\deadmines.lua" />
 	<Script file="loot\excavation_site_wetlands.lua" />
 	<Script file="loot\gnomeregan.lua" />
@@ -12,6 +13,8 @@
 	<Script file="loot\razorfen_kraul.lua" />
 	<Script file="loot\ruins_of_lordaeron.lua" />
 	<Script file="loot\scarlet_monastery_cathedral.lua" />
+	<Script file="loot\scarlet_monastery_graveyard.lua" />
+	<Script file="loot\scarlet_monastery_library.lua" />
 	<Script file="loot\scholomance.lua" />
 	<Script file="loot\shadowfang_keep.lua" />
 	<Script file="loot\stormwind_stockade.lua" />

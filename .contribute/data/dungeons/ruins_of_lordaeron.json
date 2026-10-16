@@ -98,6 +98,14 @@
         {
           "item": 271215,
           "name": "Coldspire Staff"
+        },
+        {
+          "item": 273085,
+          "name": "Blueprint: Fermenter"
+        },
+        {
+          "item": 273103,
+          "name": "Blueprint: Arcane Salvager"
         }
       ]
     },
@@ -169,6 +177,26 @@
     {
       "item": 268535,
       "name": "Bloodied Insignia"
+    },
+    {
+      "item": 286981,
+      "name": "Death Bindings"
+    },
+    {
+      "item": 286977,
+      "name": "Sword of the Fallen"
+    },
+    {
+      "item": 286978,
+      "name": "Rotmender's Garb"
+    },
+    {
+      "item": 286979,
+      "name": "Rotmender's Gloves"
+    },
+    {
+      "item": 286980,
+      "name": "Rotmender's Sash"
     }
   ],
   "quests": [92422, 92415, 92421, 95250, 95195, 95216, 97288, 92401, 95189, 95204]

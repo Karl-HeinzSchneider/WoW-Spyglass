@@ -26,6 +26,18 @@
         {
           "item": 273806,
           "name": "Dark Horde Band"
+        },
+        {
+          "item": 251380,
+          "name": "Plans: Veteran's Silvered Chain Helm"
+        },
+        {
+          "item": 251382,
+          "name": "Plans: Protector's Silvered Chain Helm"
+        },
+        {
+          "item": 253942,
+          "name": "Pattern: Filigreed Flame Leggings"
         }
       ]
     },
@@ -46,6 +58,30 @@
         {
           "item": 273807,
           "name": "Demolition Girdle"
+        },
+        {
+          "item": 251379,
+          "name": "Plans: Crusader's Silvered Chain Leggings"
+        },
+        {
+          "item": 252825,
+          "name": "Pattern: Wisdom's Leather Leggings"
+        },
+        {
+          "item": 252512,
+          "name": "Brawler's Leather Helm"
+        },
+        {
+          "item": 252513,
+          "name": "Trapper's Leather Helm"
+        },
+        {
+          "item": 252455,
+          "name": "Defender's Leather Helm"
+        },
+        {
+          "item": 252515,
+          "name": "Wisdom's Leather Helm"
         }
       ]
     },
@@ -66,6 +102,14 @@
         {
           "item": 273811,
           "name": "Repurposed Rack"
+        },
+        {
+          "item": 251377,
+          "name": "Plans: Protector's Silvered Chain Leggings"
+        },
+        {
+          "item": 252513,
+          "name": "Trapper's Leather Helm"
         }
       ]
     },
@@ -108,6 +152,38 @@
         {
           "item": 273820,
           "name": "Nightskulker Ring"
+        },
+        {
+          "item": 251375,
+          "name": "Plans: Veteran's Silvered Chain Leggings"
+        },
+        {
+          "item": 251376,
+          "name": "Plans: Guard's Silvered Chain Leggings"
+        },
+        {
+          "item": 252820,
+          "name": "Pattern: Brawler's Leather Legguards"
+        },
+        {
+          "item": 252821,
+          "name": "Pattern: Trapper's Leather Legguards"
+        },
+        {
+          "item": 252512,
+          "name": "Brawler's Leather Helm"
+        },
+        {
+          "item": 252456,
+          "name": "Totemic Leather Helm"
+        },
+        {
+          "item": 252514,
+          "name": "Stormrider's Leather Helm"
+        },
+        {
+          "item": 252515,
+          "name": "Wisdom's Leather Helm"
         }
       ]
     },
@@ -132,6 +208,30 @@
         {
           "item": 273829,
           "name": "Concealed Hand Crossbow"
+        },
+        {
+          "item": 252824,
+          "name": "Pattern: Stormrider's Leather Kilt"
+        },
+        {
+          "item": 253976,
+          "name": "Pattern: Filigreed Pristine Circlet"
+        },
+        {
+          "item": 253986,
+          "name": "Pattern: Filigreed Shining Circlet"
+        },
+        {
+          "item": 252455,
+          "name": "Defender's Leather Helm"
+        },
+        {
+          "item": 252456,
+          "name": "Totemic Leather Helm"
+        },
+        {
+          "item": 252515,
+          "name": "Wisdom's Leather Helm"
         }
       ]
     }
@@ -140,6 +240,10 @@
     {
       "item": 274092,
       "name": "Sharpened Cutlery"
+    },
+    {
+      "item": 1076,
+      "name": "Defias Renegade Ring"
     }
   ],
   "quests": [386, 377, 387, 388, 391]

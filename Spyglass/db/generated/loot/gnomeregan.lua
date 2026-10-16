@@ -3,12 +3,54 @@ local Data = Spyglass.Data
 
 -- Gnomeregan (map 90)
 
+Data:AddBossLoot(2768, { -- Grubbis
+    { 9445 }, -- Grubbis Paws
+    { 274043 }, -- Irradiated Shield
+    { 274042 }, -- Skullduggery Belt
+})
+
 Data:AddBossLoot(2769, { -- Viscous Fallout
     { 9453 }, -- Toxic Revenger
+    { 9452 }, -- Hydrocane
+    { 9454 }, -- Acidic Walkers
+})
+
+Data:AddBossLoot(2770, { -- Electrocutioner 6000
+    { 9446 }, -- Electrocutioner Leg
+    { 9447 }, -- #9447
+    { 9448 }, -- #9448
 })
 
 Data:AddBossLoot(2771, { -- Crowd Pummeler 9-60
     { 9449 }, -- Manual Crowd Pummeler
+    { 9450 }, -- Gnomebot Operating Boots
+    { 274068 }, -- Thermaplugg Medal of Honor
+})
+
+Data:AddBossLoot(2772, { -- Mekgineer Thermaplugg
+    { 9458 }, -- #9458
+    { 9459 }, -- #9459
+    { 9461 }, -- #9461
+    { 9492 }, -- #9492
+})
+
+Data:AddBossLoot(-6228, { -- Dark Iron Ambassador
+    { 9455 }, -- #9455
+    { 9456 }, -- #9456
+    { 9457 }, -- #9457
+})
+
+Data:AddTrashLoot(90, {
+    { 9508 }, -- #9508
+    { 9491 }, -- #9491
+    { 9509 }, -- Petrolspill Leggings
+    { 9510 }, -- #9510
+    { 9487 }, -- #9487
+    { 9485 }, -- #9485
+    { 9488 }, -- Oscillating Power Hammer
+    { 9486 }, -- Supercharger Battle Axe
+    { 9490 }, -- Gizmotron Megachopper
+    { 9489 }, -- #9489
 })
 
 Data:AddQuests(90, {

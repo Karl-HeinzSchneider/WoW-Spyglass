@@ -3,10 +3,18 @@ local Data = Spyglass.Data
 
 Data:AddNames("enUS", "bosses", {
     [-12876] = "Baron Aquanis",
+    [-6490] = "Azshir the Sleepless",
+    [-6489] = "Ironspine",
+    [-6488] = "Fallen Champion",
+    [-6228] = "Dark Iron Ambassador",
+    [-5912] = "Deviate Faerie Dragon",
+    [-4842] = "Earthcaller Halmgar",
     [-4627] = "Arugal's Voidwalker",
+    [-4425] = "Blind Hunter",
     [-3872] = "Deathsworn Captain",
     [-3864] = "Fel Steed",
     [-1720] = "Bruegal Ironknuckle",
+    [-642] = "Sneed's Shredder",
     [227] = "High Interrogator Gerstahn",
     [228] = "Lord Roccor",
     [229] = "Houndmaster Grebmar",

@@ -212,6 +212,28 @@
           "name": "Glowing Shard"
         }
       ]
+    },
+    {
+      "id": -5912,
+      "name": "Deviate Faerie Dragon",
+      "displayID": 1267,
+      "npc": 5912,
+      "level": 20,
+      "rare": true,
+      "loot": [
+        {
+          "item": 5243,
+          "name": "Firebelcher"
+        },
+        {
+          "item": 6632,
+          "name": "Feyscale Cloak"
+        },
+        {
+          "item": 252781,
+          "name": "Pattern: Stormrider's Leather Gloves"
+        }
+      ]
     }
   ],
   "trash": [

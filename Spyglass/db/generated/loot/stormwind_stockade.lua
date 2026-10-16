@@ -7,18 +7,29 @@ Data:AddBossLoot(2756, { -- Targorr the Dread
     { 273804 }, -- Executioner Mantle
     { 273805 }, -- Blackrock Harness
     { 273806 }, -- Dark Horde Band
+    { 251380 }, -- Plans: Veteran's Silvered Chain Helm
+    { 251382 }, -- Plans: Protector's Silvered Chain Helm
+    { 253942 }, -- Pattern: Filigreed Flame Leggings
 })
 
 Data:AddBossLoot(2757, { -- Kam Deepfury
     { 2280 }, -- Kam's Walking Stick
     { 273808 }, -- Bridgebreaker Bindings
     { 273807 }, -- Demolition Girdle
+    { 251379 }, -- Plans: Crusader's Silvered Chain Leggings
+    { 252825 }, -- Pattern: Wisdom's Leather Leggings
+    { 252512 }, -- Brawler's Leather Helm
+    { 252513 }, -- Trapper's Leather Helm
+    { 252455 }, -- Defender's Leather Helm
+    { 252515 }, -- Wisdom's Leather Helm
 })
 
 Data:AddBossLoot(2758, { -- Hamhock
     { 273809 }, -- Hamhock's Cleaver
     { 273810 }, -- Ogre Grips
     { 273811 }, -- Repurposed Rack
+    { 251377 }, -- Plans: Protector's Silvered Chain Leggings
+    { 252513 }, -- Trapper's Leather Helm
 })
 
 Data:AddBossLoot(-1720, { -- Bruegal Ironknuckle
@@ -31,6 +42,14 @@ Data:AddBossLoot(2759, { -- Dextren Ward
     { 273817 }, -- Graverobber's Shovel
     { 273819 }, -- Boneslicer
     { 273820 }, -- Nightskulker Ring
+    { 251375 }, -- Plans: Veteran's Silvered Chain Leggings
+    { 251376 }, -- Plans: Guard's Silvered Chain Leggings
+    { 252820 }, -- Pattern: Brawler's Leather Legguards
+    { 252821 }, -- Pattern: Trapper's Leather Legguards
+    { 252512 }, -- Brawler's Leather Helm
+    { 252456 }, -- Totemic Leather Helm
+    { 252514 }, -- Stormrider's Leather Helm
+    { 252515 }, -- Wisdom's Leather Helm
 })
 
 Data:AddBossLoot(2760, { -- Bazil Thredd
@@ -38,10 +57,17 @@ Data:AddBossLoot(2760, { -- Bazil Thredd
     { 273825 }, -- Red Wool Cloak
     { 273827 }, -- Debt Collector
     { 273829 }, -- Concealed Hand Crossbow
+    { 252824 }, -- Pattern: Stormrider's Leather Kilt
+    { 253976 }, -- Pattern: Filigreed Pristine Circlet
+    { 253986 }, -- Pattern: Filigreed Shining Circlet
+    { 252455 }, -- Defender's Leather Helm
+    { 252456 }, -- Totemic Leather Helm
+    { 252515 }, -- Wisdom's Leather Helm
 })
 
 Data:AddTrashLoot(34, {
     { 274092 }, -- Sharpened Cutlery
+    { 1076 }, -- Defias Renegade Ring
 })
 
 Data:AddQuests(34, {
