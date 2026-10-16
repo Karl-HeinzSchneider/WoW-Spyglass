@@ -26,7 +26,7 @@
       "name": "Old Ironforge Incursion",
       "side": "Alliance",
       "requiredLevel": 9,
-      "xp": 4930,
+      "xp": 1450,
       "objective": "Enter Hall of Thanes and claim Durgen Dirgehammer's Head.",
       "description": "The chain begins by dropping Dark Iron Map from Dark Iron Spies in Dun Morogh.",
       "requires": [96391],
@@ -57,7 +57,7 @@
       "name": "An Ancient Grudge",
       "side": "Both",
       "requiredLevel": 10,
-      "xp": 3570,
+      "xp": 1050,
       "objective": "Put the spirit of Faldrim Anvilmar to rest.",
       "start": {
         "npc": "Ghostly Attendant",
@@ -82,7 +82,7 @@
       "name": "Important Heirlooms",
       "side": "Both",
       "requiredLevel": 10,
-      "xp": 4590,
+      "xp": 1350,
       "objective": "Collect 8 Dwarven Heirlooms from the Hall of Thanes.",
       "start": {
         "npc": "Thom Filch",
@@ -107,7 +107,7 @@
       "name": "The Restless Dead",
       "side": "Alliance",
       "requiredLevel": 10,
-      "xp": 3570,
+      "xp": 1050,
       "objective": "Kill 15 Enraged Apparitions and 10 Tormented Souls, then put Anvilmar's spirit to rest.",
       "start": {
         "npc": "Afadra Dunwall"
@@ -131,7 +131,7 @@
       "name": "The Treaty of Understanding",
       "side": "Alliance",
       "requiredLevel": 9,
-      "xp": 3900,
+      "xp": 1150,
       "objective": "Deliver the Treaty of Understanding to Magni Bronzebeard in Ironforge.",
       "description": "The quest starts from a stone tablet inside a vault in the Reliquary of Kings.",
       "start": {
@@ -148,6 +148,7 @@
       "name": "Underground Map",
       "side": "Alliance",
       "requiredLevel": 9,
+      "xp": 1050,
       "objective": "Deliver the Dark Iron Map to Earthseer Farsen in Dun Morogh.",
       "description": "The Dark Iron Map starts this quest and leads directly into Old Ironforge Incursion.",
       "start": {

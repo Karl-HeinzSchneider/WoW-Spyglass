@@ -15,7 +15,7 @@
       "name": "Deathstalkers in Shadowfang",
       "side": "Horde",
       "requiredLevel": 18,
-      "xp": 8700,
+      "xp": 2000,
       "objective": "Find Deathstalker Adamant and Deathstalker Vincent inside Shadowfang Keep.",
       "start": {
         "npc": "High Executor Hadrec",
@@ -45,7 +45,7 @@
       "name": "Arugal Must Die",
       "side": "Horde",
       "requiredLevel": 18,
-      "xp": 14355,
+      "xp": 3300,
       "objective": "Kill Archmage Arugal and bring his head to Dalar Dawnweaver.",
       "start": {
         "npc": "Dalar Dawnweaver"
@@ -65,7 +65,7 @@
       "name": "The Book of Ur",
       "side": "Horde",
       "requiredLevel": 16,
-      "xp": 9135,
+      "xp": 2100,
       "objective": "Bring the Book of Ur from Shadowfang Keep to Keeper Bel'dugur.",
       "start": {
         "npc": "Keeper Bel'dugur"

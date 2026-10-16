@@ -71,11 +71,11 @@ Data:AddTrashLoot(34, {
 })
 
 Data:AddQuests(34, {
-    { id = 386, name = "What Comes Around...", side = "Alliance", items = {} },
-    { id = 377, name = "Crime and Punishment", side = "Alliance", items = {} },
-    { id = 387, name = "Quell the Uprising", items = {} },
-    { id = 388, name = "The Color of Blood", items = {} },
-    { id = 391, name = "The Stockade Riots", requires = { { id = 389, name = "Bazil Thredd" } }, items = {} },
+    { id = 386, name = "What Comes Around...", side = "Alliance", xp = 2000, items = {} },
+    { id = 377, name = "Crime and Punishment", side = "Alliance", xp = 2100, items = {} },
+    { id = 387, name = "Quell the Uprising", xp = 2650, items = {} },
+    { id = 388, name = "The Color of Blood", xp = 2650, items = {} },
+    { id = 391, name = "The Stockade Riots", xp = 2350, requires = { { id = 389, name = "Bazil Thredd" } }, items = {} },
     { id = 378, name = "The Fury Runs Deep", side = "Alliance", requiredLevel = 25, xp = 5750, objective = "Kill Kam Deepfury in The Stockade and bring his head to Motley Garmason.", description = "Requires The Dark Iron War before this quest becomes available.", requires = { { id = 303, name = "The Dark Iron War" } }, start = { description = "Dun Modr, Wetlands.", location = { 1437, 49.6, 18.2 }, npc = "Motley Garmason" }, turnIn = { description = "Dun Modr, Wetlands.", npc = "Motley Garmason" }, items = {
         { 3562 }, -- Belt of Vindication
         { 1264 }, -- Headbasher

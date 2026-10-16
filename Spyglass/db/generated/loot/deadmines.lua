@@ -106,7 +106,7 @@ Data:AddTrashLoot(36, {
 })
 
 Data:AddQuests(36, {
-    { id = 166, name = "The Defias Brotherhood", side = "Alliance", requiredLevel = 14, xp = 9750, objective = "Defeat Edwin VanCleef and collect his head.", requires = { { id = 155, name = "The Defias Brotherhood" } }, start = { description = "Sentinel Hill, Westfall.", location = { 1436, 56.4, 47.5 }, npc = "Gryan Stoutmantle" }, turnIn = { description = "Sentinel Hill, Westfall.", location = { 1436, 56.4, 47.5 }, npc = "Gryan Stoutmantle" }, items = {
+    { id = 166, name = "The Defias Brotherhood", side = "Alliance", requiredLevel = 14, xp = 2600, objective = "Defeat Edwin VanCleef and collect his head.", requires = { { id = 155, name = "The Defias Brotherhood" } }, start = { description = "Sentinel Hill, Westfall.", location = { 1436, 56.4, 47.5 }, npc = "Gryan Stoutmantle" }, turnIn = { description = "Sentinel Hill, Westfall.", location = { 1436, 56.4, 47.5 }, npc = "Gryan Stoutmantle" }, items = {
         { 2041 }, -- Tunic of Westfall
         { 2042 }, -- Staff of Westfall
         { 6087 }, -- Chausses of Westfall
@@ -121,13 +121,13 @@ Data:AddQuests(36, {
         { 270012 }, -- Miner's Workgloves
         { 270013 }, -- Miner's Workboots
     } },
-    { id = 214, name = "Red Silk Bandanas", side = "Alliance", requiredLevel = 14, xp = 4688, objective = "Collect 10 Red Silk Bandanas from Defias inside the Deadmines.", requires = { { id = 153, name = "Red Leather Bandanas" }, { id = 155, name = "The Defias Brotherhood" } }, start = { description = "Sentinel Hill tower, Westfall.", location = { 1436, 56.7, 47.4 }, npc = "Scout Riell" }, turnIn = { description = "Sentinel Hill tower, Westfall.", location = { 1436, 56.7, 47.4 }, npc = "Scout Riell" }, items = {
+    { id = 214, name = "Red Silk Bandanas", side = "Alliance", requiredLevel = 14, xp = 1250, objective = "Collect 10 Red Silk Bandanas from Defias inside the Deadmines.", requires = { { id = 153, name = "Red Leather Bandanas" }, { id = 155, name = "The Defias Brotherhood" } }, start = { description = "Sentinel Hill tower, Westfall.", location = { 1436, 56.7, 47.4 }, npc = "Scout Riell" }, turnIn = { description = "Sentinel Hill tower, Westfall.", location = { 1436, 56.7, 47.4 }, npc = "Scout Riell" }, items = {
         { 2074 }, -- Solid Shortblade
         { 2089 }, -- Scrimshaw Dagger
         { 6094 }, -- Piercing Axe
         { 270005 }, -- Monastic Hammer
     } },
-    { id = 2040, name = "Underground Assault", side = "Alliance", requiredLevel = 15, xp = 5813, objective = "Recover the Gnoam Sprecklesprocket from Sneed's Shredder.", start = { description = "Stormwind.", location = { 1453, 63, 34 }, npc = "Shoni the Shilent" }, turnIn = { description = "Stormwind.", location = { 1453, 63, 34 }, npc = "Shoni the Shilent" }, items = {
+    { id = 2040, name = "Underground Assault", side = "Alliance", requiredLevel = 15, xp = 1550, objective = "Recover the Gnoam Sprecklesprocket from Sneed's Shredder.", start = { description = "Stormwind.", location = { 1453, 63, 34 }, npc = "Shoni the Shilent" }, turnIn = { description = "Stormwind.", location = { 1453, 63, 34 }, npc = "Shoni the Shilent" }, items = {
         { 7606 }, -- Polar Gauntlets
         { 7607 }, -- Sable Wand
         { 270015 }, -- Bravo's Armbands

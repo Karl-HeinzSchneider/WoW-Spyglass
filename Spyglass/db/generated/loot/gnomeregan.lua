@@ -54,17 +54,17 @@ Data:AddTrashLoot(90, {
 })
 
 Data:AddQuests(90, {
-    { id = 2904, name = "A Fine Mess", side = "Both", items = {
+    { id = 2904, name = "A Fine Mess", side = "Both", xp = 2450, items = {
         { 9535 }, -- Fire-welded Bracers
         { 9536 }, -- Fairywing Mantle
     } },
-    { id = 2928, name = "Gyrodrillmatic Excavationators", side = "Alliance", items = {
+    { id = 2928, name = "Gyrodrillmatic Excavationators", side = "Alliance", xp = 2450, items = {
         { 9608 }, -- Shoni's Disarming Tool
         { 9609 }, -- Shilly Mitts
     } },
-    { id = 2922, name = "Save Techbot's Brain!", items = {} },
+    { id = 2922, name = "Save Techbot's Brain!", xp = 2650, items = {} },
     { id = 2923, name = "Tinkmaster Overspark", items = {} },
-    { id = 2926, name = "Gnogaine", items = {} },
+    { id = 2926, name = "Gnogaine", xp = 2200, items = {} },
     { id = 2927, name = "The Day After", items = {} },
     { id = 2842, name = "Chief Engineer Scooty", requires = { { id = 2841, name = "Rig Wars" } }, items = {} },
     { id = 2843, name = "Gnomer-gooooone!", requires = { { id = 2842, name = "Chief Engineer Scooty" } }, items = {} },
@@ -79,7 +79,7 @@ Data:AddQuests(90, {
         { 9624 }, -- Triprunner Dungarees
         { 9625 }, -- Dual Reinforced Leggings
     } },
-    { id = 2841, name = "Rig Wars", requiredLevel = 25, objective = "Accept Rig Wars from Nogg. You do not need to complete it before continuing to Chief Engineer Scooty.", description = "Accept Rig Wars first; completion is not required for Chief Engineer Scooty. Accept Rig Wars before Chief Engineer Scooty. If Rig Wars disappears, abandon Chief Engineer Scooty and it will reappear.", start = { description = "Valley of Honor, Orgrimmar.", location = { 1454, 76, 25 }, npc = "Nogg" }, turnIn = { description = "Orgrimmar.", npc = "Nogg" }, items = {} },
+    { id = 2841, name = "Rig Wars", requiredLevel = 25, xp = 2750, objective = "Accept Rig Wars from Nogg. You do not need to complete it before continuing to Chief Engineer Scooty.", description = "Accept Rig Wars first; completion is not required for Chief Engineer Scooty. Accept Rig Wars before Chief Engineer Scooty. If Rig Wars disappears, abandon Chief Engineer Scooty and it will reappear.", start = { description = "Valley of Honor, Orgrimmar.", location = { 1454, 76, 25 }, npc = "Nogg" }, turnIn = { description = "Orgrimmar.", npc = "Nogg" }, items = {} },
     { id = 2951, name = "The Sparklematic 5200!", side = "Both", requiredLevel = 25, objective = "Insert a Grime-Encrusted Object into the Sparklematic 5200, with three silver coins to start the machine.", start = { description = "Inside Gnomeregan.", npc = "The Sparklematic 5200" }, turnIn = { description = "Inside Gnomeregan.", npc = "The Sparklematic 5200" }, items = {
         { 9363 }, -- Sparklematic-Wrapped Box
     } },

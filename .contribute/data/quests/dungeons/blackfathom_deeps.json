@@ -42,7 +42,7 @@
       "name": "Blackfathom Villainy",
       "side": "Alliance",
       "requiredLevel": 18,
-      "xp": 12375,
+      "xp": 3300,
       "objective": "Defeat Twilight Lord Kelris and recover the Head of Kelris.",
       "requires": [1198],
       "start": {
@@ -75,7 +75,7 @@
       "name": "Blackfathom Villainy",
       "side": "Horde",
       "requiredLevel": 18,
-      "xp": 12375,
+      "xp": 3300,
       "objective": "Defeat Twilight Lord Kelris and recover the Head of Kelris.",
       "start": {
         "npc": "Argent Guard Thaelrid"
@@ -107,7 +107,7 @@
       "name": "Twilight Falls",
       "side": "Alliance",
       "requiredLevel": 20,
-      "xp": 9563,
+      "xp": 2550,
       "objective": "Collect 10 Twilight Pendants from Twilight's Hammer members in Blackfathom Deeps.",
       "start": {
         "npc": "Argent Guard Manados"
@@ -151,7 +151,7 @@
       "name": "Allegiance to the Old Gods",
       "side": "Horde",
       "requiredLevel": 17,
-      "xp": 9938,
+      "xp": 6489,
       "objective": "Defeat Lorgus Jett in Blackfathom Deeps.",
       "requires": [6564],
       "start": {
@@ -230,7 +230,7 @@
       "name": "Knowledge in the Deeps",
       "side": "Alliance",
       "requiredLevel": 10,
-      "xp": 10313,
+      "xp": 2750,
       "objective": "Recover the Lorgalis Manuscript from Blackfathom Deeps.",
       "description": "The Lorgalis Manuscript is inside a Pitted Iron Chest underwater in the Pool of Ask'ar, in the northern alcove just past Ghamoo-ra's turtle room.",
       "start": {
@@ -298,7 +298,7 @@
       "name": "Amongst the Ruins",
       "side": "Horde",
       "requiredLevel": 21,
-      "xp": 10313,
+      "xp": 6746,
       "objective": "Recover the Fathom Core from the Fathom Stone in Blackfathom Deeps.",
       "description": "The Fathom Stone is also associated with the optional Baron Aquanis encounter.",
       "start": {
@@ -314,6 +314,7 @@
       "name": "The Corruption Abroad",
       "side": "Alliance",
       "requiredLevel": 18,
+      "xp": 1450,
       "objective": "Travel to Gershala Nightwhisper in Auberdine, Darkshore.",
       "description": "Alliance breadcrumb required before Researching the Corruption.",
       "start": {
@@ -330,7 +331,7 @@
       "name": "Baron Aquanis",
       "side": "Horde",
       "requiredLevel": 21,
-      "xp": 11450,
+      "xp": 7468,
       "objective": "Bring the Strange Water Globe to Je'neu Sancrea at Zoram'gar Outpost, Ashenvale.",
       "description": "Drops from Baron Aquanis.",
       "start": {

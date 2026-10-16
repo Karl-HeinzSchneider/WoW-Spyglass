@@ -4,27 +4,32 @@
       "id": 386,
       "name": "What Comes Around...",
       "side": "Alliance",
+      "xp": 2000,
       "items": []
     },
     {
       "id": 377,
       "name": "Crime and Punishment",
       "side": "Alliance",
+      "xp": 2100,
       "items": []
     },
     {
       "id": 387,
       "name": "Quell the Uprising",
+      "xp": 2650,
       "items": []
     },
     {
       "id": 388,
       "name": "The Color of Blood",
+      "xp": 2650,
       "items": []
     },
     {
       "id": 391,
       "name": "The Stockade Riots",
+      "xp": 2350,
       "requires": [389],
       "items": []
     },

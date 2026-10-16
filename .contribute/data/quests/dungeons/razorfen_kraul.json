@@ -4,11 +4,13 @@
       "id": 1144,
       "name": "Willix the Importer",
       "side": "Both",
+      "xp": 3050,
       "items": []
     },
     {
       "id": 1221,
       "name": "Blueleaf Tubers",
+      "xp": 2100,
       "items": []
     },
     {
@@ -179,6 +181,7 @@
       "id": 1109,
       "name": "Going, Going, Guano!",
       "requiredLevel": 30,
+      "xp": 3300,
       "objective": "Bring 1 pile of Kraul Guano to Master Apothecary Faranell in the Undercity.",
       "description": "Required before Hearts of Zeal.",
       "start": {
