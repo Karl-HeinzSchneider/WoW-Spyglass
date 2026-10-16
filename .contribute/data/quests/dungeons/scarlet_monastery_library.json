@@ -1,3 +1,298 @@
 {
-  "quests": []
+  "quests": [
+    {
+      "id": 1050,
+      "name": "Mythology of the Titans",
+      "side": "Alliance",
+      "requiredLevel": 28,
+      "xp": 3550,
+      "objective": "Retrieve Mythology of the Titans from the Monastery and bring it to Librarian Mae Paledust in Ironforge.",
+      "start": {
+        "npc": "Librarian Mae Paledust",
+        "location": [1455, 74.4, 12.8],
+        "description": "Ironforge."
+      },
+      "turnIn": {
+        "npc": "Librarian Mae Paledust",
+        "description": "Ironforge."
+      },
+      "items": [
+        {
+          "item": 7746,
+          "name": "Explorers' League Commendation"
+        }
+      ]
+    },
+    {
+      "id": 96800,
+      "name": "Past Due",
+      "side": "Alliance",
+      "requiredLevel": 30,
+      "xp": 6750,
+      "objective": "Retrieve The Lost Magic of the Runemasters from the Scarlet Monastery.",
+      "description": "The book is held by Arcanist Doan.",
+      "start": {
+        "npc": "Magus Olvek",
+        "location": [1416, 9.7, 61.9],
+        "description": "Dalaran, Alterac Mountains."
+      },
+      "turnIn": {
+        "npc": "Magus Olvek",
+        "description": "Dalaran, Alterac Mountains."
+      },
+      "items": [
+        {
+          "item": 276898,
+          "name": "Salve and Salvation"
+        },
+        {
+          "item": 276899,
+          "name": "Knucklebound Thimble"
+        }
+      ]
+    },
+    {
+      "id": 1049,
+      "name": "Compendium of the Fallen",
+      "side": "Horde",
+      "requiredLevel": 28,
+      "xp": 3550,
+      "objective": "Retrieve the Compendium of the Fallen from the Monastery and return to Sage Truthseeker in Thunder Bluff.",
+      "description": "Undead cannot take this quest.",
+      "start": {
+        "npc": "Sage Truthseeker",
+        "location": [1456, 34.6, 47.6],
+        "description": "Thunder Bluff."
+      },
+      "turnIn": {
+        "npc": "Sage Truthseeker",
+        "description": "Thunder Bluff."
+      },
+      "items": [
+        {
+          "item": 7747,
+          "name": "Vile Protector"
+        },
+        {
+          "item": 17508,
+          "name": "Forcestone Buckler"
+        },
+        {
+          "item": 7749,
+          "name": "Omega Orb"
+        }
+      ]
+    },
+    {
+      "id": 1394,
+      "name": "Final Passage",
+      "side": "Horde",
+      "requiredLevel": 25,
+      "xp": 4200,
+      "objective": "Speak to Dorn Plainstalker in Thousand Needles.",
+      "description": "This is a long chain that has a step in the Library.",
+      "requires": [6628],
+      "start": {
+        "npc": "Parqual Fintallas",
+        "description": "Undercity."
+      },
+      "turnIn": {
+        "npc": "Dorn Plainstalker",
+        "description": "Thousand Needles."
+      },
+      "items": [
+        {
+          "item": 6804,
+          "name": "Windstorm Hammer"
+        },
+        {
+          "item": 6806,
+          "name": "Dancing Flame"
+        }
+      ]
+    },
+    {
+      "id": 1149,
+      "name": "Test of Faith",
+      "requiredLevel": 25,
+      "xp": 1050,
+      "objective": "If you have faith, leap from the planks overlooking Thousand Needles.",
+      "start": {
+        "npc": "Dorn Plainstalker",
+        "location": [1441, 53.8, 41.4],
+        "description": "Thousand Needles."
+      },
+      "turnIn": {
+        "npc": "Dorn Plainstalker",
+        "description": "Thousand Needles."
+      },
+      "items": []
+    },
+    {
+      "id": 1150,
+      "name": "Test of Endurance",
+      "requiredLevel": 25,
+      "xp": 2450,
+      "objective": "Bring Grenka's Claw to Dorn Plainstalker in Thousand Needles.",
+      "requires": [1149],
+      "start": {
+        "npc": "Dorn Plainstalker",
+        "location": [1441, 53.8, 41.4],
+        "description": "Thousand Needles."
+      },
+      "turnIn": {
+        "npc": "Dorn Plainstalker",
+        "description": "Thousand Needles."
+      },
+      "items": []
+    },
+    {
+      "id": 1151,
+      "name": "Test of Strength",
+      "requiredLevel": 25,
+      "xp": 3050,
+      "objective": "Bring Fragments of Rok'Alim to Dorn Plainstalker in Thousand Needles.",
+      "requires": [1150],
+      "start": {
+        "npc": "Dorn Plainstalker",
+        "location": [1441, 53.8, 41.4],
+        "description": "Thousand Needles."
+      },
+      "turnIn": {
+        "npc": "Dorn Plainstalker",
+        "description": "Thousand Needles."
+      },
+      "items": []
+    },
+    {
+      "id": 1152,
+      "name": "Test of Lore",
+      "requiredLevel": 25,
+      "xp": 1200,
+      "objective": "Find Braug Dimspirit near the entrance to Talondeep Path in Stonetalon Mountains.",
+      "requires": [1151],
+      "start": {
+        "npc": "Dorn Plainstalker",
+        "location": [1441, 53.8, 41.4],
+        "description": "Thousand Needles."
+      },
+      "turnIn": {
+        "npc": "Braug Dimspirit",
+        "location": [1442, 78.6, 45.4],
+        "description": "Talondeep Path, Stonetalon Mountains."
+      },
+      "items": []
+    },
+    {
+      "id": 1154,
+      "name": "Test of Lore",
+      "requiredLevel": 25,
+      "xp": 1850,
+      "objective": "Find the Legacy of the Aspects and return it to Braug Dimspirit near the entrance to Talondeep Path in Stonetalon Mountains.",
+      "requires": [1152],
+      "start": {
+        "npc": "Braug Dimspirit",
+        "location": [1442, 78.6, 45.4],
+        "description": "Talondeep Path, Stonetalon Mountains."
+      },
+      "turnIn": {
+        "npc": "Braug Dimspirit",
+        "description": "Talondeep Path, Stonetalon Mountains."
+      },
+      "items": []
+    },
+    {
+      "id": 6627,
+      "name": "Test of Lore",
+      "requiredLevel": 25,
+      "xp": 245,
+      "objective": "Answer Braug Dimspirit's question successfully and then speak to him again.",
+      "description": "ANSWER: Neltharion.",
+      "requires": [1154],
+      "start": {
+        "npc": "Braug Dimspirit",
+        "location": [1442, 78.6, 45.4],
+        "description": "Talondeep Path, Stonetalon Mountains."
+      },
+      "turnIn": {
+        "npc": "Braug Dimspirit",
+        "description": "Talondeep Path, Stonetalon Mountains."
+      },
+      "items": []
+    },
+    {
+      "id": 1159,
+      "name": "Test of Lore",
+      "requiredLevel": 25,
+      "xp": 1200,
+      "objective": "Find Parqual Fintallas in Undercity.",
+      "requires": [6627],
+      "start": {
+        "npc": "Braug Dimspirit",
+        "location": [1442, 78.6, 45.4],
+        "description": "Talondeep Path, Stonetalon Mountains."
+      },
+      "turnIn": {
+        "npc": "Parqual Fintallas",
+        "description": "Undercity."
+      },
+      "items": []
+    },
+    {
+      "id": 1160,
+      "name": "Test of Lore",
+      "requiredLevel": 25,
+      "xp": 2100,
+      "objective": "Find The Beginnings of the Undead Threat and return it to Parqual Fintallas in Undercity.",
+      "description": "The book is inside Scarlet Monastery: Library.",
+      "requires": [1159],
+      "start": {
+        "npc": "Parqual Fintallas",
+        "location": [1458, 57.6, 65.2],
+        "description": "Undercity."
+      },
+      "turnIn": {
+        "npc": "Parqual Fintallas",
+        "description": "Undercity."
+      },
+      "items": []
+    },
+    {
+      "id": 6628,
+      "name": "Test of Lore",
+      "requiredLevel": 25,
+      "objective": "Answer Parqual Fintallas' question successfully and then speak to him again.",
+      "description": "ANSWER: Ner'zhul.",
+      "requires": [1160],
+      "start": {
+        "npc": "Parqual Fintallas",
+        "location": [1458, 57.6, 65.2],
+        "description": "Undercity."
+      },
+      "turnIn": {
+        "npc": "Parqual Fintallas",
+        "description": "Undercity."
+      },
+      "items": []
+    },
+    {
+      "id": 1113,
+      "name": "Hearts of Zeal",
+      "side": "Horde",
+      "requiredLevel": 30,
+      "xp": 3300,
+      "objective": "Bring 20 Hearts of Zeal from the Scarlet Monastery to Master Apothecary Faranell.",
+      "requires": [1109],
+      "start": {
+        "npc": "Master Apothecary Faranell",
+        "location": [1458, 48, 69],
+        "description": "Undercity."
+      },
+      "turnIn": {
+        "npc": "Master Apothecary Faranell",
+        "description": "Undercity."
+      },
+      "items": []
+    }
+  ]
 }

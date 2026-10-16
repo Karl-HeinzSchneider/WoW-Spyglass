@@ -66,6 +66,27 @@ Data:AddQuests(90, {
     { id = 2923, name = "Tinkmaster Overspark", items = {} },
     { id = 2926, name = "Gnogaine", items = {} },
     { id = 2927, name = "The Day After", items = {} },
-    { id = 2842, name = "Chief Engineer Scooty", items = {} },
-    { id = 2843, name = "Gnomer-gooooone!", items = {} },
+    { id = 2842, name = "Chief Engineer Scooty", requires = { { id = 2841, name = "Rig Wars" } }, items = {} },
+    { id = 2843, name = "Gnomer-gooooone!", requires = { { id = 2842, name = "Chief Engineer Scooty" } }, items = {} },
+    { id = 2962, name = "The Only Cure is More Green Glow", side = "Alliance", requiredLevel = 20, xp = 2450, objective = "Bring High Potency Radioactive Fallout and the Heavy Leaden Collection Phial back to Ozzie. The fallout collapses quickly.", requires = { { id = 2926, name = "Gnogaine" } }, start = { description = "Kharanos, Dun Morogh.", location = { 1426, 45, 49 }, npc = "Ozzie Togglevolt" }, turnIn = { description = "Kharanos, Dun Morogh.", npc = "Ozzie Togglevolt" }, items = {} },
+    { id = 2924, name = "Essential Artificials", side = "Alliance", requiredLevel = 24, xp = 3050, objective = "Bring 12 Essential Artificials to Klockmort Spannerspan in Ironforge.", start = { description = "Ironforge.", location = { 1455, 67, 46 }, npc = "Klockmort Spannerspan" }, turnIn = { description = "Ironforge.", npc = "Klockmort Spannerspan" }, items = {} },
+    { id = 2930, name = "Data Rescue", side = "Alliance", requiredLevel = 25, xp = 3650, objective = "Bring a Prismatic Punch Card to Master Mechanic Castpipe in Ironforge.", start = { description = "Ironforge.", location = { 1455, 69, 48 }, npc = "Master Mechanic Castpipe" }, turnIn = { description = "Ironforge.", npc = "Master Mechanic Castpipe" }, items = {
+        { 9605 }, -- #9605
+        { 9604 }, -- #9604
+    } },
+    { id = 2929, name = "The Grand Betrayal", side = "Alliance", requiredLevel = 25, xp = 2750, objective = "Kill Mekgineer Thermaplugg and return to High Tinker Mekkatorque.", start = { description = "Ironforge.", location = { 1455, 68, 49 }, npc = "High Tinker Mekkatorque" }, turnIn = { description = "Ironforge.", npc = "High Tinker Mekkatorque" }, items = {
+        { 9623 }, -- #9623
+        { 9624 }, -- #9624
+        { 9625 }, -- #9625
+    } },
+    { id = 2841, name = "Rig Wars", requiredLevel = 25, objective = "Accept Rig Wars from Nogg. You do not need to complete it before continuing to Chief Engineer Scooty.", description = "Accept Rig Wars first; completion is not required for Chief Engineer Scooty. Accept Rig Wars before Chief Engineer Scooty. If Rig Wars disappears, abandon Chief Engineer Scooty and it will reappear.", start = { description = "Valley of Honor, Orgrimmar.", location = { 1454, 76, 25 }, npc = "Nogg" }, turnIn = { description = "Orgrimmar.", npc = "Nogg" }, items = {} },
+    { id = 2951, name = "The Sparklematic 5200!", side = "Both", requiredLevel = 25, objective = "Insert a Grime-Encrusted Object into the Sparklematic 5200, with three silver coins to start the machine.", start = { description = "Inside Gnomeregan.", npc = "The Sparklematic 5200" }, turnIn = { description = "Inside Gnomeregan.", npc = "The Sparklematic 5200" }, items = {
+        { 9363 }, -- Sparklematic-Wrapped Box
+    } },
+    { id = 2948, name = "Gnome Improvement", side = "Alliance", requiredLevel = 28, xp = 2750, objective = "Bring the Brilliant Gold Ring, a Silver Bar, a Moss Agate, and 30 silver coins to Talvash del Kissel in Ironforge.", requires = { { id = 2947, name = "Return of the Ring" } }, start = { description = "Mystic Ward, Ironforge.", location = { 1455, 35.7, 4 }, npc = "Talvash del Kissel" }, turnIn = { description = "Mystic Ward, Ironforge.", npc = "Talvash del Kissel" }, items = {
+        { 9538 }, -- #9538
+    } },
+    { id = 2950, name = "Nogg's Ring Redo", side = "Horde", requiredLevel = 28, xp = 2750, objective = "Bring the Brilliant Gold Ring, a Silver Bar, a Moss Agate, and 30 silver coins to Nogg in Orgrimmar.", requires = { { id = 2949, name = "Return of the Ring" } }, start = { description = "Valley of Honor, Orgrimmar.", location = { 1454, 76, 25 }, npc = "Nogg" }, turnIn = { description = "Valley of Honor, Orgrimmar.", npc = "Nogg" }, items = {
+        { 9588 }, -- #9588
+    } },
 })

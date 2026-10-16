@@ -25,6 +25,77 @@
     {
       "id": 391,
       "name": "The Stockade Riots",
+      "requires": [389],
+      "items": []
+    },
+    {
+      "id": 378,
+      "name": "The Fury Runs Deep",
+      "side": "Alliance",
+      "requiredLevel": 25,
+      "xp": 5750,
+      "objective": "Kill Kam Deepfury in The Stockade and bring his head to Motley Garmason.",
+      "description": "Requires The Dark Iron War before this quest becomes available.",
+      "requires": [303],
+      "start": {
+        "npc": "Motley Garmason",
+        "location": [1437, 49.6, 18.2],
+        "description": "Dun Modr, Wetlands."
+      },
+      "turnIn": {
+        "npc": "Motley Garmason",
+        "description": "Dun Modr, Wetlands."
+      },
+      "items": [
+        {
+          "item": 3562,
+          "name": "Belt of Vindication"
+        },
+        {
+          "item": 1264,
+          "name": "Headbasher"
+        },
+        {
+          "item": 270036,
+          "name": "Magistrate's Pantaloons"
+        }
+      ]
+    },
+    {
+      "id": 303,
+      "name": "The Dark Iron War",
+      "requiredLevel": 25,
+      "xp": 2450,
+      "objective": "Kill 10 Dark Iron Dwarves, 5 Dark Iron Tunnelers, 5 Dark Iron Saboteurs and 5 Dark Iron Demolitionists at Dun Modr.",
+      "description": "Complete The Dark Iron War to unlock The Fury Runs Deep.",
+      "start": {
+        "npc": "Motley Garmason",
+        "location": [1437, 49.6, 18.2],
+        "description": "Dun Modr, Wetlands."
+      },
+      "turnIn": {
+        "npc": "Motley Garmason",
+        "description": "Dun Modr, Wetlands."
+      },
+      "items": []
+    },
+    {
+      "id": 389,
+      "name": "Bazil Thredd",
+      "requiredLevel": 16,
+      "xp": 440,
+      "objective": "Speak with Warden Thelwater outside The Stockade.",
+      "description": "Second required step leading to The Stockade Riots.",
+      "requires": [373],
+      "start": {
+        "npc": "Baros Alexston",
+        "location": [1453, 57.7, 47.9],
+        "description": "City Hall, Cathedral Square, Stormwind."
+      },
+      "turnIn": {
+        "npc": "Warden Thelwater",
+        "description": "Outside The Stockade, Stormwind."
+      },
       "items": []
     }
   ]

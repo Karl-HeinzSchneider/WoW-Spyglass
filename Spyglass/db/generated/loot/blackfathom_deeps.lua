@@ -163,4 +163,8 @@ Data:AddQuests(48, {
         { 16887 }, -- Witch's Finger
         { 270043 }, -- Dreamer's Chestguard
     } },
+    { id = 6564, name = "Allegiance to the Old Gods", side = "Horde", requiredLevel = 17, xp = 1300, objective = "Bring the Damp Note to Je'neu Sancrea in Ashenvale.", description = "Drops from Blackfathom Tide Priestess in the entrance tunnels leading to Blackfathom Deeps.", start = { item = 16790 }, turnIn = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, items = {} },
+    { id = 1806, name = "The Test of Righteousness", side = "Alliance", class = "PALADIN", requiredLevel = 20, xp = 5500, objective = "Wait for Jordan Stilwell to finish forging a weapon for you.", description = "Paladin class quest for humans and dwarves. The parts are Whitestone Oak Lumber (The Deadmines), Jordan's Smithing Hammer (Shadowfang Keep), the Kor Gem (Blackfathom Deeps) and Jordan's ore shipment (Loch Modan).", requires = { { id = 1654, name = "The Test of Righteousness" } }, start = { description = "Gates of Ironforge, Dun Morogh.", location = { 1426, 52.6, 36.8 }, npc = "Jordan Stilwell" }, turnIn = { description = "Gates of Ironforge, Dun Morogh.", npc = "Jordan Stilwell" }, items = {
+        { 6953 }, -- Verigan's Fist
+    } },
 })

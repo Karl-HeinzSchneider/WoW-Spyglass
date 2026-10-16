@@ -485,6 +485,114 @@
         "npc": "Alba Fairmoon"
       },
       "items": []
+    },
+    {
+      "id": 92819,
+      "name": "Destruction in Deadmines",
+      "requiredLevel": 9,
+      "xp": 680,
+      "objective": "Use the detonator.",
+      "description": "Final step of the Toxic Soil chain.",
+      "requires": [92753],
+      "start": {
+        "location": [1436, 53, 53.3],
+        "description": "X."
+      },
+      "turnIn": {
+        "description": "X."
+      },
+      "items": []
+    },
+    {
+      "id": 1806,
+      "name": "The Test of Righteousness",
+      "side": "Alliance",
+      "class": "Paladin",
+      "requiredLevel": 20,
+      "xp": 5500,
+      "objective": "Wait for Jordan Stilwell to finish forging a weapon for you.",
+      "description": "Paladin class quest for humans and dwarves. The parts are Whitestone Oak Lumber (The Deadmines), Jordan's Smithing Hammer (Shadowfang Keep), the Kor Gem (Blackfathom Deeps) and Jordan's ore shipment (Loch Modan).",
+      "requires": [1654],
+      "start": {
+        "npc": "Jordan Stilwell",
+        "location": [1426, 52.6, 36.8],
+        "description": "Gates of Ironforge, Dun Morogh."
+      },
+      "turnIn": {
+        "npc": "Jordan Stilwell",
+        "description": "Gates of Ironforge, Dun Morogh."
+      },
+      "items": [
+        {
+          "item": 6953,
+          "name": "Verigan's Fist"
+        }
+      ]
+    },
+    {
+      "id": 1651,
+      "name": "The Tome of Valor",
+      "requiredLevel": 20,
+      "objective": "Defend Daphne Stilwell from the Defias attack.",
+      "start": {
+        "npc": "Daphne Stilwell",
+        "location": [1436, 42.2, 88.6],
+        "description": "Westfall."
+      },
+      "turnIn": {
+        "npc": "Daphne Stilwell",
+        "description": "Westfall."
+      },
+      "items": []
+    },
+    {
+      "id": 1652,
+      "name": "The Tome of Valor",
+      "requiredLevel": 20,
+      "objective": "Speak to Duthorian Rall in Stormwind.",
+      "requires": [1651],
+      "start": {
+        "npc": "Daphne Stilwell",
+        "description": "Westfall."
+      },
+      "turnIn": {
+        "npc": "Duthorian Rall",
+        "description": "Cathedral Square, Stormwind."
+      },
+      "items": []
+    },
+    {
+      "id": 1653,
+      "name": "The Test of Righteousness",
+      "requiredLevel": 20,
+      "objective": "Speak to Jordan Stilwell in Ironforge.",
+      "requires": [1652],
+      "start": {
+        "npc": "Duthorian Rall",
+        "description": "Cathedral Square, Stormwind."
+      },
+      "turnIn": {
+        "npc": "Jordan Stilwell",
+        "description": "Gates of Ironforge, Dun Morogh."
+      },
+      "items": []
+    },
+    {
+      "id": 1654,
+      "name": "The Test of Righteousness",
+      "requiredLevel": 20,
+      "objective": "Using Jordan's Weapon Notes, find some Whitestone Oak Lumber, Bailor's Refined Ore Shipment, Jordan's Smithing Hammer, and a Kor Gem, and return them to Jordan Stilwell in Ironforge.",
+      "requires": [1653],
+      "start": {
+        "npc": "Jordan Stilwell",
+        "location": [1426, 52.6, 36.8],
+        "description": "Gates of Ironforge, Dun Morogh."
+      },
+      "turnIn": {
+        "npc": "Jordan Stilwell",
+        "description": "Gates of Ironforge, Dun Morogh."
+      },
+      "items": []
     }
   ]
 }

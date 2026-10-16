@@ -10,6 +10,187 @@
       "id": 1221,
       "name": "Blueleaf Tubers",
       "items": []
+    },
+    {
+      "id": 1142,
+      "name": "Mortality Wanes",
+      "side": "Alliance",
+      "requiredLevel": 25,
+      "xp": 3050,
+      "objective": "Find Treshala's Pendant and return it to Treshala Fallowbrook in Darnassus.",
+      "start": {
+        "npc": "Heralath Fallowbrook",
+        "description": "Inside Razorfen Kraul."
+      },
+      "turnIn": {
+        "npc": "Treshala Fallowbrook",
+        "description": "Darnassus."
+      },
+      "items": [
+        {
+          "item": 6751,
+          "name": "Mourning Shawl"
+        },
+        {
+          "item": 6752,
+          "name": "Lancer Boots"
+        },
+        {
+          "item": 270047,
+          "name": "Sentinel's Boots"
+        }
+      ]
+    },
+    {
+      "id": 1101,
+      "name": "The Crone of the Kraul",
+      "side": "Alliance",
+      "requiredLevel": 29,
+      "xp": 3350,
+      "objective": "Bring Razorflank's Medallion to Falfindel Waywarder in Thalanaar.",
+      "requires": [1100],
+      "start": {
+        "npc": "Falfindel Waywarder",
+        "location": [1444, 89, 46],
+        "description": "Thalanaar, Feralas."
+      },
+      "turnIn": {
+        "npc": "Falfindel Waywarder",
+        "description": "Thalanaar, Feralas."
+      },
+      "items": [
+        {
+          "item": 4197,
+          "name": "Berylline Pads"
+        },
+        {
+          "item": 6742,
+          "name": "Stonefist Girdle"
+        },
+        {
+          "item": 6725,
+          "name": "Marbled Buckler"
+        }
+      ]
+    },
+    {
+      "id": 1100,
+      "name": "Lonebrow's Journal",
+      "requiredLevel": 23,
+      "objective": "Read Henrig Lonebrow's Journal and take it to Falfindel Waywarder in Thalanaar.",
+      "description": "Required before The Crone of the Kraul.",
+      "start": {
+        "location": [1441, 30, 24],
+        "description": "Henrig Lonebrow's Journal beside his corpse at the bottom of the Great Lift."
+      },
+      "turnIn": {
+        "npc": "Falfindel Waywarder",
+        "description": "Thalanaar, Feralas."
+      },
+      "items": []
+    },
+    {
+      "id": 1102,
+      "name": "A Vengeful Fate",
+      "side": "Horde",
+      "requiredLevel": 29,
+      "xp": 4050,
+      "objective": "Bring Razorflank's Heart to Auld Stonespire in Thunder Bluff.",
+      "start": {
+        "npc": "Auld Stonespire",
+        "location": [1456, 36, 59],
+        "description": "Thunder Bluff."
+      },
+      "turnIn": {
+        "npc": "Auld Stonespire",
+        "description": "Thunder Bluff."
+      },
+      "items": [
+        {
+          "item": 4197,
+          "name": "Berylline Pads"
+        },
+        {
+          "item": 6742,
+          "name": "Stonefist Girdle"
+        },
+        {
+          "item": 6725,
+          "name": "Marbled Buckler"
+        },
+        {
+          "item": 274084,
+          "name": "Quilboar Blaster"
+        }
+      ]
+    },
+    {
+      "id": 6521,
+      "name": "An Unholy Alliance",
+      "side": "Horde",
+      "requiredLevel": 28,
+      "xp": 3500,
+      "objective": "Bring Ambassador Malcin's Head to Varimathras in the Undercity.",
+      "description": "This quest is completed in the area OUTSIDE Razorfen Downs.",
+      "requires": [6522],
+      "start": {
+        "npc": "Varimathras",
+        "description": "Royal Quarter, Undercity."
+      },
+      "turnIn": {
+        "npc": "Varimathras",
+        "description": "Royal Quarter, Undercity."
+      },
+      "items": [
+        {
+          "item": 17039,
+          "name": "Skullbreaker"
+        },
+        {
+          "item": 17042,
+          "name": "Nail Spitter"
+        },
+        {
+          "item": 17043,
+          "name": "Zealot's Robe"
+        },
+        {
+          "item": 270054,
+          "name": "Cultist's Chestguard"
+        }
+      ]
+    },
+    {
+      "id": 6522,
+      "name": "An Unholy Alliance",
+      "requiredLevel": 28,
+      "objective": "Take the Small Scroll to Varimathras in the Undercity.",
+      "start": {
+        "item": 17008,
+        "description": "Drops from Charlga Razorflank in Razorfen Kraul."
+      },
+      "turnIn": {
+        "npc": "Varimathras",
+        "description": "Royal Quarter, Undercity."
+      },
+      "items": []
+    },
+    {
+      "id": 1109,
+      "name": "Going, Going, Guano!",
+      "requiredLevel": 30,
+      "objective": "Bring 1 pile of Kraul Guano to Master Apothecary Faranell in the Undercity.",
+      "description": "Required before Hearts of Zeal.",
+      "start": {
+        "npc": "Master Apothecary Faranell",
+        "location": [1458, 48, 69],
+        "description": "Apothecarium, Undercity."
+      },
+      "turnIn": {
+        "npc": "Master Apothecary Faranell",
+        "description": "Apothecarium, Undercity."
+      },
+      "items": []
     }
   ]
 }

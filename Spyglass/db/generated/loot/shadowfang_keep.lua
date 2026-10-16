@@ -125,4 +125,7 @@ Data:AddQuests(33, {
         { 6898 }, -- Orb of Soran'ruk
         { 15109 }, -- Staff of Soran'ruk
     } },
+    { id = 1806, name = "The Test of Righteousness", side = "Alliance", class = "PALADIN", requiredLevel = 20, xp = 5500, objective = "Wait for Jordan Stilwell to finish forging a weapon for you.", description = "Paladin class quest for humans and dwarves. The parts are Whitestone Oak Lumber (The Deadmines), Jordan's Smithing Hammer (Shadowfang Keep), the Kor Gem (Blackfathom Deeps) and Jordan's ore shipment (Loch Modan).", requires = { { id = 1654, name = "The Test of Righteousness" } }, start = { description = "Gates of Ironforge, Dun Morogh.", location = { 1426, 52.6, 36.8 }, npc = "Jordan Stilwell" }, turnIn = { description = "Gates of Ironforge, Dun Morogh.", npc = "Jordan Stilwell" }, items = {
+        { 6953 }, -- Verigan's Fist
+    } },
 })

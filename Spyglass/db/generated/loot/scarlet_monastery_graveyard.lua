@@ -53,3 +53,11 @@ Data:AddTrashLoot(18901, {
     { 7761 }, -- #7761
     { 7787 }, -- #7787
 })
+
+Data:AddQuests(18901, {
+    { id = 1051, name = "Vorrel's Revenge", side = "Horde", requiredLevel = 25, xp = 3300, objective = "Return Vorrel Sengutz's wedding ring (from Nancy Vishas) to Monika Sengutz in Tarren Mill.", start = { description = "Inside the Graveyard.", npc = "Vorrel Sengutz" }, turnIn = { description = "Tarren Mill, Hillsbrad Foothills.", npc = "Monika Sengutz" }, items = {
+        { 7750 }, -- #7750
+        { 4643 }, -- #4643
+    } },
+    { id = 1113, name = "Hearts of Zeal", side = "Horde", requiredLevel = 30, xp = 3300, objective = "Bring 20 Hearts of Zeal from the Scarlet Monastery to Master Apothecary Faranell.", requires = { { id = 1109, name = "Going, Going, Guano!" } }, start = { description = "Undercity.", location = { 1458, 48, 69 }, npc = "Master Apothecary Faranell" }, turnIn = { description = "Undercity.", npc = "Master Apothecary Faranell" }, items = {} },
+})

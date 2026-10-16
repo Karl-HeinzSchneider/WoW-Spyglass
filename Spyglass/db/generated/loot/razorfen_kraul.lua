@@ -87,4 +87,27 @@ Data:AddTrashLoot(47, {
 Data:AddQuests(47, {
     { id = 1144, name = "Willix the Importer", side = "Both", items = {} },
     { id = 1221, name = "Blueleaf Tubers", items = {} },
+    { id = 1142, name = "Mortality Wanes", side = "Alliance", requiredLevel = 25, xp = 3050, objective = "Find Treshala's Pendant and return it to Treshala Fallowbrook in Darnassus.", start = { description = "Inside Razorfen Kraul.", npc = "Heralath Fallowbrook" }, turnIn = { description = "Darnassus.", npc = "Treshala Fallowbrook" }, items = {
+        { 6751 }, -- #6751
+        { 6752 }, -- #6752
+        { 270047 }, -- Sentinel's Boots
+    } },
+    { id = 1101, name = "The Crone of the Kraul", side = "Alliance", requiredLevel = 29, xp = 3350, objective = "Bring Razorflank's Medallion to Falfindel Waywarder in Thalanaar.", requires = { { id = 1100, name = "Lonebrow's Journal" } }, start = { description = "Thalanaar, Feralas.", location = { 1444, 89, 46 }, npc = "Falfindel Waywarder" }, turnIn = { description = "Thalanaar, Feralas.", npc = "Falfindel Waywarder" }, items = {
+        { 4197 }, -- #4197
+        { 6742 }, -- #6742
+        { 6725 }, -- #6725
+    } },
+    { id = 1102, name = "A Vengeful Fate", side = "Horde", requiredLevel = 29, xp = 4050, objective = "Bring Razorflank's Heart to Auld Stonespire in Thunder Bluff.", start = { description = "Thunder Bluff.", location = { 1456, 36, 59 }, npc = "Auld Stonespire" }, turnIn = { description = "Thunder Bluff.", npc = "Auld Stonespire" }, items = {
+        { 4197 }, -- #4197
+        { 6742 }, -- #6742
+        { 6725 }, -- #6725
+        { 274084 }, -- Quilboar Blaster
+    } },
+    { id = 1109, name = "Going, Going, Guano!", requiredLevel = 30, objective = "Bring 1 pile of Kraul Guano to Master Apothecary Faranell in the Undercity.", description = "Required before Hearts of Zeal.", start = { description = "Apothecarium, Undercity.", location = { 1458, 48, 69 }, npc = "Master Apothecary Faranell" }, turnIn = { description = "Apothecarium, Undercity.", npc = "Master Apothecary Faranell" }, items = {} },
+    { id = 6521, name = "An Unholy Alliance", side = "Horde", requiredLevel = 28, xp = 3500, objective = "Bring Ambassador Malcin's Head to Varimathras in the Undercity.", description = "This quest is completed in the area OUTSIDE Razorfen Downs.", requires = { { id = 6522, name = "An Unholy Alliance" } }, start = { description = "Royal Quarter, Undercity.", npc = "Varimathras" }, turnIn = { description = "Royal Quarter, Undercity.", npc = "Varimathras" }, items = {
+        { 17039 }, -- #17039
+        { 17042 }, -- #17042
+        { 17043 }, -- #17043
+        { 270054 }, -- Cultist's Chestguard
+    } },
 })

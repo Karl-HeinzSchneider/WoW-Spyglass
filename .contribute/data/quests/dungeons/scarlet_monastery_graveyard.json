@@ -1,3 +1,30 @@
 {
-  "quests": []
+  "quests": [
+    {
+      "id": 1051,
+      "name": "Vorrel's Revenge",
+      "side": "Horde",
+      "requiredLevel": 25,
+      "xp": 3300,
+      "objective": "Return Vorrel Sengutz's wedding ring (from Nancy Vishas) to Monika Sengutz in Tarren Mill.",
+      "start": {
+        "npc": "Vorrel Sengutz",
+        "description": "Inside the Graveyard."
+      },
+      "turnIn": {
+        "npc": "Monika Sengutz",
+        "description": "Tarren Mill, Hillsbrad Foothills."
+      },
+      "items": [
+        {
+          "item": 7750,
+          "name": "Mantle of Woe"
+        },
+        {
+          "item": 4643,
+          "name": "Grimsteel Cape"
+        }
+      ]
+    }
+  ]
 }
