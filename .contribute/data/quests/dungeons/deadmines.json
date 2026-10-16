@@ -51,7 +51,7 @@
       "name": "The Defias Brotherhood",
       "side": "Alliance",
       "requiredLevel": 14,
-      "xp": 9750,
+      "xp": 2600,
       "objective": "Defeat Edwin VanCleef and collect his head.",
       "requires": [155],
       "start": {
@@ -138,7 +138,7 @@
       "name": "Red Silk Bandanas",
       "side": "Alliance",
       "requiredLevel": 14,
-      "xp": 4688,
+      "xp": 1250,
       "objective": "Collect 10 Red Silk Bandanas from Defias inside the Deadmines.",
       "requires": [153, 155],
       "start": {
@@ -171,7 +171,7 @@
       "name": "Underground Assault",
       "side": "Alliance",
       "requiredLevel": 15,
-      "xp": 5813,
+      "xp": 1550,
       "objective": "Recover the Gnoam Sprecklesprocket from Sneed's Shredder.",
       "start": {
         "npc": "Shoni the Shilent"
@@ -236,6 +236,7 @@
       "name": "The Defias Brotherhood",
       "side": "Alliance",
       "requiredLevel": 14,
+      "xp": 1350,
       "objective": "Talk to Wiley the Black in Lakeshire.",
       "description": "First step of the required Defias Brotherhood chain.",
       "start": {
@@ -252,6 +253,7 @@
       "name": "The Defias Brotherhood",
       "side": "Alliance",
       "requiredLevel": 14,
+      "xp": 680,
       "objective": "Take Wiley's Note back to Gryan Stoutmantle in Westfall.",
       "description": "Second step of the Defias Brotherhood chain.",
       "requires": [65],
@@ -268,6 +270,7 @@
       "name": "The Defias Brotherhood",
       "side": "Alliance",
       "requiredLevel": 14,
+      "xp": 680,
       "objective": "Take Wiley's Note to Master Mathias Shaw in Stormwind.",
       "description": "Shaw investigates the connection between the Defias and the Stonemasons.",
       "requires": [132],
@@ -284,6 +287,7 @@
       "name": "The Defias Brotherhood",
       "side": "Alliance",
       "requiredLevel": 14,
+      "xp": 340,
       "objective": "Take Shaw's Report to Gryan Stoutmantle in Westfall.",
       "description": "Returns Shaw's findings about Edwin VanCleef to Gryan.",
       "requires": [135],
@@ -300,6 +304,7 @@
       "name": "The Defias Brotherhood",
       "side": "Alliance",
       "requiredLevel": 14,
+      "xp": 1350,
       "objective": "Track down the Defias Messenger in Westfall and bring his message to Gryan Stoutmantle.",
       "description": "The messenger travels the roads between Moonbrook, Gold Coast Quarry and Jangolode Mine.",
       "requires": [141],
@@ -331,6 +336,7 @@
       "name": "The Defias Brotherhood",
       "side": "Alliance",
       "requiredLevel": 14,
+      "xp": 1700,
       "objective": "Escort the Defias Traitor until he reveals the Defias hideout, then return to Gryan Stoutmantle.",
       "description": "Final prerequisite before the dungeon step of The Defias Brotherhood.",
       "requires": [142],
@@ -348,6 +354,7 @@
       "name": "Testing the Wells",
       "side": "Alliance",
       "requiredLevel": 9,
+      "xp": 460,
       "objective": "Use the Well Water Sample Kit at the Jansen Stead and Molsen Farm wells.",
       "description": "First quest of the Toxic Soil chain.",
       "start": {
@@ -363,6 +370,7 @@
       "name": "Murloc Gills",
       "side": "Alliance",
       "requiredLevel": 9,
+      "xp": 460,
       "objective": "Collect 7 Longshore Murloc Gills along the Westfall shoreline.",
       "description": "Second quest of the Toxic Soil chain.",
       "requires": [92742],
@@ -379,6 +387,7 @@
       "name": "The State of the Mines",
       "side": "Alliance",
       "requiredLevel": 9,
+      "xp": 490,
       "objective": "Slay 4 Kobold Diggers in Jangolode Mine and 6 Riverpaw Miners in Gold Coast Quarry.",
       "description": "Investigate whether Westfall's mines are causing the contamination.",
       "requires": [92744],
@@ -395,6 +404,7 @@
       "name": "Moonbrook Espionage",
       "side": "Alliance",
       "requiredLevel": 9,
+      "xp": 580,
       "objective": "Collect 8 Suspicious Industrial Supplies from Moonbrook.",
       "description": "The supplies are found in the caves leading toward the Deadmines entrance.",
       "requires": [92745],
@@ -427,6 +437,7 @@
       "name": "A Dynamite Plan",
       "side": "Alliance",
       "requiredLevel": 9,
+      "xp": 580,
       "objective": "Obtain 10 Coarse Dynamite, then return to Sprite Jumpsprocket in Stormwind.",
       "description": "Coarse Dynamite can be crafted, traded or bought from the auction house.",
       "requires": [92748],
@@ -475,6 +486,7 @@
       "name": "Explosive Consultation",
       "side": "Alliance",
       "requiredLevel": 9,
+      "xp": 580,
       "objective": "Return to Alba Fairmoon at the Sentinel Hill inn in Westfall with the completed explosives.",
       "description": "Final preparation before Destruction in Deadmines.",
       "requires": [92751],
@@ -483,6 +495,114 @@
       },
       "turnIn": {
         "npc": "Alba Fairmoon"
+      },
+      "items": []
+    },
+    {
+      "id": 92819,
+      "name": "Destruction in Deadmines",
+      "requiredLevel": 9,
+      "xp": 680,
+      "objective": "Use the detonator.",
+      "description": "Final step of the Toxic Soil chain.",
+      "requires": [92753],
+      "start": {
+        "location": [1436, 53, 53.3],
+        "description": "X."
+      },
+      "turnIn": {
+        "description": "X."
+      },
+      "items": []
+    },
+    {
+      "id": 1806,
+      "name": "The Test of Righteousness",
+      "side": "Alliance",
+      "class": "Paladin",
+      "requiredLevel": 20,
+      "xp": 5500,
+      "objective": "Wait for Jordan Stilwell to finish forging a weapon for you.",
+      "description": "Paladin class quest for humans and dwarves. The parts are Whitestone Oak Lumber (The Deadmines), Jordan's Smithing Hammer (Shadowfang Keep), the Kor Gem (Blackfathom Deeps) and Jordan's ore shipment (Loch Modan).",
+      "requires": [1654],
+      "start": {
+        "npc": "Jordan Stilwell",
+        "location": [1426, 52.6, 36.8],
+        "description": "Gates of Ironforge, Dun Morogh."
+      },
+      "turnIn": {
+        "npc": "Jordan Stilwell",
+        "description": "Gates of Ironforge, Dun Morogh."
+      },
+      "items": [
+        {
+          "item": 6953,
+          "name": "Verigan's Fist"
+        }
+      ]
+    },
+    {
+      "id": 1651,
+      "name": "The Tome of Valor",
+      "requiredLevel": 20,
+      "objective": "Defend Daphne Stilwell from the Defias attack.",
+      "start": {
+        "npc": "Daphne Stilwell",
+        "location": [1436, 42.2, 88.6],
+        "description": "Westfall."
+      },
+      "turnIn": {
+        "npc": "Daphne Stilwell",
+        "description": "Westfall."
+      },
+      "items": []
+    },
+    {
+      "id": 1652,
+      "name": "The Tome of Valor",
+      "requiredLevel": 20,
+      "objective": "Speak to Duthorian Rall in Stormwind.",
+      "requires": [1651],
+      "start": {
+        "npc": "Daphne Stilwell",
+        "description": "Westfall."
+      },
+      "turnIn": {
+        "npc": "Duthorian Rall",
+        "description": "Cathedral Square, Stormwind."
+      },
+      "items": []
+    },
+    {
+      "id": 1653,
+      "name": "The Test of Righteousness",
+      "requiredLevel": 20,
+      "objective": "Speak to Jordan Stilwell in Ironforge.",
+      "requires": [1652],
+      "start": {
+        "npc": "Duthorian Rall",
+        "description": "Cathedral Square, Stormwind."
+      },
+      "turnIn": {
+        "npc": "Jordan Stilwell",
+        "description": "Gates of Ironforge, Dun Morogh."
+      },
+      "items": []
+    },
+    {
+      "id": 1654,
+      "name": "The Test of Righteousness",
+      "requiredLevel": 20,
+      "objective": "Using Jordan's Weapon Notes, find some Whitestone Oak Lumber, Bailor's Refined Ore Shipment, Jordan's Smithing Hammer, and a Kor Gem, and return them to Jordan Stilwell in Ironforge.",
+      "requires": [1653],
+      "start": {
+        "npc": "Jordan Stilwell",
+        "location": [1426, 52.6, 36.8],
+        "description": "Gates of Ironforge, Dun Morogh."
+      },
+      "turnIn": {
+        "npc": "Jordan Stilwell",
+        "description": "Gates of Ironforge, Dun Morogh."
       },
       "items": []
     }

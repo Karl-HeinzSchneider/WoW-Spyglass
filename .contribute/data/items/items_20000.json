@@ -84,7 +84,7 @@
     "itemLevel": 58,
     "reqLevel": 53,
     "classID": 0,
-    "subclassID": 1,
+    "subclassID": 2,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 0,
     "icon": 134862,
@@ -124,7 +124,7 @@
     "itemLevel": 50,
     "reqLevel": 40,
     "classID": 0,
-    "subclassID": 1,
+    "subclassID": 2,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 0,
     "icon": 134762,
@@ -1306,8 +1306,8 @@
       "enUS": "Ironbark Staff"
     },
     "quality": 4,
-    "itemLevel": 65,
-    "reqLevel": 60,
+    "itemLevel": 60,
+    "reqLevel": 55,
     "classID": 2,
     "subclassID": 10,
     "slot": "INVTYPE_2HWEAPON",
@@ -1320,11 +1320,11 @@
     "craftingReagent": false,
     "stats": {
       "CRIT_RATING": 28,
-      "DAMAGE_PER_SECOND": 45.74,
-      "INTELLECT": 10,
-      "RESISTANCE0_NAME": 100,
-      "SPELL_POWER": 94,
-      "STAMINA": 19
+      "DAMAGE_PER_SECOND": 42.06,
+      "INTELLECT": 15,
+      "RESISTANCE0_NAME": 120,
+      "SPELL_POWER": 88,
+      "STAMINA": 18
     }
   },
   "20070": {
@@ -1332,8 +1332,8 @@
       "enUS": "Sageclaw"
     },
     "quality": 4,
-    "itemLevel": 65,
-    "reqLevel": 60,
+    "itemLevel": 60,
+    "reqLevel": 55,
     "classID": 2,
     "subclassID": 15,
     "slot": "INVTYPE_WEAPONMAINHAND",
@@ -1346,9 +1346,9 @@
     "craftingReagent": false,
     "stats": {
       "CRIT_RATING": 14,
-      "DAMAGE_PER_SECOND": 31.47,
-      "RESISTANCE0_NAME": 40,
-      "SPELL_POWER": 94,
+      "DAMAGE_PER_SECOND": 28.82,
+      "RESISTANCE0_NAME": 30,
+      "SPELL_POWER": 88,
       "STAMINA": 8
     }
   },
@@ -1610,7 +1610,7 @@
     "slot": "INVTYPE_THROWN",
     "bind": 1,
     "icon": 135427,
-    "sellPrice": 1,
+    "sellPrice": 19878,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -4585,8 +4585,8 @@
       "enUS": "Mindfang"
     },
     "quality": 4,
-    "itemLevel": 65,
-    "reqLevel": 60,
+    "itemLevel": 60,
+    "reqLevel": 55,
     "classID": 2,
     "subclassID": 15,
     "slot": "INVTYPE_WEAPONMAINHAND",
@@ -4599,9 +4599,9 @@
     "craftingReagent": false,
     "stats": {
       "CRIT_RATING": 14,
-      "DAMAGE_PER_SECOND": 31.47,
-      "RESISTANCE0_NAME": 40,
-      "SPELL_POWER": 94,
+      "DAMAGE_PER_SECOND": 28.82,
+      "RESISTANCE0_NAME": 30,
+      "SPELL_POWER": 88,
       "STAMINA": 8
     }
   },
@@ -4732,8 +4732,8 @@
       "enUS": "Ironbark Staff"
     },
     "quality": 4,
-    "itemLevel": 65,
-    "reqLevel": 60,
+    "itemLevel": 60,
+    "reqLevel": 55,
     "classID": 2,
     "subclassID": 10,
     "slot": "INVTYPE_2HWEAPON",
@@ -4746,11 +4746,11 @@
     "craftingReagent": false,
     "stats": {
       "CRIT_RATING": 28,
-      "DAMAGE_PER_SECOND": 45.74,
-      "INTELLECT": 10,
-      "RESISTANCE0_NAME": 100,
-      "SPELL_POWER": 94,
-      "STAMINA": 19
+      "DAMAGE_PER_SECOND": 42.06,
+      "INTELLECT": 15,
+      "RESISTANCE0_NAME": 120,
+      "SPELL_POWER": 88,
+      "STAMINA": 18
     }
   },
   "20221": {
@@ -10900,7 +10900,7 @@
     "bind": 1,
     "icon": 134420,
     "sellPrice": 0,
-    "stackCount": 20,
+    "stackCount": 30,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
@@ -10918,7 +10918,7 @@
     "bind": 1,
     "icon": 133282,
     "sellPrice": 0,
-    "stackCount": 20,
+    "stackCount": 30,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
@@ -10936,7 +10936,7 @@
     "bind": 1,
     "icon": 133308,
     "sellPrice": 0,
-    "stackCount": 20,
+    "stackCount": 30,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
@@ -13299,7 +13299,7 @@
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 0,
     "icon": 134711,
-    "sellPrice": 500,
+    "sellPrice": 100,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -13317,7 +13317,7 @@
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 0,
     "icon": 134878,
-    "sellPrice": 1000,
+    "sellPrice": 500,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -13857,7 +13857,7 @@
     "slot": "INVTYPE_THROWN",
     "bind": 0,
     "icon": 135427,
-    "sellPrice": 3,
+    "sellPrice": 23806,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -15915,7 +15915,7 @@
     "slot": "INVTYPE_THROWN",
     "bind": 1,
     "icon": 135424,
-    "sellPrice": 1,
+    "sellPrice": 43186,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -23565,7 +23565,7 @@
       "enUS": "Don Rodrigo's Band"
     },
     "quality": 4,
-    "itemLevel": 65,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 0,
@@ -23579,8 +23579,8 @@
     "craftingReagent": false,
     "stats": {
       "CRIT_RATING": 14,
-      "SPELL_PENETRATION": 6,
-      "STAMINA": 7
+      "SPELL_PENETRATION": 5,
+      "STAMINA": 6
     }
   },
   "21564": {
@@ -23622,7 +23622,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "SPELL_PENETRATION": -3,
+      "SPELL_PENETRATION": 3,
       "STAMINA": 8
     }
   },
@@ -23644,7 +23644,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "SPELL_PENETRATION": -2,
+      "SPELL_PENETRATION": 2,
       "STAMINA": 4
     }
   },
@@ -40976,6 +40976,24 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "23192": {
+    "names": {
+      "enUS": "Tabard of the Scarlet Crusade"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_TABARD",
+    "bind": 1,
+    "icon": 133770,
+    "sellPrice": 7143,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
   "23193": {
     "names": {
       "enUS": "Skeletal Steed Reins"
@@ -42976,7 +42994,7 @@
     "itemLevel": 1,
     "reqLevel": 0,
     "classID": 4,
-    "subclassID": 0,
+    "subclassID": 1,
     "slot": "INVTYPE_SHOULDER",
     "bind": 1,
     "icon": 135054,
@@ -42984,7 +43002,10 @@
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
-    "craftingReagent": false
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 2
+    }
   },
   "23325": {
     "names": {

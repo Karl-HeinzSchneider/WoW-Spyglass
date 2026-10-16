@@ -24,3 +24,44 @@ Data:AddBossLoot(3482, { -- Relic Guardian
     { 270865 }, -- Titan Relic
     { 273097 }, -- Blueprint: Rock Garden
 })
+
+Data:AddQuests(2998, {
+    { id = 95682, name = "Open the Maw", side = "Horde", requiredLevel = 24, xp = 7158, objective = "Defeat 2 Dragonmaw Saboteurs and 4 Dragonmaw Warders, recover the Dragonmaw Dispatch, and report to the Deathstalker Agent outside the dungeon.", description = "Related lead-in: Dragonmaw Rumors. The Dragonmaw Dispatch is recovered from the Dragonmaw forces inside the dungeon.", requires = { { id = 95663, name = "Dragonmaw Rumors" } }, start = { description = "Just outside Excavation Site: Wetlands.", location = { 1437, 47.8, 56.3 }, npc = "Deathstalker Agent" }, turnIn = { description = "Just outside Excavation Site: Wetlands.", npc = "Deathstalker Agent" }, items = {
+        { 271740 }, -- Knife-Polishing Rag
+        { 271732 }, -- Dirt-Heavy Bracers
+        { 271745 }, -- Bloody Map
+    } },
+    { id = 95697, name = "Changing Tastes", side = "Horde", requiredLevel = 24, xp = 6950, objective = "Enter the Excavation Sites in the Wetlands and bring back 4 Thicket Raptor Meat.", description = "Thicket Raptor Meat comes from the Thicket raptors (Thicket Lurker, Thicket Hunter, Thicket Matriarch) in Stalker's Thicket, the area of Shadetooth.", start = { description = "The Drag, Orgrimmar.", location = { 1454, 57.2, 53.3 }, npc = "Borstan" }, turnIn = { description = "The Drag, Orgrimmar.", npc = "Borstan" }, items = {
+        { 280766 }, -- Satchel of Potions
+        { 280805 }, -- Serrated Raptor Claw
+        { 250185 }, -- Recipe: Twice-Spiced Raptor Slice
+        { 250077 }, -- Twice-Spiced Raptor Slice
+    } },
+    { id = 98815, name = "Highland Hides", side = "Alliance", requiredLevel = 24, xp = 1150, objective = "Collect 4 Thicket Raptor Hides and take them to James Halloran in Menethil Harbor.", requires = { { id = 484, name = "Young Crocolisk Skins" } }, start = { description = "Menethil Harbor, Wetlands.", location = { 1437, 8, 55 }, npc = "James Halloran" }, turnIn = { description = "Menethil Harbor, Wetlands.", npc = "James Halloran" }, items = {} },
+    { id = 95772, name = "Songblade Search", side = "Alliance", requiredLevel = 24, xp = 6150, objective = "Look for Dorin Songblade's brother, Daewyn, in Whelgar's Excavation Site.", description = "Find Daewyn inside the dungeon. Fallen in the Fen sends you back to Dorin Songblade in Lakeshire.", start = { description = "Redridge Mountains.", location = { 1433, 25.6, 46.6 }, npc = "Dorin Songblade" }, turnIn = { description = "Inside Excavation Site: Wetlands.", npc = "Daewyn Songblade" }, items = {} },
+    { id = 95646, name = "Horrors in the Highland", side = "Alliance", requiredLevel = 24, xp = 6150, objective = "Kill a Highland Horror within Excavation Sites and bring its root core to Rethiel the Greenwarden in the Wetlands.", requires = { { id = 275, name = "Blisters on The Land" } }, start = { description = "Wetlands.", location = { 1437, 56.2, 40.6 }, npc = "Rethiel the Greenwarden" }, turnIn = { description = "Wetlands.", npc = "Rethiel the Greenwarden" }, items = {
+        { 271667 }, -- Ironwood Destroyer
+        { 271670 }, -- Curl of Life
+        { 271664 }, -- Hornbeam Heft
+    } },
+    { id = 95809, name = "Heartwoven", side = "Alliance", requiredLevel = 24, xp = 6150, objective = "Take the Reed-woven Heart back to Caitlin Grassman in Menethil Harbor.", description = "Follow-up of Lost in the Thicket Things.", requires = { { id = 95647, name = "Lost in the Thicket Things" } }, start = { description = "Inside Excavation Site: Wetlands.", npc = "Ardin Grassman" }, turnIn = { description = "Menethil Harbor.", npc = "Caitlin Grassman" }, items = {
+        { 1710 }, -- Greater Healing Potion
+        { 3827 }, -- Mana Potion
+        { 2459 }, -- Swiftness Potion
+        { 280766 }, -- Satchel of Potions
+    } },
+    { id = 98824, name = "Prehistoric Prism", side = "Alliance", requiredLevel = 24, xp = 3150, objective = "Deliver the Titan Relic to High Explorer Magellas in the Hall of Explorers.", requires = { { id = 95810, name = "Lost Relic Carry" } }, start = { description = "Whelgar's Excavation Site, Wetlands.", npc = "Prospector Whelgar" }, turnIn = { description = "Hall of Explorers, Ironforge.", npc = "High Explorer Magellas" }, items = {
+        { 271716 }, -- Explorer's League Dustcover
+        { 271767 }, -- Healer's Staff
+        { 271766 }, -- Heavehammer
+    } },
+    { id = 98823, name = "Earthen Echo", side = "Horde", requiredLevel = 24, xp = 3150, objective = "Deliver the Titan Relic to Muln Earthfury on Skywatcher Plateau in northwest Mulgore.", requires = { { id = 95664, name = "Elder Knowledge" } }, start = { description = "Elder Rise, Thunder Bluff.", location = { 1456, 70.8, 33.4 }, npc = "Bashana Runetotem" }, turnIn = { description = "Skywatcher Plateau, Mulgore.", npc = "Muln Earthfury" }, items = {
+        { 271766 }, -- Heavehammer
+        { 271767 }, -- Healer's Staff
+        { 271719 }, -- Furs of the Earthen Ring
+    } },
+    { id = 95795, name = "Fallen in the Fen", side = "Alliance", requiredLevel = 24, xp = 3150, objective = "Report Daewyn's fate to Dorin Songblade in Lakeshire.", start = { description = "Inside Excavation Site: Wetlands.", npc = "Daewyn Songblade" }, turnIn = { description = "Lakeshire, Redridge Mountains.", npc = "Dorin Songblade" }, items = {
+        { 271769 }, -- Daewyn's Girdle
+        { 271768 }, -- Songblade Stabilizer
+    } },
+})

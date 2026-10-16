@@ -1,3 +1,423 @@
 {
-  "quests": []
+  "quests": [
+    {
+      "id": 95682,
+      "name": "Open the Maw",
+      "side": "Horde",
+      "requiredLevel": 24,
+      "xp": 7158,
+      "objective": "Defeat 2 Dragonmaw Saboteurs and 4 Dragonmaw Warders, recover the Dragonmaw Dispatch, and report to the Deathstalker Agent outside the dungeon.",
+      "description": "Related lead-in: Dragonmaw Rumors. The Dragonmaw Dispatch is recovered from the Dragonmaw forces inside the dungeon.",
+      "requires": [95663],
+      "start": {
+        "npc": "Deathstalker Agent",
+        "location": [1437, 47.8, 56.3],
+        "description": "Just outside Excavation Site: Wetlands."
+      },
+      "turnIn": {
+        "npc": "Deathstalker Agent",
+        "description": "Just outside Excavation Site: Wetlands."
+      },
+      "items": [
+        {
+          "item": 271740,
+          "name": "Knife-Polishing Rag"
+        },
+        {
+          "item": 271732,
+          "name": "Dirt-Heavy Bracers"
+        },
+        {
+          "item": 271745,
+          "name": "Bloody Map"
+        }
+      ]
+    },
+    {
+      "id": 95663,
+      "name": "Dragonmaw Rumors",
+      "requiredLevel": 24,
+      "objective": "Travel to the Wetlands and meet the Deathstalker Agent in the hills above the Dragonmaw camp.",
+      "description": "Required before Open the Maw.",
+      "start": {
+        "npc": "Zaruk",
+        "location": [1417, 74, 36],
+        "description": "Hammerfall, Arathi Highlands."
+      },
+      "turnIn": {
+        "npc": "Deathstalker Agent",
+        "description": "Hills above the Dragonmaw camp, Wetlands."
+      },
+      "items": []
+    },
+    {
+      "id": 95697,
+      "name": "Changing Tastes",
+      "side": "Horde",
+      "requiredLevel": 24,
+      "xp": 6950,
+      "objective": "Enter the Excavation Sites in the Wetlands and bring back 4 Thicket Raptor Meat.",
+      "description": "Thicket Raptor Meat comes from the Thicket raptors (Thicket Lurker, Thicket Hunter, Thicket Matriarch) in Stalker's Thicket, the area of Shadetooth.",
+      "start": {
+        "npc": "Borstan",
+        "location": [1454, 57.2, 53.3],
+        "description": "The Drag, Orgrimmar."
+      },
+      "turnIn": {
+        "npc": "Borstan",
+        "description": "The Drag, Orgrimmar."
+      },
+      "items": [
+        {
+          "item": 280766,
+          "name": "Satchel of Potions"
+        },
+        {
+          "item": 280805,
+          "name": "Serrated Raptor Claw"
+        },
+        {
+          "item": 250185,
+          "name": "Recipe: Twice-Spiced Raptor Slice"
+        },
+        {
+          "item": 250077,
+          "name": "Twice-Spiced Raptor Slice"
+        }
+      ]
+    },
+    {
+      "id": 98815,
+      "name": "Highland Hides",
+      "side": "Alliance",
+      "requiredLevel": 24,
+      "xp": 1150,
+      "objective": "Collect 4 Thicket Raptor Hides and take them to James Halloran in Menethil Harbor.",
+      "requires": [484],
+      "start": {
+        "npc": "James Halloran",
+        "location": [1437, 8, 55],
+        "description": "Menethil Harbor, Wetlands."
+      },
+      "turnIn": {
+        "npc": "James Halloran",
+        "description": "Menethil Harbor, Wetlands."
+      },
+      "items": []
+    },
+    {
+      "id": 484,
+      "name": "Young Crocolisk Skins",
+      "requiredLevel": 18,
+      "objective": "Obtain 4 Young Crocolisk Skins for James Halloran in Menethil Harbor.",
+      "description": "Required before Highland Hides. Daily Delivery is not required in Forever.",
+      "start": {
+        "npc": "James Halloran",
+        "location": [1437, 8, 55],
+        "description": "Menethil Harbor, Wetlands."
+      },
+      "turnIn": {
+        "npc": "James Halloran",
+        "description": "Menethil Harbor, Wetlands."
+      },
+      "items": []
+    },
+    {
+      "id": 95772,
+      "name": "Songblade Search",
+      "side": "Alliance",
+      "requiredLevel": 24,
+      "xp": 6150,
+      "objective": "Look for Dorin Songblade's brother, Daewyn, in Whelgar's Excavation Site.",
+      "description": "Find Daewyn inside the dungeon. Fallen in the Fen sends you back to Dorin Songblade in Lakeshire.",
+      "start": {
+        "npc": "Dorin Songblade",
+        "location": [1433, 25.6, 46.6],
+        "description": "Redridge Mountains."
+      },
+      "turnIn": {
+        "npc": "Daewyn Songblade",
+        "description": "Inside Excavation Site: Wetlands."
+      },
+      "items": []
+    },
+    {
+      "id": 95646,
+      "name": "Horrors in the Highland",
+      "side": "Alliance",
+      "requiredLevel": 24,
+      "xp": 6150,
+      "objective": "Kill a Highland Horror within Excavation Sites and bring its root core to Rethiel the Greenwarden in the Wetlands.",
+      "requires": [275],
+      "start": {
+        "npc": "Rethiel the Greenwarden",
+        "location": [1437, 56.2, 40.6],
+        "description": "Wetlands."
+      },
+      "turnIn": {
+        "npc": "Rethiel the Greenwarden",
+        "description": "Wetlands."
+      },
+      "items": [
+        {
+          "item": 271667,
+          "name": "Ironwood Destroyer"
+        },
+        {
+          "item": 271670,
+          "name": "Curl of Life"
+        },
+        {
+          "item": 271664,
+          "name": "Hornbeam Heft"
+        }
+      ]
+    },
+    {
+      "id": 463,
+      "name": "The Greenwarden",
+      "requiredLevel": 20,
+      "objective": "Find Rethiel the Greenwarden in the Wetlands.",
+      "description": "First required step before Horrors in the Highland.",
+      "start": {
+        "npc": "First Mate Fitzsimmons",
+        "location": [1437, 10.8, 59.6],
+        "description": "Menethil Harbor, Wetlands."
+      },
+      "turnIn": {
+        "npc": "Rethiel the Greenwarden",
+        "description": "The Green Belt, Wetlands."
+      },
+      "items": []
+    },
+    {
+      "id": 276,
+      "name": "Tramping Paws",
+      "requiredLevel": 20,
+      "objective": "Kill 15 Mosshide Gnolls and 10 Mosshide Mongrels, then return to Rethiel the Greenwarden.",
+      "description": "Second required step before Horrors in the Highland.",
+      "requires": [463],
+      "start": {
+        "npc": "Rethiel the Greenwarden",
+        "location": [1437, 56.2, 40.6],
+        "description": "The Green Belt, Wetlands."
+      },
+      "turnIn": {
+        "npc": "Rethiel the Greenwarden",
+        "description": "The Green Belt, Wetlands."
+      },
+      "items": []
+    },
+    {
+      "id": 277,
+      "name": "Fire Taboo",
+      "requiredLevel": 20,
+      "objective": "Bring Rethiel the Greenwarden 9 Crude Flints.",
+      "description": "Third required step before Horrors in the Highland.",
+      "requires": [276],
+      "start": {
+        "npc": "Rethiel the Greenwarden",
+        "location": [1437, 56.2, 40.6],
+        "description": "The Green Belt, Wetlands."
+      },
+      "turnIn": {
+        "npc": "Rethiel the Greenwarden",
+        "description": "The Green Belt, Wetlands."
+      },
+      "items": []
+    },
+    {
+      "id": 275,
+      "name": "Blisters on The Land",
+      "requiredLevel": 20,
+      "objective": "Kill 12 Fen Creepers, then return to Rethiel the Greenwarden.",
+      "description": "Final required step before Horrors in the Highland.",
+      "requires": [277],
+      "start": {
+        "npc": "Rethiel the Greenwarden",
+        "location": [1437, 56.2, 40.6],
+        "description": "The Green Belt, Wetlands."
+      },
+      "turnIn": {
+        "npc": "Rethiel the Greenwarden",
+        "description": "The Green Belt, Wetlands."
+      },
+      "items": []
+    },
+    {
+      "id": 95809,
+      "name": "Heartwoven",
+      "side": "Alliance",
+      "requiredLevel": 24,
+      "xp": 6150,
+      "objective": "Take the Reed-woven Heart back to Caitlin Grassman in Menethil Harbor.",
+      "description": "Follow-up of Lost in the Thicket Things.",
+      "requires": [95647],
+      "start": {
+        "npc": "Ardin Grassman",
+        "description": "Inside Excavation Site: Wetlands."
+      },
+      "turnIn": {
+        "npc": "Caitlin Grassman",
+        "description": "Menethil Harbor."
+      },
+      "items": [
+        {
+          "item": 1710,
+          "name": "Greater Healing Potion"
+        },
+        {
+          "item": 3827,
+          "name": "Mana Potion"
+        },
+        {
+          "item": 2459,
+          "name": "Swiftness Potion"
+        },
+        {
+          "item": 280766,
+          "name": "Satchel of Potions"
+        }
+      ]
+    },
+    {
+      "id": 95647,
+      "name": "Lost in the Thicket Things",
+      "requiredLevel": 24,
+      "xp": 4900,
+      "objective": "Find Ardin Grassman in the Excavation Sites. Learn what happened to Ardin Grassman.",
+      "description": "Required before Heartwoven.",
+      "start": {
+        "npc": "Caitlin Grassman",
+        "location": [1437, 11.9, 58.8],
+        "description": "Menethil Harbor, Wetlands."
+      },
+      "turnIn": {
+        "npc": "Ardin Grassman",
+        "description": "Inside Excavation Site: Wetlands."
+      },
+      "items": []
+    },
+    {
+      "id": 98824,
+      "name": "Prehistoric Prism",
+      "side": "Alliance",
+      "requiredLevel": 24,
+      "xp": 3150,
+      "objective": "Deliver the Titan Relic to High Explorer Magellas in the Hall of Explorers.",
+      "requires": [95810],
+      "start": {
+        "npc": "Prospector Whelgar",
+        "description": "Whelgar's Excavation Site, Wetlands."
+      },
+      "turnIn": {
+        "npc": "High Explorer Magellas",
+        "description": "Hall of Explorers, Ironforge."
+      },
+      "items": [
+        {
+          "item": 271716,
+          "name": "Explorer's League Dustcover"
+        },
+        {
+          "item": 271767,
+          "name": "Healer's Staff"
+        },
+        {
+          "item": 271766,
+          "name": "Heavehammer"
+        }
+      ]
+    },
+    {
+      "id": 95810,
+      "name": "Lost Relic Carry",
+      "requiredLevel": 24,
+      "xp": 630,
+      "objective": "Deliver the Titan Relic to Prospector Whelgar at the Wetlands excavation site.",
+      "start": {
+        "item": 270866,
+        "description": "Dropped by: Relic Guardian."
+      },
+      "turnIn": {
+        "npc": "Prospector Whelgar",
+        "description": "Whelgar's Excavation Site, Wetlands."
+      },
+      "items": []
+    },
+    {
+      "id": 98823,
+      "name": "Earthen Echo",
+      "side": "Horde",
+      "requiredLevel": 24,
+      "xp": 3150,
+      "objective": "Deliver the Titan Relic to Muln Earthfury on Skywatcher Plateau in northwest Mulgore.",
+      "requires": [95664],
+      "start": {
+        "npc": "Bashana Runetotem",
+        "location": [1456, 70.8, 33.4],
+        "description": "Elder Rise, Thunder Bluff."
+      },
+      "turnIn": {
+        "npc": "Muln Earthfury",
+        "description": "Skywatcher Plateau, Mulgore."
+      },
+      "items": [
+        {
+          "item": 271766,
+          "name": "Heavehammer"
+        },
+        {
+          "item": 271767,
+          "name": "Healer's Staff"
+        },
+        {
+          "item": 271719,
+          "name": "Furs of the Earthen Ring"
+        }
+      ]
+    },
+    {
+      "id": 95664,
+      "name": "Elder Knowledge",
+      "requiredLevel": 24,
+      "xp": 1400,
+      "objective": "Take the Titan Relic to the Elder Rise in Thunder Bluff and look for someone who can tell you more about it.",
+      "start": {
+        "item": 270866,
+        "description": "Dropped by: Relic Guardian."
+      },
+      "turnIn": {
+        "npc": "Bashana Runetotem",
+        "description": "Elder Rise, Thunder Bluff."
+      },
+      "items": []
+    },
+    {
+      "id": 95795,
+      "name": "Fallen in the Fen",
+      "side": "Alliance",
+      "requiredLevel": 24,
+      "xp": 3150,
+      "objective": "Report Daewyn's fate to Dorin Songblade in Lakeshire.",
+      "start": {
+        "npc": "Daewyn Songblade",
+        "description": "Inside Excavation Site: Wetlands."
+      },
+      "turnIn": {
+        "npc": "Dorin Songblade",
+        "description": "Lakeshire, Redridge Mountains."
+      },
+      "items": [
+        {
+          "item": 271769,
+          "name": "Daewyn's Girdle"
+        },
+        {
+          "item": 271768,
+          "name": "Songblade Stabilizer"
+        }
+      ]
+    }
+  ]
 }

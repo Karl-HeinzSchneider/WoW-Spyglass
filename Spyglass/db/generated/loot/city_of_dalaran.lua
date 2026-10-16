@@ -4,51 +4,88 @@ local Data = Spyglass.Data
 -- City of Dalaran (map 2959)
 
 Data:AddBossLoot(3298, { -- Arcane Anomaly
-    { 273034 }, -- #273034
-    { 273031 }, -- #273031
-    { 273035 }, -- #273035
+    { 273034 }, -- Ephemeral Grips
+    { 273031 }, -- Runemender's Seal
+    { 273035 }, -- Mana-Warped Chain Shirt
 })
 
 Data:AddBossLoot(3299, { -- Fel Ancient
-    { 273037 }, -- #273037
-    { 273039 }, -- #273039
-    { 273038 }, -- #273038
+    { 273037 }, -- Felbough Arm
+    { 273039 }, -- Blightleaf Rope
+    { 273038 }, -- Garb of Fallen Felbark
 })
 
 Data:AddBossLoot(3300, { -- Mana Devourer
-    { 273041 }, -- #273041
-    { 273040 }, -- #273040
-    { 273042 }, -- #273042
+    { 273041 }, -- Slitherwrap Girdle
+    { 273040 }, -- Spine of the Devourer
+    { 273042 }, -- Manascale Treads
 })
 
 Data:AddBossLoot(3301, { -- Mana Elemental
-    { 273045 }, -- #273045
-    { 273044 }, -- #273044
-    { 273043 }, -- #273043
+    { 273045 }, -- Drape of Shifting Energy
+    { 273044 }, -- Violet Sorcerer's Robes
+    { 273043 }, -- Wand of Mana Concentration
 })
 
 Data:AddBossLoot(3302, { -- Unstable Sentinel
-    { 273046 }, -- #273046
-    { 273047 }, -- #273047
-    { 273048 }, -- #273048
+    { 273046 }, -- Guardian's Dualblade
+    { 273047 }, -- Unstable Crystalline Shoulderpads
+    { 273048 }, -- Refractory Scaleguards
     { 273099 }, -- Blueprint: Spinning Wheel
 })
 
 Data:AddBossLoot(3303, { -- Shade of the Archmage
-    { 273052 }, -- #273052
-    { 273049 }, -- #273049
-    { 273051 }, -- #273051
+    { 273052 }, -- Ponderous Orb
+    { 273049 }, -- Archmagister's Faceted Pendant
+    { 273051 }, -- Violet Sorcerer's Mantle
     { 273103 }, -- Blueprint: Arcane Salvager
 })
 
 Data:AddBossLoot(3310, { -- Lyn the Ignored
-    { 273055 }, -- #273055
-    { 273054 }, -- #273054
-    { 273053 }, -- #273053
+    { 273055 }, -- Bonepile Gaze
+    { 273054 }, -- Cartilage Shapers
+    { 273053 }, -- Tendonscraper Dagger
 })
 
 Data:AddBossLoot(3311, { -- Atrexis the Grave Knight
-    { 273032 }, -- #273032
-    { 273036 }, -- #273036
-    { 273033 }, -- #273033
+    { 273032 }, -- Bonebinder's Signet
+    { 273036 }, -- Graveweave Bindings
+    { 273033 }, -- Gravespike Repeater
+})
+
+Data:AddQuests(2959, {
+    { id = 92456, name = "A Green Sample", side = "Alliance", requiredLevel = 24, xp = 3950, objective = "Retrieve a Fel Infused Blossom from Dalaran's central garden.", start = { description = "Stormwind City.", location = { 1453, 31.4, 62.8 }, npc = "Shylamiir" }, turnIn = { description = "Stormwind City.", npc = "Shylamiir" }, items = {
+        { 279835 }, -- Vine Pruner's Cloak
+        { 279836 }, -- Thorn Protecting Girdle
+    } },
+    { id = 92489, name = "Power Overwhelming", side = "Alliance", requiredLevel = 24, xp = 3950, objective = "Slay Arcanic Enigma, the Mana Elemental in the City of Dalaran, and return to High Sorcerer Andromath in Stormwind City.", start = { description = "Stormwind City.", location = { 1453, 48.8, 87.6 }, npc = "High Sorcerer Andromath" }, turnIn = { description = "Stormwind City.", npc = "High Sorcerer Andromath" }, items = {
+        { 251962 }, -- Violet Sash
+        { 279849 }, -- Runebound Gloves
+    } },
+    { id = 92457, name = "Starving Arcane", side = "Alliance", requiredLevel = 24, xp = 9400, objective = "Defeat 8 Seeking Remnants, 8 Saturated Remnants, and 8 Mana Echoes inside the City of Dalaran for Archmage Modera outside of Dalaran.", description = "There may not be enough of these mobs inside to finish it in one run.", requires = { { id = 92432, name = "An Alarming Request" } }, start = { description = "Lordamere Lake near Dalaran.", location = { 1416, 9.2, 60 }, npc = "Image of Archmage Modera" }, turnIn = { description = "Lordamere Lake near Dalaran.", npc = "Image of Archmage Modera" }, items = {
+        { 279837 }, -- Fallen Guard's Pendant
+        { 279838 }, -- Arcane Infused Rod
+    } },
+    { id = 92458, name = "Heart of Disruption", side = "Alliance", requiredLevel = 30, xp = 9400, objective = "Collect the Arcane Mote for the Image of Archmage Modera near the City of Dalaran.", requires = { { id = 92432, name = "An Alarming Request" } }, start = { description = "Lordamere Lake near Dalaran.", location = { 1416, 9.2, 60 }, npc = "Image of Archmage Modera" }, turnIn = { description = "Lordamere Lake near Dalaran.", npc = "Image of Archmage Modera" }, items = {
+        { 279839 }, -- Spellguard Pauldrons
+        { 279840 }, -- Renewing Footpads
+        { 279841 }, -- Defender of Dalaran
+    } },
+    { id = 96984, name = "Heart of Disruption", side = "Horde", requiredLevel = 30, xp = 9400, objective = "Collect the Arcane Mote in the City of Dalaran for Magus Wordeen Voidglare in Tarren Mill.", description = "Horde Dalaran attunement. Stone Tokens and Bracers of Binding can be done alongside the chain, but they are optional and are not required for attunement.", requires = { { id = 92434, name = "Blood in the Streets" } }, start = { description = "Lordamere Lake near Dalaran.", location = { 1416, 9.2, 60 }, npc = "Image of Archmage Modera" }, turnIn = { description = "Tarren Mill, Hillsbrad Foothills.", npc = "Magus Wordeen Voidglare" }, items = {
+        { 279842 }, -- Battle Spaulders
+        { 279843 }, -- Enchanted Sandals
+        { 279844 }, -- Striking Staff
+    } },
+    { id = 96987, name = "Opportunistic Education", side = "Horde", requiredLevel = 24, xp = 3950, objective = "Recover The Founding of Dalaran and deliver it to Rexxie Copperclutch.", start = { description = "Inside the dungeon, near the sewer entrance.", npc = "Rexxie Copperclutch" }, turnIn = { description = "Inside the dungeon, near the sewer entrance.", npc = "Rexxie Copperclutch" }, items = {
+        { 279845 }, -- Solid Gold Band
+        { 279846 }, -- Larcenist's Belt
+    } },
+    { id = 96988, name = "Source of Power", side = "Horde", requiredLevel = 24, xp = 3950, objective = "Collect 6 Cracked Sentry Cores from the constructs in Dalaran.", start = { description = "Undercity.", location = { 1458, 46.6, 74.1 }, npc = "Doctor Martin Felben" }, turnIn = { description = "Undercity.", npc = "Doctor Martin Felben" }, items = {
+        { 279847 }, -- Unstable Power Core
+        { 279848 }, -- Construct Cloak
+    } },
+    { id = 96986, name = "The Grave Knight", side = "Horde", requiredLevel = 24, xp = 3950, objective = "Defeat Atrexis the Grave Knight in the Dalaran Underbelly.", start = { description = "Tarren Mill, Hillsbrad Foothills.", location = { 1424, 62.6, 20.6 }, npc = "Melisara" }, turnIn = { description = "Tarren Mill, Hillsbrad Foothills.", npc = "Melisara" }, items = {
+        { 251963 }, -- Gravewalker Boots
+        { 251965 }, -- Undead Knight's Bracers
+    } },
 })

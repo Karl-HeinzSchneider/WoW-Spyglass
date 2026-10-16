@@ -1,3 +1,324 @@
 {
-  "quests": []
+  "quests": [
+    {
+      "id": 92456,
+      "name": "A Green Sample",
+      "side": "Alliance",
+      "requiredLevel": 24,
+      "xp": 3950,
+      "objective": "Retrieve a Fel Infused Blossom from Dalaran's central garden.",
+      "start": {
+        "npc": "Shylamiir",
+        "location": [1453, 31.4, 62.8],
+        "description": "Stormwind City."
+      },
+      "turnIn": {
+        "npc": "Shylamiir",
+        "description": "Stormwind City."
+      },
+      "items": [
+        {
+          "item": 279835,
+          "name": "Vine Pruner's Cloak"
+        },
+        {
+          "item": 279836,
+          "name": "Thorn Protecting Girdle"
+        }
+      ]
+    },
+    {
+      "id": 92489,
+      "name": "Power Overwhelming",
+      "side": "Alliance",
+      "requiredLevel": 24,
+      "xp": 3950,
+      "objective": "Slay Arcanic Enigma, the Mana Elemental in the City of Dalaran, and return to High Sorcerer Andromath in Stormwind City.",
+      "start": {
+        "npc": "High Sorcerer Andromath",
+        "location": [1453, 48.8, 87.6],
+        "description": "Stormwind City."
+      },
+      "turnIn": {
+        "npc": "High Sorcerer Andromath",
+        "description": "Stormwind City."
+      },
+      "items": [
+        {
+          "item": 251962,
+          "name": "Violet Sash"
+        },
+        {
+          "item": 279849,
+          "name": "Runebound Gloves"
+        }
+      ]
+    },
+    {
+      "id": 92457,
+      "name": "Starving Arcane",
+      "side": "Alliance",
+      "requiredLevel": 24,
+      "xp": 9400,
+      "objective": "Defeat 8 Seeking Remnants, 8 Saturated Remnants, and 8 Mana Echoes inside the City of Dalaran for Archmage Modera outside of Dalaran.",
+      "description": "There may not be enough of these mobs inside to finish it in one run.",
+      "requires": [92432],
+      "start": {
+        "npc": "Image of Archmage Modera",
+        "location": [1416, 9.2, 60],
+        "description": "Lordamere Lake near Dalaran."
+      },
+      "turnIn": {
+        "npc": "Image of Archmage Modera",
+        "description": "Lordamere Lake near Dalaran."
+      },
+      "items": [
+        {
+          "item": 279837,
+          "name": "Fallen Guard's Pendant"
+        },
+        {
+          "item": 279838,
+          "name": "Arcane Infused Rod"
+        }
+      ]
+    },
+    {
+      "id": 92432,
+      "name": "An Alarming Request",
+      "requiredLevel": 30,
+      "objective": "Report to the Image of Archmage Modera near the City of Dalaran.",
+      "description": "Introductory quest leading to Heart of Disruption and Starving Arcane.",
+      "start": {
+        "npc": "Emissary Jacques",
+        "location": [1424, 48.4, 60.2],
+        "description": "Southshore, Hillsbrad Foothills."
+      },
+      "turnIn": {
+        "npc": "Image of Archmage Modera",
+        "description": "Lordamere Lake near Dalaran."
+      },
+      "items": []
+    },
+    {
+      "id": 92458,
+      "name": "Heart of Disruption",
+      "side": "Alliance",
+      "requiredLevel": 30,
+      "xp": 9400,
+      "objective": "Collect the Arcane Mote for the Image of Archmage Modera near the City of Dalaran.",
+      "requires": [92432],
+      "start": {
+        "npc": "Image of Archmage Modera",
+        "location": [1416, 9.2, 60],
+        "description": "Lordamere Lake near Dalaran."
+      },
+      "turnIn": {
+        "npc": "Image of Archmage Modera",
+        "description": "Lordamere Lake near Dalaran."
+      },
+      "items": [
+        {
+          "item": 279839,
+          "name": "Spellguard Pauldrons"
+        },
+        {
+          "item": 279840,
+          "name": "Renewing Footpads"
+        },
+        {
+          "item": 279841,
+          "name": "Defender of Dalaran"
+        }
+      ]
+    },
+    {
+      "id": 96984,
+      "name": "Heart of Disruption",
+      "side": "Horde",
+      "requiredLevel": 30,
+      "xp": 9400,
+      "objective": "Collect the Arcane Mote in the City of Dalaran for Magus Wordeen Voidglare in Tarren Mill.",
+      "description": "Horde Dalaran attunement. Stone Tokens and Bracers of Binding can be done alongside the chain, but they are optional and are not required for attunement.",
+      "requires": [92434],
+      "start": {
+        "npc": "Image of Archmage Modera",
+        "location": [1416, 9.2, 60],
+        "description": "Lordamere Lake near Dalaran."
+      },
+      "turnIn": {
+        "npc": "Magus Wordeen Voidglare",
+        "description": "Tarren Mill, Hillsbrad Foothills."
+      },
+      "items": [
+        {
+          "item": 279842,
+          "name": "Battle Spaulders"
+        },
+        {
+          "item": 279843,
+          "name": "Enchanted Sandals"
+        },
+        {
+          "item": 279844,
+          "name": "Striking Staff"
+        }
+      ]
+    },
+    {
+      "id": 544,
+      "name": "Prison Break In",
+      "requiredLevel": 30,
+      "xp": 3350,
+      "objective": "Find the four Forsaken traitors at the Lordamere Internment Camp, recover their Bloodstone artifacts, and return to Magus Wordeen Voidglare.",
+      "description": "Pick up Key to the City from Magus Wordeen Voidglare at the same time.",
+      "start": {
+        "npc": "Magus Wordeen Voidglare",
+        "location": [1424, 61.5, 20.7],
+        "description": "Tarren Mill, Hillsbrad Foothills."
+      },
+      "turnIn": {
+        "npc": "Magus Wordeen Voidglare",
+        "description": "Tarren Mill, Hillsbrad Foothills."
+      },
+      "items": []
+    },
+    {
+      "id": 93680,
+      "name": "Key to the City",
+      "requiredLevel": 30,
+      "objective": "Acquire the Grimy Key for Magus Wordeen Voidglare in Tarren Mill.",
+      "description": "This quest can be accepted alongside Prison Break In.",
+      "requires": [544],
+      "start": {
+        "npc": "Magus Wordeen Voidglare",
+        "location": [1424, 61.5, 20.7],
+        "description": "Tarren Mill, Hillsbrad Foothills."
+      },
+      "turnIn": {
+        "npc": "Magus Wordeen Voidglare",
+        "description": "Tarren Mill, Hillsbrad Foothills."
+      },
+      "items": []
+    },
+    {
+      "id": 545,
+      "name": "Dalaran Patrols",
+      "requiredLevel": 30,
+      "xp": 2050,
+      "objective": "Kill 6 Dalaran Summoners and 12 Elemental Slaves, then return to Magus Wordeen Voidglare in Tarren Mill.",
+      "description": "Available after completing Prison Break In.",
+      "requires": [93680],
+      "start": {
+        "npc": "Magus Wordeen Voidglare",
+        "location": [1424, 61.5, 20.7],
+        "description": "Tarren Mill, Hillsbrad Foothills."
+      },
+      "turnIn": {
+        "npc": "Magus Wordeen Voidglare",
+        "description": "Tarren Mill, Hillsbrad Foothills."
+      },
+      "items": []
+    },
+    {
+      "id": 92434,
+      "name": "Blood in the Streets",
+      "requiredLevel": 30,
+      "xp": 270,
+      "objective": "Find a way into Dalaran along Lordamere Lake.",
+      "description": "Requires Magus Wordeen Voidglare's Dalaran quests. Stone Tokens and Bracers of Binding from Keeper Bel'varil are optional and are not required for attunement.",
+      "requires": [545],
+      "start": {
+        "npc": "Magus Wordeen Voidglare",
+        "location": [1424, 61.5, 20.7],
+        "description": "Tarren Mill, Hillsbrad Foothills."
+      },
+      "turnIn": {
+        "npc": "Image of Archmage Modera",
+        "location": [1416, 9.2, 60],
+        "description": "Lordamere Lake near Dalaran."
+      },
+      "items": []
+    },
+    {
+      "id": 96987,
+      "name": "Opportunistic Education",
+      "side": "Horde",
+      "requiredLevel": 24,
+      "xp": 3950,
+      "objective": "Recover The Founding of Dalaran and deliver it to Rexxie Copperclutch.",
+      "start": {
+        "npc": "Rexxie Copperclutch",
+        "description": "Inside the dungeon, near the sewer entrance."
+      },
+      "turnIn": {
+        "npc": "Rexxie Copperclutch",
+        "description": "Inside the dungeon, near the sewer entrance."
+      },
+      "items": [
+        {
+          "item": 279845,
+          "name": "Solid Gold Band"
+        },
+        {
+          "item": 279846,
+          "name": "Larcenist's Belt"
+        }
+      ]
+    },
+    {
+      "id": 96988,
+      "name": "Source of Power",
+      "side": "Horde",
+      "requiredLevel": 24,
+      "xp": 3950,
+      "objective": "Collect 6 Cracked Sentry Cores from the constructs in Dalaran.",
+      "start": {
+        "npc": "Doctor Martin Felben",
+        "location": [1458, 46.6, 74.1],
+        "description": "Undercity."
+      },
+      "turnIn": {
+        "npc": "Doctor Martin Felben",
+        "description": "Undercity."
+      },
+      "items": [
+        {
+          "item": 279847,
+          "name": "Unstable Power Core"
+        },
+        {
+          "item": 279848,
+          "name": "Construct Cloak"
+        }
+      ]
+    },
+    {
+      "id": 96986,
+      "name": "The Grave Knight",
+      "side": "Horde",
+      "requiredLevel": 24,
+      "xp": 3950,
+      "objective": "Defeat Atrexis the Grave Knight in the Dalaran Underbelly.",
+      "start": {
+        "npc": "Melisara",
+        "location": [1424, 62.6, 20.6],
+        "description": "Tarren Mill, Hillsbrad Foothills."
+      },
+      "turnIn": {
+        "npc": "Melisara",
+        "description": "Tarren Mill, Hillsbrad Foothills."
+      },
+      "items": [
+        {
+          "item": 251963,
+          "name": "Gravewalker Boots"
+        },
+        {
+          "item": 251965,
+          "name": "Undead Knight's Bracers"
+        }
+      ]
+    }
+  ]
 }

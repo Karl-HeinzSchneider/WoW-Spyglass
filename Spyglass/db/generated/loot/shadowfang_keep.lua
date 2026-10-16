@@ -108,15 +108,15 @@ Data:AddTrashLoot(33, {
 })
 
 Data:AddQuests(33, {
-    { id = 1098, name = "Deathstalkers in Shadowfang", side = "Horde", requiredLevel = 18, xp = 8700, objective = "Find Deathstalker Adamant and Deathstalker Vincent inside Shadowfang Keep.", start = { location = { 1421, 43.4, 40.9 }, npc = "High Executor Hadrec" }, turnIn = { description = "Inside Shadowfang Keep.", npc = "Deathstalker Vincent" }, items = {
+    { id = 1098, name = "Deathstalkers in Shadowfang", side = "Horde", requiredLevel = 18, xp = 2000, objective = "Find Deathstalker Adamant and Deathstalker Vincent inside Shadowfang Keep.", start = { location = { 1421, 43.4, 40.9 }, npc = "High Executor Hadrec" }, turnIn = { description = "Inside Shadowfang Keep.", npc = "Deathstalker Vincent" }, items = {
         { 3324 }, -- Ghostly Mantle
         { 270023 }, -- Tanned Shoulderpads
         { 270024 }, -- Bronzed Shoulderguards
     } },
-    { id = 1014, name = "Arugal Must Die", side = "Horde", requiredLevel = 18, xp = 14355, objective = "Kill Archmage Arugal and bring his head to Dalar Dawnweaver.", start = { description = "The Sepulcher, Silverpine Forest.", location = { 1421, 44.2, 39.8 }, npc = "Dalar Dawnweaver" }, turnIn = { description = "The Sepulcher, Silverpine Forest.", location = { 1421, 44.2, 39.8 }, npc = "Dalar Dawnweaver" }, items = {
+    { id = 1014, name = "Arugal Must Die", side = "Horde", requiredLevel = 18, xp = 3300, objective = "Kill Archmage Arugal and bring his head to Dalar Dawnweaver.", start = { description = "The Sepulcher, Silverpine Forest.", location = { 1421, 44.2, 39.8 }, npc = "Dalar Dawnweaver" }, turnIn = { description = "The Sepulcher, Silverpine Forest.", location = { 1421, 44.2, 39.8 }, npc = "Dalar Dawnweaver" }, items = {
         { 6414 }, -- Seal of Sylvanas
     } },
-    { id = 1013, name = "The Book of Ur", side = "Horde", requiredLevel = 16, xp = 9135, objective = "Bring the Book of Ur from Shadowfang Keep to Keeper Bel'dugur.", start = { description = "Apothecarium, Undercity.", location = { 1458, 53.7, 54.5 }, npc = "Keeper Bel'dugur" }, turnIn = { description = "Apothecarium, Undercity.", location = { 1458, 53.7, 54.5 }, npc = "Keeper Bel'dugur" }, items = {
+    { id = 1013, name = "The Book of Ur", side = "Horde", requiredLevel = 16, xp = 2100, objective = "Bring the Book of Ur from Shadowfang Keep to Keeper Bel'dugur.", start = { description = "Apothecarium, Undercity.", location = { 1458, 53.7, 54.5 }, npc = "Keeper Bel'dugur" }, turnIn = { description = "Apothecarium, Undercity.", location = { 1458, 53.7, 54.5 }, npc = "Keeper Bel'dugur" }, items = {
         { 6335 }, -- Grizzled Boots
         { 4534 }, -- Steel-clasped Bracers
         { 270030 }, -- Tattered Mittens
@@ -124,5 +124,8 @@ Data:AddQuests(33, {
     { id = 1740, name = "The Orb of Soran'ruk", side = "Both", class = "WARLOCK", requiredLevel = 20, xp = 2550, objective = "Find 3 Soran'ruk Fragments and 1 Large Soran'ruk Fragment and return them to Doan Karhan.", start = { description = "The Barrens.", location = { 1413, 49.3, 57.2 }, npc = "Doan Karhan" }, turnIn = { description = "The Barrens.", location = { 1413, 49.3, 57.2 }, npc = "Doan Karhan" }, items = {
         { 6898 }, -- Orb of Soran'ruk
         { 15109 }, -- Staff of Soran'ruk
+    } },
+    { id = 1806, name = "The Test of Righteousness", side = "Alliance", class = "PALADIN", requiredLevel = 20, xp = 5500, objective = "Wait for Jordan Stilwell to finish forging a weapon for you.", description = "Paladin class quest for humans and dwarves. The parts are Whitestone Oak Lumber (The Deadmines), Jordan's Smithing Hammer (Shadowfang Keep), the Kor Gem (Blackfathom Deeps) and Jordan's ore shipment (Loch Modan).", requires = { { id = 1654, name = "The Test of Righteousness" } }, start = { description = "Gates of Ironforge, Dun Morogh.", location = { 1426, 52.6, 36.8 }, npc = "Jordan Stilwell" }, turnIn = { description = "Gates of Ironforge, Dun Morogh.", npc = "Jordan Stilwell" }, items = {
+        { 6953 }, -- Verigan's Fist
     } },
 })

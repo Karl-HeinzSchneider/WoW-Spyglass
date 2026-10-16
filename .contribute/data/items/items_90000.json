@@ -1,0 +1,20 @@
+{
+  "98550": {
+    "names": {
+      "enUS": "Blossoming Ancient"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 15,
+    "subclassID": 2,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 874857,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  }
+}

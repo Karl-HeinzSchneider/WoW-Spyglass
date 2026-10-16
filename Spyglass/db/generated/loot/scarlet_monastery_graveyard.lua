@@ -12,29 +12,29 @@ Data:AddBossLoot(444, { -- Interrogator Vishas
 })
 
 Data:AddBossLoot(-6490, { -- Azshir the Sleepless
-    { 7709 }, -- #7709
-    { 7708 }, -- #7708
-    { 7731 }, -- #7731
+    { 7709 }, -- Blighted Leggings
+    { 7708 }, -- Necrotic Wand
+    { 7731 }, -- Ghostshard Talisman
     { 252512 }, -- Brawler's Leather Helm
     { 252456 }, -- Totemic Leather Helm
 })
 
 Data:AddBossLoot(-6488, { -- Fallen Champion
-    { 7691 }, -- #7691
-    { 7690 }, -- #7690
-    { 7689 }, -- #7689
+    { 7691 }, -- Embalmed Shroud
+    { 7690 }, -- Ebon Vise
+    { 7689 }, -- Morbid Dawn
     { 252513 }, -- Trapper's Leather Helm
 })
 
 Data:AddBossLoot(-6489, { -- Ironspine
-    { 7688 }, -- #7688
-    { 7687 }, -- #7687
-    { 7686 }, -- #7686
+    { 7688 }, -- Ironspine's Ribcage
+    { 7687 }, -- Ironspine's Fist
+    { 7686 }, -- Ironspine's Eye
 })
 
 Data:AddBossLoot(2779, { -- Bloodmage Thalnos
-    { 7685 }, -- #7685
-    { 7684 }, -- #7684
+    { 7685 }, -- Orb of the Forgotten Seer
+    { 7684 }, -- Bloodmage Mantle
     { 274291 }, -- Polished Skullcap
     { 252822 }, -- Pattern: Defender's Leather Kilt
     { 252513 }, -- Trapper's Leather Helm
@@ -42,14 +42,22 @@ Data:AddBossLoot(2779, { -- Bloodmage Thalnos
 })
 
 Data:AddTrashLoot(18901, {
-    { 10328 }, -- #10328
-    { 10329 }, -- #10329
-    { 10330 }, -- #10330
-    { 10331 }, -- #10331
-    { 10333 }, -- #10333
-    { 10332 }, -- #10332
-    { 5819 }, -- #5819
+    { 10328 }, -- Scarlet Chestpiece
+    { 10329 }, -- Scarlet Belt
+    { 10330 }, -- Scarlet Leggings
+    { 10331 }, -- Scarlet Gauntlets
+    { 10333 }, -- Scarlet Wristguards
+    { 10332 }, -- Scarlet Boots
+    { 5819 }, -- Sunblaze Coif
     { 7730 }, -- Cobalt Crusher
-    { 7761 }, -- #7761
-    { 7787 }, -- #7787
+    { 7761 }, -- Steelclaw Reaver
+    { 7787 }, -- Resplendent Guardian
+})
+
+Data:AddQuests(18901, {
+    { id = 1051, name = "Vorrel's Revenge", side = "Horde", requiredLevel = 25, xp = 3300, objective = "Return Vorrel Sengutz's wedding ring (from Nancy Vishas) to Monika Sengutz in Tarren Mill.", start = { description = "Inside the Graveyard.", npc = "Vorrel Sengutz" }, turnIn = { description = "Tarren Mill, Hillsbrad Foothills.", npc = "Monika Sengutz" }, items = {
+        { 7750 }, -- Mantle of Woe
+        { 4643 }, -- Grimsteel Cape
+    } },
+    { id = 1113, name = "Hearts of Zeal", side = "Horde", requiredLevel = 30, xp = 3300, objective = "Bring 20 Hearts of Zeal from the Scarlet Monastery to Master Apothecary Faranell.", requires = { { id = 1109, name = "Going, Going, Guano!" } }, start = { description = "Undercity.", location = { 1458, 48, 69 }, npc = "Master Apothecary Faranell" }, turnIn = { description = "Undercity.", npc = "Master Apothecary Faranell" }, items = {} },
 })

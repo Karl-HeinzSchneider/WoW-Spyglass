@@ -6111,11 +6111,11 @@
     "names": {
       "enUS": "Dream Journal"
     },
-    "quality": 4,
+    "quality": 2,
     "itemLevel": 1,
     "reqLevel": 0,
     "classID": 15,
-    "subclassID": 0,
+    "subclassID": 4,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 1,
     "icon": 133741,
@@ -7952,7 +7952,7 @@
       "enUS": "Whisper"
     },
     "quality": 3,
-    "itemLevel": 56,
+    "itemLevel": 53,
     "reqLevel": 0,
     "classID": 2,
     "subclassID": 5,
@@ -7965,10 +7965,10 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "CRIT_RATING": 17,
-      "DAMAGE_PER_SECOND": 48.13,
-      "STAMINA": 17,
-      "STRENGTH": 17
+      "CRIT_RATING": 7,
+      "DAMAGE_PER_SECOND": 45.74,
+      "SPELL_POWER": 14,
+      "STRENGTH": 23
     }
   },
   "221519": {
@@ -20163,7 +20163,7 @@
     "names": {
       "enUS": "Unusual Flask"
     },
-    "quality": 2,
+    "quality": 1,
     "itemLevel": 60,
     "reqLevel": 1,
     "classID": 15,
@@ -21334,7 +21334,7 @@
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 0,
     "icon": 134722,
-    "sellPrice": 1000,
+    "sellPrice": 400,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -21496,6 +21496,24 @@
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 1,
     "icon": 134247,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "229368": {
+    "names": {
+      "enUS": "Gill'el"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 15,
+    "subclassID": 2,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 5834819,
     "sellPrice": 0,
     "stackCount": 1,
     "setID": 0,
