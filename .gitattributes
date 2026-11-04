@@ -1,2 +1,6 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Text files use LF everywhere, regardless of core.autocrlf
+* text=auto eol=lf
+
+*.blp binary
+*.tga binary
+*.png binary
