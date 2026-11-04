@@ -15,7 +15,20 @@
       "id": 449,
       "name": "High Inquisitor Fairbanks",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-High Inquisitor Fairbanks",
-      "loot": []
+      "loot": [
+        {
+          "item": 19507,
+          "name": "Inquisitor's Shawl"
+        },
+        {
+          "item": 19508,
+          "name": "Branded Leather Bracers"
+        },
+        {
+          "item": 19509,
+          "name": ""
+        }
+      ]
     },
     {
       "id": 450,
@@ -25,10 +38,67 @@
         {
           "item": 7726,
           "name": "Aegis of the Scarlet Commander"
+        },
+        {
+          "item": 7724,
+          "name": "Gauntlets of Divinity"
+        },
+        {
+          "item": 7723,
+          "name": ""
+        },
+        {
+          "item": 10330,
+          "name": "Scarlet Leggings"
+        },
+        {
+          "item": 7722,
+          "name": "Triune Amulet"
+        },
+        {
+          "item": 7720,
+          "name": "Whitemane's Chapeau"
+        },
+        {
+          "item": 7721,
+          "name": "Hand of Righteousness"
         }
       ]
     }
   ],
-  "trash": [],
+  "trash": [
+    {
+      "item": 10328,
+      "name": "Scarlet Chestpiece"
+    },
+    {
+      "item": 10331,
+      "name": "Scarlet Gauntlets"
+    },
+    {
+      "item": 10332,
+      "name": "Scarlet Boots"
+    },
+    {
+      "item": 5819,
+      "name": "Sunblaze Coif"
+    },
+    {
+      "item": 7730,
+      "name": "Cobalt Crusher"
+    },
+    {
+      "item": 7757,
+      "name": "Windweaver Staff"
+    },
+    {
+      "item": 7761,
+      "name": "Steelclaw Reaver"
+    },
+    {
+      "item": 7787,
+      "name": "Resplendent Guardian"
+    }
+  ],
   "quests": []
 }

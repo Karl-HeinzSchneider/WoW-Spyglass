@@ -15,8 +15,54 @@
       "id": 448,
       "name": "Herod",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Herod",
-      "loot": []
+      "loot": [
+        {
+          "item": 7718,
+          "name": "Herod's Shoulder"
+        },
+        {
+          "item": 7719,
+          "name": "Raging Berserker's Helm"
+        },
+        {
+          "item": 7717,
+          "name": "Ravager"
+        },
+        {
+          "item": 10330,
+          "name": "Scarlet Leggings"
+        }
+      ]
     }
   ],
-  "trash": []
+  "trash": [
+    {
+      "item": 10329,
+      "name": "Scarlet Belt"
+    },
+    {
+      "item": 10332,
+      "name": "Scarlet Boots"
+    },
+    {
+      "item": 5819,
+      "name": "Sunblaze Coif"
+    },
+    {
+      "item": 7730,
+      "name": "Cobalt Crusher"
+    },
+    {
+      "item": 7757,
+      "name": "Windweaver Staff"
+    },
+    {
+      "item": 7761,
+      "name": "Steelclaw Reaver"
+    },
+    {
+      "item": 7787,
+      "name": "Resplendent Guardian"
+    }
+  ]
 }

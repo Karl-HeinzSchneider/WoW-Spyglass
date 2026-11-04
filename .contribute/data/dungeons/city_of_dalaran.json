@@ -184,6 +184,19 @@
       "loot": []
     }
   ],
-  "trash": [],
+  "trash": [
+    {
+      "item": 286987,
+      "name": "Violet Sorcerer's Sandals"
+    },
+    {
+      "item": 286989,
+      "name": "Violet Sorcerer's Wraps"
+    },
+    {
+      "item": 286988,
+      "name": "Violet Sorcerer's Leggings"
+    }
+  ],
   "quests": [92456, 92489, 92457, 92458, 96984, 96987, 96988, 96986]
 }

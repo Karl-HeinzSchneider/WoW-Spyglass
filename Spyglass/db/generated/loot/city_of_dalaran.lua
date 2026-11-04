@@ -53,6 +53,12 @@ Data:AddBossLoot(3311, { -- Atrexis the Grave Knight
     { 273033 }, -- Gravespike Repeater
 })
 
+Data:AddTrashLoot(2959, {
+    { 286987 }, -- Violet Sorcerer's Sandals
+    { 286989 }, -- Violet Sorcerer's Wraps
+    { 286988 }, -- Violet Sorcerer's Leggings
+})
+
 Data:AddQuests(2959, {
     { id = 92456, name = "A Green Sample", side = "Alliance", requiredLevel = 24, xp = 3950, objective = "Retrieve a Fel Infused Blossom from Dalaran's central garden.", start = { description = "Stormwind City.", location = { 1453, 31.4, 62.8 }, npc = "Shylamiir" }, turnIn = { description = "Stormwind City.", npc = "Shylamiir" }, items = {
         { 279835 }, -- Vine Pruner's Cloak

@@ -611,7 +611,9 @@ function module:TrainerCommand()
     end
     for _, filter in ipairs({ "available", "unavailable", "used" }) do
         if not GetTrainerServiceTypeFilter(filter) then
-            log:chat("Enable Available, Unavailable, and Already Known in the trainer filter, then use /sg trainer again.")
+            log:chat(
+                "Enable Available, Unavailable, and Already Known in the trainer filter, then use /sg trainer again."
+            )
             return
         end
     end
@@ -681,7 +683,12 @@ function module:TrainerCommand()
         trainerType = C_Trainer and C_Trainer.GetTrainerType and C_Trainer.GetTrainerType() or nil,
         services = services,
     }
-    log:chat("Recorded %d services from %s (%d). Use /sg export or /reload to save them.", count, d.trainers[trainerID].name, trainerID)
+    log:chat(
+        "Recorded %d services from %s (%d). Use /sg export or /reload to save them.",
+        count,
+        d.trainers[trainerID].name,
+        trainerID
+    )
 end
 
 -- The listing window gets its dungeon level range from these activity suggestions. Query activity
@@ -753,7 +760,16 @@ function module:ExportTable(all)
     for _ in pairs(trainers) do
         trainerCount = trainerCount + 1
     end
-    return { version = 1, build = d.build, locale = d.locale or GetLocale(), items = items, loot = d.loot, trainers = trainers }, count, trainerCount
+    return {
+        version = 1,
+        build = d.build,
+        locale = d.locale or GetLocale(),
+        items = items,
+        loot = d.loot,
+        trainers = trainers,
+    },
+        count,
+        trainerCount
 end
 
 -- `/sg export [all]`: opens the window with the JSON to copy.

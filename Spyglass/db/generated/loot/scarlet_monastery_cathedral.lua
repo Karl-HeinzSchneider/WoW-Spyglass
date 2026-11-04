@@ -3,6 +3,29 @@ local Data = Spyglass.Data
 
 -- Scarlet Monastery: Cathedral (map 189)
 
+Data:AddBossLoot(449, { -- High Inquisitor Fairbanks
+    { 19507 }, -- Inquisitor's Shawl
+    { 19508 }, -- Branded Leather Bracers
+    { 19509 }, -- #19509
+})
+
 Data:AddBossLoot(450, { -- High Inquisitor Whitemane
     { 7726 }, -- Aegis of the Scarlet Commander
+    { 7724 }, -- Gauntlets of Divinity
+    { 7723 }, -- #7723
+    { 10330 }, -- Scarlet Leggings
+    { 7722 }, -- Triune Amulet
+    { 7720 }, -- Whitemane's Chapeau
+    { 7721 }, -- Hand of Righteousness
+})
+
+Data:AddTrashLoot(18904, {
+    { 10328 }, -- Scarlet Chestpiece
+    { 10331 }, -- Scarlet Gauntlets
+    { 10332 }, -- Scarlet Boots
+    { 5819 }, -- Sunblaze Coif
+    { 7730 }, -- Cobalt Crusher
+    { 7757 }, -- Windweaver Staff
+    { 7761 }, -- Steelclaw Reaver
+    { 7787 }, -- Resplendent Guardian
 })
