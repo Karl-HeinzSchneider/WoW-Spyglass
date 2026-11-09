@@ -55,3 +55,55 @@ Data:AddBossLoot(368, { -- King Gordok
     { 18522 }, -- #18522
     { 18523 }, -- #18523
 })
+
+Data:AddQuests(42903, {
+    { id = 7703, name = "Unfinished Gordok Business", side = "Both", requiredLevel = 56, xp = 8300, objective = "Find the Gauntlet of Gordok Might and return it to Captain Kromcrush in Dire Maul. According to Kromcrush, the \"old timey story\" says that Tortheldrin - a \"creepy\" elf who called himself a prince - stole it from one of the Gordok kings.", description = "West objective: the Gauntlet of Gordok Might is in a chest near Prince Tortheldrin. The quest itself comes from a friendly Captain Kromcrush in Dire Maul North after you become the Gordok king.", start = { description = "Dire Maul", npc = "Captain Kromcrush" }, turnIn = { description = "Dire Maul", npc = "Captain Kromcrush" }, items = {
+        { 18366 }, -- #18366
+        { 18367 }, -- #18367
+        { 18368 }, -- #18368
+        { 18369 }, -- #18369
+    } },
+    { id = 5525, name = "Free Knot!", side = "Both", requiredLevel = 56, xp = 6600, objective = "Find a Gordok Shackle Key on the ogres of the Gordok wing and use it to free Knot Thimblejack.", description = "Get a Gordok Shackle Key from the North ogres and free Knot; his cache has loot.", start = { description = "Dire Maul", npc = "Knot Thimblejack" }, turnIn = { description = "Dire Maul", npc = "Knot Thimblejack" }, items = {} },
+    { id = 5518, name = "The Gordok Ogre Suit", side = "Both", requiredLevel = 56, xp = 6600, objective = "Bring 4 Bolts of Runecloth, 8 Rugged Leather, 2 Rune Threads, and Ogre Tannin to Knot Thimblejack. He is currently chained inside the Gordok wing of Dire Maul.", description = "Bring 4 Bolts of Runecloth, 8 Rugged Leather, 2 Rune Threads and 1 Ogre Tannin (basket on the upper level beyond Knot). Make any suits and learn the pattern before freeing Knot, because he leaves.", start = { description = "Dire Maul", npc = "Knot Thimblejack" }, turnIn = { description = "Dire Maul", npc = "Knot Thimblejack" }, items = {
+        { 18258 }, -- Gordok Ogre Suit
+    } },
+    { id = 7482, name = "Elven Legends", side = "Alliance", requiredLevel = 54, xp = 8300, objective = "Search Dire Maul for Kariel Winthalus. Report back to Scholar Runethorn at Feathermoon with whatever information that you may find.", description = "Interact with the Skeletal Remains of Telmius Dreamseeker beside Lorekeeper Lydros in the Athenaeum. Unlocks Lydros's libram exchanges.", start = { description = "Feathermoon Stronghold, Feralas", location = { 1444, 31, 44.2 }, npc = "Scholar Runethorn" }, turnIn = { description = "Feathermoon Stronghold, Feralas", location = { 1444, 31, 44.2 }, npc = "Scholar Runethorn" }, items = {} },
+    { id = 7481, name = "Elven Legends", side = "Horde", requiredLevel = 54, xp = 8300, objective = "Search Dire Maul for Kariel Winthalus. Report back to Sage Korolusk at Camp Mojache with whatever information that you may find.", description = "Interact with the Skeletal Remains of Telmius Dreamseeker beside Lorekeeper Lydros in the Athenaeum. Unlocks Lydros's libram exchanges.", start = { description = "Camp Mojache, Feralas", location = { 1444, 74.4, 44 }, npc = "Sage Korolusk" }, turnIn = { description = "Camp Mojache, Feralas", location = { 1444, 74.4, 44 }, npc = "Sage Korolusk" }, items = {} },
+    { id = 7506, name = "The Emerald Dream...", side = "Both", class = "DRUID", requiredLevel = 54, xp = 6600, objective = "Return the book to its rightful owners.", start = { description = "The Emerald Dream (book, Dire Maul drop)", item = 18364 }, turnIn = { description = "Dire Maul", npc = "Lorekeeper Javon" }, items = {
+        { 18470 }, -- #18470
+    } },
+    { id = 7503, name = "The Greatest Race of Hunters", side = "Both", class = "HUNTER", requiredLevel = 54, xp = 6600, objective = "Return the book to its rightful owners.", start = { description = "The Greatest Race of Hunters (book, Dire Maul drop)", item = 18361 }, turnIn = { description = "Dire Maul", npc = "Lorekeeper Mykos" }, items = {
+        { 18473 }, -- #18473
+    } },
+    { id = 7500, name = "The Arcanist's Cookbook", side = "Both", class = "MAGE", requiredLevel = 54, xp = 6600, objective = "Return the book to its rightful owners.", start = { description = "The Arcanist's Cookbook (book, Dire Maul drop)", item = 18358 }, turnIn = { description = "Dire Maul", npc = "Lorekeeper Kildrath" }, items = {
+        { 18468 }, -- #18468
+    } },
+    { id = 7501, name = "The Light and How To Swing It", side = "Alliance", class = "PALADIN", requiredLevel = 54, xp = 6600, objective = "Return the book to its rightful owners.", start = { description = "The Light and How To Swing It (book, Dire Maul drop)", item = 18359 }, turnIn = { description = "Dire Maul", npc = "Lorekeeper Mykos" }, items = {
+        { 18472 }, -- #18472
+    } },
+    { id = 7504, name = "Holy Bologna: What the Light Won't Tell You", side = "Both", class = "PRIEST", requiredLevel = 54, xp = 6600, objective = "Return the book to its rightful owners.", start = { description = "Holy Bologna: What the Light Won't Tell You (book, Dire Maul drop)", item = 18362 }, turnIn = { description = "Dire Maul", npc = "Lorekeeper Javon" }, items = {
+        { 18469 }, -- #18469
+    } },
+    { id = 7498, name = "Garona: A Study on Stealth and Treachery", side = "Both", class = "ROGUE", requiredLevel = 54, xp = 6600, objective = "Return the book to its rightful owners.", start = { description = "Garona: A Study on Stealth and Treachery (book, Dire Maul drop)", item = 18356 }, turnIn = { description = "Dire Maul", npc = "Lorekeeper Kildrath" }, items = {
+        { 18465 }, -- #18465
+    } },
+    { id = 7505, name = "Frost Shock and You", side = "Horde", class = "SHAMAN", requiredLevel = 54, xp = 6600, objective = "Return the book to its rightful owners.", start = { description = "Frost Shock and You (book, Dire Maul drop)", item = 18363 }, turnIn = { description = "Dire Maul", npc = "Lorekeeper Javon" }, items = {
+        { 18471 }, -- #18471
+    } },
+    { id = 7502, name = "Harnessing Shadows", side = "Both", class = "WARLOCK", requiredLevel = 54, xp = 6600, objective = "Return the book to its rightful owners.", start = { description = "Harnessing Shadows (book, Dire Maul drop)", item = 18360 }, turnIn = { description = "Dire Maul", npc = "Lorekeeper Mykos" }, items = {
+        { 18467 }, -- #18467
+    } },
+    { id = 7499, name = "Codex of Defense", side = "Both", class = "WARRIOR", requiredLevel = 54, xp = 6600, objective = "Return the book to its rightful owners.", start = { description = "Codex of Defense (book, Dire Maul drop)", item = 18357 }, turnIn = { description = "Dire Maul", npc = "Lorekeeper Kildrath" }, items = {
+        { 18466 }, -- #18466
+    } },
+    { id = 7507, name = "Nostro's Compendium", side = "Both", requiredLevel = 60, xp = 0, objective = "Return Nostro's Compendium of Dragon Slaying to the Athenaeum.", description = "Warriors and Paladins. Lydros then gives The Forging of Quel'Serrar, which is finished in Onyxia's Lair.", start = { description = "Nostro's Compendium of Dragon Slaying (rare Dire Maul drop)" }, turnIn = { description = "Athenaeum, Dire Maul", npc = "Lorekeeper Lydros" }, items = {} },
+    { id = 7483, name = "Libram of Rapidity", side = "Both", requiredLevel = 54, xp = 0, objective = "Bring a Libram of Rapidity, 1 Pristine Black Diamond, 2 Large Brilliant Shards, and 2 Blood of Heroes to Lorekeeper Lydros in Dire Maul to receive an Arcanum of Rapidity.", description = "Repeatable. Needs your faction's Elven Legends turned in first.", start = { description = "Athenaeum, Dire Maul", npc = "Lorekeeper Lydros" }, turnIn = { description = "Athenaeum, Dire Maul", npc = "Lorekeeper Lydros" }, items = {
+        { 18329 }, -- Arcanum of Rapidity
+    } },
+    { id = 7484, name = "Libram of Focus", side = "Both", requiredLevel = 54, xp = 0, objective = "Bring a Libram of Focus, 1 Pristine Black Diamond, 4 Large Brilliant Shards, and 2 Skin of Shadow to Lorekeeper Lydros in Dire Maul to receive an Arcanum of Focus.", description = "Repeatable. Needs your faction's Elven Legends turned in first.", start = { description = "Athenaeum, Dire Maul", npc = "Lorekeeper Lydros" }, turnIn = { description = "Athenaeum, Dire Maul", npc = "Lorekeeper Lydros" }, items = {
+        { 18330 }, -- Arcanum of Focus
+    } },
+    { id = 7485, name = "Libram of Protection", side = "Both", requiredLevel = 54, xp = 0, objective = "Bring a Libram of Protection, 1 Pristine Black Diamond, 2 Large Brilliant Shards, and 1 Frayed Abomination Stitching to Lorekeeper Lydros in Dire Maul to receive an Arcanum of Protection.", description = "Repeatable. Needs your faction's Elven Legends turned in first.", start = { description = "Athenaeum, Dire Maul", npc = "Lorekeeper Lydros" }, turnIn = { description = "Athenaeum, Dire Maul", npc = "Lorekeeper Lydros" }, items = {
+        { 18331 }, -- Arcanum of Protection
+    } },
+})

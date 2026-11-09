@@ -37,3 +37,21 @@ Data:AddBossLoot(346, { -- Alzzin the Wildshaper
     { 18327 }, -- #18327
     { 18328 }, -- #18328
 })
+
+Data:AddQuests(42901, {
+    { id = 7441, name = "Pusillin and the Elder Azj'Tordin", side = "Both", requiredLevel = 54, xp = 7750, objective = "Travel to Dire Maul and locate the Imp, Pusillin. Convince Pusillin to give you Azj'Tordin's Book of Incantations through any means necessary. Return to Azj'Tordin at the Lariss Pavilion in Feralas should you recover the Book of Incantations.", description = "Chase and talk to Pusillin through the wing until he fights, then kill him for the book. He also drops the Crescent Key.", start = { description = "Lariss Pavilion, Feralas", location = { 1444, 76.8, 37.4 }, npc = "Azj'Tordin" }, turnIn = { description = "Lariss Pavilion, Feralas", location = { 1444, 76.8, 37.4 }, npc = "Azj'Tordin" }, items = {
+        { 18411 }, -- #18411
+        { 18410 }, -- #18410
+    } },
+    { id = 7488, name = "Lethtendris's Web", side = "Alliance", requiredLevel = 54, xp = 7550, objective = "Bring Lethtendris' Web to Latronicus Moonspear at the Feathermoon Stronghold in Feralas.", description = "The web drops from Lethtendris.\n\nOptional introductory quest:", start = { description = "Feathermoon Stronghold, Feralas", location = { 1444, 30.4, 46 }, npc = "Latronicus Moonspear" }, turnIn = { description = "Feathermoon Stronghold, Feralas", location = { 1444, 30.4, 46 }, npc = "Latronicus Moonspear" }, items = {
+        { 18491 }, -- #18491
+    } },
+    { id = 7489, name = "Lethtendris's Web", side = "Horde", requiredLevel = 54, xp = 7550, objective = "Bring Lethtendris's Web to Talo Thornhoof at Camp Mojache in Feralas.", description = "The web drops from Lethtendris.\n\nOptional introductory quest:", start = { description = "Camp Mojache, Feralas", location = { 1444, 76, 43.8 }, npc = "Talo Thornhoof" }, turnIn = { description = "Camp Mojache, Feralas", location = { 1444, 76, 43.8 }, npc = "Talo Thornhoof" }, items = {
+        { 18491 }, -- #18491
+    } },
+    { id = 5526, name = "Shards of the Felvine", side = "Both", requiredLevel = 56, xp = 8300, objective = "Find the Felvine in Dire Maul and acquire a shard from it. Chances are you'll only be able to procure one with the demise of Alzzin the Wildshaper. Use the Reliquary of Purity to securely seal the shard inside, and return it to Rabine Saturna in Nighthaven, Moonglade.", description = "Kill Alzzin the Wildshaper, pick up a Felvine Shard near the vine and seal it in the Reliquary of Purity.", requires = { { id = 5527, name = "A Reliquary of Purity" } }, start = { description = "Nighthaven, Moonglade", location = { 1450, 51.6, 44.4 }, npc = "Rabine Saturna" }, turnIn = { description = "Nighthaven, Moonglade", location = { 1450, 51.6, 44.4 }, npc = "Rabine Saturna" }, items = {
+        { 18535 }, -- #18535
+        { 18536 }, -- #18536
+    } },
+    { id = 7463, name = "Arcane Refreshment", side = "Both", class = "MAGE", requiredLevel = 60, xp = 6600, objective = "Travel to the Warpwood Quarter of Dire Maul and slay the water elemental, Hydrospawn. Return to Lorekeeper Lydros in the Athenaeum with the Hydrospawn Essence.", description = "Mage class quest. Lydros is in the Athenaeum (North/West); Hydrospawn Essence drops from Hydrospawn in East. Rewards Conjure Water (Rank 7).", start = { description = "Dire Maul", npc = "Lorekeeper Lydros" }, turnIn = { description = "Dire Maul", npc = "Lorekeeper Lydros" }, items = {} },
+})

@@ -1,3 +1,818 @@
 {
-  "quests": []
+  "quests": [
+    {
+      "id": 17,
+      "name": "Uldaman Reagent Run",
+      "side": "Alliance",
+      "requiredLevel": 38,
+      "xp": 3450,
+      "objective": "Bring 12 Magenta Fungus Caps to Ghak Healtouch in Thelsamar.",
+      "requires": [2500],
+      "start": {
+        "npc": "Ghak Healtouch",
+        "location": [1432, 37, 49.2],
+        "description": "Thelsamar, Loch Modan"
+      },
+      "turnIn": {
+        "npc": "Ghak Healtouch",
+        "location": [1432, 37, 49.2],
+        "description": "Thelsamar, Loch Modan"
+      },
+      "items": [
+        {
+          "item": 9030,
+          "name": "Restorative Potion"
+        }
+      ]
+    },
+    {
+      "id": 704,
+      "name": "Agmond's Fate",
+      "side": "Alliance",
+      "requiredLevel": 30,
+      "xp": 2850,
+      "objective": "Bring 4 Carved Stone Urns to Prospector Ironband in Loch Modan.",
+      "description": "The urns are in the outer Uldaman cave, before the instance portal.\n\nOptional introductory quest:",
+      "requires": [739],
+      "start": {
+        "npc": "Prospector Ironband",
+        "location": [1432, 65.8, 65.4],
+        "description": "Loch Modan"
+      },
+      "turnIn": {
+        "npc": "Prospector Ironband",
+        "location": [1432, 65.8, 65.4],
+        "description": "Loch Modan"
+      },
+      "items": [
+        {
+          "item": 4980,
+          "name": "Prospector Gloves"
+        },
+        {
+          "item": 270059,
+          "name": "Restorer's Fine Gloves"
+        },
+        {
+          "item": 270060,
+          "name": "Excavator Gauntlets"
+        }
+      ]
+    },
+    {
+      "id": 707,
+      "name": "Ironband Wants You!",
+      "side": "Alliance",
+      "requiredLevel": 30,
+      "xp": 710,
+      "objective": "Speak with Prospector Ironband at Ironband's Excavation Site in Loch Modan.",
+      "description": "Introductory step leading to Agmond's Fate.\n\nOPTIONAL, not required",
+      "start": {
+        "npc": "Prospector Stormpike",
+        "location": [1455, 73.8, 13],
+        "description": "Hall of Explorers, Ironforge"
+      },
+      "turnIn": {
+        "npc": "Prospector Ironband",
+        "description": "Ironband's Excavation Site, Loch Modan"
+      },
+      "items": []
+    },
+    {
+      "id": 709,
+      "name": "Solution to Doom",
+      "side": "Both",
+      "requiredLevel": 30,
+      "xp": 3150,
+      "objective": "Bring the Tablet of Ryun'eh to Theldurin the Lost.",
+      "start": {
+        "npc": "Theldurin the Lost",
+        "location": [1418, 51.4, 76.4],
+        "description": "Badlands"
+      },
+      "turnIn": {
+        "npc": "Theldurin the Lost",
+        "location": [1418, 51.4, 76.4],
+        "description": "Badlands"
+      },
+      "items": [
+        {
+          "item": 4746,
+          "name": "Doomsayer's Robe"
+        },
+        {
+          "item": 270074,
+          "name": "Doomcaller's Pants"
+        },
+        {
+          "item": 270075,
+          "name": "Fists of Impending Doom"
+        }
+      ]
+    },
+    {
+      "id": 720,
+      "name": "A Sign of Hope",
+      "side": "Alliance",
+      "requiredLevel": 35,
+      "objective": "Find Prospector Ryedol and let him know Hammertoe Grez is alive.",
+      "start": {
+        "location": [1418, 53, 34.1],
+        "description": "Crumpled Map"
+      },
+      "turnIn": {
+        "npc": "Prospector Ryedol",
+        "description": "Badlands"
+      },
+      "items": []
+    },
+    {
+      "id": 721,
+      "name": "A Sign of Hope",
+      "side": "Alliance",
+      "requiredLevel": 35,
+      "xp": 2750,
+      "objective": "Find Hammertoe Grez in Uldaman.",
+      "requires": [720],
+      "start": {
+        "npc": "Prospector Ryedol",
+        "location": [1418, 53.4, 43.2],
+        "description": "Badlands"
+      },
+      "turnIn": {
+        "npc": "Hammertoe Grez",
+        "description": "Uldaman"
+      },
+      "items": []
+    },
+    {
+      "id": 722,
+      "name": "Amulet of Secrets",
+      "side": "Alliance",
+      "requiredLevel": 35,
+      "xp": 3150,
+      "objective": "Find Hammertoe's Amulet and return it to him in Uldaman.",
+      "requires": [721],
+      "start": {
+        "npc": "Hammertoe Grez",
+        "location": [1418, 44.3, 12],
+        "description": "Uldaman excavation (outside the instance)"
+      },
+      "turnIn": {
+        "npc": "Hammertoe Grez",
+        "location": [1418, 44.3, 12],
+        "description": "Uldaman excavation (outside the instance)"
+      },
+      "items": []
+    },
+    {
+      "id": 723,
+      "name": "Prospect of Faith",
+      "side": "Alliance",
+      "requiredLevel": 35,
+      "objective": "Take Hammertoe's Amulet to Prospector Ryedol in the Badlands.",
+      "requires": [722],
+      "start": {
+        "npc": "Hammertoe Grez"
+      },
+      "turnIn": {
+        "npc": "Prospector Ryedol",
+        "description": "Badlands"
+      },
+      "items": []
+    },
+    {
+      "id": 724,
+      "name": "Prospect of Faith",
+      "side": "Alliance",
+      "requiredLevel": 35,
+      "objective": "Take Hammertoe's Amulet to Historian Karnik in Ironforge.",
+      "requires": [723],
+      "start": {
+        "npc": "Prospector Ryedol",
+        "location": [1418, 53.4, 43.2],
+        "description": "Badlands"
+      },
+      "turnIn": {
+        "npc": "Historian Karnik",
+        "description": "Ironforge"
+      },
+      "items": []
+    },
+    {
+      "id": 725,
+      "name": "Passing Word of a Threat",
+      "side": "Alliance",
+      "requiredLevel": 35,
+      "objective": "Find Advisor Belgrum and give him his note.",
+      "requires": [724],
+      "start": {
+        "npc": "Historian Karnik",
+        "location": [1455, 76.4, 12.2],
+        "description": "Ironforge"
+      },
+      "turnIn": {
+        "npc": "Advisor Belgrum",
+        "description": "Ironforge"
+      },
+      "items": []
+    },
+    {
+      "id": 726,
+      "name": "Passing Word of a Threat",
+      "side": "Alliance",
+      "requiredLevel": 35,
+      "objective": "Speak to Historian Karnik.",
+      "requires": [725],
+      "start": {
+        "npc": "Advisor Belgrum",
+        "location": [1455, 76.4, 10.8],
+        "description": "Ironforge"
+      },
+      "turnIn": {
+        "npc": "Historian Karnik",
+        "description": "Ironforge"
+      },
+      "items": []
+    },
+    {
+      "id": 738,
+      "name": "Find Agmond",
+      "side": "Alliance",
+      "requiredLevel": 30,
+      "objective": "Find Agmond.",
+      "start": {
+        "npc": "Prospector Ironband",
+        "location": [1432, 65.8, 65.4],
+        "description": "Loch Modan"
+      },
+      "turnIn": {
+        "npc": "Battered Dwarven Skeleton"
+      },
+      "items": []
+    },
+    {
+      "id": 739,
+      "name": "Murdaloc",
+      "side": "Alliance",
+      "requiredLevel": 30,
+      "objective": "Slay Agmond's killer, Murdaloc. Slay 12 Stonevault Bonesnappers. Report to Prospector Ironband in Loch Modan.",
+      "requires": [738],
+      "start": {
+        "location": [1418, 50.9, 62.4],
+        "description": "Battered Dwarven Skeleton"
+      },
+      "turnIn": {
+        "npc": "Prospector Ironband",
+        "description": "Loch Modan"
+      },
+      "items": []
+    },
+    {
+      "id": 762,
+      "name": "An Ambassador of Evil",
+      "side": "Alliance",
+      "requiredLevel": 35,
+      "objective": "Kill Ambassador Infernus in Angor Fortress and bring proof of his death to Advisor Belgrum in Ironforge.",
+      "requires": [726],
+      "start": {
+        "npc": "Historian Karnik",
+        "location": [1455, 76.4, 12.2],
+        "description": "Ironforge"
+      },
+      "turnIn": {
+        "npc": "Advisor Belgrum",
+        "description": "Ironforge"
+      },
+      "items": []
+    },
+    {
+      "id": 1139,
+      "name": "The Lost Tablets of Will",
+      "side": "Alliance",
+      "requiredLevel": 35,
+      "xp": 5850,
+      "objective": "Find the Tablet of Will, and return them to Advisor Belgrum in Ironforge.",
+      "requires": [762],
+      "start": {
+        "npc": "Advisor Belgrum",
+        "location": [1455, 76.4, 10.8],
+        "description": "Ironforge"
+      },
+      "turnIn": {
+        "npc": "Advisor Belgrum",
+        "location": [1455, 76.4, 10.8],
+        "description": "Ironforge"
+      },
+      "items": [
+        {
+          "item": 6723,
+          "name": "Medal of Courage"
+        }
+      ]
+    },
+    {
+      "id": 1360,
+      "name": "Reclaimed Treasures",
+      "side": "Alliance",
+      "requiredLevel": 33,
+      "xp": 3600,
+      "objective": "Get Krom Stoutarm's treasured possession from his chest in the North Common Hall of Uldaman, and bring it to him in Ironforge.",
+      "start": {
+        "npc": "Krom Stoutarm",
+        "location": [1455, 74.2, 9.8],
+        "description": "Ironforge"
+      },
+      "turnIn": {
+        "npc": "Krom Stoutarm",
+        "location": [1455, 74.2, 9.8],
+        "description": "Ironforge"
+      },
+      "items": []
+    },
+    {
+      "id": 1954,
+      "name": "The Infernal Orb",
+      "requiredLevel": 35,
+      "objective": "Bring an Infernal Orb to Tabetha in Dustwallow Marsh.",
+      "start": {
+        "npc": "Tabetha",
+        "location": [1445, 46, 57],
+        "description": "Dustwallow Marsh"
+      },
+      "turnIn": {
+        "npc": "Tabetha",
+        "location": [1445, 46, 57],
+        "description": "Dustwallow Marsh"
+      },
+      "items": []
+    },
+    {
+      "id": 1955,
+      "name": "The Exorcism",
+      "requiredLevel": 35,
+      "objective": "Kill the Demon of the Orb, then speak with Tabetha.",
+      "requires": [1954],
+      "start": {
+        "npc": "Tabetha",
+        "location": [1445, 46, 57],
+        "description": "Dustwallow Marsh"
+      },
+      "turnIn": {
+        "npc": "Tabetha",
+        "location": [1445, 46, 57],
+        "description": "Dustwallow Marsh"
+      },
+      "items": []
+    },
+    {
+      "id": 1956,
+      "name": "Power in Uldaman",
+      "side": "Both",
+      "class": "Mage",
+      "requiredLevel": 35,
+      "xp": 3900,
+      "objective": "Retrieve an Obsidian Power Source and bring it to Tabetha in Dustwallow Marsh.",
+      "description": "Mage class quest. The Obsidian Sentinel guards the back entrance of Uldaman. Continues with Mana Surges for the Celestial Orb or Celestial Stave.",
+      "requires": [1955],
+      "start": {
+        "npc": "Tabetha",
+        "location": [1445, 46, 57],
+        "description": "Dustwallow Marsh"
+      },
+      "turnIn": {
+        "npc": "Tabetha",
+        "location": [1445, 46, 57],
+        "description": "Dustwallow Marsh"
+      },
+      "items": []
+    },
+    {
+      "id": 2198,
+      "name": "The Shattered Necklace",
+      "side": "Alliance",
+      "requiredLevel": 37,
+      "objective": "Search for the original creator of the shattered necklace to learn of its potential value.",
+      "start": {
+        "item": 7666,
+        "description": "Shattered Necklace (drops in Uldaman)"
+      },
+      "turnIn": {
+        "npc": "Talvash del Kissel",
+        "description": "Ironforge"
+      },
+      "items": []
+    },
+    {
+      "id": 2199,
+      "name": "Lore for a Price",
+      "side": "Alliance",
+      "requiredLevel": 37,
+      "objective": "Bring five silver bars to Talvash del Kissel in Ironforge.",
+      "requires": [2198],
+      "start": {
+        "npc": "Talvash del Kissel",
+        "location": [1455, 36, 4],
+        "description": "Ironforge"
+      },
+      "turnIn": {
+        "npc": "Talvash del Kissel",
+        "location": [1455, 36, 4],
+        "description": "Ironforge"
+      },
+      "items": []
+    },
+    {
+      "id": 2200,
+      "name": "Back to Uldaman",
+      "side": "Alliance",
+      "requiredLevel": 37,
+      "xp": 2550,
+      "objective": "Search for clues as to the current disposition of Talvash's necklace within Uldaman. The slain paladin he mentioned was the person who has it last.",
+      "requires": [2199],
+      "start": {
+        "npc": "Talvash del Kissel",
+        "location": [1455, 36, 3.4],
+        "description": "Ironforge"
+      },
+      "turnIn": {
+        "npc": "Remains of a Paladin",
+        "description": "Uldaman"
+      },
+      "items": []
+    },
+    {
+      "id": 2201,
+      "name": "Find the Gems",
+      "side": "Alliance",
+      "requiredLevel": 37,
+      "xp": 3600,
+      "objective": "Find the ruby, sapphire, and topaz that are scattered throughout Uldaman. Once acquired, contact Talvash del Kissel remotely by using the Phial of Scrying he previously gave you.",
+      "description": "The sapphire drops from Grimlok.",
+      "requires": [2200],
+      "start": {
+        "npc": "Remains of a Paladin",
+        "description": "Uldaman"
+      },
+      "turnIn": {
+        "description": "Talvash del Kissel (Phial of Scrying)"
+      },
+      "items": []
+    },
+    {
+      "id": 2202,
+      "name": "Uldaman Reagent Run",
+      "side": "Horde",
+      "requiredLevel": 36,
+      "xp": 3450,
+      "objective": "Bring 12 Magenta Fungus Caps to Jarkal Mossmeld in Kargath.",
+      "requires": [2258],
+      "start": {
+        "npc": "Jarkal Mossmeld",
+        "location": [1418, 2.4, 46],
+        "description": "Kargath, Badlands"
+      },
+      "turnIn": {
+        "npc": "Jarkal Mossmeld",
+        "location": [1418, 2.4, 46],
+        "description": "Kargath, Badlands"
+      },
+      "items": [
+        {
+          "item": 9030,
+          "name": "Restorative Potion"
+        }
+      ]
+    },
+    {
+      "id": 2204,
+      "name": "Restoring the Necklace",
+      "side": "Alliance",
+      "requiredLevel": 37,
+      "xp": 930,
+      "objective": "Obtain a power source from the most powerful construct you can find in Uldaman, and deliver it to Talvash del Kissel in Ironforge.",
+      "description": "The power source drops from Archaedas. Finishing it unlocks Talvash's Enhancing Necklace.",
+      "requires": [2201],
+      "start": {
+        "npc": "Talvash's Scrying Bowl",
+        "description": "Uldaman"
+      },
+      "turnIn": {
+        "npc": "Talvash del Kissel",
+        "description": "Ironforge"
+      },
+      "items": []
+    },
+    {
+      "id": 2240,
+      "name": "The Hidden Chamber",
+      "side": "Alliance",
+      "requiredLevel": 35,
+      "xp": 3900,
+      "objective": "Read Baelog's Journal, explore the hidden chamber, then report to Prospector Stormpike.",
+      "description": "Optional introductory quest:",
+      "start": {
+        "npc": "Baelog",
+        "description": "Uldaman"
+      },
+      "turnIn": {
+        "npc": "Prospector Stormpike",
+        "description": "Ironforge"
+      },
+      "items": [
+        {
+          "item": 9626,
+          "name": "Dwarven Charge"
+        },
+        {
+          "item": 9627,
+          "name": "Explorer's League Lodestar"
+        }
+      ]
+    },
+    {
+      "id": 2258,
+      "name": "Badlands Reagent Run",
+      "side": "Horde",
+      "requiredLevel": 36,
+      "objective": "Bring 5 Buzzard Gizzards, 10 Crag Coyote Fangs, and 5 Rock Elemental Shards to Jarkal Mossmeld in Kargath, Badlands.",
+      "start": {
+        "npc": "Jarkal Mossmeld",
+        "location": [1418, 2.4, 46],
+        "description": "Badlands"
+      },
+      "turnIn": {
+        "npc": "Jarkal Mossmeld",
+        "location": [1418, 2.4, 46],
+        "description": "Badlands"
+      },
+      "items": []
+    },
+    {
+      "id": 2278,
+      "name": "The Platinum Discs",
+      "side": "Both",
+      "requiredLevel": 40,
+      "xp": 4200,
+      "objective": "Speak with stone watcher and learn what ancient lore it keeps. Once you have learned what lore it has to offer, activate the Discs of Norgannon.",
+      "description": "The discs are in the Map Chamber, past Ironaya.",
+      "start": {
+        "description": "The Discs of Norgannon, Uldaman"
+      },
+      "turnIn": {
+        "npc": "The Discs of Norgannon",
+        "description": "Uldaman"
+      },
+      "items": []
+    },
+    {
+      "id": 2279,
+      "name": "The Platinum Discs",
+      "side": "Alliance",
+      "requiredLevel": 40,
+      "xp": 5250,
+      "objective": "Take the miniature version of the Discs of Norgannon to the Explorers' League in Ironforge.",
+      "description": "Speak with the Stone Watcher and activate the discs first. Then hand the reward voucher to Dinita Stonemantle in the Ironforge vault and choose your reward.",
+      "requires": [2278],
+      "start": {
+        "description": "The Discs of Norgannon, Uldaman"
+      },
+      "turnIn": {
+        "npc": "High Explorer Magellas",
+        "description": "Ironforge"
+      },
+      "items": [
+        {
+          "item": 3928,
+          "name": "Superior Healing Potion"
+        },
+        {
+          "item": 6149,
+          "name": "Greater Mana Potion"
+        },
+        {
+          "item": 9587,
+          "name": "Thawpelt Sack"
+        }
+      ]
+    },
+    {
+      "id": 2280,
+      "name": "The Platinum Discs",
+      "side": "Horde",
+      "requiredLevel": 40,
+      "xp": 5250,
+      "objective": "Take the miniature version of the Discs of Norgannon to the one of the sages in Thunder Bluff.",
+      "description": "Speak with the Stone Watcher and activate the discs first. Then hand the reward voucher to Bena Winterhoof in Thunder Bluff and choose your reward.",
+      "requires": [2278],
+      "start": {
+        "description": "The Discs of Norgannon, Uldaman"
+      },
+      "turnIn": {
+        "npc": "Sage Truthseeker",
+        "description": "Thunder Bluff"
+      },
+      "items": [
+        {
+          "item": 3928,
+          "name": "Superior Healing Potion"
+        },
+        {
+          "item": 6149,
+          "name": "Greater Mana Potion"
+        },
+        {
+          "item": 9587,
+          "name": "Thawpelt Sack"
+        }
+      ]
+    },
+    {
+      "id": 2283,
+      "name": "Necklace Recovery",
+      "side": "Horde",
+      "requiredLevel": 37,
+      "xp": 2450,
+      "objective": "Look for a valuable necklace within the Uldaman dig site and bring it back to Dran Droffers in Orgrimmar. The necklace may be damaged.",
+      "start": {
+        "npc": "Dran Droffers",
+        "location": [1454, 59.4, 36.8],
+        "description": "Orgrimmar"
+      },
+      "turnIn": {
+        "npc": "Dran Droffers",
+        "location": [1454, 59.4, 36.8],
+        "description": "Orgrimmar"
+      },
+      "items": []
+    },
+    {
+      "id": 2284,
+      "name": "Necklace Recovery, Take 2",
+      "side": "Horde",
+      "requiredLevel": 37,
+      "xp": 2450,
+      "objective": "Find a clue as to the gems' whereabouts in the depths of Uldaman.",
+      "requires": [2283],
+      "start": {
+        "npc": "Dran Droffers",
+        "location": [1454, 59.4, 36.8],
+        "description": "Orgrimmar"
+      },
+      "turnIn": {
+        "npc": "Remains of a Paladin",
+        "description": "Uldaman"
+      },
+      "items": []
+    },
+    {
+      "id": 2318,
+      "name": "Translating the Journal",
+      "side": "Horde",
+      "requiredLevel": 37,
+      "objective": "Find someone who can translate the paladin's journal. The closest location that might have someone is Kargath, in the Badlands.",
+      "requires": [2284],
+      "start": {
+        "npc": "Remains of a Paladin"
+      },
+      "turnIn": {
+        "npc": "Jarkal Mossmeld",
+        "description": "Badlands"
+      },
+      "items": []
+    },
+    {
+      "id": 2338,
+      "name": "Translating the Journal",
+      "side": "Horde",
+      "requiredLevel": 37,
+      "objective": "Let Jarkal borrow the necklace. In exchange, he will translate the journal for you.",
+      "requires": [2318],
+      "start": {
+        "npc": "Jarkal Mossmeld",
+        "location": [1418, 2.4, 46],
+        "description": "Badlands"
+      },
+      "turnIn": {
+        "npc": "Jarkal Mossmeld",
+        "location": [1418, 2.4, 46],
+        "description": "Badlands"
+      },
+      "items": []
+    },
+    {
+      "id": 2339,
+      "name": "Find the Gems and Power Source",
+      "side": "Horde",
+      "requiredLevel": 37,
+      "xp": 3750,
+      "objective": "Recover all three gems and a power source for the necklace from Uldaman, and then bring them to Jarkal Mossmeld in Kargath. Jarkal believes a power source might be found on the strongest construct present in Uldaman.",
+      "description": "The sapphire drops from Grimlok and the power source from Archaedas.",
+      "requires": [2338],
+      "start": {
+        "npc": "Jarkal Mossmeld",
+        "location": [1418, 2.4, 46],
+        "description": "Kargath, Badlands"
+      },
+      "turnIn": {
+        "npc": "Jarkal Mossmeld",
+        "location": [1418, 2.4, 46],
+        "description": "Kargath, Badlands"
+      },
+      "items": []
+    },
+    {
+      "id": 2342,
+      "name": "Reclaimed Treasures",
+      "side": "Horde",
+      "requiredLevel": 33,
+      "xp": 3600,
+      "objective": "Get Patrick Garrett's family treasure from their family chest in the South Common Hall of Uldaman, and bring it to him in the Undercity.",
+      "start": {
+        "npc": "Patrick Garrett",
+        "location": [1458, 62.4, 48.4],
+        "description": "Undercity"
+      },
+      "turnIn": {
+        "npc": "Patrick Garrett",
+        "location": [1458, 62.4, 48.4],
+        "description": "Undercity"
+      },
+      "items": []
+    },
+    {
+      "id": 2398,
+      "name": "The Lost Dwarves",
+      "side": "Alliance",
+      "requiredLevel": 35,
+      "xp": 315,
+      "objective": "Find Baelog in Uldaman.",
+      "description": "Introductory step leading to The Hidden Chamber.\n\nOPTIONAL, not required",
+      "start": {
+        "npc": "Prospector Stormpike",
+        "location": [1455, 73.8, 13],
+        "description": "Hall of Explorers, Ironforge"
+      },
+      "turnIn": {
+        "npc": "Baelog",
+        "description": "Uldaman"
+      },
+      "items": []
+    },
+    {
+      "id": 2418,
+      "name": "Power Stones",
+      "side": "Both",
+      "requiredLevel": 30,
+      "xp": 3500,
+      "objective": "Bring 8 Dentrium Power Stones and 8 An'Alleum Power Stones to Rigglefuzz in the Badlands.",
+      "description": "The power stones drop from Shadowforge dwarves in the outer cave.",
+      "start": {
+        "npc": "Rigglefuzz",
+        "location": [1418, 42.4, 52.4],
+        "description": "Badlands"
+      },
+      "turnIn": {
+        "npc": "Rigglefuzz",
+        "location": [1418, 42.4, 52.4],
+        "description": "Badlands"
+      },
+      "items": [
+        {
+          "item": 9522,
+          "name": "Energized Stone Circle"
+        },
+        {
+          "item": 10358,
+          "name": "Duracin Bracers"
+        },
+        {
+          "item": 10359,
+          "name": "Everlast Boots"
+        },
+        {
+          "item": 270055,
+          "name": "Charged Leather Bracers"
+        }
+      ]
+    },
+    {
+      "id": 2500,
+      "name": "Badlands Reagent Run",
+      "side": "Alliance",
+      "requiredLevel": 36,
+      "objective": "Acquire the reagents Ghak Healtouch needs from the Badlands, then return to him in Thelsamar.",
+      "start": {
+        "npc": "Ghak Healtouch",
+        "location": [1432, 37, 49.2],
+        "description": "Loch Modan"
+      },
+      "turnIn": {
+        "npc": "Ghak Healtouch",
+        "location": [1432, 37, 49.2],
+        "description": "Loch Modan"
+      },
+      "items": []
+    }
+  ]
 }

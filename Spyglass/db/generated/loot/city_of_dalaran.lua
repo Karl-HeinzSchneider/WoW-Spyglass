@@ -61,19 +61,19 @@ Data:AddTrashLoot(2959, {
 })
 
 Data:AddQuests(2959, {
-    { id = 92456, name = "A Green Sample", side = "Alliance", requiredLevel = 24, xp = 3950, objective = "Retrieve a Fel Infused Blossom from Dalaran's central garden.", start = { description = "Stormwind City.", location = { 1453, 31.4, 62.8 }, npc = "Shylamiir" }, turnIn = { description = "Stormwind City.", npc = "Shylamiir" }, items = {
+    { id = 92456, name = "A Green Sample", side = "Alliance", requiredLevel = 24, xp = 3950, objective = "Retrieve a Fel Infused Blossom from Dalaran's central garden.", start = { description = "Stormwind City.", location = { 1453, 31.4, 62.8 }, npc = "Shylamiir" }, turnIn = { description = "Stormwind City.", location = { 1453, 31.4, 62.8 }, npc = "Shylamiir" }, items = {
         { 279835 }, -- Vine Pruner's Cloak
         { 279836 }, -- Thorn Protecting Girdle
     } },
-    { id = 92489, name = "Power Overwhelming", side = "Alliance", requiredLevel = 24, xp = 3950, objective = "Slay Arcanic Enigma, the Mana Elemental in the City of Dalaran, and return to High Sorcerer Andromath in Stormwind City.", start = { description = "Stormwind City.", location = { 1453, 48.8, 87.6 }, npc = "High Sorcerer Andromath" }, turnIn = { description = "Stormwind City.", npc = "High Sorcerer Andromath" }, items = {
+    { id = 92489, name = "Power Overwhelming", side = "Alliance", requiredLevel = 24, xp = 3950, objective = "Slay Arcanic Enigma, the Mana Elemental in the City of Dalaran, and return to High Sorcerer Andromath in Stormwind City.", start = { description = "Stormwind City.", location = { 1453, 48.8, 87.6 }, npc = "High Sorcerer Andromath" }, turnIn = { description = "Stormwind City.", location = { 1453, 48.8, 87.6 }, npc = "High Sorcerer Andromath" }, items = {
         { 251962 }, -- Violet Sash
         { 279849 }, -- Runebound Gloves
     } },
-    { id = 92457, name = "Starving Arcane", side = "Alliance", requiredLevel = 24, xp = 9400, objective = "Defeat 8 Seeking Remnants, 8 Saturated Remnants, and 8 Mana Echoes inside the City of Dalaran for Archmage Modera outside of Dalaran.", description = "There may not be enough of these mobs inside to finish it in one run.", requires = { { id = 92432, name = "An Alarming Request" } }, start = { description = "Lordamere Lake near Dalaran.", location = { 1416, 9.2, 60 }, npc = "Image of Archmage Modera" }, turnIn = { description = "Lordamere Lake near Dalaran.", npc = "Image of Archmage Modera" }, items = {
+    { id = 92457, name = "Starving Arcane", side = "Alliance", requiredLevel = 24, xp = 9400, objective = "Defeat 8 Seeking Remnants, 8 Saturated Remnants, and 8 Mana Echoes inside the City of Dalaran for Archmage Modera outside of Dalaran.", description = "There may not be enough of these mobs inside to finish it in one run.", requires = { { id = 92432, name = "An Alarming Request" } }, start = { description = "Lordamere Lake near Dalaran.", location = { 1416, 9.2, 60 }, npc = "Image of Archmage Modera" }, turnIn = { description = "Lordamere Lake near Dalaran.", location = { 1416, 9.2, 60 }, npc = "Image of Archmage Modera" }, items = {
         { 279837 }, -- Fallen Guard's Pendant
         { 279838 }, -- Arcane Infused Rod
     } },
-    { id = 92458, name = "Heart of Disruption", side = "Alliance", requiredLevel = 30, xp = 9400, objective = "Collect the Arcane Mote for the Image of Archmage Modera near the City of Dalaran.", requires = { { id = 92432, name = "An Alarming Request" } }, start = { description = "Lordamere Lake near Dalaran.", location = { 1416, 9.2, 60 }, npc = "Image of Archmage Modera" }, turnIn = { description = "Lordamere Lake near Dalaran.", npc = "Image of Archmage Modera" }, items = {
+    { id = 92458, name = "Heart of Disruption", side = "Alliance", requiredLevel = 30, xp = 9400, objective = "Collect the Arcane Mote for the Image of Archmage Modera near the City of Dalaran.", requires = { { id = 92432, name = "An Alarming Request" } }, start = { description = "Lordamere Lake near Dalaran.", location = { 1416, 9.2, 60 }, npc = "Image of Archmage Modera" }, turnIn = { description = "Lordamere Lake near Dalaran.", location = { 1416, 9.2, 60 }, npc = "Image of Archmage Modera" }, items = {
         { 279839 }, -- Spellguard Pauldrons
         { 279840 }, -- Renewing Footpads
         { 279841 }, -- Defender of Dalaran
@@ -87,11 +87,11 @@ Data:AddQuests(2959, {
         { 279845 }, -- Solid Gold Band
         { 279846 }, -- Larcenist's Belt
     } },
-    { id = 96988, name = "Source of Power", side = "Horde", requiredLevel = 24, xp = 3950, objective = "Collect 6 Cracked Sentry Cores from the constructs in Dalaran.", start = { description = "Undercity.", location = { 1458, 46.6, 74.1 }, npc = "Doctor Martin Felben" }, turnIn = { description = "Undercity.", npc = "Doctor Martin Felben" }, items = {
+    { id = 96988, name = "Source of Power", side = "Horde", requiredLevel = 24, xp = 3950, objective = "Collect 6 Cracked Sentry Cores from the constructs in Dalaran.", start = { description = "Undercity.", location = { 1458, 46.6, 74.1 }, npc = "Doctor Martin Felben" }, turnIn = { description = "Undercity.", location = { 1458, 46.6, 74.1 }, npc = "Doctor Martin Felben" }, items = {
         { 279847 }, -- Unstable Power Core
         { 279848 }, -- Construct Cloak
     } },
-    { id = 96986, name = "The Grave Knight", side = "Horde", requiredLevel = 24, xp = 3950, objective = "Defeat Atrexis the Grave Knight in the Dalaran Underbelly.", start = { description = "Tarren Mill, Hillsbrad Foothills.", location = { 1424, 62.6, 20.6 }, npc = "Melisara" }, turnIn = { description = "Tarren Mill, Hillsbrad Foothills.", npc = "Melisara" }, items = {
+    { id = 96986, name = "The Grave Knight", side = "Horde", requiredLevel = 24, xp = 3950, objective = "Defeat Atrexis the Grave Knight in the Dalaran Underbelly.", start = { description = "Tarren Mill, Hillsbrad Foothills.", location = { 1424, 62.6, 20.6 }, npc = "Melisara" }, turnIn = { description = "Tarren Mill, Hillsbrad Foothills.", location = { 1424, 62.6, 20.6 }, npc = "Melisara" }, items = {
         { 251963 }, -- Gravewalker Boots
         { 251965 }, -- Undead Knight's Bracers
     } },

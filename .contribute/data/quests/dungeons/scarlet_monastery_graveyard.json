@@ -25,6 +25,91 @@
           "name": "Grimsteel Cape"
         }
       ]
+    },
+    {
+      "id": 78261,
+      "name": "The Horn of Xelthos",
+      "requiredLevel": 20,
+      "xp": 1850,
+      "objective": "Find The Horn of Xelthos inside of Shadowfang Keep. Then, return it to C's dead drop near Pyrewood Village. You must complete the job alone.",
+      "description": "Solo job: you must do it alone, outside any group.",
+      "start": {
+        "location": [1421, 47.1, 71.1],
+        "description": "Dead Drop, Pyrewood Village, Silverpine Forest"
+      },
+      "turnIn": {
+        "npc": "Dead Drop",
+        "description": "Pyrewood Village, Silverpine Forest"
+      },
+      "items": []
+    },
+    {
+      "id": 78307,
+      "name": "The Horn of Xelthos",
+      "side": "Both",
+      "class": "Rogue",
+      "requiredLevel": 20,
+      "xp": 6900,
+      "objective": "Collect C's payment from the Dead Drop near Pyrewood Village.",
+      "description": "Rogue class quest. C's letter arrives at level 20 in a capital city; take the job at the Dead Drop near Pyrewood Village. Keep a bag slot free.\n\nSolo job: you must do it alone, outside any group.",
+      "requires": [78261],
+      "start": {
+        "location": [1421, 47.1, 71.1],
+        "description": "Dead Drop, Pyrewood Village, Silverpine Forest"
+      },
+      "turnIn": {
+        "npc": "Dead Drop",
+        "description": "Pyrewood Village, Silverpine Forest"
+      },
+      "items": [
+        {
+          "item": 277210,
+          "name": "Pyrewood Signet Ring"
+        }
+      ]
+    },
+    {
+      "id": 78676,
+      "name": "The Eye of Bhossca",
+      "requiredLevel": 25,
+      "xp": 3450,
+      "objective": "Find The Eye of Bhossca inside of the Scarlet Monastery. Then, return it to C's dead drop near Pyrewood Village. You must complete the job alone.",
+      "description": "Solo job: you must do it alone, outside any group.",
+      "requires": [78307],
+      "start": {
+        "location": [1421, 47.1, 71.1],
+        "description": "Dead Drop, Pyrewood Village, Silverpine Forest"
+      },
+      "turnIn": {
+        "npc": "Dead Drop",
+        "description": "Pyrewood Village, Silverpine Forest"
+      },
+      "items": []
+    },
+    {
+      "id": 78699,
+      "name": "The Eye of Bhossca",
+      "side": "Both",
+      "class": "Rogue",
+      "requiredLevel": 25,
+      "xp": 6900,
+      "objective": "Collect C's payment from the Dead Drop near Pyrewood Village.",
+      "description": "Rogue class quest after The Horn of Xelthos; C's next letter (around level 30) sends you back to the Dead Drop. Wear the Scarlet Initiate's Uniform in every wing: stealth or attacking removes it.\n\nSolo job: you must do it alone, outside any group.",
+      "requires": [78676],
+      "start": {
+        "location": [1421, 47.1, 71.1],
+        "description": "Dead Drop, Pyrewood Village, Silverpine Forest"
+      },
+      "turnIn": {
+        "npc": "Dead Drop",
+        "description": "Pyrewood Village, Silverpine Forest"
+      },
+      "items": [
+        {
+          "item": 277246,
+          "name": "Ruby-Adorned Blade"
+        }
+      ]
     }
   ]
 }

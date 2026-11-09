@@ -27,3 +27,15 @@ Data:AddBossLoot(-269104, { -- Moontouched Wanderer
 Data:AddBossLoot(-269111, { -- Gortek the Apprentice
     { 280077 }, -- #280077
 })
+
+Data:AddQuests(2974, {
+    { id = 92343, name = "Get to the Roots of It", side = "Horde", requiredLevel = 45, xp = 11300, objective = "Collect 10 Nordrassil Root Caps in Blackmaw Hold.", requires = { { id = 92346, name = "Beneath Nordrassil" } }, start = { description = "Elder Rise, Thunder Bluff (75.6, 31.0)", location = { 1456, 75.6, 31 }, npc = "Nara Wildmane" }, turnIn = { description = "Elder Rise, Thunder Bluff (75.6, 31.0)", location = { 1456, 75.6, 31 }, npc = "Nara Wildmane" }, items = {} },
+    { id = 92344, name = "Get to the Roots of It", side = "Alliance", requiredLevel = 45, xp = 11300, objective = "Collect 10 Nordrassil Root Caps in Blackmaw Hold.", requires = { { id = 92345, name = "Beneath Nordrassil" } }, start = { description = "Cenarion Enclave, Darnassus (35.4, 8.4)", location = { 1457, 35.4, 8.4 }, npc = "Mathrengyl Bearwalker" }, turnIn = { description = "Cenarion Enclave, Darnassus (35.4, 8.4)", location = { 1457, 35.4, 8.4 }, npc = "Mathrengyl Bearwalker" }, items = {} },
+    { id = 97173, name = "Blackmaw Magic", side = "Alliance", requiredLevel = 52, xp = 12800, objective = "Obtain a Blackmaw Ritual Totem from Elder Shaman Bloodmane in Blackmaw Hold.", description = "Quest giver not known yet.", start = { description = "Not known yet (probably a mage in Dalaran)" }, items = {} },
+    { id = 97198, name = "Blackmaw Magic", side = "Horde", requiredLevel = 52, xp = 16100, objective = "Obtain a Blackmaw Ritual Totem from Elder Shaman Bloodmane in Blackmaw Hold.", description = "Quest giver not known yet.", start = { description = "Not known yet (perhaps Alaana Stormwalker, Mulgore)" }, items = {} },
+    { id = 92069, name = "Claws That Rend, Tusks that Gore", side = "Both", requiredLevel = 45, xp = 12400, objective = "Bring the Claws of the Great Bear and the Tusks of the Unbroken to Ogtinc in Azshara.", description = "Withermaw and Bonesnout are on different paths: take both.", start = { description = "Azshara (42.4, 42.6) (probably)", location = { 1447, 42.4, 42.6 }, npc = "Ogtinc" }, turnIn = { description = "Azshara (42.4, 42.6)", location = { 1447, 42.4, 42.6 }, npc = "Ogtinc" }, items = {
+        { 260213 }, -- #260213
+        { 260214 }, -- #260214
+        { 260215 }, -- #260215
+    } },
+})

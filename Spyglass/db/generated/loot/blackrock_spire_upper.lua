@@ -111,3 +111,37 @@ Data:AddTrashLoot(22902, {
     { 16703 }, -- Dreadmist Bracers
     { 16735 }, -- Bracers of Valor
 })
+
+Data:AddQuests(22902, {
+    { id = 4743, name = "Seal of Ascension", side = "Both", requiredLevel = 57, xp = 9950, objective = "Travel to the Wyrmbog in Dustwallow Marsh. Find the ancient drake Emberstrife and beat him until his will is broken, place the Unforged Seal of Ascension before him, then use the Orb of Draconic Energy on him and force the Flames of the Black Dragonflight upon the Unforged Seal of Ascension.", description = "Take the Unforged Seal and the Orb of Draconic Energy to Emberstrife in the Wyrmbog, Dustwallow Marsh. The forged seal opens the UBRS door.", requires = { { id = 4742, name = "Seal of Ascension" } }, start = { description = "Lower Blackrock Spire", npc = "Vaelan" }, turnIn = { description = "Lower Blackrock Spire", npc = "Vaelan" }, items = {
+        { 12344 }, -- #12344
+    } },
+    { id = 7761, name = "Blackhand's Command", side = "Both", requiredLevel = 55, xp = 6600, objective = "Find the brand that General Drakkisath guards and gain the Mark of Drakkisath, so you can use the Orb of Command.", description = "The Scarshield Quartermaster is in the hallway outside the Spire portal. Touch Drakkisath's Brand behind General Drakkisath; this unlocks the Orb of Command shortcut to Blackwing Lair.", start = { description = "Blackhand's Command (letter from the Scarshield Quartermaster, Blackrock Mountain)", item = 18987 }, turnIn = { description = "Upper Blackrock Spire", npc = "Drakkisath's Brand" }, items = {} },
+    { id = 4735, name = "Egg Collection", side = "Both", requiredLevel = 57, xp = 9950, objective = "Bring 8 Collected Dragon Eggs and the Collectronic Module to Tinkee Steamboil at Flame Crest in the Burning Steppes.", description = "Using the module on the eggs in the Rookery can hatch whelps.", requires = { { id = 4734, name = "Egg Freezing" } }, start = { description = "Flame Crest, Burning Steppes", location = { 1428, 65.2, 23.8 }, npc = "Tinkee Steamboil" }, turnIn = { description = "Flame Crest, Burning Steppes", location = { 1428, 65.2, 23.8 }, npc = "Tinkee Steamboil" }, items = {} },
+    { id = 5102, name = "General Drakkisath's Demise", side = "Alliance", requiredLevel = 55, xp = 9950, objective = "Travel to Blackrock Spire and destroy General Drakkisath. Return to Marshal Maxwell when the job is done.", description = "Kill General Drakkisath at the end of UBRS.", requires = { { id = 5089, name = "General Drakkisath's Command" } }, start = { description = "Morgan's Vigil, Burning Steppes", location = { 1428, 84.6, 68.8 }, npc = "Marshal Maxwell" }, turnIn = { description = "Morgan's Vigil, Burning Steppes", location = { 1428, 84.6, 68.8 }, npc = "Marshal Maxwell" }, items = {
+        { 13966 }, -- #13966
+        { 13968 }, -- #13968
+        { 13965 }, -- #13965
+    } },
+    { id = 6502, name = "Drakefire Amulet", side = "Alliance", requiredLevel = 50, xp = 8300, objective = "You must retrieve the Blood of the Black Dragon Champion from General Drakkisath. Drakkisath can be found in his throne room behind the Halls of Ascension in Blackrock Spire.", description = "Part of the Onyxia attunement.", requires = { { id = 6501, name = "The Dragon's Eye" } }, start = { description = "Mazthoril, Winterspring", location = { 1452, 54.4, 51.2 }, npc = "Haleh" }, turnIn = { description = "Mazthoril, Winterspring", location = { 1452, 54.4, 51.2 }, npc = "Haleh" }, items = {
+        { 16309 }, -- Drakefire Amulet
+    } },
+    { id = 6602, name = "Blood of the Black Dragon Champion", side = "Horde", requiredLevel = 55, xp = 9950, objective = "Travel to Blackrock Spire and slay General Drakkisath. Gather his blood and return it to Rexxar.", description = "Part of the Onyxia attunement.", requires = { { id = 6601, name = "Ascension..." } }, start = { description = "Desolace", location = { 1444, 44.8, 7.4 }, npc = "Rexxar" }, turnIn = { description = "Desolace", location = { 1444, 44.8, 7.4 }, npc = "Rexxar" }, items = {
+        { 16309 }, -- Drakefire Amulet
+    } },
+    { id = 5127, name = "The Demon Forge", side = "Both", requiredLevel = 55, xp = 8300, objective = "Travel to Blackrock Spire, slay Goraluk Anvilcrack and use the Blood Stained Pike on his corpse. Also find the Unforged Rune Covered Breastplate. Return the Soul Stained Pike and the breastplate to Lorax in Winterspring.", description = "Blacksmithing 270 (Armorsmith). Use the Blood Stained Pike on Goraluk's corpse and loot the Unforged Rune Covered Breastplate nearby.", start = { description = "Winterspring", location = { 1452, 63.8, 73.8 }, npc = "Lorax" }, turnIn = { description = "Winterspring", location = { 1452, 63.8, 73.8 }, npc = "Lorax" }, items = {
+        { 12696 }, -- Plans: Demon Forged Breastplate
+        { 12849 }, -- Demon Kissed Sack
+        { 9224 }, -- Potion of Demon Slaying
+    } },
+    { id = 4764, name = "Doomrigger's Clasp", side = "Alliance", requiredLevel = 57, xp = 1650, objective = "Bring Doomrigger's Clasp to Mayara Brightwing in the Burning Steppes.", description = "Doomrigger's Coffer is in the Rookery. Then take Delivery to Ridgewell to Count Remington Ridgewell in Stormwind Keep for the reward.\n\nOptional introductory quest:", start = { description = "Morgan's Vigil, Burning Steppes", location = { 1428, 84.8, 69 }, npc = "Mayara Brightwing" }, turnIn = { description = "Morgan's Vigil, Burning Steppes", location = { 1428, 84.8, 69 }, npc = "Mayara Brightwing" }, items = {
+        { 15861 }, -- #15861
+        { 15860 }, -- #15860
+    } },
+    { id = 4768, name = "The Darkstone Tablet", side = "Horde", requiredLevel = 57, xp = 8300, objective = "Bring the Darkstone Tablet to Shadow Mage Vivian Lagrave in Kargath.", description = "The Darkstone Tablet lies on the ground in the Rookery.\n\nOptional introductory quest:", start = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Shadowmage Vivian Lagrave" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Shadowmage Vivian Lagrave" }, items = {
+        { 15861 }, -- #15861
+        { 15860 }, -- #15860
+    } },
+    { id = 5047, name = "Finkle Einhorn, At Your Service!", side = "Both", requiredLevel = 57, xp = 6600, objective = "Talk to Malyfous Darkhammer in Everlook.", description = "He appears from The Beast's corpse after the fight. Malyfous then offers the Pristine Hide of the Beast exchanges.", start = { description = "From The Beast's corpse, Upper Blackrock Spire" }, turnIn = { description = "Everlook, Winterspring", npc = "Malyfous Darkhammer" }, items = {} },
+    { id = 5160, name = "The Matron Protectorate", side = "Both", requiredLevel = 57, xp = 6600, objective = "Travel to Winterspring and find Haleh. Give her Awbee's scale.", description = "Awbee is the wounded blue dragon near the arena route after Rend. Use the rune deep in the Mazthoril cave to reach Haleh.", start = { description = "Upper Blackrock Spire", npc = "Awbee" }, turnIn = { description = "Mazthoril, Winterspring", npc = "Haleh" }, items = {} },
+})

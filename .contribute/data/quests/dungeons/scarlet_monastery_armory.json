@@ -1,3 +1,129 @@
 {
-  "quests": []
+  "quests": [
+    {
+      "id": 261,
+      "name": "Down the Scarlet Path",
+      "side": "Alliance",
+      "requiredLevel": 34,
+      "objective": "Destroy 30 Undead Ravagers, then return to Brother Anton at Nijel's Point.",
+      "start": {
+        "npc": "Brother Anton",
+        "location": [1443, 66.4, 7.8],
+        "description": "Desolace"
+      },
+      "turnIn": {
+        "npc": "Brother Anton",
+        "location": [1443, 66.4, 7.8],
+        "description": "Desolace"
+      },
+      "items": []
+    },
+    {
+      "id": 1048,
+      "name": "Into The Scarlet Monastery",
+      "side": "Horde",
+      "requiredLevel": 33,
+      "xp": 5150,
+      "objective": "Kill High Inquisitor Whitemane, Scarlet Commander Mograine, Herod, the Scarlet Champion and Houndmaster Loksey and then report back to Varimathras in the Undercity.",
+      "description": "Herod is in the Armory; Loksey in the Library; Mograine and Whitemane in the Cathedral.",
+      "start": {
+        "npc": "Varimathras",
+        "location": [1458, 56.2, 92.6],
+        "description": "Undercity"
+      },
+      "turnIn": {
+        "npc": "Varimathras",
+        "location": [1458, 56.2, 92.6],
+        "description": "Undercity"
+      },
+      "items": [
+        {
+          "item": 6802,
+          "name": "Sword of Omen"
+        },
+        {
+          "item": 6803,
+          "name": "Prophetic Cane"
+        },
+        {
+          "item": 10711,
+          "name": "Dragon's Blood Necklace"
+        }
+      ]
+    },
+    {
+      "id": 1052,
+      "name": "Down the Scarlet Path",
+      "side": "Alliance",
+      "requiredLevel": 34,
+      "objective": "Take Brother Anton's Letter of Commendation to Raleigh the Devout in Southshore.",
+      "requires": [261],
+      "start": {
+        "npc": "Brother Anton",
+        "location": [1443, 66.4, 7.8],
+        "description": "Desolace"
+      },
+      "turnIn": {
+        "npc": "Raleigh the Devout"
+      },
+      "items": []
+    },
+    {
+      "id": 1053,
+      "name": "In the Name of the Light",
+      "side": "Alliance",
+      "requiredLevel": 34,
+      "xp": 4700,
+      "objective": "Kill High Inquisitor Whitemane, Scarlet Commander Mograine, Herod, the Scarlet Champion and Houndmaster Loksey and then report back to Raleigh the Devout in Southshore.",
+      "description": "Herod is in the Armory; Loksey in the Library; Mograine and Whitemane in the Cathedral.\n\nOptional introductory quest:",
+      "requires": [1052],
+      "start": {
+        "npc": "Raleigh the Devout",
+        "location": [1424, 51.4, 58.4],
+        "description": "Southshore"
+      },
+      "turnIn": {
+        "npc": "Raleigh the Devout",
+        "location": [1424, 51.4, 58.4],
+        "description": "Southshore"
+      },
+      "items": [
+        {
+          "item": 6829,
+          "name": "Sword of Serenity"
+        },
+        {
+          "item": 6830,
+          "name": "Bonebiter"
+        },
+        {
+          "item": 6831,
+          "name": "Black Menace"
+        },
+        {
+          "item": 11262,
+          "name": "Orb of Lorica"
+        }
+      ]
+    },
+    {
+      "id": 6141,
+      "name": "Brother Anton",
+      "side": "Alliance",
+      "requiredLevel": 34,
+      "xp": 300,
+      "objective": "Speak with Brother Anton in Desolace.",
+      "description": "Introductory step leading to In the Name of the Light.\n\nOPTIONAL, not required",
+      "start": {
+        "npc": "Brother Crowley",
+        "location": [1453, 52.6, 43.2],
+        "description": "Cathedral of Light, Stormwind"
+      },
+      "turnIn": {
+        "npc": "Brother Anton",
+        "description": "Nijel's Point, Desolace"
+      },
+      "items": []
+    }
+  ]
 }

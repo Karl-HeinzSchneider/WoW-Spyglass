@@ -60,5 +60,8 @@ Data:AddQuests(18901, {
         { 7750 }, -- Mantle of Woe
         { 4643 }, -- Grimsteel Cape
     } },
-    { id = 1113, name = "Hearts of Zeal", side = "Horde", requiredLevel = 30, xp = 3300, objective = "Bring 20 Hearts of Zeal from the Scarlet Monastery to Master Apothecary Faranell.", requires = { { id = 1109, name = "Going, Going, Guano!" } }, start = { description = "Undercity.", location = { 1458, 48, 69 }, npc = "Master Apothecary Faranell" }, turnIn = { description = "Undercity.", npc = "Master Apothecary Faranell" }, items = {} },
+    { id = 1113, name = "Hearts of Zeal", side = "Horde", requiredLevel = 30, xp = 3300, objective = "Bring 20 Hearts of Zeal from the Scarlet Monastery to Master Apothecary Faranell.", requires = { { id = 1109, name = "Going, Going, Guano!" } }, start = { description = "Undercity.", location = { 1458, 48, 69 }, npc = "Master Apothecary Faranell" }, turnIn = { description = "Undercity.", location = { 1458, 48, 69 }, npc = "Master Apothecary Faranell" }, items = {} },
+    { id = 78699, name = "The Eye of Bhossca", side = "Both", class = "ROGUE", requiredLevel = 25, xp = 6900, objective = "Collect C's payment from the Dead Drop near Pyrewood Village.", description = "Rogue class quest after The Horn of Xelthos; C's next letter (around level 30) sends you back to the Dead Drop. Wear the Scarlet Initiate's Uniform in every wing: stealth or attacking removes it.\n\nSolo job: you must do it alone, outside any group.", requires = { { id = 78676, name = "The Eye of Bhossca" } }, start = { description = "Dead Drop, Pyrewood Village, Silverpine Forest", location = { 1421, 47.1, 71.1 } }, turnIn = { description = "Pyrewood Village, Silverpine Forest", npc = "Dead Drop" }, items = {
+        { 277246 }, -- Ruby-Adorned Blade
+    } },
 })

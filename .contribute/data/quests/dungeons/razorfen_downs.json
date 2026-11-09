@@ -1,3 +1,138 @@
 {
-  "quests": []
+  "quests": [
+    {
+      "id": 3341,
+      "name": "Bring the End",
+      "side": "Horde",
+      "requiredLevel": 37,
+      "xp": 4300,
+      "objective": "Andrew Brownell wants you to kill Amnennar the Coldbringer and return his skull.",
+      "start": {
+        "npc": "Andrew Brownell",
+        "location": [1458, 74, 32.4],
+        "description": "Undercity"
+      },
+      "turnIn": {
+        "npc": "Andrew Brownell",
+        "location": [1458, 74, 32.4],
+        "description": "Undercity"
+      },
+      "items": [
+        {
+          "item": 10823,
+          "name": "Vanquisher's Sword"
+        },
+        {
+          "item": 10824,
+          "name": "Amberglow Talisman"
+        }
+      ]
+    },
+    {
+      "id": 3523,
+      "name": "Scourge of the Downs",
+      "requiredLevel": 32,
+      "objective": "If you agree to aid Belnistrasz, speak with him again and hand the Oathstone he gave you back to him.",
+      "start": {
+        "npc": "Belnistrasz",
+        "description": "Razorfen Downs"
+      },
+      "turnIn": {
+        "npc": "Belnistrasz",
+        "description": "Razorfen Downs"
+      },
+      "items": []
+    },
+    {
+      "id": 3525,
+      "name": "Extinguishing the Idol",
+      "side": "Both",
+      "requiredLevel": 32,
+      "xp": 4250,
+      "objective": "Escort Belnistrasz to the Quilboar's idol in Razorfen Downs. Protect Belnistrasz while he performs the ritual to shut down the idol.",
+      "description": "Waves of undead attack during the ritual. Talk to the brazier near the idol afterwards to finish.",
+      "requires": [3523],
+      "start": {
+        "npc": "Belnistrasz",
+        "description": "Razorfen Downs"
+      },
+      "turnIn": {
+        "npc": "Belnistrasz's Brazier",
+        "description": "Razorfen Downs"
+      },
+      "items": [
+        {
+          "item": 10710,
+          "name": "Dragonclaw Ring"
+        }
+      ]
+    },
+    {
+      "id": 3636,
+      "name": "Bring the Light",
+      "side": "Alliance",
+      "requiredLevel": 39,
+      "xp": 4300,
+      "objective": "Archbishop Benedictus wants you to slay Amnennar the Coldbringer in Razorfen Downs.",
+      "start": {
+        "npc": "Archbishop Benedictus",
+        "location": [1453, 49.6, 44.8],
+        "description": "Stormwind"
+      },
+      "turnIn": {
+        "npc": "Archbishop Benedictus",
+        "location": [1453, 49.6, 44.8],
+        "description": "Stormwind"
+      },
+      "items": [
+        {
+          "item": 10823,
+          "name": "Vanquisher's Sword"
+        },
+        {
+          "item": 10824,
+          "name": "Amberglow Talisman"
+        }
+      ]
+    },
+    {
+      "id": 6626,
+      "name": "A Host of Evil",
+      "side": "Both",
+      "requiredLevel": 28,
+      "xp": 3450,
+      "objective": "Kill 8 Razorfen Battleguard, 8 Razorfen Thornweavers, and 8 Death's Head Cultists and return to Myriam Moonsinger near the entrance to Razorfen Downs.",
+      "description": "These mobs are outside the instance, around the entrance.",
+      "start": {
+        "npc": "Myriam Moonsinger",
+        "location": [1413, 49, 94.8],
+        "description": "Razorfen Downs thorn maze, The Barrens"
+      },
+      "turnIn": {
+        "npc": "Myriam Moonsinger",
+        "location": [1413, 49, 94.8],
+        "description": "Razorfen Downs thorn maze, The Barrens"
+      },
+      "items": []
+    },
+    {
+      "id": 97196,
+      "name": "The Coldbringer's Eye",
+      "side": "Horde",
+      "requiredLevel": 34,
+      "xp": 8600,
+      "objective": "Recover The Coldbringer's Eye from Razorfen Downs.",
+      "start": {
+        "npc": "Sutara Plainstalker",
+        "location": [1412, 34.4, 22.8],
+        "description": "Skywatcher Plateau, Mulgore"
+      },
+      "turnIn": {
+        "npc": "Sutara Plainstalker",
+        "location": [1412, 34.4, 22.8],
+        "description": "Skywatcher Plateau, Mulgore"
+      },
+      "items": []
+    }
+  ]
 }

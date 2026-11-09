@@ -1,3 +1,187 @@
 {
-  "quests": []
+  "quests": [
+    {
+      "id": 5526,
+      "name": "Shards of the Felvine",
+      "side": "Both",
+      "requiredLevel": 56,
+      "xp": 8300,
+      "objective": "Find the Felvine in Dire Maul and acquire a shard from it. Chances are you'll only be able to procure one with the demise of Alzzin the Wildshaper. Use the Reliquary of Purity to securely seal the shard inside, and return it to Rabine Saturna in Nighthaven, Moonglade.",
+      "description": "Kill Alzzin the Wildshaper, pick up a Felvine Shard near the vine and seal it in the Reliquary of Purity.",
+      "requires": [5527],
+      "start": {
+        "npc": "Rabine Saturna",
+        "location": [1450, 51.6, 44.4],
+        "description": "Nighthaven, Moonglade"
+      },
+      "turnIn": {
+        "npc": "Rabine Saturna",
+        "location": [1450, 51.6, 44.4],
+        "description": "Nighthaven, Moonglade"
+      },
+      "items": [
+        {
+          "item": 18535,
+          "name": "Milli's Shield"
+        },
+        {
+          "item": 18536,
+          "name": "Milli's Lexicon"
+        }
+      ]
+    },
+    {
+      "id": 5527,
+      "name": "A Reliquary of Purity",
+      "requiredLevel": 56,
+      "objective": "Travel to Silithus and search for a Reliquary of Purity within the ruins of Southwind Village. If you are able to find it, return with it to Rabine Saturna in Nighthaven, Moonglade.",
+      "start": {
+        "npc": "Rabine Saturna",
+        "location": [1450, 51.6, 44.4],
+        "description": "Moonglade"
+      },
+      "turnIn": {
+        "npc": "Rabine Saturna",
+        "location": [1450, 51.6, 44.4],
+        "description": "Moonglade"
+      },
+      "items": []
+    },
+    {
+      "id": 7441,
+      "name": "Pusillin and the Elder Azj'Tordin",
+      "side": "Both",
+      "requiredLevel": 54,
+      "xp": 7750,
+      "objective": "Travel to Dire Maul and locate the Imp, Pusillin. Convince Pusillin to give you Azj'Tordin's Book of Incantations through any means necessary. Return to Azj'Tordin at the Lariss Pavilion in Feralas should you recover the Book of Incantations.",
+      "description": "Chase and talk to Pusillin through the wing until he fights, then kill him for the book. He also drops the Crescent Key.",
+      "start": {
+        "npc": "Azj'Tordin",
+        "location": [1444, 76.8, 37.4],
+        "description": "Lariss Pavilion, Feralas"
+      },
+      "turnIn": {
+        "npc": "Azj'Tordin",
+        "location": [1444, 76.8, 37.4],
+        "description": "Lariss Pavilion, Feralas"
+      },
+      "items": [
+        {
+          "item": 18411,
+          "name": "Spry Boots"
+        },
+        {
+          "item": 18410,
+          "name": "Sprinter's Sword"
+        }
+      ]
+    },
+    {
+      "id": 7463,
+      "name": "Arcane Refreshment",
+      "side": "Both",
+      "class": "Mage",
+      "requiredLevel": 60,
+      "xp": 6600,
+      "objective": "Travel to the Warpwood Quarter of Dire Maul and slay the water elemental, Hydrospawn. Return to Lorekeeper Lydros in the Athenaeum with the Hydrospawn Essence.",
+      "description": "Mage class quest. Lydros is in the Athenaeum (North/West); Hydrospawn Essence drops from Hydrospawn in East. Rewards Conjure Water (Rank 7).",
+      "start": {
+        "npc": "Lorekeeper Lydros",
+        "description": "Dire Maul"
+      },
+      "turnIn": {
+        "npc": "Lorekeeper Lydros",
+        "description": "Dire Maul"
+      },
+      "items": []
+    },
+    {
+      "id": 7488,
+      "name": "Lethtendris's Web",
+      "side": "Alliance",
+      "requiredLevel": 54,
+      "xp": 7550,
+      "objective": "Bring Lethtendris' Web to Latronicus Moonspear at the Feathermoon Stronghold in Feralas.",
+      "description": "The web drops from Lethtendris.\n\nOptional introductory quest:",
+      "start": {
+        "npc": "Latronicus Moonspear",
+        "location": [1444, 30.4, 46],
+        "description": "Feathermoon Stronghold, Feralas"
+      },
+      "turnIn": {
+        "npc": "Latronicus Moonspear",
+        "location": [1444, 30.4, 46],
+        "description": "Feathermoon Stronghold, Feralas"
+      },
+      "items": [
+        {
+          "item": 18491,
+          "name": "Lorespinner"
+        }
+      ]
+    },
+    {
+      "id": 7489,
+      "name": "Lethtendris's Web",
+      "side": "Horde",
+      "requiredLevel": 54,
+      "xp": 7550,
+      "objective": "Bring Lethtendris's Web to Talo Thornhoof at Camp Mojache in Feralas.",
+      "description": "The web drops from Lethtendris.\n\nOptional introductory quest:",
+      "start": {
+        "npc": "Talo Thornhoof",
+        "location": [1444, 76, 43.8],
+        "description": "Camp Mojache, Feralas"
+      },
+      "turnIn": {
+        "npc": "Talo Thornhoof",
+        "location": [1444, 76, 43.8],
+        "description": "Camp Mojache, Feralas"
+      },
+      "items": [
+        {
+          "item": 18491,
+          "name": "Lorespinner"
+        }
+      ]
+    },
+    {
+      "id": 7492,
+      "name": "Camp Mojache",
+      "side": "Horde",
+      "requiredLevel": 54,
+      "xp": 0,
+      "objective": "Speak with Talo Thornhoof at Camp Mojache in Feralas.",
+      "description": "Introductory step leading to Lethtendris's Web.\n\nOPTIONAL, not required",
+      "start": {
+        "npc": "Harbinger Balthazad",
+        "location": [1458, 63.9, 44.1],
+        "description": "Undercity (or Warcaller Gorlach, Orgrimmar / Bluff Runner Windstrider, Thunder Bluff)"
+      },
+      "turnIn": {
+        "npc": "Talo Thornhoof",
+        "description": "Camp Mojache, Feralas"
+      },
+      "items": []
+    },
+    {
+      "id": 7494,
+      "name": "Feathermoon Stronghold",
+      "side": "Alliance",
+      "requiredLevel": 54,
+      "xp": 0,
+      "objective": "Speak with Latronicus Moonspear at the Feathermoon Stronghold in Feralas.",
+      "description": "Introductory step leading to Lethtendris's Web.\n\nOPTIONAL, not required",
+      "start": {
+        "npc": "Crier Goodman",
+        "location": [1453, 56.4, 74.1],
+        "description": "Stormwind (or Courier Hammerfall, Ironforge / Herald Moonstalker, Darnassus)"
+      },
+      "turnIn": {
+        "npc": "Latronicus Moonspear",
+        "description": "Feathermoon Stronghold, Feralas"
+      },
+      "items": []
+    }
+  ]
 }

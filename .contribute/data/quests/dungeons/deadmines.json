@@ -342,6 +342,7 @@
       "requires": [142],
       "start": {
         "npc": "Defias Traitor",
+        "location": [1436, 55.7, 47.5],
         "description": "Sentinel Hill, Westfall."
       },
       "turnIn": {
@@ -501,6 +502,7 @@
     {
       "id": 92819,
       "name": "Destruction in Deadmines",
+      "side": "Alliance",
       "requiredLevel": 9,
       "xp": 680,
       "objective": "Use the detonator.",
@@ -532,6 +534,7 @@
       },
       "turnIn": {
         "npc": "Jordan Stilwell",
+        "location": [1426, 52.6, 36.8],
         "description": "Gates of Ironforge, Dun Morogh."
       },
       "items": [
@@ -553,6 +556,7 @@
       },
       "turnIn": {
         "npc": "Daphne Stilwell",
+        "location": [1436, 42.2, 88.6],
         "description": "Westfall."
       },
       "items": []
@@ -565,6 +569,7 @@
       "requires": [1651],
       "start": {
         "npc": "Daphne Stilwell",
+        "location": [1436, 41.7, 89.2],
         "description": "Westfall."
       },
       "turnIn": {
@@ -581,6 +586,7 @@
       "requires": [1652],
       "start": {
         "npc": "Duthorian Rall",
+        "location": [1453, 50.5, 47.5],
         "description": "Cathedral Square, Stormwind."
       },
       "turnIn": {
@@ -602,6 +608,7 @@
       },
       "turnIn": {
         "npc": "Jordan Stilwell",
+        "location": [1426, 52.6, 36.8],
         "description": "Gates of Ironforge, Dun Morogh."
       },
       "items": []

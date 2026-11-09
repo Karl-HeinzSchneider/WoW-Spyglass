@@ -1,0 +1,139 @@
+{
+  "quests": [
+    {
+      "id": 92069,
+      "name": "Claws That Rend, Tusks that Gore",
+      "side": "Both",
+      "requiredLevel": 45,
+      "xp": 12400,
+      "objective": "Bring the Claws of the Great Bear and the Tusks of the Unbroken to Ogtinc in Azshara.",
+      "description": "Withermaw and Bonesnout are on different paths: take both.",
+      "start": {
+        "npc": "Ogtinc",
+        "location": [1447, 42.4, 42.6],
+        "description": "Azshara (42.4, 42.6) (probably)"
+      },
+      "turnIn": {
+        "npc": "Ogtinc",
+        "location": [1447, 42.4, 42.6],
+        "description": "Azshara (42.4, 42.6)"
+      },
+      "items": [
+        {
+          "item": 260213,
+          "name": "Great Bear Claw"
+        },
+        {
+          "item": 260214,
+          "name": "Staff of Wild Beasts"
+        },
+        {
+          "item": 260215,
+          "name": "Wild Malleus"
+        }
+      ]
+    },
+    {
+      "id": 92343,
+      "name": "Get to the Roots of It",
+      "side": "Horde",
+      "requiredLevel": 45,
+      "xp": 11300,
+      "objective": "Collect 10 Nordrassil Root Caps in Blackmaw Hold.",
+      "requires": [92346],
+      "start": {
+        "npc": "Nara Wildmane",
+        "location": [1456, 75.6, 31],
+        "description": "Elder Rise, Thunder Bluff (75.6, 31.0)"
+      },
+      "turnIn": {
+        "npc": "Nara Wildmane",
+        "location": [1456, 75.6, 31],
+        "description": "Elder Rise, Thunder Bluff (75.6, 31.0)"
+      },
+      "items": []
+    },
+    {
+      "id": 92344,
+      "name": "Get to the Roots of It",
+      "side": "Alliance",
+      "requiredLevel": 45,
+      "xp": 11300,
+      "objective": "Collect 10 Nordrassil Root Caps in Blackmaw Hold.",
+      "requires": [92345],
+      "start": {
+        "npc": "Mathrengyl Bearwalker",
+        "location": [1457, 35.4, 8.4],
+        "description": "Cenarion Enclave, Darnassus (35.4, 8.4)"
+      },
+      "turnIn": {
+        "npc": "Mathrengyl Bearwalker",
+        "location": [1457, 35.4, 8.4],
+        "description": "Cenarion Enclave, Darnassus (35.4, 8.4)"
+      },
+      "items": []
+    },
+    {
+      "id": 92345,
+      "name": "Beneath Nordrassil",
+      "side": "Alliance",
+      "requiredLevel": 45,
+      "xp": 560,
+      "objective": "Speak with Mathrengyl Bearwalker in the Cenarion Enclave in Darnassus.",
+      "start": {
+        "description": "Southern Azshara (giver not known yet)"
+      },
+      "turnIn": {
+        "npc": "Mathrengyl Bearwalker",
+        "location": [1457, 35.4, 8.4],
+        "description": "Cenarion Enclave, Darnassus"
+      },
+      "items": []
+    },
+    {
+      "id": 92346,
+      "name": "Beneath Nordrassil",
+      "side": "Horde",
+      "requiredLevel": 45,
+      "xp": 560,
+      "objective": "Speak with Nara Wildmane on Elder Rise in Thunder Bluff.",
+      "start": {
+        "npc": "Jediga",
+        "location": [1447, 22.5, 51.4],
+        "description": "Valormok, Azshara (22.5, 51.4)"
+      },
+      "turnIn": {
+        "npc": "Nara Wildmane",
+        "location": [1456, 75.6, 31],
+        "description": "Elder Rise, Thunder Bluff"
+      },
+      "items": []
+    },
+    {
+      "id": 97173,
+      "name": "Blackmaw Magic",
+      "side": "Alliance",
+      "requiredLevel": 52,
+      "xp": 12800,
+      "objective": "Obtain a Blackmaw Ritual Totem from Elder Shaman Bloodmane in Blackmaw Hold.",
+      "description": "Quest giver not known yet.",
+      "start": {
+        "description": "Not known yet (probably a mage in Dalaran)"
+      },
+      "items": []
+    },
+    {
+      "id": 97198,
+      "name": "Blackmaw Magic",
+      "side": "Horde",
+      "requiredLevel": 52,
+      "xp": 16100,
+      "objective": "Obtain a Blackmaw Ritual Totem from Elder Shaman Bloodmane in Blackmaw Hold.",
+      "description": "Quest giver not known yet.",
+      "start": {
+        "description": "Not known yet (perhaps Alaana Stormwalker, Mulgore)"
+      },
+      "items": []
+    }
+  ]
+}

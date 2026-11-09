@@ -225,7 +225,8 @@
       "objective": "Travel to Ratchet to find someone who can identify the Glowing Shard, then deliver it as directed.",
       "description": "Dropped by: Mutanus the Devourer.\nVisit Sputtervalve in Ratchet near the flight master at [63.0, 37.2].",
       "start": {
-        "item": 10441
+        "item": 10441,
+        "location": [1413, 48.2, 32.8]
       },
       "turnIn": {
         "npc": "Falla Sagewind"
@@ -246,7 +247,16 @@
       "turnIn": {
         "npc": "Mebok Mizzyrix"
       },
-      "items": []
+      "items": [
+        {
+          "item": 5342,
+          "name": "Raptor Punch"
+        },
+        {
+          "item": 5343,
+          "name": "Barkeeper's Cloak"
+        }
+      ]
     },
     {
       "id": 870,

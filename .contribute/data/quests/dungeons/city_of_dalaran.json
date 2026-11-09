@@ -14,6 +14,7 @@
       },
       "turnIn": {
         "npc": "Shylamiir",
+        "location": [1453, 31.4, 62.8],
         "description": "Stormwind City."
       },
       "items": [
@@ -41,6 +42,7 @@
       },
       "turnIn": {
         "npc": "High Sorcerer Andromath",
+        "location": [1453, 48.8, 87.6],
         "description": "Stormwind City."
       },
       "items": [
@@ -70,6 +72,7 @@
       },
       "turnIn": {
         "npc": "Image of Archmage Modera",
+        "location": [1416, 9.2, 60],
         "description": "Lordamere Lake near Dalaran."
       },
       "items": [
@@ -115,6 +118,7 @@
       },
       "turnIn": {
         "npc": "Image of Archmage Modera",
+        "location": [1416, 9.2, 60],
         "description": "Lordamere Lake near Dalaran."
       },
       "items": [
@@ -179,6 +183,7 @@
       },
       "turnIn": {
         "npc": "Magus Wordeen Voidglare",
+        "location": [1424, 61.5, 20.7],
         "description": "Tarren Mill, Hillsbrad Foothills."
       },
       "items": []
@@ -197,6 +202,7 @@
       },
       "turnIn": {
         "npc": "Magus Wordeen Voidglare",
+        "location": [1424, 61.5, 20.7],
         "description": "Tarren Mill, Hillsbrad Foothills."
       },
       "items": []
@@ -216,6 +222,7 @@
       },
       "turnIn": {
         "npc": "Magus Wordeen Voidglare",
+        "location": [1424, 61.5, 20.7],
         "description": "Tarren Mill, Hillsbrad Foothills."
       },
       "items": []
@@ -280,6 +287,7 @@
       },
       "turnIn": {
         "npc": "Doctor Martin Felben",
+        "location": [1458, 46.6, 74.1],
         "description": "Undercity."
       },
       "items": [
@@ -307,6 +315,7 @@
       },
       "turnIn": {
         "npc": "Melisara",
+        "location": [1424, 62.6, 20.6],
         "description": "Tarren Mill, Hillsbrad Foothills."
       },
       "items": [

@@ -38,6 +38,7 @@
       "name": "The Wrath of Rath'mael",
       "side": "Horde",
       "requiredLevel": 15,
+      "xp": 0,
       "objective": "Kill Rath'mael in Ruins of Lordaeron.",
       "start": {
         "npc": "Deathguard Kristof"
@@ -197,7 +198,20 @@
         "npc": "Master Apothecary Faranell",
         "description": "Undercity."
       },
-      "items": []
+      "items": [
+        {
+          "item": 279864,
+          "name": "Monstrous Cleaver"
+        },
+        {
+          "item": 279865,
+          "name": "Grave Shroud"
+        },
+        {
+          "item": 279867,
+          "name": "Slain Baron's Signet"
+        }
+      ]
     },
     {
       "id": 97289,
@@ -345,6 +359,129 @@
         {
           "item": 280567,
           "name": "Small Sack of Gems"
+        }
+      ]
+    },
+    {
+      "id": 356,
+      "name": "Rear Guard Patrol",
+      "requiredLevel": 6,
+      "xp": 650,
+      "objective": "Kill 8 Bleeding Horrors and 8 Wandering Spirits, then report back to Linnea at her camp.",
+      "description": "Both are at the Balnir Farmstead, east of Linnea's camp.",
+      "start": {
+        "npc": "Deathguard Linnea",
+        "location": [1420, 65.5, 60.3],
+        "description": "camp south-east of Brill, Tirisfal Glades"
+      },
+      "turnIn": {
+        "npc": "Deathguard Linnea",
+        "location": [1420, 65.5, 60.3],
+        "description": "camp south-east of Brill, Tirisfal Glades"
+      },
+      "items": []
+    },
+    {
+      "id": 447,
+      "name": "A Recipe For Death",
+      "requiredLevel": 9,
+      "xp": 900,
+      "objective": "Collect 6 Grizzled Bear Hearts and 6 samples of Skittering Blood and deliver them to Master Apothecary Faranell in the Undercity.",
+      "start": {
+        "npc": "Apothecary Renferrel",
+        "location": [1421, 42.8, 40.9],
+        "description": "The Sepulcher, Silverpine Forest"
+      },
+      "turnIn": {
+        "npc": "Master Apothecary Faranell",
+        "location": [1458, 48.8, 69.3],
+        "description": "Undercity"
+      },
+      "items": [
+        {
+          "item": 3448,
+          "name": "Senggin Root"
+        }
+      ]
+    },
+    {
+      "id": 450,
+      "name": "A Recipe For Death",
+      "requiredLevel": 9,
+      "xp": 1350,
+      "objective": "Retrieve Apothecary Berard's journal from Pyrewood Village and take it to Apothecary Renferrel at the Sepulcher.",
+      "description": "Group quest: the inn is in Pyrewood Village, among hostile villagers.",
+      "requires": [447],
+      "start": {
+        "npc": "Master Apothecary Faranell",
+        "location": [1458, 48.8, 69.3],
+        "description": "Undercity"
+      },
+      "turnIn": {
+        "npc": "Apothecary Renferrel",
+        "location": [1421, 42.8, 40.9],
+        "description": "The Sepulcher, Silverpine Forest"
+      },
+      "items": []
+    },
+    {
+      "id": 451,
+      "name": "A Recipe For Death",
+      "requiredLevel": 9,
+      "xp": 2050,
+      "objective": "Bring 6 samples of Lake Creeper Moss, 6 samples of Lake Skulker Moss and a Hardened Tumor to Master Apothecary Faranell in the Undercity.",
+      "requires": [450],
+      "start": {
+        "npc": "Apothecary Renferrel",
+        "location": [1421, 42.8, 40.9],
+        "description": "The Sepulcher, Silverpine Forest"
+      },
+      "turnIn": {
+        "npc": "Master Apothecary Faranell",
+        "location": [1458, 48.8, 69.3],
+        "description": "Undercity"
+      },
+      "items": [
+        {
+          "item": 3451,
+          "name": "Nightglow Concoction"
+        },
+        {
+          "item": 3582,
+          "name": "Acidproof Cloak"
+        }
+      ]
+    },
+    {
+      "id": 99156,
+      "name": "Rear Guard Patrol",
+      "requiredLevel": 6,
+      "xp": 900,
+      "objective": "Kill Riptear in north-east Tirisfal Glades and bring Riptear's Heart to Deathguard Linnea.",
+      "description": "Group quest: Riptear is a level 13 elite.",
+      "requires": [356],
+      "start": {
+        "npc": "Deathguard Linnea",
+        "location": [1420, 65.5, 60.3],
+        "description": "camp south-east of Brill, Tirisfal Glades"
+      },
+      "turnIn": {
+        "npc": "Deathguard Linnea",
+        "location": [1420, 65.5, 60.3],
+        "description": "camp south-east of Brill, Tirisfal Glades"
+      },
+      "items": [
+        {
+          "item": 286742,
+          "name": "Riptear's Cleaver"
+        },
+        {
+          "item": 286743,
+          "name": "Riptear's Spare Arm"
+        },
+        {
+          "item": 286744,
+          "name": "Thrice-Stitched Flesh"
         }
       ]
     }

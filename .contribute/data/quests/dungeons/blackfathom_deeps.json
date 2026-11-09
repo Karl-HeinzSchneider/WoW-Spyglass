@@ -354,6 +354,133 @@
           "name": "Dreamer's Chestguard"
         }
       ]
+    },
+    {
+      "id": 95034,
+      "name": "The Debt",
+      "side": "Horde",
+      "requiredLevel": 18,
+      "objective": "Speak with Lumina Windsinger in the Sepulcher.",
+      "description": "The questline starts at level 18 with Diplomatic Incident from Danitha Morr at Bandarion Keep, Tirisfal Glades. It takes you to Fenris Isle, where you free Lumina Windsinger from Fenris Keep.",
+      "start": {
+        "npc": "Lumina Windsinger",
+        "location": [1421, 43.3, 41],
+        "description": "The Sepulcher, Silverpine Forest"
+      },
+      "turnIn": {
+        "npc": "Lumina Windsinger",
+        "location": [1421, 43.3, 41],
+        "description": "The Sepulcher, Silverpine Forest"
+      },
+      "items": []
+    },
+    {
+      "id": 95036,
+      "name": "A Moon-Kissed Blade",
+      "side": "Horde",
+      "requiredLevel": 20,
+      "objective": "Speak with Trevan Rol in the Sepulcher and bring him the materials he requires.",
+      "requires": [95034],
+      "start": {
+        "npc": "Lumina Windsinger",
+        "location": [1421, 43.3, 41],
+        "description": "The Sepulcher, Silverpine Forest"
+      },
+      "turnIn": {
+        "npc": "Trevan Rol",
+        "location": [1421, 43.4, 41],
+        "description": "The Sepulcher, Silverpine Forest"
+      },
+      "items": []
+    },
+    {
+      "id": 95111,
+      "name": "An Underrated Talent",
+      "side": "Horde",
+      "requiredLevel": 20,
+      "objective": "Speak with Ott and ask him to forge your blade.",
+      "requires": [95036],
+      "start": {
+        "npc": "Trevan Rol",
+        "location": [1421, 43.4, 41],
+        "description": "The Sepulcher, Silverpine Forest"
+      },
+      "turnIn": {
+        "npc": "Ott",
+        "location": [1424, 60.4, 26.2],
+        "description": "Tarren Mill, Hillsbrad Foothills"
+      },
+      "items": []
+    },
+    {
+      "id": 95125,
+      "name": "Ott's Masterwork",
+      "side": "Horde",
+      "requiredLevel": 20,
+      "objective": "Watch as Ott forges your blade.",
+      "requires": [95111],
+      "start": {
+        "npc": "Ott",
+        "location": [1424, 60.4, 26.2],
+        "description": "Tarren Mill, Hillsbrad Foothills"
+      },
+      "turnIn": {
+        "npc": "Ott",
+        "location": [1424, 60.4, 26.2],
+        "description": "Tarren Mill, Hillsbrad Foothills"
+      },
+      "items": []
+    },
+    {
+      "id": 95126,
+      "name": "The Moonsilver Blade",
+      "side": "Horde",
+      "requiredLevel": 20,
+      "objective": "Bring Ott's Masterwork to Trevan Rol in Silverpine Forest.",
+      "requires": [95125],
+      "start": {
+        "npc": "Ott",
+        "location": [1424, 60.4, 26.2],
+        "description": "Tarren Mill, Hillsbrad Foothills"
+      },
+      "turnIn": {
+        "npc": "Trevan Rol",
+        "location": [1421, 43.4, 41],
+        "description": "The Sepulcher, Silverpine Forest"
+      },
+      "items": [
+        {
+          "item": 268484,
+          "name": "Moonsilver Blade"
+        }
+      ]
+    },
+    {
+      "id": 95140,
+      "name": "Old Fire-Eye",
+      "side": "Horde",
+      "class": "Paladin",
+      "requiredLevel": 20,
+      "xp": 2650,
+      "objective": "Use the Moonsilver Blade to destroy Old-Fire Eye in Silverpine Forest.",
+      "description": "Paladin class quest for undead and tauren. In this dungeon: Whitestone Oak Lumber drops from Goblin Woodcarvers. The other parts are the Enchanted Silver Ingot (Shadowfang Keep) and the Purified Kor Gem (Blackfathom Deeps).\n\nThis is a chain quest with a step in The Deadmines",
+      "requires": [95126],
+      "start": {
+        "npc": "Lumina Windsinger",
+        "location": [1421, 43.3, 41],
+        "description": "The Sepulcher, Silverpine Forest"
+      },
+      "turnIn": {
+        "npc": "Lumina Windsinger",
+        "location": [1421, 43.3, 41],
+        "description": "The Sepulcher, Silverpine Forest"
+      },
+      "items": [
+        {
+          "item": 267369,
+          "name": "Wolfsbane"
+        }
+      ]
     }
   ]
 }

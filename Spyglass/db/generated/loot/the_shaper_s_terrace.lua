@@ -45,3 +45,10 @@ Data:AddBossLoot(3507, { -- Direhorn Matriarch
 Data:AddTrashLoot(3001, {
     { 287037 }, -- #287037
 })
+
+Data:AddQuests(3001, {
+    { id = 95928, name = "Crystalline Elements", side = "Horde", requiredLevel = 55, xp = 17655, objective = "Bring Mayena Earthseeker a Moist Crystal, a Charged Crystal, a Noxious Crystal and a Fiery Crystal from Shaper's Terrace.", start = { description = "Mulgore (34.8, 22.2)", location = { 1412, 34.8, 22.2 }, npc = "Mayena Earthseeker" }, turnIn = { description = "Mulgore (34.8, 22.2)", location = { 1412, 34.8, 22.2 }, npc = "Mayena Earthseeker" }, items = {
+        { 279904 }, -- #279904
+        { 279906 }, -- #279906
+    } },
+})

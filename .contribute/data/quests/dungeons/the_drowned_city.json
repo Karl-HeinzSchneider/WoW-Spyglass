@@ -1,0 +1,463 @@
+{
+  "quests": [
+    {
+      "id": 203,
+      "name": "The Second Rebellion",
+      "side": "Alliance",
+      "requiredLevel": 30,
+      "xp": 1950,
+      "objective": "Kill 15 Kurzen Jungle Fighters.",
+      "description": "Done together with the other of Sergeant Yohwa's two quests (The Second Rebellion and Bad Medicine); Brother Nimetz offers Kurzen's Mystery once both are handed in.",
+      "start": {
+        "npc": "Sergeant Yohwa",
+        "location": [1434, 38, 3.4],
+        "description": "Rebel Camp, Stranglethorn Vale"
+      },
+      "turnIn": {
+        "npc": "Sergeant Yohwa",
+        "location": [1434, 38, 3.4],
+        "description": "Rebel Camp, Stranglethorn Vale"
+      },
+      "items": []
+    },
+    {
+      "id": 204,
+      "name": "Bad Medicine",
+      "side": "Alliance",
+      "requiredLevel": 30,
+      "xp": 2700,
+      "objective": "Bring 7 Jungle Remedies and 1 Venom Fern Extract to Sergeant Yohwa.",
+      "description": "Done together with the other of Sergeant Yohwa's two quests (The Second Rebellion and Bad Medicine); Brother Nimetz offers Kurzen's Mystery once both are handed in.",
+      "start": {
+        "npc": "Sergeant Yohwa",
+        "location": [1434, 38, 3.4],
+        "description": "Rebel Camp, Stranglethorn Vale"
+      },
+      "turnIn": {
+        "npc": "Sergeant Yohwa",
+        "location": [1434, 38, 3.4],
+        "description": "Rebel Camp, Stranglethorn Vale"
+      },
+      "items": []
+    },
+    {
+      "id": 205,
+      "name": "Troll Witchery",
+      "side": "Alliance",
+      "requiredLevel": 30,
+      "xp": 3150,
+      "objective": "Bring 4 Skullsplitter Fetishes to Brother Nimetz.",
+      "requires": [207],
+      "start": {
+        "npc": "Brother Nimetz",
+        "location": [1434, 37.8, 3.6],
+        "description": "Rebel Camp, Stranglethorn Vale"
+      },
+      "turnIn": {
+        "npc": "Brother Nimetz",
+        "location": [1434, 37.8, 3.6],
+        "description": "Rebel Camp, Stranglethorn Vale"
+      },
+      "items": []
+    },
+    {
+      "id": 207,
+      "name": "Kurzen's Mystery",
+      "side": "Alliance",
+      "requiredLevel": 30,
+      "xp": 3550,
+      "objective": "Find the four troll tablets on the coast and in the Vile Reef, and bring back the First, Second, Third and Fourth Troll Legends.",
+      "requires": [203, 204],
+      "start": {
+        "npc": "Brother Nimetz",
+        "location": [1434, 37.8, 3.6],
+        "description": "Rebel Camp, Stranglethorn Vale"
+      },
+      "turnIn": {
+        "npc": "Brother Nimetz",
+        "location": [1434, 37.8, 3.6],
+        "description": "Rebel Camp, Stranglethorn Vale"
+      },
+      "items": []
+    },
+    {
+      "id": 629,
+      "name": "The Vile Reef",
+      "side": "Horde",
+      "requiredLevel": 30,
+      "xp": 2850,
+      "objective": "Bring a Tablet Shard to Kin'weelay at Grom'gol Base Camp.",
+      "description": "Group quest: the Saltscale murlocs at the Vile Reef are elite.",
+      "start": {
+        "npc": "Kin'weelay",
+        "location": [1434, 32.3, 27.7],
+        "description": "Grom'gol Base Camp, Stranglethorn Vale"
+      },
+      "turnIn": {
+        "npc": "Kin'weelay",
+        "location": [1434, 32.3, 27.7],
+        "description": "Grom'gol Base Camp, Stranglethorn Vale"
+      },
+      "items": []
+    },
+    {
+      "id": 95748,
+      "name": "The Gurubashi Legends of Old",
+      "side": "Horde",
+      "requiredLevel": 30,
+      "xp": 3150,
+      "objective": "Use the hide and charcoal to make a rubbing of the Third Troll Legend tablet.",
+      "requires": [629],
+      "start": {
+        "npc": "Kin'weelay",
+        "location": [1434, 32.3, 27.7],
+        "description": "Grom'gol Base Camp, Stranglethorn Vale"
+      },
+      "turnIn": {
+        "npc": "Kin'weelay",
+        "location": [1434, 32.3, 27.7],
+        "description": "Grom'gol Base Camp, Stranglethorn Vale"
+      },
+      "items": []
+    },
+    {
+      "id": 95770,
+      "name": "Locating the Lost City",
+      "side": "Horde",
+      "requiredLevel": 30,
+      "xp": 3150,
+      "objective": "Explore just west of the Vile Reef and find the cavern entrance, then report back to Kin'weelay.",
+      "description": "The cave is in Sunken Hollow, underwater around 21, 28: the entrance to the Drowned City.",
+      "requires": [95748],
+      "start": {
+        "npc": "Kin'weelay",
+        "location": [1434, 32.3, 27.7],
+        "description": "Grom'gol Base Camp, Stranglethorn Vale"
+      },
+      "turnIn": {
+        "npc": "Kin'weelay",
+        "location": [1434, 32.3, 27.7],
+        "description": "Grom'gol Base Camp, Stranglethorn Vale"
+      },
+      "items": []
+    },
+    {
+      "id": 95773,
+      "name": "Enemies in the Water",
+      "side": "Horde",
+      "requiredLevel": 30,
+      "xp": 2850,
+      "objective": "Gather 10 Brinescale Tridents from Brinescale Skirmishers.",
+      "description": "Commander Aggro'gosh offers it once The Gurubashi Legends of Old is handed in.",
+      "requires": [95748],
+      "start": {
+        "npc": "Commander Aggro'gosh",
+        "location": [1434, 32.2, 28.8],
+        "description": "Grom'gol Base Camp, Stranglethorn Vale"
+      },
+      "turnIn": {
+        "npc": "Commander Aggro'gosh",
+        "location": [1434, 32.2, 28.8],
+        "description": "Grom'gol Base Camp, Stranglethorn Vale"
+      },
+      "items": []
+    },
+    {
+      "id": 95775,
+      "name": "The Drowned City",
+      "side": "Horde",
+      "requiredLevel": 30,
+      "xp": 8450,
+      "objective": "Use the hide and charcoal to make rubbings of the four Tablets of I'lalai in the Drowned City.",
+      "requires": [95770],
+      "start": {
+        "npc": "Kin'weelay",
+        "location": [1434, 32.3, 27.7],
+        "description": "Grom'gol Base Camp, Stranglethorn Vale"
+      },
+      "turnIn": {
+        "npc": "Kin'weelay",
+        "location": [1434, 32.3, 27.7],
+        "description": "Grom'gol Base Camp, Stranglethorn Vale"
+      },
+      "items": []
+    },
+    {
+      "id": 95776,
+      "name": "The Only Good Brinescale...",
+      "side": "Horde",
+      "requiredLevel": 30,
+      "xp": 9500,
+      "objective": "Kill Var'Taka in the Drowned City.",
+      "description": "Commander Aggro'gosh offers it once Enemies in the Water and Locating the Lost City (Kin'weelay) are both handed in.",
+      "requires": [95770, 95773],
+      "start": {
+        "npc": "Commander Aggro'gosh",
+        "location": [1434, 32.2, 28.8],
+        "description": "Grom'gol Base Camp, Stranglethorn Vale"
+      },
+      "turnIn": {
+        "npc": "Commander Aggro'gosh",
+        "location": [1434, 32.2, 28.8],
+        "description": "Grom'gol Base Camp, Stranglethorn Vale"
+      },
+      "items": [
+        {
+          "item": 279888,
+          "name": "Tidesoaked Leggings"
+        },
+        {
+          "item": 279889,
+          "name": "Naga Priestess's Mantle"
+        }
+      ]
+    },
+    {
+      "id": 95786,
+      "name": "An Acquaintance in Southshore",
+      "side": "Alliance",
+      "requiredLevel": 30,
+      "xp": 3150,
+      "objective": "Take the Savage Coast Report Bundle (the fetishes, the troll legends and the scouting report) to Loremaster Dibbs in Southshore.",
+      "requires": [205],
+      "start": {
+        "npc": "Brother Nimetz",
+        "location": [1434, 37.8, 3.6],
+        "description": "Rebel Camp, Stranglethorn Vale"
+      },
+      "turnIn": {
+        "npc": "Loremaster Dibbs",
+        "location": [1424, 50.6, 57.1],
+        "description": "Southshore, Hillsbrad Foothills"
+      },
+      "items": []
+    },
+    {
+      "id": 95787,
+      "name": "Take Two With Water",
+      "side": "Alliance",
+      "requiredLevel": 30,
+      "xp": 8450,
+      "objective": "Make rubbings of the four Tablets of I'lalai in the Drowned City.",
+      "description": "Quest giver not confirmed yet. Lead-in: An Acquaintance in Southshore, taking the Savage Coast Report Bundle to Loremaster Dibbs.",
+      "requires": [95786],
+      "start": {
+        "npc": "Loremaster Dibbs",
+        "location": [1424, 50.6, 57.1],
+        "description": "Southshore, Hillsbrad Foothills"
+      },
+      "turnIn": {
+        "npc": "Loremaster Dibbs",
+        "location": [1424, 50.6, 57.1],
+        "description": "Southshore, Hillsbrad Foothills"
+      },
+      "items": []
+    },
+    {
+      "id": 95788,
+      "name": "Magics of the Drowned City",
+      "side": "Alliance",
+      "requiredLevel": 30,
+      "xp": 8450,
+      "objective": "Collect 5 I'lalai Fetishes from the trolls in the Drowned City.",
+      "requires": [95786],
+      "start": {
+        "npc": "Loremaster Dibbs",
+        "location": [1424, 50.6, 57.1],
+        "description": "Southshore, Hillsbrad Foothills"
+      },
+      "turnIn": {
+        "npc": "Loremaster Dibbs",
+        "location": [1424, 50.6, 57.1],
+        "description": "Southshore, Hillsbrad Foothills"
+      },
+      "items": []
+    },
+    {
+      "id": 95789,
+      "name": "Shady Saltseers",
+      "side": "Both",
+      "requiredLevel": 34,
+      "xp": 10450,
+      "objective": "Collect 10 Voodoo-Infused Artifacts from the Saltseer pirates in the Drowned City.",
+      "start": {
+        "npc": "Krazek",
+        "location": [1434, 26.9, 77.2],
+        "description": "Booty Bay, Stranglethorn Vale"
+      },
+      "turnIn": {
+        "npc": "Krazek",
+        "location": [1434, 26.9, 77.2],
+        "description": "Booty Bay, Stranglethorn Vale"
+      },
+      "items": [
+        {
+          "item": 279882,
+          "name": "Rusted Troll War Belt"
+        },
+        {
+          "item": 279930,
+          "name": "Saltseer's Helm"
+        }
+      ]
+    },
+    {
+      "id": 95791,
+      "name": "The Saltseer Captain",
+      "side": "Both",
+      "requiredLevel": 34,
+      "xp": 10450,
+      "objective": "Slay Captain Dreadrise and 3 Saltseer Coroners in the Drowned City.",
+      "start": {
+        "npc": "Krazek",
+        "location": [1434, 26.9, 77.2],
+        "description": "Booty Bay, Stranglethorn Vale"
+      },
+      "turnIn": {
+        "npc": "Krazek",
+        "location": [1434, 26.9, 77.2],
+        "description": "Booty Bay, Stranglethorn Vale"
+      },
+      "items": [
+        {
+          "item": 279883,
+          "name": "Mutinous Cuffs"
+        },
+        {
+          "item": 279884,
+          "name": "South Seas Shroud"
+        }
+      ]
+    },
+    {
+      "id": 95798,
+      "name": "The Web of Magic",
+      "side": "Alliance",
+      "requiredLevel": 30,
+      "xp": 2350,
+      "objective": "Take the I'lalai Fetish to Abra Cadabra in Dalaran.",
+      "description": "The Kirin Tor only let noteworthy visitors into Dalaran.",
+      "requires": [95788],
+      "start": {
+        "npc": "Loremaster Dibbs",
+        "location": [1424, 50.6, 57.1],
+        "description": "Southshore, Hillsbrad Foothills"
+      },
+      "turnIn": {
+        "npc": "Abra Cadabra",
+        "location": [1416, 13.2, 69.6],
+        "description": "Dalaran"
+      },
+      "items": [
+        {
+          "item": 279879,
+          "name": "Rune-Etched Epaulets"
+        },
+        {
+          "item": 279878,
+          "name": "Apprentice Sorcerer's Slacks"
+        }
+      ]
+    },
+    {
+      "id": 95799,
+      "name": "Findings for the Explorer's League",
+      "side": "Alliance",
+      "requiredLevel": 30,
+      "xp": 2350,
+      "objective": "Take Dibbs' I'lalai Translations to Historian Karnik in Ironforge.",
+      "requires": [95787],
+      "start": {
+        "npc": "Loremaster Dibbs",
+        "location": [1424, 50.6, 57.1],
+        "description": "Southshore, Hillsbrad Foothills"
+      },
+      "turnIn": {
+        "npc": "Historian Karnik",
+        "location": [1455, 77.5, 11.8],
+        "description": "Hall of Explorers, Ironforge"
+      },
+      "items": [
+        {
+          "item": 279880,
+          "name": "Ancient Voodoo Pouch"
+        },
+        {
+          "item": 279881,
+          "name": "Intrepid Explorer's Chainmail"
+        }
+      ]
+    },
+    {
+      "id": 96078,
+      "name": "A Tale Spun Around the Fire",
+      "side": "Horde",
+      "requiredLevel": 30,
+      "xp": 2350,
+      "objective": "Take the tablet etchings to Master Gadrin in Sen'jin Village in Durotar.",
+      "requires": [95775],
+      "start": {
+        "npc": "Kin'weelay",
+        "location": [1434, 32.3, 27.7],
+        "description": "Grom'gol Base Camp, Stranglethorn Vale"
+      },
+      "turnIn": {
+        "npc": "Master Gadrin",
+        "location": [1411, 55.8, 74.4],
+        "description": "Sen'jin Village, Durotar"
+      },
+      "items": [
+        {
+          "item": 279885,
+          "name": "Ceremonial Mallet"
+        },
+        {
+          "item": 279886,
+          "name": "Sacrificial Sword"
+        },
+        {
+          "item": 279887,
+          "name": "I'lalai Flayer"
+        }
+      ]
+    },
+    {
+      "id": 96774,
+      "name": "Ancient Gurubashi Idol",
+      "side": "Horde",
+      "requiredLevel": 30,
+      "xp": 8800,
+      "objective": "Recover an Ancient Gurubashi Idol from the Drowned City.",
+      "start": {
+        "npc": "Mazu'kon",
+        "location": [1412, 32.5, 20.6],
+        "description": "Mulgore"
+      },
+      "turnIn": {
+        "npc": "Mazu'kon",
+        "location": [1412, 32.5, 20.6],
+        "description": "Mulgore"
+      },
+      "items": []
+    },
+    {
+      "id": 97130,
+      "name": "Ancient Gurubashi Secrets",
+      "side": "Alliance",
+      "requiredLevel": 34,
+      "xp": 10450,
+      "objective": "Recover an Ancient Gurubashi Idol from the Drowned City.",
+      "start": {
+        "npc": "Archmage Timear",
+        "location": [1416, 15.4, 74],
+        "description": "outside where the Violet Hold stood, Dalaran, Alterac Mountains"
+      },
+      "turnIn": {
+        "npc": "Archmage Timear",
+        "location": [1416, 15.4, 74],
+        "description": "Dalaran (not confirmed)"
+      },
+      "items": []
+    }
+  ]
+}

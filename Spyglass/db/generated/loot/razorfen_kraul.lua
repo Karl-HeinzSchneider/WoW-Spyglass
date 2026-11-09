@@ -87,26 +87,31 @@ Data:AddTrashLoot(47, {
 })
 
 Data:AddQuests(47, {
-    { id = 1144, name = "Willix the Importer", side = "Both", xp = 3050, items = {} },
-    { id = 1221, name = "Blueleaf Tubers", xp = 2100, items = {} },
+    { id = 1144, name = "Willix the Importer", side = "Both", requiredLevel = 23, xp = 3050, objective = "Escort Willix the Importer out of Razorfen Kraul.", start = { description = "Willix the Importer, inside Razorfen Kraul", npc = "Willix the Importer" }, turnIn = { description = "Willix the Importer, inside Razorfen Kraul", npc = "Willix the Importer" }, items = {
+        { 6748 }, -- Monkey Ring
+        { 6750 }, -- Snake Hoop
+        { 6749 }, -- Tiger Band
+        { 274078 }, -- Boar Signet
+    } },
+    { id = 1221, name = "Blueleaf Tubers", side = "Both", requiredLevel = 20, xp = 2100, objective = "Use the Crate with Holes to summon a Snufflenose Gopher and the Command Stick to make it find 6 Blueleaf Tubers. Bring them, the Command Stick and the Crate back to Mebok Mizzyrix.", start = { description = "Mebok Mizzyrix, Ratchet, The Barrens", location = { 1413, 62, 37 }, npc = "Mebok Mizzyrix" }, turnIn = { description = "Mebok Mizzyrix, Ratchet, The Barrens", location = { 1413, 62, 37 }, npc = "Mebok Mizzyrix" }, items = {} },
     { id = 1142, name = "Mortality Wanes", side = "Alliance", requiredLevel = 25, xp = 3050, objective = "Find Treshala's Pendant and return it to Treshala Fallowbrook in Darnassus.", start = { description = "Inside Razorfen Kraul.", npc = "Heralath Fallowbrook" }, turnIn = { description = "Darnassus.", npc = "Treshala Fallowbrook" }, items = {
         { 6751 }, -- Mourning Shawl
         { 6752 }, -- Lancer Boots
         { 270047 }, -- Sentinel's Boots
     } },
-    { id = 1101, name = "The Crone of the Kraul", side = "Alliance", requiredLevel = 29, xp = 3350, objective = "Bring Razorflank's Medallion to Falfindel Waywarder in Thalanaar.", requires = { { id = 1100, name = "Lonebrow's Journal" } }, start = { description = "Thalanaar, Feralas.", location = { 1444, 89, 46 }, npc = "Falfindel Waywarder" }, turnIn = { description = "Thalanaar, Feralas.", npc = "Falfindel Waywarder" }, items = {
+    { id = 1101, name = "The Crone of the Kraul", side = "Alliance", requiredLevel = 29, xp = 3350, objective = "Bring Razorflank's Medallion to Falfindel Waywarder in Thalanaar.", requires = { { id = 1100, name = "Lonebrow's Journal" } }, start = { description = "Thalanaar, Feralas.", location = { 1444, 89, 46 }, npc = "Falfindel Waywarder" }, turnIn = { description = "Thalanaar, Feralas.", location = { 1444, 89, 46 }, npc = "Falfindel Waywarder" }, items = {
         { 4197 }, -- Berylline Pads
         { 6742 }, -- Stonefist Girdle
         { 6725 }, -- Marbled Buckler
     } },
-    { id = 1102, name = "A Vengeful Fate", side = "Horde", requiredLevel = 29, xp = 4050, objective = "Bring Razorflank's Heart to Auld Stonespire in Thunder Bluff.", start = { description = "Thunder Bluff.", location = { 1456, 36, 59 }, npc = "Auld Stonespire" }, turnIn = { description = "Thunder Bluff.", npc = "Auld Stonespire" }, items = {
+    { id = 1102, name = "A Vengeful Fate", side = "Horde", requiredLevel = 29, xp = 4050, objective = "Bring Razorflank's Heart to Auld Stonespire in Thunder Bluff.", start = { description = "Thunder Bluff.", location = { 1456, 36, 59 }, npc = "Auld Stonespire" }, turnIn = { description = "Thunder Bluff.", location = { 1456, 36, 59 }, npc = "Auld Stonespire" }, items = {
         { 4197 }, -- Berylline Pads
         { 6742 }, -- Stonefist Girdle
         { 6725 }, -- Marbled Buckler
         { 274084 }, -- Quilboar Blaster
     } },
-    { id = 1109, name = "Going, Going, Guano!", requiredLevel = 30, xp = 3300, objective = "Bring 1 pile of Kraul Guano to Master Apothecary Faranell in the Undercity.", description = "Required before Hearts of Zeal.", start = { description = "Apothecarium, Undercity.", location = { 1458, 48, 69 }, npc = "Master Apothecary Faranell" }, turnIn = { description = "Apothecarium, Undercity.", npc = "Master Apothecary Faranell" }, items = {} },
-    { id = 6521, name = "An Unholy Alliance", side = "Horde", requiredLevel = 28, xp = 3500, objective = "Bring Ambassador Malcin's Head to Varimathras in the Undercity.", description = "This quest is completed in the area OUTSIDE Razorfen Downs.", requires = { { id = 6522, name = "An Unholy Alliance" } }, start = { description = "Royal Quarter, Undercity.", npc = "Varimathras" }, turnIn = { description = "Royal Quarter, Undercity.", npc = "Varimathras" }, items = {
+    { id = 1109, name = "Going, Going, Guano!", side = "Horde", requiredLevel = 30, xp = 3300, objective = "Bring 1 pile of Kraul Guano to Master Apothecary Faranell in the Undercity.", description = "Required before Hearts of Zeal.", start = { description = "Apothecarium, Undercity.", location = { 1458, 48, 69 }, npc = "Master Apothecary Faranell" }, turnIn = { description = "Apothecarium, Undercity.", location = { 1458, 48, 69 }, npc = "Master Apothecary Faranell" }, items = {} },
+    { id = 6521, name = "An Unholy Alliance", side = "Horde", requiredLevel = 28, xp = 3500, objective = "Bring Ambassador Malcin's Head to Varimathras in the Undercity.", description = "This quest is completed in the area OUTSIDE Razorfen Downs.", requires = { { id = 6522, name = "An Unholy Alliance" } }, start = { description = "Royal Quarter, Undercity.", location = { 1458, 56.2, 92.6 }, npc = "Varimathras" }, turnIn = { description = "Royal Quarter, Undercity.", location = { 1458, 56.2, 92.6 }, npc = "Varimathras" }, items = {
         { 17039 }, -- Skullbreaker
         { 17042 }, -- Nail Spitter
         { 17043 }, -- Zealot's Robe
