@@ -52,6 +52,7 @@ Data:AddTrashLoot(18901, {
     { 7730 }, -- Cobalt Crusher
     { 7761 }, -- Steelclaw Reaver
     { 7787 }, -- Resplendent Guardian
+    { 5756 }, -- Sliverblade
 })
 
 Data:AddQuests(18901, {

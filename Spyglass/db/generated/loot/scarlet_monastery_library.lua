@@ -7,6 +7,7 @@ Data:AddBossLoot(446, { -- Houndmaster Loksey
     { 7756 }, -- Dog Training Gloves
     { 3456 }, -- Dog Whistle
     { 7710 }, -- Loksey's Training Stick
+    { 274292 }, -- Houndmaster Boomerang
 })
 
 Data:AddBossLoot(447, { -- Arcanist Doan
@@ -16,6 +17,7 @@ Data:AddBossLoot(447, { -- Arcanist Doan
     { 7712 }, -- Mantle of Doan
     { 7711 }, -- Robe of Doan
     { 7146 }, -- The Scarlet Key
+    { 274294 }, -- Library Walkers
 })
 
 Data:AddTrashLoot(18902, {
@@ -25,6 +27,7 @@ Data:AddTrashLoot(18902, {
     { 7757 }, -- Windweaver Staff
     { 7761 }, -- Steelclaw Reaver
     { 7787 }, -- Resplendent Guardian
+    { 5756 }, -- Sliverblade
 })
 
 Data:AddQuests(18902, {

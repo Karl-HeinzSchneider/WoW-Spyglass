@@ -1,0 +1,91 @@
+{
+  "map": 2974,
+  "name": "Blackmaw Hold",
+  "minLevel": 55,
+  "maxLevel": 60,
+  "icon": "Interface\\Icons\\INV_Misc_MonsterClaw_04",
+  "encounters": [
+    {
+      "id": 3315,
+      "name": "Withermaw",
+      "loot": [
+        {
+          "item": 280064,
+          "name": "Withering Grips"
+        }
+      ]
+    },
+    {
+      "id": 3316,
+      "name": "Impaan the Imprisoner",
+      "loot": []
+    },
+    {
+      "id": 3322,
+      "name": "Bonesnout the Unbroken",
+      "loot": []
+    },
+    {
+      "id": 3323,
+      "name": "Blackmaw Behemoth",
+      "loot": []
+    },
+    {
+      "id": 3327,
+      "name": "Elder Shaman Bloodmane",
+      "loot": [
+        {
+          "item": 280068,
+          "name": "Bloody Claws of Attack"
+        }
+      ]
+    },
+    {
+      "id": 3334,
+      "name": "Varrox Bleakhoof",
+      "loot": [
+        {
+          "item": 280074,
+          "name": "Scalding Flamehoof"
+        }
+      ]
+    },
+    {
+      "id": 3336,
+      "name": "Unbound Spirit",
+      "loot": [
+        {
+          "item": 280071,
+          "name": "Flamebreak Talisman"
+        }
+      ]
+    },
+    {
+      "id": -269104,
+      "name": "Moontouched Wanderer",
+      "npc": 269104,
+      "loot": [
+        {
+          "item": 280080,
+          "name": "Claymore of Two Moons"
+        },
+        {
+          "item": 280079,
+          "name": "Lunarlight Robe"
+        }
+      ]
+    },
+    {
+      "id": -269111,
+      "name": "Gortek the Apprentice",
+      "npc": 269111,
+      "loot": [
+        {
+          "item": 280077,
+          "name": "Fist of Revelation"
+        }
+      ]
+    }
+  ],
+  "trash": []
+}

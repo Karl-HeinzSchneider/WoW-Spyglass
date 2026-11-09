@@ -8,6 +8,7 @@ Data:AddBossLoot(448, { -- Herod
     { 7719 }, -- Raging Berserker's Helm
     { 7717 }, -- Ravager
     { 10330 }, -- Scarlet Leggings
+    { 274295 }, -- Band of Crimson Light
 })
 
 Data:AddTrashLoot(18903, {
@@ -18,4 +19,5 @@ Data:AddTrashLoot(18903, {
     { 7757 }, -- Windweaver Staff
     { 7761 }, -- Steelclaw Reaver
     { 7787 }, -- Resplendent Guardian
+    { 5756 }, -- Sliverblade
 })

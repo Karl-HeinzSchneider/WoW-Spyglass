@@ -19,6 +19,13 @@ Data:AddBossLoot(450, { -- High Inquisitor Whitemane
     { 7721 }, -- Hand of Righteousness
 })
 
+Data:AddBossLoot(-3976, { -- Scarlet Commander Mograine
+    { 7726 }, -- Aegis of the Scarlet Commander
+    { 7724 }, -- Gauntlets of Divinity
+    { 7723 }, -- #7723
+    { 10330 }, -- Scarlet Leggings
+})
+
 Data:AddTrashLoot(18904, {
     { 10328 }, -- Scarlet Chestpiece
     { 10331 }, -- Scarlet Gauntlets
@@ -28,4 +35,5 @@ Data:AddTrashLoot(18904, {
     { 7757 }, -- Windweaver Staff
     { 7761 }, -- Steelclaw Reaver
     { 7787 }, -- Resplendent Guardian
+    { 5756 }, -- Sliverblade
 })

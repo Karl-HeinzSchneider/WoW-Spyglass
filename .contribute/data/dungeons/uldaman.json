@@ -13,19 +13,78 @@
       "id": 547,
       "name": "Revelosh",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Revelosh",
-      "loot": []
+      "loot": [
+        {
+          "item": 9389,
+          "name": "Revelosh's Spaulders"
+        },
+        {
+          "item": 9388,
+          "name": "Revelosh's Armguards"
+        },
+        {
+          "item": 9387,
+          "name": "Revelosh's Boots"
+        },
+        {
+          "item": 9390,
+          "name": "Revelosh's Gloves"
+        }
+      ]
     },
     {
       "id": 548,
       "name": "The Lost Dwarves",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-The Lost Dwarves",
-      "loot": []
+      "loot": [
+        {
+          "item": 9400,
+          "name": "Baelog's Shortbow"
+        },
+        {
+          "item": 9401,
+          "name": "Nordic Longshank"
+        },
+        {
+          "item": 9398,
+          "name": "Worn Running Boots"
+        },
+        {
+          "item": 9394,
+          "name": "Horned Viking Helmet"
+        },
+        {
+          "item": 9403,
+          "name": "Battered Viking Shield"
+        },
+        {
+          "item": 9404,
+          "name": "Olaf's All Purpose Shield"
+        },
+        {
+          "item": 9399,
+          "name": "Precision Arrow"
+        }
+      ]
     },
     {
       "id": 549,
       "name": "Ironaya",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Ironaya",
-      "loot": []
+      "loot": [
+        {
+          "item": 9407,
+          "name": "Stoneweaver Leggings"
+        },
+        {
+          "item": 9409,
+          "name": "Ironaya's Bracers"
+        },
+        {
+          "item": 9408,
+          "name": "Ironshod Bludgeon"
+        }
+      ]
     },
     {
       "id": 1887,
@@ -37,25 +96,77 @@
       "id": 551,
       "name": "Ancient Stone Keeper",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Ancient Stone Keeper",
-      "loot": []
+      "loot": [
+        {
+          "item": 9410,
+          "name": "Cragfists"
+        },
+        {
+          "item": 9411,
+          "name": "Rockshard Pauldrons"
+        }
+      ]
     },
     {
       "id": 552,
       "name": "Galgann Firehammer",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Galgann Firehammer",
-      "loot": []
+      "loot": [
+        {
+          "item": 11311,
+          "name": "Emberscale Cape"
+        },
+        {
+          "item": 11310,
+          "name": "Flameseer Mantle"
+        },
+        {
+          "item": 9419,
+          "name": "Galgann's Firehammer"
+        },
+        {
+          "item": 9412,
+          "name": "Galgann's Fireblaster"
+        }
+      ]
     },
     {
       "id": 553,
       "name": "Grimlok",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Grimlok",
-      "loot": []
+      "loot": [
+        {
+          "item": 9415,
+          "name": "Grimlok's Tribal Vestments"
+        },
+        {
+          "item": 9414,
+          "name": "Oilskin Leggings"
+        },
+        {
+          "item": 9416,
+          "name": "Grimlok's Charge"
+        }
+      ]
     },
     {
       "id": 554,
       "name": "Archaedas",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Archaedas",
-      "loot": []
+      "loot": [
+        {
+          "item": 11118,
+          "name": "Archaedic Stone"
+        },
+        {
+          "item": 9413,
+          "name": "The Rockpounder"
+        },
+        {
+          "item": 9418,
+          "name": "Stoneslayer"
+        }
+      ]
     }
   ],
   "trash": [],

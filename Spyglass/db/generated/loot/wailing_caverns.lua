@@ -43,6 +43,7 @@ Data:AddBossLoot(590, { -- Lord Serpentis
     { 6459 }, -- Savage Trodders
     { 10411 }, -- Footpads of the Fang
     { 9741 }, -- Gem of Serpentis
+    { 273087 }, -- Blueprint: Journeyman Campfire
 })
 
 Data:AddBossLoot(591, { -- Verdan the Everliving

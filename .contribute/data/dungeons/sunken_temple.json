@@ -12,7 +12,20 @@
     {
       "id": 3582,
       "name": "Atal'alarion",
-      "loot": []
+      "loot": [
+        {
+          "item": 10800,
+          "name": "Darkwater Bracers"
+        },
+        {
+          "item": 10798,
+          "name": "Atal'alarion's Tusk Ring"
+        },
+        {
+          "item": 10799,
+          "name": "Headspike"
+        }
+      ]
     },
     {
       "id": 3583,
@@ -24,34 +37,143 @@
       "id": 3584,
       "name": "Shade of Eranikus",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Shade of Eranikus",
-      "loot": []
+      "loot": [
+        {
+          "item": 10829,
+          "name": "Dragon's Eye"
+        },
+        {
+          "item": 10833,
+          "name": "Horns of Eranikus"
+        },
+        {
+          "item": 10835,
+          "name": "Crest of Supremacy"
+        },
+        {
+          "item": 10836,
+          "name": "Rod of Corrosion"
+        },
+        {
+          "item": 10828,
+          "name": "Dire Nail"
+        },
+        {
+          "item": 10837,
+          "name": "Tooth of Eranikus"
+        }
+      ]
     },
     {
       "id": 3585,
       "name": "Hazzas",
-      "loot": []
+      "loot": [
+        {
+          "item": 12465,
+          "name": "Nightfall Drape"
+        },
+        {
+          "item": 12466,
+          "name": "Dawnspire Cord"
+        },
+        {
+          "item": 12243,
+          "name": "Smoldering Claw"
+        }
+      ]
     },
     {
       "id": 3586,
       "name": "Morphaz",
-      "loot": []
+      "loot": [
+        {
+          "item": 12465,
+          "name": "Nightfall Drape"
+        },
+        {
+          "item": 12466,
+          "name": "Dawnspire Cord"
+        },
+        {
+          "item": 12243,
+          "name": "Smoldering Claw"
+        }
+      ]
     },
     {
       "id": 3587,
       "name": "Weaver",
-      "loot": []
+      "loot": [
+        {
+          "item": 12465,
+          "name": "Nightfall Drape"
+        },
+        {
+          "item": 12466,
+          "name": "Dawnspire Cord"
+        },
+        {
+          "item": 12243,
+          "name": "Smoldering Claw"
+        }
+      ]
     },
     {
       "id": 3588,
       "name": "Dreamscythe",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Dreamscythe",
-      "loot": []
+      "loot": [
+        {
+          "item": 12465,
+          "name": "Nightfall Drape"
+        },
+        {
+          "item": 12466,
+          "name": "Dawnspire Cord"
+        },
+        {
+          "item": 12243,
+          "name": "Smoldering Claw"
+        }
+      ]
     },
     {
       "id": 3589,
       "name": "Jammal'an the Prophet",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Jammalan the Prophet",
-      "loot": []
+      "loot": [
+        {
+          "item": 10806,
+          "name": "Vestments of the Atal'ai Prophet"
+        },
+        {
+          "item": 10807,
+          "name": "Kilt of the Atal'ai Prophet"
+        },
+        {
+          "item": 10808,
+          "name": "Gloves of the Atal'ai Prophet"
+        }
+      ]
+    },
+    {
+      "id": -5711,
+      "name": "Ogom the Wretched",
+      "npc": 5711,
+      "loot": [
+        {
+          "item": 10804,
+          "name": "Fist of the Damned"
+        },
+        {
+          "item": 10803,
+          "name": "Blade of the Wretched"
+        },
+        {
+          "item": 10805,
+          "name": "Eater of the Dead"
+        }
+      ]
     }
   ],
   "trash": [],

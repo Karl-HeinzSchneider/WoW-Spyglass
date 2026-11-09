@@ -5,27 +5,112 @@ local Data = Spyglass.Data
 
 Data:AddBossLoot(267, { -- Highlord Omokk
     { 16670 }, -- Boots of Elements
+    { 12336 }, -- Gemstone of Spirestone
+    { 13166 }, -- #13166
+    { 13167 }, -- #13167
+    { 13168 }, -- #13168
+    { 13169 }, -- #13169
+    { 13170 }, -- #13170
 })
 
 Data:AddBossLoot(268, { -- Shadow Hunter Vosh'gajin
     { 16712 }, -- Shadowcraft Gloves
+    { 13255 }, -- #13255
+    { 12626 }, -- #12626
+    { 13257 }, -- #13257
+    { 12651 }, -- #12651
+    { 12653 }, -- #12653
+    { 12654 }, -- #12654
 })
 
 Data:AddBossLoot(269, { -- War Master Voone
     { 16676 }, -- Beaststalker's Gloves
+    { 12335 }, -- Gemstone of Smolderthorn
+    { 13177 }, -- #13177
+    { 13179 }, -- #13179
+    { 12582 }, -- #12582
+    { 22231 }, -- #22231
+    { 13173 }, -- #13173
 })
 
 Data:AddBossLoot(270, { -- Mother Smolderweb
     { 16715 }, -- Wildheart Boots
+    { 13244 }, -- #13244
+    { 13213 }, -- #13213
+    { 13183 }, -- #13183
+})
+
+Data:AddBossLoot(271, { -- Urok Doomhowl
+    { 13258 }, -- #13258
+    { 13259 }, -- #13259
+    { 22232 }, -- #22232
+    { 13178 }, -- #13178
+    { 13053 }, -- Doombringer
+})
+
+Data:AddBossLoot(272, { -- Quartermaster Zigris
+    { 13252 }, -- #13252
+    { 13253 }, -- #13253
+    { 12835 }, -- Plans: Annihilator
+})
+
+Data:AddBossLoot(274, { -- Halycon
+    { 13212 }, -- #13212
+    { 13211 }, -- #13211
+    { 13210 }, -- #13210
+    { 22313 }, -- #22313
 })
 
 Data:AddBossLoot(273, { -- Gizrul the Slavener
     { 16718 }, -- Wildheart Spaulders
+    { 13206 }, -- #13206
+    { 13205 }, -- #13205
+    { 13208 }, -- #13208
 })
 
 Data:AddBossLoot(275, { -- Overlord Wyrmthalak
     { 13164 }, -- Heart of the Scale
     { 16679 }, -- Beaststalker's Mantle
+    { 12337 }, -- Gemstone of Bloodaxe
+    { 13161 }, -- #13161
+    { 13162 }, -- #13162
+    { 13163 }, -- #13163
+    { 22321 }, -- #22321
+})
+
+Data:AddBossLoot(-9219, { -- Spirestone Butcher
+    { 12608 }, -- #12608
+    { 13286 }, -- #13286
+})
+
+Data:AddBossLoot(-9218, { -- Spirestone Battle Lord
+    { 13284 }, -- #13284
+    { 13285 }, -- #13285
+})
+
+Data:AddBossLoot(-9217, { -- Spirestone Lord Magus
+    { 13283 }, -- #13283
+    { 13282 }, -- #13282
+    { 13261 }, -- #13261
+})
+
+Data:AddBossLoot(-10376, { -- Crystal Fang
+    { 13185 }, -- #13185
+    { 13184 }, -- #13184
+    { 13218 }, -- #13218
+})
+
+Data:AddBossLoot(-9596, { -- Bannok Grimaxe
+    { 12634 }, -- #12634
+    { 12637 }, -- #12637
+    { 12621 }, -- #12621
+    { 12838 }, -- Plans: Arcanite Reaper
+})
+
+Data:AddBossLoot(-9718, { -- Ghok Bashguud
+    { 13203 }, -- #13203
+    { 13204 }, -- #13204
+    { 13198 }, -- #13198
 })
 
 Data:AddTrashLoot(22901, {

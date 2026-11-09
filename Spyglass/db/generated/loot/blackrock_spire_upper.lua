@@ -5,15 +5,38 @@ local Data = Spyglass.Data
 
 Data:AddBossLoot(3062, { -- Pyroguard Emberseer
     { 16672 }, -- Gauntlets of Elements
+    { 12905 }, -- #12905
+    { 12926 }, -- #12926
+    { 12927 }, -- #12927
+    { 12929 }, -- #12929
 })
 
 Data:AddBossLoot(3063, { -- Warchief Rend Blackhand
     { 16733 }, -- Spaulders of Valor
     { 16669 }, -- Pauldrons of Elements
+    { 12583 }, -- #12583
+    { 12587 }, -- #12587
+    { 12935 }, -- #12935
+    { 12936 }, -- #12936
+    { 12939 }, -- #12939
+    { 12940 }, -- #12940
+    { 18102 }, -- #18102
+    { 18103 }, -- #18103
+    { 18104 }, -- #18104
+    { 22247 }, -- #22247
 })
 
 Data:AddBossLoot(3068, { -- The Beast
     { 16729 }, -- Lightforge Spaulders
+    { 12709 }, -- #12709
+    { 12963 }, -- #12963
+    { 12964 }, -- #12964
+    { 12965 }, -- #12965
+    { 12966 }, -- #12966
+    { 12967 }, -- #12967
+    { 12968 }, -- #12968
+    { 12969 }, -- #12969
+    { 22311 }, -- #22311
 })
 
 Data:AddBossLoot(3069, { -- General Drakkisath
@@ -26,6 +49,57 @@ Data:AddBossLoot(3069, { -- General Drakkisath
     { 16721 }, -- Shadowcraft Tunic
     { 16726 }, -- Lightforge Breastplate
     { 16730 }, -- Breastplate of Valor
+    { 13141 }, -- #13141
+    { 13098 }, -- #13098
+    { 13142 }, -- #13142
+    { 12602 }, -- #12602
+    { 22253 }, -- #22253
+    { 22267 }, -- #22267
+    { 22269 }, -- #22269
+    { 22268 }, -- #22268
+    { 15730 }, -- Pattern: Red Dragonscale Breastplate
+})
+
+Data:AddBossLoot(3070, { -- Lord Valthalak
+    { 22335 }, -- #22335
+    { 22336 }, -- #22336
+    { 22337 }, -- #22337
+    { 22339 }, -- #22339
+    { 22340 }, -- #22340
+    { 22342 }, -- #22342
+    { 22343 }, -- #22343
+    { 22302 }, -- #22302
+})
+
+Data:AddBossLoot(-10264, { -- Solakar Flamewreath
+    { 12589 }, -- #12589
+    { 12603 }, -- #12603
+    { 12606 }, -- #12606
+    { 12609 }, -- #12609
+    { 16695 }, -- Devout Mantle
+})
+
+Data:AddBossLoot(-10509, { -- Jed Runewatcher
+    { 12604 }, -- #12604
+    { 12605 }, -- #12605
+    { 12930 }, -- #12930
+})
+
+Data:AddBossLoot(-10899, { -- Goraluk Anvilcrack
+    { 18048 }, -- #18048
+    { 13498 }, -- #13498
+    { 18047 }, -- #18047
+    { 13502 }, -- #13502
+    { 12834 }, -- Plans: Arcanite Champion
+    { 12837 }, -- Plans: Masterwork Stormhammer
+})
+
+Data:AddBossLoot(-10339, { -- Gyth
+    { 12952 }, -- #12952
+    { 12953 }, -- #12953
+    { 12960 }, -- #12960
+    { 16669 }, -- Pauldrons of Elements
+    { 22225 }, -- #22225
 })
 
 Data:AddTrashLoot(22902, {

@@ -1,0 +1,63 @@
+{
+  "map": 2994,
+  "name": "Alcaz Prison",
+  "minLevel": 48,
+  "maxLevel": 53,
+  "icon": "Interface\\Icons\\INV_Misc_Key_14",
+  "encounters": [
+    {
+      "id": 3403,
+      "name": "Overseer Wrex",
+      "loot": [
+        {
+          "item": 276734,
+          "name": "Wrex's Pinky Ring"
+        }
+      ]
+    },
+    {
+      "id": 3409,
+      "name": "Blazeroar",
+      "loot": []
+    },
+    {
+      "id": 3410,
+      "name": "Tidemistress Ca'zass",
+      "loot": [
+        {
+          "item": 276736,
+          "name": "Seascale Bracers"
+        }
+      ]
+    },
+    {
+      "id": 3415,
+      "name": "The Questioner",
+      "loot": [
+        {
+          "item": 276742,
+          "name": "Girdle of Extracted Answers"
+        },
+        {
+          "item": 276743,
+          "name": "Fingerbreaker Stamp"
+        },
+        {
+          "item": 276741,
+          "name": "Defias Enforcer's Shoulderpads"
+        }
+      ]
+    },
+    {
+      "id": 3418,
+      "name": "Katerina the Cleaner",
+      "loot": []
+    }
+  ],
+  "trash": [
+    {
+      "item": 287021,
+      "name": "Defias Enforcer's Prowlers"
+    }
+  ]
+}

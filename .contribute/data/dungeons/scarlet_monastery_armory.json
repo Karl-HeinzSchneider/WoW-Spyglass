@@ -31,6 +31,10 @@
         {
           "item": 10330,
           "name": "Scarlet Leggings"
+        },
+        {
+          "item": 274295,
+          "name": "Band of Crimson Light"
         }
       ]
     }
@@ -63,6 +67,10 @@
     {
       "item": 7787,
       "name": "Resplendent Guardian"
+    },
+    {
+      "item": 5756,
+      "name": "Sliverblade"
     }
   ]
 }

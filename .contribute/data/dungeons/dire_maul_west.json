@@ -14,45 +14,184 @@
       "id": 350,
       "name": "Tendris Warpwood",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Tendris Warpwood",
-      "loot": []
+      "loot": [
+        {
+          "item": 18390,
+          "name": "Tanglemoss Leggings"
+        },
+        {
+          "item": 18393,
+          "name": "Warpwood Binding"
+        },
+        {
+          "item": 18353,
+          "name": "Stoneflower Staff"
+        }
+      ]
     },
     {
       "id": 347,
       "name": "Illyanna Ravenoak",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Illyanna Ravenoak",
-      "loot": []
+      "loot": [
+        {
+          "item": 18383,
+          "name": "Force Imbued Gauntlets"
+        },
+        {
+          "item": 18386,
+          "name": "Padre's Trousers"
+        }
+      ]
     },
     {
       "id": 348,
       "name": "Magister Kalendris",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Magister Kalendris",
-      "loot": []
+      "loot": [
+        {
+          "item": 18374,
+          "name": "Flamescarred Shoulders"
+        },
+        {
+          "item": 18397,
+          "name": "Elder Magus Pendant"
+        },
+        {
+          "item": 18371,
+          "name": "Mindtap Talisman"
+        }
+      ]
     },
     {
       "id": 349,
       "name": "Immol'thar",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Immolthar",
-      "loot": []
+      "loot": [
+        {
+          "item": 18377,
+          "name": "Quickdraw Gloves"
+        },
+        {
+          "item": 18379,
+          "name": "Odious Greaves"
+        },
+        {
+          "item": 18381,
+          "name": "Evil Eye Pendant"
+        },
+        {
+          "item": 18391,
+          "name": "Eyestalk Cord"
+        },
+        {
+          "item": 18385,
+          "name": "Robe of Everlasting Night"
+        },
+        {
+          "item": 18384,
+          "name": "Bile-etched Spaulders"
+        },
+        {
+          "item": 18389,
+          "name": "Cloak of the Cosmos"
+        },
+        {
+          "item": 18394,
+          "name": "Demon Howl Wristguards"
+        },
+        {
+          "item": 18372,
+          "name": "Blade of the New Moon"
+        },
+        {
+          "item": 18370,
+          "name": "Vigilance Charm"
+        }
+      ]
     },
     {
       "id": 361,
       "name": "Prince Tortheldrin",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Prince Tortheldrin",
-      "loot": []
+      "loot": [
+        {
+          "item": 18382,
+          "name": "Fluctuating Cloak"
+        },
+        {
+          "item": 18395,
+          "name": "Emerald Flame Ring"
+        },
+        {
+          "item": 18380,
+          "name": "Eldritch Reinforced Legplates"
+        },
+        {
+          "item": 18378,
+          "name": "Silvermoon Leggings"
+        },
+        {
+          "item": 18396,
+          "name": "Mind Carver"
+        },
+        {
+          "item": 18392,
+          "name": "Distracting Dagger"
+        },
+        {
+          "item": 18376,
+          "name": "Timeworn Mace"
+        },
+        {
+          "item": 18375,
+          "name": "Bracers of the Eclipse"
+        },
+        {
+          "item": 18388,
+          "name": "Stoneshatter"
+        },
+        {
+          "item": 18373,
+          "name": "Chestplate of Tranquility"
+        }
+      ]
     },
     {
       "id": 2793,
       "name": "Lord Hel'nurath",
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\lord_helnurath.blp",
       "displayID": 14556,
-      "loot": []
+      "loot": [
+        {
+          "item": 18755,
+          "name": "Xorothian Firestick"
+        },
+        {
+          "item": 18756,
+          "name": "Dreadguard's Protector"
+        },
+        {
+          "item": 18754,
+          "name": "Fel Hardened Bracers"
+        },
+        {
+          "item": 18757,
+          "name": "Diabolic Mantle"
+        }
+      ]
     },
     {
       "id": 2794,
       "name": "Tsu'zee",
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\tsuzee.blp",
       "displayID": 11250,
-      "loot": []
+      "loot": [
+        {
+          "item": 18387,
+          "name": "Brightspark Gloves"
+        }
+      ]
     }
   ],
   "trash": [],

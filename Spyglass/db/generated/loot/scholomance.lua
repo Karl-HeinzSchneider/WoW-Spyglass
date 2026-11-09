@@ -5,18 +5,83 @@ local Data = Spyglass.Data
 
 Data:AddBossLoot(2805, { -- Kirtonos
     { 16734 }, -- Boots of Valor
+    { 13960 }, -- #13960
+    { 13967 }, -- #13967
+    { 13969 }, -- #13969
+    { 14024 }, -- #14024
+    { 13957 }, -- #13957
 })
 
 Data:AddBossLoot(2804, { -- Jandice Barov
     { 16701 }, -- Dreadmist Mantle
+    { 14545 }, -- #14545
+    { 14541 }, -- #14541
+    { 14548 }, -- #14548
+    { 18690 }, -- #18690
+    { 18689 }, -- #18689
+    { 22394 }, -- #22394
 })
 
 Data:AddBossLoot(2811, { -- Rattlegore
     { 16711 }, -- Shadowcraft Boots
+    { 14528 }, -- #14528
+    { 14531 }, -- #14531
+    { 14537 }, -- #14537
+    { 14538 }, -- #14538
+    { 14539 }, -- #14539
+    { 18686 }, -- #18686
+})
+
+Data:AddBossLoot(2809, { -- Marduk Blackpool
+    { 14576 }, -- #14576
+    { 18692 }, -- #18692
+})
+
+Data:AddBossLoot(2813, { -- Vectus
+    { 14577 }, -- #14577
+    { 18691 }, -- #18691
 })
 
 Data:AddBossLoot(2810, { -- Ras Frostwhisperer
     { 16689 }, -- Magister's Mantle
+    { 14487 }, -- #14487
+    { 14502 }, -- #14502
+    { 18694 }, -- #18694
+    { 18696 }, -- #18696
+    { 13952 }, -- #13952
+    { 14340 }, -- #14340
+    { 14522 }, -- #14522
+    { 14525 }, -- #14525
+    { 18693 }, -- #18693
+})
+
+Data:AddBossLoot(2803, { -- Instructor Malicia
+    { 16710 }, -- Shadowcraft Bracers
+})
+
+Data:AddBossLoot(2802, { -- Doctor Theolen Krastinov
+    { 16684 }, -- Magister's Gloves
+})
+
+Data:AddBossLoot(2808, { -- Lorekeeper Polkelt
+    { 16705 }, -- Dreadmist Wraps
+})
+
+Data:AddBossLoot(2812, { -- The Ravenian
+    { 16716 }, -- Wildheart Belt
+})
+
+Data:AddBossLoot(2807, { -- Lord Alexei Barov
+    { 14626 }, -- #14626
+    { 14637 }, -- #14637
+    { 18680 }, -- #18680
+    { 18681 }, -- #18681
+    { 18682 }, -- #18682
+    { 18683 }, -- #18683
+    { 18684 }, -- #18684
+    { 14611 }, -- #14611
+    { 14624 }, -- #14624
+    { 16722 }, -- Lightforge Bracers
 })
 
 Data:AddBossLoot(2801, { -- Darkmaster Gandling
@@ -29,6 +94,13 @@ Data:AddBossLoot(2801, { -- Darkmaster Gandling
     { 16720 }, -- Wildheart Cowl
     { 16727 }, -- Lightforge Helm
     { 16731 }, -- Helm of Valor
+    { 13951 }, -- #13951
+    { 13398 }, -- #13398
+    { 13938 }, -- #13938
+    { 13944 }, -- #13944
+    { 13953 }, -- #13953
+    { 13964 }, -- #13964
+    { 22433 }, -- #22433
 })
 
 Data:AddTrashLoot(289, {

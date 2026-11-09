@@ -14,32 +14,117 @@
       "id": 343,
       "name": "Zevrim Thornhoof",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Zevrim Thornhoof",
-      "loot": []
+      "loot": [
+        {
+          "item": 18313,
+          "name": "Helm of Awareness"
+        },
+        {
+          "item": 18323,
+          "name": "Satyr's Bow"
+        },
+        {
+          "item": 18319,
+          "name": "Fervent Helm"
+        }
+      ]
     },
     {
       "id": 344,
       "name": "Hydrospawn",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Hydrospawn",
-      "loot": []
+      "loot": [
+        {
+          "item": 18322,
+          "name": "Waterspout Boots"
+        },
+        {
+          "item": 18317,
+          "name": "Tempest Talisman"
+        },
+        {
+          "item": 18324,
+          "name": "Waveslicer"
+        }
+      ]
     },
     {
       "id": 345,
       "name": "Lethtendris",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lethtendris",
-      "loot": []
+      "loot": [
+        {
+          "item": 18325,
+          "name": "Felhide Cap"
+        },
+        {
+          "item": 18311,
+          "name": "Quel'dorai Channeling Rod"
+        }
+      ]
     },
     {
       "id": 2792,
       "name": "Pusillin",
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\pusillin.blp",
       "displayID": 7552,
-      "loot": []
+      "loot": [
+        {
+          "item": 18316,
+          "name": "Obsidian Bauble"
+        },
+        {
+          "item": 18267,
+          "name": "Recipe: Runn Tum Tuber Surprise"
+        }
+      ]
     },
     {
       "id": 346,
       "name": "Alzzin the Wildshaper",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Alzzin the Wildshaper",
-      "loot": []
+      "loot": [
+        {
+          "item": 18309,
+          "name": "Gloves of Restoration"
+        },
+        {
+          "item": 18310,
+          "name": "Fiendish Machete"
+        },
+        {
+          "item": 18312,
+          "name": "Energized Chestplate"
+        },
+        {
+          "item": 18314,
+          "name": "Ring of Demonic Guile"
+        },
+        {
+          "item": 18315,
+          "name": "Ring of Demonic Potency"
+        },
+        {
+          "item": 18318,
+          "name": "Merciful Greaves"
+        },
+        {
+          "item": 18321,
+          "name": "Energetic Rod"
+        },
+        {
+          "item": 18326,
+          "name": "Razor Gauntlets"
+        },
+        {
+          "item": 18327,
+          "name": "Whipvine Cord"
+        },
+        {
+          "item": 18328,
+          "name": "Shadewood Cloak"
+        }
+      ]
     }
   ],
   "trash": [],

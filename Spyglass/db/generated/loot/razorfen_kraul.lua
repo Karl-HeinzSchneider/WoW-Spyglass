@@ -57,6 +57,7 @@ Data:AddBossLoot(2778, { -- Charlga Razorflank
     { 252455 }, -- Defender's Leather Helm
     { 252456 }, -- Totemic Leather Helm
     { 252515 }, -- Wisdom's Leather Helm
+    { 17008 }, -- Small Scroll
 })
 
 Data:AddBossLoot(-4425, { -- Blind Hunter
@@ -82,6 +83,7 @@ Data:AddTrashLoot(47, {
     { 2264 }, -- Mantle of Thieves
     { 4438 }, -- Pugilist Bracers
     { 2039 }, -- Plains Ring
+    { 1488 }, -- Avenger's Armor
 })
 
 Data:AddQuests(47, {

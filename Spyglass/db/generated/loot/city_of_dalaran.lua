@@ -57,6 +57,7 @@ Data:AddTrashLoot(2959, {
     { 286987 }, -- Violet Sorcerer's Sandals
     { 286989 }, -- Violet Sorcerer's Wraps
     { 286988 }, -- Violet Sorcerer's Leggings
+    { 286995 }, -- Guardian's Emblem
 })
 
 Data:AddQuests(2959, {
