@@ -40,6 +40,11 @@ SG:RegisterModule({
             SG.InstanceFolder(2720), -- The Searing Basin
             SG.InstanceFolder(2784), -- Demon Fall Canyon
             SG.InstanceFolder(2875), -- Karazhan Crypts
+            SG.InstanceFolder(2994),
+            SG.InstanceFolder(2970),
+            SG.InstanceFolder(3001),
+            SG.InstanceFolder(2974),
+            SG.InstanceFolder(3039),
             -- SG.InstanceFolder(2921), -- Naxxramas (5-man)
             SG.InstanceFolder(2959), -- City of Dalaran
             SG.InstanceFolder(2998), -- Excavation Site: Wetlands

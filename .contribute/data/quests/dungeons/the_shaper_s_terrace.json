@@ -1,0 +1,32 @@
+{
+  "quests": [
+    {
+      "id": 95928,
+      "name": "Crystalline Elements",
+      "side": "Horde",
+      "requiredLevel": 55,
+      "xp": 17655,
+      "objective": "Bring Mayena Earthseeker a Moist Crystal, a Charged Crystal, a Noxious Crystal and a Fiery Crystal from Shaper's Terrace.",
+      "start": {
+        "npc": "Mayena Earthseeker",
+        "location": [1412, 34.8, 22.2],
+        "description": "Mulgore (34.8, 22.2)"
+      },
+      "turnIn": {
+        "npc": "Mayena Earthseeker",
+        "location": [1412, 34.8, 22.2],
+        "description": "Mulgore (34.8, 22.2)"
+      },
+      "items": [
+        {
+          "item": 279904,
+          "name": "Crystalline Pauldrons"
+        },
+        {
+          "item": 279906,
+          "name": "Potent Treads"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,383 @@
+{
+  "quests": [
+    {
+      "id": 94879,
+      "name": "Scraps of Knowledge",
+      "side": "Alliance",
+      "requiredLevel": 36,
+      "xp": 3150,
+      "objective": "Collect 5 Twilight Pages from within Sunnyglade for Ashe Amberhall in Farholde Keep.",
+      "description": "Done alongside Curious Trinkets.",
+      "start": {
+        "npc": "Ashe Amberhall",
+        "location": [2548, 66.6, 81],
+        "description": "Farholde Keep, Riverglades"
+      },
+      "turnIn": {
+        "npc": "Ashe Amberhall",
+        "location": [2548, 66.6, 81],
+        "description": "Farholde Keep, Riverglades"
+      },
+      "items": []
+    },
+    {
+      "id": 94881,
+      "name": "Curious Trinkets",
+      "side": "Alliance",
+      "requiredLevel": 36,
+      "xp": 2850,
+      "objective": "Retrieve 25 Twilight Charms from Twilight Shadowmancers and Twilight Neophytes in Sunnyglade for Ashe Amberhall in Farholde Keep.",
+      "description": "Done alongside Scraps of Knowledge.",
+      "requires": [94879],
+      "start": {
+        "npc": "Ashe Amberhall",
+        "location": [2548, 66.6, 81],
+        "description": "Farholde Keep, Riverglades"
+      },
+      "turnIn": {
+        "npc": "Ashe Amberhall",
+        "location": [2548, 66.6, 81],
+        "description": "Farholde Keep, Riverglades"
+      },
+      "items": []
+    },
+    {
+      "id": 94890,
+      "name": "Bring Me His Head",
+      "side": "Alliance",
+      "requiredLevel": 38,
+      "xp": 5050,
+      "objective": "Defeat Overlord Kilgar within the Twilight's Shroud and bring his head to Sergeant Riftan.",
+      "description": "Handing it in to Sergeant Riftan unlocks Twilight Mementos.",
+      "start": {
+        "npc": "Farholde Keep",
+        "description": "Riverglades (giver not known yet)"
+      },
+      "turnIn": {
+        "npc": "Sergeant Riftan",
+        "description": "Farholde Keep, Riverglades"
+      },
+      "items": [
+        {
+          "item": 275046,
+          "name": "Twilight Overlord Drape"
+        },
+        {
+          "item": 275049,
+          "name": "Farholde Bastion"
+        }
+      ]
+    },
+    {
+      "id": 94907,
+      "name": "A Small Favor",
+      "side": "Alliance",
+      "objective": "Summon a Twilight's Thrall from a conduit within the Twilight's Shroud and capture it with Amberhall's Soulstone.",
+      "requires": [94881],
+      "start": {
+        "npc": "Ashe Amberhall",
+        "description": "Riverglades (exact spot not known yet)"
+      },
+      "turnIn": {
+        "npc": "Ashe Amberhall",
+        "description": "Riverglades"
+      },
+      "items": []
+    },
+    {
+      "id": 94968,
+      "name": "Eye of Mugg",
+      "side": "Horde",
+      "requiredLevel": 40,
+      "xp": 13000,
+      "objective": "Infiltrate Krol'dok Stronghold and return to Krom'rosh with proof of their leader's demise.",
+      "start": {
+        "npc": "Krom'rosh",
+        "description": "Riverglades (exact spot not known yet)"
+      },
+      "turnIn": {
+        "npc": "Krom'rosh",
+        "description": "Riverglades"
+      },
+      "items": [
+        {
+          "item": 279852,
+          "name": "Rock on Stick"
+        },
+        {
+          "item": 279480,
+          "name": "Bigger Rock on Bigger Stick"
+        },
+        {
+          "item": 279853,
+          "name": "Stick No Rock"
+        }
+      ]
+    },
+    {
+      "id": 94972,
+      "name": "Tome of Twilight",
+      "side": "Horde",
+      "requiredLevel": 39,
+      "xp": 12450,
+      "objective": "Recover the Tome of Twilight from Krol'dok Stronghold.",
+      "start": {
+        "description": "Riverglades (giver not known yet)"
+      },
+      "turnIn": {
+        "description": "Riverglades (not known yet)"
+      },
+      "items": [
+        {
+          "item": 279859,
+          "name": "Indoctrinated Choker"
+        },
+        {
+          "item": 279860,
+          "name": "Convert's Bindings"
+        }
+      ]
+    },
+    {
+      "id": 94973,
+      "name": "Krol'dok Moulding",
+      "side": "Horde",
+      "requiredLevel": 38,
+      "xp": 3300,
+      "objective": "Find someone in Rog'mar who may know about the mould.",
+      "start": {
+        "item": 267137,
+        "description": "Krol'dok Moulding, looted in Krol'dok Stronghold"
+      },
+      "turnIn": {
+        "npc": "Kreza Darkthorn",
+        "description": "Rog'mar, Riverglades (probably)"
+      },
+      "items": []
+    },
+    {
+      "id": 94974,
+      "name": "Key Ingredients",
+      "side": "Horde",
+      "requiredLevel": 38,
+      "xp": 3300,
+      "objective": "Bring 4 Thick Leather and 12 Iron Bar to Kreza Darkthorn.",
+      "description": "Keep any Krol'dok Moulding you loot: it starts the quest before this one.",
+      "requires": [94973],
+      "start": {
+        "npc": "Kreza Darkthorn",
+        "description": "Rog'mar, Riverglades"
+      },
+      "turnIn": {
+        "npc": "Kreza Darkthorn",
+        "description": "Rog'mar, Riverglades"
+      },
+      "items": [
+        {
+          "item": 267089,
+          "name": "Krol'dok Compound Key"
+        }
+      ]
+    },
+    {
+      "id": 94975,
+      "name": "A Token of Vengeance",
+      "side": "Horde",
+      "requiredLevel": 38,
+      "xp": 9250,
+      "objective": "Collect 15 Cultist Ears from the Twilight's Hammer in Krol'dok Stronghold.",
+      "start": {
+        "description": "Riverglades (giver not known yet)"
+      },
+      "turnIn": {
+        "description": "Riverglades (not known yet)"
+      },
+      "items": [
+        {
+          "item": 267090,
+          "name": "Semblance of Twilight"
+        }
+      ]
+    },
+    {
+      "id": 94980,
+      "name": "Krol'dok Moulding",
+      "side": "Alliance",
+      "requiredLevel": 38,
+      "xp": 3300,
+      "objective": "Find someone in Farholde Keep who may know about the mould.",
+      "start": {
+        "item": 267138,
+        "description": "Krol'dok Moulding, looted in Krol'dok Stronghold"
+      },
+      "turnIn": {
+        "npc": "Alphonse Dumas",
+        "description": "Farholde Keep, Riverglades (probably)"
+      },
+      "items": []
+    },
+    {
+      "id": 94981,
+      "name": "Key Ingredients",
+      "side": "Alliance",
+      "requiredLevel": 38,
+      "xp": 3300,
+      "objective": "Bring 4 Thick Leather and 12 Iron Bars to Alphonse Dumas.",
+      "description": "Keep any Krol'dok Moulding you loot: it starts the quest before this one.",
+      "requires": [94980],
+      "start": {
+        "npc": "Alphonse Dumas",
+        "description": "Farholde Keep, Riverglades"
+      },
+      "turnIn": {
+        "npc": "Alphonse Dumas",
+        "description": "Farholde Keep, Riverglades"
+      },
+      "items": [
+        {
+          "item": 267089,
+          "name": "Krol'dok Compound Key"
+        }
+      ]
+    },
+    {
+      "id": 94982,
+      "name": "Eye of Mugg",
+      "side": "Alliance",
+      "requiredLevel": 40,
+      "xp": 13000,
+      "objective": "Infiltrate Krol'dok Stronghold and return to Commander Brant with proof of their leader's demise.",
+      "start": {
+        "npc": "Commander Demar Brant",
+        "description": "Farholde Keep, Riverglades (exact spot not known yet)"
+      },
+      "turnIn": {
+        "npc": "Commander Demar Brant",
+        "description": "Farholde Keep, Riverglades"
+      },
+      "items": [
+        {
+          "item": 279852,
+          "name": "Rock on Stick"
+        },
+        {
+          "item": 279853,
+          "name": "Stick No Rock"
+        },
+        {
+          "item": 279480,
+          "name": "Bigger Rock on Bigger Stick"
+        }
+      ]
+    },
+    {
+      "id": 94983,
+      "name": "Twilight Mementos",
+      "side": "Alliance",
+      "requiredLevel": 38,
+      "xp": 11500,
+      "objective": "Collect 8 Twilight Bangles from the Twilight's Hammer in Krol'dok Stronghold.",
+      "requires": [94890],
+      "start": {
+        "npc": "Farholde Keep",
+        "description": "Riverglades (giver not known yet)"
+      },
+      "turnIn": {
+        "npc": "Farholde Keep",
+        "location": [2548, 66.6, 80],
+        "description": "Riverglades (not known yet)"
+      },
+      "items": []
+    },
+    {
+      "id": 94984,
+      "name": "Tome of Twilight",
+      "side": "Alliance",
+      "requiredLevel": 39,
+      "xp": 12450,
+      "objective": "Kill Nar'gurk in Krol'dok Stronghold and recover any valuable information.",
+      "requires": [94907],
+      "start": {
+        "npc": "Ashe Amberhall",
+        "description": "Riverglades (exact spot not known yet)"
+      },
+      "turnIn": {
+        "npc": "Ashe Amberhall",
+        "description": "Riverglades"
+      },
+      "items": [
+        {
+          "item": 279854,
+          "name": "Twilight Initiate's Belt"
+        },
+        {
+          "item": 279855,
+          "name": "Torn Cultist Cloak"
+        }
+      ]
+    },
+    {
+      "id": 94997,
+      "name": "Lingering Essence",
+      "side": "Alliance",
+      "requiredLevel": 38,
+      "xp": 3450,
+      "objective": "Bring the Satchel of Cursed Mementos to Ashe Amberhall in Farholde Keep.",
+      "requires": [94983],
+      "start": {
+        "npc": "Farholde Keep",
+        "description": "Riverglades (who gives it is not known yet)"
+      },
+      "turnIn": {
+        "npc": "Ashe Amberhall",
+        "location": [2548, 66.6, 81],
+        "description": "Farholde Keep, Riverglades"
+      },
+      "items": []
+    },
+    {
+      "id": 94998,
+      "name": "Curios of Curiosity",
+      "side": "Alliance",
+      "requiredLevel": 38,
+      "xp": 3450,
+      "objective": "Bring the Satchel of Mementos to Melanie Sable.",
+      "description": "Probably follows Lingering Essence (not confirmed yet).",
+      "requires": [94997],
+      "start": {
+        "npc": "Ashe Amberhall",
+        "location": [2548, 66.6, 81],
+        "description": "Farholde Keep, Riverglades (probably)"
+      },
+      "turnIn": {
+        "description": "Melanie Sable (where she stands is not known yet)"
+      },
+      "items": [
+        {
+          "item": 279850,
+          "name": "Curio-Adorned Necklace"
+        }
+      ]
+    },
+    {
+      "id": 96771,
+      "name": "Vengeance of the Highborne",
+      "side": "Alliance",
+      "requiredLevel": 37,
+      "xp": 13000,
+      "objective": "Travel to Krol'dok Stronghold and slay Zalfan Moonshadow.",
+      "description": "Zalfan Moonshadow, a highborne among the Twilight's Hammer inside the stronghold; where he stands is not known yet.",
+      "start": {
+        "npc": "Ranath Nightstride",
+        "location": [1416, 17.8, 66],
+        "description": "in the inn in Dalaran, Alterac Mountains"
+      },
+      "turnIn": {
+        "npc": "Ranath Nightstride",
+        "location": [1416, 17.8, 66],
+        "description": "in the inn in Dalaran, Alterac Mountains"
+      },
+      "items": []
+    }
+  ]
+}

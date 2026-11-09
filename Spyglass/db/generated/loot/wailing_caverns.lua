@@ -43,6 +43,7 @@ Data:AddBossLoot(590, { -- Lord Serpentis
     { 6459 }, -- Savage Trodders
     { 10411 }, -- Footpads of the Fang
     { 9741 }, -- Gem of Serpentis
+    { 273087 }, -- Blueprint: Journeyman Campfire
 })
 
 Data:AddBossLoot(591, { -- Verdan the Everliving
@@ -92,5 +93,5 @@ Data:AddQuests(43, {
     } },
     { id = 1491, name = "Smart Drinks", side = "Both", requiredLevel = 13, xp = 1350, objective = "Bring 6 Wailing Essence to Mebok Mizzyrix.", requires = { { id = 865, name = "Raptor Horns" } }, start = { description = "Ratchet, The Barrens.", location = { 1413, 62.8, 36.7 }, npc = "Mebok Mizzyrix" }, turnIn = { description = "Ratchet, The Barrens.", location = { 1413, 62.8, 36.7 }, npc = "Mebok Mizzyrix" }, items = {} },
     { id = 959, name = "Trouble at the Docks", side = "Both", requiredLevel = 14, xp = 1350, objective = "Retrieve the 99-Year-Old Port from Mad Magglish in Wailing Caverns.", start = { description = "Ratchet, The Barrens.", location = { 1413, 63.9, 38.3 }, npc = "Crane Operator Bigglefuzz" }, turnIn = { description = "Ratchet, The Barrens.", location = { 1413, 63.9, 38.3 }, npc = "Crane Operator Bigglefuzz" }, items = {} },
-    { id = 6981, name = "The Glowing Shard", side = "Both", requiredLevel = 15, xp = 2650, objective = "Travel to Ratchet to find someone who can identify the Glowing Shard, then deliver it as directed.", description = "Dropped by: Mutanus the Devourer.\nVisit Sputtervalve in Ratchet near the flight master at [63.0, 37.2].", start = { item = 10441 }, turnIn = { description = "Above the entrance to Wailing Caverns,, The Barrens.", location = { 1413, 48.2, 32.8 }, npc = "Falla Sagewind" }, items = {} },
+    { id = 6981, name = "The Glowing Shard", side = "Both", requiredLevel = 15, xp = 2650, objective = "Travel to Ratchet to find someone who can identify the Glowing Shard, then deliver it as directed.", description = "Dropped by: Mutanus the Devourer.\nVisit Sputtervalve in Ratchet near the flight master at [63.0, 37.2].", start = { item = 10441, location = { 1413, 48.2, 32.8 } }, turnIn = { description = "Above the entrance to Wailing Caverns,, The Barrens.", location = { 1413, 48.2, 32.8 }, npc = "Falla Sagewind" }, items = {} },
 })

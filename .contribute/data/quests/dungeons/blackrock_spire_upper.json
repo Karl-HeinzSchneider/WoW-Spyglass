@@ -1,3 +1,714 @@
 {
-  "quests": []
+  "quests": [
+    {
+      "id": 4726,
+      "name": "Broodling Essence",
+      "requiredLevel": 50,
+      "objective": "Bring 8 Broodling Essence and the Draco-Incarcinatrix 900 to Tinkee Steamboil at the Flame Crest in the Burning Steppes.",
+      "start": {
+        "npc": "Tinkee Steamboil",
+        "location": [1428, 65.2, 23.8],
+        "description": "Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Tinkee Steamboil",
+        "location": [1428, 65.2, 23.8],
+        "description": "Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 4734,
+      "name": "Egg Freezing",
+      "requiredLevel": 57,
+      "objective": "Use the Eggscilloscope Prototype on an egg in the Rookery.",
+      "requires": [4907],
+      "start": {
+        "npc": "Tinkee Steamboil",
+        "location": [1428, 65.2, 23.8],
+        "description": "Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Tinkee Steamboil",
+        "location": [1428, 65.2, 23.8],
+        "description": "Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 4735,
+      "name": "Egg Collection",
+      "side": "Both",
+      "requiredLevel": 57,
+      "xp": 9950,
+      "objective": "Bring 8 Collected Dragon Eggs and the Collectronic Module to Tinkee Steamboil at Flame Crest in the Burning Steppes.",
+      "description": "Using the module on the eggs in the Rookery can hatch whelps.",
+      "requires": [4734],
+      "start": {
+        "npc": "Tinkee Steamboil",
+        "location": [1428, 65.2, 23.8],
+        "description": "Flame Crest, Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Tinkee Steamboil",
+        "location": [1428, 65.2, 23.8],
+        "description": "Flame Crest, Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 4743,
+      "name": "Seal of Ascension",
+      "side": "Both",
+      "requiredLevel": 57,
+      "xp": 9950,
+      "objective": "Travel to the Wyrmbog in Dustwallow Marsh. Find the ancient drake Emberstrife and beat him until his will is broken, place the Unforged Seal of Ascension before him, then use the Orb of Draconic Energy on him and force the Flames of the Black Dragonflight upon the Unforged Seal of Ascension.",
+      "description": "Take the Unforged Seal and the Orb of Draconic Energy to Emberstrife in the Wyrmbog, Dustwallow Marsh. The forged seal opens the UBRS door.",
+      "requires": [4742],
+      "start": {
+        "npc": "Vaelan",
+        "description": "Lower Blackrock Spire"
+      },
+      "turnIn": {
+        "npc": "Vaelan",
+        "description": "Lower Blackrock Spire"
+      },
+      "items": [
+        {
+          "item": 12344,
+          "name": "Seal of Ascension"
+        }
+      ]
+    },
+    {
+      "id": 4764,
+      "name": "Doomrigger's Clasp",
+      "side": "Alliance",
+      "requiredLevel": 57,
+      "xp": 1650,
+      "objective": "Bring Doomrigger's Clasp to Mayara Brightwing in the Burning Steppes.",
+      "description": "Doomrigger's Coffer is in the Rookery. Then take Delivery to Ridgewell to Count Remington Ridgewell in Stormwind Keep for the reward.\n\nOptional introductory quest:",
+      "start": {
+        "npc": "Mayara Brightwing",
+        "location": [1428, 84.8, 69],
+        "description": "Morgan's Vigil, Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Mayara Brightwing",
+        "location": [1428, 84.8, 69],
+        "description": "Morgan's Vigil, Burning Steppes"
+      },
+      "items": [
+        {
+          "item": 15861,
+          "name": "Swiftfoot Treads"
+        },
+        {
+          "item": 15860,
+          "name": "Blinkstrike Armguards"
+        }
+      ]
+    },
+    {
+      "id": 4766,
+      "name": "Mayara Brightwing",
+      "side": "Alliance",
+      "requiredLevel": 57,
+      "xp": 0,
+      "objective": "Speak with Mayara Brightwing in the Burning Steppes.",
+      "description": "Introductory step leading to Doomrigger's Clasp.\n\nOPTIONAL, not required",
+      "start": {
+        "npc": "Count Remington Ridgewell",
+        "location": [1453, 76.9, 47.8],
+        "description": "Stormwind Keep"
+      },
+      "turnIn": {
+        "npc": "Mayara Brightwing",
+        "description": "Morgan's Vigil, Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 4768,
+      "name": "The Darkstone Tablet",
+      "side": "Horde",
+      "requiredLevel": 57,
+      "xp": 8300,
+      "objective": "Bring the Darkstone Tablet to Shadow Mage Vivian Lagrave in Kargath.",
+      "description": "The Darkstone Tablet lies on the ground in the Rookery.\n\nOptional introductory quest:",
+      "start": {
+        "npc": "Shadowmage Vivian Lagrave",
+        "location": [1418, 3, 47.6],
+        "description": "Kargath, Badlands"
+      },
+      "turnIn": {
+        "npc": "Shadowmage Vivian Lagrave",
+        "location": [1418, 3, 47.6],
+        "description": "Kargath, Badlands"
+      },
+      "items": [
+        {
+          "item": 15861,
+          "name": "Swiftfoot Treads"
+        },
+        {
+          "item": 15860,
+          "name": "Blinkstrike Armguards"
+        }
+      ]
+    },
+    {
+      "id": 4769,
+      "name": "Vivian Lagrave and the Darkstone Tablet",
+      "side": "Horde",
+      "requiredLevel": 57,
+      "xp": 0,
+      "objective": "Speak with Shadowmage Vivian Lagrave.",
+      "description": "Introductory step leading to The Darkstone Tablet.\n\nOPTIONAL, not required",
+      "start": {
+        "npc": "Apothecary Zinge",
+        "location": [1458, 50.1, 68],
+        "description": "The Apothecarium, Undercity"
+      },
+      "turnIn": {
+        "npc": "Shadowmage Vivian Lagrave",
+        "description": "Kargath, Badlands"
+      },
+      "items": []
+    },
+    {
+      "id": 4808,
+      "name": "Felnok Steelspring",
+      "requiredLevel": 50,
+      "objective": "Give Tinkee's Letter to Felnok Steelspring.",
+      "requires": [4726],
+      "start": {
+        "npc": "Tinkee Steamboil",
+        "location": [1428, 65.2, 23.8],
+        "description": "Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Felnok Steelspring",
+        "description": "Winterspring"
+      },
+      "items": []
+    },
+    {
+      "id": 4809,
+      "name": "Chillwind Horns",
+      "requiredLevel": 50,
+      "objective": "Bring 8 Uncracked Chillwind Horns to Felnok Steelspring.",
+      "requires": [4808],
+      "start": {
+        "npc": "Felnok Steelspring",
+        "location": [1452, 61.4, 38.4],
+        "description": "Winterspring"
+      },
+      "turnIn": {
+        "npc": "Felnok Steelspring",
+        "location": [1452, 61.4, 38.4],
+        "description": "Winterspring"
+      },
+      "items": []
+    },
+    {
+      "id": 4810,
+      "name": "Return to Tinkee",
+      "requiredLevel": 50,
+      "objective": "Bring Felnok's Package to Tinkee Steamboil in the Burning Steppes.",
+      "requires": [4809],
+      "start": {
+        "npc": "Felnok Steelspring",
+        "location": [1452, 61.4, 38.4],
+        "description": "Winterspring"
+      },
+      "turnIn": {
+        "npc": "Tinkee Steamboil",
+        "description": "Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 4907,
+      "name": "Tinkee Steamboil",
+      "requiredLevel": 57,
+      "objective": "Speak with Tinkee Steamboil.",
+      "requires": [4810],
+      "start": {
+        "npc": "Felnok Steelspring",
+        "location": [1452, 61.4, 38.4],
+        "description": "Winterspring"
+      },
+      "turnIn": {
+        "npc": "Tinkee Steamboil",
+        "description": "Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 4941,
+      "name": "Eitrigg's Wisdom",
+      "side": "Horde",
+      "requiredLevel": 55,
+      "objective": "Speak with Eitrigg in Orgrimmar. When you have discussed matters with Eitrigg, seek council from Thrall. You recall having seen Eitrigg in Thrall's chamber.",
+      "requires": [4903],
+      "start": {
+        "npc": "Warlord Goretooth",
+        "location": [1418, 3, 47.6],
+        "description": "Badlands"
+      },
+      "turnIn": {
+        "npc": "Thrall",
+        "description": "Orgrimmar"
+      },
+      "items": []
+    },
+    {
+      "id": 4974,
+      "name": "For The Horde!",
+      "side": "Horde",
+      "requiredLevel": 55,
+      "xp": 9950,
+      "objective": "Travel to Blackrock Spire and slay Warchief Rend Blackhand. Take his head and return to Orgrimmar.",
+      "requires": [4941],
+      "start": {
+        "npc": "Thrall",
+        "location": [1454, 32, 37.8],
+        "description": "Orgrimmar"
+      },
+      "turnIn": {
+        "npc": "Thrall",
+        "location": [1454, 32, 37.8],
+        "description": "Orgrimmar"
+      },
+      "items": [
+        {
+          "item": 13966,
+          "name": "Mark of Tyranny"
+        },
+        {
+          "item": 13968,
+          "name": "Eye of the Beast"
+        },
+        {
+          "item": 13965,
+          "name": "Blackhand's Breadth"
+        }
+      ]
+    },
+    {
+      "id": 5047,
+      "name": "Finkle Einhorn, At Your Service!",
+      "side": "Both",
+      "requiredLevel": 57,
+      "xp": 6600,
+      "objective": "Talk to Malyfous Darkhammer in Everlook.",
+      "description": "He appears from The Beast's corpse after the fight. Malyfous then offers the Pristine Hide of the Beast exchanges.",
+      "start": {
+        "description": "From The Beast's corpse, Upper Blackrock Spire"
+      },
+      "turnIn": {
+        "npc": "Malyfous Darkhammer",
+        "description": "Everlook, Winterspring"
+      },
+      "items": []
+    },
+    {
+      "id": 5102,
+      "name": "General Drakkisath's Demise",
+      "side": "Alliance",
+      "requiredLevel": 55,
+      "xp": 9950,
+      "objective": "Travel to Blackrock Spire and destroy General Drakkisath. Return to Marshal Maxwell when the job is done.",
+      "description": "Kill General Drakkisath at the end of UBRS.",
+      "requires": [5089],
+      "start": {
+        "npc": "Marshal Maxwell",
+        "location": [1428, 84.6, 68.8],
+        "description": "Morgan's Vigil, Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Marshal Maxwell",
+        "location": [1428, 84.6, 68.8],
+        "description": "Morgan's Vigil, Burning Steppes"
+      },
+      "items": [
+        {
+          "item": 13966,
+          "name": "Mark of Tyranny"
+        },
+        {
+          "item": 13968,
+          "name": "Eye of the Beast"
+        },
+        {
+          "item": 13965,
+          "name": "Blackhand's Breadth"
+        }
+      ]
+    },
+    {
+      "id": 5127,
+      "name": "The Demon Forge",
+      "side": "Both",
+      "requiredLevel": 55,
+      "xp": 8300,
+      "objective": "Travel to Blackrock Spire, slay Goraluk Anvilcrack and use the Blood Stained Pike on his corpse. Also find the Unforged Rune Covered Breastplate. Return the Soul Stained Pike and the breastplate to Lorax in Winterspring.",
+      "description": "Blacksmithing 270 (Armorsmith). Use the Blood Stained Pike on Goraluk's corpse and loot the Unforged Rune Covered Breastplate nearby.",
+      "start": {
+        "npc": "Lorax",
+        "location": [1452, 63.8, 73.8],
+        "description": "Winterspring"
+      },
+      "turnIn": {
+        "npc": "Lorax",
+        "location": [1452, 63.8, 73.8],
+        "description": "Winterspring"
+      },
+      "items": [
+        {
+          "item": 12696,
+          "name": "Plans: Demon Forged Breastplate"
+        },
+        {
+          "item": 12849,
+          "name": "Demon Kissed Sack"
+        },
+        {
+          "item": 9224,
+          "name": "Potion of Demon Slaying"
+        }
+      ]
+    },
+    {
+      "id": 5160,
+      "name": "The Matron Protectorate",
+      "side": "Both",
+      "requiredLevel": 57,
+      "xp": 6600,
+      "objective": "Travel to Winterspring and find Haleh. Give her Awbee's scale.",
+      "description": "Awbee is the wounded blue dragon near the arena route after Rend. Use the rune deep in the Mazthoril cave to reach Haleh.",
+      "start": {
+        "npc": "Awbee",
+        "description": "Upper Blackrock Spire"
+      },
+      "turnIn": {
+        "npc": "Haleh",
+        "description": "Mazthoril, Winterspring"
+      },
+      "items": []
+    },
+    {
+      "id": 6402,
+      "name": "Stormwind Rendezvous",
+      "side": "Alliance",
+      "requiredLevel": 50,
+      "objective": "Travel to Stormwind City and venture to the city gates. Speak with Squire Rowe so that he may let Marshal Windsor know that you have arrived.",
+      "requires": [4322],
+      "start": {
+        "npc": "Marshal Maxwell",
+        "location": [1428, 84.6, 68.8],
+        "description": "Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Reginald Windsor",
+        "description": "Elwynn Forest"
+      },
+      "items": []
+    },
+    {
+      "id": 6403,
+      "name": "The Great Masquerade",
+      "side": "Alliance",
+      "requiredLevel": 50,
+      "objective": "Follow Reginald Windsor through Stormwind. Protect him from harm!",
+      "requires": [6402],
+      "start": {
+        "npc": "Reginald Windsor",
+        "location": [1429, 32, 49.2],
+        "description": "Elwynn Forest"
+      },
+      "turnIn": {
+        "npc": "Highlord Bolvar Fordragon",
+        "description": "Stormwind"
+      },
+      "items": []
+    },
+    {
+      "id": 6501,
+      "name": "The Dragon's Eye",
+      "side": "Alliance",
+      "requiredLevel": 50,
+      "objective": "You must search the world for a being capable of restoring the power to the Fragment of the Dragon's Eye. The only information you possess about such a being is that they exist.",
+      "requires": [6403],
+      "start": {
+        "npc": "Highlord Bolvar Fordragon",
+        "location": [1453, 77.4, 18.8],
+        "description": "Stormwind"
+      },
+      "turnIn": {
+        "npc": "Haleh",
+        "description": "Winterspring"
+      },
+      "items": []
+    },
+    {
+      "id": 6502,
+      "name": "Drakefire Amulet",
+      "side": "Alliance",
+      "requiredLevel": 50,
+      "xp": 8300,
+      "objective": "You must retrieve the Blood of the Black Dragon Champion from General Drakkisath. Drakkisath can be found in his throne room behind the Halls of Ascension in Blackrock Spire.",
+      "description": "Part of the Onyxia attunement.",
+      "requires": [6501],
+      "start": {
+        "npc": "Haleh",
+        "location": [1452, 54.4, 51.2],
+        "description": "Mazthoril, Winterspring"
+      },
+      "turnIn": {
+        "npc": "Haleh",
+        "location": [1452, 54.4, 51.2],
+        "description": "Mazthoril, Winterspring"
+      },
+      "items": [
+        {
+          "item": 16309,
+          "name": "Drakefire Amulet"
+        }
+      ]
+    },
+    {
+      "id": 6566,
+      "name": "What the Wind Carries",
+      "side": "Horde",
+      "requiredLevel": 55,
+      "objective": "Listen to Thrall.",
+      "requires": [4974],
+      "start": {
+        "npc": "Thrall",
+        "location": [1454, 32, 37.8],
+        "description": "Orgrimmar"
+      },
+      "turnIn": {
+        "npc": "Thrall",
+        "location": [1454, 32, 37.8],
+        "description": "Orgrimmar"
+      },
+      "items": []
+    },
+    {
+      "id": 6567,
+      "name": "The Champion of the Horde",
+      "side": "Horde",
+      "requiredLevel": 55,
+      "objective": "Seek out Rexxar. The Warchief has instructed you as to his whereabouts. Search the paths of Desolace, between the Stonetalon Mountains and Feralas.",
+      "requires": [6566],
+      "start": {
+        "npc": "Thrall",
+        "location": [1454, 32, 37.8],
+        "description": "Orgrimmar"
+      },
+      "turnIn": {
+        "npc": "Rexxar",
+        "description": "Feralas"
+      },
+      "items": []
+    },
+    {
+      "id": 6568,
+      "name": "The Testament of Rexxar",
+      "side": "Horde",
+      "requiredLevel": 55,
+      "objective": "Deliver Rexxar's Testament to Myranda the Hag in the Western Plaguelands.",
+      "requires": [6567],
+      "start": {
+        "npc": "Rexxar",
+        "location": [1444, 44.8, 7.4],
+        "description": "Feralas"
+      },
+      "turnIn": {
+        "npc": "Myranda the Hag",
+        "description": "Western Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 6569,
+      "name": "Oculus Illusions",
+      "side": "Horde",
+      "requiredLevel": 55,
+      "xp": 6600,
+      "objective": "Travel to Blackrock Spire and collect 20 Black Dragonspawn Eyes. Return to Myranda the Hag when the task is complete.",
+      "description": "Part of the Horde Onyxia chain. Black Dragonspawn Eyes drop from the dragonspawn in UBRS.",
+      "requires": [6568],
+      "start": {
+        "npc": "Myranda the Hag",
+        "location": [1422, 50.8, 77.8],
+        "description": "Sorrow Hill, Western Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Myranda the Hag",
+        "location": [1422, 50.8, 77.8],
+        "description": "Sorrow Hill, Western Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 6570,
+      "name": "Emberstrife",
+      "side": "Horde",
+      "requiredLevel": 55,
+      "objective": "Travel to the Wyrmbog in Dustwallow Marsh and seek out Emberstrife's Den. Once inside, wear the Amulet of Draconic Subversion and speak with Emberstrife.",
+      "requires": [6569],
+      "start": {
+        "npc": "Myranda the Hag",
+        "location": [1422, 50.8, 77.8],
+        "description": "Western Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Emberstrife",
+        "description": "Dustwallow Marsh"
+      },
+      "items": []
+    },
+    {
+      "id": 6582,
+      "name": "The Test of Skulls, Scryer",
+      "side": "Horde",
+      "requiredLevel": 55,
+      "objective": "You must find the blue dragonflight drake champion, Scryer, and slay him. Pry his skull from his corpse and return it to Emberstrife. You know that Scryer can be found in Winterspring.",
+      "requires": [6570],
+      "start": {
+        "npc": "Emberstrife",
+        "location": [1445, 56.2, 88],
+        "description": "Dustwallow Marsh"
+      },
+      "turnIn": {
+        "npc": "Emberstrife",
+        "location": [1445, 56.2, 88],
+        "description": "Dustwallow Marsh"
+      },
+      "items": []
+    },
+    {
+      "id": 6583,
+      "name": "The Test of Skulls, Somnus",
+      "side": "Horde",
+      "requiredLevel": 55,
+      "objective": "Destroy the drake champion of the Green Flight, Somnus. Take his skull and return it to Emberstrife.",
+      "requires": [6582],
+      "start": {
+        "npc": "Emberstrife",
+        "location": [1445, 56.2, 88],
+        "description": "Dustwallow Marsh"
+      },
+      "turnIn": {
+        "npc": "Emberstrife",
+        "location": [1445, 56.2, 88],
+        "description": "Dustwallow Marsh"
+      },
+      "items": []
+    },
+    {
+      "id": 6584,
+      "name": "The Test of Skulls, Chronalis",
+      "side": "Horde",
+      "requiredLevel": 55,
+      "objective": "Guarding the Caverns of Time in the Tanaris Desert is Chronalis, child of Nozdormu. Destroy him and return his skull to Emberstrife.",
+      "requires": [6583],
+      "start": {
+        "npc": "Emberstrife",
+        "location": [1445, 56.2, 88],
+        "description": "Dustwallow Marsh"
+      },
+      "turnIn": {
+        "npc": "Emberstrife",
+        "location": [1445, 56.2, 88],
+        "description": "Dustwallow Marsh"
+      },
+      "items": []
+    },
+    {
+      "id": 6585,
+      "name": "The Test of Skulls, Axtroz",
+      "side": "Horde",
+      "requiredLevel": 55,
+      "objective": "Travel to Grim Batol and track down Axtroz, drake champion of the Red Flight. Destroy him and take his skull. Return the skull to Emberstrife.",
+      "requires": [6584],
+      "start": {
+        "npc": "Emberstrife",
+        "location": [1445, 56.2, 88],
+        "description": "Dustwallow Marsh"
+      },
+      "turnIn": {
+        "npc": "Emberstrife",
+        "location": [1445, 56.2, 88],
+        "description": "Dustwallow Marsh"
+      },
+      "items": []
+    },
+    {
+      "id": 6601,
+      "name": "Ascension...",
+      "side": "Horde",
+      "requiredLevel": 55,
+      "objective": "It would appear as if the charade is over. You know that the Amulet of Draconic Subversion that Myranda the Hag created for you will not function inside Blackrock Spire. Perhaps you should find Rexxar and explain your predicament. Show him the Dull Drakefire Amulet. Hopefully he will know what to do next.",
+      "requires": [6585],
+      "start": {
+        "npc": "Emberstrife",
+        "location": [1445, 56.2, 88],
+        "description": "Dustwallow Marsh"
+      },
+      "turnIn": {
+        "npc": "Rexxar",
+        "description": "Feralas"
+      },
+      "items": []
+    },
+    {
+      "id": 6602,
+      "name": "Blood of the Black Dragon Champion",
+      "side": "Horde",
+      "requiredLevel": 55,
+      "xp": 9950,
+      "objective": "Travel to Blackrock Spire and slay General Drakkisath. Gather his blood and return it to Rexxar.",
+      "description": "Part of the Onyxia attunement.",
+      "requires": [6601],
+      "start": {
+        "npc": "Rexxar",
+        "location": [1444, 44.8, 7.4],
+        "description": "Desolace"
+      },
+      "turnIn": {
+        "npc": "Rexxar",
+        "location": [1444, 44.8, 7.4],
+        "description": "Desolace"
+      },
+      "items": [
+        {
+          "item": 16309,
+          "name": "Drakefire Amulet"
+        }
+      ]
+    },
+    {
+      "id": 7761,
+      "name": "Blackhand's Command",
+      "side": "Both",
+      "requiredLevel": 55,
+      "xp": 6600,
+      "objective": "Find the brand that General Drakkisath guards and gain the Mark of Drakkisath, so you can use the Orb of Command.",
+      "description": "The Scarshield Quartermaster is in the hallway outside the Spire portal. Touch Drakkisath's Brand behind General Drakkisath; this unlocks the Orb of Command shortcut to Blackwing Lair.",
+      "start": {
+        "item": 18987,
+        "description": "Blackhand's Command (letter from the Scarshield Quartermaster, Blackrock Mountain)"
+      },
+      "turnIn": {
+        "npc": "Drakkisath's Brand",
+        "description": "Upper Blackrock Spire"
+      },
+      "items": []
+    }
+  ]
 }

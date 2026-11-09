@@ -57,7 +57,7 @@ Data:AddTrashLoot(2999, {
 })
 
 Data:AddQuests(2999, {
-    { id = 92422, name = "The Wrath of Rath'mael", side = "Horde", requiredLevel = 15, objective = "Kill Rath'mael in Ruins of Lordaeron.", start = { description = "Brill.", location = { 1420, 65.2, 60.2 }, npc = "Deathguard Kristof" }, turnIn = { description = "Brill.", location = { 1420, 65.2, 60.2 }, npc = "Deathguard Kristof" }, items = {
+    { id = 92422, name = "The Wrath of Rath'mael", side = "Horde", requiredLevel = 15, xp = 0, objective = "Kill Rath'mael in Ruins of Lordaeron.", start = { description = "Brill.", location = { 1420, 65.2, 60.2 }, npc = "Deathguard Kristof" }, turnIn = { description = "Brill.", location = { 1420, 65.2, 60.2 }, npc = "Deathguard Kristof" }, items = {
         { 251533 }, -- Forsaken Greataxe
         { 251534 }, -- Gnarled Necromancer's Staff
     } },
@@ -81,7 +81,11 @@ Data:AddQuests(2999, {
         { 279876 }, -- Plaguefang
         { 279877 }, -- Blight Gloves
     } },
-    { id = 97288, name = "Unending Torment", side = "Horde", requiredLevel = 16, xp = 1650, objective = "Deliver the Abominable Head to the Undercity.", description = "Dropped by: The Baron", followUps = { 97289, 97290, 97291, 97292 }, start = { item = 280438 }, turnIn = { description = "Undercity.", location = { 1458, 48.6, 69.6 }, npc = "Master Apothecary Faranell" }, items = {} },
+    { id = 97288, name = "Unending Torment", side = "Horde", requiredLevel = 16, xp = 1650, objective = "Deliver the Abominable Head to the Undercity.", description = "Dropped by: The Baron", followUps = { 97289, 97290, 97291, 97292 }, start = { item = 280438 }, turnIn = { description = "Undercity.", location = { 1458, 48.6, 69.6 }, npc = "Master Apothecary Faranell" }, items = {
+        { 279864 }, -- Monstrous Cleaver
+        { 279865 }, -- Grave Shroud
+        { 279867 }, -- Slain Baron's Signet
+    } },
     { id = 92401, name = "A Frightened Request", side = "Horde", requiredLevel = 15, xp = 2200, objective = "Investigate the disappearance of Edward Heartweaver in Ruins of Lordaeron.", start = { description = "The Sepulcher, Silverpine Forest.", location = { 1421, 44.5, 43 }, npc = "Tabitha Heartweaver" }, turnIn = { description = "The Sepulcher, Silverpine Forest.", location = { 1421, 44.5, 43 }, npc = "Tabitha Heartweaver" }, items = {
         { 251485 }, -- Edward's Knife
         { 251486 }, -- Tabitha's Cuffs

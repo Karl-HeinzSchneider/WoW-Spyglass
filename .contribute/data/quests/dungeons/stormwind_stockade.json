@@ -4,33 +4,122 @@
       "id": 386,
       "name": "What Comes Around...",
       "side": "Alliance",
+      "requiredLevel": 22,
       "xp": 2000,
-      "items": []
+      "objective": "Kill Targorr the Dread in The Stockade and bring his head to Guard Berton.",
+      "start": {
+        "npc": "Guard Berton",
+        "location": [1433, 21.2, 46.6],
+        "description": "Guard Berton, Lakeshire, Redridge Mountains"
+      },
+      "turnIn": {
+        "npc": "Guard Berton",
+        "location": [1433, 21.2, 46.6],
+        "description": "Guard Berton, Lakeshire, Redridge Mountains"
+      },
+      "items": [
+        {
+          "item": 3400,
+          "name": "Lucine Longsword"
+        },
+        {
+          "item": 1317,
+          "name": "Hardened Root Staff"
+        },
+        {
+          "item": 270027,
+          "name": "Ursine Hammer"
+        }
+      ]
     },
     {
       "id": 377,
       "name": "Crime and Punishment",
       "side": "Alliance",
+      "requiredLevel": 22,
       "xp": 2100,
-      "items": []
+      "objective": "Kill Dextren Ward in The Stockade and bring his hand to Councilman Millstipe.",
+      "start": {
+        "npc": "Councilman Millstipe",
+        "location": [1431, 72, 47.8],
+        "description": "Councilman Millstipe, Darkshire, Duskwood"
+      },
+      "turnIn": {
+        "npc": "Councilman Millstipe",
+        "location": [1431, 72, 47.8],
+        "description": "Councilman Millstipe, Darkshire, Duskwood"
+      },
+      "items": [
+        {
+          "item": 2033,
+          "name": "Ambassador's Boots"
+        },
+        {
+          "item": 2906,
+          "name": "Darkshire Mail Leggings"
+        },
+        {
+          "item": 270029,
+          "name": "Town Clerk's Mittens"
+        }
+      ]
     },
     {
       "id": 387,
       "name": "Quell the Uprising",
+      "side": "Alliance",
+      "requiredLevel": 22,
       "xp": 2650,
+      "objective": "Kill 10 Defias Prisoners, 8 Defias Convicts, and 8 Defias Insurgents inside The Stockade.",
+      "start": {
+        "npc": "Warden Thelwater",
+        "location": [1453, 51.8, 69.3],
+        "description": "Warden Thelwater, outside The Stockade, Stormwind"
+      },
+      "turnIn": {
+        "npc": "Warden Thelwater",
+        "location": [1453, 51.8, 69.3],
+        "description": "Warden Thelwater, outside The Stockade, Stormwind"
+      },
       "items": []
     },
     {
       "id": 388,
       "name": "The Color of Blood",
+      "side": "Alliance",
+      "requiredLevel": 22,
       "xp": 2650,
+      "objective": "Collect 10 Red Wool Bandanas from Defias prisoners in The Stockade.",
+      "start": {
+        "npc": "Nikova Raskol",
+        "location": [1453, 74.4, 60],
+        "description": "Nikova Raskol, Old Town, Stormwind"
+      },
+      "turnIn": {
+        "npc": "Nikova Raskol",
+        "location": [1453, 74.4, 60],
+        "description": "Nikova Raskol, Old Town, Stormwind"
+      },
       "items": []
     },
     {
       "id": 391,
       "name": "The Stockade Riots",
+      "side": "Alliance",
+      "requiredLevel": 16,
       "xp": 2350,
+      "objective": "Kill Bazil Thredd in The Stockade and bring his head back to Warden Thelwater.",
       "requires": [389],
+      "start": {
+        "npc": "Warden Thelwater",
+        "location": [1453, 51.8, 69.3],
+        "description": "Warden Thelwater, outside The Stockade, Stormwind"
+      },
+      "turnIn": {
+        "npc": "Warden Thelwater",
+        "location": [1453, 51.8, 69.3],
+        "description": "Warden Thelwater, outside The Stockade, Stormwind"
+      },
       "items": []
     },
     {
@@ -49,6 +138,7 @@
       },
       "turnIn": {
         "npc": "Motley Garmason",
+        "location": [1437, 49.6, 18.2],
         "description": "Dun Modr, Wetlands."
       },
       "items": [
@@ -80,6 +170,7 @@
       },
       "turnIn": {
         "npc": "Motley Garmason",
+        "location": [1437, 49.6, 18.2],
         "description": "Dun Modr, Wetlands."
       },
       "items": []

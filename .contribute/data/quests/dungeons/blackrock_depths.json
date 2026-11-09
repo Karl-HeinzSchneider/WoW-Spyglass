@@ -1,3 +1,1051 @@
 {
-  "quests": []
+  "quests": [
+    {
+      "id": 3701,
+      "name": "The Smoldering Ruins of Thaurissan",
+      "side": "Alliance",
+      "requiredLevel": 50,
+      "objective": "Venture to the Ruins of Thaurissan in the Burning Steppes and recover information from the Thaurissan Relics. Return to Royal Historian Archesonus when you have recovered the information.",
+      "requires": [3702],
+      "start": {
+        "npc": "Royal Historian Archesonus",
+        "location": [1455, 38.4, 55.4],
+        "description": "Ironforge"
+      },
+      "turnIn": {
+        "npc": "Royal Historian Archesonus",
+        "location": [1455, 38.4, 55.4],
+        "description": "Ironforge"
+      },
+      "items": []
+    },
+    {
+      "id": 3702,
+      "name": "The Smoldering Ruins of Thaurissan",
+      "side": "Alliance",
+      "requiredLevel": 50,
+      "objective": "Listen to Royal Historian Archesonus recant the history of Thaurissan.",
+      "start": {
+        "npc": "Royal Historian Archesonus",
+        "location": [1455, 38.4, 55.4],
+        "description": "Ironforge"
+      },
+      "turnIn": {
+        "npc": "Royal Historian Archesonus",
+        "location": [1455, 38.4, 55.4],
+        "description": "Ironforge"
+      },
+      "items": []
+    },
+    {
+      "id": 3801,
+      "name": "Dark Iron Legacy",
+      "requiredLevel": 48,
+      "objective": "Speak with Franclorn Forgewright if you are interested in obtaining a key to the city major.",
+      "description": "You have to be dead to talk to this guy. He's in Blackrock Mountain, in a room while walking the chain down to BRD.",
+      "start": {
+        "npc": "Franclorn Forgewright",
+        "description": "Blackrock Mountain"
+      },
+      "turnIn": {
+        "npc": "Franclorn Forgewright",
+        "description": "Blackrock Mountain"
+      },
+      "items": []
+    },
+    {
+      "id": 3802,
+      "name": "Dark Iron Legacy",
+      "side": "Both",
+      "requiredLevel": 48,
+      "xp": 5100,
+      "objective": "Slay Fineous Darkvire and recover the great hammer, Ironfel. Take Ironfel to the Shrine of Thaurissan and place it on the statue of Franclorn Forgewright.",
+      "description": "Speak to Franclorn's ghost while dead. Kill Fineous Darkvire for Ironfel and place it on Franclorn's monument by the Ring of Law. The Shadowforge Key opens shortcuts inside BRD.",
+      "requires": [3801],
+      "start": {
+        "npc": "Franclorn Forgewright",
+        "description": "Blackrock Mountain"
+      },
+      "turnIn": {
+        "npc": "Franclorn Forgewright",
+        "description": "Blackrock Mountain"
+      },
+      "items": [
+        {
+          "item": 11000,
+          "name": "Shadowforge Key"
+        }
+      ]
+    },
+    {
+      "id": 3906,
+      "name": "Disharmony of Flame",
+      "side": "Horde",
+      "requiredLevel": 48,
+      "objective": "Travel to the quarry in Blackrock Mountain and slay Overmaster Pyron. Return to Thunderheart when you have completed this assignment.",
+      "start": {
+        "npc": "Thunderheart",
+        "location": [1418, 3.4, 48.2],
+        "description": "Badlands"
+      },
+      "turnIn": {
+        "npc": "Thunderheart",
+        "location": [1418, 3.4, 48.2],
+        "description": "Badlands"
+      },
+      "items": []
+    },
+    {
+      "id": 3907,
+      "name": "Disharmony of Fire",
+      "side": "Horde",
+      "requiredLevel": 48,
+      "xp": 7300,
+      "objective": "Enter Blackrock Depths and track down Lord Incendius. Slay him and return any source of information you may find to Thunderheart.",
+      "description": "Kill Lord Incendius at the Black Anvil inside BRD and bring back the Tablet of Kurniya.",
+      "requires": [3906],
+      "start": {
+        "npc": "Thunderheart",
+        "location": [1418, 3.4, 48.2],
+        "description": "Kargath, Badlands"
+      },
+      "turnIn": {
+        "npc": "Thunderheart",
+        "location": [1418, 3.4, 48.2],
+        "description": "Kargath, Badlands"
+      },
+      "items": []
+    },
+    {
+      "id": 3981,
+      "name": "Commander Gor'shak",
+      "side": "Horde",
+      "requiredLevel": 48,
+      "objective": "Find Commander Gor'shak in Blackrock Depths. You recall that the crudely drawn picture of the orc included bars drawn over the portrait. Perhaps you should search for a prison of some sort.",
+      "requires": [3906],
+      "start": {
+        "npc": "Galamav the Marksman",
+        "location": [1418, 5.8, 47.4],
+        "description": "Badlands"
+      },
+      "turnIn": {
+        "npc": "Commander Gor'shak"
+      },
+      "items": []
+    },
+    {
+      "id": 3982,
+      "name": "What Is Going On?",
+      "side": "Horde",
+      "requiredLevel": 48,
+      "xp": 5450,
+      "objective": "Defend Gor'shak.",
+      "description": "Open his cell with the Prison Cell Key from High Interrogator Gerstahn, then defend him.",
+      "requires": [3981],
+      "start": {
+        "npc": "Commander Gor'shak",
+        "description": "Blackrock Depths"
+      },
+      "turnIn": {
+        "npc": "Commander Gor'shak",
+        "description": "Blackrock Depths"
+      },
+      "items": []
+    },
+    {
+      "id": 4001,
+      "name": "What Is Going On?",
+      "side": "Horde",
+      "requiredLevel": 48,
+      "objective": "Speak with Kharan Mighthammer and gather information about Princess Moira Bronzebeard's kidnapping. Take that information to Thrall in Orgrimmar. You recall Gor'shak mentioning that Kharan is being held in a cell nearby.",
+      "requires": [3982],
+      "start": {
+        "npc": "Commander Gor'shak"
+      },
+      "turnIn": {
+        "npc": "Thrall",
+        "description": "Orgrimmar"
+      },
+      "items": []
+    },
+    {
+      "id": 4002,
+      "name": "The Eastern Kingdoms",
+      "side": "Horde",
+      "requiredLevel": 48,
+      "objective": "Speak with Thrall if you are prepared to take on the mission he has planned.",
+      "requires": [4001],
+      "start": {
+        "npc": "Thrall",
+        "location": [1454, 32, 37.8],
+        "description": "Orgrimmar"
+      },
+      "turnIn": {
+        "npc": "Thrall",
+        "location": [1454, 32, 37.8],
+        "description": "Orgrimmar"
+      },
+      "items": []
+    },
+    {
+      "id": 4003,
+      "name": "The Royal Rescue",
+      "side": "Horde",
+      "requiredLevel": 48,
+      "xp": 8050,
+      "objective": "Slay Emperor Dagran Thaurissan and free Princess Moira Bronzebeard from his evil spell.",
+      "requires": [4002],
+      "start": {
+        "npc": "Thrall",
+        "location": [1454, 32, 37.8],
+        "description": "Grommash Hold, Orgrimmar"
+      },
+      "turnIn": {
+        "npc": "Princess Moira Bronzebeard",
+        "description": "Blackrock Depths"
+      },
+      "items": [
+        {
+          "item": 12544,
+          "name": "Thrall's Resolve"
+        },
+        {
+          "item": 12545,
+          "name": "Eye of Orgrimmar"
+        }
+      ]
+    },
+    {
+      "id": 4024,
+      "name": "A Taste of Flame",
+      "side": "Both",
+      "requiredLevel": 52,
+      "xp": 6200,
+      "objective": "Travel to Blackrock Depths and slay Bael'Gar. Use the Altered Black Dragonflight Molt on Bael'Gar's remains to capture the Fiery Essence. Return the Encased Fiery Essence to Cyrus Therepentous.",
+      "description": "Show Cyrus a Black Dragonflight Molt first (A Taste of Flame, or kill the drake he summons). Then kill Bael'Gar and use the Altered Black Dragonflight Molt on his remains to collect the Encased Fiery Essence.",
+      "start": {
+        "npc": "Cyrus Therepentous",
+        "location": [1428, 94.8, 31.6],
+        "description": "Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Cyrus Therepentous",
+        "location": [1428, 94.8, 31.6],
+        "description": "Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 4061,
+      "name": "The Rise of the Machines",
+      "side": "Horde",
+      "requiredLevel": 52,
+      "objective": "Venture to the Burning Steppes and recover 10 Fractured Elemental Shards for Hierophant Theodora Mulvadania. You recall Theodora mentioning the golems and elementals of that region as being a source for these shards.",
+      "start": {
+        "npc": "Hierophant Theodora Mulvadania",
+        "location": [1418, 3, 47.8],
+        "description": "Badlands"
+      },
+      "turnIn": {
+        "npc": "Hierophant Theodora Mulvadania",
+        "location": [1418, 3, 47.8],
+        "description": "Badlands"
+      },
+      "items": []
+    },
+    {
+      "id": 4062,
+      "name": "The Rise of the Machines",
+      "side": "Horde",
+      "requiredLevel": 52,
+      "objective": "Take the Elemental Shard Sample to Lotwil Veriatus. You recall Theodora saying that Lotwil was stationed in a camp to the east.",
+      "requires": [4061],
+      "start": {
+        "npc": "Hierophant Theodora Mulvadania",
+        "location": [1418, 3, 47.8],
+        "description": "Badlands"
+      },
+      "turnIn": {
+        "npc": "Lotwil Veriatus"
+      },
+      "items": []
+    },
+    {
+      "id": 4063,
+      "name": "The Rise of the Machines",
+      "side": "Horde",
+      "requiredLevel": 52,
+      "xp": 6200,
+      "objective": "Find and slay Golem Lord Argelmach. Return his head to Lotwil. You will also need to collect 10 Intact Elemental Cores from the Ragereaver Golems and Warbringer Constructs protecting Argelmach.",
+      "description": "Kill Golem Lord Argelmach for his head and collect 10 Intact Elemental Cores from the constructs guarding him.",
+      "requires": [4062],
+      "start": {
+        "npc": "Lotwil Veriatus",
+        "location": [1418, 25.8, 45],
+        "description": "Badlands"
+      },
+      "turnIn": {
+        "npc": "Lotwil Veriatus",
+        "location": [1418, 25.8, 45],
+        "description": "Badlands"
+      },
+      "items": [
+        {
+          "item": 12109,
+          "name": "Azure Moon Amice"
+        },
+        {
+          "item": 12110,
+          "name": "Raincaster Drape"
+        },
+        {
+          "item": 12108,
+          "name": "Basaltscale Armor"
+        },
+        {
+          "item": 12111,
+          "name": "Lavaplate Gauntlets"
+        }
+      ]
+    },
+    {
+      "id": 4081,
+      "name": "KILL ON SIGHT: Dark Iron Dwarves",
+      "side": "Horde",
+      "requiredLevel": 48,
+      "xp": 5100,
+      "objective": "Venture to Blackrock Depths and destroy the vile aggressors! Warlord Goretooth wants you to kill 15 Anvilrage Guardsmen, 10 Anvilrage Wardens and 5 Anvilrage Footmen. Return to him once your task is complete.",
+      "start": {
+        "location": [1418, 3.8, 47.5],
+        "description": "Wanted Poster, Kargath, Badlands"
+      },
+      "turnIn": {
+        "npc": "Warlord Goretooth",
+        "description": "Kargath, Badlands"
+      },
+      "items": []
+    },
+    {
+      "id": 4082,
+      "name": "KILL ON SIGHT: High Ranking Dark Iron Officials",
+      "side": "Horde",
+      "requiredLevel": 50,
+      "xp": 5450,
+      "objective": "Venture to Blackrock Depths and destroy the vile aggressors! Warlord Goretooth wants you to kill 10 Anvilrage Medics, 10 Anvilrage Soldiers and 10 Anvilrage Officers. Return to him once your task is complete.",
+      "requires": [4081],
+      "start": {
+        "location": [1418, 4, 46.8],
+        "description": "Wanted Poster, Kargath, Badlands"
+      },
+      "turnIn": {
+        "npc": "Warlord Goretooth",
+        "description": "Kargath, Badlands"
+      },
+      "items": []
+    },
+    {
+      "id": 4083,
+      "name": "The Spectral Chalice",
+      "side": "Both",
+      "requiredLevel": 40,
+      "xp": 5650,
+      "objective": "Bring Gloom'rel 2 Star Rubies, 20 Gold Bars and 10 Truesilver Bars, then place them in the Spectral Chalice in the Summoners' Tomb.",
+      "description": "Mining 230. Talk to Gloom'rel before the Seven fight; give the Spectral Chalice 2 Star Rubies, 20 Gold Bars and 10 Truesilver Bars to learn Smelt Dark Iron.",
+      "start": {
+        "npc": "Gloom'rel",
+        "description": "Blackrock Depths"
+      },
+      "turnIn": {
+        "npc": "Gloom'rel",
+        "description": "Blackrock Depths"
+      },
+      "items": []
+    },
+    {
+      "id": 4121,
+      "name": "Precarious Predicament",
+      "side": "Horde",
+      "requiredLevel": 52,
+      "objective": "Escort your prisoner, Grark Lorkrub, through Burning Steppes and through Blackrock Mountain to the Searing Gorge. You recall Lexlort mentioning that he would have his men waiting on the other side to take Grark into custody. You will also be required to hand over your Thorium Shackles to Lexlort.",
+      "requires": [4122],
+      "start": {
+        "npc": "Grark Lorkrub",
+        "location": [1428, 40, 34.6],
+        "description": "Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Lexlort",
+        "description": "Badlands"
+      },
+      "items": []
+    },
+    {
+      "id": 4122,
+      "name": "Grark Lorkrub",
+      "side": "Horde",
+      "requiredLevel": 52,
+      "objective": "Travel to the Burning Steppes and find Grark Lorkrub. You recall Lexlort mentioning that he was last seen in a massive Blackrock fortress. When you find Grark Lorkrub, use the Thorium Shackles to bind him and then lead him back through Blackrock Mountain to the Searing Gorge. Lexlort will have his men waiting on the other side to take Grark into custody.",
+      "requires": [4082],
+      "start": {
+        "npc": "Lexlort",
+        "location": [1418, 5.8, 47.4],
+        "description": "Badlands"
+      },
+      "turnIn": {
+        "npc": "Grark Lorkrub",
+        "description": "Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 4123,
+      "name": "The Heart of the Mountain",
+      "side": "Both",
+      "requiredLevel": 50,
+      "xp": 5650,
+      "objective": "Bring the Heart of the Mountain to Maxwort Uberglint in the Burning Steppes.",
+      "description": "The Heart of the Mountain is in the vault safe after the Dark Keepers.",
+      "start": {
+        "npc": "Maxwort Uberglint",
+        "location": [1428, 65.2, 23.8],
+        "description": "Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Maxwort Uberglint",
+        "location": [1428, 65.2, 23.8],
+        "description": "Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 4126,
+      "name": "Hurley Blackbreath",
+      "side": "Alliance",
+      "requiredLevel": 50,
+      "xp": 7050,
+      "objective": "Bring the Lost Thunderbrew Recipe to Ragnar Thunderbrew in Kharanos.",
+      "description": "Break the three kegs in the Grim Guzzler storeroom to spawn Hurley Blackbreath and his guards.\n\nOptional introductory quest:",
+      "start": {
+        "npc": "Ragnar Thunderbrew",
+        "location": [1426, 46.8, 52.4],
+        "description": "Kharanos, Dun Morogh"
+      },
+      "turnIn": {
+        "npc": "Ragnar Thunderbrew",
+        "location": [1426, 46.8, 52.4],
+        "description": "Kharanos, Dun Morogh"
+      },
+      "items": []
+    },
+    {
+      "id": 4128,
+      "name": "Ragnar Thunderbrew",
+      "side": "Alliance",
+      "requiredLevel": 50,
+      "xp": 560,
+      "objective": "Speak with Ragnar Thunderbrew.",
+      "description": "Introductory step leading to Hurley Blackbreath.\n\nOPTIONAL, not required",
+      "start": {
+        "npc": "Enohar Thunderbrew",
+        "location": [1419, 63.6, 20.6],
+        "description": "Nethergarde Keep, Blasted Lands"
+      },
+      "turnIn": {
+        "npc": "Ragnar Thunderbrew",
+        "description": "Kharanos, Dun Morogh"
+      },
+      "items": []
+    },
+    {
+      "id": 4132,
+      "name": "Operation: Death to Angerforge",
+      "side": "Horde",
+      "requiredLevel": 52,
+      "xp": 7750,
+      "objective": "Travel to Blackrock Depths and slay General Angerforge! Return to Warlord Goretooth when the task is complete.",
+      "description": "Needs both KILL ON SIGHT quests and the Grark Lorkrub escort first.",
+      "requires": [4121],
+      "start": {
+        "npc": "Warlord Goretooth",
+        "location": [1418, 3, 47.6],
+        "description": "Kargath, Badlands"
+      },
+      "turnIn": {
+        "npc": "Warlord Goretooth",
+        "location": [1418, 3, 47.6],
+        "description": "Kargath, Badlands"
+      },
+      "items": []
+    },
+    {
+      "id": 4133,
+      "name": "Vivian Lagrave",
+      "side": "Horde",
+      "requiredLevel": 50,
+      "xp": 560,
+      "objective": "Speak with Shadowmage Vivian Lagrave in Kargath.",
+      "description": "Introductory step leading to Lost Thunderbrew Recipe.\n\nOPTIONAL, not required",
+      "start": {
+        "npc": "Apothecary Zinge",
+        "location": [1458, 50.1, 68],
+        "description": "The Apothecarium, Undercity"
+      },
+      "turnIn": {
+        "npc": "Shadowmage Vivian Lagrave",
+        "description": "Kargath, Badlands"
+      },
+      "items": []
+    },
+    {
+      "id": 4134,
+      "name": "Lost Thunderbrew Recipe",
+      "side": "Horde",
+      "requiredLevel": 50,
+      "xp": 5650,
+      "objective": "Bring the Lost Thunderbrew Recipe to Vivian Lagrave in Kargath.",
+      "description": "Break the three kegs in the Grim Guzzler storeroom to spawn Hurley Blackbreath and his guards.\n\nOptional introductory quest:",
+      "start": {
+        "npc": "Shadowmage Vivian Lagrave",
+        "location": [1418, 3, 47.6],
+        "description": "Kargath, Badlands"
+      },
+      "turnIn": {
+        "npc": "Shadowmage Vivian Lagrave",
+        "location": [1418, 3, 47.6],
+        "description": "Kargath, Badlands"
+      },
+      "items": []
+    },
+    {
+      "id": 4136,
+      "name": "Ribbly Screwspigot",
+      "side": "Both",
+      "requiredLevel": 48,
+      "xp": 2650,
+      "objective": "Bring Ribbly's Head to Yuka Screwspigot in the Burning Steppes.",
+      "description": "Optional introductory quest:",
+      "start": {
+        "npc": "Yuka Screwspigot",
+        "location": [1428, 66, 22],
+        "description": "Flame Crest, Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Yuka Screwspigot",
+        "location": [1428, 66, 22],
+        "description": "Flame Crest, Burning Steppes"
+      },
+      "items": [
+        {
+          "item": 11865,
+          "name": "Rancor Boots"
+        },
+        {
+          "item": 11963,
+          "name": "Penance Spaulders"
+        },
+        {
+          "item": 12049,
+          "name": "Splintsteel Armor"
+        }
+      ]
+    },
+    {
+      "id": 4182,
+      "name": "Dragonkin Menace",
+      "side": "Alliance",
+      "requiredLevel": 48,
+      "objective": "Slay 15 Black Broodlings, 10 Black Dragonspawn, 4 Black Wyrmkin and 1 Black Drake. Return to Helendis Riverhorn when the task is complete.",
+      "start": {
+        "npc": "Helendis Riverhorn",
+        "location": [1428, 85.4, 68.8],
+        "description": "Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Helendis Riverhorn",
+        "location": [1428, 85.4, 68.8],
+        "description": "Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 4183,
+      "name": "The True Masters",
+      "side": "Alliance",
+      "requiredLevel": 48,
+      "objective": "Travel to Lakeshire and deliver Helendis Riverhorn's Letter to Magistrate Solomon.",
+      "requires": [4182],
+      "start": {
+        "npc": "Helendis Riverhorn",
+        "location": [1428, 85.4, 68.8],
+        "description": "Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Magistrate Solomon",
+        "description": "Redridge Mountains"
+      },
+      "items": []
+    },
+    {
+      "id": 4184,
+      "name": "The True Masters",
+      "side": "Alliance",
+      "requiredLevel": 48,
+      "objective": "Travel to Stormwind and deliver Solomon's Plea to Highlord Bolvar Fordragon. Bolvar resides in Stormwind Keep.",
+      "requires": [4183],
+      "start": {
+        "npc": "Magistrate Solomon",
+        "location": [1433, 29.8, 44.6],
+        "description": "Redridge Mountains"
+      },
+      "turnIn": {
+        "npc": "Highlord Bolvar Fordragon",
+        "description": "Stormwind"
+      },
+      "items": []
+    },
+    {
+      "id": 4185,
+      "name": "The True Masters",
+      "side": "Alliance",
+      "requiredLevel": 48,
+      "objective": "Speak with Highlord Bolvar Fordragon after speaking with Lady Katrana Prestor.",
+      "requires": [4184],
+      "start": {
+        "npc": "Highlord Bolvar Fordragon",
+        "location": [1453, 77.4, 18.8],
+        "description": "Stormwind"
+      },
+      "turnIn": {
+        "npc": "Highlord Bolvar Fordragon",
+        "location": [1453, 77.4, 18.8],
+        "description": "Stormwind"
+      },
+      "items": []
+    },
+    {
+      "id": 4186,
+      "name": "The True Masters",
+      "side": "Alliance",
+      "requiredLevel": 48,
+      "objective": "Take Bolvar's Decree to Magistrate Solomon in Lakeshire.",
+      "requires": [4185],
+      "start": {
+        "npc": "Highlord Bolvar Fordragon",
+        "location": [1453, 77.4, 18.8],
+        "description": "Stormwind"
+      },
+      "turnIn": {
+        "npc": "Magistrate Solomon",
+        "description": "Redridge Mountains"
+      },
+      "items": []
+    },
+    {
+      "id": 4201,
+      "name": "The Love Potion",
+      "side": "Both",
+      "requiredLevel": 50,
+      "xp": 5450,
+      "objective": "Bring 4 Gromsblood, 10 Giant Silver Veins and Nagmara's Filled Vial to Mistress Nagmara in Blackrock Depths.",
+      "description": "Gromsblood, Giant Silver Veins (Azshara cliff giants) and the vial filled at Golakka Hot Springs in Un'Goro. Opens a peaceful way through the bar on later visits.",
+      "start": {
+        "npc": "Mistress Nagmara",
+        "description": "Blackrock Depths"
+      },
+      "turnIn": {
+        "npc": "Mistress Nagmara",
+        "description": "Blackrock Depths"
+      },
+      "items": [
+        {
+          "item": 11866,
+          "name": "Nagmara's Whipping Belt"
+        },
+        {
+          "item": 11962,
+          "name": "Manacle Cuffs"
+        }
+      ]
+    },
+    {
+      "id": 4223,
+      "name": "The True Masters",
+      "side": "Alliance",
+      "requiredLevel": 48,
+      "objective": "Speak with Marshal Maxwell in the Burning Steppes.",
+      "requires": [4186],
+      "start": {
+        "npc": "Magistrate Solomon",
+        "location": [1433, 29.8, 44.6],
+        "description": "Redridge Mountains"
+      },
+      "turnIn": {
+        "npc": "Marshal Maxwell",
+        "description": "Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 4224,
+      "name": "The True Masters",
+      "side": "Alliance",
+      "requiredLevel": 48,
+      "objective": "Speak with Ragged John to learn of Marshal Windsor's fate and return to Marshal Maxwell when you have completed this task. You recall Marshal Maxwell telling you to search for him in a cave to the north.",
+      "requires": [4223],
+      "start": {
+        "npc": "Marshal Maxwell",
+        "location": [1428, 84.6, 68.8],
+        "description": "Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Marshal Maxwell",
+        "location": [1428, 84.6, 68.8],
+        "description": "Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 4241,
+      "name": "Marshal Windsor",
+      "side": "Alliance",
+      "requiredLevel": 48,
+      "objective": "Travel to Blackrock Mountain in the northwest and enter Blackrock Depths. Find out what became of Marshal Windsor. You recall Ragged John talking about Windsor being dragged off to a prison.",
+      "requires": [4224],
+      "start": {
+        "npc": "Marshal Maxwell",
+        "location": [1428, 84.6, 68.8],
+        "description": "Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Marshal Windsor"
+      },
+      "items": []
+    },
+    {
+      "id": 4242,
+      "name": "Abandoned Hope",
+      "side": "Alliance",
+      "requiredLevel": 48,
+      "objective": "Give Marshal Maxwell the bad news.",
+      "requires": [4241],
+      "start": {
+        "npc": "Marshal Windsor"
+      },
+      "turnIn": {
+        "npc": "Marshal Maxwell",
+        "description": "Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 4262,
+      "name": "Overmaster Pyron",
+      "side": "Alliance",
+      "requiredLevel": 48,
+      "objective": "Slay Overmaster Pyron and return to Jalinda Sprig. You recall Jalinda talking about Pyron guarding the quarry. Perhaps you should search there?",
+      "start": {
+        "npc": "Jalinda Sprig",
+        "location": [1428, 85.4, 70],
+        "description": "Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Jalinda Sprig",
+        "location": [1428, 85.4, 70],
+        "description": "Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 4263,
+      "name": "Incendius!",
+      "side": "Alliance",
+      "requiredLevel": 48,
+      "xp": 5800,
+      "objective": "Find Lord Incendius in Blackrock Depths and destroy him!",
+      "description": "Kill Lord Incendius at the Black Anvil inside BRD.",
+      "requires": [4262],
+      "start": {
+        "npc": "Jalinda Sprig",
+        "location": [1428, 85.4, 70],
+        "description": "Morgan's Vigil, Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Jalinda Sprig",
+        "location": [1428, 85.4, 70],
+        "description": "Morgan's Vigil, Burning Steppes"
+      },
+      "items": [
+        {
+          "item": 12113,
+          "name": "Sunborne Cape"
+        },
+        {
+          "item": 12114,
+          "name": "Nightfall Gloves"
+        },
+        {
+          "item": 12112,
+          "name": "Crypt Demon Bracers"
+        },
+        {
+          "item": 12115,
+          "name": "Stalwart Clutch"
+        }
+      ]
+    },
+    {
+      "id": 4264,
+      "name": "A Crumpled Up Note",
+      "side": "Alliance",
+      "requiredLevel": 50,
+      "objective": "You may have just stumbled on to something that Marshal Windsor would be interested in seeing. There may be hope, after all.",
+      "requires": [4242],
+      "start": {
+        "item": 11446,
+        "description": "A Crumpled Up Note (drops from Dark Iron dwarves)"
+      },
+      "turnIn": {
+        "npc": "Marshal Windsor"
+      },
+      "items": []
+    },
+    {
+      "id": 4282,
+      "name": "A Shred of Hope",
+      "side": "Alliance",
+      "requiredLevel": 50,
+      "objective": "Return Marshal Windsor's Lost Information. Marshal Windsor believes that the information is being held by Golem Lord Argelmach and General Angerforge.",
+      "requires": [4264],
+      "start": {
+        "npc": "Marshal Windsor"
+      },
+      "turnIn": {
+        "npc": "Marshal Windsor"
+      },
+      "items": []
+    },
+    {
+      "id": 4286,
+      "name": "The Good Stuff",
+      "side": "Alliance",
+      "requiredLevel": 50,
+      "xp": 5800,
+      "objective": "Travel to Blackrock Depths and recover 20 Dark Iron Fanny Packs. Return to Oralius when you have completed this task. You assume that the Dark Iron dwarves inside Blackrock Depths carry these 'fanny pack' contraptions.",
+      "description": "Dark Iron Fanny Packs drop from Dark Iron dwarves in BRD.",
+      "start": {
+        "npc": "Oralius",
+        "location": [1428, 84.4, 68.4],
+        "description": "Morgan's Vigil, Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Oralius",
+        "location": [1428, 84.4, 68.4],
+        "description": "Morgan's Vigil, Burning Steppes"
+      },
+      "items": [
+        {
+          "item": 11883,
+          "name": "A Dingy Fanny Pack"
+        }
+      ]
+    },
+    {
+      "id": 4295,
+      "name": "Rocknot's Ale",
+      "side": "Both",
+      "requiredLevel": 50,
+      "xp": 0,
+      "objective": "Bring Private Rocknot two Dark Iron Ale Mugs.",
+      "description": "Buy Dark Iron Ale Mugs from Plugger Spazzring and keep handing them to Rocknot. The drunken event opens the bar route and can turn Phalanx hostile.",
+      "start": {
+        "npc": "Private Rocknot",
+        "description": "Grim Guzzler, Blackrock Depths"
+      },
+      "turnIn": {
+        "npc": "Private Rocknot",
+        "description": "Grim Guzzler, Blackrock Depths"
+      },
+      "items": []
+    },
+    {
+      "id": 4322,
+      "name": "Jail Break!",
+      "side": "Alliance",
+      "requiredLevel": 50,
+      "xp": 7750,
+      "objective": "Help Marshal Windsor get his gear back and free his friends. Return to Marshal Maxwell if you succeed.",
+      "description": "Escort Marshal Windsor through the prison. Clear the patrols first and have everyone ready before you start.",
+      "requires": [4282],
+      "start": {
+        "npc": "Marshal Windsor",
+        "description": "Blackrock Depths"
+      },
+      "turnIn": {
+        "npc": "Marshal Maxwell",
+        "description": "Morgan's Vigil, Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 4324,
+      "name": "Yuka Screwspigot",
+      "side": "Both",
+      "requiredLevel": 48,
+      "xp": 0,
+      "objective": "Speak with Yuka Screwspigot in the Burning Steppes.",
+      "description": "Introductory step leading to Ribbly Screwspigot.\n\nOPTIONAL, not required",
+      "start": {
+        "npc": "Yorba Screwspigot",
+        "location": [1446, 67, 24],
+        "description": "Steamwheedle Port, Tanaris"
+      },
+      "turnIn": {
+        "npc": "Yuka Screwspigot",
+        "description": "Flame Crest, Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 4341,
+      "name": "Kharan Mighthammer",
+      "side": "Alliance",
+      "requiredLevel": 50,
+      "objective": "Travel to Blackrock Depths and find Kharan Mighthammer. The King mentioned that Kharan was being held prisoner there - perhaps you should try looking for a prison.",
+      "requires": [3701],
+      "start": {
+        "npc": "King Magni Bronzebeard",
+        "location": [1455, 39.4, 55.8],
+        "description": "Ironforge"
+      },
+      "turnIn": {
+        "npc": "Kharan Mighthammer"
+      },
+      "items": []
+    },
+    {
+      "id": 4342,
+      "name": "Kharan's Tale",
+      "side": "Alliance",
+      "requiredLevel": 50,
+      "objective": "Listen as Kharan Mighthammer tells his story.",
+      "requires": [4341],
+      "start": {
+        "npc": "Kharan Mighthammer"
+      },
+      "turnIn": {
+        "npc": "Kharan Mighthammer"
+      },
+      "items": []
+    },
+    {
+      "id": 4361,
+      "name": "The Bearer of Bad News",
+      "side": "Alliance",
+      "requiredLevel": 50,
+      "objective": "Return to Ironforge and deliver the bad news to King Magni Bronzebeard.",
+      "requires": [4342],
+      "start": {
+        "npc": "Kharan Mighthammer"
+      },
+      "turnIn": {
+        "npc": "King Magni Bronzebeard",
+        "description": "Ironforge"
+      },
+      "items": []
+    },
+    {
+      "id": 4362,
+      "name": "The Fate of the Kingdom",
+      "side": "Alliance",
+      "requiredLevel": 50,
+      "xp": 8050,
+      "objective": "Return to Blackrock Depths and rescue Princess Moira Bronzebeard from the evil clutches of Emperor Dagran Thaurissan.",
+      "requires": [4361],
+      "start": {
+        "npc": "King Magni Bronzebeard",
+        "location": [1455, 39.4, 55.8],
+        "description": "Ironforge"
+      },
+      "turnIn": {
+        "npc": "Princess Moira Bronzebeard",
+        "description": "Blackrock Depths"
+      },
+      "items": [
+        {
+          "item": 12548,
+          "name": "Magni's Will"
+        },
+        {
+          "item": 12543,
+          "name": "Songstone of Ironforge"
+        }
+      ]
+    },
+    {
+      "id": 7201,
+      "name": "The Last Element",
+      "side": "Horde",
+      "requiredLevel": 48,
+      "xp": 5450,
+      "objective": "Travel to Blackrock Depths and recover 10 Essence of the Elements. Your first inclination is to search the golems and golem makers. You remember Vivian Lagrave also muttering something about elementals.",
+      "description": "Essence of the Elements drops from BRD elementals and golems.",
+      "requires": [3906],
+      "start": {
+        "npc": "Shadowmage Vivian Lagrave",
+        "location": [1418, 3, 47.6],
+        "description": "Kargath, Badlands"
+      },
+      "turnIn": {
+        "npc": "Shadowmage Vivian Lagrave",
+        "location": [1418, 3, 47.6],
+        "description": "Kargath, Badlands"
+      },
+      "items": [
+        {
+          "item": 12038,
+          "name": "Lagrave's Seal"
+        }
+      ]
+    },
+    {
+      "id": 7604,
+      "name": "A Binding Contract",
+      "side": "Both",
+      "requiredLevel": 60,
+      "xp": 0,
+      "objective": "Turn the Thorium Brotherhood Contract in to Lokhtos Darkbargainer if you would like to receive the plans for Sulfuron.",
+      "description": "Blacksmithing. Bring a Sulfuron Ingot (Golemagg, Molten Core) to Lokhtos in the Grim Guzzler to get the contract, then hand it back for the Sulfuron Hammer plans.",
+      "start": {
+        "description": "Thorium Brotherhood Contract (from Lokhtos Darkbargainer with a Sulfuron Ingot)"
+      },
+      "turnIn": {
+        "npc": "Lokhtos Darkbargainer",
+        "description": "Grim Guzzler, Blackrock Depths"
+      },
+      "items": [
+        {
+          "item": 18592,
+          "name": "Plans: Sulfuron Hammer"
+        }
+      ]
+    },
+    {
+      "id": 7848,
+      "name": "Attunement to the Core",
+      "side": "Both",
+      "requiredLevel": 55,
+      "xp": 6600,
+      "objective": "Venture to the Molten Core entry portal in Blackrock Depths and recover a Core Fragment. Return to Lothos Riftwaker in Blackrock Mountain when you have recovered the Core Fragment.",
+      "description": "The Core Fragment is on the rock beside the Molten Core portal deep inside BRD. Unlocks Lothos's teleport to Molten Core.",
+      "start": {
+        "npc": "Lothos Riftwaker",
+        "description": "Blackrock Mountain"
+      },
+      "turnIn": {
+        "npc": "Lothos Riftwaker",
+        "description": "Blackrock Mountain"
+      },
+      "items": []
+    }
+  ]
 }

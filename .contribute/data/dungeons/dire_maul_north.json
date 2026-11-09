@@ -14,44 +14,180 @@
       "id": 362,
       "name": "Guard Mol'dar",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Guard Moldar",
-      "loot": []
+      "loot": [
+        {
+          "item": 18494,
+          "name": "Denwatcher's Shoulders"
+        },
+        {
+          "item": 18493,
+          "name": "Bulky Iron Spaulders"
+        },
+        {
+          "item": 18496,
+          "name": "Heliotrope Cloak"
+        },
+        {
+          "item": 18497,
+          "name": "Sublime Wristguards"
+        },
+        {
+          "item": 18498,
+          "name": "Hedgecutter"
+        }
+      ]
     },
     {
       "id": 363,
       "name": "Stomper Kreeg",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Stomper Kreeg",
-      "loot": []
+      "loot": [
+        {
+          "item": 18425,
+          "name": "Kreeg's Mug"
+        }
+      ]
     },
     {
       "id": 364,
       "name": "Guard Fengus",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Guard Fengus",
-      "loot": []
+      "loot": [
+        {
+          "item": 18494,
+          "name": "Denwatcher's Shoulders"
+        },
+        {
+          "item": 18493,
+          "name": "Bulky Iron Spaulders"
+        },
+        {
+          "item": 18496,
+          "name": "Heliotrope Cloak"
+        },
+        {
+          "item": 18497,
+          "name": "Sublime Wristguards"
+        },
+        {
+          "item": 18498,
+          "name": "Hedgecutter"
+        }
+      ]
     },
     {
       "id": 365,
       "name": "Guard Slip'kik",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Guard Slipkik",
-      "loot": []
+      "loot": [
+        {
+          "item": 18494,
+          "name": "Denwatcher's Shoulders"
+        },
+        {
+          "item": 18493,
+          "name": "Bulky Iron Spaulders"
+        },
+        {
+          "item": 18496,
+          "name": "Heliotrope Cloak"
+        },
+        {
+          "item": 18497,
+          "name": "Sublime Wristguards"
+        },
+        {
+          "item": 18498,
+          "name": "Hedgecutter"
+        }
+      ]
     },
     {
       "id": 366,
       "name": "Captain Kromcrush",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Captain Kromcrush",
-      "loot": []
+      "loot": [
+        {
+          "item": 18503,
+          "name": "Kromcrush's Chestplate"
+        },
+        {
+          "item": 18507,
+          "name": "Boots of the Full Moon"
+        },
+        {
+          "item": 18502,
+          "name": "Monstrous Glaive"
+        },
+        {
+          "item": 18505,
+          "name": "Mugger's Belt"
+        }
+      ]
     },
     {
       "id": 367,
       "name": "Cho'Rush the Observer",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-ChoRush the Observer",
-      "loot": []
+      "loot": [
+        {
+          "item": 18483,
+          "name": "Mana Channeling Wand"
+        },
+        {
+          "item": 18484,
+          "name": "Cho'Rush's Blade"
+        },
+        {
+          "item": 18485,
+          "name": "Observer's Shield"
+        },
+        {
+          "item": 18490,
+          "name": "Insightful Hood"
+        }
+      ]
     },
     {
       "id": 368,
       "name": "King Gordok",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-King Gordok",
-      "loot": []
+      "loot": [
+        {
+          "item": 18526,
+          "name": "Crown of the Ogre King"
+        },
+        {
+          "item": 18525,
+          "name": "Bracers of Prosperity"
+        },
+        {
+          "item": 18527,
+          "name": "Harmonious Gauntlets"
+        },
+        {
+          "item": 18524,
+          "name": "Leggings of Destruction"
+        },
+        {
+          "item": 18521,
+          "name": "Grimy Metal Boots"
+        },
+        {
+          "item": 18520,
+          "name": "Barbarous Blade"
+        },
+        {
+          "item": 18522,
+          "name": "Band of the Ogre King"
+        },
+        {
+          "item": 18523,
+          "name": "Brightly Glowing Stone"
+        }
+      ]
     }
   ],
-  "trash": []
+  "trash": [],
+  "quests": [7703, 5525, 5518, 7482, 7481, 7506, 7503, 7500, 7501, 7504, 7498, 7505, 7502, 7499, 7507, 7483, 7484, 7485]
 }

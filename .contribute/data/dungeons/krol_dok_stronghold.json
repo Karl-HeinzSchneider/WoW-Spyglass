@@ -1,0 +1,120 @@
+{
+  "map": 3039,
+  "name": "Krol'dok Stronghold",
+  "minLevel": 40,
+  "maxLevel": 45,
+  "icon": "Interface\\Icons\\INV_Misc_Key_13",
+  "encounters": [
+    {
+      "id": 3449,
+      "name": "Nar'gurk",
+      "loot": [
+        {
+          "item": 275004,
+          "name": "Chain of the Corruptor"
+        },
+        {
+          "item": 275005,
+          "name": "Krol'dok Warplate Chest"
+        },
+        {
+          "item": 275006,
+          "name": "Krol'dok Warplate Helmet"
+        }
+      ]
+    },
+    {
+      "id": 3450,
+      "name": "Slavecrusher Grox",
+      "loot": [
+        {
+          "item": 274996,
+          "name": "Resistance Breaker Spaulder"
+        },
+        {
+          "item": 274997,
+          "name": "Chain of Binding"
+        },
+        {
+          "item": 274995,
+          "name": "Slavecrusher Scepter"
+        },
+        {
+          "item": 273101,
+          "name": "Blueprint: Expert Campfire"
+        }
+      ]
+    },
+    {
+      "id": 3451,
+      "name": "Overseer Mugg",
+      "loot": [
+        {
+          "item": 275009,
+          "name": "Emblem of Slamming"
+        },
+        {
+          "item": 275007,
+          "name": "Mugg's Jabber"
+        },
+        {
+          "item": 275010,
+          "name": "Strongly Scented Hood"
+        }
+      ]
+    },
+    {
+      "id": 3452,
+      "name": "Twilight Commander Zarmok",
+      "loot": [
+        {
+          "item": 275000,
+          "name": "Zarmok's Plated Signet"
+        },
+        {
+          "item": 274998,
+          "name": "Shadowlight Athame"
+        },
+        {
+          "item": 274999,
+          "name": "Shadecaster's Leggings"
+        }
+      ]
+    },
+    {
+      "id": 3453,
+      "name": "Handler Ashka",
+      "loot": [
+        {
+          "item": 275001,
+          "name": "Bloodied Gutslicer"
+        },
+        {
+          "item": 275002,
+          "name": "War Handler's Gaze"
+        }
+      ]
+    },
+    {
+      "id": -264773,
+      "name": "Bossman Toof",
+      "npc": 264773,
+      "loot": [
+        {
+          "item": 286430,
+          "name": "Toofbreaker"
+        },
+        {
+          "item": 286429,
+          "name": "Big-Belly Belt"
+        },
+        {
+          "item": 286428,
+          "name": "Band of Bossman"
+        }
+      ]
+    }
+  ],
+  "trash": [],
+  "quests": [94968, 94972, 94975, 94982, 94984, 96771, 94981, 94974, 94998]
+}

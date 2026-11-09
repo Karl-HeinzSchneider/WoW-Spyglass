@@ -13,51 +13,202 @@
       "id": 422,
       "name": "Noxxion",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Noxxion",
-      "loot": []
+      "loot": [
+        {
+          "item": 17744,
+          "name": "Heart of Noxxion"
+        },
+        {
+          "item": 17746,
+          "name": "Noxxion's Shackles"
+        },
+        {
+          "item": 17745,
+          "name": "Noxious Shooter"
+        }
+      ]
     },
     {
       "id": 423,
       "name": "Razorlash",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Razorlash",
-      "loot": []
+      "loot": [
+        {
+          "item": 17748,
+          "name": "Vinerot Sandals"
+        },
+        {
+          "item": 17749,
+          "name": "Phytoskin Spaulders"
+        },
+        {
+          "item": 17750,
+          "name": "Chloromesh Girdle"
+        },
+        {
+          "item": 17751,
+          "name": "Brusslehide Leggings"
+        }
+      ]
     },
     {
       "id": 427,
       "name": "Tinkerer Gizlock",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Tinkerer Gizlock",
-      "loot": []
+      "loot": [
+        {
+          "item": 17717,
+          "name": "Megashot Rifle"
+        },
+        {
+          "item": 17718,
+          "name": "Gizlock's Hypertech Buckler"
+        },
+        {
+          "item": 17719,
+          "name": "Inventor's Focal Sword"
+        }
+      ]
     },
     {
       "id": 424,
       "name": "Lord Vyletongue",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Vyletongue",
-      "loot": []
+      "loot": [
+        {
+          "item": 17752,
+          "name": "Satyr's Lash"
+        },
+        {
+          "item": 17754,
+          "name": "Infernal Trickster Leggings"
+        },
+        {
+          "item": 17755,
+          "name": "Satyrmane Sash"
+        }
+      ]
     },
     {
       "id": 425,
       "name": "Celebras the Cursed",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Celebras the Cursed",
-      "loot": []
+      "loot": [
+        {
+          "item": 17738,
+          "name": "Claw of Celebras"
+        },
+        {
+          "item": 17739,
+          "name": "Grovekeeper's Drape"
+        },
+        {
+          "item": 17740,
+          "name": "Soothsayer's Headdress"
+        }
+      ]
     },
     {
       "id": 426,
       "name": "Landslide",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Landslide",
-      "loot": []
+      "loot": [
+        {
+          "item": 17943,
+          "name": "Fist of Stone"
+        },
+        {
+          "item": 17736,
+          "name": "Rockgrip Gauntlets"
+        },
+        {
+          "item": 17737,
+          "name": "Cloud Stone"
+        },
+        {
+          "item": 17734,
+          "name": "Helm of the Mountain"
+        }
+      ]
     },
     {
       "id": 428,
       "name": "Rotgrip",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Rotgrip",
-      "loot": []
+      "loot": [
+        {
+          "item": 17732,
+          "name": "Rotgrip Mantle"
+        },
+        {
+          "item": 17728,
+          "name": "Albino Crocscale Boots"
+        },
+        {
+          "item": 17730,
+          "name": "Gatorbite Axe"
+        }
+      ]
     },
     {
       "id": 429,
       "name": "Princess Theradras",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Princess Theradras",
-      "loot": []
+      "loot": [
+        {
+          "item": 17713,
+          "name": "Blackstone Ring"
+        },
+        {
+          "item": 17714,
+          "name": "Bracers of the Stone Princess"
+        },
+        {
+          "item": 17707,
+          "name": "Gemshard Heart"
+        },
+        {
+          "item": 17715,
+          "name": "Eye of Theradras"
+        },
+        {
+          "item": 17766,
+          "name": "Princess Theradras' Scepter"
+        },
+        {
+          "item": 17710,
+          "name": "Charstone Dirk"
+        },
+        {
+          "item": 17711,
+          "name": "Elemental Rockridge Leggings"
+        },
+        {
+          "item": 17780,
+          "name": "Blade of Eternal Darkness"
+        }
+      ]
+    },
+    {
+      "id": -12237,
+      "name": "Meshlok the Harvester",
+      "npc": 12237,
+      "loot": [
+        {
+          "item": 17767,
+          "name": "Bloomsprout Headpiece"
+        },
+        {
+          "item": 17741,
+          "name": "Nature's Embrace"
+        },
+        {
+          "item": 17742,
+          "name": "Fungus Shroud Armor"
+        }
+      ]
     }
   ],
   "trash": [],
-  "quests": []
+  "quests": [7067, 7068, 7070, 7029, 7041, 7028, 7044, 7046, 7064, 7065, 7066]
 }

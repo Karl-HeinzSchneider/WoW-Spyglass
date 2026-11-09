@@ -13,10 +13,31 @@
       "id": 2805,
       "name": "Kirtonos",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Kirtonos the Herald",
+      "npc": 10506,
       "loot": [
         {
           "item": 16734,
           "name": "Boots of Valor"
+        },
+        {
+          "item": 13960,
+          "name": "Heart of the Fiend"
+        },
+        {
+          "item": 13967,
+          "name": "Windreaver Greaves"
+        },
+        {
+          "item": 13969,
+          "name": "Loomguard Armbraces"
+        },
+        {
+          "item": 14024,
+          "name": "Frightalon"
+        },
+        {
+          "item": 13957,
+          "name": "Gargoyle Slashers"
         }
       ]
     },
@@ -28,6 +49,30 @@
         {
           "item": 16701,
           "name": "Dreadmist Mantle"
+        },
+        {
+          "item": 14545,
+          "name": "Ghostloom Leggings"
+        },
+        {
+          "item": 14541,
+          "name": "Barovian Family Sword"
+        },
+        {
+          "item": 14548,
+          "name": "Royal Cap Spaulders"
+        },
+        {
+          "item": 18690,
+          "name": "Wraithplate Leggings"
+        },
+        {
+          "item": 18689,
+          "name": "Phantasmal Cloak"
+        },
+        {
+          "item": 22394,
+          "name": "Staff of Metanoia"
         }
       ]
     },
@@ -39,6 +84,30 @@
         {
           "item": 16711,
           "name": "Shadowcraft Boots"
+        },
+        {
+          "item": 14528,
+          "name": "Rattlecage Buckler"
+        },
+        {
+          "item": 14531,
+          "name": "Frightskull Shaft"
+        },
+        {
+          "item": 14537,
+          "name": "Corpselight Greaves"
+        },
+        {
+          "item": 14538,
+          "name": "Deadwalker Mantle"
+        },
+        {
+          "item": 14539,
+          "name": "Bone Ring Helm"
+        },
+        {
+          "item": 18686,
+          "name": "Bone Golem Shoulders"
         }
       ]
     },
@@ -46,13 +115,31 @@
       "id": 2809,
       "name": "Marduk Blackpool",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Marduk Blackpool",
-      "loot": []
+      "loot": [
+        {
+          "item": 14576,
+          "name": "Ebon Hilt of Marduk"
+        },
+        {
+          "item": 18692,
+          "name": "Death Knight Sabatons"
+        }
+      ]
     },
     {
       "id": 2813,
       "name": "Vectus",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Vectus",
-      "loot": []
+      "loot": [
+        {
+          "item": 14577,
+          "name": "Skullsmoke Pants"
+        },
+        {
+          "item": 18691,
+          "name": "Dark Advisor's Pendant"
+        }
+      ]
     },
     {
       "id": 3055,
@@ -64,10 +151,47 @@
       "id": 2810,
       "name": "Ras Frostwhisperer",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Ras Frostwhisper",
+      "npc": 10508,
       "loot": [
         {
           "item": 16689,
           "name": "Magister's Mantle"
+        },
+        {
+          "item": 14487,
+          "name": "Bonechill Hammer"
+        },
+        {
+          "item": 14502,
+          "name": "Frostbite Girdle"
+        },
+        {
+          "item": 18694,
+          "name": "Shadowy Mail Greaves"
+        },
+        {
+          "item": 18696,
+          "name": "Intricately Runed Shield"
+        },
+        {
+          "item": 13952,
+          "name": "Iceblade Hacker"
+        },
+        {
+          "item": 14340,
+          "name": "Freezing Lich Robes"
+        },
+        {
+          "item": 14522,
+          "name": "Maelstrom Leggings"
+        },
+        {
+          "item": 14525,
+          "name": "Boneclenched Gauntlets"
+        },
+        {
+          "item": 18693,
+          "name": "Shivery Handwraps"
         }
       ]
     },
@@ -75,31 +199,92 @@
       "id": 2803,
       "name": "Instructor Malicia",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Instructor Malicia",
-      "loot": []
+      "loot": [
+        {
+          "item": 16710,
+          "name": "Shadowcraft Bracers"
+        }
+      ]
     },
     {
       "id": 2802,
       "name": "Doctor Theolen Krastinov",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Doctor Theolen Krastinov",
-      "loot": []
+      "loot": [
+        {
+          "item": 16684,
+          "name": "Magister's Gloves"
+        }
+      ]
     },
     {
       "id": 2808,
       "name": "Lorekeeper Polkelt",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lorekeeper Polkelt",
-      "loot": []
+      "loot": [
+        {
+          "item": 16705,
+          "name": "Dreadmist Wraps"
+        }
+      ]
     },
     {
       "id": 2812,
       "name": "The Ravenian",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-The Ravenian",
-      "loot": []
+      "loot": [
+        {
+          "item": 16716,
+          "name": "Wildheart Belt"
+        }
+      ]
     },
     {
       "id": 2807,
       "name": "Lord Alexei Barov",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Alexei Barov",
-      "loot": []
+      "loot": [
+        {
+          "item": 14626,
+          "name": "Necropile Robe"
+        },
+        {
+          "item": 14637,
+          "name": "Cadaverous Armor"
+        },
+        {
+          "item": 18680,
+          "name": "Ancient Bone Bow"
+        },
+        {
+          "item": 18681,
+          "name": "Burial Shawl"
+        },
+        {
+          "item": 18682,
+          "name": "Ghoul Skin Leggings"
+        },
+        {
+          "item": 18683,
+          "name": "Hammer of the Vesper"
+        },
+        {
+          "item": 18684,
+          "name": "Dimly Opalescent Ring"
+        },
+        {
+          "item": 14611,
+          "name": "Bloodmail Hauberk"
+        },
+        {
+          "item": 14624,
+          "name": "Deathbone Chestplate"
+        },
+        {
+          "item": 16722,
+          "name": "Lightforge Bracers"
+        }
+      ]
     },
     {
       "id": 2806,
@@ -147,6 +332,34 @@
         {
           "item": 16731,
           "name": "Helm of Valor"
+        },
+        {
+          "item": 13951,
+          "name": "Vigorsteel Vambraces"
+        },
+        {
+          "item": 13398,
+          "name": "Boots of the Shrieker"
+        },
+        {
+          "item": 13938,
+          "name": "Bonecreeper Stylus"
+        },
+        {
+          "item": 13944,
+          "name": "Tombstone Breastplate"
+        },
+        {
+          "item": 13953,
+          "name": "Silent Fang"
+        },
+        {
+          "item": 13964,
+          "name": "Witchblade"
+        },
+        {
+          "item": 22433,
+          "name": "Don Mauricio's Band of Domination"
         }
       ]
     }
@@ -165,5 +378,5 @@
       "name": "Lightforge Bracers"
     }
   ],
-  "quests": []
+  "quests": [5466, 5343, 5341, 4771, 5529, 7629, 7647, 7668]
 }

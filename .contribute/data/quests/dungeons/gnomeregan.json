@@ -4,7 +4,17 @@
       "id": 2904,
       "name": "A Fine Mess",
       "side": "Both",
+      "requiredLevel": 24,
       "xp": 2450,
+      "objective": "Escort Kernobee to the Clockwerk Run exit, then report to Scooty in Booty Bay.",
+      "start": {
+        "npc": "Kernobee",
+        "description": "Kernobee, inside Gnomeregan"
+      },
+      "turnIn": {
+        "npc": "Scooty",
+        "description": "Scooty, Booty Bay, Stranglethorn Vale"
+      },
       "items": [
         {
           "item": 9535,
@@ -13,6 +23,10 @@
         {
           "item": 9536,
           "name": "Fairywing Mantle"
+        },
+        {
+          "item": 270042,
+          "name": "Technician's Bracers"
         }
       ]
     },
@@ -20,7 +34,19 @@
       "id": 2928,
       "name": "Gyrodrillmatic Excavationators",
       "side": "Alliance",
+      "requiredLevel": 20,
       "xp": 2450,
+      "objective": "Bring twenty-four Robo-mechanical Guts to Shoni in Stormwind.",
+      "start": {
+        "npc": "Shoni the Shilent",
+        "location": [1453, 63, 34],
+        "description": "Shoni the Shilent, Stormwind City"
+      },
+      "turnIn": {
+        "npc": "Shoni the Shilent",
+        "location": [1453, 63, 34],
+        "description": "Shoni the Shilent, Stormwind City"
+      },
       "items": [
         {
           "item": 9608,
@@ -29,13 +55,30 @@
         {
           "item": 9609,
           "name": "Shilly Mitts"
+        },
+        {
+          "item": 270045,
+          "name": "Operator's Gloves"
         }
       ]
     },
     {
       "id": 2922,
       "name": "Save Techbot's Brain!",
+      "side": "Alliance",
+      "requiredLevel": 20,
       "xp": 2650,
+      "objective": "Bring Techbot's Memory Core to Tinkmaster Overspark in Ironforge.",
+      "start": {
+        "npc": "Tinkmaster Overspark",
+        "location": [1455, 69, 50],
+        "description": "Tinkmaster Overspark, Ironforge"
+      },
+      "turnIn": {
+        "npc": "Tinkmaster Overspark",
+        "location": [1455, 69, 50],
+        "description": "Tinkmaster Overspark, Ironforge"
+      },
       "items": []
     },
     {
@@ -46,7 +89,20 @@
     {
       "id": 2926,
       "name": "Gnogaine",
+      "side": "Alliance",
+      "requiredLevel": 20,
       "xp": 2200,
+      "objective": "Use the Empty Leaden Collection Phial on Irradiated Invaders or Irradiated Pillagers, then take the full phial back to Ozzie Togglevolt.",
+      "start": {
+        "npc": "Ozzie Togglevolt",
+        "location": [1426, 45, 49],
+        "description": "Ozzie Togglevolt, Kharanos, Dun Morogh"
+      },
+      "turnIn": {
+        "npc": "Ozzie Togglevolt",
+        "location": [1426, 45, 49],
+        "description": "Ozzie Togglevolt, Kharanos, Dun Morogh"
+      },
       "items": []
     },
     {
@@ -63,8 +119,26 @@
     {
       "id": 2843,
       "name": "Gnomer-gooooone!",
+      "side": "Horde",
+      "requiredLevel": 20,
+      "objective": "Wait for Scooty to calibrate the Goblin Transponder.",
       "requires": [2842],
-      "items": []
+      "start": {
+        "npc": "Scooty",
+        "location": [1434, 28, 77],
+        "description": "Scooty, Booty Bay, Stranglethorn Vale"
+      },
+      "turnIn": {
+        "npc": "Scooty",
+        "location": [1434, 28, 77],
+        "description": "Scooty, Booty Bay, Stranglethorn Vale"
+      },
+      "items": [
+        {
+          "item": 9173,
+          "name": "Goblin Transponder"
+        }
+      ]
     },
     {
       "id": 2962,
@@ -81,6 +155,7 @@
       },
       "turnIn": {
         "npc": "Ozzie Togglevolt",
+        "location": [1426, 45, 49],
         "description": "Kharanos, Dun Morogh."
       },
       "items": []
@@ -99,6 +174,7 @@
       },
       "turnIn": {
         "npc": "Klockmort Spannerspan",
+        "location": [1455, 67, 46],
         "description": "Ironforge."
       },
       "items": []
@@ -117,6 +193,7 @@
       },
       "turnIn": {
         "npc": "Master Mechanic Castpipe",
+        "location": [1455, 69, 48],
         "description": "Ironforge."
       },
       "items": [
@@ -144,6 +221,7 @@
       },
       "turnIn": {
         "npc": "High Tinker Mekkatorque",
+        "location": [1455, 68, 49],
         "description": "Ironforge."
       },
       "items": [
@@ -164,6 +242,7 @@
     {
       "id": 2841,
       "name": "Rig Wars",
+      "side": "Horde",
       "requiredLevel": 25,
       "xp": 2750,
       "objective": "Accept Rig Wars from Nogg. You do not need to complete it before continuing to Chief Engineer Scooty.",
@@ -175,9 +254,23 @@
       },
       "turnIn": {
         "npc": "Nogg",
+        "location": [1454, 76, 25],
         "description": "Orgrimmar."
       },
-      "items": []
+      "items": [
+        {
+          "item": 9623,
+          "name": "Civinad Robes"
+        },
+        {
+          "item": 9624,
+          "name": "Triprunner Dungarees"
+        },
+        {
+          "item": 9625,
+          "name": "Dual Reinforced Leggings"
+        }
+      ]
     },
     {
       "id": 2951,
@@ -215,6 +308,7 @@
       },
       "turnIn": {
         "npc": "Talvash del Kissel",
+        "location": [1455, 35.7, 4],
         "description": "Mystic Ward, Ironforge."
       },
       "items": [
@@ -271,6 +365,7 @@
       },
       "turnIn": {
         "npc": "Nogg",
+        "location": [1454, 76, 25],
         "description": "Valley of Honor, Orgrimmar."
       },
       "items": [

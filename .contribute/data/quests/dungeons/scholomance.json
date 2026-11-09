@@ -1,3 +1,423 @@
 {
-  "quests": []
+  "quests": [
+    {
+      "id": 4771,
+      "name": "Dawn's Gambit",
+      "side": "Both",
+      "requiredLevel": 57,
+      "xp": 9950,
+      "objective": "Place Dawn's Gambit in the Viewing Room of the Scholomance. Defeat Vectus, then return to Betina Bigglezink.",
+      "description": "Use Dawn's Gambit in the Viewing Room and defeat Vectus.",
+      "requires": [5531],
+      "start": {
+        "npc": "Betina Bigglezink",
+        "location": [1423, 73.7, 50.5],
+        "description": "Light's Hope Chapel, Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Betina Bigglezink",
+        "location": [1423, 73.7, 50.5],
+        "description": "Light's Hope Chapel, Eastern Plaguelands"
+      },
+      "items": [
+        {
+          "item": 15853,
+          "name": "Windreaper"
+        },
+        {
+          "item": 15854,
+          "name": "Dancing Sliver"
+        }
+      ]
+    },
+    {
+      "id": 5341,
+      "name": "Barov Family Fortune",
+      "side": "Horde",
+      "requiredLevel": 52,
+      "xp": 6600,
+      "objective": "Venture to the Scholomance and recover the Barov family fortune. Four deeds make up this fortune: The Deed to Caer Darrow; The Deed to Brill; The Deed to Tarren Mill; and The Deed to Southshore. Return to Alexi Barov when you have completed this task.",
+      "description": "The four deeds: Southshore in the first large chamber, Tarren Mill before the hatchlings, Brill by Ras Frostwhisper, Caer Darrow by Lord Alexei Barov. The follow-up The Last Barov sends you to kill the rival brother.",
+      "start": {
+        "npc": "Alexi Barov",
+        "location": [1420, 83, 71.4],
+        "description": "The Bulwark, Tirisfal Glades"
+      },
+      "turnIn": {
+        "npc": "Alexi Barov",
+        "location": [1420, 83, 71.4],
+        "description": "The Bulwark, Tirisfal Glades"
+      },
+      "items": []
+    },
+    {
+      "id": 5343,
+      "name": "Barov Family Fortune",
+      "side": "Alliance",
+      "requiredLevel": 52,
+      "xp": 6600,
+      "objective": "Venture to the Scholomance and recover the Barov family fortune. Four deeds make up this fortune: The Deed to Caer Darrow; The Deed to Brill; The Deed to Tarren Mill; and The Deed to Southshore. Return to Weldon Barov when you have completed this task.",
+      "description": "The four deeds: Southshore in the first large chamber, Tarren Mill before the hatchlings, Brill by Ras Frostwhisper, Caer Darrow by Lord Alexei Barov. The follow-up The Last Barov sends you to kill the rival brother.",
+      "start": {
+        "npc": "Weldon Barov",
+        "location": [1422, 43.4, 83.4],
+        "description": "Chillwind Camp, Western Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Weldon Barov",
+        "location": [1422, 43.4, 83.4],
+        "description": "Chillwind Camp, Western Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5382,
+      "name": "Doctor Theolen Krastinov, the Butcher",
+      "side": "Both",
+      "requiredLevel": 55,
+      "xp": 6600,
+      "objective": "Find Doctor Theolen Krastinov inside the Scholomance. Destroy him, then burn the Remains of Eva Sarkhoff and the Remains of Lucien Sarkhoff. Return to Eva Sarkhoff when the task is complete.",
+      "start": {
+        "npc": "Eva Sarkhoff",
+        "location": [1422, 70.2, 73.8],
+        "description": "Caer Darrow, Western Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Eva Sarkhoff",
+        "location": [1422, 70.2, 73.8],
+        "description": "Caer Darrow, Western Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5384,
+      "name": "Kirtonos the Herald",
+      "side": "Both",
+      "requiredLevel": 55,
+      "xp": 8300,
+      "objective": "Return to the Scholomance with the Blood of Innocents. Find the porch and place the Blood of Innocents in the brazier. Kirtonos will come to feast upon your soul. Fight valiantly, do not give an inch! Destroy Kirtonos and return to Eva Sarkhoff.",
+      "description": "Use the Blood of Innocents at the brazier on the Scholomance porch. Rewards the Spectral Essence.",
+      "requires": [5515],
+      "start": {
+        "npc": "Eva Sarkhoff",
+        "location": [1422, 70.2, 73.8],
+        "description": "Caer Darrow, Western Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Eva Sarkhoff",
+        "location": [1422, 70.2, 73.8],
+        "description": "Caer Darrow, Western Plaguelands"
+      },
+      "items": [
+        {
+          "item": 15805,
+          "name": "Penelope's Rose"
+        },
+        {
+          "item": 15806,
+          "name": "Mirah's Song"
+        }
+      ]
+    },
+    {
+      "id": 5461,
+      "name": "The Human, Ras Frostwhisper",
+      "requiredLevel": 57,
+      "objective": "Travel to the Arathi Highlands, to the ruins of Stromgarde. Search Stromgarde for a Keepsake of Remembrance. If you find such an item, return with it to Magistrate Marduke.",
+      "requires": [5384],
+      "start": {
+        "npc": "Magistrate Marduke",
+        "location": [1422, 70.4, 74],
+        "description": "Western Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Magistrate Marduke",
+        "location": [1422, 70.4, 74],
+        "description": "Western Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5462,
+      "name": "The Dying, Ras Frostwhisper",
+      "requiredLevel": 57,
+      "objective": "Travel to Light's Hope in Eastern Plaguelands and seek out Leonid Barthalomew the Revered. Show him the Keepsake of Remembrance and tell him all that you have discovered.",
+      "requires": [5461],
+      "start": {
+        "npc": "Magistrate Marduke",
+        "location": [1422, 70.4, 74],
+        "description": "Western Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Leonid Barthalomew the Revered",
+        "description": "Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5463,
+      "name": "Menethil's Gift",
+      "side": "Both",
+      "requiredLevel": 57,
+      "xp": 6600,
+      "objective": "Travel to Stratholme and find Menethil's Gift. Place the Keepsake of Remembrance upon the unholy ground.",
+      "description": "After Baron Rivendare dies, use the glowing rune on the floor of his room, then take the follow-up back to Leonid.",
+      "requires": [5462],
+      "start": {
+        "npc": "Leonid Barthalomew the Revered",
+        "location": [1423, 73.9, 49],
+        "description": "Light's Hope Chapel, Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Menethil's Gift",
+        "description": "Stratholme"
+      },
+      "items": []
+    },
+    {
+      "id": 5464,
+      "name": "Menethil's Gift",
+      "requiredLevel": 57,
+      "objective": "Take the Soulbound Keepsake to Leonid Barthalomew in Eastern Plaguelands.",
+      "requires": [5463],
+      "start": {
+        "description": "Menethil's Gift"
+      },
+      "turnIn": {
+        "npc": "Leonid Barthalomew the Revered",
+        "description": "Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5465,
+      "name": "Soulbound Keepsake",
+      "requiredLevel": 57,
+      "objective": "Return to Magistrate Marduke in Caer Darrow. Show him the Soulbound Keepsake.",
+      "requires": [5464],
+      "start": {
+        "npc": "Leonid Barthalomew the Revered",
+        "location": [1423, 73.9, 49],
+        "description": "Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Magistrate Marduke",
+        "description": "Western Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5466,
+      "name": "The Lich, Ras Frostwhisper",
+      "side": "Both",
+      "requiredLevel": 57,
+      "xp": 9950,
+      "objective": "Find Ras Frostwhisper in the Scholomance. When you have found him, use the Soulbound Keepsake on his undead visage. Should you succeed in reverting him to a mortal, strike him down and recover the Human Head of Ras Frostwhisper. Take the head back to Magistrate Marduke.",
+      "description": "Use the Soulbound Keepsake on Ras Frostwhisper to make him human, then kill him and bring back his human head.",
+      "requires": [5465],
+      "start": {
+        "npc": "Magistrate Marduke",
+        "location": [1422, 70.4, 74],
+        "description": "Caer Darrow, Western Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Magistrate Marduke",
+        "location": [1422, 70.4, 74],
+        "description": "Caer Darrow, Western Plaguelands"
+      },
+      "items": [
+        {
+          "item": 13982,
+          "name": "Warblade of Caer Darrow"
+        },
+        {
+          "item": 13986,
+          "name": "Crown of Caer Darrow"
+        },
+        {
+          "item": 13984,
+          "name": "Darrowspike"
+        },
+        {
+          "item": 14002,
+          "name": "Darrowshire Strongguard"
+        }
+      ]
+    },
+    {
+      "id": 5515,
+      "name": "Krastinov's Bag of Horrors",
+      "side": "Both",
+      "requiredLevel": 55,
+      "xp": 6600,
+      "objective": "Locate Jandice Barov in the Scholomance and destroy her. From her corpse recover Krastinov's Bag of Horrors. Return the bag to Eva Sarkhoff.",
+      "description": "The bag drops from Jandice Barov.",
+      "requires": [5382],
+      "start": {
+        "npc": "Eva Sarkhoff",
+        "location": [1422, 70.2, 73.8],
+        "description": "Caer Darrow, Western Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Eva Sarkhoff",
+        "location": [1422, 70.2, 73.8],
+        "description": "Caer Darrow, Western Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5522,
+      "name": "Leonid Barthalomew",
+      "requiredLevel": 57,
+      "objective": "Bring the Frozen Eggs to Leonid Barthalomew in the Eastern Plaguelands.",
+      "requires": [4735],
+      "start": {
+        "npc": "Tinkee Steamboil",
+        "location": [1428, 65.2, 23.8],
+        "description": "Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Leonid Barthalomew the Revered",
+        "description": "Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5529,
+      "name": "Plagued Hatchlings",
+      "side": "Both",
+      "requiredLevel": 55,
+      "xp": 6200,
+      "objective": "Kill 20 Plagued Hatchlings, then return to Betina Bigglezink at the Light's Hope Chapel.",
+      "description": "Kill 20 Plagued Hatchlings. After turning this in, hatchlings can drop Healthy Dragon Scales, which start a repeatable turn-in to Betina.",
+      "start": {
+        "npc": "Betina Bigglezink",
+        "location": [1423, 73.7, 50.5],
+        "description": "Light's Hope Chapel, Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Betina Bigglezink",
+        "location": [1423, 73.7, 50.5],
+        "description": "Light's Hope Chapel, Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5531,
+      "name": "Betina Bigglezink",
+      "requiredLevel": 57,
+      "objective": "Bring the Frozen Eggs to Betina Bigglezink.",
+      "requires": [5522],
+      "start": {
+        "npc": "Leonid Barthalomew the Revered",
+        "location": [1423, 73.9, 49],
+        "description": "Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Betina Bigglezink"
+      },
+      "items": []
+    },
+    {
+      "id": 7644,
+      "name": "Blessed Arcanite Barding",
+      "side": "Alliance",
+      "requiredLevel": 60,
+      "objective": "Return with the Blessed Arcanite Barding to Lord Grayson Shadowbreaker in the Cathedral District of Stormwind.",
+      "requires": [7643],
+      "start": {
+        "npc": "Ancient Equine Spirit"
+      },
+      "turnIn": {
+        "npc": "Lord Grayson Shadowbreaker",
+        "description": "Stormwind"
+      },
+      "items": []
+    },
+    {
+      "id": 7646,
+      "name": "The Divination Scryer",
+      "side": "Alliance",
+      "requiredLevel": 60,
+      "objective": "Bring an Azerothian Diamond and a Pristine Black Diamond to Lord Grayson Shadowbreaker in the Cathedral District of Stormwind.",
+      "requires": [7644],
+      "start": {
+        "npc": "Lord Grayson Shadowbreaker",
+        "location": [1453, 49.4, 47.6],
+        "description": "Stormwind"
+      },
+      "turnIn": {
+        "npc": "Lord Grayson Shadowbreaker",
+        "location": [1453, 49.4, 47.6],
+        "description": "Stormwind"
+      },
+      "items": []
+    },
+    {
+      "id": 7647,
+      "name": "Judgment and Redemption",
+      "side": "Alliance",
+      "class": "Paladin",
+      "requiredLevel": 60,
+      "xp": 9950,
+      "objective": "Use the Divination Scryer in the heart of the Great Ossuary's basement in the Scholomance. Doing so will bring forth the spirits you must judge. Defeating these spirits will summon forth Death Knight Darkreaver. Defeat him and reclaim the lost soul of the fallen charger. Give the Charger's Redeemed Soul and the Blessed Enchanted Barding to Darkreaver's Fallen Charger.",
+      "description": "Paladin charger quest. Clear Rattlegore's basement in the Great Ossuary, use the Divination Scryer and defeat the spirits and Death Knight Darkreaver.",
+      "requires": [7646],
+      "start": {
+        "npc": "Lord Grayson Shadowbreaker",
+        "location": [1453, 49.4, 47.6],
+        "description": "Cathedral of Light, Stormwind"
+      },
+      "turnIn": {
+        "npc": "Darkreaver's Fallen Charger",
+        "description": "Scholomance"
+      },
+      "items": []
+    },
+    {
+      "id": 7667,
+      "name": "Material Assistance",
+      "side": "Horde",
+      "requiredLevel": 58,
+      "objective": "If you are interested in helping Sagorne Crestrider in Orgrimmar's Valley of Wisdom, bring him an Azerothian Diamond and a Pristine Black Diamond.",
+      "start": {
+        "npc": "Sagorne Creststrider",
+        "location": [1454, 38.4, 36],
+        "description": "Orgrimmar"
+      },
+      "turnIn": {
+        "npc": "Sagorne Creststrider",
+        "location": [1454, 38.4, 36],
+        "description": "Orgrimmar"
+      },
+      "items": []
+    },
+    {
+      "id": 7668,
+      "name": "The Darkreaver Menace",
+      "side": "Horde",
+      "class": "Shaman",
+      "requiredLevel": 58,
+      "xp": 9950,
+      "objective": "Use the Divination Scryer in the heart of the Great Ossuary's basement in the Scholomance. Doing so will bring forth spirits you must fight. Defeating these spirits will summon forth Death Knight Darkreaver; defeat him. Bring Darkreaver's Head to Sagorne Creststrider in the Valley of Wisdom, Orgrimmar.",
+      "description": "Shaman quest. Clear Rattlegore's basement, use the scryer and defeat Death Knight Darkreaver; return his head.",
+      "requires": [7667],
+      "start": {
+        "npc": "Sagorne Creststrider",
+        "location": [1454, 38.4, 36],
+        "description": "Valley of Wisdom, Orgrimmar"
+      },
+      "turnIn": {
+        "npc": "Sagorne Creststrider",
+        "location": [1454, 38.4, 36],
+        "description": "Valley of Wisdom, Orgrimmar"
+      },
+      "items": [
+        {
+          "item": 18807,
+          "name": "Helm of Latent Power"
+        }
+      ]
+    }
+  ]
 }

@@ -4,13 +4,53 @@
       "id": 1144,
       "name": "Willix the Importer",
       "side": "Both",
+      "requiredLevel": 23,
       "xp": 3050,
-      "items": []
+      "objective": "Escort Willix the Importer out of Razorfen Kraul.",
+      "start": {
+        "npc": "Willix the Importer",
+        "description": "Willix the Importer, inside Razorfen Kraul"
+      },
+      "turnIn": {
+        "npc": "Willix the Importer",
+        "description": "Willix the Importer, inside Razorfen Kraul"
+      },
+      "items": [
+        {
+          "item": 6748,
+          "name": "Monkey Ring"
+        },
+        {
+          "item": 6750,
+          "name": "Snake Hoop"
+        },
+        {
+          "item": 6749,
+          "name": "Tiger Band"
+        },
+        {
+          "item": 274078,
+          "name": "Boar Signet"
+        }
+      ]
     },
     {
       "id": 1221,
       "name": "Blueleaf Tubers",
+      "side": "Both",
+      "requiredLevel": 20,
       "xp": 2100,
+      "objective": "Use the Crate with Holes to summon a Snufflenose Gopher and the Command Stick to make it find 6 Blueleaf Tubers. Bring them, the Command Stick and the Crate back to Mebok Mizzyrix.",
+      "start": {
+        "npc": "Mebok Mizzyrix",
+        "location": [1413, 62, 37],
+        "description": "Mebok Mizzyrix, Ratchet, The Barrens"
+      },
+      "turnIn": {
+        "npc": "Mebok Mizzyrix",
+        "location": [1413, 62, 37],
+        "description": "Mebok Mizzyrix, Ratchet, The Barrens"
+      },
       "items": []
     },
     {
@@ -58,6 +98,7 @@
       },
       "turnIn": {
         "npc": "Falfindel Waywarder",
+        "location": [1444, 89, 46],
         "description": "Thalanaar, Feralas."
       },
       "items": [
@@ -105,6 +146,7 @@
       },
       "turnIn": {
         "npc": "Auld Stonespire",
+        "location": [1456, 36, 59],
         "description": "Thunder Bluff."
       },
       "items": [
@@ -137,10 +179,12 @@
       "requires": [6522],
       "start": {
         "npc": "Varimathras",
+        "location": [1458, 56.2, 92.6],
         "description": "Royal Quarter, Undercity."
       },
       "turnIn": {
         "npc": "Varimathras",
+        "location": [1458, 56.2, 92.6],
         "description": "Royal Quarter, Undercity."
       },
       "items": [
@@ -180,6 +224,7 @@
     {
       "id": 1109,
       "name": "Going, Going, Guano!",
+      "side": "Horde",
       "requiredLevel": 30,
       "xp": 3300,
       "objective": "Bring 1 pile of Kraul Guano to Master Apothecary Faranell in the Undercity.",
@@ -191,6 +236,7 @@
       },
       "turnIn": {
         "npc": "Master Apothecary Faranell",
+        "location": [1458, 48, 69],
         "description": "Apothecarium, Undercity."
       },
       "items": []

@@ -18,6 +18,30 @@
         {
           "item": 16670,
           "name": "Boots of Elements"
+        },
+        {
+          "item": 12336,
+          "name": "Gemstone of Spirestone"
+        },
+        {
+          "item": 13166,
+          "name": "Slamshot Shoulders"
+        },
+        {
+          "item": 13167,
+          "name": "Fist of Omokk"
+        },
+        {
+          "item": 13168,
+          "name": "Plate of the Shaman King"
+        },
+        {
+          "item": 13169,
+          "name": "Tressermane Leggings"
+        },
+        {
+          "item": 13170,
+          "name": "Skyshroud Leggings"
         }
       ]
     },
@@ -29,6 +53,30 @@
         {
           "item": 16712,
           "name": "Shadowcraft Gloves"
+        },
+        {
+          "item": 13255,
+          "name": "Trueaim Gauntlets"
+        },
+        {
+          "item": 12626,
+          "name": "Funeral Cuffs"
+        },
+        {
+          "item": 13257,
+          "name": "Demonic Runed Spaulders"
+        },
+        {
+          "item": 12651,
+          "name": "Blackcrow"
+        },
+        {
+          "item": 12653,
+          "name": "Riphook"
+        },
+        {
+          "item": 12654,
+          "name": "Doomshot"
         }
       ]
     },
@@ -40,6 +88,30 @@
         {
           "item": 16676,
           "name": "Beaststalker's Gloves"
+        },
+        {
+          "item": 12335,
+          "name": "Gemstone of Smolderthorn"
+        },
+        {
+          "item": 13177,
+          "name": "Talisman of Evasion"
+        },
+        {
+          "item": 13179,
+          "name": "Brazecore Armguards"
+        },
+        {
+          "item": 12582,
+          "name": "Keris of Zul'Serak"
+        },
+        {
+          "item": 22231,
+          "name": "Kayser's Boots of Precision"
+        },
+        {
+          "item": 13173,
+          "name": "Flightblade Throwing Axe"
         }
       ]
     },
@@ -51,6 +123,18 @@
         {
           "item": 16715,
           "name": "Wildheart Boots"
+        },
+        {
+          "item": 13244,
+          "name": "Gilded Gauntlets"
+        },
+        {
+          "item": 13213,
+          "name": "Smolderweb's Eye"
+        },
+        {
+          "item": 13183,
+          "name": "Venomspitter"
         }
       ]
     },
@@ -58,19 +142,70 @@
       "id": 271,
       "name": "Urok Doomhowl",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Urok Doomhowl",
-      "loot": []
+      "loot": [
+        {
+          "item": 13258,
+          "name": "Slaghide Gauntlets"
+        },
+        {
+          "item": 13259,
+          "name": "Ribsteel Footguards"
+        },
+        {
+          "item": 22232,
+          "name": "Marksman's Girdle"
+        },
+        {
+          "item": 13178,
+          "name": "Rosewine Circle"
+        },
+        {
+          "item": 13053,
+          "name": "Doombringer"
+        }
+      ]
     },
     {
       "id": 272,
       "name": "Quartermaster Zigris",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Quartermaster Zigris",
-      "loot": []
+      "loot": [
+        {
+          "item": 13252,
+          "name": "Cloudrunner Girdle"
+        },
+        {
+          "item": 13253,
+          "name": "Hands of Power"
+        },
+        {
+          "item": 12835,
+          "name": "Plans: Annihilator"
+        }
+      ]
     },
     {
       "id": 274,
       "name": "Halycon",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Halycon",
-      "loot": []
+      "loot": [
+        {
+          "item": 13212,
+          "name": "Halycon's Spiked Collar"
+        },
+        {
+          "item": 13211,
+          "name": "Slashclaw Bracers"
+        },
+        {
+          "item": 13210,
+          "name": "Pads of the Dread Wolf"
+        },
+        {
+          "item": 22313,
+          "name": "Ironweave Bracers"
+        }
+      ]
     },
     {
       "id": 273,
@@ -80,6 +215,18 @@
         {
           "item": 16718,
           "name": "Wildheart Spaulders"
+        },
+        {
+          "item": 13206,
+          "name": "Wolfshear Leggings"
+        },
+        {
+          "item": 13205,
+          "name": "Rhombeard Protector"
+        },
+        {
+          "item": 13208,
+          "name": "Bleak Howler Armguards"
         }
       ]
     },
@@ -95,6 +242,136 @@
         {
           "item": 16679,
           "name": "Beaststalker's Mantle"
+        },
+        {
+          "item": 12337,
+          "name": "Gemstone of Bloodaxe"
+        },
+        {
+          "item": 13161,
+          "name": "Trindlehaven Staff"
+        },
+        {
+          "item": 13162,
+          "name": "Reiver Claws"
+        },
+        {
+          "item": 13163,
+          "name": "Relentless Scythe"
+        },
+        {
+          "item": 22321,
+          "name": "Heart of Wyrmthalak"
+        }
+      ]
+    },
+    {
+      "id": -9219,
+      "name": "Spirestone Butcher",
+      "npc": 9219,
+      "loot": [
+        {
+          "item": 12608,
+          "name": "Butcher's Apron"
+        },
+        {
+          "item": 13286,
+          "name": "Rivenspike"
+        }
+      ]
+    },
+    {
+      "id": -9218,
+      "name": "Spirestone Battle Lord",
+      "npc": 9218,
+      "loot": [
+        {
+          "item": 13284,
+          "name": "Swiftdart Battleboots"
+        },
+        {
+          "item": 13285,
+          "name": "The Blackrock Slicer"
+        }
+      ]
+    },
+    {
+      "id": -9217,
+      "name": "Spirestone Lord Magus",
+      "npc": 9217,
+      "loot": [
+        {
+          "item": 13283,
+          "name": "Magus Ring"
+        },
+        {
+          "item": 13282,
+          "name": "Ogreseer Tower Boots"
+        },
+        {
+          "item": 13261,
+          "name": "Globe of D'sak"
+        }
+      ]
+    },
+    {
+      "id": -10376,
+      "name": "Crystal Fang",
+      "npc": 10376,
+      "loot": [
+        {
+          "item": 13185,
+          "name": "Sunderseer Mantle"
+        },
+        {
+          "item": 13184,
+          "name": "Fallbrush Handgrips"
+        },
+        {
+          "item": 13218,
+          "name": "Fang of the Crystal Spider"
+        }
+      ]
+    },
+    {
+      "id": -9596,
+      "name": "Bannok Grimaxe",
+      "npc": 9596,
+      "loot": [
+        {
+          "item": 12634,
+          "name": "Chiselbrand Girdle"
+        },
+        {
+          "item": 12637,
+          "name": "Backusarian Gauntlets"
+        },
+        {
+          "item": 12621,
+          "name": "Demonfork"
+        },
+        {
+          "item": 12838,
+          "name": "Plans: Arcanite Reaper"
+        }
+      ]
+    },
+    {
+      "id": -9718,
+      "name": "Ghok Bashguud",
+      "npc": 9718,
+      "loot": [
+        {
+          "item": 13203,
+          "name": "Armswake Cloak"
+        },
+        {
+          "item": 13204,
+          "name": "Bashguuder"
+        },
+        {
+          "item": 13198,
+          "name": "Hurd Smasher"
         }
       ]
     }
@@ -129,5 +406,5 @@
       "name": "Bracers of Valor"
     }
   ],
-  "quests": []
+  "quests": [4742, 4981, 4982, 5081, 4903, 4701, 4724, 4729, 4862, 4866, 4867, 5089, 4788]
 }

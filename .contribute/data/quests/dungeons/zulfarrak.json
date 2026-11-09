@@ -1,3 +1,367 @@
 {
-  "quests": []
+  "quests": [
+    {
+      "id": 2768,
+      "name": "Divino-matic Rod",
+      "side": "Both",
+      "requiredLevel": 40,
+      "xp": 6300,
+      "objective": "Bring the Divino-matic Rod to Chief Engineer Bilgewhizzle in Gadgetzan.",
+      "description": "The rod drops from Sergeant Bly after the pyramid event.",
+      "start": {
+        "npc": "Chief Engineer Bilgewhizzle",
+        "location": [1446, 52.4, 28.4],
+        "description": "Gadgetzan, Tanaris"
+      },
+      "turnIn": {
+        "npc": "Chief Engineer Bilgewhizzle",
+        "location": [1446, 52.4, 28.4],
+        "description": "Gadgetzan, Tanaris"
+      },
+      "items": [
+        {
+          "item": 9533,
+          "name": "Masons Fraternity Ring"
+        },
+        {
+          "item": 9534,
+          "name": "Engineer's Guild Headpiece"
+        }
+      ]
+    },
+    {
+      "id": 2769,
+      "name": "The Brassbolts Brothers",
+      "side": "Alliance",
+      "requiredLevel": 40,
+      "xp": 405,
+      "objective": "Speak with Wizzle Brassbolts in the Shimmering Flats.",
+      "description": "Introductory step leading to Gahz'rilla.\n\nOPTIONAL, not required",
+      "start": {
+        "npc": "Klockmort Spannerspan",
+        "location": [1455, 67.9, 46.1],
+        "description": "Tinker Town, Ironforge"
+      },
+      "turnIn": {
+        "npc": "Wizzle Brassbolts",
+        "description": "Mirage Raceway, Thousand Needles"
+      },
+      "items": []
+    },
+    {
+      "id": 2770,
+      "name": "Gahz'rilla",
+      "side": "Both",
+      "requiredLevel": 40,
+      "xp": 7100,
+      "objective": "Bring Gahz'rilla's Electrified Scale to Wizzle Brassbolts in the Shimmering Flats.",
+      "description": "Optional introductory quest:",
+      "start": {
+        "npc": "Wizzle Brassbolts",
+        "location": [1441, 78, 77],
+        "description": "Shimmering Flats, Thousand Needles"
+      },
+      "turnIn": {
+        "npc": "Wizzle Brassbolts",
+        "location": [1441, 78, 77],
+        "description": "Shimmering Flats, Thousand Needles"
+      },
+      "items": [
+        {
+          "item": 11122,
+          "name": "Carrot on a Stick"
+        }
+      ]
+    },
+    {
+      "id": 2846,
+      "name": "Tiara of the Deep",
+      "side": "Both",
+      "requiredLevel": 40,
+      "xp": 6050,
+      "objective": "Bring the Tiara of the Deep to Tabetha in Dustwallow Marsh.",
+      "description": "The Tiara drops from Hydromancer Velratha.\n\nOptional introductory quest:",
+      "start": {
+        "npc": "Tabetha",
+        "location": [1445, 46, 57],
+        "description": "Dustwallow Marsh"
+      },
+      "turnIn": {
+        "npc": "Tabetha",
+        "location": [1445, 46, 57],
+        "description": "Dustwallow Marsh"
+      },
+      "items": [
+        {
+          "item": 9527,
+          "name": "Spellshifter Rod"
+        },
+        {
+          "item": 9531,
+          "name": "Gemshale Pauldrons"
+        }
+      ]
+    },
+    {
+      "id": 2861,
+      "name": "Tabetha's Task",
+      "side": "Both",
+      "requiredLevel": 40,
+      "xp": 405,
+      "objective": "Speak with Tabetha in Dustwallow Marsh.",
+      "description": "Introductory step leading to Tiara of the Deep.\n\nOPTIONAL, not required",
+      "start": {
+        "description": "Mage trainers (mages only)"
+      },
+      "turnIn": {
+        "npc": "Tabetha",
+        "description": "Dustwallow Marsh"
+      },
+      "items": []
+    },
+    {
+      "id": 2864,
+      "name": "Tran'rek",
+      "side": "Both",
+      "requiredLevel": 40,
+      "xp": 390,
+      "objective": "Speak with Tran'rek in Gadgetzan.",
+      "description": "Introductory step leading to Scarab Shells.\n\nOPTIONAL, not required",
+      "start": {
+        "npc": "Krazek",
+        "location": [1434, 26.9, 77.2],
+        "description": "Booty Bay, Stranglethorn Vale"
+      },
+      "turnIn": {
+        "npc": "Tran'rek",
+        "description": "Gadgetzan, Tanaris"
+      },
+      "items": []
+    },
+    {
+      "id": 2865,
+      "name": "Scarab Shells",
+      "side": "Both",
+      "requiredLevel": 40,
+      "xp": 3900,
+      "objective": "Bring 5 Uncracked Scarab Shells to Tran'rek in Gadgetzan.",
+      "description": "Optional introductory quest:",
+      "start": {
+        "npc": "Tran'rek",
+        "location": [1446, 51.4, 26.8],
+        "description": "Gadgetzan, Tanaris"
+      },
+      "turnIn": {
+        "npc": "Tran'rek",
+        "location": [1446, 51.4, 26.8],
+        "description": "Gadgetzan, Tanaris"
+      },
+      "items": []
+    },
+    {
+      "id": 2933,
+      "name": "Venom Bottles",
+      "side": "Horde",
+      "requiredLevel": 40,
+      "objective": "Bring a Venom Bottle to an apothecary in Tarren Mill.",
+      "start": {
+        "location": [1425, 23, 57.8],
+        "description": "Venom Bottle"
+      },
+      "turnIn": {
+        "npc": "Apothecary Lydon",
+        "description": "Hillsbrad Foothills"
+      },
+      "items": []
+    },
+    {
+      "id": 2934,
+      "name": "Undamaged Venom Sac",
+      "side": "Horde",
+      "requiredLevel": 40,
+      "objective": "Bring an Undamaged Venom Sac to Apothecary Lydon in Tarren Mill.",
+      "requires": [2933],
+      "start": {
+        "npc": "Apothecary Lydon",
+        "location": [1424, 61.4, 19.2],
+        "description": "Hillsbrad Foothills"
+      },
+      "turnIn": {
+        "npc": "Apothecary Lydon",
+        "location": [1424, 61.4, 19.2],
+        "description": "Hillsbrad Foothills"
+      },
+      "items": []
+    },
+    {
+      "id": 2935,
+      "name": "Consult Master Gadrin",
+      "side": "Horde",
+      "requiredLevel": 40,
+      "objective": "Speak with Master Gadrin in Sen'jin Village.",
+      "requires": [2934],
+      "start": {
+        "npc": "Apothecary Lydon",
+        "location": [1424, 61.4, 19.2],
+        "description": "Hillsbrad Foothills"
+      },
+      "turnIn": {
+        "npc": "Master Gadrin"
+      },
+      "items": []
+    },
+    {
+      "id": 2936,
+      "name": "The Spider God",
+      "side": "Horde",
+      "requiredLevel": 40,
+      "xp": 4850,
+      "objective": "Read from the Tablet of Theka to learn the name of the Witherbark spider god, then return to Master Gadrin.",
+      "description": "The Tablet of Theka is in Theka the Martyr's room.",
+      "requires": [2935],
+      "start": {
+        "npc": "Master Gadrin",
+        "location": [1411, 55.8, 74.4],
+        "description": "Sen'jin Village, Durotar"
+      },
+      "turnIn": {
+        "npc": "Master Gadrin",
+        "location": [1411, 55.8, 74.4],
+        "description": "Sen'jin Village, Durotar"
+      },
+      "items": []
+    },
+    {
+      "id": 2988,
+      "name": "Witherbark Cages",
+      "side": "Alliance",
+      "requiredLevel": 40,
+      "objective": "Check the cages at the two Witherbark villages, then return to Gryphon Master Talonaxe.",
+      "start": {
+        "npc": "Gryphon Master Talonaxe",
+        "location": [1425, 9.8, 44.4],
+        "description": "The Hinterlands"
+      },
+      "turnIn": {
+        "npc": "Gryphon Master Talonaxe",
+        "location": [1425, 9.8, 44.4],
+        "description": "The Hinterlands"
+      },
+      "items": []
+    },
+    {
+      "id": 2989,
+      "name": "The Altar of Zul",
+      "side": "Alliance",
+      "requiredLevel": 40,
+      "objective": "Check the top of the Altar of Zul, then return to Gryphon Master Talonaxe.",
+      "requires": [2988],
+      "start": {
+        "npc": "Gryphon Master Talonaxe",
+        "location": [1425, 9.8, 44.4],
+        "description": "The Hinterlands"
+      },
+      "turnIn": {
+        "npc": "Gryphon Master Talonaxe",
+        "location": [1425, 9.8, 44.4],
+        "description": "The Hinterlands"
+      },
+      "items": []
+    },
+    {
+      "id": 2990,
+      "name": "Thadius Grimshade",
+      "side": "Alliance",
+      "requiredLevel": 40,
+      "objective": "Bring Sharpbeak's Feather to Thadius Grimshade in the Blasted Lands.",
+      "requires": [2989],
+      "start": {
+        "npc": "Gryphon Master Talonaxe",
+        "location": [1425, 9.8, 44.4],
+        "description": "The Hinterlands"
+      },
+      "turnIn": {
+        "npc": "Thadius Grimshade"
+      },
+      "items": []
+    },
+    {
+      "id": 2991,
+      "name": "Nekrum's Medallion",
+      "side": "Alliance",
+      "requiredLevel": 40,
+      "xp": 5250,
+      "objective": "Bring Nekrum's Medallion to Thadius Grimshade in the Blasted Lands.",
+      "description": "The medallion drops from Nekrum Gutchewer.",
+      "requires": [2990],
+      "start": {
+        "npc": "Thadius Grimshade",
+        "location": [1419, 67, 19.4],
+        "description": "Blasted Lands"
+      },
+      "turnIn": {
+        "npc": "Thadius Grimshade",
+        "location": [1419, 67, 19.4],
+        "description": "Blasted Lands"
+      },
+      "items": []
+    },
+    {
+      "id": 3042,
+      "name": "Troll Temper",
+      "side": "Both",
+      "requiredLevel": 40,
+      "xp": 3900,
+      "objective": "Bring 20 Vials of Troll Temper to Trenton Lighthammer in Gadgetzan.",
+      "start": {
+        "npc": "Trenton Lighthammer",
+        "location": [1446, 51.4, 28.6],
+        "description": "Gadgetzan, Tanaris"
+      },
+      "turnIn": {
+        "npc": "Trenton Lighthammer",
+        "location": [1446, 51.4, 28.6],
+        "description": "Gadgetzan, Tanaris"
+      },
+      "items": []
+    },
+    {
+      "id": 96770,
+      "name": "The Witch Doctor's Head",
+      "side": "Alliance",
+      "requiredLevel": 39,
+      "xp": 10100,
+      "objective": "Slay Witch Doctor Zum'rah and bring Zum'rah's Head to Archmage Lan'dalock in Dalaran.",
+      "start": {
+        "npc": "Archmage Lan'dalock",
+        "location": [1416, 15.89, 73.1],
+        "description": "Dalaran, Alterac Mountains"
+      },
+      "turnIn": {
+        "npc": "Archmage Lan'dalock",
+        "location": [1416, 15.89, 73.1],
+        "description": "Dalaran, Alterac Mountains"
+      },
+      "items": []
+    },
+    {
+      "id": 96775,
+      "name": "Zum'rah's Head",
+      "side": "Horde",
+      "requiredLevel": 42,
+      "xp": 10100,
+      "objective": "Slay Witch Doctor Zum'rah and bring Zum'rah's Head to Mazu'kon in Mulgore.",
+      "start": {
+        "npc": "Mazu'kon",
+        "location": [1412, 32.5, 20.6],
+        "description": "Skywatcher Plateau, Mulgore"
+      },
+      "turnIn": {
+        "npc": "Mazu'kon",
+        "location": [1412, 32.5, 20.6],
+        "description": "Skywatcher Plateau, Mulgore"
+      },
+      "items": []
+    }
+  ]
 }

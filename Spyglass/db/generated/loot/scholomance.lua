@@ -5,18 +5,83 @@ local Data = Spyglass.Data
 
 Data:AddBossLoot(2805, { -- Kirtonos
     { 16734 }, -- Boots of Valor
+    { 13960 }, -- #13960
+    { 13967 }, -- #13967
+    { 13969 }, -- #13969
+    { 14024 }, -- #14024
+    { 13957 }, -- #13957
 })
 
 Data:AddBossLoot(2804, { -- Jandice Barov
     { 16701 }, -- Dreadmist Mantle
+    { 14545 }, -- #14545
+    { 14541 }, -- #14541
+    { 14548 }, -- #14548
+    { 18690 }, -- #18690
+    { 18689 }, -- #18689
+    { 22394 }, -- #22394
 })
 
 Data:AddBossLoot(2811, { -- Rattlegore
     { 16711 }, -- Shadowcraft Boots
+    { 14528 }, -- #14528
+    { 14531 }, -- #14531
+    { 14537 }, -- #14537
+    { 14538 }, -- #14538
+    { 14539 }, -- #14539
+    { 18686 }, -- #18686
+})
+
+Data:AddBossLoot(2809, { -- Marduk Blackpool
+    { 14576 }, -- #14576
+    { 18692 }, -- #18692
+})
+
+Data:AddBossLoot(2813, { -- Vectus
+    { 14577 }, -- #14577
+    { 18691 }, -- #18691
 })
 
 Data:AddBossLoot(2810, { -- Ras Frostwhisperer
     { 16689 }, -- Magister's Mantle
+    { 14487 }, -- #14487
+    { 14502 }, -- #14502
+    { 18694 }, -- #18694
+    { 18696 }, -- #18696
+    { 13952 }, -- #13952
+    { 14340 }, -- #14340
+    { 14522 }, -- #14522
+    { 14525 }, -- #14525
+    { 18693 }, -- #18693
+})
+
+Data:AddBossLoot(2803, { -- Instructor Malicia
+    { 16710 }, -- Shadowcraft Bracers
+})
+
+Data:AddBossLoot(2802, { -- Doctor Theolen Krastinov
+    { 16684 }, -- Magister's Gloves
+})
+
+Data:AddBossLoot(2808, { -- Lorekeeper Polkelt
+    { 16705 }, -- Dreadmist Wraps
+})
+
+Data:AddBossLoot(2812, { -- The Ravenian
+    { 16716 }, -- Wildheart Belt
+})
+
+Data:AddBossLoot(2807, { -- Lord Alexei Barov
+    { 14626 }, -- #14626
+    { 14637 }, -- #14637
+    { 18680 }, -- #18680
+    { 18681 }, -- #18681
+    { 18682 }, -- #18682
+    { 18683 }, -- #18683
+    { 18684 }, -- #18684
+    { 14611 }, -- #14611
+    { 14624 }, -- #14624
+    { 16722 }, -- Lightforge Bracers
 })
 
 Data:AddBossLoot(2801, { -- Darkmaster Gandling
@@ -29,10 +94,38 @@ Data:AddBossLoot(2801, { -- Darkmaster Gandling
     { 16720 }, -- Wildheart Cowl
     { 16727 }, -- Lightforge Helm
     { 16731 }, -- Helm of Valor
+    { 13951 }, -- #13951
+    { 13398 }, -- #13398
+    { 13938 }, -- #13938
+    { 13944 }, -- #13944
+    { 13953 }, -- #13953
+    { 13964 }, -- #13964
+    { 22433 }, -- #22433
 })
 
 Data:AddTrashLoot(289, {
     { 16684 }, -- Magister's Gloves
     { 16705 }, -- Dreadmist Wraps
     { 16722 }, -- Lightforge Bracers
+})
+
+Data:AddQuests(289, {
+    { id = 5466, name = "The Lich, Ras Frostwhisper", side = "Both", requiredLevel = 57, xp = 9950, objective = "Find Ras Frostwhisper in the Scholomance. When you have found him, use the Soulbound Keepsake on his undead visage. Should you succeed in reverting him to a mortal, strike him down and recover the Human Head of Ras Frostwhisper. Take the head back to Magistrate Marduke.", description = "Use the Soulbound Keepsake on Ras Frostwhisper to make him human, then kill him and bring back his human head.", requires = { { id = 5465, name = "Soulbound Keepsake" } }, start = { description = "Caer Darrow, Western Plaguelands", location = { 1422, 70.4, 74 }, npc = "Magistrate Marduke" }, turnIn = { description = "Caer Darrow, Western Plaguelands", location = { 1422, 70.4, 74 }, npc = "Magistrate Marduke" }, items = {
+        { 13982 }, -- #13982
+        { 13986 }, -- #13986
+        { 13984 }, -- #13984
+        { 14002 }, -- #14002
+    } },
+    { id = 5343, name = "Barov Family Fortune", side = "Alliance", requiredLevel = 52, xp = 6600, objective = "Venture to the Scholomance and recover the Barov family fortune. Four deeds make up this fortune: The Deed to Caer Darrow; The Deed to Brill; The Deed to Tarren Mill; and The Deed to Southshore. Return to Weldon Barov when you have completed this task.", description = "The four deeds: Southshore in the first large chamber, Tarren Mill before the hatchlings, Brill by Ras Frostwhisper, Caer Darrow by Lord Alexei Barov. The follow-up The Last Barov sends you to kill the rival brother.", start = { description = "Chillwind Camp, Western Plaguelands", location = { 1422, 43.4, 83.4 }, npc = "Weldon Barov" }, turnIn = { description = "Chillwind Camp, Western Plaguelands", location = { 1422, 43.4, 83.4 }, npc = "Weldon Barov" }, items = {} },
+    { id = 5341, name = "Barov Family Fortune", side = "Horde", requiredLevel = 52, xp = 6600, objective = "Venture to the Scholomance and recover the Barov family fortune. Four deeds make up this fortune: The Deed to Caer Darrow; The Deed to Brill; The Deed to Tarren Mill; and The Deed to Southshore. Return to Alexi Barov when you have completed this task.", description = "The four deeds: Southshore in the first large chamber, Tarren Mill before the hatchlings, Brill by Ras Frostwhisper, Caer Darrow by Lord Alexei Barov. The follow-up The Last Barov sends you to kill the rival brother.", start = { description = "The Bulwark, Tirisfal Glades", location = { 1420, 83, 71.4 }, npc = "Alexi Barov" }, turnIn = { description = "The Bulwark, Tirisfal Glades", location = { 1420, 83, 71.4 }, npc = "Alexi Barov" }, items = {} },
+    { id = 4771, name = "Dawn's Gambit", side = "Both", requiredLevel = 57, xp = 9950, objective = "Place Dawn's Gambit in the Viewing Room of the Scholomance. Defeat Vectus, then return to Betina Bigglezink.", description = "Use Dawn's Gambit in the Viewing Room and defeat Vectus.", requires = { { id = 5531, name = "Betina Bigglezink" } }, start = { description = "Light's Hope Chapel, Eastern Plaguelands", location = { 1423, 73.7, 50.5 }, npc = "Betina Bigglezink" }, turnIn = { description = "Light's Hope Chapel, Eastern Plaguelands", location = { 1423, 73.7, 50.5 }, npc = "Betina Bigglezink" }, items = {
+        { 15853 }, -- #15853
+        { 15854 }, -- #15854
+    } },
+    { id = 5529, name = "Plagued Hatchlings", side = "Both", requiredLevel = 55, xp = 6200, objective = "Kill 20 Plagued Hatchlings, then return to Betina Bigglezink at the Light's Hope Chapel.", description = "Kill 20 Plagued Hatchlings. After turning this in, hatchlings can drop Healthy Dragon Scales, which start a repeatable turn-in to Betina.", start = { description = "Light's Hope Chapel, Eastern Plaguelands", location = { 1423, 73.7, 50.5 }, npc = "Betina Bigglezink" }, turnIn = { description = "Light's Hope Chapel, Eastern Plaguelands", location = { 1423, 73.7, 50.5 }, npc = "Betina Bigglezink" }, items = {} },
+    { id = 7629, name = "Imp Delivery", side = "Both", class = "WARLOCK", requiredLevel = 60, xp = 6600, objective = "Bring the Imp in a Jar to the alchemy lab in the Scholomance. After the parchment is created, return the jar to Gorzeeki Wildeyes.", description = "Warlock dreadsteed quest. Release the Imp in a Jar at the alchemy lab in Ras Frostwhisper's room and wait for the parchment.", requires = { { id = 7625, name = "Xorothian Stardust" } }, start = { description = "Altar of Storms, Burning Steppes", location = { 1428, 12.4, 31.4 }, npc = "Gorzeeki Wildeyes" }, turnIn = { description = "Altar of Storms, Burning Steppes", location = { 1428, 12.4, 31.4 }, npc = "Gorzeeki Wildeyes" }, items = {} },
+    { id = 7647, name = "Judgment and Redemption", side = "Alliance", class = "PALADIN", requiredLevel = 60, xp = 9950, objective = "Use the Divination Scryer in the heart of the Great Ossuary's basement in the Scholomance. Doing so will bring forth the spirits you must judge. Defeating these spirits will summon forth Death Knight Darkreaver. Defeat him and reclaim the lost soul of the fallen charger. Give the Charger's Redeemed Soul and the Blessed Enchanted Barding to Darkreaver's Fallen Charger.", description = "Paladin charger quest. Clear Rattlegore's basement in the Great Ossuary, use the Divination Scryer and defeat the spirits and Death Knight Darkreaver.", requires = { { id = 7646, name = "The Divination Scryer" } }, start = { description = "Cathedral of Light, Stormwind", location = { 1453, 49.4, 47.6 }, npc = "Lord Grayson Shadowbreaker" }, turnIn = { description = "Scholomance", npc = "Darkreaver's Fallen Charger" }, items = {} },
+    { id = 7668, name = "The Darkreaver Menace", side = "Horde", class = "SHAMAN", requiredLevel = 58, xp = 9950, objective = "Use the Divination Scryer in the heart of the Great Ossuary's basement in the Scholomance. Doing so will bring forth spirits you must fight. Defeating these spirits will summon forth Death Knight Darkreaver; defeat him. Bring Darkreaver's Head to Sagorne Creststrider in the Valley of Wisdom, Orgrimmar.", description = "Shaman quest. Clear Rattlegore's basement, use the scryer and defeat Death Knight Darkreaver; return his head.", requires = { { id = 7667, name = "Material Assistance" } }, start = { description = "Valley of Wisdom, Orgrimmar", location = { 1454, 38.4, 36 }, npc = "Sagorne Creststrider" }, turnIn = { description = "Valley of Wisdom, Orgrimmar", location = { 1454, 38.4, 36 }, npc = "Sagorne Creststrider" }, items = {
+        { 18807 }, -- Helm of Latent Power
+    } },
 })

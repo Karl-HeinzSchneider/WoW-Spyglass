@@ -1,3 +1,413 @@
 {
-  "quests": []
+  "quests": [
+    {
+      "id": 5518,
+      "name": "The Gordok Ogre Suit",
+      "side": "Both",
+      "requiredLevel": 56,
+      "xp": 6600,
+      "objective": "Bring 4 Bolts of Runecloth, 8 Rugged Leather, 2 Rune Threads, and Ogre Tannin to Knot Thimblejack. He is currently chained inside the Gordok wing of Dire Maul.",
+      "description": "Bring 4 Bolts of Runecloth, 8 Rugged Leather, 2 Rune Threads and 1 Ogre Tannin (basket on the upper level beyond Knot). Make any suits and learn the pattern before freeing Knot, because he leaves.",
+      "start": {
+        "npc": "Knot Thimblejack",
+        "description": "Dire Maul"
+      },
+      "turnIn": {
+        "npc": "Knot Thimblejack",
+        "description": "Dire Maul"
+      },
+      "items": [
+        {
+          "item": 18258,
+          "name": "Gordok Ogre Suit"
+        }
+      ]
+    },
+    {
+      "id": 5525,
+      "name": "Free Knot!",
+      "side": "Both",
+      "requiredLevel": 56,
+      "xp": 6600,
+      "objective": "Find a Gordok Shackle Key on the ogres of the Gordok wing and use it to free Knot Thimblejack.",
+      "description": "Get a Gordok Shackle Key from the North ogres and free Knot; his cache has loot.",
+      "start": {
+        "npc": "Knot Thimblejack",
+        "description": "Dire Maul"
+      },
+      "turnIn": {
+        "npc": "Knot Thimblejack",
+        "description": "Dire Maul"
+      },
+      "items": []
+    },
+    {
+      "id": 7481,
+      "name": "Elven Legends",
+      "side": "Horde",
+      "requiredLevel": 54,
+      "xp": 8300,
+      "objective": "Search Dire Maul for Kariel Winthalus. Report back to Sage Korolusk at Camp Mojache with whatever information that you may find.",
+      "description": "Interact with the Skeletal Remains of Telmius Dreamseeker beside Lorekeeper Lydros in the Athenaeum. Unlocks Lydros's libram exchanges.",
+      "start": {
+        "npc": "Sage Korolusk",
+        "location": [1444, 74.4, 44],
+        "description": "Camp Mojache, Feralas"
+      },
+      "turnIn": {
+        "npc": "Sage Korolusk",
+        "location": [1444, 74.4, 44],
+        "description": "Camp Mojache, Feralas"
+      },
+      "items": []
+    },
+    {
+      "id": 7482,
+      "name": "Elven Legends",
+      "side": "Alliance",
+      "requiredLevel": 54,
+      "xp": 8300,
+      "objective": "Search Dire Maul for Kariel Winthalus. Report back to Scholar Runethorn at Feathermoon with whatever information that you may find.",
+      "description": "Interact with the Skeletal Remains of Telmius Dreamseeker beside Lorekeeper Lydros in the Athenaeum. Unlocks Lydros's libram exchanges.",
+      "start": {
+        "npc": "Scholar Runethorn",
+        "location": [1444, 31, 44.2],
+        "description": "Feathermoon Stronghold, Feralas"
+      },
+      "turnIn": {
+        "npc": "Scholar Runethorn",
+        "location": [1444, 31, 44.2],
+        "description": "Feathermoon Stronghold, Feralas"
+      },
+      "items": []
+    },
+    {
+      "id": 7483,
+      "name": "Libram of Rapidity",
+      "side": "Both",
+      "requiredLevel": 54,
+      "xp": 0,
+      "objective": "Bring a Libram of Rapidity, 1 Pristine Black Diamond, 2 Large Brilliant Shards, and 2 Blood of Heroes to Lorekeeper Lydros in Dire Maul to receive an Arcanum of Rapidity.",
+      "description": "Repeatable. Needs your faction's Elven Legends turned in first.",
+      "start": {
+        "npc": "Lorekeeper Lydros",
+        "description": "Athenaeum, Dire Maul"
+      },
+      "turnIn": {
+        "npc": "Lorekeeper Lydros",
+        "description": "Athenaeum, Dire Maul"
+      },
+      "items": [
+        {
+          "item": 18329,
+          "name": "Arcanum of Rapidity"
+        }
+      ]
+    },
+    {
+      "id": 7484,
+      "name": "Libram of Focus",
+      "side": "Both",
+      "requiredLevel": 54,
+      "xp": 0,
+      "objective": "Bring a Libram of Focus, 1 Pristine Black Diamond, 4 Large Brilliant Shards, and 2 Skin of Shadow to Lorekeeper Lydros in Dire Maul to receive an Arcanum of Focus.",
+      "description": "Repeatable. Needs your faction's Elven Legends turned in first.",
+      "start": {
+        "npc": "Lorekeeper Lydros",
+        "description": "Athenaeum, Dire Maul"
+      },
+      "turnIn": {
+        "npc": "Lorekeeper Lydros",
+        "description": "Athenaeum, Dire Maul"
+      },
+      "items": [
+        {
+          "item": 18330,
+          "name": "Arcanum of Focus"
+        }
+      ]
+    },
+    {
+      "id": 7485,
+      "name": "Libram of Protection",
+      "side": "Both",
+      "requiredLevel": 54,
+      "xp": 0,
+      "objective": "Bring a Libram of Protection, 1 Pristine Black Diamond, 2 Large Brilliant Shards, and 1 Frayed Abomination Stitching to Lorekeeper Lydros in Dire Maul to receive an Arcanum of Protection.",
+      "description": "Repeatable. Needs your faction's Elven Legends turned in first.",
+      "start": {
+        "npc": "Lorekeeper Lydros",
+        "description": "Athenaeum, Dire Maul"
+      },
+      "turnIn": {
+        "npc": "Lorekeeper Lydros",
+        "description": "Athenaeum, Dire Maul"
+      },
+      "items": [
+        {
+          "item": 18331,
+          "name": "Arcanum of Protection"
+        }
+      ]
+    },
+    {
+      "id": 7498,
+      "name": "Garona: A Study on Stealth and Treachery",
+      "side": "Both",
+      "class": "Rogue",
+      "requiredLevel": 54,
+      "xp": 6600,
+      "objective": "Return the book to its rightful owners.",
+      "start": {
+        "item": 18356,
+        "description": "Garona: A Study on Stealth and Treachery (book, Dire Maul drop)"
+      },
+      "turnIn": {
+        "npc": "Lorekeeper Kildrath",
+        "description": "Dire Maul"
+      },
+      "items": [
+        {
+          "item": 18465,
+          "name": "Royal Seal of Eldre'Thalas"
+        }
+      ]
+    },
+    {
+      "id": 7499,
+      "name": "Codex of Defense",
+      "side": "Both",
+      "class": "Warrior",
+      "requiredLevel": 54,
+      "xp": 6600,
+      "objective": "Return the book to its rightful owners.",
+      "start": {
+        "item": 18357,
+        "description": "Codex of Defense (book, Dire Maul drop)"
+      },
+      "turnIn": {
+        "npc": "Lorekeeper Kildrath",
+        "description": "Dire Maul"
+      },
+      "items": [
+        {
+          "item": 18466,
+          "name": "Royal Seal of Eldre'Thalas"
+        }
+      ]
+    },
+    {
+      "id": 7500,
+      "name": "The Arcanist's Cookbook",
+      "side": "Both",
+      "class": "Mage",
+      "requiredLevel": 54,
+      "xp": 6600,
+      "objective": "Return the book to its rightful owners.",
+      "start": {
+        "item": 18358,
+        "description": "The Arcanist's Cookbook (book, Dire Maul drop)"
+      },
+      "turnIn": {
+        "npc": "Lorekeeper Kildrath",
+        "description": "Dire Maul"
+      },
+      "items": [
+        {
+          "item": 18468,
+          "name": "Royal Seal of Eldre'Thalas"
+        }
+      ]
+    },
+    {
+      "id": 7501,
+      "name": "The Light and How To Swing It",
+      "side": "Alliance",
+      "class": "Paladin",
+      "requiredLevel": 54,
+      "xp": 6600,
+      "objective": "Return the book to its rightful owners.",
+      "start": {
+        "item": 18359,
+        "description": "The Light and How To Swing It (book, Dire Maul drop)"
+      },
+      "turnIn": {
+        "npc": "Lorekeeper Mykos",
+        "description": "Dire Maul"
+      },
+      "items": [
+        {
+          "item": 18472,
+          "name": "Royal Seal of Eldre'Thalas"
+        }
+      ]
+    },
+    {
+      "id": 7502,
+      "name": "Harnessing Shadows",
+      "side": "Both",
+      "class": "Warlock",
+      "requiredLevel": 54,
+      "xp": 6600,
+      "objective": "Return the book to its rightful owners.",
+      "start": {
+        "item": 18360,
+        "description": "Harnessing Shadows (book, Dire Maul drop)"
+      },
+      "turnIn": {
+        "npc": "Lorekeeper Mykos",
+        "description": "Dire Maul"
+      },
+      "items": [
+        {
+          "item": 18467,
+          "name": "Royal Seal of Eldre'Thalas"
+        }
+      ]
+    },
+    {
+      "id": 7503,
+      "name": "The Greatest Race of Hunters",
+      "side": "Both",
+      "class": "Hunter",
+      "requiredLevel": 54,
+      "xp": 6600,
+      "objective": "Return the book to its rightful owners.",
+      "start": {
+        "item": 18361,
+        "description": "The Greatest Race of Hunters (book, Dire Maul drop)"
+      },
+      "turnIn": {
+        "npc": "Lorekeeper Mykos",
+        "description": "Dire Maul"
+      },
+      "items": [
+        {
+          "item": 18473,
+          "name": "Royal Seal of Eldre'Thalas"
+        }
+      ]
+    },
+    {
+      "id": 7504,
+      "name": "Holy Bologna: What the Light Won't Tell You",
+      "side": "Both",
+      "class": "Priest",
+      "requiredLevel": 54,
+      "xp": 6600,
+      "objective": "Return the book to its rightful owners.",
+      "start": {
+        "item": 18362,
+        "description": "Holy Bologna: What the Light Won't Tell You (book, Dire Maul drop)"
+      },
+      "turnIn": {
+        "npc": "Lorekeeper Javon",
+        "description": "Dire Maul"
+      },
+      "items": [
+        {
+          "item": 18469,
+          "name": "Royal Seal of Eldre'Thalas"
+        }
+      ]
+    },
+    {
+      "id": 7505,
+      "name": "Frost Shock and You",
+      "side": "Horde",
+      "class": "Shaman",
+      "requiredLevel": 54,
+      "xp": 6600,
+      "objective": "Return the book to its rightful owners.",
+      "start": {
+        "item": 18363,
+        "description": "Frost Shock and You (book, Dire Maul drop)"
+      },
+      "turnIn": {
+        "npc": "Lorekeeper Javon",
+        "description": "Dire Maul"
+      },
+      "items": [
+        {
+          "item": 18471,
+          "name": "Royal Seal of Eldre'Thalas"
+        }
+      ]
+    },
+    {
+      "id": 7506,
+      "name": "The Emerald Dream...",
+      "side": "Both",
+      "class": "Druid",
+      "requiredLevel": 54,
+      "xp": 6600,
+      "objective": "Return the book to its rightful owners.",
+      "start": {
+        "item": 18364,
+        "description": "The Emerald Dream (book, Dire Maul drop)"
+      },
+      "turnIn": {
+        "npc": "Lorekeeper Javon",
+        "description": "Dire Maul"
+      },
+      "items": [
+        {
+          "item": 18470,
+          "name": "Royal Seal of Eldre'Thalas"
+        }
+      ]
+    },
+    {
+      "id": 7507,
+      "name": "Nostro's Compendium",
+      "side": "Both",
+      "requiredLevel": 60,
+      "xp": 0,
+      "objective": "Return Nostro's Compendium of Dragon Slaying to the Athenaeum.",
+      "description": "Warriors and Paladins. Lydros then gives The Forging of Quel'Serrar, which is finished in Onyxia's Lair.",
+      "start": {
+        "description": "Nostro's Compendium of Dragon Slaying (rare Dire Maul drop)"
+      },
+      "turnIn": {
+        "npc": "Lorekeeper Lydros",
+        "description": "Athenaeum, Dire Maul"
+      },
+      "items": []
+    },
+    {
+      "id": 7703,
+      "name": "Unfinished Gordok Business",
+      "side": "Both",
+      "requiredLevel": 56,
+      "xp": 8300,
+      "objective": "Find the Gauntlet of Gordok Might and return it to Captain Kromcrush in Dire Maul. According to Kromcrush, the \"old timey story\" says that Tortheldrin - a \"creepy\" elf who called himself a prince - stole it from one of the Gordok kings.",
+      "description": "West objective: the Gauntlet of Gordok Might is in a chest near Prince Tortheldrin. The quest itself comes from a friendly Captain Kromcrush in Dire Maul North after you become the Gordok king.",
+      "start": {
+        "npc": "Captain Kromcrush",
+        "description": "Dire Maul"
+      },
+      "turnIn": {
+        "npc": "Captain Kromcrush",
+        "description": "Dire Maul"
+      },
+      "items": [
+        {
+          "item": 18366,
+          "name": "Gordok's Handguards"
+        },
+        {
+          "item": 18367,
+          "name": "Gordok's Gauntlets"
+        },
+        {
+          "item": 18368,
+          "name": "Gordok's Gloves"
+        },
+        {
+          "item": 18369,
+          "name": "Gordok's Handwraps"
+        }
+      ]
+    }
+  ]
 }

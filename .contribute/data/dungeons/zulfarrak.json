@@ -19,13 +19,39 @@
       "id": 594,
       "name": "Gahz'rilla",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Gahzrilla",
-      "loot": []
+      "loot": [
+        {
+          "item": 9467,
+          "name": "Gahz'rilla Fang"
+        },
+        {
+          "item": 9469,
+          "name": "Gahz'rilla Scale Armor"
+        }
+      ]
     },
     {
       "id": 595,
       "name": "Antu'sul",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Antusul",
-      "loot": []
+      "loot": [
+        {
+          "item": 9640,
+          "name": "Vice Grips"
+        },
+        {
+          "item": 9639,
+          "name": "The Hand of Antu'sul"
+        },
+        {
+          "item": 9641,
+          "name": "Lifeblood Amulet"
+        },
+        {
+          "item": 9379,
+          "name": "Sang'thraze the Deflector"
+        }
+      ]
     },
     {
       "id": 596,
@@ -37,7 +63,16 @@
       "id": 597,
       "name": "Witch Doctor Zum'rah",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Witch Doctor Zumrah",
-      "loot": []
+      "loot": [
+        {
+          "item": 18082,
+          "name": "Zum'rah's Vexing Cane"
+        },
+        {
+          "item": 18083,
+          "name": "Jumanza Grips"
+        }
+      ]
     },
     {
       "id": 598,
@@ -49,15 +84,75 @@
       "id": 599,
       "name": "Shadowpriest Sezz'ziz",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Shadowpriest Sezzizz",
-      "loot": []
+      "loot": [
+        {
+          "item": 9470,
+          "name": "Bad Mojo Mask"
+        },
+        {
+          "item": 9473,
+          "name": "Jinxed Hoodoo Skin"
+        },
+        {
+          "item": 9474,
+          "name": "Jinxed Hoodoo Kilt"
+        },
+        {
+          "item": 9475,
+          "name": "Diabolic Skiver"
+        }
+      ]
     },
     {
       "id": 600,
       "name": "Chief Ukorz Sandscalp",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Chief Ukorz Sandscalp",
-      "loot": []
+      "loot": [
+        {
+          "item": 9476,
+          "name": "Big Bad Pauldrons"
+        },
+        {
+          "item": 9477,
+          "name": "The Chief's Enforcer"
+        },
+        {
+          "item": 9478,
+          "name": "Ripsaw"
+        },
+        {
+          "item": 9479,
+          "name": "Embrace of the Lycan"
+        },
+        {
+          "item": 11086,
+          "name": "Jang'thraze the Protector"
+        }
+      ]
+    },
+    {
+      "id": -10082,
+      "name": "Zerillis",
+      "npc": 10082,
+      "loot": [
+        {
+          "item": 12470,
+          "name": "Sandstalker Ankleguards"
+        }
+      ]
+    },
+    {
+      "id": -10081,
+      "name": "Dustwraith",
+      "npc": 10081,
+      "loot": [
+        {
+          "item": 12471,
+          "name": "Desertwalker Cane"
+        }
+      ]
     }
   ],
   "trash": [],
-  "quests": []
+  "quests": [2770, 2846, 2768, 2865, 3042, 3527, 2991, 2936, 96770, 96775]
 }

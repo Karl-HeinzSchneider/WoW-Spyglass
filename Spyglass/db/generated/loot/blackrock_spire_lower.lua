@@ -5,27 +5,112 @@ local Data = Spyglass.Data
 
 Data:AddBossLoot(267, { -- Highlord Omokk
     { 16670 }, -- Boots of Elements
+    { 12336 }, -- Gemstone of Spirestone
+    { 13166 }, -- #13166
+    { 13167 }, -- #13167
+    { 13168 }, -- #13168
+    { 13169 }, -- #13169
+    { 13170 }, -- #13170
 })
 
 Data:AddBossLoot(268, { -- Shadow Hunter Vosh'gajin
     { 16712 }, -- Shadowcraft Gloves
+    { 13255 }, -- #13255
+    { 12626 }, -- #12626
+    { 13257 }, -- #13257
+    { 12651 }, -- #12651
+    { 12653 }, -- #12653
+    { 12654 }, -- #12654
 })
 
 Data:AddBossLoot(269, { -- War Master Voone
     { 16676 }, -- Beaststalker's Gloves
+    { 12335 }, -- Gemstone of Smolderthorn
+    { 13177 }, -- #13177
+    { 13179 }, -- #13179
+    { 12582 }, -- #12582
+    { 22231 }, -- #22231
+    { 13173 }, -- #13173
 })
 
 Data:AddBossLoot(270, { -- Mother Smolderweb
     { 16715 }, -- Wildheart Boots
+    { 13244 }, -- #13244
+    { 13213 }, -- #13213
+    { 13183 }, -- #13183
+})
+
+Data:AddBossLoot(271, { -- Urok Doomhowl
+    { 13258 }, -- #13258
+    { 13259 }, -- #13259
+    { 22232 }, -- #22232
+    { 13178 }, -- #13178
+    { 13053 }, -- Doombringer
+})
+
+Data:AddBossLoot(272, { -- Quartermaster Zigris
+    { 13252 }, -- #13252
+    { 13253 }, -- #13253
+    { 12835 }, -- Plans: Annihilator
+})
+
+Data:AddBossLoot(274, { -- Halycon
+    { 13212 }, -- #13212
+    { 13211 }, -- #13211
+    { 13210 }, -- #13210
+    { 22313 }, -- #22313
 })
 
 Data:AddBossLoot(273, { -- Gizrul the Slavener
     { 16718 }, -- Wildheart Spaulders
+    { 13206 }, -- #13206
+    { 13205 }, -- #13205
+    { 13208 }, -- #13208
 })
 
 Data:AddBossLoot(275, { -- Overlord Wyrmthalak
     { 13164 }, -- Heart of the Scale
     { 16679 }, -- Beaststalker's Mantle
+    { 12337 }, -- Gemstone of Bloodaxe
+    { 13161 }, -- #13161
+    { 13162 }, -- #13162
+    { 13163 }, -- #13163
+    { 22321 }, -- #22321
+})
+
+Data:AddBossLoot(-9219, { -- Spirestone Butcher
+    { 12608 }, -- #12608
+    { 13286 }, -- #13286
+})
+
+Data:AddBossLoot(-9218, { -- Spirestone Battle Lord
+    { 13284 }, -- #13284
+    { 13285 }, -- #13285
+})
+
+Data:AddBossLoot(-9217, { -- Spirestone Lord Magus
+    { 13283 }, -- #13283
+    { 13282 }, -- #13282
+    { 13261 }, -- #13261
+})
+
+Data:AddBossLoot(-10376, { -- Crystal Fang
+    { 13185 }, -- #13185
+    { 13184 }, -- #13184
+    { 13218 }, -- #13218
+})
+
+Data:AddBossLoot(-9596, { -- Bannok Grimaxe
+    { 12634 }, -- #12634
+    { 12637 }, -- #12637
+    { 12621 }, -- #12621
+    { 12838 }, -- Plans: Arcanite Reaper
+})
+
+Data:AddBossLoot(-9718, { -- Ghok Bashguud
+    { 13203 }, -- #13203
+    { 13204 }, -- #13204
+    { 13198 }, -- #13198
 })
 
 Data:AddTrashLoot(22901, {
@@ -36,4 +121,51 @@ Data:AddTrashLoot(22901, {
     { 16683 }, -- Magister's Bindings
     { 16703 }, -- Dreadmist Bracers
     { 16735 }, -- Bracers of Valor
+})
+
+Data:AddQuests(22901, {
+    { id = 4742, name = "Seal of Ascension", side = "Both", requiredLevel = 57, xp = 8300, objective = "Find the three gemstones of command: the Gemstone of Smolderthorn, Gemstone of Spirestone and Gemstone of Bloodaxe. Return them, along with the Unadorned Seal of Ascension, to Vaelan. The generals are War Master Voone of the Smolderthorn, Highlord Omokk of the Spirestone and Overlord Wyrmthalak of the Bloodaxe.", start = { description = "Vaelan (Scarshield Infiltrator), Lower Blackrock Spire" }, turnIn = { description = "Vaelan (Scarshield Infiltrator), Lower Blackrock Spire" }, items = {} },
+    { id = 4981, name = "Operative Bijou", side = "Horde", requiredLevel = 55, objective = "Travel to Blackrock Spire and find out what happened to Bijou.", followUps = { 4982 }, start = { description = "Kargath, Badlands", location = { 1418, 5.8, 47.4 }, npc = "Lexlort" }, turnIn = { description = "inside Lower Blackrock Spire", npc = "Bijou" }, items = {} },
+    { id = 4982, name = "Bijou's Belongings", side = "Horde", requiredLevel = 55, xp = 6400, objective = "Find Bijou's Belongings and return them to her. You recall her mentioning that she stashed them on the bottom floor of the city.", description = "Then take Bijou's Reconnaissance Report to Lexlort in Kargath for the reward.", start = { description = "Lower Blackrock Spire", npc = "Bijou" }, turnIn = { description = "Lower Blackrock Spire", npc = "Bijou" }, items = {
+        { 15858 }, -- #15858
+        { 15859 }, -- #15859
+    } },
+    { id = 5081, name = "Maxwell's Mission", side = "Alliance", requiredLevel = 55, xp = 8300, objective = "Travel to Blackrock Spire and destroy War Master Voone, Highlord Omokk, and Overlord Wyrmthalak. Return to Marshal Maxwell when the job is done.", requires = { { id = 5002, name = "Message to Maxwell" } }, start = { description = "Morgan's Vigil, Burning Steppes", location = { 1428, 84.6, 68.8 }, npc = "Marshal Maxwell" }, turnIn = { description = "Morgan's Vigil, Burning Steppes", location = { 1428, 84.6, 68.8 }, npc = "Marshal Maxwell" }, items = {
+        { 13958 }, -- #13958
+        { 13959 }, -- #13959
+        { 13961 }, -- #13961
+        { 13962 }, -- #13962
+        { 13963 }, -- #13963
+    } },
+    { id = 4903, name = "Warlord's Command", side = "Horde", requiredLevel = 55, xp = 8300, objective = "Slay Highlord Omokk, War Master Voone, and Overlord Wyrmthalak. Recover Important Blackrock Documents. Return to Warlord Goretooth in Kargath when the mission has been accomplished.", start = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Warlord Goretooth" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Warlord Goretooth" }, items = {
+        { 13958 }, -- #13958
+        { 13959 }, -- #13959
+        { 13961 }, -- #13961
+        { 13962 }, -- #13962
+        { 13963 }, -- #13963
+    } },
+    { id = 4701, name = "Put Her Down", side = "Alliance", requiredLevel = 55, xp = 6400, objective = "Travel to Blackrock Spire and destroy the source of the worg menace. As you left Helendis, he shouted a name: Halycon. It is what the orcs refer to in regards to the worg.", description = "Kill Halycon, the worg den mother. Be ready for Gizrul the Slavener, who comes for you right after.", start = { description = "Morgan's Vigil, Burning Steppes", location = { 1428, 85.4, 68.8 }, npc = "Helendis Riverhorn" }, turnIn = { description = "Morgan's Vigil, Burning Steppes", location = { 1428, 85.4, 68.8 }, npc = "Helendis Riverhorn" }, items = {
+        { 15824 }, -- #15824
+        { 15825 }, -- #15825
+        { 15827 }, -- #15827
+    } },
+    { id = 4724, name = "The Pack Mistress", side = "Horde", requiredLevel = 55, xp = 6400, objective = "Slay Halycon, pack mistress of the Bloodaxe worg.", description = "Kill Halycon, the worg den mother. Be ready for Gizrul the Slavener, who comes for you right after.", start = { description = "Kargath, Badlands", location = { 1418, 5.8, 47.4 }, npc = "Galamav the Marksman" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 5.8, 47.4 }, npc = "Galamav the Marksman" }, items = {
+        { 15824 }, -- #15824
+        { 15825 }, -- #15825
+        { 15827 }, -- #15827
+    } },
+    { id = 4729, name = "Kibler's Exotic Pets", side = "Both", requiredLevel = 55, xp = 6400, objective = "Travel to Blackrock Spire and find Bloodaxe Worg Pups. Use the cage to carry the ferocious little beasts. Bring back a Caged Worg Pup to Kibler.", description = "Use the supplied cage on a Bloodaxe Worg Pup in the worg area.", start = { description = "Flame Crest, Burning Steppes", location = { 1428, 65.8, 22 }, npc = "Kibler" }, turnIn = { description = "Flame Crest, Burning Steppes", location = { 1428, 65.8, 22 }, npc = "Kibler" }, items = {
+        { 12264 }, -- Worg Carrier
+    } },
+    { id = 4862, name = "En-Ay-Es-Tee-Why", side = "Both", requiredLevel = 55, xp = 6400, objective = "Travel to Blackrock Spire and collect 15 Spire Spider Eggs for Kibler. By the sound of it, these eggs could be found near spiders.", description = "Spire Spider Eggs are in the spider tunnels.", start = { description = "Flame Crest, Burning Steppes", location = { 1428, 65.8, 22 }, npc = "Kibler" }, turnIn = { description = "Flame Crest, Burning Steppes", location = { 1428, 65.8, 22 }, npc = "Kibler" }, items = {
+        { 12529 }, -- Smolderweb Carrier
+    } },
+    { id = 4866, name = "Mother's Milk", side = "Both", requiredLevel = 55, xp = 9950, objective = "In the heart of Blackrock Spire you will find Mother Smolderweb. Engage her and get her to poison you. Return to Ragged John while poisoned so that he can 'milk' you.", description = "Get poisoned by Mother Smolderweb and reach Ragged John while still poisoned. Don't let anyone cleanse it.", start = { description = "Flame Crest, Burning Steppes", location = { 1428, 65, 23.6 }, npc = "Ragged John" }, turnIn = { description = "Flame Crest, Burning Steppes", location = { 1428, 65, 23.6 }, npc = "Ragged John" }, items = {
+        { 15873 }, -- #15873
+    } },
+    { id = 4867, name = "Urok Doomhowl", side = "Both", requiredLevel = 55, xp = 9950, objective = "Read Warosh's Scroll. Bring Warosh's Mojo to Warosh.", description = "Bring Highlord Omokk's Head and a Roughshod Pike to Urok's Tribute Pile beyond the spiders to start the waves.", start = { description = "Lower Blackrock Spire", npc = "Warosh" }, turnIn = { description = "Lower Blackrock Spire", npc = "Warosh" }, items = {
+        { 15867 }, -- #15867
+    } },
+    { id = 5089, name = "General Drakkisath's Command", side = "Alliance", requiredLevel = 55, xp = 0, objective = "Take General Drakkisath's Command to Marshal Maxwell in Burning Steppes.", description = "Leads to General Drakkisath's Demise in Upper Blackrock Spire.", start = { description = "General Drakkisath's Command (drops from Overlord Wyrmthalak)", item = 12780 }, turnIn = { description = "Morgan's Vigil, Burning Steppes", npc = "Marshal Maxwell" }, items = {} },
+    { id = 4788, name = "The Final Tablets", side = "Both", requiredLevel = 40, xp = 7750, objective = "Bring the Fifth and Sixth Mosh'aru Tablets to Prospector Ironboot in Tanaris.", description = "The fifth and sixth Mosh'aru tablets are in the Smolderthorn troll area. Continues with Confront Yeh'kinya and The Hand of Rastakhan.", requires = { { id = 5065, name = "The Lost Tablets of Mosh'aru" } }, start = { description = "Steamwheedle Port, Tanaris", location = { 1446, 66.8, 24 }, npc = "Prospector Ironboot" }, turnIn = { description = "Steamwheedle Port, Tanaris", location = { 1446, 66.8, 24 }, npc = "Prospector Ironboot" }, items = {} },
 })

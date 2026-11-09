@@ -1,3 +1,476 @@
 {
-  "quests": []
+  "quests": [
+    {
+      "id": 5244,
+      "name": "The Ruins of Kel'Theril",
+      "side": "Alliance",
+      "requiredLevel": 53,
+      "objective": "Speak with Jaron Stoneshaper in Starfall Village.",
+      "start": {
+        "npc": "Wynd Nightchaser",
+        "location": [1452, 52, 30.2],
+        "description": "Winterspring"
+      },
+      "turnIn": {
+        "npc": "Jaron Stoneshaper",
+        "description": "Winterspring"
+      },
+      "items": []
+    },
+    {
+      "id": 5245,
+      "name": "Troubled Spirits of Kel'Theril",
+      "side": "Alliance",
+      "requiredLevel": 53,
+      "objective": "Use Jaron's Pick to find the four Highborne Relic Fragments. Bring them to Aurora Skycaller in Eastern Plaguelands.",
+      "requires": [5244],
+      "start": {
+        "npc": "Jaron Stoneshaper",
+        "location": [1452, 52, 30.4],
+        "description": "Winterspring"
+      },
+      "turnIn": {
+        "npc": "Aurora Skycaller",
+        "description": "Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5246,
+      "name": "Fragments of the Past",
+      "side": "Alliance",
+      "requiredLevel": 53,
+      "objective": "Find the Sacred Highborne Writings in the Temple of Zin-Malor in Azshara, and bring them to Aurora Skycaller near the Northpass Tower in Eastern Plaguelands.",
+      "requires": [5245],
+      "start": {
+        "npc": "Aurora Skycaller",
+        "location": [1423, 47.5, 16.8],
+        "description": "Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Aurora Skycaller",
+        "location": [1423, 47.5, 16.8],
+        "description": "Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5247,
+      "name": "Fragments of the Past",
+      "side": "Alliance",
+      "requiredLevel": 53,
+      "xp": 6000,
+      "objective": "Bring an Enchanted Thorium Bar, 5 Crystal Restore, and a Vial of Dire Water to Aurora Skycaller near the Northpass Tower in Eastern Plaguelands.",
+      "description": "Fill her vial at the dire pool along Eldreth Row in Dire Maul West; also bring 1 Enchanted Thorium Bar and 5 Crystal Restore.\n\nOptional introductory quest:",
+      "requires": [5246],
+      "start": {
+        "npc": "Aurora Skycaller",
+        "location": [1423, 47.5, 16.8],
+        "description": "Northpass Tower, Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Aurora Skycaller",
+        "location": [1423, 47.5, 16.8],
+        "description": "Northpass Tower, Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5250,
+      "name": "Starfall",
+      "side": "Alliance",
+      "requiredLevel": 53,
+      "xp": 580,
+      "objective": "Find Starfall in Winterspring and speak with Wynd Nightchaser.",
+      "description": "Introductory step leading to Fragments of the Past.\n\nOPTIONAL, not required",
+      "start": {
+        "npc": "Daryn Lightwind",
+        "location": [1438, 55.4, 92.2],
+        "description": "Rut'theran Village, Teldrassil"
+      },
+      "turnIn": {
+        "npc": "Wynd Nightchaser",
+        "description": "Starfall Village, Winterspring"
+      },
+      "items": []
+    },
+    {
+      "id": 7461,
+      "name": "The Madness Within",
+      "side": "Both",
+      "requiredLevel": 56,
+      "xp": 9950,
+      "objective": "You must destroy the guardians surrounding the 5 Pylons that power the Prison of Immol'thar. Once the Pylons have powered down, the force field surrounding Immol'thar will have dissipated. Enter the Prison of Immol'thar and eradicate the foul demon that stands at its heart. Finally, confront Prince Tortheldrin in Athenaeum. Return to the Shen'dralar Ancient in the courtyard should you complete this quest.",
+      "description": "Kill the guardians of all five pylons, then Immol'thar, then Prince Tortheldrin. Return to the Ancient, take The Treasure of the Shen'dralar and open the chest under the library stairs for the reward.",
+      "start": {
+        "npc": "Shen'dralar Ancient",
+        "description": "Dire Maul"
+      },
+      "turnIn": {
+        "npc": "Shen'dralar Ancient",
+        "description": "Dire Maul"
+      },
+      "items": [
+        {
+          "item": 18420,
+          "name": "Bonecrusher"
+        },
+        {
+          "item": 18421,
+          "name": "Backwood Helm"
+        },
+        {
+          "item": 18424,
+          "name": "Sedge Boots"
+        }
+      ]
+    },
+    {
+      "id": 7563,
+      "name": "Rage of Blood",
+      "requiredLevel": 60,
+      "objective": "Bring 30 bottles of Raging Beast's Blood to Mor'zul Bloodbringer in the Burning Steppes.",
+      "start": {
+        "npc": "Mor'zul Bloodbringer",
+        "location": [1428, 12.6, 31.4],
+        "description": "Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Mor'zul Bloodbringer",
+        "location": [1428, 12.6, 31.4],
+        "description": "Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 7564,
+      "name": "Wildeyes",
+      "requiredLevel": 60,
+      "objective": "Bring the Case of Blood to Gorzeeki Wildeyes in the Burning Steppes.",
+      "requires": [7563],
+      "start": {
+        "npc": "Mor'zul Bloodbringer",
+        "location": [1428, 12.6, 31.4],
+        "description": "Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Gorzeeki Wildeyes",
+        "description": "Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 7623,
+      "name": "Lord Banehollow",
+      "requiredLevel": 60,
+      "objective": "Purchase Shadowy Potions from Gorzeeki in the Burning Steppes. Use the potions to travel through Jaedenar, and speak with Lord Banehollow.",
+      "requires": [7564],
+      "start": {
+        "npc": "Gorzeeki Wildeyes",
+        "location": [1428, 12.4, 31.4],
+        "description": "Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Lord Banehollow",
+        "description": "Felwood"
+      },
+      "items": []
+    },
+    {
+      "id": 7624,
+      "name": "Ulathek the Traitor",
+      "requiredLevel": 60,
+      "objective": "Confront Ulathek, then bring The Traitor's Heart to Lord Banehollow in Jaedenar.",
+      "requires": [7623],
+      "start": {
+        "npc": "Lord Banehollow",
+        "location": [1448, 36, 44.4],
+        "description": "Felwood"
+      },
+      "turnIn": {
+        "npc": "Lord Banehollow",
+        "location": [1448, 36, 44.4],
+        "description": "Felwood"
+      },
+      "items": []
+    },
+    {
+      "id": 7625,
+      "name": "Xorothian Stardust",
+      "requiredLevel": 60,
+      "objective": "Purchase Xorothian Stardust from Ur'dan. Bring it to Gorzeeki Wildeyes in the Burning Steppes.",
+      "requires": [7624],
+      "start": {
+        "npc": "Lord Banehollow",
+        "location": [1448, 36, 44.4],
+        "description": "Felwood"
+      },
+      "turnIn": {
+        "npc": "Gorzeeki Wildeyes",
+        "description": "Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 7626,
+      "name": "Bell of Dethmoora",
+      "requiredLevel": 60,
+      "objective": "Bring 10 Elixirs of Shadow Power to Gorzeeki Wildeyes in the Burning Steppes.",
+      "requires": [7625],
+      "start": {
+        "npc": "Mor'zul Bloodbringer",
+        "location": [1428, 12.6, 31.4],
+        "description": "Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Gorzeeki Wildeyes",
+        "description": "Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 7627,
+      "name": "Wheel of the Black March",
+      "requiredLevel": 60,
+      "objective": "Bring 6 Large Brilliant Shards and 25 Dark Iron Ore to Gorzeeki in the Burning Steppes.",
+      "requires": [7625],
+      "start": {
+        "npc": "Mor'zul Bloodbringer",
+        "location": [1428, 12.6, 31.4],
+        "description": "Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Gorzeeki Wildeyes",
+        "description": "Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 7628,
+      "name": "Doomsday Candle",
+      "requiredLevel": 60,
+      "objective": "Bring 35 Black Dragonscales to Gorzeeki Wildeyes in the Burning Steppes.",
+      "requires": [7625],
+      "start": {
+        "npc": "Mor'zul Bloodbringer",
+        "location": [1428, 12.6, 31.4],
+        "description": "Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Gorzeeki Wildeyes",
+        "description": "Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 7629,
+      "name": "Imp Delivery",
+      "side": "Both",
+      "class": "Warlock",
+      "requiredLevel": 60,
+      "xp": 6600,
+      "objective": "Bring the Imp in a Jar to the alchemy lab in the Scholomance. After the parchment is created, return the jar to Gorzeeki Wildeyes.",
+      "description": "Warlock dreadsteed quest. Release the Imp in a Jar at the alchemy lab in Ras Frostwhisper's room and wait for the parchment.",
+      "requires": [7625],
+      "start": {
+        "npc": "Gorzeeki Wildeyes",
+        "location": [1428, 12.4, 31.4],
+        "description": "Altar of Storms, Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Gorzeeki Wildeyes",
+        "location": [1428, 12.4, 31.4],
+        "description": "Altar of Storms, Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 7630,
+      "name": "Arcanite",
+      "requiredLevel": 60,
+      "objective": "Bring 3 Arcanite Bars to Gorzeeki in the Burning Steppes.",
+      "requires": [7626, 7627, 7628, 7629],
+      "start": {
+        "npc": "Gorzeeki Wildeyes",
+        "location": [1428, 12.4, 31.4],
+        "description": "Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Gorzeeki Wildeyes",
+        "location": [1428, 12.4, 31.4],
+        "description": "Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 7631,
+      "name": "Dreadsteed of Xoroth",
+      "side": "Both",
+      "class": "Warlock",
+      "requiredLevel": 60,
+      "xp": 6600,
+      "objective": "Read Mor'zul's Instructions. Summon a Xorothian Dreadsteed, defeat it, then bind its spirit to you.",
+      "description": "Warlock dreadsteed quest. After Immol'thar dies, run the ritual in his prison with J'eevee's Jar, the Black Lodestone and the Xorothian Glyphs. Bring Soul Shards.",
+      "requires": [7630],
+      "start": {
+        "npc": "Mor'zul Bloodbringer",
+        "location": [1428, 12.6, 31.4],
+        "description": "Altar of Storms, Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Dreadsteed Spirit",
+        "description": "Dire Maul"
+      },
+      "items": []
+    },
+    {
+      "id": 7637,
+      "name": "Emphasis on Sacrifice",
+      "side": "Alliance",
+      "requiredLevel": 60,
+      "objective": "Travel to Ironforge and get High Priest Rohan's Exorcism Censer. You will need to make a donation of 150 gold in order to secure it.",
+      "start": {
+        "npc": "Lord Grayson Shadowbreaker",
+        "location": [1453, 49.4, 47.6],
+        "description": "Stormwind"
+      },
+      "turnIn": {
+        "npc": "High Priest Rohan",
+        "description": "Ironforge"
+      },
+      "items": []
+    },
+    {
+      "id": 7639,
+      "name": "To Show Due Judgment",
+      "side": "Alliance",
+      "requiredLevel": 60,
+      "objective": "Return the Exorcism Censer to Lord Grayson Shadowbreaker in the Cathedral District of Stormwind.",
+      "requires": [7637],
+      "start": {
+        "npc": "High Priest Rohan",
+        "location": [1455, 23.4, 6.4],
+        "description": "Ironforge"
+      },
+      "turnIn": {
+        "npc": "Lord Grayson Shadowbreaker",
+        "description": "Stormwind"
+      },
+      "items": []
+    },
+    {
+      "id": 7640,
+      "name": "Exorcising Terrordale",
+      "side": "Alliance",
+      "requiredLevel": 60,
+      "objective": "Use the Exorcism Censer to drive out the spirits that torment Terrordale. When you have slain 25 Terrordale Spirits, return to Lord Grayson Shadowbreaker in the Cathedral District of Stormwind.",
+      "requires": [7639],
+      "start": {
+        "npc": "Lord Grayson Shadowbreaker",
+        "location": [1453, 49.4, 47.6],
+        "description": "Stormwind"
+      },
+      "turnIn": {
+        "npc": "Lord Grayson Shadowbreaker",
+        "location": [1453, 49.4, 47.6],
+        "description": "Stormwind"
+      },
+      "items": []
+    },
+    {
+      "id": 7641,
+      "name": "The Work of Grimand Elmore",
+      "side": "Alliance",
+      "requiredLevel": 60,
+      "objective": "Speak with Grimand Elmore in Stormwind's Dwarven District.",
+      "requires": [7640],
+      "start": {
+        "npc": "Lord Grayson Shadowbreaker",
+        "location": [1453, 49.4, 47.6],
+        "description": "Stormwind"
+      },
+      "turnIn": {
+        "npc": "Grimand Elmore",
+        "description": "Stormwind"
+      },
+      "items": []
+    },
+    {
+      "id": 7642,
+      "name": "Collection of Goods",
+      "side": "Alliance",
+      "requiredLevel": 60,
+      "objective": "Bring 40 Runecloth, 6 Arcanite Bars, 10 Arthas' Tears, 5 Stratholme Holy Water vials, and 150 gold to Grimand Elmore in the Dwarven District of Stormwind.",
+      "requires": [7641],
+      "start": {
+        "npc": "Grimand Elmore",
+        "location": [1453, 51.6, 12.2],
+        "description": "Stormwind"
+      },
+      "turnIn": {
+        "npc": "Grimand Elmore",
+        "location": [1453, 51.6, 12.2],
+        "description": "Stormwind"
+      },
+      "items": []
+    },
+    {
+      "id": 7643,
+      "name": "Ancient Equine Spirit",
+      "side": "Alliance",
+      "class": "Paladin",
+      "requiredLevel": 60,
+      "xp": 4950,
+      "objective": "Acquire special horse feed used for feeding a spirit horse. Merideth Carlson in Southshore apparently is the source for such food. Travel to the Dire Maul dungeon in Feralas and slay Tendris Warpwood. Doing so will free the Ancient Equine Spirit. Feed it the special horse feed, thereby soothing the spirit. Finally, give it the Arcanite Barding so it may bless it.",
+      "description": "Paladin charger quest. Kill Tendris Warpwood, then feed the Ancient Equine Spirit and give it the Arcanite Barding. Bring the Manna-Enriched Horse Feed from Merideth Carlson in Southshore.",
+      "requires": [7645],
+      "start": {
+        "npc": "Lord Grayson Shadowbreaker",
+        "location": [1453, 49.4, 47.6],
+        "description": "Cathedral of Light, Stormwind"
+      },
+      "turnIn": {
+        "npc": "Ancient Equine Spirit",
+        "description": "Dire Maul"
+      },
+      "items": []
+    },
+    {
+      "id": 7645,
+      "name": "Manna-Enriched Horse Feed",
+      "side": "Alliance",
+      "requiredLevel": 60,
+      "objective": "Retrieve 20 Enriched Manna Biscuits - the key ingredient in making Manna-Enriched Horse Feed - for Merideth Carlson at Southshore in the Hillsbrad Foothills. The Argent Dawn is known as the sole purveyor of the biscuits. You also need to give her 50 gold to soothe her ruffled sensibilities.",
+      "requires": [7648],
+      "start": {
+        "npc": "Merideth Carlson",
+        "location": [1424, 52, 55.6],
+        "description": "Hillsbrad Foothills"
+      },
+      "turnIn": {
+        "npc": "Merideth Carlson",
+        "location": [1424, 52, 55.6],
+        "description": "Hillsbrad Foothills"
+      },
+      "items": []
+    },
+    {
+      "id": 7648,
+      "name": "Grimand's Finest Work",
+      "side": "Alliance",
+      "requiredLevel": 60,
+      "objective": "Take the Arcanite Barding to Lord Grayson Shadowbreaker in Stormwind's Cathedral District for his inspection.",
+      "requires": [7642],
+      "start": {
+        "npc": "Grimand Elmore",
+        "location": [1453, 51.6, 12.2],
+        "description": "Stormwind"
+      },
+      "turnIn": {
+        "npc": "Lord Grayson Shadowbreaker",
+        "description": "Stormwind"
+      },
+      "items": []
+    }
+  ]
 }

@@ -64,6 +64,29 @@
           "name": "Hand of Righteousness"
         }
       ]
+    },
+    {
+      "id": -3976,
+      "name": "Scarlet Commander Mograine",
+      "npc": 3976,
+      "loot": [
+        {
+          "item": 7726,
+          "name": "Aegis of the Scarlet Commander"
+        },
+        {
+          "item": 7724,
+          "name": "Gauntlets of Divinity"
+        },
+        {
+          "item": 7723,
+          "name": "Mograine's Might"
+        },
+        {
+          "item": 10330,
+          "name": "Scarlet Leggings"
+        }
+      ]
     }
   ],
   "trash": [
@@ -98,7 +121,11 @@
     {
       "item": 7787,
       "name": "Resplendent Guardian"
+    },
+    {
+      "item": 5756,
+      "name": "Sliverblade"
     }
   ],
-  "quests": []
+  "quests": [1048, 1053, 1113]
 }

@@ -16,6 +16,7 @@
       },
       "turnIn": {
         "npc": "Deathstalker Agent",
+        "location": [1437, 47.8, 56.3],
         "description": "Just outside Excavation Site: Wetlands."
       },
       "items": [
@@ -65,6 +66,7 @@
       },
       "turnIn": {
         "npc": "Borstan",
+        "location": [1454, 57.2, 53.3],
         "description": "The Drag, Orgrimmar."
       },
       "items": [
@@ -101,6 +103,7 @@
       },
       "turnIn": {
         "npc": "James Halloran",
+        "location": [1437, 8, 55],
         "description": "Menethil Harbor, Wetlands."
       },
       "items": []
@@ -118,6 +121,7 @@
       },
       "turnIn": {
         "npc": "James Halloran",
+        "location": [1437, 8, 55],
         "description": "Menethil Harbor, Wetlands."
       },
       "items": []
@@ -156,6 +160,7 @@
       },
       "turnIn": {
         "npc": "Rethiel the Greenwarden",
+        "location": [1437, 56.2, 40.6],
         "description": "Wetlands."
       },
       "items": [
@@ -204,6 +209,7 @@
       },
       "turnIn": {
         "npc": "Rethiel the Greenwarden",
+        "location": [1437, 56.2, 40.6],
         "description": "The Green Belt, Wetlands."
       },
       "items": []
@@ -222,6 +228,7 @@
       },
       "turnIn": {
         "npc": "Rethiel the Greenwarden",
+        "location": [1437, 56.2, 40.6],
         "description": "The Green Belt, Wetlands."
       },
       "items": []
@@ -240,6 +247,7 @@
       },
       "turnIn": {
         "npc": "Rethiel the Greenwarden",
+        "location": [1437, 56.2, 40.6],
         "description": "The Green Belt, Wetlands."
       },
       "items": []
@@ -283,6 +291,7 @@
     {
       "id": 95647,
       "name": "Lost in the Thicket Things",
+      "side": "Alliance",
       "requiredLevel": 24,
       "xp": 4900,
       "objective": "Find Ardin Grassman in the Excavation Sites. Learn what happened to Ardin Grassman.",
@@ -308,6 +317,7 @@
       "requires": [95810],
       "start": {
         "npc": "Prospector Whelgar",
+        "location": [1437, 38.8, 52.2],
         "description": "Whelgar's Excavation Site, Wetlands."
       },
       "turnIn": {
@@ -360,6 +370,7 @@
       },
       "turnIn": {
         "npc": "Muln Earthfury",
+        "location": [1412, 33.4, 22.4],
         "description": "Skywatcher Plateau, Mulgore."
       },
       "items": [

@@ -1,0 +1,87 @@
+{
+  "map": 2970,
+  "name": "The Drowned City",
+  "minLevel": 35,
+  "maxLevel": 40,
+  "icon": "Interface\\Icons\\Spell_Frost_SummonWaterElemental",
+  "encounters": [
+    {
+      "id": 3474,
+      "name": "Zul'Alai",
+      "loot": []
+    },
+    {
+      "id": 3475,
+      "name": "Var'Taka",
+      "loot": []
+    },
+    {
+      "id": 3476,
+      "name": "Captain Dreadrise",
+      "loot": []
+    },
+    {
+      "id": 3478,
+      "name": "Deathless Guardians",
+      "loot": []
+    },
+    {
+      "id": 3479,
+      "name": "Min'loth the Serpent",
+      "loot": []
+    },
+    {
+      "id": 3511,
+      "name": "Primeval Elemental",
+      "loot": []
+    },
+    {
+      "id": -264177,
+      "name": "Gill",
+      "npc": 264177,
+      "loot": [
+        {
+          "item": 286646,
+          "name": "Gill's Gills"
+        },
+        {
+          "item": 286649,
+          "name": "Tidebound Dagger"
+        }
+      ]
+    },
+    {
+      "id": -264172,
+      "name": "Umbra",
+      "npc": 264172,
+      "loot": [
+        {
+          "item": 286662,
+          "name": "Deep-Dweller's Grips"
+        }
+      ]
+    },
+    {
+      "id": -260468,
+      "name": "\"Pyromancer\" Braxton",
+      "npc": 260468,
+      "loot": [
+        {
+          "item": 286650,
+          "name": "Pyromancer's Baton"
+        },
+        {
+          "item": 286651,
+          "name": "Flamestarter's Signet"
+        }
+      ]
+    }
+  ],
+  "trash": [
+    {
+      "item": 287002,
+      "name": "Risen Sentry's Links"
+    }
+  ],
+  "quests": [96078, 95776, 96774, 95799, 95798, 97130, 95789, 95791]
+}

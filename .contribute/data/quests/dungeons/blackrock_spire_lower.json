@@ -1,3 +1,490 @@
 {
-  "quests": []
+  "quests": [
+    {
+      "id": 3520,
+      "name": "Screecher Spirits",
+      "requiredLevel": 40,
+      "objective": "Capture the spirits of 3 screechers in Feralas, then return to Yeh'kinya in Steamwheedle Port.",
+      "start": {
+        "npc": "Yeh'kinya",
+        "location": [1446, 67, 22.4],
+        "description": "Tanaris"
+      },
+      "turnIn": {
+        "npc": "Yeh'kinya",
+        "location": [1446, 67, 22.4],
+        "description": "Tanaris"
+      },
+      "items": []
+    },
+    {
+      "id": 3527,
+      "name": "The Prophecy of Mosh'aru",
+      "side": "Both",
+      "requiredLevel": 40,
+      "xp": 5250,
+      "objective": "Bring the First and Second Mosh'aru Tablets to Yeh'kinya in Tanaris.",
+      "description": "The tablets drop from Theka the Martyr and Hydromancer Velratha.",
+      "requires": [3520],
+      "start": {
+        "npc": "Yeh'kinya",
+        "location": [1446, 67, 22.4],
+        "description": "Steamwheedle Port, Tanaris"
+      },
+      "turnIn": {
+        "npc": "Yeh'kinya",
+        "location": [1446, 67, 22.4],
+        "description": "Steamwheedle Port, Tanaris"
+      },
+      "items": []
+    },
+    {
+      "id": 3528,
+      "name": "The God Hakkar",
+      "side": "Both",
+      "requiredLevel": 40,
+      "xp": 7900,
+      "objective": "Bring the Filled Egg of Hakkar to Yeh'kinya in Tanaris.",
+      "description": "Fill the Egg of Hakkar from the Hakkari Bloodkeepers to summon the Avatar of Hakkar.",
+      "requires": [4787],
+      "start": {
+        "npc": "Yeh'kinya",
+        "location": [1446, 67, 22.4],
+        "description": "Steamwheedle Port, Tanaris"
+      },
+      "turnIn": {
+        "npc": "Yeh'kinya",
+        "location": [1446, 67, 22.4],
+        "description": "Steamwheedle Port, Tanaris"
+      },
+      "items": [
+        {
+          "item": 10749,
+          "name": "Avenguard Helm"
+        },
+        {
+          "item": 10750,
+          "name": "Lifeforce Dirk"
+        },
+        {
+          "item": 10751,
+          "name": "Gemburst Circlet"
+        }
+      ]
+    },
+    {
+      "id": 4701,
+      "name": "Put Her Down",
+      "side": "Alliance",
+      "requiredLevel": 55,
+      "xp": 6400,
+      "objective": "Travel to Blackrock Spire and destroy the source of the worg menace. As you left Helendis, he shouted a name: Halycon. It is what the orcs refer to in regards to the worg.",
+      "description": "Kill Halycon, the worg den mother. Be ready for Gizrul the Slavener, who comes for you right after.",
+      "start": {
+        "npc": "Helendis Riverhorn",
+        "location": [1428, 85.4, 68.8],
+        "description": "Morgan's Vigil, Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Helendis Riverhorn",
+        "location": [1428, 85.4, 68.8],
+        "description": "Morgan's Vigil, Burning Steppes"
+      },
+      "items": [
+        {
+          "item": 15824,
+          "name": "Astoria Robes"
+        },
+        {
+          "item": 15825,
+          "name": "Traphook Jerkin"
+        },
+        {
+          "item": 15827,
+          "name": "Jadescale Breastplate"
+        }
+      ]
+    },
+    {
+      "id": 4724,
+      "name": "The Pack Mistress",
+      "side": "Horde",
+      "requiredLevel": 55,
+      "xp": 6400,
+      "objective": "Slay Halycon, pack mistress of the Bloodaxe worg.",
+      "description": "Kill Halycon, the worg den mother. Be ready for Gizrul the Slavener, who comes for you right after.",
+      "start": {
+        "npc": "Galamav the Marksman",
+        "location": [1418, 5.8, 47.4],
+        "description": "Kargath, Badlands"
+      },
+      "turnIn": {
+        "npc": "Galamav the Marksman",
+        "location": [1418, 5.8, 47.4],
+        "description": "Kargath, Badlands"
+      },
+      "items": [
+        {
+          "item": 15824,
+          "name": "Astoria Robes"
+        },
+        {
+          "item": 15825,
+          "name": "Traphook Jerkin"
+        },
+        {
+          "item": 15827,
+          "name": "Jadescale Breastplate"
+        }
+      ]
+    },
+    {
+      "id": 4729,
+      "name": "Kibler's Exotic Pets",
+      "side": "Both",
+      "requiredLevel": 55,
+      "xp": 6400,
+      "objective": "Travel to Blackrock Spire and find Bloodaxe Worg Pups. Use the cage to carry the ferocious little beasts. Bring back a Caged Worg Pup to Kibler.",
+      "description": "Use the supplied cage on a Bloodaxe Worg Pup in the worg area.",
+      "start": {
+        "npc": "Kibler",
+        "location": [1428, 65.8, 22],
+        "description": "Flame Crest, Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Kibler",
+        "location": [1428, 65.8, 22],
+        "description": "Flame Crest, Burning Steppes"
+      },
+      "items": [
+        {
+          "item": 12264,
+          "name": "Worg Carrier"
+        }
+      ]
+    },
+    {
+      "id": 4742,
+      "name": "Seal of Ascension",
+      "side": "Both",
+      "requiredLevel": 57,
+      "xp": 8300,
+      "objective": "Find the three gemstones of command: the Gemstone of Smolderthorn, Gemstone of Spirestone and Gemstone of Bloodaxe. Return them, along with the Unadorned Seal of Ascension, to Vaelan. The generals are War Master Voone of the Smolderthorn, Highlord Omokk of the Spirestone and Overlord Wyrmthalak of the Bloodaxe.",
+      "start": {
+        "description": "Vaelan (Scarshield Infiltrator), Lower Blackrock Spire"
+      },
+      "turnIn": {
+        "description": "Vaelan (Scarshield Infiltrator), Lower Blackrock Spire"
+      },
+      "items": []
+    },
+    {
+      "id": 4787,
+      "name": "The Ancient Egg",
+      "requiredLevel": 40,
+      "objective": "Bring the Ancient Egg to Yeh'kinya in Tanaris.",
+      "requires": [3527],
+      "start": {
+        "npc": "Yeh'kinya",
+        "location": [1446, 67, 22.4],
+        "description": "Tanaris"
+      },
+      "turnIn": {
+        "npc": "Yeh'kinya",
+        "location": [1446, 67, 22.4],
+        "description": "Tanaris"
+      },
+      "items": []
+    },
+    {
+      "id": 4788,
+      "name": "The Final Tablets",
+      "side": "Both",
+      "requiredLevel": 40,
+      "xp": 7750,
+      "objective": "Bring the Fifth and Sixth Mosh'aru Tablets to Prospector Ironboot in Tanaris.",
+      "description": "The fifth and sixth Mosh'aru tablets are in the Smolderthorn troll area. Continues with Confront Yeh'kinya and The Hand of Rastakhan.",
+      "requires": [5065],
+      "start": {
+        "npc": "Prospector Ironboot",
+        "location": [1446, 66.8, 24],
+        "description": "Steamwheedle Port, Tanaris"
+      },
+      "turnIn": {
+        "npc": "Prospector Ironboot",
+        "location": [1446, 66.8, 24],
+        "description": "Steamwheedle Port, Tanaris"
+      },
+      "items": []
+    },
+    {
+      "id": 4862,
+      "name": "En-Ay-Es-Tee-Why",
+      "side": "Both",
+      "requiredLevel": 55,
+      "xp": 6400,
+      "objective": "Travel to Blackrock Spire and collect 15 Spire Spider Eggs for Kibler. By the sound of it, these eggs could be found near spiders.",
+      "description": "Spire Spider Eggs are in the spider tunnels.",
+      "start": {
+        "npc": "Kibler",
+        "location": [1428, 65.8, 22],
+        "description": "Flame Crest, Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Kibler",
+        "location": [1428, 65.8, 22],
+        "description": "Flame Crest, Burning Steppes"
+      },
+      "items": [
+        {
+          "item": 12529,
+          "name": "Smolderweb Carrier"
+        }
+      ]
+    },
+    {
+      "id": 4866,
+      "name": "Mother's Milk",
+      "side": "Both",
+      "requiredLevel": 55,
+      "xp": 9950,
+      "objective": "In the heart of Blackrock Spire you will find Mother Smolderweb. Engage her and get her to poison you. Return to Ragged John while poisoned so that he can 'milk' you.",
+      "description": "Get poisoned by Mother Smolderweb and reach Ragged John while still poisoned. Don't let anyone cleanse it.",
+      "start": {
+        "npc": "Ragged John",
+        "location": [1428, 65, 23.6],
+        "description": "Flame Crest, Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Ragged John",
+        "location": [1428, 65, 23.6],
+        "description": "Flame Crest, Burning Steppes"
+      },
+      "items": [
+        {
+          "item": 15873,
+          "name": "Ragged John's Neverending Cup"
+        }
+      ]
+    },
+    {
+      "id": 4867,
+      "name": "Urok Doomhowl",
+      "side": "Both",
+      "requiredLevel": 55,
+      "xp": 9950,
+      "objective": "Read Warosh's Scroll. Bring Warosh's Mojo to Warosh.",
+      "description": "Bring Highlord Omokk's Head and a Roughshod Pike to Urok's Tribute Pile beyond the spiders to start the waves.",
+      "start": {
+        "npc": "Warosh",
+        "description": "Lower Blackrock Spire"
+      },
+      "turnIn": {
+        "npc": "Warosh",
+        "description": "Lower Blackrock Spire"
+      },
+      "items": [
+        {
+          "item": 15867,
+          "name": "Prismcharm"
+        }
+      ]
+    },
+    {
+      "id": 4903,
+      "name": "Warlord's Command",
+      "side": "Horde",
+      "requiredLevel": 55,
+      "xp": 8300,
+      "objective": "Slay Highlord Omokk, War Master Voone, and Overlord Wyrmthalak. Recover Important Blackrock Documents. Return to Warlord Goretooth in Kargath when the mission has been accomplished.",
+      "start": {
+        "npc": "Warlord Goretooth",
+        "location": [1418, 3, 47.6],
+        "description": "Kargath, Badlands"
+      },
+      "turnIn": {
+        "npc": "Warlord Goretooth",
+        "location": [1418, 3, 47.6],
+        "description": "Kargath, Badlands"
+      },
+      "items": [
+        {
+          "item": 13958,
+          "name": "Wyrmthalak's Shackles"
+        },
+        {
+          "item": 13959,
+          "name": "Omokk's Girth Restrainer"
+        },
+        {
+          "item": 13961,
+          "name": "Halycon's Muzzle"
+        },
+        {
+          "item": 13962,
+          "name": "Vosh'gajin's Strand"
+        },
+        {
+          "item": 13963,
+          "name": "Voone's Vice Grips"
+        }
+      ]
+    },
+    {
+      "id": 4981,
+      "name": "Operative Bijou",
+      "side": "Horde",
+      "requiredLevel": 55,
+      "objective": "Travel to Blackrock Spire and find out what happened to Bijou.",
+      "followUps": [4982],
+      "start": {
+        "npc": "Lexlort",
+        "location": [1418, 5.8, 47.4],
+        "description": "Kargath, Badlands"
+      },
+      "turnIn": {
+        "npc": "Bijou",
+        "description": "inside Lower Blackrock Spire"
+      },
+      "items": []
+    },
+    {
+      "id": 4982,
+      "name": "Bijou's Belongings",
+      "side": "Horde",
+      "requiredLevel": 55,
+      "xp": 6400,
+      "objective": "Find Bijou's Belongings and return them to her. You recall her mentioning that she stashed them on the bottom floor of the city.",
+      "description": "Then take Bijou's Reconnaissance Report to Lexlort in Kargath for the reward.",
+      "start": {
+        "npc": "Bijou",
+        "description": "Lower Blackrock Spire"
+      },
+      "turnIn": {
+        "npc": "Bijou",
+        "description": "Lower Blackrock Spire"
+      },
+      "items": [
+        {
+          "item": 15858,
+          "name": "Freewind Gloves"
+        },
+        {
+          "item": 15859,
+          "name": "Seapost Girdle"
+        }
+      ]
+    },
+    {
+      "id": 5001,
+      "name": "Bijou's Belongings",
+      "side": "Alliance",
+      "requiredLevel": 55,
+      "xp": 6400,
+      "objective": "Find Bijou's Belongings and return them to her. Good luck!",
+      "description": "Bijou hides in a recess beyond the early bridges. Her belongings spawn in one of several places around the troll and orc rooms.",
+      "start": {
+        "npc": "Bijou",
+        "description": "Lower Blackrock Spire"
+      },
+      "turnIn": {
+        "npc": "Bijou",
+        "description": "Lower Blackrock Spire"
+      },
+      "items": []
+    },
+    {
+      "id": 5002,
+      "name": "Message to Maxwell",
+      "side": "Alliance",
+      "requiredLevel": 55,
+      "objective": "Travel to the Burning Steppes and give Bijou's Information to Marshal Maxwell.",
+      "requires": [5001],
+      "start": {
+        "npc": "Bijou"
+      },
+      "turnIn": {
+        "npc": "Marshal Maxwell",
+        "description": "Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 5065,
+      "name": "The Lost Tablets of Mosh'aru",
+      "requiredLevel": 40,
+      "objective": "Bring the Third and Fourth Mosh'aru Tablets to Prospector Ironboot in Tanaris.",
+      "requires": [3528],
+      "start": {
+        "npc": "Prospector Ironboot",
+        "location": [1446, 66.8, 24],
+        "description": "Tanaris"
+      },
+      "turnIn": {
+        "npc": "Prospector Ironboot",
+        "location": [1446, 66.8, 24],
+        "description": "Tanaris"
+      },
+      "items": []
+    },
+    {
+      "id": 5081,
+      "name": "Maxwell's Mission",
+      "side": "Alliance",
+      "requiredLevel": 55,
+      "xp": 8300,
+      "objective": "Travel to Blackrock Spire and destroy War Master Voone, Highlord Omokk, and Overlord Wyrmthalak. Return to Marshal Maxwell when the job is done.",
+      "requires": [5002],
+      "start": {
+        "npc": "Marshal Maxwell",
+        "location": [1428, 84.6, 68.8],
+        "description": "Morgan's Vigil, Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Marshal Maxwell",
+        "location": [1428, 84.6, 68.8],
+        "description": "Morgan's Vigil, Burning Steppes"
+      },
+      "items": [
+        {
+          "item": 13958,
+          "name": "Wyrmthalak's Shackles"
+        },
+        {
+          "item": 13959,
+          "name": "Omokk's Girth Restrainer"
+        },
+        {
+          "item": 13961,
+          "name": "Halycon's Muzzle"
+        },
+        {
+          "item": 13962,
+          "name": "Vosh'gajin's Strand"
+        },
+        {
+          "item": 13963,
+          "name": "Voone's Vice Grips"
+        }
+      ]
+    },
+    {
+      "id": 5089,
+      "name": "General Drakkisath's Command",
+      "side": "Alliance",
+      "requiredLevel": 55,
+      "xp": 0,
+      "objective": "Take General Drakkisath's Command to Marshal Maxwell in Burning Steppes.",
+      "description": "Leads to General Drakkisath's Demise in Upper Blackrock Spire.",
+      "start": {
+        "item": 12780,
+        "description": "General Drakkisath's Command (drops from Overlord Wyrmthalak)"
+      },
+      "turnIn": {
+        "npc": "Marshal Maxwell",
+        "description": "Morgan's Vigil, Burning Steppes"
+      },
+      "items": []
+    }
+  ]
 }

@@ -1,3 +1,567 @@
 {
-  "quests": []
+  "quests": [
+    {
+      "id": 5122,
+      "name": "The Medallion of Faith",
+      "side": "Both",
+      "requiredLevel": 55,
+      "objective": "Retrieve the Medallion of Faith from Malor the Zealous in the Scarlet Bastion and bring it back to Aurius.",
+      "description": "Malor's Strongbox in the Scarlet Bastion holds the medallion. Give it to Aurius in the chapel before fighting the Baron.",
+      "start": {
+        "npc": "Aurius",
+        "description": "Stratholme"
+      },
+      "turnIn": {
+        "npc": "Aurius",
+        "description": "Stratholme"
+      },
+      "items": []
+    },
+    {
+      "id": 5125,
+      "name": "Aurius' Reckoning",
+      "side": "Both",
+      "requiredLevel": 55,
+      "xp": 9950,
+      "objective": "Give Aurius the Medallion of Faith; he joins the fight against Baron Rivendare. Claim his reward after the battle.",
+      "description": "Give Aurius the Medallion of Faith before the Baron fight; speak to him after Baron Rivendare dies.",
+      "requires": [5122],
+      "start": {
+        "npc": "Aurius",
+        "description": "Stratholme"
+      },
+      "turnIn": {
+        "npc": "Aurius",
+        "description": "Stratholme"
+      },
+      "items": [
+        {
+          "item": 17044,
+          "name": "Will of the Martyr"
+        },
+        {
+          "item": 17045,
+          "name": "Blood of the Martyr"
+        }
+      ]
+    },
+    {
+      "id": 5212,
+      "name": "The Flesh Does Not Lie",
+      "side": "Both",
+      "requiredLevel": 55,
+      "xp": 6600,
+      "objective": "Recover 20 Plagued Flesh Samples from Stratholme and return them to Betina Bigglezink. You suspect that any creature in Stratholme would have said flesh sample.",
+      "description": "Any undead in Stratholme can drop Plagued Flesh Samples.",
+      "start": {
+        "npc": "Betina Bigglezink",
+        "location": [1423, 73.7, 50.5],
+        "description": "Light's Hope Chapel, Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Betina Bigglezink",
+        "location": [1423, 73.7, 50.5],
+        "description": "Light's Hope Chapel, Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5213,
+      "name": "The Active Agent",
+      "side": "Both",
+      "requiredLevel": 55,
+      "xp": 6600,
+      "objective": "Travel to Stratholme and search the ziggurats. Find and return new Scourge Data to Betina Bigglezink.",
+      "requires": [5212],
+      "start": {
+        "npc": "Betina Bigglezink",
+        "location": [1423, 73.7, 50.5],
+        "description": "Light's Hope Chapel, Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Betina Bigglezink",
+        "location": [1423, 73.7, 50.5],
+        "description": "Light's Hope Chapel, Eastern Plaguelands"
+      },
+      "items": [
+        {
+          "item": 13209,
+          "name": "Seal of the Dawn"
+        },
+        {
+          "item": 19812,
+          "name": "Rune of the Dawn"
+        }
+      ]
+    },
+    {
+      "id": 5214,
+      "name": "The Great Fras Siabi",
+      "side": "Both",
+      "requiredLevel": 55,
+      "xp": 8300,
+      "objective": "Find Fras Siabi's smoke shop in Stratholme and recover a box of Siabi's Premium Tobacco. Return to Smokey LaRue when the job is done.",
+      "description": "Newer Classic records call him Ezra Grimm. Clear the smoke shop, touch the tobacco box and kill the shopkeeper.",
+      "start": {
+        "npc": "Smokey LaRue",
+        "location": [1423, 72.8, 49.2],
+        "description": "Light's Hope Chapel, Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Smokey LaRue",
+        "location": [1423, 72.8, 49.2],
+        "description": "Light's Hope Chapel, Eastern Plaguelands"
+      },
+      "items": [
+        {
+          "item": 13171,
+          "name": "Smokey's Lighter"
+        }
+      ]
+    },
+    {
+      "id": 5243,
+      "name": "Houses of the Holy",
+      "side": "Both",
+      "requiredLevel": 55,
+      "xp": 6600,
+      "objective": "Travel to Stratholme, in the north. Search the supply crates that litter the city and recover 5 Stratholme Holy Water. Return to Leonid Barthalomew the Revered when you have collected enough of the blessed fluid.",
+      "description": "Collect 5 Stratholme Holy Water from the supply crates in the streets; some crates spawn enemies.",
+      "start": {
+        "npc": "Leonid Barthalomew the Revered",
+        "location": [1423, 73.9, 49],
+        "description": "Light's Hope Chapel, Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Leonid Barthalomew the Revered",
+        "location": [1423, 73.9, 49],
+        "description": "Light's Hope Chapel, Eastern Plaguelands"
+      },
+      "items": [
+        {
+          "item": 13216,
+          "name": "Crown of the Penitent"
+        },
+        {
+          "item": 13217,
+          "name": "Band of the Penitent"
+        }
+      ]
+    },
+    {
+      "id": 5251,
+      "name": "The Archivist",
+      "side": "Both",
+      "requiredLevel": 55,
+      "xp": 8300,
+      "objective": "Travel to Stratholme and find Archivist Galford of the Scarlet Crusade. Destroy him and burn down the Scarlet Archive.",
+      "description": "Kill Archivist Galford in the Scarlet Bastion and burn the archives.",
+      "start": {
+        "npc": "Duke Nicholas Zverenhoff",
+        "location": [1423, 73.7, 50.8],
+        "description": "Light's Hope Chapel, Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Duke Nicholas Zverenhoff",
+        "location": [1423, 73.7, 50.8],
+        "description": "Light's Hope Chapel, Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5262,
+      "name": "The Truth Comes Crashing Down",
+      "side": "Both",
+      "requiredLevel": 55,
+      "xp": 8300,
+      "objective": "Take the Head of Balnazzar to Duke Nicholas Zverenhoff in the Eastern Plaguelands.",
+      "description": "Hand in The Archivist first, or Balnazzar's head will not start this quest.",
+      "requires": [5251],
+      "start": {
+        "item": 13250,
+        "description": "Head of Balnazzar (drops from Balnazzar)"
+      },
+      "turnIn": {
+        "npc": "Duke Nicholas Zverenhoff",
+        "description": "Light's Hope Chapel, Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5263,
+      "name": "Above and Beyond",
+      "side": "Both",
+      "requiredLevel": 55,
+      "xp": 8300,
+      "objective": "Venture to Stratholme and destroy Baron Rivendare. Take his head and return to Duke Nicholas Zverenhoff.",
+      "description": "Then Lord Maxwell Tyrosus and The Argent Hold, in Light's Hope Chapel, give the weapon or shield reward.",
+      "requires": [5262],
+      "start": {
+        "npc": "Duke Nicholas Zverenhoff",
+        "location": [1423, 73.7, 50.8],
+        "description": "Light's Hope Chapel, Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Duke Nicholas Zverenhoff",
+        "location": [1423, 73.7, 50.8],
+        "description": "Light's Hope Chapel, Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5281,
+      "name": "The Restless Souls",
+      "side": "Both",
+      "requiredLevel": 55,
+      "xp": 6600,
+      "objective": "Find Egan. You only know that he was last seen around Stratholme.",
+      "description": "Introductory step leading to The Restless Souls.\n\nOPTIONAL, not required",
+      "start": {
+        "npc": "Caretaker Alen",
+        "location": [1423, 71.8, 54.4],
+        "description": "Light's Hope Chapel, Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Egan",
+        "description": "Terrordale, Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5282,
+      "name": "The Restless Souls",
+      "side": "Both",
+      "requiredLevel": 55,
+      "xp": 8300,
+      "objective": "Use Egan's Blaster on the ghostly and spectral citizens of Stratholme. When the restless souls break free from their ghostly shells, use the blaster again - freedom will be theirs! Free 15 Restless Souls and return to Egan.",
+      "description": "Optional introductory quest:",
+      "start": {
+        "npc": "Egan",
+        "location": [1423, 10.9, 27.2],
+        "description": "Terrordale, Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Egan",
+        "location": [1423, 10.9, 27.2],
+        "description": "Terrordale, Eastern Plaguelands"
+      },
+      "items": [
+        {
+          "item": 13315,
+          "name": "Testament of Hope"
+        }
+      ]
+    },
+    {
+      "id": 5542,
+      "name": "Demon Dogs",
+      "requiredLevel": 52,
+      "objective": "Slay 20 Plaguehound Runts, 5 Plaguehounds and 5 Frenzied Plaguehounds. Return to Tirion Fordring when the task is complete.",
+      "start": {
+        "npc": "Tirion Fordring",
+        "location": [1423, 4.3, 36.1],
+        "description": "Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Tirion Fordring",
+        "location": [1423, 4.3, 36.1],
+        "description": "Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5543,
+      "name": "Blood Tinged Skies",
+      "requiredLevel": 52,
+      "objective": "Slay 30 Plaguebats and return to Tirion Fordring.",
+      "requires": [5542],
+      "start": {
+        "npc": "Tirion Fordring",
+        "location": [1423, 4.3, 36.1],
+        "description": "Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Tirion Fordring",
+        "location": [1423, 4.3, 36.1],
+        "description": "Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5544,
+      "name": "Carrion Grubbage",
+      "requiredLevel": 52,
+      "objective": "Seek out the Carrion Grubs and Devourers of the region. Slay them and harvest their meat. Return to Tirion Fordring when you have gathered 15 Slabs of Carrion Worm Meat.",
+      "requires": [5543],
+      "start": {
+        "npc": "Tirion Fordring",
+        "location": [1423, 4.3, 36.1],
+        "description": "Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Tirion Fordring",
+        "location": [1423, 4.3, 36.1],
+        "description": "Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5742,
+      "name": "Redemption",
+      "requiredLevel": 52,
+      "objective": "Listen to what Tirion Fordring has to say.",
+      "requires": [5544],
+      "start": {
+        "npc": "Tirion Fordring",
+        "location": [1423, 4.3, 36.1],
+        "description": "Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Tirion Fordring",
+        "location": [1423, 4.3, 36.1],
+        "description": "Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5781,
+      "name": "Of Forgotten Memories",
+      "requiredLevel": 52,
+      "objective": "Travel to the Undercroft - at the southernmost section of the Eastern Plaguelands - and recover Taelan's Hammer. Return to Tirion Fordring upon completion of your objective.",
+      "requires": [5742],
+      "start": {
+        "npc": "Tirion Fordring",
+        "location": [1423, 4.3, 36.1],
+        "description": "Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Tirion Fordring",
+        "location": [1423, 4.3, 36.1],
+        "description": "Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5845,
+      "name": "Of Lost Honor",
+      "requiredLevel": 52,
+      "objective": "Travel to Northdale, in the northeastern region of the Eastern Plaguelands, and recover the Symbol of Lost Honor. Return to Tirion Fordring upon completion of your objective.",
+      "requires": [5781],
+      "start": {
+        "npc": "Tirion Fordring",
+        "location": [1423, 4.3, 36.1],
+        "description": "Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Tirion Fordring",
+        "location": [1423, 4.3, 36.1],
+        "description": "Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5846,
+      "name": "Of Love and Family",
+      "requiredLevel": 52,
+      "objective": "Travel to island of Caer Darrow, in the south-central region of the Plaguelands, and look for any clues as to the whereabouts of the painting.",
+      "requires": [5845],
+      "start": {
+        "npc": "Tirion Fordring",
+        "location": [1423, 4.3, 36.1],
+        "description": "Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Artist Renfray"
+      },
+      "items": []
+    },
+    {
+      "id": 5848,
+      "name": "Of Love and Family",
+      "side": "Both",
+      "requiredLevel": 52,
+      "xp": 6600,
+      "objective": "Travel to Stratholme, in the northern part of the Plaguelands. It is in the Scarlet Bastion that you will find the painting 'Of Love and Family,' hidden behind another painting depicting the twin moons of our world. Return the painting to Tirion Fordring.",
+      "description": "Take the painting hidden behind the twin-moons picture in Archivist Galford's room before you burn the archives.",
+      "requires": [5846],
+      "start": {
+        "npc": "Artist Renfray",
+        "location": [1422, 65.6, 75.4],
+        "description": "Caer Darrow, Western Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Tirion Fordring",
+        "description": "Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 5961,
+      "name": "The Champion of the Banshee Queen",
+      "side": "Horde",
+      "requiredLevel": 54,
+      "xp": 1450,
+      "objective": "Speak with Nathanos Blightcaller in the Eastern Plaguelands. He is said to have taken up residence at the Marris Stead.",
+      "description": "Introductory step leading to Ramstein.\n\nOPTIONAL, not required",
+      "start": {
+        "npc": "Lady Sylvanas Windrunner",
+        "location": [1458, 58, 91.6],
+        "description": "Royal Quarter, Undercity"
+      },
+      "turnIn": {
+        "npc": "Nathanos Blightcaller",
+        "description": "Marris Stead, Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 6022,
+      "name": "To Kill With Purpose",
+      "side": "Horde",
+      "requiredLevel": 54,
+      "objective": "Travel to Corin's Crossing to the east and slaughter the Scourge that inhabit the town. Collect 7 pieces of Living Rot in under 10 minutes. Use the Mortar and Pestle to grind the Living Rot into Coagulated Rot.",
+      "requires": [6042],
+      "start": {
+        "npc": "Nathanos Blightcaller",
+        "location": [1423, 22.2, 64.3],
+        "description": "Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Nathanos Blightcaller",
+        "location": [1423, 22.2, 64.3],
+        "description": "Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 6042,
+      "name": "Un-Life's Little Annoyances",
+      "side": "Horde",
+      "requiredLevel": 54,
+      "objective": "Slay 20 Noxious Plaguebats and 10 Monstrous Plaguebats. Return to Nathanos Blightcaller when you are finished.",
+      "requires": [6133],
+      "start": {
+        "npc": "Nathanos Blightcaller",
+        "location": [1423, 22.2, 64.3],
+        "description": "Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Nathanos Blightcaller",
+        "location": [1423, 22.2, 64.3],
+        "description": "Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 6133,
+      "name": "The Ranger Lord's Behest",
+      "side": "Horde",
+      "requiredLevel": 54,
+      "objective": "Travel to the northern borders of the Eastern Plaguelands and recover the Quel'Thalas Registry. The item is somewhere in the Quel'Lithien lodge. You must also slay 8 Rangers, 8 Pathstriders, and 8 Woodsmen.",
+      "start": {
+        "npc": "Nathanos Blightcaller",
+        "location": [1423, 22.2, 64.3],
+        "description": "Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Nathanos Blightcaller",
+        "location": [1423, 22.2, 64.3],
+        "description": "Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 6135,
+      "name": "Duskwing, Oh How I Hate Thee...",
+      "side": "Horde",
+      "requiredLevel": 56,
+      "objective": "Find Duskwing and slay him. From the corpse, recover a Patch of Duskwing's Fur and return it to Nathanos Blightcaller. It is said that Duskwing roams the countryside to the north of Marris Stead.",
+      "requires": [6022],
+      "start": {
+        "npc": "Nathanos Blightcaller",
+        "location": [1423, 22.2, 64.3],
+        "description": "Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Nathanos Blightcaller",
+        "location": [1423, 22.2, 64.3],
+        "description": "Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 6136,
+      "name": "The Corpulent One",
+      "side": "Horde",
+      "requiredLevel": 56,
+      "objective": "Find Borelgore in the northern wastes of Eastern Plaguelands and destroy him. Return to Nathanos Blightcaller when the mission is complete.",
+      "requires": [6135],
+      "start": {
+        "npc": "Nathanos Blightcaller",
+        "location": [1423, 22.2, 64.3],
+        "description": "Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Nathanos Blightcaller",
+        "location": [1423, 22.2, 64.3],
+        "description": "Eastern Plaguelands"
+      },
+      "items": []
+    },
+    {
+      "id": 6163,
+      "name": "Ramstein",
+      "side": "Horde",
+      "requiredLevel": 56,
+      "xp": 6600,
+      "objective": "Travel to Stratholme and slay Ramstein the Gorger. Take his head as a souvenir for Nathanos.",
+      "description": "Optional introductory quest:",
+      "requires": [6136],
+      "start": {
+        "npc": "Nathanos Blightcaller",
+        "location": [1423, 22.2, 64.3],
+        "description": "Marris Stead, Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Nathanos Blightcaller",
+        "location": [1423, 22.2, 64.3],
+        "description": "Marris Stead, Eastern Plaguelands"
+      },
+      "items": [
+        {
+          "item": 18022,
+          "name": "Royal Seal of Alexis"
+        },
+        {
+          "item": 17001,
+          "name": "Elemental Circle"
+        }
+      ]
+    },
+    {
+      "id": 8945,
+      "name": "Dead Man's Plea",
+      "side": "Both",
+      "requiredLevel": 58,
+      "xp": 8300,
+      "objective": "Go into Stratholme and rescue Ysida Harmon from Baron Rivendare.",
+      "description": "Timed: rescue Ysida Harmon by killing Baron Rivendare within 45 minutes. Use the Extra-Dimensional Ghost Revealer to see Anthion.",
+      "start": {
+        "npc": "Anthion Harmon",
+        "location": [1423, 26.1, 11.3],
+        "description": "Eastern Plaguelands"
+      },
+      "turnIn": {
+        "npc": "Anthion Harmon",
+        "location": [1423, 26.1, 11.3],
+        "description": "Eastern Plaguelands"
+      },
+      "items": [
+        {
+          "item": 22137,
+          "name": "Ysida's Satchel"
+        }
+      ]
+    }
+  ]
 }

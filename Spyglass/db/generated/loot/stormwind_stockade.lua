@@ -22,6 +22,7 @@ Data:AddBossLoot(2757, { -- Kam Deepfury
     { 252513 }, -- Trapper's Leather Helm
     { 252455 }, -- Defender's Leather Helm
     { 252515 }, -- Wisdom's Leather Helm
+    { 252815 }, -- #252815
 })
 
 Data:AddBossLoot(2758, { -- Hamhock
@@ -71,12 +72,20 @@ Data:AddTrashLoot(34, {
 })
 
 Data:AddQuests(34, {
-    { id = 386, name = "What Comes Around...", side = "Alliance", xp = 2000, items = {} },
-    { id = 377, name = "Crime and Punishment", side = "Alliance", xp = 2100, items = {} },
-    { id = 387, name = "Quell the Uprising", xp = 2650, items = {} },
-    { id = 388, name = "The Color of Blood", xp = 2650, items = {} },
-    { id = 391, name = "The Stockade Riots", xp = 2350, requires = { { id = 389, name = "Bazil Thredd" } }, items = {} },
-    { id = 378, name = "The Fury Runs Deep", side = "Alliance", requiredLevel = 25, xp = 5750, objective = "Kill Kam Deepfury in The Stockade and bring his head to Motley Garmason.", description = "Requires The Dark Iron War before this quest becomes available.", requires = { { id = 303, name = "The Dark Iron War" } }, start = { description = "Dun Modr, Wetlands.", location = { 1437, 49.6, 18.2 }, npc = "Motley Garmason" }, turnIn = { description = "Dun Modr, Wetlands.", npc = "Motley Garmason" }, items = {
+    { id = 386, name = "What Comes Around...", side = "Alliance", requiredLevel = 22, xp = 2000, objective = "Kill Targorr the Dread in The Stockade and bring his head to Guard Berton.", start = { description = "Guard Berton, Lakeshire, Redridge Mountains", location = { 1433, 21.2, 46.6 }, npc = "Guard Berton" }, turnIn = { description = "Guard Berton, Lakeshire, Redridge Mountains", location = { 1433, 21.2, 46.6 }, npc = "Guard Berton" }, items = {
+        { 3400 }, -- Lucine Longsword
+        { 1317 }, -- Hardened Root Staff
+        { 270027 }, -- Ursine Hammer
+    } },
+    { id = 377, name = "Crime and Punishment", side = "Alliance", requiredLevel = 22, xp = 2100, objective = "Kill Dextren Ward in The Stockade and bring his hand to Councilman Millstipe.", start = { description = "Councilman Millstipe, Darkshire, Duskwood", location = { 1431, 72, 47.8 }, npc = "Councilman Millstipe" }, turnIn = { description = "Councilman Millstipe, Darkshire, Duskwood", location = { 1431, 72, 47.8 }, npc = "Councilman Millstipe" }, items = {
+        { 2033 }, -- Ambassador's Boots
+        { 2906 }, -- Darkshire Mail Leggings
+        { 270029 }, -- Town Clerk's Mittens
+    } },
+    { id = 387, name = "Quell the Uprising", side = "Alliance", requiredLevel = 22, xp = 2650, objective = "Kill 10 Defias Prisoners, 8 Defias Convicts, and 8 Defias Insurgents inside The Stockade.", start = { description = "Warden Thelwater, outside The Stockade, Stormwind", location = { 1453, 51.8, 69.3 }, npc = "Warden Thelwater" }, turnIn = { description = "Warden Thelwater, outside The Stockade, Stormwind", location = { 1453, 51.8, 69.3 }, npc = "Warden Thelwater" }, items = {} },
+    { id = 388, name = "The Color of Blood", side = "Alliance", requiredLevel = 22, xp = 2650, objective = "Collect 10 Red Wool Bandanas from Defias prisoners in The Stockade.", start = { description = "Nikova Raskol, Old Town, Stormwind", location = { 1453, 74.4, 60 }, npc = "Nikova Raskol" }, turnIn = { description = "Nikova Raskol, Old Town, Stormwind", location = { 1453, 74.4, 60 }, npc = "Nikova Raskol" }, items = {} },
+    { id = 391, name = "The Stockade Riots", side = "Alliance", requiredLevel = 16, xp = 2350, objective = "Kill Bazil Thredd in The Stockade and bring his head back to Warden Thelwater.", requires = { { id = 389, name = "Bazil Thredd" } }, start = { description = "Warden Thelwater, outside The Stockade, Stormwind", location = { 1453, 51.8, 69.3 }, npc = "Warden Thelwater" }, turnIn = { description = "Warden Thelwater, outside The Stockade, Stormwind", location = { 1453, 51.8, 69.3 }, npc = "Warden Thelwater" }, items = {} },
+    { id = 378, name = "The Fury Runs Deep", side = "Alliance", requiredLevel = 25, xp = 5750, objective = "Kill Kam Deepfury in The Stockade and bring his head to Motley Garmason.", description = "Requires The Dark Iron War before this quest becomes available.", requires = { { id = 303, name = "The Dark Iron War" } }, start = { description = "Dun Modr, Wetlands.", location = { 1437, 49.6, 18.2 }, npc = "Motley Garmason" }, turnIn = { description = "Dun Modr, Wetlands.", location = { 1437, 49.6, 18.2 }, npc = "Motley Garmason" }, items = {
         { 3562 }, -- Belt of Vindication
         { 1264 }, -- Headbasher
         { 270036 }, -- Magistrate's Pantaloons

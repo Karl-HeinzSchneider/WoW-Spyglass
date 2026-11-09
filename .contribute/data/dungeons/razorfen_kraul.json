@@ -200,6 +200,10 @@
         {
           "item": 252515,
           "name": "Wisdom's Leather Helm"
+        },
+        {
+          "item": 17008,
+          "name": "Small Scroll"
         }
       ]
     },
@@ -288,6 +292,10 @@
     {
       "item": 2039,
       "name": "Plains Ring"
+    },
+    {
+      "item": 1488,
+      "name": "Avenger's Armor"
     }
   ],
   "quests": [1144, 1221, 1142, 1101, 1102, 1109, 6521]

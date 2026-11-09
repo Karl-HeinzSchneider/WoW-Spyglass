@@ -18,6 +18,22 @@
         {
           "item": 16672,
           "name": "Gauntlets of Elements"
+        },
+        {
+          "item": 12905,
+          "name": "Wildfire Cape"
+        },
+        {
+          "item": 12926,
+          "name": "Flaming Band"
+        },
+        {
+          "item": 12927,
+          "name": "Truestrike Shoulders"
+        },
+        {
+          "item": 12929,
+          "name": "Emberfury Talisman"
         }
       ]
     },
@@ -33,6 +49,46 @@
         {
           "item": 16669,
           "name": "Pauldrons of Elements"
+        },
+        {
+          "item": 12583,
+          "name": "Blackhand Doomsaw"
+        },
+        {
+          "item": 12587,
+          "name": "Eye of Rend"
+        },
+        {
+          "item": 12935,
+          "name": "Warmaster Legguards"
+        },
+        {
+          "item": 12936,
+          "name": "Battleborn Armbraces"
+        },
+        {
+          "item": 12939,
+          "name": "Dal'Rend's Tribal Guardian"
+        },
+        {
+          "item": 12940,
+          "name": "Dal'Rend's Sacred Charge"
+        },
+        {
+          "item": 18102,
+          "name": "Dragonrider Boots"
+        },
+        {
+          "item": 18103,
+          "name": "Band of Rumination"
+        },
+        {
+          "item": 18104,
+          "name": "Feralsurge Girdle"
+        },
+        {
+          "item": 22247,
+          "name": "Faith Healer's Boots"
         }
       ]
     },
@@ -44,6 +100,42 @@
         {
           "item": 16729,
           "name": "Lightforge Spaulders"
+        },
+        {
+          "item": 12709,
+          "name": "Pip's Skinner"
+        },
+        {
+          "item": 12963,
+          "name": "Blademaster Leggings"
+        },
+        {
+          "item": 12964,
+          "name": "Tristam Legguards"
+        },
+        {
+          "item": 12965,
+          "name": "Spiritshroud Leggings"
+        },
+        {
+          "item": 12966,
+          "name": "Blackmist Armguards"
+        },
+        {
+          "item": 12967,
+          "name": "Bloodmoon Cloak"
+        },
+        {
+          "item": 12968,
+          "name": "Frostweaver Cape"
+        },
+        {
+          "item": 12969,
+          "name": "Seeping Willow"
+        },
+        {
+          "item": 22311,
+          "name": "Ironweave Boots"
         }
       ]
     },
@@ -87,6 +179,42 @@
         {
           "item": 16730,
           "name": "Breastplate of Valor"
+        },
+        {
+          "item": 13141,
+          "name": "Tooth of Gnarr"
+        },
+        {
+          "item": 13098,
+          "name": "Painweaver Band"
+        },
+        {
+          "item": 13142,
+          "name": "Brigam Girdle"
+        },
+        {
+          "item": 12602,
+          "name": "Draconian Deflector"
+        },
+        {
+          "item": 22253,
+          "name": "Tome of the Lost"
+        },
+        {
+          "item": 22267,
+          "name": "Spellweaver's Turban"
+        },
+        {
+          "item": 22269,
+          "name": "Shadow Prowler's Cloak"
+        },
+        {
+          "item": 22268,
+          "name": "Draconic Infused Emblem"
+        },
+        {
+          "item": 15730,
+          "name": "Pattern: Red Dragonscale Breastplate"
         }
       ]
     },
@@ -95,7 +223,144 @@
       "name": "Lord Valthalak",
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\lord_valthalak.blp",
       "displayID": 14308,
-      "loot": []
+      "loot": [
+        {
+          "item": 22335,
+          "name": "Lord Valthalak's Staff of Command"
+        },
+        {
+          "item": 22336,
+          "name": "Draconian Aegis of the Legion"
+        },
+        {
+          "item": 22337,
+          "name": "Shroud of Domination"
+        },
+        {
+          "item": 22339,
+          "name": "Rune Band of Wizardry"
+        },
+        {
+          "item": 22340,
+          "name": "Pendant of Celerity"
+        },
+        {
+          "item": 22342,
+          "name": "Leggings of Torment"
+        },
+        {
+          "item": 22343,
+          "name": "Handguards of Savagery"
+        },
+        {
+          "item": 22302,
+          "name": "Ironweave Cowl"
+        }
+      ]
+    },
+    {
+      "id": -10264,
+      "name": "Solakar Flamewreath",
+      "npc": 10264,
+      "loot": [
+        {
+          "item": 12589,
+          "name": "Dustfeather Sash"
+        },
+        {
+          "item": 12603,
+          "name": "Nightbrace Tunic"
+        },
+        {
+          "item": 12606,
+          "name": "Crystallized Girdle"
+        },
+        {
+          "item": 12609,
+          "name": "Polychromatic Visionwrap"
+        },
+        {
+          "item": 16695,
+          "name": "Devout Mantle"
+        }
+      ]
+    },
+    {
+      "id": -10509,
+      "name": "Jed Runewatcher",
+      "npc": 10509,
+      "loot": [
+        {
+          "item": 12604,
+          "name": "Starfire Tiara"
+        },
+        {
+          "item": 12605,
+          "name": "Serpentine Skuller"
+        },
+        {
+          "item": 12930,
+          "name": "Briarwood Reed"
+        }
+      ]
+    },
+    {
+      "id": -10899,
+      "name": "Goraluk Anvilcrack",
+      "npc": 10899,
+      "loot": [
+        {
+          "item": 18048,
+          "name": "Mastersmith's Hammer"
+        },
+        {
+          "item": 13498,
+          "name": "Handcrafted Mastersmith Leggings"
+        },
+        {
+          "item": 18047,
+          "name": "Flame Walkers"
+        },
+        {
+          "item": 13502,
+          "name": "Handcrafted Mastersmith Girdle"
+        },
+        {
+          "item": 12834,
+          "name": "Plans: Arcanite Champion"
+        },
+        {
+          "item": 12837,
+          "name": "Plans: Masterwork Stormhammer"
+        }
+      ]
+    },
+    {
+      "id": -10339,
+      "name": "Gyth",
+      "npc": 10339,
+      "loot": [
+        {
+          "item": 12952,
+          "name": "Gyth's Skull"
+        },
+        {
+          "item": 12953,
+          "name": "Dragoneye Coif"
+        },
+        {
+          "item": 12960,
+          "name": "Tribal War Feathers"
+        },
+        {
+          "item": 16669,
+          "name": "Pauldrons of Elements"
+        },
+        {
+          "item": 22225,
+          "name": "Dragonskin Cowl"
+        }
+      ]
     }
   ],
   "trash": [
@@ -128,5 +393,5 @@
       "name": "Bracers of Valor"
     }
   ],
-  "quests": []
+  "quests": [4743, 7761, 4735, 5102, 6502, 6602, 5127, 4764, 4768, 5047, 5160]
 }

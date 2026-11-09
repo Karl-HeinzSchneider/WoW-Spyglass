@@ -1,3 +1,317 @@
 {
-  "quests": []
+  "quests": [
+    {
+      "id": 7028,
+      "name": "Twisted Evils",
+      "side": "Both",
+      "requiredLevel": 41,
+      "xp": 5250,
+      "objective": "Collect 25 Theradric Crystal Carvings for Willow in Desolace.",
+      "description": "Any Maraudon creature can drop the Theradric Crystal Carvings.",
+      "start": {
+        "npc": "Willow",
+        "location": [1443, 62, 39.4],
+        "description": "Desolace"
+      },
+      "turnIn": {
+        "npc": "Willow",
+        "location": [1443, 62, 39.4],
+        "description": "Desolace"
+      },
+      "items": [
+        {
+          "item": 17775,
+          "name": "Acumen Robes"
+        },
+        {
+          "item": 17776,
+          "name": "Sprightring Helm"
+        },
+        {
+          "item": 17777,
+          "name": "Relentless Chain"
+        },
+        {
+          "item": 17779,
+          "name": "Hulkstone Pauldrons"
+        }
+      ]
+    },
+    {
+      "id": 7029,
+      "name": "Vyletongue Corruption",
+      "side": "Horde",
+      "requiredLevel": 41,
+      "xp": 5250,
+      "objective": "Fill the Coated Cerulean Vial at the orange crystal pool in Maraudon. Use the Filled Cerulean Vial on the Vylestem Vines to force the corrupted Noxxious Scion to emerge. Heal 8 plants by killing these Noxxious Scion, then return to Vark Battlescar in Shadowprey Village.",
+      "description": "Fill the Coated Cerulean Vial at the orange crystal pool in the outer caves, then use it on Vylestem Vines inside (orange side) and kill the Noxxious Scions to heal 8 plants.",
+      "start": {
+        "npc": "Vark Battlescar",
+        "location": [1443, 23.2, 70.2],
+        "description": "Shadowprey Village, Desolace"
+      },
+      "turnIn": {
+        "npc": "Vark Battlescar",
+        "location": [1443, 23.2, 70.2],
+        "description": "Shadowprey Village, Desolace"
+      },
+      "items": [
+        {
+          "item": 17768,
+          "name": "Woodseed Hoop"
+        },
+        {
+          "item": 17778,
+          "name": "Sagebrush Girdle"
+        },
+        {
+          "item": 17770,
+          "name": "Branchclaw Gauntlets"
+        }
+      ]
+    },
+    {
+      "id": 7041,
+      "name": "Vyletongue Corruption",
+      "side": "Alliance",
+      "requiredLevel": 41,
+      "xp": 5250,
+      "objective": "Fill the Coated Cerulean Vial at the orange crystal pool in Maraudon. Use the Filled Cerulean Vial on the Vylestem Vines to force the corrupted Noxxious Scion to emerge. Heal 8 plants by killing these Noxxious Scion, then return to Talendria in Nijel's Point.",
+      "description": "Fill the Coated Cerulean Vial at the orange crystal pool in the outer caves, then use it on Vylestem Vines inside (orange side) and kill the Noxxious Scions to heal 8 plants.",
+      "start": {
+        "npc": "Talendria",
+        "location": [1443, 68.4, 8.8],
+        "description": "Nijel's Point, Desolace"
+      },
+      "turnIn": {
+        "npc": "Talendria",
+        "location": [1443, 68.4, 8.8],
+        "description": "Nijel's Point, Desolace"
+      },
+      "items": [
+        {
+          "item": 17768,
+          "name": "Woodseed Hoop"
+        },
+        {
+          "item": 17778,
+          "name": "Sagebrush Girdle"
+        },
+        {
+          "item": 17770,
+          "name": "Branchclaw Gauntlets"
+        }
+      ]
+    },
+    {
+      "id": 7044,
+      "name": "Legends of Maraudon",
+      "side": "Both",
+      "requiredLevel": 41,
+      "xp": 3400,
+      "objective": "Recover the two parts of the Scepter of Celebras: the Celebrian Rod and the Celebrian Diamond. Find a way to speak with Celebras.",
+      "description": "The Celebrian Rod drops from Noxxion and the Celebrian Diamond from Lord Vyletongue.",
+      "followUps": [7046],
+      "start": {
+        "npc": "Cavindra",
+        "location": [1443, 32.1, 64],
+        "description": "Maraudon Orange Entrance, Desolace"
+      },
+      "turnIn": {
+        "npc": "Celebras the Redeemed",
+        "description": "Maraudon"
+      },
+      "items": []
+    },
+    {
+      "id": 7046,
+      "name": "The Scepter of Celebras",
+      "side": "Both",
+      "requiredLevel": 41,
+      "xp": 5700,
+      "objective": "Assist Celebras the Redeemed while he creates the Scepter of Celebras. Speak with him when the ritual is complete.",
+      "description": "Defeat Celebras the Cursed where the paths meet and turn in Legends of Maraudon to Celebras the Redeemed, then help with his ritual and speak to him again for the scepter.",
+      "start": {
+        "npc": "Celebras the Redeemed",
+        "description": "Maraudon"
+      },
+      "turnIn": {
+        "npc": "Celebras the Redeemed",
+        "description": "Maraudon"
+      },
+      "items": [
+        {
+          "item": 17191,
+          "name": "Scepter of Celebras"
+        }
+      ]
+    },
+    {
+      "id": 7064,
+      "name": "Corruption of Earth and Seed",
+      "side": "Horde",
+      "requiredLevel": 45,
+      "xp": 6100,
+      "objective": "Slay Princess Theradras and return to Selendra near Shadowprey Village in Desolace.",
+      "description": "Kill Princess Theradras in the inner cavern.",
+      "start": {
+        "npc": "Selendra",
+        "location": [1443, 26.8, 77.6],
+        "description": "Shadowprey Village, Desolace"
+      },
+      "turnIn": {
+        "npc": "Selendra",
+        "location": [1443, 26.8, 77.6],
+        "description": "Shadowprey Village, Desolace"
+      },
+      "items": [
+        {
+          "item": 17705,
+          "name": "Thrash Blade"
+        },
+        {
+          "item": 17743,
+          "name": "Resurgence Rod"
+        },
+        {
+          "item": 17753,
+          "name": "Verdant Keeper's Aim"
+        }
+      ]
+    },
+    {
+      "id": 7065,
+      "name": "Corruption of Earth and Seed",
+      "side": "Alliance",
+      "requiredLevel": 45,
+      "xp": 6100,
+      "objective": "Slay Princess Theradras and return to Keeper Marandis at Nijel's Point in Desolace.",
+      "description": "Kill Princess Theradras in the inner cavern.",
+      "start": {
+        "npc": "Keeper Marandis",
+        "location": [1443, 63.8, 10.6],
+        "description": "Nijel's Point, Desolace"
+      },
+      "turnIn": {
+        "npc": "Keeper Marandis",
+        "location": [1443, 63.8, 10.6],
+        "description": "Nijel's Point, Desolace"
+      },
+      "items": [
+        {
+          "item": 17705,
+          "name": "Thrash Blade"
+        },
+        {
+          "item": 17743,
+          "name": "Resurgence Rod"
+        },
+        {
+          "item": 17753,
+          "name": "Verdant Keeper's Aim"
+        }
+      ]
+    },
+    {
+      "id": 7066,
+      "name": "Seed of Life",
+      "side": "Both",
+      "requiredLevel": 39,
+      "xp": 6100,
+      "objective": "Seek out Remulos in Moonglade and give him the Seed of Life.",
+      "description": "Zaetar's Spirit appears after Princess Theradras dies.",
+      "start": {
+        "npc": "Zaetar's Spirit",
+        "description": "Maraudon"
+      },
+      "turnIn": {
+        "npc": "Keeper Remulos",
+        "description": "Moonglade"
+      },
+      "items": []
+    },
+    {
+      "id": 7067,
+      "name": "The Pariah's Instructions",
+      "side": "Both",
+      "requiredLevel": 39,
+      "xp": 5450,
+      "objective": "Read the Pariah's Instructions. Afterwards, obtain the Amulet of Union from Maraudon and return it to the Centaur Pariah in southern Desolace.",
+      "description": "Loot the Amulet of Spirits from the Nameless Prophet in the outer caves, then use it to fight the five Khans: three in the outer caves, one on the purple route and one on the orange route. Combine their gems with the amulet.",
+      "start": {
+        "npc": "Centaur Pariah",
+        "location": [1443, 43.4, 84.8],
+        "description": "southern Desolace"
+      },
+      "turnIn": {
+        "npc": "Centaur Pariah",
+        "location": [1443, 43.4, 84.8],
+        "description": "southern Desolace"
+      },
+      "items": [
+        {
+          "item": 17774,
+          "name": "Mark of the Chosen"
+        }
+      ]
+    },
+    {
+      "id": 7068,
+      "name": "Shadowshard Fragments",
+      "side": "Horde",
+      "requiredLevel": 39,
+      "xp": 3450,
+      "objective": "Collect 10 Shadowshard Fragments from Maraudon and return them to Uthel'nay in Orgrimmar.",
+      "description": "Shadowshard elementals in the outer purple-crystal caves. It can be done without entering the instance.",
+      "start": {
+        "npc": "Uthel'nay",
+        "location": [1454, 38.8, 85.4],
+        "description": "Orgrimmar"
+      },
+      "turnIn": {
+        "npc": "Uthel'nay",
+        "location": [1454, 38.8, 85.4],
+        "description": "Orgrimmar"
+      },
+      "items": [
+        {
+          "item": 17772,
+          "name": "Zealous Shadowshard Pendant"
+        },
+        {
+          "item": 17773,
+          "name": "Prodigious Shadowshard Pendant"
+        }
+      ]
+    },
+    {
+      "id": 7070,
+      "name": "Shadowshard Fragments",
+      "side": "Alliance",
+      "requiredLevel": 39,
+      "xp": 3450,
+      "objective": "Collect 10 Shadowshard Fragments from Maraudon and return them to Archmage Tervosh in Theramore on the coast of Dustwallow Marsh.",
+      "description": "Shadowshard elementals in the outer purple-crystal caves. It can be done without entering the instance.",
+      "start": {
+        "npc": "Archmage Tervosh",
+        "location": [1445, 45.2, 24.4],
+        "description": "Theramore, Dustwallow Marsh"
+      },
+      "turnIn": {
+        "npc": "Archmage Tervosh",
+        "location": [1445, 45.2, 24.4],
+        "description": "Theramore, Dustwallow Marsh"
+      },
+      "items": [
+        {
+          "item": 17772,
+          "name": "Zealous Shadowshard Pendant"
+        },
+        {
+          "item": 17773,
+          "name": "Prodigious Shadowshard Pendant"
+        }
+      ]
+    }
+  ]
 }

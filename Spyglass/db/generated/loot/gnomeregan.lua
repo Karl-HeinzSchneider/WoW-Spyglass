@@ -54,39 +54,47 @@ Data:AddTrashLoot(90, {
 })
 
 Data:AddQuests(90, {
-    { id = 2904, name = "A Fine Mess", side = "Both", xp = 2450, items = {
+    { id = 2904, name = "A Fine Mess", side = "Both", requiredLevel = 24, xp = 2450, objective = "Escort Kernobee to the Clockwerk Run exit, then report to Scooty in Booty Bay.", start = { description = "Kernobee, inside Gnomeregan", npc = "Kernobee" }, turnIn = { description = "Scooty, Booty Bay, Stranglethorn Vale", npc = "Scooty" }, items = {
         { 9535 }, -- Fire-welded Bracers
         { 9536 }, -- Fairywing Mantle
+        { 270042 }, -- Technician's Bracers
     } },
-    { id = 2928, name = "Gyrodrillmatic Excavationators", side = "Alliance", xp = 2450, items = {
+    { id = 2928, name = "Gyrodrillmatic Excavationators", side = "Alliance", requiredLevel = 20, xp = 2450, objective = "Bring twenty-four Robo-mechanical Guts to Shoni in Stormwind.", start = { description = "Shoni the Shilent, Stormwind City", location = { 1453, 63, 34 }, npc = "Shoni the Shilent" }, turnIn = { description = "Shoni the Shilent, Stormwind City", location = { 1453, 63, 34 }, npc = "Shoni the Shilent" }, items = {
         { 9608 }, -- Shoni's Disarming Tool
         { 9609 }, -- Shilly Mitts
+        { 270045 }, -- Operator's Gloves
     } },
-    { id = 2922, name = "Save Techbot's Brain!", xp = 2650, items = {} },
+    { id = 2922, name = "Save Techbot's Brain!", side = "Alliance", requiredLevel = 20, xp = 2650, objective = "Bring Techbot's Memory Core to Tinkmaster Overspark in Ironforge.", start = { description = "Tinkmaster Overspark, Ironforge", location = { 1455, 69, 50 }, npc = "Tinkmaster Overspark" }, turnIn = { description = "Tinkmaster Overspark, Ironforge", location = { 1455, 69, 50 }, npc = "Tinkmaster Overspark" }, items = {} },
     { id = 2923, name = "Tinkmaster Overspark", items = {} },
-    { id = 2926, name = "Gnogaine", xp = 2200, items = {} },
+    { id = 2926, name = "Gnogaine", side = "Alliance", requiredLevel = 20, xp = 2200, objective = "Use the Empty Leaden Collection Phial on Irradiated Invaders or Irradiated Pillagers, then take the full phial back to Ozzie Togglevolt.", start = { description = "Ozzie Togglevolt, Kharanos, Dun Morogh", location = { 1426, 45, 49 }, npc = "Ozzie Togglevolt" }, turnIn = { description = "Ozzie Togglevolt, Kharanos, Dun Morogh", location = { 1426, 45, 49 }, npc = "Ozzie Togglevolt" }, items = {} },
     { id = 2927, name = "The Day After", items = {} },
     { id = 2842, name = "Chief Engineer Scooty", requires = { { id = 2841, name = "Rig Wars" } }, items = {} },
-    { id = 2843, name = "Gnomer-gooooone!", requires = { { id = 2842, name = "Chief Engineer Scooty" } }, items = {} },
-    { id = 2962, name = "The Only Cure is More Green Glow", side = "Alliance", requiredLevel = 20, xp = 2450, objective = "Bring High Potency Radioactive Fallout and the Heavy Leaden Collection Phial back to Ozzie. The fallout collapses quickly.", requires = { { id = 2926, name = "Gnogaine" } }, start = { description = "Kharanos, Dun Morogh.", location = { 1426, 45, 49 }, npc = "Ozzie Togglevolt" }, turnIn = { description = "Kharanos, Dun Morogh.", npc = "Ozzie Togglevolt" }, items = {} },
-    { id = 2924, name = "Essential Artificials", side = "Alliance", requiredLevel = 24, xp = 3050, objective = "Bring 12 Essential Artificials to Klockmort Spannerspan in Ironforge.", start = { description = "Ironforge.", location = { 1455, 67, 46 }, npc = "Klockmort Spannerspan" }, turnIn = { description = "Ironforge.", npc = "Klockmort Spannerspan" }, items = {} },
-    { id = 2930, name = "Data Rescue", side = "Alliance", requiredLevel = 25, xp = 3650, objective = "Bring a Prismatic Punch Card to Master Mechanic Castpipe in Ironforge.", start = { description = "Ironforge.", location = { 1455, 69, 48 }, npc = "Master Mechanic Castpipe" }, turnIn = { description = "Ironforge.", npc = "Master Mechanic Castpipe" }, items = {
+    { id = 2843, name = "Gnomer-gooooone!", side = "Horde", requiredLevel = 20, objective = "Wait for Scooty to calibrate the Goblin Transponder.", requires = { { id = 2842, name = "Chief Engineer Scooty" } }, start = { description = "Scooty, Booty Bay, Stranglethorn Vale", location = { 1434, 28, 77 }, npc = "Scooty" }, turnIn = { description = "Scooty, Booty Bay, Stranglethorn Vale", location = { 1434, 28, 77 }, npc = "Scooty" }, items = {
+        { 9173 }, -- Goblin Transponder
+    } },
+    { id = 2962, name = "The Only Cure is More Green Glow", side = "Alliance", requiredLevel = 20, xp = 2450, objective = "Bring High Potency Radioactive Fallout and the Heavy Leaden Collection Phial back to Ozzie. The fallout collapses quickly.", requires = { { id = 2926, name = "Gnogaine" } }, start = { description = "Kharanos, Dun Morogh.", location = { 1426, 45, 49 }, npc = "Ozzie Togglevolt" }, turnIn = { description = "Kharanos, Dun Morogh.", location = { 1426, 45, 49 }, npc = "Ozzie Togglevolt" }, items = {} },
+    { id = 2924, name = "Essential Artificials", side = "Alliance", requiredLevel = 24, xp = 3050, objective = "Bring 12 Essential Artificials to Klockmort Spannerspan in Ironforge.", start = { description = "Ironforge.", location = { 1455, 67, 46 }, npc = "Klockmort Spannerspan" }, turnIn = { description = "Ironforge.", location = { 1455, 67, 46 }, npc = "Klockmort Spannerspan" }, items = {} },
+    { id = 2930, name = "Data Rescue", side = "Alliance", requiredLevel = 25, xp = 3650, objective = "Bring a Prismatic Punch Card to Master Mechanic Castpipe in Ironforge.", start = { description = "Ironforge.", location = { 1455, 69, 48 }, npc = "Master Mechanic Castpipe" }, turnIn = { description = "Ironforge.", location = { 1455, 69, 48 }, npc = "Master Mechanic Castpipe" }, items = {
         { 9605 }, -- Repairman's Cape
         { 9604 }, -- Mechanic's Pipehammer
     } },
-    { id = 2929, name = "The Grand Betrayal", side = "Alliance", requiredLevel = 25, xp = 2750, objective = "Kill Mekgineer Thermaplugg and return to High Tinker Mekkatorque.", start = { description = "Ironforge.", location = { 1455, 68, 49 }, npc = "High Tinker Mekkatorque" }, turnIn = { description = "Ironforge.", npc = "High Tinker Mekkatorque" }, items = {
+    { id = 2929, name = "The Grand Betrayal", side = "Alliance", requiredLevel = 25, xp = 2750, objective = "Kill Mekgineer Thermaplugg and return to High Tinker Mekkatorque.", start = { description = "Ironforge.", location = { 1455, 68, 49 }, npc = "High Tinker Mekkatorque" }, turnIn = { description = "Ironforge.", location = { 1455, 68, 49 }, npc = "High Tinker Mekkatorque" }, items = {
         { 9623 }, -- Civinad Robes
         { 9624 }, -- Triprunner Dungarees
         { 9625 }, -- Dual Reinforced Leggings
     } },
-    { id = 2841, name = "Rig Wars", requiredLevel = 25, xp = 2750, objective = "Accept Rig Wars from Nogg. You do not need to complete it before continuing to Chief Engineer Scooty.", description = "Accept Rig Wars first; completion is not required for Chief Engineer Scooty. Accept Rig Wars before Chief Engineer Scooty. If Rig Wars disappears, abandon Chief Engineer Scooty and it will reappear.", start = { description = "Valley of Honor, Orgrimmar.", location = { 1454, 76, 25 }, npc = "Nogg" }, turnIn = { description = "Orgrimmar.", npc = "Nogg" }, items = {} },
+    { id = 2841, name = "Rig Wars", side = "Horde", requiredLevel = 25, xp = 2750, objective = "Accept Rig Wars from Nogg. You do not need to complete it before continuing to Chief Engineer Scooty.", description = "Accept Rig Wars first; completion is not required for Chief Engineer Scooty. Accept Rig Wars before Chief Engineer Scooty. If Rig Wars disappears, abandon Chief Engineer Scooty and it will reappear.", start = { description = "Valley of Honor, Orgrimmar.", location = { 1454, 76, 25 }, npc = "Nogg" }, turnIn = { description = "Orgrimmar.", location = { 1454, 76, 25 }, npc = "Nogg" }, items = {
+        { 9623 }, -- Civinad Robes
+        { 9624 }, -- Triprunner Dungarees
+        { 9625 }, -- Dual Reinforced Leggings
+    } },
     { id = 2951, name = "The Sparklematic 5200!", side = "Both", requiredLevel = 25, objective = "Insert a Grime-Encrusted Object into the Sparklematic 5200, with three silver coins to start the machine.", start = { description = "Inside Gnomeregan.", npc = "The Sparklematic 5200" }, turnIn = { description = "Inside Gnomeregan.", npc = "The Sparklematic 5200" }, items = {
         { 9363 }, -- Sparklematic-Wrapped Box
     } },
-    { id = 2948, name = "Gnome Improvement", side = "Alliance", requiredLevel = 28, xp = 2750, objective = "Bring the Brilliant Gold Ring, a Silver Bar, a Moss Agate, and 30 silver coins to Talvash del Kissel in Ironforge.", requires = { { id = 2947, name = "Return of the Ring" } }, start = { description = "Mystic Ward, Ironforge.", location = { 1455, 35.7, 4 }, npc = "Talvash del Kissel" }, turnIn = { description = "Mystic Ward, Ironforge.", npc = "Talvash del Kissel" }, items = {
+    { id = 2948, name = "Gnome Improvement", side = "Alliance", requiredLevel = 28, xp = 2750, objective = "Bring the Brilliant Gold Ring, a Silver Bar, a Moss Agate, and 30 silver coins to Talvash del Kissel in Ironforge.", requires = { { id = 2947, name = "Return of the Ring" } }, start = { description = "Mystic Ward, Ironforge.", location = { 1455, 35.7, 4 }, npc = "Talvash del Kissel" }, turnIn = { description = "Mystic Ward, Ironforge.", location = { 1455, 35.7, 4 }, npc = "Talvash del Kissel" }, items = {
         { 9538 }, -- Talvash's Gold Ring
     } },
-    { id = 2950, name = "Nogg's Ring Redo", side = "Horde", requiredLevel = 28, xp = 2750, objective = "Bring the Brilliant Gold Ring, a Silver Bar, a Moss Agate, and 30 silver coins to Nogg in Orgrimmar.", requires = { { id = 2949, name = "Return of the Ring" } }, start = { description = "Valley of Honor, Orgrimmar.", location = { 1454, 76, 25 }, npc = "Nogg" }, turnIn = { description = "Valley of Honor, Orgrimmar.", npc = "Nogg" }, items = {
+    { id = 2950, name = "Nogg's Ring Redo", side = "Horde", requiredLevel = 28, xp = 2750, objective = "Bring the Brilliant Gold Ring, a Silver Bar, a Moss Agate, and 30 silver coins to Nogg in Orgrimmar.", requires = { { id = 2949, name = "Return of the Ring" } }, start = { description = "Valley of Honor, Orgrimmar.", location = { 1454, 76, 25 }, npc = "Nogg" }, turnIn = { description = "Valley of Honor, Orgrimmar.", location = { 1454, 76, 25 }, npc = "Nogg" }, items = {
         { 9588 }, -- Nogg's Gold Ring
     } },
 })

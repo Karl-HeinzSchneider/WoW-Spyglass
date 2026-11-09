@@ -13,41 +13,139 @@
       "id": 2780,
       "name": "Tuten'kash",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Tutenkash",
-      "loot": []
+      "loot": [
+        {
+          "item": 10776,
+          "name": "Silky Spider Cape"
+        },
+        {
+          "item": 10775,
+          "name": "Carapace of Tuten'kash"
+        },
+        {
+          "item": 10777,
+          "name": "Arachnid Gloves"
+        }
+      ]
     },
     {
       "id": 2781,
       "name": "Plaguemaw the Rotting",
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\plaguemaw_the_rotting.blp",
       "displayID": 6124,
-      "loot": []
+      "loot": [
+        {
+          "item": 10760,
+          "name": "Swine Fists"
+        },
+        {
+          "item": 10766,
+          "name": "Plaguerot Sprig"
+        },
+        {
+          "item": 274380,
+          "name": "Decaying Flesh Bands"
+        }
+      ]
     },
     {
       "id": 2782,
       "name": "Mordresh Fire Eye",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Mordresh Fire Eye",
-      "loot": []
+      "loot": [
+        {
+          "item": 10770,
+          "name": "Mordresh's Lifeless Skull"
+        },
+        {
+          "item": 10769,
+          "name": "Glowing Eye of Mordresh"
+        },
+        {
+          "item": 10771,
+          "name": "Deathmage Sash"
+        }
+      ]
     },
     {
       "id": 2783,
       "name": "Ragglesnout",
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\ragglesnout.blp",
       "displayID": 11382,
-      "loot": []
+      "loot": [
+        {
+          "item": 10758,
+          "name": "X'caliboar"
+        },
+        {
+          "item": 10767,
+          "name": "Savage Boar's Guard"
+        },
+        {
+          "item": 10768,
+          "name": "Boar Champion's Belt"
+        },
+        {
+          "item": 251399,
+          "name": "Plans: Sentinel's Boots"
+        }
+      ]
     },
     {
       "id": 2784,
       "name": "Glutton",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Glutton",
-      "loot": []
+      "loot": [
+        {
+          "item": 10772,
+          "name": "Glutton's Cleaver"
+        },
+        {
+          "item": 10774,
+          "name": "Fleshhide Shoulders"
+        },
+        {
+          "item": 274385,
+          "name": "Abomination Chain"
+        },
+        {
+          "item": 251402,
+          "name": "Plans: Justicar's Boots"
+        }
+      ]
     },
     {
       "id": 2785,
       "name": "Amnennar the Coldbringer",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Amnennar the Coldbringer",
-      "loot": []
+      "loot": [
+        {
+          "item": 10762,
+          "name": "Robes of the Lich"
+        },
+        {
+          "item": 10763,
+          "name": "Icemetal Barbute"
+        },
+        {
+          "item": 10764,
+          "name": "Deathchill Armor"
+        },
+        {
+          "item": 10765,
+          "name": "Bonefingers"
+        },
+        {
+          "item": 10761,
+          "name": "Coldrage Dagger"
+        },
+        {
+          "item": 274381,
+          "name": "Coldbringer Spine"
+        }
+      ]
     }
   ],
   "trash": [],
-  "quests": []
+  "quests": [3525, 6626, 3341, 3636, 6521, 97196]
 }

@@ -1,0 +1,151 @@
+{
+  "map": 3001,
+  "name": "The Shaper's Terrace",
+  "minLevel": 58,
+  "maxLevel": 60,
+  "icon": "Interface\\Icons\\INV_Misc_Gem_Crystal_02",
+  "encounters": [
+    {
+      "id": 3498,
+      "name": "Titanosaur",
+      "loot": [
+        {
+          "item": 280009,
+          "name": "Titanosaur Scale Pendant"
+        },
+        {
+          "item": 280011,
+          "name": "Deeproar Cord"
+        },
+        {
+          "item": 280010,
+          "name": "Gargantuan Wristguards"
+        }
+      ]
+    },
+    {
+      "id": 3499,
+      "name": "Ravasaur Hunters",
+      "npc": 253218,
+      "loot": [
+        {
+          "item": 280014,
+          "name": "Raptorscale Bulwark"
+        },
+        {
+          "item": 280013,
+          "name": "Frostfang Mail Vest"
+        },
+        {
+          "item": 280012,
+          "name": "Talon of Tor'Rel"
+        }
+      ]
+    },
+    {
+      "id": 3500,
+      "name": "Thunderhoof",
+      "loot": [
+        {
+          "item": 280020,
+          "name": "Deep Jungle Rifle"
+        },
+        {
+          "item": 280019,
+          "name": "Dinofrill Casque"
+        }
+      ]
+    },
+    {
+      "id": 3501,
+      "name": "Venomridge",
+      "loot": [
+        {
+          "item": 280015,
+          "name": "Venomvessel Ring"
+        },
+        {
+          "item": 280017,
+          "name": "Octoclaw Chain Boots"
+        },
+        {
+          "item": 280016,
+          "name": "Spiderchitin Wrap"
+        }
+      ]
+    },
+    {
+      "id": 3502,
+      "name": "Nanaya",
+      "loot": [
+        {
+          "item": 280023,
+          "name": "Nanaya's Control Spire"
+        },
+        {
+          "item": 280025,
+          "name": "Leggings of Curation"
+        },
+        {
+          "item": 273128,
+          "name": "Maker's Spark"
+        },
+        {
+          "item": 280024,
+          "name": "Legplates of Reinforced Crystal"
+        }
+      ]
+    },
+    {
+      "id": 3503,
+      "name": "Cinder",
+      "loot": []
+    },
+    {
+      "id": 3504,
+      "name": "King Op",
+      "loot": []
+    },
+    {
+      "id": 3505,
+      "name": "Bolt",
+      "loot": [
+        {
+          "item": 280032,
+          "name": "Bolt's Charged Eyeball"
+        }
+      ]
+    },
+    {
+      "id": 3507,
+      "name": "Direhorn Matriarch",
+      "loot": [
+        {
+          "item": 280022,
+          "name": "Scaleguard Scimitar"
+        },
+        {
+          "item": 280021,
+          "name": "Tooth of the Matriarch"
+        }
+      ]
+    },
+    {
+      "id": 3597,
+      "name": "Snowtalon",
+      "loot": []
+    },
+    {
+      "id": 3600,
+      "name": "Vitrix",
+      "loot": []
+    }
+  ],
+  "trash": [
+    {
+      "item": 287037,
+      "name": "Shaper's Robe"
+    }
+  ],
+  "quests": [95928]
+}
