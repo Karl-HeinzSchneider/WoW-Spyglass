@@ -5476,7 +5476,7 @@
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 0,
     "icon": 134939,
-    "sellPrice": 0,
+    "sellPrice": 100,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -6184,6 +6184,24 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "251340": {
+    "names": {
+      "enUS": "Plans: Veteran's Chain Shirt"
+    },
+    "quality": 3,
+    "itemLevel": 20,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 4,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 150,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
   "251341": {
     "names": {
       "enUS": "Plans: Guard's Chain Shirt"
@@ -6197,6 +6215,240 @@
     "bind": 1,
     "icon": 134939,
     "sellPrice": 150,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "251342": {
+    "names": {
+      "enUS": "Plans: Protector's Chain Shirt"
+    },
+    "quality": 3,
+    "itemLevel": 20,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 4,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 150,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "251343": {
+    "names": {
+      "enUS": "Plans: Acolyte's Chain Shirt"
+    },
+    "quality": 3,
+    "itemLevel": 20,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 4,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 150,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "251344": {
+    "names": {
+      "enUS": "Plans: Crusader's Chain Shirt"
+    },
+    "quality": 3,
+    "itemLevel": 20,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 4,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 150,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "251345": {
+    "names": {
+      "enUS": "Plans: Veteran's Chain Leggings"
+    },
+    "quality": 3,
+    "itemLevel": 25,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 4,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 300,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "251346": {
+    "names": {
+      "enUS": "Plans: Guard's Chain Leggings"
+    },
+    "quality": 3,
+    "itemLevel": 25,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 4,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 300,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "251347": {
+    "names": {
+      "enUS": "Plans: Protector's Chain Leggings"
+    },
+    "quality": 3,
+    "itemLevel": 25,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 4,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 300,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "251348": {
+    "names": {
+      "enUS": "Plans: Acolyte's Chain Leggings"
+    },
+    "quality": 3,
+    "itemLevel": 25,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 4,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 300,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "251349": {
+    "names": {
+      "enUS": "Plans: Crusader's Chain Leggings"
+    },
+    "quality": 3,
+    "itemLevel": 25,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 4,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 300,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "251350": {
+    "names": {
+      "enUS": "Plans: Veteran's Chain Helm"
+    },
+    "quality": 3,
+    "itemLevel": 30,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 4,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "251351": {
+    "names": {
+      "enUS": "Plans: Guard's Chain Helm"
+    },
+    "quality": 3,
+    "itemLevel": 30,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 4,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "251352": {
+    "names": {
+      "enUS": "Plans: Protector's Chain Helm"
+    },
+    "quality": 3,
+    "itemLevel": 30,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 4,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "251353": {
+    "names": {
+      "enUS": "Plans: Acolyte's Chain Helm"
+    },
+    "quality": 3,
+    "itemLevel": 30,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 4,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "251354": {
+    "names": {
+      "enUS": "Plans: Crusader's Chain Helm"
+    },
+    "quality": 3,
+    "itemLevel": 30,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 4,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 500,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -6917,6 +7169,24 @@
     "bind": 1,
     "icon": 134939,
     "sellPrice": 2000,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "251395": {
+    "names": {
+      "enUS": "Plans: Shining Mithril Helm"
+    },
+    "quality": 3,
+    "itemLevel": 48,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 4,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134939,
+    "sellPrice": 2500,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -9325,7 +9595,7 @@
     "slot": "INVTYPE_FEET",
     "bind": 1,
     "icon": 132542,
-    "sellPrice": 469,
+    "sellPrice": 2991,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -14204,6 +14474,114 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "252771": {
+    "names": {
+      "enUS": "Pattern: Brawler's Leather Armor"
+    },
+    "quality": 3,
+    "itemLevel": 20,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134942,
+    "sellPrice": 350,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "252772": {
+    "names": {
+      "enUS": "Pattern: Trapper's Leather Armor"
+    },
+    "quality": 3,
+    "itemLevel": 20,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134942,
+    "sellPrice": 350,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "252773": {
+    "names": {
+      "enUS": "Pattern: Defender's Leather Armor"
+    },
+    "quality": 3,
+    "itemLevel": 20,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134942,
+    "sellPrice": 350,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "252774": {
+    "names": {
+      "enUS": "Pattern: Totemic Leather Armor"
+    },
+    "quality": 3,
+    "itemLevel": 20,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134942,
+    "sellPrice": 350,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "252775": {
+    "names": {
+      "enUS": "Pattern: Stormrider's Leather Armor"
+    },
+    "quality": 3,
+    "itemLevel": 20,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134942,
+    "sellPrice": 350,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "252776": {
+    "names": {
+      "enUS": "Pattern: Wisdom's Leather Armor"
+    },
+    "quality": 3,
+    "itemLevel": 20,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134942,
+    "sellPrice": 350,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
   "252777": {
     "names": {
       "enUS": "Pattern: Brawler's Leather Gloves"
@@ -14451,6 +14829,114 @@
     "bind": 1,
     "icon": 134942,
     "sellPrice": 425,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "252792": {
+    "names": {
+      "enUS": "Pattern: Brawler's Leather Pants"
+    },
+    "quality": 3,
+    "itemLevel": 25,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134942,
+    "sellPrice": 400,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "252793": {
+    "names": {
+      "enUS": "Pattern: Trapper's Leather Pants"
+    },
+    "quality": 3,
+    "itemLevel": 25,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134942,
+    "sellPrice": 400,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "252794": {
+    "names": {
+      "enUS": "Pattern: Defender's Leather Pants"
+    },
+    "quality": 3,
+    "itemLevel": 25,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134942,
+    "sellPrice": 400,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "252795": {
+    "names": {
+      "enUS": "Pattern: Totemic Leather Pants"
+    },
+    "quality": 3,
+    "itemLevel": 25,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134942,
+    "sellPrice": 400,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "252796": {
+    "names": {
+      "enUS": "Pattern: Stormrider's Leather Pants"
+    },
+    "quality": 3,
+    "itemLevel": 25,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134942,
+    "sellPrice": 400,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "252797": {
+    "names": {
+      "enUS": "Pattern: Wisdom's Leather Pants"
+    },
+    "quality": 3,
+    "itemLevel": 25,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134942,
+    "sellPrice": 400,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -14713,6 +15199,114 @@
       "enUS": "Pattern: Forceful Heavy Armor Kit"
     },
     "quality": 2,
+    "itemLevel": 30,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134942,
+    "sellPrice": 500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "252814": {
+    "names": {
+      "enUS": "Pattern: Brawler's Leather Helm"
+    },
+    "quality": 3,
+    "itemLevel": 30,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134942,
+    "sellPrice": 500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "252815": {
+    "names": {
+      "enUS": "Pattern: Trapper's Leather Helm"
+    },
+    "quality": 3,
+    "itemLevel": 30,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134942,
+    "sellPrice": 500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "252816": {
+    "names": {
+      "enUS": "Pattern: Defender's Leather Helm"
+    },
+    "quality": 3,
+    "itemLevel": 30,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134942,
+    "sellPrice": 500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "252817": {
+    "names": {
+      "enUS": "Pattern: Totemic Leather Helm"
+    },
+    "quality": 3,
+    "itemLevel": 30,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134942,
+    "sellPrice": 500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "252818": {
+    "names": {
+      "enUS": "Pattern: Stormrider's Leather Helm"
+    },
+    "quality": 3,
+    "itemLevel": 30,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 1,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134942,
+    "sellPrice": 500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "252819": {
+    "names": {
+      "enUS": "Pattern: Wisdom's Leather Helm"
+    },
+    "quality": 3,
     "itemLevel": 30,
     "reqLevel": 0,
     "classID": 9,
@@ -25833,11 +26427,11 @@
     },
     "quality": 2,
     "itemLevel": 48,
-    "reqLevel": 0,
+    "reqLevel": 45,
     "classID": 2,
     "subclassID": 3,
     "slot": "INVTYPE_RANGEDRIGHT",
-    "bind": 2,
+    "bind": 1,
     "icon": 135613,
     "sellPrice": 15998,
     "stackCount": 1,

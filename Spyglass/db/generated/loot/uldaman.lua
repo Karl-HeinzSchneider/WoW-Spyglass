@@ -46,14 +46,14 @@ Data:AddBossLoot(553, { -- Grimlok
 
 Data:AddBossLoot(554, { -- Archaedas
     { 11118 }, -- Archaedic Stone
-    { 9413 }, -- #9413
-    { 9418 }, -- #9418
+    { 9413 }, -- The Rockpounder
+    { 9418 }, -- Stoneslayer
 })
 
 Data:AddQuests(70, {
     { id = 2240, name = "The Hidden Chamber", side = "Alliance", requiredLevel = 35, xp = 3900, objective = "Read Baelog's Journal, explore the hidden chamber, then report to Prospector Stormpike.", description = "Optional introductory quest:", start = { description = "Uldaman", npc = "Baelog" }, turnIn = { description = "Ironforge", npc = "Prospector Stormpike" }, items = {
-        { 9626 }, -- #9626
-        { 9627 }, -- #9627
+        { 9626 }, -- Dwarven Charge
+        { 9627 }, -- Explorer's League Lodestar
     } },
     { id = 704, name = "Agmond's Fate", side = "Alliance", requiredLevel = 30, xp = 2850, objective = "Bring 4 Carved Stone Urns to Prospector Ironband in Loch Modan.", description = "The urns are in the outer Uldaman cave, before the instance portal.\n\nOptional introductory quest:", requires = { { id = 739, name = "Murdaloc" } }, start = { description = "Loch Modan", location = { 1432, 65.8, 65.4 }, npc = "Prospector Ironband" }, turnIn = { description = "Loch Modan", location = { 1432, 65.8, 65.4 }, npc = "Prospector Ironband" }, items = {
         { 4980 }, -- Prospector Gloves

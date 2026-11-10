@@ -10,9 +10,9 @@ Data:AddBossLoot(2780, { -- Tuten'kash
 })
 
 Data:AddBossLoot(2781, { -- Plaguemaw the Rotting
-    { 10760 }, -- #10760
-    { 10766 }, -- #10766
-    { 274380 }, -- #274380
+    { 10760 }, -- Swine Fists
+    { 10766 }, -- Plaguerot Sprig
+    { 274380 }, -- Decaying Flesh Bands
 })
 
 Data:AddBossLoot(2782, { -- Mordresh Fire Eye
@@ -22,9 +22,9 @@ Data:AddBossLoot(2782, { -- Mordresh Fire Eye
 })
 
 Data:AddBossLoot(2783, { -- Ragglesnout
-    { 10758 }, -- #10758
-    { 10767 }, -- #10767
-    { 10768 }, -- #10768
+    { 10758 }, -- X'caliboar
+    { 10767 }, -- Savage Boar's Guard
+    { 10768 }, -- Boar Champion's Belt
     { 251399 }, -- Plans: Sentinel's Boots
 })
 
@@ -38,24 +38,24 @@ Data:AddBossLoot(2784, { -- Glutton
 Data:AddBossLoot(2785, { -- Amnennar the Coldbringer
     { 10762 }, -- Robes of the Lich
     { 10763 }, -- Icemetal Barbute
-    { 10764 }, -- #10764
-    { 10765 }, -- #10765
-    { 10761 }, -- #10761
+    { 10764 }, -- Deathchill Armor
+    { 10765 }, -- Bonefingers
+    { 10761 }, -- Coldrage Dagger
     { 274381 }, -- Coldbringer Spine
 })
 
 Data:AddQuests(129, {
     { id = 3525, name = "Extinguishing the Idol", side = "Both", requiredLevel = 32, xp = 4250, objective = "Escort Belnistrasz to the Quilboar's idol in Razorfen Downs. Protect Belnistrasz while he performs the ritual to shut down the idol.", description = "Waves of undead attack during the ritual. Talk to the brazier near the idol afterwards to finish.", requires = { { id = 3523, name = "Scourge of the Downs" } }, start = { description = "Razorfen Downs", npc = "Belnistrasz" }, turnIn = { description = "Razorfen Downs", npc = "Belnistrasz's Brazier" }, items = {
-        { 10710 }, -- #10710
+        { 10710 }, -- Dragonclaw Ring
     } },
     { id = 6626, name = "A Host of Evil", side = "Both", requiredLevel = 28, xp = 3450, objective = "Kill 8 Razorfen Battleguard, 8 Razorfen Thornweavers, and 8 Death's Head Cultists and return to Myriam Moonsinger near the entrance to Razorfen Downs.", description = "These mobs are outside the instance, around the entrance.", start = { description = "Razorfen Downs thorn maze, The Barrens", location = { 1413, 49, 94.8 }, npc = "Myriam Moonsinger" }, turnIn = { description = "Razorfen Downs thorn maze, The Barrens", location = { 1413, 49, 94.8 }, npc = "Myriam Moonsinger" }, items = {} },
     { id = 3341, name = "Bring the End", side = "Horde", requiredLevel = 37, xp = 4300, objective = "Andrew Brownell wants you to kill Amnennar the Coldbringer and return his skull.", start = { description = "Undercity", location = { 1458, 74, 32.4 }, npc = "Andrew Brownell" }, turnIn = { description = "Undercity", location = { 1458, 74, 32.4 }, npc = "Andrew Brownell" }, items = {
-        { 10823 }, -- #10823
-        { 10824 }, -- #10824
+        { 10823 }, -- Vanquisher's Sword
+        { 10824 }, -- Amberglow Talisman
     } },
     { id = 3636, name = "Bring the Light", side = "Alliance", requiredLevel = 39, xp = 4300, objective = "Archbishop Benedictus wants you to slay Amnennar the Coldbringer in Razorfen Downs.", start = { description = "Stormwind", location = { 1453, 49.6, 44.8 }, npc = "Archbishop Benedictus" }, turnIn = { description = "Stormwind", location = { 1453, 49.6, 44.8 }, npc = "Archbishop Benedictus" }, items = {
-        { 10823 }, -- #10823
-        { 10824 }, -- #10824
+        { 10823 }, -- Vanquisher's Sword
+        { 10824 }, -- Amberglow Talisman
     } },
     { id = 6521, name = "An Unholy Alliance", side = "Horde", requiredLevel = 28, xp = 3500, objective = "Bring Ambassador Malcin's Head to Varimathras in the Undercity.", description = "This quest is completed in the area OUTSIDE Razorfen Downs.", requires = { { id = 6522, name = "An Unholy Alliance" } }, start = { description = "Royal Quarter, Undercity.", location = { 1458, 56.2, 92.6 }, npc = "Varimathras" }, turnIn = { description = "Royal Quarter, Undercity.", location = { 1458, 56.2, 92.6 }, npc = "Varimathras" }, items = {
         { 17039 }, -- Skullbreaker

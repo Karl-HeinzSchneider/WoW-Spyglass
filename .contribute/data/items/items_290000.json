@@ -1,0 +1,24 @@
+{
+  "290333": {
+    "names": {
+      "enUS": "Berdun's Trusty Rifle"
+    },
+    "quality": 2,
+    "itemLevel": 48,
+    "reqLevel": 0,
+    "classID": 2,
+    "subclassID": 3,
+    "slot": "INVTYPE_RANGEDRIGHT",
+    "bind": 1,
+    "icon": 135613,
+    "sellPrice": 15326,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 22.33,
+      "STRENGTH": 6
+    }
+  }
+}

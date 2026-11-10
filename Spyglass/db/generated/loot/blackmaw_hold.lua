@@ -4,24 +4,24 @@ local Data = Spyglass.Data
 -- Blackmaw Hold (map 2974)
 
 Data:AddBossLoot(3315, { -- Withermaw
-    { 280064 }, -- #280064
+    { 280064 }, -- Withering Grips
 })
 
 Data:AddBossLoot(3327, { -- Elder Shaman Bloodmane
-    { 280068 }, -- #280068
+    { 280068 }, -- Bloody Claws of Attack
 })
 
 Data:AddBossLoot(3334, { -- Varrox Bleakhoof
-    { 280074 }, -- #280074
+    { 280074 }, -- Scalding Flamehoof
 })
 
 Data:AddBossLoot(3336, { -- Unbound Spirit
-    { 280071 }, -- #280071
+    { 280071 }, -- Flamebreak Talisman
 })
 
 Data:AddBossLoot(-269104, { -- Moontouched Wanderer
-    { 280080 }, -- #280080
-    { 280079 }, -- #280079
+    { 280080 }, -- Claymore of Two Moons
+    { 280079 }, -- Lunarlight Robe
 })
 
 Data:AddBossLoot(-269111, { -- Gortek the Apprentice
@@ -34,8 +34,8 @@ Data:AddQuests(2974, {
     { id = 97173, name = "Blackmaw Magic", side = "Alliance", requiredLevel = 52, xp = 12800, objective = "Obtain a Blackmaw Ritual Totem from Elder Shaman Bloodmane in Blackmaw Hold.", description = "Quest giver not known yet.", start = { description = "Not known yet (probably a mage in Dalaran)" }, items = {} },
     { id = 97198, name = "Blackmaw Magic", side = "Horde", requiredLevel = 52, xp = 16100, objective = "Obtain a Blackmaw Ritual Totem from Elder Shaman Bloodmane in Blackmaw Hold.", description = "Quest giver not known yet.", start = { description = "Not known yet (perhaps Alaana Stormwalker, Mulgore)" }, items = {} },
     { id = 92069, name = "Claws That Rend, Tusks that Gore", side = "Both", requiredLevel = 45, xp = 12400, objective = "Bring the Claws of the Great Bear and the Tusks of the Unbroken to Ogtinc in Azshara.", description = "Withermaw and Bonesnout are on different paths: take both.", start = { description = "Azshara (42.4, 42.6) (probably)", location = { 1447, 42.4, 42.6 }, npc = "Ogtinc" }, turnIn = { description = "Azshara (42.4, 42.6)", location = { 1447, 42.4, 42.6 }, npc = "Ogtinc" }, items = {
-        { 260213 }, -- #260213
-        { 260214 }, -- #260214
-        { 260215 }, -- #260215
+        { 260213 }, -- Great Bear Claw
+        { 260214 }, -- Staff of Wild Beasts
+        { 260215 }, -- Wild Malleus
     } },
 })

@@ -591,6 +591,171 @@
       "SPIRIT": 17
     }
   },
+  "260213": {
+    "names": {
+      "enUS": "Great Bear Claw"
+    },
+    "quality": 2,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 2,
+    "subclassID": 13,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 1,
+    "icon": 134297,
+    "sellPrice": 39636,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 4,
+      "DAMAGE_PER_SECOND": 35.83,
+      "STAMINA": 5,
+      "STRENGTH": 8
+    }
+  },
+  "260214": {
+    "names": {
+      "enUS": "Staff of Wild Beasts"
+    },
+    "quality": 2,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 2,
+    "subclassID": 10,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 1,
+    "icon": 135187,
+    "sellPrice": 49736,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 14,
+      "DAMAGE_PER_SECOND": 34.6,
+      "SPELL_POWER": 52,
+      "SPIRIT": 19
+    }
+  },
+  "260215": {
+    "names": {
+      "enUS": "Wild Malleus"
+    },
+    "quality": 2,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 2,
+    "subclassID": 5,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 1,
+    "icon": 133476,
+    "sellPrice": 49923,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 11,
+      "DAMAGE_PER_SECOND": 46.47,
+      "SPIRIT": 8,
+      "STAMINA": 12,
+      "STRENGTH": 13
+    }
+  },
+  "260216": {
+    "names": {
+      "enUS": "Ouroboros Ring"
+    },
+    "quality": 3,
+    "itemLevel": 62,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_FINGER",
+    "bind": 1,
+    "icon": 133382,
+    "sellPrice": 21216,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 100,
+      "STAMINA": 13,
+      "STRENGTH": 7
+    }
+  },
+  "260217": {
+    "names": {
+      "enUS": "Eagle's Head Signet"
+    },
+    "quality": 3,
+    "itemLevel": 62,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_FINGER",
+    "bind": 1,
+    "icon": 514159,
+    "sellPrice": 21297,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 14,
+      "INTELLECT": 8,
+      "SPIRIT": 7
+    }
+  },
+  "260218": {
+    "names": {
+      "enUS": "Malefactor's End"
+    },
+    "quality": 3,
+    "itemLevel": 62,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_FINGER",
+    "bind": 1,
+    "icon": 133408,
+    "sellPrice": 21960,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 14,
+      "MANA_REGENERATION": 4,
+      "STAMINA": 6
+    }
+  },
+  "260219": {
+    "names": {
+      "enUS": "Engraved Band"
+    },
+    "quality": 3,
+    "itemLevel": 62,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_FINGER",
+    "bind": 1,
+    "icon": 1379209,
+    "sellPrice": 22039,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 7,
+      "SPIRIT": 10,
+      "STRENGTH": 14
+    }
+  },
   "260236": {
     "names": {
       "enUS": "Scribbled Directions to Sulfur Vents"
@@ -698,6 +863,30 @@
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
+  },
+  "260308": {
+    "names": {
+      "enUS": "Hyjal Postal Clasp"
+    },
+    "quality": 2,
+    "itemLevel": 58,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_TRINKET",
+    "bind": 1,
+    "icon": 959837,
+    "sellPrice": 14493,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "FROST_RESISTANCE": 10,
+      "NATURE_RESISTANCE": 10,
+      "RESISTANCE3_NAME": 10,
+      "RESISTANCE4_NAME": 10
+    }
   },
   "260347": {
     "names": {
@@ -7416,6 +7605,27 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "264501": {
+    "names": {
+      "enUS": "Ancient Skyborne Blade"
+    },
+    "quality": 2,
+    "itemLevel": 13,
+    "reqLevel": 8,
+    "classID": 2,
+    "subclassID": 7,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 1,
+    "icon": 7789512,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 7
+    }
+  },
   "264671": {
     "names": {
       "enUS": "(DNT) Sylvestris' Bow"
@@ -8594,6 +8804,28 @@
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
+  },
+  "267090": {
+    "names": {
+      "enUS": "Semblance of Twilight"
+    },
+    "quality": 2,
+    "itemLevel": 44,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_NECK",
+    "bind": 1,
+    "icon": 133854,
+    "sellPrice": 6145,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "BLOCK_VALUE": 8,
+      "STAMINA": 8
+    }
   },
   "267091": {
     "names": {
@@ -9953,7 +10185,7 @@
     "bind": 4,
     "icon": 458717,
     "sellPrice": 0,
-    "stackCount": 25,
+    "stackCount": 50,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
@@ -11063,7 +11295,7 @@
       "enUS": "Keen Skinning Knife"
     },
     "quality": 2,
-    "itemLevel": 19,
+    "itemLevel": 18,
     "reqLevel": 0,
     "classID": 2,
     "subclassID": 15,
@@ -11076,10 +11308,10 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DAMAGE_PER_SECOND": 6.33,
+      "DAMAGE_PER_SECOND": 6,
       "INTELLECT": 2,
       "SKINNING": 3,
-      "SPELL_POWER": 12
+      "SPELL_POWER": 10
     }
   },
   "269717": {
@@ -11087,21 +11319,21 @@
       "enUS": "Wildgore Greatsword"
     },
     "quality": 2,
-    "itemLevel": 19,
+    "itemLevel": 18,
     "reqLevel": 0,
     "classID": 2,
     "subclassID": 8,
     "slot": "INVTYPE_2HWEAPON",
     "bind": 1,
     "icon": 135350,
-    "sellPrice": 1555,
+    "sellPrice": 1353,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "DAMAGE_PER_SECOND": 12.58,
-      "STRENGTH": 6
+      "DAMAGE_PER_SECOND": 11.77,
+      "STRENGTH": 5
     }
   },
   "269718": {
@@ -11181,7 +11413,7 @@
       "enUS": "Walton's Second-Favorite Gun"
     },
     "quality": 2,
-    "itemLevel": 20,
+    "itemLevel": 18,
     "reqLevel": 0,
     "classID": 2,
     "subclassID": 3,
@@ -11195,7 +11427,7 @@
     "craftingReagent": false,
     "stats": {
       "AGILITY": 2,
-      "DAMAGE_PER_SECOND": 7.95
+      "DAMAGE_PER_SECOND": 7.05
     }
   },
   "269749": {

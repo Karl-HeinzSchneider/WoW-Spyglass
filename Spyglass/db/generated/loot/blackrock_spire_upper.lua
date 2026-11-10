@@ -7,20 +7,20 @@ Data:AddBossLoot(3062, { -- Pyroguard Emberseer
     { 16672 }, -- Gauntlets of Elements
     { 12905 }, -- #12905
     { 12926 }, -- #12926
-    { 12927 }, -- #12927
+    { 12927 }, -- Truestrike Shoulders
     { 12929 }, -- #12929
 })
 
 Data:AddBossLoot(3063, { -- Warchief Rend Blackhand
     { 16733 }, -- Spaulders of Valor
     { 16669 }, -- Pauldrons of Elements
-    { 12583 }, -- #12583
-    { 12587 }, -- #12587
+    { 12583 }, -- Blackhand Doomsaw
+    { 12587 }, -- Eye of Rend
     { 12935 }, -- #12935
     { 12936 }, -- #12936
     { 12939 }, -- #12939
     { 12940 }, -- #12940
-    { 18102 }, -- #18102
+    { 18102 }, -- Dragonrider Boots
     { 18103 }, -- #18103
     { 18104 }, -- #18104
     { 22247 }, -- #22247
@@ -30,13 +30,13 @@ Data:AddBossLoot(3068, { -- The Beast
     { 16729 }, -- Lightforge Spaulders
     { 12709 }, -- #12709
     { 12963 }, -- #12963
-    { 12964 }, -- #12964
+    { 12964 }, -- Tristam Legguards
     { 12965 }, -- #12965
-    { 12966 }, -- #12966
-    { 12967 }, -- #12967
-    { 12968 }, -- #12968
+    { 12966 }, -- Blackmist Armguards
+    { 12967 }, -- Bloodmoon Cloak
+    { 12968 }, -- Frostweaver Cape
     { 12969 }, -- #12969
-    { 22311 }, -- #22311
+    { 22311 }, -- Ironweave Boots
 })
 
 Data:AddBossLoot(3069, { -- General Drakkisath
@@ -53,10 +53,10 @@ Data:AddBossLoot(3069, { -- General Drakkisath
     { 13098 }, -- #13098
     { 13142 }, -- #13142
     { 12602 }, -- #12602
-    { 22253 }, -- #22253
+    { 22253 }, -- Tome of the Lost
     { 22267 }, -- #22267
-    { 22269 }, -- #22269
-    { 22268 }, -- #22268
+    { 22269 }, -- Shadow Prowler's Cloak
+    { 22268 }, -- Draconic Infused Emblem
     { 15730 }, -- Pattern: Red Dragonscale Breastplate
 })
 
@@ -68,21 +68,21 @@ Data:AddBossLoot(3070, { -- Lord Valthalak
     { 22340 }, -- #22340
     { 22342 }, -- #22342
     { 22343 }, -- #22343
-    { 22302 }, -- #22302
+    { 22302 }, -- Ironweave Cowl
 })
 
 Data:AddBossLoot(-10264, { -- Solakar Flamewreath
     { 12589 }, -- #12589
-    { 12603 }, -- #12603
-    { 12606 }, -- #12606
+    { 12603 }, -- Nightbrace Tunic
+    { 12606 }, -- Crystallized Girdle
     { 12609 }, -- #12609
     { 16695 }, -- Devout Mantle
 })
 
 Data:AddBossLoot(-10509, { -- Jed Runewatcher
     { 12604 }, -- #12604
-    { 12605 }, -- #12605
-    { 12930 }, -- #12930
+    { 12605 }, -- Serpentine Skuller
+    { 12930 }, -- Briarwood Reed
 })
 
 Data:AddBossLoot(-10899, { -- Goraluk Anvilcrack
@@ -95,11 +95,11 @@ Data:AddBossLoot(-10899, { -- Goraluk Anvilcrack
 })
 
 Data:AddBossLoot(-10339, { -- Gyth
-    { 12952 }, -- #12952
+    { 12952 }, -- Gyth's Skull
     { 12953 }, -- #12953
     { 12960 }, -- #12960
     { 16669 }, -- Pauldrons of Elements
-    { 22225 }, -- #22225
+    { 22225 }, -- Dragonskin Cowl
 })
 
 Data:AddTrashLoot(22902, {
@@ -114,14 +114,14 @@ Data:AddTrashLoot(22902, {
 
 Data:AddQuests(22902, {
     { id = 4743, name = "Seal of Ascension", side = "Both", requiredLevel = 57, xp = 9950, objective = "Travel to the Wyrmbog in Dustwallow Marsh. Find the ancient drake Emberstrife and beat him until his will is broken, place the Unforged Seal of Ascension before him, then use the Orb of Draconic Energy on him and force the Flames of the Black Dragonflight upon the Unforged Seal of Ascension.", description = "Take the Unforged Seal and the Orb of Draconic Energy to Emberstrife in the Wyrmbog, Dustwallow Marsh. The forged seal opens the UBRS door.", requires = { { id = 4742, name = "Seal of Ascension" } }, start = { description = "Lower Blackrock Spire", npc = "Vaelan" }, turnIn = { description = "Lower Blackrock Spire", npc = "Vaelan" }, items = {
-        { 12344 }, -- #12344
+        { 12344 }, -- Seal of Ascension
     } },
     { id = 7761, name = "Blackhand's Command", side = "Both", requiredLevel = 55, xp = 6600, objective = "Find the brand that General Drakkisath guards and gain the Mark of Drakkisath, so you can use the Orb of Command.", description = "The Scarshield Quartermaster is in the hallway outside the Spire portal. Touch Drakkisath's Brand behind General Drakkisath; this unlocks the Orb of Command shortcut to Blackwing Lair.", start = { description = "Blackhand's Command (letter from the Scarshield Quartermaster, Blackrock Mountain)", item = 18987 }, turnIn = { description = "Upper Blackrock Spire", npc = "Drakkisath's Brand" }, items = {} },
     { id = 4735, name = "Egg Collection", side = "Both", requiredLevel = 57, xp = 9950, objective = "Bring 8 Collected Dragon Eggs and the Collectronic Module to Tinkee Steamboil at Flame Crest in the Burning Steppes.", description = "Using the module on the eggs in the Rookery can hatch whelps.", requires = { { id = 4734, name = "Egg Freezing" } }, start = { description = "Flame Crest, Burning Steppes", location = { 1428, 65.2, 23.8 }, npc = "Tinkee Steamboil" }, turnIn = { description = "Flame Crest, Burning Steppes", location = { 1428, 65.2, 23.8 }, npc = "Tinkee Steamboil" }, items = {} },
     { id = 5102, name = "General Drakkisath's Demise", side = "Alliance", requiredLevel = 55, xp = 9950, objective = "Travel to Blackrock Spire and destroy General Drakkisath. Return to Marshal Maxwell when the job is done.", description = "Kill General Drakkisath at the end of UBRS.", requires = { { id = 5089, name = "General Drakkisath's Command" } }, start = { description = "Morgan's Vigil, Burning Steppes", location = { 1428, 84.6, 68.8 }, npc = "Marshal Maxwell" }, turnIn = { description = "Morgan's Vigil, Burning Steppes", location = { 1428, 84.6, 68.8 }, npc = "Marshal Maxwell" }, items = {
-        { 13966 }, -- #13966
-        { 13968 }, -- #13968
-        { 13965 }, -- #13965
+        { 13966 }, -- Mark of Tyranny
+        { 13968 }, -- Eye of the Beast
+        { 13965 }, -- Blackhand's Breadth
     } },
     { id = 6502, name = "Drakefire Amulet", side = "Alliance", requiredLevel = 50, xp = 8300, objective = "You must retrieve the Blood of the Black Dragon Champion from General Drakkisath. Drakkisath can be found in his throne room behind the Halls of Ascension in Blackrock Spire.", description = "Part of the Onyxia attunement.", requires = { { id = 6501, name = "The Dragon's Eye" } }, start = { description = "Mazthoril, Winterspring", location = { 1452, 54.4, 51.2 }, npc = "Haleh" }, turnIn = { description = "Mazthoril, Winterspring", location = { 1452, 54.4, 51.2 }, npc = "Haleh" }, items = {
         { 16309 }, -- Drakefire Amulet
@@ -135,12 +135,12 @@ Data:AddQuests(22902, {
         { 9224 }, -- Potion of Demon Slaying
     } },
     { id = 4764, name = "Doomrigger's Clasp", side = "Alliance", requiredLevel = 57, xp = 1650, objective = "Bring Doomrigger's Clasp to Mayara Brightwing in the Burning Steppes.", description = "Doomrigger's Coffer is in the Rookery. Then take Delivery to Ridgewell to Count Remington Ridgewell in Stormwind Keep for the reward.\n\nOptional introductory quest:", start = { description = "Morgan's Vigil, Burning Steppes", location = { 1428, 84.8, 69 }, npc = "Mayara Brightwing" }, turnIn = { description = "Morgan's Vigil, Burning Steppes", location = { 1428, 84.8, 69 }, npc = "Mayara Brightwing" }, items = {
-        { 15861 }, -- #15861
-        { 15860 }, -- #15860
+        { 15861 }, -- Swiftfoot Treads
+        { 15860 }, -- Blinkstrike Armguards
     } },
     { id = 4768, name = "The Darkstone Tablet", side = "Horde", requiredLevel = 57, xp = 8300, objective = "Bring the Darkstone Tablet to Shadow Mage Vivian Lagrave in Kargath.", description = "The Darkstone Tablet lies on the ground in the Rookery.\n\nOptional introductory quest:", start = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Shadowmage Vivian Lagrave" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Shadowmage Vivian Lagrave" }, items = {
-        { 15861 }, -- #15861
-        { 15860 }, -- #15860
+        { 15861 }, -- Swiftfoot Treads
+        { 15860 }, -- Blinkstrike Armguards
     } },
     { id = 5047, name = "Finkle Einhorn, At Your Service!", side = "Both", requiredLevel = 57, xp = 6600, objective = "Talk to Malyfous Darkhammer in Everlook.", description = "He appears from The Beast's corpse after the fight. Malyfous then offers the Pristine Hide of the Beast exchanges.", start = { description = "From The Beast's corpse, Upper Blackrock Spire" }, turnIn = { description = "Everlook, Winterspring", npc = "Malyfous Darkhammer" }, items = {} },
     { id = 5160, name = "The Matron Protectorate", side = "Both", requiredLevel = 57, xp = 6600, objective = "Travel to Winterspring and find Haleh. Give her Awbee's scale.", description = "Awbee is the wounded blue dragon near the arena route after Rend. Use the rune deep in the Mazthoril cave to reach Haleh.", start = { description = "Upper Blackrock Spire", npc = "Awbee" }, turnIn = { description = "Mazthoril, Winterspring", npc = "Haleh" }, items = {} },

@@ -4,51 +4,51 @@ local Data = Spyglass.Data
 -- The Shaper's Terrace (map 3001)
 
 Data:AddBossLoot(3498, { -- Titanosaur
-    { 280009 }, -- #280009
-    { 280011 }, -- #280011
-    { 280010 }, -- #280010
+    { 280009 }, -- Titanosaur Scale Pendant
+    { 280011 }, -- Deeproar Cord
+    { 280010 }, -- Gargantuan Wristguards
 })
 
 Data:AddBossLoot(3499, { -- Ravasaur Hunters
-    { 280014 }, -- #280014
-    { 280013 }, -- #280013
-    { 280012 }, -- #280012
+    { 280014 }, -- Raptorscale Bulwark
+    { 280013 }, -- Frostfang Mail Vest
+    { 280012 }, -- Talon of Tor'Rel
 })
 
 Data:AddBossLoot(3500, { -- Thunderhoof
-    { 280020 }, -- #280020
-    { 280019 }, -- #280019
+    { 280020 }, -- Deep Jungle Rifle
+    { 280019 }, -- Dinofrill Casque
 })
 
 Data:AddBossLoot(3501, { -- Venomridge
-    { 280015 }, -- #280015
-    { 280017 }, -- #280017
-    { 280016 }, -- #280016
+    { 280015 }, -- Venomvessel Ring
+    { 280017 }, -- Octoclaw Chain Boots
+    { 280016 }, -- Spiderchitin Wrap
 })
 
 Data:AddBossLoot(3502, { -- Nanaya
-    { 280023 }, -- #280023
-    { 280025 }, -- #280025
+    { 280023 }, -- Nanaya's Control Spire
+    { 280025 }, -- Leggings of Curation
     { 273128 }, -- Maker's Spark
-    { 280024 }, -- #280024
+    { 280024 }, -- Legplates of Reinforced Crystal
 })
 
 Data:AddBossLoot(3505, { -- Bolt
-    { 280032 }, -- #280032
+    { 280032 }, -- Bolt's Charged Eyeball
 })
 
 Data:AddBossLoot(3507, { -- Direhorn Matriarch
-    { 280022 }, -- #280022
-    { 280021 }, -- #280021
+    { 280022 }, -- Scaleguard Scimitar
+    { 280021 }, -- Tooth of the Matriarch
 })
 
 Data:AddTrashLoot(3001, {
-    { 287037 }, -- #287037
+    { 287037 }, -- Shaper's Robe
 })
 
 Data:AddQuests(3001, {
     { id = 95928, name = "Crystalline Elements", side = "Horde", requiredLevel = 55, xp = 17655, objective = "Bring Mayena Earthseeker a Moist Crystal, a Charged Crystal, a Noxious Crystal and a Fiery Crystal from Shaper's Terrace.", start = { description = "Mulgore (34.8, 22.2)", location = { 1412, 34.8, 22.2 }, npc = "Mayena Earthseeker" }, turnIn = { description = "Mulgore (34.8, 22.2)", location = { 1412, 34.8, 22.2 }, npc = "Mayena Earthseeker" }, items = {
-        { 279904 }, -- #279904
-        { 279906 }, -- #279906
+        { 279904 }, -- Crystalline Pauldrons
+        { 279906 }, -- Potent Treads
     } },
 })

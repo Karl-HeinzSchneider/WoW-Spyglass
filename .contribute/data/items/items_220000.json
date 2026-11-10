@@ -2033,6 +2033,24 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "220170": {
+    "names": {
+      "enUS": "Note from Gregory"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 4,
+    "icon": 133473,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
   "220213": {
     "names": {
       "enUS": "Fel Lifeblood"
@@ -7073,7 +7091,7 @@
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 1,
     "icon": 134242,
-    "sellPrice": 0,
+    "sellPrice": 17,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -20248,6 +20266,31 @@
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
+  },
+  "227935": {
+    "names": {
+      "enUS": "Hammer of the Fallen Thane"
+    },
+    "quality": 3,
+    "itemLevel": 59,
+    "reqLevel": 0,
+    "classID": 2,
+    "subclassID": 4,
+    "slot": "INVTYPE_WEAPONMAINHAND",
+    "bind": 1,
+    "icon": 133720,
+    "sellPrice": 49481,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 25.68,
+      "INTELLECT": 10,
+      "MANA_REGENERATION": 2,
+      "SPELL_POWER": 68,
+      "STAMINA": 5
+    }
   },
   "227937": {
     "names": {

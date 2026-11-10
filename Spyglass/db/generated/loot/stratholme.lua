@@ -5,103 +5,103 @@ local Data = Spyglass.Data
 
 Data:AddBossLoot(473, { -- Hearthsinger Forresten
     { 16682 }, -- Magister's Boots
-    { 13378 }, -- #13378
-    { 13379 }, -- #13379
-    { 13384 }, -- #13384
-    { 13383 }, -- #13383
+    { 13378 }, -- Songbird Blouse
+    { 13379 }, -- Piccolo of the Flaming Fire
+    { 13384 }, -- Rainbow Girdle
+    { 13383 }, -- Woollies of the Prancing Minstrel
 })
 
 Data:AddBossLoot(474, { -- Timmy the Cruel
-    { 13400 }, -- #13400
-    { 13402 }, -- #13402
-    { 13401 }, -- #13401
-    { 13403 }, -- #13403
+    { 13400 }, -- Vambraces of the Sadist
+    { 13402 }, -- Timmy's Galoshes
+    { 13401 }, -- The Cruel Hand of Timmy
+    { 13403 }, -- Grimgore Noose
     { 16724 }, -- Lightforge Gauntlets
 })
 
 Data:AddBossLoot(475, { -- Cannon Master Willey
     { 16708 }, -- Shadowcraft Spaulders
-    { 22403 }, -- #22403
+    { 22403 }, -- Nacreous Shell Necklace
     { 13380 }, -- #13380
-    { 13382 }, -- #13382
-    { 18721 }, -- #18721
-    { 22407 }, -- #22407
-    { 13381 }, -- #13381
-    { 22405 }, -- #22405
-    { 22404 }, -- #22404
-    { 22406 }, -- #22406
+    { 13382 }, -- Cannonball Runner
+    { 18721 }, -- Barrage Girdle
+    { 22407 }, -- Helm of the New Moon
+    { 13381 }, -- Master Cannoneer Boots
+    { 22405 }, -- Mantle of the Scarlet Crusade
+    { 22404 }, -- Willey's Back Scratcher
+    { 22406 }, -- Redemption
 })
 
 Data:AddBossLoot(477, { -- Archivist Galford
     { 16692 }, -- Devout Gloves
-    { 13387 }, -- #13387
-    { 13386 }, -- #13386
-    { 18716 }, -- #18716
-    { 13385 }, -- #13385
+    { 13387 }, -- Foresight Girdle
+    { 13386 }, -- Archivist Cape
+    { 18716 }, -- Ash Covered Boots
+    { 13385 }, -- Tome of Knowledge
 })
 
 Data:AddBossLoot(478, { -- Balnazzar
     { 13353 }, -- #13353
-    { 13348 }, -- #13348
-    { 13358 }, -- #13358
-    { 13359 }, -- #13359
-    { 18718 }, -- #18718
-    { 18720 }, -- #18720
-    { 13360 }, -- #13360
-    { 12103 }, -- #12103
-    { 18717 }, -- #18717
-    { 13369 }, -- #13369
+    { 13348 }, -- Demonshear
+    { 13358 }, -- Wyrmtongue Shoulders
+    { 13359 }, -- Crown of Tyranny
+    { 18718 }, -- Grand Crusader's Helm
+    { 18720 }, -- Shroud of the Nathrezim
+    { 13360 }, -- Gift of the Elven Magi
+    { 12103 }, -- Star of Mystaria
+    { 18717 }, -- Hammer of the Grand Crusader
+    { 13369 }, -- Fire Striders
     { 16725 }, -- Lightforge Boots
 })
 
 Data:AddBossLoot(472, { -- The Unforgiven
-    { 13405 }, -- #13405
-    { 13404 }, -- #13404
-    { 13408 }, -- #13408
-    { 13409 }, -- #13409
+    { 13405 }, -- Wailing Nightbane Pauldrons
+    { 13404 }, -- Mask of the Unforgiven
+    { 13408 }, -- Soul Breaker
+    { 13409 }, -- Tearfall Bracers
     { 16717 }, -- Wildheart Gloves
 })
 
 Data:AddBossLoot(479, { -- Baroness Anastari
     { 16704 }, -- Dreadmist Sandals
-    { 13534 }, -- #13534
+    { 13534 }, -- Banshee Finger
     { 18728 }, -- #18728
-    { 18730 }, -- #18730
-    { 18729 }, -- #18729
-    { 13514 }, -- #13514
+    { 18730 }, -- Shadowy Laced Handwraps
+    { 18729 }, -- Screeching Bow
+    { 13514 }, -- Wail of the Banshee
 })
 
 Data:AddBossLoot(480, { -- Nerub'enkan
     { 16675 }, -- Beaststalker's Boots
-    { 13529 }, -- #13529
-    { 18738 }, -- #18738
-    { 18739 }, -- #18739
-    { 18740 }, -- #18740
+    { 13529 }, -- Husk of Nerub'enkan
+    { 18738 }, -- Carapace Spine Crossbow
+    { 18739 }, -- Chitinous Plate Legguards
+    { 18740 }, -- Thuzadin Sash
 })
 
 Data:AddBossLoot(481, { -- Maleki the Pallid
     { 16691 }, -- Devout Sandals
-    { 18737 }, -- #18737
-    { 13524 }, -- #13524
-    { 18734 }, -- #18734
-    { 18735 }, -- #18735
+    { 18737 }, -- Bone Slicing Hatchet
+    { 13524 }, -- Skull of Burning Shadows
+    { 18734 }, -- Pale Moon Cloak
+    { 18735 }, -- Maleki's Footwraps
 })
 
 Data:AddBossLoot(482, { -- Magistrate Barthilas
     { 18722 }, -- #18722
-    { 13376 }, -- #13376
-    { 18725 }, -- #18725
-    { 18727 }, -- #18727
-    { 18726 }, -- #18726
+    { 13376 }, -- Royal Tribunal Cloak
+    { 18725 }, -- Peacemaker
+    { 18727 }, -- Crimson Felt Hat
+    { 18726 }, -- Magistrate's Cuffs
 })
 
 Data:AddBossLoot(483, { -- Ramstein the Gorger
     { 16737 }, -- Gauntlets of Valor
-    { 13372 }, -- #13372
-    { 13373 }, -- #13373
-    { 13374 }, -- #13374
+    { 13372 }, -- Slavedriver's Cane
+    { 13373 }, -- Band of Flesh
+    { 13374 }, -- Soulstealer Mantle
     { 13375 }, -- #13375
-    { 13515 }, -- #13515
+    { 13515 }, -- Ramstein's Lightning Bolts
     { 18723 }, -- #18723
 })
 
@@ -115,34 +115,34 @@ Data:AddBossLoot(484, { -- Baron Rivendare
     { 16719 }, -- Wildheart Kilt
     { 16728 }, -- Lightforge Legplates
     { 16732 }, -- Legplates of Valor
-    { 13340 }, -- #13340
-    { 22408 }, -- #22408
+    { 13340 }, -- Cape of the Black Baron
+    { 22408 }, -- Ritssyn's Wand of Bad Mojo
     { 22409 }, -- #22409
-    { 13346 }, -- #13346
-    { 22412 }, -- #22412
-    { 13344 }, -- #13344
-    { 13349 }, -- #13349
-    { 22410 }, -- #22410
-    { 22411 }, -- #22411
+    { 13346 }, -- Robes of the Exalted
+    { 22412 }, -- Thuzadin Mantle
+    { 13344 }, -- Dracorian Gauntlets
+    { 13349 }, -- Scepter of the Unholy
+    { 22410 }, -- Gauntlets of Deftness
+    { 22411 }, -- Helm of the Executioner
     { 13345 }, -- #13345
 })
 
 Data:AddBossLoot(2798, { -- Postmaster Malown
-    { 13392 }, -- #13392
-    { 13388 }, -- #13388
-    { 13389 }, -- #13389
-    { 13391 }, -- #13391
+    { 13392 }, -- The Postmaster's Seal
+    { 13388 }, -- The Postmaster's Tunic
+    { 13389 }, -- The Postmaster's Trousers
+    { 13391 }, -- The Postmaster's Treads
     { 13393 }, -- #13393
 })
 
 Data:AddBossLoot(2799, { -- Skul
     { 13394 }, -- #13394
     { 13396 }, -- #13396
-    { 13395 }, -- #13395
+    { 13395 }, -- Skul's Fingerbone Claws
 })
 
 Data:AddBossLoot(2800, { -- Stonespine
-    { 13399 }, -- #13399
+    { 13399 }, -- Gargoyle Shredder Talons
     { 13397 }, -- #13397
     { 13954 }, -- #13954
 })
@@ -156,19 +156,19 @@ Data:AddTrashLoot(329, {
 Data:AddQuests(329, {
     { id = 5263, name = "Above and Beyond", side = "Both", requiredLevel = 55, xp = 8300, objective = "Venture to Stratholme and destroy Baron Rivendare. Take his head and return to Duke Nicholas Zverenhoff.", description = "Then Lord Maxwell Tyrosus and The Argent Hold, in Light's Hope Chapel, give the weapon or shield reward.", requires = { { id = 5262, name = "The Truth Comes Crashing Down" } }, start = { description = "Light's Hope Chapel, Eastern Plaguelands", location = { 1423, 73.7, 50.8 }, npc = "Duke Nicholas Zverenhoff" }, turnIn = { description = "Light's Hope Chapel, Eastern Plaguelands", location = { 1423, 73.7, 50.8 }, npc = "Duke Nicholas Zverenhoff" }, items = {} },
     { id = 5213, name = "The Active Agent", side = "Both", requiredLevel = 55, xp = 6600, objective = "Travel to Stratholme and search the ziggurats. Find and return new Scourge Data to Betina Bigglezink.", requires = { { id = 5212, name = "The Flesh Does Not Lie" } }, start = { description = "Light's Hope Chapel, Eastern Plaguelands", location = { 1423, 73.7, 50.5 }, npc = "Betina Bigglezink" }, turnIn = { description = "Light's Hope Chapel, Eastern Plaguelands", location = { 1423, 73.7, 50.5 }, npc = "Betina Bigglezink" }, items = {
-        { 13209 }, -- #13209
-        { 19812 }, -- #19812
+        { 13209 }, -- Seal of the Dawn
+        { 19812 }, -- Rune of the Dawn
     } },
     { id = 5282, name = "The Restless Souls", side = "Both", requiredLevel = 55, xp = 8300, objective = "Use Egan's Blaster on the ghostly and spectral citizens of Stratholme. When the restless souls break free from their ghostly shells, use the blaster again - freedom will be theirs! Free 15 Restless Souls and return to Egan.", description = "Optional introductory quest:", start = { description = "Terrordale, Eastern Plaguelands", location = { 1423, 10.9, 27.2 }, npc = "Egan" }, turnIn = { description = "Terrordale, Eastern Plaguelands", location = { 1423, 10.9, 27.2 }, npc = "Egan" }, items = {
-        { 13315 }, -- #13315
+        { 13315 }, -- Testament of Hope
     } },
     { id = 6163, name = "Ramstein", side = "Horde", requiredLevel = 56, xp = 6600, objective = "Travel to Stratholme and slay Ramstein the Gorger. Take his head as a souvenir for Nathanos.", description = "Optional introductory quest:", requires = { { id = 6136, name = "The Corpulent One" } }, start = { description = "Marris Stead, Eastern Plaguelands", location = { 1423, 22.2, 64.3 }, npc = "Nathanos Blightcaller" }, turnIn = { description = "Marris Stead, Eastern Plaguelands", location = { 1423, 22.2, 64.3 }, npc = "Nathanos Blightcaller" }, items = {
-        { 18022 }, -- #18022
-        { 17001 }, -- #17001
+        { 18022 }, -- Royal Seal of Alexis
+        { 17001 }, -- Elemental Circle
     } },
     { id = 5125, name = "Aurius' Reckoning", side = "Both", requiredLevel = 55, xp = 9950, objective = "Give Aurius the Medallion of Faith; he joins the fight against Baron Rivendare. Claim his reward after the battle.", description = "Give Aurius the Medallion of Faith before the Baron fight; speak to him after Baron Rivendare dies.", requires = { { id = 5122, name = "The Medallion of Faith" } }, start = { description = "Stratholme", npc = "Aurius" }, turnIn = { description = "Stratholme", npc = "Aurius" }, items = {
-        { 17044 }, -- #17044
-        { 17045 }, -- #17045
+        { 17044 }, -- Will of the Martyr
+        { 17045 }, -- Blood of the Martyr
     } },
     { id = 8945, name = "Dead Man's Plea", side = "Both", requiredLevel = 58, xp = 8300, objective = "Go into Stratholme and rescue Ysida Harmon from Baron Rivendare.", description = "Timed: rescue Ysida Harmon by killing Baron Rivendare within 45 minutes. Use the Extra-Dimensional Ghost Revealer to see Anthion.", start = { description = "Eastern Plaguelands", location = { 1423, 26.1, 11.3 }, npc = "Anthion Harmon" }, turnIn = { description = "Eastern Plaguelands", location = { 1423, 26.1, 11.3 }, npc = "Anthion Harmon" }, items = {
         { 22137 }, -- Ysida's Satchel
@@ -177,11 +177,11 @@ Data:AddQuests(329, {
     { id = 5262, name = "The Truth Comes Crashing Down", side = "Both", requiredLevel = 55, xp = 8300, objective = "Take the Head of Balnazzar to Duke Nicholas Zverenhoff in the Eastern Plaguelands.", description = "Hand in The Archivist first, or Balnazzar's head will not start this quest.", requires = { { id = 5251, name = "The Archivist" } }, start = { description = "Head of Balnazzar (drops from Balnazzar)", item = 13250 }, turnIn = { description = "Light's Hope Chapel, Eastern Plaguelands", npc = "Duke Nicholas Zverenhoff" }, items = {} },
     { id = 5212, name = "The Flesh Does Not Lie", side = "Both", requiredLevel = 55, xp = 6600, objective = "Recover 20 Plagued Flesh Samples from Stratholme and return them to Betina Bigglezink. You suspect that any creature in Stratholme would have said flesh sample.", description = "Any undead in Stratholme can drop Plagued Flesh Samples.", start = { description = "Light's Hope Chapel, Eastern Plaguelands", location = { 1423, 73.7, 50.5 }, npc = "Betina Bigglezink" }, turnIn = { description = "Light's Hope Chapel, Eastern Plaguelands", location = { 1423, 73.7, 50.5 }, npc = "Betina Bigglezink" }, items = {} },
     { id = 5243, name = "Houses of the Holy", side = "Both", requiredLevel = 55, xp = 6600, objective = "Travel to Stratholme, in the north. Search the supply crates that litter the city and recover 5 Stratholme Holy Water. Return to Leonid Barthalomew the Revered when you have collected enough of the blessed fluid.", description = "Collect 5 Stratholme Holy Water from the supply crates in the streets; some crates spawn enemies.", start = { description = "Light's Hope Chapel, Eastern Plaguelands", location = { 1423, 73.9, 49 }, npc = "Leonid Barthalomew the Revered" }, turnIn = { description = "Light's Hope Chapel, Eastern Plaguelands", location = { 1423, 73.9, 49 }, npc = "Leonid Barthalomew the Revered" }, items = {
-        { 13216 }, -- #13216
-        { 13217 }, -- #13217
+        { 13216 }, -- Crown of the Penitent
+        { 13217 }, -- Band of the Penitent
     } },
     { id = 5214, name = "The Great Fras Siabi", side = "Both", requiredLevel = 55, xp = 8300, objective = "Find Fras Siabi's smoke shop in Stratholme and recover a box of Siabi's Premium Tobacco. Return to Smokey LaRue when the job is done.", description = "Newer Classic records call him Ezra Grimm. Clear the smoke shop, touch the tobacco box and kill the shopkeeper.", start = { description = "Light's Hope Chapel, Eastern Plaguelands", location = { 1423, 72.8, 49.2 }, npc = "Smokey LaRue" }, turnIn = { description = "Light's Hope Chapel, Eastern Plaguelands", location = { 1423, 72.8, 49.2 }, npc = "Smokey LaRue" }, items = {
-        { 13171 }, -- #13171
+        { 13171 }, -- Smokey's Lighter
     } },
     { id = 5848, name = "Of Love and Family", side = "Both", requiredLevel = 52, xp = 6600, objective = "Travel to Stratholme, in the northern part of the Plaguelands. It is in the Scarlet Bastion that you will find the painting 'Of Love and Family,' hidden behind another painting depicting the twin moons of our world. Return the painting to Tirion Fordring.", description = "Take the painting hidden behind the twin-moons picture in Archivist Galford's room before you burn the archives.", requires = { { id = 5846, name = "Of Love and Family" } }, start = { description = "Caer Darrow, Western Plaguelands", location = { 1422, 65.6, 75.4 }, npc = "Artist Renfray" }, turnIn = { description = "Eastern Plaguelands", npc = "Tirion Fordring" }, items = {} },
     { id = 5122, name = "The Medallion of Faith", side = "Both", requiredLevel = 55, objective = "Retrieve the Medallion of Faith from Malor the Zealous in the Scarlet Bastion and bring it back to Aurius.", description = "Malor's Strongbox in the Scarlet Bastion holds the medallion. Give it to Aurius in the chapel before fighting the Baron.", start = { description = "Stratholme", npc = "Aurius" }, turnIn = { description = "Stratholme", npc = "Aurius" }, items = {} },

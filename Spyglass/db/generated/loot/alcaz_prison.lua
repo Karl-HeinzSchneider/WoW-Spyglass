@@ -4,21 +4,21 @@ local Data = Spyglass.Data
 -- Alcaz Prison (map 2994)
 
 Data:AddBossLoot(3403, { -- Overseer Wrex
-    { 276734 }, -- #276734
+    { 276734 }, -- Wrex's Pinky Ring
 })
 
 Data:AddBossLoot(3410, { -- Tidemistress Ca'zass
-    { 276736 }, -- #276736
+    { 276736 }, -- Seascale Bracers
 })
 
 Data:AddBossLoot(3415, { -- The Questioner
-    { 276742 }, -- #276742
-    { 276743 }, -- #276743
-    { 276741 }, -- #276741
+    { 276742 }, -- Girdle of Extracted Answers
+    { 276743 }, -- Fingerbreaker Stamp
+    { 276741 }, -- Defias Enforcer's Shoulderpads
 })
 
 Data:AddTrashLoot(2994, {
-    { 287021 }, -- #287021
+    { 287021 }, -- Defias Enforcer's Prowlers
 })
 
 Data:AddQuests(2994, {

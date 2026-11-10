@@ -5,10 +5,10 @@ local Data = Spyglass.Data
 
 Data:AddBossLoot(362, { -- Guard Mol'dar
     { 18494 }, -- #18494
-    { 18493 }, -- #18493
+    { 18493 }, -- Bulky Iron Spaulders
     { 18496 }, -- #18496
     { 18497 }, -- #18497
-    { 18498 }, -- #18498
+    { 18498 }, -- Hedgecutter
 })
 
 Data:AddBossLoot(363, { -- Stomper Kreeg
@@ -17,51 +17,51 @@ Data:AddBossLoot(363, { -- Stomper Kreeg
 
 Data:AddBossLoot(364, { -- Guard Fengus
     { 18494 }, -- #18494
-    { 18493 }, -- #18493
+    { 18493 }, -- Bulky Iron Spaulders
     { 18496 }, -- #18496
     { 18497 }, -- #18497
-    { 18498 }, -- #18498
+    { 18498 }, -- Hedgecutter
 })
 
 Data:AddBossLoot(365, { -- Guard Slip'kik
     { 18494 }, -- #18494
-    { 18493 }, -- #18493
+    { 18493 }, -- Bulky Iron Spaulders
     { 18496 }, -- #18496
     { 18497 }, -- #18497
-    { 18498 }, -- #18498
+    { 18498 }, -- Hedgecutter
 })
 
 Data:AddBossLoot(366, { -- Captain Kromcrush
     { 18503 }, -- #18503
-    { 18507 }, -- #18507
+    { 18507 }, -- Boots of the Full Moon
     { 18502 }, -- #18502
-    { 18505 }, -- #18505
+    { 18505 }, -- Mugger's Belt
 })
 
 Data:AddBossLoot(367, { -- Cho'Rush the Observer
-    { 18483 }, -- #18483
+    { 18483 }, -- Mana Channeling Wand
     { 18484 }, -- #18484
-    { 18485 }, -- #18485
+    { 18485 }, -- Observer's Shield
     { 18490 }, -- #18490
 })
 
 Data:AddBossLoot(368, { -- King Gordok
-    { 18526 }, -- #18526
-    { 18525 }, -- #18525
-    { 18527 }, -- #18527
-    { 18524 }, -- #18524
-    { 18521 }, -- #18521
-    { 18520 }, -- #18520
-    { 18522 }, -- #18522
-    { 18523 }, -- #18523
+    { 18526 }, -- Crown of the Ogre King
+    { 18525 }, -- Bracers of Prosperity
+    { 18527 }, -- Harmonious Gauntlets
+    { 18524 }, -- Leggings of Destruction
+    { 18521 }, -- Grimy Metal Boots
+    { 18520 }, -- Barbarous Blade
+    { 18522 }, -- Band of the Ogre King
+    { 18523 }, -- Brightly Glowing Stone
 })
 
 Data:AddQuests(42903, {
     { id = 7703, name = "Unfinished Gordok Business", side = "Both", requiredLevel = 56, xp = 8300, objective = "Find the Gauntlet of Gordok Might and return it to Captain Kromcrush in Dire Maul. According to Kromcrush, the \"old timey story\" says that Tortheldrin - a \"creepy\" elf who called himself a prince - stole it from one of the Gordok kings.", description = "West objective: the Gauntlet of Gordok Might is in a chest near Prince Tortheldrin. The quest itself comes from a friendly Captain Kromcrush in Dire Maul North after you become the Gordok king.", start = { description = "Dire Maul", npc = "Captain Kromcrush" }, turnIn = { description = "Dire Maul", npc = "Captain Kromcrush" }, items = {
-        { 18366 }, -- #18366
-        { 18367 }, -- #18367
-        { 18368 }, -- #18368
-        { 18369 }, -- #18369
+        { 18366 }, -- Gordok's Handguards
+        { 18367 }, -- Gordok's Gauntlets
+        { 18368 }, -- Gordok's Gloves
+        { 18369 }, -- Gordok's Handwraps
     } },
     { id = 5525, name = "Free Knot!", side = "Both", requiredLevel = 56, xp = 6600, objective = "Find a Gordok Shackle Key on the ogres of the Gordok wing and use it to free Knot Thimblejack.", description = "Get a Gordok Shackle Key from the North ogres and free Knot; his cache has loot.", start = { description = "Dire Maul", npc = "Knot Thimblejack" }, turnIn = { description = "Dire Maul", npc = "Knot Thimblejack" }, items = {} },
     { id = 5518, name = "The Gordok Ogre Suit", side = "Both", requiredLevel = 56, xp = 6600, objective = "Bring 4 Bolts of Runecloth, 8 Rugged Leather, 2 Rune Threads, and Ogre Tannin to Knot Thimblejack. He is currently chained inside the Gordok wing of Dire Maul.", description = "Bring 4 Bolts of Runecloth, 8 Rugged Leather, 2 Rune Threads and 1 Ogre Tannin (basket on the upper level beyond Knot). Make any suits and learn the pattern before freeing Knot, because he leaves.", start = { description = "Dire Maul", npc = "Knot Thimblejack" }, turnIn = { description = "Dire Maul", npc = "Knot Thimblejack" }, items = {
@@ -70,10 +70,10 @@ Data:AddQuests(42903, {
     { id = 7482, name = "Elven Legends", side = "Alliance", requiredLevel = 54, xp = 8300, objective = "Search Dire Maul for Kariel Winthalus. Report back to Scholar Runethorn at Feathermoon with whatever information that you may find.", description = "Interact with the Skeletal Remains of Telmius Dreamseeker beside Lorekeeper Lydros in the Athenaeum. Unlocks Lydros's libram exchanges.", start = { description = "Feathermoon Stronghold, Feralas", location = { 1444, 31, 44.2 }, npc = "Scholar Runethorn" }, turnIn = { description = "Feathermoon Stronghold, Feralas", location = { 1444, 31, 44.2 }, npc = "Scholar Runethorn" }, items = {} },
     { id = 7481, name = "Elven Legends", side = "Horde", requiredLevel = 54, xp = 8300, objective = "Search Dire Maul for Kariel Winthalus. Report back to Sage Korolusk at Camp Mojache with whatever information that you may find.", description = "Interact with the Skeletal Remains of Telmius Dreamseeker beside Lorekeeper Lydros in the Athenaeum. Unlocks Lydros's libram exchanges.", start = { description = "Camp Mojache, Feralas", location = { 1444, 74.4, 44 }, npc = "Sage Korolusk" }, turnIn = { description = "Camp Mojache, Feralas", location = { 1444, 74.4, 44 }, npc = "Sage Korolusk" }, items = {} },
     { id = 7506, name = "The Emerald Dream...", side = "Both", class = "DRUID", requiredLevel = 54, xp = 6600, objective = "Return the book to its rightful owners.", start = { description = "The Emerald Dream (book, Dire Maul drop)", item = 18364 }, turnIn = { description = "Dire Maul", npc = "Lorekeeper Javon" }, items = {
-        { 18470 }, -- #18470
+        { 18470 }, -- Royal Seal of Eldre'Thalas
     } },
     { id = 7503, name = "The Greatest Race of Hunters", side = "Both", class = "HUNTER", requiredLevel = 54, xp = 6600, objective = "Return the book to its rightful owners.", start = { description = "The Greatest Race of Hunters (book, Dire Maul drop)", item = 18361 }, turnIn = { description = "Dire Maul", npc = "Lorekeeper Mykos" }, items = {
-        { 18473 }, -- #18473
+        { 18473 }, -- Royal Seal of Eldre'Thalas
     } },
     { id = 7500, name = "The Arcanist's Cookbook", side = "Both", class = "MAGE", requiredLevel = 54, xp = 6600, objective = "Return the book to its rightful owners.", start = { description = "The Arcanist's Cookbook (book, Dire Maul drop)", item = 18358 }, turnIn = { description = "Dire Maul", npc = "Lorekeeper Kildrath" }, items = {
         { 18468 }, -- #18468
@@ -85,10 +85,10 @@ Data:AddQuests(42903, {
         { 18469 }, -- #18469
     } },
     { id = 7498, name = "Garona: A Study on Stealth and Treachery", side = "Both", class = "ROGUE", requiredLevel = 54, xp = 6600, objective = "Return the book to its rightful owners.", start = { description = "Garona: A Study on Stealth and Treachery (book, Dire Maul drop)", item = 18356 }, turnIn = { description = "Dire Maul", npc = "Lorekeeper Kildrath" }, items = {
-        { 18465 }, -- #18465
+        { 18465 }, -- Royal Seal of Eldre'Thalas
     } },
     { id = 7505, name = "Frost Shock and You", side = "Horde", class = "SHAMAN", requiredLevel = 54, xp = 6600, objective = "Return the book to its rightful owners.", start = { description = "Frost Shock and You (book, Dire Maul drop)", item = 18363 }, turnIn = { description = "Dire Maul", npc = "Lorekeeper Javon" }, items = {
-        { 18471 }, -- #18471
+        { 18471 }, -- Royal Seal of Eldre'Thalas
     } },
     { id = 7502, name = "Harnessing Shadows", side = "Both", class = "WARLOCK", requiredLevel = 54, xp = 6600, objective = "Return the book to its rightful owners.", start = { description = "Harnessing Shadows (book, Dire Maul drop)", item = 18360 }, turnIn = { description = "Dire Maul", npc = "Lorekeeper Mykos" }, items = {
         { 18467 }, -- #18467

@@ -4,91 +4,91 @@ local Data = Spyglass.Data
 -- Blackrock Depths (map 230)
 
 Data:AddBossLoot(227, { -- High Interrogator Gerstahn
-    { 11624 }, -- #11624
-    { 11625 }, -- #11625
-    { 11626 }, -- #11626
-    { 22240 }, -- #22240
+    { 11624 }, -- Kentic Amice
+    { 11625 }, -- Enthralled Sphere
+    { 11626 }, -- Blackveil Cape
+    { 22240 }, -- Greaves of Withering Despair
 })
 
 Data:AddBossLoot(228, { -- Lord Roccor
-    { 11632 }, -- #11632
-    { 11631 }, -- #11631
-    { 22234 }, -- #22234
-    { 22397 }, -- #22397
-    { 11630 }, -- #11630
+    { 11632 }, -- Earthslag Shoulders
+    { 11631 }, -- Stoneshell Guard
+    { 22234 }, -- Mantle of Lost Hope
+    { 22397 }, -- Idol of Ferocity
+    { 11630 }, -- Rockshard Pellets
 })
 
 Data:AddBossLoot(229, { -- Houndmaster Grebmar
-    { 11627 }, -- #11627
-    { 11623 }, -- #11623
-    { 11628 }, -- #11628
-    { 11629 }, -- #11629
+    { 11627 }, -- Fleetfoot Greaves
+    { 11623 }, -- Spritecaster Cape
+    { 11628 }, -- Houndmaster's Bow
+    { 11629 }, -- Houndmaster's Rifle
 })
 
 Data:AddBossLoot(231, { -- Pyromancer Loregrain
-    { 11747 }, -- #11747
-    { 11748 }, -- #11748
-    { 11749 }, -- #11749
-    { 11750 }, -- #11750
+    { 11747 }, -- Flamestrider Robes
+    { 11748 }, -- Pyric Caduceus
+    { 11749 }, -- Searingscale Leggings
+    { 11750 }, -- Kindling Stave
 })
 
 Data:AddBossLoot(232, { -- Lord Incendius
-    { 11764 }, -- #11764
-    { 11765 }, -- #11765
-    { 11766 }, -- #11766
-    { 11767 }, -- #11767
+    { 11764 }, -- Cinderhide Armsplints
+    { 11765 }, -- Pyremail Wristguards
+    { 11766 }, -- Flameweave Cuffs
+    { 11767 }, -- Emberplate Armguards
 })
 
 Data:AddBossLoot(233, { -- Warder Stilgiss
-    { 11782 }, -- #11782
-    { 11783 }, -- #11783
-    { 11784 }, -- #11784
-    { 22241 }, -- #22241
-    { 11755 }, -- #11755
-    { 22242 }, -- #22242
+    { 11782 }, -- Boreal Mantle
+    { 11783 }, -- Chillsteel Girdle
+    { 11784 }, -- Arbiter's Blade
+    { 22241 }, -- Dark Warder's Pauldrons
+    { 11755 }, -- Verek's Collar
+    { 22242 }, -- Verek's Leash
 })
 
 Data:AddBossLoot(234, { -- Fineous Darkvire
-    { 11841 }, -- #11841
-    { 11842 }, -- #11842
-    { 11839 }, -- #11839
-    { 22223 }, -- #22223
+    { 11841 }, -- Senior Designer's Pantaloons
+    { 11842 }, -- Lead Surveyor's Mantle
+    { 11839 }, -- Chief Architect's Monocle
+    { 22223 }, -- Foreman's Head Protector
 })
 
 Data:AddBossLoot(235, { -- Bael'Gar
-    { 11802 }, -- #11802
-    { 11803 }, -- #11803
-    { 11805 }, -- #11805
-    { 11807 }, -- #11807
+    { 11802 }, -- Lavacrest Leggings
+    { 11803 }, -- Force of Magma
+    { 11805 }, -- Rubidium Hammer
+    { 11807 }, -- Sash of the Burning Heart
 })
 
 Data:AddBossLoot(236, { -- General Angerforge
-    { 11816 }, -- #11816
-    { 11820 }, -- #11820
-    { 11821 }, -- #11821
-    { 11817 }, -- #11817
-    { 11810 }, -- #11810
+    { 11816 }, -- Angerforge's Battle Axe
+    { 11820 }, -- Royal Decorated Armor
+    { 11821 }, -- Warstrife Leggings
+    { 11817 }, -- Lord General's Sword
+    { 11810 }, -- Force of Will
 })
 
 Data:AddBossLoot(237, { -- Golem Lord Argelmach
-    { 11822 }, -- #11822
-    { 11823 }, -- #11823
-    { 11669 }, -- #11669
-    { 11819 }, -- #11819
+    { 11822 }, -- Omnicast Boots
+    { 11823 }, -- Luminary Kilt
+    { 11669 }, -- Naglering
+    { 11819 }, -- Second Wind
 })
 
 Data:AddBossLoot(238, { -- Hurley Blackbreath
-    { 18044 }, -- #18044
-    { 18043 }, -- #18043
-    { 22275 }, -- #22275
-    { 11735 }, -- #11735
+    { 18044 }, -- Hurley's Tankard
+    { 18043 }, -- Coal Miner Boots
+    { 22275 }, -- Firemoss Boots
+    { 11735 }, -- Ragefury Eyepatch
 })
 
 Data:AddBossLoot(239, { -- Phalanx
-    { 11745 }, -- #11745
-    { 11744 }, -- #11744
-    { 22212 }, -- #22212
-    { 11746 }, -- #11746
+    { 11745 }, -- Fists of Phalanx
+    { 11744 }, -- Bloodfist
+    { 22212 }, -- Golem Fitted Pauldrons
+    { 11746 }, -- Golem Skull Helm
 })
 
 Data:AddBossLoot(240, { -- Ribbly Screwspigot
@@ -96,101 +96,101 @@ Data:AddBossLoot(240, { -- Ribbly Screwspigot
 })
 
 Data:AddBossLoot(241, { -- Plugger Spazzring
-    { 12793 }, -- #12793
-    { 12791 }, -- #12791
+    { 12793 }, -- Mixologist's Tunic
+    { 12791 }, -- Barman Shanker
 })
 
 Data:AddBossLoot(242, { -- Ambassador Flamelash
-    { 11812 }, -- #11812
-    { 11814 }, -- #11814
-    { 11809 }, -- #11809
-    { 11832 }, -- #11832
+    { 11812 }, -- Cape of the Fire Salamander
+    { 11814 }, -- Molten Fists
+    { 11809 }, -- Flame Wrath
+    { 11832 }, -- Burst of Knowledge
 })
 
 Data:AddBossLoot(243, { -- The Seven
-    { 11920 }, -- #11920
-    { 11921 }, -- #11921
-    { 11922 }, -- #11922
-    { 11926 }, -- #11926
-    { 11927 }, -- #11927
+    { 11920 }, -- Wraith Scythe
+    { 11921 }, -- Impervious Giant
+    { 11922 }, -- Blood-Etched Blade
+    { 11926 }, -- Deathdealer Breastplate
+    { 11927 }, -- Legplates of the Eternal Guardian
 })
 
 Data:AddBossLoot(244, { -- Magmus
-    { 11935 }, -- #11935
-    { 22208 }, -- #22208
-    { 22395 }, -- #22395
-    { 22400 }, -- #22400
-    { 11746 }, -- #11746
+    { 11935 }, -- Magmus Stone
+    { 22208 }, -- Lavastone Hammer
+    { 22395 }, -- Totem of Rage
+    { 22400 }, -- Libram of Truth
+    { 11746 }, -- Golem Skull Helm
 })
 
 Data:AddBossLoot(2789, { -- Princess Moira Bronzebeard
-    { 12553 }, -- #12553
-    { 12554 }, -- #12554
-    { 12556 }, -- #12556
-    { 12557 }, -- #12557
+    { 12553 }, -- Swiftwalker Boots
+    { 12554 }, -- Hands of the Exalted Herald
+    { 12556 }, -- High Priestess Boots
+    { 12557 }, -- Ebonsteel Spaulders
 })
 
 Data:AddBossLoot(2790, { -- Emperor Dagran Thaurissan
-    { 11815 }, -- #11815
-    { 11924 }, -- #11924
-    { 11928 }, -- #11928
-    { 11930 }, -- #11930
-    { 11931 }, -- #11931
-    { 11932 }, -- #11932
-    { 11933 }, -- #11933
-    { 11934 }, -- #11934
-    { 22204 }, -- #22204
-    { 22207 }, -- #22207
+    { 11815 }, -- Hand of Justice
+    { 11924 }, -- Robes of the Royal Crown
+    { 11928 }, -- Thaurissan's Royal Scepter
+    { 11930 }, -- The Emperor's New Cape
+    { 11931 }, -- Dreadforge Retaliator
+    { 11932 }, -- Guiding Stave of Wisdom
+    { 11933 }, -- Imperial Jewel
+    { 11934 }, -- Emperor's Seal
+    { 22204 }, -- Wristguards of Renown
+    { 22207 }, -- Sash of the Grand Hunt
 })
 
 Data:AddBossLoot(-9027, { -- Gorosh the Dervish
-    { 11726 }, -- #11726
-    { 22257 }, -- #22257
-    { 22266 }, -- #22266
-    { 22271 }, -- #22271
+    { 11726 }, -- Savage Gladiator Chain
+    { 22257 }, -- Bloodclot Band
+    { 22266 }, -- Flarethorn
+    { 22271 }, -- Leggings of Frenzied Magic
 })
 
 Data:AddBossLoot(-9028, { -- Grizzle
-    { 11702 }, -- #11702
-    { 11703 }, -- #11703
-    { 11722 }, -- #11722
-    { 22270 }, -- #22270
+    { 11702 }, -- Grizzle's Skinner
+    { 11703 }, -- Stonewall Girdle
+    { 11722 }, -- Dregmetal Spaulders
+    { 22270 }, -- Entrenching Boots
     { 11610 }, -- Plans: Dark Iron Pulverizer
 })
 
 Data:AddBossLoot(-9029, { -- Eviscerator
-    { 11679 }, -- #11679
-    { 11685 }, -- #11685
-    { 11686 }, -- #11686
-    { 11730 }, -- #11730
+    { 11679 }, -- Rubicund Armguards
+    { 11685 }, -- Splinthide Shoulders
+    { 11686 }, -- Girdle of Beastial Fury
+    { 11730 }, -- Savage Gladiator Grips
 })
 
 Data:AddBossLoot(-9030, { -- Ok'thor the Breaker
-    { 11662 }, -- #11662
-    { 11665 }, -- #11665
-    { 11824 }, -- #11824
-    { 11728 }, -- #11728
+    { 11662 }, -- Ban'thok Sash
+    { 11665 }, -- Ogreseer Fists
+    { 11824 }, -- Cyclopean Band
+    { 11728 }, -- Savage Gladiator Leggings
 })
 
 Data:AddBossLoot(-9031, { -- Anub'shiah
-    { 11675 }, -- #11675
-    { 11677 }, -- #11677
-    { 11678 }, -- #11678
-    { 11731 }, -- #11731
+    { 11675 }, -- Shadefiend Boots
+    { 11677 }, -- Graverot Cape
+    { 11678 }, -- Carapace of Anub'shiah
+    { 11731 }, -- Savage Gladiator Greaves
 })
 
 Data:AddBossLoot(-9032, { -- Hedrum the Creeper
-    { 11633 }, -- #11633
-    { 11634 }, -- #11634
-    { 11635 }, -- #11635
-    { 11729 }, -- #11729
+    { 11633 }, -- Spiderfang Carapace
+    { 11634 }, -- Silkweb Gloves
+    { 11635 }, -- Hookfang Shanker
+    { 11729 }, -- Savage Gladiator Helm
 })
 
 Data:AddBossLoot(-8923, { -- Panzor the Invincible
-    { 11787 }, -- #11787
-    { 11786 }, -- #11786
-    { 11785 }, -- #11785
-    { 22245 }, -- #22245
+    { 11787 }, -- Shalehusk Boots
+    { 11786 }, -- Stone of the Earth
+    { 11785 }, -- Rock Golem Bulwark
+    { 22245 }, -- Soot Encrusted Footwear
 })
 
 Data:AddQuests(230, {
@@ -200,42 +200,42 @@ Data:AddQuests(230, {
     { id = 4123, name = "The Heart of the Mountain", side = "Both", requiredLevel = 50, xp = 5650, objective = "Bring the Heart of the Mountain to Maxwort Uberglint in the Burning Steppes.", description = "The Heart of the Mountain is in the vault safe after the Dark Keepers.", start = { description = "Burning Steppes", location = { 1428, 65.2, 23.8 }, npc = "Maxwort Uberglint" }, turnIn = { description = "Burning Steppes", location = { 1428, 65.2, 23.8 }, npc = "Maxwort Uberglint" }, items = {} },
     { id = 4083, name = "The Spectral Chalice", side = "Both", requiredLevel = 40, xp = 5650, objective = "Bring Gloom'rel 2 Star Rubies, 20 Gold Bars and 10 Truesilver Bars, then place them in the Spectral Chalice in the Summoners' Tomb.", description = "Mining 230. Talk to Gloom'rel before the Seven fight; give the Spectral Chalice 2 Star Rubies, 20 Gold Bars and 10 Truesilver Bars to learn Smelt Dark Iron.", start = { description = "Blackrock Depths", npc = "Gloom'rel" }, turnIn = { description = "Blackrock Depths", npc = "Gloom'rel" }, items = {} },
     { id = 4136, name = "Ribbly Screwspigot", side = "Both", requiredLevel = 48, xp = 2650, objective = "Bring Ribbly's Head to Yuka Screwspigot in the Burning Steppes.", description = "Optional introductory quest:", start = { description = "Flame Crest, Burning Steppes", location = { 1428, 66, 22 }, npc = "Yuka Screwspigot" }, turnIn = { description = "Flame Crest, Burning Steppes", location = { 1428, 66, 22 }, npc = "Yuka Screwspigot" }, items = {
-        { 11865 }, -- #11865
-        { 11963 }, -- #11963
-        { 12049 }, -- #12049
+        { 11865 }, -- Rancor Boots
+        { 11963 }, -- Penance Spaulders
+        { 12049 }, -- Splintsteel Armor
     } },
     { id = 4201, name = "The Love Potion", side = "Both", requiredLevel = 50, xp = 5450, objective = "Bring 4 Gromsblood, 10 Giant Silver Veins and Nagmara's Filled Vial to Mistress Nagmara in Blackrock Depths.", description = "Gromsblood, Giant Silver Veins (Azshara cliff giants) and the vial filled at Golakka Hot Springs in Un'Goro. Opens a peaceful way through the bar on later visits.", start = { description = "Blackrock Depths", npc = "Mistress Nagmara" }, turnIn = { description = "Blackrock Depths", npc = "Mistress Nagmara" }, items = {
-        { 11866 }, -- #11866
-        { 11962 }, -- #11962
+        { 11866 }, -- Nagmara's Whipping Belt
+        { 11962 }, -- Manacle Cuffs
     } },
     { id = 4126, name = "Hurley Blackbreath", side = "Alliance", requiredLevel = 50, xp = 7050, objective = "Bring the Lost Thunderbrew Recipe to Ragnar Thunderbrew in Kharanos.", description = "Break the three kegs in the Grim Guzzler storeroom to spawn Hurley Blackbreath and his guards.\n\nOptional introductory quest:", start = { description = "Kharanos, Dun Morogh", location = { 1426, 46.8, 52.4 }, npc = "Ragnar Thunderbrew" }, turnIn = { description = "Kharanos, Dun Morogh", location = { 1426, 46.8, 52.4 }, npc = "Ragnar Thunderbrew" }, items = {} },
     { id = 4134, name = "Lost Thunderbrew Recipe", side = "Horde", requiredLevel = 50, xp = 5650, objective = "Bring the Lost Thunderbrew Recipe to Vivian Lagrave in Kargath.", description = "Break the three kegs in the Grim Guzzler storeroom to spawn Hurley Blackbreath and his guards.\n\nOptional introductory quest:", start = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Shadowmage Vivian Lagrave" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Shadowmage Vivian Lagrave" }, items = {} },
     { id = 4263, name = "Incendius!", side = "Alliance", requiredLevel = 48, xp = 5800, objective = "Find Lord Incendius in Blackrock Depths and destroy him!", description = "Kill Lord Incendius at the Black Anvil inside BRD.", requires = { { id = 4262, name = "Overmaster Pyron" } }, start = { description = "Morgan's Vigil, Burning Steppes", location = { 1428, 85.4, 70 }, npc = "Jalinda Sprig" }, turnIn = { description = "Morgan's Vigil, Burning Steppes", location = { 1428, 85.4, 70 }, npc = "Jalinda Sprig" }, items = {
-        { 12113 }, -- #12113
-        { 12114 }, -- #12114
-        { 12112 }, -- #12112
-        { 12115 }, -- #12115
+        { 12113 }, -- Sunborne Cape
+        { 12114 }, -- Nightfall Gloves
+        { 12112 }, -- Crypt Demon Bracers
+        { 12115 }, -- Stalwart Clutch
     } },
     { id = 3907, name = "Disharmony of Fire", side = "Horde", requiredLevel = 48, xp = 7300, objective = "Enter Blackrock Depths and track down Lord Incendius. Slay him and return any source of information you may find to Thunderheart.", description = "Kill Lord Incendius at the Black Anvil inside BRD and bring back the Tablet of Kurniya.", requires = { { id = 3906, name = "Disharmony of Flame" } }, start = { description = "Kargath, Badlands", location = { 1418, 3.4, 48.2 }, npc = "Thunderheart" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 3.4, 48.2 }, npc = "Thunderheart" }, items = {} },
     { id = 7201, name = "The Last Element", side = "Horde", requiredLevel = 48, xp = 5450, objective = "Travel to Blackrock Depths and recover 10 Essence of the Elements. Your first inclination is to search the golems and golem makers. You remember Vivian Lagrave also muttering something about elementals.", description = "Essence of the Elements drops from BRD elementals and golems.", requires = { { id = 3906, name = "Disharmony of Flame" } }, start = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Shadowmage Vivian Lagrave" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Shadowmage Vivian Lagrave" }, items = {
-        { 12038 }, -- #12038
+        { 12038 }, -- Lagrave's Seal
     } },
     { id = 4322, name = "Jail Break!", side = "Alliance", requiredLevel = 50, xp = 7750, objective = "Help Marshal Windsor get his gear back and free his friends. Return to Marshal Maxwell if you succeed.", description = "Escort Marshal Windsor through the prison. Clear the patrols first and have everyone ready before you start.", requires = { { id = 4282, name = "A Shred of Hope" } }, start = { description = "Blackrock Depths", npc = "Marshal Windsor" }, turnIn = { description = "Morgan's Vigil, Burning Steppes", npc = "Marshal Maxwell" }, items = {} },
     { id = 4063, name = "The Rise of the Machines", side = "Horde", requiredLevel = 52, xp = 6200, objective = "Find and slay Golem Lord Argelmach. Return his head to Lotwil. You will also need to collect 10 Intact Elemental Cores from the Ragereaver Golems and Warbringer Constructs protecting Argelmach.", description = "Kill Golem Lord Argelmach for his head and collect 10 Intact Elemental Cores from the constructs guarding him.", requires = { { id = 4062, name = "The Rise of the Machines" } }, start = { description = "Badlands", location = { 1418, 25.8, 45 }, npc = "Lotwil Veriatus" }, turnIn = { description = "Badlands", location = { 1418, 25.8, 45 }, npc = "Lotwil Veriatus" }, items = {
-        { 12109 }, -- #12109
-        { 12110 }, -- #12110
-        { 12108 }, -- #12108
-        { 12111 }, -- #12111
+        { 12109 }, -- Azure Moon Amice
+        { 12110 }, -- Raincaster Drape
+        { 12108 }, -- Basaltscale Armor
+        { 12111 }, -- Lavaplate Gauntlets
     } },
     { id = 4132, name = "Operation: Death to Angerforge", side = "Horde", requiredLevel = 52, xp = 7750, objective = "Travel to Blackrock Depths and slay General Angerforge! Return to Warlord Goretooth when the task is complete.", description = "Needs both KILL ON SIGHT quests and the Grark Lorkrub escort first.", requires = { { id = 4121, name = "Precarious Predicament" } }, start = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Warlord Goretooth" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Warlord Goretooth" }, items = {} },
     { id = 4024, name = "A Taste of Flame", side = "Both", requiredLevel = 52, xp = 6200, objective = "Travel to Blackrock Depths and slay Bael'Gar. Use the Altered Black Dragonflight Molt on Bael'Gar's remains to capture the Fiery Essence. Return the Encased Fiery Essence to Cyrus Therepentous.", description = "Show Cyrus a Black Dragonflight Molt first (A Taste of Flame, or kill the drake he summons). Then kill Bael'Gar and use the Altered Black Dragonflight Molt on his remains to collect the Encased Fiery Essence.", start = { description = "Burning Steppes", location = { 1428, 94.8, 31.6 }, npc = "Cyrus Therepentous" }, turnIn = { description = "Burning Steppes", location = { 1428, 94.8, 31.6 }, npc = "Cyrus Therepentous" }, items = {} },
     { id = 4362, name = "The Fate of the Kingdom", side = "Alliance", requiredLevel = 50, xp = 8050, objective = "Return to Blackrock Depths and rescue Princess Moira Bronzebeard from the evil clutches of Emperor Dagran Thaurissan.", requires = { { id = 4361, name = "The Bearer of Bad News" } }, start = { description = "Ironforge", location = { 1455, 39.4, 55.8 }, npc = "King Magni Bronzebeard" }, turnIn = { description = "Blackrock Depths", npc = "Princess Moira Bronzebeard" }, items = {
-        { 12548 }, -- #12548
-        { 12543 }, -- #12543
+        { 12548 }, -- Magni's Will
+        { 12543 }, -- Songstone of Ironforge
     } },
     { id = 4003, name = "The Royal Rescue", side = "Horde", requiredLevel = 48, xp = 8050, objective = "Slay Emperor Dagran Thaurissan and free Princess Moira Bronzebeard from his evil spell.", requires = { { id = 4002, name = "The Eastern Kingdoms" } }, start = { description = "Grommash Hold, Orgrimmar", location = { 1454, 32, 37.8 }, npc = "Thrall" }, turnIn = { description = "Blackrock Depths", npc = "Princess Moira Bronzebeard" }, items = {
-        { 12544 }, -- #12544
-        { 12545 }, -- #12545
+        { 12544 }, -- Thrall's Resolve
+        { 12545 }, -- Eye of Orgrimmar
     } },
     { id = 4286, name = "The Good Stuff", side = "Alliance", requiredLevel = 50, xp = 5800, objective = "Travel to Blackrock Depths and recover 20 Dark Iron Fanny Packs. Return to Oralius when you have completed this task. You assume that the Dark Iron dwarves inside Blackrock Depths carry these 'fanny pack' contraptions.", description = "Dark Iron Fanny Packs drop from Dark Iron dwarves in BRD.", start = { description = "Morgan's Vigil, Burning Steppes", location = { 1428, 84.4, 68.4 }, npc = "Oralius" }, turnIn = { description = "Morgan's Vigil, Burning Steppes", location = { 1428, 84.4, 68.4 }, npc = "Oralius" }, items = {
         { 11883 }, -- A Dingy Fanny Pack

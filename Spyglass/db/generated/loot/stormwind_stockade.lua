@@ -22,7 +22,7 @@ Data:AddBossLoot(2757, { -- Kam Deepfury
     { 252513 }, -- Trapper's Leather Helm
     { 252455 }, -- Defender's Leather Helm
     { 252515 }, -- Wisdom's Leather Helm
-    { 252815 }, -- #252815
+    { 252815 }, -- Pattern: Trapper's Leather Helm
 })
 
 Data:AddBossLoot(2758, { -- Hamhock

@@ -5,31 +5,31 @@ local Data = Spyglass.Data
 
 Data:AddBossLoot(2805, { -- Kirtonos
     { 16734 }, -- Boots of Valor
-    { 13960 }, -- #13960
-    { 13967 }, -- #13967
-    { 13969 }, -- #13969
-    { 14024 }, -- #14024
-    { 13957 }, -- #13957
+    { 13960 }, -- Heart of the Fiend
+    { 13967 }, -- Windreaver Greaves
+    { 13969 }, -- Loomguard Armbraces
+    { 14024 }, -- Frightalon
+    { 13957 }, -- Gargoyle Slashers
 })
 
 Data:AddBossLoot(2804, { -- Jandice Barov
     { 16701 }, -- Dreadmist Mantle
-    { 14545 }, -- #14545
-    { 14541 }, -- #14541
-    { 14548 }, -- #14548
-    { 18690 }, -- #18690
-    { 18689 }, -- #18689
-    { 22394 }, -- #22394
+    { 14545 }, -- Ghostloom Leggings
+    { 14541 }, -- Barovian Family Sword
+    { 14548 }, -- Royal Cap Spaulders
+    { 18690 }, -- Wraithplate Leggings
+    { 18689 }, -- Phantasmal Cloak
+    { 22394 }, -- Staff of Metanoia
 })
 
 Data:AddBossLoot(2811, { -- Rattlegore
     { 16711 }, -- Shadowcraft Boots
     { 14528 }, -- #14528
-    { 14531 }, -- #14531
-    { 14537 }, -- #14537
-    { 14538 }, -- #14538
-    { 14539 }, -- #14539
-    { 18686 }, -- #18686
+    { 14531 }, -- Frightskull Shaft
+    { 14537 }, -- Corpselight Greaves
+    { 14538 }, -- Deadwalker Mantle
+    { 14539 }, -- Bone Ring Helm
+    { 18686 }, -- Bone Golem Shoulders
 })
 
 Data:AddBossLoot(2809, { -- Marduk Blackpool
@@ -44,15 +44,15 @@ Data:AddBossLoot(2813, { -- Vectus
 
 Data:AddBossLoot(2810, { -- Ras Frostwhisperer
     { 16689 }, -- Magister's Mantle
-    { 14487 }, -- #14487
-    { 14502 }, -- #14502
-    { 18694 }, -- #18694
+    { 14487 }, -- Bonechill Hammer
+    { 14502 }, -- Frostbite Girdle
+    { 18694 }, -- Shadowy Mail Greaves
     { 18696 }, -- #18696
-    { 13952 }, -- #13952
+    { 13952 }, -- Iceblade Hacker
     { 14340 }, -- #14340
-    { 14522 }, -- #14522
-    { 14525 }, -- #14525
-    { 18693 }, -- #18693
+    { 14522 }, -- Maelstrom Leggings
+    { 14525 }, -- Boneclenched Gauntlets
+    { 18693 }, -- Shivery Handwraps
 })
 
 Data:AddBossLoot(2803, { -- Instructor Malicia
@@ -72,15 +72,15 @@ Data:AddBossLoot(2812, { -- The Ravenian
 })
 
 Data:AddBossLoot(2807, { -- Lord Alexei Barov
-    { 14626 }, -- #14626
-    { 14637 }, -- #14637
+    { 14626 }, -- Necropile Robe
+    { 14637 }, -- Cadaverous Armor
     { 18680 }, -- #18680
     { 18681 }, -- #18681
-    { 18682 }, -- #18682
-    { 18683 }, -- #18683
-    { 18684 }, -- #18684
-    { 14611 }, -- #14611
-    { 14624 }, -- #14624
+    { 18682 }, -- Ghoul Skin Leggings
+    { 18683 }, -- Hammer of the Vesper
+    { 18684 }, -- Dimly Opalescent Ring
+    { 14611 }, -- Bloodmail Hauberk
+    { 14624 }, -- Deathbone Chestplate
     { 16722 }, -- Lightforge Bracers
 })
 
@@ -95,12 +95,12 @@ Data:AddBossLoot(2801, { -- Darkmaster Gandling
     { 16727 }, -- Lightforge Helm
     { 16731 }, -- Helm of Valor
     { 13951 }, -- #13951
-    { 13398 }, -- #13398
+    { 13398 }, -- Boots of the Shrieker
     { 13938 }, -- #13938
-    { 13944 }, -- #13944
-    { 13953 }, -- #13953
-    { 13964 }, -- #13964
-    { 22433 }, -- #22433
+    { 13944 }, -- Tombstone Breastplate
+    { 13953 }, -- Silent Fang
+    { 13964 }, -- Witchblade
+    { 22433 }, -- Don Mauricio's Band of Domination
 })
 
 Data:AddTrashLoot(289, {
@@ -111,10 +111,10 @@ Data:AddTrashLoot(289, {
 
 Data:AddQuests(289, {
     { id = 5466, name = "The Lich, Ras Frostwhisper", side = "Both", requiredLevel = 57, xp = 9950, objective = "Find Ras Frostwhisper in the Scholomance. When you have found him, use the Soulbound Keepsake on his undead visage. Should you succeed in reverting him to a mortal, strike him down and recover the Human Head of Ras Frostwhisper. Take the head back to Magistrate Marduke.", description = "Use the Soulbound Keepsake on Ras Frostwhisper to make him human, then kill him and bring back his human head.", requires = { { id = 5465, name = "Soulbound Keepsake" } }, start = { description = "Caer Darrow, Western Plaguelands", location = { 1422, 70.4, 74 }, npc = "Magistrate Marduke" }, turnIn = { description = "Caer Darrow, Western Plaguelands", location = { 1422, 70.4, 74 }, npc = "Magistrate Marduke" }, items = {
-        { 13982 }, -- #13982
-        { 13986 }, -- #13986
-        { 13984 }, -- #13984
-        { 14002 }, -- #14002
+        { 13982 }, -- Warblade of Caer Darrow
+        { 13986 }, -- Crown of Caer Darrow
+        { 13984 }, -- Darrowspike
+        { 14002 }, -- Darrowshire Strongguard
     } },
     { id = 5343, name = "Barov Family Fortune", side = "Alliance", requiredLevel = 52, xp = 6600, objective = "Venture to the Scholomance and recover the Barov family fortune. Four deeds make up this fortune: The Deed to Caer Darrow; The Deed to Brill; The Deed to Tarren Mill; and The Deed to Southshore. Return to Weldon Barov when you have completed this task.", description = "The four deeds: Southshore in the first large chamber, Tarren Mill before the hatchlings, Brill by Ras Frostwhisper, Caer Darrow by Lord Alexei Barov. The follow-up The Last Barov sends you to kill the rival brother.", start = { description = "Chillwind Camp, Western Plaguelands", location = { 1422, 43.4, 83.4 }, npc = "Weldon Barov" }, turnIn = { description = "Chillwind Camp, Western Plaguelands", location = { 1422, 43.4, 83.4 }, npc = "Weldon Barov" }, items = {} },
     { id = 5341, name = "Barov Family Fortune", side = "Horde", requiredLevel = 52, xp = 6600, objective = "Venture to the Scholomance and recover the Barov family fortune. Four deeds make up this fortune: The Deed to Caer Darrow; The Deed to Brill; The Deed to Tarren Mill; and The Deed to Southshore. Return to Alexi Barov when you have completed this task.", description = "The four deeds: Southshore in the first large chamber, Tarren Mill before the hatchlings, Brill by Ras Frostwhisper, Caer Darrow by Lord Alexei Barov. The follow-up The Last Barov sends you to kill the rival brother.", start = { description = "The Bulwark, Tirisfal Glades", location = { 1420, 83, 71.4 }, npc = "Alexi Barov" }, turnIn = { description = "The Bulwark, Tirisfal Glades", location = { 1420, 83, 71.4 }, npc = "Alexi Barov" }, items = {} },

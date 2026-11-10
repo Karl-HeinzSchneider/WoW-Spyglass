@@ -197,6 +197,24 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "231313": {
+    "names": {
+      "enUS": "Grimy Rune"
+    },
+    "quality": 2,
+    "itemLevel": 77,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 135231,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
   "231386": {
     "names": {
       "enUS": "Flawless Black Dragonscale"

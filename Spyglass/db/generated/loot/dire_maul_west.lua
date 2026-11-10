@@ -4,45 +4,45 @@ local Data = Spyglass.Data
 -- Dire Maul: West (map 429)
 
 Data:AddBossLoot(350, { -- Tendris Warpwood
-    { 18390 }, -- #18390
-    { 18393 }, -- #18393
+    { 18390 }, -- Tanglemoss Leggings
+    { 18393 }, -- Warpwood Binding
     { 18353 }, -- #18353
 })
 
 Data:AddBossLoot(347, { -- Illyanna Ravenoak
-    { 18383 }, -- #18383
-    { 18386 }, -- #18386
+    { 18383 }, -- Force Imbued Gauntlets
+    { 18386 }, -- Padre's Trousers
 })
 
 Data:AddBossLoot(348, { -- Magister Kalendris
     { 18374 }, -- #18374
-    { 18397 }, -- #18397
-    { 18371 }, -- #18371
+    { 18397 }, -- Elder Magus Pendant
+    { 18371 }, -- Mindtap Talisman
 })
 
 Data:AddBossLoot(349, { -- Immol'thar
-    { 18377 }, -- #18377
-    { 18379 }, -- #18379
+    { 18377 }, -- Quickdraw Gloves
+    { 18379 }, -- Odious Greaves
     { 18381 }, -- #18381
-    { 18391 }, -- #18391
+    { 18391 }, -- Eyestalk Cord
     { 18385 }, -- #18385
     { 18384 }, -- #18384
-    { 18389 }, -- #18389
-    { 18394 }, -- #18394
-    { 18372 }, -- #18372
+    { 18389 }, -- Cloak of the Cosmos
+    { 18394 }, -- Demon Howl Wristguards
+    { 18372 }, -- Blade of the New Moon
     { 18370 }, -- #18370
 })
 
 Data:AddBossLoot(361, { -- Prince Tortheldrin
-    { 18382 }, -- #18382
-    { 18395 }, -- #18395
+    { 18382 }, -- Fluctuating Cloak
+    { 18395 }, -- Emerald Flame Ring
     { 18380 }, -- #18380
     { 18378 }, -- #18378
-    { 18396 }, -- #18396
-    { 18392 }, -- #18392
+    { 18396 }, -- Mind Carver
+    { 18392 }, -- Distracting Dagger
     { 18376 }, -- #18376
-    { 18375 }, -- #18375
-    { 18388 }, -- #18388
+    { 18375 }, -- Bracers of the Eclipse
+    { 18388 }, -- Stoneshatter
     { 18373 }, -- #18373
 })
 
@@ -54,24 +54,24 @@ Data:AddBossLoot(2793, { -- Lord Hel'nurath
 })
 
 Data:AddBossLoot(2794, { -- Tsu'zee
-    { 18387 }, -- #18387
+    { 18387 }, -- Brightspark Gloves
 })
 
 Data:AddQuests(42902, {
     { id = 7461, name = "The Madness Within", side = "Both", requiredLevel = 56, xp = 9950, objective = "You must destroy the guardians surrounding the 5 Pylons that power the Prison of Immol'thar. Once the Pylons have powered down, the force field surrounding Immol'thar will have dissipated. Enter the Prison of Immol'thar and eradicate the foul demon that stands at its heart. Finally, confront Prince Tortheldrin in Athenaeum. Return to the Shen'dralar Ancient in the courtyard should you complete this quest.", description = "Kill the guardians of all five pylons, then Immol'thar, then Prince Tortheldrin. Return to the Ancient, take The Treasure of the Shen'dralar and open the chest under the library stairs for the reward.", start = { description = "Dire Maul", npc = "Shen'dralar Ancient" }, turnIn = { description = "Dire Maul", npc = "Shen'dralar Ancient" }, items = {
-        { 18420 }, -- #18420
-        { 18421 }, -- #18421
-        { 18424 }, -- #18424
+        { 18420 }, -- Bonecrusher
+        { 18421 }, -- Backwood Helm
+        { 18424 }, -- Sedge Boots
     } },
     { id = 7481, name = "Elven Legends", side = "Horde", requiredLevel = 54, xp = 8300, objective = "Search Dire Maul for Kariel Winthalus. Report back to Sage Korolusk at Camp Mojache with whatever information that you may find.", description = "Interact with the Skeletal Remains of Telmius Dreamseeker beside Lorekeeper Lydros in the Athenaeum. Unlocks Lydros's libram exchanges.", start = { description = "Camp Mojache, Feralas", location = { 1444, 74.4, 44 }, npc = "Sage Korolusk" }, turnIn = { description = "Camp Mojache, Feralas", location = { 1444, 74.4, 44 }, npc = "Sage Korolusk" }, items = {} },
     { id = 7482, name = "Elven Legends", side = "Alliance", requiredLevel = 54, xp = 8300, objective = "Search Dire Maul for Kariel Winthalus. Report back to Scholar Runethorn at Feathermoon with whatever information that you may find.", description = "Interact with the Skeletal Remains of Telmius Dreamseeker beside Lorekeeper Lydros in the Athenaeum. Unlocks Lydros's libram exchanges.", start = { description = "Feathermoon Stronghold, Feralas", location = { 1444, 31, 44.2 }, npc = "Scholar Runethorn" }, turnIn = { description = "Feathermoon Stronghold, Feralas", location = { 1444, 31, 44.2 }, npc = "Scholar Runethorn" }, items = {} },
     { id = 5247, name = "Fragments of the Past", side = "Alliance", requiredLevel = 53, xp = 6000, objective = "Bring an Enchanted Thorium Bar, 5 Crystal Restore, and a Vial of Dire Water to Aurora Skycaller near the Northpass Tower in Eastern Plaguelands.", description = "Fill her vial at the dire pool along Eldreth Row in Dire Maul West; also bring 1 Enchanted Thorium Bar and 5 Crystal Restore.\n\nOptional introductory quest:", requires = { { id = 5246, name = "Fragments of the Past" } }, start = { description = "Northpass Tower, Eastern Plaguelands", location = { 1423, 47.5, 16.8 }, npc = "Aurora Skycaller" }, turnIn = { description = "Northpass Tower, Eastern Plaguelands", location = { 1423, 47.5, 16.8 }, npc = "Aurora Skycaller" }, items = {} },
     { id = 7643, name = "Ancient Equine Spirit", side = "Alliance", class = "PALADIN", requiredLevel = 60, xp = 4950, objective = "Acquire special horse feed used for feeding a spirit horse. Merideth Carlson in Southshore apparently is the source for such food. Travel to the Dire Maul dungeon in Feralas and slay Tendris Warpwood. Doing so will free the Ancient Equine Spirit. Feed it the special horse feed, thereby soothing the spirit. Finally, give it the Arcanite Barding so it may bless it.", description = "Paladin charger quest. Kill Tendris Warpwood, then feed the Ancient Equine Spirit and give it the Arcanite Barding. Bring the Manna-Enriched Horse Feed from Merideth Carlson in Southshore.", requires = { { id = 7645, name = "Manna-Enriched Horse Feed" } }, start = { description = "Cathedral of Light, Stormwind", location = { 1453, 49.4, 47.6 }, npc = "Lord Grayson Shadowbreaker" }, turnIn = { description = "Dire Maul", npc = "Ancient Equine Spirit" }, items = {} },
     { id = 7703, name = "Unfinished Gordok Business", side = "Both", requiredLevel = 56, xp = 8300, objective = "Find the Gauntlet of Gordok Might and return it to Captain Kromcrush in Dire Maul. According to Kromcrush, the \"old timey story\" says that Tortheldrin - a \"creepy\" elf who called himself a prince - stole it from one of the Gordok kings.", description = "West objective: the Gauntlet of Gordok Might is in a chest near Prince Tortheldrin. The quest itself comes from a friendly Captain Kromcrush in Dire Maul North after you become the Gordok king.", start = { description = "Dire Maul", npc = "Captain Kromcrush" }, turnIn = { description = "Dire Maul", npc = "Captain Kromcrush" }, items = {
-        { 18366 }, -- #18366
-        { 18367 }, -- #18367
-        { 18368 }, -- #18368
-        { 18369 }, -- #18369
+        { 18366 }, -- Gordok's Handguards
+        { 18367 }, -- Gordok's Gauntlets
+        { 18368 }, -- Gordok's Gloves
+        { 18369 }, -- Gordok's Handwraps
     } },
     { id = 7631, name = "Dreadsteed of Xoroth", side = "Both", class = "WARLOCK", requiredLevel = 60, xp = 6600, objective = "Read Mor'zul's Instructions. Summon a Xorothian Dreadsteed, defeat it, then bind its spirit to you.", description = "Warlock dreadsteed quest. After Immol'thar dies, run the ritual in his prison with J'eevee's Jar, the Black Lodestone and the Xorothian Glyphs. Bring Soul Shards.", requires = { { id = 7630, name = "Arcanite" } }, start = { description = "Altar of Storms, Burning Steppes", location = { 1428, 12.6, 31.4 }, npc = "Mor'zul Bloodbringer" }, turnIn = { description = "Dire Maul", npc = "Dreadsteed Spirit" }, items = {} },
 })

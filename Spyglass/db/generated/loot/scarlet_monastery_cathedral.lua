@@ -6,13 +6,13 @@ local Data = Spyglass.Data
 Data:AddBossLoot(449, { -- High Inquisitor Fairbanks
     { 19507 }, -- Inquisitor's Shawl
     { 19508 }, -- Branded Leather Bracers
-    { 19509 }, -- #19509
+    { 19509 }, -- Dusty Mail Boots
 })
 
 Data:AddBossLoot(450, { -- High Inquisitor Whitemane
     { 7726 }, -- Aegis of the Scarlet Commander
     { 7724 }, -- Gauntlets of Divinity
-    { 7723 }, -- #7723
+    { 7723 }, -- Mograine's Might
     { 10330 }, -- Scarlet Leggings
     { 7722 }, -- Triune Amulet
     { 7720 }, -- Whitemane's Chapeau
@@ -22,7 +22,7 @@ Data:AddBossLoot(450, { -- High Inquisitor Whitemane
 Data:AddBossLoot(-3976, { -- Scarlet Commander Mograine
     { 7726 }, -- Aegis of the Scarlet Commander
     { 7724 }, -- Gauntlets of Divinity
-    { 7723 }, -- #7723
+    { 7723 }, -- Mograine's Might
     { 10330 }, -- Scarlet Leggings
 })
 
@@ -40,15 +40,15 @@ Data:AddTrashLoot(18904, {
 
 Data:AddQuests(18904, {
     { id = 1048, name = "Into The Scarlet Monastery", side = "Horde", requiredLevel = 33, xp = 5150, objective = "Kill High Inquisitor Whitemane, Scarlet Commander Mograine, Herod, the Scarlet Champion and Houndmaster Loksey and then report back to Varimathras in the Undercity.", description = "Herod is in the Armory; Loksey in the Library; Mograine and Whitemane in the Cathedral.", start = { description = "Undercity", location = { 1458, 56.2, 92.6 }, npc = "Varimathras" }, turnIn = { description = "Undercity", location = { 1458, 56.2, 92.6 }, npc = "Varimathras" }, items = {
-        { 6802 }, -- #6802
-        { 6803 }, -- #6803
-        { 10711 }, -- #10711
+        { 6802 }, -- Sword of Omen
+        { 6803 }, -- Prophetic Cane
+        { 10711 }, -- Dragon's Blood Necklace
     } },
     { id = 1053, name = "In the Name of the Light", side = "Alliance", requiredLevel = 34, xp = 4700, objective = "Kill High Inquisitor Whitemane, Scarlet Commander Mograine, Herod, the Scarlet Champion and Houndmaster Loksey and then report back to Raleigh the Devout in Southshore.", description = "Herod is in the Armory; Loksey in the Library; Mograine and Whitemane in the Cathedral.\n\nOptional introductory quest:", requires = { { id = 1052, name = "Down the Scarlet Path" } }, start = { description = "Southshore", location = { 1424, 51.4, 58.4 }, npc = "Raleigh the Devout" }, turnIn = { description = "Southshore", location = { 1424, 51.4, 58.4 }, npc = "Raleigh the Devout" }, items = {
-        { 6829 }, -- #6829
-        { 6830 }, -- #6830
-        { 6831 }, -- #6831
-        { 11262 }, -- #11262
+        { 6829 }, -- Sword of Serenity
+        { 6830 }, -- Bonebiter
+        { 6831 }, -- Black Menace
+        { 11262 }, -- Orb of Lorica
     } },
     { id = 1113, name = "Hearts of Zeal", side = "Horde", requiredLevel = 30, xp = 3300, objective = "Bring 20 Hearts of Zeal from the Scarlet Monastery to Master Apothecary Faranell.", requires = { { id = 1109, name = "Going, Going, Guano!" } }, start = { description = "Undercity.", location = { 1458, 48, 69 }, npc = "Master Apothecary Faranell" }, turnIn = { description = "Undercity.", location = { 1458, 48, 69 }, npc = "Master Apothecary Faranell" }, items = {} },
 })

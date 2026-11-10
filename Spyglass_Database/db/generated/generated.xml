@@ -10,5 +10,6 @@
 	<Script file="items\items_008.lua" />
 	<Script file="items\items_009.lua" />
 	<Script file="items\items_010.lua" />
+	<Script file="items\items_011.lua" />
 	<Script file="locales\enUS\items.lua" />
 </Ui>

@@ -15,22 +15,22 @@ Data:AddList("reputation", "the_watchers", {
     },
 })
 Data:AddListLoot("reputation", "the_watchers", {
-    { 275969, standing = "Friendly" }, -- Brilliant Watcher's Signet
-    { 275968, standing = "Friendly" }, -- Ferocious Watcher's Signet
-    { 275971, standing = "Friendly" }, -- Stalwart Watcher's Signet
-    { 275970, standing = "Friendly" }, -- Vigilant Watcher's Signet
-    { 275973, standing = "Honored" }, -- Brilliant Watcher's Signet
-    { 275972, standing = "Honored" }, -- Ferocious Watcher's Signet
+    { 275969, standing = "Friendly" }, -- Initiate's Signet of Brilliance
+    { 275968, standing = "Friendly" }, -- Initiate's Signet of Ferocity
+    { 275971, standing = "Friendly" }, -- Initiate's Signet of Vigilance
+    { 275970, standing = "Friendly" }, -- Initiate's Signet of Resolve
+    { 275973, standing = "Honored" }, -- Tracker's Signet of Brilliance
+    { 275972, standing = "Honored" }, -- Tracker's Signet of Ferocity
     { 277153, standing = "Honored" }, -- Intricate Filigree
     { 277519, standing = "Honored" }, -- Nelanna's Enchanted Jewel
-    { 275975, standing = "Honored" }, -- Stalwart Watcher's Signet
-    { 275974, standing = "Honored" }, -- Vigilant Watcher's Signet
-    { 275977, standing = "Revered" }, -- Brilliant Watcher's Signet
-    { 275976, standing = "Revered" }, -- Ferocious Watcher's Signet
-    { 275980, standing = "Revered" }, -- Stalwart Watcher's Signet
-    { 275979, standing = "Revered" }, -- Vigilant Watcher's Signet
-    { 275982, standing = "Exalted" }, -- Brilliant Watcher's Signet
-    { 275981, standing = "Exalted" }, -- Ferocious Watcher's Signet
-    { 275984, standing = "Exalted" }, -- Stalwart Watcher's Signet
-    { 275983, standing = "Exalted" }, -- Vigilant Watcher's Signet
+    { 275975, standing = "Honored" }, -- Tracker's Signet of Vigilance
+    { 275974, standing = "Honored" }, -- Tracker's Signet of Resolve
+    { 275977, standing = "Revered" }, -- Watcher's Signet of Brilliance
+    { 275976, standing = "Revered" }, -- Watcher's Signet of Ferocity
+    { 275980, standing = "Revered" }, -- Watcher's Signet of Vigilance
+    { 275979, standing = "Revered" }, -- Watcher's Signet of Resolve
+    { 275982, standing = "Exalted" }, -- Warden's Signet of Brilliance
+    { 275981, standing = "Exalted" }, -- Warden's Signet of Ferocity
+    { 275984, standing = "Exalted" }, -- Warden's Signet of Vigilance
+    { 275983, standing = "Exalted" }, -- Warden's Signet of Resolve
 })

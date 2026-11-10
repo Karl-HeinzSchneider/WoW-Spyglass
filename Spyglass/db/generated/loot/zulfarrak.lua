@@ -4,43 +4,43 @@ local Data = Spyglass.Data
 -- Zul'Farrak (map 209)
 
 Data:AddBossLoot(594, { -- Gahz'rilla
-    { 9467 }, -- #9467
-    { 9469 }, -- #9469
+    { 9467 }, -- Gahz'rilla Fang
+    { 9469 }, -- Gahz'rilla Scale Armor
 })
 
 Data:AddBossLoot(595, { -- Antu'sul
-    { 9640 }, -- #9640
-    { 9639 }, -- #9639
-    { 9641 }, -- #9641
-    { 9379 }, -- #9379
+    { 9640 }, -- Vice Grips
+    { 9639 }, -- The Hand of Antu'sul
+    { 9641 }, -- Lifeblood Amulet
+    { 9379 }, -- Sang'thraze the Deflector
 })
 
 Data:AddBossLoot(597, { -- Witch Doctor Zum'rah
-    { 18082 }, -- #18082
-    { 18083 }, -- #18083
+    { 18082 }, -- Zum'rah's Vexing Cane
+    { 18083 }, -- Jumanza Grips
 })
 
 Data:AddBossLoot(599, { -- Shadowpriest Sezz'ziz
-    { 9470 }, -- #9470
-    { 9473 }, -- #9473
-    { 9474 }, -- #9474
-    { 9475 }, -- #9475
+    { 9470 }, -- Bad Mojo Mask
+    { 9473 }, -- Jinxed Hoodoo Skin
+    { 9474 }, -- Jinxed Hoodoo Kilt
+    { 9475 }, -- Diabolic Skiver
 })
 
 Data:AddBossLoot(600, { -- Chief Ukorz Sandscalp
-    { 9476 }, -- #9476
-    { 9477 }, -- #9477
-    { 9478 }, -- #9478
-    { 9479 }, -- #9479
-    { 11086 }, -- #11086
+    { 9476 }, -- Big Bad Pauldrons
+    { 9477 }, -- The Chief's Enforcer
+    { 9478 }, -- Ripsaw
+    { 9479 }, -- Embrace of the Lycan
+    { 11086 }, -- Jang'thraze the Protector
 })
 
 Data:AddBossLoot(-10082, { -- Zerillis
-    { 12470 }, -- #12470
+    { 12470 }, -- Sandstalker Ankleguards
 })
 
 Data:AddBossLoot(-10081, { -- Dustwraith
-    { 12471 }, -- #12471
+    { 12471 }, -- Desertwalker Cane
 })
 
 Data:AddQuests(209, {
@@ -48,12 +48,12 @@ Data:AddQuests(209, {
         { 11122 }, -- Carrot on a Stick
     } },
     { id = 2846, name = "Tiara of the Deep", side = "Both", requiredLevel = 40, xp = 6050, objective = "Bring the Tiara of the Deep to Tabetha in Dustwallow Marsh.", description = "The Tiara drops from Hydromancer Velratha.\n\nOptional introductory quest:", start = { description = "Dustwallow Marsh", location = { 1445, 46, 57 }, npc = "Tabetha" }, turnIn = { description = "Dustwallow Marsh", location = { 1445, 46, 57 }, npc = "Tabetha" }, items = {
-        { 9527 }, -- #9527
-        { 9531 }, -- #9531
+        { 9527 }, -- Spellshifter Rod
+        { 9531 }, -- Gemshale Pauldrons
     } },
     { id = 2768, name = "Divino-matic Rod", side = "Both", requiredLevel = 40, xp = 6300, objective = "Bring the Divino-matic Rod to Chief Engineer Bilgewhizzle in Gadgetzan.", description = "The rod drops from Sergeant Bly after the pyramid event.", start = { description = "Gadgetzan, Tanaris", location = { 1446, 52.4, 28.4 }, npc = "Chief Engineer Bilgewhizzle" }, turnIn = { description = "Gadgetzan, Tanaris", location = { 1446, 52.4, 28.4 }, npc = "Chief Engineer Bilgewhizzle" }, items = {
-        { 9533 }, -- #9533
-        { 9534 }, -- #9534
+        { 9533 }, -- Masons Fraternity Ring
+        { 9534 }, -- Engineer's Guild Headpiece
     } },
     { id = 2865, name = "Scarab Shells", side = "Both", requiredLevel = 40, xp = 3900, objective = "Bring 5 Uncracked Scarab Shells to Tran'rek in Gadgetzan.", description = "Optional introductory quest:", start = { description = "Gadgetzan, Tanaris", location = { 1446, 51.4, 26.8 }, npc = "Tran'rek" }, turnIn = { description = "Gadgetzan, Tanaris", location = { 1446, 51.4, 26.8 }, npc = "Tran'rek" }, items = {} },
     { id = 3042, name = "Troll Temper", side = "Both", requiredLevel = 40, xp = 3900, objective = "Bring 20 Vials of Troll Temper to Trenton Lighthammer in Gadgetzan.", start = { description = "Gadgetzan, Tanaris", location = { 1446, 51.4, 28.6 }, npc = "Trenton Lighthammer" }, turnIn = { description = "Gadgetzan, Tanaris", location = { 1446, 51.4, 28.6 }, npc = "Trenton Lighthammer" }, items = {} },

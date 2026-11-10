@@ -4,28 +4,28 @@ local Data = Spyglass.Data
 -- The Drowned City (map 2970)
 
 Data:AddBossLoot(-264177, { -- Gill
-    { 286646 }, -- #286646
-    { 286649 }, -- #286649
+    { 286646 }, -- Gill's Gills
+    { 286649 }, -- Tidebound Dagger
 })
 
 Data:AddBossLoot(-264172, { -- Umbra
-    { 286662 }, -- #286662
+    { 286662 }, -- Deep-Dweller's Grips
 })
 
 Data:AddBossLoot(-260468, { -- "Pyromancer" Braxton
-    { 286650 }, -- #286650
-    { 286651 }, -- #286651
+    { 286650 }, -- Pyromancer's Baton
+    { 286651 }, -- Flamestarter's Signet
 })
 
 Data:AddTrashLoot(2970, {
-    { 287002 }, -- #287002
+    { 287002 }, -- Risen Sentry's Links
 })
 
 Data:AddQuests(2970, {
     { id = 96078, name = "A Tale Spun Around the Fire", side = "Horde", requiredLevel = 30, xp = 2350, objective = "Take the tablet etchings to Master Gadrin in Sen'jin Village in Durotar.", requires = { { id = 95775, name = "The Drowned City" } }, start = { description = "Grom'gol Base Camp, Stranglethorn Vale", location = { 1434, 32.3, 27.7 }, npc = "Kin'weelay" }, turnIn = { description = "Sen'jin Village, Durotar", location = { 1411, 55.8, 74.4 }, npc = "Master Gadrin" }, items = {
-        { 279885 }, -- #279885
-        { 279886 }, -- #279886
-        { 279887 }, -- #279887
+        { 279885 }, -- Ceremonial Mallet
+        { 279886 }, -- Sacrificial Sword
+        { 279887 }, -- I'lalai Flayer
     } },
     { id = 95776, name = "The Only Good Brinescale...", side = "Horde", requiredLevel = 30, xp = 9500, objective = "Kill Var'Taka in the Drowned City.", description = "Commander Aggro'gosh offers it once Enemies in the Water and Locating the Lost City (Kin'weelay) are both handed in.", requires = { { id = 95770, name = "Locating the Lost City" }, { id = 95773, name = "Enemies in the Water" } }, start = { description = "Grom'gol Base Camp, Stranglethorn Vale", location = { 1434, 32.2, 28.8 }, npc = "Commander Aggro'gosh" }, turnIn = { description = "Grom'gol Base Camp, Stranglethorn Vale", location = { 1434, 32.2, 28.8 }, npc = "Commander Aggro'gosh" }, items = {
         { 279888 }, -- Tidesoaked Leggings
@@ -33,20 +33,20 @@ Data:AddQuests(2970, {
     } },
     { id = 96774, name = "Ancient Gurubashi Idol", side = "Horde", requiredLevel = 30, xp = 8800, objective = "Recover an Ancient Gurubashi Idol from the Drowned City.", start = { description = "Mulgore", location = { 1412, 32.5, 20.6 }, npc = "Mazu'kon" }, turnIn = { description = "Mulgore", location = { 1412, 32.5, 20.6 }, npc = "Mazu'kon" }, items = {} },
     { id = 95799, name = "Findings for the Explorer's League", side = "Alliance", requiredLevel = 30, xp = 2350, objective = "Take Dibbs' I'lalai Translations to Historian Karnik in Ironforge.", requires = { { id = 95787, name = "Take Two With Water" } }, start = { description = "Southshore, Hillsbrad Foothills", location = { 1424, 50.6, 57.1 }, npc = "Loremaster Dibbs" }, turnIn = { description = "Hall of Explorers, Ironforge", location = { 1455, 77.5, 11.8 }, npc = "Historian Karnik" }, items = {
-        { 279880 }, -- #279880
-        { 279881 }, -- #279881
+        { 279880 }, -- Ancient Voodoo Pouch
+        { 279881 }, -- Intrepid Explorer's Chainmail
     } },
     { id = 95798, name = "The Web of Magic", side = "Alliance", requiredLevel = 30, xp = 2350, objective = "Take the I'lalai Fetish to Abra Cadabra in Dalaran.", description = "The Kirin Tor only let noteworthy visitors into Dalaran.", requires = { { id = 95788, name = "Magics of the Drowned City" } }, start = { description = "Southshore, Hillsbrad Foothills", location = { 1424, 50.6, 57.1 }, npc = "Loremaster Dibbs" }, turnIn = { description = "Dalaran", location = { 1416, 13.2, 69.6 }, npc = "Abra Cadabra" }, items = {
-        { 279879 }, -- #279879
-        { 279878 }, -- #279878
+        { 279879 }, -- Rune-Etched Epaulets
+        { 279878 }, -- Apprentice Sorcerer's Slacks
     } },
     { id = 97130, name = "Ancient Gurubashi Secrets", side = "Alliance", requiredLevel = 34, xp = 10450, objective = "Recover an Ancient Gurubashi Idol from the Drowned City.", start = { description = "outside where the Violet Hold stood, Dalaran, Alterac Mountains", location = { 1416, 15.4, 74 }, npc = "Archmage Timear" }, turnIn = { description = "Dalaran (not confirmed)", location = { 1416, 15.4, 74 }, npc = "Archmage Timear" }, items = {} },
     { id = 95789, name = "Shady Saltseers", side = "Both", requiredLevel = 34, xp = 10450, objective = "Collect 10 Voodoo-Infused Artifacts from the Saltseer pirates in the Drowned City.", start = { description = "Booty Bay, Stranglethorn Vale", location = { 1434, 26.9, 77.2 }, npc = "Krazek" }, turnIn = { description = "Booty Bay, Stranglethorn Vale", location = { 1434, 26.9, 77.2 }, npc = "Krazek" }, items = {
-        { 279882 }, -- #279882
-        { 279930 }, -- #279930
+        { 279882 }, -- Rusted Troll War Belt
+        { 279930 }, -- Saltseer's Helm
     } },
     { id = 95791, name = "The Saltseer Captain", side = "Both", requiredLevel = 34, xp = 10450, objective = "Slay Captain Dreadrise and 3 Saltseer Coroners in the Drowned City.", start = { description = "Booty Bay, Stranglethorn Vale", location = { 1434, 26.9, 77.2 }, npc = "Krazek" }, turnIn = { description = "Booty Bay, Stranglethorn Vale", location = { 1434, 26.9, 77.2 }, npc = "Krazek" }, items = {
-        { 279883 }, -- #279883
-        { 279884 }, -- #279884
+        { 279883 }, -- Mutinous Cuffs
+        { 279884 }, -- South Seas Shroud
     } },
 })

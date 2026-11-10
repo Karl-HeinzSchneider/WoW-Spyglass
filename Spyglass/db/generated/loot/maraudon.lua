@@ -4,93 +4,93 @@ local Data = Spyglass.Data
 -- Maraudon (map 349)
 
 Data:AddBossLoot(422, { -- Noxxion
-    { 17744 }, -- #17744
-    { 17746 }, -- #17746
-    { 17745 }, -- #17745
+    { 17744 }, -- Heart of Noxxion
+    { 17746 }, -- Noxxion's Shackles
+    { 17745 }, -- Noxious Shooter
 })
 
 Data:AddBossLoot(423, { -- Razorlash
-    { 17748 }, -- #17748
-    { 17749 }, -- #17749
-    { 17750 }, -- #17750
-    { 17751 }, -- #17751
+    { 17748 }, -- Vinerot Sandals
+    { 17749 }, -- Phytoskin Spaulders
+    { 17750 }, -- Chloromesh Girdle
+    { 17751 }, -- Brusslehide Leggings
 })
 
 Data:AddBossLoot(427, { -- Tinkerer Gizlock
-    { 17717 }, -- #17717
-    { 17718 }, -- #17718
-    { 17719 }, -- #17719
+    { 17717 }, -- Megashot Rifle
+    { 17718 }, -- Gizlock's Hypertech Buckler
+    { 17719 }, -- Inventor's Focal Sword
 })
 
 Data:AddBossLoot(424, { -- Lord Vyletongue
-    { 17752 }, -- #17752
-    { 17754 }, -- #17754
-    { 17755 }, -- #17755
+    { 17752 }, -- Satyr's Lash
+    { 17754 }, -- Infernal Trickster Leggings
+    { 17755 }, -- Satyrmane Sash
 })
 
 Data:AddBossLoot(425, { -- Celebras the Cursed
-    { 17738 }, -- #17738
-    { 17739 }, -- #17739
-    { 17740 }, -- #17740
+    { 17738 }, -- Claw of Celebras
+    { 17739 }, -- Grovekeeper's Drape
+    { 17740 }, -- Soothsayer's Headdress
 })
 
 Data:AddBossLoot(426, { -- Landslide
-    { 17943 }, -- #17943
-    { 17736 }, -- #17736
-    { 17737 }, -- #17737
-    { 17734 }, -- #17734
+    { 17943 }, -- Fist of Stone
+    { 17736 }, -- Rockgrip Gauntlets
+    { 17737 }, -- Cloud Stone
+    { 17734 }, -- Helm of the Mountain
 })
 
 Data:AddBossLoot(428, { -- Rotgrip
-    { 17732 }, -- #17732
-    { 17728 }, -- #17728
-    { 17730 }, -- #17730
+    { 17732 }, -- Rotgrip Mantle
+    { 17728 }, -- Albino Crocscale Boots
+    { 17730 }, -- Gatorbite Axe
 })
 
 Data:AddBossLoot(429, { -- Princess Theradras
-    { 17713 }, -- #17713
-    { 17714 }, -- #17714
-    { 17707 }, -- #17707
-    { 17715 }, -- #17715
-    { 17766 }, -- #17766
-    { 17710 }, -- #17710
-    { 17711 }, -- #17711
-    { 17780 }, -- #17780
+    { 17713 }, -- Blackstone Ring
+    { 17714 }, -- Bracers of the Stone Princess
+    { 17707 }, -- Gemshard Heart
+    { 17715 }, -- Eye of Theradras
+    { 17766 }, -- Princess Theradras' Scepter
+    { 17710 }, -- Charstone Dirk
+    { 17711 }, -- Elemental Rockridge Leggings
+    { 17780 }, -- Blade of Eternal Darkness
 })
 
 Data:AddBossLoot(-12237, { -- Meshlok the Harvester
-    { 17767 }, -- #17767
-    { 17741 }, -- #17741
-    { 17742 }, -- #17742
+    { 17767 }, -- Bloomsprout Headpiece
+    { 17741 }, -- Nature's Embrace
+    { 17742 }, -- Fungus Shroud Armor
 })
 
 Data:AddQuests(349, {
     { id = 7067, name = "The Pariah's Instructions", side = "Both", requiredLevel = 39, xp = 5450, objective = "Read the Pariah's Instructions. Afterwards, obtain the Amulet of Union from Maraudon and return it to the Centaur Pariah in southern Desolace.", description = "Loot the Amulet of Spirits from the Nameless Prophet in the outer caves, then use it to fight the five Khans: three in the outer caves, one on the purple route and one on the orange route. Combine their gems with the amulet.", start = { description = "southern Desolace", location = { 1443, 43.4, 84.8 }, npc = "Centaur Pariah" }, turnIn = { description = "southern Desolace", location = { 1443, 43.4, 84.8 }, npc = "Centaur Pariah" }, items = {
-        { 17774 }, -- #17774
+        { 17774 }, -- Mark of the Chosen
     } },
     { id = 7068, name = "Shadowshard Fragments", side = "Horde", requiredLevel = 39, xp = 3450, objective = "Collect 10 Shadowshard Fragments from Maraudon and return them to Uthel'nay in Orgrimmar.", description = "Shadowshard elementals in the outer purple-crystal caves. It can be done without entering the instance.", start = { description = "Orgrimmar", location = { 1454, 38.8, 85.4 }, npc = "Uthel'nay" }, turnIn = { description = "Orgrimmar", location = { 1454, 38.8, 85.4 }, npc = "Uthel'nay" }, items = {
-        { 17772 }, -- #17772
-        { 17773 }, -- #17773
+        { 17772 }, -- Zealous Shadowshard Pendant
+        { 17773 }, -- Prodigious Shadowshard Pendant
     } },
     { id = 7070, name = "Shadowshard Fragments", side = "Alliance", requiredLevel = 39, xp = 3450, objective = "Collect 10 Shadowshard Fragments from Maraudon and return them to Archmage Tervosh in Theramore on the coast of Dustwallow Marsh.", description = "Shadowshard elementals in the outer purple-crystal caves. It can be done without entering the instance.", start = { description = "Theramore, Dustwallow Marsh", location = { 1445, 45.2, 24.4 }, npc = "Archmage Tervosh" }, turnIn = { description = "Theramore, Dustwallow Marsh", location = { 1445, 45.2, 24.4 }, npc = "Archmage Tervosh" }, items = {
-        { 17772 }, -- #17772
-        { 17773 }, -- #17773
+        { 17772 }, -- Zealous Shadowshard Pendant
+        { 17773 }, -- Prodigious Shadowshard Pendant
     } },
     { id = 7029, name = "Vyletongue Corruption", side = "Horde", requiredLevel = 41, xp = 5250, objective = "Fill the Coated Cerulean Vial at the orange crystal pool in Maraudon. Use the Filled Cerulean Vial on the Vylestem Vines to force the corrupted Noxxious Scion to emerge. Heal 8 plants by killing these Noxxious Scion, then return to Vark Battlescar in Shadowprey Village.", description = "Fill the Coated Cerulean Vial at the orange crystal pool in the outer caves, then use it on Vylestem Vines inside (orange side) and kill the Noxxious Scions to heal 8 plants.", start = { description = "Shadowprey Village, Desolace", location = { 1443, 23.2, 70.2 }, npc = "Vark Battlescar" }, turnIn = { description = "Shadowprey Village, Desolace", location = { 1443, 23.2, 70.2 }, npc = "Vark Battlescar" }, items = {
-        { 17768 }, -- #17768
-        { 17778 }, -- #17778
-        { 17770 }, -- #17770
+        { 17768 }, -- Woodseed Hoop
+        { 17778 }, -- Sagebrush Girdle
+        { 17770 }, -- Branchclaw Gauntlets
     } },
     { id = 7041, name = "Vyletongue Corruption", side = "Alliance", requiredLevel = 41, xp = 5250, objective = "Fill the Coated Cerulean Vial at the orange crystal pool in Maraudon. Use the Filled Cerulean Vial on the Vylestem Vines to force the corrupted Noxxious Scion to emerge. Heal 8 plants by killing these Noxxious Scion, then return to Talendria in Nijel's Point.", description = "Fill the Coated Cerulean Vial at the orange crystal pool in the outer caves, then use it on Vylestem Vines inside (orange side) and kill the Noxxious Scions to heal 8 plants.", start = { description = "Nijel's Point, Desolace", location = { 1443, 68.4, 8.8 }, npc = "Talendria" }, turnIn = { description = "Nijel's Point, Desolace", location = { 1443, 68.4, 8.8 }, npc = "Talendria" }, items = {
-        { 17768 }, -- #17768
-        { 17778 }, -- #17778
-        { 17770 }, -- #17770
+        { 17768 }, -- Woodseed Hoop
+        { 17778 }, -- Sagebrush Girdle
+        { 17770 }, -- Branchclaw Gauntlets
     } },
     { id = 7028, name = "Twisted Evils", side = "Both", requiredLevel = 41, xp = 5250, objective = "Collect 25 Theradric Crystal Carvings for Willow in Desolace.", description = "Any Maraudon creature can drop the Theradric Crystal Carvings.", start = { description = "Desolace", location = { 1443, 62, 39.4 }, npc = "Willow" }, turnIn = { description = "Desolace", location = { 1443, 62, 39.4 }, npc = "Willow" }, items = {
-        { 17775 }, -- #17775
-        { 17776 }, -- #17776
-        { 17777 }, -- #17777
-        { 17779 }, -- #17779
+        { 17775 }, -- Acumen Robes
+        { 17776 }, -- Sprightring Helm
+        { 17777 }, -- Relentless Chain
+        { 17779 }, -- Hulkstone Pauldrons
     } },
     { id = 7044, name = "Legends of Maraudon", side = "Both", requiredLevel = 41, xp = 3400, objective = "Recover the two parts of the Scepter of Celebras: the Celebrian Rod and the Celebrian Diamond. Find a way to speak with Celebras.", description = "The Celebrian Rod drops from Noxxion and the Celebrian Diamond from Lord Vyletongue.", followUps = { 7046 }, start = { description = "Maraudon Orange Entrance, Desolace", location = { 1443, 32.1, 64 }, npc = "Cavindra" }, turnIn = { description = "Maraudon", npc = "Celebras the Redeemed" }, items = {} },
     { id = 7046, name = "The Scepter of Celebras", side = "Both", requiredLevel = 41, xp = 5700, objective = "Assist Celebras the Redeemed while he creates the Scepter of Celebras. Speak with him when the ritual is complete.", description = "Defeat Celebras the Cursed where the paths meet and turn in Legends of Maraudon to Celebras the Redeemed, then help with his ritual and speak to him again for the scepter.", start = { description = "Maraudon", npc = "Celebras the Redeemed" }, turnIn = { description = "Maraudon", npc = "Celebras the Redeemed" }, items = {
