@@ -8,6 +8,7 @@
     {
       "id": 3403,
       "name": "Overseer Wrex",
+      "displayID": 7914,
       "npc": 255391,
       "loot": [
         {
@@ -27,12 +28,14 @@
     {
       "id": 3409,
       "name": "Blazeroar",
+      "displayID": 6374,
       "npc": 255702,
       "loot": []
     },
     {
       "id": 3410,
       "name": "Tidemistress Ca'zass",
+      "displayID": 4973,
       "npc": 255997,
       "loot": [
         {
@@ -48,6 +51,7 @@
     {
       "id": 3415,
       "name": "The Questioner",
+      "displayID": 140092,
       "npc": 256236,
       "loot": [
         {
@@ -67,6 +71,7 @@
     {
       "id": 3418,
       "name": "Katerina the Cleaner",
+      "displayID": 2317,
       "npc": 257016,
       "loot": [
         {

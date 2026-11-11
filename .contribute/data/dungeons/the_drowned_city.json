@@ -8,6 +8,7 @@
     {
       "id": 3474,
       "name": "Zul'Alai",
+      "displayID": 144475,
       "npc": 258905,
       "loot": [
         {
@@ -23,6 +24,7 @@
     {
       "id": 3475,
       "name": "Var'Taka",
+      "displayID": 144487,
       "npc": 258924,
       "loot": [
         {
@@ -34,6 +36,7 @@
     {
       "id": 3476,
       "name": "Captain Dreadrise",
+      "displayID": 142144,
       "npc": 260042,
       "loot": [
         {
@@ -49,6 +52,7 @@
     {
       "id": 3478,
       "name": "Deathless Guardians",
+      "displayID": 142245,
       "loot": [
         {
           "item": 274607,
@@ -59,6 +63,7 @@
     {
       "id": 3479,
       "name": "Min'loth the Serpent",
+      "displayID": 142322,
       "npc": 260274,
       "loot": [
         {
@@ -70,6 +75,7 @@
     {
       "id": 3511,
       "name": "Primeval Elemental",
+      "displayID": 129945,
       "npc": 270887,
       "loot": [
         {
@@ -81,6 +87,7 @@
     {
       "id": -264177,
       "name": "Gill",
+      "displayID": 144023,
       "npc": 264177,
       "loot": [
         {
@@ -96,6 +103,7 @@
     {
       "id": -264172,
       "name": "Umbra",
+      "displayID": 144022,
       "npc": 264172,
       "loot": [
         {
@@ -107,6 +115,7 @@
     {
       "id": -260468,
       "name": "\"Pyromancer\" Braxton",
+      "displayID": 142457,
       "npc": 260468,
       "loot": [
         {

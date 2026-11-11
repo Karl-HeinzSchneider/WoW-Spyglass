@@ -496,6 +496,7 @@
     {
       "id": 2799,
       "name": "Skul",
+      "displayID": 2606,
       "npc": 10393,
       "loot": [
         {
@@ -515,6 +516,7 @@
     {
       "id": 2800,
       "name": "Stonespine",
+      "displayID": 7856,
       "npc": 10809,
       "loot": [
         {

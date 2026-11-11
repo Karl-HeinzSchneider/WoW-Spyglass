@@ -8,6 +8,7 @@
     {
       "id": 3498,
       "name": "Titanosaur",
+      "displayID": 142989,
       "npc": 253201,
       "loot": [
         {
@@ -27,6 +28,7 @@
     {
       "id": 3499,
       "name": "Ravasaur Hunters",
+      "displayID": 143040,
       "npc": 253218,
       "loot": [
         {
@@ -46,6 +48,7 @@
     {
       "id": 3500,
       "name": "Thunderhoof",
+      "displayID": 144514,
       "npc": 261812,
       "loot": [
         {
@@ -65,6 +68,7 @@
     {
       "id": 3501,
       "name": "Venomridge",
+      "displayID": 144511,
       "npc": 261813,
       "loot": [
         {
@@ -84,6 +88,7 @@
     {
       "id": 3502,
       "name": "Nanaya",
+      "displayID": 143832,
       "npc": 261809,
       "loot": [
         {
@@ -123,6 +128,7 @@
     {
       "id": 3505,
       "name": "Bolt",
+      "displayID": 143063,
       "npc": 262081,
       "loot": [
         {
@@ -138,6 +144,7 @@
     {
       "id": 3507,
       "name": "Direhorn Matriarch",
+      "displayID": 144515,
       "npc": 262127,
       "loot": [
         {
@@ -168,6 +175,7 @@
     {
       "id": 3600,
       "name": "Vitrix",
+      "displayID": 147098,
       "npc": 272561,
       "loot": [
         {

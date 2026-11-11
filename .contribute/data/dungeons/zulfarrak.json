@@ -164,6 +164,7 @@
     {
       "id": -10082,
       "name": "Zerillis",
+      "displayID": 9293,
       "npc": 10082,
       "loot": [
         {
@@ -179,6 +180,7 @@
     {
       "id": -10081,
       "name": "Dustwraith",
+      "displayID": 9292,
       "npc": 10081,
       "loot": [
         {
@@ -190,6 +192,7 @@
     {
       "id": -7604,
       "name": "Sergeant Bly",
+      "displayID": 6433,
       "npc": 7604,
       "loot": [
         {

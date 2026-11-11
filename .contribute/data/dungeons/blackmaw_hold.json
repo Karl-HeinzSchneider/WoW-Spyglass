@@ -8,6 +8,7 @@
     {
       "id": 3315,
       "name": "Withermaw",
+      "displayID": 140708,
       "npc": 247195,
       "loot": [
         {
@@ -27,6 +28,7 @@
     {
       "id": 3316,
       "name": "Impaan the Imprisoner",
+      "displayID": 130432,
       "npc": 247206,
       "loot": [
         {
@@ -46,6 +48,7 @@
     {
       "id": 3322,
       "name": "Bonesnout the Unbroken",
+      "displayID": 130427,
       "npc": 247198,
       "loot": [
         {
@@ -61,6 +64,7 @@
     {
       "id": 3323,
       "name": "Blackmaw Behemoth",
+      "displayID": 130436,
       "npc": 247207,
       "loot": [
         {
@@ -80,6 +84,7 @@
     {
       "id": 3327,
       "name": "Elder Shaman Bloodmane",
+      "displayID": 130440,
       "npc": 247209,
       "loot": [
         {
@@ -99,6 +104,7 @@
     {
       "id": 3334,
       "name": "Varrox Bleakhoof",
+      "displayID": 130447,
       "npc": 247234,
       "loot": [
         {
@@ -118,6 +124,7 @@
     {
       "id": 3336,
       "name": "Unbound Spirit",
+      "displayID": 131644,
       "npc": 247231,
       "loot": [
         {
@@ -137,6 +144,7 @@
     {
       "id": -269104,
       "name": "Moontouched Wanderer",
+      "displayID": 12235,
       "npc": 269104,
       "loot": [
         {
@@ -152,6 +160,7 @@
     {
       "id": -269111,
       "name": "Gortek the Apprentice",
+      "displayID": 145808,
       "npc": 269111,
       "loot": [
         {
