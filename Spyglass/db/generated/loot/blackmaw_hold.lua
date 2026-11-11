@@ -25,7 +25,7 @@ Data:AddBossLoot(-269104, { -- Moontouched Wanderer
 })
 
 Data:AddBossLoot(-269111, { -- Gortek the Apprentice
-    { 280077 }, -- #280077
+    { 280077 }, -- Fist of Revelation
 })
 
 Data:AddQuests(2974, {
