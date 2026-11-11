@@ -166,6 +166,7 @@
       "name": "Lord Hel'nurath",
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\lord_helnurath.blp",
       "displayID": 14556,
+      "npc": 14506,
       "loot": [
         {
           "item": 18755,
@@ -190,6 +191,7 @@
       "name": "Tsu'zee",
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\tsuzee.blp",
       "displayID": 11250,
+      "npc": 11467,
       "loot": [
         {
           "item": 18387,

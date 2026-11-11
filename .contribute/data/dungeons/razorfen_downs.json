@@ -33,6 +33,7 @@
       "name": "Plaguemaw the Rotting",
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\plaguemaw_the_rotting.blp",
       "displayID": 6124,
+      "npc": 7356,
       "loot": [
         {
           "item": 10760,
@@ -72,6 +73,7 @@
       "name": "Ragglesnout",
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\ragglesnout.blp",
       "displayID": 11382,
+      "npc": 7354,
       "loot": [
         {
           "item": 10758,

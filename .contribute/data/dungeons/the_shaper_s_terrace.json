@@ -8,6 +8,7 @@
     {
       "id": 3498,
       "name": "Titanosaur",
+      "npc": 253201,
       "loot": [
         {
           "item": 280009,
@@ -45,6 +46,7 @@
     {
       "id": 3500,
       "name": "Thunderhoof",
+      "npc": 261812,
       "loot": [
         {
           "item": 280020,
@@ -63,6 +65,7 @@
     {
       "id": 3501,
       "name": "Venomridge",
+      "npc": 261813,
       "loot": [
         {
           "item": 280015,
@@ -81,6 +84,7 @@
     {
       "id": 3502,
       "name": "Nanaya",
+      "npc": 261809,
       "loot": [
         {
           "item": 280023,
@@ -103,6 +107,7 @@
     {
       "id": 3503,
       "name": "Cinder",
+      "npc": 261974,
       "loot": [
         {
           "item": 280029,
@@ -118,6 +123,7 @@
     {
       "id": 3505,
       "name": "Bolt",
+      "npc": 262081,
       "loot": [
         {
           "item": 280032,
@@ -132,6 +138,7 @@
     {
       "id": 3507,
       "name": "Direhorn Matriarch",
+      "npc": 262127,
       "loot": [
         {
           "item": 280022,
@@ -150,6 +157,7 @@
     {
       "id": 3597,
       "name": "Snowtalon",
+      "npc": 262297,
       "loot": [
         {
           "item": 280026,
@@ -160,6 +168,7 @@
     {
       "id": 3600,
       "name": "Vitrix",
+      "npc": 272561,
       "loot": [
         {
           "item": 280031,

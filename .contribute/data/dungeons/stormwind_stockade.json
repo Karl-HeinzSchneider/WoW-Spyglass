@@ -14,6 +14,7 @@
       "name": "Targorr the Dread",
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\targorr_the_dread.blp",
       "displayID": 517,
+      "npc": 1696,
       "loot": [
         {
           "item": 273804,
@@ -46,6 +47,7 @@
       "name": "Kam Deepfury",
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\kam_deepfury.blp",
       "displayID": 825,
+      "npc": 1666,
       "loot": [
         {
           "item": 2280,
@@ -94,6 +96,7 @@
       "name": "Hamhock",
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\hamhock.blp",
       "displayID": 3250,
+      "npc": 1717,
       "loot": [
         {
           "item": 273809,
@@ -144,6 +147,7 @@
       "name": "Dextren Ward",
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\dextren_ward.blp",
       "displayID": 2149,
+      "npc": 1663,
       "loot": [
         {
           "item": 273817,
@@ -196,6 +200,7 @@
       "name": "Bazil Thredd",
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\bazil_thredd.blp",
       "displayID": 1621,
+      "npc": 1716,
       "loot": [
         {
           "item": 273824,

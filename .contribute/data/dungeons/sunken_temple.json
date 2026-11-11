@@ -12,6 +12,7 @@
     {
       "id": 3582,
       "name": "Atal'alarion",
+      "npc": 8580,
       "loot": [
         {
           "item": 10800,
@@ -92,6 +93,7 @@
     {
       "id": 3585,
       "name": "Hazzas",
+      "npc": 5722,
       "loot": [
         {
           "item": 12465,
@@ -130,6 +132,7 @@
     {
       "id": 3586,
       "name": "Morphaz",
+      "npc": 5719,
       "loot": [
         {
           "item": 12465,
@@ -168,6 +171,7 @@
     {
       "id": 3587,
       "name": "Weaver",
+      "npc": 5720,
       "loot": [
         {
           "item": 12465,

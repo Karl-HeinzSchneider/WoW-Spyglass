@@ -107,6 +107,7 @@
       "name": "Miner Johnson",
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\miner_johnson.blp",
       "displayID": 556,
+      "npc": 3586,
       "level": 19,
       "rare": true,
       "loot": [

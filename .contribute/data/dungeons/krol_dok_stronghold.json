@@ -8,6 +8,7 @@
     {
       "id": 3449,
       "name": "Nar'gurk",
+      "npc": 258964,
       "loot": [
         {
           "item": 275004,
@@ -26,6 +27,7 @@
     {
       "id": 3450,
       "name": "Slavecrusher Grox",
+      "npc": 258966,
       "loot": [
         {
           "item": 274996,
@@ -66,6 +68,7 @@
     {
       "id": 3452,
       "name": "Twilight Commander Zarmok",
+      "npc": 258972,
       "loot": [
         {
           "item": 275000,

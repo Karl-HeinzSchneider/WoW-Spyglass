@@ -8,6 +8,7 @@
     {
       "id": 3474,
       "name": "Zul'Alai",
+      "npc": 258905,
       "loot": [
         {
           "item": 274599,
@@ -22,6 +23,7 @@
     {
       "id": 3475,
       "name": "Var'Taka",
+      "npc": 258924,
       "loot": [
         {
           "item": 274602,
@@ -32,6 +34,7 @@
     {
       "id": 3476,
       "name": "Captain Dreadrise",
+      "npc": 260042,
       "loot": [
         {
           "item": 274603,
@@ -56,6 +59,7 @@
     {
       "id": 3479,
       "name": "Min'loth the Serpent",
+      "npc": 260274,
       "loot": [
         {
           "item": 274608,
@@ -66,6 +70,7 @@
     {
       "id": 3511,
       "name": "Primeval Elemental",
+      "npc": 270887,
       "loot": [
         {
           "item": 274611,

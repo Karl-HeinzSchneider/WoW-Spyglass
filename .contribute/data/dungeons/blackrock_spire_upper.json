@@ -223,6 +223,7 @@
       "name": "Lord Valthalak",
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\lord_valthalak.blp",
       "displayID": 14308,
+      "npc": 16042,
       "loot": [
         {
           "item": 22335,

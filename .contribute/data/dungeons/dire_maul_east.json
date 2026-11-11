@@ -68,6 +68,7 @@
       "name": "Pusillin",
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\pusillin.blp",
       "displayID": 7552,
+      "npc": 14354,
       "loot": [
         {
           "item": 18316,
