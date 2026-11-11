@@ -53,6 +53,10 @@
         {
           "item": 280019,
           "name": "Dinofrill Casque"
+        },
+        {
+          "item": 280018,
+          "name": "Hammer of Thundering Hooves"
         }
       ]
     },
@@ -99,7 +103,12 @@
     {
       "id": 3503,
       "name": "Cinder",
-      "loot": []
+      "loot": [
+        {
+          "item": 280029,
+          "name": "Cinderedge Crescent"
+        }
+      ]
     },
     {
       "id": 3504,
@@ -113,6 +122,10 @@
         {
           "item": 280032,
           "name": "Bolt's Charged Eyeball"
+        },
+        {
+          "item": 280031,
+          "name": "Sparklance Wand"
         }
       ]
     },
@@ -127,18 +140,32 @@
         {
           "item": 280021,
           "name": "Tooth of the Matriarch"
+        },
+        {
+          "item": 280045,
+          "name": "Regal Direhorn Drape"
         }
       ]
     },
     {
       "id": 3597,
       "name": "Snowtalon",
-      "loot": []
+      "loot": [
+        {
+          "item": 280026,
+          "name": "Albinofur Grips"
+        }
+      ]
     },
     {
       "id": 3600,
       "name": "Vitrix",
-      "loot": []
+      "loot": [
+        {
+          "item": 280031,
+          "name": "Sparklance Wand"
+        }
+      ]
     }
   ],
   "trash": [

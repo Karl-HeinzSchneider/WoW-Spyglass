@@ -3,6 +3,10 @@ local Data = Spyglass.Data
 
 -- Zul'Farrak (map 209)
 
+Data:AddBossLoot(593, { -- Hydromancer Velratha
+    { 274653 }, -- Deep Ritual Girdle
+})
+
 Data:AddBossLoot(594, { -- Gahz'rilla
     { 9467 }, -- Gahz'rilla Fang
     { 9469 }, -- Gahz'rilla Scale Armor
@@ -15,9 +19,21 @@ Data:AddBossLoot(595, { -- Antu'sul
     { 9379 }, -- Sang'thraze the Deflector
 })
 
+Data:AddBossLoot(596, { -- Theka the Martyr
+    { 274641 }, -- Theka's Last Breath
+    { 274639 }, -- Sacrificial Chain Vest
+    { 274638 }, -- Sandfury Pauldrons
+})
+
 Data:AddBossLoot(597, { -- Witch Doctor Zum'rah
     { 18082 }, -- Zum'rah's Vexing Cane
     { 18083 }, -- Jumanza Grips
+    { 274642 }, -- Blood Ritual Ring
+})
+
+Data:AddBossLoot(598, { -- Nekrum Gutchewer
+    { 274644 }, -- Undying Headdress
+    { 274645 }, -- Desert Ziggurat Drape
 })
 
 Data:AddBossLoot(599, { -- Shadowpriest Sezz'ziz
@@ -37,10 +53,18 @@ Data:AddBossLoot(600, { -- Chief Ukorz Sandscalp
 
 Data:AddBossLoot(-10082, { -- Zerillis
     { 12470 }, -- Sandstalker Ankleguards
+    { 274658 }, -- Dune Hacker
 })
 
 Data:AddBossLoot(-10081, { -- Dustwraith
     { 12471 }, -- Desertwalker Cane
+})
+
+Data:AddBossLoot(-7604, { -- Sergeant Bly
+    { 274646 }, -- Arch of the Covenant
+    { 274647 }, -- Farraki Kris
+    { 274648 }, -- The Desert Rose
+    { 252896 }, -- Pattern: Stalker's Mail Boots
 })
 
 Data:AddQuests(209, {

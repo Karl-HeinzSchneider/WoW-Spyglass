@@ -26,6 +26,14 @@ Data:AddBossLoot(549, { -- Ironaya
     { 9408 }, -- Ironshod Bludgeon
 })
 
+Data:AddBossLoot(1887, { -- Obsidian Sentinel
+    { 274430 }, -- Rock Sentinel Slicer
+    { 274428 }, -- Dark Golem Breastplate
+    { 274425 }, -- White Obsidian Wand
+    { 274485 }, -- Axe of Lingering Dread
+    { 251400 }, -- Plans: Warder's Boots
+})
+
 Data:AddBossLoot(551, { -- Ancient Stone Keeper
     { 9410 }, -- Cragfists
     { 9411 }, -- Rockshard Pauldrons
@@ -48,6 +56,33 @@ Data:AddBossLoot(554, { -- Archaedas
     { 11118 }, -- Archaedic Stone
     { 9413 }, -- The Rockpounder
     { 9418 }, -- Stoneslayer
+    { 274432 }, -- Stone Keeper Spire
+})
+
+Data:AddTrashLoot(70, {
+    { 9425 }, -- Pendulum of Doom
+    { 9431 }, -- Papal Fez
+    { 9396 }, -- Legguards of the Vault
+    { 9393 }, -- Beacon of Hope
+    { 9429 }, -- Miner's Hat of the Deep
+    { 9424 }, -- Ginn-su Sword
+    { 9427 }, -- Stonevault Bonebreaker
+    { 9426 }, -- Monolithic Bow
+    { 9422 }, -- Shadowforge Bushmaster
+    { 9465 }, -- Digmaster 5000
+    { 9423 }, -- The Jackhammer
+    { 9391 }, -- The Shoveler
+    { 9392 }, -- Annealed Blade
+    { 9383 }, -- Obsidian Cleaver
+    { 9381 }, -- Earthen Rod
+    { 9386 }, -- Excavator's Brand
+    { 9384 }, -- Stonevault Shiv
+    { 9430 }, -- Spaulders of a Lost Age
+    { 9432 }, -- Skullplate Bracers
+    { 9397 }, -- Energy Cloak
+    { 9420 }, -- Adventurer's Pith Helmet
+    { 9406 }, -- Spirewind Fetter
+    { 9428 }, -- Unearthed Bands
 })
 
 Data:AddQuests(70, {

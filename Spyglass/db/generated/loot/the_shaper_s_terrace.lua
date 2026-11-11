@@ -18,6 +18,7 @@ Data:AddBossLoot(3499, { -- Ravasaur Hunters
 Data:AddBossLoot(3500, { -- Thunderhoof
     { 280020 }, -- Deep Jungle Rifle
     { 280019 }, -- Dinofrill Casque
+    { 280018 }, -- Hammer of Thundering Hooves
 })
 
 Data:AddBossLoot(3501, { -- Venomridge
@@ -33,13 +34,27 @@ Data:AddBossLoot(3502, { -- Nanaya
     { 280024 }, -- Legplates of Reinforced Crystal
 })
 
+Data:AddBossLoot(3503, { -- Cinder
+    { 280029 }, -- Cinderedge Crescent
+})
+
 Data:AddBossLoot(3505, { -- Bolt
     { 280032 }, -- Bolt's Charged Eyeball
+    { 280031 }, -- Sparklance Wand
 })
 
 Data:AddBossLoot(3507, { -- Direhorn Matriarch
     { 280022 }, -- Scaleguard Scimitar
     { 280021 }, -- Tooth of the Matriarch
+    { 280045 }, -- Regal Direhorn Drape
+})
+
+Data:AddBossLoot(3597, { -- Snowtalon
+    { 280026 }, -- Albinofur Grips
+})
+
+Data:AddBossLoot(3600, { -- Vitrix
+    { 280031 }, -- Sparklance Wand
 })
 
 Data:AddTrashLoot(3001, {

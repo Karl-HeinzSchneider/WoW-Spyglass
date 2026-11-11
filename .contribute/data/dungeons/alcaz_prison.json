@@ -12,6 +12,14 @@
         {
           "item": 276734,
           "name": "Wrex's Pinky Ring"
+        },
+        {
+          "item": 276733,
+          "name": "Grips of Control"
+        },
+        {
+          "item": 276732,
+          "name": "Alcaz Willcrusher"
         }
       ]
     },
@@ -27,6 +35,10 @@
         {
           "item": 276736,
           "name": "Seascale Bracers"
+        },
+        {
+          "item": 276735,
+          "name": "Tidesong Wand"
         }
       ]
     },
@@ -51,7 +63,12 @@
     {
       "id": 3418,
       "name": "Katerina the Cleaner",
-      "loot": []
+      "loot": [
+        {
+          "item": 276739,
+          "name": "Cutthroat Chestguard"
+        }
+      ]
     }
   ],
   "trash": [

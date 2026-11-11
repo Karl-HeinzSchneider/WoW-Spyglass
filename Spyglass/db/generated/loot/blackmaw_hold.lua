@@ -5,18 +5,43 @@ local Data = Spyglass.Data
 
 Data:AddBossLoot(3315, { -- Withermaw
     { 280064 }, -- Withering Grips
+    { 280063 }, -- Bloodfur Bulwark
+    { 280062 }, -- Cloak of the Fleshborer
+})
+
+Data:AddBossLoot(3316, { -- Impaan the Imprisoner
+    { 280057 }, -- Robes of Dark Summons
+    { 280056 }, -- Flameslash Crescent
+    { 280058 }, -- Impish Chain Hood
+})
+
+Data:AddBossLoot(3322, { -- Bonesnout the Unbroken
+    { 280059 }, -- Tuskblade Halberd
+    { 280060 }, -- Lucky Shovelnose Tuft
+})
+
+Data:AddBossLoot(3323, { -- Blackmaw Behemoth
+    { 280065 }, -- Behemoth Bones
+    { 280066 }, -- Trousers of the Ebon Giant
+    { 280067 }, -- Blackmaw Chain Belt
 })
 
 Data:AddBossLoot(3327, { -- Elder Shaman Bloodmane
     { 280068 }, -- Bloody Claws of Attack
+    { 280070 }, -- Veilpiercer Girdle
+    { 280069 }, -- Shamanic Wristguards
 })
 
 Data:AddBossLoot(3334, { -- Varrox Bleakhoof
     { 280074 }, -- Scalding Flamehoof
+    { 280076 }, -- Horns of Varrox
+    { 280075 }, -- Bleak Eye Shoulderplates
 })
 
 Data:AddBossLoot(3336, { -- Unbound Spirit
     { 280071 }, -- Flamebreak Talisman
+    { 280072 }, -- Cowl of Dark Ambition
+    { 280073 }, -- Burnished Pridescales
 })
 
 Data:AddBossLoot(-269104, { -- Moontouched Wanderer
@@ -26,6 +51,18 @@ Data:AddBossLoot(-269104, { -- Moontouched Wanderer
 
 Data:AddBossLoot(-269111, { -- Gortek the Apprentice
     { 280077 }, -- Fist of Revelation
+    { 280078 }, -- Apprentice's Protective Treads
+})
+
+Data:AddBossLoot(-250034, { -- Tunnelweb Matriarch
+    { 280085 }, -- Tunnelweb Pincer
+})
+
+Data:AddTrashLoot(2974, {
+    { 287032 }, -- Den Champion's Binding
+    { 251453 }, -- Plans: Breastplate of Salvation
+    { 287034 }, -- Grove Subjugator's Blade
+    { 287036 }, -- Satyr's Touch
 })
 
 Data:AddQuests(2974, {

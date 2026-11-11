@@ -92,6 +92,10 @@
         {
           "item": 275002,
           "name": "War Handler's Gaze"
+        },
+        {
+          "item": 275003,
+          "name": "Worgbinder's Treads"
         }
       ]
     },
@@ -115,6 +119,27 @@
       ]
     }
   ],
-  "trash": [],
+  "trash": [
+    {
+      "item": 287008,
+      "name": "Ogre Magi's Mantle"
+    },
+    {
+      "item": 287014,
+      "name": "Krol'dok Warplate Pauldrons"
+    },
+    {
+      "item": 287012,
+      "name": "Krol'dok Warplate Gauntlets"
+    },
+    {
+      "item": 287013,
+      "name": "Krol'dok Warplate Legplates"
+    },
+    {
+      "item": 287010,
+      "name": "Outrider's Gloves"
+    }
+  ],
   "quests": [94968, 94972, 94975, 94982, 94984, 96771, 94981, 94974, 94998]
 }

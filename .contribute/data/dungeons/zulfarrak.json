@@ -13,7 +13,12 @@
       "id": 593,
       "name": "Hydromancer Velratha",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Hydromancer Velratha",
-      "loot": []
+      "loot": [
+        {
+          "item": 274653,
+          "name": "Deep Ritual Girdle"
+        }
+      ]
     },
     {
       "id": 594,
@@ -57,7 +62,20 @@
       "id": 596,
       "name": "Theka the Martyr",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Theka the Martyr",
-      "loot": []
+      "loot": [
+        {
+          "item": 274641,
+          "name": "Theka's Last Breath"
+        },
+        {
+          "item": 274639,
+          "name": "Sacrificial Chain Vest"
+        },
+        {
+          "item": 274638,
+          "name": "Sandfury Pauldrons"
+        }
+      ]
     },
     {
       "id": 597,
@@ -71,6 +89,10 @@
         {
           "item": 18083,
           "name": "Jumanza Grips"
+        },
+        {
+          "item": 274642,
+          "name": "Blood Ritual Ring"
         }
       ]
     },
@@ -78,7 +100,16 @@
       "id": 598,
       "name": "Nekrum Gutchewer",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Nekrum Gutchewer",
-      "loot": []
+      "loot": [
+        {
+          "item": 274644,
+          "name": "Undying Headdress"
+        },
+        {
+          "item": 274645,
+          "name": "Desert Ziggurat Drape"
+        }
+      ]
     },
     {
       "id": 599,
@@ -138,6 +169,10 @@
         {
           "item": 12470,
           "name": "Sandstalker Ankleguards"
+        },
+        {
+          "item": 274658,
+          "name": "Dune Hacker"
         }
       ]
     },
@@ -149,6 +184,29 @@
         {
           "item": 12471,
           "name": "Desertwalker Cane"
+        }
+      ]
+    },
+    {
+      "id": -7604,
+      "name": "Sergeant Bly",
+      "npc": 7604,
+      "loot": [
+        {
+          "item": 274646,
+          "name": "Arch of the Covenant"
+        },
+        {
+          "item": 274647,
+          "name": "Farraki Kris"
+        },
+        {
+          "item": 274648,
+          "name": "The Desert Rose"
+        },
+        {
+          "item": 252896,
+          "name": "Pattern: Stalker's Mail Boots"
         }
       ]
     }

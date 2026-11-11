@@ -93,6 +93,9 @@ Data:AddBossLoot(239, { -- Phalanx
 
 Data:AddBossLoot(240, { -- Ribbly Screwspigot
     { 11612 }, -- Plans: Dark Iron Plate
+    { 11742 }, -- Wayfarer's Knapsack
+    { 2662 }, -- Ribbly's Quiver
+    { 2663 }, -- Ribbly's Bandolier
 })
 
 Data:AddBossLoot(241, { -- Plugger Spazzring
@@ -105,6 +108,7 @@ Data:AddBossLoot(242, { -- Ambassador Flamelash
     { 11814 }, -- Molten Fists
     { 11809 }, -- Flame Wrath
     { 11832 }, -- Burst of Knowledge
+    { 11808 }, -- Circle of Flame
 })
 
 Data:AddBossLoot(243, { -- The Seven
@@ -113,6 +117,9 @@ Data:AddBossLoot(243, { -- The Seven
     { 11922 }, -- Blood-Etched Blade
     { 11926 }, -- Deathdealer Breastplate
     { 11927 }, -- Legplates of the Eternal Guardian
+    { 11923 }, -- The Hammer of Grace
+    { 11925 }, -- Ghostshroud
+    { 11929 }, -- Haunting Specter Leggings
 })
 
 Data:AddBossLoot(244, { -- Magmus
@@ -141,6 +148,7 @@ Data:AddBossLoot(2790, { -- Emperor Dagran Thaurissan
     { 11934 }, -- Emperor's Seal
     { 22204 }, -- Wristguards of Renown
     { 22207 }, -- Sash of the Grand Hunt
+    { 11684 }, -- Ironfoe
 })
 
 Data:AddBossLoot(-9027, { -- Gorosh the Dervish
@@ -191,6 +199,20 @@ Data:AddBossLoot(-8923, { -- Panzor the Invincible
     { 11786 }, -- Stone of the Earth
     { 11785 }, -- Rock Golem Bulwark
     { 22245 }, -- Soot Encrusted Footwear
+})
+
+Data:AddBossLoot(-16059, { -- Theldren
+    { 22305 }, -- Ironweave Mantle
+})
+
+Data:AddTrashLoot(230, {
+    { 12549 }, -- Braincage
+    { 12542 }, -- Funeral Pyre Vestment
+    { 12546 }, -- Aristocratic Cuffs
+    { 12550 }, -- Runed Golem Shackles
+    { 12555 }, -- Battlechaser's Greaves
+    { 12527 }, -- Ribsplitter
+    { 12531 }, -- Searing Needle
 })
 
 Data:AddQuests(230, {

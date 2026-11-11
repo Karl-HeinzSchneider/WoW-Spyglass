@@ -9,6 +9,15 @@ Data:AddBossLoot(3582, { -- Atal'alarion
     { 10799 }, -- Headspike
 })
 
+Data:AddBossLoot(3583, { -- Avatar of Hakkar
+    { 10838 }, -- Might of Hakkar
+    { 10842 }, -- Windscale Sarong
+    { 10843 }, -- Featherskin Cape
+    { 10844 }, -- Spire of Hakkar
+    { 10845 }, -- Warrior's Embrace
+    { 10846 }, -- Bloodshot Greaves
+})
+
 Data:AddBossLoot(3584, { -- Shade of Eranikus
     { 10829 }, -- Dragon's Eye
     { 10833 }, -- Horns of Eranikus
@@ -22,24 +31,44 @@ Data:AddBossLoot(3585, { -- Hazzas
     { 12465 }, -- Nightfall Drape
     { 12466 }, -- Dawnspire Cord
     { 12243 }, -- Smoldering Claw
+    { 10795 }, -- Drakeclaw Band
+    { 10796 }, -- Drakestone
+    { 10797 }, -- Firebreather
+    { 12463 }, -- Drakefang Butcher
+    { 12464 }, -- Bloodfire Talons
 })
 
 Data:AddBossLoot(3586, { -- Morphaz
     { 12465 }, -- Nightfall Drape
     { 12466 }, -- Dawnspire Cord
     { 12243 }, -- Smoldering Claw
+    { 10795 }, -- Drakeclaw Band
+    { 10796 }, -- Drakestone
+    { 10797 }, -- Firebreather
+    { 12463 }, -- Drakefang Butcher
+    { 12464 }, -- Bloodfire Talons
 })
 
 Data:AddBossLoot(3587, { -- Weaver
     { 12465 }, -- Nightfall Drape
     { 12466 }, -- Dawnspire Cord
     { 12243 }, -- Smoldering Claw
+    { 10795 }, -- Drakeclaw Band
+    { 10796 }, -- Drakestone
+    { 10797 }, -- Firebreather
+    { 12463 }, -- Drakefang Butcher
+    { 12464 }, -- Bloodfire Talons
 })
 
 Data:AddBossLoot(3588, { -- Dreamscythe
     { 12465 }, -- Nightfall Drape
     { 12466 }, -- Dawnspire Cord
     { 12243 }, -- Smoldering Claw
+    { 10795 }, -- Drakeclaw Band
+    { 10796 }, -- Drakestone
+    { 10797 }, -- Firebreather
+    { 12463 }, -- Drakefang Butcher
+    { 12464 }, -- Bloodfire Talons
 })
 
 Data:AddBossLoot(3589, { -- Jammal'an the Prophet

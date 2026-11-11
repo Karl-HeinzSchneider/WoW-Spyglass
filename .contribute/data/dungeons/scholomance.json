@@ -38,6 +38,14 @@
         {
           "item": 13957,
           "name": "Gargoyle Slashers"
+        },
+        {
+          "item": 13955,
+          "name": "Stoneform Shoulders"
+        },
+        {
+          "item": 13983,
+          "name": "Gravestone War Axe"
         }
       ]
     },
@@ -203,6 +211,106 @@
         {
           "item": 16710,
           "name": "Shadowcraft Bracers"
+        },
+        {
+          "item": 23201,
+          "name": "Libram of Divinity"
+        },
+        {
+          "item": 23200,
+          "name": "Totem of Sustaining"
+        },
+        {
+          "item": 14614,
+          "name": "Bloodmail Belt"
+        },
+        {
+          "item": 14616,
+          "name": "Bloodmail Boots"
+        },
+        {
+          "item": 14615,
+          "name": "Bloodmail Gauntlets"
+        },
+        {
+          "item": 14611,
+          "name": "Bloodmail Hauberk"
+        },
+        {
+          "item": 14612,
+          "name": "Bloodmail Legguards"
+        },
+        {
+          "item": 14637,
+          "name": "Cadaverous Armor"
+        },
+        {
+          "item": 14636,
+          "name": "Cadaverous Belt"
+        },
+        {
+          "item": 14640,
+          "name": "Cadaverous Gloves"
+        },
+        {
+          "item": 14638,
+          "name": "Cadaverous Leggings"
+        },
+        {
+          "item": 14641,
+          "name": "Cadaverous Walkers"
+        },
+        {
+          "item": 14624,
+          "name": "Deathbone Chestplate"
+        },
+        {
+          "item": 14622,
+          "name": "Deathbone Gauntlets"
+        },
+        {
+          "item": 14620,
+          "name": "Deathbone Girdle"
+        },
+        {
+          "item": 14623,
+          "name": "Deathbone Legguards"
+        },
+        {
+          "item": 14621,
+          "name": "Deathbone Sabatons"
+        },
+        {
+          "item": 18684,
+          "name": "Dimly Opalescent Ring"
+        },
+        {
+          "item": 18682,
+          "name": "Ghoul Skin Leggings"
+        },
+        {
+          "item": 18683,
+          "name": "Hammer of the Vesper"
+        },
+        {
+          "item": 14631,
+          "name": "Necropile Boots"
+        },
+        {
+          "item": 14629,
+          "name": "Necropile Cuffs"
+        },
+        {
+          "item": 14632,
+          "name": "Necropile Leggings"
+        },
+        {
+          "item": 14633,
+          "name": "Necropile Mantle"
+        },
+        {
+          "item": 14626,
+          "name": "Necropile Robe"
         }
       ]
     },
@@ -214,6 +322,110 @@
         {
           "item": 16684,
           "name": "Magister's Gloves"
+        },
+        {
+          "item": 14617,
+          "name": "Sawbones Shirt"
+        },
+        {
+          "item": 23201,
+          "name": "Libram of Divinity"
+        },
+        {
+          "item": 23200,
+          "name": "Totem of Sustaining"
+        },
+        {
+          "item": 14614,
+          "name": "Bloodmail Belt"
+        },
+        {
+          "item": 14616,
+          "name": "Bloodmail Boots"
+        },
+        {
+          "item": 14615,
+          "name": "Bloodmail Gauntlets"
+        },
+        {
+          "item": 14611,
+          "name": "Bloodmail Hauberk"
+        },
+        {
+          "item": 14612,
+          "name": "Bloodmail Legguards"
+        },
+        {
+          "item": 14637,
+          "name": "Cadaverous Armor"
+        },
+        {
+          "item": 14636,
+          "name": "Cadaverous Belt"
+        },
+        {
+          "item": 14640,
+          "name": "Cadaverous Gloves"
+        },
+        {
+          "item": 14638,
+          "name": "Cadaverous Leggings"
+        },
+        {
+          "item": 14641,
+          "name": "Cadaverous Walkers"
+        },
+        {
+          "item": 14624,
+          "name": "Deathbone Chestplate"
+        },
+        {
+          "item": 14622,
+          "name": "Deathbone Gauntlets"
+        },
+        {
+          "item": 14620,
+          "name": "Deathbone Girdle"
+        },
+        {
+          "item": 14623,
+          "name": "Deathbone Legguards"
+        },
+        {
+          "item": 14621,
+          "name": "Deathbone Sabatons"
+        },
+        {
+          "item": 18684,
+          "name": "Dimly Opalescent Ring"
+        },
+        {
+          "item": 18682,
+          "name": "Ghoul Skin Leggings"
+        },
+        {
+          "item": 18683,
+          "name": "Hammer of the Vesper"
+        },
+        {
+          "item": 14631,
+          "name": "Necropile Boots"
+        },
+        {
+          "item": 14629,
+          "name": "Necropile Cuffs"
+        },
+        {
+          "item": 14632,
+          "name": "Necropile Leggings"
+        },
+        {
+          "item": 14633,
+          "name": "Necropile Mantle"
+        },
+        {
+          "item": 14626,
+          "name": "Necropile Robe"
         }
       ]
     },
@@ -225,6 +437,106 @@
         {
           "item": 16705,
           "name": "Dreadmist Wraps"
+        },
+        {
+          "item": 23201,
+          "name": "Libram of Divinity"
+        },
+        {
+          "item": 23200,
+          "name": "Totem of Sustaining"
+        },
+        {
+          "item": 14614,
+          "name": "Bloodmail Belt"
+        },
+        {
+          "item": 14616,
+          "name": "Bloodmail Boots"
+        },
+        {
+          "item": 14615,
+          "name": "Bloodmail Gauntlets"
+        },
+        {
+          "item": 14611,
+          "name": "Bloodmail Hauberk"
+        },
+        {
+          "item": 14612,
+          "name": "Bloodmail Legguards"
+        },
+        {
+          "item": 14637,
+          "name": "Cadaverous Armor"
+        },
+        {
+          "item": 14636,
+          "name": "Cadaverous Belt"
+        },
+        {
+          "item": 14640,
+          "name": "Cadaverous Gloves"
+        },
+        {
+          "item": 14638,
+          "name": "Cadaverous Leggings"
+        },
+        {
+          "item": 14641,
+          "name": "Cadaverous Walkers"
+        },
+        {
+          "item": 14624,
+          "name": "Deathbone Chestplate"
+        },
+        {
+          "item": 14622,
+          "name": "Deathbone Gauntlets"
+        },
+        {
+          "item": 14620,
+          "name": "Deathbone Girdle"
+        },
+        {
+          "item": 14623,
+          "name": "Deathbone Legguards"
+        },
+        {
+          "item": 14621,
+          "name": "Deathbone Sabatons"
+        },
+        {
+          "item": 18684,
+          "name": "Dimly Opalescent Ring"
+        },
+        {
+          "item": 18682,
+          "name": "Ghoul Skin Leggings"
+        },
+        {
+          "item": 18683,
+          "name": "Hammer of the Vesper"
+        },
+        {
+          "item": 14631,
+          "name": "Necropile Boots"
+        },
+        {
+          "item": 14629,
+          "name": "Necropile Cuffs"
+        },
+        {
+          "item": 14632,
+          "name": "Necropile Leggings"
+        },
+        {
+          "item": 14633,
+          "name": "Necropile Mantle"
+        },
+        {
+          "item": 14626,
+          "name": "Necropile Robe"
         }
       ]
     },
@@ -236,6 +548,106 @@
         {
           "item": 16716,
           "name": "Wildheart Belt"
+        },
+        {
+          "item": 23201,
+          "name": "Libram of Divinity"
+        },
+        {
+          "item": 23200,
+          "name": "Totem of Sustaining"
+        },
+        {
+          "item": 14614,
+          "name": "Bloodmail Belt"
+        },
+        {
+          "item": 14616,
+          "name": "Bloodmail Boots"
+        },
+        {
+          "item": 14615,
+          "name": "Bloodmail Gauntlets"
+        },
+        {
+          "item": 14611,
+          "name": "Bloodmail Hauberk"
+        },
+        {
+          "item": 14612,
+          "name": "Bloodmail Legguards"
+        },
+        {
+          "item": 14637,
+          "name": "Cadaverous Armor"
+        },
+        {
+          "item": 14636,
+          "name": "Cadaverous Belt"
+        },
+        {
+          "item": 14640,
+          "name": "Cadaverous Gloves"
+        },
+        {
+          "item": 14638,
+          "name": "Cadaverous Leggings"
+        },
+        {
+          "item": 14641,
+          "name": "Cadaverous Walkers"
+        },
+        {
+          "item": 14624,
+          "name": "Deathbone Chestplate"
+        },
+        {
+          "item": 14622,
+          "name": "Deathbone Gauntlets"
+        },
+        {
+          "item": 14620,
+          "name": "Deathbone Girdle"
+        },
+        {
+          "item": 14623,
+          "name": "Deathbone Legguards"
+        },
+        {
+          "item": 14621,
+          "name": "Deathbone Sabatons"
+        },
+        {
+          "item": 18684,
+          "name": "Dimly Opalescent Ring"
+        },
+        {
+          "item": 18682,
+          "name": "Ghoul Skin Leggings"
+        },
+        {
+          "item": 18683,
+          "name": "Hammer of the Vesper"
+        },
+        {
+          "item": 14631,
+          "name": "Necropile Boots"
+        },
+        {
+          "item": 14629,
+          "name": "Necropile Cuffs"
+        },
+        {
+          "item": 14632,
+          "name": "Necropile Leggings"
+        },
+        {
+          "item": 14633,
+          "name": "Necropile Mantle"
+        },
+        {
+          "item": 14626,
+          "name": "Necropile Robe"
         }
       ]
     },
@@ -283,6 +695,78 @@
         {
           "item": 16722,
           "name": "Lightforge Bracers"
+        },
+        {
+          "item": 23201,
+          "name": "Libram of Divinity"
+        },
+        {
+          "item": 23200,
+          "name": "Totem of Sustaining"
+        },
+        {
+          "item": 14614,
+          "name": "Bloodmail Belt"
+        },
+        {
+          "item": 14616,
+          "name": "Bloodmail Boots"
+        },
+        {
+          "item": 14615,
+          "name": "Bloodmail Gauntlets"
+        },
+        {
+          "item": 14612,
+          "name": "Bloodmail Legguards"
+        },
+        {
+          "item": 14636,
+          "name": "Cadaverous Belt"
+        },
+        {
+          "item": 14640,
+          "name": "Cadaverous Gloves"
+        },
+        {
+          "item": 14638,
+          "name": "Cadaverous Leggings"
+        },
+        {
+          "item": 14641,
+          "name": "Cadaverous Walkers"
+        },
+        {
+          "item": 14622,
+          "name": "Deathbone Gauntlets"
+        },
+        {
+          "item": 14620,
+          "name": "Deathbone Girdle"
+        },
+        {
+          "item": 14623,
+          "name": "Deathbone Legguards"
+        },
+        {
+          "item": 14621,
+          "name": "Deathbone Sabatons"
+        },
+        {
+          "item": 14631,
+          "name": "Necropile Boots"
+        },
+        {
+          "item": 14629,
+          "name": "Necropile Cuffs"
+        },
+        {
+          "item": 14632,
+          "name": "Necropile Leggings"
+        },
+        {
+          "item": 14633,
+          "name": "Necropile Mantle"
         }
       ]
     },
@@ -290,7 +774,108 @@
       "id": 2806,
       "name": "Lady Illucia Barov",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lady Illucia Barov",
-      "loot": []
+      "loot": [
+        {
+          "item": 23201,
+          "name": "Libram of Divinity"
+        },
+        {
+          "item": 23200,
+          "name": "Totem of Sustaining"
+        },
+        {
+          "item": 14614,
+          "name": "Bloodmail Belt"
+        },
+        {
+          "item": 14616,
+          "name": "Bloodmail Boots"
+        },
+        {
+          "item": 14615,
+          "name": "Bloodmail Gauntlets"
+        },
+        {
+          "item": 14611,
+          "name": "Bloodmail Hauberk"
+        },
+        {
+          "item": 14612,
+          "name": "Bloodmail Legguards"
+        },
+        {
+          "item": 14637,
+          "name": "Cadaverous Armor"
+        },
+        {
+          "item": 14636,
+          "name": "Cadaverous Belt"
+        },
+        {
+          "item": 14640,
+          "name": "Cadaverous Gloves"
+        },
+        {
+          "item": 14638,
+          "name": "Cadaverous Leggings"
+        },
+        {
+          "item": 14641,
+          "name": "Cadaverous Walkers"
+        },
+        {
+          "item": 14624,
+          "name": "Deathbone Chestplate"
+        },
+        {
+          "item": 14622,
+          "name": "Deathbone Gauntlets"
+        },
+        {
+          "item": 14620,
+          "name": "Deathbone Girdle"
+        },
+        {
+          "item": 14623,
+          "name": "Deathbone Legguards"
+        },
+        {
+          "item": 14621,
+          "name": "Deathbone Sabatons"
+        },
+        {
+          "item": 18684,
+          "name": "Dimly Opalescent Ring"
+        },
+        {
+          "item": 18682,
+          "name": "Ghoul Skin Leggings"
+        },
+        {
+          "item": 18683,
+          "name": "Hammer of the Vesper"
+        },
+        {
+          "item": 14631,
+          "name": "Necropile Boots"
+        },
+        {
+          "item": 14629,
+          "name": "Necropile Cuffs"
+        },
+        {
+          "item": 14632,
+          "name": "Necropile Leggings"
+        },
+        {
+          "item": 14633,
+          "name": "Necropile Mantle"
+        },
+        {
+          "item": 14626,
+          "name": "Necropile Robe"
+        }
+      ]
     },
     {
       "id": 2801,

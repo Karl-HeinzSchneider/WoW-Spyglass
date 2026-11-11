@@ -5,16 +5,23 @@ local Data = Spyglass.Data
 
 Data:AddBossLoot(3403, { -- Overseer Wrex
     { 276734 }, -- Wrex's Pinky Ring
+    { 276733 }, -- Grips of Control
+    { 276732 }, -- Alcaz Willcrusher
 })
 
 Data:AddBossLoot(3410, { -- Tidemistress Ca'zass
     { 276736 }, -- Seascale Bracers
+    { 276735 }, -- Tidesong Wand
 })
 
 Data:AddBossLoot(3415, { -- The Questioner
     { 276742 }, -- Girdle of Extracted Answers
     { 276743 }, -- Fingerbreaker Stamp
     { 276741 }, -- Defias Enforcer's Shoulderpads
+})
+
+Data:AddBossLoot(3418, { -- Katerina the Cleaner
+    { 276739 }, -- Cutthroat Chestguard
 })
 
 Data:AddTrashLoot(2994, {

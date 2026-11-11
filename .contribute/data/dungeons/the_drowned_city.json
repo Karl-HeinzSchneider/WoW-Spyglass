@@ -8,32 +8,70 @@
     {
       "id": 3474,
       "name": "Zul'Alai",
-      "loot": []
+      "loot": [
+        {
+          "item": 274599,
+          "name": "Oathbound Bracers"
+        },
+        {
+          "item": 274600,
+          "name": "Berserker Shackles"
+        }
+      ]
     },
     {
       "id": 3475,
       "name": "Var'Taka",
-      "loot": []
+      "loot": [
+        {
+          "item": 274602,
+          "name": "Brinebelly Leggings"
+        }
+      ]
     },
     {
       "id": 3476,
       "name": "Captain Dreadrise",
-      "loot": []
+      "loot": [
+        {
+          "item": 274603,
+          "name": "Dreadfrost Saber"
+        },
+        {
+          "item": 274604,
+          "name": "Frosty Blunderbuss"
+        }
+      ]
     },
     {
       "id": 3478,
       "name": "Deathless Guardians",
-      "loot": []
+      "loot": [
+        {
+          "item": 274607,
+          "name": "Viscera Spaulders"
+        }
+      ]
     },
     {
       "id": 3479,
       "name": "Min'loth the Serpent",
-      "loot": []
+      "loot": [
+        {
+          "item": 274608,
+          "name": "Maw of Min'loth"
+        }
+      ]
     },
     {
       "id": 3511,
       "name": "Primeval Elemental",
-      "loot": []
+      "loot": [
+        {
+          "item": 274611,
+          "name": "Robe of the Drowned"
+        }
+      ]
     },
     {
       "id": -264177,
@@ -81,6 +119,10 @@
     {
       "item": 287002,
       "name": "Risen Sentry's Links"
+    },
+    {
+      "item": 286997,
+      "name": "Depth-Risen Leggings"
     }
   ],
   "quests": [96078, 95776, 96774, 95799, 95798, 97130, 95789, 95791]

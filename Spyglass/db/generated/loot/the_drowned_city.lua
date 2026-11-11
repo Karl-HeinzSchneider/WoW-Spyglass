@@ -3,6 +3,32 @@ local Data = Spyglass.Data
 
 -- The Drowned City (map 2970)
 
+Data:AddBossLoot(3474, { -- Zul'Alai
+    { 274599 }, -- Oathbound Bracers
+    { 274600 }, -- Berserker Shackles
+})
+
+Data:AddBossLoot(3475, { -- Var'Taka
+    { 274602 }, -- Brinebelly Leggings
+})
+
+Data:AddBossLoot(3476, { -- Captain Dreadrise
+    { 274603 }, -- Dreadfrost Saber
+    { 274604 }, -- Frosty Blunderbuss
+})
+
+Data:AddBossLoot(3478, { -- Deathless Guardians
+    { 274607 }, -- Viscera Spaulders
+})
+
+Data:AddBossLoot(3479, { -- Min'loth the Serpent
+    { 274608 }, -- Maw of Min'loth
+})
+
+Data:AddBossLoot(3511, { -- Primeval Elemental
+    { 274611 }, -- Robe of the Drowned
+})
+
 Data:AddBossLoot(-264177, { -- Gill
     { 286646 }, -- Gill's Gills
     { 286649 }, -- Tidebound Dagger
@@ -19,6 +45,7 @@ Data:AddBossLoot(-260468, { -- "Pyromancer" Braxton
 
 Data:AddTrashLoot(2970, {
     { 287002 }, -- Risen Sentry's Links
+    { 286997 }, -- Depth-Risen Leggings
 })
 
 Data:AddQuests(2970, {

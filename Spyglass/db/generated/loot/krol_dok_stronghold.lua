@@ -31,12 +31,21 @@ Data:AddBossLoot(3452, { -- Twilight Commander Zarmok
 Data:AddBossLoot(3453, { -- Handler Ashka
     { 275001 }, -- Bloodied Gutslicer
     { 275002 }, -- War Handler's Gaze
+    { 275003 }, -- Worgbinder's Treads
 })
 
 Data:AddBossLoot(-264773, { -- Bossman Toof
     { 286430 }, -- Toofbreaker
     { 286429 }, -- Big-Belly Belt
     { 286428 }, -- Band of Bossman
+})
+
+Data:AddTrashLoot(3039, {
+    { 287008 }, -- Ogre Magi's Mantle
+    { 287014 }, -- Krol'dok Warplate Pauldrons
+    { 287012 }, -- Krol'dok Warplate Gauntlets
+    { 287013 }, -- Krol'dok Warplate Legplates
+    { 287010 }, -- Outrider's Gloves
 })
 
 Data:AddQuests(3039, {

@@ -314,7 +314,7 @@ Data:AddInstance(209, {
     background = "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenZulFarrak",
     backgroundCoords = { 0, 1, 0.305, 0.695 },
     entrance = { 1446, 39, 20 },
-    bosses = { 593, 594, 595, 596, 597, 598, 599, 600, -10082, -10081 },
+    bosses = { 593, 594, 595, 596, 597, 598, 599, 600, -10082, -10081, -7604 },
 })
 Data:AddBoss(593, { instanceID = 209, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hydromancer Velratha" }) -- Hydromancer Velratha
 Data:AddBoss(594, { instanceID = 209, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Gahzrilla" }) -- Gahz'rilla
@@ -326,6 +326,7 @@ Data:AddBoss(599, { instanceID = 209, order = 6000, portrait = "Interface\\Encou
 Data:AddBoss(600, { instanceID = 209, order = 7000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Chief Ukorz Sandscalp" }) -- Chief Ukorz Sandscalp
 Data:AddBoss(-10082, { instanceID = 209 }) -- Zerillis
 Data:AddBoss(-10081, { instanceID = 209 }) -- Dustwraith
+Data:AddBoss(-7604, { instanceID = 209 }) -- Sergeant Bly
 
 -- Blackrock Spire: Lower
 Data:AddInstance(22901, {
@@ -393,7 +394,7 @@ Data:AddInstance(230, {
     background = "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenBlackrockDepths",
     backgroundCoords = { 0, 1, 0.305, 0.695 },
     entrance = { 1428, 29, 38 },
-    bosses = { 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 2791, 242, 243, 244, 2789, 2790, -9027, -9028, -9029, -9030, -9031, -9032, -8923 },
+    bosses = { 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 2791, 242, 243, 244, 2789, 2790, -9027, -9028, -9029, -9030, -9031, -9032, -8923, -16059 },
 })
 Data:AddBoss(227, { instanceID = 230, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-High Interrogator Gerstahn" }) -- High Interrogator Gerstahn
 Data:AddBoss(228, { instanceID = 230, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Roccor" }) -- Lord Roccor
@@ -423,6 +424,7 @@ Data:AddBoss(-9030, { instanceID = 230 }) -- Ok'thor the Breaker
 Data:AddBoss(-9031, { instanceID = 230 }) -- Anub'shiah
 Data:AddBoss(-9032, { instanceID = 230 }) -- Hedrum the Creeper
 Data:AddBoss(-8923, { instanceID = 230 }) -- Panzor the Invincible
+Data:AddBoss(-16059, { instanceID = 230, rare = true }) -- Theldren
 
 -- Onyxia's Lair
 Data:AddInstance(249, {
@@ -877,7 +879,7 @@ Data:AddInstance(2974, {
     minLevel = 55,
     maxLevel = 60,
     icon = "Interface\\Icons\\INV_Misc_MonsterClaw_04",
-    bosses = { 3315, 3316, 3322, 3323, 3327, 3334, 3336, -269104, -269111 },
+    bosses = { 3315, 3316, 3322, 3323, 3327, 3334, 3336, -269104, -269111, -250034 },
 })
 Data:AddBoss(3315, { instanceID = 2974, order = 0 }) -- Withermaw
 Data:AddBoss(3316, { instanceID = 2974, order = 1000 }) -- Impaan the Imprisoner
@@ -888,6 +890,7 @@ Data:AddBoss(3334, { instanceID = 2974, order = 4000 }) -- Varrox Bleakhoof
 Data:AddBoss(3336, { instanceID = 2974, order = 6000 }) -- Unbound Spirit
 Data:AddBoss(-269104, { instanceID = 2974 }) -- Moontouched Wanderer
 Data:AddBoss(-269111, { instanceID = 2974 }) -- Gortek the Apprentice
+Data:AddBoss(-250034, { instanceID = 2974, rare = true }) -- Tunnelweb Matriarch
 
 -- Alcaz Prison
 Data:AddInstance(2994, {

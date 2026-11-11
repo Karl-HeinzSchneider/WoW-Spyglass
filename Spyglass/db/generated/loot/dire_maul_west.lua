@@ -7,6 +7,7 @@ Data:AddBossLoot(350, { -- Tendris Warpwood
     { 18390 }, -- Tanglemoss Leggings
     { 18393 }, -- Warpwood Binding
     { 18353 }, -- #18353
+    { 18352 }, -- Petrified Bark Shield
 })
 
 Data:AddBossLoot(347, { -- Illyanna Ravenoak

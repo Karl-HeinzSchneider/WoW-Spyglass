@@ -90,7 +90,28 @@
       "id": 1887,
       "name": "Obsidian Sentinel",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Obsidian Sentinel",
-      "loot": []
+      "loot": [
+        {
+          "item": 274430,
+          "name": "Rock Sentinel Slicer"
+        },
+        {
+          "item": 274428,
+          "name": "Dark Golem Breastplate"
+        },
+        {
+          "item": 274425,
+          "name": "White Obsidian Wand"
+        },
+        {
+          "item": 274485,
+          "name": "Axe of Lingering Dread"
+        },
+        {
+          "item": 251400,
+          "name": "Plans: Warder's Boots"
+        }
+      ]
     },
     {
       "id": 551,
@@ -165,10 +186,107 @@
         {
           "item": 9418,
           "name": "Stoneslayer"
+        },
+        {
+          "item": 274432,
+          "name": "Stone Keeper Spire"
         }
       ]
     }
   ],
-  "trash": [],
+  "trash": [
+    {
+      "item": 9425,
+      "name": "Pendulum of Doom"
+    },
+    {
+      "item": 9431,
+      "name": "Papal Fez"
+    },
+    {
+      "item": 9396,
+      "name": "Legguards of the Vault"
+    },
+    {
+      "item": 9393,
+      "name": "Beacon of Hope"
+    },
+    {
+      "item": 9429,
+      "name": "Miner's Hat of the Deep"
+    },
+    {
+      "item": 9424,
+      "name": "Ginn-su Sword"
+    },
+    {
+      "item": 9427,
+      "name": "Stonevault Bonebreaker"
+    },
+    {
+      "item": 9426,
+      "name": "Monolithic Bow"
+    },
+    {
+      "item": 9422,
+      "name": "Shadowforge Bushmaster"
+    },
+    {
+      "item": 9465,
+      "name": "Digmaster 5000"
+    },
+    {
+      "item": 9423,
+      "name": "The Jackhammer"
+    },
+    {
+      "item": 9391,
+      "name": "The Shoveler"
+    },
+    {
+      "item": 9392,
+      "name": "Annealed Blade"
+    },
+    {
+      "item": 9383,
+      "name": "Obsidian Cleaver"
+    },
+    {
+      "item": 9381,
+      "name": "Earthen Rod"
+    },
+    {
+      "item": 9386,
+      "name": "Excavator's Brand"
+    },
+    {
+      "item": 9384,
+      "name": "Stonevault Shiv"
+    },
+    {
+      "item": 9430,
+      "name": "Spaulders of a Lost Age"
+    },
+    {
+      "item": 9432,
+      "name": "Skullplate Bracers"
+    },
+    {
+      "item": 9397,
+      "name": "Energy Cloak"
+    },
+    {
+      "item": 9420,
+      "name": "Adventurer's Pith Helmet"
+    },
+    {
+      "item": 9406,
+      "name": "Spirewind Fetter"
+    },
+    {
+      "item": 9428,
+      "name": "Unearthed Bands"
+    }
+  ],
   "quests": [2240, 704, 17, 2202, 709, 2418, 1360, 2342, 1139, 2204, 2339, 2279, 2280, 1956]
 }

@@ -31,7 +31,32 @@
       "id": 3583,
       "name": "Avatar of Hakkar",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Avatar of Hakkar",
-      "loot": []
+      "loot": [
+        {
+          "item": 10838,
+          "name": "Might of Hakkar"
+        },
+        {
+          "item": 10842,
+          "name": "Windscale Sarong"
+        },
+        {
+          "item": 10843,
+          "name": "Featherskin Cape"
+        },
+        {
+          "item": 10844,
+          "name": "Spire of Hakkar"
+        },
+        {
+          "item": 10845,
+          "name": "Warrior's Embrace"
+        },
+        {
+          "item": 10846,
+          "name": "Bloodshot Greaves"
+        }
+      ]
     },
     {
       "id": 3584,
@@ -79,6 +104,26 @@
         {
           "item": 12243,
           "name": "Smoldering Claw"
+        },
+        {
+          "item": 10795,
+          "name": "Drakeclaw Band"
+        },
+        {
+          "item": 10796,
+          "name": "Drakestone"
+        },
+        {
+          "item": 10797,
+          "name": "Firebreather"
+        },
+        {
+          "item": 12463,
+          "name": "Drakefang Butcher"
+        },
+        {
+          "item": 12464,
+          "name": "Bloodfire Talons"
         }
       ]
     },
@@ -97,6 +142,26 @@
         {
           "item": 12243,
           "name": "Smoldering Claw"
+        },
+        {
+          "item": 10795,
+          "name": "Drakeclaw Band"
+        },
+        {
+          "item": 10796,
+          "name": "Drakestone"
+        },
+        {
+          "item": 10797,
+          "name": "Firebreather"
+        },
+        {
+          "item": 12463,
+          "name": "Drakefang Butcher"
+        },
+        {
+          "item": 12464,
+          "name": "Bloodfire Talons"
         }
       ]
     },
@@ -115,6 +180,26 @@
         {
           "item": 12243,
           "name": "Smoldering Claw"
+        },
+        {
+          "item": 10795,
+          "name": "Drakeclaw Band"
+        },
+        {
+          "item": 10796,
+          "name": "Drakestone"
+        },
+        {
+          "item": 10797,
+          "name": "Firebreather"
+        },
+        {
+          "item": 12463,
+          "name": "Drakefang Butcher"
+        },
+        {
+          "item": 12464,
+          "name": "Bloodfire Talons"
         }
       ]
     },
@@ -134,6 +219,26 @@
         {
           "item": 12243,
           "name": "Smoldering Claw"
+        },
+        {
+          "item": 10795,
+          "name": "Drakeclaw Band"
+        },
+        {
+          "item": 10796,
+          "name": "Drakestone"
+        },
+        {
+          "item": 10797,
+          "name": "Firebreather"
+        },
+        {
+          "item": 12463,
+          "name": "Drakefang Butcher"
+        },
+        {
+          "item": 12464,
+          "name": "Bloodfire Talons"
         }
       ]
     },

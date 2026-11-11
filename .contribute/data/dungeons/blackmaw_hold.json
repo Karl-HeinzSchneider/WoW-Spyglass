@@ -12,23 +12,66 @@
         {
           "item": 280064,
           "name": "Withering Grips"
+        },
+        {
+          "item": 280063,
+          "name": "Bloodfur Bulwark"
+        },
+        {
+          "item": 280062,
+          "name": "Cloak of the Fleshborer"
         }
       ]
     },
     {
       "id": 3316,
       "name": "Impaan the Imprisoner",
-      "loot": []
+      "loot": [
+        {
+          "item": 280057,
+          "name": "Robes of Dark Summons"
+        },
+        {
+          "item": 280056,
+          "name": "Flameslash Crescent"
+        },
+        {
+          "item": 280058,
+          "name": "Impish Chain Hood"
+        }
+      ]
     },
     {
       "id": 3322,
       "name": "Bonesnout the Unbroken",
-      "loot": []
+      "loot": [
+        {
+          "item": 280059,
+          "name": "Tuskblade Halberd"
+        },
+        {
+          "item": 280060,
+          "name": "Lucky Shovelnose Tuft"
+        }
+      ]
     },
     {
       "id": 3323,
       "name": "Blackmaw Behemoth",
-      "loot": []
+      "loot": [
+        {
+          "item": 280065,
+          "name": "Behemoth Bones"
+        },
+        {
+          "item": 280066,
+          "name": "Trousers of the Ebon Giant"
+        },
+        {
+          "item": 280067,
+          "name": "Blackmaw Chain Belt"
+        }
+      ]
     },
     {
       "id": 3327,
@@ -37,6 +80,14 @@
         {
           "item": 280068,
           "name": "Bloody Claws of Attack"
+        },
+        {
+          "item": 280070,
+          "name": "Veilpiercer Girdle"
+        },
+        {
+          "item": 280069,
+          "name": "Shamanic Wristguards"
         }
       ]
     },
@@ -47,6 +98,14 @@
         {
           "item": 280074,
           "name": "Scalding Flamehoof"
+        },
+        {
+          "item": 280076,
+          "name": "Horns of Varrox"
+        },
+        {
+          "item": 280075,
+          "name": "Bleak Eye Shoulderplates"
         }
       ]
     },
@@ -57,6 +116,14 @@
         {
           "item": 280071,
           "name": "Flamebreak Talisman"
+        },
+        {
+          "item": 280072,
+          "name": "Cowl of Dark Ambition"
+        },
+        {
+          "item": 280073,
+          "name": "Burnished Pridescales"
         }
       ]
     },
@@ -83,10 +150,43 @@
         {
           "item": 280077,
           "name": "Fist of Revelation"
+        },
+        {
+          "item": 280078,
+          "name": "Apprentice's Protective Treads"
+        }
+      ]
+    },
+    {
+      "id": -250034,
+      "name": "Tunnelweb Matriarch",
+      "npc": 250034,
+      "rare": true,
+      "loot": [
+        {
+          "item": 280085,
+          "name": "Tunnelweb Pincer"
         }
       ]
     }
   ],
-  "trash": [],
+  "trash": [
+    {
+      "item": 287032,
+      "name": "Den Champion's Binding"
+    },
+    {
+      "item": 251453,
+      "name": "Plans: Breastplate of Salvation"
+    },
+    {
+      "item": 287034,
+      "name": "Grove Subjugator's Blade"
+    },
+    {
+      "item": 287036,
+      "name": "Satyr's Touch"
+    }
+  ],
   "quests": [92343, 92344, 97173, 97198, 92069]
 }

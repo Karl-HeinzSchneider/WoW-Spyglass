@@ -314,6 +314,18 @@
         {
           "item": 11612,
           "name": "Plans: Dark Iron Plate"
+        },
+        {
+          "item": 11742,
+          "name": "Wayfarer's Knapsack"
+        },
+        {
+          "item": 2662,
+          "name": "Ribbly's Quiver"
+        },
+        {
+          "item": 2663,
+          "name": "Ribbly's Bandolier"
         }
       ]
     },
@@ -357,6 +369,10 @@
         {
           "item": 11832,
           "name": "Burst of Knowledge"
+        },
+        {
+          "item": 11808,
+          "name": "Circle of Flame"
         }
       ]
     },
@@ -383,6 +399,18 @@
         {
           "item": 11927,
           "name": "Legplates of the Eternal Guardian"
+        },
+        {
+          "item": 11923,
+          "name": "The Hammer of Grace"
+        },
+        {
+          "item": 11925,
+          "name": "Ghostshroud"
+        },
+        {
+          "item": 11929,
+          "name": "Haunting Specter Leggings"
         }
       ]
     },
@@ -480,6 +508,10 @@
         {
           "item": 22207,
           "name": "Sash of the Grand Hunt"
+        },
+        {
+          "item": 11684,
+          "name": "Ironfoe"
         }
       ]
     },
@@ -647,9 +679,50 @@
           "name": "Soot Encrusted Footwear"
         }
       ]
+    },
+    {
+      "id": -16059,
+      "name": "Theldren",
+      "npc": 16059,
+      "rare": true,
+      "loot": [
+        {
+          "item": 22305,
+          "name": "Ironweave Mantle"
+        }
+      ]
     }
   ],
-  "trash": [],
+  "trash": [
+    {
+      "item": 12549,
+      "name": "Braincage"
+    },
+    {
+      "item": 12542,
+      "name": "Funeral Pyre Vestment"
+    },
+    {
+      "item": 12546,
+      "name": "Aristocratic Cuffs"
+    },
+    {
+      "item": 12550,
+      "name": "Runed Golem Shackles"
+    },
+    {
+      "item": 12555,
+      "name": "Battlechaser's Greaves"
+    },
+    {
+      "item": 12527,
+      "name": "Ribsplitter"
+    },
+    {
+      "item": 12531,
+      "name": "Searing Needle"
+    }
+  ],
   "quests": [
     3802, 4123, 4083, 4136, 4201, 4126, 4134, 4263, 3907, 7201, 4322, 4063, 4132, 4024, 4362, 4003, 4286, 7848, 7604,
     4295
