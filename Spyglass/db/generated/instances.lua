@@ -961,9 +961,9 @@ Data:AddBoss(3499, { instanceID = 3001, order = 1000, displayID = 143040 }) -- R
 Data:AddBoss(3500, { instanceID = 3001, order = 2000, displayID = 144514 }) -- Thunderhoof
 Data:AddBoss(3501, { instanceID = 3001, order = 3000, displayID = 144511 }) -- Venomridge
 Data:AddBoss(3507, { instanceID = 3001, order = 3500, displayID = 144515 }) -- Direhorn Matriarch
-Data:AddBoss(3503, { instanceID = 3001, order = 5000 }) -- Cinder
+Data:AddBoss(3503, { instanceID = 3001, order = 5000, displayID = 143035 }) -- Cinder
 Data:AddBoss(3504, { instanceID = 3001, order = 6000 }) -- King Op
-Data:AddBoss(3597, { instanceID = 3001, order = 6500 }) -- Snowtalon
+Data:AddBoss(3597, { instanceID = 3001, order = 6500, displayID = 143122 }) -- Snowtalon
 Data:AddBoss(3505, { instanceID = 3001, order = 7000, displayID = 143063 }) -- Bolt
 Data:AddBoss(3600, { instanceID = 3001, order = 7500, displayID = 147098 }) -- Vitrix
 Data:AddBoss(3502, { instanceID = 3001, order = 8000, displayID = 143832 }) -- Nanaya

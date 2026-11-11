@@ -112,6 +112,7 @@
     {
       "id": 3503,
       "name": "Cinder",
+      "displayID": 143035,
       "npc": 261974,
       "loot": [
         {
@@ -164,6 +165,7 @@
     {
       "id": 3597,
       "name": "Snowtalon",
+      "displayID": 143122,
       "npc": 262297,
       "loot": [
         {
