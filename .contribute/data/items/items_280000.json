@@ -896,8 +896,7 @@
     "stats": {
       "ATTACK_POWER": 8,
       "CRIT_RATING": 7,
-      "DAMAGE_PER_SECOND": 40.19,
-      "FIST_WEAPONS": 1
+      "DAMAGE_PER_SECOND": 40.19
     }
   },
   "280069": {
@@ -5939,6 +5938,29 @@
     "craftingReagent": false,
     "stats": {
       "STAMINA": 12
+    }
+  },
+  "281599": {
+    "names": {
+      "enUS": "Ragged Colors"
+    },
+    "quality": 2,
+    "itemLevel": 60,
+    "reqLevel": 55,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_CLOAK",
+    "bind": 2,
+    "icon": 133757,
+    "sellPrice": 12114,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ATTACK_POWER": 25,
+      "RESISTANCE0_NAME": 39,
+      "SPIRIT": 5
     }
   },
   "281600": {
@@ -16580,6 +16602,30 @@
       "STAMINA": 16
     }
   },
+  "286613": {
+    "names": {
+      "enUS": "King Mosh's Tooth"
+    },
+    "quality": 3,
+    "itemLevel": 62,
+    "reqLevel": 57,
+    "classID": 2,
+    "subclassID": 15,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 1,
+    "icon": 135646,
+    "sellPrice": 56721,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 11,
+      "ATTACK_POWER": 13,
+      "ATTACK_POWER_VS_BEAST": 15,
+      "DAMAGE_PER_SECOND": 40.63
+    }
+  },
   "286614": {
     "names": {
       "enUS": "Gruff's Tough Tongue"
@@ -18633,6 +18679,30 @@
       "DAMAGE_PER_SECOND": 27.86
     }
   },
+  "287028": {
+    "names": {
+      "enUS": "Tormented Cuffs"
+    },
+    "quality": 3,
+    "itemLevel": 58,
+    "reqLevel": 53,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_WRIST",
+    "bind": 2,
+    "icon": 132612,
+    "sellPrice": 9434,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "HEALTH_REGEN": 14,
+      "RESISTANCE0_NAME": 36,
+      "SPELL_POWER": 9,
+      "STAMINA": 13
+    }
+  },
   "287029": {
     "names": {
       "enUS": "Nature Guardian's Legguards"
@@ -18850,6 +18920,56 @@
       "SPIRIT": 15
     }
   },
+  "287038": {
+    "names": {
+      "enUS": "Naturopathy Footpads"
+    },
+    "quality": 3,
+    "itemLevel": 59,
+    "reqLevel": 54,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_FEET",
+    "bind": 2,
+    "icon": 132539,
+    "sellPrice": 13958,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "HEALTH_REGEN": 18,
+      "RESISTANCE0_NAME": 58,
+      "SPELL_DAMAGE_DONE": 7,
+      "SPELL_HEALING_DONE": 22,
+      "SPIRIT": 17
+    }
+  },
+  "287039": {
+    "names": {
+      "enUS": "Tattered Explorer's Cuffs"
+    },
+    "quality": 3,
+    "itemLevel": 60,
+    "reqLevel": 55,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_WRIST",
+    "bind": 2,
+    "icon": 132615,
+    "sellPrice": 12358,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 74,
+      "SPELL_DAMAGE_DONE": 5,
+      "SPELL_HEALING_DONE": 15,
+      "STAMINA": 13,
+      "STRENGTH": 8
+    }
+  },
   "287040": {
     "names": {
       "enUS": "Dinosaur Hide Belt"
@@ -18920,6 +19040,77 @@
       "RESISTANCE0_NAME": 478,
       "SPIRIT": 11,
       "STAMINA": 12
+    }
+  },
+  "287044": {
+    "names": {
+      "enUS": "Predator's Shroud"
+    },
+    "quality": 3,
+    "itemLevel": 60,
+    "reqLevel": 55,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_CLOAK",
+    "bind": 2,
+    "icon": 133769,
+    "sellPrice": 15380,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 9,
+      "ATTACK_POWER": 11,
+      "RESISTANCE0_NAME": 43,
+      "STAMINA": 14
+    }
+  },
+  "287045": {
+    "names": {
+      "enUS": "Ancient Mattock"
+    },
+    "quality": 3,
+    "itemLevel": 61,
+    "reqLevel": 56,
+    "classID": 2,
+    "subclassID": 0,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 2,
+    "icon": 7816730,
+    "sellPrice": 54025,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 40.19,
+      "SPIRIT": 8,
+      "STAMINA": 8
+    }
+  },
+  "287046": {
+    "names": {
+      "enUS": "Pylon Poker"
+    },
+    "quality": 3,
+    "itemLevel": 61,
+    "reqLevel": 56,
+    "classID": 2,
+    "subclassID": 10,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 2,
+    "icon": 135157,
+    "sellPrice": 67773,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 52.21,
+      "HIT_RATING": 10,
+      "SPIRIT": 16,
+      "STRENGTH": 25
     }
   },
   "287059": {
@@ -19942,6 +20133,24 @@
     "bind": 1,
     "icon": 4624631,
     "sellPrice": 750000,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "288206": {
+    "names": {
+      "enUS": "Recipe: Draught of Water Walking"
+    },
+    "quality": 2,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 9,
+    "subclassID": 6,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134939,
+    "sellPrice": 500,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,

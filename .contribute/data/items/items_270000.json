@@ -43945,6 +43945,32 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "276069": {
+    "names": {
+      "enUS": "Gravetoll Gavel"
+    },
+    "quality": 3,
+    "itemLevel": 59,
+    "reqLevel": 54,
+    "classID": 2,
+    "subclassID": 5,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 1,
+    "icon": 133489,
+    "sellPrice": 57647,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 37.58,
+      "INTELLECT": 21,
+      "SPELL_DAMAGE_DONE": 42,
+      "SPELL_HEALING_DONE": 127,
+      "SPIRIT": 13,
+      "STAMINA": 16
+    }
+  },
   "276070": {
     "names": {
       "enUS": "Chol'aruk's Head"
