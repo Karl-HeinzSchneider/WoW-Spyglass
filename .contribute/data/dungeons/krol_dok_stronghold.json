@@ -67,6 +67,10 @@
         {
           "item": 275010,
           "name": "Strongly Scented Hood"
+        },
+        {
+          "item": 275008,
+          "name": "Mugg's Crosser"
         }
       ]
     },
@@ -150,6 +154,10 @@
     {
       "item": 287010,
       "name": "Outrider's Gloves"
+    },
+    {
+      "item": 287007,
+      "name": "Stretched Footpads"
     }
   ],
   "quests": [94968, 94972, 94975, 94982, 94984, 96771, 94981, 94974, 94998]

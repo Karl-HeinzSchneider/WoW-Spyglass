@@ -56,6 +56,7 @@ Data:AddBossLoot(-269111, { -- Gortek the Apprentice
 
 Data:AddBossLoot(-250034, { -- Tunnelweb Matriarch
     { 280085 }, -- Tunnelweb Pincer
+    { 280086 }, -- Octofinger Gauntlets
 })
 
 Data:AddTrashLoot(2974, {

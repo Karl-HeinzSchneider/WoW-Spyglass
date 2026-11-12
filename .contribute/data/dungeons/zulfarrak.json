@@ -32,6 +32,10 @@
         {
           "item": 9469,
           "name": "Gahz'rilla Scale Armor"
+        },
+        {
+          "item": 274657,
+          "name": "Hydra Leather Legs"
         }
       ]
     },
@@ -108,6 +112,10 @@
         {
           "item": 274645,
           "name": "Desert Ziggurat Drape"
+        },
+        {
+          "item": 274643,
+          "name": "Gutcutter Hatchet"
         }
       ]
     },
@@ -186,6 +194,10 @@
         {
           "item": 12471,
           "name": "Desertwalker Cane"
+        },
+        {
+          "item": 12469,
+          "name": "Mutilator"
         }
       ]
     },
@@ -210,6 +222,37 @@
         {
           "item": 252896,
           "name": "Pattern: Stalker's Mail Boots"
+        }
+      ]
+    },
+    {
+      "id": -10080,
+      "name": "Sandarr Dunereaver",
+      "npc": 10080,
+      "rare": true,
+      "loot": [
+        {
+          "item": 274660,
+          "name": "Sandarr's Shoulders"
+        },
+        {
+          "item": 274659,
+          "name": "Bloodsand Belt"
+        }
+      ]
+    },
+    {
+      "id": -7797,
+      "name": "Ruuzlu",
+      "npc": 7797,
+      "loot": [
+        {
+          "item": 274654,
+          "name": "Sandfury Guillotine"
+        },
+        {
+          "item": 274655,
+          "name": "Peacekeeper Wand"
         }
       ]
     }

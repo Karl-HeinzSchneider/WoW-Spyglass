@@ -67,7 +67,16 @@
       "id": 476,
       "name": "Malor the Zealous",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Commander Malor",
-      "loot": []
+      "loot": [
+        {
+          "item": 276398,
+          "name": "Scarlet Malice"
+        },
+        {
+          "item": 276399,
+          "name": "Plate of the Scarlet Bastion"
+        }
+      ]
     },
     {
       "id": 475,

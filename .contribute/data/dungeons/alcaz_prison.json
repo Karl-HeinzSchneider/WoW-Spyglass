@@ -32,7 +32,20 @@
       "name": "Blazeroar",
       "displayID": 6374,
       "npc": 255702,
-      "loot": []
+      "loot": [
+        {
+          "item": 276744,
+          "name": "Zarla's Snack Pouch"
+        },
+        {
+          "item": 276745,
+          "name": "Beastbond Robe"
+        },
+        {
+          "item": 276746,
+          "name": "Defias Enforcer's Legguards"
+        }
+      ]
     },
     {
       "id": 3410,
@@ -47,6 +60,10 @@
         {
           "item": 276735,
           "name": "Tidesong Wand"
+        },
+        {
+          "item": 276737,
+          "name": "Cloak of the Tidemistress"
         }
       ]
     },
@@ -79,6 +96,14 @@
         {
           "item": 276739,
           "name": "Cutthroat Chestguard"
+        },
+        {
+          "item": 276738,
+          "name": "Katerina's Shanker"
+        },
+        {
+          "item": 276740,
+          "name": "Sentimental Locket"
         }
       ]
     }
@@ -87,6 +112,14 @@
     {
       "item": 287021,
       "name": "Defias Enforcer's Prowlers"
+    },
+    {
+      "item": 287019,
+      "name": "Defias Enforcer's Mask"
+    },
+    {
+      "item": 287018,
+      "name": "Compound Gloves"
     }
   ],
   "quests": [96772]

@@ -19,6 +19,11 @@ Data:AddBossLoot(474, { -- Timmy the Cruel
     { 16724 }, -- Lightforge Gauntlets
 })
 
+Data:AddBossLoot(476, { -- Malor the Zealous
+    { 276398 }, -- Scarlet Malice
+    { 276399 }, -- Plate of the Scarlet Bastion
+})
+
 Data:AddBossLoot(475, { -- Cannon Master Willey
     { 16708 }, -- Shadowcraft Spaulders
     { 22403 }, -- Nacreous Shell Necklace

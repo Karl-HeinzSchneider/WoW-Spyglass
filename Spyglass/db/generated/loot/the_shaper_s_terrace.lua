@@ -36,6 +36,7 @@ Data:AddBossLoot(3502, { -- Nanaya
 
 Data:AddBossLoot(3503, { -- Cinder
     { 280029 }, -- Cinderedge Crescent
+    { 280028 }, -- Heartflame Gauntlets
 })
 
 Data:AddBossLoot(3505, { -- Bolt
@@ -51,10 +52,12 @@ Data:AddBossLoot(3507, { -- Direhorn Matriarch
 
 Data:AddBossLoot(3597, { -- Snowtalon
     { 280026 }, -- Albinofur Grips
+    { 280027 }, -- Crownroar Chestplate
 })
 
 Data:AddBossLoot(3600, { -- Vitrix
     { 280031 }, -- Sparklance Wand
+    { 280028 }, -- Heartflame Gauntlets
 })
 
 Data:AddTrashLoot(3001, {

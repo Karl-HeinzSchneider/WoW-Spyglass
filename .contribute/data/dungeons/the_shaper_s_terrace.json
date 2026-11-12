@@ -120,6 +120,10 @@
         {
           "item": 280029,
           "name": "Cinderedge Crescent"
+        },
+        {
+          "item": 280028,
+          "name": "Heartflame Gauntlets"
         }
       ]
     },
@@ -173,6 +177,10 @@
         {
           "item": 280026,
           "name": "Albinofur Grips"
+        },
+        {
+          "item": 280027,
+          "name": "Crownroar Chestplate"
         }
       ]
     },
@@ -185,6 +193,10 @@
         {
           "item": 280031,
           "name": "Sparklance Wand"
+        },
+        {
+          "item": 280028,
+          "name": "Heartflame Gauntlets"
         }
       ]
     }

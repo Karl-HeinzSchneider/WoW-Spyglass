@@ -6,36 +6,54 @@ local Data = Spyglass.Data
 Data:AddBossLoot(3474, { -- Zul'Alai
     { 274599 }, -- Oathbound Bracers
     { 274600 }, -- Berserker Shackles
+    { 274598 }, -- Bloodslash Axe
+    { 271718 }, -- Linken's Boots of Iron
 })
 
 Data:AddBossLoot(3475, { -- Var'Taka
     { 274602 }, -- Brinebelly Leggings
+    { 274601 }, -- Harpoon of Command
+    { 274613 }, -- Priestess Cloak
+    { 271718 }, -- Linken's Boots of Iron
 })
 
 Data:AddBossLoot(3476, { -- Captain Dreadrise
     { 274603 }, -- Dreadfrost Saber
     { 274604 }, -- Frosty Blunderbuss
+    { 274605 }, -- Briny Sash
+    { 271718 }, -- Linken's Boots of Iron
 })
 
 Data:AddBossLoot(3478, { -- Deathless Guardians
     { 274607 }, -- Viscera Spaulders
+    { 274606 }, -- Bloodspine Staff
+    { 274614 }, -- Knucklebone Ring
+    { 271718 }, -- Linken's Boots of Iron
 })
 
 Data:AddBossLoot(3479, { -- Min'loth the Serpent
     { 274608 }, -- Maw of Min'loth
+    { 274610 }, -- Ritual-Binder's Gloves
+    { 274609 }, -- Serpentbane Crown
+    { 271718 }, -- Linken's Boots of Iron
 })
 
 Data:AddBossLoot(3511, { -- Primeval Elemental
     { 274611 }, -- Robe of the Drowned
+    { 274612 }, -- Waterlogged Burial Shroud
+    { 274615 }, -- Heart of the Primeval
+    { 271718 }, -- Linken's Boots of Iron
 })
 
 Data:AddBossLoot(-264177, { -- Gill
     { 286646 }, -- Gill's Gills
     { 286649 }, -- Tidebound Dagger
+    { 271718 }, -- Linken's Boots of Iron
 })
 
 Data:AddBossLoot(-264172, { -- Umbra
     { 286662 }, -- Deep-Dweller's Grips
+    { 286658 }, -- Umbral Scaled Belt
 })
 
 Data:AddBossLoot(-260468, { -- "Pyromancer" Braxton
@@ -46,6 +64,7 @@ Data:AddBossLoot(-260468, { -- "Pyromancer" Braxton
 Data:AddTrashLoot(2970, {
     { 287002 }, -- Risen Sentry's Links
     { 286997 }, -- Depth-Risen Leggings
+    { 287005 }, -- Sword of Dismemberment
 })
 
 Data:AddQuests(2970, {

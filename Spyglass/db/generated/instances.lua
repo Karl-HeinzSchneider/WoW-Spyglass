@@ -314,7 +314,7 @@ Data:AddInstance(209, {
     background = "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenZulFarrak",
     backgroundCoords = { 0, 1, 0.305, 0.695 },
     entrance = { 1446, 39, 20 },
-    bosses = { 593, 594, 595, 596, 597, 598, 599, 600, -10082, -10081, -7604 },
+    bosses = { 593, 594, 595, 596, 597, 598, 599, 600, -10082, -10081, -7604, -10080, -7797 },
 })
 Data:AddBoss(593, { instanceID = 209, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hydromancer Velratha" }) -- Hydromancer Velratha
 Data:AddBoss(594, { instanceID = 209, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Gahzrilla" }) -- Gahz'rilla
@@ -327,6 +327,8 @@ Data:AddBoss(600, { instanceID = 209, order = 7000, portrait = "Interface\\Encou
 Data:AddBoss(-10082, { instanceID = 209, displayID = 9293 }) -- Zerillis
 Data:AddBoss(-10081, { instanceID = 209, displayID = 9292 }) -- Dustwraith
 Data:AddBoss(-7604, { instanceID = 209, displayID = 6433 }) -- Sergeant Bly
+Data:AddBoss(-10080, { instanceID = 209, rare = true }) -- Sandarr Dunereaver
+Data:AddBoss(-7797, { instanceID = 209 }) -- Ruuzlu
 
 -- Blackrock Spire: Lower
 Data:AddInstance(22901, {
