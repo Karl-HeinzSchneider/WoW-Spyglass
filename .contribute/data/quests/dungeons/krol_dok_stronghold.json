@@ -72,6 +72,7 @@
       "id": 94907,
       "name": "A Small Favor",
       "side": "Alliance",
+      "xp": 3750,
       "objective": "Summon a Twilight's Thrall from a conduit within the Twilight's Shroud and capture it with Amberhall's Soulstone.",
       "requires": [94881],
       "start": {
@@ -89,14 +90,16 @@
       "name": "Eye of Mugg",
       "side": "Horde",
       "requiredLevel": 40,
-      "xp": 13000,
+      "xp": 11500,
       "objective": "Infiltrate Krol'dok Stronghold and return to Krom'rosh with proof of their leader's demise.",
       "start": {
         "npc": "Krom'rosh",
+        "location": [2548, 59.4, 45.5],
         "description": "Riverglades (exact spot not known yet)"
       },
       "turnIn": {
         "npc": "Krom'rosh",
+        "location": [2548, 59.4, 45.5],
         "description": "Riverglades"
       },
       "items": [
@@ -119,7 +122,7 @@
       "name": "Tome of Twilight",
       "side": "Horde",
       "requiredLevel": 39,
-      "xp": 12450,
+      "xp": 11050,
       "objective": "Recover the Tome of Twilight from Krol'dok Stronghold.",
       "start": {
         "description": "Riverglades (giver not known yet)"
@@ -161,15 +164,17 @@
       "side": "Horde",
       "requiredLevel": 38,
       "xp": 3300,
-      "objective": "Bring 4 Thick Leather and 12 Iron Bar to Kreza Darkthorn.",
+      "objective": "Bring 4 Thick Leather and 12 Iron Bars to Kreza Darkthorn.",
       "description": "Keep any Krol'dok Moulding you loot: it starts the quest before this one.",
       "requires": [94973],
       "start": {
         "npc": "Kreza Darkthorn",
+        "location": [2548, 59.8, 46],
         "description": "Rog'mar, Riverglades"
       },
       "turnIn": {
         "npc": "Kreza Darkthorn",
+        "location": [2548, 59.8, 46],
         "description": "Rog'mar, Riverglades"
       },
       "items": [
@@ -184,7 +189,7 @@
       "name": "A Token of Vengeance",
       "side": "Horde",
       "requiredLevel": 38,
-      "xp": 9250,
+      "xp": 8200,
       "objective": "Collect 15 Cultist Ears from the Twilight's Hammer in Krol'dok Stronghold.",
       "start": {
         "description": "Riverglades (giver not known yet)"
@@ -227,10 +232,12 @@
       "requires": [94980],
       "start": {
         "npc": "Alphonse Dumas",
+        "location": [2548, 64.4, 82],
         "description": "Farholde Keep, Riverglades"
       },
       "turnIn": {
         "npc": "Alphonse Dumas",
+        "location": [2548, 64.4, 82],
         "description": "Farholde Keep, Riverglades"
       },
       "items": [
@@ -245,7 +252,7 @@
       "name": "Eye of Mugg",
       "side": "Alliance",
       "requiredLevel": 40,
-      "xp": 13000,
+      "xp": 11500,
       "objective": "Infiltrate Krol'dok Stronghold and return to Commander Brant with proof of their leader's demise.",
       "start": {
         "npc": "Commander Demar Brant",
@@ -275,7 +282,7 @@
       "name": "Twilight Mementos",
       "side": "Alliance",
       "requiredLevel": 38,
-      "xp": 11500,
+      "xp": 10200,
       "objective": "Collect 8 Twilight Bangles from the Twilight's Hammer in Krol'dok Stronghold.",
       "requires": [94890],
       "start": {
@@ -294,15 +301,17 @@
       "name": "Tome of Twilight",
       "side": "Alliance",
       "requiredLevel": 39,
-      "xp": 12450,
+      "xp": 11050,
       "objective": "Kill Nar'gurk in Krol'dok Stronghold and recover any valuable information.",
       "requires": [94907],
       "start": {
         "npc": "Ashe Amberhall",
+        "location": [2548, 66.6, 81],
         "description": "Riverglades (exact spot not known yet)"
       },
       "turnIn": {
         "npc": "Ashe Amberhall",
+        "location": [2548, 66.6, 81],
         "description": "Riverglades"
       },
       "items": [
@@ -364,7 +373,7 @@
       "name": "Vengeance of the Highborne",
       "side": "Alliance",
       "requiredLevel": 37,
-      "xp": 13000,
+      "xp": 11500,
       "objective": "Travel to Krol'dok Stronghold and slay Zalfan Moonshadow.",
       "description": "Zalfan Moonshadow, a highborne among the Twilight's Hammer inside the stronghold; where he stands is not known yet.",
       "start": {

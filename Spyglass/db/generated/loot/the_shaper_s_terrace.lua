@@ -69,4 +69,22 @@ Data:AddQuests(3001, {
         { 279904 }, -- Crystalline Pauldrons
         { 279906 }, -- Potent Treads
     } },
+    { id = 97049, name = "Essence of Seeping Slimes", side = "Horde", requiredLevel = 55, xp = 17650, objective = "Gather 8 Seeping Slime Essence in the Shaper's Terrace.", description = "Quest giver not known yet.", items = {
+        { 279932 }, -- Slime-Resistant Shroud
+        { 279902 }, -- Reinforced Muck Protectors
+    } },
+    { id = 95926, name = "The Dark Crystal", side = "Horde", requiredLevel = 55, xp = 6600, objective = "Gather a colorless Drained Crystal Fragment near the Achromatic Crystal in the Shaper's Terrace.", description = "Quest giver not known yet.", items = {
+        { 279908 }, -- Crystal-Infused Cleaver
+        { 279910 }, -- Beastslayer's Trident
+        { 279912 }, -- Faintly Glowing Orb
+    } },
+    { id = 95924, name = "Panic at the Digsite", side = "Alliance", requiredLevel = 55, xp = 17650, objective = "Slay Venomridge, 6 Ravasaur Matriarchs and 8 Ironhide Ravasaurs in Shaper's Terrace.", description = "Quest giver not known yet. The quest text asks for 9 Ironhide Ravasaurs, its objective counts 8.", items = {
+        { 279903 }, -- Diemetradon Scale Spaulders
+        { 279905 }, -- Ravasaur Hide Footpads
+    } },
+    { id = 95925, name = "Mapping the Way Forward", side = "Alliance", requiredLevel = 55, xp = 17650, objective = "Find Interesting Landmarks in Shaper's Terrace and fill out the explorer's map at each: the Pillar of Assimilation, the Achromatic Crystal, the Western Gates, the Regrowth Vestibule and the Unearthed Stone Watcher.", description = "Quest giver not known yet. You map them with an Explorers' League Cartographer's Kit.", items = {
+        { 279908 }, -- Crystal-Infused Cleaver
+        { 279910 }, -- Beastslayer's Trident
+        { 279912 }, -- Faintly Glowing Orb
+    } },
 })

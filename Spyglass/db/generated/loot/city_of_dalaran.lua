@@ -69,7 +69,7 @@ Data:AddQuests(2959, {
         { 251962 }, -- Violet Sash
         { 279849 }, -- Runebound Gloves
     } },
-    { id = 92457, name = "Starving Arcane", side = "Alliance", requiredLevel = 24, xp = 9400, objective = "Defeat 8 Seeking Remnants, 8 Saturated Remnants, and 8 Mana Echoes inside the City of Dalaran for Archmage Modera outside of Dalaran.", description = "There may not be enough of these mobs inside to finish it in one run.", requires = { { id = 92432, name = "An Alarming Request" } }, start = { description = "Lordamere Lake near Dalaran.", location = { 1416, 9.2, 60 }, npc = "Image of Archmage Modera" }, turnIn = { description = "Lordamere Lake near Dalaran.", location = { 1416, 9.2, 60 }, npc = "Image of Archmage Modera" }, items = {
+    { id = 92457, name = "Starving Arcane", side = "Alliance", requiredLevel = 30, xp = 9400, objective = "Defeat 8 Seeking Remnants, 8 Saturated Remnants, and 8 Mana Echoes inside the City of Dalaran for Archmage Modera outside of Dalaran.", description = "There may not be enough of these mobs inside to finish it in one run.", requires = { { id = 92432, name = "An Alarming Request" } }, start = { description = "Lordamere Lake near Dalaran.", location = { 1416, 9.2, 60 }, npc = "Image of Archmage Modera" }, turnIn = { description = "Lordamere Lake near Dalaran.", location = { 1416, 9.2, 60 }, npc = "Image of Archmage Modera" }, items = {
         { 279837 }, -- Fallen Guard's Pendant
         { 279838 }, -- Arcane Infused Rod
     } },

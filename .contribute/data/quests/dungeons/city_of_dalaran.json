@@ -60,7 +60,7 @@
       "id": 92457,
       "name": "Starving Arcane",
       "side": "Alliance",
-      "requiredLevel": 24,
+      "requiredLevel": 30,
       "xp": 9400,
       "objective": "Defeat 8 Seeking Remnants, 8 Saturated Remnants, and 8 Mana Echoes inside the City of Dalaran for Archmage Modera outside of Dalaran.",
       "description": "There may not be enough of these mobs inside to finish it in one run.",

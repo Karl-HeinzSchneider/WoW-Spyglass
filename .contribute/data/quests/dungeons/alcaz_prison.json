@@ -5,12 +5,402 @@
       "name": "The Dragon's Journal",
       "side": "Alliance",
       "requiredLevel": 46,
-      "xp": 14410,
+      "xp": 14400,
       "objective": "Recover Zarla's Journal from the depths of Alcaz Prison.",
       "description": "Reported to start in Dalaran; who gives it is not known yet.",
       "start": {
         "npc": "Dalaran",
         "description": "Alterac Mountains (giver not known yet)"
+      },
+      "turnIn": {
+        "npc": "Archmage Lan'dalock",
+        "location": [1416, 15.4, 73.8],
+        "description": "at the Violet Hold entrance in Dalaran, Alterac Mountains"
+      },
+      "items": []
+    },
+    {
+      "id": 95483,
+      "name": "Thrall Needs to Know",
+      "side": "Horde",
+      "requiredLevel": 48,
+      "xp": 2400,
+      "objective": "Bring word of Varian Wrynn's fate to Thrall in Orgrimmar.",
+      "requires": [96369],
+      "start": {
+        "npc": "Commander Folkar",
+        "description": "inside Alcaz Prison"
+      },
+      "turnIn": {
+        "npc": "Thrall",
+        "location": [1454, 32, 37.8],
+        "description": "Valley of Wisdom, Orgrimmar"
+      },
+      "items": [
+        {
+          "item": 279831,
+          "name": "Fatebound Buckler"
+        },
+        {
+          "item": 279833,
+          "name": "Courier's Clasp"
+        },
+        {
+          "item": 279474,
+          "name": "Dustwallow Dirk"
+        }
+      ]
+    },
+    {
+      "id": 95283,
+      "name": "The Missing Kor'kron",
+      "side": "Horde",
+      "requiredLevel": 48,
+      "xp": 1300,
+      "objective": "Speak with Nazeer Bloodspike in Brackenwall Village.",
+      "start": {
+        "npc": "Eitrigg",
+        "location": [1454, 34.4, 38.6],
+        "description": "Grommash Hold (Thrall's room), Orgrimmar"
+      },
+      "turnIn": {
+        "npc": "Nazeer Bloodspike",
+        "location": [1445, 36, 31],
+        "description": "Brackenwall Village, Dustwallow Marsh"
+      },
+      "items": []
+    },
+    {
+      "id": 95284,
+      "name": "The Elite of the Elite",
+      "side": "Horde",
+      "requiredLevel": 48,
+      "xp": 1300,
+      "objective": "Find the missing Kor'kron Elites.",
+      "description": "Nazeer offers it even before you hand in The Missing Kor'kron.",
+      "requires": [95283],
+      "start": {
+        "npc": "Nazeer Bloodspike",
+        "location": [1445, 36, 31],
+        "description": "Brackenwall Village, Dustwallow Marsh"
+      },
+      "turnIn": {
+        "npc": "Sergeant Ulka",
+        "location": [1445, 70.2, 18.8],
+        "description": "outside Alcaz Prison, Alcaz Island, Dustwallow Marsh"
+      },
+      "items": []
+    },
+    {
+      "id": 95285,
+      "name": "Right Place, Wrong Time",
+      "side": "Horde",
+      "requiredLevel": 48,
+      "xp": 1300,
+      "objective": "Speak with Sergeant Ulka to learn more about the situation on Alcaz Isle.",
+      "description": "Sergeant Ulka then offers No Orc Left Behind, A Little Payback and Blood Red Bandanas.",
+      "requires": [95284],
+      "start": {
+        "npc": "Sergeant Ulka",
+        "location": [1445, 70.2, 18.8],
+        "description": "outside Alcaz Prison, Alcaz Island, Dustwallow Marsh"
+      },
+      "turnIn": {
+        "npc": "Sergeant Ulka",
+        "location": [1445, 70.2, 18.8],
+        "description": "outside Alcaz Prison, Alcaz Island, Dustwallow Marsh"
+      },
+      "items": []
+    },
+    {
+      "id": 95309,
+      "name": "No Orc Left Behind",
+      "side": "Horde",
+      "requiredLevel": 48,
+      "xp": 12100,
+      "objective": "Find Commander Folkar inside Alcaz Prison.",
+      "requires": [95285],
+      "followUps": [95454, 96369, 95483],
+      "start": {
+        "npc": "Sergeant Ulka",
+        "location": [1445, 70.2, 18.8],
+        "description": "outside Alcaz Prison, Dustwallow Marsh"
+      },
+      "turnIn": {
+        "npc": "Commander Folkar",
+        "description": "inside Alcaz Prison"
+      },
+      "items": []
+    },
+    {
+      "id": 95454,
+      "name": "The Honor of the Kor'kron",
+      "side": "Horde",
+      "requiredLevel": 48,
+      "xp": 12100,
+      "objective": "Look for King Varian Wrynn in Alcaz Prison.",
+      "requires": [95309],
+      "followUps": [96369, 95483],
+      "start": {
+        "npc": "Commander Folkar",
+        "description": "inside Alcaz Prison"
+      },
+      "turnIn": {
+        "npc": "Perfumed Note",
+        "description": "after Blazeroar, inside Alcaz Prison"
+      },
+      "items": []
+    },
+    {
+      "id": 96369,
+      "name": "Bad News for Folkar",
+      "side": "Horde",
+      "requiredLevel": 48,
+      "xp": 2400,
+      "objective": "Tell Commander Folkar what you found.",
+      "requires": [95454],
+      "start": {
+        "npc": "Perfumed Note",
+        "description": "after Blazeroar, inside Alcaz Prison"
+      },
+      "turnIn": {
+        "npc": "Commander Folkar",
+        "description": "inside Alcaz Prison"
+      },
+      "items": []
+    },
+    {
+      "id": 96334,
+      "name": "Blood Red Bandanas",
+      "side": "Horde",
+      "requiredLevel": 48,
+      "xp": 9700,
+      "objective": "Enter Alcaz Prison and collect 8 Blood Red Bandanas from the human guards there.",
+      "requires": [95285],
+      "start": {
+        "npc": "Sergeant Ulka",
+        "location": [1445, 70.2, 18.8],
+        "description": "outside Alcaz Prison, Alcaz Island, Dustwallow Marsh"
+      },
+      "turnIn": {
+        "npc": "Eitrigg",
+        "location": [1454, 34.4, 38.6],
+        "description": "Grommash Hold, Orgrimmar"
+      },
+      "items": [
+        {
+          "item": 279448,
+          "name": "Bloodsplattered Bandana"
+        },
+        {
+          "item": 279473,
+          "name": "Makeshift Belt"
+        }
+      ]
+    },
+    {
+      "id": 96332,
+      "name": "A Little Payback",
+      "side": "Horde",
+      "requiredLevel": 48,
+      "xp": 9700,
+      "objective": "Enter the Alcaz Prison and slay 15 Strashaz Soldiers, 8 Strashaz Enchantresses, and bring the head of Tidemistress Ca'zass to Sergeant Ulka.",
+      "requires": [95285],
+      "start": {
+        "npc": "Sergeant Ulka",
+        "location": [1445, 70.2, 18.8],
+        "description": "outside Alcaz Prison, Alcaz Island, Dustwallow Marsh"
+      },
+      "turnIn": {
+        "npc": "Sergeant Ulka",
+        "location": [1445, 70.2, 18.8],
+        "description": "outside Alcaz Prison, Alcaz Island, Dustwallow Marsh"
+      },
+      "items": [
+        {
+          "item": 279824,
+          "name": "Kor'kron Battle Gauntlets"
+        },
+        {
+          "item": 279826,
+          "name": "Marshdweller's Pants"
+        },
+        {
+          "item": 279829,
+          "name": "Naga Scale Spaulders"
+        }
+      ]
+    },
+    {
+      "id": 95263,
+      "name": "Somber News",
+      "side": "Alliance",
+      "requiredLevel": 48,
+      "xp": 2850,
+      "objective": "Return to Sully McCleary in Dustwallow Marsh.",
+      "requires": [95262],
+      "start": {
+        "description": "Inside Alcaz Prison, once you learn what became of King Varian Wrynn"
+      },
+      "turnIn": {
+        "npc": "Sully McCleary",
+        "location": [1445, 66.2, 45.2],
+        "description": "in the inn in Theramore, Dustwallow Marsh"
+      },
+      "items": []
+    },
+    {
+      "id": 95194,
+      "name": "Our Man in Theramore",
+      "side": "Alliance",
+      "requiredLevel": 48,
+      "xp": 1300,
+      "objective": "Seek out the SI:7 agent stationed on Theramore Isle.",
+      "start": {
+        "npc": "Mathias Shaw",
+        "location": [1453, 75.8, 59.8],
+        "description": "Master Mathias Shaw, SI:7, Old Town, Stormwind City"
+      },
+      "turnIn": {
+        "npc": "Sully McCleary",
+        "location": [1445, 66.2, 45.2],
+        "description": "in the inn in Theramore, Dustwallow Marsh"
+      },
+      "items": []
+    },
+    {
+      "id": 95196,
+      "name": "Watch Yer Back",
+      "side": "Alliance",
+      "requiredLevel": 48,
+      "xp": 1300,
+      "objective": "Meet Sully McCleary in Dustwallow Marsh and learn more about your mission.",
+      "requires": [95194],
+      "start": {
+        "npc": "Sully McCleary",
+        "location": [1445, 66.2, 45.2],
+        "description": "in the inn in Theramore, Dustwallow Marsh"
+      },
+      "turnIn": {
+        "npc": "Sully McCleary",
+        "location": [1445, 63.4, 42.4],
+        "description": "outside Theramore across the bridge, Dustwallow Marsh"
+      },
+      "items": []
+    },
+    {
+      "id": 95198,
+      "name": "The Return of the King?",
+      "side": "Alliance",
+      "requiredLevel": 48,
+      "xp": 1300,
+      "objective": "Use the SI:7 Disguise Kit to eavesdrop on Jaina and her inner circle at the Theramore Mage Tower.",
+      "description": "Up the tower, talk to the guard next to Archmage Tervosh (he looks like you in the disguise) and relieve him; don't get close to Jaina or she dispels it. You stay stuck a while after it completes: use Exit Vehicle.",
+      "requires": [95196],
+      "start": {
+        "npc": "Sully McCleary",
+        "location": [1445, 63.4, 42.4],
+        "description": "outside Theramore across the bridge, Dustwallow Marsh"
+      },
+      "turnIn": {
+        "npc": "Sully McCleary",
+        "location": [1445, 66.2, 45.2],
+        "description": "in the inn in Theramore, Dustwallow Marsh"
+      },
+      "items": []
+    },
+    {
+      "id": 95262,
+      "name": "The Secret Prison",
+      "side": "Alliance",
+      "requiredLevel": 48,
+      "xp": 14400,
+      "objective": "Enter Alcaz Prison and learn what became of the King of Stormwind.",
+      "requires": [95198],
+      "followUps": [95263],
+      "start": {
+        "npc": "Sully McCleary",
+        "location": [1445, 66.2, 45.2],
+        "description": "in the inn in Theramore, Dustwallow Marsh"
+      },
+      "turnIn": {
+        "description": "Inside Alcaz Prison (who takes it is not known yet)"
+      },
+      "items": []
+    },
+    {
+      "id": 96381,
+      "name": "A Bit of Wet Work",
+      "side": "Alliance",
+      "requiredLevel": 48,
+      "xp": 11550,
+      "objective": "Enter the Alcaz Prison and slay 15 Strashaz Soldiers, 8 Strashaz Enchantresses, and bring the head of Tidemistress Ca'zass to Sully McCleary.",
+      "requires": [95198],
+      "start": {
+        "npc": "Sully McCleary",
+        "location": [1445, 66.2, 45.2],
+        "description": "in the inn in Theramore, Dustwallow Marsh"
+      },
+      "turnIn": {
+        "npc": "Sully McCleary",
+        "location": [1445, 66.2, 45.2],
+        "description": "in the inn in Theramore, Dustwallow Marsh"
+      },
+      "items": [
+        {
+          "item": 279825,
+          "name": "Theramore Defender's Gauntlets"
+        },
+        {
+          "item": 279826,
+          "name": "Marshdweller's Pants"
+        },
+        {
+          "item": 279829,
+          "name": "Naga Scale Spaulders"
+        }
+      ]
+    },
+    {
+      "id": 96337,
+      "name": "More Valuable Than Gold",
+      "side": "Both",
+      "requiredLevel": 48,
+      "xp": 11550,
+      "objective": "Use the note provided by Mason Connery to find his hidden treasure.",
+      "description": "The Document Box sells for 25g, and it starts State Secrets (a Horde, an Alliance and a Steamwheedle Cartel version); who takes it is not known yet.\nDon't kill The Questioner before the last boss, or you can't get this quest.",
+      "requires": [96335],
+      "start": {
+        "npc": "Mason Connery",
+        "description": "inside Alcaz Prison, once you free him"
+      },
+      "turnIn": {
+        "npc": "Loose Floorboard",
+        "location": [1436, 43.4, 67.8],
+        "description": "Mason Connery's treasure: a loose floorboard upstairs in the middle room of the Moonbrook inn, Westfall"
+      },
+      "items": [
+        {
+          "item": 274041,
+          "name": "Document Box"
+        }
+      ]
+    },
+    {
+      "id": 96335,
+      "name": "The Man in the Iron Chains",
+      "side": "Both",
+      "requiredLevel": 48,
+      "xp": 2850,
+      "objective": "Recover the Alcaz Shackle Key from The Questioner in Alcaz Prison.",
+      "followUps": [96337],
+      "start": {
+        "npc": "Mason Connery",
+        "description": "the man in iron chains, inside Alcaz Prison"
+      },
+      "turnIn": {
+        "npc": "Mason Connery",
+        "description": "inside Alcaz Prison"
       },
       "items": []
     }
