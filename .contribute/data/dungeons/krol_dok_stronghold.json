@@ -4,6 +4,8 @@
   "minLevel": 40,
   "maxLevel": 45,
   "icon": "Interface\\Icons\\INV_Misc_Key_13",
+  "background": 7963780,
+  "backgroundCoords": [0, 1, 0.154, 0.846],
   "encounters": [
     {
       "id": 3449,

@@ -4,6 +4,8 @@
   "minLevel": 35,
   "maxLevel": 40,
   "icon": "Interface\\Icons\\Spell_Frost_SummonWaterElemental",
+  "background": 7963741,
+  "backgroundCoords": [0, 1, 0.154, 0.846],
   "encounters": [
     {
       "id": 3474,

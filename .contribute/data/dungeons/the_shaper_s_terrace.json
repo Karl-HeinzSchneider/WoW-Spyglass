@@ -4,6 +4,8 @@
   "minLevel": 58,
   "maxLevel": 60,
   "icon": "Interface\\Icons\\INV_Misc_Gem_Crystal_02",
+  "background": 7963783,
+  "backgroundCoords": [0, 1, 0.154, 0.846],
   "encounters": [
     {
       "id": 3498,

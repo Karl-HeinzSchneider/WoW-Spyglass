@@ -860,6 +860,8 @@ Data:AddInstance(2970, {
     minLevel = 35,
     maxLevel = 40,
     icon = "Interface\\Icons\\Spell_Frost_SummonWaterElemental",
+    background = 7963741,
+    backgroundCoords = { 0, 1, 0.154, 0.846 },
     bosses = { 3474, 3475, 3476, 3478, 3479, 3511, -264177, -264172, -260468 },
 })
 Data:AddBoss(3474, { instanceID = 2970, order = 0, displayID = 144475 }) -- Zul'Alai
@@ -879,6 +881,8 @@ Data:AddInstance(2974, {
     minLevel = 55,
     maxLevel = 60,
     icon = "Interface\\Icons\\INV_Misc_MonsterClaw_04",
+    background = 7963784,
+    backgroundCoords = { 0, 1, 0.154, 0.846 },
     bosses = { 3315, 3316, 3322, 3323, 3327, 3334, 3336, -269104, -269111, -250034 },
 })
 Data:AddBoss(3315, { instanceID = 2974, order = 0, displayID = 140708 }) -- Withermaw
@@ -899,6 +903,8 @@ Data:AddInstance(2994, {
     minLevel = 48,
     maxLevel = 53,
     icon = "Interface\\Icons\\INV_Misc_Key_14",
+    background = 7963734,
+    backgroundCoords = { 0, 1, 0.154, 0.846 },
     bosses = { 3403, 3410, 3418, 3415, 3409 },
 })
 Data:AddBoss(3403, { instanceID = 2994, order = 0, displayID = 7914 }) -- Overseer Wrex
@@ -954,6 +960,8 @@ Data:AddInstance(3001, {
     minLevel = 58,
     maxLevel = 60,
     icon = "Interface\\Icons\\INV_Misc_Gem_Crystal_02",
+    background = 7963783,
+    backgroundCoords = { 0, 1, 0.154, 0.846 },
     bosses = { 3498, 3499, 3500, 3501, 3507, 3503, 3504, 3597, 3505, 3600, 3502 },
 })
 Data:AddBoss(3498, { instanceID = 3001, order = 0, displayID = 142989 }) -- Titanosaur
@@ -975,6 +983,8 @@ Data:AddInstance(3039, {
     minLevel = 40,
     maxLevel = 45,
     icon = "Interface\\Icons\\INV_Misc_Key_13",
+    background = 7963780,
+    backgroundCoords = { 0, 1, 0.154, 0.846 },
     bosses = { 3449, 3450, 3451, 3452, 3453, -264773 },
 })
 Data:AddBoss(3449, { instanceID = 3039, order = 4500, displayID = 141215 }) -- Nar'gurk
