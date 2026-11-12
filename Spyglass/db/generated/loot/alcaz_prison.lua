@@ -9,9 +9,16 @@ Data:AddBossLoot(3403, { -- Overseer Wrex
     { 276732 }, -- Alcaz Willcrusher
 })
 
+Data:AddBossLoot(3409, { -- Blazeroar
+    { 276744 }, -- Zarla's Snack Pouch
+    { 276745 }, -- Beastbond Robe
+    { 276746 }, -- Defias Enforcer's Legguards
+})
+
 Data:AddBossLoot(3410, { -- Tidemistress Ca'zass
     { 276736 }, -- Seascale Bracers
     { 276735 }, -- Tidesong Wand
+    { 276737 }, -- Cloak of the Tidemistress
 })
 
 Data:AddBossLoot(3415, { -- The Questioner
@@ -22,10 +29,14 @@ Data:AddBossLoot(3415, { -- The Questioner
 
 Data:AddBossLoot(3418, { -- Katerina the Cleaner
     { 276739 }, -- Cutthroat Chestguard
+    { 276738 }, -- Katerina's Shanker
+    { 276740 }, -- Sentimental Locket
 })
 
 Data:AddTrashLoot(2994, {
     { 287021 }, -- Defias Enforcer's Prowlers
+    { 287019 }, -- Defias Enforcer's Mask
+    { 287018 }, -- Compound Gloves
 })
 
 Data:AddQuests(2994, {

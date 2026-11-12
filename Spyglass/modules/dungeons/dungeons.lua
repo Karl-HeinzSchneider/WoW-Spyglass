@@ -37,9 +37,6 @@ SG:RegisterModule({
             SG.InstanceFolder(42903), -- Dire Maul: North
             SG.InstanceFolder(329), -- Stratholme
             SG.InstanceFolder(289), -- Scholomance
-            SG.InstanceFolder(2720), -- The Searing Basin
-            SG.InstanceFolder(2784), -- Demon Fall Canyon
-            SG.InstanceFolder(2875), -- Karazhan Crypts
             SG.InstanceFolder(2994),
             SG.InstanceFolder(2970),
             SG.InstanceFolder(3001),

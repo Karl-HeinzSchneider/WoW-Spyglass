@@ -379,6 +379,7 @@
     {
       "id": 243,
       "name": "The Seven",
+      "displayID": 8687,
       "loot": [
         {
           "item": 11920,
@@ -518,6 +519,7 @@
     {
       "id": -9027,
       "name": "Gorosh the Dervish",
+      "displayID": 8760,
       "npc": 9027,
       "loot": [
         {
@@ -541,6 +543,7 @@
     {
       "id": -9028,
       "name": "Grizzle",
+      "displayID": 7873,
       "npc": 9028,
       "loot": [
         {
@@ -568,6 +571,7 @@
     {
       "id": -9029,
       "name": "Eviscerator",
+      "displayID": 523,
       "npc": 9029,
       "loot": [
         {
@@ -591,6 +595,7 @@
     {
       "id": -9030,
       "name": "Ok'thor the Breaker",
+      "displayID": 11538,
       "npc": 9030,
       "loot": [
         {
@@ -614,6 +619,7 @@
     {
       "id": -9031,
       "name": "Anub'shiah",
+      "displayID": 3004,
       "npc": 9031,
       "loot": [
         {
@@ -637,6 +643,7 @@
     {
       "id": -9032,
       "name": "Hedrum the Creeper",
+      "displayID": 8271,
       "npc": 9032,
       "loot": [
         {
@@ -660,6 +667,7 @@
     {
       "id": -8923,
       "name": "Panzor the Invincible",
+      "displayID": 8270,
       "npc": 8923,
       "loot": [
         {

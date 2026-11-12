@@ -13,6 +13,7 @@ Data:AddBossLoot(2749, { -- Razorclaw the Butcher
     { 1292 }, -- Butcher's Cleaver
     { 6226 }, -- Bloody Apron
     { 6633 }, -- Butcher's Slicer
+    { 273096 }, -- Blueprint: Tanning Rack
 })
 
 Data:AddBossLoot(-3864, { -- Fel Steed

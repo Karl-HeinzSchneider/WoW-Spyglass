@@ -10,6 +10,7 @@ Data:AddBossLoot(593, { -- Hydromancer Velratha
 Data:AddBossLoot(594, { -- Gahz'rilla
     { 9467 }, -- Gahz'rilla Fang
     { 9469 }, -- Gahz'rilla Scale Armor
+    { 274657 }, -- Hydra Leather Legs
 })
 
 Data:AddBossLoot(595, { -- Antu'sul
@@ -34,6 +35,7 @@ Data:AddBossLoot(597, { -- Witch Doctor Zum'rah
 Data:AddBossLoot(598, { -- Nekrum Gutchewer
     { 274644 }, -- Undying Headdress
     { 274645 }, -- Desert Ziggurat Drape
+    { 274643 }, -- Gutcutter Hatchet
 })
 
 Data:AddBossLoot(599, { -- Shadowpriest Sezz'ziz
@@ -58,6 +60,7 @@ Data:AddBossLoot(-10082, { -- Zerillis
 
 Data:AddBossLoot(-10081, { -- Dustwraith
     { 12471 }, -- Desertwalker Cane
+    { 12469 }, -- Mutilator
 })
 
 Data:AddBossLoot(-7604, { -- Sergeant Bly
@@ -65,6 +68,16 @@ Data:AddBossLoot(-7604, { -- Sergeant Bly
     { 274647 }, -- Farraki Kris
     { 274648 }, -- The Desert Rose
     { 252896 }, -- Pattern: Stalker's Mail Boots
+})
+
+Data:AddBossLoot(-10080, { -- Sandarr Dunereaver
+    { 274660 }, -- Sandarr's Shoulders
+    { 274659 }, -- Bloodsand Belt
+})
+
+Data:AddBossLoot(-7797, { -- Ruuzlu
+    { 274654 }, -- Sandfury Guillotine
+    { 274655 }, -- Peacekeeper Wand
 })
 
 Data:AddQuests(209, {

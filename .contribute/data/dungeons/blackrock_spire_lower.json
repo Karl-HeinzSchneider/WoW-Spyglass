@@ -268,6 +268,7 @@
     {
       "id": -9219,
       "name": "Spirestone Butcher",
+      "displayID": 11574,
       "npc": 9219,
       "loot": [
         {
@@ -283,6 +284,7 @@
     {
       "id": -9218,
       "name": "Spirestone Battle Lord",
+      "displayID": 11576,
       "npc": 9218,
       "loot": [
         {
@@ -298,6 +300,7 @@
     {
       "id": -9217,
       "name": "Spirestone Lord Magus",
+      "displayID": 11578,
       "npc": 9217,
       "loot": [
         {
@@ -317,6 +320,7 @@
     {
       "id": -10376,
       "name": "Crystal Fang",
+      "displayID": 9755,
       "npc": 10376,
       "loot": [
         {
@@ -336,6 +340,7 @@
     {
       "id": -9596,
       "name": "Bannok Grimaxe",
+      "displayID": 9668,
       "npc": 9596,
       "loot": [
         {
@@ -359,6 +364,7 @@
     {
       "id": -9718,
       "name": "Ghok Bashguud",
+      "displayID": 11809,
       "npc": 9718,
       "loot": [
         {

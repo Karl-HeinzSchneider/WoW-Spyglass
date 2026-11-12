@@ -4,10 +4,14 @@
   "minLevel": 35,
   "maxLevel": 40,
   "icon": "Interface\\Icons\\Spell_Frost_SummonWaterElemental",
+  "background": 7963741,
+  "backgroundCoords": [0, 1, 0.154, 0.846],
   "encounters": [
     {
       "id": 3474,
       "name": "Zul'Alai",
+      "displayID": 144475,
+      "npc": 258905,
       "loot": [
         {
           "item": 274599,
@@ -16,22 +20,46 @@
         {
           "item": 274600,
           "name": "Berserker Shackles"
+        },
+        {
+          "item": 274598,
+          "name": "Bloodslash Axe"
+        },
+        {
+          "item": 271718,
+          "name": "Linken's Boots of Iron"
         }
       ]
     },
     {
       "id": 3475,
       "name": "Var'Taka",
+      "displayID": 144487,
+      "npc": 258924,
       "loot": [
         {
           "item": 274602,
           "name": "Brinebelly Leggings"
+        },
+        {
+          "item": 274601,
+          "name": "Harpoon of Command"
+        },
+        {
+          "item": 274613,
+          "name": "Priestess Cloak"
+        },
+        {
+          "item": 271718,
+          "name": "Linken's Boots of Iron"
         }
       ]
     },
     {
       "id": 3476,
       "name": "Captain Dreadrise",
+      "displayID": 142144,
+      "npc": 260042,
       "loot": [
         {
           "item": 274603,
@@ -40,42 +68,92 @@
         {
           "item": 274604,
           "name": "Frosty Blunderbuss"
+        },
+        {
+          "item": 274605,
+          "name": "Briny Sash"
+        },
+        {
+          "item": 271718,
+          "name": "Linken's Boots of Iron"
         }
       ]
     },
     {
       "id": 3478,
       "name": "Deathless Guardians",
+      "displayID": 142245,
       "loot": [
         {
           "item": 274607,
           "name": "Viscera Spaulders"
+        },
+        {
+          "item": 274606,
+          "name": "Bloodspine Staff"
+        },
+        {
+          "item": 274614,
+          "name": "Knucklebone Ring"
+        },
+        {
+          "item": 271718,
+          "name": "Linken's Boots of Iron"
         }
       ]
     },
     {
       "id": 3479,
       "name": "Min'loth the Serpent",
+      "displayID": 142322,
+      "npc": 260274,
       "loot": [
         {
           "item": 274608,
           "name": "Maw of Min'loth"
+        },
+        {
+          "item": 274610,
+          "name": "Ritual-Binder's Gloves"
+        },
+        {
+          "item": 274609,
+          "name": "Serpentbane Crown"
+        },
+        {
+          "item": 271718,
+          "name": "Linken's Boots of Iron"
         }
       ]
     },
     {
       "id": 3511,
       "name": "Primeval Elemental",
+      "displayID": 129945,
+      "npc": 270887,
       "loot": [
         {
           "item": 274611,
           "name": "Robe of the Drowned"
+        },
+        {
+          "item": 274612,
+          "name": "Waterlogged Burial Shroud"
+        },
+        {
+          "item": 274615,
+          "name": "Heart of the Primeval"
+        },
+        {
+          "item": 271718,
+          "name": "Linken's Boots of Iron"
         }
       ]
     },
     {
       "id": -264177,
       "name": "Gill",
+      "displayID": 144023,
       "npc": 264177,
       "loot": [
         {
@@ -85,23 +163,33 @@
         {
           "item": 286649,
           "name": "Tidebound Dagger"
+        },
+        {
+          "item": 271718,
+          "name": "Linken's Boots of Iron"
         }
       ]
     },
     {
       "id": -264172,
       "name": "Umbra",
+      "displayID": 144022,
       "npc": 264172,
       "loot": [
         {
           "item": 286662,
           "name": "Deep-Dweller's Grips"
+        },
+        {
+          "item": 286658,
+          "name": "Umbral Scaled Belt"
         }
       ]
     },
     {
       "id": -260468,
       "name": "\"Pyromancer\" Braxton",
+      "displayID": 142457,
       "npc": 260468,
       "loot": [
         {
@@ -123,6 +211,10 @@
     {
       "item": 286997,
       "name": "Depth-Risen Leggings"
+    },
+    {
+      "item": 287005,
+      "name": "Sword of Dismemberment"
     }
   ],
   "quests": [96078, 95776, 96774, 95799, 95798, 97130, 95789, 95791]

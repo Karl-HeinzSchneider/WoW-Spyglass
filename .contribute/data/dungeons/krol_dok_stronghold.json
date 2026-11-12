@@ -4,10 +4,14 @@
   "minLevel": 40,
   "maxLevel": 45,
   "icon": "Interface\\Icons\\INV_Misc_Key_13",
+  "background": 7963780,
+  "backgroundCoords": [0, 1, 0.154, 0.846],
   "encounters": [
     {
       "id": 3449,
       "name": "Nar'gurk",
+      "displayID": 141215,
+      "npc": 258964,
       "loot": [
         {
           "item": 275004,
@@ -26,6 +30,8 @@
     {
       "id": 3450,
       "name": "Slavecrusher Grox",
+      "displayID": 141217,
+      "npc": 258966,
       "loot": [
         {
           "item": 274996,
@@ -48,6 +54,7 @@
     {
       "id": 3451,
       "name": "Overseer Mugg",
+      "displayID": 141218,
       "loot": [
         {
           "item": 275009,
@@ -60,12 +67,18 @@
         {
           "item": 275010,
           "name": "Strongly Scented Hood"
+        },
+        {
+          "item": 275008,
+          "name": "Mugg's Crosser"
         }
       ]
     },
     {
       "id": 3452,
       "name": "Twilight Commander Zarmok",
+      "displayID": 141219,
+      "npc": 258972,
       "loot": [
         {
           "item": 275000,
@@ -84,6 +97,7 @@
     {
       "id": 3453,
       "name": "Handler Ashka",
+      "displayID": 141443,
       "loot": [
         {
           "item": 275001,
@@ -102,6 +116,7 @@
     {
       "id": -264773,
       "name": "Bossman Toof",
+      "displayID": 14424,
       "npc": 264773,
       "loot": [
         {
@@ -139,6 +154,10 @@
     {
       "item": 287010,
       "name": "Outrider's Gloves"
+    },
+    {
+      "item": 287007,
+      "name": "Stretched Footpads"
     }
   ],
   "quests": [94968, 94972, 94975, 94982, 94984, 96771, 94981, 94974, 94998]

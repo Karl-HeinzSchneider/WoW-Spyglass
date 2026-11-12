@@ -223,6 +223,7 @@
       "name": "Lord Valthalak",
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\lord_valthalak.blp",
       "displayID": 14308,
+      "npc": 16042,
       "loot": [
         {
           "item": 22335,
@@ -261,6 +262,7 @@
     {
       "id": -10264,
       "name": "Solakar Flamewreath",
+      "displayID": 9581,
       "npc": 10264,
       "loot": [
         {
@@ -288,6 +290,7 @@
     {
       "id": -10509,
       "name": "Jed Runewatcher",
+      "displayID": 9686,
       "npc": 10509,
       "loot": [
         {
@@ -307,6 +310,7 @@
     {
       "id": -10899,
       "name": "Goraluk Anvilcrack",
+      "displayID": 10222,
       "npc": 10899,
       "loot": [
         {
@@ -338,6 +342,7 @@
     {
       "id": -10339,
       "name": "Gyth",
+      "displayID": 9806,
       "npc": 10339,
       "loot": [
         {

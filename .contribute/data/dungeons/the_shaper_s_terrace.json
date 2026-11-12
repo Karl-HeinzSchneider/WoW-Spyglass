@@ -4,10 +4,14 @@
   "minLevel": 58,
   "maxLevel": 60,
   "icon": "Interface\\Icons\\INV_Misc_Gem_Crystal_02",
+  "background": 7963783,
+  "backgroundCoords": [0, 1, 0.154, 0.846],
   "encounters": [
     {
       "id": 3498,
       "name": "Titanosaur",
+      "displayID": 142989,
+      "npc": 253201,
       "loot": [
         {
           "item": 280009,
@@ -26,6 +30,7 @@
     {
       "id": 3499,
       "name": "Ravasaur Hunters",
+      "displayID": 143040,
       "npc": 253218,
       "loot": [
         {
@@ -45,6 +50,8 @@
     {
       "id": 3500,
       "name": "Thunderhoof",
+      "displayID": 144514,
+      "npc": 261812,
       "loot": [
         {
           "item": 280020,
@@ -63,6 +70,8 @@
     {
       "id": 3501,
       "name": "Venomridge",
+      "displayID": 144511,
+      "npc": 261813,
       "loot": [
         {
           "item": 280015,
@@ -81,6 +90,8 @@
     {
       "id": 3502,
       "name": "Nanaya",
+      "displayID": 143832,
+      "npc": 261809,
       "loot": [
         {
           "item": 280023,
@@ -103,10 +114,16 @@
     {
       "id": 3503,
       "name": "Cinder",
+      "displayID": 143035,
+      "npc": 261974,
       "loot": [
         {
           "item": 280029,
           "name": "Cinderedge Crescent"
+        },
+        {
+          "item": 280028,
+          "name": "Heartflame Gauntlets"
         }
       ]
     },
@@ -118,6 +135,8 @@
     {
       "id": 3505,
       "name": "Bolt",
+      "displayID": 143063,
+      "npc": 262081,
       "loot": [
         {
           "item": 280032,
@@ -132,6 +151,8 @@
     {
       "id": 3507,
       "name": "Direhorn Matriarch",
+      "displayID": 144515,
+      "npc": 262127,
       "loot": [
         {
           "item": 280022,
@@ -150,20 +171,32 @@
     {
       "id": 3597,
       "name": "Snowtalon",
+      "displayID": 143122,
+      "npc": 262297,
       "loot": [
         {
           "item": 280026,
           "name": "Albinofur Grips"
+        },
+        {
+          "item": 280027,
+          "name": "Crownroar Chestplate"
         }
       ]
     },
     {
       "id": 3600,
       "name": "Vitrix",
+      "displayID": 147098,
+      "npc": 272561,
       "loot": [
         {
           "item": 280031,
           "name": "Sparklance Wand"
+        },
+        {
+          "item": 280028,
+          "name": "Heartflame Gauntlets"
         }
       ]
     }

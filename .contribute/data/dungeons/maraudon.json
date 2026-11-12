@@ -192,6 +192,7 @@
     {
       "id": -12237,
       "name": "Meshlok the Harvester",
+      "displayID": 9014,
       "npc": 12237,
       "loot": [
         {

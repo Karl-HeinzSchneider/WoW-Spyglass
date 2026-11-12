@@ -4,10 +4,14 @@
   "minLevel": 48,
   "maxLevel": 53,
   "icon": "Interface\\Icons\\INV_Misc_Key_14",
+  "background": 7963734,
+  "backgroundCoords": [0, 1, 0.154, 0.846],
   "encounters": [
     {
       "id": 3403,
       "name": "Overseer Wrex",
+      "displayID": 7914,
+      "npc": 255391,
       "loot": [
         {
           "item": 276734,
@@ -26,11 +30,28 @@
     {
       "id": 3409,
       "name": "Blazeroar",
-      "loot": []
+      "displayID": 6374,
+      "npc": 255702,
+      "loot": [
+        {
+          "item": 276744,
+          "name": "Zarla's Snack Pouch"
+        },
+        {
+          "item": 276745,
+          "name": "Beastbond Robe"
+        },
+        {
+          "item": 276746,
+          "name": "Defias Enforcer's Legguards"
+        }
+      ]
     },
     {
       "id": 3410,
       "name": "Tidemistress Ca'zass",
+      "displayID": 4973,
+      "npc": 255997,
       "loot": [
         {
           "item": 276736,
@@ -39,12 +60,18 @@
         {
           "item": 276735,
           "name": "Tidesong Wand"
+        },
+        {
+          "item": 276737,
+          "name": "Cloak of the Tidemistress"
         }
       ]
     },
     {
       "id": 3415,
       "name": "The Questioner",
+      "displayID": 140092,
+      "npc": 256236,
       "loot": [
         {
           "item": 276742,
@@ -63,10 +90,20 @@
     {
       "id": 3418,
       "name": "Katerina the Cleaner",
+      "displayID": 2317,
+      "npc": 257016,
       "loot": [
         {
           "item": 276739,
           "name": "Cutthroat Chestguard"
+        },
+        {
+          "item": 276738,
+          "name": "Katerina's Shanker"
+        },
+        {
+          "item": 276740,
+          "name": "Sentimental Locket"
         }
       ]
     }
@@ -75,6 +112,14 @@
     {
       "item": 287021,
       "name": "Defias Enforcer's Prowlers"
+    },
+    {
+      "item": 287019,
+      "name": "Defias Enforcer's Mask"
+    },
+    {
+      "item": 287018,
+      "name": "Compound Gloves"
     }
   ],
   "quests": [96772]

@@ -20,6 +20,7 @@ Data:AddBossLoot(3451, { -- Overseer Mugg
     { 275009 }, -- Emblem of Slamming
     { 275007 }, -- Mugg's Jabber
     { 275010 }, -- Strongly Scented Hood
+    { 275008 }, -- Mugg's Crosser
 })
 
 Data:AddBossLoot(3452, { -- Twilight Commander Zarmok
@@ -46,6 +47,7 @@ Data:AddTrashLoot(3039, {
     { 287012 }, -- Krol'dok Warplate Gauntlets
     { 287013 }, -- Krol'dok Warplate Legplates
     { 287010 }, -- Outrider's Gloves
+    { 287007 }, -- Stretched Footpads
 })
 
 Data:AddQuests(3039, {
