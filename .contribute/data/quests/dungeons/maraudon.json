@@ -5,7 +5,7 @@
       "name": "Twisted Evils",
       "side": "Both",
       "requiredLevel": 41,
-      "xp": 5250,
+      "xp": 10250,
       "objective": "Collect 25 Theradric Crystal Carvings for Willow in Desolace.",
       "description": "Any Maraudon creature can drop the Theradric Crystal Carvings.",
       "start": {
@@ -42,7 +42,7 @@
       "name": "Vyletongue Corruption",
       "side": "Horde",
       "requiredLevel": 41,
-      "xp": 5250,
+      "xp": 10250,
       "objective": "Fill the Coated Cerulean Vial at the orange crystal pool in Maraudon. Use the Filled Cerulean Vial on the Vylestem Vines to force the corrupted Noxxious Scion to emerge. Heal 8 plants by killing these Noxxious Scion, then return to Vark Battlescar in Shadowprey Village.",
       "description": "Fill the Coated Cerulean Vial at the orange crystal pool in the outer caves, then use it on Vylestem Vines inside (orange side) and kill the Noxxious Scions to heal 8 plants.",
       "start": {
@@ -75,7 +75,7 @@
       "name": "Vyletongue Corruption",
       "side": "Alliance",
       "requiredLevel": 41,
-      "xp": 5250,
+      "xp": 10250,
       "objective": "Fill the Coated Cerulean Vial at the orange crystal pool in Maraudon. Use the Filled Cerulean Vial on the Vylestem Vines to force the corrupted Noxxious Scion to emerge. Heal 8 plants by killing these Noxxious Scion, then return to Talendria in Nijel's Point.",
       "description": "Fill the Coated Cerulean Vial at the orange crystal pool in the outer caves, then use it on Vylestem Vines inside (orange side) and kill the Noxxious Scions to heal 8 plants.",
       "start": {
@@ -108,7 +108,7 @@
       "name": "Legends of Maraudon",
       "side": "Both",
       "requiredLevel": 41,
-      "xp": 3400,
+      "xp": 6650,
       "objective": "Recover the two parts of the Scepter of Celebras: the Celebrian Rod and the Celebrian Diamond. Find a way to speak with Celebras.",
       "description": "The Celebrian Rod drops from Noxxion and the Celebrian Diamond from Lord Vyletongue.",
       "followUps": [7046],
@@ -128,7 +128,7 @@
       "name": "The Scepter of Celebras",
       "side": "Both",
       "requiredLevel": 41,
-      "xp": 5700,
+      "xp": 11100,
       "objective": "Assist Celebras the Redeemed while he creates the Scepter of Celebras. Speak with him when the ritual is complete.",
       "description": "Defeat Celebras the Cursed where the paths meet and turn in Legends of Maraudon to Celebras the Redeemed, then help with his ritual and speak to him again for the scepter.",
       "start": {
@@ -151,7 +151,7 @@
       "name": "Corruption of Earth and Seed",
       "side": "Horde",
       "requiredLevel": 45,
-      "xp": 6100,
+      "xp": 11900,
       "objective": "Slay Princess Theradras and return to Selendra near Shadowprey Village in Desolace.",
       "description": "Kill Princess Theradras in the inner cavern.",
       "start": {
@@ -184,7 +184,7 @@
       "name": "Corruption of Earth and Seed",
       "side": "Alliance",
       "requiredLevel": 45,
-      "xp": 6100,
+      "xp": 11900,
       "objective": "Slay Princess Theradras and return to Keeper Marandis at Nijel's Point in Desolace.",
       "description": "Kill Princess Theradras in the inner cavern.",
       "start": {
@@ -217,7 +217,7 @@
       "name": "Seed of Life",
       "side": "Both",
       "requiredLevel": 39,
-      "xp": 6100,
+      "xp": 11900,
       "objective": "Seek out Remulos in Moonglade and give him the Seed of Life.",
       "description": "Zaetar's Spirit appears after Princess Theradras dies.",
       "start": {
@@ -235,7 +235,7 @@
       "name": "The Pariah's Instructions",
       "side": "Both",
       "requiredLevel": 39,
-      "xp": 5450,
+      "xp": 10650,
       "objective": "Read the Pariah's Instructions. Afterwards, obtain the Amulet of Union from Maraudon and return it to the Centaur Pariah in southern Desolace.",
       "description": "Loot the Amulet of Spirits from the Nameless Prophet in the outer caves, then use it to fight the five Khans: three in the outer caves, one on the purple route and one on the orange route. Combine their gems with the amulet.",
       "start": {
@@ -260,7 +260,7 @@
       "name": "Shadowshard Fragments",
       "side": "Horde",
       "requiredLevel": 39,
-      "xp": 3450,
+      "xp": 6750,
       "objective": "Collect 10 Shadowshard Fragments from Maraudon and return them to Uthel'nay in Orgrimmar.",
       "description": "Shadowshard elementals in the outer purple-crystal caves. It can be done without entering the instance.",
       "start": {
@@ -289,7 +289,7 @@
       "name": "Shadowshard Fragments",
       "side": "Alliance",
       "requiredLevel": 39,
-      "xp": 3450,
+      "xp": 6750,
       "objective": "Collect 10 Shadowshard Fragments from Maraudon and return them to Archmage Tervosh in Theramore on the coast of Dustwallow Marsh.",
       "description": "Shadowshard elementals in the outer purple-crystal caves. It can be done without entering the instance.",
       "start": {
@@ -312,6 +312,180 @@
           "name": "Prodigious Shadowshard Pendant"
         }
       ]
+    },
+    {
+      "id": 93404,
+      "name": "Rot and Regret",
+      "side": "Both",
+      "requiredLevel": 35,
+      "xp": 11100,
+      "objective": "Venture to Maraudon and recover a Vial of Earth Song Water, then use it to put out Woodwyrd's flame at the Forlorn Gardens.",
+      "description": "Back at the Forlorn Gardens, use the vial on the burning tree next to Woodwyrd, not on Woodwyrd himself. Afterwards Woodwyrd sends you to the Bristleback Retreat (Passing the Blame), which leads to Agamaggan's Blood in Razorfen Downs.",
+      "requires": [93594],
+      "start": {
+        "npc": "Woodwyrd",
+        "location": [2652, 53.5, 76],
+        "description": "Forlorn Gardens, Shen'dralas (just east of Mithera, about 53, 76)"
+      },
+      "turnIn": {
+        "npc": "Woodwyrd",
+        "location": [2652, 53.5, 76],
+        "description": "Forlorn Gardens, Shen'dralas (just east of Mithera, about 53, 76)"
+      },
+      "items": [
+        {
+          "item": 272186,
+          "name": "Overgrown Cuffs"
+        },
+        {
+          "item": 272187,
+          "name": "Thornplated Cord"
+        }
+      ]
+    },
+    {
+      "id": 92914,
+      "name": "Strange Pylons",
+      "side": "Both",
+      "requiredLevel": 35,
+      "xp": 3600,
+      "objective": "Explore Shen'dralas in an effort to find other pylons like the one you found.",
+      "description": "The other pylons: east at 73, 23 (more arcane elementals, you get dismounted there) and south at 47, 78 inside the big Shen'dralas building.",
+      "start": {
+        "npc": "Shen'dralar Pylon",
+        "location": [2652, 43.6, 34.2],
+        "description": "Shen'dralas"
+      },
+      "turnIn": {
+        "npc": "Mordent Evenshade",
+        "location": [2652, 35, 46.4],
+        "description": "Evenshade's Overlook, Shen'dralas"
+      },
+      "items": []
+    },
+    {
+      "id": 96010,
+      "name": "Fragments of the Pylons",
+      "side": "Both",
+      "requiredLevel": 35,
+      "xp": 2450,
+      "objective": "Recover shards and fragments of the pylons, found guarded at the Magram and Gelkis villages. Return them to Mordent Evenshade.",
+      "description": "One crystal at each centaur camp in Desolace.",
+      "requires": [92914],
+      "start": {
+        "npc": "Mordent Evenshade",
+        "location": [2652, 35, 46.4],
+        "description": "Evenshade's Overlook, Shen'dralas"
+      },
+      "turnIn": {
+        "npc": "Mordent Evenshade",
+        "location": [2652, 35, 46.4],
+        "description": "Evenshade's Overlook, Shen'dralas"
+      },
+      "items": []
+    },
+    {
+      "id": 96018,
+      "name": "Powering the Pylons",
+      "side": "Both",
+      "requiredLevel": 35,
+      "xp": 3600,
+      "objective": "Acquire the Mana Sieve from within the temple in Shen'dralas and use it to collect Ancient Mana Crystals, then empower the pylons and return to Mordent Evenshade.",
+      "description": "The Mana Sieve is on the top floor of the big temple. Take 8 mana from the arcane orbs around Shen'dralas, then use the pylon parts with 4 mana on each pylon.",
+      "requires": [96010],
+      "start": {
+        "npc": "Mordent Evenshade",
+        "location": [2652, 35, 46.4],
+        "description": "Evenshade's Overlook, Shen'dralas"
+      },
+      "turnIn": {
+        "npc": "Mordent Evenshade",
+        "location": [2652, 35, 46.4],
+        "description": "Evenshade's Overlook, Shen'dralas"
+      },
+      "items": []
+    },
+    {
+      "id": 93016,
+      "name": "A Brief History Lesson",
+      "side": "Both",
+      "requiredLevel": 35,
+      "xp": 360,
+      "objective": "Speak with Mordent Evenshade in Shen'dralas for information about the crystals you repaired.",
+      "requires": [96018],
+      "start": {
+        "npc": "Mordent Evenshade",
+        "location": [2652, 35, 46.4],
+        "description": "Evenshade's Overlook, Shen'dralas"
+      },
+      "turnIn": {
+        "npc": "Mordent Evenshade",
+        "location": [2652, 35, 46.4],
+        "description": "Evenshade's Overlook, Shen'dralas"
+      },
+      "items": []
+    },
+    {
+      "id": 93394,
+      "name": "Meeting the Magister",
+      "side": "Both",
+      "requiredLevel": 35,
+      "xp": 360,
+      "objective": "Locate Magister Kirandis inside the temple of Shen'dralas.",
+      "description": "This opens the Shen'dralas quests, Mithera's included.",
+      "requires": [93016],
+      "start": {
+        "npc": "Mordent Evenshade",
+        "location": [2652, 35, 46.4],
+        "description": "Evenshade's Overlook, Shen'dralas"
+      },
+      "turnIn": {
+        "npc": "Magister Kirandis",
+        "location": [2652, 47.2, 75.8],
+        "description": "inside the temple of Shen'dralas"
+      },
+      "items": []
+    },
+    {
+      "id": 93594,
+      "name": "Word of the Woods",
+      "side": "Both",
+      "requiredLevel": 35,
+      "xp": 360,
+      "objective": "Find Woodwyrd in the Forlorn Gardens at Shen'dralas.",
+      "description": "Horde players get it from Mithera after her Forlorn Gardens quest (Wowhead lists that one for the Horde only; how the Alliance gets Word of the Woods is not confirmed yet).",
+      "requires": [93394],
+      "start": {
+        "npc": "Mithera",
+        "location": [2652, 52.8, 76],
+        "description": "by the Forlorn Gardens, Shen'dralas"
+      },
+      "turnIn": {
+        "npc": "Woodwyrd",
+        "location": [2652, 53.5, 76],
+        "description": "Forlorn Gardens, Shen'dralas (just east of Mithera, about 53, 76)"
+      },
+      "items": []
+    },
+    {
+      "id": 96776,
+      "name": "An'she's Radiance",
+      "side": "Horde",
+      "requiredLevel": 43,
+      "xp": 11900,
+      "objective": "Recover the crystal known as An'she's Radiance from Maraudon and return it to Olana Brighthoof in Mulgore.",
+      "description": "Beyond Earth Song Falls, find the chamber of brilliant white crystals guarded by giants. Retrieve An'she's Radiance from the crystal near the highest part of the chamber. Rewards 300 Earthen Ring and 200 Thunder Bluff reputation.",
+      "start": {
+        "npc": "Olana Brighthoof",
+        "location": [1412, 33.8, 23.7],
+        "description": "Skywatcher Plateau, Mulgore"
+      },
+      "turnIn": {
+        "npc": "Olana Brighthoof",
+        "location": [1412, 33.8, 23.7],
+        "description": "Skywatcher Plateau, Mulgore"
+      },
+      "items": []
     }
   ]
 }

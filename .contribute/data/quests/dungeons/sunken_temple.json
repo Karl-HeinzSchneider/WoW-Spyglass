@@ -5,6 +5,7 @@
       "name": "Pool of Tears",
       "side": "Horde",
       "requiredLevel": 38,
+      "xp": 4450,
       "objective": "Fel'zerul in Stonard wants you to gather 10 Atal'ai Artifacts.",
       "start": {
         "npc": "Fel'zerul",
@@ -23,6 +24,7 @@
       "name": "The Atal'ai Exile",
       "side": "Horde",
       "requiredLevel": 38,
+      "xp": 3750,
       "objective": "Bring the Bundle of Atal'ai Artifacts to the Atal'ai Exile in the Hinterlands.",
       "requires": [1424],
       "start": {
@@ -41,6 +43,7 @@
       "name": "Return to Fel'Zerul",
       "side": "Horde",
       "requiredLevel": 38,
+      "xp": 3750,
       "objective": "Return to Fel'Zerul in Stonard.",
       "requires": [1429],
       "start": {
@@ -59,7 +62,7 @@
       "name": "The Temple of Atal'Hakkar",
       "side": "Horde",
       "requiredLevel": 38,
-      "xp": 5900,
+      "xp": 10600,
       "objective": "Collect 20 Fetishes of Hakkar and bring them to Fel'Zerul in Stonard.",
       "description": "Collect 20 Fetishes of Hakkar from Atal'ai trolls; outer-temple trolls also drop them.",
       "requires": [1444],
@@ -84,7 +87,7 @@
       "name": "Jammal'an the Prophet",
       "side": "Both",
       "requiredLevel": 38,
-      "xp": 6550,
+      "xp": 12750,
       "objective": "The Atal'ai Exile in The Hinterlands wants the Head of Jammal'an.",
       "description": "Kill the six troll guardians on the balconies to drop Jammal'an's barrier, then bring back his head.",
       "start": {
@@ -113,6 +116,7 @@
       "name": "In Search of The Temple",
       "side": "Alliance",
       "requiredLevel": 38,
+      "xp": 3600,
       "objective": "Brohann Caskbelly in Stormwind wants you to search for the Temple of Atal'Hakkar.",
       "start": {
         "npc": "Brohann Caskbelly",
@@ -131,6 +135,7 @@
       "name": "To The Hinterlands",
       "side": "Alliance",
       "requiredLevel": 38,
+      "xp": 1800,
       "objective": "Speak with High Thane Falstad Wildhammer at Aerie Peak in the Hinterlands.",
       "requires": [1448],
       "start": {
@@ -149,6 +154,7 @@
       "name": "Gryphon Master Talonaxe",
       "side": "Alliance",
       "requiredLevel": 38,
+      "xp": 900,
       "objective": "Speak with Gryphon Master Talonaxe inside the Aerie Peak Aviary.",
       "requires": [1449],
       "start": {
@@ -167,6 +173,7 @@
       "name": "Rhapsody Shindigger",
       "side": "Alliance",
       "requiredLevel": 38,
+      "xp": 1800,
       "objective": "Seek out Rhapsody Shindigger in The Hinterlands.",
       "requires": [1450],
       "start": {
@@ -185,6 +192,7 @@
       "name": "Rhapsody's Kalimdor Kocktail",
       "side": "Alliance",
       "requiredLevel": 38,
+      "xp": 3600,
       "objective": "Rhapsody Shindigger in The Hinterlands wants you to bring him 3 Roc Gizzards, 3 Groddoc Livers and 3 Ironfur Livers.",
       "requires": [1451],
       "start": {
@@ -204,6 +212,7 @@
       "name": "Rhapsody's Tale",
       "side": "Alliance",
       "requiredLevel": 38,
+      "xp": 2700,
       "objective": "Bring the Atal'ai Tablet Fragment to Brohann Caskbelly in Stormwind.",
       "requires": [1452],
       "start": {
@@ -222,7 +231,7 @@
       "name": "Into The Temple of Atal'Hakkar",
       "side": "Alliance",
       "requiredLevel": 38,
-      "xp": 7100,
+      "xp": 13850,
       "objective": "Gather 10 Atal'ai Tablets for Brohann Caskbelly in Stormwind.",
       "description": "Collect 10 Atal'ai Tablets around the temple; tablets in the outer temple also count.",
       "requires": [1469],
@@ -248,7 +257,7 @@
       "name": "The Essence of Eranikus",
       "side": "Both",
       "requiredLevel": 44,
-      "xp": 2800,
+      "xp": 5450,
       "objective": "Place the Essence of Eranikus in the Essence Font located in this lair in the Sunken Temple.",
       "start": {
         "item": 10454,
@@ -269,6 +278,7 @@
       "id": 3444,
       "name": "The Stone Circle",
       "requiredLevel": 46,
+      "xp": 4900,
       "objective": "Retrieve the Stone Circle from Marvon Rivetseeker's workshop in Ratchet.",
       "start": {
         "npc": "Marvon Rivetseeker",
@@ -287,7 +297,7 @@
       "name": "Into the Depths",
       "side": "Both",
       "requiredLevel": 46,
-      "xp": 4900,
+      "xp": 9550,
       "objective": "Find the Altar of Hakkar in the Sunken Temple in Swamp of Sorrows.",
       "description": "Examine the Altar of Hakkar in the temple basement. Started from Marvon Rivetseeker after The Stone Circle.",
       "requires": [3444],
@@ -307,7 +317,7 @@
       "name": "Secret of the Circle",
       "side": "Both",
       "requiredLevel": 46,
-      "xp": 6100,
+      "xp": 11900,
       "objective": "Travel into the Sunken Temple and discover the secret hidden in the circle of statues.",
       "description": "Light the statues around the circle in the right order to summon Atal'alarion.",
       "requires": [3444],
@@ -332,6 +342,7 @@
       "name": "Muigin and Larion",
       "side": "Alliance",
       "requiredLevel": 47,
+      "xp": 5100,
       "objective": "Collect 15 Bloodpetals and return to Muigin.",
       "start": {
         "npc": "Muigin",
@@ -350,6 +361,7 @@
       "name": "A Visit to Gregan",
       "side": "Alliance",
       "requiredLevel": 47,
+      "xp": 3800,
       "objective": "Take a Bloodpetal to Gregan Brewspewer in Feralas.",
       "requires": [4141],
       "start": {
@@ -368,7 +380,7 @@
       "name": "Haze of Evil",
       "side": "Alliance",
       "requiredLevel": 47,
-      "xp": 5100,
+      "xp": 9950,
       "objective": "Collect 5 samples of Atal'ai Haze, then return to Muigin in Un'Goro Crater.",
       "description": "Atal'ai Haze drops from the temple's worms, lurkers and oozes.",
       "requires": [4142],
@@ -388,6 +400,7 @@
       "name": "Larion and Muigin",
       "side": "Horde",
       "requiredLevel": 47,
+      "xp": 5100,
       "objective": "Hunt 5 Bloodpetal Lashers, 5 Bloodpetal Threshers, 5 Bloodpetal Flayers and 5 Bloodpetal Trappers for Larion at Marshal's Refuge.",
       "start": {
         "npc": "Larion",
@@ -406,7 +419,7 @@
       "name": "Zapper Fuel",
       "side": "Horde",
       "requiredLevel": 47,
-      "xp": 5100,
+      "xp": 9200,
       "objective": "Deliver the Unloaded Zapper and 5 samples of Atal'ai Haze to Larion in Marshal's Refuge.",
       "description": "Atal'ai Haze drops from the temple's worms, lurkers and oozes.",
       "requires": [4147],
@@ -426,6 +439,7 @@
       "name": "Marvon's Workshop",
       "side": "Horde",
       "requiredLevel": 47,
+      "xp": 2550,
       "objective": "Travel to Marvon Rivetseeker's workshop in Ratchet.",
       "requires": [4145],
       "start": {
@@ -445,7 +459,7 @@
       "side": "Both",
       "class": "Hunter",
       "requiredLevel": 50,
-      "xp": 510,
+      "xp": 500,
       "objective": "Speak to Ogtinc in Azshara.",
       "description": "Introductory step leading to The Green Drake.\n\nOPTIONAL, not required",
       "start": {
@@ -461,6 +475,7 @@
       "id": 8153,
       "name": "Courser Antlers",
       "requiredLevel": 50,
+      "xp": 5100,
       "objective": "Bring a pair of Perfect Courser Antlers to Ogtinc in Azshara. Ogtinc resides atop the cliffs northeast of the Ruins of Eldarath.",
       "start": {
         "npc": "Ogtinc",
@@ -478,6 +493,7 @@
       "id": 8231,
       "name": "Wavethrashing",
       "requiredLevel": 50,
+      "xp": 5100,
       "objective": "Bring 6 Wavethrasher Scales to Ogtinc in Azshara. Ogtinc resides atop the cliffs northeast the Ruins of Eldarath.",
       "requires": [8153],
       "start": {
@@ -498,7 +514,7 @@
       "side": "Both",
       "class": "Hunter",
       "requiredLevel": 50,
-      "xp": 6350,
+      "xp": 12400,
       "objective": "Bring the Tooth of Morphaz to Ogtinc in Azshara. Ogtinc resides atop the cliffs northeast the Ruins of Eldarath.",
       "description": "Hunter class quest. The Tooth of Morphaz drops from Morphaz.\n\nOptional introductory quest:",
       "requires": [8231],
@@ -533,7 +549,7 @@
       "side": "Both",
       "class": "Rogue",
       "requiredLevel": 50,
-      "xp": 510,
+      "xp": 500,
       "objective": "Speak with Lord Jorach Ravenholdt in Ravenholdt Manor.",
       "description": "Introductory step leading to The Azure Key.\n\nOPTIONAL, not required",
       "start": {
@@ -549,6 +565,7 @@
       "id": 8234,
       "name": "Sealed Azure Bag",
       "requiredLevel": 50,
+      "xp": 5100,
       "objective": "Retrieve the Sealed Azure Bag from the Timbermaw Shaman in Azshara. Then take the bag to Archmage Xylem, also found in Azshara.",
       "start": {
         "npc": "Lord Jorach Ravenholdt",
@@ -565,6 +582,7 @@
       "id": 8235,
       "name": "Encoded Fragments",
       "requiredLevel": 50,
+      "xp": 5100,
       "objective": "Bring 10 Encoded Fragments to Archmage Xylem in Azshara.",
       "requires": [8234],
       "start": {
@@ -585,7 +603,7 @@
       "side": "Both",
       "class": "Rogue",
       "requiredLevel": 50,
-      "xp": 6350,
+      "xp": 12400,
       "objective": "Return the Azure Key to Lord Jorach Ravenholdt.",
       "description": "Rogue class quest. The Azure Key drops from Morphaz.\n\nOptional introductory quest:",
       "requires": [8235],
@@ -619,7 +637,7 @@
       "side": "Both",
       "class": "Mage",
       "requiredLevel": 50,
-      "xp": 510,
+      "xp": 500,
       "objective": "Seek out Sanath Lim-yo and gain passage to see Archmage Xylem.",
       "description": "Introductory step leading to Destroy Morphaz.\n\nOPTIONAL, not required",
       "start": {
@@ -635,6 +653,7 @@
       "id": 8251,
       "name": "Magic Dust",
       "requiredLevel": 50,
+      "xp": 5100,
       "objective": "Bring 10 Glittering Dust to Archmage Xylem.",
       "start": {
         "npc": "Archmage Xylem",
@@ -652,6 +671,7 @@
       "id": 8252,
       "name": "The Siren's Coral",
       "requiredLevel": 50,
+      "xp": 5100,
       "objective": "Collect 6 Enchanted Coral and return them to Archmage Xylem.",
       "requires": [8251],
       "start": {
@@ -672,7 +692,7 @@
       "side": "Both",
       "class": "Mage",
       "requiredLevel": 50,
-      "xp": 6350,
+      "xp": 12400,
       "objective": "Retrieve the Arcane Shard from Morphaz and return to Archmage Xylem.",
       "description": "Mage class quest. The Arcane Shard drops from Morphaz.\n\nOptional introductory quest:",
       "requires": [8252],
@@ -707,7 +727,7 @@
       "side": "Both",
       "class": "Priest",
       "requiredLevel": 50,
-      "xp": 510,
+      "xp": 500,
       "objective": "Seek out Ogtinc in Azshara.",
       "description": "Introductory step leading to Blood of Morphaz.\n\nOPTIONAL, not required",
       "start": {
@@ -723,6 +743,7 @@
       "id": 8255,
       "name": "Of Coursers We Know",
       "requiredLevel": 50,
+      "xp": 5100,
       "objective": "Acquire 4 Healthy Courser Glands and bring them to Ogtinc in Azshara. Ogtinc resides atop the cliffs northeast the Ruins of Eldarath.",
       "start": {
         "npc": "Ogtinc",
@@ -740,6 +761,7 @@
       "id": 8256,
       "name": "The Ichor of Undeath",
       "requiredLevel": 50,
+      "xp": 5100,
       "objective": "Acquire an Ichor of Undeath for Ogtinc in Azshara. Ogtinc resides atop the cliffs northeast the Ruins of Eldarath.",
       "requires": [8255],
       "start": {
@@ -760,7 +782,7 @@
       "side": "Both",
       "class": "Priest",
       "requiredLevel": 50,
-      "xp": 6350,
+      "xp": 12400,
       "objective": "Kill Morphaz in the sunken temple of Atal'Hakkar, and return his blood to Greta Mosshoof in Felwood. The entrance to the sunken temple can be found in the Swamp of Sorrows.",
       "description": "Priest class quest. Morphaz's blood is turned in to Greta Mosshoof, not Ogtinc.\n\nOptional introductory quest:",
       "requires": [8256],
@@ -793,6 +815,7 @@
       "name": "Elemental Mastery",
       "side": "Horde",
       "requiredLevel": 50,
+      "xp": 3800,
       "objective": "Collect a sample of air, fire, earth and water for Bath'rah the Windwatcher.",
       "start": {
         "npc": "Beram Skychaser",
@@ -810,6 +833,7 @@
       "name": "Spirit Totem",
       "side": "Horde",
       "requiredLevel": 50,
+      "xp": 5100,
       "objective": "Bring the pieces for the spirit totem to Bath'rah the Windwatcher.",
       "requires": [8410],
       "start": {
@@ -830,7 +854,7 @@
       "side": "Horde",
       "class": "Shaman",
       "requiredLevel": 50,
-      "xp": 6350,
+      "xp": 12400,
       "objective": "Bring the voodoo feathers to Bath'rah the Windwatcher.",
       "description": "Shaman class quest. Needs 2 amber, 2 blue and 2 green Voodoo Feathers from the six troll guardians: Gasher, Mijan, Zolo, Hukku, Zul'Lor and Loro.",
       "requires": [8412],
@@ -864,6 +888,7 @@
       "name": "Dispelling Evil",
       "side": "Alliance",
       "requiredLevel": 50,
+      "xp": 5100,
       "objective": "Collect 20 Minion's Scourgestones and bring them to High Priest Thel'danis in the Western Plaguelands.",
       "start": {
         "npc": "Commander Ashlam Valorfist",
@@ -882,7 +907,7 @@
       "side": "Alliance",
       "class": "Paladin",
       "requiredLevel": 50,
-      "xp": 510,
+      "xp": 500,
       "objective": "Speak to Commander Ashlam Valorfist at Chillwind Point.",
       "description": "Introductory step leading to Forging the Mightstone.\n\nOPTIONAL, not required",
       "start": {
@@ -901,6 +926,7 @@
       "name": "Inert Scourgestones",
       "side": "Alliance",
       "requiredLevel": 50,
+      "xp": 2550,
       "objective": "Bring the Inert Scourgestone to Commander Ashlan Valorfist in Chillwind Point.",
       "requires": [8414],
       "start": {
@@ -920,7 +946,7 @@
       "side": "Both",
       "class": "Warrior",
       "requiredLevel": 50,
-      "xp": 510,
+      "xp": 500,
       "objective": "Speak with the Fallen Hero of the Horde at the entrance to the Blasted Lands.",
       "description": "Introductory step leading to Voodoo Feathers.\n\nOPTIONAL, not required",
       "start": {
@@ -938,7 +964,7 @@
       "side": "Alliance",
       "class": "Paladin",
       "requiredLevel": 50,
-      "xp": 6350,
+      "xp": 12400,
       "objective": "Bring the voodoo feathers to Ashlam Valorfist.",
       "description": "Paladin class quest. Needs 2 amber, 2 blue and 2 green Voodoo Feathers from the six troll guardians: Gasher, Mijan, Zolo, Hukku, Zul'Lor and Loro.\n\nOptional introductory quest:",
       "requires": [8416],
@@ -975,6 +1001,7 @@
       "id": 8419,
       "name": "An Imp's Request",
       "requiredLevel": 50,
+      "xp": 3800,
       "objective": "Bring a piece of felcloth to Impsy in Felwood.",
       "start": {
         "npc": "Your class trainer"
@@ -989,6 +1016,7 @@
       "id": 8420,
       "name": "Hot and Itchy",
       "requiredLevel": 50,
+      "xp": 3800,
       "objective": "Bring a piece of felcloth to Impsy in Felwood.",
       "requires": [8419],
       "start": {
@@ -1007,6 +1035,7 @@
       "id": 8421,
       "name": "The Wrong Stuff",
       "requiredLevel": 50,
+      "xp": 5100,
       "objective": "Bring 10 Rotting Wood and 4 Bloodvenom Essence to Impsy in Felwood.",
       "requires": [8420],
       "start": {
@@ -1027,7 +1056,7 @@
       "side": "Both",
       "class": "Warlock",
       "requiredLevel": 50,
-      "xp": 6350,
+      "xp": 12400,
       "objective": "Bring a total of 6 Voodoo Feathers from the trolls in sunken temple.",
       "description": "Warlock class quest. Needs 2 amber, 2 blue and 2 green Voodoo Feathers from the six troll guardians: Gasher, Mijan, Zolo, Hukku, Zul'Lor and Loro.",
       "requires": [8421],
@@ -1060,6 +1089,7 @@
       "id": 8423,
       "name": "Warrior Kinship",
       "requiredLevel": 50,
+      "xp": 5100,
       "objective": "Kill 7 Helboar in the Blasted Lands and return to the Fallen Hero of the Horde.",
       "start": {
         "npc": "Fallen Hero of the Horde",
@@ -1077,6 +1107,7 @@
       "id": 8424,
       "name": "War on the Shadowsworn",
       "requiredLevel": 50,
+      "xp": 5100,
       "objective": "Slaughter the Shadowsworn in the Blasted Lands and return to the Fallen Hero of the Horde.",
       "requires": [8423],
       "start": {
@@ -1097,7 +1128,7 @@
       "side": "Both",
       "class": "Warrior",
       "requiredLevel": 50,
-      "xp": 6350,
+      "xp": 12400,
       "objective": "Bring the Voodoo Feathers from the trolls in the Sunken Temple to the Fallen Hero of the Horde.",
       "description": "Warrior class quest for both factions. Needs 2 amber, 2 blue and 2 green Voodoo Feathers from the six troll guardians: Gasher, Mijan, Zolo, Hukku, Zul'Lor and Loro.\n\nOptional introductory quest:",
       "requires": [8424],
@@ -1148,6 +1179,7 @@
       "id": 9052,
       "name": "Bloodpetal Poison",
       "requiredLevel": 50,
+      "xp": 5100,
       "objective": "Collect 8 Bloodcap and 8 Gorishi Stings, and return to Torwa Pathfinder in Un'Goro Crater.",
       "start": {
         "npc": "Torwa Pathfinder",
@@ -1167,7 +1199,7 @@
       "side": "Both",
       "class": "Druid",
       "requiredLevel": 50,
-      "xp": 6350,
+      "xp": 12400,
       "objective": "Retrieve a Putrid Vine from the guardian at the bottom of the Sunken Temple and return to Torwa Pathfinder.",
       "description": "Druid class quest. The Putrid Vine drops from Atal'alarion in the temple basement.\n\nOptional introductory quest:",
       "requires": [9051],
@@ -1202,7 +1234,7 @@
       "side": "Both",
       "class": "Druid",
       "requiredLevel": 50,
-      "xp": 510,
+      "xp": 500,
       "objective": "Speak with Torwa Pathfinder in Un'Goro Crater.",
       "description": "Introductory step leading to A Better Ingredient.\n\nOPTIONAL, not required",
       "start": {

@@ -110,12 +110,12 @@ Data:AddInstance(47, {
     entrance = { 1413, 43, 90 },
     bosses = { 2773, 2774, 2775, 2776, 2777, 2778, -4425, -4842 },
 })
-Data:AddBoss(2773, { instanceID = 47, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Roogug" }) -- Roogug
+Data:AddBoss(2773, { instanceID = 47, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Roogug", quests = { 1701, 1838 } }) -- Roogug
 Data:AddBoss(2774, { instanceID = 47, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Aggem Thorncurse" }) -- Aggem Thorncurse
 Data:AddBoss(2775, { instanceID = 47, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Death Speaker Jargba" }) -- Death Speaker Jargba
 Data:AddBoss(2776, { instanceID = 47, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Overlord Ramtusk" }) -- Overlord Ramtusk
 Data:AddBoss(2777, { instanceID = 47, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Agathelos the Raging" }) -- Agathelos the Raging
-Data:AddBoss(2778, { instanceID = 47, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Charlga Razorflank" }) -- Charlga Razorflank
+Data:AddBoss(2778, { instanceID = 47, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Charlga Razorflank", quests = { 96264, 79360 } }) -- Charlga Razorflank
 Data:AddBoss(-4425, { instanceID = 47, displayID = 4735, level = 32, rare = true }) -- Blind Hunter
 Data:AddBoss(-4842, { instanceID = 47, displayID = 6102, level = 32, rare = true }) -- Earthcaller Halmgar
 
@@ -426,7 +426,7 @@ Data:AddBoss(-9030, { instanceID = 230, displayID = 11538 }) -- Ok'thor the Brea
 Data:AddBoss(-9031, { instanceID = 230, displayID = 3004 }) -- Anub'shiah
 Data:AddBoss(-9032, { instanceID = 230, displayID = 8271 }) -- Hedrum the Creeper
 Data:AddBoss(-8923, { instanceID = 230, displayID = 8270 }) -- Panzor the Invincible
-Data:AddBoss(-16059, { instanceID = 230, rare = true }) -- Theldren
+Data:AddBoss(-16059, { instanceID = 230, rare = true, quests = { 9015 } }) -- Theldren
 
 -- Onyxia's Lair
 Data:AddInstance(249, {
@@ -892,7 +892,7 @@ Data:AddBoss(3316, { instanceID = 2974, order = 1000, displayID = 130432 }) -- I
 Data:AddBoss(3322, { instanceID = 2974, order = 3000, displayID = 130427 }) -- Bonesnout the Unbroken
 Data:AddBoss(3323, { instanceID = 2974, order = 5000, displayID = 130436 }) -- Blackmaw Behemoth
 Data:AddBoss(3327, { instanceID = 2974, order = 2000, displayID = 130440 }) -- Elder Shaman Bloodmane
-Data:AddBoss(3334, { instanceID = 2974, order = 4000, displayID = 130447 }) -- Varrox Bleakhoof
+Data:AddBoss(3334, { instanceID = 2974, order = 4000, displayID = 130447, quests = { 92065 } }) -- Varrox Bleakhoof
 Data:AddBoss(3336, { instanceID = 2974, order = 6000, displayID = 131644 }) -- Unbound Spirit
 Data:AddBoss(-269104, { instanceID = 2974, displayID = 12235 }) -- Moontouched Wanderer
 Data:AddBoss(-269111, { instanceID = 2974, displayID = 145808 }) -- Gortek the Apprentice
@@ -910,9 +910,9 @@ Data:AddInstance(2994, {
     bosses = { 3403, 3410, 3418, 3415, 3409 },
 })
 Data:AddBoss(3403, { instanceID = 2994, order = 0, displayID = 7914 }) -- Overseer Wrex
-Data:AddBoss(3410, { instanceID = 2994, order = 500, displayID = 4973 }) -- Tidemistress Ca'zass
+Data:AddBoss(3410, { instanceID = 2994, order = 500, displayID = 4973, quests = { 96332, 96381 } }) -- Tidemistress Ca'zass
 Data:AddBoss(3418, { instanceID = 2994, order = 625, displayID = 2317 }) -- Katerina the Cleaner
-Data:AddBoss(3415, { instanceID = 2994, order = 750, displayID = 140092 }) -- The Questioner
+Data:AddBoss(3415, { instanceID = 2994, order = 750, displayID = 140092, quests = { 96335 } }) -- The Questioner
 Data:AddBoss(3409, { instanceID = 2994, order = 1000, displayID = 6374 }) -- Blazeroar
 
 -- Excavation Site: Wetlands
@@ -969,7 +969,7 @@ Data:AddInstance(3001, {
 Data:AddBoss(3498, { instanceID = 3001, order = 0, displayID = 142989 }) -- Titanosaur
 Data:AddBoss(3499, { instanceID = 3001, order = 1000, displayID = 143040 }) -- Ravasaur Hunters
 Data:AddBoss(3500, { instanceID = 3001, order = 2000, displayID = 144514 }) -- Thunderhoof
-Data:AddBoss(3501, { instanceID = 3001, order = 3000, displayID = 144511 }) -- Venomridge
+Data:AddBoss(3501, { instanceID = 3001, order = 3000, displayID = 144511, quests = { 95924 } }) -- Venomridge
 Data:AddBoss(3507, { instanceID = 3001, order = 3500, displayID = 144515 }) -- Direhorn Matriarch
 Data:AddBoss(3503, { instanceID = 3001, order = 5000, displayID = 143035 }) -- Cinder
 Data:AddBoss(3504, { instanceID = 3001, order = 6000 }) -- King Op

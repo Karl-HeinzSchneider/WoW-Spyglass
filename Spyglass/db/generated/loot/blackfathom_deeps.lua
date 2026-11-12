@@ -151,7 +151,7 @@ Data:AddQuests(48, {
         { 6898 }, -- Orb of Soran'ruk
         { 15109 }, -- Staff of Soran'ruk
     } },
-    { id = 971, name = "Knowledge in the Deeps", side = "Alliance", requiredLevel = 10, xp = 2750, objective = "Recover the Lorgalis Manuscript from Blackfathom Deeps.", description = "The Lorgalis Manuscript is inside a Pitted Iron Chest underwater in the Pool of Ask'ar, in the northern alcove just past Ghamoo-ra's turtle room.", start = { description = "Forlorn Cavern, Ironforge.", location = { 1455, 50.8, 5.6 }, npc = "Gerrig Bonegrip" }, turnIn = { description = "Forlorn Cavern, Ironforge.", location = { 1455, 50.8, 5.6 }, npc = "Gerrig Bonegrip" }, items = {
+    { id = 971, name = "Knowledge in the Deeps", side = "Alliance", requiredLevel = 18, xp = 2750, objective = "Recover the Lorgalis Manuscript from Blackfathom Deeps.", description = "The Lorgalis Manuscript is inside a Pitted Iron Chest underwater in the Pool of Ask'ar, in the northern alcove just past Ghamoo-ra's turtle room.", start = { description = "Forlorn Cavern, Ironforge.", location = { 1455, 50.8, 5.6 }, npc = "Gerrig Bonegrip" }, turnIn = { description = "Forlorn Cavern, Ironforge.", location = { 1455, 50.8, 5.6 }, npc = "Gerrig Bonegrip" }, items = {
         { 6743 }, -- Sustaining Ring
     } },
     { id = 6563, name = "The Essence of Aku'Mai", side = "Horde", requiredLevel = 17, xp = 1750, objective = "Collect 20 Sapphires of Aku'Mai in Blackfathom Deeps.", start = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, turnIn = { description = "Zoram'gar Outpost, Ashenvale.", location = { 1440, 12, 34 }, npc = "Je'neu Sancrea" }, items = {} },

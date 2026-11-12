@@ -5,7 +5,7 @@
       "name": "Uldaman Reagent Run",
       "side": "Alliance",
       "requiredLevel": 38,
-      "xp": 3450,
+      "xp": 6050,
       "objective": "Bring 12 Magenta Fungus Caps to Ghak Healtouch in Thelsamar.",
       "requires": [2500],
       "start": {
@@ -30,7 +30,7 @@
       "name": "Agmond's Fate",
       "side": "Alliance",
       "requiredLevel": 30,
-      "xp": 2850,
+      "xp": 5000,
       "objective": "Bring 4 Carved Stone Urns to Prospector Ironband in Loch Modan.",
       "description": "The urns are in the outer Uldaman cave, before the instance portal.\n\nOptional introductory quest:",
       "requires": [739],
@@ -83,7 +83,7 @@
       "name": "Solution to Doom",
       "side": "Both",
       "requiredLevel": 30,
-      "xp": 3150,
+      "xp": 6150,
       "objective": "Bring the Tablet of Ryun'eh to Theldurin the Lost.",
       "start": {
         "npc": "Theldurin the Lost",
@@ -131,7 +131,7 @@
       "name": "A Sign of Hope",
       "side": "Alliance",
       "requiredLevel": 35,
-      "xp": 2750,
+      "xp": 4800,
       "objective": "Find Hammertoe Grez in Uldaman.",
       "requires": [720],
       "start": {
@@ -150,7 +150,7 @@
       "name": "Amulet of Secrets",
       "side": "Alliance",
       "requiredLevel": 35,
-      "xp": 3150,
+      "xp": 5500,
       "objective": "Find Hammertoe's Amulet and return it to him in Uldaman.",
       "requires": [721],
       "start": {
@@ -291,7 +291,7 @@
       "name": "The Lost Tablets of Will",
       "side": "Alliance",
       "requiredLevel": 35,
-      "xp": 5850,
+      "xp": 10250,
       "objective": "Find the Tablet of Will, and return them to Advisor Belgrum in Ironforge.",
       "requires": [762],
       "start": {
@@ -316,7 +316,7 @@
       "name": "Reclaimed Treasures",
       "side": "Alliance",
       "requiredLevel": 33,
-      "xp": 3600,
+      "xp": 6300,
       "objective": "Get Krom Stoutarm's treasured possession from his chest in the North Common Hall of Uldaman, and bring it to him in Ironforge.",
       "start": {
         "npc": "Krom Stoutarm",
@@ -371,7 +371,7 @@
       "side": "Both",
       "class": "Mage",
       "requiredLevel": 35,
-      "xp": 3900,
+      "xp": 7800,
       "objective": "Retrieve an Obsidian Power Source and bring it to Tabetha in Dustwallow Marsh.",
       "description": "Mage class quest. The Obsidian Sentinel guards the back entrance of Uldaman. Continues with Mana Surges for the Celestial Orb or Celestial Stave.",
       "requires": [1955],
@@ -392,6 +392,7 @@
       "name": "The Shattered Necklace",
       "side": "Alliance",
       "requiredLevel": 37,
+      "xp": 5800,
       "objective": "Search for the original creator of the shattered necklace to learn of its potential value.",
       "start": {
         "item": 7666,
@@ -408,6 +409,7 @@
       "name": "Lore for a Price",
       "side": "Alliance",
       "requiredLevel": 37,
+      "xp": 2450,
       "objective": "Bring five silver bars to Talvash del Kissel in Ironforge.",
       "requires": [2198],
       "start": {
@@ -427,7 +429,7 @@
       "name": "Back to Uldaman",
       "side": "Alliance",
       "requiredLevel": 37,
-      "xp": 2550,
+      "xp": 4450,
       "objective": "Search for clues as to the current disposition of Talvash's necklace within Uldaman. The slain paladin he mentioned was the person who has it last.",
       "requires": [2199],
       "start": {
@@ -446,7 +448,7 @@
       "name": "Find the Gems",
       "side": "Alliance",
       "requiredLevel": 37,
-      "xp": 3600,
+      "xp": 6300,
       "objective": "Find the ruby, sapphire, and topaz that are scattered throughout Uldaman. Once acquired, contact Talvash del Kissel remotely by using the Phial of Scrying he previously gave you.",
       "description": "The sapphire drops from Grimlok.",
       "requires": [2200],
@@ -464,7 +466,7 @@
       "name": "Uldaman Reagent Run",
       "side": "Horde",
       "requiredLevel": 36,
-      "xp": 3450,
+      "xp": 6750,
       "objective": "Bring 12 Magenta Fungus Caps to Jarkal Mossmeld in Kargath.",
       "requires": [2258],
       "start": {
@@ -489,10 +491,11 @@
       "name": "Restoring the Necklace",
       "side": "Alliance",
       "requiredLevel": 37,
-      "xp": 930,
+      "xp": 1650,
       "objective": "Obtain a power source from the most powerful construct you can find in Uldaman, and deliver it to Talvash del Kissel in Ironforge.",
       "description": "The power source drops from Archaedas. Finishing it unlocks Talvash's Enhancing Necklace.",
       "requires": [2201],
+      "followUps": [2361],
       "start": {
         "npc": "Talvash's Scrying Bowl",
         "description": "Uldaman"
@@ -508,7 +511,7 @@
       "name": "The Hidden Chamber",
       "side": "Alliance",
       "requiredLevel": 35,
-      "xp": 3900,
+      "xp": 6850,
       "objective": "Read Baelog's Journal, explore the hidden chamber, then report to Prospector Stormpike.",
       "description": "Optional introductory quest:",
       "start": {
@@ -553,7 +556,7 @@
       "name": "The Platinum Discs",
       "side": "Both",
       "requiredLevel": 40,
-      "xp": 4200,
+      "xp": 8200,
       "objective": "Speak with stone watcher and learn what ancient lore it keeps. Once you have learned what lore it has to offer, activate the Discs of Norgannon.",
       "description": "The discs are in the Map Chamber, past Ironaya.",
       "start": {
@@ -572,29 +575,18 @@
       "requiredLevel": 40,
       "xp": 5250,
       "objective": "Take the miniature version of the Discs of Norgannon to the Explorers' League in Ironforge.",
-      "description": "Speak with the Stone Watcher and activate the discs first. Then hand the reward voucher to Dinita Stonemantle in the Ironforge vault and choose your reward.",
+      "description": "Speak with the Stone Watcher and activate the Discs of Norgannon before bringing the miniature discs to Ironforge.",
       "requires": [2278],
+      "followUps": [2439],
       "start": {
         "description": "The Discs of Norgannon, Uldaman"
       },
       "turnIn": {
         "npc": "High Explorer Magellas",
+        "location": [1455, 69.6, 18.6],
         "description": "Ironforge"
       },
-      "items": [
-        {
-          "item": 3928,
-          "name": "Superior Healing Potion"
-        },
-        {
-          "item": 6149,
-          "name": "Greater Mana Potion"
-        },
-        {
-          "item": 9587,
-          "name": "Thawpelt Sack"
-        }
-      ]
+      "items": []
     },
     {
       "id": 2280,
@@ -632,7 +624,7 @@
       "name": "Necklace Recovery",
       "side": "Horde",
       "requiredLevel": 37,
-      "xp": 2450,
+      "xp": 4800,
       "objective": "Look for a valuable necklace within the Uldaman dig site and bring it back to Dran Droffers in Orgrimmar. The necklace may be damaged.",
       "start": {
         "npc": "Dran Droffers",
@@ -651,7 +643,7 @@
       "name": "Necklace Recovery, Take 2",
       "side": "Horde",
       "requiredLevel": 37,
-      "xp": 2450,
+      "xp": 4800,
       "objective": "Find a clue as to the gems' whereabouts in the depths of Uldaman.",
       "requires": [2283],
       "start": {
@@ -670,6 +662,7 @@
       "name": "Translating the Journal",
       "side": "Horde",
       "requiredLevel": 37,
+      "xp": 6750,
       "objective": "Find someone who can translate the paladin's journal. The closest location that might have someone is Kargath, in the Badlands.",
       "requires": [2284],
       "start": {
@@ -686,6 +679,7 @@
       "name": "Translating the Journal",
       "side": "Horde",
       "requiredLevel": 37,
+      "xp": 350,
       "objective": "Let Jarkal borrow the necklace. In exchange, he will translate the journal for you.",
       "requires": [2318],
       "start": {
@@ -705,10 +699,11 @@
       "name": "Find the Gems and Power Source",
       "side": "Horde",
       "requiredLevel": 37,
-      "xp": 3750,
+      "xp": 7300,
       "objective": "Recover all three gems and a power source for the necklace from Uldaman, and then bring them to Jarkal Mossmeld in Kargath. Jarkal believes a power source might be found on the strongest construct present in Uldaman.",
       "description": "The sapphire drops from Grimlok and the power source from Archaedas.",
       "requires": [2338],
+      "followUps": [2340, 2341],
       "start": {
         "npc": "Jarkal Mossmeld",
         "location": [1418, 2.4, 46],
@@ -726,7 +721,7 @@
       "name": "Reclaimed Treasures",
       "side": "Horde",
       "requiredLevel": 33,
-      "xp": 3600,
+      "xp": 7000,
       "objective": "Get Patrick Garrett's family treasure from their family chest in the South Common Hall of Uldaman, and bring it to him in the Undercity.",
       "start": {
         "npc": "Patrick Garrett",
@@ -745,7 +740,7 @@
       "name": "The Lost Dwarves",
       "side": "Alliance",
       "requiredLevel": 35,
-      "xp": 315,
+      "xp": 550,
       "objective": "Find Baelog in Uldaman.",
       "description": "Introductory step leading to The Hidden Chamber.\n\nOPTIONAL, not required",
       "start": {
@@ -813,6 +808,110 @@
         "description": "Loch Modan"
       },
       "items": []
+    },
+    {
+      "id": 2361,
+      "name": "Restoring the Necklace",
+      "side": "Alliance",
+      "requiredLevel": 37,
+      "xp": 5600,
+      "objective": "Let Talvash del Kissel finish restoring the necklace, then take it from him.",
+      "requires": [2204],
+      "start": {
+        "npc": "Talvash del Kissel",
+        "location": [1455, 36, 4],
+        "description": "Mystic Ward, Ironforge"
+      },
+      "turnIn": {
+        "npc": "Talvash del Kissel",
+        "location": [1455, 36, 4],
+        "description": "Mystic Ward, Ironforge"
+      },
+      "items": [
+        {
+          "item": 7673,
+          "name": "Talvash's Enhancing Necklace"
+        }
+      ]
+    },
+    {
+      "id": 2341,
+      "name": "Necklace Recovery, Take 3",
+      "side": "Horde",
+      "requiredLevel": 37,
+      "xp": 5600,
+      "objective": "Visit Jarkal Mossmeld in Kargath to see if he was successful.",
+      "requires": [2340],
+      "start": {
+        "npc": "Dran Droffers",
+        "location": [1454, 59.4, 36.8],
+        "description": "The Drag, Orgrimmar"
+      },
+      "turnIn": {
+        "npc": "Jarkal Mossmeld",
+        "location": [1418, 2.6, 46],
+        "description": "Kargath, Badlands"
+      },
+      "items": [
+        {
+          "item": 7888,
+          "name": "Jarkal's Enhancing Necklace"
+        }
+      ]
+    },
+    {
+      "id": 2340,
+      "name": "Deliver the Gems",
+      "side": "Horde",
+      "requiredLevel": 37,
+      "xp": 1850,
+      "objective": "Deliver the Necklace and Gem Salvage to Dran Droffers in Orgrimmar.",
+      "requires": [2339],
+      "followUps": [2341],
+      "start": {
+        "npc": "Jarkal Mossmeld",
+        "location": [1418, 2.6, 46],
+        "description": "Kargath, Badlands"
+      },
+      "turnIn": {
+        "npc": "Dran Droffers",
+        "location": [1454, 59.4, 36.8],
+        "description": "The Drag, Orgrimmar"
+      },
+      "items": []
+    },
+    {
+      "id": 2439,
+      "name": "The Platinum Discs",
+      "side": "Alliance",
+      "requiredLevel": 40,
+      "xp": 420,
+      "objective": "Take your reward voucher to Dinita Stonemantle in the Vault of Ironforge.",
+      "requires": [2279],
+      "start": {
+        "npc": "High Explorer Magellas",
+        "location": [1455, 69.6, 18.6],
+        "description": "Hall of Explorers, Ironforge"
+      },
+      "turnIn": {
+        "npc": "Dinita Stonemantle",
+        "location": [1455, 33.8, 60.2],
+        "description": "The Vault, Ironforge"
+      },
+      "items": [
+        {
+          "item": 3928,
+          "name": "Superior Healing Potion"
+        },
+        {
+          "item": 6149,
+          "name": "Greater Mana Potion"
+        },
+        {
+          "item": 9587,
+          "name": "Thawpelt Sack"
+        }
+      ]
     }
   ]
 }

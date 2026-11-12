@@ -438,7 +438,7 @@
       "name": "A Dynamite Plan",
       "side": "Alliance",
       "requiredLevel": 9,
-      "xp": 580,
+      "xp": 575,
       "objective": "Obtain 10 Coarse Dynamite, then return to Sprite Jumpsprocket in Stormwind.",
       "description": "Coarse Dynamite can be crafted, traded or bought from the auction house.",
       "requires": [92748],

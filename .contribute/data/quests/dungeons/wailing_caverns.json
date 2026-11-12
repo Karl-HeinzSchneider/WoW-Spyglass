@@ -222,7 +222,7 @@
       "side": "Both",
       "requiredLevel": 15,
       "xp": 2650,
-      "objective": "Travel to Ratchet to find someone who can identify the Glowing Shard, then deliver it as directed.",
+      "objective": "Speak with Sputtervalve in Ratchet about the Glowing Shard, then deliver it to Falla Sagewind on top of the mountain above Wailing Caverns.",
       "description": "Dropped by: Mutanus the Devourer.\nVisit Sputtervalve in Ratchet near the flight master at [63.0, 37.2].",
       "start": {
         "item": 10441,

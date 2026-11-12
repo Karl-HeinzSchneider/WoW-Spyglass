@@ -305,6 +305,67 @@
         "description": "Undercity."
       },
       "items": []
+    },
+    {
+      "id": 1951,
+      "name": "Rituals of Power",
+      "side": "Both",
+      "class": "Mage",
+      "requiredLevel": 30,
+      "xp": 6300,
+      "objective": "Bring the book Rituals of Power to Tabetha in Dustwallow Marsh.",
+      "description": "Mage class quest.",
+      "requires": [1950],
+      "start": {
+        "npc": "Magus Tirth",
+        "location": [1441, 78.2, 75.8],
+        "description": "Shimmering Flats, Thousand Needles"
+      },
+      "turnIn": {
+        "npc": "Tabetha",
+        "location": [1445, 46, 57],
+        "description": "Dustwallow Marsh"
+      },
+      "items": []
+    },
+    {
+      "id": 1949,
+      "name": "Hidden Secrets",
+      "side": "Both",
+      "class": "Mage",
+      "requiredLevel": 30,
+      "objective": "Speak with Magus Tirth in the Shimmering Flats.",
+      "start": {
+        "npc": "Tabetha",
+        "location": [1445, 46, 57],
+        "description": "Dustwallow Marsh"
+      },
+      "turnIn": {
+        "npc": "Magus Tirth",
+        "location": [1441, 78.2, 75.8],
+        "description": "Shimmering Flats, Thousand Needles"
+      },
+      "items": []
+    },
+    {
+      "id": 1950,
+      "name": "Get the Scoop",
+      "side": "Both",
+      "class": "Mage",
+      "requiredLevel": 30,
+      "objective": "Find the phrase to Tirth's strongbox, then return to Tirth.",
+      "requires": [1949],
+      "start": {
+        "npc": "Magus Tirth",
+        "location": [1441, 78.2, 75.8],
+        "description": "Shimmering Flats, Thousand Needles"
+      },
+      "turnIn": {
+        "npc": "Magus Tirth",
+        "location": [1441, 78.2, 75.8],
+        "description": "Shimmering Flats, Thousand Needles"
+      },
+      "items": []
     }
   ]
 }

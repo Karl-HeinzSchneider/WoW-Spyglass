@@ -5,7 +5,7 @@
       "name": "Bring the End",
       "side": "Horde",
       "requiredLevel": 37,
-      "xp": 4300,
+      "xp": 9050,
       "objective": "Andrew Brownell wants you to kill Amnennar the Coldbringer and return his skull.",
       "start": {
         "npc": "Andrew Brownell",
@@ -25,6 +25,10 @@
         {
           "item": 10824,
           "name": "Amberglow Talisman"
+        },
+        {
+          "item": 270081,
+          "name": "Purified Ring"
         }
       ]
     },
@@ -32,6 +36,7 @@
       "id": 3523,
       "name": "Scourge of the Downs",
       "requiredLevel": 32,
+      "xp": 675,
       "objective": "If you agree to aid Belnistrasz, speak with him again and hand the Oathstone he gave you back to him.",
       "start": {
         "npc": "Belnistrasz",
@@ -48,7 +53,7 @@
       "name": "Extinguishing the Idol",
       "side": "Both",
       "requiredLevel": 32,
-      "xp": 4250,
+      "xp": 10100,
       "objective": "Escort Belnistrasz to the Quilboar's idol in Razorfen Downs. Protect Belnistrasz while he performs the ritual to shut down the idol.",
       "description": "Waves of undead attack during the ritual. Talk to the brazier near the idol afterwards to finish.",
       "requires": [3523],
@@ -72,7 +77,7 @@
       "name": "Bring the Light",
       "side": "Alliance",
       "requiredLevel": 39,
-      "xp": 4300,
+      "xp": 10200,
       "objective": "Archbishop Benedictus wants you to slay Amnennar the Coldbringer in Razorfen Downs.",
       "start": {
         "npc": "Archbishop Benedictus",
@@ -92,6 +97,10 @@
         {
           "item": 10824,
           "name": "Amberglow Talisman"
+        },
+        {
+          "item": 270081,
+          "name": "Purified Ring"
         }
       ]
     },
@@ -100,7 +109,7 @@
       "name": "A Host of Evil",
       "side": "Both",
       "requiredLevel": 28,
-      "xp": 3450,
+      "xp": 8200,
       "objective": "Kill 8 Razorfen Battleguard, 8 Razorfen Thornweavers, and 8 Death's Head Cultists and return to Myriam Moonsinger near the entrance to Razorfen Downs.",
       "description": "These mobs are outside the instance, around the entrance.",
       "start": {
@@ -131,6 +140,66 @@
         "npc": "Sutara Plainstalker",
         "location": [1412, 34.4, 22.8],
         "description": "Skywatcher Plateau, Mulgore"
+      },
+      "items": []
+    },
+    {
+      "id": 96773,
+      "name": "The Coldbringer's Eye",
+      "side": "Alliance",
+      "requiredLevel": 34,
+      "xp": 8600,
+      "objective": "Recover The Coldbringer's Eye from Razorfen Downs.",
+      "start": {
+        "npc": "Archmage Lan'dalock",
+        "location": [1416, 15.4, 73.8],
+        "description": "at the Violet Hold entrance in Dalaran, Alterac Mountains"
+      },
+      "turnIn": {
+        "npc": "Archmage Lan'dalock",
+        "location": [1416, 15.4, 73.8],
+        "description": "at the Violet Hold entrance in Dalaran, Alterac Mountains"
+      },
+      "items": []
+    },
+    {
+      "id": 93604,
+      "name": "Agamaggan's Blood",
+      "side": "Both",
+      "requiredLevel": 35,
+      "xp": 10200,
+      "objective": "Venture to Razorfen Downs and acquire Virulent Blood of Agamaggan, then return it to Kog'thug the Brave at Bristleback Retreat.",
+      "description": "Click a Cauldron of Agamaggan's Blood to summon the Virulent Blood of Agamaggan and kill it for the blood. One cauldron is in the tent nearest the last boss (it may also be in other tents). Blood from Razorfen Kraul doesn't count.",
+      "requires": [93601],
+      "start": {
+        "npc": "Kog'thug the Brave",
+        "location": [2652, 72.6, 31.4],
+        "description": "Bristleback Retreat, Shen'dralas"
+      },
+      "turnIn": {
+        "npc": "Kog'thug the Brave",
+        "location": [2652, 72.6, 31.4],
+        "description": "Bristleback Retreat, Shen'dralas"
+      },
+      "items": []
+    },
+    {
+      "id": 93601,
+      "name": "Passing the Blame",
+      "side": "Both",
+      "requiredLevel": 35,
+      "xp": 390,
+      "objective": "Seek out a quilboar of significance at the Bristleback Retreat.",
+      "requires": [93404],
+      "start": {
+        "npc": "Woodwyrd",
+        "location": [2652, 53.5, 76],
+        "description": "Forlorn Gardens, Shen'dralas (just east of Mithera, about 53, 76)"
+      },
+      "turnIn": {
+        "npc": "Kog'thug the Brave",
+        "location": [2652, 72.6, 31.4],
+        "description": "Bristleback Retreat, Shen'dralas"
       },
       "items": []
     }

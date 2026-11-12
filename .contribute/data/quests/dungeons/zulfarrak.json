@@ -5,7 +5,7 @@
       "name": "Divino-matic Rod",
       "side": "Both",
       "requiredLevel": 40,
-      "xp": 6300,
+      "xp": 12600,
       "objective": "Bring the Divino-matic Rod to Chief Engineer Bilgewhizzle in Gadgetzan.",
       "description": "The rod drops from Sergeant Bly after the pyramid event.",
       "start": {
@@ -53,7 +53,7 @@
       "name": "Gahz'rilla",
       "side": "Both",
       "requiredLevel": 40,
-      "xp": 7100,
+      "xp": 14200,
       "objective": "Bring Gahz'rilla's Electrified Scale to Wizzle Brassbolts in the Shimmering Flats.",
       "description": "Optional introductory quest:",
       "start": {
@@ -78,7 +78,7 @@
       "name": "Tiara of the Deep",
       "side": "Both",
       "requiredLevel": 40,
-      "xp": 6050,
+      "xp": 12100,
       "objective": "Bring the Tiara of the Deep to Tabetha in Dustwallow Marsh.",
       "description": "The Tiara drops from Hydromancer Velratha.\n\nOptional introductory quest:",
       "start": {
@@ -107,7 +107,7 @@
       "name": "Tabetha's Task",
       "side": "Both",
       "requiredLevel": 40,
-      "xp": 405,
+      "xp": 410,
       "objective": "Speak with Tabetha in Dustwallow Marsh.",
       "description": "Introductory step leading to Tiara of the Deep.\n\nOPTIONAL, not required",
       "start": {
@@ -143,7 +143,7 @@
       "name": "Scarab Shells",
       "side": "Both",
       "requiredLevel": 40,
-      "xp": 3900,
+      "xp": 7800,
       "objective": "Bring 5 Uncracked Scarab Shells to Tran'rek in Gadgetzan.",
       "description": "Optional introductory quest:",
       "start": {
@@ -215,7 +215,7 @@
       "name": "The Spider God",
       "side": "Horde",
       "requiredLevel": 40,
-      "xp": 4850,
+      "xp": 9700,
       "objective": "Read from the Tablet of Theka to learn the name of the Witherbark spider god, then return to Master Gadrin.",
       "description": "The Tablet of Theka is in Theka the Martyr's room.",
       "requires": [2935],
@@ -290,7 +290,7 @@
       "name": "Nekrum's Medallion",
       "side": "Alliance",
       "requiredLevel": 40,
-      "xp": 5250,
+      "xp": 10500,
       "objective": "Bring Nekrum's Medallion to Thadius Grimshade in the Blasted Lands.",
       "description": "The medallion drops from Nekrum Gutchewer.",
       "requires": [2990],
@@ -311,7 +311,7 @@
       "name": "Troll Temper",
       "side": "Both",
       "requiredLevel": 40,
-      "xp": 3900,
+      "xp": 7800,
       "objective": "Bring 20 Vials of Troll Temper to Trenton Lighthammer in Gadgetzan.",
       "start": {
         "npc": "Trenton Lighthammer",
@@ -362,6 +362,28 @@
         "description": "Skywatcher Plateau, Mulgore"
       },
       "items": []
+    },
+    {
+      "id": 82084,
+      "name": "A Lesson in Literacy",
+      "side": "Both",
+      "class": "Mage",
+      "requiredLevel": 42,
+      "xp": 3900,
+      "objective": "Track down and collect the spellbook materials requested by the librarian.",
+      "description": "Mage class quest.",
+      "start": {
+        "description": "Garion Wendell, Stormwind (Alliance) or Owen Thadd, Undercity (Horde)"
+      },
+      "turnIn": {
+        "description": "Garion Wendell, Stormwind (Alliance) or Owen Thadd, Undercity (Horde)"
+      },
+      "items": [
+        {
+          "item": 221344,
+          "name": "Personal Spellbook"
+        }
+      ]
     }
   ]
 }

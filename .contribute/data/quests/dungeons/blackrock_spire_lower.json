@@ -4,6 +4,7 @@
       "id": 3520,
       "name": "Screecher Spirits",
       "requiredLevel": 40,
+      "xp": 3750,
       "objective": "Capture the spirits of 3 screechers in Feralas, then return to Yeh'kinya in Steamwheedle Port.",
       "start": {
         "npc": "Yeh'kinya",
@@ -22,7 +23,7 @@
       "name": "The Prophecy of Mosh'aru",
       "side": "Both",
       "requiredLevel": 40,
-      "xp": 5250,
+      "xp": 10500,
       "objective": "Bring the First and Second Mosh'aru Tablets to Yeh'kinya in Tanaris.",
       "description": "The tablets drop from Theka the Martyr and Hydromancer Velratha.",
       "requires": [3520],
@@ -43,7 +44,7 @@
       "name": "The God Hakkar",
       "side": "Both",
       "requiredLevel": 40,
-      "xp": 7900,
+      "xp": 15400,
       "objective": "Bring the Filled Egg of Hakkar to Yeh'kinya in Tanaris.",
       "description": "Fill the Egg of Hakkar from the Hakkari Bloodkeepers to summon the Avatar of Hakkar.",
       "requires": [4787],
@@ -182,6 +183,7 @@
       "id": 4787,
       "name": "The Ancient Egg",
       "requiredLevel": 40,
+      "xp": 5900,
       "objective": "Bring the Ancient Egg to Yeh'kinya in Tanaris.",
       "requires": [3527],
       "start": {

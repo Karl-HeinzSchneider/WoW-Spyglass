@@ -40,5 +40,32 @@ Data:AddTrashLoot(2994, {
 })
 
 Data:AddQuests(2994, {
-    { id = 96772, name = "The Dragon's Journal", side = "Alliance", requiredLevel = 46, xp = 14410, objective = "Recover Zarla's Journal from the depths of Alcaz Prison.", description = "Reported to start in Dalaran; who gives it is not known yet.", start = { description = "Alterac Mountains (giver not known yet)", npc = "Dalaran" }, items = {} },
+    { id = 96772, name = "The Dragon's Journal", side = "Alliance", requiredLevel = 46, xp = 14400, objective = "Recover Zarla's Journal from the depths of Alcaz Prison.", description = "Reported to start in Dalaran; who gives it is not known yet.", start = { description = "Alterac Mountains (giver not known yet)", npc = "Dalaran" }, turnIn = { description = "at the Violet Hold entrance in Dalaran, Alterac Mountains", location = { 1416, 15.4, 73.8 }, npc = "Archmage Lan'dalock" }, items = {} },
+    { id = 95483, name = "Thrall Needs to Know", side = "Horde", requiredLevel = 48, xp = 2400, objective = "Bring word of Varian Wrynn's fate to Thrall in Orgrimmar.", requires = { { id = 96369, name = "Bad News for Folkar" } }, start = { description = "inside Alcaz Prison", npc = "Commander Folkar" }, turnIn = { description = "Valley of Wisdom, Orgrimmar", location = { 1454, 32, 37.8 }, npc = "Thrall" }, items = {
+        { 279831 }, -- Fatebound Buckler
+        { 279833 }, -- Courier's Clasp
+        { 279474 }, -- Dustwallow Dirk
+    } },
+    { id = 96334, name = "Blood Red Bandanas", side = "Horde", requiredLevel = 48, xp = 9700, objective = "Enter Alcaz Prison and collect 8 Blood Red Bandanas from the human guards there.", requires = { { id = 95285, name = "Right Place, Wrong Time" } }, start = { description = "outside Alcaz Prison, Alcaz Island, Dustwallow Marsh", location = { 1445, 70.2, 18.8 }, npc = "Sergeant Ulka" }, turnIn = { description = "Grommash Hold, Orgrimmar", location = { 1454, 34.4, 38.6 }, npc = "Eitrigg" }, items = {
+        { 279448 }, -- Bloodsplattered Bandana
+        { 279473 }, -- Makeshift Belt
+    } },
+    { id = 96332, name = "A Little Payback", side = "Horde", requiredLevel = 48, xp = 9700, objective = "Enter the Alcaz Prison and slay 15 Strashaz Soldiers, 8 Strashaz Enchantresses, and bring the head of Tidemistress Ca'zass to Sergeant Ulka.", requires = { { id = 95285, name = "Right Place, Wrong Time" } }, start = { description = "outside Alcaz Prison, Alcaz Island, Dustwallow Marsh", location = { 1445, 70.2, 18.8 }, npc = "Sergeant Ulka" }, turnIn = { description = "outside Alcaz Prison, Alcaz Island, Dustwallow Marsh", location = { 1445, 70.2, 18.8 }, npc = "Sergeant Ulka" }, items = {
+        { 279824 }, -- Kor'kron Battle Gauntlets
+        { 279826 }, -- Marshdweller's Pants
+        { 279829 }, -- Naga Scale Spaulders
+    } },
+    { id = 95263, name = "Somber News", side = "Alliance", requiredLevel = 48, xp = 2850, objective = "Return to Sully McCleary in Dustwallow Marsh.", requires = { { id = 95262, name = "The Secret Prison" } }, start = { description = "Inside Alcaz Prison, once you learn what became of King Varian Wrynn" }, turnIn = { description = "in the inn in Theramore, Dustwallow Marsh", location = { 1445, 66.2, 45.2 }, npc = "Sully McCleary" }, items = {} },
+    { id = 96381, name = "A Bit of Wet Work", side = "Alliance", requiredLevel = 48, xp = 11550, objective = "Enter the Alcaz Prison and slay 15 Strashaz Soldiers, 8 Strashaz Enchantresses, and bring the head of Tidemistress Ca'zass to Sully McCleary.", requires = { { id = 95198, name = "The Return of the King?" } }, start = { description = "in the inn in Theramore, Dustwallow Marsh", location = { 1445, 66.2, 45.2 }, npc = "Sully McCleary" }, turnIn = { description = "in the inn in Theramore, Dustwallow Marsh", location = { 1445, 66.2, 45.2 }, npc = "Sully McCleary" }, items = {
+        { 279825 }, -- Theramore Defender's Gauntlets
+        { 279826 }, -- Marshdweller's Pants
+        { 279829 }, -- Naga Scale Spaulders
+    } },
+    { id = 96337, name = "More Valuable Than Gold", side = "Both", requiredLevel = 48, xp = 11550, objective = "Use the note provided by Mason Connery to find his hidden treasure.", description = "The Document Box sells for 25g, and it starts State Secrets (a Horde, an Alliance and a Steamwheedle Cartel version); who takes it is not known yet.\nDon't kill The Questioner before the last boss, or you can't get this quest.", requires = { { id = 96335, name = "The Man in the Iron Chains" } }, start = { description = "inside Alcaz Prison, once you free him", npc = "Mason Connery" }, turnIn = { description = "Mason Connery's treasure: a loose floorboard upstairs in the middle room of the Moonbrook inn, Westfall", location = { 1436, 43.4, 67.8 }, npc = "Loose Floorboard" }, items = {
+        { 274041 }, -- Document Box
+    } },
+    { id = 95262, name = "The Secret Prison", side = "Alliance", requiredLevel = 48, xp = 14400, objective = "Enter Alcaz Prison and learn what became of the King of Stormwind.", requires = { { id = 95198, name = "The Return of the King?" } }, followUps = { 95263 }, start = { description = "in the inn in Theramore, Dustwallow Marsh", location = { 1445, 66.2, 45.2 }, npc = "Sully McCleary" }, turnIn = { description = "Inside Alcaz Prison (who takes it is not known yet)" }, items = {} },
+    { id = 95309, name = "No Orc Left Behind", side = "Horde", requiredLevel = 48, xp = 12100, objective = "Find Commander Folkar inside Alcaz Prison.", requires = { { id = 95285, name = "Right Place, Wrong Time" } }, followUps = { 95454, 96369, 95483 }, start = { description = "outside Alcaz Prison, Dustwallow Marsh", location = { 1445, 70.2, 18.8 }, npc = "Sergeant Ulka" }, turnIn = { description = "inside Alcaz Prison", npc = "Commander Folkar" }, items = {} },
+    { id = 95454, name = "The Honor of the Kor'kron", side = "Horde", requiredLevel = 48, xp = 12100, objective = "Look for King Varian Wrynn in Alcaz Prison.", requires = { { id = 95309, name = "No Orc Left Behind" } }, followUps = { 96369, 95483 }, start = { description = "inside Alcaz Prison", npc = "Commander Folkar" }, turnIn = { description = "after Blazeroar, inside Alcaz Prison", npc = "Perfumed Note" }, items = {} },
+    { id = 96335, name = "The Man in the Iron Chains", side = "Both", requiredLevel = 48, xp = 2850, objective = "Recover the Alcaz Shackle Key from The Questioner in Alcaz Prison.", followUps = { 96337 }, start = { description = "the man in iron chains, inside Alcaz Prison", npc = "Mason Connery" }, turnIn = { description = "inside Alcaz Prison", npc = "Mason Connery" }, items = {} },
 })

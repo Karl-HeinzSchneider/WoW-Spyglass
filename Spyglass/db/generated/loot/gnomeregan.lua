@@ -83,7 +83,7 @@ Data:AddQuests(90, {
         { 9624 }, -- Triprunner Dungarees
         { 9625 }, -- Dual Reinforced Leggings
     } },
-    { id = 2841, name = "Rig Wars", side = "Horde", requiredLevel = 25, xp = 2750, objective = "Accept Rig Wars from Nogg. You do not need to complete it before continuing to Chief Engineer Scooty.", description = "Accept Rig Wars first; completion is not required for Chief Engineer Scooty. Accept Rig Wars before Chief Engineer Scooty. If Rig Wars disappears, abandon Chief Engineer Scooty and it will reappear.", start = { description = "Valley of Honor, Orgrimmar.", location = { 1454, 76, 25 }, npc = "Nogg" }, turnIn = { description = "Orgrimmar.", location = { 1454, 76, 25 }, npc = "Nogg" }, items = {
+    { id = 2841, name = "Rig Wars", side = "Horde", requiredLevel = 25, xp = 2750, objective = "Retrieve the Rig Blueprints and Thermaplugg's Safe Combination and bring them to Nogg in Orgrimmar.", description = "Accept Rig Wars first; completion is not required for Chief Engineer Scooty. Accept Rig Wars before Chief Engineer Scooty. If Rig Wars disappears, abandon Chief Engineer Scooty and it will reappear.", start = { description = "Valley of Honor, Orgrimmar.", location = { 1454, 76, 25 }, npc = "Nogg" }, turnIn = { description = "Orgrimmar.", location = { 1454, 76, 25 }, npc = "Nogg" }, items = {
         { 9623 }, -- Civinad Robes
         { 9624 }, -- Triprunner Dungarees
         { 9625 }, -- Dual Reinforced Leggings

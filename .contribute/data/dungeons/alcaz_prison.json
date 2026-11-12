@@ -52,6 +52,7 @@
       "name": "Tidemistress Ca'zass",
       "displayID": 4973,
       "npc": 255997,
+      "quests": [96332, 96381],
       "loot": [
         {
           "item": 276736,
@@ -72,6 +73,7 @@
       "name": "The Questioner",
       "displayID": 140092,
       "npc": 256236,
+      "quests": [96335],
       "loot": [
         {
           "item": 276742,
@@ -122,5 +124,5 @@
       "name": "Compound Gloves"
     }
   ],
-  "quests": [96772]
+  "quests": [96772, 95483, 96334, 96332, 95263, 96381, 96337, 95262, 95309, 95454, 96335]
 }

@@ -72,6 +72,7 @@
       "name": "Venomridge",
       "displayID": 144511,
       "npc": 261813,
+      "quests": [95924],
       "loot": [
         {
           "item": 280015,
@@ -207,5 +208,5 @@
       "name": "Shaper's Robe"
     }
   ],
-  "quests": [95928]
+  "quests": [95928, 97049, 95926, 95924, 95925]
 }
