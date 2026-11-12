@@ -73,9 +73,14 @@ recorded in the game by the `Spyglass_Scraper` addon:
 /sg scan resume                continue where the last scan stopped (survives /reload)
 /sg scan 270000 280000         scan a range
 /sg scan 270000 280000 force   re-record every id in the range, known or not
+/sg scan missing              scan missing item data for known dungeon drops
 /sg scan stop    /sg scan      stop; status
 /sg scan limit off             no per-scan item limit (for the SavedVariables route); `limit 1000` restores it
 ```
+
+Use `/sg scan missing` to look up item IDs in the dungeon boss and trash loot tables that
+still lack an item record. Each ID is checked once, and the command reports how many still
+lack data. Run it again to retry those IDs, and use `/sg export` to collect the records.
 
 A scan asks for about 100 ids per second and skips ids the shipped database already has; an
 open-ended scan gives up after 20 000 consecutive missing ids. Every existing item is recorded

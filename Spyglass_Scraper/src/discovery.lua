@@ -50,6 +50,7 @@ local LOOT_SLOT_ITEM = LOOT_SLOT_ITEM or 1
 ---@field from integer
 ---@field to? integer  # nil = open-ended
 ---@field next integer  # first id not requested yet
+---@field ids? integer[]  # when set, from/to/next are indices into the target list
 ---@field found integer  # items recorded by this scan
 ---@field force boolean  # re-record ids the DB has; no SCAN_LIMIT
 ---@field gap integer  # consecutive ids that didn't exist
@@ -399,7 +400,7 @@ function module:ITEM_DATA_LOAD_RESULT(_, itemID, success)
         if self:RecordItem(itemID, scan.force) then
             scan.found = scan.found + 1
             local limit = self:ScanLimit()
-            if not scan.force and limit and scan.found >= limit and not scan.done then
+            if not scan.force and not scan.ids and limit and scan.found >= limit and not scan.done then
                 self:FinishScan(("%d new items recorded"):format(scan.found))
             end
         end
@@ -418,24 +419,23 @@ end
 ---@param from integer
 ---@param to? integer
 ---@param force? boolean
-function module:StartScan(from, to, force)
+---@param ids? integer[]
+function module:StartScan(from, to, force, ids)
     if self.scan then
-        log:chat(
-            "A scan is already running (%d..%s, at %d); /sg scan stop first",
-            self.scan.from,
-            tostring(self.scan.to or "open"),
-            self.scan.next
-        )
+        log:chat("A scan is already running; /sg scan shows its status, /sg scan stop ends it")
         return
     end
     ---@type SpyglassScraper.Scan
     local scan =
         { from = from, to = to, next = from, found = 0, force = force or false, gap = 0, pending = {}, done = false }
+    scan.ids = ids
     self.scan = scan
     scan.ticker = C_Timer.NewTicker(SCAN_INTERVAL, function()
         self:ScanTick()
     end)
-    if force then
+    if ids then
+        log:chat("Scanning %d dungeon loot item(s) missing from the database; /sg scan stop ends the scan.", #ids)
+    elseif force then
         log:chat("Re-scanning item ids %d..%d, recording every item again.", from, to)
     else
         local limit = self:ScanLimit()
@@ -447,6 +447,34 @@ function module:StartScan(from, to, force)
             limit and ("stops after %d new items"):format(limit) or "no item limit"
         )
     end
+end
+
+function module:ScanMissingDungeonLoot()
+    local ids, seen = {}, {}
+    local function addMissing(loot)
+        for _, row in ipairs(loot) do
+            local id = row[1]
+            if not seen[id] and not Data:GetItem(id) then
+                seen[id] = true
+                ids[#ids + 1] = id
+            end
+        end
+    end
+    for _, instanceID in ipairs(Data:GetInstanceIDs()) do
+        local instance = Data:GetInstance(instanceID)
+        if instance and instance.type == "dungeon" then
+            addMissing(Data:GetTrashLoot(instanceID))
+            for _, bossID in ipairs(instance.bosses) do
+                addMissing(Data:GetBossLoot(bossID))
+            end
+        end
+    end
+    if #ids == 0 then
+        log:chat("All dungeon loot items with known IDs already have item data.")
+        return
+    end
+    table.sort(ids)
+    self:StartScan(1, #ids, false, ids)
 end
 
 -- New items per scan before it stops; nil = unlimited (`/sg scan limit off`).
@@ -468,20 +496,25 @@ function module:ScanTick()
     if scan.to then
         last = math.min(last, scan.to)
     end
-    for id = scan.next, last do
+    for index = scan.next, last do
+        local id = scan.ids and scan.ids[index] or index
         if scan.force or not Data:GetItem(id) then
-            scan.pending[id] = true
-            C_Item.RequestLoadItemDataByID(id)
+            if scan.ids and self:RecordItem(id) then
+                scan.found = scan.found + 1
+            else
+                scan.pending[id] = true
+                C_Item.RequestLoadItemDataByID(id)
+            end
         end
     end
     scan.next = last + 1
-    if not scan.force then
-        -- A force re-scan is a side trip; the resume point belongs to the main scan.
+    if not scan.force and not scan.ids then
+        -- The resume point belongs to the regular range scan.
         local progress = app.db.global.scan
         progress.next, progress.to = scan.next, scan.to
     end
     if scan.to and scan.next > scan.to then
-        self:FinishScan("end of the range")
+        self:FinishScan(scan.ids and "end of the dungeon loot list" or "end of the range")
     elseif (scan.next - scan.from) % 1000 == 0 then
         log:chat("Scan at %d, %d item(s) recorded so far", last, scan.found)
     end
@@ -501,6 +534,21 @@ function module:FinishScan(reason)
             return
         end
         self.scan = nil
+        if scan.ids then
+            local missing = 0
+            for _, id in ipairs(scan.ids) do
+                if not Data:GetItem(id) then
+                    missing = missing + 1
+                end
+            end
+            log:chat(
+                "Dungeon loot scan ended (%s): %d item(s) recorded, %d still missing. Export with /sg export.",
+                reason,
+                scan.found,
+                missing
+            )
+            return
+        end
         local resume = scan.to and scan.next > scan.to and "" or (", /sg scan resume continues at %d"):format(scan.next)
         log:chat(
             "Scan stopped at %d (%s): %d item(s) recorded. Export with /sg export, or /reload to write the SavedVariables file%s.",
@@ -537,6 +585,8 @@ function module:ScanCommand(a, b, c)
     local progress = app.db.global.scan
     if a == "stop" then
         self:StopScan()
+    elseif a == "missing" then
+        self:ScanMissingDungeonLoot()
     elseif a == "limit" then
         local limit = tonumber(b)
         if b == "off" or (limit and limit <= 0) then
@@ -571,7 +621,14 @@ function module:ScanCommand(a, b, c)
         end
     elseif not a then
         local scan = self.scan
-        if scan then
+        if scan and scan.ids then
+            log:chat(
+                "Dungeon loot scan: %d of %d item(s) checked, %d recorded so far",
+                scan.next - 1,
+                #scan.ids,
+                scan.found
+            )
+        elseif scan then
             log:chat(
                 "Scan %d..%s at %d, %d item(s) recorded so far",
                 scan.from,

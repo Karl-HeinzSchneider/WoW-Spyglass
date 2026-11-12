@@ -12,7 +12,7 @@ scanned item is browsable immediately. Trainer snapshots are saved alongside the
 
 ## Scanning (`/sg scan`)
 
-`/sg scan <from> [to]`, `resume`, `stop`, `limit <n|off>`, `<from> <to> force`.
+`/sg scan <from> [to]`, `missing`, `resume`, `stop`, `limit <n|off>`, `<from> <to> force`.
 
 - `StartScan` / `ScanTick` request `SCAN_BATCH` = 25 ids per `SCAN_INTERVAL` = 0.25 s (about 100 per
   second) through `C_Item.RequestLoadItemDataByID`. `ITEM_DATA_LOAD_RESULT` records each existing
@@ -24,6 +24,9 @@ scanned item is browsable immediately. Trainer snapshots are saved alongside the
 - A scan stops after `SCAN_LIMIT` = 1000 new items (the default; `limit off` = 0 for the
   SavedVariables route) or `SCAN_MAX_GAP` = 20 000 consecutive missing ids. `SCAN_SETTLE` = 3 s
   waits for the last results. Progress persists in `global.scan`, so `resume` survives `/reload`.
+- `/sg scan missing` uses the dungeon boss and trash loot tables to build a deduplicated list
+  of IDs without item records. It uses the same request batches, records cached items immediately,
+  and checks the whole list regardless of the item limit. The range scan's resume point is preserved.
 - `MergeIntoData` runs in `OnEnable` (`PLAYER_LOGIN`, when every data file has loaded): a record
   identical to the shipped row is dropped, the rest are added to `Data`. So after an import and a
   `/reload`, `resume` starts clean.

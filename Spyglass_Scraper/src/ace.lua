@@ -38,7 +38,7 @@ function addon:OnInitialize()
 end
 
 function addon:OnEnable()
-    SG:RegisterCommand("scan", self.scanHandler, "/sg scan <from> [to] | resume | stop | limit <n|off>")
+    SG:RegisterCommand("scan", self.scanHandler, "/sg scan <from> [to] | missing | resume | stop | limit <n|off>")
     SG:RegisterCommand("export", self.exportHandler, "/sg export [all]")
     SG:RegisterCommand("portrait", self.portraitHandler, "/sg portrait [displayID]")
     SG:RegisterCommand("levels", self.levelsHandler, "/sg levels")
