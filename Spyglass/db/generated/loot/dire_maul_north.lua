@@ -4,45 +4,45 @@ local Data = Spyglass.Data
 -- Dire Maul: North (map 429)
 
 Data:AddBossLoot(362, { -- Guard Mol'dar
-    { 18494 }, -- #18494
+    { 18494 }, -- Denwatcher's Shoulders
     { 18493 }, -- Bulky Iron Spaulders
-    { 18496 }, -- #18496
-    { 18497 }, -- #18497
+    { 18496 }, -- Heliotrope Cloak
+    { 18497 }, -- Sublime Wristguards
     { 18498 }, -- Hedgecutter
 })
 
 Data:AddBossLoot(363, { -- Stomper Kreeg
-    { 18425 }, -- #18425
+    { 18425 }, -- Kreeg's Mug
 })
 
 Data:AddBossLoot(364, { -- Guard Fengus
-    { 18494 }, -- #18494
+    { 18494 }, -- Denwatcher's Shoulders
     { 18493 }, -- Bulky Iron Spaulders
-    { 18496 }, -- #18496
-    { 18497 }, -- #18497
+    { 18496 }, -- Heliotrope Cloak
+    { 18497 }, -- Sublime Wristguards
     { 18498 }, -- Hedgecutter
 })
 
 Data:AddBossLoot(365, { -- Guard Slip'kik
-    { 18494 }, -- #18494
+    { 18494 }, -- Denwatcher's Shoulders
     { 18493 }, -- Bulky Iron Spaulders
-    { 18496 }, -- #18496
-    { 18497 }, -- #18497
+    { 18496 }, -- Heliotrope Cloak
+    { 18497 }, -- Sublime Wristguards
     { 18498 }, -- Hedgecutter
 })
 
 Data:AddBossLoot(366, { -- Captain Kromcrush
-    { 18503 }, -- #18503
+    { 18503 }, -- Kromcrush's Chestplate
     { 18507 }, -- Boots of the Full Moon
-    { 18502 }, -- #18502
+    { 18502 }, -- Monstrous Glaive
     { 18505 }, -- Mugger's Belt
 })
 
 Data:AddBossLoot(367, { -- Cho'Rush the Observer
     { 18483 }, -- Mana Channeling Wand
-    { 18484 }, -- #18484
+    { 18484 }, -- Cho'Rush's Blade
     { 18485 }, -- Observer's Shield
-    { 18490 }, -- #18490
+    { 18490 }, -- Insightful Hood
 })
 
 Data:AddBossLoot(368, { -- King Gordok

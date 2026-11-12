@@ -11,7 +11,7 @@ Data:AddBossLoot(343, { -- Zevrim Thornhoof
 
 Data:AddBossLoot(344, { -- Hydrospawn
     { 18322 }, -- Waterspout Boots
-    { 18317 }, -- #18317
+    { 18317 }, -- Tempest Talisman
     { 18324 }, -- Waveslicer
 })
 
@@ -27,14 +27,14 @@ Data:AddBossLoot(2792, { -- Pusillin
 
 Data:AddBossLoot(346, { -- Alzzin the Wildshaper
     { 18309 }, -- Gloves of Restoration
-    { 18310 }, -- #18310
+    { 18310 }, -- Fiendish Machete
     { 18312 }, -- Energized Chestplate
     { 18314 }, -- Ring of Demonic Guile
     { 18315 }, -- Ring of Demonic Potency
     { 18318 }, -- Merciful Greaves
     { 18321 }, -- Energetic Rod
     { 18326 }, -- Razor Gauntlets
-    { 18327 }, -- #18327
+    { 18327 }, -- Whipvine Cord
     { 18328 }, -- Shadewood Cloak
 })
 

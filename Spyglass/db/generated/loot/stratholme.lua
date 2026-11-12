@@ -27,7 +27,7 @@ Data:AddBossLoot(476, { -- Malor the Zealous
 Data:AddBossLoot(475, { -- Cannon Master Willey
     { 16708 }, -- Shadowcraft Spaulders
     { 22403 }, -- Nacreous Shell Necklace
-    { 13380 }, -- #13380
+    { 13380 }, -- Willey's Portable Howitzer
     { 13382 }, -- Cannonball Runner
     { 18721 }, -- Barrage Girdle
     { 22407 }, -- Helm of the New Moon
@@ -46,7 +46,7 @@ Data:AddBossLoot(477, { -- Archivist Galford
 })
 
 Data:AddBossLoot(478, { -- Balnazzar
-    { 13353 }, -- #13353
+    { 13353 }, -- Book of the Dead
     { 13348 }, -- Demonshear
     { 13358 }, -- Wyrmtongue Shoulders
     { 13359 }, -- Crown of Tyranny
@@ -70,7 +70,7 @@ Data:AddBossLoot(472, { -- The Unforgiven
 Data:AddBossLoot(479, { -- Baroness Anastari
     { 16704 }, -- Dreadmist Sandals
     { 13534 }, -- Banshee Finger
-    { 18728 }, -- #18728
+    { 18728 }, -- Anastari Heirloom
     { 18730 }, -- Shadowy Laced Handwraps
     { 18729 }, -- Screeching Bow
     { 13514 }, -- Wail of the Banshee
@@ -93,7 +93,7 @@ Data:AddBossLoot(481, { -- Maleki the Pallid
 })
 
 Data:AddBossLoot(482, { -- Magistrate Barthilas
-    { 18722 }, -- #18722
+    { 18722 }, -- Death Grips
     { 13376 }, -- Royal Tribunal Cloak
     { 18725 }, -- Peacemaker
     { 18727 }, -- Crimson Felt Hat
@@ -105,9 +105,9 @@ Data:AddBossLoot(483, { -- Ramstein the Gorger
     { 13372 }, -- Slavedriver's Cane
     { 13373 }, -- Band of Flesh
     { 13374 }, -- Soulstealer Mantle
-    { 13375 }, -- #13375
+    { 13375 }, -- Crest of Retribution
     { 13515 }, -- Ramstein's Lightning Bolts
-    { 18723 }, -- #18723
+    { 18723 }, -- Animated Chain Necklace
 })
 
 Data:AddBossLoot(484, { -- Baron Rivendare
@@ -122,14 +122,14 @@ Data:AddBossLoot(484, { -- Baron Rivendare
     { 16732 }, -- Legplates of Valor
     { 13340 }, -- Cape of the Black Baron
     { 22408 }, -- Ritssyn's Wand of Bad Mojo
-    { 22409 }, -- #22409
+    { 22409 }, -- Tunic of the Crescent Moon
     { 13346 }, -- Robes of the Exalted
     { 22412 }, -- Thuzadin Mantle
     { 13344 }, -- Dracorian Gauntlets
     { 13349 }, -- Scepter of the Unholy
     { 22410 }, -- Gauntlets of Deftness
     { 22411 }, -- Helm of the Executioner
-    { 13345 }, -- #13345
+    { 13345 }, -- Seal of Rivendare
 })
 
 Data:AddBossLoot(2798, { -- Postmaster Malown
@@ -137,19 +137,19 @@ Data:AddBossLoot(2798, { -- Postmaster Malown
     { 13388 }, -- The Postmaster's Tunic
     { 13389 }, -- The Postmaster's Trousers
     { 13391 }, -- The Postmaster's Treads
-    { 13393 }, -- #13393
+    { 13393 }, -- Malown's Slam
 })
 
 Data:AddBossLoot(2799, { -- Skul
-    { 13394 }, -- #13394
-    { 13396 }, -- #13396
+    { 13394 }, -- Skul's Cold Embrace
+    { 13396 }, -- Skul's Ghastly Touch
     { 13395 }, -- Skul's Fingerbone Claws
 })
 
 Data:AddBossLoot(2800, { -- Stonespine
     { 13399 }, -- Gargoyle Shredder Talons
-    { 13397 }, -- #13397
-    { 13954 }, -- #13954
+    { 13397 }, -- Stoneskin Gargoyle Cape
+    { 13954 }, -- Verdant Footpads
 })
 
 Data:AddTrashLoot(329, {

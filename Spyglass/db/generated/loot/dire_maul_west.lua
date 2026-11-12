@@ -6,7 +6,7 @@ local Data = Spyglass.Data
 Data:AddBossLoot(350, { -- Tendris Warpwood
     { 18390 }, -- Tanglemoss Leggings
     { 18393 }, -- Warpwood Binding
-    { 18353 }, -- #18353
+    { 18353 }, -- Stoneflower Staff
     { 18352 }, -- Petrified Bark Shield
 })
 
@@ -16,7 +16,7 @@ Data:AddBossLoot(347, { -- Illyanna Ravenoak
 })
 
 Data:AddBossLoot(348, { -- Magister Kalendris
-    { 18374 }, -- #18374
+    { 18374 }, -- Flamescarred Shoulders
     { 18397 }, -- Elder Magus Pendant
     { 18371 }, -- Mindtap Talisman
 })
@@ -24,27 +24,27 @@ Data:AddBossLoot(348, { -- Magister Kalendris
 Data:AddBossLoot(349, { -- Immol'thar
     { 18377 }, -- Quickdraw Gloves
     { 18379 }, -- Odious Greaves
-    { 18381 }, -- #18381
+    { 18381 }, -- Evil Eye Pendant
     { 18391 }, -- Eyestalk Cord
-    { 18385 }, -- #18385
-    { 18384 }, -- #18384
+    { 18385 }, -- Robe of Everlasting Night
+    { 18384 }, -- Bile-etched Spaulders
     { 18389 }, -- Cloak of the Cosmos
     { 18394 }, -- Demon Howl Wristguards
     { 18372 }, -- Blade of the New Moon
-    { 18370 }, -- #18370
+    { 18370 }, -- Vigilance Charm
 })
 
 Data:AddBossLoot(361, { -- Prince Tortheldrin
     { 18382 }, -- Fluctuating Cloak
     { 18395 }, -- Emerald Flame Ring
-    { 18380 }, -- #18380
-    { 18378 }, -- #18378
+    { 18380 }, -- Eldritch Reinforced Legplates
+    { 18378 }, -- Silvermoon Leggings
     { 18396 }, -- Mind Carver
     { 18392 }, -- Distracting Dagger
-    { 18376 }, -- #18376
+    { 18376 }, -- Timeworn Mace
     { 18375 }, -- Bracers of the Eclipse
     { 18388 }, -- Stoneshatter
-    { 18373 }, -- #18373
+    { 18373 }, -- Chestplate of Tranquility
 })
 
 Data:AddBossLoot(2793, { -- Lord Hel'nurath

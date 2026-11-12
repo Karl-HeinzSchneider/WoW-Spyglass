@@ -49,8 +49,8 @@ Data:AddBossLoot(271, { -- Urok Doomhowl
 })
 
 Data:AddBossLoot(272, { -- Quartermaster Zigris
-    { 13252 }, -- #13252
-    { 13253 }, -- #13253
+    { 13252 }, -- Cloudrunner Girdle
+    { 13253 }, -- Hands of Power
     { 12835 }, -- Plans: Annihilator
 })
 
@@ -85,7 +85,7 @@ Data:AddBossLoot(-9219, { -- Spirestone Butcher
 
 Data:AddBossLoot(-9218, { -- Spirestone Battle Lord
     { 13284 }, -- Swiftdart Battleboots
-    { 13285 }, -- #13285
+    { 13285 }, -- The Blackrock Slicer
 })
 
 Data:AddBossLoot(-9217, { -- Spirestone Lord Magus
@@ -101,8 +101,8 @@ Data:AddBossLoot(-10376, { -- Crystal Fang
 })
 
 Data:AddBossLoot(-9596, { -- Bannok Grimaxe
-    { 12634 }, -- #12634
-    { 12637 }, -- #12637
+    { 12634 }, -- Chiselbrand Girdle
+    { 12637 }, -- Backusarian Gauntlets
     { 12621 }, -- Demonfork
     { 12838 }, -- Plans: Arcanite Reaper
 })

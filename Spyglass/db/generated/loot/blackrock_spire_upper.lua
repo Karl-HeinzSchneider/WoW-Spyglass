@@ -5,10 +5,10 @@ local Data = Spyglass.Data
 
 Data:AddBossLoot(3062, { -- Pyroguard Emberseer
     { 16672 }, -- Gauntlets of Elements
-    { 12905 }, -- #12905
-    { 12926 }, -- #12926
+    { 12905 }, -- Wildfire Cape
+    { 12926 }, -- Flaming Band
     { 12927 }, -- Truestrike Shoulders
-    { 12929 }, -- #12929
+    { 12929 }, -- Emberfury Talisman
 })
 
 Data:AddBossLoot(3063, { -- Warchief Rend Blackhand
@@ -16,26 +16,26 @@ Data:AddBossLoot(3063, { -- Warchief Rend Blackhand
     { 16669 }, -- Pauldrons of Elements
     { 12583 }, -- Blackhand Doomsaw
     { 12587 }, -- Eye of Rend
-    { 12935 }, -- #12935
-    { 12936 }, -- #12936
-    { 12939 }, -- #12939
-    { 12940 }, -- #12940
+    { 12935 }, -- Warmaster Legguards
+    { 12936 }, -- Battleborn Armbraces
+    { 12939 }, -- Dal'Rend's Tribal Guardian
+    { 12940 }, -- Dal'Rend's Sacred Charge
     { 18102 }, -- Dragonrider Boots
-    { 18103 }, -- #18103
-    { 18104 }, -- #18104
-    { 22247 }, -- #22247
+    { 18103 }, -- Band of Rumination
+    { 18104 }, -- Feralsurge Girdle
+    { 22247 }, -- Faith Healer's Boots
 })
 
 Data:AddBossLoot(3068, { -- The Beast
     { 16729 }, -- Lightforge Spaulders
-    { 12709 }, -- #12709
-    { 12963 }, -- #12963
+    { 12709 }, -- Pip's Skinner
+    { 12963 }, -- Blademaster Leggings
     { 12964 }, -- Tristam Legguards
-    { 12965 }, -- #12965
+    { 12965 }, -- Spiritshroud Leggings
     { 12966 }, -- Blackmist Armguards
     { 12967 }, -- Bloodmoon Cloak
     { 12968 }, -- Frostweaver Cape
-    { 12969 }, -- #12969
+    { 12969 }, -- Seeping Willow
     { 22311 }, -- Ironweave Boots
 })
 
@@ -49,12 +49,12 @@ Data:AddBossLoot(3069, { -- General Drakkisath
     { 16721 }, -- Shadowcraft Tunic
     { 16726 }, -- Lightforge Breastplate
     { 16730 }, -- Breastplate of Valor
-    { 13141 }, -- #13141
-    { 13098 }, -- #13098
-    { 13142 }, -- #13142
-    { 12602 }, -- #12602
+    { 13141 }, -- Tooth of Gnarr
+    { 13098 }, -- Painweaver Band
+    { 13142 }, -- Brigam Girdle
+    { 12602 }, -- Draconian Deflector
     { 22253 }, -- Tome of the Lost
-    { 22267 }, -- #22267
+    { 22267 }, -- Spellweaver's Turban
     { 22269 }, -- Shadow Prowler's Cloak
     { 22268 }, -- Draconic Infused Emblem
     { 15730 }, -- Pattern: Red Dragonscale Breastplate
@@ -72,32 +72,32 @@ Data:AddBossLoot(3070, { -- Lord Valthalak
 })
 
 Data:AddBossLoot(-10264, { -- Solakar Flamewreath
-    { 12589 }, -- #12589
+    { 12589 }, -- Dustfeather Sash
     { 12603 }, -- Nightbrace Tunic
     { 12606 }, -- Crystallized Girdle
-    { 12609 }, -- #12609
+    { 12609 }, -- Polychromatic Visionwrap
     { 16695 }, -- Devout Mantle
 })
 
 Data:AddBossLoot(-10509, { -- Jed Runewatcher
-    { 12604 }, -- #12604
+    { 12604 }, -- Starfire Tiara
     { 12605 }, -- Serpentine Skuller
     { 12930 }, -- Briarwood Reed
 })
 
 Data:AddBossLoot(-10899, { -- Goraluk Anvilcrack
-    { 18048 }, -- #18048
-    { 13498 }, -- #13498
-    { 18047 }, -- #18047
-    { 13502 }, -- #13502
+    { 18048 }, -- Mastersmith's Hammer
+    { 13498 }, -- Handcrafted Mastersmith Leggings
+    { 18047 }, -- Flame Walkers
+    { 13502 }, -- Handcrafted Mastersmith Girdle
     { 12834 }, -- Plans: Arcanite Champion
     { 12837 }, -- Plans: Masterwork Stormhammer
 })
 
 Data:AddBossLoot(-10339, { -- Gyth
     { 12952 }, -- Gyth's Skull
-    { 12953 }, -- #12953
-    { 12960 }, -- #12960
+    { 12953 }, -- Dragoneye Coif
+    { 12960 }, -- Tribal War Feathers
     { 16669 }, -- Pauldrons of Elements
     { 22225 }, -- Dragonskin Cowl
 })

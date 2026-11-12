@@ -32237,6 +32237,32 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "22247": {
+    "names": {
+      "enUS": "Faith Healer's Boots"
+    },
+    "quality": 3,
+    "itemLevel": 63,
+    "reqLevel": 58,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_FEET",
+    "bind": 1,
+    "icon": 132560,
+    "sellPrice": 17274,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 12,
+      "RESISTANCE0_NAME": 61,
+      "SPELL_DAMAGE_DONE": 8,
+      "SPELL_HEALING_DONE": 24,
+      "SPIRIT": 12,
+      "STAMINA": 10
+    }
+  },
   "22248": {
     "names": {
       "enUS": "Enchanted Runecloth Bag"
@@ -32597,6 +32623,30 @@
       "FIRE_RESISTANCE": 12,
       "INTELLECT": 5,
       "RESISTANCE2_NAME": 12
+    }
+  },
+  "22267": {
+    "names": {
+      "enUS": "Spellweaver's Turban"
+    },
+    "quality": 3,
+    "itemLevel": 63,
+    "reqLevel": 60,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_HEAD",
+    "bind": 1,
+    "icon": 133164,
+    "sellPrice": 17274,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "HIT_RATING": 10,
+      "RESISTANCE0_NAME": 73,
+      "SPELL_POWER": 33,
+      "SPIRIT": 13
     }
   },
   "22268": {
@@ -34866,6 +34916,32 @@
       "DAMAGE_PER_SECOND": 63.85,
       "SPELL_POWER": 11,
       "STAMINA": 5
+    }
+  },
+  "22409": {
+    "names": {
+      "enUS": "Tunic of the Crescent Moon"
+    },
+    "quality": 3,
+    "itemLevel": 63,
+    "reqLevel": 58,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_CHEST",
+    "bind": 1,
+    "icon": 132723,
+    "sellPrice": 28791,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 14,
+      "INTELLECT": 12,
+      "RESISTANCE0_NAME": 176,
+      "SPELL_POWER": 15,
+      "SPIRIT": 11,
+      "STAMINA": 14
     }
   },
   "22410": {

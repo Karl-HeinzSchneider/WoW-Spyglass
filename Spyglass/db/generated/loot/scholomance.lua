@@ -26,7 +26,7 @@ Data:AddBossLoot(2804, { -- Jandice Barov
 
 Data:AddBossLoot(2811, { -- Rattlegore
     { 16711 }, -- Shadowcraft Boots
-    { 14528 }, -- #14528
+    { 14528 }, -- Rattlecage Buckler
     { 14531 }, -- Frightskull Shaft
     { 14537 }, -- Corpselight Greaves
     { 14538 }, -- Deadwalker Mantle
@@ -41,7 +41,7 @@ Data:AddBossLoot(2809, { -- Marduk Blackpool
 
 Data:AddBossLoot(2813, { -- Vectus
     { 14577 }, -- #14577
-    { 18691 }, -- #18691
+    { 18691 }, -- Dark Advisor's Pendant
 })
 
 Data:AddBossLoot(2810, { -- Ras Frostwhisperer
@@ -49,9 +49,9 @@ Data:AddBossLoot(2810, { -- Ras Frostwhisperer
     { 14487 }, -- Bonechill Hammer
     { 14502 }, -- Frostbite Girdle
     { 18694 }, -- Shadowy Mail Greaves
-    { 18696 }, -- #18696
+    { 18696 }, -- Intricately Runed Shield
     { 13952 }, -- Iceblade Hacker
-    { 14340 }, -- #14340
+    { 14340 }, -- Freezing Lich Robes
     { 14522 }, -- Maelstrom Leggings
     { 14525 }, -- Boneclenched Gauntlets
     { 18693 }, -- Shivery Handwraps
@@ -177,8 +177,8 @@ Data:AddBossLoot(2812, { -- The Ravenian
 Data:AddBossLoot(2807, { -- Lord Alexei Barov
     { 14626 }, -- Necropile Robe
     { 14637 }, -- Cadaverous Armor
-    { 18680 }, -- #18680
-    { 18681 }, -- #18681
+    { 18680 }, -- Ancient Bone Bow
+    { 18681 }, -- Burial Shawl
     { 18682 }, -- Ghoul Skin Leggings
     { 18683 }, -- Hammer of the Vesper
     { 18684 }, -- Dimly Opalescent Ring
@@ -243,9 +243,9 @@ Data:AddBossLoot(2801, { -- Darkmaster Gandling
     { 16720 }, -- Wildheart Cowl
     { 16727 }, -- Lightforge Helm
     { 16731 }, -- Helm of Valor
-    { 13951 }, -- #13951
+    { 13951 }, -- Vigorsteel Vambraces
     { 13398 }, -- Boots of the Shrieker
-    { 13938 }, -- #13938
+    { 13938 }, -- Bonecreeper Stylus
     { 13944 }, -- Tombstone Breastplate
     { 13953 }, -- Silent Fang
     { 13964 }, -- Witchblade
