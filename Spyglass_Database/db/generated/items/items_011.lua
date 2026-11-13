@@ -3,6 +3,11 @@ local Data = Spyglass.Data
 
 -- { quality, itemLevel, reqLevel, classID, subclassID, slot, bind, icon, stats, sellPrice, stackCount, setID, expansionID, craftingReagent }; see Data.ITEM.
 Data:AddItems({
+    [285289] = { 2, 1, 1, 9, 4, "INVTYPE_NON_EQUIP_IGNORE", 1, 134942, nil, 1000, 1, 0, 0, false },
+    [285290] = { 2, 1, 1, 9, 4, "INVTYPE_NON_EQUIP_IGNORE", 1, 134942, nil, 1000, 1, 0, 0, false },
+    [285291] = { 3, 1, 1, 9, 4, "INVTYPE_NON_EQUIP_IGNORE", 1, 134942, nil, 1000, 1, 0, 0, false },
+    [285292] = { 3, 21, 16, 2, 16, "INVTYPE_THROWN", 1, 134427, { ATTACK_POWER = 6, DAMAGE_PER_SECOND = 12.65, STAMINA = 2 }, 1472, 1, 0, 0, false },
+    [285326] = { 3, 1, 1, 4, 0, "INVTYPE_FINGER", 0, 6029060, { ARMOR_PENETRATION_RATING = 50 }, 2, 1, 0, 0, false },
     [285327] = { 1, 1, 1, 4, 0, "INVTYPE_TABARD", 1, 135026, nil, 0, 1, 0, 0, false },
     [285328] = { 3, 28, 23, 2, 1, "INVTYPE_2HWEAPON", 1, 132395, { ATTACK_POWER_VS_HUMANOID = 32, DAMAGE_PER_SECOND = 22.94, STAMINA = 9 }, 5572, 1, 0, 0, false },
     [285329] = { 3, 21, 16, 4, 1, "INVTYPE_CLOAK", 1, 133769, { RESISTANCE0_NAME = 19, SPIRIT = 3, STAMINA = 4 }, 591, 1, 2132, 0, false },
@@ -151,6 +156,7 @@ Data:AddItems({
     [286570] = { 2, 52, 47, 4, 2, "INVTYPE_WRIST", 2, 132603, { RESISTANCE0_NAME = 60, STAMINA = 8, STRENGTH = 8 }, 703, 1, 0, 0, false },
     [286571] = { 2, 52, 47, 4, 3, "INVTYPE_CHEST", 2, 132631, { AGILITY = 16, INTELLECT = 12, RESISTANCE0_NAME = 283 }, 15914, 1, 0, 0, false },
     [286572] = { 2, 51, 46, 4, 1, "INVTYPE_CLOAK", 2, 133764, { RESISTANCE0_NAME = 33, SPELL_POWER = 5, STRENGTH = 10 }, 7534, 1, 0, 0, false },
+    [286573] = { 3, 1, 1, 15, 4, "INVTYPE_NON_EQUIP_IGNORE", 1, 538518, nil, 0, 1, 0, 0, false },
     [286597] = { 2, 60, 55, 4, 0, "INVTYPE_FINGER", 2, 133370, { SPELL_DAMAGE_DONE = 6, SPELL_HEALING_DONE = 19, SPIRIT = 11 }, 17394, 1, 0, 0, false },
     [286604] = { 2, 60, 50, 15, 2, "INVTYPE_NON_EQUIP_IGNORE", 1, 134895, nil, 500, 1, 0, 0, false },
     [286609] = { 2, 58, 53, 4, 6, "INVTYPE_SHIELD", 2, 134967, { DEFENSE_SKILL_RATING = 7, RESISTANCE0_NAME = 1776, SPIRIT = 6 }, 24534, 1, 0, 0, false },

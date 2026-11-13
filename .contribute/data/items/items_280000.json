@@ -8792,6 +8792,24 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "282548": {
+    "names": {
+      "enUS": "Star of Elune"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 15,
+    "subclassID": 4,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 133267,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
   "282550": {
     "names": {
       "enUS": "Combat Tuning Wrench"
@@ -16515,6 +16533,24 @@
       "SPELL_POWER": 5,
       "STRENGTH": 10
     }
+  },
+  "286573": {
+    "names": {
+      "enUS": "Unleashed Swarm"
+    },
+    "quality": 3,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 15,
+    "subclassID": 4,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 538518,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
   },
   "286597": {
     "names": {
