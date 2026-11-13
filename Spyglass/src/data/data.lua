@@ -146,6 +146,7 @@ local RECIPE = {
 ---@field info? string  # small text on the tile
 ---@field order? number  # position among the kind's lists; by name when equal
 ---@field factionID? integer  # reputation lists
+---@field factionCategory? string  # name of the parent faction from the game data
 ---@field skillLineID? integer  # crafting lists
 ---@field sections? Spyglass.ListSection[]  # crafting lists: the categories grouped under subheaders
 ---@field panel? Spyglass.PanelWidget[]  # the right pane while the list is open; replaces the kind's default

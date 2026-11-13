@@ -6,6 +6,7 @@ Data:AddList("reputation", "booty_bay", {
     name = "Booty Bay",
     icon = "Interface\\Icons\\Achievement_Reputation_01",
     factionID = 21,
+    factionCategory = "Steamwheedle Cartel",
     panel = {
         { bar = "reputation" },
         { description = true },

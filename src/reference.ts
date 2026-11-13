@@ -20,6 +20,8 @@ export interface Reference {
   itemSkills: Map<number, { skillLineID: number; rank: number }>;
   /** Factions with a reputation bar (`Faction` rows with a ReputationIndex), for the reputation lists. */
   factions: Map<number, Faction>;
+  /** Names of all Faction rows, including category headers without a reputation bar. */
+  factionNames: Map<number, string>;
   items: Map<number, ScannedItem>;
   /** ItemSparse's item names per configured locale (enUS too, to check it means the scanned item). */
   wagoItemNames: Map<string, Map<number, string>>;
@@ -97,9 +99,11 @@ export async function loadReference(
   ]);
 
   const factions = new Map<number, Faction>();
+  const factionNames = new Map<number, string>();
   for (const row of factionRows) {
-    if (int(row.ReputationIndex, -1) < 0) continue; // no reputation bar: team, guild and helper factions
     const id = int(row.ID);
+    if (row.Name_lang) factionNames.set(id, row.Name_lang);
+    if (int(row.ReputationIndex, -1) < 0) continue; // no reputation bar: team, guild and helper factions
     factions.set(id, { id, name: row.Name_lang ?? "", parentID: int(row.ParentFactionID) });
   }
 
@@ -175,6 +179,7 @@ export async function loadReference(
     categories: recipeTables.categories,
     itemSkills: recipeTables.itemSkills,
     factions,
+    factionNames,
     items: loadScannedItems(),
     wagoItemNames,
     itemLocales: [],

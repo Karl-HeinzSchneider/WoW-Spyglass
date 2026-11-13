@@ -283,7 +283,8 @@ Constructors (optional sugar):
   quest ids in `quests`, so it shows the same
   "!" and title list a boss with quests does.
 - `Spyglass.ListFolders(kind, opts?)` — folders for every curated list of `kind` (`"crafting"`, `"pvp"`,
-  `"collections"`, `"reputation"`), by `order` then name; the built-in modules of those names are exactly this
+  `"collections"`, `"reputation"`), by `order` then name. The built-in Reputation module uses these
+  folders with category headers and sorts each category by the displayed faction name.
 - `Spyglass.ListFolder(kind, id, opts?)` / `Spyglass.ListEntries(kind, id)` — one list as a two-column
   folder; its item nodes carry the row's fields in `meta` (`standing`, `rank`, `skill`, `spell`, `source`,
   `side`, `group`) and are grouped by the row's `group`, else the kind's default (standing / honor rank /
@@ -526,7 +527,8 @@ Curated item lists (`Data.lists[kind][id]`) back the Crafting, PvP, Collections 
 modules: `kind` is one of `"crafting"`, `"pvp"`, `"collections"`, `"reputation"` (other addons may
 add kinds of their own and browse them with `ListFolders`), `id` is a string unique within the kind
 (the shipped ones are the `.contribute/data/<kind>/<id>.json` file names; prefix yours). A list is
-`{ name, icon?, background?, backgroundCoords?, info?, order?, factionID?, skillLineID? }`; reputation
+`{ name, icon?, background?, backgroundCoords?, info?, order?, factionID?, factionCategory?, skillLineID? }`.
+Generated reputation lists with a named parent carry its English name in `factionCategory`. Reputation
 folders use `factionID` to resolve the localized name, description, current reaction and progress
 from `C_Reputation` at runtime, falling back to the generated fields. Its rows
 are `{ itemID, field = value, ... }` with the kind's fields by name (`standing`, `rank`, `skill`,

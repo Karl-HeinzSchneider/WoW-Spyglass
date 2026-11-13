@@ -6,6 +6,7 @@ Data:AddList("reputation", "gadgetzan", {
     name = "Gadgetzan",
     icon = "Interface\\Icons\\Achievement_Reputation_01",
     factionID = 369,
+    factionCategory = "Steamwheedle Cartel",
     panel = {
         { bar = "reputation" },
         { description = true },

@@ -6,6 +6,7 @@ Data:AddList("reputation", "everlook", {
     name = "Everlook",
     icon = "Interface\\Icons\\Achievement_Reputation_01",
     factionID = 577,
+    factionCategory = "Steamwheedle Cartel",
     panel = {
         { bar = "reputation" },
         { description = true },

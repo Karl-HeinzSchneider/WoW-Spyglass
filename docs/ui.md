@@ -135,6 +135,9 @@ open.
   corners. `addon:OnEnable` (still behind the loading screen) preloads the pictures of the root's
   tile folders onto textures of their own, set once on an alpha-0 frame, so the files are loaded
   before the first visit and never drop out.
+- **Reputation** groups faction tiles under their parent faction from the game data. Categories
+  are alphabetical, with **Other** last for factions without a named parent. Tiles are alphabetical
+  within each category.
 - **`display = "cards"`** (an instance's boss list) draws `SpyglassCardTemplate`, two per line:
   the same bevelled list-button atlas with the entry's `portrait` standing on the left (a
   `portraitDisplayID` instead draws the creature's model through

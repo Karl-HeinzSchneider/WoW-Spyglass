@@ -102,7 +102,8 @@ Spyglass`, no private table); never give them private hooks.
 - `raids` and `dungeons` are `display = "tiles"` modules listing explicit `SG.InstanceFolder(id)`
   lines, commented out until the instance has curated loot (a split dungeon's parts by their own
   ids, e.g. `18901`). Crafting, reputation, pvp and collections return `SG.ListFolders(kind)`;
-  `crafting` also sets `showIcon` on each tile, and `collections` appends the item set tiles (one
+  `reputation` groups its tiles by parent faction, `crafting` sets `showIcon` on each tile, and
+  `collections` appends the item set tiles (one
   per source).
 - `lists` is a `display = "tiles"` module built through `getEntries` (rebuilt on every open):
   one tile per `SG.Lists` list (kept per list id, so an open tab's node survives a rename), then

@@ -7,6 +7,7 @@ Data:AddList("reputation", "theramore_expeditionary_force", {
     icon = "Interface\\Icons\\Achievement_Reputation_01",
     info = "Alliance",
     factionID = 2799,
+    factionCategory = "Alliance Forces",
     panel = {
         { bar = "reputation" },
         { description = true },

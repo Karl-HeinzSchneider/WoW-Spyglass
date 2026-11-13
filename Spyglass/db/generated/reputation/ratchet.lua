@@ -6,6 +6,7 @@ Data:AddList("reputation", "ratchet", {
     name = "Ratchet",
     icon = "Interface\\Icons\\Achievement_Reputation_01",
     factionID = 470,
+    factionCategory = "Steamwheedle Cartel",
     panel = {
         { bar = "reputation" },
         { description = true },

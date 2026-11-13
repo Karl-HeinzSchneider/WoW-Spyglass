@@ -6,6 +6,7 @@ Data:AddList("reputation", "powderfuse", {
     name = "Powderfuse",
     icon = "Interface\\Icons\\Achievement_Reputation_01",
     factionID = 2827,
+    factionCategory = "Steamwheedle Cartel",
     panel = {
         { bar = "reputation" },
         { description = true },

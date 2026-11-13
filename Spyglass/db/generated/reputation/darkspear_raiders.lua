@@ -7,6 +7,7 @@ Data:AddList("reputation", "darkspear_raiders", {
     icon = "Interface\\Icons\\Achievement_Reputation_01",
     info = "Horde",
     factionID = 2798,
+    factionCategory = "Horde Forces",
     panel = {
         { bar = "reputation" },
         { description = true },

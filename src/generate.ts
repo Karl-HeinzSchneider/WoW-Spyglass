@@ -258,6 +258,7 @@ function emitLoot(file: CuratedFile, ref: Reference, questsByID: Map<number, Cur
 function emitList(file: ListFile, ref: Reference): string {
   const rel = sourceLabel(file.path);
   const d = file.data;
+  const parentID = d.faction === undefined ? 0 : (ref.factions.get(d.faction)?.parentID ?? 0);
   const out = [header(rel), "local Data = Spyglass.Data\n"];
   out.push(`\n-- ${d.name}\n`);
   out.push(`Data:AddList(${luaString(file.kind)}, ${luaString(file.slug)}, {\n`);
@@ -271,9 +272,10 @@ function emitList(file: ListFile, ref: Reference): string {
         info: d.info,
         order: d.order,
         factionID: d.faction,
+        factionCategory: parentID > 0 ? ref.factionNames.get(parentID) : undefined,
         skillLineID: d.skillLine,
       },
-      ["name", "icon", "background", "backgroundCoords", "info", "order", "factionID", "skillLineID"],
+      ["name", "icon", "background", "backgroundCoords", "info", "order", "factionID", "factionCategory", "skillLineID"],
     ).map((l) => l + "\n"),
   );
   out.push(...emitSections(d.sections, ref));
