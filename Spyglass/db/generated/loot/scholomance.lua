@@ -267,6 +267,25 @@ Data:AddTrashLoot(289, {
     { 16684 }, -- Magister's Gloves
     { 16705 }, -- Dreadmist Wraps
     { 16722 }, -- Lightforge Bracers
+    { 16685 }, -- Magister's Belt
+    { 16702 }, -- Dreadmist Belt
+    { 16714 }, -- Wildheart Bracers
+    { 16710 }, -- Shadowcraft Bracers
+    { 16716 }, -- Wildheart Belt
+    { 16671 }, -- Bindings of Elements
+    { 18697 }, -- #18697
+    { 18698 }, -- Tattered Leather Hood
+    { 18699 }, -- #18699
+    { 18700 }, -- #18700
+    { 18701 }, -- #18701
+    { 18702 }, -- Belt of the Ordained
+    { 14536 }, -- #14536
+    { 16254 }, -- Formula: Enchant Weapon - Lifestealing
+    { 16255 }, -- Formula: Enchant 2H Weapon - Major Spirit
+    { 15776 }, -- Pattern: Runic Leather Armor
+    { 15773 }, -- Pattern: Wicked Leather Armor
+    { 20520 }, -- Dark Rune
+    { 12753 }, -- Skin of Shadow
 })
 
 Data:AddQuests(289, {

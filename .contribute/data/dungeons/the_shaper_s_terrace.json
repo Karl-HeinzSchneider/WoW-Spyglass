@@ -218,6 +218,14 @@
     {
       "item": 287037,
       "name": "Shaper's Robe"
+    },
+    {
+      "item": 287044,
+      "name": "Predator's Shroud"
+    },
+    {
+      "item": 287045,
+      "name": "Ancient Mattock"
     }
   ],
   "quests": [95928, 97049, 95926, 95924, 95925]

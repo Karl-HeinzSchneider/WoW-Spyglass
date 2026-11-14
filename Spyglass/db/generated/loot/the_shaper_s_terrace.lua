@@ -62,6 +62,8 @@ Data:AddBossLoot(3600, { -- Vitrix
 
 Data:AddTrashLoot(3001, {
     { 287037 }, -- Shaper's Robe
+    { 287044 }, -- Predator's Shroud
+    { 287045 }, -- Ancient Mattock
 })
 
 Data:AddQuests(3001, {

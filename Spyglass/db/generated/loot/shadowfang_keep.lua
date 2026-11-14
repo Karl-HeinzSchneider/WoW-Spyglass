@@ -14,6 +14,9 @@ Data:AddBossLoot(2749, { -- Razorclaw the Butcher
     { 6226 }, -- Bloody Apron
     { 6633 }, -- Butcher's Slicer
     { 273096 }, -- Blueprint: Tanning Rack
+    { 253938 }, -- Pattern: Filigreed Pristine Leggings
+    { 253942 }, -- Pattern: Filigreed Flame Leggings
+    { 253944 }, -- Pattern: Filigreed Shadow Leggings
 })
 
 Data:AddBossLoot(-3864, { -- Fel Steed

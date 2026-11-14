@@ -66,6 +66,10 @@ Data:AddTrashLoot(2974, {
     { 287034 }, -- Grove Subjugator's Blade
     { 287036 }, -- Satyr's Touch
     { 287028 }, -- Tormented Cuffs
+    { 287029 }, -- Nature Guardian's Legguards
+    { 287030 }, -- Blackmaw Bindings
+    { 287033 }, -- Furbolg Berserker's Boots
+    { 252893 }, -- Pattern: Timbermaw Tunic
 })
 
 Data:AddQuests(2974, {

@@ -94,6 +94,78 @@ Data:AddBossLoot(-5711, { -- Ogom the Wretched
     { 10805 }, -- Eater of the Dead
 })
 
+Data:AddBossLoot(-5713, { -- Gasher
+    { 10783 }, -- Atal'ai Spaulders
+    { 10784 }, -- Atal'ai Breastplate
+    { 10787 }, -- Atal'ai Gloves
+    { 10785 }, -- Atal'ai Leggings
+    { 10786 }, -- Atal'ai Boots
+    { 10788 }, -- Atal'ai Girdle
+})
+
+Data:AddBossLoot(-5715, { -- Hukku
+    { 10783 }, -- Atal'ai Spaulders
+    { 10784 }, -- Atal'ai Breastplate
+    { 10787 }, -- Atal'ai Gloves
+    { 10785 }, -- Atal'ai Leggings
+    { 10786 }, -- Atal'ai Boots
+    { 10788 }, -- Atal'ai Girdle
+})
+
+Data:AddBossLoot(-5714, { -- Loro
+    { 10783 }, -- Atal'ai Spaulders
+    { 10784 }, -- Atal'ai Breastplate
+    { 10787 }, -- Atal'ai Gloves
+    { 10785 }, -- Atal'ai Leggings
+    { 10786 }, -- Atal'ai Boots
+    { 10788 }, -- Atal'ai Girdle
+})
+
+Data:AddBossLoot(-5717, { -- Mijan
+    { 10783 }, -- Atal'ai Spaulders
+    { 10784 }, -- Atal'ai Breastplate
+    { 10787 }, -- Atal'ai Gloves
+    { 10785 }, -- Atal'ai Leggings
+    { 10786 }, -- Atal'ai Boots
+    { 10788 }, -- Atal'ai Girdle
+})
+
+Data:AddBossLoot(-5712, { -- Zolo
+    { 10783 }, -- Atal'ai Spaulders
+    { 10784 }, -- Atal'ai Breastplate
+    { 10787 }, -- Atal'ai Gloves
+    { 10785 }, -- Atal'ai Leggings
+    { 10786 }, -- Atal'ai Boots
+    { 10788 }, -- Atal'ai Girdle
+})
+
+Data:AddBossLoot(-5716, { -- Zul'Lor
+    { 10783 }, -- Atal'ai Spaulders
+    { 10784 }, -- Atal'ai Breastplate
+    { 10787 }, -- Atal'ai Gloves
+    { 10785 }, -- Atal'ai Leggings
+    { 10786 }, -- Atal'ai Boots
+    { 10788 }, -- Atal'ai Girdle
+})
+
+Data:AddTrashLoot(109, {
+    { 10630 }, -- #10630
+    { 10629 }, -- #10629
+    { 10631 }, -- Murkwater Gauntlets
+    { 10632 }, -- Slimescale Bracers
+    { 10633 }, -- Silvershell Leggings
+    { 10634 }, -- Mindseye Circle
+    { 10623 }, -- #10623
+    { 10625 }, -- Stealthblade
+    { 10626 }, -- Ragehammer
+    { 10628 }, -- Deathblow
+    { 10627 }, -- Bludgeon of the Grinning Dog
+    { 10624 }, -- Stinging Bow
+    { 10801 }, -- Slitherscale Boots
+    { 15733 }, -- Pattern: Green Dragonscale Leggings
+    { 16216 }, -- Formula: Enchant Cloak - Greater Resistance
+})
+
 Data:AddQuests(109, {
     { id = 1475, name = "Into The Temple of Atal'Hakkar", side = "Alliance", requiredLevel = 38, xp = 13850, objective = "Gather 10 Atal'ai Tablets for Brohann Caskbelly in Stormwind.", description = "Collect 10 Atal'ai Tablets around the temple; tablets in the outer temple also count.", requires = { { id = 1469, name = "Rhapsody's Tale" } }, start = { description = "Stormwind", location = { 1453, 66.8, 43.4 }, npc = "Brohann Caskbelly" }, turnIn = { description = "Stormwind", location = { 1453, 66.8, 43.4 }, npc = "Brohann Caskbelly" }, items = {
         { 1490 }, -- Guardian Talisman

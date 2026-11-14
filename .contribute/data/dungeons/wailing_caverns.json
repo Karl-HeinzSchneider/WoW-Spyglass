@@ -36,6 +36,10 @@
         {
           "item": 9739,
           "name": "Gem of Anacondra"
+        },
+        {
+          "item": 273098,
+          "name": "Blueprint: Field Guide"
         }
       ]
     },
@@ -62,6 +66,10 @@
         {
           "item": 9738,
           "name": "Gem of Cobrahn"
+        },
+        {
+          "item": 252782,
+          "name": "Pattern: Wisdom's Leather Gloves"
         }
       ]
     },
@@ -110,6 +118,18 @@
         {
           "item": 9740,
           "name": "Gem of Pythas"
+        },
+        {
+          "item": 253938,
+          "name": "Pattern: Filigreed Pristine Leggings"
+        },
+        {
+          "item": 253940,
+          "name": "Pattern: Filigreed Silky Leggings"
+        },
+        {
+          "item": 253946,
+          "name": "Pattern: Filigreed Pearly Leggings"
         }
       ]
     },
@@ -132,6 +152,10 @@
         {
           "item": 6448,
           "name": "Tail Spike"
+        },
+        {
+          "item": 253944,
+          "name": "Pattern: Filigreed Shadow Leggings"
         }
       ]
     },
@@ -166,6 +190,10 @@
         {
           "item": 273087,
           "name": "Blueprint: Journeyman Campfire"
+        },
+        {
+          "item": 253942,
+          "name": "Pattern: Filigreed Flame Leggings"
         }
       ]
     },
@@ -188,6 +216,10 @@
         {
           "item": 6629,
           "name": "Sporid Cape"
+        },
+        {
+          "item": 253948,
+          "name": "Pattern: Filigreed Shining Leggings"
         }
       ]
     },
@@ -214,6 +246,10 @@
         {
           "item": 10441,
           "name": "Glowing Shard"
+        },
+        {
+          "item": 252798,
+          "name": "Pattern: Brawler's Leather Hood"
         }
       ]
     },

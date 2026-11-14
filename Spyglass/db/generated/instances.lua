@@ -194,7 +194,7 @@ Data:AddInstance(109, {
     background = "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenSunkenTemple",
     backgroundCoords = { 0, 1, 0.305, 0.695 },
     entrance = { 1435, 70, 54 },
-    bosses = { 3582, 3583, 3584, 3585, 3586, 3587, 3588, 3589, -5711 },
+    bosses = { 3582, 3583, 3584, 3585, 3586, 3587, 3588, 3589, -5711, -5713, -5715, -5714, -5717, -5712, -5716 },
 })
 Data:AddBoss(3582, { instanceID = 109, order = 0, displayID = 7873, level = 50 }) -- Atal'alarion
 Data:AddBoss(3583, { instanceID = 109, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Avatar of Hakkar", level = 55 }) -- Avatar of Hakkar
@@ -205,6 +205,12 @@ Data:AddBoss(3587, { instanceID = 109, order = 5000, displayID = 6375 }) -- Weav
 Data:AddBoss(3588, { instanceID = 109, order = 6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Dreamscythe" }) -- Dreamscythe
 Data:AddBoss(3589, { instanceID = 109, order = 7000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Jammalan the Prophet", level = 54 }) -- Jammal'an the Prophet
 Data:AddBoss(-5711, { instanceID = 109, displayID = 6709, level = 53 }) -- Ogom the Wretched
+Data:AddBoss(-5713, { instanceID = 109, level = 51 }) -- Gasher
+Data:AddBoss(-5715, { instanceID = 109, level = 52 }) -- Hukku
+Data:AddBoss(-5714, { instanceID = 109, level = 51 }) -- Loro
+Data:AddBoss(-5717, { instanceID = 109, level = 52 }) -- Mijan
+Data:AddBoss(-5712, { instanceID = 109, level = 51 }) -- Zolo
+Data:AddBoss(-5716, { instanceID = 109, level = 52 }) -- Zul'Lor
 
 -- Razorfen Downs
 Data:AddInstance(129, {

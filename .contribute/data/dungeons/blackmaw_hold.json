@@ -229,6 +229,22 @@
     {
       "item": 287028,
       "name": "Tormented Cuffs"
+    },
+    {
+      "item": 287029,
+      "name": "Nature Guardian's Legguards"
+    },
+    {
+      "item": 287030,
+      "name": "Blackmaw Bindings"
+    },
+    {
+      "item": 287033,
+      "name": "Furbolg Berserker's Boots"
+    },
+    {
+      "item": 252893,
+      "name": "Pattern: Timbermaw Tunic"
     }
   ],
   "quests": [92343, 92344, 97173, 97198, 92069, 92070, 97327, 92066, 92065, 96246, 92067]

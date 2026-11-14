@@ -54,6 +54,18 @@
         {
           "item": 273096,
           "name": "Blueprint: Tanning Rack"
+        },
+        {
+          "item": 253938,
+          "name": "Pattern: Filigreed Pristine Leggings"
+        },
+        {
+          "item": 253942,
+          "name": "Pattern: Filigreed Flame Leggings"
+        },
+        {
+          "item": 253944,
+          "name": "Pattern: Filigreed Shadow Leggings"
         }
       ]
     },

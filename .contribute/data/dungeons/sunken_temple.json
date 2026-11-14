@@ -341,8 +341,261 @@
           "name": "Eater of the Dead"
         }
       ]
+    },
+    {
+      "id": -5713,
+      "name": "Gasher",
+      "npc": 5713,
+      "level": 51,
+      "loot": [
+        {
+          "item": 10783,
+          "name": "Atal'ai Spaulders"
+        },
+        {
+          "item": 10784,
+          "name": "Atal'ai Breastplate"
+        },
+        {
+          "item": 10787,
+          "name": "Atal'ai Gloves"
+        },
+        {
+          "item": 10785,
+          "name": "Atal'ai Leggings"
+        },
+        {
+          "item": 10786,
+          "name": "Atal'ai Boots"
+        },
+        {
+          "item": 10788,
+          "name": "Atal'ai Girdle"
+        }
+      ]
+    },
+    {
+      "id": -5715,
+      "name": "Hukku",
+      "npc": 5715,
+      "level": 52,
+      "loot": [
+        {
+          "item": 10783,
+          "name": "Atal'ai Spaulders"
+        },
+        {
+          "item": 10784,
+          "name": "Atal'ai Breastplate"
+        },
+        {
+          "item": 10787,
+          "name": "Atal'ai Gloves"
+        },
+        {
+          "item": 10785,
+          "name": "Atal'ai Leggings"
+        },
+        {
+          "item": 10786,
+          "name": "Atal'ai Boots"
+        },
+        {
+          "item": 10788,
+          "name": "Atal'ai Girdle"
+        }
+      ]
+    },
+    {
+      "id": -5714,
+      "name": "Loro",
+      "npc": 5714,
+      "level": 51,
+      "loot": [
+        {
+          "item": 10783,
+          "name": "Atal'ai Spaulders"
+        },
+        {
+          "item": 10784,
+          "name": "Atal'ai Breastplate"
+        },
+        {
+          "item": 10787,
+          "name": "Atal'ai Gloves"
+        },
+        {
+          "item": 10785,
+          "name": "Atal'ai Leggings"
+        },
+        {
+          "item": 10786,
+          "name": "Atal'ai Boots"
+        },
+        {
+          "item": 10788,
+          "name": "Atal'ai Girdle"
+        }
+      ]
+    },
+    {
+      "id": -5717,
+      "name": "Mijan",
+      "npc": 5717,
+      "level": 52,
+      "loot": [
+        {
+          "item": 10783,
+          "name": "Atal'ai Spaulders"
+        },
+        {
+          "item": 10784,
+          "name": "Atal'ai Breastplate"
+        },
+        {
+          "item": 10787,
+          "name": "Atal'ai Gloves"
+        },
+        {
+          "item": 10785,
+          "name": "Atal'ai Leggings"
+        },
+        {
+          "item": 10786,
+          "name": "Atal'ai Boots"
+        },
+        {
+          "item": 10788,
+          "name": "Atal'ai Girdle"
+        }
+      ]
+    },
+    {
+      "id": -5712,
+      "name": "Zolo",
+      "npc": 5712,
+      "level": 51,
+      "loot": [
+        {
+          "item": 10783,
+          "name": "Atal'ai Spaulders"
+        },
+        {
+          "item": 10784,
+          "name": "Atal'ai Breastplate"
+        },
+        {
+          "item": 10787,
+          "name": "Atal'ai Gloves"
+        },
+        {
+          "item": 10785,
+          "name": "Atal'ai Leggings"
+        },
+        {
+          "item": 10786,
+          "name": "Atal'ai Boots"
+        },
+        {
+          "item": 10788,
+          "name": "Atal'ai Girdle"
+        }
+      ]
+    },
+    {
+      "id": -5716,
+      "name": "Zul'Lor",
+      "npc": 5716,
+      "level": 52,
+      "loot": [
+        {
+          "item": 10783,
+          "name": "Atal'ai Spaulders"
+        },
+        {
+          "item": 10784,
+          "name": "Atal'ai Breastplate"
+        },
+        {
+          "item": 10787,
+          "name": "Atal'ai Gloves"
+        },
+        {
+          "item": 10785,
+          "name": "Atal'ai Leggings"
+        },
+        {
+          "item": 10786,
+          "name": "Atal'ai Boots"
+        },
+        {
+          "item": 10788,
+          "name": "Atal'ai Girdle"
+        }
+      ]
     }
   ],
-  "trash": [],
+  "trash": [
+    {
+      "item": 10630,
+      "name": "Soulcatcher Halo"
+    },
+    {
+      "item": 10629,
+      "name": "Mistwalker Boots"
+    },
+    {
+      "item": 10631,
+      "name": "Murkwater Gauntlets"
+    },
+    {
+      "item": 10632,
+      "name": "Slimescale Bracers"
+    },
+    {
+      "item": 10633,
+      "name": "Silvershell Leggings"
+    },
+    {
+      "item": 10634,
+      "name": "Mindseye Circle"
+    },
+    {
+      "item": 10623,
+      "name": "Winter's Bite"
+    },
+    {
+      "item": 10625,
+      "name": "Stealthblade"
+    },
+    {
+      "item": 10626,
+      "name": "Ragehammer"
+    },
+    {
+      "item": 10628,
+      "name": "Deathblow"
+    },
+    {
+      "item": 10627,
+      "name": "Bludgeon of the Grinning Dog"
+    },
+    {
+      "item": 10624,
+      "name": "Stinging Bow"
+    },
+    {
+      "item": 10801,
+      "name": "Slitherscale Boots"
+    },
+    {
+      "item": 15733,
+      "name": "Pattern: Green Dragonscale Leggings"
+    },
+    {
+      "item": 16216,
+      "name": "Formula: Enchant Cloak - Greater Resistance"
+    }
+  ],
   "quests": [1475, 1445, 3446, 3447, 1446, 3528, 3373, 4143, 4146, 9053, 8232, 8253, 8418, 8257, 8236, 8413, 8422, 8425]
 }

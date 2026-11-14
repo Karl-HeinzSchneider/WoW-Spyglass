@@ -1029,6 +1029,82 @@
     {
       "item": 16722,
       "name": "Lightforge Bracers"
+    },
+    {
+      "item": 16685,
+      "name": "Magister's Belt"
+    },
+    {
+      "item": 16702,
+      "name": "Dreadmist Belt"
+    },
+    {
+      "item": 16714,
+      "name": "Wildheart Bracers"
+    },
+    {
+      "item": 16710,
+      "name": "Shadowcraft Bracers"
+    },
+    {
+      "item": 16716,
+      "name": "Wildheart Belt"
+    },
+    {
+      "item": 16671,
+      "name": "Bindings of Elements"
+    },
+    {
+      "item": 18697,
+      "name": "Coldstone Slippers"
+    },
+    {
+      "item": 18698,
+      "name": "Tattered Leather Hood"
+    },
+    {
+      "item": 18699,
+      "name": "Icy Tomb Spaulders"
+    },
+    {
+      "item": 18700,
+      "name": "Malefic Bracers"
+    },
+    {
+      "item": 18701,
+      "name": "Innervating Band"
+    },
+    {
+      "item": 18702,
+      "name": "Belt of the Ordained"
+    },
+    {
+      "item": 14536,
+      "name": "Bonebrace Hauberk"
+    },
+    {
+      "item": 16254,
+      "name": "Formula: Enchant Weapon - Lifestealing"
+    },
+    {
+      "item": 16255,
+      "name": "Formula: Enchant 2H Weapon - Major Spirit"
+    },
+    {
+      "item": 15776,
+      "name": "Pattern: Runic Leather Armor"
+    },
+    {
+      "item": 15773,
+      "name": "Pattern: Wicked Leather Armor"
+    },
+    {
+      "item": 20520,
+      "name": "Dark Rune"
+    },
+    {
+      "item": 12753,
+      "name": "Skin of Shadow"
     }
   ],
   "quests": [5466, 5343, 5341, 4771, 5529, 7629, 7647, 7668]

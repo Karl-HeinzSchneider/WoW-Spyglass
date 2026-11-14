@@ -487,6 +487,10 @@
         {
           "item": 13345,
           "name": "Seal of Rivendare"
+        },
+        {
+          "item": 13505,
+          "name": "Runeblade of Baron Rivendare"
         }
       ]
     },
@@ -589,6 +593,98 @@
     {
       "item": 16697,
       "name": "Devout Bracers"
+    },
+    {
+      "item": 16685,
+      "name": "Magister's Belt"
+    },
+    {
+      "item": 16702,
+      "name": "Dreadmist Belt"
+    },
+    {
+      "item": 16714,
+      "name": "Wildheart Bracers"
+    },
+    {
+      "item": 16710,
+      "name": "Shadowcraft Bracers"
+    },
+    {
+      "item": 16681,
+      "name": "Beaststalker's Bindings"
+    },
+    {
+      "item": 16671,
+      "name": "Bindings of Elements"
+    },
+    {
+      "item": 16736,
+      "name": "Belt of Valor"
+    },
+    {
+      "item": 18743,
+      "name": "Gracious Cape"
+    },
+    {
+      "item": 18745,
+      "name": "Sacred Cloth Leggings"
+    },
+    {
+      "item": 18736,
+      "name": "Plaguehound Leggings"
+    },
+    {
+      "item": 18741,
+      "name": "Morlune's Bracer"
+    },
+    {
+      "item": 18742,
+      "name": "Stratholme Militia Shoulderguard"
+    },
+    {
+      "item": 18744,
+      "name": "Plaguebat Fur Gloves"
+    },
+    {
+      "item": 17061,
+      "name": "Juno's Shadow"
+    },
+    {
+      "item": 16248,
+      "name": "Formula: Enchant Weapon - Unholy Weapon"
+    },
+    {
+      "item": 14495,
+      "name": "Pattern: Ghostweave Pants"
+    },
+    {
+      "item": 15768,
+      "name": "Pattern: Wicked Leather Belt"
+    },
+    {
+      "item": 12735,
+      "name": "Frayed Abomination Stitching"
+    },
+    {
+      "item": 16249,
+      "name": "Formula: Enchant 2H Weapon - Major Intellect"
+    },
+    {
+      "item": 15777,
+      "name": "Pattern: Runic Leather Shoulders"
+    },
+    {
+      "item": 18658,
+      "name": "Schematic: Ultra-Flash Shadow Reflector"
+    },
+    {
+      "item": 16052,
+      "name": "Schematic: Voice Amplification Modulator"
+    },
+    {
+      "item": 12811,
+      "name": "Righteous Orb"
     }
   ],
   "quests": [5263, 5213, 5282, 6163, 5125, 8945, 5463, 5262, 5212, 5243, 5214, 5848, 5122]

@@ -131,6 +131,7 @@ Data:AddBossLoot(484, { -- Baron Rivendare
     { 22410 }, -- Gauntlets of Deftness
     { 22411 }, -- Helm of the Executioner
     { 13345 }, -- Seal of Rivendare
+    { 13505 }, -- #13505
 })
 
 Data:AddBossLoot(2798, { -- Postmaster Malown
@@ -157,6 +158,29 @@ Data:AddTrashLoot(329, {
     { 16725 }, -- Lightforge Boots
     { 16723 }, -- Lightforge Belt
     { 16697 }, -- Devout Bracers
+    { 16685 }, -- Magister's Belt
+    { 16702 }, -- Dreadmist Belt
+    { 16714 }, -- Wildheart Bracers
+    { 16710 }, -- Shadowcraft Bracers
+    { 16681 }, -- Beaststalker's Bindings
+    { 16671 }, -- Bindings of Elements
+    { 16736 }, -- Belt of Valor
+    { 18743 }, -- #18743
+    { 18745 }, -- Sacred Cloth Leggings
+    { 18736 }, -- #18736
+    { 18741 }, -- #18741
+    { 18742 }, -- #18742
+    { 18744 }, -- #18744
+    { 17061 }, -- #17061
+    { 16248 }, -- Formula: Enchant Weapon - Unholy Weapon
+    { 14495 }, -- Pattern: Ghostweave Pants
+    { 15768 }, -- Pattern: Wicked Leather Belt
+    { 12735 }, -- Frayed Abomination Stitching
+    { 16249 }, -- Formula: Enchant 2H Weapon - Major Intellect
+    { 15777 }, -- Pattern: Runic Leather Shoulders
+    { 18658 }, -- Schematic: Ultra-Flash Shadow Reflector
+    { 16052 }, -- Schematic: Voice Amplification Modulator
+    { 12811 }, -- Righteous Orb
 })
 
 Data:AddQuests(329, {

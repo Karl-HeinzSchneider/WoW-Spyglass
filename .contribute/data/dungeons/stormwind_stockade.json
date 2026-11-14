@@ -40,6 +40,70 @@
         {
           "item": 253942,
           "name": "Pattern: Filigreed Flame Leggings"
+        },
+        {
+          "item": 251345,
+          "name": "Plans: Veteran's Chain Leggings"
+        },
+        {
+          "item": 251346,
+          "name": "Plans: Guard's Chain Leggings"
+        },
+        {
+          "item": 251347,
+          "name": "Plans: Protector's Chain Leggings"
+        },
+        {
+          "item": 251348,
+          "name": "Plans: Acolyte's Chain Leggings"
+        },
+        {
+          "item": 251349,
+          "name": "Plans: Crusader's Chain Leggings"
+        },
+        {
+          "item": 252792,
+          "name": "Pattern: Brawler's Leather Pants"
+        },
+        {
+          "item": 252793,
+          "name": "Pattern: Trapper's Leather Pants"
+        },
+        {
+          "item": 252794,
+          "name": "Pattern: Defender's Leather Pants"
+        },
+        {
+          "item": 252795,
+          "name": "Pattern: Totemic Leather Pants"
+        },
+        {
+          "item": 252796,
+          "name": "Pattern: Stormrider's Leather Pants"
+        },
+        {
+          "item": 252797,
+          "name": "Pattern: Wisdom's Leather Pants"
+        },
+        {
+          "item": 253938,
+          "name": "Pattern: Filigreed Pristine Leggings"
+        },
+        {
+          "item": 253940,
+          "name": "Pattern: Filigreed Silky Leggings"
+        },
+        {
+          "item": 253944,
+          "name": "Pattern: Filigreed Shadow Leggings"
+        },
+        {
+          "item": 253946,
+          "name": "Pattern: Filigreed Pearly Leggings"
+        },
+        {
+          "item": 253948,
+          "name": "Pattern: Filigreed Shining Leggings"
         }
       ]
     },
@@ -90,6 +154,70 @@
         {
           "item": 252815,
           "name": "Pattern: Trapper's Leather Helm"
+        },
+        {
+          "item": 251350,
+          "name": "Plans: Veteran's Chain Helm"
+        },
+        {
+          "item": 251351,
+          "name": "Plans: Guard's Chain Helm"
+        },
+        {
+          "item": 251352,
+          "name": "Plans: Protector's Chain Helm"
+        },
+        {
+          "item": 251353,
+          "name": "Plans: Acolyte's Chain Helm"
+        },
+        {
+          "item": 251354,
+          "name": "Plans: Crusader's Chain Helm"
+        },
+        {
+          "item": 252814,
+          "name": "Pattern: Brawler's Leather Helm"
+        },
+        {
+          "item": 252816,
+          "name": "Pattern: Defender's Leather Helm"
+        },
+        {
+          "item": 252817,
+          "name": "Pattern: Totemic Leather Helm"
+        },
+        {
+          "item": 252818,
+          "name": "Pattern: Stormrider's Leather Helm"
+        },
+        {
+          "item": 252819,
+          "name": "Pattern: Wisdom's Leather Helm"
+        },
+        {
+          "item": 253976,
+          "name": "Pattern: Filigreed Pristine Circlet"
+        },
+        {
+          "item": 253978,
+          "name": "Pattern: Filigreed Silky Circlet"
+        },
+        {
+          "item": 253980,
+          "name": "Pattern: Filigreed Flame Circlet"
+        },
+        {
+          "item": 253982,
+          "name": "Pattern: Filigreed Shadow Circlet"
+        },
+        {
+          "item": 253984,
+          "name": "Pattern: Filigreed Pearly Circlet"
+        },
+        {
+          "item": 253986,
+          "name": "Pattern: Filigreed Shining Circlet"
         }
       ]
     },
@@ -120,6 +248,74 @@
         {
           "item": 252513,
           "name": "Trapper's Leather Helm"
+        },
+        {
+          "item": 251350,
+          "name": "Plans: Veteran's Chain Helm"
+        },
+        {
+          "item": 251351,
+          "name": "Plans: Guard's Chain Helm"
+        },
+        {
+          "item": 251352,
+          "name": "Plans: Protector's Chain Helm"
+        },
+        {
+          "item": 251353,
+          "name": "Plans: Acolyte's Chain Helm"
+        },
+        {
+          "item": 251354,
+          "name": "Plans: Crusader's Chain Helm"
+        },
+        {
+          "item": 252814,
+          "name": "Pattern: Brawler's Leather Helm"
+        },
+        {
+          "item": 252815,
+          "name": "Pattern: Trapper's Leather Helm"
+        },
+        {
+          "item": 252816,
+          "name": "Pattern: Defender's Leather Helm"
+        },
+        {
+          "item": 252817,
+          "name": "Pattern: Totemic Leather Helm"
+        },
+        {
+          "item": 252818,
+          "name": "Pattern: Stormrider's Leather Helm"
+        },
+        {
+          "item": 252819,
+          "name": "Pattern: Wisdom's Leather Helm"
+        },
+        {
+          "item": 253976,
+          "name": "Pattern: Filigreed Pristine Circlet"
+        },
+        {
+          "item": 253978,
+          "name": "Pattern: Filigreed Silky Circlet"
+        },
+        {
+          "item": 253980,
+          "name": "Pattern: Filigreed Flame Circlet"
+        },
+        {
+          "item": 253982,
+          "name": "Pattern: Filigreed Shadow Circlet"
+        },
+        {
+          "item": 253984,
+          "name": "Pattern: Filigreed Pearly Circlet"
+        },
+        {
+          "item": 253986,
+          "name": "Pattern: Filigreed Shining Circlet"
         }
       ]
     },
@@ -143,6 +339,66 @@
         {
           "item": 2941,
           "name": "Prison Shank"
+        },
+        {
+          "item": 251350,
+          "name": "Plans: Veteran's Chain Helm"
+        },
+        {
+          "item": 251351,
+          "name": "Plans: Guard's Chain Helm"
+        },
+        {
+          "item": 251352,
+          "name": "Plans: Protector's Chain Helm"
+        },
+        {
+          "item": 251353,
+          "name": "Plans: Acolyte's Chain Helm"
+        },
+        {
+          "item": 251354,
+          "name": "Plans: Crusader's Chain Helm"
+        },
+        {
+          "item": 252814,
+          "name": "Pattern: Brawler's Leather Helm"
+        },
+        {
+          "item": 252816,
+          "name": "Pattern: Defender's Leather Helm"
+        },
+        {
+          "item": 252817,
+          "name": "Pattern: Totemic Leather Helm"
+        },
+        {
+          "item": 252818,
+          "name": "Pattern: Stormrider's Leather Helm"
+        },
+        {
+          "item": 252819,
+          "name": "Pattern: Wisdom's Leather Helm"
+        },
+        {
+          "item": 253976,
+          "name": "Pattern: Filigreed Pristine Circlet"
+        },
+        {
+          "item": 253978,
+          "name": "Pattern: Filigreed Silky Circlet"
+        },
+        {
+          "item": 253980,
+          "name": "Pattern: Filigreed Flame Circlet"
+        },
+        {
+          "item": 253984,
+          "name": "Pattern: Filigreed Pearly Circlet"
+        },
+        {
+          "item": 253986,
+          "name": "Pattern: Filigreed Shining Circlet"
         }
       ]
     },
@@ -197,6 +453,74 @@
         {
           "item": 252515,
           "name": "Wisdom's Leather Helm"
+        },
+        {
+          "item": 251350,
+          "name": "Plans: Veteran's Chain Helm"
+        },
+        {
+          "item": 251351,
+          "name": "Plans: Guard's Chain Helm"
+        },
+        {
+          "item": 251352,
+          "name": "Plans: Protector's Chain Helm"
+        },
+        {
+          "item": 251353,
+          "name": "Plans: Acolyte's Chain Helm"
+        },
+        {
+          "item": 251354,
+          "name": "Plans: Crusader's Chain Helm"
+        },
+        {
+          "item": 252814,
+          "name": "Pattern: Brawler's Leather Helm"
+        },
+        {
+          "item": 252815,
+          "name": "Pattern: Trapper's Leather Helm"
+        },
+        {
+          "item": 252816,
+          "name": "Pattern: Defender's Leather Helm"
+        },
+        {
+          "item": 252817,
+          "name": "Pattern: Totemic Leather Helm"
+        },
+        {
+          "item": 252818,
+          "name": "Pattern: Stormrider's Leather Helm"
+        },
+        {
+          "item": 252819,
+          "name": "Pattern: Wisdom's Leather Helm"
+        },
+        {
+          "item": 253976,
+          "name": "Pattern: Filigreed Pristine Circlet"
+        },
+        {
+          "item": 253978,
+          "name": "Pattern: Filigreed Silky Circlet"
+        },
+        {
+          "item": 253980,
+          "name": "Pattern: Filigreed Flame Circlet"
+        },
+        {
+          "item": 253982,
+          "name": "Pattern: Filigreed Shadow Circlet"
+        },
+        {
+          "item": 253984,
+          "name": "Pattern: Filigreed Pearly Circlet"
+        },
+        {
+          "item": 253986,
+          "name": "Pattern: Filigreed Shining Circlet"
         }
       ]
     },
@@ -247,6 +571,66 @@
         {
           "item": 252515,
           "name": "Wisdom's Leather Helm"
+        },
+        {
+          "item": 251350,
+          "name": "Plans: Veteran's Chain Helm"
+        },
+        {
+          "item": 251351,
+          "name": "Plans: Guard's Chain Helm"
+        },
+        {
+          "item": 251352,
+          "name": "Plans: Protector's Chain Helm"
+        },
+        {
+          "item": 251353,
+          "name": "Plans: Acolyte's Chain Helm"
+        },
+        {
+          "item": 251354,
+          "name": "Plans: Crusader's Chain Helm"
+        },
+        {
+          "item": 252814,
+          "name": "Pattern: Brawler's Leather Helm"
+        },
+        {
+          "item": 252815,
+          "name": "Pattern: Trapper's Leather Helm"
+        },
+        {
+          "item": 252816,
+          "name": "Pattern: Defender's Leather Helm"
+        },
+        {
+          "item": 252817,
+          "name": "Pattern: Totemic Leather Helm"
+        },
+        {
+          "item": 252818,
+          "name": "Pattern: Stormrider's Leather Helm"
+        },
+        {
+          "item": 252819,
+          "name": "Pattern: Wisdom's Leather Helm"
+        },
+        {
+          "item": 253978,
+          "name": "Pattern: Filigreed Silky Circlet"
+        },
+        {
+          "item": 253980,
+          "name": "Pattern: Filigreed Flame Circlet"
+        },
+        {
+          "item": 253982,
+          "name": "Pattern: Filigreed Shadow Circlet"
+        },
+        {
+          "item": 253984,
+          "name": "Pattern: Filigreed Pearly Circlet"
         }
       ]
     }

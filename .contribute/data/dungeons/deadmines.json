@@ -40,6 +40,10 @@
         {
           "item": 253906,
           "name": "Pattern: Filigreed Flame Gown"
+        },
+        {
+          "item": 251363,
+          "name": "Plans: Acolyte's Gloves"
         }
       ]
     },
@@ -99,6 +103,10 @@
         {
           "item": 253902,
           "name": "Pattern: Filigreed Pristine Gown"
+        },
+        {
+          "item": 251361,
+          "name": "Plans: Guard's Gloves"
         }
       ]
     },
@@ -168,6 +176,54 @@
         {
           "item": 273086,
           "name": "Blueprint: Anvil"
+        },
+        {
+          "item": 251340,
+          "name": "Plans: Veteran's Chain Shirt"
+        },
+        {
+          "item": 251341,
+          "name": "Plans: Guard's Chain Shirt"
+        },
+        {
+          "item": 251342,
+          "name": "Plans: Protector's Chain Shirt"
+        },
+        {
+          "item": 251343,
+          "name": "Plans: Acolyte's Chain Shirt"
+        },
+        {
+          "item": 251344,
+          "name": "Plans: Crusader's Chain Shirt"
+        },
+        {
+          "item": 252771,
+          "name": "Pattern: Brawler's Leather Armor"
+        },
+        {
+          "item": 252772,
+          "name": "Pattern: Trapper's Leather Armor"
+        },
+        {
+          "item": 252773,
+          "name": "Pattern: Defender's Leather Armor"
+        },
+        {
+          "item": 252774,
+          "name": "Pattern: Totemic Leather Armor"
+        },
+        {
+          "item": 252775,
+          "name": "Pattern: Stormrider's Leather Armor"
+        },
+        {
+          "item": 252776,
+          "name": "Pattern: Wisdom's Leather Armor"
+        },
+        {
+          "item": 253908,
+          "name": "Pattern: Filigreed Shadow Gown"
         }
       ]
     },
@@ -336,6 +392,70 @@
         {
           "item": 253948,
           "name": "Pattern: Filigreed Shining Leggings"
+        },
+        {
+          "item": 251345,
+          "name": "Plans: Veteran's Chain Leggings"
+        },
+        {
+          "item": 251346,
+          "name": "Plans: Guard's Chain Leggings"
+        },
+        {
+          "item": 251347,
+          "name": "Plans: Protector's Chain Leggings"
+        },
+        {
+          "item": 251348,
+          "name": "Plans: Acolyte's Chain Leggings"
+        },
+        {
+          "item": 251349,
+          "name": "Plans: Crusader's Chain Leggings"
+        },
+        {
+          "item": 251383,
+          "name": "Plans: Acolyte's Silvered Chain Helm"
+        },
+        {
+          "item": 252792,
+          "name": "Pattern: Brawler's Leather Pants"
+        },
+        {
+          "item": 252793,
+          "name": "Pattern: Trapper's Leather Pants"
+        },
+        {
+          "item": 252794,
+          "name": "Pattern: Defender's Leather Pants"
+        },
+        {
+          "item": 252795,
+          "name": "Pattern: Totemic Leather Pants"
+        },
+        {
+          "item": 252796,
+          "name": "Pattern: Stormrider's Leather Pants"
+        },
+        {
+          "item": 252797,
+          "name": "Pattern: Wisdom's Leather Pants"
+        },
+        {
+          "item": 253940,
+          "name": "Pattern: Filigreed Silky Leggings"
+        },
+        {
+          "item": 253942,
+          "name": "Pattern: Filigreed Flame Leggings"
+        },
+        {
+          "item": 253944,
+          "name": "Pattern: Filigreed Shadow Leggings"
+        },
+        {
+          "item": 253946,
+          "name": "Pattern: Filigreed Pearly Leggings"
         }
       ]
     }

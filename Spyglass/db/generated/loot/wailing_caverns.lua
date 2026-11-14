@@ -9,6 +9,7 @@ Data:AddBossLoot(585, { -- Lady Anacondra
     { 10412 }, -- Belt of the Fang
     { 6446 }, -- Snakeskin Bag
     { 9739 }, -- Gem of Anacondra
+    { 273098 }, -- Blueprint: Field Guide
 })
 
 Data:AddBossLoot(586, { -- Lord Cobrahn
@@ -16,6 +17,7 @@ Data:AddBossLoot(586, { -- Lord Cobrahn
     { 6465 }, -- Robe of the Moccasin
     { 10410 }, -- Leggings of the Fang
     { 9738 }, -- Gem of Cobrahn
+    { 252782 }, -- Pattern: Wisdom's Leather Gloves
 })
 
 Data:AddBossLoot(587, { -- Kresh
@@ -29,12 +31,16 @@ Data:AddBossLoot(588, { -- Lord Pythas
     { 6473 }, -- Armor of the Fang
     { 273089 }, -- Slither Cord
     { 9740 }, -- Gem of Pythas
+    { 253938 }, -- Pattern: Filigreed Pristine Leggings
+    { 253940 }, -- Pattern: Filigreed Silky Leggings
+    { 253946 }, -- Pattern: Filigreed Pearly Leggings
 })
 
 Data:AddBossLoot(589, { -- Skum
     { 6449 }, -- Glowing Lizardscale Cloak
     { 273137 }, -- Skum's Bucket
     { 6448 }, -- Tail Spike
+    { 253944 }, -- Pattern: Filigreed Shadow Leggings
 })
 
 Data:AddBossLoot(590, { -- Lord Serpentis
@@ -44,12 +50,14 @@ Data:AddBossLoot(590, { -- Lord Serpentis
     { 10411 }, -- Footpads of the Fang
     { 9741 }, -- Gem of Serpentis
     { 273087 }, -- Blueprint: Journeyman Campfire
+    { 253942 }, -- Pattern: Filigreed Flame Leggings
 })
 
 Data:AddBossLoot(591, { -- Verdan the Everliving
     { 6630 }, -- Seedcloud Buckler
     { 6631 }, -- Living Root
     { 6629 }, -- Sporid Cape
+    { 253948 }, -- Pattern: Filigreed Shining Leggings
 })
 
 Data:AddBossLoot(592, { -- Mutanus the Devourer
@@ -57,6 +65,7 @@ Data:AddBossLoot(592, { -- Mutanus the Devourer
     { 6463 }, -- Deep Fathom Ring
     { 6627 }, -- Mutant Scale Breastplate
     { 10441 }, -- Glowing Shard
+    { 252798 }, -- Pattern: Brawler's Leather Hood
 })
 
 Data:AddBossLoot(-5912, { -- Deviate Faerie Dragon

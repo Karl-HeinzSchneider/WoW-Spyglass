@@ -10,6 +10,7 @@ Data:AddBossLoot(2741, { -- Rhahk'Zor
     { 251362 }, -- Plans: Protector's Gloves
     { 251364 }, -- Plans: Crusader's Gloves
     { 253906 }, -- Pattern: Filigreed Flame Gown
+    { 251363 }, -- Plans: Acolyte's Gloves
 })
 
 Data:AddBossLoot(-642, { -- Sneed's Shredder
@@ -26,6 +27,7 @@ Data:AddBossLoot(2742, { -- Sneed
     { 251360 }, -- Plans: Veteran's Gloves
     { 251364 }, -- Plans: Crusader's Gloves
     { 253902 }, -- Pattern: Filigreed Pristine Gown
+    { 251361 }, -- Plans: Guard's Gloves
 })
 
 Data:AddBossLoot(3676, { -- Miner Johnson
@@ -44,6 +46,18 @@ Data:AddBossLoot(2743, { -- Gilnid
     { 253904 }, -- Pattern: Filigreed Silky Gown
     { 253906 }, -- Pattern: Filigreed Flame Gown
     { 273086 }, -- Blueprint: Anvil
+    { 251340 }, -- Plans: Veteran's Chain Shirt
+    { 251341 }, -- Plans: Guard's Chain Shirt
+    { 251342 }, -- Plans: Protector's Chain Shirt
+    { 251343 }, -- Plans: Acolyte's Chain Shirt
+    { 251344 }, -- Plans: Crusader's Chain Shirt
+    { 252771 }, -- Pattern: Brawler's Leather Armor
+    { 252772 }, -- Pattern: Trapper's Leather Armor
+    { 252773 }, -- Pattern: Defender's Leather Armor
+    { 252774 }, -- Pattern: Totemic Leather Armor
+    { 252775 }, -- Pattern: Stormrider's Leather Armor
+    { 252776 }, -- Pattern: Wisdom's Leather Armor
+    { 253908 }, -- Pattern: Filigreed Shadow Gown
 })
 
 Data:AddBossLoot(2744, { -- Captain Greenskin
@@ -88,6 +102,22 @@ Data:AddBossLoot(2747, { -- Edwin VanCleef
     { 252803 }, -- Pattern: Wisdom's Leather Hood
     { 253938 }, -- Pattern: Filigreed Pristine Leggings
     { 253948 }, -- Pattern: Filigreed Shining Leggings
+    { 251345 }, -- Plans: Veteran's Chain Leggings
+    { 251346 }, -- Plans: Guard's Chain Leggings
+    { 251347 }, -- Plans: Protector's Chain Leggings
+    { 251348 }, -- Plans: Acolyte's Chain Leggings
+    { 251349 }, -- Plans: Crusader's Chain Leggings
+    { 251383 }, -- Plans: Acolyte's Silvered Chain Helm
+    { 252792 }, -- Pattern: Brawler's Leather Pants
+    { 252793 }, -- Pattern: Trapper's Leather Pants
+    { 252794 }, -- Pattern: Defender's Leather Pants
+    { 252795 }, -- Pattern: Totemic Leather Pants
+    { 252796 }, -- Pattern: Stormrider's Leather Pants
+    { 252797 }, -- Pattern: Wisdom's Leather Pants
+    { 253940 }, -- Pattern: Filigreed Silky Leggings
+    { 253942 }, -- Pattern: Filigreed Flame Leggings
+    { 253944 }, -- Pattern: Filigreed Shadow Leggings
+    { 253946 }, -- Pattern: Filigreed Pearly Leggings
 })
 
 Data:AddTrashLoot(36, {

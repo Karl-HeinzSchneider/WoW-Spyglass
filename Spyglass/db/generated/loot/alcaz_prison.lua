@@ -40,6 +40,7 @@ Data:AddTrashLoot(2994, {
     { 287021 }, -- Defias Enforcer's Prowlers
     { 287019 }, -- Defias Enforcer's Mask
     { 287018 }, -- Compound Gloves
+    { 287020 }, -- Defias Enforcer's Chest
 })
 
 Data:AddQuests(2994, {

@@ -141,6 +141,10 @@
     {
       "item": 287018,
       "name": "Compound Gloves"
+    },
+    {
+      "item": 287020,
+      "name": "Defias Enforcer's Chest"
     }
   ],
   "quests": [96772, 95483, 96334, 96332, 95263, 96381, 96337, 95262, 95309, 95454, 96335]

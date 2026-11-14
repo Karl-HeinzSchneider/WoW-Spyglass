@@ -3,6 +3,8 @@ local Data = Spyglass.Data
 
 -- { quality, itemLevel, reqLevel, classID, subclassID, slot, bind, icon, stats, sellPrice, stackCount, setID, expansionID, craftingReagent }; see Data.ITEM.
 Data:AddItems({
+    [285287] = { 2, 1, 1, 9, 3, "INVTYPE_NON_EQUIP_IGNORE", 1, 134942, nil, 1000, 1, 0, 0, false },
+    [285288] = { 2, 1, 1, 9, 3, "INVTYPE_NON_EQUIP_IGNORE", 1, 134942, nil, 1000, 1, 0, 0, false },
     [285289] = { 2, 1, 1, 9, 4, "INVTYPE_NON_EQUIP_IGNORE", 1, 134942, nil, 1000, 1, 0, 0, false },
     [285290] = { 2, 1, 1, 9, 4, "INVTYPE_NON_EQUIP_IGNORE", 1, 134942, nil, 1000, 1, 0, 0, false },
     [285291] = { 3, 1, 1, 9, 4, "INVTYPE_NON_EQUIP_IGNORE", 1, 134942, nil, 1000, 1, 0, 0, false },
@@ -157,6 +159,7 @@ Data:AddItems({
     [286571] = { 2, 52, 47, 4, 3, "INVTYPE_CHEST", 2, 132631, { AGILITY = 16, INTELLECT = 12, RESISTANCE0_NAME = 283 }, 15914, 1, 0, 0, false },
     [286572] = { 2, 51, 46, 4, 1, "INVTYPE_CLOAK", 2, 133764, { RESISTANCE0_NAME = 33, SPELL_POWER = 5, STRENGTH = 10 }, 7534, 1, 0, 0, false },
     [286573] = { 3, 1, 1, 15, 4, "INVTYPE_NON_EQUIP_IGNORE", 1, 538518, nil, 0, 1, 0, 0, false },
+    [286590] = { 3, 61, 56, 4, 4, "INVTYPE_CHEST", 1, 132743, { ATTACK_POWER = 24, ATTACK_POWER_VS_HUMANOID = 29, CRIT_RATING = 14, RESISTANCE0_NAME = 637, STAMINA = 23 }, 36447, 1, 0, 0, false },
     [286597] = { 2, 60, 55, 4, 0, "INVTYPE_FINGER", 2, 133370, { SPELL_DAMAGE_DONE = 6, SPELL_HEALING_DONE = 19, SPIRIT = 11 }, 17394, 1, 0, 0, false },
     [286604] = { 2, 60, 50, 15, 2, "INVTYPE_NON_EQUIP_IGNORE", 1, 134895, nil, 500, 1, 0, 0, false },
     [286609] = { 2, 58, 53, 4, 6, "INVTYPE_SHIELD", 2, 134967, { DEFENSE_SKILL_RATING = 7, RESISTANCE0_NAME = 1776, SPIRIT = 6 }, 24534, 1, 0, 0, false },
@@ -268,6 +271,7 @@ Data:AddItems({
     [287040] = { 3, 61, 56, 4, 2, "INVTYPE_WAIST", 2, 132498, { AGILITY = 12, RESISTANCE0_NAME = 197, STAMINA = 18 }, 13023, 1, 0, 0, false },
     [287041] = { 3, 60, 55, 4, 3, "INVTYPE_WRIST", 2, 132606, { HIT_RATING = 10, RESISTANCE0_NAME = 155, SPIRIT = 5, STAMINA = 13 }, 14821, 1, 0, 0, false },
     [287042] = { 3, 61, 56, 4, 4, "INVTYPE_SHOULDER", 2, 135060, { ATTACK_POWER = 24, DEFENSE_SKILL_RATING = 6, RESISTANCE0_NAME = 478, SPIRIT = 11, STAMINA = 12 }, 27283, 1, 0, 0, false },
+    [287043] = { 3, 60, 55, 4, 0, "INVTYPE_FINGER", 2, 133356, { ATTACK_POWER_VS_BEAST = 18, STAMINA = 14 }, 20434, 1, 0, 0, false },
     [287044] = { 3, 60, 55, 4, 1, "INVTYPE_CLOAK", 2, 133769, { AGILITY = 9, ATTACK_POWER = 11, RESISTANCE0_NAME = 43, STAMINA = 14 }, 15380, 1, 0, 0, false },
     [287045] = { 3, 61, 56, 2, 0, "INVTYPE_WEAPON", 2, 7816730, { DAMAGE_PER_SECOND = 40.19, SPIRIT = 8, STAMINA = 8 }, 54025, 1, 0, 0, false },
     [287046] = { 3, 61, 56, 2, 10, "INVTYPE_2HWEAPON", 2, 135157, { DAMAGE_PER_SECOND = 52.21, HIT_RATING = 10, SPIRIT = 16, STRENGTH = 25 }, 67773, 1, 0, 0, false },

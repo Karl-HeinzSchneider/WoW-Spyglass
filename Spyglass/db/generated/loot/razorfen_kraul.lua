@@ -9,6 +9,23 @@ Data:AddBossLoot(2773, { -- Roogug
     { 274152 }, -- Roogug's Severed Head
     { 252512 }, -- Brawler's Leather Helm
     { 6841 }, -- Vial of Phlogiston
+    { 251350 }, -- Plans: Veteran's Chain Helm
+    { 251351 }, -- Plans: Guard's Chain Helm
+    { 251352 }, -- Plans: Protector's Chain Helm
+    { 251353 }, -- Plans: Acolyte's Chain Helm
+    { 251354 }, -- Plans: Crusader's Chain Helm
+    { 252814 }, -- Pattern: Brawler's Leather Helm
+    { 252815 }, -- Pattern: Trapper's Leather Helm
+    { 252816 }, -- Pattern: Defender's Leather Helm
+    { 252817 }, -- Pattern: Totemic Leather Helm
+    { 252818 }, -- Pattern: Stormrider's Leather Helm
+    { 252819 }, -- Pattern: Wisdom's Leather Helm
+    { 253976 }, -- Pattern: Filigreed Pristine Circlet
+    { 253978 }, -- Pattern: Filigreed Silky Circlet
+    { 253980 }, -- Pattern: Filigreed Flame Circlet
+    { 253982 }, -- Pattern: Filigreed Shadow Circlet
+    { 253984 }, -- Pattern: Filigreed Pearly Circlet
+    { 253986 }, -- Pattern: Filigreed Shining Circlet
 })
 
 Data:AddBossLoot(2774, { -- Aggem Thorncurse
@@ -18,6 +35,23 @@ Data:AddBossLoot(2774, { -- Aggem Thorncurse
     { 252820 }, -- Pattern: Brawler's Leather Legguards
     { 252512 }, -- Brawler's Leather Helm
     { 252455 }, -- Defender's Leather Helm
+    { 251350 }, -- Plans: Veteran's Chain Helm
+    { 251351 }, -- Plans: Guard's Chain Helm
+    { 251352 }, -- Plans: Protector's Chain Helm
+    { 251353 }, -- Plans: Acolyte's Chain Helm
+    { 251354 }, -- Plans: Crusader's Chain Helm
+    { 252814 }, -- Pattern: Brawler's Leather Helm
+    { 252815 }, -- Pattern: Trapper's Leather Helm
+    { 252816 }, -- Pattern: Defender's Leather Helm
+    { 252817 }, -- Pattern: Totemic Leather Helm
+    { 252818 }, -- Pattern: Stormrider's Leather Helm
+    { 252819 }, -- Pattern: Wisdom's Leather Helm
+    { 253976 }, -- Pattern: Filigreed Pristine Circlet
+    { 253978 }, -- Pattern: Filigreed Silky Circlet
+    { 253980 }, -- Pattern: Filigreed Flame Circlet
+    { 253982 }, -- Pattern: Filigreed Shadow Circlet
+    { 253984 }, -- Pattern: Filigreed Pearly Circlet
+    { 253986 }, -- Pattern: Filigreed Shining Circlet
 })
 
 Data:AddBossLoot(2775, { -- Death Speaker Jargba
@@ -26,6 +60,23 @@ Data:AddBossLoot(2775, { -- Death Speaker Jargba
     { 6682 }, -- Death Speaker Robes
     { 252512 }, -- Brawler's Leather Helm
     { 252515 }, -- Wisdom's Leather Helm
+    { 251350 }, -- Plans: Veteran's Chain Helm
+    { 251351 }, -- Plans: Guard's Chain Helm
+    { 251352 }, -- Plans: Protector's Chain Helm
+    { 251353 }, -- Plans: Acolyte's Chain Helm
+    { 251354 }, -- Plans: Crusader's Chain Helm
+    { 252814 }, -- Pattern: Brawler's Leather Helm
+    { 252815 }, -- Pattern: Trapper's Leather Helm
+    { 252816 }, -- Pattern: Defender's Leather Helm
+    { 252817 }, -- Pattern: Totemic Leather Helm
+    { 252818 }, -- Pattern: Stormrider's Leather Helm
+    { 252819 }, -- Pattern: Wisdom's Leather Helm
+    { 253976 }, -- Pattern: Filigreed Pristine Circlet
+    { 253978 }, -- Pattern: Filigreed Silky Circlet
+    { 253980 }, -- Pattern: Filigreed Flame Circlet
+    { 253982 }, -- Pattern: Filigreed Shadow Circlet
+    { 253984 }, -- Pattern: Filigreed Pearly Circlet
+    { 253986 }, -- Pattern: Filigreed Shining Circlet
 })
 
 Data:AddBossLoot(2776, { -- Overlord Ramtusk
@@ -37,6 +88,23 @@ Data:AddBossLoot(2776, { -- Overlord Ramtusk
     { 252512 }, -- Brawler's Leather Helm
     { 252513 }, -- Trapper's Leather Helm
     { 252515 }, -- Wisdom's Leather Helm
+    { 251350 }, -- Plans: Veteran's Chain Helm
+    { 251351 }, -- Plans: Guard's Chain Helm
+    { 251352 }, -- Plans: Protector's Chain Helm
+    { 251353 }, -- Plans: Acolyte's Chain Helm
+    { 251354 }, -- Plans: Crusader's Chain Helm
+    { 252814 }, -- Pattern: Brawler's Leather Helm
+    { 252815 }, -- Pattern: Trapper's Leather Helm
+    { 252816 }, -- Pattern: Defender's Leather Helm
+    { 252817 }, -- Pattern: Totemic Leather Helm
+    { 252818 }, -- Pattern: Stormrider's Leather Helm
+    { 252819 }, -- Pattern: Wisdom's Leather Helm
+    { 253976 }, -- Pattern: Filigreed Pristine Circlet
+    { 253978 }, -- Pattern: Filigreed Silky Circlet
+    { 253980 }, -- Pattern: Filigreed Flame Circlet
+    { 253982 }, -- Pattern: Filigreed Shadow Circlet
+    { 253984 }, -- Pattern: Filigreed Pearly Circlet
+    { 253986 }, -- Pattern: Filigreed Shining Circlet
 })
 
 Data:AddBossLoot(2777, { -- Agathelos the Raging
@@ -47,6 +115,23 @@ Data:AddBossLoot(2777, { -- Agathelos the Raging
     { 252512 }, -- Brawler's Leather Helm
     { 252513 }, -- Trapper's Leather Helm
     { 252455 }, -- Defender's Leather Helm
+    { 251350 }, -- Plans: Veteran's Chain Helm
+    { 251351 }, -- Plans: Guard's Chain Helm
+    { 251352 }, -- Plans: Protector's Chain Helm
+    { 251353 }, -- Plans: Acolyte's Chain Helm
+    { 251354 }, -- Plans: Crusader's Chain Helm
+    { 252814 }, -- Pattern: Brawler's Leather Helm
+    { 252815 }, -- Pattern: Trapper's Leather Helm
+    { 252816 }, -- Pattern: Defender's Leather Helm
+    { 252817 }, -- Pattern: Totemic Leather Helm
+    { 252818 }, -- Pattern: Stormrider's Leather Helm
+    { 252819 }, -- Pattern: Wisdom's Leather Helm
+    { 253976 }, -- Pattern: Filigreed Pristine Circlet
+    { 253978 }, -- Pattern: Filigreed Silky Circlet
+    { 253980 }, -- Pattern: Filigreed Flame Circlet
+    { 253982 }, -- Pattern: Filigreed Shadow Circlet
+    { 253984 }, -- Pattern: Filigreed Pearly Circlet
+    { 253986 }, -- Pattern: Filigreed Shining Circlet
 })
 
 Data:AddBossLoot(2778, { -- Charlga Razorflank
@@ -60,12 +145,43 @@ Data:AddBossLoot(2778, { -- Charlga Razorflank
     { 252515 }, -- Wisdom's Leather Helm
     { 17008 }, -- Small Scroll
     { 274463 }, -- Tattered Note
+    { 251350 }, -- Plans: Veteran's Chain Helm
+    { 251351 }, -- Plans: Guard's Chain Helm
+    { 251352 }, -- Plans: Protector's Chain Helm
+    { 251353 }, -- Plans: Acolyte's Chain Helm
+    { 251354 }, -- Plans: Crusader's Chain Helm
+    { 252814 }, -- Pattern: Brawler's Leather Helm
+    { 252815 }, -- Pattern: Trapper's Leather Helm
+    { 252816 }, -- Pattern: Defender's Leather Helm
+    { 252817 }, -- Pattern: Totemic Leather Helm
+    { 252818 }, -- Pattern: Stormrider's Leather Helm
+    { 252819 }, -- Pattern: Wisdom's Leather Helm
+    { 253976 }, -- Pattern: Filigreed Pristine Circlet
+    { 253978 }, -- Pattern: Filigreed Silky Circlet
+    { 253980 }, -- Pattern: Filigreed Flame Circlet
+    { 253982 }, -- Pattern: Filigreed Shadow Circlet
+    { 253984 }, -- Pattern: Filigreed Pearly Circlet
+    { 253986 }, -- Pattern: Filigreed Shining Circlet
 })
 
 Data:AddBossLoot(-4425, { -- Blind Hunter
     { 6695 }, -- Stygian Bone Amulet
     { 6697 }, -- Batwing Mantle
     { 6696 }, -- Nightstalker Bow
+    { 251351 }, -- Plans: Guard's Chain Helm
+    { 251352 }, -- Plans: Protector's Chain Helm
+    { 251353 }, -- Plans: Acolyte's Chain Helm
+    { 252814 }, -- Pattern: Brawler's Leather Helm
+    { 252815 }, -- Pattern: Trapper's Leather Helm
+    { 252816 }, -- Pattern: Defender's Leather Helm
+    { 252817 }, -- Pattern: Totemic Leather Helm
+    { 252818 }, -- Pattern: Stormrider's Leather Helm
+    { 252819 }, -- Pattern: Wisdom's Leather Helm
+    { 253976 }, -- Pattern: Filigreed Pristine Circlet
+    { 253978 }, -- Pattern: Filigreed Silky Circlet
+    { 253980 }, -- Pattern: Filigreed Flame Circlet
+    { 253982 }, -- Pattern: Filigreed Shadow Circlet
+    { 253984 }, -- Pattern: Filigreed Pearly Circlet
 })
 
 Data:AddBossLoot(-4842, { -- Earthcaller Halmgar
@@ -73,6 +189,15 @@ Data:AddBossLoot(-4842, { -- Earthcaller Halmgar
     { 6688 }, -- Whisperwind Headdress
     { 252455 }, -- Defender's Leather Helm
     { 252514 }, -- Stormrider's Leather Helm
+    { 251351 }, -- Plans: Guard's Chain Helm
+    { 251352 }, -- Plans: Protector's Chain Helm
+    { 251353 }, -- Plans: Acolyte's Chain Helm
+    { 252815 }, -- Pattern: Trapper's Leather Helm
+    { 252818 }, -- Pattern: Stormrider's Leather Helm
+    { 252819 }, -- Pattern: Wisdom's Leather Helm
+    { 253976 }, -- Pattern: Filigreed Pristine Circlet
+    { 253980 }, -- Pattern: Filigreed Flame Circlet
+    { 253984 }, -- Pattern: Filigreed Pearly Circlet
 })
 
 Data:AddTrashLoot(47, {
