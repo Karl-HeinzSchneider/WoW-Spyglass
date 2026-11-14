@@ -140,6 +140,10 @@
         {
           "item": 11767,
           "name": "Emberplate Armguards"
+        },
+        {
+          "item": 11768,
+          "name": "Incendic Bracers"
         }
       ]
     },
@@ -327,6 +331,10 @@
         {
           "item": 11746,
           "name": "Golem Skull Helm"
+        },
+        {
+          "item": 11743,
+          "name": "Rockfist"
         }
       ]
     },
@@ -744,6 +752,18 @@
         {
           "item": 22305,
           "name": "Ironweave Mantle"
+        },
+        {
+          "item": 22330,
+          "name": "Shroud of Arcane Mastery"
+        },
+        {
+          "item": 22317,
+          "name": "Lefty's Brass Knuckle"
+        },
+        {
+          "item": 22318,
+          "name": "Malgen's Long Bow"
         }
       ]
     }
@@ -776,6 +796,30 @@
     {
       "item": 12531,
       "name": "Searing Needle"
+    },
+    {
+      "item": 12547,
+      "name": "Mar Alom's Grip"
+    },
+    {
+      "item": 12551,
+      "name": "Stoneshield Cloak"
+    },
+    {
+      "item": 12552,
+      "name": "Blisterbane Wrap"
+    },
+    {
+      "item": 12535,
+      "name": "Doomforged Straightedge"
+    },
+    {
+      "item": 12528,
+      "name": "The Judge's Gavel"
+    },
+    {
+      "item": 12532,
+      "name": "Spire of the Stoneshaper"
     }
   ],
   "quests": [

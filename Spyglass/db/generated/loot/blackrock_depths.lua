@@ -37,6 +37,7 @@ Data:AddBossLoot(232, { -- Lord Incendius
     { 11765 }, -- Pyremail Wristguards
     { 11766 }, -- Flameweave Cuffs
     { 11767 }, -- Emberplate Armguards
+    { 11768 }, -- #11768
 })
 
 Data:AddBossLoot(233, { -- Warder Stilgiss
@@ -89,6 +90,7 @@ Data:AddBossLoot(239, { -- Phalanx
     { 11744 }, -- Bloodfist
     { 22212 }, -- Golem Fitted Pauldrons
     { 11746 }, -- Golem Skull Helm
+    { 11743 }, -- #11743
 })
 
 Data:AddBossLoot(240, { -- Ribbly Screwspigot
@@ -203,6 +205,9 @@ Data:AddBossLoot(-8923, { -- Panzor the Invincible
 
 Data:AddBossLoot(-16059, { -- Theldren
     { 22305 }, -- Ironweave Mantle
+    { 22330 }, -- #22330
+    { 22317 }, -- #22317
+    { 22318 }, -- #22318
 })
 
 Data:AddTrashLoot(230, {
@@ -213,6 +218,12 @@ Data:AddTrashLoot(230, {
     { 12555 }, -- Battlechaser's Greaves
     { 12527 }, -- Ribsplitter
     { 12531 }, -- Searing Needle
+    { 12547 }, -- #12547
+    { 12551 }, -- #12551
+    { 12552 }, -- #12552
+    { 12535 }, -- #12535
+    { 12528 }, -- #12528
+    { 12532 }, -- #12532
 })
 
 Data:AddQuests(230, {

@@ -17,6 +17,7 @@ Data:AddBossLoot(3583, { -- Avatar of Hakkar
     { 10845 }, -- Warrior's Embrace
     { 10846 }, -- Bloodshot Greaves
     { 10663 }, -- Essence of Hakkar
+    { 12462 }, -- #12462
 })
 
 Data:AddBossLoot(3584, { -- Shade of Eranikus

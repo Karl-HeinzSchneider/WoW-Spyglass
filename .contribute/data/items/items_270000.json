@@ -7285,7 +7285,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "MANA_REGENERATION": 3,
+      "MANA_REGENERATION": 4,
       "STAMINA": 16
     }
   },
@@ -7329,7 +7329,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "MANA_REGENERATION": 2,
+      "MANA_REGENERATION": 3,
       "STAMINA": 11
     }
   },
@@ -9004,7 +9004,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "MANA_REGENERATION": 9,
+      "MANA_REGENERATION": 4,
       "STAMINA": 16
     }
   },
@@ -9026,7 +9026,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "MANA_REGENERATION": 7,
+      "MANA_REGENERATION": 3,
       "STAMINA": 14
     }
   },
@@ -9048,7 +9048,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "MANA_REGENERATION": 6,
+      "MANA_REGENERATION": 3,
       "STAMINA": 11
     }
   },
@@ -9070,7 +9070,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "MANA_REGENERATION": 4,
+      "MANA_REGENERATION": 2,
       "STAMINA": 8
     }
   },
@@ -10925,7 +10925,7 @@
     "stats": {
       "HIT_RATING": 10,
       "INTELLECT": 14,
-      "SPIRIT": 8
+      "SPELL_POWER": 9
     }
   },
   "272407": {
@@ -10946,7 +10946,6 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "HIT_RATING": 10,
       "SPELL_DAMAGE_DONE": 10,
       "SPELL_HEALING_DONE": 31,
       "SPIRIT": 8,
@@ -38153,7 +38152,7 @@
     "craftingReagent": false,
     "stats": {
       "HEALTH_REGEN": 5,
-      "STAMINA": 13
+      "STAMINA": 10
     }
   },
   "274750": {

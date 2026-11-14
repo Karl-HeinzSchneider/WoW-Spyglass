@@ -12,6 +12,7 @@ Data:AddBossLoot(2805, { -- Kirtonos
     { 13957 }, -- Gargoyle Slashers
     { 13955 }, -- Stoneform Shoulders
     { 13983 }, -- Gravestone War Axe
+    { 13956 }, -- #13956
 })
 
 Data:AddBossLoot(2804, { -- Jandice Barov

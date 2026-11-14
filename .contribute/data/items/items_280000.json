@@ -10333,7 +10333,7 @@
     "craftingReagent": false,
     "stats": {
       "HIT_RATING": 10,
-      "SPIRIT": 14,
+      "SPIRIT": 6,
       "STAMINA": 13
     }
   },
@@ -10624,6 +10624,42 @@
       "MANA_REGENERATION": 5,
       "RESISTANCE0_NAME": 79
     }
+  },
+  "284163": {
+    "names": {
+      "enUS": "Scarlet Hearthstone"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 451164,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "284164": {
+    "names": {
+      "enUS": "Scarlet Hearthstone"
+    },
+    "quality": 3,
+    "itemLevel": 35,
+    "reqLevel": 0,
+    "classID": 15,
+    "subclassID": 4,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 451164,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
   },
   "284165": {
     "names": {
@@ -16552,6 +16588,31 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "286590": {
+    "names": {
+      "enUS": "Silithid Queen's Husk"
+    },
+    "quality": 3,
+    "itemLevel": 61,
+    "reqLevel": 56,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_CHEST",
+    "bind": 1,
+    "icon": 132743,
+    "sellPrice": 36447,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ATTACK_POWER": 24,
+      "ATTACK_POWER_VS_HUMANOID": 29,
+      "CRIT_RATING": 14,
+      "RESISTANCE0_NAME": 637,
+      "STAMINA": 23
+    }
+  },
   "286597": {
     "names": {
       "enUS": "Calm Air Band"
@@ -19076,6 +19137,28 @@
       "RESISTANCE0_NAME": 478,
       "SPIRIT": 11,
       "STAMINA": 12
+    }
+  },
+  "287043": {
+    "names": {
+      "enUS": "Predaceous Band"
+    },
+    "quality": 3,
+    "itemLevel": 60,
+    "reqLevel": 55,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_FINGER",
+    "bind": 2,
+    "icon": 133356,
+    "sellPrice": 20434,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ATTACK_POWER_VS_BEAST": 18,
+      "STAMINA": 14
     }
   },
   "287044": {
