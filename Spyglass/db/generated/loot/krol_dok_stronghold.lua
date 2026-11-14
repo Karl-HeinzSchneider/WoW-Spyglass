@@ -41,6 +41,11 @@ Data:AddBossLoot(-264773, { -- Bossman Toof
     { 286428 }, -- Band of Bossman
 })
 
+Data:AddBossLoot(-262716, { -- Kroog
+    { 279863 }, -- Black Horn Necklace
+    { 279857 }, -- Kroog's Backscratcher
+})
+
 Data:AddTrashLoot(3039, {
     { 287008 }, -- Ogre Magi's Mantle
     { 287014 }, -- Krol'dok Warplate Pauldrons

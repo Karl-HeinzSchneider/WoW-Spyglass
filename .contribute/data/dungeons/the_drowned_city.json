@@ -3,9 +3,11 @@
   "name": "The Drowned City",
   "minLevel": 35,
   "maxLevel": 40,
+  "zone": 1434,
   "icon": "Interface\\Icons\\Spell_Frost_SummonWaterElemental",
   "background": 7963741,
   "backgroundCoords": [0, 1, 0.154, 0.846],
+  "entrance": [1434, 21.4, 27.9],
   "encounters": [
     {
       "id": 3474,
@@ -217,5 +219,5 @@
       "name": "Sword of Dismemberment"
     }
   ],
-  "quests": [96078, 95776, 96774, 95799, 95798, 97130, 95789, 95791]
+  "quests": [96078, 95776, 96774, 95799, 95798, 97130, 95789, 95791, 95775, 95787, 95788]
 }

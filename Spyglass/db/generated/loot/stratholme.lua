@@ -22,6 +22,7 @@ Data:AddBossLoot(474, { -- Timmy the Cruel
 Data:AddBossLoot(476, { -- Malor the Zealous
     { 276398 }, -- Scarlet Malice
     { 276399 }, -- Plate of the Scarlet Bastion
+    { 12845 }, -- Medallion of Faith
 })
 
 Data:AddBossLoot(475, { -- Cannon Master Willey

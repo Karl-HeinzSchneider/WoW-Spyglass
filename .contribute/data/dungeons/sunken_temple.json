@@ -14,6 +14,7 @@
       "name": "Atal'alarion",
       "displayID": 7873,
       "npc": 8580,
+      "level": 50,
       "loot": [
         {
           "item": 10800,
@@ -33,6 +34,8 @@
       "id": 3583,
       "name": "Avatar of Hakkar",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Avatar of Hakkar",
+      "npc": 8443,
+      "level": 55,
       "loot": [
         {
           "item": 10838,
@@ -57,6 +60,10 @@
         {
           "item": 10846,
           "name": "Bloodshot Greaves"
+        },
+        {
+          "item": 10663,
+          "name": "Essence of Hakkar"
         }
       ]
     },
@@ -64,6 +71,8 @@
       "id": 3584,
       "name": "Shade of Eranikus",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Shade of Eranikus",
+      "npc": 5709,
+      "level": 55,
       "loot": [
         {
           "item": 10829,
@@ -88,6 +97,26 @@
         {
           "item": 10837,
           "name": "Tooth of Eranikus"
+        },
+        {
+          "item": 10847,
+          "name": "Dragon's Call"
+        },
+        {
+          "item": 254106,
+          "name": "Pattern: Radiant Gloves"
+        },
+        {
+          "item": 252919,
+          "name": "Pattern: Skycaller's Mail Gauntlets"
+        },
+        {
+          "item": 251403,
+          "name": "Plans: Officer's Gloves"
+        },
+        {
+          "item": 10454,
+          "name": "Essence of Eranikus"
         }
       ]
     },
@@ -168,6 +197,22 @@
         {
           "item": 12464,
           "name": "Bloodfire Talons"
+        },
+        {
+          "item": 20019,
+          "name": "Tooth of Morphaz"
+        },
+        {
+          "item": 20022,
+          "name": "Azure Key"
+        },
+        {
+          "item": 20025,
+          "name": "Blood of Morphaz"
+        },
+        {
+          "item": 20085,
+          "name": "Arcane Shard"
         }
       ]
     },
@@ -215,6 +260,7 @@
       "id": 3588,
       "name": "Dreamscythe",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Dreamscythe",
+      "npc": 5721,
       "loot": [
         {
           "item": 12465,
@@ -254,6 +300,8 @@
       "id": 3589,
       "name": "Jammal'an the Prophet",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Jammalan the Prophet",
+      "npc": 5710,
+      "level": 54,
       "loot": [
         {
           "item": 10806,
@@ -274,6 +322,7 @@
       "name": "Ogom the Wretched",
       "displayID": 6709,
       "npc": 5711,
+      "level": 53,
       "loot": [
         {
           "item": 10804,

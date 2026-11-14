@@ -13,6 +13,8 @@
       "id": 227,
       "name": "High Interrogator Gerstahn",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-High Interrogator Gerstahn",
+      "npc": 9018,
+      "level": 52,
       "loot": [
         {
           "item": 11624,
@@ -36,6 +38,8 @@
       "id": 228,
       "name": "Lord Roccor",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Roccor",
+      "npc": 9025,
+      "level": 51,
       "loot": [
         {
           "item": 11632,
@@ -63,6 +67,8 @@
       "id": 229,
       "name": "Houndmaster Grebmar",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Houndmaster Grebmar",
+      "npc": 9319,
+      "level": 52,
       "loot": [
         {
           "item": 11627,
@@ -91,6 +97,8 @@
       "id": 231,
       "name": "Pyromancer Loregrain",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Pyromancer Loregrain",
+      "npc": 9024,
+      "level": 52,
       "loot": [
         {
           "item": 11747,
@@ -114,6 +122,8 @@
       "id": 232,
       "name": "Lord Incendius",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Incendius",
+      "npc": 9017,
+      "level": 55,
       "loot": [
         {
           "item": 11764,
@@ -137,6 +147,8 @@
       "id": 233,
       "name": "Warder Stilgiss",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Warder Stilgiss",
+      "npc": 9041,
+      "level": 56,
       "loot": [
         {
           "item": 11782,
@@ -168,6 +180,8 @@
       "id": 234,
       "name": "Fineous Darkvire",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Fineous Darkvire",
+      "npc": 9056,
+      "level": 54,
       "loot": [
         {
           "item": 11841,
@@ -191,6 +205,8 @@
       "id": 235,
       "name": "Bael'Gar",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-BaelGar",
+      "npc": 9016,
+      "level": 54,
       "loot": [
         {
           "item": 11802,
@@ -214,6 +230,8 @@
       "id": 236,
       "name": "General Angerforge",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-General Angerforge",
+      "npc": 9033,
+      "level": 57,
       "loot": [
         {
           "item": 11816,
@@ -241,6 +259,8 @@
       "id": 237,
       "name": "Golem Lord Argelmach",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Golem Lord Argelmach",
+      "npc": 8983,
+      "level": 57,
       "loot": [
         {
           "item": 11822,
@@ -264,6 +284,8 @@
       "id": 238,
       "name": "Hurley Blackbreath",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Hurley Blackbreath",
+      "npc": 9537,
+      "level": 55,
       "loot": [
         {
           "item": 18044,
@@ -287,6 +309,8 @@
       "id": 239,
       "name": "Phalanx",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Phalanx",
+      "npc": 9502,
+      "level": 55,
       "loot": [
         {
           "item": 11745,
@@ -310,6 +334,8 @@
       "id": 240,
       "name": "Ribbly Screwspigot",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Ribbly Screwspigot",
+      "npc": 9543,
+      "level": 53,
       "loot": [
         {
           "item": 11612,
@@ -333,6 +359,8 @@
       "id": 241,
       "name": "Plugger Spazzring",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Plugger Spazzring",
+      "npc": 9499,
+      "level": 55,
       "loot": [
         {
           "item": 12793,
@@ -353,6 +381,8 @@
       "id": 242,
       "name": "Ambassador Flamelash",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Ambassador Flamelash",
+      "npc": 9156,
+      "level": 57,
       "loot": [
         {
           "item": 11812,
@@ -380,6 +410,8 @@
       "id": 243,
       "name": "The Seven",
       "displayID": 8687,
+      "npc": 9039,
+      "level": 57,
       "loot": [
         {
           "item": 11920,
@@ -419,6 +451,8 @@
       "id": 244,
       "name": "Magmus",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Magmus",
+      "npc": 9938,
+      "level": 57,
       "loot": [
         {
           "item": 11935,
@@ -446,6 +480,8 @@
       "id": 2789,
       "name": "Princess Moira Bronzebeard",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Princess Moira Bronzebeard",
+      "npc": 8929,
+      "level": 58,
       "loot": [
         {
           "item": 12553,
@@ -469,6 +505,8 @@
       "id": 2790,
       "name": "Emperor Dagran Thaurissan",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Emperor Thaurissan",
+      "npc": 9019,
+      "level": 59,
       "loot": [
         {
           "item": 11815,
@@ -521,6 +559,7 @@
       "name": "Gorosh the Dervish",
       "displayID": 8760,
       "npc": 9027,
+      "level": 56,
       "loot": [
         {
           "item": 11726,
@@ -545,6 +584,7 @@
       "name": "Grizzle",
       "displayID": 7873,
       "npc": 9028,
+      "level": 54,
       "loot": [
         {
           "item": 11702,
@@ -573,6 +613,7 @@
       "name": "Eviscerator",
       "displayID": 523,
       "npc": 9029,
+      "level": 54,
       "loot": [
         {
           "item": 11679,
@@ -597,6 +638,7 @@
       "name": "Ok'thor the Breaker",
       "displayID": 11538,
       "npc": 9030,
+      "level": 53,
       "loot": [
         {
           "item": 11662,
@@ -621,6 +663,7 @@
       "name": "Anub'shiah",
       "displayID": 3004,
       "npc": 9031,
+      "level": 54,
       "loot": [
         {
           "item": 11675,
@@ -645,6 +688,7 @@
       "name": "Hedrum the Creeper",
       "displayID": 8271,
       "npc": 9032,
+      "level": 53,
       "loot": [
         {
           "item": 11633,
@@ -669,6 +713,7 @@
       "name": "Panzor the Invincible",
       "displayID": 8270,
       "npc": 8923,
+      "level": 57,
       "loot": [
         {
           "item": 11787,
@@ -692,6 +737,7 @@
       "id": -16059,
       "name": "Theldren",
       "npc": 16059,
+      "level": 60,
       "rare": true,
       "quests": [9015],
       "loot": [

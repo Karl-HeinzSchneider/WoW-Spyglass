@@ -84,6 +84,8 @@ Data:AddBossLoot(2803, { -- Instructor Malicia
     { 14632 }, -- Necropile Leggings
     { 14633 }, -- Necropile Mantle
     { 14626 }, -- Necropile Robe
+    { 18680 }, -- Ancient Bone Bow
+    { 18681 }, -- Burial Shawl
 })
 
 Data:AddBossLoot(2802, { -- Doctor Theolen Krastinov
@@ -114,6 +116,8 @@ Data:AddBossLoot(2802, { -- Doctor Theolen Krastinov
     { 14632 }, -- Necropile Leggings
     { 14633 }, -- Necropile Mantle
     { 14626 }, -- Necropile Robe
+    { 18680 }, -- Ancient Bone Bow
+    { 18681 }, -- Burial Shawl
 })
 
 Data:AddBossLoot(2808, { -- Lorekeeper Polkelt
@@ -143,6 +147,8 @@ Data:AddBossLoot(2808, { -- Lorekeeper Polkelt
     { 14632 }, -- Necropile Leggings
     { 14633 }, -- Necropile Mantle
     { 14626 }, -- Necropile Robe
+    { 18680 }, -- Ancient Bone Bow
+    { 18681 }, -- Burial Shawl
 })
 
 Data:AddBossLoot(2812, { -- The Ravenian
@@ -172,6 +178,8 @@ Data:AddBossLoot(2812, { -- The Ravenian
     { 14632 }, -- Necropile Leggings
     { 14633 }, -- Necropile Mantle
     { 14626 }, -- Necropile Robe
+    { 18680 }, -- Ancient Bone Bow
+    { 18681 }, -- Burial Shawl
 })
 
 Data:AddBossLoot(2807, { -- Lord Alexei Barov
@@ -231,6 +239,8 @@ Data:AddBossLoot(2806, { -- Lady Illucia Barov
     { 14632 }, -- Necropile Leggings
     { 14633 }, -- Necropile Mantle
     { 14626 }, -- Necropile Robe
+    { 18680 }, -- Ancient Bone Bow
+    { 18681 }, -- Burial Shawl
 })
 
 Data:AddBossLoot(2801, { -- Darkmaster Gandling

@@ -13,18 +13,21 @@ Data:AddBossLoot(3409, { -- Blazeroar
     { 276744 }, -- Zarla's Snack Pouch
     { 276745 }, -- Beastbond Robe
     { 276746 }, -- Defias Enforcer's Legguards
+    { 276890 }, -- Zarla's Journal
 })
 
 Data:AddBossLoot(3410, { -- Tidemistress Ca'zass
     { 276736 }, -- Seascale Bracers
     { 276735 }, -- Tidesong Wand
     { 276737 }, -- Cloak of the Tidemistress
+    { 273883 }, -- Ca'zass's Head
 })
 
 Data:AddBossLoot(3415, { -- The Questioner
     { 276742 }, -- Girdle of Extracted Answers
     { 276743 }, -- Fingerbreaker Stamp
     { 276741 }, -- Defias Enforcer's Shoulderpads
+    { 274029 }, -- Ornate Shackle Key
 })
 
 Data:AddBossLoot(3418, { -- Katerina the Cleaner

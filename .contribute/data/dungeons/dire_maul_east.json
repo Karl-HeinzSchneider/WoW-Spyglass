@@ -14,6 +14,8 @@
       "id": 343,
       "name": "Zevrim Thornhoof",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Zevrim Thornhoof",
+      "npc": 11490,
+      "level": 57,
       "loot": [
         {
           "item": 18313,
@@ -33,6 +35,8 @@
       "id": 344,
       "name": "Hydrospawn",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Hydrospawn",
+      "npc": 13280,
+      "level": 57,
       "loot": [
         {
           "item": 18322,
@@ -52,6 +56,8 @@
       "id": 345,
       "name": "Lethtendris",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lethtendris",
+      "npc": 14327,
+      "level": 57,
       "loot": [
         {
           "item": 18325,
@@ -69,6 +75,7 @@
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\pusillin.blp",
       "displayID": 7552,
       "npc": 14354,
+      "level": 57,
       "loot": [
         {
           "item": 18316,
@@ -84,6 +91,8 @@
       "id": 346,
       "name": "Alzzin the Wildshaper",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Alzzin the Wildshaper",
+      "npc": 11492,
+      "level": 58,
       "loot": [
         {
           "item": 18309,

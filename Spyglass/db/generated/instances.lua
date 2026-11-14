@@ -41,12 +41,12 @@ Data:AddInstance(34, {
     entrance = { 1453, 52, 70 },
     bosses = { 2756, 2757, 2758, -1720, 2759, 2760 },
 })
-Data:AddBoss(2756, { instanceID = 34, order = 0, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\targorr_the_dread.blp", displayID = 517 }) -- Targorr the Dread
-Data:AddBoss(2757, { instanceID = 34, order = 1000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\kam_deepfury.blp", displayID = 825 }) -- Kam Deepfury
-Data:AddBoss(2758, { instanceID = 34, order = 2000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\hamhock.blp", displayID = 3250 }) -- Hamhock
-Data:AddBoss(-1720, { instanceID = 34, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\bruegal_ironknuckle.blp", displayID = 2142, rare = true }) -- Bruegal Ironknuckle
-Data:AddBoss(2759, { instanceID = 34, order = 3000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\dextren_ward.blp", displayID = 2149 }) -- Dextren Ward
-Data:AddBoss(2760, { instanceID = 34, order = 4000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\bazil_thredd.blp", displayID = 1621 }) -- Bazil Thredd
+Data:AddBoss(2756, { instanceID = 34, order = 0, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\targorr_the_dread.blp", displayID = 517, level = 24 }) -- Targorr the Dread
+Data:AddBoss(2757, { instanceID = 34, order = 1000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\kam_deepfury.blp", displayID = 825, level = 27 }) -- Kam Deepfury
+Data:AddBoss(2758, { instanceID = 34, order = 2000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\hamhock.blp", displayID = 3250, level = 28 }) -- Hamhock
+Data:AddBoss(-1720, { instanceID = 34, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\bruegal_ironknuckle.blp", displayID = 2142, level = 26, rare = true }) -- Bruegal Ironknuckle
+Data:AddBoss(2759, { instanceID = 34, order = 3000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\dextren_ward.blp", displayID = 2149, level = 26 }) -- Dextren Ward
+Data:AddBoss(2760, { instanceID = 34, order = 4000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\bazil_thredd.blp", displayID = 1621, level = 29 }) -- Bazil Thredd
 
 -- Deadmines
 Data:AddInstance(36, {
@@ -110,12 +110,12 @@ Data:AddInstance(47, {
     entrance = { 1413, 43, 90 },
     bosses = { 2773, 2774, 2775, 2776, 2777, 2778, -4425, -4842 },
 })
-Data:AddBoss(2773, { instanceID = 47, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Roogug", quests = { 1701, 1838 } }) -- Roogug
-Data:AddBoss(2774, { instanceID = 47, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Aggem Thorncurse" }) -- Aggem Thorncurse
-Data:AddBoss(2775, { instanceID = 47, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Death Speaker Jargba" }) -- Death Speaker Jargba
-Data:AddBoss(2776, { instanceID = 47, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Overlord Ramtusk" }) -- Overlord Ramtusk
-Data:AddBoss(2777, { instanceID = 47, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Agathelos the Raging" }) -- Agathelos the Raging
-Data:AddBoss(2778, { instanceID = 47, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Charlga Razorflank", quests = { 96264, 79360 } }) -- Charlga Razorflank
+Data:AddBoss(2773, { instanceID = 47, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Roogug", level = 28, quests = { 1701, 1838 } }) -- Roogug
+Data:AddBoss(2774, { instanceID = 47, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Aggem Thorncurse", level = 30 }) -- Aggem Thorncurse
+Data:AddBoss(2775, { instanceID = 47, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Death Speaker Jargba", level = 30 }) -- Death Speaker Jargba
+Data:AddBoss(2776, { instanceID = 47, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Overlord Ramtusk", level = 32 }) -- Overlord Ramtusk
+Data:AddBoss(2777, { instanceID = 47, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Agathelos the Raging", level = 33 }) -- Agathelos the Raging
+Data:AddBoss(2778, { instanceID = 47, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Charlga Razorflank", level = 33, quests = { 96264, 79360 } }) -- Charlga Razorflank
 Data:AddBoss(-4425, { instanceID = 47, displayID = 4735, level = 32, rare = true }) -- Blind Hunter
 Data:AddBoss(-4842, { instanceID = 47, displayID = 6102, level = 32, rare = true }) -- Earthcaller Halmgar
 
@@ -153,14 +153,14 @@ Data:AddInstance(70, {
     entrance = { 1418, 45, 12 },
     bosses = { 547, 548, 549, 1887, 551, 552, 553, 554 },
 })
-Data:AddBoss(547, { instanceID = 70, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Revelosh" }) -- Revelosh
-Data:AddBoss(548, { instanceID = 70, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-The Lost Dwarves" }) -- The Lost Dwarves
-Data:AddBoss(549, { instanceID = 70, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ironaya" }) -- Ironaya
-Data:AddBoss(1887, { instanceID = 70, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Obsidian Sentinel" }) -- Obsidian Sentinel
-Data:AddBoss(551, { instanceID = 70, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ancient Stone Keeper" }) -- Ancient Stone Keeper
-Data:AddBoss(552, { instanceID = 70, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Galgann Firehammer" }) -- Galgann Firehammer
-Data:AddBoss(553, { instanceID = 70, order = 6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Grimlok" }) -- Grimlok
-Data:AddBoss(554, { instanceID = 70, order = 7000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Archaedas" }) -- Archaedas
+Data:AddBoss(547, { instanceID = 70, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Revelosh", level = 40 }) -- Revelosh
+Data:AddBoss(548, { instanceID = 70, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-The Lost Dwarves", level = 41 }) -- The Lost Dwarves
+Data:AddBoss(549, { instanceID = 70, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ironaya", level = 40 }) -- Ironaya
+Data:AddBoss(1887, { instanceID = 70, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Obsidian Sentinel", level = 42 }) -- Obsidian Sentinel
+Data:AddBoss(551, { instanceID = 70, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ancient Stone Keeper", level = 44 }) -- Ancient Stone Keeper
+Data:AddBoss(552, { instanceID = 70, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Galgann Firehammer", level = 45 }) -- Galgann Firehammer
+Data:AddBoss(553, { instanceID = 70, order = 6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Grimlok", level = 45 }) -- Grimlok
+Data:AddBoss(554, { instanceID = 70, order = 7000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Archaedas", level = 47 }) -- Archaedas
 
 -- Gnomeregan
 Data:AddInstance(90, {
@@ -176,10 +176,10 @@ Data:AddInstance(90, {
     entrance = { 1426, 24, 40 },
     bosses = { 2769, 2770, 2771, 2772, -6228 },
 })
-Data:AddBoss(2769, { instanceID = 90, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Viscous Fallout" }) -- Viscous Fallout
-Data:AddBoss(2770, { instanceID = 90, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Electrocutioner 6000" }) -- Electrocutioner 6000
-Data:AddBoss(2771, { instanceID = 90, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Crowd Pummeler 9-60" }) -- Crowd Pummeler 9-60
-Data:AddBoss(2772, { instanceID = 90, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Mekgineer Thermaplugg" }) -- Mekgineer Thermaplugg
+Data:AddBoss(2769, { instanceID = 90, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Viscous Fallout", level = 30 }) -- Viscous Fallout
+Data:AddBoss(2770, { instanceID = 90, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Electrocutioner 6000", level = 32 }) -- Electrocutioner 6000
+Data:AddBoss(2771, { instanceID = 90, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Crowd Pummeler 9-60", level = 32 }) -- Crowd Pummeler 9-60
+Data:AddBoss(2772, { instanceID = 90, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Mekgineer Thermaplugg", level = 34 }) -- Mekgineer Thermaplugg
 Data:AddBoss(-6228, { instanceID = 90, displayID = 6669, level = 33, rare = true }) -- Dark Iron Ambassador
 
 -- Sunken Temple
@@ -196,15 +196,15 @@ Data:AddInstance(109, {
     entrance = { 1435, 70, 54 },
     bosses = { 3582, 3583, 3584, 3585, 3586, 3587, 3588, 3589, -5711 },
 })
-Data:AddBoss(3582, { instanceID = 109, order = 0, displayID = 7873 }) -- Atal'alarion
-Data:AddBoss(3583, { instanceID = 109, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Avatar of Hakkar" }) -- Avatar of Hakkar
-Data:AddBoss(3584, { instanceID = 109, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Shade of Eranikus" }) -- Shade of Eranikus
+Data:AddBoss(3582, { instanceID = 109, order = 0, displayID = 7873, level = 50 }) -- Atal'alarion
+Data:AddBoss(3583, { instanceID = 109, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Avatar of Hakkar", level = 55 }) -- Avatar of Hakkar
+Data:AddBoss(3584, { instanceID = 109, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Shade of Eranikus", level = 55 }) -- Shade of Eranikus
 Data:AddBoss(3585, { instanceID = 109, order = 3000, displayID = 9584 }) -- Hazzas
 Data:AddBoss(3586, { instanceID = 109, order = 4000, displayID = 7975 }) -- Morphaz
 Data:AddBoss(3587, { instanceID = 109, order = 5000, displayID = 6375 }) -- Weaver
 Data:AddBoss(3588, { instanceID = 109, order = 6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Dreamscythe" }) -- Dreamscythe
-Data:AddBoss(3589, { instanceID = 109, order = 7000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Jammalan the Prophet" }) -- Jammal'an the Prophet
-Data:AddBoss(-5711, { instanceID = 109, displayID = 6709 }) -- Ogom the Wretched
+Data:AddBoss(3589, { instanceID = 109, order = 7000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Jammalan the Prophet", level = 54 }) -- Jammal'an the Prophet
+Data:AddBoss(-5711, { instanceID = 109, displayID = 6709, level = 53 }) -- Ogom the Wretched
 
 -- Razorfen Downs
 Data:AddInstance(129, {
@@ -220,12 +220,12 @@ Data:AddInstance(129, {
     entrance = { 1413, 49, 94 },
     bosses = { 2780, 2781, 2782, 2783, 2784, 2785 },
 })
-Data:AddBoss(2780, { instanceID = 129, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Tutenkash" }) -- Tuten'kash
-Data:AddBoss(2781, { instanceID = 129, order = 1000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\plaguemaw_the_rotting.blp", displayID = 6124 }) -- Plaguemaw the Rotting
-Data:AddBoss(2782, { instanceID = 129, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Mordresh Fire Eye" }) -- Mordresh Fire Eye
-Data:AddBoss(2783, { instanceID = 129, order = 3000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\ragglesnout.blp", displayID = 11382 }) -- Ragglesnout
-Data:AddBoss(2784, { instanceID = 129, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Glutton" }) -- Glutton
-Data:AddBoss(2785, { instanceID = 129, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Amnennar the Coldbringer" }) -- Amnennar the Coldbringer
+Data:AddBoss(2780, { instanceID = 129, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Tutenkash", level = 40 }) -- Tuten'kash
+Data:AddBoss(2781, { instanceID = 129, order = 1000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\plaguemaw_the_rotting.blp", displayID = 6124, level = 40 }) -- Plaguemaw the Rotting
+Data:AddBoss(2782, { instanceID = 129, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Mordresh Fire Eye", level = 39 }) -- Mordresh Fire Eye
+Data:AddBoss(2783, { instanceID = 129, order = 3000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\ragglesnout.blp", displayID = 11382, level = 37 }) -- Ragglesnout
+Data:AddBoss(2784, { instanceID = 129, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Glutton", level = 40 }) -- Glutton
+Data:AddBoss(2785, { instanceID = 129, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Amnennar the Coldbringer", level = 41 }) -- Amnennar the Coldbringer
 
 -- Scarlet Monastery: Graveyard
 Data:AddInstance(18901, {
@@ -242,11 +242,11 @@ Data:AddInstance(18901, {
     entrance = { 1420, 83, 34 },
     bosses = { 444, -6490, -6488, -6489, 2779 },
 })
-Data:AddBoss(444, { instanceID = 18901, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Interrogator Vishas" }) -- Interrogator Vishas
+Data:AddBoss(444, { instanceID = 18901, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Interrogator Vishas", level = 32 }) -- Interrogator Vishas
 Data:AddBoss(-6490, { instanceID = 18901, displayID = 5534, level = 33, rare = true }) -- Azshir the Sleepless
 Data:AddBoss(-6488, { instanceID = 18901, displayID = 5230, level = 33, rare = true }) -- Fallen Champion
 Data:AddBoss(-6489, { instanceID = 18901, displayID = 5231, level = 33, rare = true }) -- Ironspine
-Data:AddBoss(2779, { instanceID = 18901, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Bloodmage Thalnos" }) -- Bloodmage Thalnos
+Data:AddBoss(2779, { instanceID = 18901, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Bloodmage Thalnos", level = 34 }) -- Bloodmage Thalnos
 
 -- Scarlet Monastery: Library
 Data:AddInstance(18902, {
@@ -263,8 +263,8 @@ Data:AddInstance(18902, {
     entrance = { 1420, 83, 34 },
     bosses = { 446, 447 },
 })
-Data:AddBoss(446, { instanceID = 18902, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Houndmaster Loksey" }) -- Houndmaster Loksey
-Data:AddBoss(447, { instanceID = 18902, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Arcanist Doan" }) -- Arcanist Doan
+Data:AddBoss(446, { instanceID = 18902, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Houndmaster Loksey", level = 34 }) -- Houndmaster Loksey
+Data:AddBoss(447, { instanceID = 18902, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Arcanist Doan", level = 37 }) -- Arcanist Doan
 
 -- Scarlet Monastery: Armory
 Data:AddInstance(18903, {
@@ -281,7 +281,7 @@ Data:AddInstance(18903, {
     entrance = { 1420, 83, 34 },
     bosses = { 448 },
 })
-Data:AddBoss(448, { instanceID = 18903, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Herod" }) -- Herod
+Data:AddBoss(448, { instanceID = 18903, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Herod", level = 40 }) -- Herod
 
 -- Scarlet Monastery: Cathedral
 Data:AddInstance(18904, {
@@ -298,9 +298,9 @@ Data:AddInstance(18904, {
     entrance = { 1420, 83, 34 },
     bosses = { 449, 450, -3976 },
 })
-Data:AddBoss(449, { instanceID = 18904, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-High Inquisitor Fairbanks" }) -- High Inquisitor Fairbanks
-Data:AddBoss(450, { instanceID = 18904, order = 6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-High Inquisitor Whitemane" }) -- High Inquisitor Whitemane
-Data:AddBoss(-3976, { instanceID = 18904, displayID = 2042 }) -- Scarlet Commander Mograine
+Data:AddBoss(449, { instanceID = 18904, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-High Inquisitor Fairbanks", level = 40 }) -- High Inquisitor Fairbanks
+Data:AddBoss(450, { instanceID = 18904, order = 6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-High Inquisitor Whitemane", level = 42 }) -- High Inquisitor Whitemane
+Data:AddBoss(-3976, { instanceID = 18904, displayID = 2042, level = 42 }) -- Scarlet Commander Mograine
 
 -- Zul'Farrak
 Data:AddInstance(209, {
@@ -316,19 +316,19 @@ Data:AddInstance(209, {
     entrance = { 1446, 39, 20 },
     bosses = { 593, 594, 595, 596, 597, 598, 599, 600, -10082, -10081, -7604, -10080, -7797 },
 })
-Data:AddBoss(593, { instanceID = 209, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hydromancer Velratha" }) -- Hydromancer Velratha
-Data:AddBoss(594, { instanceID = 209, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Gahzrilla" }) -- Gahz'rilla
-Data:AddBoss(595, { instanceID = 209, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Antusul" }) -- Antu'sul
-Data:AddBoss(596, { instanceID = 209, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Theka the Martyr" }) -- Theka the Martyr
-Data:AddBoss(597, { instanceID = 209, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Witch Doctor Zumrah" }) -- Witch Doctor Zum'rah
-Data:AddBoss(598, { instanceID = 209, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Nekrum Gutchewer" }) -- Nekrum Gutchewer
-Data:AddBoss(599, { instanceID = 209, order = 6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Shadowpriest Sezzizz" }) -- Shadowpriest Sezz'ziz
-Data:AddBoss(600, { instanceID = 209, order = 7000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Chief Ukorz Sandscalp" }) -- Chief Ukorz Sandscalp
-Data:AddBoss(-10082, { instanceID = 209, displayID = 9293 }) -- Zerillis
-Data:AddBoss(-10081, { instanceID = 209, displayID = 9292 }) -- Dustwraith
-Data:AddBoss(-7604, { instanceID = 209, displayID = 6433 }) -- Sergeant Bly
-Data:AddBoss(-10080, { instanceID = 209, rare = true }) -- Sandarr Dunereaver
-Data:AddBoss(-7797, { instanceID = 209 }) -- Ruuzlu
+Data:AddBoss(593, { instanceID = 209, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hydromancer Velratha", level = 46 }) -- Hydromancer Velratha
+Data:AddBoss(594, { instanceID = 209, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Gahzrilla", level = 46 }) -- Gahz'rilla
+Data:AddBoss(595, { instanceID = 209, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Antusul", level = 48 }) -- Antu'sul
+Data:AddBoss(596, { instanceID = 209, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Theka the Martyr", level = 46 }) -- Theka the Martyr
+Data:AddBoss(597, { instanceID = 209, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Witch Doctor Zumrah", level = 46 }) -- Witch Doctor Zum'rah
+Data:AddBoss(598, { instanceID = 209, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Nekrum Gutchewer", level = 45 }) -- Nekrum Gutchewer
+Data:AddBoss(599, { instanceID = 209, order = 6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Shadowpriest Sezzizz", level = 47 }) -- Shadowpriest Sezz'ziz
+Data:AddBoss(600, { instanceID = 209, order = 7000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Chief Ukorz Sandscalp", level = 48 }) -- Chief Ukorz Sandscalp
+Data:AddBoss(-10082, { instanceID = 209, displayID = 9293, level = 45 }) -- Zerillis
+Data:AddBoss(-10081, { instanceID = 209, displayID = 9292, level = 45 }) -- Dustwraith
+Data:AddBoss(-7604, { instanceID = 209, displayID = 6433, level = 45 }) -- Sergeant Bly
+Data:AddBoss(-10080, { instanceID = 209, level = 45, rare = true }) -- Sandarr Dunereaver
+Data:AddBoss(-7797, { instanceID = 209, level = 46 }) -- Ruuzlu
 
 -- Blackrock Spire: Lower
 Data:AddInstance(22901, {
@@ -344,21 +344,21 @@ Data:AddInstance(22901, {
     entrance = { 1428, 29, 38 },
     bosses = { 267, 268, 269, 270, 271, 272, 274, 273, 275, -9219, -9218, -9217, -10376, -9596, -9718 },
 })
-Data:AddBoss(267, { instanceID = 22901, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Highlord Omokk" }) -- Highlord Omokk
-Data:AddBoss(268, { instanceID = 22901, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Shadow Hunter Voshgajin" }) -- Shadow Hunter Vosh'gajin
-Data:AddBoss(269, { instanceID = 22901, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-War Master Voone" }) -- War Master Voone
-Data:AddBoss(270, { instanceID = 22901, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Mother Smolderweb" }) -- Mother Smolderweb
-Data:AddBoss(271, { instanceID = 22901, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Urok Doomhowl" }) -- Urok Doomhowl
-Data:AddBoss(272, { instanceID = 22901, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Quartermaster Zigris" }) -- Quartermaster Zigris
-Data:AddBoss(274, { instanceID = 22901, order = 5500, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Halycon" }) -- Halycon
-Data:AddBoss(273, { instanceID = 22901, order = 6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Gizrul the Slavener" }) -- Gizrul the Slavener
-Data:AddBoss(275, { instanceID = 22901, order = 8000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Overlord Wyrmthalak" }) -- Overlord Wyrmthalak
-Data:AddBoss(-9219, { instanceID = 22901, displayID = 11574 }) -- Spirestone Butcher
-Data:AddBoss(-9218, { instanceID = 22901, displayID = 11576 }) -- Spirestone Battle Lord
-Data:AddBoss(-9217, { instanceID = 22901, displayID = 11578 }) -- Spirestone Lord Magus
-Data:AddBoss(-10376, { instanceID = 22901, displayID = 9755 }) -- Crystal Fang
-Data:AddBoss(-9596, { instanceID = 22901, displayID = 9668 }) -- Bannok Grimaxe
-Data:AddBoss(-9718, { instanceID = 22901, displayID = 11809 }) -- Ghok Bashguud
+Data:AddBoss(267, { instanceID = 22901, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Highlord Omokk", level = 59 }) -- Highlord Omokk
+Data:AddBoss(268, { instanceID = 22901, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Shadow Hunter Voshgajin", level = 58 }) -- Shadow Hunter Vosh'gajin
+Data:AddBoss(269, { instanceID = 22901, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-War Master Voone", level = 59 }) -- War Master Voone
+Data:AddBoss(270, { instanceID = 22901, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Mother Smolderweb", level = 59 }) -- Mother Smolderweb
+Data:AddBoss(271, { instanceID = 22901, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Urok Doomhowl", level = 60 }) -- Urok Doomhowl
+Data:AddBoss(272, { instanceID = 22901, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Quartermaster Zigris", level = 59 }) -- Quartermaster Zigris
+Data:AddBoss(274, { instanceID = 22901, order = 5500, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Halycon", level = 59 }) -- Halycon
+Data:AddBoss(273, { instanceID = 22901, order = 6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Gizrul the Slavener", level = 60 }) -- Gizrul the Slavener
+Data:AddBoss(275, { instanceID = 22901, order = 8000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Overlord Wyrmthalak", level = 60 }) -- Overlord Wyrmthalak
+Data:AddBoss(-9219, { instanceID = 22901, displayID = 11574, level = 57 }) -- Spirestone Butcher
+Data:AddBoss(-9218, { instanceID = 22901, displayID = 11576, level = 58 }) -- Spirestone Battle Lord
+Data:AddBoss(-9217, { instanceID = 22901, displayID = 11578, level = 58 }) -- Spirestone Lord Magus
+Data:AddBoss(-10376, { instanceID = 22901, displayID = 9755, level = 60 }) -- Crystal Fang
+Data:AddBoss(-9596, { instanceID = 22901, displayID = 9668, level = 59 }) -- Bannok Grimaxe
+Data:AddBoss(-9718, { instanceID = 22901, displayID = 11809, level = 59 }) -- Ghok Bashguud
 
 -- Blackrock Spire: Upper
 Data:AddInstance(22902, {
@@ -374,15 +374,15 @@ Data:AddInstance(22902, {
     entrance = { 1428, 29, 38 },
     bosses = { 3062, 3063, 3068, 3069, 3070, -10264, -10509, -10899, -10339 },
 })
-Data:AddBoss(3062, { instanceID = 22902, order = 9000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Pyroguard Emberseer" }) -- Pyroguard Emberseer
-Data:AddBoss(3063, { instanceID = 22902, order = 10000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Warchief Rend Blackhand" }) -- Warchief Rend Blackhand
-Data:AddBoss(3068, { instanceID = 22902, order = 11000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-The Beast" }) -- The Beast
-Data:AddBoss(3069, { instanceID = 22902, order = 12000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-General Drakkisath" }) -- General Drakkisath
-Data:AddBoss(3070, { instanceID = 22902, order = 13000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\lord_valthalak.blp", displayID = 14308 }) -- Lord Valthalak
-Data:AddBoss(-10264, { instanceID = 22902, displayID = 9581 }) -- Solakar Flamewreath
-Data:AddBoss(-10509, { instanceID = 22902, displayID = 9686 }) -- Jed Runewatcher
-Data:AddBoss(-10899, { instanceID = 22902, displayID = 10222 }) -- Goraluk Anvilcrack
-Data:AddBoss(-10339, { instanceID = 22902, displayID = 9806 }) -- Gyth
+Data:AddBoss(3062, { instanceID = 22902, order = 9000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Pyroguard Emberseer", level = 60 }) -- Pyroguard Emberseer
+Data:AddBoss(3063, { instanceID = 22902, order = 10000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Warchief Rend Blackhand", level = 62 }) -- Warchief Rend Blackhand
+Data:AddBoss(3068, { instanceID = 22902, order = 11000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-The Beast", level = 62 }) -- The Beast
+Data:AddBoss(3069, { instanceID = 22902, order = 12000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-General Drakkisath", level = 62 }) -- General Drakkisath
+Data:AddBoss(3070, { instanceID = 22902, order = 13000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\lord_valthalak.blp", displayID = 14308, level = 62 }) -- Lord Valthalak
+Data:AddBoss(-10264, { instanceID = 22902, displayID = 9581, level = 60 }) -- Solakar Flamewreath
+Data:AddBoss(-10509, { instanceID = 22902, displayID = 9686, level = 59 }) -- Jed Runewatcher
+Data:AddBoss(-10899, { instanceID = 22902, displayID = 10222, level = 61 }) -- Goraluk Anvilcrack
+Data:AddBoss(-10339, { instanceID = 22902, displayID = 9806, level = 62 }) -- Gyth
 
 -- Blackrock Depths
 Data:AddInstance(230, {
@@ -398,35 +398,35 @@ Data:AddInstance(230, {
     entrance = { 1428, 29, 38 },
     bosses = { 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 2791, 242, 243, 244, 2789, 2790, -9027, -9028, -9029, -9030, -9031, -9032, -8923, -16059 },
 })
-Data:AddBoss(227, { instanceID = 230, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-High Interrogator Gerstahn" }) -- High Interrogator Gerstahn
-Data:AddBoss(228, { instanceID = 230, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Roccor" }) -- Lord Roccor
-Data:AddBoss(229, { instanceID = 230, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Houndmaster Grebmar" }) -- Houndmaster Grebmar
+Data:AddBoss(227, { instanceID = 230, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-High Interrogator Gerstahn", level = 52 }) -- High Interrogator Gerstahn
+Data:AddBoss(228, { instanceID = 230, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Roccor", level = 51 }) -- Lord Roccor
+Data:AddBoss(229, { instanceID = 230, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Houndmaster Grebmar", level = 52 }) -- Houndmaster Grebmar
 Data:AddBoss(230, { instanceID = 230, order = 3000 }) -- Ring of Law
-Data:AddBoss(231, { instanceID = 230, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Pyromancer Loregrain" }) -- Pyromancer Loregrain
-Data:AddBoss(232, { instanceID = 230, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Incendius" }) -- Lord Incendius
-Data:AddBoss(233, { instanceID = 230, order = 6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Warder Stilgiss" }) -- Warder Stilgiss
-Data:AddBoss(234, { instanceID = 230, order = 7000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Fineous Darkvire" }) -- Fineous Darkvire
-Data:AddBoss(235, { instanceID = 230, order = 8000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-BaelGar" }) -- Bael'Gar
-Data:AddBoss(236, { instanceID = 230, order = 9000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-General Angerforge" }) -- General Angerforge
-Data:AddBoss(237, { instanceID = 230, order = 10000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Golem Lord Argelmach" }) -- Golem Lord Argelmach
-Data:AddBoss(238, { instanceID = 230, order = 11000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hurley Blackbreath" }) -- Hurley Blackbreath
-Data:AddBoss(239, { instanceID = 230, order = 12000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Phalanx" }) -- Phalanx
-Data:AddBoss(240, { instanceID = 230, order = 13000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ribbly Screwspigot" }) -- Ribbly Screwspigot
-Data:AddBoss(241, { instanceID = 230, order = 14000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Plugger Spazzring" }) -- Plugger Spazzring
+Data:AddBoss(231, { instanceID = 230, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Pyromancer Loregrain", level = 52 }) -- Pyromancer Loregrain
+Data:AddBoss(232, { instanceID = 230, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Incendius", level = 55 }) -- Lord Incendius
+Data:AddBoss(233, { instanceID = 230, order = 6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Warder Stilgiss", level = 56 }) -- Warder Stilgiss
+Data:AddBoss(234, { instanceID = 230, order = 7000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Fineous Darkvire", level = 54 }) -- Fineous Darkvire
+Data:AddBoss(235, { instanceID = 230, order = 8000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-BaelGar", level = 54 }) -- Bael'Gar
+Data:AddBoss(236, { instanceID = 230, order = 9000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-General Angerforge", level = 57 }) -- General Angerforge
+Data:AddBoss(237, { instanceID = 230, order = 10000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Golem Lord Argelmach", level = 57 }) -- Golem Lord Argelmach
+Data:AddBoss(238, { instanceID = 230, order = 11000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hurley Blackbreath", level = 55 }) -- Hurley Blackbreath
+Data:AddBoss(239, { instanceID = 230, order = 12000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Phalanx", level = 55 }) -- Phalanx
+Data:AddBoss(240, { instanceID = 230, order = 13000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ribbly Screwspigot", level = 53 }) -- Ribbly Screwspigot
+Data:AddBoss(241, { instanceID = 230, order = 14000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Plugger Spazzring", level = 55 }) -- Plugger Spazzring
 Data:AddBoss(2791, { instanceID = 230, order = 14500 }) -- The Vault
-Data:AddBoss(242, { instanceID = 230, order = 15000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ambassador Flamelash" }) -- Ambassador Flamelash
-Data:AddBoss(243, { instanceID = 230, order = 16000, displayID = 8687 }) -- The Seven
-Data:AddBoss(244, { instanceID = 230, order = 17000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Magmus" }) -- Magmus
-Data:AddBoss(2789, { instanceID = 230, order = 18000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Princess Moira Bronzebeard" }) -- Princess Moira Bronzebeard
-Data:AddBoss(2790, { instanceID = 230, order = 19000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Emperor Thaurissan" }) -- Emperor Dagran Thaurissan
-Data:AddBoss(-9027, { instanceID = 230, displayID = 8760 }) -- Gorosh the Dervish
-Data:AddBoss(-9028, { instanceID = 230, displayID = 7873 }) -- Grizzle
-Data:AddBoss(-9029, { instanceID = 230, displayID = 523 }) -- Eviscerator
-Data:AddBoss(-9030, { instanceID = 230, displayID = 11538 }) -- Ok'thor the Breaker
-Data:AddBoss(-9031, { instanceID = 230, displayID = 3004 }) -- Anub'shiah
-Data:AddBoss(-9032, { instanceID = 230, displayID = 8271 }) -- Hedrum the Creeper
-Data:AddBoss(-8923, { instanceID = 230, displayID = 8270 }) -- Panzor the Invincible
-Data:AddBoss(-16059, { instanceID = 230, rare = true, quests = { 9015 } }) -- Theldren
+Data:AddBoss(242, { instanceID = 230, order = 15000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ambassador Flamelash", level = 57 }) -- Ambassador Flamelash
+Data:AddBoss(243, { instanceID = 230, order = 16000, displayID = 8687, level = 57 }) -- The Seven
+Data:AddBoss(244, { instanceID = 230, order = 17000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Magmus", level = 57 }) -- Magmus
+Data:AddBoss(2789, { instanceID = 230, order = 18000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Princess Moira Bronzebeard", level = 58 }) -- Princess Moira Bronzebeard
+Data:AddBoss(2790, { instanceID = 230, order = 19000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Emperor Thaurissan", level = 59 }) -- Emperor Dagran Thaurissan
+Data:AddBoss(-9027, { instanceID = 230, displayID = 8760, level = 56 }) -- Gorosh the Dervish
+Data:AddBoss(-9028, { instanceID = 230, displayID = 7873, level = 54 }) -- Grizzle
+Data:AddBoss(-9029, { instanceID = 230, displayID = 523, level = 54 }) -- Eviscerator
+Data:AddBoss(-9030, { instanceID = 230, displayID = 11538, level = 53 }) -- Ok'thor the Breaker
+Data:AddBoss(-9031, { instanceID = 230, displayID = 3004, level = 54 }) -- Anub'shiah
+Data:AddBoss(-9032, { instanceID = 230, displayID = 8271, level = 53 }) -- Hedrum the Creeper
+Data:AddBoss(-8923, { instanceID = 230, displayID = 8270, level = 57 }) -- Panzor the Invincible
+Data:AddBoss(-16059, { instanceID = 230, level = 60, rare = true, quests = { 9015 } }) -- Theldren
 
 -- Onyxia's Lair
 Data:AddInstance(249, {
@@ -456,20 +456,20 @@ Data:AddInstance(289, {
     entrance = { 1422, 70, 73 },
     bosses = { 2805, 2804, 2811, 2809, 2813, 3055, 2810, 2803, 2802, 2808, 2812, 2807, 2806, 2801 },
 })
-Data:AddBoss(2805, { instanceID = 289, order = -1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Kirtonos the Herald" }) -- Kirtonos
-Data:AddBoss(2804, { instanceID = 289, order = -500, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Jandice Barov" }) -- Jandice Barov
-Data:AddBoss(2811, { instanceID = 289, order = -250, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Rattlegore" }) -- Rattlegore
-Data:AddBoss(2809, { instanceID = 289, order = -125, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Marduk Blackpool" }) -- Marduk Blackpool
-Data:AddBoss(2813, { instanceID = 289, order = -62, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Vectus" }) -- Vectus
+Data:AddBoss(2805, { instanceID = 289, order = -1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Kirtonos the Herald", level = 60 }) -- Kirtonos
+Data:AddBoss(2804, { instanceID = 289, order = -500, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Jandice Barov", level = 61 }) -- Jandice Barov
+Data:AddBoss(2811, { instanceID = 289, order = -250, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Rattlegore", level = 61 }) -- Rattlegore
+Data:AddBoss(2809, { instanceID = 289, order = -125, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Marduk Blackpool", level = 58 }) -- Marduk Blackpool
+Data:AddBoss(2813, { instanceID = 289, order = -62, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Vectus", level = 60 }) -- Vectus
 Data:AddBoss(3055, { instanceID = 289, order = -46, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Kormok" }) -- Kormok
-Data:AddBoss(2810, { instanceID = 289, order = -31, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ras Frostwhisper" }) -- Ras Frostwhisperer
-Data:AddBoss(2803, { instanceID = 289, order = -15, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Instructor Malicia" }) -- Instructor Malicia
-Data:AddBoss(2802, { instanceID = 289, order = -7, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Doctor Theolen Krastinov" }) -- Doctor Theolen Krastinov
-Data:AddBoss(2808, { instanceID = 289, order = 7000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lorekeeper Polkelt" }) -- Lorekeeper Polkelt
-Data:AddBoss(2812, { instanceID = 289, order = 11000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-The Ravenian" }) -- The Ravenian
-Data:AddBoss(2807, { instanceID = 289, order = 11250, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Alexei Barov" }) -- Lord Alexei Barov
-Data:AddBoss(2806, { instanceID = 289, order = 11500, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lady Illucia Barov" }) -- Lady Illucia Barov
-Data:AddBoss(2801, { instanceID = 289, order = 12000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Darkmaster Gandling" }) -- Darkmaster Gandling
+Data:AddBoss(2810, { instanceID = 289, order = -31, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ras Frostwhisper", level = 62 }) -- Ras Frostwhisperer
+Data:AddBoss(2803, { instanceID = 289, order = -15, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Instructor Malicia", level = 60 }) -- Instructor Malicia
+Data:AddBoss(2802, { instanceID = 289, order = -7, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Doctor Theolen Krastinov", level = 60 }) -- Doctor Theolen Krastinov
+Data:AddBoss(2808, { instanceID = 289, order = 7000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lorekeeper Polkelt", level = 60 }) -- Lorekeeper Polkelt
+Data:AddBoss(2812, { instanceID = 289, order = 11000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-The Ravenian", level = 60 }) -- The Ravenian
+Data:AddBoss(2807, { instanceID = 289, order = 11250, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Alexei Barov", level = 60 }) -- Lord Alexei Barov
+Data:AddBoss(2806, { instanceID = 289, order = 11500, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lady Illucia Barov", level = 60 }) -- Lady Illucia Barov
+Data:AddBoss(2801, { instanceID = 289, order = 12000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Darkmaster Gandling", level = 61 }) -- Darkmaster Gandling
 
 -- Zul'Gurub
 Data:AddInstance(309, {
@@ -503,25 +503,25 @@ Data:AddInstance(329, {
     entrance = { 1423, 31, 16 },
     bosses = { 473, 474, 476, 475, 477, 478, 472, 479, 480, 481, 482, 483, 484, 2795, 2796, 2797, 2798, 2799, 2800 },
 })
-Data:AddBoss(473, { instanceID = 329, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hearthsinger Forresten" }) -- Hearthsinger Forresten
-Data:AddBoss(474, { instanceID = 329, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Timmy the Cruel" }) -- Timmy the Cruel
-Data:AddBoss(476, { instanceID = 329, order = 2500, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Commander Malor" }) -- Malor the Zealous
-Data:AddBoss(475, { instanceID = 329, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Willey Hopebreaker" }) -- Cannon Master Willey
-Data:AddBoss(477, { instanceID = 329, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Instructor Galford" }) -- Archivist Galford
-Data:AddBoss(478, { instanceID = 329, order = 6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Balnazzar" }) -- Balnazzar
-Data:AddBoss(472, { instanceID = 329, order = 6500, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-The Unforgiven" }) -- The Unforgiven
-Data:AddBoss(479, { instanceID = 329, order = 7000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Baroness Anastari" }) -- Baroness Anastari
-Data:AddBoss(480, { instanceID = 329, order = 8000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Nerubenkan" }) -- Nerub'enkan
-Data:AddBoss(481, { instanceID = 329, order = 9000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Maleki the Pallid" }) -- Maleki the Pallid
-Data:AddBoss(482, { instanceID = 329, order = 10000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Magistrate Barthilas" }) -- Magistrate Barthilas
-Data:AddBoss(483, { instanceID = 329, order = 11000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ramstein the Gorger" }) -- Ramstein the Gorger
-Data:AddBoss(484, { instanceID = 329, order = 12000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Aurius Rivendare" }) -- Baron Rivendare
+Data:AddBoss(473, { instanceID = 329, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hearthsinger Forresten", level = 57 }) -- Hearthsinger Forresten
+Data:AddBoss(474, { instanceID = 329, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Timmy the Cruel", level = 58 }) -- Timmy the Cruel
+Data:AddBoss(476, { instanceID = 329, order = 2500, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Commander Malor", level = 60 }) -- Malor the Zealous
+Data:AddBoss(475, { instanceID = 329, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Willey Hopebreaker", level = 60 }) -- Cannon Master Willey
+Data:AddBoss(477, { instanceID = 329, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Instructor Galford", level = 60 }) -- Archivist Galford
+Data:AddBoss(478, { instanceID = 329, order = 6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Balnazzar", level = 62 }) -- Balnazzar
+Data:AddBoss(472, { instanceID = 329, order = 6500, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-The Unforgiven", level = 57 }) -- The Unforgiven
+Data:AddBoss(479, { instanceID = 329, order = 7000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Baroness Anastari", level = 59 }) -- Baroness Anastari
+Data:AddBoss(480, { instanceID = 329, order = 8000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Nerubenkan", level = 60 }) -- Nerub'enkan
+Data:AddBoss(481, { instanceID = 329, order = 9000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Maleki the Pallid", level = 61 }) -- Maleki the Pallid
+Data:AddBoss(482, { instanceID = 329, order = 10000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Magistrate Barthilas", level = 58 }) -- Magistrate Barthilas
+Data:AddBoss(483, { instanceID = 329, order = 11000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Ramstein the Gorger", level = 61 }) -- Ramstein the Gorger
+Data:AddBoss(484, { instanceID = 329, order = 12000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Aurius Rivendare", level = 62 }) -- Baron Rivendare
 Data:AddBoss(2795, { instanceID = 329, order = 13000 }) -- Black Guard Swordsmith
 Data:AddBoss(2796, { instanceID = 329, order = 14000 }) -- Crimson Hammersmith
 Data:AddBoss(2797, { instanceID = 329, order = 15000 }) -- Ezra Grimm
-Data:AddBoss(2798, { instanceID = 329, order = 16000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-PostmasterMalown" }) -- Postmaster Malown
-Data:AddBoss(2799, { instanceID = 329, order = 17000, displayID = 2606 }) -- Skul
-Data:AddBoss(2800, { instanceID = 329, order = 18000, displayID = 7856 }) -- Stonespine
+Data:AddBoss(2798, { instanceID = 329, order = 16000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-PostmasterMalown", level = 60 }) -- Postmaster Malown
+Data:AddBoss(2799, { instanceID = 329, order = 17000, displayID = 2606, level = 58 }) -- Skul
+Data:AddBoss(2800, { instanceID = 329, order = 18000, displayID = 7856, level = 60 }) -- Stonespine
 
 -- Maraudon
 Data:AddInstance(349, {
@@ -537,15 +537,15 @@ Data:AddInstance(349, {
     entrance = { 1443, 29, 63 },
     bosses = { 422, 423, 427, 424, 425, 426, 428, 429, -12237 },
 })
-Data:AddBoss(422, { instanceID = 349, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Noxxion" }) -- Noxxion
-Data:AddBoss(423, { instanceID = 349, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Razorlash" }) -- Razorlash
-Data:AddBoss(427, { instanceID = 349, order = 1500, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Tinkerer Gizlock" }) -- Tinkerer Gizlock
-Data:AddBoss(424, { instanceID = 349, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Vyletongue" }) -- Lord Vyletongue
-Data:AddBoss(425, { instanceID = 349, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Celebras the Cursed" }) -- Celebras the Cursed
-Data:AddBoss(426, { instanceID = 349, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Landslide" }) -- Landslide
-Data:AddBoss(428, { instanceID = 349, order = 6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Rotgrip" }) -- Rotgrip
-Data:AddBoss(429, { instanceID = 349, order = 7000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Princess Theradras" }) -- Princess Theradras
-Data:AddBoss(-12237, { instanceID = 349, displayID = 9014 }) -- Meshlok the Harvester
+Data:AddBoss(422, { instanceID = 349, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Noxxion", level = 48 }) -- Noxxion
+Data:AddBoss(423, { instanceID = 349, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Razorlash", level = 48 }) -- Razorlash
+Data:AddBoss(427, { instanceID = 349, order = 1500, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Tinkerer Gizlock", level = 50 }) -- Tinkerer Gizlock
+Data:AddBoss(424, { instanceID = 349, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Vyletongue", level = 47 }) -- Lord Vyletongue
+Data:AddBoss(425, { instanceID = 349, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Celebras the Cursed", level = 49 }) -- Celebras the Cursed
+Data:AddBoss(426, { instanceID = 349, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Landslide", level = 50 }) -- Landslide
+Data:AddBoss(428, { instanceID = 349, order = 6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Rotgrip", level = 50 }) -- Rotgrip
+Data:AddBoss(429, { instanceID = 349, order = 7000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Princess Theradras", level = 51 }) -- Princess Theradras
+Data:AddBoss(-12237, { instanceID = 349, displayID = 9014, level = 48 }) -- Meshlok the Harvester
 
 -- Ragefire Chasm
 Data:AddInstance(389, {
@@ -599,11 +599,11 @@ Data:AddInstance(42901, {
     entrance = { 1444, 65, 30 },
     bosses = { 343, 344, 345, 2792, 346 },
 })
-Data:AddBoss(343, { instanceID = 42901, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Zevrim Thornhoof" }) -- Zevrim Thornhoof
-Data:AddBoss(344, { instanceID = 42901, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hydrospawn" }) -- Hydrospawn
-Data:AddBoss(345, { instanceID = 42901, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lethtendris" }) -- Lethtendris
-Data:AddBoss(2792, { instanceID = 42901, order = 2500, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\pusillin.blp", displayID = 7552 }) -- Pusillin
-Data:AddBoss(346, { instanceID = 42901, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Alzzin the Wildshaper" }) -- Alzzin the Wildshaper
+Data:AddBoss(343, { instanceID = 42901, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Zevrim Thornhoof", level = 57 }) -- Zevrim Thornhoof
+Data:AddBoss(344, { instanceID = 42901, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hydrospawn", level = 57 }) -- Hydrospawn
+Data:AddBoss(345, { instanceID = 42901, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lethtendris", level = 57 }) -- Lethtendris
+Data:AddBoss(2792, { instanceID = 42901, order = 2500, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\pusillin.blp", displayID = 7552, level = 57 }) -- Pusillin
+Data:AddBoss(346, { instanceID = 42901, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Alzzin the Wildshaper", level = 58 }) -- Alzzin the Wildshaper
 
 -- Dire Maul: West
 Data:AddInstance(42902, {
@@ -619,13 +619,13 @@ Data:AddInstance(42902, {
     entrance = { 1444, 60, 30 },
     bosses = { 350, 347, 348, 349, 361, 2793, 2794 },
 })
-Data:AddBoss(350, { instanceID = 42902, order = 3500, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Tendris Warpwood" }) -- Tendris Warpwood
-Data:AddBoss(347, { instanceID = 42902, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Illyanna Ravenoak" }) -- Illyanna Ravenoak
-Data:AddBoss(348, { instanceID = 42902, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Magister Kalendris" }) -- Magister Kalendris
-Data:AddBoss(349, { instanceID = 42902, order = 6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Immolthar" }) -- Immol'thar
-Data:AddBoss(361, { instanceID = 42902, order = 7000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Prince Tortheldrin" }) -- Prince Tortheldrin
-Data:AddBoss(2793, { instanceID = 42902, order = 15000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\lord_helnurath.blp", displayID = 14556 }) -- Lord Hel'nurath
-Data:AddBoss(2794, { instanceID = 42902, order = 16000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\tsuzee.blp", displayID = 11250 }) -- Tsu'zee
+Data:AddBoss(350, { instanceID = 42902, order = 3500, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Tendris Warpwood", level = 60 }) -- Tendris Warpwood
+Data:AddBoss(347, { instanceID = 42902, order = 4000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Illyanna Ravenoak", level = 60 }) -- Illyanna Ravenoak
+Data:AddBoss(348, { instanceID = 42902, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Magister Kalendris", level = 60 }) -- Magister Kalendris
+Data:AddBoss(349, { instanceID = 42902, order = 6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Immolthar", level = 61 }) -- Immol'thar
+Data:AddBoss(361, { instanceID = 42902, order = 7000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Prince Tortheldrin", level = 61 }) -- Prince Tortheldrin
+Data:AddBoss(2793, { instanceID = 42902, order = 15000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\lord_helnurath.blp", displayID = 14556, level = 62 }) -- Lord Hel'nurath
+Data:AddBoss(2794, { instanceID = 42902, order = 16000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\tsuzee.blp", displayID = 11250, level = 59 }) -- Tsu'zee
 
 -- Dire Maul: North
 Data:AddInstance(42903, {
@@ -641,13 +641,13 @@ Data:AddInstance(42903, {
     entrance = { 1444, 63, 25 },
     bosses = { 362, 363, 364, 365, 366, 367, 368 },
 })
-Data:AddBoss(362, { instanceID = 42903, order = 8000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Guard Moldar" }) -- Guard Mol'dar
-Data:AddBoss(363, { instanceID = 42903, order = 9000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Stomper Kreeg" }) -- Stomper Kreeg
-Data:AddBoss(364, { instanceID = 42903, order = 10000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Guard Fengus" }) -- Guard Fengus
-Data:AddBoss(365, { instanceID = 42903, order = 11000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Guard Slipkik" }) -- Guard Slip'kik
-Data:AddBoss(366, { instanceID = 42903, order = 12000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Captain Kromcrush" }) -- Captain Kromcrush
-Data:AddBoss(367, { instanceID = 42903, order = 13000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-ChoRush the Observer" }) -- Cho'Rush the Observer
-Data:AddBoss(368, { instanceID = 42903, order = 14000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-King Gordok" }) -- King Gordok
+Data:AddBoss(362, { instanceID = 42903, order = 8000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Guard Moldar", level = 59 }) -- Guard Mol'dar
+Data:AddBoss(363, { instanceID = 42903, order = 9000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Stomper Kreeg", level = 59 }) -- Stomper Kreeg
+Data:AddBoss(364, { instanceID = 42903, order = 10000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Guard Fengus", level = 59 }) -- Guard Fengus
+Data:AddBoss(365, { instanceID = 42903, order = 11000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Guard Slipkik", level = 59 }) -- Guard Slip'kik
+Data:AddBoss(366, { instanceID = 42903, order = 12000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Captain Kromcrush", level = 61 }) -- Captain Kromcrush
+Data:AddBoss(367, { instanceID = 42903, order = 13000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-ChoRush the Observer", level = 60 }) -- Cho'Rush the Observer
+Data:AddBoss(368, { instanceID = 42903, order = 14000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-King Gordok", level = 62 }) -- King Gordok
 
 -- Blackwing Lair
 Data:AddInstance(469, {
@@ -845,15 +845,15 @@ Data:AddInstance(2959, {
     entrance = { 1416, 17, 67 },
     bosses = { 3298, 3299, 3300, 3301, 3302, 3310, 3311, 3312, 3303 },
 })
-Data:AddBoss(3298, { instanceID = 2959, order = 0, displayID = 129891 }) -- Arcane Anomaly
-Data:AddBoss(3299, { instanceID = 2959, order = 1000, displayID = 129894 }) -- Fel Ancient
-Data:AddBoss(3300, { instanceID = 2959, order = 2000, displayID = 129895 }) -- Mana Devourer
-Data:AddBoss(3301, { instanceID = 2959, order = 3000, displayID = 14253 }) -- Mana Elemental
-Data:AddBoss(3302, { instanceID = 2959, order = 4000, displayID = 129954 }) -- Unstable Sentinel
+Data:AddBoss(3298, { instanceID = 2959, order = 0, displayID = 129891, level = 30 }) -- Arcane Anomaly
+Data:AddBoss(3299, { instanceID = 2959, order = 1000, displayID = 129894, level = 32 }) -- Fel Ancient
+Data:AddBoss(3300, { instanceID = 2959, order = 2000, displayID = 129895, level = 31 }) -- Mana Devourer
+Data:AddBoss(3301, { instanceID = 2959, order = 3000, displayID = 14253, level = 30 }) -- Mana Elemental
+Data:AddBoss(3302, { instanceID = 2959, order = 4000, displayID = 129954, level = 31 }) -- Unstable Sentinel
 Data:AddBoss(3310, { instanceID = 2959, order = 6000, displayID = 130235 }) -- Lyn the Ignored
-Data:AddBoss(3311, { instanceID = 2959, order = 7000, displayID = 145787 }) -- Atrexis the Grave Knight
+Data:AddBoss(3311, { instanceID = 2959, order = 7000, displayID = 145787, level = 29 }) -- Atrexis the Grave Knight
 Data:AddBoss(3312, { instanceID = 2959, order = 8000, displayID = 130220 }) -- Mana Wraith
-Data:AddBoss(3303, { instanceID = 2959, order = 9000, displayID = 130061 }) -- Shade of the Archmage
+Data:AddBoss(3303, { instanceID = 2959, order = 9000, displayID = 130061, level = 33 }) -- Shade of the Archmage
 
 -- The Drowned City
 Data:AddInstance(2970, {
@@ -861,9 +861,11 @@ Data:AddInstance(2970, {
     expansionID = 0,
     minLevel = 35,
     maxLevel = 40,
+    zone = 1434,
     icon = "Interface\\Icons\\Spell_Frost_SummonWaterElemental",
     background = 7963741,
     backgroundCoords = { 0, 1, 0.154, 0.846 },
+    entrance = { 1434, 21.4, 27.9 },
     bosses = { 3474, 3475, 3476, 3478, 3479, 3511, -264177, -264172, -260468 },
 })
 Data:AddBoss(3474, { instanceID = 2970, order = 0, displayID = 144475 }) -- Zul'Alai
@@ -882,21 +884,23 @@ Data:AddInstance(2974, {
     expansionID = 0,
     minLevel = 55,
     maxLevel = 60,
+    zone = 1447,
     icon = "Interface\\Icons\\INV_Misc_MonsterClaw_04",
     background = 7963784,
     backgroundCoords = { 0, 1, 0.154, 0.846 },
+    entrance = { 1447, 38.6, 33.2 },
     bosses = { 3315, 3316, 3322, 3323, 3327, 3334, 3336, -269104, -269111, -250034 },
 })
-Data:AddBoss(3315, { instanceID = 2974, order = 0, displayID = 140708 }) -- Withermaw
-Data:AddBoss(3316, { instanceID = 2974, order = 1000, displayID = 130432 }) -- Impaan the Imprisoner
-Data:AddBoss(3322, { instanceID = 2974, order = 3000, displayID = 130427 }) -- Bonesnout the Unbroken
-Data:AddBoss(3323, { instanceID = 2974, order = 5000, displayID = 130436 }) -- Blackmaw Behemoth
-Data:AddBoss(3327, { instanceID = 2974, order = 2000, displayID = 130440 }) -- Elder Shaman Bloodmane
-Data:AddBoss(3334, { instanceID = 2974, order = 4000, displayID = 130447, quests = { 92065 } }) -- Varrox Bleakhoof
-Data:AddBoss(3336, { instanceID = 2974, order = 6000, displayID = 131644 }) -- Unbound Spirit
-Data:AddBoss(-269104, { instanceID = 2974, displayID = 12235 }) -- Moontouched Wanderer
-Data:AddBoss(-269111, { instanceID = 2974, displayID = 145808 }) -- Gortek the Apprentice
-Data:AddBoss(-250034, { instanceID = 2974, rare = true }) -- Tunnelweb Matriarch
+Data:AddBoss(3315, { instanceID = 2974, order = 0, displayID = 140708, level = 58 }) -- Withermaw
+Data:AddBoss(3316, { instanceID = 2974, order = 1000, displayID = 130432, level = 57 }) -- Impaan the Imprisoner
+Data:AddBoss(3322, { instanceID = 2974, order = 3000, displayID = 130427, level = 58 }) -- Bonesnout the Unbroken
+Data:AddBoss(3323, { instanceID = 2974, order = 5000, displayID = 130436, level = 59 }) -- Blackmaw Behemoth
+Data:AddBoss(3327, { instanceID = 2974, order = 2000, displayID = 130440, level = 59 }) -- Elder Shaman Bloodmane
+Data:AddBoss(3334, { instanceID = 2974, order = 4000, displayID = 130447, level = 60, quests = { 92065 } }) -- Varrox Bleakhoof
+Data:AddBoss(3336, { instanceID = 2974, order = 6000, displayID = 131644, level = 59 }) -- Unbound Spirit
+Data:AddBoss(-269104, { instanceID = 2974, displayID = 12235, level = 55 }) -- Moontouched Wanderer
+Data:AddBoss(-269111, { instanceID = 2974, displayID = 145808, level = 55 }) -- Gortek the Apprentice
+Data:AddBoss(-250034, { instanceID = 2974, level = 55, rare = true }) -- Tunnelweb Matriarch
 
 -- Alcaz Prison
 Data:AddInstance(2994, {
@@ -904,16 +908,18 @@ Data:AddInstance(2994, {
     expansionID = 0,
     minLevel = 48,
     maxLevel = 53,
+    zone = 1445,
     icon = "Interface\\Icons\\INV_Misc_Key_14",
     background = 7963734,
     backgroundCoords = { 0, 1, 0.154, 0.846 },
+    entrance = { 1445, 75.3, 14.1 },
     bosses = { 3403, 3410, 3418, 3415, 3409 },
 })
-Data:AddBoss(3403, { instanceID = 2994, order = 0, displayID = 7914 }) -- Overseer Wrex
-Data:AddBoss(3410, { instanceID = 2994, order = 500, displayID = 4973, quests = { 96332, 96381 } }) -- Tidemistress Ca'zass
-Data:AddBoss(3418, { instanceID = 2994, order = 625, displayID = 2317 }) -- Katerina the Cleaner
-Data:AddBoss(3415, { instanceID = 2994, order = 750, displayID = 140092, quests = { 96335 } }) -- The Questioner
-Data:AddBoss(3409, { instanceID = 2994, order = 1000, displayID = 6374 }) -- Blazeroar
+Data:AddBoss(3403, { instanceID = 2994, order = 0, displayID = 7914, level = 50 }) -- Overseer Wrex
+Data:AddBoss(3410, { instanceID = 2994, order = 500, displayID = 4973, level = 50, quests = { 96332, 96381 } }) -- Tidemistress Ca'zass
+Data:AddBoss(3418, { instanceID = 2994, order = 625, displayID = 2317, level = 52 }) -- Katerina the Cleaner
+Data:AddBoss(3415, { instanceID = 2994, order = 750, displayID = 140092, level = 51, quests = { 96335 } }) -- The Questioner
+Data:AddBoss(3409, { instanceID = 2994, order = 1000, displayID = 6374, level = 53 }) -- Blazeroar
 
 -- Excavation Site: Wetlands
 Data:AddInstance(2998, {
@@ -928,10 +934,10 @@ Data:AddInstance(2998, {
     entrance = { 1437, 42, 60 },
     bosses = { 3480, 3481, 3644, 3482 },
 })
-Data:AddBoss(3480, { instanceID = 2998, order = 0, displayID = 144209 }) -- Saltspine
-Data:AddBoss(3481, { instanceID = 2998, order = 1000, displayID = 144210 }) -- Shadetooth
+Data:AddBoss(3480, { instanceID = 2998, order = 0, displayID = 144209, level = 28 }) -- Saltspine
+Data:AddBoss(3481, { instanceID = 2998, order = 1000, displayID = 144210, level = 29 }) -- Shadetooth
 Data:AddBoss(3644, { instanceID = 2998, order = 1500, displayID = 9010 }) -- Highland Horror
-Data:AddBoss(3482, { instanceID = 2998, order = 2000, displayID = 144224 }) -- Relic Guardian
+Data:AddBoss(3482, { instanceID = 2998, order = 2000, displayID = 144224, level = 31 }) -- Relic Guardian
 
 -- Ruins of Lordaeron
 Data:AddInstance(2999, {
@@ -961,22 +967,24 @@ Data:AddInstance(3001, {
     expansionID = 0,
     minLevel = 58,
     maxLevel = 60,
+    zone = 1449,
     icon = "Interface\\Icons\\INV_Misc_Gem_Crystal_02",
     background = 7963783,
     backgroundCoords = { 0, 1, 0.154, 0.846 },
+    entrance = { 1449, 48.1, 6.1 },
     bosses = { 3498, 3499, 3500, 3501, 3507, 3503, 3504, 3597, 3505, 3600, 3502 },
 })
-Data:AddBoss(3498, { instanceID = 3001, order = 0, displayID = 142989 }) -- Titanosaur
-Data:AddBoss(3499, { instanceID = 3001, order = 1000, displayID = 143040 }) -- Ravasaur Hunters
-Data:AddBoss(3500, { instanceID = 3001, order = 2000, displayID = 144514 }) -- Thunderhoof
-Data:AddBoss(3501, { instanceID = 3001, order = 3000, displayID = 144511, quests = { 95924 } }) -- Venomridge
-Data:AddBoss(3507, { instanceID = 3001, order = 3500, displayID = 144515 }) -- Direhorn Matriarch
-Data:AddBoss(3503, { instanceID = 3001, order = 5000, displayID = 143035 }) -- Cinder
+Data:AddBoss(3498, { instanceID = 3001, order = 0, displayID = 142989, level = 61 }) -- Titanosaur
+Data:AddBoss(3499, { instanceID = 3001, order = 1000, displayID = 143040, level = 61 }) -- Ravasaur Hunters
+Data:AddBoss(3500, { instanceID = 3001, order = 2000, displayID = 144514, level = 61 }) -- Thunderhoof
+Data:AddBoss(3501, { instanceID = 3001, order = 3000, displayID = 144511, level = 61, quests = { 95924 } }) -- Venomridge
+Data:AddBoss(3507, { instanceID = 3001, order = 3500, displayID = 144515, level = 61 }) -- Direhorn Matriarch
+Data:AddBoss(3503, { instanceID = 3001, order = 5000, displayID = 143035, level = 61 }) -- Cinder
 Data:AddBoss(3504, { instanceID = 3001, order = 6000 }) -- King Op
-Data:AddBoss(3597, { instanceID = 3001, order = 6500, displayID = 143122 }) -- Snowtalon
-Data:AddBoss(3505, { instanceID = 3001, order = 7000, displayID = 143063 }) -- Bolt
-Data:AddBoss(3600, { instanceID = 3001, order = 7500, displayID = 147098 }) -- Vitrix
-Data:AddBoss(3502, { instanceID = 3001, order = 8000, displayID = 143832 }) -- Nanaya
+Data:AddBoss(3597, { instanceID = 3001, order = 6500, displayID = 143122, level = 62 }) -- Snowtalon
+Data:AddBoss(3505, { instanceID = 3001, order = 7000, displayID = 143063, level = 62 }) -- Bolt
+Data:AddBoss(3600, { instanceID = 3001, order = 7500, displayID = 147098, level = 62 }) -- Vitrix
+Data:AddBoss(3502, { instanceID = 3001, order = 8000, displayID = 143832, level = 62 }) -- Nanaya
 
 -- Krol'dok Stronghold
 Data:AddInstance(3039, {
@@ -984,17 +992,20 @@ Data:AddInstance(3039, {
     expansionID = 0,
     minLevel = 40,
     maxLevel = 45,
+    zone = 2548,
     icon = "Interface\\Icons\\INV_Misc_Key_13",
     background = 7963780,
     backgroundCoords = { 0, 1, 0.154, 0.846 },
-    bosses = { 3449, 3450, 3451, 3452, 3453, -264773 },
+    entrance = { 2548, 37.5, 37.3 },
+    bosses = { 3449, 3450, 3451, 3452, 3453, -264773, -262716 },
 })
-Data:AddBoss(3449, { instanceID = 3039, order = 4500, displayID = 141215 }) -- Nar'gurk
-Data:AddBoss(3450, { instanceID = 3039, order = 1000, displayID = 141217 }) -- Slavecrusher Grox
-Data:AddBoss(3451, { instanceID = 3039, order = 5000, displayID = 141218 }) -- Overseer Mugg
-Data:AddBoss(3452, { instanceID = 3039, order = 1500, displayID = 141219 }) -- Twilight Commander Zarmok
-Data:AddBoss(3453, { instanceID = 3039, order = 4000, displayID = 141443 }) -- Handler Ashka
-Data:AddBoss(-264773, { instanceID = 3039, displayID = 14424 }) -- Bossman Toof
+Data:AddBoss(3449, { instanceID = 3039, order = 4500, displayID = 141215, level = 44 }) -- Nar'gurk
+Data:AddBoss(3450, { instanceID = 3039, order = 1000, displayID = 141217, level = 42 }) -- Slavecrusher Grox
+Data:AddBoss(3451, { instanceID = 3039, order = 5000, displayID = 141218, level = 45 }) -- Overseer Mugg
+Data:AddBoss(3452, { instanceID = 3039, order = 1500, displayID = 141219, level = 43 }) -- Twilight Commander Zarmok
+Data:AddBoss(3453, { instanceID = 3039, order = 4000, displayID = 141443, level = 43 }) -- Handler Ashka
+Data:AddBoss(-264773, { instanceID = 3039, displayID = 14424, level = 42 }) -- Bossman Toof
+Data:AddBoss(-262716, { instanceID = 3039, level = 41 }) -- Kroog
 
 -- The Hall of Thanes
 Data:AddInstance(3065, {

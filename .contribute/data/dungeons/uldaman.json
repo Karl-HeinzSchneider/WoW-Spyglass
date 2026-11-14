@@ -13,6 +13,8 @@
       "id": 547,
       "name": "Revelosh",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Revelosh",
+      "npc": 6910,
+      "level": 40,
       "loot": [
         {
           "item": 9389,
@@ -36,6 +38,8 @@
       "id": 548,
       "name": "The Lost Dwarves",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-The Lost Dwarves",
+      "npc": 6906,
+      "level": 41,
       "loot": [
         {
           "item": 9400,
@@ -71,6 +75,8 @@
       "id": 549,
       "name": "Ironaya",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Ironaya",
+      "npc": 7228,
+      "level": 40,
       "loot": [
         {
           "item": 9407,
@@ -83,6 +89,10 @@
         {
           "item": 9408,
           "name": "Ironshod Bludgeon"
+        },
+        {
+          "item": 274484,
+          "name": "Axe of Inevitable Ruin"
         }
       ]
     },
@@ -90,6 +100,8 @@
       "id": 1887,
       "name": "Obsidian Sentinel",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Obsidian Sentinel",
+      "npc": 7023,
+      "level": 42,
       "loot": [
         {
           "item": 274430,
@@ -117,6 +129,8 @@
       "id": 551,
       "name": "Ancient Stone Keeper",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Ancient Stone Keeper",
+      "npc": 7206,
+      "level": 44,
       "loot": [
         {
           "item": 9410,
@@ -125,6 +139,10 @@
         {
           "item": 9411,
           "name": "Rockshard Pauldrons"
+        },
+        {
+          "item": 274431,
+          "name": "Sandstorm Staff"
         }
       ]
     },
@@ -132,6 +150,8 @@
       "id": 552,
       "name": "Galgann Firehammer",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Galgann Firehammer",
+      "npc": 7291,
+      "level": 45,
       "loot": [
         {
           "item": 11311,
@@ -155,6 +175,8 @@
       "id": 553,
       "name": "Grimlok",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Grimlok",
+      "npc": 4854,
+      "level": 45,
       "loot": [
         {
           "item": 9415,
@@ -174,6 +196,8 @@
       "id": 554,
       "name": "Archaedas",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Archaedas",
+      "npc": 2748,
+      "level": 47,
       "loot": [
         {
           "item": 11118,

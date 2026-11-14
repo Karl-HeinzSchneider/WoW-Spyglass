@@ -14,6 +14,8 @@
       "id": 362,
       "name": "Guard Mol'dar",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Guard Moldar",
+      "npc": 14326,
+      "level": 59,
       "loot": [
         {
           "item": 18494,
@@ -41,6 +43,8 @@
       "id": 363,
       "name": "Stomper Kreeg",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Stomper Kreeg",
+      "npc": 14322,
+      "level": 59,
       "loot": [
         {
           "item": 18425,
@@ -52,6 +56,8 @@
       "id": 364,
       "name": "Guard Fengus",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Guard Fengus",
+      "npc": 14321,
+      "level": 59,
       "loot": [
         {
           "item": 18494,
@@ -79,6 +85,8 @@
       "id": 365,
       "name": "Guard Slip'kik",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Guard Slipkik",
+      "npc": 14323,
+      "level": 59,
       "loot": [
         {
           "item": 18494,
@@ -106,6 +114,8 @@
       "id": 366,
       "name": "Captain Kromcrush",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Captain Kromcrush",
+      "npc": 14325,
+      "level": 61,
       "loot": [
         {
           "item": 18503,
@@ -129,6 +139,8 @@
       "id": 367,
       "name": "Cho'Rush the Observer",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-ChoRush the Observer",
+      "npc": 14324,
+      "level": 60,
       "loot": [
         {
           "item": 18483,
@@ -152,6 +164,8 @@
       "id": 368,
       "name": "King Gordok",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-King Gordok",
+      "npc": 11501,
+      "level": 62,
       "loot": [
         {
           "item": 18526,

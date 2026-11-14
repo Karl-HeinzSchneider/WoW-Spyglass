@@ -13,6 +13,7 @@
       "name": "Saltspine",
       "displayID": 144209,
       "npc": 260322,
+      "level": 28,
       "loot": [
         {
           "item": 273022,
@@ -33,6 +34,7 @@
       "name": "Shadetooth",
       "displayID": 144210,
       "npc": 260325,
+      "level": 29,
       "loot": [
         {
           "item": 273025,
@@ -64,6 +66,7 @@
       "name": "Relic Guardian",
       "displayID": 144224,
       "npc": 260326,
+      "level": 31,
       "loot": [
         {
           "item": 273028,
@@ -92,6 +95,31 @@
       ]
     }
   ],
-  "trash": [],
+  "trash": [
+    {
+      "item": 286982,
+      "name": "Unearthed Barrier"
+    },
+    {
+      "item": 286983,
+      "name": "Ancient Cleaver"
+    },
+    {
+      "item": 286984,
+      "name": "Mark of the Marsh"
+    },
+    {
+      "item": 286985,
+      "name": "Thicket Bindings"
+    },
+    {
+      "item": 286986,
+      "name": "Abandoned Leggings"
+    },
+    {
+      "item": 287068,
+      "name": "Excavated Dagger"
+    }
+  ],
   "quests": [95682, 95697, 98815, 95772, 95646, 95809, 98824, 98823, 95795, 95647]
 }

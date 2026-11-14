@@ -24,6 +24,7 @@ Data:AddBossLoot(549, { -- Ironaya
     { 9407 }, -- Stoneweaver Leggings
     { 9409 }, -- Ironaya's Bracers
     { 9408 }, -- Ironshod Bludgeon
+    { 274484 }, -- Axe of Inevitable Ruin
 })
 
 Data:AddBossLoot(1887, { -- Obsidian Sentinel
@@ -37,6 +38,7 @@ Data:AddBossLoot(1887, { -- Obsidian Sentinel
 Data:AddBossLoot(551, { -- Ancient Stone Keeper
     { 9410 }, -- Cragfists
     { 9411 }, -- Rockshard Pauldrons
+    { 274431 }, -- Sandstorm Staff
 })
 
 Data:AddBossLoot(552, { -- Galgann Firehammer
@@ -89,6 +91,7 @@ Data:AddQuests(70, {
     { id = 2240, name = "The Hidden Chamber", side = "Alliance", requiredLevel = 35, xp = 6850, objective = "Read Baelog's Journal, explore the hidden chamber, then report to Prospector Stormpike.", description = "Optional introductory quest:", start = { description = "Uldaman", npc = "Baelog" }, turnIn = { description = "Ironforge", npc = "Prospector Stormpike" }, items = {
         { 9626 }, -- Dwarven Charge
         { 9627 }, -- Explorer's League Lodestar
+        { 270078 }, -- Guardian Staff
     } },
     { id = 704, name = "Agmond's Fate", side = "Alliance", requiredLevel = 30, xp = 5000, objective = "Bring 4 Carved Stone Urns to Prospector Ironband in Loch Modan.", description = "The urns are in the outer Uldaman cave, before the instance portal.\n\nOptional introductory quest:", requires = { { id = 739, name = "Murdaloc" } }, start = { description = "Loch Modan", location = { 1432, 65.8, 65.4 }, npc = "Prospector Ironband" }, turnIn = { description = "Loch Modan", location = { 1432, 65.8, 65.4 }, npc = "Prospector Ironband" }, items = {
         { 4980 }, -- Prospector Gloves

@@ -15,6 +15,8 @@
       "id": 446,
       "name": "Houndmaster Loksey",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Houndmaster Loksey",
+      "npc": 3974,
+      "level": 34,
       "loot": [
         {
           "item": 7756,
@@ -38,6 +40,8 @@
       "id": 447,
       "name": "Arcanist Doan",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Arcanist Doan",
+      "npc": 6487,
+      "level": 37,
       "loot": [
         {
           "item": 7714,

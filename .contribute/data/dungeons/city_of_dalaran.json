@@ -13,6 +13,7 @@
       "name": "Arcane Anomaly",
       "displayID": 129891,
       "npc": 245999,
+      "level": 30,
       "loot": [
         {
           "item": 273034,
@@ -33,6 +34,7 @@
       "name": "Fel Ancient",
       "displayID": 129894,
       "npc": 246003,
+      "level": 32,
       "loot": [
         {
           "item": 273037,
@@ -53,6 +55,7 @@
       "name": "Mana Devourer",
       "displayID": 129895,
       "npc": 246008,
+      "level": 31,
       "loot": [
         {
           "item": 273041,
@@ -73,6 +76,7 @@
       "name": "Mana Elemental",
       "displayID": 14253,
       "npc": 14689,
+      "level": 30,
       "loot": [
         {
           "item": 273045,
@@ -93,6 +97,7 @@
       "name": "Unstable Sentinel",
       "displayID": 129954,
       "npc": 246017,
+      "level": 31,
       "loot": [
         {
           "item": 273046,
@@ -117,6 +122,7 @@
       "name": "Shade of the Archmage",
       "displayID": 130061,
       "npc": 246020,
+      "level": 33,
       "loot": [
         {
           "item": 273052,
@@ -161,6 +167,7 @@
       "name": "Atrexis the Grave Knight",
       "displayID": 145787,
       "npc": 247126,
+      "level": 29,
       "loot": [
         {
           "item": 273032,
@@ -200,6 +207,30 @@
     {
       "item": 286995,
       "name": "Guardian's Emblem"
+    },
+    {
+      "item": 286990,
+      "name": "Arcane Remnant Leggings"
+    },
+    {
+      "item": 286991,
+      "name": "Roused Nature Footwraps"
+    },
+    {
+      "item": 286992,
+      "name": "Construct's Grips"
+    },
+    {
+      "item": 286993,
+      "name": "Suffused Bindings"
+    },
+    {
+      "item": 286994,
+      "name": "Tattered Kirin Tor Cloak"
+    },
+    {
+      "item": 286996,
+      "name": "City Guard's Tarnished Blade"
     }
   ],
   "quests": [92456, 92489, 92457, 92458, 96984, 96987, 96988, 96986]

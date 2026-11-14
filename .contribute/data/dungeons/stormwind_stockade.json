@@ -15,6 +15,7 @@
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\targorr_the_dread.blp",
       "displayID": 517,
       "npc": 1696,
+      "level": 24,
       "loot": [
         {
           "item": 273804,
@@ -48,6 +49,7 @@
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\kam_deepfury.blp",
       "displayID": 825,
       "npc": 1666,
+      "level": 27,
       "loot": [
         {
           "item": 2280,
@@ -97,6 +99,7 @@
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\hamhock.blp",
       "displayID": 3250,
       "npc": 1717,
+      "level": 28,
       "loot": [
         {
           "item": 273809,
@@ -126,6 +129,7 @@
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\bruegal_ironknuckle.blp",
       "displayID": 2142,
       "npc": 1720,
+      "level": 26,
       "rare": true,
       "loot": [
         {
@@ -148,6 +152,7 @@
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\dextren_ward.blp",
       "displayID": 2149,
       "npc": 1663,
+      "level": 26,
       "loot": [
         {
           "item": 273817,
@@ -201,6 +206,7 @@
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\bazil_thredd.blp",
       "displayID": 1621,
       "npc": 1716,
+      "level": 29,
       "loot": [
         {
           "item": 273824,

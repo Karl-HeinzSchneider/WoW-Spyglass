@@ -14,6 +14,7 @@
       "name": "Kirtonos",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Kirtonos the Herald",
       "npc": 10506,
+      "level": 60,
       "loot": [
         {
           "item": 16734,
@@ -53,6 +54,8 @@
       "id": 2804,
       "name": "Jandice Barov",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Jandice Barov",
+      "npc": 10503,
+      "level": 61,
       "loot": [
         {
           "item": 16701,
@@ -88,6 +91,8 @@
       "id": 2811,
       "name": "Rattlegore",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Rattlegore",
+      "npc": 11622,
+      "level": 61,
       "loot": [
         {
           "item": 16711,
@@ -123,6 +128,8 @@
       "id": 2809,
       "name": "Marduk Blackpool",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Marduk Blackpool",
+      "npc": 10433,
+      "level": 58,
       "loot": [
         {
           "item": 14576,
@@ -138,6 +145,8 @@
       "id": 2813,
       "name": "Vectus",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Vectus",
+      "npc": 10432,
+      "level": 60,
       "loot": [
         {
           "item": 14577,
@@ -160,6 +169,7 @@
       "name": "Ras Frostwhisperer",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Ras Frostwhisper",
       "npc": 10508,
+      "level": 62,
       "loot": [
         {
           "item": 16689,
@@ -207,6 +217,8 @@
       "id": 2803,
       "name": "Instructor Malicia",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Instructor Malicia",
+      "npc": 10505,
+      "level": 60,
       "loot": [
         {
           "item": 16710,
@@ -311,6 +323,14 @@
         {
           "item": 14626,
           "name": "Necropile Robe"
+        },
+        {
+          "item": 18680,
+          "name": "Ancient Bone Bow"
+        },
+        {
+          "item": 18681,
+          "name": "Burial Shawl"
         }
       ]
     },
@@ -318,6 +338,8 @@
       "id": 2802,
       "name": "Doctor Theolen Krastinov",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Doctor Theolen Krastinov",
+      "npc": 11261,
+      "level": 60,
       "loot": [
         {
           "item": 16684,
@@ -426,6 +448,14 @@
         {
           "item": 14626,
           "name": "Necropile Robe"
+        },
+        {
+          "item": 18680,
+          "name": "Ancient Bone Bow"
+        },
+        {
+          "item": 18681,
+          "name": "Burial Shawl"
         }
       ]
     },
@@ -433,6 +463,8 @@
       "id": 2808,
       "name": "Lorekeeper Polkelt",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lorekeeper Polkelt",
+      "npc": 10901,
+      "level": 60,
       "loot": [
         {
           "item": 16705,
@@ -537,6 +569,14 @@
         {
           "item": 14626,
           "name": "Necropile Robe"
+        },
+        {
+          "item": 18680,
+          "name": "Ancient Bone Bow"
+        },
+        {
+          "item": 18681,
+          "name": "Burial Shawl"
         }
       ]
     },
@@ -544,6 +584,8 @@
       "id": 2812,
       "name": "The Ravenian",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-The Ravenian",
+      "npc": 10507,
+      "level": 60,
       "loot": [
         {
           "item": 16716,
@@ -648,6 +690,14 @@
         {
           "item": 14626,
           "name": "Necropile Robe"
+        },
+        {
+          "item": 18680,
+          "name": "Ancient Bone Bow"
+        },
+        {
+          "item": 18681,
+          "name": "Burial Shawl"
         }
       ]
     },
@@ -655,6 +705,8 @@
       "id": 2807,
       "name": "Lord Alexei Barov",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Alexei Barov",
+      "npc": 10504,
+      "level": 60,
       "loot": [
         {
           "item": 14626,
@@ -774,6 +826,8 @@
       "id": 2806,
       "name": "Lady Illucia Barov",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lady Illucia Barov",
+      "npc": 10502,
+      "level": 60,
       "loot": [
         {
           "item": 23201,
@@ -874,6 +928,14 @@
         {
           "item": 14626,
           "name": "Necropile Robe"
+        },
+        {
+          "item": 18680,
+          "name": "Ancient Bone Bow"
+        },
+        {
+          "item": 18681,
+          "name": "Burial Shawl"
         }
       ]
     },
@@ -881,6 +943,8 @@
       "id": 2801,
       "name": "Darkmaster Gandling",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Darkmaster Gandling",
+      "npc": 1853,
+      "level": 61,
       "loot": [
         {
           "item": 16667,

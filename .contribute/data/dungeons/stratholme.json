@@ -13,6 +13,8 @@
       "id": 473,
       "name": "Hearthsinger Forresten",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Hearthsinger Forresten",
+      "npc": 10558,
+      "level": 57,
       "loot": [
         {
           "item": 16682,
@@ -40,6 +42,8 @@
       "id": 474,
       "name": "Timmy the Cruel",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Timmy the Cruel",
+      "npc": 10808,
+      "level": 58,
       "loot": [
         {
           "item": 13400,
@@ -67,6 +71,8 @@
       "id": 476,
       "name": "Malor the Zealous",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Commander Malor",
+      "npc": 11032,
+      "level": 60,
       "loot": [
         {
           "item": 276398,
@@ -75,6 +81,10 @@
         {
           "item": 276399,
           "name": "Plate of the Scarlet Bastion"
+        },
+        {
+          "item": 12845,
+          "name": "Medallion of Faith"
         }
       ]
     },
@@ -82,6 +92,8 @@
       "id": 475,
       "name": "Cannon Master Willey",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Willey Hopebreaker",
+      "npc": 10997,
+      "level": 60,
       "loot": [
         {
           "item": 16708,
@@ -129,6 +141,8 @@
       "id": 477,
       "name": "Archivist Galford",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Instructor Galford",
+      "npc": 10811,
+      "level": 60,
       "loot": [
         {
           "item": 16692,
@@ -156,6 +170,8 @@
       "id": 478,
       "name": "Balnazzar",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Balnazzar",
+      "npc": 10813,
+      "level": 62,
       "loot": [
         {
           "item": 13353,
@@ -207,6 +223,8 @@
       "id": 472,
       "name": "The Unforgiven",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-The Unforgiven",
+      "npc": 10516,
+      "level": 57,
       "loot": [
         {
           "item": 13405,
@@ -234,6 +252,8 @@
       "id": 479,
       "name": "Baroness Anastari",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Baroness Anastari",
+      "npc": 10436,
+      "level": 59,
       "loot": [
         {
           "item": 16704,
@@ -265,6 +285,8 @@
       "id": 480,
       "name": "Nerub'enkan",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Nerubenkan",
+      "npc": 10437,
+      "level": 60,
       "loot": [
         {
           "item": 16675,
@@ -292,6 +314,8 @@
       "id": 481,
       "name": "Maleki the Pallid",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Maleki the Pallid",
+      "npc": 10438,
+      "level": 61,
       "loot": [
         {
           "item": 16691,
@@ -319,6 +343,8 @@
       "id": 482,
       "name": "Magistrate Barthilas",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Magistrate Barthilas",
+      "npc": 10435,
+      "level": 58,
       "loot": [
         {
           "item": 18722,
@@ -346,6 +372,8 @@
       "id": 483,
       "name": "Ramstein the Gorger",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Ramstein the Gorger",
+      "npc": 10439,
+      "level": 61,
       "loot": [
         {
           "item": 16737,
@@ -381,6 +409,8 @@
       "id": 484,
       "name": "Baron Rivendare",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Aurius Rivendare",
+      "npc": 10440,
+      "level": 62,
       "loot": [
         {
           "item": 16668,
@@ -479,6 +509,8 @@
       "id": 2798,
       "name": "Postmaster Malown",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-PostmasterMalown",
+      "npc": 11143,
+      "level": 60,
       "loot": [
         {
           "item": 13392,
@@ -507,6 +539,7 @@
       "name": "Skul",
       "displayID": 2606,
       "npc": 10393,
+      "level": 58,
       "loot": [
         {
           "item": 13394,
@@ -527,6 +560,7 @@
       "name": "Stonespine",
       "displayID": 7856,
       "npc": 10809,
+      "level": 60,
       "loot": [
         {
           "item": 13399,

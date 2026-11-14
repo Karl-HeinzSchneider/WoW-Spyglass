@@ -5,6 +5,8 @@ local Data = Spyglass.Data
 
 Data:AddBossLoot(593, { -- Hydromancer Velratha
     { 274653 }, -- Deep Ritual Girdle
+    { 274651 }, -- Zealot Plate
+    { 274652 }, -- Wall of Water
 })
 
 Data:AddBossLoot(594, { -- Gahz'rilla
@@ -68,6 +70,7 @@ Data:AddBossLoot(-7604, { -- Sergeant Bly
     { 274647 }, -- Farraki Kris
     { 274648 }, -- The Desert Rose
     { 252896 }, -- Pattern: Stalker's Mail Boots
+    { 8548 }, -- Divino-matic Rod
 })
 
 Data:AddBossLoot(-10080, { -- Sandarr Dunereaver

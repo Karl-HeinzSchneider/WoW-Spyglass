@@ -3,15 +3,18 @@
   "name": "Blackmaw Hold",
   "minLevel": 55,
   "maxLevel": 60,
+  "zone": 1447,
   "icon": "Interface\\Icons\\INV_Misc_MonsterClaw_04",
   "background": 7963784,
   "backgroundCoords": [0, 1, 0.154, 0.846],
+  "entrance": [1447, 38.6, 33.2],
   "encounters": [
     {
       "id": 3315,
       "name": "Withermaw",
       "displayID": 140708,
       "npc": 247195,
+      "level": 58,
       "loot": [
         {
           "item": 280064,
@@ -32,6 +35,7 @@
       "name": "Impaan the Imprisoner",
       "displayID": 130432,
       "npc": 247206,
+      "level": 57,
       "loot": [
         {
           "item": 280057,
@@ -52,6 +56,7 @@
       "name": "Bonesnout the Unbroken",
       "displayID": 130427,
       "npc": 247198,
+      "level": 58,
       "loot": [
         {
           "item": 280059,
@@ -60,6 +65,10 @@
         {
           "item": 280060,
           "name": "Lucky Shovelnose Tuft"
+        },
+        {
+          "item": 280061,
+          "name": "Spike Crested Bracers"
         }
       ]
     },
@@ -68,6 +77,7 @@
       "name": "Blackmaw Behemoth",
       "displayID": 130436,
       "npc": 247207,
+      "level": 59,
       "loot": [
         {
           "item": 280065,
@@ -88,6 +98,7 @@
       "name": "Elder Shaman Bloodmane",
       "displayID": 130440,
       "npc": 247209,
+      "level": 59,
       "loot": [
         {
           "item": 280068,
@@ -108,6 +119,7 @@
       "name": "Varrox Bleakhoof",
       "displayID": 130447,
       "npc": 247234,
+      "level": 60,
       "quests": [92065],
       "loot": [
         {
@@ -129,6 +141,7 @@
       "name": "Unbound Spirit",
       "displayID": 131644,
       "npc": 247231,
+      "level": 59,
       "loot": [
         {
           "item": 280071,
@@ -149,6 +162,7 @@
       "name": "Moontouched Wanderer",
       "displayID": 12235,
       "npc": 269104,
+      "level": 55,
       "loot": [
         {
           "item": 280080,
@@ -165,6 +179,7 @@
       "name": "Gortek the Apprentice",
       "displayID": 145808,
       "npc": 269111,
+      "level": 55,
       "loot": [
         {
           "item": 280077,
@@ -180,6 +195,7 @@
       "id": -250034,
       "name": "Tunnelweb Matriarch",
       "npc": 250034,
+      "level": 55,
       "rare": true,
       "loot": [
         {
@@ -209,6 +225,10 @@
     {
       "item": 287036,
       "name": "Satyr's Touch"
+    },
+    {
+      "item": 287028,
+      "name": "Tormented Cuffs"
     }
   ],
   "quests": [92343, 92344, 97173, 97198, 92069, 92070, 97327, 92066, 92065, 96246, 92067]

@@ -13,6 +13,8 @@
       "id": 422,
       "name": "Noxxion",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Noxxion",
+      "npc": 13282,
+      "level": 48,
       "loot": [
         {
           "item": 17744,
@@ -32,6 +34,8 @@
       "id": 423,
       "name": "Razorlash",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Razorlash",
+      "npc": 12258,
+      "level": 48,
       "loot": [
         {
           "item": 17748,
@@ -55,6 +59,8 @@
       "id": 427,
       "name": "Tinkerer Gizlock",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Tinkerer Gizlock",
+      "npc": 13601,
+      "level": 50,
       "loot": [
         {
           "item": 17717,
@@ -74,6 +80,8 @@
       "id": 424,
       "name": "Lord Vyletongue",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Vyletongue",
+      "npc": 12236,
+      "level": 47,
       "loot": [
         {
           "item": 17752,
@@ -93,6 +101,8 @@
       "id": 425,
       "name": "Celebras the Cursed",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Celebras the Cursed",
+      "npc": 12225,
+      "level": 49,
       "loot": [
         {
           "item": 17738,
@@ -112,6 +122,8 @@
       "id": 426,
       "name": "Landslide",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Landslide",
+      "npc": 12203,
+      "level": 50,
       "loot": [
         {
           "item": 17943,
@@ -135,6 +147,8 @@
       "id": 428,
       "name": "Rotgrip",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Rotgrip",
+      "npc": 13596,
+      "level": 50,
       "loot": [
         {
           "item": 17732,
@@ -154,6 +168,8 @@
       "id": 429,
       "name": "Princess Theradras",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Princess Theradras",
+      "npc": 12201,
+      "level": 51,
       "loot": [
         {
           "item": 17713,
@@ -194,6 +210,7 @@
       "name": "Meshlok the Harvester",
       "displayID": 9014,
       "npc": 12237,
+      "level": 48,
       "loot": [
         {
           "item": 17767,

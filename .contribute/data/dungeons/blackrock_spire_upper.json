@@ -14,6 +14,8 @@
       "id": 3062,
       "name": "Pyroguard Emberseer",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Pyroguard Emberseer",
+      "npc": 9816,
+      "level": 60,
       "loot": [
         {
           "item": 16672,
@@ -41,6 +43,8 @@
       "id": 3063,
       "name": "Warchief Rend Blackhand",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Warchief Rend Blackhand",
+      "npc": 10429,
+      "level": 62,
       "loot": [
         {
           "item": 16733,
@@ -96,6 +100,8 @@
       "id": 3068,
       "name": "The Beast",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-The Beast",
+      "npc": 10430,
+      "level": 62,
       "loot": [
         {
           "item": 16729,
@@ -143,6 +149,8 @@
       "id": 3069,
       "name": "General Drakkisath",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-General Drakkisath",
+      "npc": 10363,
+      "level": 62,
       "loot": [
         {
           "item": 16666,
@@ -224,6 +232,7 @@
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\lord_valthalak.blp",
       "displayID": 14308,
       "npc": 16042,
+      "level": 62,
       "loot": [
         {
           "item": 22335,
@@ -264,6 +273,7 @@
       "name": "Solakar Flamewreath",
       "displayID": 9581,
       "npc": 10264,
+      "level": 60,
       "loot": [
         {
           "item": 12589,
@@ -292,6 +302,7 @@
       "name": "Jed Runewatcher",
       "displayID": 9686,
       "npc": 10509,
+      "level": 59,
       "loot": [
         {
           "item": 12604,
@@ -312,6 +323,7 @@
       "name": "Goraluk Anvilcrack",
       "displayID": 10222,
       "npc": 10899,
+      "level": 61,
       "loot": [
         {
           "item": 18048,
@@ -344,6 +356,7 @@
       "name": "Gyth",
       "displayID": 9806,
       "npc": 10339,
+      "level": 62,
       "loot": [
         {
           "item": 12952,

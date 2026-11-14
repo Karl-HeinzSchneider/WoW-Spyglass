@@ -44,6 +44,20 @@ Data:AddBossLoot(2785, { -- Amnennar the Coldbringer
     { 274381 }, -- Coldbringer Spine
 })
 
+Data:AddTrashLoot(129, {
+    { 10574 }, -- Corpseshroud
+    { 10581 }, -- Death's Head Vestment
+    { 10583 }, -- Quillward Harness
+    { 10584 }, -- Stormgale Fists
+    { 10578 }, -- Thoughtcast Boots
+    { 10582 }, -- Briar Tredders
+    { 10572 }, -- Freezing Shard
+    { 10567 }, -- Quillshooter
+    { 10571 }, -- Ebony Boneclub
+    { 10570 }, -- Manslayer
+    { 10573 }, -- Boneslasher
+})
+
 Data:AddQuests(129, {
     { id = 3525, name = "Extinguishing the Idol", side = "Both", requiredLevel = 32, xp = 10100, objective = "Escort Belnistrasz to the Quilboar's idol in Razorfen Downs. Protect Belnistrasz while he performs the ritual to shut down the idol.", description = "Waves of undead attack during the ritual. Talk to the brazier near the idol afterwards to finish.", requires = { { id = 3523, name = "Scourge of the Downs" } }, start = { description = "Razorfen Downs", npc = "Belnistrasz" }, turnIn = { description = "Razorfen Downs", npc = "Belnistrasz's Brazier" }, items = {
         { 10710 }, -- Dragonclaw Ring

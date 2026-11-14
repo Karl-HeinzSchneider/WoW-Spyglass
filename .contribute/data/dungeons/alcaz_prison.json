@@ -3,15 +3,18 @@
   "name": "Alcaz Prison",
   "minLevel": 48,
   "maxLevel": 53,
+  "zone": 1445,
   "icon": "Interface\\Icons\\INV_Misc_Key_14",
   "background": 7963734,
   "backgroundCoords": [0, 1, 0.154, 0.846],
+  "entrance": [1445, 75.3, 14.1],
   "encounters": [
     {
       "id": 3403,
       "name": "Overseer Wrex",
       "displayID": 7914,
       "npc": 255391,
+      "level": 50,
       "loot": [
         {
           "item": 276734,
@@ -32,6 +35,7 @@
       "name": "Blazeroar",
       "displayID": 6374,
       "npc": 255702,
+      "level": 53,
       "loot": [
         {
           "item": 276744,
@@ -44,6 +48,10 @@
         {
           "item": 276746,
           "name": "Defias Enforcer's Legguards"
+        },
+        {
+          "item": 276890,
+          "name": "Zarla's Journal"
         }
       ]
     },
@@ -52,6 +60,7 @@
       "name": "Tidemistress Ca'zass",
       "displayID": 4973,
       "npc": 255997,
+      "level": 50,
       "quests": [96332, 96381],
       "loot": [
         {
@@ -65,6 +74,10 @@
         {
           "item": 276737,
           "name": "Cloak of the Tidemistress"
+        },
+        {
+          "item": 273883,
+          "name": "Ca'zass's Head"
         }
       ]
     },
@@ -73,6 +86,7 @@
       "name": "The Questioner",
       "displayID": 140092,
       "npc": 256236,
+      "level": 51,
       "quests": [96335],
       "loot": [
         {
@@ -86,6 +100,10 @@
         {
           "item": 276741,
           "name": "Defias Enforcer's Shoulderpads"
+        },
+        {
+          "item": 274029,
+          "name": "Ornate Shackle Key"
         }
       ]
     },
@@ -94,6 +112,7 @@
       "name": "Katerina the Cleaner",
       "displayID": 2317,
       "npc": 257016,
+      "level": 52,
       "loot": [
         {
           "item": 276739,

@@ -25,6 +25,15 @@ Data:AddBossLoot(3482, { -- Relic Guardian
     { 273097 }, -- Blueprint: Rock Garden
 })
 
+Data:AddTrashLoot(2998, {
+    { 286982 }, -- Unearthed Barrier
+    { 286983 }, -- Ancient Cleaver
+    { 286984 }, -- Mark of the Marsh
+    { 286985 }, -- Thicket Bindings
+    { 286986 }, -- Abandoned Leggings
+    { 287068 }, -- Excavated Dagger
+})
+
 Data:AddQuests(2998, {
     { id = 95682, name = "Open the Maw", side = "Horde", requiredLevel = 24, xp = 7158, objective = "Defeat 2 Dragonmaw Saboteurs and 4 Dragonmaw Warders, recover the Dragonmaw Dispatch, and report to the Deathstalker Agent outside the dungeon.", description = "Related lead-in: Dragonmaw Rumors. The Dragonmaw Dispatch is recovered from the Dragonmaw forces inside the dungeon.", requires = { { id = 95663, name = "Dragonmaw Rumors" } }, start = { description = "Just outside Excavation Site: Wetlands.", location = { 1437, 47.8, 56.3 }, npc = "Deathstalker Agent" }, turnIn = { description = "Just outside Excavation Site: Wetlands.", location = { 1437, 47.8, 56.3 }, npc = "Deathstalker Agent" }, items = {
         { 271740 }, -- Knife-Polishing Rag

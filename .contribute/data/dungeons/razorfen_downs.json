@@ -13,6 +13,8 @@
       "id": 2780,
       "name": "Tuten'kash",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Tutenkash",
+      "npc": 7355,
+      "level": 40,
       "loot": [
         {
           "item": 10776,
@@ -34,6 +36,7 @@
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\plaguemaw_the_rotting.blp",
       "displayID": 6124,
       "npc": 7356,
+      "level": 40,
       "loot": [
         {
           "item": 10760,
@@ -53,6 +56,8 @@
       "id": 2782,
       "name": "Mordresh Fire Eye",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Mordresh Fire Eye",
+      "npc": 7357,
+      "level": 39,
       "loot": [
         {
           "item": 10770,
@@ -74,6 +79,7 @@
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\ragglesnout.blp",
       "displayID": 11382,
       "npc": 7354,
+      "level": 37,
       "loot": [
         {
           "item": 10758,
@@ -97,6 +103,8 @@
       "id": 2784,
       "name": "Glutton",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Glutton",
+      "npc": 8567,
+      "level": 40,
       "loot": [
         {
           "item": 10772,
@@ -120,6 +128,8 @@
       "id": 2785,
       "name": "Amnennar the Coldbringer",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Amnennar the Coldbringer",
+      "npc": 7358,
+      "level": 41,
       "loot": [
         {
           "item": 10762,
@@ -148,6 +158,51 @@
       ]
     }
   ],
-  "trash": [],
+  "trash": [
+    {
+      "item": 10574,
+      "name": "Corpseshroud"
+    },
+    {
+      "item": 10581,
+      "name": "Death's Head Vestment"
+    },
+    {
+      "item": 10583,
+      "name": "Quillward Harness"
+    },
+    {
+      "item": 10584,
+      "name": "Stormgale Fists"
+    },
+    {
+      "item": 10578,
+      "name": "Thoughtcast Boots"
+    },
+    {
+      "item": 10582,
+      "name": "Briar Tredders"
+    },
+    {
+      "item": 10572,
+      "name": "Freezing Shard"
+    },
+    {
+      "item": 10567,
+      "name": "Quillshooter"
+    },
+    {
+      "item": 10571,
+      "name": "Ebony Boneclub"
+    },
+    {
+      "item": 10570,
+      "name": "Manslayer"
+    },
+    {
+      "item": 10573,
+      "name": "Boneslasher"
+    }
+  ],
   "quests": [3525, 6626, 3341, 3636, 6521, 97196, 96773, 93604]
 }

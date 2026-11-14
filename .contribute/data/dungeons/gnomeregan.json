@@ -13,6 +13,8 @@
       "id": 2768,
       "name": "Grubbis",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Grubbis",
+      "npc": 7361,
+      "level": 32,
       "loot": [
         {
           "item": 9445,
@@ -32,6 +34,8 @@
       "id": 2769,
       "name": "Viscous Fallout",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Viscous Fallout",
+      "npc": 7079,
+      "level": 30,
       "loot": [
         {
           "item": 9453,
@@ -51,6 +55,8 @@
       "id": 2770,
       "name": "Electrocutioner 6000",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Electrocutioner 6000",
+      "npc": 6235,
+      "level": 32,
       "loot": [
         {
           "item": 9446,
@@ -70,6 +76,8 @@
       "id": 2771,
       "name": "Crowd Pummeler 9-60",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Crowd Pummeler 9-60",
+      "npc": 6229,
+      "level": 32,
       "loot": [
         {
           "item": 9449,
@@ -89,6 +97,8 @@
       "id": 2772,
       "name": "Mekgineer Thermaplugg",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Mekgineer Thermaplugg",
+      "npc": 7800,
+      "level": 34,
       "loot": [
         {
           "item": 9458,

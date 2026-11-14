@@ -14,6 +14,8 @@
       "id": 267,
       "name": "Highlord Omokk",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Highlord Omokk",
+      "npc": 9196,
+      "level": 59,
       "loot": [
         {
           "item": 16670,
@@ -49,6 +51,8 @@
       "id": 268,
       "name": "Shadow Hunter Vosh'gajin",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Shadow Hunter Voshgajin",
+      "npc": 9236,
+      "level": 58,
       "loot": [
         {
           "item": 16712,
@@ -84,6 +88,8 @@
       "id": 269,
       "name": "War Master Voone",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-War Master Voone",
+      "npc": 9237,
+      "level": 59,
       "loot": [
         {
           "item": 16676,
@@ -119,6 +125,8 @@
       "id": 270,
       "name": "Mother Smolderweb",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Mother Smolderweb",
+      "npc": 10596,
+      "level": 59,
       "loot": [
         {
           "item": 16715,
@@ -142,6 +150,8 @@
       "id": 271,
       "name": "Urok Doomhowl",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Urok Doomhowl",
+      "npc": 10584,
+      "level": 60,
       "loot": [
         {
           "item": 13258,
@@ -169,6 +179,8 @@
       "id": 272,
       "name": "Quartermaster Zigris",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Quartermaster Zigris",
+      "npc": 9736,
+      "level": 59,
       "loot": [
         {
           "item": 13252,
@@ -188,6 +200,8 @@
       "id": 274,
       "name": "Halycon",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Halycon",
+      "npc": 10220,
+      "level": 59,
       "loot": [
         {
           "item": 13212,
@@ -211,6 +225,8 @@
       "id": 273,
       "name": "Gizrul the Slavener",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Gizrul the Slavener",
+      "npc": 10268,
+      "level": 60,
       "loot": [
         {
           "item": 16718,
@@ -234,6 +250,8 @@
       "id": 275,
       "name": "Overlord Wyrmthalak",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Overlord Wyrmthalak",
+      "npc": 9568,
+      "level": 60,
       "loot": [
         {
           "item": 13164,
@@ -270,6 +288,7 @@
       "name": "Spirestone Butcher",
       "displayID": 11574,
       "npc": 9219,
+      "level": 57,
       "loot": [
         {
           "item": 12608,
@@ -286,6 +305,7 @@
       "name": "Spirestone Battle Lord",
       "displayID": 11576,
       "npc": 9218,
+      "level": 58,
       "loot": [
         {
           "item": 13284,
@@ -302,6 +322,7 @@
       "name": "Spirestone Lord Magus",
       "displayID": 11578,
       "npc": 9217,
+      "level": 58,
       "loot": [
         {
           "item": 13283,
@@ -322,6 +343,7 @@
       "name": "Crystal Fang",
       "displayID": 9755,
       "npc": 10376,
+      "level": 60,
       "loot": [
         {
           "item": 13185,
@@ -342,6 +364,7 @@
       "name": "Bannok Grimaxe",
       "displayID": 9668,
       "npc": 9596,
+      "level": 59,
       "loot": [
         {
           "item": 12634,
@@ -366,6 +389,7 @@
       "name": "Ghok Bashguud",
       "displayID": 11809,
       "npc": 9718,
+      "level": 59,
       "loot": [
         {
           "item": 13203,

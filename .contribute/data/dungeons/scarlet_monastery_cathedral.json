@@ -15,6 +15,8 @@
       "id": 449,
       "name": "High Inquisitor Fairbanks",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-High Inquisitor Fairbanks",
+      "npc": 4542,
+      "level": 40,
       "loot": [
         {
           "item": 19507,
@@ -34,6 +36,8 @@
       "id": 450,
       "name": "High Inquisitor Whitemane",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-High Inquisitor Whitemane",
+      "npc": 3977,
+      "level": 42,
       "loot": [
         {
           "item": 7726,
@@ -70,6 +74,7 @@
       "name": "Scarlet Commander Mograine",
       "displayID": 2042,
       "npc": 3976,
+      "level": 42,
       "loot": [
         {
           "item": 7726,

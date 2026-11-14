@@ -7,6 +7,7 @@ Data:AddNames("enUS", "bosses", {
     [-264773] = "Bossman Toof",
     [-264177] = "Gill",
     [-264172] = "Umbra",
+    [-262716] = "Kroog",
     [-260468] = "\"Pyromancer\" Braxton",
     [-250034] = "Tunnelweb Matriarch",
     [-16059] = "Theldren",

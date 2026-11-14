@@ -18,6 +18,7 @@ Data:AddBossLoot(3316, { -- Impaan the Imprisoner
 Data:AddBossLoot(3322, { -- Bonesnout the Unbroken
     { 280059 }, -- Tuskblade Halberd
     { 280060 }, -- Lucky Shovelnose Tuft
+    { 280061 }, -- Spike Crested Bracers
 })
 
 Data:AddBossLoot(3323, { -- Blackmaw Behemoth
@@ -64,6 +65,7 @@ Data:AddTrashLoot(2974, {
     { 251453 }, -- Plans: Breastplate of Salvation
     { 287034 }, -- Grove Subjugator's Blade
     { 287036 }, -- Satyr's Touch
+    { 287028 }, -- Tormented Cuffs
 })
 
 Data:AddQuests(2974, {

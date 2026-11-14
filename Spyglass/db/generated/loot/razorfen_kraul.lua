@@ -8,6 +8,7 @@ Data:AddBossLoot(2773, { -- Roogug
     { 274149 }, -- Thornweaver Drape
     { 274152 }, -- Roogug's Severed Head
     { 252512 }, -- Brawler's Leather Helm
+    { 6841 }, -- Vial of Phlogiston
 })
 
 Data:AddBossLoot(2774, { -- Aggem Thorncurse
@@ -58,6 +59,7 @@ Data:AddBossLoot(2778, { -- Charlga Razorflank
     { 252456 }, -- Totemic Leather Helm
     { 252515 }, -- Wisdom's Leather Helm
     { 17008 }, -- Small Scroll
+    { 274463 }, -- Tattered Note
 })
 
 Data:AddBossLoot(-4425, { -- Blind Hunter

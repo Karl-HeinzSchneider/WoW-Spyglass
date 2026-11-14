@@ -14,6 +14,8 @@
       "id": 350,
       "name": "Tendris Warpwood",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Tendris Warpwood",
+      "npc": 11489,
+      "level": 60,
       "loot": [
         {
           "item": 18390,
@@ -37,6 +39,8 @@
       "id": 347,
       "name": "Illyanna Ravenoak",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Illyanna Ravenoak",
+      "npc": 11488,
+      "level": 60,
       "loot": [
         {
           "item": 18383,
@@ -52,6 +56,8 @@
       "id": 348,
       "name": "Magister Kalendris",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Magister Kalendris",
+      "npc": 11487,
+      "level": 60,
       "loot": [
         {
           "item": 18374,
@@ -71,6 +77,8 @@
       "id": 349,
       "name": "Immol'thar",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Immolthar",
+      "npc": 11496,
+      "level": 61,
       "loot": [
         {
           "item": 18377,
@@ -118,6 +126,8 @@
       "id": 361,
       "name": "Prince Tortheldrin",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Prince Tortheldrin",
+      "npc": 11486,
+      "level": 61,
       "loot": [
         {
           "item": 18382,
@@ -167,6 +177,7 @@
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\lord_helnurath.blp",
       "displayID": 14556,
       "npc": 14506,
+      "level": 62,
       "loot": [
         {
           "item": 18755,
@@ -192,6 +203,7 @@
       "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\tsuzee.blp",
       "displayID": 11250,
       "npc": 11467,
+      "level": 59,
       "loot": [
         {
           "item": 18387,

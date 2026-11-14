@@ -13,10 +13,20 @@
       "id": 593,
       "name": "Hydromancer Velratha",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Hydromancer Velratha",
+      "npc": 7795,
+      "level": 46,
       "loot": [
         {
           "item": 274653,
           "name": "Deep Ritual Girdle"
+        },
+        {
+          "item": 274651,
+          "name": "Zealot Plate"
+        },
+        {
+          "item": 274652,
+          "name": "Wall of Water"
         }
       ]
     },
@@ -24,6 +34,8 @@
       "id": 594,
       "name": "Gahz'rilla",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Gahzrilla",
+      "npc": 7273,
+      "level": 46,
       "loot": [
         {
           "item": 9467,
@@ -43,6 +55,8 @@
       "id": 595,
       "name": "Antu'sul",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Antusul",
+      "npc": 8127,
+      "level": 48,
       "loot": [
         {
           "item": 9640,
@@ -66,6 +80,8 @@
       "id": 596,
       "name": "Theka the Martyr",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Theka the Martyr",
+      "npc": 7272,
+      "level": 46,
       "loot": [
         {
           "item": 274641,
@@ -85,6 +101,8 @@
       "id": 597,
       "name": "Witch Doctor Zum'rah",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Witch Doctor Zumrah",
+      "npc": 7271,
+      "level": 46,
       "loot": [
         {
           "item": 18082,
@@ -104,6 +122,8 @@
       "id": 598,
       "name": "Nekrum Gutchewer",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Nekrum Gutchewer",
+      "npc": 7796,
+      "level": 45,
       "loot": [
         {
           "item": 274644,
@@ -123,6 +143,8 @@
       "id": 599,
       "name": "Shadowpriest Sezz'ziz",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Shadowpriest Sezzizz",
+      "npc": 7275,
+      "level": 47,
       "loot": [
         {
           "item": 9470,
@@ -146,6 +168,8 @@
       "id": 600,
       "name": "Chief Ukorz Sandscalp",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Chief Ukorz Sandscalp",
+      "npc": 7267,
+      "level": 48,
       "loot": [
         {
           "item": 9476,
@@ -174,6 +198,7 @@
       "name": "Zerillis",
       "displayID": 9293,
       "npc": 10082,
+      "level": 45,
       "loot": [
         {
           "item": 12470,
@@ -190,6 +215,7 @@
       "name": "Dustwraith",
       "displayID": 9292,
       "npc": 10081,
+      "level": 45,
       "loot": [
         {
           "item": 12471,
@@ -206,6 +232,7 @@
       "name": "Sergeant Bly",
       "displayID": 6433,
       "npc": 7604,
+      "level": 45,
       "loot": [
         {
           "item": 274646,
@@ -222,6 +249,10 @@
         {
           "item": 252896,
           "name": "Pattern: Stalker's Mail Boots"
+        },
+        {
+          "item": 8548,
+          "name": "Divino-matic Rod"
         }
       ]
     },
@@ -229,6 +260,7 @@
       "id": -10080,
       "name": "Sandarr Dunereaver",
       "npc": 10080,
+      "level": 45,
       "rare": true,
       "loot": [
         {
@@ -245,6 +277,7 @@
       "id": -7797,
       "name": "Ruuzlu",
       "npc": 7797,
+      "level": 46,
       "loot": [
         {
           "item": 274654,

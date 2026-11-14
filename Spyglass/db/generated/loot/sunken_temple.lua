@@ -16,6 +16,7 @@ Data:AddBossLoot(3583, { -- Avatar of Hakkar
     { 10844 }, -- Spire of Hakkar
     { 10845 }, -- Warrior's Embrace
     { 10846 }, -- Bloodshot Greaves
+    { 10663 }, -- Essence of Hakkar
 })
 
 Data:AddBossLoot(3584, { -- Shade of Eranikus
@@ -25,6 +26,11 @@ Data:AddBossLoot(3584, { -- Shade of Eranikus
     { 10836 }, -- Rod of Corrosion
     { 10828 }, -- Dire Nail
     { 10837 }, -- Tooth of Eranikus
+    { 10847 }, -- Dragon's Call
+    { 254106 }, -- Pattern: Radiant Gloves
+    { 252919 }, -- Pattern: Skycaller's Mail Gauntlets
+    { 251403 }, -- Plans: Officer's Gloves
+    { 10454 }, -- Essence of Eranikus
 })
 
 Data:AddBossLoot(3585, { -- Hazzas
@@ -47,6 +53,10 @@ Data:AddBossLoot(3586, { -- Morphaz
     { 10797 }, -- Firebreather
     { 12463 }, -- Drakefang Butcher
     { 12464 }, -- Bloodfire Talons
+    { 20019 }, -- Tooth of Morphaz
+    { 20022 }, -- Azure Key
+    { 20025 }, -- Blood of Morphaz
+    { 20085 }, -- Arcane Shard
 })
 
 Data:AddBossLoot(3587, { -- Weaver

@@ -13,6 +13,8 @@
       "id": 2773,
       "name": "Roogug",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Roogug",
+      "npc": 6168,
+      "level": 28,
       "quests": [1701, 1838],
       "loot": [
         {
@@ -30,6 +32,10 @@
         {
           "item": 252512,
           "name": "Brawler's Leather Helm"
+        },
+        {
+          "item": 6841,
+          "name": "Vial of Phlogiston"
         }
       ]
     },
@@ -37,6 +43,8 @@
       "id": 2774,
       "name": "Aggem Thorncurse",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Aggem Thorncurse",
+      "npc": 4424,
+      "level": 30,
       "loot": [
         {
           "item": 6681,
@@ -68,6 +76,8 @@
       "id": 2775,
       "name": "Death Speaker Jargba",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Death Speaker Jargba",
+      "npc": 4428,
+      "level": 30,
       "loot": [
         {
           "item": 2816,
@@ -95,6 +105,8 @@
       "id": 2776,
       "name": "Overlord Ramtusk",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Overlord Ramtusk",
+      "npc": 4420,
+      "level": 32,
       "loot": [
         {
           "item": 6687,
@@ -134,6 +146,8 @@
       "id": 2777,
       "name": "Agathelos the Raging",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Agathelos the Raging",
+      "npc": 4422,
+      "level": 33,
       "loot": [
         {
           "item": 6691,
@@ -169,6 +183,8 @@
       "id": 2778,
       "name": "Charlga Razorflank",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Charlga Razorflank",
+      "npc": 4421,
+      "level": 33,
       "quests": [96264, 79360],
       "loot": [
         {
@@ -206,6 +222,10 @@
         {
           "item": 17008,
           "name": "Small Scroll"
+        },
+        {
+          "item": 274463,
+          "name": "Tattered Note"
         }
       ]
     },

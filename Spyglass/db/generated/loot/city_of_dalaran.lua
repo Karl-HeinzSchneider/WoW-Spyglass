@@ -58,6 +58,12 @@ Data:AddTrashLoot(2959, {
     { 286989 }, -- Violet Sorcerer's Wraps
     { 286988 }, -- Violet Sorcerer's Leggings
     { 286995 }, -- Guardian's Emblem
+    { 286990 }, -- Arcane Remnant Leggings
+    { 286991 }, -- Roused Nature Footwraps
+    { 286992 }, -- Construct's Grips
+    { 286993 }, -- Suffused Bindings
+    { 286994 }, -- Tattered Kirin Tor Cloak
+    { 286996 }, -- City Guard's Tarnished Blade
 })
 
 Data:AddQuests(2959, {
