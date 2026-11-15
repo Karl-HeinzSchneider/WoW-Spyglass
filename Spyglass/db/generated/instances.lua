@@ -460,7 +460,7 @@ Data:AddInstance(289, {
     background = "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenScholomance",
     backgroundCoords = { 0, 1, 0.305, 0.695 },
     entrance = { 1422, 70, 73 },
-    bosses = { 2805, 2804, 2811, 2809, 2813, 3055, 2810, 2803, 2802, 2808, 2812, 2807, 2806, 2801 },
+    bosses = { 2805, 2804, 2811, 2809, 2813, 3055, 2810, 2803, 2802, 2808, 2812, 2807, 2806, 2801, -14516 },
 })
 Data:AddBoss(2805, { instanceID = 289, order = -1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Kirtonos the Herald", level = 60 }) -- Kirtonos
 Data:AddBoss(2804, { instanceID = 289, order = -500, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Jandice Barov", level = 61 }) -- Jandice Barov
@@ -476,6 +476,7 @@ Data:AddBoss(2812, { instanceID = 289, order = 11000, portrait = "Interface\\Enc
 Data:AddBoss(2807, { instanceID = 289, order = 11250, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Alexei Barov", level = 60 }) -- Lord Alexei Barov
 Data:AddBoss(2806, { instanceID = 289, order = 11500, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lady Illucia Barov", level = 60 }) -- Lady Illucia Barov
 Data:AddBoss(2801, { instanceID = 289, order = 12000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Darkmaster Gandling", level = 61 }) -- Darkmaster Gandling
+Data:AddBoss(-14516, { instanceID = 289, level = 62 }) -- Death Knight Darkreaver
 
 -- Zul'Gurub
 Data:AddInstance(309, {

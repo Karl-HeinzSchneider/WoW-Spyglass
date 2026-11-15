@@ -53,6 +53,10 @@ Data:AddTrashLoot(3039, {
     { 287013 }, -- Krol'dok Warplate Legplates
     { 287010 }, -- Outrider's Gloves
     { 287007 }, -- Stretched Footpads
+    { 287009 }, -- Twilight Enforcer's Legs
+    { 287011 }, -- Guise of Battle
+    { 287015 }, -- Supreme Smasher
+    { 287016 }, -- Shadow-Seer Orb
 })
 
 Data:AddQuests(3039, {

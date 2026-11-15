@@ -54,6 +54,14 @@ Data:AddBossLoot(272, { -- Quartermaster Zigris
     { 13253 }, -- Hands of Power
     { 12835 }, -- Plans: Annihilator
     { 273115 }, -- Blueprint: Iron Oven
+    { 16673 }, -- Cord of Elements
+    { 16680 }, -- Beaststalker's Belt
+    { 16683 }, -- Magister's Bindings
+    { 16696 }, -- Devout Belt
+    { 16703 }, -- Dreadmist Bracers
+    { 16713 }, -- Shadowcraft Belt
+    { 16735 }, -- Bracers of Valor
+    { 16716 }, -- Wildheart Belt
 })
 
 Data:AddBossLoot(274, { -- Halycon

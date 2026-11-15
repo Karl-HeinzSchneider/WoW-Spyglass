@@ -94,6 +94,7 @@ Data:AddBossLoot(239, { -- Phalanx
     { 22212 }, -- Golem Fitted Pauldrons
     { 11746 }, -- Golem Skull Helm
     { 11743 }, -- #11743
+    { 276879 }, -- Backroom Bulwark
 })
 
 Data:AddBossLoot(240, { -- Ribbly Screwspigot
@@ -171,6 +172,7 @@ Data:AddBossLoot(-9028, { -- Grizzle
     { 11722 }, -- Dregmetal Spaulders
     { 22270 }, -- Entrenching Boots
     { 11610 }, -- Plans: Dark Iron Pulverizer
+    { 277117 }, -- Savage Gladiator Shoulders
 })
 
 Data:AddBossLoot(-9029, { -- Eviscerator

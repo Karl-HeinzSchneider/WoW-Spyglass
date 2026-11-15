@@ -11,6 +11,7 @@ Data:AddNames("enUS", "bosses", {
     [-260468] = "\"Pyromancer\" Braxton",
     [-250034] = "Tunnelweb Matriarch",
     [-16059] = "Theldren",
+    [-14516] = "Death Knight Darkreaver",
     [-12876] = "Baron Aquanis",
     [-12237] = "Meshlok the Harvester",
     [-10899] = "Goraluk Anvilcrack",

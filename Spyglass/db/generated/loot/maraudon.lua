@@ -41,6 +41,7 @@ Data:AddBossLoot(424, { -- Lord Vyletongue
     { 17752 }, -- Satyr's Lash
     { 17754 }, -- Infernal Trickster Leggings
     { 17755 }, -- Satyrmane Sash
+    { 275864 }, -- Putridus Wall
 })
 
 Data:AddBossLoot(425, { -- Celebras the Cursed

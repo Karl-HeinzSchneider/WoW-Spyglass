@@ -53,6 +53,14 @@
         {
           "item": 7091,
           "name": "Pattern: Truefaith Gloves"
+        },
+        {
+          "item": 18305,
+          "name": "Breakwater Legguards"
+        },
+        {
+          "item": 18307,
+          "name": "Riptide Shoes"
         }
       ]
     },
@@ -70,6 +78,14 @@
         {
           "item": 18311,
           "name": "Quel'dorai Channeling Rod"
+        },
+        {
+          "item": 18302,
+          "name": "Band of Vigor"
+        },
+        {
+          "item": 18354,
+          "name": "Pimgib's Collar"
         }
       ]
     },
@@ -141,6 +157,11 @@
       ]
     }
   ],
-  "trash": [],
+  "trash": [
+    {
+      "item": 18296,
+      "name": "Marksman Bands"
+    }
+  ],
   "quests": [7441, 7488, 7489, 5526, 7463]
 }

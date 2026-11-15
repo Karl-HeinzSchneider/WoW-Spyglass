@@ -347,6 +347,10 @@
         {
           "item": 11743,
           "name": "Rockfist"
+        },
+        {
+          "item": 276879,
+          "name": "Backroom Bulwark"
         }
       ]
     },
@@ -633,6 +637,10 @@
         {
           "item": 11610,
           "name": "Plans: Dark Iron Pulverizer"
+        },
+        {
+          "item": 277117,
+          "name": "Savage Gladiator Shoulders"
         }
       ]
     },

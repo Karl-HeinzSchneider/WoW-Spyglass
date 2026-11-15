@@ -184,6 +184,22 @@
     {
       "item": 287007,
       "name": "Stretched Footpads"
+    },
+    {
+      "item": 287009,
+      "name": "Twilight Enforcer's Legs"
+    },
+    {
+      "item": 287011,
+      "name": "Guise of Battle"
+    },
+    {
+      "item": 287015,
+      "name": "Supreme Smasher"
+    },
+    {
+      "item": 287016,
+      "name": "Shadow-Seer Orb"
     }
   ],
   "quests": [94968, 94972, 94975, 94982, 94984, 96771, 94981, 94974, 94998]

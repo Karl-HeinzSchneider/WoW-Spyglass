@@ -40,6 +40,19 @@ Data:AddTrashLoot(18903, {
     { 7761 }, -- Steelclaw Reaver
     { 7787 }, -- Resplendent Guardian
     { 5756 }, -- Sliverblade
+    { 2262 }, -- Mark of Kern
+    { 7727 }, -- Watchman Pauldrons
+    { 7728 }, -- Beguiler Robes
+    { 7729 }, -- Chesterfall Musket
+    { 7736 }, -- Fight Club
+    { 7753 }, -- Bloodspiller
+    { 7755 }, -- Flintrock Shoulders
+    { 7758 }, -- Ruthless Shiv
+    { 7759 }, -- Archon Chestpiece
+    { 7760 }, -- Warchief Kilt
+    { 8225 }, -- Tainted Pierce
+    { 8226 }, -- The Butcher
+    { 1992 }, -- Swampchill Fetish
 })
 
 Data:AddQuests(18903, {

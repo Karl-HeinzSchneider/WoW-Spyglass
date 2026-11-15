@@ -85,6 +85,10 @@
         {
           "item": 12845,
           "name": "Medallion of Faith"
+        },
+        {
+          "item": 276397,
+          "name": "Hand of the Zealous"
         }
       ]
     },
@@ -290,6 +294,22 @@
         {
           "item": 13514,
           "name": "Wail of the Banshee"
+        },
+        {
+          "item": 13535,
+          "name": "Coldtouch Phantom Wraps"
+        },
+        {
+          "item": 13537,
+          "name": "Chillhide Bracers"
+        },
+        {
+          "item": 13538,
+          "name": "Windshrieker Pauldrons"
+        },
+        {
+          "item": 13539,
+          "name": "Banshee's Touch"
         }
       ]
     },
@@ -319,6 +339,22 @@
         {
           "item": 18740,
           "name": "Thuzadin Sash"
+        },
+        {
+          "item": 13530,
+          "name": "Fangdrip Runners"
+        },
+        {
+          "item": 13531,
+          "name": "Crypt Stalker Leggings"
+        },
+        {
+          "item": 13532,
+          "name": "Darkspinner Claws"
+        },
+        {
+          "item": 13533,
+          "name": "Acid-etched Pauldrons"
         }
       ]
     },
@@ -352,6 +388,22 @@
         {
           "item": 12833,
           "name": "Plans: Hammer of the Titans"
+        },
+        {
+          "item": 13525,
+          "name": "Darkbind Fingers"
+        },
+        {
+          "item": 13526,
+          "name": "Flamescarred Girdle"
+        },
+        {
+          "item": 13527,
+          "name": "Lavawalker Greaves"
+        },
+        {
+          "item": 13528,
+          "name": "Twilight Void Bracers"
         }
       ]
     },
@@ -381,6 +433,10 @@
         {
           "item": 18726,
           "name": "Magistrate's Cuffs"
+        },
+        {
+          "item": 23198,
+          "name": "Idol of Brutality"
         }
       ]
     },
@@ -507,6 +563,18 @@
         {
           "item": 13505,
           "name": "Runeblade of Baron Rivendare"
+        },
+        {
+          "item": 13361,
+          "name": "Skullforge Reaver"
+        },
+        {
+          "item": 13368,
+          "name": "Bonescraper"
+        },
+        {
+          "item": 13251,
+          "name": "Head of Baron Rivendare"
         }
       ]
     },
@@ -523,7 +591,32 @@
     {
       "id": 2797,
       "name": "Ezra Grimm",
-      "loot": []
+      "loot": [
+        {
+          "item": 276396,
+          "name": "Ezra's Seal of Authenticity"
+        },
+        {
+          "item": 276395,
+          "name": "Grimm's Packing Gloves"
+        },
+        {
+          "item": 276394,
+          "name": "Luxurious Smoking Jacket"
+        },
+        {
+          "item": 13172,
+          "name": "Grimm's Premium Tobacco"
+        },
+        {
+          "item": 273129,
+          "name": "Essence of Anarchy"
+        },
+        {
+          "item": 273117,
+          "name": "Blueprint: Anarchist's Workbench"
+        }
+      ]
     },
     {
       "id": 2798,
@@ -551,6 +644,10 @@
         {
           "item": 13393,
           "name": "Malown's Slam"
+        },
+        {
+          "item": 13390,
+          "name": "The Postmaster's Band"
         }
       ]
     },

@@ -126,6 +126,11 @@ Data:AddTrashLoot(18901, {
     { 7761 }, -- Steelclaw Reaver
     { 7787 }, -- Resplendent Guardian
     { 5756 }, -- Sliverblade
+    { 7727 }, -- Watchman Pauldrons
+    { 7728 }, -- Beguiler Robes
+    { 7729 }, -- Chesterfall Musket
+    { 7753 }, -- Bloodspiller
+    { 8226 }, -- The Butcher
 })
 
 Data:AddQuests(18901, {

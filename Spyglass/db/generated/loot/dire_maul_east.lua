@@ -14,11 +14,15 @@ Data:AddBossLoot(344, { -- Hydrospawn
     { 18317 }, -- Tempest Talisman
     { 18324 }, -- Waveslicer
     { 7091 }, -- Pattern: Truefaith Gloves
+    { 18305 }, -- Breakwater Legguards
+    { 18307 }, -- Riptide Shoes
 })
 
 Data:AddBossLoot(345, { -- Lethtendris
     { 18325 }, -- Felhide Cap
     { 18311 }, -- Quel'dorai Channeling Rod
+    { 18302 }, -- Band of Vigor
+    { 18354 }, -- Pimgib's Collar
 })
 
 Data:AddBossLoot(2792, { -- Pusillin
@@ -37,6 +41,10 @@ Data:AddBossLoot(346, { -- Alzzin the Wildshaper
     { 18326 }, -- Razor Gauntlets
     { 18327 }, -- Whipvine Cord
     { 18328 }, -- Shadewood Cloak
+})
+
+Data:AddTrashLoot(42901, {
+    { 18296 }, -- #18296
 })
 
 Data:AddQuests(42901, {

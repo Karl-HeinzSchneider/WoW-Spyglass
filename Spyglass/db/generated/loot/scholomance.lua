@@ -45,6 +45,14 @@ Data:AddBossLoot(2813, { -- Vectus
     { 18691 }, -- Dark Advisor's Pendant
 })
 
+Data:AddBossLoot(3055, { -- Kormok
+    { 22332 }, -- #22332
+    { 22303 }, -- Ironweave Pants
+    { 22326 }, -- #22326
+    { 21984 }, -- Left Piece of Lord Valthalak's Amulet
+    { 22046 }, -- Right Piece of Lord Valthalak's Amulet
+})
+
 Data:AddBossLoot(2810, { -- Ras Frostwhisperer
     { 16689 }, -- Magister's Mantle
     { 14487 }, -- Bonechill Hammer
@@ -58,6 +66,9 @@ Data:AddBossLoot(2810, { -- Ras Frostwhisperer
     { 18693 }, -- Shivery Handwraps
     { 13521 }, -- Recipe: Flask of Supreme Power
     { 273112 }, -- Blueprint: Alchemy Laboratory
+    { 13314 }, -- Alanna's Embrace
+    { 14503 }, -- #14503
+    { 18695 }, -- Spellbound Tome
 })
 
 Data:AddBossLoot(2803, { -- Instructor Malicia
@@ -265,6 +276,16 @@ Data:AddBossLoot(2801, { -- Darkmaster Gandling
     { 22433 }, -- Don Mauricio's Band of Domination
     { 14514 }, -- Pattern: Robe of the Void
     { 13501 }, -- Recipe: Major Mana Potion
+    { 13937 }, -- Headmaster's Charge
+})
+
+Data:AddBossLoot(-14516, { -- Death Knight Darkreaver
+    { 18758 }, -- #18758
+    { 18759 }, -- #18759
+    { 18760 }, -- Necromantic Band
+    { 18761 }, -- #18761
+    { 18749 }, -- Charger's Lost Soul
+    { 18880 }, -- Darkreaver's Head
 })
 
 Data:AddTrashLoot(289, {

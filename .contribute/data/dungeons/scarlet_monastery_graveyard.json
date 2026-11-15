@@ -488,6 +488,26 @@
     {
       "item": 5756,
       "name": "Sliverblade"
+    },
+    {
+      "item": 7727,
+      "name": "Watchman Pauldrons"
+    },
+    {
+      "item": 7728,
+      "name": "Beguiler Robes"
+    },
+    {
+      "item": 7729,
+      "name": "Chesterfall Musket"
+    },
+    {
+      "item": 7753,
+      "name": "Bloodspiller"
+    },
+    {
+      "item": 8226,
+      "name": "The Butcher"
     }
   ],
   "quests": [1051, 1113, 78699]

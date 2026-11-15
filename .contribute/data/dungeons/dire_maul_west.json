@@ -49,6 +49,14 @@
         {
           "item": 18386,
           "name": "Padre's Trousers"
+        },
+        {
+          "item": 18347,
+          "name": "Well Balanced Axe"
+        },
+        {
+          "item": 18349,
+          "name": "Gauntlets of Accuracy"
         }
       ]
     },
@@ -74,6 +82,14 @@
         {
           "item": 22309,
           "name": "Pattern: Big Bag of Enchantment"
+        },
+        {
+          "item": 18350,
+          "name": "Amplifying Cloak"
+        },
+        {
+          "item": 18351,
+          "name": "Magically Sealed Bracers"
         }
       ]
     },
@@ -212,6 +228,14 @@
         {
           "item": 18387,
           "name": "Brightspark Gloves"
+        },
+        {
+          "item": 18345,
+          "name": "Murmuring Ring"
+        },
+        {
+          "item": 18346,
+          "name": "Threadbare Trousers"
         }
       ]
     }

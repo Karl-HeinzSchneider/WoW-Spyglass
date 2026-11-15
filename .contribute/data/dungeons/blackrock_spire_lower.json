@@ -201,6 +201,38 @@
         {
           "item": 273115,
           "name": "Blueprint: Iron Oven"
+        },
+        {
+          "item": 16673,
+          "name": "Cord of Elements"
+        },
+        {
+          "item": 16680,
+          "name": "Beaststalker's Belt"
+        },
+        {
+          "item": 16683,
+          "name": "Magister's Bindings"
+        },
+        {
+          "item": 16696,
+          "name": "Devout Belt"
+        },
+        {
+          "item": 16703,
+          "name": "Dreadmist Bracers"
+        },
+        {
+          "item": 16713,
+          "name": "Shadowcraft Belt"
+        },
+        {
+          "item": 16735,
+          "name": "Bracers of Valor"
+        },
+        {
+          "item": 16716,
+          "name": "Wildheart Belt"
         }
       ]
     },

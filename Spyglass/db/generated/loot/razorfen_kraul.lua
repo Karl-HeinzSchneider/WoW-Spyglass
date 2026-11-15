@@ -211,6 +211,7 @@ Data:AddTrashLoot(47, {
     { 4438 }, -- Pugilist Bracers
     { 2039 }, -- Plains Ring
     { 1488 }, -- Avenger's Armor
+    { 6679 }, -- Armor Piercer
 })
 
 Data:AddQuests(47, {

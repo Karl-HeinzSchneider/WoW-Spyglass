@@ -359,6 +359,58 @@
     {
       "item": 5756,
       "name": "Sliverblade"
+    },
+    {
+      "item": 2262,
+      "name": "Mark of Kern"
+    },
+    {
+      "item": 7727,
+      "name": "Watchman Pauldrons"
+    },
+    {
+      "item": 7728,
+      "name": "Beguiler Robes"
+    },
+    {
+      "item": 7729,
+      "name": "Chesterfall Musket"
+    },
+    {
+      "item": 7736,
+      "name": "Fight Club"
+    },
+    {
+      "item": 7753,
+      "name": "Bloodspiller"
+    },
+    {
+      "item": 7755,
+      "name": "Flintrock Shoulders"
+    },
+    {
+      "item": 7758,
+      "name": "Ruthless Shiv"
+    },
+    {
+      "item": 7759,
+      "name": "Archon Chestpiece"
+    },
+    {
+      "item": 7760,
+      "name": "Warchief Kilt"
+    },
+    {
+      "item": 8225,
+      "name": "Tainted Pierce"
+    },
+    {
+      "item": 8226,
+      "name": "The Butcher"
+    },
+    {
+      "item": 1992,
+      "name": "Swampchill Fetish"
     }
   ],
   "quests": [1048, 1053, 1113, 79946]

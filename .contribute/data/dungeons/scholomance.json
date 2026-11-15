@@ -166,7 +166,28 @@
       "id": 3055,
       "name": "Kormok",
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Kormok",
-      "loot": []
+      "loot": [
+        {
+          "item": 22332,
+          "name": "Blade of Necromancy"
+        },
+        {
+          "item": 22303,
+          "name": "Ironweave Pants"
+        },
+        {
+          "item": 22326,
+          "name": "Amalgam's Band"
+        },
+        {
+          "item": 21984,
+          "name": "Left Piece of Lord Valthalak's Amulet"
+        },
+        {
+          "item": 22046,
+          "name": "Right Piece of Lord Valthalak's Amulet"
+        }
+      ]
     },
     {
       "id": 2810,
@@ -222,6 +243,18 @@
         {
           "item": 273112,
           "name": "Blueprint: Alchemy Laboratory"
+        },
+        {
+          "item": 13314,
+          "name": "Alanna's Embrace"
+        },
+        {
+          "item": 14503,
+          "name": "Death's Clutch"
+        },
+        {
+          "item": 18695,
+          "name": "Spellbound Tome"
         }
       ]
     },
@@ -1029,6 +1062,42 @@
         {
           "item": 13501,
           "name": "Recipe: Major Mana Potion"
+        },
+        {
+          "item": 13937,
+          "name": "Headmaster's Charge"
+        }
+      ]
+    },
+    {
+      "id": -14516,
+      "name": "Death Knight Darkreaver",
+      "npc": 14516,
+      "level": 62,
+      "loot": [
+        {
+          "item": 18758,
+          "name": "Specter's Blade"
+        },
+        {
+          "item": 18759,
+          "name": "Malicious Axe"
+        },
+        {
+          "item": 18760,
+          "name": "Necromantic Band"
+        },
+        {
+          "item": 18761,
+          "name": "Oblivion's Touch"
+        },
+        {
+          "item": 18749,
+          "name": "Charger's Lost Soul"
+        },
+        {
+          "item": 18880,
+          "name": "Darkreaver's Head"
         }
       ]
     }

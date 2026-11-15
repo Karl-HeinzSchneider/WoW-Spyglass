@@ -129,6 +129,10 @@
         {
           "item": 251405,
           "name": "Plans: Warder's Gloves"
+        },
+        {
+          "item": 9484,
+          "name": "Spellshock Leggings"
         }
       ]
     },
@@ -530,6 +534,10 @@
         {
           "item": 251405,
           "name": "Plans: Warder's Gloves"
+        },
+        {
+          "item": 9511,
+          "name": "Bloodletter Scalpel"
         }
       ]
     }

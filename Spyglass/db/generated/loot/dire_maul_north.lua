@@ -9,6 +9,14 @@ Data:AddBossLoot(362, { -- Guard Mol'dar
     { 18496 }, -- Heliotrope Cloak
     { 18497 }, -- Sublime Wristguards
     { 18498 }, -- Hedgecutter
+    { 18450 }, -- #18450
+    { 18451 }, -- Hyena Hide Belt
+    { 18458 }, -- #18458
+    { 18459 }, -- Gallant's Wristguards
+    { 18460 }, -- Unsophisticated Hand Cannon
+    { 18462 }, -- Jagged Bone Fist
+    { 18463 }, -- Ogre Pocket Knife
+    { 18464 }, -- Gordok Nose Ring
 })
 
 Data:AddBossLoot(363, { -- Stomper Kreeg
@@ -21,6 +29,14 @@ Data:AddBossLoot(364, { -- Guard Fengus
     { 18496 }, -- Heliotrope Cloak
     { 18497 }, -- Sublime Wristguards
     { 18498 }, -- Hedgecutter
+    { 18450 }, -- #18450
+    { 18451 }, -- Hyena Hide Belt
+    { 18458 }, -- #18458
+    { 18459 }, -- Gallant's Wristguards
+    { 18460 }, -- Unsophisticated Hand Cannon
+    { 18462 }, -- Jagged Bone Fist
+    { 18463 }, -- Ogre Pocket Knife
+    { 18464 }, -- Gordok Nose Ring
 })
 
 Data:AddBossLoot(365, { -- Guard Slip'kik
@@ -29,6 +45,14 @@ Data:AddBossLoot(365, { -- Guard Slip'kik
     { 18496 }, -- Heliotrope Cloak
     { 18497 }, -- Sublime Wristguards
     { 18498 }, -- Hedgecutter
+    { 18450 }, -- #18450
+    { 18451 }, -- Hyena Hide Belt
+    { 18458 }, -- #18458
+    { 18459 }, -- Gallant's Wristguards
+    { 18460 }, -- Unsophisticated Hand Cannon
+    { 18462 }, -- Jagged Bone Fist
+    { 18463 }, -- Ogre Pocket Knife
+    { 18464 }, -- Gordok Nose Ring
 })
 
 Data:AddBossLoot(366, { -- Captain Kromcrush

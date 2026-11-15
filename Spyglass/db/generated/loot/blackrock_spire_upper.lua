@@ -60,6 +60,7 @@ Data:AddBossLoot(3069, { -- General Drakkisath
     { 22268 }, -- Draconic Infused Emblem
     { 15730 }, -- Pattern: Red Dragonscale Breastplate
     { 13519 }, -- Recipe: Flask of the Titans
+    { 12592 }, -- #12592
 })
 
 Data:AddBossLoot(3070, { -- Lord Valthalak

@@ -23,6 +23,7 @@ Data:AddBossLoot(476, { -- Malor the Zealous
     { 276398 }, -- Scarlet Malice
     { 276399 }, -- Plate of the Scarlet Bastion
     { 12845 }, -- Medallion of Faith
+    { 276397 }, -- Hand of the Zealous
 })
 
 Data:AddBossLoot(475, { -- Cannon Master Willey
@@ -78,6 +79,10 @@ Data:AddBossLoot(479, { -- Baroness Anastari
     { 18730 }, -- Shadowy Laced Handwraps
     { 18729 }, -- Screeching Bow
     { 13514 }, -- Wail of the Banshee
+    { 13535 }, -- #13535
+    { 13537 }, -- Chillhide Bracers
+    { 13538 }, -- #13538
+    { 13539 }, -- Banshee's Touch
 })
 
 Data:AddBossLoot(480, { -- Nerub'enkan
@@ -86,6 +91,10 @@ Data:AddBossLoot(480, { -- Nerub'enkan
     { 18738 }, -- Carapace Spine Crossbow
     { 18739 }, -- Chitinous Plate Legguards
     { 18740 }, -- Thuzadin Sash
+    { 13530 }, -- Fangdrip Runners
+    { 13531 }, -- Crypt Stalker Leggings
+    { 13532 }, -- #13532
+    { 13533 }, -- #13533
 })
 
 Data:AddBossLoot(481, { -- Maleki the Pallid
@@ -95,6 +104,10 @@ Data:AddBossLoot(481, { -- Maleki the Pallid
     { 18734 }, -- Pale Moon Cloak
     { 18735 }, -- Maleki's Footwraps
     { 12833 }, -- Plans: Hammer of the Titans
+    { 13525 }, -- Darkbind Fingers
+    { 13526 }, -- Flamescarred Girdle
+    { 13527 }, -- Lavawalker Greaves
+    { 13528 }, -- #13528
 })
 
 Data:AddBossLoot(482, { -- Magistrate Barthilas
@@ -103,6 +116,7 @@ Data:AddBossLoot(482, { -- Magistrate Barthilas
     { 18725 }, -- Peacemaker
     { 18727 }, -- Crimson Felt Hat
     { 18726 }, -- Magistrate's Cuffs
+    { 23198 }, -- Idol of Brutality
 })
 
 Data:AddBossLoot(483, { -- Ramstein the Gorger
@@ -136,6 +150,18 @@ Data:AddBossLoot(484, { -- Baron Rivendare
     { 22411 }, -- Helm of the Executioner
     { 13345 }, -- Seal of Rivendare
     { 13505 }, -- #13505
+    { 13361 }, -- #13361
+    { 13368 }, -- Bonescraper
+    { 13251 }, -- Head of Baron Rivendare
+})
+
+Data:AddBossLoot(2797, { -- Ezra Grimm
+    { 276396 }, -- Ezra's Seal of Authenticity
+    { 276395 }, -- Grimm's Packing Gloves
+    { 276394 }, -- Luxurious Smoking Jacket
+    { 13172 }, -- Grimm's Premium Tobacco
+    { 273129 }, -- Essence of Anarchy
+    { 273117 }, -- Blueprint: Anarchist's Workbench
 })
 
 Data:AddBossLoot(2798, { -- Postmaster Malown
@@ -144,6 +170,7 @@ Data:AddBossLoot(2798, { -- Postmaster Malown
     { 13389 }, -- The Postmaster's Trousers
     { 13391 }, -- The Postmaster's Treads
     { 13393 }, -- Malown's Slam
+    { 13390 }, -- The Postmaster's Band
 })
 
 Data:AddBossLoot(2799, { -- Skul

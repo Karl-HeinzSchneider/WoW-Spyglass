@@ -13,6 +13,8 @@ Data:AddBossLoot(350, { -- Tendris Warpwood
 Data:AddBossLoot(347, { -- Illyanna Ravenoak
     { 18383 }, -- Force Imbued Gauntlets
     { 18386 }, -- Padre's Trousers
+    { 18347 }, -- #18347
+    { 18349 }, -- Gauntlets of Accuracy
 })
 
 Data:AddBossLoot(348, { -- Magister Kalendris
@@ -20,6 +22,8 @@ Data:AddBossLoot(348, { -- Magister Kalendris
     { 18397 }, -- Elder Magus Pendant
     { 18371 }, -- Mindtap Talisman
     { 22309 }, -- Pattern: Big Bag of Enchantment
+    { 18350 }, -- Amplifying Cloak
+    { 18351 }, -- #18351
 })
 
 Data:AddBossLoot(349, { -- Immol'thar
@@ -57,6 +61,8 @@ Data:AddBossLoot(2793, { -- Lord Hel'nurath
 
 Data:AddBossLoot(2794, { -- Tsu'zee
     { 18387 }, -- Brightspark Gloves
+    { 18345 }, -- #18345
+    { 18346 }, -- #18346
 })
 
 Data:AddQuests(42902, {

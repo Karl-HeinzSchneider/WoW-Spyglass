@@ -58,6 +58,7 @@ Data:AddBossLoot(3597, { -- Snowtalon
 Data:AddBossLoot(3600, { -- Vitrix
     { 280031 }, -- Sparklance Wand
     { 280028 }, -- Heartflame Gauntlets
+    { 280032 }, -- Bolt's Charged Eyeball
 })
 
 Data:AddTrashLoot(3001, {
