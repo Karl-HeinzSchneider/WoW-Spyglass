@@ -73,6 +73,7 @@ recorded in the game by the `Spyglass_Scraper` addon:
 /sg scan resume                continue where the last scan stopped (survives /reload)
 /sg scan 270000 280000         scan a range
 /sg scan 270000 280000 force   re-record every id in the range, known or not
+/sg scan batch 50             check 50 IDs per tick (about 200/sec); `batch reset` restores 25
 /sg scan missing              scan missing item data for known dungeon drops
 /sg scan stop    /sg scan      stop; status
 /sg scan limit off             no per-scan item limit (for the SavedVariables route); `limit 1000` restores it

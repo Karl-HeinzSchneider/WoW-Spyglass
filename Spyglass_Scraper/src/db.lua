@@ -66,6 +66,7 @@ local _, app = ...
 ---@field next? integer
 ---@field to? integer
 ---@field limit? integer
+---@field batch? integer
 
 ---@class SpyglassScraper.DB.Global
 local global = {
