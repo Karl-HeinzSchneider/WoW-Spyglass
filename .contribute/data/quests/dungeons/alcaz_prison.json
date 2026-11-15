@@ -9,14 +9,14 @@
       "objective": "Recover Zarla's Journal from the depths of Alcaz Prison.",
       "description": "Reported to start in Dalaran; who gives it is not known yet.",
       "start": {
-        "npc": "Dalaran",
+        "npc": "Archmage Lan'dalock",
         "location": [1416, 15.4, 73.8],
-        "description": "Alterac Mountains (giver not known yet)"
+        "description": "Archmage Lan'dalock, at the Violet Hold entrance in Dalaran, Alterac Mountains (15.4, 73.8)"
       },
       "turnIn": {
         "npc": "Archmage Lan'dalock",
         "location": [1416, 15.4, 73.8],
-        "description": "at the Violet Hold entrance in Dalaran, Alterac Mountains"
+        "description": "Archmage Lan'dalock, at the Violet Hold entrance in Dalaran, Alterac Mountains"
       },
       "items": []
     },
@@ -30,12 +30,12 @@
       "requires": [96369],
       "start": {
         "npc": "Commander Folkar",
-        "description": "inside Alcaz Prison"
+        "description": "Commander Folkar, inside Alcaz Prison"
       },
       "turnIn": {
         "npc": "Thrall",
         "location": [1454, 32, 37.8],
-        "description": "Valley of Wisdom, Orgrimmar"
+        "description": "Thrall, Valley of Wisdom, Orgrimmar (32.0, 37.8)"
       },
       "items": [
         {
@@ -62,12 +62,12 @@
       "start": {
         "npc": "Eitrigg",
         "location": [1454, 34.4, 38.6],
-        "description": "Grommash Hold (Thrall's room), Orgrimmar"
+        "description": "Eitrigg, Grommash Hold (Thrall's room), Orgrimmar"
       },
       "turnIn": {
         "npc": "Nazeer Bloodspike",
         "location": [1445, 36, 31],
-        "description": "Brackenwall Village, Dustwallow Marsh"
+        "description": "Nazeer Bloodspike, Brackenwall Village, Dustwallow Marsh"
       },
       "items": []
     },
@@ -83,12 +83,12 @@
       "start": {
         "npc": "Nazeer Bloodspike",
         "location": [1445, 36, 31],
-        "description": "Brackenwall Village, Dustwallow Marsh"
+        "description": "Nazeer Bloodspike, Brackenwall Village, Dustwallow Marsh"
       },
       "turnIn": {
         "npc": "Sergeant Ulka",
         "location": [1445, 70.2, 18.8],
-        "description": "outside Alcaz Prison, Alcaz Island, Dustwallow Marsh"
+        "description": "Sergeant Ulka, outside Alcaz Prison, Alcaz Island, Dustwallow Marsh (70.2, 18.8)"
       },
       "items": []
     },
@@ -104,12 +104,12 @@
       "start": {
         "npc": "Sergeant Ulka",
         "location": [1445, 70.2, 18.8],
-        "description": "outside Alcaz Prison, Alcaz Island, Dustwallow Marsh"
+        "description": "Sergeant Ulka, outside Alcaz Prison, Alcaz Island, Dustwallow Marsh (70.2, 18.8)"
       },
       "turnIn": {
         "npc": "Sergeant Ulka",
         "location": [1445, 70.2, 18.8],
-        "description": "outside Alcaz Prison, Alcaz Island, Dustwallow Marsh"
+        "description": "Sergeant Ulka, outside Alcaz Prison, Alcaz Island, Dustwallow Marsh (70.2, 18.8)"
       },
       "items": []
     },
@@ -125,11 +125,11 @@
       "start": {
         "npc": "Sergeant Ulka",
         "location": [1445, 70.2, 18.8],
-        "description": "outside Alcaz Prison, Dustwallow Marsh"
+        "description": "Sergeant Ulka, outside Alcaz Prison, Dustwallow Marsh (70.2, 18.8)"
       },
       "turnIn": {
         "npc": "Commander Folkar",
-        "description": "inside Alcaz Prison"
+        "description": "Commander Folkar, inside Alcaz Prison"
       },
       "items": []
     },
@@ -144,11 +144,11 @@
       "followUps": [96369, 95483],
       "start": {
         "npc": "Commander Folkar",
-        "description": "inside Alcaz Prison"
+        "description": "Commander Folkar, inside Alcaz Prison"
       },
       "turnIn": {
         "npc": "Perfumed Note",
-        "description": "after Blazeroar, inside Alcaz Prison"
+        "description": "Perfumed Note, after Blazeroar, inside Alcaz Prison"
       },
       "items": []
     },
@@ -162,11 +162,11 @@
       "requires": [95454],
       "start": {
         "npc": "Perfumed Note",
-        "description": "after Blazeroar, inside Alcaz Prison"
+        "description": "Perfumed Note, after Blazeroar, inside Alcaz Prison"
       },
       "turnIn": {
         "npc": "Commander Folkar",
-        "description": "inside Alcaz Prison"
+        "description": "Commander Folkar, inside Alcaz Prison"
       },
       "items": []
     },
@@ -181,12 +181,12 @@
       "start": {
         "npc": "Sergeant Ulka",
         "location": [1445, 70.2, 18.8],
-        "description": "outside Alcaz Prison, Alcaz Island, Dustwallow Marsh"
+        "description": "Sergeant Ulka, outside Alcaz Prison, Alcaz Island, Dustwallow Marsh (70.2, 18.8)"
       },
       "turnIn": {
         "npc": "Eitrigg",
         "location": [1454, 34.4, 38.6],
-        "description": "Grommash Hold, Orgrimmar"
+        "description": "Eitrigg, Grommash Hold, Orgrimmar"
       },
       "items": [
         {
@@ -210,12 +210,12 @@
       "start": {
         "npc": "Sergeant Ulka",
         "location": [1445, 70.2, 18.8],
-        "description": "outside Alcaz Prison, Alcaz Island, Dustwallow Marsh"
+        "description": "Sergeant Ulka, outside Alcaz Prison, Alcaz Island, Dustwallow Marsh (70.2, 18.8)"
       },
       "turnIn": {
         "npc": "Sergeant Ulka",
         "location": [1445, 70.2, 18.8],
-        "description": "outside Alcaz Prison, Alcaz Island, Dustwallow Marsh"
+        "description": "Sergeant Ulka, outside Alcaz Prison, Alcaz Island, Dustwallow Marsh (70.2, 18.8)"
       },
       "items": [
         {
@@ -246,7 +246,7 @@
       "turnIn": {
         "npc": "Sully McCleary",
         "location": [1445, 66.2, 45.2],
-        "description": "in the inn in Theramore, Dustwallow Marsh"
+        "description": "Sully McCleary, in the inn in Theramore, Dustwallow Marsh (66.2, 45.2)"
       },
       "items": []
     },
@@ -260,12 +260,12 @@
       "start": {
         "npc": "Mathias Shaw",
         "location": [1453, 75.8, 59.8],
-        "description": "Master Mathias Shaw, SI:7, Old Town, Stormwind City"
+        "description": "Master Mathias Shaw, SI:7, Old Town, Stormwind City (75.8, 59.8)"
       },
       "turnIn": {
         "npc": "Sully McCleary",
         "location": [1445, 66.2, 45.2],
-        "description": "in the inn in Theramore, Dustwallow Marsh"
+        "description": "Sully McCleary, in the inn in Theramore, Dustwallow Marsh (66.2, 45.2)"
       },
       "items": []
     },
@@ -280,12 +280,12 @@
       "start": {
         "npc": "Sully McCleary",
         "location": [1445, 66.2, 45.2],
-        "description": "in the inn in Theramore, Dustwallow Marsh"
+        "description": "Sully McCleary, in the inn in Theramore, Dustwallow Marsh (66.2, 45.2)"
       },
       "turnIn": {
         "npc": "Sully McCleary",
         "location": [1445, 63.4, 42.4],
-        "description": "outside Theramore across the bridge, Dustwallow Marsh"
+        "description": "Sully McCleary, outside Theramore across the bridge, Dustwallow Marsh (63.4, 42.4)"
       },
       "items": []
     },
@@ -301,12 +301,12 @@
       "start": {
         "npc": "Sully McCleary",
         "location": [1445, 63.4, 42.4],
-        "description": "outside Theramore across the bridge, Dustwallow Marsh"
+        "description": "Sully McCleary, outside Theramore across the bridge, Dustwallow Marsh (63.4, 42.4)"
       },
       "turnIn": {
         "npc": "Sully McCleary",
         "location": [1445, 66.2, 45.2],
-        "description": "in the inn in Theramore, Dustwallow Marsh"
+        "description": "Sully McCleary, in the inn in Theramore, Dustwallow Marsh (66.2, 45.2)"
       },
       "items": []
     },
@@ -322,7 +322,7 @@
       "start": {
         "npc": "Sully McCleary",
         "location": [1445, 66.2, 45.2],
-        "description": "in the inn in Theramore, Dustwallow Marsh"
+        "description": "Sully McCleary, in the inn in Theramore, Dustwallow Marsh (66.2, 45.2)"
       },
       "turnIn": {
         "description": "Inside Alcaz Prison (who takes it is not known yet)"
@@ -340,12 +340,12 @@
       "start": {
         "npc": "Sully McCleary",
         "location": [1445, 66.2, 45.2],
-        "description": "in the inn in Theramore, Dustwallow Marsh"
+        "description": "Sully McCleary, in the inn in Theramore, Dustwallow Marsh (66.2, 45.2)"
       },
       "turnIn": {
         "npc": "Sully McCleary",
         "location": [1445, 66.2, 45.2],
-        "description": "in the inn in Theramore, Dustwallow Marsh"
+        "description": "Sully McCleary, in the inn in Theramore, Dustwallow Marsh (66.2, 45.2)"
       },
       "items": [
         {
@@ -373,12 +373,12 @@
       "requires": [96335],
       "start": {
         "npc": "Mason Connery",
-        "description": "inside Alcaz Prison, once you free him"
+        "description": "Mason Connery, inside Alcaz Prison, once you free him"
       },
       "turnIn": {
         "npc": "Loose Floorboard",
         "location": [1436, 43.4, 67.8],
-        "description": "Mason Connery's treasure: a loose floorboard upstairs in the middle room of the Moonbrook inn, Westfall"
+        "description": "Mason Connery's treasure: a loose floorboard upstairs in the middle room of the Moonbrook inn, Westfall (43.4, 67.8)"
       },
       "items": [
         {
@@ -397,11 +397,11 @@
       "followUps": [96337],
       "start": {
         "npc": "Mason Connery",
-        "description": "the man in iron chains, inside Alcaz Prison"
+        "description": "Mason Connery, the man in iron chains, inside Alcaz Prison"
       },
       "turnIn": {
         "npc": "Mason Connery",
-        "description": "inside Alcaz Prison"
+        "description": "Mason Connery, inside Alcaz Prison"
       },
       "items": []
     }
