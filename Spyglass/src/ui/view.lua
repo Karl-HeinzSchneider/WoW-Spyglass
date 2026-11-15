@@ -1453,15 +1453,17 @@ end
 -- Children: static, dynamic and query folders
 ----------------------------------------------------------------------------------------------------
 
+-- Keep node lookup local so the frame uses the native GetChildren() for frame enumeration.
 -- The entries to list for a folder node. Query folders run the view's query over the item DB.
+---@param view Spyglass.View
 ---@param node Spyglass.Node
 ---@return Spyglass.Node[]
-function SpyglassViewMixin:GetChildren(node)
+local function getNodeChildren(view, node)
     if node.query then
-        return self:GetQueryChildren(node)
+        return view:GetQueryChildren(node)
     end
     if node.getChildren then
-        local ok, result = pcall(node.getChildren, node, self)
+        local ok, result = pcall(node.getChildren, node, view)
         if ok and type(result) == "table" then
             return result
         end
@@ -1474,9 +1476,9 @@ end
 -- Loads the pictures of the tiles in the root's tile folders (Dungeons, Raids, Crafting, …)
 -- ahead of the first visit and keeps them loaded (see holdPicture).
 function SpyglassViewMixin:PreloadTilePictures()
-    for _, module in ipairs(self:GetChildren(self.path[1])) do
+    for _, module in ipairs(getNodeChildren(self, self.path[1])) do
         if module.display == "tiles" then
-            for _, child in ipairs(self:GetChildren(module)) do
+            for _, child in ipairs(getNodeChildren(self, module)) do
                 if child.background then
                     holdPicture(child.background)
                 end
@@ -1765,7 +1767,7 @@ function SpyglassViewMixin:GetFieldValues(field)
         end
     end
     local node = self:GetCurrentNode()
-    for _, child in ipairs(node and self:GetChildren(node) or {}) do
+    for _, child in ipairs(node and getNodeChildren(self, node) or {}) do
         for _, entry in ipairs(child.items or { child }) do
             add(entry)
         end
@@ -1804,7 +1806,7 @@ function SpyglassViewMixin:OpenPath(path)
     local nodes = { self.path[1] }
     for segment in path:gmatch("[^/]+") do
         local parent, found = nodes[#nodes], nil
-        for _, child in ipairs(self:GetChildren(parent)) do
+        for _, child in ipairs(getNodeChildren(self, parent)) do
             for _, entry in ipairs(child.items or { child }) do
                 if app.api.IsFolder(entry) and matchesSegment(entry, segment) then
                     found = entry
@@ -1845,7 +1847,7 @@ function SpyglassViewMixin:RestorePath(names)
     local nodes = { self.path[1] }
     for _, name in ipairs(names) do
         local found
-        for _, child in ipairs(self:GetChildren(nodes[#nodes])) do
+        for _, child in ipairs(getNodeChildren(self, nodes[#nodes])) do
             for _, entry in ipairs(child.items or { child }) do
                 if app.api.IsFolder(entry) and entry.name == name then
                     found = entry
@@ -2114,7 +2116,7 @@ function SpyglassViewMixin:BuildElements(node)
         pending = {}
     end
 
-    for _, child in ipairs(self:GetChildren(node)) do
+    for _, child in ipairs(getNodeChildren(self, node)) do
         if child.hidden then
             flush()
         elseif child.header then

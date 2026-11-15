@@ -58,7 +58,7 @@ row (44px) with the two class filter buttons on the left, then the active list d
   (`PopTo`, breadcrumbs, right-click) returns to that page.
 - **`Refresh()`** rebuilds the elements and the page layout (navigation, query or size changes)
   and keeps the current page; **`Render()`** only redraws it (page flips, item info arriving).
-- **Children** come from `view:GetChildren(node)`: static `children`, dynamic `getChildren`, or a
+- **Children** come from the local `getNodeChildren(view, node)` helper: static `children`, dynamic `getChildren`, or a
   `query` folder whose entries are `Query.Run` over the database with per-node query state
   (`view.queries`). The right pane shows a debounced search box, dropdowns for the visible
   filters (including Stats, which requires every selected stat), paired minimum and maximum inputs
