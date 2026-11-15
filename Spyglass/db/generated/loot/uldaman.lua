@@ -18,6 +18,8 @@ Data:AddBossLoot(548, { -- The Lost Dwarves
     { 9403 }, -- Battered Viking Shield
     { 9404 }, -- Olaf's All Purpose Shield
     { 9399 }, -- Precision Arrow
+    { 251400 }, -- Plans: Warder's Boots
+    { 252896 }, -- Pattern: Stalker's Mail Boots
 })
 
 Data:AddBossLoot(549, { -- Ironaya
@@ -46,6 +48,7 @@ Data:AddBossLoot(552, { -- Galgann Firehammer
     { 11310 }, -- Flameseer Mantle
     { 9419 }, -- Galgann's Firehammer
     { 9412 }, -- Galgann's Fireblaster
+    { 251402 }, -- Plans: Justicar's Boots
 })
 
 Data:AddBossLoot(553, { -- Grimlok
@@ -59,6 +62,15 @@ Data:AddBossLoot(554, { -- Archaedas
     { 9413 }, -- The Rockpounder
     { 9418 }, -- Stoneslayer
     { 274432 }, -- Stone Keeper Spire
+    { 252868 }, -- Pattern: Skulker's Leather Gauntlets
+    { 254100 }, -- Pattern: Fiery Gloves
+    { 252871 }, -- Pattern: Mender's Leather Gauntlets
+    { 254096 }, -- Pattern: Gilded Gloves
+    { 254106 }, -- Pattern: Radiant Gloves
+    { 252870 }, -- Pattern: Skycaller's Leather Gauntlets
+    { 252919 }, -- Pattern: Skycaller's Mail Gauntlets
+    { 251404 }, -- Plans: Sentinel's Gloves
+    { 251405 }, -- Plans: Warder's Gloves
 })
 
 Data:AddTrashLoot(70, {

@@ -48,6 +48,34 @@
         {
           "item": 274657,
           "name": "Hydra Leather Legs"
+        },
+        {
+          "item": 254096,
+          "name": "Pattern: Gilded Gloves"
+        },
+        {
+          "item": 252871,
+          "name": "Pattern: Mender's Leather Gauntlets"
+        },
+        {
+          "item": 254106,
+          "name": "Pattern: Radiant Gloves"
+        },
+        {
+          "item": 254098,
+          "name": "Pattern: Frothing Gloves"
+        },
+        {
+          "item": 252867,
+          "name": "Pattern: Prowler's Leather Gauntlets"
+        },
+        {
+          "item": 252868,
+          "name": "Pattern: Skulker's Leather Gauntlets"
+        },
+        {
+          "item": 252869,
+          "name": "Pattern: Warden's Leather Gauntlets"
         }
       ]
     },
@@ -73,6 +101,34 @@
         {
           "item": 9379,
           "name": "Sang'thraze the Deflector"
+        },
+        {
+          "item": 251407,
+          "name": "Plans: Justicar's Gloves"
+        },
+        {
+          "item": 252920,
+          "name": "Pattern: Skirmisher's Mail Gauntlets"
+        },
+        {
+          "item": 252869,
+          "name": "Pattern: Warden's Leather Gauntlets"
+        },
+        {
+          "item": 252868,
+          "name": "Pattern: Skulker's Leather Gauntlets"
+        },
+        {
+          "item": 252870,
+          "name": "Pattern: Skycaller's Leather Gauntlets"
+        },
+        {
+          "item": 251403,
+          "name": "Plans: Officer's Gloves"
+        },
+        {
+          "item": 251405,
+          "name": "Plans: Warder's Gloves"
         }
       ]
     },
@@ -94,6 +150,22 @@
         {
           "item": 274638,
           "name": "Sandfury Pauldrons"
+        },
+        {
+          "item": 254098,
+          "name": "Pattern: Frothing Gloves"
+        },
+        {
+          "item": 254096,
+          "name": "Pattern: Gilded Gloves"
+        },
+        {
+          "item": 252920,
+          "name": "Pattern: Skirmisher's Mail Gauntlets"
+        },
+        {
+          "item": 251403,
+          "name": "Plans: Officer's Gloves"
         }
       ]
     },
@@ -115,6 +187,42 @@
         {
           "item": 274642,
           "name": "Blood Ritual Ring"
+        },
+        {
+          "item": 252868,
+          "name": "Pattern: Skulker's Leather Gauntlets"
+        },
+        {
+          "item": 252918,
+          "name": "Pattern: Stalker's Mail Gauntlets"
+        },
+        {
+          "item": 252869,
+          "name": "Pattern: Warden's Leather Gauntlets"
+        },
+        {
+          "item": 251403,
+          "name": "Plans: Officer's Gloves"
+        },
+        {
+          "item": 252871,
+          "name": "Pattern: Mender's Leather Gauntlets"
+        },
+        {
+          "item": 254106,
+          "name": "Pattern: Radiant Gloves"
+        },
+        {
+          "item": 252870,
+          "name": "Pattern: Skycaller's Leather Gauntlets"
+        },
+        {
+          "item": 251404,
+          "name": "Plans: Sentinel's Gloves"
+        },
+        {
+          "item": 251405,
+          "name": "Plans: Warder's Gloves"
         }
       ]
     },
@@ -136,6 +244,18 @@
         {
           "item": 274643,
           "name": "Gutcutter Hatchet"
+        },
+        {
+          "item": 252871,
+          "name": "Pattern: Mender's Leather Gauntlets"
+        },
+        {
+          "item": 252868,
+          "name": "Pattern: Skulker's Leather Gauntlets"
+        },
+        {
+          "item": 251400,
+          "name": "Plans: Warder's Boots"
         }
       ]
     },
@@ -161,6 +281,34 @@
         {
           "item": 9475,
           "name": "Diabolic Skiver"
+        },
+        {
+          "item": 254102,
+          "name": "Pattern: Black Gloves"
+        },
+        {
+          "item": 251404,
+          "name": "Plans: Sentinel's Gloves"
+        },
+        {
+          "item": 254098,
+          "name": "Pattern: Frothing Gloves"
+        },
+        {
+          "item": 252919,
+          "name": "Pattern: Skycaller's Mail Gauntlets"
+        },
+        {
+          "item": 252918,
+          "name": "Pattern: Stalker's Mail Gauntlets"
+        },
+        {
+          "item": 251407,
+          "name": "Plans: Justicar's Gloves"
+        },
+        {
+          "item": 251403,
+          "name": "Plans: Officer's Gloves"
         }
       ]
     },
@@ -190,6 +338,46 @@
         {
           "item": 11086,
           "name": "Jang'thraze the Protector"
+        },
+        {
+          "item": 254100,
+          "name": "Pattern: Fiery Gloves"
+        },
+        {
+          "item": 254096,
+          "name": "Pattern: Gilded Gloves"
+        },
+        {
+          "item": 254102,
+          "name": "Pattern: Black Gloves"
+        },
+        {
+          "item": 251407,
+          "name": "Plans: Justicar's Gloves"
+        },
+        {
+          "item": 254098,
+          "name": "Pattern: Frothing Gloves"
+        },
+        {
+          "item": 252871,
+          "name": "Pattern: Mender's Leather Gauntlets"
+        },
+        {
+          "item": 252867,
+          "name": "Pattern: Prowler's Leather Gauntlets"
+        },
+        {
+          "item": 254106,
+          "name": "Pattern: Radiant Gloves"
+        },
+        {
+          "item": 251404,
+          "name": "Plans: Sentinel's Gloves"
+        },
+        {
+          "item": 251405,
+          "name": "Plans: Warder's Gloves"
         }
       ]
     },
@@ -207,6 +395,10 @@
         {
           "item": 274658,
           "name": "Dune Hacker"
+        },
+        {
+          "item": 251400,
+          "name": "Plans: Warder's Boots"
         }
       ]
     },
@@ -224,6 +416,10 @@
         {
           "item": 12469,
           "name": "Mutilator"
+        },
+        {
+          "item": 251399,
+          "name": "Plans: Sentinel's Boots"
         }
       ]
     },
@@ -253,6 +449,18 @@
         {
           "item": 8548,
           "name": "Divino-matic Rod"
+        },
+        {
+          "item": 251399,
+          "name": "Plans: Sentinel's Boots"
+        },
+        {
+          "item": 251400,
+          "name": "Plans: Warder's Boots"
+        },
+        {
+          "item": 251402,
+          "name": "Plans: Justicar's Boots"
         }
       ]
     },
@@ -286,6 +494,42 @@
         {
           "item": 274655,
           "name": "Peacekeeper Wand"
+        },
+        {
+          "item": 252919,
+          "name": "Pattern: Skycaller's Mail Gauntlets"
+        },
+        {
+          "item": 254100,
+          "name": "Pattern: Fiery Gloves"
+        },
+        {
+          "item": 252869,
+          "name": "Pattern: Warden's Leather Gauntlets"
+        },
+        {
+          "item": 254102,
+          "name": "Pattern: Black Gloves"
+        },
+        {
+          "item": 254096,
+          "name": "Pattern: Gilded Gloves"
+        },
+        {
+          "item": 252870,
+          "name": "Pattern: Skycaller's Leather Gauntlets"
+        },
+        {
+          "item": 252918,
+          "name": "Pattern: Stalker's Mail Gauntlets"
+        },
+        {
+          "item": 251407,
+          "name": "Plans: Justicar's Gloves"
+        },
+        {
+          "item": 251405,
+          "name": "Plans: Warder's Gloves"
         }
       ]
     }

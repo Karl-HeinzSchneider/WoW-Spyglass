@@ -36,6 +36,7 @@ Data:AddBossLoot(475, { -- Cannon Master Willey
     { 22405 }, -- Mantle of the Scarlet Crusade
     { 22404 }, -- Willey's Back Scratcher
     { 22406 }, -- Redemption
+    { 12839 }, -- Plans: Heartseeker
 })
 
 Data:AddBossLoot(477, { -- Archivist Galford
@@ -58,6 +59,8 @@ Data:AddBossLoot(478, { -- Balnazzar
     { 18717 }, -- Hammer of the Grand Crusader
     { 13369 }, -- Fire Striders
     { 16725 }, -- Lightforge Boots
+    { 14512 }, -- Pattern: Truefaith Vestments
+    { 13520 }, -- Recipe: Flask of Distilled Wisdom
 })
 
 Data:AddBossLoot(472, { -- The Unforgiven
@@ -91,6 +94,7 @@ Data:AddBossLoot(481, { -- Maleki the Pallid
     { 13524 }, -- Skull of Burning Shadows
     { 18734 }, -- Pale Moon Cloak
     { 18735 }, -- Maleki's Footwraps
+    { 12833 }, -- Plans: Hammer of the Titans
 })
 
 Data:AddBossLoot(482, { -- Magistrate Barthilas
@@ -181,6 +185,8 @@ Data:AddTrashLoot(329, {
     { 18658 }, -- Schematic: Ultra-Flash Shadow Reflector
     { 16052 }, -- Schematic: Voice Amplification Modulator
     { 12811 }, -- Righteous Orb
+    { 12827 }, -- Plans: Serenity
+    { 12830 }, -- Plans: Corruption
 })
 
 Data:AddQuests(329, {

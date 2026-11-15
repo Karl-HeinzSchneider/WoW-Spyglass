@@ -86,6 +86,12 @@ Data:AddBossLoot(3589, { -- Jammal'an the Prophet
     { 10806 }, -- Vestments of the Atal'ai Prophet
     { 10807 }, -- Kilt of the Atal'ai Prophet
     { 10808 }, -- Gloves of the Atal'ai Prophet
+    { 254102 }, -- Pattern: Black Gloves
+    { 252919 }, -- Pattern: Skycaller's Mail Gauntlets
+    { 252918 }, -- Pattern: Stalker's Mail Gauntlets
+    { 252869 }, -- Pattern: Warden's Leather Gauntlets
+    { 251405 }, -- Plans: Warder's Gloves
+    { 273119 }, -- Blueprint: Fishing Hut
 })
 
 Data:AddBossLoot(-5711, { -- Ogom the Wretched

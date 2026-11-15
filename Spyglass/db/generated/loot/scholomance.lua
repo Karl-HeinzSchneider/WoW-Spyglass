@@ -56,6 +56,8 @@ Data:AddBossLoot(2810, { -- Ras Frostwhisperer
     { 14522 }, -- Maelstrom Leggings
     { 14525 }, -- Boneclenched Gauntlets
     { 18693 }, -- Shivery Handwraps
+    { 13521 }, -- Recipe: Flask of Supreme Power
+    { 273112 }, -- Blueprint: Alchemy Laboratory
 })
 
 Data:AddBossLoot(2803, { -- Instructor Malicia
@@ -261,6 +263,8 @@ Data:AddBossLoot(2801, { -- Darkmaster Gandling
     { 13953 }, -- Silent Fang
     { 13964 }, -- Witchblade
     { 22433 }, -- Don Mauricio's Band of Domination
+    { 14514 }, -- Pattern: Robe of the Void
+    { 13501 }, -- Recipe: Major Mana Potion
 })
 
 Data:AddTrashLoot(289, {
@@ -286,6 +290,7 @@ Data:AddTrashLoot(289, {
     { 15773 }, -- Pattern: Wicked Leather Armor
     { 20520 }, -- Dark Rune
     { 12753 }, -- Skin of Shadow
+    { 252940 }, -- Pattern: Pristine Scorpid Leggings
 })
 
 Data:AddQuests(289, {

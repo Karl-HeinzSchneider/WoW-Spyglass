@@ -143,6 +143,10 @@
         {
           "item": 13183,
           "name": "Venomspitter"
+        },
+        {
+          "item": 249521,
+          "name": "Formula: Dormant Heart of the Mountain"
         }
       ]
     },
@@ -193,6 +197,10 @@
         {
           "item": 12835,
           "name": "Plans: Annihilator"
+        },
+        {
+          "item": 273115,
+          "name": "Blueprint: Iron Oven"
         }
       ]
     },
@@ -438,6 +446,26 @@
     {
       "item": 16735,
       "name": "Bracers of Valor"
+    },
+    {
+      "item": 14513,
+      "name": "Pattern: Robe of the Archmage"
+    },
+    {
+      "item": 251451,
+      "name": "Plans: Stalwart Helm"
+    },
+    {
+      "item": 15775,
+      "name": "Pattern: Volcanic Shoulders"
+    },
+    {
+      "item": 16250,
+      "name": "Formula: Enchant Weapon - Superior Striking"
+    },
+    {
+      "item": 16244,
+      "name": "Formula: Enchant Gloves - Greater Strength"
     }
   ],
   "quests": [4742, 4981, 4982, 5081, 4903, 4701, 4724, 4729, 4862, 4866, 4867, 5089, 4788]

@@ -33,6 +33,78 @@
         {
           "item": 274292,
           "name": "Houndmaster Boomerang"
+        },
+        {
+          "item": 273109,
+          "name": "Blueprint: Trapper's Workbench"
+        },
+        {
+          "item": 251350,
+          "name": "Plans: Veteran's Chain Helm"
+        },
+        {
+          "item": 251351,
+          "name": "Plans: Guard's Chain Helm"
+        },
+        {
+          "item": 251352,
+          "name": "Plans: Protector's Chain Helm"
+        },
+        {
+          "item": 251353,
+          "name": "Plans: Acolyte's Chain Helm"
+        },
+        {
+          "item": 251354,
+          "name": "Plans: Crusader's Chain Helm"
+        },
+        {
+          "item": 252814,
+          "name": "Pattern: Brawler's Leather Helm"
+        },
+        {
+          "item": 252815,
+          "name": "Pattern: Trapper's Leather Helm"
+        },
+        {
+          "item": 252816,
+          "name": "Pattern: Defender's Leather Helm"
+        },
+        {
+          "item": 252817,
+          "name": "Pattern: Totemic Leather Helm"
+        },
+        {
+          "item": 252818,
+          "name": "Pattern: Stormrider's Leather Helm"
+        },
+        {
+          "item": 252819,
+          "name": "Pattern: Wisdom's Leather Helm"
+        },
+        {
+          "item": 253976,
+          "name": "Pattern: Filigreed Pristine Circlet"
+        },
+        {
+          "item": 253978,
+          "name": "Pattern: Filigreed Silky Circlet"
+        },
+        {
+          "item": 253980,
+          "name": "Pattern: Filigreed Flame Circlet"
+        },
+        {
+          "item": 253982,
+          "name": "Pattern: Filigreed Shadow Circlet"
+        },
+        {
+          "item": 253984,
+          "name": "Pattern: Filigreed Pearly Circlet"
+        },
+        {
+          "item": 253986,
+          "name": "Pattern: Filigreed Shining Circlet"
         }
       ]
     },
@@ -70,6 +142,86 @@
         {
           "item": 274294,
           "name": "Library Walkers"
+        },
+        {
+          "item": 251398,
+          "name": "Plans: Officer's Boots"
+        },
+        {
+          "item": 251399,
+          "name": "Plans: Sentinel's Boots"
+        },
+        {
+          "item": 251400,
+          "name": "Plans: Warder's Boots"
+        },
+        {
+          "item": 251401,
+          "name": "Plans: Prefect's Boots"
+        },
+        {
+          "item": 251402,
+          "name": "Plans: Justicar's Boots"
+        },
+        {
+          "item": 252843,
+          "name": "Pattern: Prowler's Leather Shoes"
+        },
+        {
+          "item": 252844,
+          "name": "Pattern: Skulker's Leather Shoes"
+        },
+        {
+          "item": 252845,
+          "name": "Pattern: Warden's Leather Shoes"
+        },
+        {
+          "item": 252846,
+          "name": "Pattern: Skycaller's Leather Shoes"
+        },
+        {
+          "item": 252847,
+          "name": "Pattern: Mender's Leather Shoes"
+        },
+        {
+          "item": 252896,
+          "name": "Pattern: Stalker's Mail Boots"
+        },
+        {
+          "item": 252897,
+          "name": "Pattern: Skycaller's Mail Boots"
+        },
+        {
+          "item": 252898,
+          "name": "Pattern: Skirmisher's Mail Boots"
+        },
+        {
+          "item": 252899,
+          "name": "Pattern: Mender's Mail Boots"
+        },
+        {
+          "item": 254038,
+          "name": "Pattern: Gilded Cord"
+        },
+        {
+          "item": 254040,
+          "name": "Pattern: Frothing Cord"
+        },
+        {
+          "item": 254042,
+          "name": "Pattern: Fiery Cord"
+        },
+        {
+          "item": 254044,
+          "name": "Pattern: Black Cord"
+        },
+        {
+          "item": 254046,
+          "name": "Pattern: Golden Cord"
+        },
+        {
+          "item": 254048,
+          "name": "Pattern: Radiant Cord"
         }
       ]
     }

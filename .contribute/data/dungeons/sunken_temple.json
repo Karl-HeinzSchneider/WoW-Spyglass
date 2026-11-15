@@ -318,6 +318,30 @@
         {
           "item": 10808,
           "name": "Gloves of the Atal'ai Prophet"
+        },
+        {
+          "item": 254102,
+          "name": "Pattern: Black Gloves"
+        },
+        {
+          "item": 252919,
+          "name": "Pattern: Skycaller's Mail Gauntlets"
+        },
+        {
+          "item": 252918,
+          "name": "Pattern: Stalker's Mail Gauntlets"
+        },
+        {
+          "item": 252869,
+          "name": "Pattern: Warden's Leather Gauntlets"
+        },
+        {
+          "item": 251405,
+          "name": "Plans: Warder's Gloves"
+        },
+        {
+          "item": 273119,
+          "name": "Blueprint: Fishing Hut"
         }
       ]
     },

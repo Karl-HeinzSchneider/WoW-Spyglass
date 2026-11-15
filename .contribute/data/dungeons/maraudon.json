@@ -27,6 +27,22 @@
         {
           "item": 17745,
           "name": "Noxious Shooter"
+        },
+        {
+          "item": 254100,
+          "name": "Pattern: Fiery Gloves"
+        },
+        {
+          "item": 254096,
+          "name": "Pattern: Gilded Gloves"
+        },
+        {
+          "item": 252918,
+          "name": "Pattern: Stalker's Mail Gauntlets"
+        },
+        {
+          "item": 251405,
+          "name": "Plans: Warder's Gloves"
         }
       ]
     },
@@ -52,6 +68,26 @@
         {
           "item": 17751,
           "name": "Brusslehide Leggings"
+        },
+        {
+          "item": 252869,
+          "name": "Pattern: Warden's Leather Gauntlets"
+        },
+        {
+          "item": 254100,
+          "name": "Pattern: Fiery Gloves"
+        },
+        {
+          "item": 254096,
+          "name": "Pattern: Gilded Gloves"
+        },
+        {
+          "item": 252871,
+          "name": "Pattern: Mender's Leather Gauntlets"
+        },
+        {
+          "item": 251407,
+          "name": "Plans: Justicar's Gloves"
         }
       ]
     },
@@ -73,6 +109,30 @@
         {
           "item": 17719,
           "name": "Inventor's Focal Sword"
+        },
+        {
+          "item": 254098,
+          "name": "Pattern: Frothing Gloves"
+        },
+        {
+          "item": 252867,
+          "name": "Pattern: Prowler's Leather Gauntlets"
+        },
+        {
+          "item": 254106,
+          "name": "Pattern: Radiant Gloves"
+        },
+        {
+          "item": 252920,
+          "name": "Pattern: Skirmisher's Mail Gauntlets"
+        },
+        {
+          "item": 252868,
+          "name": "Pattern: Skulker's Leather Gauntlets"
+        },
+        {
+          "item": 251404,
+          "name": "Plans: Sentinel's Gloves"
         }
       ]
     },
@@ -115,6 +175,22 @@
         {
           "item": 17740,
           "name": "Soothsayer's Headdress"
+        },
+        {
+          "item": 251405,
+          "name": "Plans: Warder's Gloves"
+        },
+        {
+          "item": 254098,
+          "name": "Pattern: Frothing Gloves"
+        },
+        {
+          "item": 252920,
+          "name": "Pattern: Skirmisher's Mail Gauntlets"
+        },
+        {
+          "item": 252868,
+          "name": "Pattern: Skulker's Leather Gauntlets"
         }
       ]
     },
@@ -140,6 +216,38 @@
         {
           "item": 17734,
           "name": "Helm of the Mountain"
+        },
+        {
+          "item": 252868,
+          "name": "Pattern: Skulker's Leather Gauntlets"
+        },
+        {
+          "item": 252918,
+          "name": "Pattern: Stalker's Mail Gauntlets"
+        },
+        {
+          "item": 254098,
+          "name": "Pattern: Frothing Gloves"
+        },
+        {
+          "item": 252867,
+          "name": "Pattern: Prowler's Leather Gauntlets"
+        },
+        {
+          "item": 254106,
+          "name": "Pattern: Radiant Gloves"
+        },
+        {
+          "item": 252920,
+          "name": "Pattern: Skirmisher's Mail Gauntlets"
+        },
+        {
+          "item": 252919,
+          "name": "Pattern: Skycaller's Mail Gauntlets"
+        },
+        {
+          "item": 251404,
+          "name": "Plans: Sentinel's Gloves"
         }
       ]
     },
@@ -161,6 +269,22 @@
         {
           "item": 17730,
           "name": "Gatorbite Axe"
+        },
+        {
+          "item": 252918,
+          "name": "Pattern: Stalker's Mail Gauntlets"
+        },
+        {
+          "item": 254102,
+          "name": "Pattern: Black Gloves"
+        },
+        {
+          "item": 254100,
+          "name": "Pattern: Fiery Gloves"
+        },
+        {
+          "item": 252919,
+          "name": "Pattern: Skycaller's Mail Gauntlets"
         }
       ]
     },
@@ -202,6 +326,26 @@
         {
           "item": 17780,
           "name": "Blade of Eternal Darkness"
+        },
+        {
+          "item": 254100,
+          "name": "Pattern: Fiery Gloves"
+        },
+        {
+          "item": 252868,
+          "name": "Pattern: Skulker's Leather Gauntlets"
+        },
+        {
+          "item": 252869,
+          "name": "Pattern: Warden's Leather Gauntlets"
+        },
+        {
+          "item": 251407,
+          "name": "Plans: Justicar's Gloves"
+        },
+        {
+          "item": 251403,
+          "name": "Plans: Officer's Gloves"
         }
       ]
     },
@@ -223,6 +367,10 @@
         {
           "item": 17742,
           "name": "Fungus Shroud Armor"
+        },
+        {
+          "item": 251407,
+          "name": "Plans: Justicar's Gloves"
         }
       ]
     }

@@ -38,6 +38,7 @@ Data:AddBossLoot(270, { -- Mother Smolderweb
     { 13244 }, -- Gilded Gauntlets
     { 13213 }, -- Smolderweb's Eye
     { 13183 }, -- Venomspitter
+    { 249521 }, -- Formula: Dormant Heart of the Mountain
 })
 
 Data:AddBossLoot(271, { -- Urok Doomhowl
@@ -52,6 +53,7 @@ Data:AddBossLoot(272, { -- Quartermaster Zigris
     { 13252 }, -- Cloudrunner Girdle
     { 13253 }, -- Hands of Power
     { 12835 }, -- Plans: Annihilator
+    { 273115 }, -- Blueprint: Iron Oven
 })
 
 Data:AddBossLoot(274, { -- Halycon
@@ -122,6 +124,11 @@ Data:AddTrashLoot(22901, {
     { 16683 }, -- Magister's Bindings
     { 16703 }, -- Dreadmist Bracers
     { 16735 }, -- Bracers of Valor
+    { 14513 }, -- Pattern: Robe of the Archmage
+    { 251451 }, -- Plans: Stalwart Helm
+    { 15775 }, -- Pattern: Volcanic Shoulders
+    { 16250 }, -- Formula: Enchant Weapon - Superior Striking
+    { 16244 }, -- Formula: Enchant Gloves - Greater Strength
 })
 
 Data:AddQuests(22901, {

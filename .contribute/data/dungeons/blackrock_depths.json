@@ -60,6 +60,10 @@
         {
           "item": 11630,
           "name": "Rockshard Pellets"
+        },
+        {
+          "item": 11813,
+          "name": "Formula: Smoking Heart of the Mountain"
         }
       ]
     },
@@ -115,6 +119,10 @@
         {
           "item": 11750,
           "name": "Kindling Stave"
+        },
+        {
+          "item": 11207,
+          "name": "Formula: Enchant Weapon - Fiery Weapon"
         }
       ]
     },
@@ -281,6 +289,10 @@
         {
           "item": 11819,
           "name": "Second Wind"
+        },
+        {
+          "item": 273113,
+          "name": "Blueprint: Master Forge"
         }
       ]
     },
@@ -377,6 +389,10 @@
         {
           "item": 12791,
           "name": "Barman Shanker"
+        },
+        {
+          "item": 18653,
+          "name": "Schematic: Goblin Jumper Cables XL"
         }
       ]
     },
@@ -481,6 +497,10 @@
         {
           "item": 11746,
           "name": "Golem Skull Helm"
+        },
+        {
+          "item": 277129,
+          "name": "Fragment of the Firelands"
         }
       ]
     },
@@ -820,6 +840,38 @@
     {
       "item": 12532,
       "name": "Spire of the Stoneshaper"
+    },
+    {
+      "item": 11611,
+      "name": "Plans: Dark Iron Sunderer"
+    },
+    {
+      "item": 11614,
+      "name": "Plans: Dark Iron Mail"
+    },
+    {
+      "item": 11615,
+      "name": "Plans: Dark Iron Shoulders"
+    },
+    {
+      "item": 16049,
+      "name": "Schematic: Dark Iron Bomb"
+    },
+    {
+      "item": 16048,
+      "name": "Schematic: Dark Iron Rifle"
+    },
+    {
+      "item": 18654,
+      "name": "Schematic: Gnomish Alarm-O-Bot"
+    },
+    {
+      "item": 16053,
+      "name": "Schematic: Master Engineer's Goggles"
+    },
+    {
+      "item": 18661,
+      "name": "Schematic: World Enlarger"
     }
   ],
   "quests": [

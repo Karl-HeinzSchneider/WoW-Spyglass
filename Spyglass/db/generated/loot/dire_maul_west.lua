@@ -19,6 +19,7 @@ Data:AddBossLoot(348, { -- Magister Kalendris
     { 18374 }, -- Flamescarred Shoulders
     { 18397 }, -- Elder Magus Pendant
     { 18371 }, -- Mindtap Talisman
+    { 22309 }, -- Pattern: Big Bag of Enchantment
 })
 
 Data:AddBossLoot(349, { -- Immol'thar

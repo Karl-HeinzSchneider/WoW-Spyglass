@@ -36,6 +36,10 @@
         {
           "item": 12929,
           "name": "Emberfury Talisman"
+        },
+        {
+          "item": 249520,
+          "name": "Formula: Molten Heart of the Mountain"
         }
       ]
     },
@@ -223,6 +227,10 @@
         {
           "item": 15730,
           "name": "Pattern: Red Dragonscale Breastplate"
+        },
+        {
+          "item": 13519,
+          "name": "Recipe: Flask of the Titans"
         }
       ]
     },
@@ -294,6 +302,10 @@
         {
           "item": 16695,
           "name": "Devout Mantle"
+        },
+        {
+          "item": 18657,
+          "name": "Schematic: Hyper-Radiant Flame Reflector"
         }
       ]
     },
@@ -348,6 +360,10 @@
         {
           "item": 12837,
           "name": "Plans: Masterwork Stormhammer"
+        },
+        {
+          "item": 12728,
+          "name": "Pattern: Invulnerable Mail"
         }
       ]
     },
@@ -377,6 +393,10 @@
         {
           "item": 22225,
           "name": "Dragonskin Cowl"
+        },
+        {
+          "item": 13522,
+          "name": "Recipe: Flask of Chromatic Resistance"
         }
       ]
     }
@@ -409,6 +429,10 @@
     {
       "item": 16735,
       "name": "Bracers of Valor"
+    },
+    {
+      "item": 16247,
+      "name": "Formula: Enchant 2H Weapon - Superior Impact"
     }
   ],
   "quests": [4743, 7761, 4735, 5102, 6502, 6602, 5127, 4764, 4768, 5047, 5160]

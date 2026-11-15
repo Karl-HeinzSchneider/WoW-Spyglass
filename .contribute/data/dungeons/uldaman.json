@@ -68,6 +68,14 @@
         {
           "item": 9399,
           "name": "Precision Arrow"
+        },
+        {
+          "item": 251400,
+          "name": "Plans: Warder's Boots"
+        },
+        {
+          "item": 252896,
+          "name": "Pattern: Stalker's Mail Boots"
         }
       ]
     },
@@ -168,6 +176,10 @@
         {
           "item": 9412,
           "name": "Galgann's Fireblaster"
+        },
+        {
+          "item": 251402,
+          "name": "Plans: Justicar's Boots"
         }
       ]
     },
@@ -214,6 +226,42 @@
         {
           "item": 274432,
           "name": "Stone Keeper Spire"
+        },
+        {
+          "item": 252868,
+          "name": "Pattern: Skulker's Leather Gauntlets"
+        },
+        {
+          "item": 254100,
+          "name": "Pattern: Fiery Gloves"
+        },
+        {
+          "item": 252871,
+          "name": "Pattern: Mender's Leather Gauntlets"
+        },
+        {
+          "item": 254096,
+          "name": "Pattern: Gilded Gloves"
+        },
+        {
+          "item": 254106,
+          "name": "Pattern: Radiant Gloves"
+        },
+        {
+          "item": 252870,
+          "name": "Pattern: Skycaller's Leather Gauntlets"
+        },
+        {
+          "item": 252919,
+          "name": "Pattern: Skycaller's Mail Gauntlets"
+        },
+        {
+          "item": 251404,
+          "name": "Plans: Sentinel's Gloves"
+        },
+        {
+          "item": 251405,
+          "name": "Plans: Warder's Gloves"
         }
       ]
     }

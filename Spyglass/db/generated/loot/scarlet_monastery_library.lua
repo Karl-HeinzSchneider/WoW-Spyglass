@@ -8,6 +8,24 @@ Data:AddBossLoot(446, { -- Houndmaster Loksey
     { 3456 }, -- Dog Whistle
     { 7710 }, -- Loksey's Training Stick
     { 274292 }, -- Houndmaster Boomerang
+    { 273109 }, -- Blueprint: Trapper's Workbench
+    { 251350 }, -- Plans: Veteran's Chain Helm
+    { 251351 }, -- Plans: Guard's Chain Helm
+    { 251352 }, -- Plans: Protector's Chain Helm
+    { 251353 }, -- Plans: Acolyte's Chain Helm
+    { 251354 }, -- Plans: Crusader's Chain Helm
+    { 252814 }, -- Pattern: Brawler's Leather Helm
+    { 252815 }, -- Pattern: Trapper's Leather Helm
+    { 252816 }, -- Pattern: Defender's Leather Helm
+    { 252817 }, -- Pattern: Totemic Leather Helm
+    { 252818 }, -- Pattern: Stormrider's Leather Helm
+    { 252819 }, -- Pattern: Wisdom's Leather Helm
+    { 253976 }, -- Pattern: Filigreed Pristine Circlet
+    { 253978 }, -- Pattern: Filigreed Silky Circlet
+    { 253980 }, -- Pattern: Filigreed Flame Circlet
+    { 253982 }, -- Pattern: Filigreed Shadow Circlet
+    { 253984 }, -- Pattern: Filigreed Pearly Circlet
+    { 253986 }, -- Pattern: Filigreed Shining Circlet
 })
 
 Data:AddBossLoot(447, { -- Arcanist Doan
@@ -18,6 +36,26 @@ Data:AddBossLoot(447, { -- Arcanist Doan
     { 7711 }, -- Robe of Doan
     { 7146 }, -- The Scarlet Key
     { 274294 }, -- Library Walkers
+    { 251398 }, -- Plans: Officer's Boots
+    { 251399 }, -- Plans: Sentinel's Boots
+    { 251400 }, -- Plans: Warder's Boots
+    { 251401 }, -- Plans: Prefect's Boots
+    { 251402 }, -- Plans: Justicar's Boots
+    { 252843 }, -- Pattern: Prowler's Leather Shoes
+    { 252844 }, -- Pattern: Skulker's Leather Shoes
+    { 252845 }, -- Pattern: Warden's Leather Shoes
+    { 252846 }, -- Pattern: Skycaller's Leather Shoes
+    { 252847 }, -- Pattern: Mender's Leather Shoes
+    { 252896 }, -- Pattern: Stalker's Mail Boots
+    { 252897 }, -- Pattern: Skycaller's Mail Boots
+    { 252898 }, -- Pattern: Skirmisher's Mail Boots
+    { 252899 }, -- Pattern: Mender's Mail Boots
+    { 254038 }, -- Pattern: Gilded Cord
+    { 254040 }, -- Pattern: Frothing Cord
+    { 254042 }, -- Pattern: Fiery Cord
+    { 254044 }, -- Pattern: Black Cord
+    { 254046 }, -- Pattern: Golden Cord
+    { 254048 }, -- Pattern: Radiant Cord
 })
 
 Data:AddTrashLoot(18902, {

@@ -214,6 +214,14 @@
         {
           "item": 18693,
           "name": "Shivery Handwraps"
+        },
+        {
+          "item": 13521,
+          "name": "Recipe: Flask of Supreme Power"
+        },
+        {
+          "item": 273112,
+          "name": "Blueprint: Alchemy Laboratory"
         }
       ]
     },
@@ -1013,6 +1021,14 @@
         {
           "item": 22433,
           "name": "Don Mauricio's Band of Domination"
+        },
+        {
+          "item": 14514,
+          "name": "Pattern: Robe of the Void"
+        },
+        {
+          "item": 13501,
+          "name": "Recipe: Major Mana Potion"
         }
       ]
     }
@@ -1105,6 +1121,10 @@
     {
       "item": 12753,
       "name": "Skin of Shadow"
+    },
+    {
+      "item": 252940,
+      "name": "Pattern: Pristine Scorpid Leggings"
     }
   ],
   "quests": [5466, 5343, 5341, 4771, 5529, 7629, 7647, 7668]

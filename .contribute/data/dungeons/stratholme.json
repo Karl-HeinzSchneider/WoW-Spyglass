@@ -134,6 +134,10 @@
         {
           "item": 22406,
           "name": "Redemption"
+        },
+        {
+          "item": 12839,
+          "name": "Plans: Heartseeker"
         }
       ]
     },
@@ -216,6 +220,14 @@
         {
           "item": 16725,
           "name": "Lightforge Boots"
+        },
+        {
+          "item": 14512,
+          "name": "Pattern: Truefaith Vestments"
+        },
+        {
+          "item": 13520,
+          "name": "Recipe: Flask of Distilled Wisdom"
         }
       ]
     },
@@ -336,6 +348,10 @@
         {
           "item": 18735,
           "name": "Maleki's Footwraps"
+        },
+        {
+          "item": 12833,
+          "name": "Plans: Hammer of the Titans"
         }
       ]
     },
@@ -685,6 +701,14 @@
     {
       "item": 12811,
       "name": "Righteous Orb"
+    },
+    {
+      "item": 12827,
+      "name": "Plans: Serenity"
+    },
+    {
+      "item": 12830,
+      "name": "Plans: Corruption"
     }
   ],
   "quests": [5263, 5213, 5282, 6163, 5125, 8945, 5463, 5262, 5212, 5243, 5214, 5848, 5122]

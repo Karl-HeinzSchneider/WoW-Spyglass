@@ -7,6 +7,10 @@ Data:AddBossLoot(422, { -- Noxxion
     { 17744 }, -- Heart of Noxxion
     { 17746 }, -- Noxxion's Shackles
     { 17745 }, -- Noxious Shooter
+    { 254100 }, -- Pattern: Fiery Gloves
+    { 254096 }, -- Pattern: Gilded Gloves
+    { 252918 }, -- Pattern: Stalker's Mail Gauntlets
+    { 251405 }, -- Plans: Warder's Gloves
 })
 
 Data:AddBossLoot(423, { -- Razorlash
@@ -14,12 +18,23 @@ Data:AddBossLoot(423, { -- Razorlash
     { 17749 }, -- Phytoskin Spaulders
     { 17750 }, -- Chloromesh Girdle
     { 17751 }, -- Brusslehide Leggings
+    { 252869 }, -- Pattern: Warden's Leather Gauntlets
+    { 254100 }, -- Pattern: Fiery Gloves
+    { 254096 }, -- Pattern: Gilded Gloves
+    { 252871 }, -- Pattern: Mender's Leather Gauntlets
+    { 251407 }, -- Plans: Justicar's Gloves
 })
 
 Data:AddBossLoot(427, { -- Tinkerer Gizlock
     { 17717 }, -- Megashot Rifle
     { 17718 }, -- Gizlock's Hypertech Buckler
     { 17719 }, -- Inventor's Focal Sword
+    { 254098 }, -- Pattern: Frothing Gloves
+    { 252867 }, -- Pattern: Prowler's Leather Gauntlets
+    { 254106 }, -- Pattern: Radiant Gloves
+    { 252920 }, -- Pattern: Skirmisher's Mail Gauntlets
+    { 252868 }, -- Pattern: Skulker's Leather Gauntlets
+    { 251404 }, -- Plans: Sentinel's Gloves
 })
 
 Data:AddBossLoot(424, { -- Lord Vyletongue
@@ -32,6 +47,10 @@ Data:AddBossLoot(425, { -- Celebras the Cursed
     { 17738 }, -- Claw of Celebras
     { 17739 }, -- Grovekeeper's Drape
     { 17740 }, -- Soothsayer's Headdress
+    { 251405 }, -- Plans: Warder's Gloves
+    { 254098 }, -- Pattern: Frothing Gloves
+    { 252920 }, -- Pattern: Skirmisher's Mail Gauntlets
+    { 252868 }, -- Pattern: Skulker's Leather Gauntlets
 })
 
 Data:AddBossLoot(426, { -- Landslide
@@ -39,12 +58,24 @@ Data:AddBossLoot(426, { -- Landslide
     { 17736 }, -- Rockgrip Gauntlets
     { 17737 }, -- Cloud Stone
     { 17734 }, -- Helm of the Mountain
+    { 252868 }, -- Pattern: Skulker's Leather Gauntlets
+    { 252918 }, -- Pattern: Stalker's Mail Gauntlets
+    { 254098 }, -- Pattern: Frothing Gloves
+    { 252867 }, -- Pattern: Prowler's Leather Gauntlets
+    { 254106 }, -- Pattern: Radiant Gloves
+    { 252920 }, -- Pattern: Skirmisher's Mail Gauntlets
+    { 252919 }, -- Pattern: Skycaller's Mail Gauntlets
+    { 251404 }, -- Plans: Sentinel's Gloves
 })
 
 Data:AddBossLoot(428, { -- Rotgrip
     { 17732 }, -- Rotgrip Mantle
     { 17728 }, -- Albino Crocscale Boots
     { 17730 }, -- Gatorbite Axe
+    { 252918 }, -- Pattern: Stalker's Mail Gauntlets
+    { 254102 }, -- Pattern: Black Gloves
+    { 254100 }, -- Pattern: Fiery Gloves
+    { 252919 }, -- Pattern: Skycaller's Mail Gauntlets
 })
 
 Data:AddBossLoot(429, { -- Princess Theradras
@@ -56,12 +87,18 @@ Data:AddBossLoot(429, { -- Princess Theradras
     { 17710 }, -- Charstone Dirk
     { 17711 }, -- Elemental Rockridge Leggings
     { 17780 }, -- Blade of Eternal Darkness
+    { 254100 }, -- Pattern: Fiery Gloves
+    { 252868 }, -- Pattern: Skulker's Leather Gauntlets
+    { 252869 }, -- Pattern: Warden's Leather Gauntlets
+    { 251407 }, -- Plans: Justicar's Gloves
+    { 251403 }, -- Plans: Officer's Gloves
 })
 
 Data:AddBossLoot(-12237, { -- Meshlok the Harvester
     { 17767 }, -- Bloomsprout Headpiece
     { 17741 }, -- Nature's Embrace
     { 17742 }, -- Fungus Shroud Armor
+    { 251407 }, -- Plans: Justicar's Gloves
 })
 
 Data:AddQuests(349, {

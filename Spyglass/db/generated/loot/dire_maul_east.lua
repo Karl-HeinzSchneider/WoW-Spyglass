@@ -13,6 +13,7 @@ Data:AddBossLoot(344, { -- Hydrospawn
     { 18322 }, -- Waterspout Boots
     { 18317 }, -- Tempest Talisman
     { 18324 }, -- Waveslicer
+    { 7091 }, -- Pattern: Truefaith Gloves
 })
 
 Data:AddBossLoot(345, { -- Lethtendris

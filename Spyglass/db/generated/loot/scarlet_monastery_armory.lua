@@ -9,6 +9,26 @@ Data:AddBossLoot(448, { -- Herod
     { 7717 }, -- Ravager
     { 10330 }, -- Scarlet Leggings
     { 274295 }, -- Band of Crimson Light
+    { 251398 }, -- Plans: Officer's Boots
+    { 251399 }, -- Plans: Sentinel's Boots
+    { 251400 }, -- Plans: Warder's Boots
+    { 251401 }, -- Plans: Prefect's Boots
+    { 251402 }, -- Plans: Justicar's Boots
+    { 252843 }, -- Pattern: Prowler's Leather Shoes
+    { 252844 }, -- Pattern: Skulker's Leather Shoes
+    { 252845 }, -- Pattern: Warden's Leather Shoes
+    { 252846 }, -- Pattern: Skycaller's Leather Shoes
+    { 252847 }, -- Pattern: Mender's Leather Shoes
+    { 252896 }, -- Pattern: Stalker's Mail Boots
+    { 252897 }, -- Pattern: Skycaller's Mail Boots
+    { 252898 }, -- Pattern: Skirmisher's Mail Boots
+    { 252899 }, -- Pattern: Mender's Mail Boots
+    { 254038 }, -- Pattern: Gilded Cord
+    { 254040 }, -- Pattern: Frothing Cord
+    { 254042 }, -- Pattern: Fiery Cord
+    { 254044 }, -- Pattern: Black Cord
+    { 254046 }, -- Pattern: Golden Cord
+    { 254048 }, -- Pattern: Radiant Cord
 })
 
 Data:AddTrashLoot(18903, {

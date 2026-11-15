@@ -16,6 +16,7 @@ Data:AddBossLoot(228, { -- Lord Roccor
     { 22234 }, -- Mantle of Lost Hope
     { 22397 }, -- Idol of Ferocity
     { 11630 }, -- Rockshard Pellets
+    { 11813 }, -- Formula: Smoking Heart of the Mountain
 })
 
 Data:AddBossLoot(229, { -- Houndmaster Grebmar
@@ -30,6 +31,7 @@ Data:AddBossLoot(231, { -- Pyromancer Loregrain
     { 11748 }, -- Pyric Caduceus
     { 11749 }, -- Searingscale Leggings
     { 11750 }, -- Kindling Stave
+    { 11207 }, -- Formula: Enchant Weapon - Fiery Weapon
 })
 
 Data:AddBossLoot(232, { -- Lord Incendius
@@ -76,6 +78,7 @@ Data:AddBossLoot(237, { -- Golem Lord Argelmach
     { 11823 }, -- Luminary Kilt
     { 11669 }, -- Naglering
     { 11819 }, -- Second Wind
+    { 273113 }, -- Blueprint: Master Forge
 })
 
 Data:AddBossLoot(238, { -- Hurley Blackbreath
@@ -103,6 +106,7 @@ Data:AddBossLoot(240, { -- Ribbly Screwspigot
 Data:AddBossLoot(241, { -- Plugger Spazzring
     { 12793 }, -- Mixologist's Tunic
     { 12791 }, -- Barman Shanker
+    { 18653 }, -- Schematic: Goblin Jumper Cables XL
 })
 
 Data:AddBossLoot(242, { -- Ambassador Flamelash
@@ -130,6 +134,7 @@ Data:AddBossLoot(244, { -- Magmus
     { 22395 }, -- Totem of Rage
     { 22400 }, -- Libram of Truth
     { 11746 }, -- Golem Skull Helm
+    { 277129 }, -- Fragment of the Firelands
 })
 
 Data:AddBossLoot(2789, { -- Princess Moira Bronzebeard
@@ -224,6 +229,14 @@ Data:AddTrashLoot(230, {
     { 12535 }, -- #12535
     { 12528 }, -- #12528
     { 12532 }, -- #12532
+    { 11611 }, -- Plans: Dark Iron Sunderer
+    { 11614 }, -- Plans: Dark Iron Mail
+    { 11615 }, -- Plans: Dark Iron Shoulders
+    { 16049 }, -- Schematic: Dark Iron Bomb
+    { 16048 }, -- Schematic: Dark Iron Rifle
+    { 18654 }, -- Schematic: Gnomish Alarm-O-Bot
+    { 16053 }, -- Schematic: Master Engineer's Goggles
+    { 18661 }, -- Schematic: World Enlarger
 })
 
 Data:AddQuests(230, {

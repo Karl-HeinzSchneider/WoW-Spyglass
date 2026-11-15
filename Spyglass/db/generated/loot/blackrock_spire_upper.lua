@@ -9,6 +9,7 @@ Data:AddBossLoot(3062, { -- Pyroguard Emberseer
     { 12926 }, -- Flaming Band
     { 12927 }, -- Truestrike Shoulders
     { 12929 }, -- Emberfury Talisman
+    { 249520 }, -- Formula: Molten Heart of the Mountain
 })
 
 Data:AddBossLoot(3063, { -- Warchief Rend Blackhand
@@ -58,6 +59,7 @@ Data:AddBossLoot(3069, { -- General Drakkisath
     { 22269 }, -- Shadow Prowler's Cloak
     { 22268 }, -- Draconic Infused Emblem
     { 15730 }, -- Pattern: Red Dragonscale Breastplate
+    { 13519 }, -- Recipe: Flask of the Titans
 })
 
 Data:AddBossLoot(3070, { -- Lord Valthalak
@@ -77,6 +79,7 @@ Data:AddBossLoot(-10264, { -- Solakar Flamewreath
     { 12606 }, -- Crystallized Girdle
     { 12609 }, -- Polychromatic Visionwrap
     { 16695 }, -- Devout Mantle
+    { 18657 }, -- Schematic: Hyper-Radiant Flame Reflector
 })
 
 Data:AddBossLoot(-10509, { -- Jed Runewatcher
@@ -92,6 +95,7 @@ Data:AddBossLoot(-10899, { -- Goraluk Anvilcrack
     { 13502 }, -- Handcrafted Mastersmith Girdle
     { 12834 }, -- Plans: Arcanite Champion
     { 12837 }, -- Plans: Masterwork Stormhammer
+    { 12728 }, -- Pattern: Invulnerable Mail
 })
 
 Data:AddBossLoot(-10339, { -- Gyth
@@ -100,6 +104,7 @@ Data:AddBossLoot(-10339, { -- Gyth
     { 12960 }, -- Tribal War Feathers
     { 16669 }, -- Pauldrons of Elements
     { 22225 }, -- Dragonskin Cowl
+    { 13522 }, -- Recipe: Flask of Chromatic Resistance
 })
 
 Data:AddTrashLoot(22902, {
@@ -110,6 +115,7 @@ Data:AddTrashLoot(22902, {
     { 16683 }, -- Magister's Bindings
     { 16703 }, -- Dreadmist Bracers
     { 16735 }, -- Bracers of Valor
+    { 16247 }, -- Formula: Enchant 2H Weapon - Superior Impact
 })
 
 Data:AddQuests(22902, {

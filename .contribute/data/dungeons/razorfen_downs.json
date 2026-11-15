@@ -27,6 +27,70 @@
         {
           "item": 10777,
           "name": "Arachnid Gloves"
+        },
+        {
+          "item": 251398,
+          "name": "Plans: Officer's Boots"
+        },
+        {
+          "item": 254042,
+          "name": "Pattern: Fiery Cord"
+        },
+        {
+          "item": 254040,
+          "name": "Pattern: Frothing Cord"
+        },
+        {
+          "item": 251402,
+          "name": "Plans: Justicar's Boots"
+        },
+        {
+          "item": 254038,
+          "name": "Pattern: Gilded Cord"
+        },
+        {
+          "item": 254046,
+          "name": "Pattern: Golden Cord"
+        },
+        {
+          "item": 252844,
+          "name": "Pattern: Skulker's Leather Shoes"
+        },
+        {
+          "item": 252846,
+          "name": "Pattern: Skycaller's Leather Shoes"
+        },
+        {
+          "item": 251401,
+          "name": "Plans: Prefect's Boots"
+        },
+        {
+          "item": 252896,
+          "name": "Pattern: Stalker's Mail Boots"
+        },
+        {
+          "item": 252847,
+          "name": "Pattern: Mender's Leather Shoes"
+        },
+        {
+          "item": 252843,
+          "name": "Pattern: Prowler's Leather Shoes"
+        },
+        {
+          "item": 254048,
+          "name": "Pattern: Radiant Cord"
+        },
+        {
+          "item": 252845,
+          "name": "Pattern: Warden's Leather Shoes"
+        },
+        {
+          "item": 251399,
+          "name": "Plans: Sentinel's Boots"
+        },
+        {
+          "item": 251400,
+          "name": "Plans: Warder's Boots"
         }
       ]
     },
@@ -49,6 +113,74 @@
         {
           "item": 274380,
           "name": "Decaying Flesh Bands"
+        },
+        {
+          "item": 254042,
+          "name": "Pattern: Fiery Cord"
+        },
+        {
+          "item": 254038,
+          "name": "Pattern: Gilded Cord"
+        },
+        {
+          "item": 252845,
+          "name": "Pattern: Warden's Leather Shoes"
+        },
+        {
+          "item": 254044,
+          "name": "Pattern: Black Cord"
+        },
+        {
+          "item": 254040,
+          "name": "Pattern: Frothing Cord"
+        },
+        {
+          "item": 251398,
+          "name": "Plans: Officer's Boots"
+        },
+        {
+          "item": 251401,
+          "name": "Plans: Prefect's Boots"
+        },
+        {
+          "item": 252844,
+          "name": "Pattern: Skulker's Leather Shoes"
+        },
+        {
+          "item": 252897,
+          "name": "Pattern: Skycaller's Mail Boots"
+        },
+        {
+          "item": 252896,
+          "name": "Pattern: Stalker's Mail Boots"
+        },
+        {
+          "item": 252847,
+          "name": "Pattern: Mender's Leather Shoes"
+        },
+        {
+          "item": 252899,
+          "name": "Pattern: Mender's Mail Boots"
+        },
+        {
+          "item": 252843,
+          "name": "Pattern: Prowler's Leather Shoes"
+        },
+        {
+          "item": 252898,
+          "name": "Pattern: Skirmisher's Mail Boots"
+        },
+        {
+          "item": 252846,
+          "name": "Pattern: Skycaller's Leather Shoes"
+        },
+        {
+          "item": 251399,
+          "name": "Plans: Sentinel's Boots"
+        },
+        {
+          "item": 251400,
+          "name": "Plans: Warder's Boots"
         }
       ]
     },
@@ -70,6 +202,78 @@
         {
           "item": 10771,
           "name": "Deathmage Sash"
+        },
+        {
+          "item": 254044,
+          "name": "Pattern: Black Cord"
+        },
+        {
+          "item": 254042,
+          "name": "Pattern: Fiery Cord"
+        },
+        {
+          "item": 252843,
+          "name": "Pattern: Prowler's Leather Shoes"
+        },
+        {
+          "item": 251402,
+          "name": "Plans: Justicar's Boots"
+        },
+        {
+          "item": 254040,
+          "name": "Pattern: Frothing Cord"
+        },
+        {
+          "item": 252847,
+          "name": "Pattern: Mender's Leather Shoes"
+        },
+        {
+          "item": 254048,
+          "name": "Pattern: Radiant Cord"
+        },
+        {
+          "item": 252898,
+          "name": "Pattern: Skirmisher's Mail Boots"
+        },
+        {
+          "item": 252896,
+          "name": "Pattern: Stalker's Mail Boots"
+        },
+        {
+          "item": 254046,
+          "name": "Pattern: Golden Cord"
+        },
+        {
+          "item": 252897,
+          "name": "Pattern: Skycaller's Mail Boots"
+        },
+        {
+          "item": 252845,
+          "name": "Pattern: Warden's Leather Shoes"
+        },
+        {
+          "item": 251398,
+          "name": "Plans: Officer's Boots"
+        },
+        {
+          "item": 251401,
+          "name": "Plans: Prefect's Boots"
+        },
+        {
+          "item": 251399,
+          "name": "Plans: Sentinel's Boots"
+        },
+        {
+          "item": 254038,
+          "name": "Pattern: Gilded Cord"
+        },
+        {
+          "item": 252846,
+          "name": "Pattern: Skycaller's Leather Shoes"
+        },
+        {
+          "item": 251400,
+          "name": "Plans: Warder's Boots"
         }
       ]
     },
@@ -96,6 +300,30 @@
         {
           "item": 251399,
           "name": "Plans: Sentinel's Boots"
+        },
+        {
+          "item": 252897,
+          "name": "Pattern: Skycaller's Mail Boots"
+        },
+        {
+          "item": 254038,
+          "name": "Pattern: Gilded Cord"
+        },
+        {
+          "item": 252899,
+          "name": "Pattern: Mender's Mail Boots"
+        },
+        {
+          "item": 252843,
+          "name": "Pattern: Prowler's Leather Shoes"
+        },
+        {
+          "item": 252898,
+          "name": "Pattern: Skirmisher's Mail Boots"
+        },
+        {
+          "item": 252845,
+          "name": "Pattern: Warden's Leather Shoes"
         }
       ]
     },
@@ -121,6 +349,70 @@
         {
           "item": 251402,
           "name": "Plans: Justicar's Boots"
+        },
+        {
+          "item": 252846,
+          "name": "Pattern: Skycaller's Leather Shoes"
+        },
+        {
+          "item": 254038,
+          "name": "Pattern: Gilded Cord"
+        },
+        {
+          "item": 252843,
+          "name": "Pattern: Prowler's Leather Shoes"
+        },
+        {
+          "item": 252897,
+          "name": "Pattern: Skycaller's Mail Boots"
+        },
+        {
+          "item": 252896,
+          "name": "Pattern: Stalker's Mail Boots"
+        },
+        {
+          "item": 252845,
+          "name": "Pattern: Warden's Leather Shoes"
+        },
+        {
+          "item": 254044,
+          "name": "Pattern: Black Cord"
+        },
+        {
+          "item": 252847,
+          "name": "Pattern: Mender's Leather Shoes"
+        },
+        {
+          "item": 254048,
+          "name": "Pattern: Radiant Cord"
+        },
+        {
+          "item": 252844,
+          "name": "Pattern: Skulker's Leather Shoes"
+        },
+        {
+          "item": 254042,
+          "name": "Pattern: Fiery Cord"
+        },
+        {
+          "item": 254046,
+          "name": "Pattern: Golden Cord"
+        },
+        {
+          "item": 252899,
+          "name": "Pattern: Mender's Mail Boots"
+        },
+        {
+          "item": 251398,
+          "name": "Plans: Officer's Boots"
+        },
+        {
+          "item": 251401,
+          "name": "Plans: Prefect's Boots"
+        },
+        {
+          "item": 251400,
+          "name": "Plans: Warder's Boots"
         }
       ]
     },
@@ -154,6 +446,66 @@
         {
           "item": 274381,
           "name": "Coldbringer Spine"
+        },
+        {
+          "item": 252899,
+          "name": "Pattern: Mender's Mail Boots"
+        },
+        {
+          "item": 252896,
+          "name": "Pattern: Stalker's Mail Boots"
+        },
+        {
+          "item": 251402,
+          "name": "Plans: Justicar's Boots"
+        },
+        {
+          "item": 254044,
+          "name": "Pattern: Black Cord"
+        },
+        {
+          "item": 254042,
+          "name": "Pattern: Fiery Cord"
+        },
+        {
+          "item": 252847,
+          "name": "Pattern: Mender's Leather Shoes"
+        },
+        {
+          "item": 252843,
+          "name": "Pattern: Prowler's Leather Shoes"
+        },
+        {
+          "item": 252845,
+          "name": "Pattern: Warden's Leather Shoes"
+        },
+        {
+          "item": 251401,
+          "name": "Plans: Prefect's Boots"
+        },
+        {
+          "item": 251400,
+          "name": "Plans: Warder's Boots"
+        },
+        {
+          "item": 254040,
+          "name": "Pattern: Frothing Cord"
+        },
+        {
+          "item": 252898,
+          "name": "Pattern: Skirmisher's Mail Boots"
+        },
+        {
+          "item": 252846,
+          "name": "Pattern: Skycaller's Leather Shoes"
+        },
+        {
+          "item": 252897,
+          "name": "Pattern: Skycaller's Mail Boots"
+        },
+        {
+          "item": 251398,
+          "name": "Plans: Officer's Boots"
         }
       ]
     }
