@@ -254,7 +254,7 @@
       "requires": [4903],
       "start": {
         "npc": "Warlord Goretooth",
-        "location": [1418, 3, 47.6],
+        "location": [1418, 5.8, 47.4],
         "description": "Badlands"
       },
       "turnIn": {

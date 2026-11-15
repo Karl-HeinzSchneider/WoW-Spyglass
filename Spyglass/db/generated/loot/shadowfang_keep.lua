@@ -112,20 +112,20 @@ Data:AddTrashLoot(33, {
 })
 
 Data:AddQuests(33, {
-    { id = 1098, name = "Deathstalkers in Shadowfang", side = "Horde", requiredLevel = 18, xp = 2000, objective = "Find Deathstalker Adamant and Deathstalker Vincent inside Shadowfang Keep.", start = { location = { 1421, 43.4, 40.9 }, npc = "High Executor Hadrec" }, turnIn = { description = "Inside Shadowfang Keep.", npc = "Deathstalker Vincent" }, items = {
+    { id = 1098, name = "Deathstalkers in Shadowfang", side = "Horde", requiredLevel = 18, xp = 2000, objective = "Find Deathstalker Adamant and Deathstalker Vincent inside Shadowfang Keep.", start = { description = "High Executor Hadrec, The Sepulcher, Silverpine Forest", location = { 1421, 43.4, 40.9 }, npc = "High Executor Hadrec" }, turnIn = { description = "Inside Shadowfang Keep.", npc = "Deathstalker Vincent" }, items = {
         { 3324 }, -- Ghostly Mantle
         { 270023 }, -- Tanned Shoulderpads
         { 270024 }, -- Bronzed Shoulderguards
     } },
-    { id = 1014, name = "Arugal Must Die", side = "Horde", requiredLevel = 18, xp = 3300, objective = "Kill Archmage Arugal and bring his head to Dalar Dawnweaver.", start = { description = "The Sepulcher, Silverpine Forest.", location = { 1421, 44.2, 39.8 }, npc = "Dalar Dawnweaver" }, turnIn = { description = "The Sepulcher, Silverpine Forest.", location = { 1421, 44.2, 39.8 }, npc = "Dalar Dawnweaver" }, items = {
+    { id = 1014, name = "Arugal Must Die", side = "Horde", requiredLevel = 18, xp = 3300, objective = "Kill Archmage Arugal and bring his head to Dalar Dawnweaver.", description = "The current Forever quest data also lists Arcane Intellect as a learned reward.", start = { description = "Dalar Dawnweaver, The Sepulcher, Silverpine Forest", location = { 1421, 44.2, 39.8 }, npc = "Dalar Dawnweaver" }, turnIn = { description = "Dalar Dawnweaver, The Sepulcher, Silverpine Forest", location = { 1421, 44.2, 39.8 }, npc = "Dalar Dawnweaver" }, items = {
         { 6414 }, -- Seal of Sylvanas
     } },
-    { id = 1013, name = "The Book of Ur", side = "Horde", requiredLevel = 16, xp = 2100, objective = "Bring the Book of Ur from Shadowfang Keep to Keeper Bel'dugur.", start = { description = "Apothecarium, Undercity.", location = { 1458, 53.7, 54.5 }, npc = "Keeper Bel'dugur" }, turnIn = { description = "Apothecarium, Undercity.", location = { 1458, 53.7, 54.5 }, npc = "Keeper Bel'dugur" }, items = {
+    { id = 1013, name = "The Book of Ur", side = "Horde", requiredLevel = 16, xp = 2100, objective = "Bring the Book of Ur from Shadowfang Keep to Keeper Bel'dugur.", start = { description = "Keeper Bel'dugur, Apothecarium, Undercity", location = { 1458, 53.7, 54.5 }, npc = "Keeper Bel'dugur" }, turnIn = { description = "Keeper Bel'dugur, Apothecarium, Undercity", location = { 1458, 53.7, 54.5 }, npc = "Keeper Bel'dugur" }, items = {
         { 6335 }, -- Grizzled Boots
         { 4534 }, -- Steel-clasped Bracers
         { 270030 }, -- Tattered Mittens
     } },
-    { id = 1740, name = "The Orb of Soran'ruk", side = "Both", class = "WARLOCK", requiredLevel = 20, xp = 2550, objective = "Find 3 Soran'ruk Fragments and 1 Large Soran'ruk Fragment and return them to Doan Karhan.", start = { description = "The Barrens.", location = { 1413, 49.3, 57.2 }, npc = "Doan Karhan" }, turnIn = { description = "The Barrens.", location = { 1413, 49.3, 57.2 }, npc = "Doan Karhan" }, items = {
+    { id = 1740, name = "The Orb of Soran'ruk", side = "Both", class = "WARLOCK", requiredLevel = 20, xp = 2550, objective = "Find 3 Soran'ruk Fragments and 1 Large Soran'ruk Fragment and return them to Doan Karhan.", description = "Warlock class quest. The fragments come from Shadowfang Keep and Blackfathom Deeps.", start = { description = "Doan Karhan, The Barrens", location = { 1413, 49.3, 57.2 }, npc = "Doan Karhan" }, turnIn = { description = "Doan Karhan, The Barrens", location = { 1413, 49.3, 57.2 }, npc = "Doan Karhan" }, items = {
         { 6898 }, -- Orb of Soran'ruk
         { 15109 }, -- Staff of Soran'ruk
     } },
@@ -135,7 +135,7 @@ Data:AddQuests(33, {
     { id = 95140, name = "Old Fire-Eye", side = "Horde", class = "PALADIN", requiredLevel = 20, xp = 2650, objective = "Use the Moonsilver Blade to destroy Old-Fire Eye in Silverpine Forest.", description = "Paladin class quest for undead and tauren. In this dungeon: Whitestone Oak Lumber drops from Goblin Woodcarvers. The other parts are the Enchanted Silver Ingot (Shadowfang Keep) and the Purified Kor Gem (Blackfathom Deeps).\n\nThis is a chain quest with a step in The Deadmines", requires = { { id = 95126, name = "The Moonsilver Blade" } }, start = { description = "The Sepulcher, Silverpine Forest", location = { 1421, 43.3, 41 }, npc = "Lumina Windsinger" }, turnIn = { description = "The Sepulcher, Silverpine Forest", location = { 1421, 43.3, 41 }, npc = "Lumina Windsinger" }, items = {
         { 267369 }, -- Wolfsbane
     } },
-    { id = 78307, name = "The Horn of Xelthos", side = "Both", class = "ROGUE", requiredLevel = 20, xp = 6900, objective = "Collect C's payment from the Dead Drop near Pyrewood Village.", description = "Rogue class quest. C's letter arrives at level 20 in a capital city; take the job at the Dead Drop near Pyrewood Village. Keep a bag slot free.\n\nSolo job: you must do it alone, outside any group.", requires = { { id = 78261, name = "The Horn of Xelthos" } }, start = { description = "Dead Drop, Pyrewood Village, Silverpine Forest", location = { 1421, 47.1, 71.1 } }, turnIn = { description = "Pyrewood Village, Silverpine Forest", npc = "Dead Drop" }, items = {
+    { id = 78307, name = "The Horn of Xelthos", side = "Both", class = "ROGUE", requiredLevel = 20, xp = 6900, objective = "Collect C's payment from the Dead Drop near Pyrewood Village.", description = "Rogue class quest. C's letter arrives at level 20 in a capital city; take the job at the Dead Drop near Pyrewood Village. Keep a bag slot free.\n\nSolo job: you must do it alone, outside any group.", requires = { { id = 78261, name = "The Horn of Xelthos" } }, start = { description = "Dead Drop, Pyrewood Village, Silverpine Forest", location = { 1421, 47.1, 71.1 }, npc = "Dead Drop" }, turnIn = { description = "Pyrewood Village, Silverpine Forest", npc = "Dead Drop" }, items = {
         { 277210 }, -- Pyrewood Signet Ring
     } },
 })

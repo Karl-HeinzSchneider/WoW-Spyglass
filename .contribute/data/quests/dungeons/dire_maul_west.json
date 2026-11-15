@@ -233,7 +233,7 @@
       "name": "Wheel of the Black March",
       "requiredLevel": 60,
       "objective": "Bring 6 Large Brilliant Shards and 25 Dark Iron Ore to Gorzeeki in the Burning Steppes.",
-      "requires": [7625],
+      "requires": [7625, 7626],
       "start": {
         "npc": "Mor'zul Bloodbringer",
         "location": [1428, 12.6, 31.4],
@@ -250,7 +250,7 @@
       "name": "Doomsday Candle",
       "requiredLevel": 60,
       "objective": "Bring 35 Black Dragonscales to Gorzeeki Wildeyes in the Burning Steppes.",
-      "requires": [7625],
+      "requires": [7625, 7627],
       "start": {
         "npc": "Mor'zul Bloodbringer",
         "location": [1428, 12.6, 31.4],
@@ -271,7 +271,7 @@
       "xp": 6600,
       "objective": "Bring the Imp in a Jar to the alchemy lab in the Scholomance. After the parchment is created, return the jar to Gorzeeki Wildeyes.",
       "description": "Warlock dreadsteed quest. Release the Imp in a Jar at the alchemy lab in Ras Frostwhisper's room and wait for the parchment.",
-      "requires": [7625],
+      "requires": [7625, 7628],
       "start": {
         "npc": "Gorzeeki Wildeyes",
         "location": [1428, 12.4, 31.4],

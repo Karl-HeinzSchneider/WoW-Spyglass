@@ -40,11 +40,15 @@
       "requiredLevel": 15,
       "xp": 0,
       "objective": "Kill Rath'mael in Ruins of Lordaeron.",
+      "requires": [99156],
       "start": {
-        "npc": "Deathguard Kristof"
+        "npc": "Deathguard Kristof",
+        "location": [1420, 65.2, 60.2],
+        "description": "Deathguard Kristof, Brill, Tirisfal Glades"
       },
       "turnIn": {
-        "npc": "Deathguard Kristof"
+        "npc": "Deathguard Kristof",
+        "description": "Deathguard Kristof, Brill"
       },
       "items": [
         {
@@ -66,7 +70,8 @@
       "objective": "Bring the Blood-Stained Letter to Orphan Matron Nightingale.",
       "description": "Found in the graveyard inside Ruins of Lordaeron",
       "start": {
-        "item": 251522
+        "item": 251522,
+        "description": "Item start: Blood-Stained Letter, graveyard inside Ruins of Lordaeron"
       },
       "turnIn": {
         "npc": "Orphan Matron Nightingale",
@@ -87,10 +92,13 @@
       "xp": 2200,
       "objective": "Collect 25 Intact Limbs within Ruins of Lordaeron.",
       "start": {
-        "npc": "Morbin Lightbane"
+        "npc": "Morbin Lightbane",
+        "location": [1458, 57.9, 89.5],
+        "description": "Morbin Lightbane, Undercity"
       },
       "turnIn": {
-        "npc": "Morbin Lightbane"
+        "npc": "Morbin Lightbane",
+        "description": "Morbin Lightbane, Undercity"
       },
       "items": [
         {
@@ -115,7 +123,8 @@
         "description": "Just inside Ruins of Lordaeron (left of the entrance)."
       },
       "turnIn": {
-        "npc": "Captain Truman"
+        "npc": "Captain Truman",
+        "description": "Captain Truman, just inside Ruins of Lordaeron"
       },
       "items": [
         {
@@ -141,7 +150,8 @@
       "objective": "Collect 10 Bloodied Insignias.",
       "description": "Dropped by: undead enemies inside Ruins of Lordaeron",
       "start": {
-        "item": 268535
+        "item": 268535,
+        "description": "Item start: Bloodied Insignia, inside Ruins of Lordaeron"
       },
       "turnIn": {
         "npc": "General Marcus Jonathan",
@@ -165,11 +175,15 @@
       "requiredLevel": 16,
       "xp": 2600,
       "objective": "Collect the Highly Toxic Strain from Witherfang.",
+      "requires": [451],
       "start": {
-        "npc": "Theodore Griffs"
+        "npc": "Theodore Griffs",
+        "location": [1458, 46.5, 71.6],
+        "description": "Theodore Griffs, Undercity"
       },
       "turnIn": {
-        "npc": "Theodore Griffs"
+        "npc": "Theodore Griffs",
+        "description": "Theodore Griffs, Undercity"
       },
       "items": [
         {
@@ -186,13 +200,14 @@
       "id": 97288,
       "name": "Unending Torment",
       "side": "Horde",
-      "requiredLevel": 16,
+      "requiredLevel": 15,
       "xp": 1650,
       "objective": "Deliver the Abominable Head to the Undercity.",
       "description": "Dropped by: The Baron",
       "followUps": [97289, 97290, 97291, 97292],
       "start": {
-        "item": 280438
+        "item": 280438,
+        "description": "Item start: Abominable Head, inside Ruins of Lordaeron"
       },
       "turnIn": {
         "npc": "Master Apothecary Faranell",
@@ -302,10 +317,13 @@
       "xp": 2200,
       "objective": "Investigate the disappearance of Edward Heartweaver in Ruins of Lordaeron.",
       "start": {
-        "npc": "Tabitha Heartweaver"
+        "npc": "Tabitha Heartweaver",
+        "location": [1421, 44.5, 43],
+        "description": "Tabitha Heartweaver, Silverpine Forest / The Sepulcher"
       },
       "turnIn": {
-        "npc": "Tabitha Heartweaver"
+        "npc": "Tabitha Heartweaver",
+        "description": "Tabitha Heartweaver, The Sepulcher, Silverpine Forest"
       },
       "items": [
         {
@@ -327,7 +345,8 @@
       "objective": "Return the Crest of Lordaeron to Stormwind.",
       "description": "Community reports indicate the Crest can spawn at one of several locations inside the dungeon. Reported spots include upper floors of towers, side/crypt rooms near The Baron, and the area around Bjork.",
       "start": {
-        "item": 268579
+        "item": 268579,
+        "description": "Item start: Crest of Lordaeron, inside Ruins of Lordaeron"
       },
       "turnIn": {
         "npc": "Lady Dena Kennedy",
@@ -349,7 +368,8 @@
       "objective": "Bring the Crest of Lordaeron to the Undercity.",
       "description": "Community reports indicate the Crest can spawn at one of several locations inside the dungeon. Reported spots include upper floors of towers, side/crypt rooms near The Baron, and the area around Bjork.",
       "start": {
-        "item": 268579
+        "item": 268579,
+        "description": "Item start: Crest of Lordaeron, inside Ruins of Lordaeron"
       },
       "turnIn": {
         "npc": "Oran Snakewrithe",

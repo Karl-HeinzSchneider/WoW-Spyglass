@@ -27,10 +27,13 @@
       "objective": "Bring a Lieutenant's Insignia from the Burning Blade in Skull Rock to Thrall.",
       "description": "First required Hidden Enemies step for the Ragefire Chasm chain.",
       "start": {
-        "npc": "Thrall"
+        "npc": "Thrall",
+        "location": [1454, 32, 37.8],
+        "description": "Thrall, Valley of Wisdom, Orgrimmar"
       },
       "turnIn": {
-        "npc": "Thrall"
+        "npc": "Thrall",
+        "description": "Thrall, Valley of Wisdom, Orgrimmar"
       },
       "items": []
     },
@@ -44,10 +47,13 @@
       "description": "Neeru is in the Cleft of Shadow near the Ragefire Chasm entrance.",
       "requires": [5726],
       "start": {
-        "npc": "Thrall"
+        "npc": "Thrall",
+        "location": [1454, 31.7, 37.8],
+        "description": "Thrall, Valley of Wisdom, Orgrimmar"
       },
       "turnIn": {
-        "npc": "Thrall"
+        "npc": "Thrall",
+        "description": "Thrall, Valley of Wisdom, Orgrimmar"
       },
       "items": []
     },
@@ -58,13 +64,17 @@
       "requiredLevel": 9,
       "xp": 1150,
       "objective": "Kill Bazzalan and Jergosh the Invoker inside Ragefire Chasm.",
+      "description": "Requires the earlier Hidden Enemies chain steps in Orgrimmar. The next Hidden Enemies step later offers:",
       "requires": [5727],
       "followUps": [5729, 5730],
       "start": {
-        "npc": "Thrall"
+        "npc": "Thrall",
+        "location": [1454, 32, 37.8],
+        "description": "Thrall, Valley of Wisdom, Orgrimmar"
       },
       "turnIn": {
-        "npc": "Thrall"
+        "npc": "Thrall",
+        "description": "Thrall, Valley of Wisdom, Orgrimmar"
       },
       "items": []
     },
@@ -127,10 +137,13 @@
       "xp": 1450,
       "objective": "Collect Spells of Shadow and Incantations from the Nether inside Ragefire Chasm.",
       "start": {
-        "npc": "Varimathras"
+        "npc": "Varimathras",
+        "location": [1458, 56.2, 92.6],
+        "description": "Varimathras, Royal Quarter, Undercity"
       },
       "turnIn": {
-        "npc": "Varimathras"
+        "npc": "Varimathras",
+        "description": "Varimathras, Royal Quarter, Undercity"
       },
       "items": [
         {
@@ -160,7 +173,8 @@
         "description": "The Grimtotem Satchel starts this quest after finding Maur Grimtotem's corpse in Ragefire Chasm."
       },
       "turnIn": {
-        "npc": "Rahauro"
+        "npc": "Rahauro",
+        "description": "Rahauro, Elder Rise, Thunder Bluff"
       },
       "items": [
         {
@@ -185,10 +199,13 @@
       "xp": 1050,
       "objective": "Kill 8 Ragefire Troggs and 8 Ragefire Shamans inside Ragefire Chasm.",
       "start": {
-        "npc": "Rahauro"
+        "npc": "Rahauro",
+        "location": [1456, 70.4, 32.2],
+        "description": "Rahauro, Elder Rise, Thunder Bluff"
       },
       "turnIn": {
-        "npc": "Rahauro"
+        "npc": "Rahauro",
+        "description": "Rahauro, Elder Rise, Thunder Bluff"
       },
       "items": []
     },
@@ -199,9 +216,12 @@
       "requiredLevel": 9,
       "xp": 880,
       "objective": "Find Maur Grimtotem's corpse inside Ragefire Chasm and search it for anything of interest.",
+      "description": "From the first major three-way junction, take the right-hand tunnel, follow it uphill toward the dead end, then enter the small side room on the left. Interact with Maur's corpse there.",
       "followUps": [5724],
       "start": {
-        "npc": "Rahauro"
+        "npc": "Rahauro",
+        "location": [1456, 70.4, 32.2],
+        "description": "Rahauro, Elder Rise, Thunder Bluff"
       },
       "turnIn": {
         "npc": "Maur Grimtotem's corpse",
@@ -217,10 +237,13 @@
       "xp": 1150,
       "objective": "Slay Taragaman the Hungerer and recover Taragaman the Hungerer's Heart.",
       "start": {
-        "npc": "Neeru Fireblade"
+        "npc": "Neeru Fireblade",
+        "location": [1454, 49.6, 50.6],
+        "description": "Neeru Fireblade, Cleft of Shadow, Orgrimmar"
       },
       "turnIn": {
-        "npc": "Neeru Fireblade"
+        "npc": "Neeru Fireblade",
+        "description": "Neeru Fireblade, Cleft of Shadow, Orgrimmar"
       },
       "items": []
     }

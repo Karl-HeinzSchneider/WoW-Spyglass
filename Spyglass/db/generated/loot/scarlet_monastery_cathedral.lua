@@ -107,5 +107,5 @@ Data:AddQuests(18904, {
         { 6831 }, -- Black Menace
         { 11262 }, -- Orb of Lorica
     } },
-    { id = 1113, name = "Hearts of Zeal", side = "Horde", requiredLevel = 30, xp = 3300, objective = "Bring 20 Hearts of Zeal from the Scarlet Monastery to Master Apothecary Faranell.", requires = { { id = 1109, name = "Going, Going, Guano!" } }, start = { description = "Undercity.", location = { 1458, 48, 69 }, npc = "Master Apothecary Faranell" }, turnIn = { description = "Undercity.", location = { 1458, 48, 69 }, npc = "Master Apothecary Faranell" }, items = {} },
+    { id = 1113, name = "Hearts of Zeal", side = "Horde", requiredLevel = 30, xp = 3300, objective = "Master Apothecary Faranell in the Undercity wants 20 Hearts of Zeal.", description = "Monastery-wide collection: any Scarlet humanoid on the way to the Armory can drop Hearts of Zeal.", requires = { { id = 1109, name = "Going, Going, Guano!" } }, start = { description = "Undercity.", location = { 1458, 48, 69 }, npc = "Master Apothecary Faranell" }, turnIn = { description = "Undercity.", location = { 1458, 48, 69 }, npc = "Master Apothecary Faranell" }, items = {} },
 })

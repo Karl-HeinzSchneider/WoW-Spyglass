@@ -110,7 +110,7 @@ Data:AddQuests(70, {
         { 270059 }, -- Restorer's Fine Gloves
         { 270060 }, -- Excavator Gauntlets
     } },
-    { id = 17, name = "Uldaman Reagent Run", side = "Alliance", requiredLevel = 38, xp = 6050, objective = "Bring 12 Magenta Fungus Caps to Ghak Healtouch in Thelsamar.", requires = { { id = 2500, name = "Badlands Reagent Run" } }, start = { description = "Thelsamar, Loch Modan", location = { 1432, 37, 49.2 }, npc = "Ghak Healtouch" }, turnIn = { description = "Thelsamar, Loch Modan", location = { 1432, 37, 49.2 }, npc = "Ghak Healtouch" }, items = {
+    { id = 17, name = "Uldaman Reagent Run", side = "Alliance", requiredLevel = 38, xp = 6050, objective = "Bring 12 Magenta Fungus Caps to Ghak Healtouch in Thelsamar.", requires = { { id = 2500, name = "Badlands Reagent Run" } }, start = { description = "Thelsamar, Loch Modan", location = { 1432, 37, 49.2 }, npc = "Ghak Healtouch" }, turnIn = { description = "Thelsamar, Loch Modan", location = { 2548, 66.6, 79.9 }, npc = "Ghak Healtouch" }, items = {
         { 9030 }, -- Restorative Potion
     } },
     { id = 2202, name = "Uldaman Reagent Run", side = "Horde", requiredLevel = 36, xp = 6750, objective = "Bring 12 Magenta Fungus Caps to Jarkal Mossmeld in Kargath.", requires = { { id = 2258, name = "Badlands Reagent Run" } }, start = { description = "Kargath, Badlands", location = { 1418, 2.4, 46 }, npc = "Jarkal Mossmeld" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 2.4, 46 }, npc = "Jarkal Mossmeld" }, items = {
@@ -141,4 +141,15 @@ Data:AddQuests(70, {
         { 9587 }, -- Thawpelt Sack
     } },
     { id = 1956, name = "Power in Uldaman", side = "Both", class = "MAGE", requiredLevel = 35, xp = 7800, objective = "Retrieve an Obsidian Power Source and bring it to Tabetha in Dustwallow Marsh.", description = "Mage class quest. The Obsidian Sentinel guards the back entrance of Uldaman. Continues with Mana Surges for the Celestial Orb or Celestial Stave.", requires = { { id = 1955, name = "The Exorcism" } }, start = { description = "Dustwallow Marsh", location = { 1445, 46, 57 }, npc = "Tabetha" }, turnIn = { description = "Dustwallow Marsh", location = { 1445, 46, 57 }, npc = "Tabetha" }, items = {} },
+    { id = 2361, name = "Restoring the Necklace", side = "Alliance", requiredLevel = 37, xp = 5600, objective = "Let Talvash del Kissel finish restoring the necklace, then take it from him.", requires = { { id = 2204, name = "Restoring the Necklace" } }, start = { description = "Mystic Ward, Ironforge", location = { 1455, 36, 4 }, npc = "Talvash del Kissel" }, turnIn = { description = "Mystic Ward, Ironforge", location = { 1455, 36, 4 }, npc = "Talvash del Kissel" }, items = {
+        { 7673 }, -- Talvash's Enhancing Necklace
+    } },
+    { id = 2341, name = "Necklace Recovery, Take 3", side = "Horde", requiredLevel = 37, xp = 5600, objective = "Visit Jarkal Mossmeld in Kargath to see if he was successful.", requires = { { id = 2340, name = "Deliver the Gems" } }, start = { description = "The Drag, Orgrimmar", location = { 1454, 59.4, 36.8 }, npc = "Dran Droffers" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 2.6, 46 }, npc = "Jarkal Mossmeld" }, items = {
+        { 7888 }, -- Jarkal's Enhancing Necklace
+    } },
+    { id = 2439, name = "The Platinum Discs", side = "Alliance", requiredLevel = 40, xp = 420, objective = "Take your reward voucher to Dinita Stonemantle in the Vault of Ironforge.", requires = { { id = 2279, name = "The Platinum Discs" } }, start = { description = "Hall of Explorers, Ironforge", location = { 1455, 69.6, 18.6 }, npc = "High Explorer Magellas" }, turnIn = { description = "The Vault, Ironforge", location = { 1455, 33.8, 60.2 }, npc = "Dinita Stonemantle" }, items = {
+        { 3928 }, -- Superior Healing Potion
+        { 6149 }, -- Greater Mana Potion
+        { 9587 }, -- Thawpelt Sack
+    } },
 })

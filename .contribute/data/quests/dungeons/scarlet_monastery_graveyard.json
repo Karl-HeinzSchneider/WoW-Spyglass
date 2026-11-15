@@ -54,6 +54,7 @@
       "description": "Rogue class quest. C's letter arrives at level 20 in a capital city; take the job at the Dead Drop near Pyrewood Village. Keep a bag slot free.\n\nSolo job: you must do it alone, outside any group.",
       "requires": [78261],
       "start": {
+        "npc": "Dead Drop",
         "location": [1421, 47.1, 71.1],
         "description": "Dead Drop, Pyrewood Village, Silverpine Forest"
       },
@@ -97,6 +98,7 @@
       "description": "Rogue class quest after The Horn of Xelthos; C's next letter (around level 30) sends you back to the Dead Drop. Wear the Scarlet Initiate's Uniform in every wing: stealth or attacking removes it.\n\nSolo job: you must do it alone, outside any group.",
       "requires": [78676],
       "start": {
+        "npc": "Dead Drop",
         "location": [1421, 47.1, 71.1],
         "description": "Dead Drop, Pyrewood Village, Silverpine Forest"
       },

@@ -53,12 +53,16 @@
       "requiredLevel": 14,
       "xp": 2600,
       "objective": "Defeat Edwin VanCleef and collect his head.",
+      "description": "Final dungeon step of the Defias Brotherhood chain; complete the earlier steps first.",
       "requires": [155],
       "start": {
-        "npc": "Gryan Stoutmantle"
+        "npc": "Gryan Stoutmantle",
+        "location": [1436, 56.4, 47.5],
+        "description": "Gryan Stoutmantle, Sentinel Hill tower, Westfall (56.4, 47.5)"
       },
       "turnIn": {
-        "npc": "Gryan Stoutmantle"
+        "npc": "Gryan Stoutmantle",
+        "description": "Gryan Stoutmantle, Sentinel Hill, Westfall"
       },
       "items": [
         {
@@ -84,10 +88,13 @@
       "objective": "Collect 4 Miners' Union Cards from undead miners in the tunnels outside the instance.",
       "description": "The undead side tunnel is before the instance portal.",
       "start": {
-        "npc": "Wilder Thistlenettle"
+        "npc": "Wilder Thistlenettle",
+        "location": [1453, 66.8, 43.8],
+        "description": "Wilder Thistlenettle, the Dwarven District, Stormwind"
       },
       "turnIn": {
-        "npc": "Wilder Thistlenettle"
+        "npc": "Wilder Thistlenettle",
+        "description": "Wilder Thistlenettle, Stormwind"
       },
       "items": [
         {
@@ -113,10 +120,13 @@
       "objective": "Recover Thistlenettle's Badge from Foreman Thistlenettle in the undead side tunnel.",
       "description": "The foreman is in the tunnels before the instance portal.",
       "start": {
-        "npc": "Wilder Thistlenettle"
+        "npc": "Wilder Thistlenettle",
+        "location": [1453, 66.8, 43.8],
+        "description": "Wilder Thistlenettle, the Dwarven District, Stormwind"
       },
       "turnIn": {
-        "npc": "Wilder Thistlenettle"
+        "npc": "Wilder Thistlenettle",
+        "description": "Wilder Thistlenettle, Stormwind"
       },
       "items": [
         {
@@ -140,12 +150,16 @@
       "requiredLevel": 14,
       "xp": 1250,
       "objective": "Collect 10 Red Silk Bandanas from Defias inside the Deadmines.",
+      "description": "Requires the Defias Brotherhood escort step.",
       "requires": [153, 155],
       "start": {
-        "npc": "Scout Riell"
+        "npc": "Scout Riell",
+        "location": [1436, 56.67, 47.35],
+        "description": "Scout Riell, Sentinel Hill tower, Westfall"
       },
       "turnIn": {
-        "npc": "Scout Riell"
+        "npc": "Scout Riell",
+        "description": "Scout Riell, Sentinel Hill tower, Westfall"
       },
       "items": [
         {
@@ -173,11 +187,15 @@
       "requiredLevel": 15,
       "xp": 1550,
       "objective": "Recover the Gnoam Sprecklesprocket from Sneed's Shredder.",
+      "description": "Follows Speak with Shoni.",
       "start": {
-        "npc": "Shoni the Shilent"
+        "npc": "Shoni the Shilent",
+        "location": [1453, 63, 34],
+        "description": "Shoni the Shilent, the Dwarven District, Stormwind"
       },
       "turnIn": {
-        "npc": "Shoni the Shilent"
+        "npc": "Shoni the Shilent",
+        "description": "Shoni the Shilent, Stormwind"
       },
       "items": [
         {
@@ -208,10 +226,12 @@
       "description": "Use the Extra-Destructive Explosives to start this quest.",
       "requires": [92752],
       "start": {
-        "item": 254553
+        "item": 254553,
+        "description": "Use the Extra-Destructive Explosives quest-start item."
       },
       "turnIn": {
-        "npc": "Alba Fairmoon"
+        "npc": "Alba Fairmoon",
+        "description": "Alba Fairmoon, in the hills behind Moonbrook (at the Deadmines exit), Westfall"
       },
       "items": []
     },
@@ -224,10 +244,12 @@
       "objective": "Take the letter to the city architect in Stormwind.",
       "description": "Looted from Edwin VanCleef",
       "start": {
-        "item": 2874
+        "item": 2874,
+        "description": "Use An Unsent Letter, looted from Edwin VanCleef."
       },
       "turnIn": {
-        "npc": "Baros Alexston"
+        "npc": "Baros Alexston",
+        "description": "Baros Alexston, City Hall, Cathedral Square, Stormwind"
       },
       "items": []
     },
@@ -241,10 +263,12 @@
       "description": "First step of the required Defias Brotherhood chain.",
       "start": {
         "npc": "Gryan Stoutmantle",
-        "location": [1436, 56.2, 47.6]
+        "location": [1436, 56.2, 47.6],
+        "description": "Gryan Stoutmantle, Sentinel Hill, Westfall"
       },
       "turnIn": {
-        "npc": "Wiley the Black"
+        "npc": "Wiley the Black",
+        "description": "Wiley the Black, Lakeshire, Redridge Mountains"
       },
       "items": []
     },
@@ -258,10 +282,13 @@
       "description": "Second step of the Defias Brotherhood chain.",
       "requires": [65],
       "start": {
-        "npc": "Wiley the Black"
+        "npc": "Wiley the Black",
+        "location": [1433, 21.4, 45.4],
+        "description": "Wiley the Black, Lakeshire, Redridge Mountains"
       },
       "turnIn": {
-        "npc": "Gryan Stoutmantle"
+        "npc": "Gryan Stoutmantle",
+        "description": "Gryan Stoutmantle, Sentinel Hill, Westfall"
       },
       "items": []
     },
@@ -275,10 +302,13 @@
       "description": "Shaw investigates the connection between the Defias and the Stonemasons.",
       "requires": [132],
       "start": {
-        "npc": "Gryan Stoutmantle"
+        "npc": "Gryan Stoutmantle",
+        "location": [1436, 56.3, 47.5],
+        "description": "Gryan Stoutmantle, Sentinel Hill, Westfall"
       },
       "turnIn": {
-        "npc": "Master Mathias Shaw"
+        "npc": "Master Mathias Shaw",
+        "description": "Master Mathias Shaw, Old Town, Stormwind"
       },
       "items": []
     },
@@ -292,10 +322,13 @@
       "description": "Returns Shaw's findings about Edwin VanCleef to Gryan.",
       "requires": [135],
       "start": {
-        "npc": "Master Mathias Shaw"
+        "npc": "Master Mathias Shaw",
+        "location": [1453, 78.3, 70.7],
+        "description": "Master Mathias Shaw, Old Town, Stormwind"
       },
       "turnIn": {
-        "npc": "Gryan Stoutmantle"
+        "npc": "Gryan Stoutmantle",
+        "description": "Gryan Stoutmantle, Sentinel Hill, Westfall"
       },
       "items": []
     },
@@ -309,10 +342,13 @@
       "description": "The messenger travels the roads between Moonbrook, Gold Coast Quarry and Jangolode Mine.",
       "requires": [141],
       "start": {
-        "npc": "Gryan Stoutmantle"
+        "npc": "Gryan Stoutmantle",
+        "location": [1436, 56.3, 47.5],
+        "description": "Gryan Stoutmantle, Sentinel Hill, Westfall"
       },
       "turnIn": {
-        "npc": "Gryan Stoutmantle"
+        "npc": "Gryan Stoutmantle",
+        "description": "Gryan Stoutmantle, Sentinel Hill, Westfall"
       },
       "items": []
     },
@@ -346,7 +382,8 @@
         "description": "Sentinel Hill, Westfall."
       },
       "turnIn": {
-        "npc": "Gryan Stoutmantle"
+        "npc": "Gryan Stoutmantle",
+        "description": "Gryan Stoutmantle, Sentinel Hill, Westfall"
       },
       "items": []
     },
@@ -359,7 +396,8 @@
       "objective": "Use the Well Water Sample Kit at the Jansen Stead and Molsen Farm wells.",
       "description": "First quest of the Toxic Soil chain.",
       "start": {
-        "npc": "Alba Fairmoon"
+        "npc": "Alba Fairmoon",
+        "location": [1436, 53, 53.3]
       },
       "turnIn": {
         "npc": "Alba Fairmoon"
@@ -376,7 +414,8 @@
       "description": "Second quest of the Toxic Soil chain.",
       "requires": [92742],
       "start": {
-        "npc": "Alba Fairmoon"
+        "npc": "Alba Fairmoon",
+        "location": [1436, 53, 53.3]
       },
       "turnIn": {
         "npc": "Alba Fairmoon"
@@ -393,7 +432,8 @@
       "description": "Investigate whether Westfall's mines are causing the contamination.",
       "requires": [92744],
       "start": {
-        "npc": "Alba Fairmoon"
+        "npc": "Alba Fairmoon",
+        "location": [1436, 53, 53.3]
       },
       "turnIn": {
         "npc": "Alba Fairmoon"
@@ -410,7 +450,8 @@
       "description": "The supplies are found in the caves leading toward the Deadmines entrance.",
       "requires": [92745],
       "start": {
-        "npc": "Alba Fairmoon"
+        "npc": "Alba Fairmoon",
+        "location": [1436, 53, 53.3]
       },
       "turnIn": {
         "npc": "Alba Fairmoon"
@@ -426,10 +467,12 @@
       "description": "Begins the explosives portion of the Toxic Soil chain.",
       "requires": [92747],
       "start": {
-        "npc": "Alba Fairmoon"
+        "npc": "Alba Fairmoon",
+        "location": [1436, 53, 53.3]
       },
       "turnIn": {
-        "npc": "Sprite Jumpsprocket"
+        "npc": "Sprite Jumpsprocket",
+        "description": "Sprite Jumpsprocket, Dwarven District, Stormwind"
       },
       "items": []
     },
@@ -443,10 +486,13 @@
       "description": "Coarse Dynamite can be crafted, traded or bought from the auction house.",
       "requires": [92748],
       "start": {
-        "npc": "Sprite Jumpsprocket"
+        "npc": "Sprite Jumpsprocket",
+        "location": [1453, 61.9, 30.6],
+        "description": "Sprite Jumpsprocket, Dwarven District, Stormwind"
       },
       "turnIn": {
-        "npc": "Sprite Jumpsprocket"
+        "npc": "Sprite Jumpsprocket",
+        "description": "Sprite Jumpsprocket, Dwarven District, Stormwind"
       },
       "items": []
     },
@@ -459,10 +505,13 @@
       "description": "You need a remote detonator for the planned explosion.",
       "requires": [92749],
       "start": {
-        "npc": "Sprite Jumpsprocket"
+        "npc": "Sprite Jumpsprocket",
+        "location": [1453, 61.9, 30.6],
+        "description": "Sprite Jumpsprocket, Dwarven District, Stormwind"
       },
       "turnIn": {
-        "npc": "Jasper Fel"
+        "npc": "Jasper Fel",
+        "description": "Jasper Fel, SI:7, Old Town, Stormwind"
       },
       "items": []
     },
@@ -475,10 +524,13 @@
       "description": "Returns the remote detonator to the engineer.",
       "requires": [92750],
       "start": {
-        "npc": "Jasper Fel"
+        "npc": "Jasper Fel",
+        "location": [1453, 80.3, 70.1],
+        "description": "Jasper Fel, SI:7, Old Town, Stormwind"
       },
       "turnIn": {
-        "npc": "Sprite Jumpsprocket"
+        "npc": "Sprite Jumpsprocket",
+        "description": "Sprite Jumpsprocket, Dwarven District, Stormwind"
       },
       "items": []
     },
@@ -492,7 +544,9 @@
       "description": "Final preparation before Destruction in Deadmines.",
       "requires": [92751],
       "start": {
-        "npc": "Sprite Jumpsprocket"
+        "npc": "Sprite Jumpsprocket",
+        "location": [1453, 61.9, 30.6],
+        "description": "Sprite Jumpsprocket, Dwarven District, Stormwind"
       },
       "turnIn": {
         "npc": "Alba Fairmoon"

@@ -67,26 +67,30 @@ Data:AddTrashLoot(3001, {
 })
 
 Data:AddQuests(3001, {
-    { id = 95928, name = "Crystalline Elements", side = "Horde", requiredLevel = 55, xp = 17655, objective = "Bring Mayena Earthseeker a Moist Crystal, a Charged Crystal, a Noxious Crystal and a Fiery Crystal from Shaper's Terrace.", start = { description = "Mulgore (34.8, 22.2)", location = { 1412, 34.8, 22.2 }, npc = "Mayena Earthseeker" }, turnIn = { description = "Mulgore (34.8, 22.2)", location = { 1412, 34.8, 22.2 }, npc = "Mayena Earthseeker" }, items = {
+    { id = 95928, name = "Crystalline Elements", side = "Horde", requiredLevel = 55, xp = 17650, objective = "Bring Mayena Earthseeker a Moist Crystal, a Charged Crystal, a Noxious Crystal and a Fiery Crystal from Shaper's Terrace.", start = { description = "Mulgore (34.8, 22.2)", location = { 1412, 34.8, 22.2 }, npc = "Mayena Earthseeker" }, turnIn = { description = "Mulgore (34.8, 22.2)", location = { 1412, 34.8, 22.2 }, npc = "Mayena Earthseeker" }, items = {
         { 279904 }, -- Crystalline Pauldrons
         { 279906 }, -- Potent Treads
     } },
-    { id = 97049, name = "Essence of Seeping Slimes", side = "Horde", requiredLevel = 55, xp = 17650, objective = "Gather 8 Seeping Slime Essence in the Shaper's Terrace.", description = "Quest giver not known yet.", items = {
+    { id = 97049, name = "Essence of Seeping Slimes", side = "Horde", requiredLevel = 55, xp = 17650, objective = "Gather 8 Seeping Slime Essence in the Shaper's Terrace.", description = "Quest giver not known yet.", start = { description = "Chemist Fuely, The Apothecarium, Undercity (47.5, 73.3)", location = { 1458, 47.5, 73.3 }, npc = "Chemist Fuely" }, turnIn = { description = "Chemist Fuely, The Apothecarium, Undercity (47.5, 73.3)", location = { 1458, 47.5, 73.3 }, npc = "Chemist Fuely" }, items = {
         { 279932 }, -- Slime-Resistant Shroud
         { 279902 }, -- Reinforced Muck Protectors
     } },
-    { id = 95926, name = "The Dark Crystal", side = "Horde", requiredLevel = 55, xp = 6600, objective = "Gather a colorless Drained Crystal Fragment near the Achromatic Crystal in the Shaper's Terrace.", description = "Quest giver not known yet.", items = {
+    { id = 95926, name = "The Dark Crystal", side = "Horde", requiredLevel = 55, xp = 17650, objective = "Gather a colorless Drained Crystal Fragment near the Achromatic Crystal in the Shaper's Terrace.", description = "Quest giver not known yet.", start = { description = "Master Apothecary Faranell, The Apothecarium, Undercity (48.8, 69.3)", location = { 1458, 48.8, 69.3 }, npc = "Master Apothecary Faranell" }, turnIn = { description = "Master Apothecary Faranell, The Apothecarium, Undercity (48.8, 69.3)", location = { 1458, 48.8, 69.3 }, npc = "Master Apothecary Faranell" }, items = {
         { 279908 }, -- Crystal-Infused Cleaver
         { 279910 }, -- Beastslayer's Trident
         { 279912 }, -- Faintly Glowing Orb
     } },
-    { id = 95924, name = "Panic at the Digsite", side = "Alliance", requiredLevel = 55, xp = 17650, objective = "Slay Venomridge, 6 Ravasaur Matriarchs and 8 Ironhide Ravasaurs in Shaper's Terrace.", description = "Quest giver not known yet. The quest text asks for 9 Ironhide Ravasaurs, its objective counts 8.", items = {
+    { id = 95924, name = "Panic at the Digsite", side = "Alliance", requiredLevel = 55, xp = 17650, objective = "Slay Venomridge, 6 Ravasaur Matriarchs and 8 Ironhide Ravasaurs in Shaper's Terrace.", description = "Quest giver not known yet. The quest text asks for 9 Ironhide Ravasaurs, its objective counts 8.", start = { description = "Curator Thorius, Hall of Explorers, Ironforge (71.5, 15.7)", location = { 1455, 71.5, 15.7 }, npc = "Curator Thorius" }, turnIn = { description = "Curator Thorius, Hall of Explorers, Ironforge (71.5, 15.7)", location = { 1455, 71.5, 15.7 }, npc = "Curator Thorius" }, items = {
         { 279903 }, -- Diemetradon Scale Spaulders
         { 279905 }, -- Ravasaur Hide Footpads
     } },
-    { id = 95925, name = "Mapping the Way Forward", side = "Alliance", requiredLevel = 55, xp = 17650, objective = "Find Interesting Landmarks in Shaper's Terrace and fill out the explorer's map at each: the Pillar of Assimilation, the Achromatic Crystal, the Western Gates, the Regrowth Vestibule and the Unearthed Stone Watcher.", description = "Quest giver not known yet. You map them with an Explorers' League Cartographer's Kit.", items = {
+    { id = 95925, name = "Mapping the Way Forward", side = "Alliance", requiredLevel = 55, xp = 17650, objective = "Find Interesting Landmarks in Shaper's Terrace and fill out the explorer's map at each: the Pillar of Assimilation, the Achromatic Crystal, the Western Gates, the Regrowth Vestibule and the Unearthed Stone Watcher.", description = "Quest giver not known yet. You map them with an Explorers' League Cartographer's Kit.", start = { description = "Curator Thorius, Hall of Explorers, Ironforge (71.5, 15.7)", location = { 1455, 71.5, 15.7 }, npc = "Curator Thorius" }, turnIn = { description = "Curator Thorius, Hall of Explorers, Ironforge (71.5, 15.7)", location = { 1455, 71.5, 15.7 }, npc = "Curator Thorius" }, items = {
         { 279908 }, -- Crystal-Infused Cleaver
         { 279910 }, -- Beastslayer's Trident
         { 279912 }, -- Faintly Glowing Orb
+    } },
+    { id = 95790, name = "Digestible Research", side = "Alliance", requiredLevel = 55, xp = 17650, objective = "Collect 15 Partially Digested Journal Pages in Shaper's Terrace.", description = "Starts from the Partially Digested Journal on the ground inside the dungeon.", start = { description = "The Partially Digested Journal lying on the ground inside Shaper's Terrace (the Verdant Plains): click it to get the quest" }, turnIn = { description = "Curator Thorius, Hall of Explorers, Ironforge (71.5, 15.7)", location = { 1455, 71.5, 15.7 }, npc = "Curator Thorius" }, items = {
+        { 279931 }, -- Lost Researcher's Hood
+        { 279901 }, -- Expeditionary Legplates
     } },
 })

@@ -5,7 +5,7 @@
       "name": "Crystalline Elements",
       "side": "Horde",
       "requiredLevel": 55,
-      "xp": 17655,
+      "xp": 17650,
       "objective": "Bring Mayena Earthseeker a Moist Crystal, a Charged Crystal, a Noxious Crystal and a Fiery Crystal from Shaper's Terrace.",
       "start": {
         "npc": "Mayena Earthseeker",
@@ -36,6 +36,16 @@
       "xp": 17650,
       "objective": "Gather 8 Seeping Slime Essence in the Shaper's Terrace.",
       "description": "Quest giver not known yet.",
+      "start": {
+        "npc": "Chemist Fuely",
+        "location": [1458, 47.5, 73.3],
+        "description": "Chemist Fuely, The Apothecarium, Undercity (47.5, 73.3)"
+      },
+      "turnIn": {
+        "npc": "Chemist Fuely",
+        "location": [1458, 47.5, 73.3],
+        "description": "Chemist Fuely, The Apothecarium, Undercity (47.5, 73.3)"
+      },
       "items": [
         {
           "item": 279932,
@@ -52,9 +62,19 @@
       "name": "The Dark Crystal",
       "side": "Horde",
       "requiredLevel": 55,
-      "xp": 6600,
+      "xp": 17650,
       "objective": "Gather a colorless Drained Crystal Fragment near the Achromatic Crystal in the Shaper's Terrace.",
       "description": "Quest giver not known yet.",
+      "start": {
+        "npc": "Master Apothecary Faranell",
+        "location": [1458, 48.8, 69.3],
+        "description": "Master Apothecary Faranell, The Apothecarium, Undercity (48.8, 69.3)"
+      },
+      "turnIn": {
+        "npc": "Master Apothecary Faranell",
+        "location": [1458, 48.8, 69.3],
+        "description": "Master Apothecary Faranell, The Apothecarium, Undercity (48.8, 69.3)"
+      },
       "items": [
         {
           "item": 279908,
@@ -78,6 +98,16 @@
       "xp": 17650,
       "objective": "Slay Venomridge, 6 Ravasaur Matriarchs and 8 Ironhide Ravasaurs in Shaper's Terrace.",
       "description": "Quest giver not known yet. The quest text asks for 9 Ironhide Ravasaurs, its objective counts 8.",
+      "start": {
+        "npc": "Curator Thorius",
+        "location": [1455, 71.5, 15.7],
+        "description": "Curator Thorius, Hall of Explorers, Ironforge (71.5, 15.7)"
+      },
+      "turnIn": {
+        "npc": "Curator Thorius",
+        "location": [1455, 71.5, 15.7],
+        "description": "Curator Thorius, Hall of Explorers, Ironforge (71.5, 15.7)"
+      },
       "items": [
         {
           "item": 279903,
@@ -97,6 +127,16 @@
       "xp": 17650,
       "objective": "Find Interesting Landmarks in Shaper's Terrace and fill out the explorer's map at each: the Pillar of Assimilation, the Achromatic Crystal, the Western Gates, the Regrowth Vestibule and the Unearthed Stone Watcher.",
       "description": "Quest giver not known yet. You map them with an Explorers' League Cartographer's Kit.",
+      "start": {
+        "npc": "Curator Thorius",
+        "location": [1455, 71.5, 15.7],
+        "description": "Curator Thorius, Hall of Explorers, Ironforge (71.5, 15.7)"
+      },
+      "turnIn": {
+        "npc": "Curator Thorius",
+        "location": [1455, 71.5, 15.7],
+        "description": "Curator Thorius, Hall of Explorers, Ironforge (71.5, 15.7)"
+      },
       "items": [
         {
           "item": 279908,
@@ -109,6 +149,33 @@
         {
           "item": 279912,
           "name": "Faintly Glowing Orb"
+        }
+      ]
+    },
+    {
+      "id": 95790,
+      "name": "Digestible Research",
+      "side": "Alliance",
+      "requiredLevel": 55,
+      "xp": 17650,
+      "objective": "Collect 15 Partially Digested Journal Pages in Shaper's Terrace.",
+      "description": "Starts from the Partially Digested Journal on the ground inside the dungeon.",
+      "start": {
+        "description": "The Partially Digested Journal lying on the ground inside Shaper's Terrace (the Verdant Plains): click it to get the quest"
+      },
+      "turnIn": {
+        "npc": "Curator Thorius",
+        "location": [1455, 71.5, 15.7],
+        "description": "Curator Thorius, Hall of Explorers, Ironforge (71.5, 15.7)"
+      },
+      "items": [
+        {
+          "item": 279931,
+          "name": "Lost Researcher's Hood"
+        },
+        {
+          "item": 279901,
+          "name": "Expeditionary Legplates"
         }
       ]
     }

@@ -10,12 +10,12 @@
       "description": "Withermaw and Bonesnout are on different paths: take both.",
       "start": {
         "npc": "Ogtinc",
-        "location": [1447, 42.4, 42.6],
+        "location": [1447, 42.4, 42.7],
         "description": "Azshara (42.4, 42.6) (probably)"
       },
       "turnIn": {
         "npc": "Ogtinc",
-        "location": [1447, 42.4, 42.6],
+        "location": [1447, 42.4, 42.7],
         "description": "Azshara (42.4, 42.6)"
       },
       "items": [
@@ -81,6 +81,8 @@
       "xp": 560,
       "objective": "Speak with Mathrengyl Bearwalker in the Cenarion Enclave in Darnassus.",
       "start": {
+        "npc": "Commander Truesong",
+        "location": [1447, 11.8, 78.3],
         "description": "Southern Azshara (giver not known yet)"
       },
       "turnIn": {
@@ -118,7 +120,14 @@
       "objective": "Obtain a Blackmaw Ritual Totem from Elder Shaman Bloodmane in Blackmaw Hold.",
       "description": "Quest giver not known yet.",
       "start": {
+        "npc": "Archmage Timear",
+        "location": [1416, 15.4, 74],
         "description": "Not known yet (probably a mage in Dalaran)"
+      },
+      "turnIn": {
+        "npc": "Archmage Timear",
+        "location": [1416, 15.4, 74],
+        "description": "Archmage Timear, Dalaran (15.4, 74.0)"
       },
       "items": []
     },
@@ -131,7 +140,14 @@
       "objective": "Obtain a Blackmaw Ritual Totem from Elder Shaman Bloodmane in Blackmaw Hold.",
       "description": "Quest giver not known yet.",
       "start": {
+        "npc": "Muln Earthfury",
+        "location": [1412, 33.4, 22.5],
         "description": "Not known yet (perhaps Alaana Stormwalker, Mulgore)"
+      },
+      "turnIn": {
+        "npc": "Muln Earthfury",
+        "location": [1412, 33.4, 22.5],
+        "description": "Muln Earthfury, Mulgore (33.4, 22.5)"
       },
       "items": []
     },
@@ -148,6 +164,8 @@
         "description": "Looted in Blackmaw Hold; specific drop source not yet confirmed"
       },
       "turnIn": {
+        "npc": "Unele",
+        "location": [1447, 43.4, 17.4],
         "description": "The necklace's original Blackmaw owner (location not yet confirmed)"
       },
       "items": [
@@ -162,18 +180,18 @@
       "name": "Blackmaw Pouches",
       "side": "Both",
       "requiredLevel": 55,
-      "xp": 1450,
+      "xp": 13200,
       "objective": "Enter Blackmaw Hold and recover 5 Blackmaw Pouches for Ekkal at the Ruins of Eldarath in Azshara.",
       "description": "Afterwards Ekkal takes more pouches as a repeatable quest (Timbermaw Hold +100).",
       "followUps": [96246],
       "start": {
         "npc": "Ekkal",
-        "location": [1447, 41.8, 38.8],
+        "location": [1447, 42, 38.9],
         "description": "Ruins of Eldarath, Azshara"
       },
       "turnIn": {
         "npc": "Ekkal",
-        "location": [1447, 41.8, 38.8],
+        "location": [1447, 42, 38.9],
         "description": "Ruins of Eldarath, Azshara"
       },
       "items": []
@@ -182,35 +200,68 @@
       "id": 92066,
       "name": "The Twin Bears",
       "side": "Both",
-      "requiredLevel": 50,
+      "requiredLevel": 47,
       "xp": 11300,
       "objective": "Find the Totem of Ursoc and the Totem of Ursol inside Blackmaw Hold. Then, return them to Lorekeeper Nok at Ursolan.",
       "description": "Needs Timbermaw Hold reputation Neutral or better. The required level isn't confirmed yet.",
       "start": {
+        "npc": "Lorekeeper Nok",
+        "location": [1447, 41.4, 20],
         "description": "Lorekeeper Nok, Ursolan (probably; he takes the totems)"
       },
       "turnIn": {
         "npc": "Lorekeeper Nok",
+        "location": [1447, 41.4, 20],
         "description": "Ursolan"
       },
-      "items": []
+      "items": [
+        {
+          "item": 279891,
+          "name": "Guidance of Ursoc"
+        },
+        {
+          "item": 279892,
+          "name": "Wisdom of Ursol"
+        }
+      ]
     },
     {
       "id": 92065,
       "name": "Blackmaw Reclamation",
       "side": "Both",
-      "requiredLevel": 55,
-      "xp": 1450,
+      "requiredLevel": 47,
+      "xp": 13200,
       "objective": "Bring Varrox Bleakhoof's Head to Gatekeeper Rageroar at Ursolan.",
       "description": "Varrox Bleakhoof, the last boss, has the head. Needs Timbermaw Hold reputation Neutral or better. The required level isn't confirmed yet.",
+      "requires": [86814],
       "start": {
+        "npc": "Gatekeeper Rageroar",
+        "location": [1447, 42.4, 20.2],
         "description": "Gatekeeper Rageroar, Ursolan (probably; he takes the head)"
       },
       "turnIn": {
         "npc": "Gatekeeper Rageroar",
+        "location": [1447, 42.4, 20.2],
         "description": "Ursolan"
       },
-      "items": []
+      "items": [
+        {
+          "item": 260216,
+          "name": "Ouroboros Ring"
+        },
+        {
+          "item": 260217,
+          "name": "Eagle's Head Signet"
+        },
+        {
+          "item": 260218,
+          "name": "Malefactor's End"
+        },
+        {
+          "item": 260219,
+          "name": "Engraved Band"
+        }
+      ]
     },
     {
       "id": 96246,
@@ -222,12 +273,12 @@
       "requires": [97327],
       "start": {
         "npc": "Ekkal",
-        "location": [1447, 41.8, 38.8],
+        "location": [1447, 42, 38.9],
         "description": "Ruins of Eldarath, Azshara"
       },
       "turnIn": {
         "npc": "Ekkal",
-        "location": [1447, 41.8, 38.8],
+        "location": [1447, 42, 38.9],
         "description": "Ruins of Eldarath, Azshara"
       },
       "items": []
@@ -236,9 +287,154 @@
       "id": 92067,
       "name": "Feeding Time!",
       "side": "Both",
-      "requiredLevel": 50,
+      "requiredLevel": 45,
       "objective": "Bring Fel-Tainted Flesh.",
       "description": "Repeatable. The quest text sends you after the Legashi satyrs. Who gives it isn't known yet.",
+      "start": {
+        "description": "Not known yet"
+      },
+      "turnIn": {
+        "description": "Not known yet"
+      },
+      "items": [
+        {
+          "item": 249900,
+          "name": "Regurgitated Seed Pod"
+        }
+      ]
+    },
+    {
+      "id": 86777,
+      "name": "Master Feardred",
+      "requiredLevel": 47,
+      "xp": 5250,
+      "objective": "Kill Master Feardred, and bring his amulet to Korsa.",
+      "start": {
+        "npc": "Korsa",
+        "location": [1447, 63, 23.3],
+        "description": "Korsa, outside Legashi Stronghold, Azshara (63.0, 23.3)"
+      },
+      "turnIn": {
+        "npc": "Korsa",
+        "location": [1447, 63, 23.3],
+        "description": "Korsa, outside Legashi Stronghold, Azshara (63.0, 23.3)"
+      },
+      "items": []
+    },
+    {
+      "id": 86792,
+      "name": "Thinning Their Forces",
+      "requiredLevel": 47,
+      "xp": 5450,
+      "objective": "Kill 6 Legashi Hellraisers, 4 Legashi Soulstealers, and 2 Legashi Blackguards for Korsa outside Legashi Stronghold.",
+      "requires": [86777],
+      "start": {
+        "npc": "Korsa",
+        "location": [1447, 63, 23.3],
+        "description": "Korsa, outside Legashi Stronghold, Azshara (63.0, 23.3)"
+      },
+      "turnIn": {
+        "npc": "Korsa",
+        "location": [1447, 63, 23.3],
+        "description": "Korsa, outside Legashi Stronghold, Azshara (63.0, 23.3)"
+      },
+      "items": []
+    },
+    {
+      "id": 86796,
+      "name": "Later, Satyr",
+      "requiredLevel": 47,
+      "xp": 5450,
+      "objective": "Help Graal break out of Legashi Stronghold, then inform Korsa outside Legashi Stronghold.",
+      "requires": [86792],
+      "start": {
+        "npc": "Graal",
+        "location": [1447, 65.9, 14.4],
+        "description": "Graal, caged in Legashi Stronghold, Azshara (65.9, 14.4)"
+      },
+      "turnIn": {
+        "npc": "Korsa",
+        "location": [1447, 63, 23.3],
+        "description": "Korsa, outside Legashi Stronghold, Azshara (63.0, 23.3)"
+      },
+      "items": []
+    },
+    {
+      "id": 86797,
+      "name": "Return to Rageroar",
+      "requiredLevel": 47,
+      "xp": 525,
+      "objective": "Return to Gatekeeper Rageroar at Ursolan.",
+      "requires": [86796],
+      "start": {
+        "npc": "Korsa",
+        "location": [1447, 63, 23.3],
+        "description": "Korsa, outside Legashi Stronghold, Azshara (63.0, 23.3)"
+      },
+      "turnIn": {
+        "npc": "Gatekeeper Rageroar",
+        "location": [1447, 42.4, 20.2],
+        "description": "Gatekeeper Rageroar, Ursolan, Azshara (42.4, 20.2)"
+      },
+      "items": []
+    },
+    {
+      "id": 86798,
+      "name": "Timbermaw Reinforcements",
+      "requiredLevel": 47,
+      "xp": 550,
+      "objective": "Speak to Gorn One Eye in Timbermaw Hold and ask him to provide reinforcements.",
+      "requires": [86797],
+      "start": {
+        "npc": "Gatekeeper Rageroar",
+        "location": [1447, 42.4, 20.2],
+        "description": "Gatekeeper Rageroar, Ursolan, Azshara (42.4, 20.2)"
+      },
+      "turnIn": {
+        "npc": "Gorn One Eye",
+        "location": [1448, 65.2, 2.6],
+        "description": "Gorn One Eye, Timbermaw Hold"
+      },
+      "items": []
+    },
+    {
+      "id": 87346,
+      "name": "Chieftain Bloodmaw",
+      "requiredLevel": 47,
+      "xp": 5650,
+      "objective": "Kill Chieftain Bloodmaw and bring his mace to Gorn One Eye in Timbermaw Hold.",
+      "description": "Chieftain Bloodmaw is in Felwood, south of Timbermaw Hold.",
+      "requires": [86798],
+      "start": {
+        "npc": "Gorn One Eye",
+        "location": [1448, 65.2, 2.6],
+        "description": "Gorn One Eye, Timbermaw Hold"
+      },
+      "turnIn": {
+        "npc": "Gorn One Eye",
+        "location": [1448, 65.2, 2.6],
+        "description": "Gorn One Eye, Timbermaw Hold"
+      },
+      "items": []
+    },
+    {
+      "id": 86814,
+      "name": "Blackmaw Counter-Offensive",
+      "requiredLevel": 47,
+      "xp": 7050,
+      "objective": "Plant the Timbermaw War Banner at the Legashi Stronghold in Azshara. Kill Prince Halanox, report your victory to Gatekeeper Rageroar at Ursolan.",
+      "description": "Elite quest: bring a group for Prince Halanox.",
+      "requires": [87346],
+      "start": {
+        "npc": "Gorn One Eye",
+        "location": [1448, 65.2, 2.6],
+        "description": "Gorn One Eye, Timbermaw Hold"
+      },
+      "turnIn": {
+        "npc": "Gatekeeper Rageroar",
+        "location": [1447, 42.4, 20.2],
+        "description": "Gatekeeper Rageroar, Ursolan, Azshara (42.4, 20.2)"
+      },
       "items": []
     }
   ]

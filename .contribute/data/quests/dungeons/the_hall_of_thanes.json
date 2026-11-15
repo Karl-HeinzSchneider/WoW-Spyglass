@@ -32,10 +32,12 @@
       "requires": [96391],
       "start": {
         "npc": "Earthseer Farsen",
+        "location": [1426, 64.7, 58.4],
         "description": "Dun Morogh (after Underground Map)."
       },
       "turnIn": {
-        "npc": "King Magni Bronzebeard"
+        "npc": "King Magni Bronzebeard",
+        "description": "King Magni Bronzebeard, Ironforge"
       },
       "items": [
         {
@@ -64,7 +66,8 @@
         "description": "Inside Hall of Thanes, after the first room."
       },
       "turnIn": {
-        "npc": "Ghostly Attendant"
+        "npc": "Ghostly Attendant",
+        "description": "Ghostly Attendant, inside the dungeon"
       },
       "items": [
         {
@@ -86,10 +89,12 @@
       "objective": "Collect 8 Dwarven Heirlooms from the Hall of Thanes.",
       "start": {
         "npc": "Thom Filch",
+        "location": [1455, 43.5, 52],
         "description": "By the bridge / vault entrance in Ironforge."
       },
       "turnIn": {
-        "npc": "Thom Filch"
+        "npc": "Thom Filch",
+        "description": "Thom Filch, near the dungeon entrance"
       },
       "items": [
         {
@@ -110,10 +115,13 @@
       "xp": 1050,
       "objective": "Kill 15 Enraged Apparitions and 10 Tormented Souls, then put Anvilmar's spirit to rest.",
       "start": {
-        "npc": "Afadra Dunwall"
+        "npc": "Afadra Dunwall",
+        "location": [1455, 33.3, 48.1],
+        "description": "Afadra Dunwall, top of Old Ironforge, outside the dungeon"
       },
       "turnIn": {
-        "npc": "Afadra Dunwall"
+        "npc": "Afadra Dunwall",
+        "description": "Afadra Dunwall, Ironforge"
       },
       "items": [
         {
@@ -139,7 +147,8 @@
         "description": "Reliquary of Kings vault."
       },
       "turnIn": {
-        "npc": "King Magni Bronzebeard"
+        "npc": "King Magni Bronzebeard",
+        "description": "King Magni Bronzebeard, Ironforge"
       },
       "items": []
     },
@@ -153,10 +162,12 @@
       "description": "The Dark Iron Map starts this quest and leads directly into Old Ironforge Incursion.",
       "start": {
         "item": 274268,
-        "location": [1426, 77, 60]
+        "location": [1426, 77, 60],
+        "description": "Dark Iron Map, dropped by Dark Iron Spies at Ironband's Compound, Dun Morogh"
       },
       "turnIn": {
-        "npc": "Earthseer Farsen"
+        "npc": "Earthseer Farsen",
+        "description": "Earthseer Farsen, Dun Morogh"
       },
       "items": []
     }

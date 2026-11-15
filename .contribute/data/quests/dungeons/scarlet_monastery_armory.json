@@ -64,7 +64,8 @@
         "description": "Desolace"
       },
       "turnIn": {
-        "npc": "Raleigh the Devout"
+        "npc": "Raleigh the Devout",
+        "description": "Raleigh the Devout"
       },
       "items": []
     },

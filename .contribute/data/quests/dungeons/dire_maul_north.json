@@ -158,6 +158,7 @@
       "requiredLevel": 54,
       "xp": 6600,
       "objective": "Return the book to its rightful owners.",
+      "description": "Rogue class book. Click the book to start the quest.",
       "start": {
         "item": 18356,
         "description": "Garona: A Study on Stealth and Treachery (book, Dire Maul drop)"
@@ -181,6 +182,7 @@
       "requiredLevel": 54,
       "xp": 6600,
       "objective": "Return the book to its rightful owners.",
+      "description": "Warrior class book. Click the book to start the quest.",
       "start": {
         "item": 18357,
         "description": "Codex of Defense (book, Dire Maul drop)"
@@ -204,6 +206,7 @@
       "requiredLevel": 54,
       "xp": 6600,
       "objective": "Return the book to its rightful owners.",
+      "description": "Mage class book. Click the book to start the quest.",
       "start": {
         "item": 18358,
         "description": "The Arcanist's Cookbook (book, Dire Maul drop)"
@@ -227,6 +230,7 @@
       "requiredLevel": 54,
       "xp": 6600,
       "objective": "Return the book to its rightful owners.",
+      "description": "Paladin class book. Click the book to start the quest.",
       "start": {
         "item": 18359,
         "description": "The Light and How To Swing It (book, Dire Maul drop)"
@@ -250,6 +254,7 @@
       "requiredLevel": 54,
       "xp": 6600,
       "objective": "Return the book to its rightful owners.",
+      "description": "Warlock class book. Click the book to start the quest.",
       "start": {
         "item": 18360,
         "description": "Harnessing Shadows (book, Dire Maul drop)"
@@ -273,6 +278,7 @@
       "requiredLevel": 54,
       "xp": 6600,
       "objective": "Return the book to its rightful owners.",
+      "description": "Hunter class book. Click the book to start the quest.",
       "start": {
         "item": 18361,
         "description": "The Greatest Race of Hunters (book, Dire Maul drop)"
@@ -296,6 +302,7 @@
       "requiredLevel": 54,
       "xp": 6600,
       "objective": "Return the book to its rightful owners.",
+      "description": "Priest class book. Click the book to start the quest.",
       "start": {
         "item": 18362,
         "description": "Holy Bologna: What the Light Won't Tell You (book, Dire Maul drop)"
@@ -319,6 +326,7 @@
       "requiredLevel": 54,
       "xp": 6600,
       "objective": "Return the book to its rightful owners.",
+      "description": "Shaman class book. Click the book to start the quest.",
       "start": {
         "item": 18363,
         "description": "Frost Shock and You (book, Dire Maul drop)"
@@ -342,6 +350,7 @@
       "requiredLevel": 54,
       "xp": 6600,
       "objective": "Return the book to its rightful owners.",
+      "description": "Druid class book. Click the book to start the quest.",
       "start": {
         "item": 18364,
         "description": "The Emerald Dream (book, Dire Maul drop)"

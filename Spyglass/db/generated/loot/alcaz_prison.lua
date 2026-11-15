@@ -44,7 +44,7 @@ Data:AddTrashLoot(2994, {
 })
 
 Data:AddQuests(2994, {
-    { id = 96772, name = "The Dragon's Journal", side = "Alliance", requiredLevel = 46, xp = 14400, objective = "Recover Zarla's Journal from the depths of Alcaz Prison.", description = "Reported to start in Dalaran; who gives it is not known yet.", start = { description = "Alterac Mountains (giver not known yet)", npc = "Dalaran" }, turnIn = { description = "at the Violet Hold entrance in Dalaran, Alterac Mountains", location = { 1416, 15.4, 73.8 }, npc = "Archmage Lan'dalock" }, items = {} },
+    { id = 96772, name = "The Dragon's Journal", side = "Alliance", requiredLevel = 46, xp = 14400, objective = "Recover Zarla's Journal from the depths of Alcaz Prison.", description = "Reported to start in Dalaran; who gives it is not known yet.", start = { description = "Alterac Mountains (giver not known yet)", location = { 1416, 15.4, 73.8 }, npc = "Dalaran" }, turnIn = { description = "at the Violet Hold entrance in Dalaran, Alterac Mountains", location = { 1416, 15.4, 73.8 }, npc = "Archmage Lan'dalock" }, items = {} },
     { id = 95483, name = "Thrall Needs to Know", side = "Horde", requiredLevel = 48, xp = 2400, objective = "Bring word of Varian Wrynn's fate to Thrall in Orgrimmar.", requires = { { id = 96369, name = "Bad News for Folkar" } }, start = { description = "inside Alcaz Prison", npc = "Commander Folkar" }, turnIn = { description = "Valley of Wisdom, Orgrimmar", location = { 1454, 32, 37.8 }, npc = "Thrall" }, items = {
         { 279831 }, -- Fatebound Buckler
         { 279833 }, -- Courier's Clasp

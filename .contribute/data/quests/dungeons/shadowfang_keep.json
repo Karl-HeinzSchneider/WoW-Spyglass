@@ -19,7 +19,8 @@
       "objective": "Find Deathstalker Adamant and Deathstalker Vincent inside Shadowfang Keep.",
       "start": {
         "npc": "High Executor Hadrec",
-        "location": [1421, 43.4, 40.9]
+        "location": [1421, 43.4, 40.9],
+        "description": "High Executor Hadrec, The Sepulcher, Silverpine Forest"
       },
       "turnIn": {
         "npc": "Deathstalker Vincent",
@@ -47,11 +48,15 @@
       "requiredLevel": 18,
       "xp": 3300,
       "objective": "Kill Archmage Arugal and bring his head to Dalar Dawnweaver.",
+      "description": "The current Forever quest data also lists Arcane Intellect as a learned reward.",
       "start": {
-        "npc": "Dalar Dawnweaver"
+        "npc": "Dalar Dawnweaver",
+        "location": [1421, 44.2, 39.8],
+        "description": "Dalar Dawnweaver, The Sepulcher, Silverpine Forest"
       },
       "turnIn": {
-        "npc": "Dalar Dawnweaver"
+        "npc": "Dalar Dawnweaver",
+        "description": "Dalar Dawnweaver, The Sepulcher, Silverpine Forest"
       },
       "items": [
         {
@@ -68,10 +73,13 @@
       "xp": 2100,
       "objective": "Bring the Book of Ur from Shadowfang Keep to Keeper Bel'dugur.",
       "start": {
-        "npc": "Keeper Bel'dugur"
+        "npc": "Keeper Bel'dugur",
+        "location": [1458, 53.7, 54.5],
+        "description": "Keeper Bel'dugur, Apothecarium, Undercity"
       },
       "turnIn": {
-        "npc": "Keeper Bel'dugur"
+        "npc": "Keeper Bel'dugur",
+        "description": "Keeper Bel'dugur, Apothecarium, Undercity"
       },
       "items": [
         {

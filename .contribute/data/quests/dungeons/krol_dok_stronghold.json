@@ -49,12 +49,15 @@
       "xp": 5050,
       "objective": "Defeat Overlord Kilgar within the Twilight's Shroud and bring his head to Sergeant Riftan.",
       "description": "Handing it in to Sergeant Riftan unlocks Twilight Mementos.",
+      "requires": [94889],
       "start": {
         "npc": "Farholde Keep",
+        "location": [2548, 30.6, 49],
         "description": "Riverglades (giver not known yet)"
       },
       "turnIn": {
         "npc": "Sergeant Riftan",
+        "location": [2548, 30.6, 49],
         "description": "Farholde Keep, Riverglades"
       },
       "items": [
@@ -77,10 +80,12 @@
       "requires": [94881],
       "start": {
         "npc": "Ashe Amberhall",
+        "location": [2548, 66.6, 81],
         "description": "Riverglades (exact spot not known yet)"
       },
       "turnIn": {
         "npc": "Ashe Amberhall",
+        "location": [2548, 66.6, 81],
         "description": "Riverglades"
       },
       "items": []
@@ -92,6 +97,7 @@
       "requiredLevel": 40,
       "xp": 11500,
       "objective": "Infiltrate Krol'dok Stronghold and return to Krom'rosh with proof of their leader's demise.",
+      "requires": [95278],
       "start": {
         "npc": "Krom'rosh",
         "location": [2548, 59.4, 45.5],
@@ -124,10 +130,15 @@
       "requiredLevel": 39,
       "xp": 11050,
       "objective": "Recover the Tome of Twilight from Krol'dok Stronghold.",
+      "requires": [95278],
       "start": {
+        "npc": "Tran'gul",
+        "location": [2548, 59.4, 44],
         "description": "Riverglades (giver not known yet)"
       },
       "turnIn": {
+        "npc": "Tran'gul",
+        "location": [2548, 59.4, 44],
         "description": "Riverglades (not known yet)"
       },
       "items": [
@@ -154,6 +165,7 @@
       },
       "turnIn": {
         "npc": "Kreza Darkthorn",
+        "location": [2548, 59.8, 46],
         "description": "Rog'mar, Riverglades (probably)"
       },
       "items": []
@@ -191,10 +203,15 @@
       "requiredLevel": 38,
       "xp": 8200,
       "objective": "Collect 15 Cultist Ears from the Twilight's Hammer in Krol'dok Stronghold.",
+      "requires": [94768],
       "start": {
+        "npc": "Da'grosh",
+        "location": [2548, 33.4, 38],
         "description": "Riverglades (giver not known yet)"
       },
       "turnIn": {
+        "npc": "Da'grosh",
+        "location": [2548, 33.4, 38],
         "description": "Riverglades (not known yet)"
       },
       "items": [
@@ -217,6 +234,7 @@
       },
       "turnIn": {
         "npc": "Alphonse Dumas",
+        "location": [2548, 64.4, 82],
         "description": "Farholde Keep, Riverglades (probably)"
       },
       "items": []
@@ -254,12 +272,15 @@
       "requiredLevel": 40,
       "xp": 11500,
       "objective": "Infiltrate Krol'dok Stronghold and return to Commander Brant with proof of their leader's demise.",
+      "requires": [94891],
       "start": {
         "npc": "Commander Demar Brant",
+        "location": [2548, 66.6, 81],
         "description": "Farholde Keep, Riverglades (exact spot not known yet)"
       },
       "turnIn": {
         "npc": "Commander Demar Brant",
+        "location": [2548, 66.6, 81],
         "description": "Farholde Keep, Riverglades"
       },
       "items": [
@@ -284,14 +305,16 @@
       "requiredLevel": 38,
       "xp": 10200,
       "objective": "Collect 8 Twilight Bangles from the Twilight's Hammer in Krol'dok Stronghold.",
+      "description": "Unlocked by handing in Bring Me His Head to Sergeant Riftan.",
       "requires": [94890],
       "start": {
         "npc": "Farholde Keep",
+        "location": [2548, 30.6, 49],
         "description": "Riverglades (giver not known yet)"
       },
       "turnIn": {
         "npc": "Farholde Keep",
-        "location": [2548, 66.6, 80],
+        "location": [2548, 30.6, 49],
         "description": "Riverglades (not known yet)"
       },
       "items": []
@@ -335,6 +358,7 @@
       "requires": [94983],
       "start": {
         "npc": "Farholde Keep",
+        "location": [2548, 30.6, 49],
         "description": "Riverglades (who gives it is not known yet)"
       },
       "turnIn": {
@@ -359,6 +383,8 @@
         "description": "Farholde Keep, Riverglades (probably)"
       },
       "turnIn": {
+        "npc": "Melanie Sable",
+        "location": [2548, 66.2, 83.2],
         "description": "Melanie Sable (where she stands is not known yet)"
       },
       "items": [
@@ -385,6 +411,275 @@
         "npc": "Ranath Nightstride",
         "location": [1416, 17.8, 66],
         "description": "in the inn in Dalaran, Alterac Mountains"
+      },
+      "items": []
+    },
+    {
+      "id": 94483,
+      "name": "Show Them How It's Done",
+      "requiredLevel": 38,
+      "xp": 3000,
+      "objective": "Slay 8 Farholde Priests and 12 Farholde Scouts south of the river.",
+      "description": "Needed before the Twilight's Hammer quests (a player's report on the Discord).",
+      "start": {
+        "description": "Riverglades (giver not known yet)"
+      },
+      "turnIn": {
+        "description": "Riverglades (not known yet)"
+      },
+      "items": []
+    },
+    {
+      "id": 94672,
+      "name": "Encroaching Twilight",
+      "requiredLevel": 36,
+      "xp": 3300,
+      "objective": "Defeat 8 Twilight Raiders, 8 Twilight Shadowmancers and 8 Twilight Neophytes within Sunnyglade for Tran'gul in Rog'mar.",
+      "description": "Start of the Horde chains (Mobalytics); what leads from it to Clugfist's Decree is not confirmed yet.",
+      "requires": [94483],
+      "start": {
+        "npc": "Tran'gul",
+        "location": [2548, 59.4, 44],
+        "description": "Tran'gul, Rog'mar, Riverglades (59.4, 44.0)"
+      },
+      "turnIn": {
+        "npc": "Tran'gul",
+        "location": [2548, 59.4, 44],
+        "description": "Tran'gul, Rog'mar, Riverglades"
+      },
+      "items": []
+    },
+    {
+      "id": 95428,
+      "name": "Clugfist's Decree",
+      "requiredLevel": 36,
+      "xp": 330,
+      "objective": "Report to Krom'rosh in Rog'mar.",
+      "requires": [94672],
+      "start": {
+        "npc": "Clugfist",
+        "location": [2548, 64.4, 14.8],
+        "description": "Clugfist, Riverglades (64.4, 14.8)"
+      },
+      "turnIn": {
+        "npc": "Krom'rosh",
+        "location": [2548, 59.4, 45.6],
+        "description": "Krom'rosh, Rog'mar, Riverglades (59.4, 45.6)"
+      },
+      "items": []
+    },
+    {
+      "id": 94744,
+      "name": "The Wayward Warrior",
+      "requiredLevel": 38,
+      "xp": 360,
+      "objective": "Find Da'grosh in the hills west of Rog'mar.",
+      "requires": [95428],
+      "start": {
+        "npc": "Krom'rosh",
+        "location": [2548, 59.4, 45.6],
+        "description": "Krom'rosh, Rog'mar, Riverglades (59.4, 45.6)"
+      },
+      "turnIn": {
+        "npc": "Da'grosh",
+        "location": [2548, 33.4, 38],
+        "description": "Da'grosh, Twilight's Shroud, Riverglades (33.4, 38.0)"
+      },
+      "items": []
+    },
+    {
+      "id": 94748,
+      "name": "Break Their Chains",
+      "requiredLevel": 38,
+      "xp": 3750,
+      "objective": "Rescue 5 Rog'mar Scouts within the Twilight's Shroud for Da'grosh.",
+      "description": "Done alongside Carving a Path and Rise Up!.",
+      "requires": [94744],
+      "start": {
+        "npc": "Da'grosh",
+        "location": [2548, 33.4, 38],
+        "description": "Da'grosh, Twilight's Shroud, Riverglades (33.4, 38.0)"
+      },
+      "turnIn": {
+        "npc": "Da'grosh",
+        "location": [2548, 33.4, 38],
+        "description": "Da'grosh, Twilight's Shroud, Riverglades (33.4, 38.0)"
+      },
+      "items": []
+    },
+    {
+      "id": 94745,
+      "name": "Carving a Path",
+      "requiredLevel": 38,
+      "xp": 3750,
+      "objective": "Defeat 8 Twilight Fanatics, 8 Twilight Corrupters and 8 Twilight Champions within the Twilight's Shroud for Da'grosh.",
+      "description": "Done alongside Break Their Chains and Rise Up!.",
+      "requires": [94748],
+      "start": {
+        "npc": "Da'grosh",
+        "location": [2548, 33.4, 38],
+        "description": "Da'grosh, Twilight's Shroud, Riverglades (33.4, 38.0)"
+      },
+      "turnIn": {
+        "npc": "Da'grosh",
+        "location": [2548, 33.4, 38],
+        "description": "Da'grosh, Twilight's Shroud, Riverglades (33.4, 38.0)"
+      },
+      "items": []
+    },
+    {
+      "id": 95432,
+      "name": "Rise Up!",
+      "requiredLevel": 36,
+      "xp": 1800,
+      "objective": "Recruit 5 Ogre Miners.",
+      "description": "Done alongside Break Their Chains and Carving a Path.",
+      "requires": [94745],
+      "start": {
+        "npc": "Crag'rog",
+        "location": [2548, 27.4, 37],
+        "description": "Crag'rog, Riverglades (27.4, 37.0)"
+      },
+      "turnIn": {
+        "npc": "Crag'rog",
+        "location": [2548, 27.4, 37],
+        "description": "Crag'rog, Riverglades (27.4, 37.0)"
+      },
+      "items": []
+    },
+    {
+      "id": 94768,
+      "name": "Bring Me His Head",
+      "requiredLevel": 38,
+      "xp": 5050,
+      "objective": "Defeat Overlord Kilgar within the Twilight's Shroud and bring his head to Da'grosh.",
+      "description": "Horde version. Handing it in to Da'grosh opens A Token of Vengeance.",
+      "requires": [95432],
+      "start": {
+        "npc": "Da'grosh",
+        "location": [2548, 33.4, 38],
+        "description": "Da'grosh, Twilight's Shroud, Riverglades (33.4, 38.0)"
+      },
+      "turnIn": {
+        "npc": "Da'grosh",
+        "location": [2548, 33.4, 38],
+        "description": "Da'grosh, Twilight's Shroud, Riverglades (33.4, 38.0)"
+      },
+      "items": []
+    },
+    {
+      "id": 95278,
+      "name": "It Is Time, Brother...",
+      "requiredLevel": 38,
+      "xp": 390,
+      "objective": "Deliver the missive to Krom'rosh at Rog'mar.",
+      "description": "Handing it in opens Eye of Mugg (Krom'rosh) and Tome of Twilight (Tran'gul).",
+      "requires": [94768],
+      "start": {
+        "npc": "Da'grosh",
+        "location": [2548, 33.4, 38],
+        "description": "Da'grosh, Twilight's Shroud, Riverglades (33.4, 38.0)"
+      },
+      "turnIn": {
+        "npc": "Krom'rosh",
+        "location": [2548, 59.4, 45.5],
+        "description": "Krom'rosh, Rog'mar, Riverglades (59.4, 45.5)"
+      },
+      "items": []
+    },
+    {
+      "id": 94886,
+      "name": "The Western Front",
+      "requiredLevel": 38,
+      "xp": 380,
+      "objective": "Find Sergeant Riftan near the Twilight's Shroud to the west.",
+      "requires": [94879, 94877],
+      "start": {
+        "npc": "Demar Brant",
+        "location": [2548, 66.6, 81],
+        "description": "Demar Brant, Farholde Keep, Riverglades (66.6, 81.0)"
+      },
+      "turnIn": {
+        "npc": "Sergeant Riftan",
+        "location": [2548, 30.6, 49],
+        "description": "Sergeant Riftan, Farholde Lookouts, Twilight's Shroud, Riverglades (30.6, 49.0)"
+      },
+      "items": []
+    },
+    {
+      "id": 94888,
+      "name": "No Soldier Left Behind",
+      "requiredLevel": 38,
+      "xp": 3750,
+      "objective": "Rescue 5 Farholde Scouts within the Twilight's Shroud for Sergeant Riftan.",
+      "description": "Done alongside Carving a Path.",
+      "requires": [94886],
+      "start": {
+        "npc": "Sergeant Riftan",
+        "location": [2548, 30.6, 49],
+        "description": "Sergeant Riftan, Farholde Lookouts, Twilight's Shroud, Riverglades (30.6, 49.0)"
+      },
+      "turnIn": {
+        "npc": "Sergeant Riftan",
+        "location": [2548, 30.6, 49],
+        "description": "Sergeant Riftan, Farholde Lookouts, Twilight's Shroud, Riverglades (30.6, 49.0)"
+      },
+      "items": []
+    },
+    {
+      "id": 94889,
+      "name": "Carving a Path",
+      "requiredLevel": 38,
+      "xp": 3750,
+      "objective": "Defeat 8 Twilight Fanatics, 8 Twilight Corrupters and 8 Twilight Champions within the Twilight's Shroud for Sergeant Riftan.",
+      "description": "Done alongside No Soldier Left Behind.",
+      "requires": [94888],
+      "start": {
+        "npc": "Sergeant Riftan",
+        "location": [2548, 30.6, 49],
+        "description": "Sergeant Riftan, Farholde Lookouts, Twilight's Shroud, Riverglades (30.6, 49.0)"
+      },
+      "turnIn": {
+        "npc": "Sergeant Riftan",
+        "location": [2548, 30.6, 49],
+        "description": "Sergeant Riftan, Farholde Lookouts, Twilight's Shroud, Riverglades (30.6, 49.0)"
+      },
+      "items": []
+    },
+    {
+      "id": 94891,
+      "name": "News to Farholde",
+      "requiredLevel": 38,
+      "xp": 4050,
+      "objective": "Return to Ashe Amberhall in Farholde Keep.",
+      "description": "Handing it in opens Eye of Mugg (Demar Brant).",
+      "requires": [94890],
+      "start": {
+        "description": "Given when you hand in Bring Me His Head to Sergeant Riftan"
+      },
+      "turnIn": {
+        "npc": "Ashe Amberhall",
+        "location": [2548, 66.6, 81],
+        "description": "Ashe Amberhall, Farholde Keep, Riverglades (66.6, 81.0)"
+      },
+      "items": []
+    },
+    {
+      "id": 94877,
+      "name": "Saving Sunnyglade",
+      "requiredLevel": 36,
+      "xp": 3150,
+      "objective": "Defeat 8 Twilight Raiders, 8 Twilight Shadowmancers and 8 Twilight Neophytes within Sunnyglade for Demar Brant.",
+      "description": "First step of the Twilight Mementos chain (Mobalytics); what leads from it to The Western Front is not confirmed yet.",
+      "start": {
+        "npc": "Demar Brant",
+        "location": [2548, 66.6, 81],
+        "description": "Demar Brant, Farholde Keep, Riverglades (66.6, 81.0)"
+      },
+      "turnIn": {
+        "npc": "Demar Brant",
+        "location": [2548, 66.6, 81],
+        "description": "Demar Brant, Farholde Keep, Riverglades (66.6, 81.0)"
       },
       "items": []
     }

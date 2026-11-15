@@ -15,7 +15,7 @@
       },
       "turnIn": {
         "npc": "Ghak Healtouch",
-        "location": [1432, 37, 49.2],
+        "location": [2548, 66.6, 79.9],
         "description": "Thelsamar, Loch Modan"
       },
       "items": [
@@ -117,6 +117,7 @@
       "requiredLevel": 35,
       "objective": "Find Prospector Ryedol and let him know Hammertoe Grez is alive.",
       "start": {
+        "npc": "Crumpled Map",
         "location": [1418, 53, 34.1],
         "description": "Crumpled Map"
       },
@@ -173,7 +174,8 @@
       "objective": "Take Hammertoe's Amulet to Prospector Ryedol in the Badlands.",
       "requires": [722],
       "start": {
-        "npc": "Hammertoe Grez"
+        "npc": "Hammertoe Grez",
+        "description": "Hammertoe Grez"
       },
       "turnIn": {
         "npc": "Prospector Ryedol",
@@ -247,7 +249,8 @@
         "description": "Loch Modan"
       },
       "turnIn": {
-        "npc": "Battered Dwarven Skeleton"
+        "npc": "Battered Dwarven Skeleton",
+        "description": "Battered Dwarven Skeleton"
       },
       "items": []
     },
@@ -259,6 +262,7 @@
       "objective": "Slay Agmond's killer, Murdaloc. Slay 12 Stonevault Bonesnappers. Report to Prospector Ironband in Loch Modan.",
       "requires": [738],
       "start": {
+        "npc": "Battered Dwarven Skeleton",
         "location": [1418, 50.9, 62.4],
         "description": "Battered Dwarven Skeleton"
       },
@@ -670,7 +674,8 @@
       "objective": "Find someone who can translate the paladin's journal. The closest location that might have someone is Kargath, in the Badlands.",
       "requires": [2284],
       "start": {
-        "npc": "Remains of a Paladin"
+        "npc": "Remains of a Paladin",
+        "description": "Remains of a Paladin"
       },
       "turnIn": {
         "npc": "Jarkal Mossmeld",

@@ -314,7 +314,8 @@
         "description": "Eastern Plaguelands"
       },
       "turnIn": {
-        "npc": "Betina Bigglezink"
+        "npc": "Betina Bigglezink",
+        "description": "Betina Bigglezink"
       },
       "items": []
     },
@@ -326,7 +327,8 @@
       "objective": "Return with the Blessed Arcanite Barding to Lord Grayson Shadowbreaker in the Cathedral District of Stormwind.",
       "requires": [7643],
       "start": {
-        "npc": "Ancient Equine Spirit"
+        "npc": "Ancient Equine Spirit",
+        "description": "Ancient Equine Spirit"
       },
       "turnIn": {
         "npc": "Lord Grayson Shadowbreaker",

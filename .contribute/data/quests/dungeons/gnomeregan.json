@@ -93,6 +93,7 @@
       "requiredLevel": 20,
       "xp": 2200,
       "objective": "Use the Empty Leaden Collection Phial on Irradiated Invaders or Irradiated Pillagers, then take the full phial back to Ozzie Togglevolt.",
+      "description": "Required before The Only Cure is More Green Glow.",
       "start": {
         "npc": "Ozzie Togglevolt",
         "location": [1426, 45, 49],
@@ -113,7 +114,17 @@
     {
       "id": 2842,
       "name": "Chief Engineer Scooty",
+      "requiredLevel": 20,
+      "objective": "Speak with Scooty in Booty Bay.",
+      "description": "Required before Gnomer-gooooone!",
       "requires": [2841],
+      "start": {
+        "location": [1454, 75.6, 25.2],
+        "description": "Sovik, Valley of Honor, Orgrimmar"
+      },
+      "turnIn": {
+        "description": "Scooty, Booty Bay, Stranglethorn Vale"
+      },
       "items": []
     },
     {

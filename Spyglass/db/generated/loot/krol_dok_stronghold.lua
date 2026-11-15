@@ -56,19 +56,19 @@ Data:AddTrashLoot(3039, {
 })
 
 Data:AddQuests(3039, {
-    { id = 94968, name = "Eye of Mugg", side = "Horde", requiredLevel = 40, xp = 11500, objective = "Infiltrate Krol'dok Stronghold and return to Krom'rosh with proof of their leader's demise.", start = { description = "Riverglades (exact spot not known yet)", location = { 2548, 59.4, 45.5 }, npc = "Krom'rosh" }, turnIn = { description = "Riverglades", location = { 2548, 59.4, 45.5 }, npc = "Krom'rosh" }, items = {
+    { id = 94968, name = "Eye of Mugg", side = "Horde", requiredLevel = 40, xp = 11500, objective = "Infiltrate Krol'dok Stronghold and return to Krom'rosh with proof of their leader's demise.", requires = { { id = 95278, name = "It Is Time, Brother..." } }, start = { description = "Riverglades (exact spot not known yet)", location = { 2548, 59.4, 45.5 }, npc = "Krom'rosh" }, turnIn = { description = "Riverglades", location = { 2548, 59.4, 45.5 }, npc = "Krom'rosh" }, items = {
         { 279852 }, -- Rock on Stick
         { 279480 }, -- Bigger Rock on Bigger Stick
         { 279853 }, -- Stick No Rock
     } },
-    { id = 94972, name = "Tome of Twilight", side = "Horde", requiredLevel = 39, xp = 11050, objective = "Recover the Tome of Twilight from Krol'dok Stronghold.", start = { description = "Riverglades (giver not known yet)" }, turnIn = { description = "Riverglades (not known yet)" }, items = {
+    { id = 94972, name = "Tome of Twilight", side = "Horde", requiredLevel = 39, xp = 11050, objective = "Recover the Tome of Twilight from Krol'dok Stronghold.", requires = { { id = 95278, name = "It Is Time, Brother..." } }, start = { description = "Riverglades (giver not known yet)", location = { 2548, 59.4, 44 }, npc = "Tran'gul" }, turnIn = { description = "Riverglades (not known yet)", location = { 2548, 59.4, 44 }, npc = "Tran'gul" }, items = {
         { 279859 }, -- Indoctrinated Choker
         { 279860 }, -- Convert's Bindings
     } },
-    { id = 94975, name = "A Token of Vengeance", side = "Horde", requiredLevel = 38, xp = 8200, objective = "Collect 15 Cultist Ears from the Twilight's Hammer in Krol'dok Stronghold.", start = { description = "Riverglades (giver not known yet)" }, turnIn = { description = "Riverglades (not known yet)" }, items = {
+    { id = 94975, name = "A Token of Vengeance", side = "Horde", requiredLevel = 38, xp = 8200, objective = "Collect 15 Cultist Ears from the Twilight's Hammer in Krol'dok Stronghold.", requires = { { id = 94768, name = "Bring Me His Head" } }, start = { description = "Riverglades (giver not known yet)", location = { 2548, 33.4, 38 }, npc = "Da'grosh" }, turnIn = { description = "Riverglades (not known yet)", location = { 2548, 33.4, 38 }, npc = "Da'grosh" }, items = {
         { 267090 }, -- Semblance of Twilight
     } },
-    { id = 94982, name = "Eye of Mugg", side = "Alliance", requiredLevel = 40, xp = 11500, objective = "Infiltrate Krol'dok Stronghold and return to Commander Brant with proof of their leader's demise.", start = { description = "Farholde Keep, Riverglades (exact spot not known yet)", npc = "Commander Demar Brant" }, turnIn = { description = "Farholde Keep, Riverglades", npc = "Commander Demar Brant" }, items = {
+    { id = 94982, name = "Eye of Mugg", side = "Alliance", requiredLevel = 40, xp = 11500, objective = "Infiltrate Krol'dok Stronghold and return to Commander Brant with proof of their leader's demise.", requires = { { id = 94891, name = "News to Farholde" } }, start = { description = "Farholde Keep, Riverglades (exact spot not known yet)", location = { 2548, 66.6, 81 }, npc = "Commander Demar Brant" }, turnIn = { description = "Farholde Keep, Riverglades", location = { 2548, 66.6, 81 }, npc = "Commander Demar Brant" }, items = {
         { 279852 }, -- Rock on Stick
         { 279853 }, -- Stick No Rock
         { 279480 }, -- Bigger Rock on Bigger Stick
@@ -84,7 +84,7 @@ Data:AddQuests(3039, {
     { id = 94974, name = "Key Ingredients", side = "Horde", requiredLevel = 38, xp = 3300, objective = "Bring 4 Thick Leather and 12 Iron Bars to Kreza Darkthorn.", description = "Keep any Krol'dok Moulding you loot: it starts the quest before this one.", requires = { { id = 94973, name = "Krol'dok Moulding" } }, start = { description = "Rog'mar, Riverglades", location = { 2548, 59.8, 46 }, npc = "Kreza Darkthorn" }, turnIn = { description = "Rog'mar, Riverglades", location = { 2548, 59.8, 46 }, npc = "Kreza Darkthorn" }, items = {
         { 267089 }, -- Krol'dok Compound Key
     } },
-    { id = 94998, name = "Curios of Curiosity", side = "Alliance", requiredLevel = 38, xp = 3450, objective = "Bring the Satchel of Mementos to Melanie Sable.", description = "Probably follows Lingering Essence (not confirmed yet).", requires = { { id = 94997, name = "Lingering Essence" } }, start = { description = "Farholde Keep, Riverglades (probably)", location = { 2548, 66.6, 81 }, npc = "Ashe Amberhall" }, turnIn = { description = "Melanie Sable (where she stands is not known yet)" }, items = {
+    { id = 94998, name = "Curios of Curiosity", side = "Alliance", requiredLevel = 38, xp = 3450, objective = "Bring the Satchel of Mementos to Melanie Sable.", description = "Probably follows Lingering Essence (not confirmed yet).", requires = { { id = 94997, name = "Lingering Essence" } }, start = { description = "Farholde Keep, Riverglades (probably)", location = { 2548, 66.6, 81 }, npc = "Ashe Amberhall" }, turnIn = { description = "Melanie Sable (where she stands is not known yet)", location = { 2548, 66.2, 83.2 }, npc = "Melanie Sable" }, items = {
         { 279850 }, -- Curio-Adorned Necklace
     } },
 })

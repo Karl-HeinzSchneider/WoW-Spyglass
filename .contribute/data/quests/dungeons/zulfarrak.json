@@ -165,6 +165,7 @@
       "requiredLevel": 40,
       "objective": "Bring a Venom Bottle to an apothecary in Tarren Mill.",
       "start": {
+        "npc": "Venom Bottle",
         "location": [1425, 23, 57.8],
         "description": "Venom Bottle"
       },
@@ -206,7 +207,8 @@
         "description": "Hillsbrad Foothills"
       },
       "turnIn": {
-        "npc": "Master Gadrin"
+        "npc": "Master Gadrin",
+        "description": "Master Gadrin"
       },
       "items": []
     },
@@ -281,7 +283,8 @@
         "description": "The Hinterlands"
       },
       "turnIn": {
-        "npc": "Thadius Grimshade"
+        "npc": "Thadius Grimshade",
+        "description": "Thadius Grimshade"
       },
       "items": []
     },
@@ -334,12 +337,12 @@
       "objective": "Slay Witch Doctor Zum'rah and bring Zum'rah's Head to Archmage Lan'dalock in Dalaran.",
       "start": {
         "npc": "Archmage Lan'dalock",
-        "location": [1416, 15.89, 73.1],
+        "location": [1416, 15.4, 73.8],
         "description": "Dalaran, Alterac Mountains"
       },
       "turnIn": {
         "npc": "Archmage Lan'dalock",
-        "location": [1416, 15.89, 73.1],
+        "location": [1416, 15.4, 73.8],
         "description": "Dalaran, Alterac Mountains"
       },
       "items": []
@@ -373,6 +376,8 @@
       "objective": "Track down and collect the spellbook materials requested by the librarian.",
       "description": "Mage class quest.",
       "start": {
+        "npc": "Garion Wendell",
+        "location": [1453, 48.8, 86.6],
         "description": "Garion Wendell, Stormwind (Alliance) or Owen Thadd, Undercity (Horde)"
       },
       "turnIn": {

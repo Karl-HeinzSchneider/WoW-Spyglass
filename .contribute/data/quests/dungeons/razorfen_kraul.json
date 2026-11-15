@@ -43,7 +43,7 @@
       "objective": "Use the Crate with Holes to summon a Snufflenose Gopher and the Command Stick to make it find 6 Blueleaf Tubers. Bring them, the Command Stick and the Crate back to Mebok Mizzyrix.",
       "start": {
         "npc": "Mebok Mizzyrix",
-        "location": [1413, 62, 37],
+        "location": [1413, 62.4, 37.6],
         "description": "Mebok Mizzyrix, Ratchet, The Barrens"
       },
       "turnIn": {
@@ -93,7 +93,7 @@
       "requires": [1100],
       "start": {
         "npc": "Falfindel Waywarder",
-        "location": [1444, 89, 46],
+        "location": [1444, 89.6, 46.6],
         "description": "Thalanaar, Feralas."
       },
       "turnIn": {
@@ -113,6 +113,10 @@
         {
           "item": 6725,
           "name": "Marbled Buckler"
+        },
+        {
+          "item": 274084,
+          "name": "Quilboar Blaster"
         }
       ]
     },
@@ -123,7 +127,7 @@
       "objective": "Read Henrig Lonebrow's Journal and take it to Falfindel Waywarder in Thalanaar.",
       "description": "Required before The Crone of the Kraul.",
       "start": {
-        "location": [1441, 30, 24],
+        "location": [1441, 30.7, 24.4],
         "description": "Henrig Lonebrow's Journal beside his corpse at the bottom of the Great Lift."
       },
       "turnIn": {
@@ -228,7 +232,7 @@
       "side": "Horde",
       "requiredLevel": 30,
       "xp": 3300,
-      "objective": "Bring 1 pile of Kraul Guano to Master Apothecary Faranell in the Undercity.",
+      "objective": "Bring 1 pile of Kraul Guano from the Kraul bats to Master Apothecary Faranell.",
       "description": "Required before Hearts of Zeal.",
       "start": {
         "npc": "Master Apothecary Faranell",
@@ -288,6 +292,7 @@
       "requiredLevel": 30,
       "xp": 6950,
       "objective": "Defeat Charlga Razorflank in Razorfen Kraul and collect information on the quilboar's plans.",
+      "description": "The Razorfen Kraul step. Call of Air (from Eldrun Stormbreaker in Ironforge) sends you to Veyric. Alliance Shamans can share this quest.",
       "followUps": [79358, 96135, 96016],
       "start": {
         "npc": "Veyric Thunderhame",
@@ -308,6 +313,7 @@
       "class": "Shaman",
       "requiredLevel": 30,
       "objective": "Collect 5 Twisted Fire Totems, 5 Twisted Earth Totems, 5 Twisted Air Totems and 5 Twisted Water Totems for Veyric Thunderhame in Arathi Highlands.",
+      "description": "Twisted Totems only drop while this quest is in your log. Water: Mirefin murlocs, northeast coast of Dustwallow Marsh. Air: Maraudine centaurs, Desolace. Earth: Lost Ones, Swamp of Sorrows. Fire: Dustbelcher ogres and Stonevault troggs, Badlands.",
       "requires": [96264],
       "start": {
         "npc": "Veyric Thunderhame",
@@ -329,6 +335,7 @@
       "requiredLevel": 30,
       "xp": 3150,
       "objective": "Use the Twisted Totems to put an end to the quilboar ritual.",
+      "description": "Elite, level 40: bring a group. At the steam pools in Thousand Needles, stand on the rune circle and use the Corrupted Totems. Waves of elementals come, then an elite quilboar and the Ravaging Tempest, which drops the Eye of the Tempest for every Shaman on the quest.",
       "requires": [79358],
       "followUps": [96016],
       "start": {
@@ -383,6 +390,7 @@
       "class": "Shaman",
       "requiredLevel": 30,
       "objective": "Defeat Charlga Razorflank in Razorfen Kraul and collect information on the quilboar's plans.",
+      "description": "The Razorfen Kraul step. After Call of Air, Prate Cloudseer sends you to Rau Cliffrunner. It can't be shared on the Horde side.",
       "followUps": [79364, 79361, 79366, 79442],
       "start": {
         "npc": "Rau Cliffrunner",
@@ -423,6 +431,7 @@
       "class": "Shaman",
       "requiredLevel": 30,
       "objective": "Collect 5 Twisted Fire Totems, 5 Twisted Earth Totems, 5 Twisted Air Totems and 5 Twisted Water Totems and turn them in to Prate Cloudseer in Thousand Needles.",
+      "description": "Twisted Totems only drop while this quest is in your log. Water: Mirefin murlocs, northeast coast of Dustwallow Marsh. Air: Maraudine centaurs, Desolace. Earth: Lost Ones, Swamp of Sorrows. Fire: Dustbelcher ogres and Stonevault troggs, Badlands.",
       "requires": [79364],
       "start": {
         "npc": "Prate Cloudseer",
@@ -443,6 +452,7 @@
       "class": "Shaman",
       "requiredLevel": 30,
       "objective": "Use the Twisted Totems to put an end to the quilboar ritual.",
+      "description": "Elite, level 40: bring a group. At the steam pools in Thousand Needles, stand on the rune circle and use the Corrupted Totems. Waves of elementals come, then an elite quilboar and the Ravaging Tempest, which drops the Eye of the Tempest for every Shaman on the quest. Horde: givers not confirmed yet, follow your quest log.",
       "requires": [79361],
       "followUps": [79442],
       "start": {
@@ -491,12 +501,15 @@
       "class": "Warrior",
       "requiredLevel": 20,
       "objective": "Enter the Rethban Caverns, reach the first fork and return to Yorus Barleybrew in time. You must not die and release your spirit.",
+      "description": "Your warrior trainer (Wu Shen in Stormwind, or the trainers in Ironforge and Darnassus) sends you to Yorus Barleybrew in Lakeshire first. The run is timed.",
       "start": {
         "npc": "Yorus Barleybrew",
+        "location": [1433, 21.5, 44.7],
         "description": "Lakeshire, Redridge Mountains"
       },
       "turnIn": {
         "npc": "Yorus Barleybrew",
+        "location": [1433, 21.5, 44.7],
         "description": "Lakeshire, Redridge Mountains"
       },
       "items": []
@@ -508,9 +521,11 @@
       "class": "Warrior",
       "requiredLevel": 20,
       "objective": "Bring the Cask of Scalder to Furen Longbeard.",
+      "description": "Furen rewards you with a shield, Furen's Favor.",
       "requires": [1699],
       "start": {
         "npc": "Yorus Barleybrew",
+        "location": [1433, 21.5, 44.7],
         "description": "Lakeshire, Redridge Mountains"
       },
       "turnIn": {
@@ -528,6 +543,7 @@
       "requiredLevel": 20,
       "xp": 2300,
       "objective": "Gather the materials Furen Longbeard requires, and bring them to him in Stormwind.",
+      "description": "The Razorfen Kraul step.",
       "requires": [1702],
       "followUps": [1782],
       "start": {
@@ -576,6 +592,7 @@
       "class": "Warrior",
       "requiredLevel": 20,
       "objective": "Deliver 5 Twitching Antennae to Ruga Ragetotem at Camp Taurajo.",
+      "description": "Your warrior trainer (Sorek in Orgrimmar) sends you to Ruga first. Timed: 30 minutes. The antennae come from the silithids at the Field of Giants, south of Camp Taurajo.",
       "start": {
         "npc": "Ruga Ragetotem",
         "location": [1413, 45, 59],
@@ -616,6 +633,7 @@
       "requiredLevel": 20,
       "xp": 3650,
       "objective": "Bring Thun'grim Firegaze 15 Smoky Iron Ingots, 10 Powdered Azurite, 10 Iron Bars and a Vial of Phlogiston.",
+      "description": "The Razorfen Kraul step.",
       "requires": [1825],
       "followUps": [1848],
       "start": {

@@ -299,9 +299,11 @@
       "requiredLevel": 55,
       "xp": 8300,
       "objective": "Slay Highlord Omokk, War Master Voone, and Overlord Wyrmthalak. Recover Important Blackrock Documents. Return to Warlord Goretooth in Kargath when the mission has been accomplished.",
+      "description": "Talk to Goretooth to receive his Command item and click it to start the quest. The Important Blackrock Documents spawn near the three generals.",
+      "requires": [98325],
       "start": {
         "npc": "Warlord Goretooth",
-        "location": [1418, 3, 47.6],
+        "location": [1418, 5.8, 47.4],
         "description": "Kargath, Badlands"
       },
       "turnIn": {
@@ -403,7 +405,8 @@
       "objective": "Travel to the Burning Steppes and give Bijou's Information to Marshal Maxwell.",
       "requires": [5001],
       "start": {
-        "npc": "Bijou"
+        "npc": "Bijou",
+        "description": "Bijou"
       },
       "turnIn": {
         "npc": "Marshal Maxwell",
@@ -485,6 +488,25 @@
       "turnIn": {
         "npc": "Marshal Maxwell",
         "description": "Morgan's Vigil, Burning Steppes"
+      },
+      "items": []
+    },
+    {
+      "id": 98325,
+      "name": "Blood and Thunder",
+      "requiredLevel": 55,
+      "xp": 660,
+      "objective": "Speak to Warlord Goretooth to serve the Kargath Expeditionary Force.",
+      "description": "New in WoW Forever: it comes before Warlord's Command.",
+      "start": {
+        "npc": "Warlord Goretooth",
+        "location": [1418, 5.8, 47.4],
+        "description": "Warlord Goretooth, Kargath, Badlands (5.8, 47.4)"
+      },
+      "turnIn": {
+        "npc": "Warlord Goretooth",
+        "location": [1418, 5.8, 47.4],
+        "description": "Warlord Goretooth, Kargath, Badlands (5.8, 47.4)"
       },
       "items": []
     }

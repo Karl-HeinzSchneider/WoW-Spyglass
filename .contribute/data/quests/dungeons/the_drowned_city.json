@@ -28,6 +28,7 @@
       "xp": 2700,
       "objective": "Bring 7 Jungle Remedies and 1 Venom Fern Extract to Sergeant Yohwa.",
       "description": "Done together with the other of Sergeant Yohwa's two quests (The Second Rebellion and Bad Medicine); Brother Nimetz offers Kurzen's Mystery once both are handed in.",
+      "requires": [203],
       "start": {
         "npc": "Sergeant Yohwa",
         "location": [1434, 38, 3.4],
@@ -128,7 +129,7 @@
       "xp": 3150,
       "objective": "Explore just west of the Vile Reef and find the cavern entrance, then report back to Kin'weelay.",
       "description": "The cave is in Sunken Hollow, underwater around 21, 28: the entrance to the Drowned City.",
-      "requires": [95748],
+      "requires": [95748, 95773],
       "start": {
         "npc": "Kin'weelay",
         "location": [1434, 32.3, 27.7],

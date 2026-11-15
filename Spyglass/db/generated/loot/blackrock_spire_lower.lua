@@ -145,7 +145,7 @@ Data:AddQuests(22901, {
         { 13962 }, -- Vosh'gajin's Strand
         { 13963 }, -- Voone's Vice Grips
     } },
-    { id = 4903, name = "Warlord's Command", side = "Horde", requiredLevel = 55, xp = 8300, objective = "Slay Highlord Omokk, War Master Voone, and Overlord Wyrmthalak. Recover Important Blackrock Documents. Return to Warlord Goretooth in Kargath when the mission has been accomplished.", start = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Warlord Goretooth" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Warlord Goretooth" }, items = {
+    { id = 4903, name = "Warlord's Command", side = "Horde", requiredLevel = 55, xp = 8300, objective = "Slay Highlord Omokk, War Master Voone, and Overlord Wyrmthalak. Recover Important Blackrock Documents. Return to Warlord Goretooth in Kargath when the mission has been accomplished.", description = "Talk to Goretooth to receive his Command item and click it to start the quest. The Important Blackrock Documents spawn near the three generals.", requires = { { id = 98325, name = "Blood and Thunder" } }, start = { description = "Kargath, Badlands", location = { 1418, 5.8, 47.4 }, npc = "Warlord Goretooth" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Warlord Goretooth" }, items = {
         { 13958 }, -- Wyrmthalak's Shackles
         { 13959 }, -- Omokk's Girth Restrainer
         { 13961 }, -- Halycon's Muzzle

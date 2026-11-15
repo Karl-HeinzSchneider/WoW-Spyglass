@@ -109,7 +109,7 @@ Data:AddQuests(349, {
         { 17772 }, -- Zealous Shadowshard Pendant
         { 17773 }, -- Prodigious Shadowshard Pendant
     } },
-    { id = 7070, name = "Shadowshard Fragments", side = "Alliance", requiredLevel = 39, xp = 6750, objective = "Collect 10 Shadowshard Fragments from Maraudon and return them to Archmage Tervosh in Theramore on the coast of Dustwallow Marsh.", description = "Shadowshard elementals in the outer purple-crystal caves. It can be done without entering the instance.", start = { description = "Theramore, Dustwallow Marsh", location = { 1445, 45.2, 24.4 }, npc = "Archmage Tervosh" }, turnIn = { description = "Theramore, Dustwallow Marsh", location = { 1445, 45.2, 24.4 }, npc = "Archmage Tervosh" }, items = {
+    { id = 7070, name = "Shadowshard Fragments", side = "Alliance", requiredLevel = 39, xp = 6750, objective = "Collect 10 Shadowshard Fragments from Maraudon and return them to Archmage Tervosh in Theramore on the coast of Dustwallow Marsh.", description = "Shadowshard elementals in the outer purple-crystal caves. It can be done without entering the instance.", start = { description = "Theramore, Dustwallow Marsh", location = { 1445, 66.4, 49.3 }, npc = "Archmage Tervosh" }, turnIn = { description = "Theramore, Dustwallow Marsh", location = { 1445, 45.2, 24.4 }, npc = "Archmage Tervosh" }, items = {
         { 17772 }, -- Zealous Shadowshard Pendant
         { 17773 }, -- Prodigious Shadowshard Pendant
     } },

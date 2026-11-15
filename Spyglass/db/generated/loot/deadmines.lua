@@ -136,35 +136,35 @@ Data:AddTrashLoot(36, {
 })
 
 Data:AddQuests(36, {
-    { id = 166, name = "The Defias Brotherhood", side = "Alliance", requiredLevel = 14, xp = 2600, objective = "Defeat Edwin VanCleef and collect his head.", requires = { { id = 155, name = "The Defias Brotherhood" } }, start = { description = "Sentinel Hill, Westfall.", location = { 1436, 56.4, 47.5 }, npc = "Gryan Stoutmantle" }, turnIn = { description = "Sentinel Hill, Westfall.", location = { 1436, 56.4, 47.5 }, npc = "Gryan Stoutmantle" }, items = {
+    { id = 166, name = "The Defias Brotherhood", side = "Alliance", requiredLevel = 14, xp = 2600, objective = "Defeat Edwin VanCleef and collect his head.", description = "Final dungeon step of the Defias Brotherhood chain; complete the earlier steps first.", requires = { { id = 155, name = "The Defias Brotherhood" } }, start = { description = "Gryan Stoutmantle, Sentinel Hill tower, Westfall (56.4, 47.5)", location = { 1436, 56.4, 47.5 }, npc = "Gryan Stoutmantle" }, turnIn = { description = "Gryan Stoutmantle, Sentinel Hill, Westfall", location = { 1436, 56.4, 47.5 }, npc = "Gryan Stoutmantle" }, items = {
         { 2041 }, -- Tunic of Westfall
         { 2042 }, -- Staff of Westfall
         { 6087 }, -- Chausses of Westfall
     } },
-    { id = 168, name = "Collecting Memories", side = "Alliance", requiredLevel = 14, xp = 1350, objective = "Collect 4 Miners' Union Cards from undead miners in the tunnels outside the instance.", description = "The undead side tunnel is before the instance portal.", start = { description = "Stormwind.", location = { 1453, 66.8, 43.8 }, npc = "Wilder Thistlenettle" }, turnIn = { description = "Stormwind.", location = { 1453, 66.8, 43.8 }, npc = "Wilder Thistlenettle" }, items = {
+    { id = 168, name = "Collecting Memories", side = "Alliance", requiredLevel = 14, xp = 1350, objective = "Collect 4 Miners' Union Cards from undead miners in the tunnels outside the instance.", description = "The undead side tunnel is before the instance portal.", start = { description = "Wilder Thistlenettle, the Dwarven District, Stormwind", location = { 1453, 66.8, 43.8 }, npc = "Wilder Thistlenettle" }, turnIn = { description = "Wilder Thistlenettle, Stormwind", location = { 1453, 66.8, 43.8 }, npc = "Wilder Thistlenettle" }, items = {
         { 2036 }, -- Dusty Mining Gloves
         { 2037 }, -- Tunneler's Boots
         { 270007 }, -- Worn Miner's Waistcord
     } },
-    { id = 167, name = "Oh Brother. . .", side = "Alliance", requiredLevel = 15, xp = 1550, objective = "Recover Thistlenettle's Badge from Foreman Thistlenettle in the undead side tunnel.", description = "The foreman is in the tunnels before the instance portal.", start = { description = "Stormwind.", location = { 1453, 66.8, 43.8 }, npc = "Wilder Thistlenettle" }, turnIn = { description = "Stormwind.", location = { 1453, 66.8, 43.8 }, npc = "Wilder Thistlenettle" }, items = {
+    { id = 167, name = "Oh Brother. . .", side = "Alliance", requiredLevel = 15, xp = 1550, objective = "Recover Thistlenettle's Badge from Foreman Thistlenettle in the undead side tunnel.", description = "The foreman is in the tunnels before the instance portal.", start = { description = "Wilder Thistlenettle, the Dwarven District, Stormwind", location = { 1453, 66.8, 43.8 }, npc = "Wilder Thistlenettle" }, turnIn = { description = "Wilder Thistlenettle, Stormwind", location = { 1453, 66.8, 43.8 }, npc = "Wilder Thistlenettle" }, items = {
         { 1893 }, -- Miner's Revenge
         { 270012 }, -- Miner's Workgloves
         { 270013 }, -- Miner's Workboots
     } },
-    { id = 214, name = "Red Silk Bandanas", side = "Alliance", requiredLevel = 14, xp = 1250, objective = "Collect 10 Red Silk Bandanas from Defias inside the Deadmines.", requires = { { id = 153, name = "Red Leather Bandanas" }, { id = 155, name = "The Defias Brotherhood" } }, start = { description = "Sentinel Hill tower, Westfall.", location = { 1436, 56.7, 47.4 }, npc = "Scout Riell" }, turnIn = { description = "Sentinel Hill tower, Westfall.", location = { 1436, 56.7, 47.4 }, npc = "Scout Riell" }, items = {
+    { id = 214, name = "Red Silk Bandanas", side = "Alliance", requiredLevel = 14, xp = 1250, objective = "Collect 10 Red Silk Bandanas from Defias inside the Deadmines.", description = "Requires the Defias Brotherhood escort step.", requires = { { id = 153, name = "Red Leather Bandanas" }, { id = 155, name = "The Defias Brotherhood" } }, start = { description = "Scout Riell, Sentinel Hill tower, Westfall", location = { 1436, 56.67, 47.35 }, npc = "Scout Riell" }, turnIn = { description = "Scout Riell, Sentinel Hill tower, Westfall", location = { 1436, 56.7, 47.4 }, npc = "Scout Riell" }, items = {
         { 2074 }, -- Solid Shortblade
         { 2089 }, -- Scrimshaw Dagger
         { 6094 }, -- Piercing Axe
         { 270005 }, -- Monastic Hammer
     } },
-    { id = 2040, name = "Underground Assault", side = "Alliance", requiredLevel = 15, xp = 1550, objective = "Recover the Gnoam Sprecklesprocket from Sneed's Shredder.", start = { description = "Stormwind.", location = { 1453, 63, 34 }, npc = "Shoni the Shilent" }, turnIn = { description = "Stormwind.", location = { 1453, 63, 34 }, npc = "Shoni the Shilent" }, items = {
+    { id = 2040, name = "Underground Assault", side = "Alliance", requiredLevel = 15, xp = 1550, objective = "Recover the Gnoam Sprecklesprocket from Sneed's Shredder.", description = "Follows Speak with Shoni.", start = { description = "Shoni the Shilent, the Dwarven District, Stormwind", location = { 1453, 63, 34 }, npc = "Shoni the Shilent" }, turnIn = { description = "Shoni the Shilent, Stormwind", location = { 1453, 63, 34 }, npc = "Shoni the Shilent" }, items = {
         { 7606 }, -- Polar Gauntlets
         { 7607 }, -- Sable Wand
         { 270015 }, -- Bravo's Armbands
         { 270016 }, -- Dreamer's Leggings
     } },
-    { id = 92753, name = "Destruction in Deadmines", side = "Alliance", requiredLevel = 9, xp = 1350, objective = "Place the explosives beside the forge in the Deadmines.", description = "Use the Extra-Destructive Explosives to start this quest.", requires = { { id = 92752, name = "Explosive Consultation" } }, start = { item = 254553 }, turnIn = { description = "Sentinel Hill inn, Westfall.", location = { 1436, 53, 53.3 }, npc = "Alba Fairmoon" }, items = {} },
-    { id = 373, name = "The Unsent Letter", side = "Alliance", requiredLevel = 16, xp = 870, objective = "Take the letter to the city architect in Stormwind.", description = "Looted from Edwin VanCleef", start = { item = 2874 }, turnIn = { description = "Stormwind.", location = { 1453, 57.6, 47.8 }, npc = "Baros Alexston" }, items = {} },
+    { id = 92753, name = "Destruction in Deadmines", side = "Alliance", requiredLevel = 9, xp = 1350, objective = "Place the explosives beside the forge in the Deadmines.", description = "Use the Extra-Destructive Explosives to start this quest.", requires = { { id = 92752, name = "Explosive Consultation" } }, start = { description = "Use the Extra-Destructive Explosives quest-start item.", item = 254553 }, turnIn = { description = "Alba Fairmoon, in the hills behind Moonbrook (at the Deadmines exit), Westfall", location = { 1436, 53, 53.3 }, npc = "Alba Fairmoon" }, items = {} },
+    { id = 373, name = "The Unsent Letter", side = "Alliance", requiredLevel = 16, xp = 870, objective = "Take the letter to the city architect in Stormwind.", description = "Looted from Edwin VanCleef", start = { description = "Use An Unsent Letter, looted from Edwin VanCleef.", item = 2874 }, turnIn = { description = "Baros Alexston, City Hall, Cathedral Square, Stormwind", location = { 1453, 57.6, 47.8 }, npc = "Baros Alexston" }, items = {} },
     { id = 1806, name = "The Test of Righteousness", side = "Alliance", class = "PALADIN", requiredLevel = 20, xp = 5500, objective = "Wait for Jordan Stilwell to finish forging a weapon for you.", description = "Paladin class quest for humans and dwarves. The parts are Whitestone Oak Lumber (The Deadmines), Jordan's Smithing Hammer (Shadowfang Keep), the Kor Gem (Blackfathom Deeps) and Jordan's ore shipment (Loch Modan).", requires = { { id = 1654, name = "The Test of Righteousness" } }, start = { description = "Gates of Ironforge, Dun Morogh.", location = { 1426, 52.6, 36.8 }, npc = "Jordan Stilwell" }, turnIn = { description = "Gates of Ironforge, Dun Morogh.", location = { 1426, 52.6, 36.8 }, npc = "Jordan Stilwell" }, items = {
         { 6953 }, -- Verigan's Fist
     } },

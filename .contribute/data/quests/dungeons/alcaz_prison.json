@@ -10,6 +10,7 @@
       "description": "Reported to start in Dalaran; who gives it is not known yet.",
       "start": {
         "npc": "Dalaran",
+        "location": [1416, 15.4, 73.8],
         "description": "Alterac Mountains (giver not known yet)"
       },
       "turnIn": {

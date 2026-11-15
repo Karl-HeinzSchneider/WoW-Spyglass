@@ -109,6 +109,7 @@
       "requiredLevel": 16,
       "xp": 2350,
       "objective": "Kill Bazil Thredd in The Stockade and bring his head back to Warden Thelwater.",
+      "description": "Part of the chain that begins with The Unsent Letter from Edwin VanCleef in The Deadmines.",
       "requires": [389],
       "start": {
         "npc": "Warden Thelwater",

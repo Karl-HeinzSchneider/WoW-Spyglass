@@ -49,12 +49,16 @@
       "requiredLevel": 10,
       "xp": 2200,
       "objective": "Bring the Gems of Cobrahn, Anacondra, Pythas and Serpentis to Nara Wildmane.",
+      "description": "Requires the Barrens oasis quest chain. Complete The Barrens Oases, The Forgotten Pools, The Stagnant Oasis and Altered Beings, then Hamuul Runetotem and Nara Wildmane before Leaders of the Fang becomes available.",
       "requires": [1490],
       "start": {
-        "npc": "Nara Wildmane"
+        "npc": "Nara Wildmane",
+        "location": [1456, 75.3, 31.3],
+        "description": "Nara Wildmane, Thunder Bluff"
       },
       "turnIn": {
-        "npc": "Nara Wildmane"
+        "npc": "Nara Wildmane",
+        "description": "Nara Wildmane, Thunder Bluff"
       },
       "items": [
         {
@@ -79,10 +83,13 @@
       "xp": 1600,
       "objective": "Bring 20 Deviate Hides to Nalpak.",
       "start": {
-        "npc": "Nalpak"
+        "npc": "Nalpak",
+        "location": [1413, 46.6, 36.3],
+        "description": "Nalpak, above the entrance to Wailing Caverns, The Barrens"
       },
       "turnIn": {
-        "npc": "Nalpak"
+        "npc": "Nalpak",
+        "description": "Nalpak, above the entrance to Wailing Caverns, The Barrens"
       },
       "items": [
         {
@@ -103,10 +110,13 @@
       "xp": 1700,
       "objective": "Collect 10 Serpentbloom from Wailing Caverns.",
       "start": {
-        "npc": "Apothecary Zamah"
+        "npc": "Apothecary Zamah",
+        "location": [1456, 23, 21],
+        "description": "Apothecary Zamah, Thunder Bluff"
       },
       "turnIn": {
-        "npc": "Apothecary Zamah"
+        "npc": "Apothecary Zamah",
+        "description": "Apothecary Zamah, Thunder Bluff"
       },
       "items": [
         {
@@ -131,10 +141,13 @@
       "xp": 2050,
       "objective": "Kill 7 Deviate Ravagers, 7 Deviate Vipers, 7 Deviate Shamblers and 7 Deviate Dreadfangs.",
       "start": {
-        "npc": "Ebru"
+        "npc": "Ebru",
+        "location": [1413, 46.6, 35.7],
+        "description": "Ebru, above the entrance to Wailing Caverns, The Barrens"
       },
       "turnIn": {
-        "npc": "Ebru"
+        "npc": "Ebru",
+        "description": "Ebru, above the entrance to Wailing Caverns, The Barrens"
       },
       "items": [
         {
@@ -161,10 +174,13 @@
       "description": "Tonga sends you to Hamuul after Altered Beings.",
       "requires": [880],
       "start": {
-        "npc": "Tonga Runetotem"
+        "npc": "Tonga Runetotem",
+        "location": [1413, 52.3, 31.9],
+        "description": "Tonga Runetotem, The Crossroads"
       },
       "turnIn": {
-        "npc": "Hamuul Runetotem"
+        "npc": "Hamuul Runetotem",
+        "description": "Hamuul Runetotem, Elder Rise, Thunder Bluff"
       },
       "items": []
     },
@@ -178,10 +194,13 @@
       "description": "Nara Wildmane is the final prerequisite before Leaders of the Fang becomes available.",
       "requires": [1489],
       "start": {
-        "npc": "Hamuul Runetotem"
+        "npc": "Hamuul Runetotem",
+        "location": [1456, 78.6, 28.6],
+        "description": "Hamuul Runetotem, Elder Rise, Thunder Bluff"
       },
       "turnIn": {
-        "npc": "Nara Wildmane"
+        "npc": "Nara Wildmane",
+        "description": "Nara Wildmane, Thunder Bluff"
       },
       "items": []
     },
@@ -194,10 +213,13 @@
       "objective": "Bring 6 Wailing Essence to Mebok Mizzyrix.",
       "requires": [865],
       "start": {
-        "npc": "Mebok Mizzyrix"
+        "npc": "Mebok Mizzyrix",
+        "location": [1413, 62.8, 36.7],
+        "description": "Mebok Mizzyrix, Ratchet, The Barrens"
       },
       "turnIn": {
-        "npc": "Mebok Mizzyrix"
+        "npc": "Mebok Mizzyrix",
+        "description": "Mebok Mizzyrix, Ratchet, The Barrens"
       },
       "items": []
     },
@@ -209,10 +231,13 @@
       "xp": 1350,
       "objective": "Retrieve the 99-Year-Old Port from Mad Magglish in Wailing Caverns.",
       "start": {
-        "npc": "Crane Operator Bigglefuzz"
+        "npc": "Crane Operator Bigglefuzz",
+        "location": [1413, 63.9, 38.3],
+        "description": "Crane Operator Bigglefuzz, Ratchet, The Barrens"
       },
       "turnIn": {
-        "npc": "Crane Operator Bigglefuzz"
+        "npc": "Crane Operator Bigglefuzz",
+        "description": "Crane Operator Bigglefuzz, Ratchet, The Barrens"
       },
       "items": []
     },
@@ -225,11 +250,15 @@
       "objective": "Speak with Sputtervalve in Ratchet about the Glowing Shard, then deliver it to Falla Sagewind on top of the mountain above Wailing Caverns.",
       "description": "Dropped by: Mutanus the Devourer.\nVisit Sputtervalve in Ratchet near the flight master at [63.0, 37.2].",
       "start": {
+        "npc": "Falla Sagewind",
         "item": 10441,
-        "location": [1413, 48.2, 32.8]
+        "location": [1413, 48.2, 32.8],
+        "description": "Item start: Glowing Shard, dropped by Mutanus the Devourer"
       },
       "turnIn": {
-        "npc": "Falla Sagewind"
+        "npc": "Falla Sagewind",
+        "location": [1413, 48.2, 32.8],
+        "description": "Falla Sagewind, on top of the mountain above Wailing Caverns, The Barrens (48.2, 32.8)"
       },
       "items": []
     },
@@ -242,10 +271,13 @@
       "objective": "Gather 5 Intact Raptor Horns from Sunscale Scytheclaws and bring them to Mebok Mizzyrix.",
       "description": "Required before Smart Drinks becomes available.",
       "start": {
-        "npc": "Mebok Mizzyrix"
+        "npc": "Mebok Mizzyrix",
+        "location": [1413, 62.8, 36.7],
+        "description": "Mebok Mizzyrix, Ratchet, The Barrens"
       },
       "turnIn": {
-        "npc": "Mebok Mizzyrix"
+        "npc": "Mebok Mizzyrix",
+        "description": "Mebok Mizzyrix, Ratchet, The Barrens"
       },
       "items": [
         {
@@ -267,10 +299,13 @@
       "objective": "Explore the waters of the Forgotten Pools northwest of the Crossroads, then report back.",
       "description": "Investigate the fissure beneath the Forgotten Pools.",
       "start": {
-        "npc": "Tonga Runetotem"
+        "npc": "Tonga Runetotem",
+        "location": [1413, 52, 32],
+        "description": "Tonga Runetotem, The Crossroads"
       },
       "turnIn": {
-        "npc": "Tonga Runetotem"
+        "npc": "Tonga Runetotem",
+        "description": "Tonga Runetotem, The Crossroads"
       },
       "items": []
     },
@@ -284,10 +319,13 @@
       "description": "The next required oasis investigation after The Forgotten Pools.",
       "requires": [870],
       "start": {
-        "npc": "Tonga Runetotem"
+        "npc": "Tonga Runetotem",
+        "location": [1413, 52.3, 31.9],
+        "description": "Tonga Runetotem, The Crossroads"
       },
       "turnIn": {
-        "npc": "Tonga Runetotem"
+        "npc": "Tonga Runetotem",
+        "description": "Tonga Runetotem, The Crossroads"
       },
       "items": []
     },
@@ -301,10 +339,13 @@
       "description": "Completing Altered Beings unlocks Hamuul Runetotem.",
       "requires": [877],
       "start": {
-        "npc": "Tonga Runetotem"
+        "npc": "Tonga Runetotem",
+        "location": [1413, 52.3, 31.9],
+        "description": "Tonga Runetotem, The Crossroads"
       },
       "turnIn": {
-        "npc": "Tonga Runetotem"
+        "npc": "Tonga Runetotem",
+        "description": "Tonga Runetotem, The Crossroads"
       },
       "items": []
     }

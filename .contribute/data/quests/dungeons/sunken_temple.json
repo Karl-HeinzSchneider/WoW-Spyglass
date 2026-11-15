@@ -280,6 +280,7 @@
       "requiredLevel": 46,
       "xp": 4900,
       "objective": "Retrieve the Stone Circle from Marvon Rivetseeker's workshop in Ratchet.",
+      "requires": [3445],
       "start": {
         "npc": "Marvon Rivetseeker",
         "location": [1446, 52.6, 45.8],
@@ -463,7 +464,8 @@
       "objective": "Speak to Ogtinc in Azshara.",
       "description": "Introductory step leading to The Green Drake.\n\nOPTIONAL, not required",
       "start": {
-        "npc": "Hunter trainers"
+        "npc": "Hunter trainers",
+        "description": "Hunter trainers"
       },
       "turnIn": {
         "npc": "Ogtinc",
@@ -553,7 +555,8 @@
       "objective": "Speak with Lord Jorach Ravenholdt in Ravenholdt Manor.",
       "description": "Introductory step leading to The Azure Key.\n\nOPTIONAL, not required",
       "start": {
-        "npc": "Rogue trainers"
+        "npc": "Rogue trainers",
+        "description": "Rogue trainers"
       },
       "turnIn": {
         "npc": "Lord Jorach Ravenholdt",
@@ -641,7 +644,8 @@
       "objective": "Seek out Sanath Lim-yo and gain passage to see Archmage Xylem.",
       "description": "Introductory step leading to Destroy Morphaz.\n\nOPTIONAL, not required",
       "start": {
-        "npc": "Mage trainers"
+        "npc": "Mage trainers",
+        "description": "Mage trainers"
       },
       "turnIn": {
         "npc": "Sanath Lim-yo",
@@ -731,7 +735,8 @@
       "objective": "Seek out Ogtinc in Azshara.",
       "description": "Introductory step leading to Blood of Morphaz.\n\nOPTIONAL, not required",
       "start": {
-        "npc": "Priest trainers"
+        "npc": "Priest trainers",
+        "description": "Priest trainers"
       },
       "turnIn": {
         "npc": "Ogtinc",
@@ -950,7 +955,8 @@
       "objective": "Speak with the Fallen Hero of the Horde at the entrance to the Blasted Lands.",
       "description": "Introductory step leading to Voodoo Feathers.\n\nOPTIONAL, not required",
       "start": {
-        "npc": "Warrior trainers"
+        "npc": "Warrior trainers",
+        "description": "Warrior trainers"
       },
       "turnIn": {
         "npc": "Fallen Hero of the Horde",
@@ -1004,7 +1010,8 @@
       "xp": 3800,
       "objective": "Bring a piece of felcloth to Impsy in Felwood.",
       "start": {
-        "npc": "Your class trainer"
+        "npc": "Your class trainer",
+        "description": "Your class trainer"
       },
       "turnIn": {
         "npc": "Impsy",
@@ -1238,11 +1245,28 @@
       "objective": "Speak with Torwa Pathfinder in Un'Goro Crater.",
       "description": "Introductory step leading to A Better Ingredient.\n\nOPTIONAL, not required",
       "start": {
-        "npc": "Druid trainers"
+        "npc": "Druid trainers",
+        "description": "Druid trainers"
       },
       "turnIn": {
         "npc": "Torwa Pathfinder",
         "description": "Un'Goro Crater"
+      },
+      "items": []
+    },
+    {
+      "id": 3445,
+      "name": "The Sunken Temple",
+      "requiredLevel": 46,
+      "xp": 3650,
+      "objective": "Find Marvon Rivetseeker in Tanaris.",
+      "start": {
+        "npc": "Angelas Moonbreeze",
+        "location": [1444, 31.8, 45.6],
+        "description": "Angelas Moonbreeze, Feathermoon Stronghold, Feralas (31.8, 45.6)"
+      },
+      "turnIn": {
+        "description": "Marvon Rivetseeker, Broken Pillar, Tanaris (52.6, 45.8)"
       },
       "items": []
     }

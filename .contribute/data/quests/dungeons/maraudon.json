@@ -294,7 +294,7 @@
       "description": "Shadowshard elementals in the outer purple-crystal caves. It can be done without entering the instance.",
       "start": {
         "npc": "Archmage Tervosh",
-        "location": [1445, 45.2, 24.4],
+        "location": [1445, 66.4, 49.3],
         "description": "Theramore, Dustwallow Marsh"
       },
       "turnIn": {
@@ -454,7 +454,7 @@
       "xp": 360,
       "objective": "Find Woodwyrd in the Forlorn Gardens at Shen'dralas.",
       "description": "Horde players get it from Mithera after her Forlorn Gardens quest (Wowhead lists that one for the Horde only; how the Alliance gets Word of the Woods is not confirmed yet).",
-      "requires": [93394],
+      "requires": [93394, 93341],
       "start": {
         "npc": "Mithera",
         "location": [2652, 52.8, 76],
@@ -484,6 +484,25 @@
         "npc": "Olana Brighthoof",
         "location": [1412, 33.8, 23.7],
         "description": "Skywatcher Plateau, Mulgore"
+      },
+      "items": []
+    },
+    {
+      "id": 93341,
+      "name": "Forlorn Gardens",
+      "requiredLevel": 35,
+      "xp": 1800,
+      "objective": "Investigate the Forlorn Gardens near Shen'dralas and then return to Mithera at the nearby temple.",
+      "requires": [93394],
+      "start": {
+        "npc": "Mithera",
+        "location": [2652, 52.8, 76],
+        "description": "Mithera, by the Forlorn Gardens, Shen'dralas (52.8, 76.0)"
+      },
+      "turnIn": {
+        "npc": "Mithera",
+        "location": [2652, 52.8, 76],
+        "description": "Mithera, by the Forlorn Gardens, Shen'dralas (52.8, 76.0)"
       },
       "items": []
     }

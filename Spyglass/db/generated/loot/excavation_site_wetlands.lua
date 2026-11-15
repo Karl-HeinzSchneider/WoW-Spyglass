@@ -35,7 +35,7 @@ Data:AddTrashLoot(2998, {
 })
 
 Data:AddQuests(2998, {
-    { id = 95682, name = "Open the Maw", side = "Horde", requiredLevel = 24, xp = 7158, objective = "Defeat 2 Dragonmaw Saboteurs and 4 Dragonmaw Warders, recover the Dragonmaw Dispatch, and report to the Deathstalker Agent outside the dungeon.", description = "Related lead-in: Dragonmaw Rumors. The Dragonmaw Dispatch is recovered from the Dragonmaw forces inside the dungeon.", requires = { { id = 95663, name = "Dragonmaw Rumors" } }, start = { description = "Just outside Excavation Site: Wetlands.", location = { 1437, 47.8, 56.3 }, npc = "Deathstalker Agent" }, turnIn = { description = "Just outside Excavation Site: Wetlands.", location = { 1437, 47.8, 56.3 }, npc = "Deathstalker Agent" }, items = {
+    { id = 95682, name = "Open the Maw", side = "Horde", requiredLevel = 24, xp = 7158, objective = "Defeat 2 Dragonmaw Saboteurs and 4 Dragonmaw Warders, recover the Dragonmaw Dispatch, and report to the Deathstalker Agent outside the dungeon.", description = "Related lead-in: Dragonmaw Rumors. The Dragonmaw Dispatch is recovered from the Dragonmaw forces inside the dungeon.", requires = { { id = 95663, name = "Dragonmaw Rumors" } }, start = { description = "Just outside Excavation Site: Wetlands.", location = { 1437, 51.4, 59.2 }, npc = "Deathstalker Agent" }, turnIn = { description = "Just outside Excavation Site: Wetlands.", location = { 1437, 47.8, 56.3 }, npc = "Deathstalker Agent" }, items = {
         { 271740 }, -- Knife-Polishing Rag
         { 271732 }, -- Dirt-Heavy Bracers
         { 271745 }, -- Bloody Map

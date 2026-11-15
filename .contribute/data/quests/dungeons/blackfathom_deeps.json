@@ -46,10 +46,12 @@
       "objective": "Defeat Twilight Lord Kelris and recover the Head of Kelris.",
       "requires": [1198],
       "start": {
-        "npc": "Argent Guard Thaelrid"
+        "npc": "Argent Guard Thaelrid",
+        "description": "Argent Guard Thaelrid, inside Blackfathom Deeps"
       },
       "turnIn": {
-        "npc": "Dawnwatcher Selgorm"
+        "npc": "Dawnwatcher Selgorm",
+        "description": "Dawnwatcher Selgorm, Darnassus"
       },
       "items": [
         {
@@ -78,10 +80,12 @@
       "xp": 3300,
       "objective": "Defeat Twilight Lord Kelris and recover the Head of Kelris.",
       "start": {
-        "npc": "Argent Guard Thaelrid"
+        "npc": "Argent Guard Thaelrid",
+        "description": "Argent Guard Thaelrid, inside Blackfathom Deeps"
       },
       "turnIn": {
-        "npc": "Bashana Runetotem"
+        "npc": "Bashana Runetotem",
+        "description": "Bashana Runetotem, Elder Rise, Thunder Bluff"
       },
       "items": [
         {
@@ -110,10 +114,13 @@
       "xp": 2550,
       "objective": "Collect 10 Twilight Pendants from Twilight's Hammer members in Blackfathom Deeps.",
       "start": {
-        "npc": "Argent Guard Manados"
+        "npc": "Argent Guard Manados",
+        "location": [1457, 55, 24],
+        "description": "Argent Guard Manados, Craftsmen's Terrace, Darnassus (55, 24)"
       },
       "turnIn": {
-        "npc": "Argent Guard Manados"
+        "npc": "Argent Guard Manados",
+        "description": "Argent Guard Manados, Craftsmen's Terrace, Darnassus"
       },
       "items": [
         {
@@ -139,10 +146,12 @@
       "objective": "Bring the Damp Note to Je'neu Sancrea in Ashenvale.",
       "description": "Drops from Blackfathom Tide Priestess in the entrance tunnels leading to Blackfathom Deeps.",
       "start": {
-        "item": 16790
+        "item": 16790,
+        "description": "Use the Damp Note dropped by Blackfathom Tide Priestesses"
       },
       "turnIn": {
-        "npc": "Je'neu Sancrea"
+        "npc": "Je'neu Sancrea",
+        "description": "Je'neu Sancrea, Zoram'gar Outpost, Ashenvale"
       },
       "items": []
     },
@@ -151,14 +160,18 @@
       "name": "Allegiance to the Old Gods",
       "side": "Horde",
       "requiredLevel": 17,
-      "xp": 6489,
+      "xp": 2650,
       "objective": "Defeat Lorgus Jett in Blackfathom Deeps.",
+      "description": "Follows the Damp Note version of Allegiance to the Old Gods.",
       "requires": [6564],
       "start": {
-        "npc": "Je'neu Sancrea"
+        "npc": "Je'neu Sancrea",
+        "location": [1440, 12, 34],
+        "description": "Je'neu Sancrea, Zoram'gar Outpost, Ashenvale (12, 34)"
       },
       "turnIn": {
-        "npc": "Je'neu Sancrea"
+        "npc": "Je'neu Sancrea",
+        "description": "Je'neu Sancrea, Zoram'gar Outpost, Ashenvale"
       },
       "items": [
         {
@@ -178,12 +191,16 @@
       "requiredLevel": 18,
       "xp": 2400,
       "objective": "Collect 8 Corrupted Brain Stems from creatures in Blackfathom Deeps.",
+      "description": "Optional introductory quest:",
       "requires": [3765],
       "start": {
-        "npc": "Gershala Nightwhisper"
+        "npc": "Gershala Nightwhisper",
+        "location": [1439, 38.3, 43.1],
+        "description": "Gershala Nightwhisper, Auberdine, Darkshore (38.3, 43.1)"
       },
       "turnIn": {
-        "npc": "Gershala Nightwhisper"
+        "npc": "Gershala Nightwhisper",
+        "description": "Gershala Nightwhisper, Auberdine, Darkshore"
       },
       "items": [
         {
@@ -208,11 +225,15 @@
       "requiredLevel": 20,
       "xp": 2550,
       "objective": "Find 3 Soran'ruk Fragments and 1 Large Soran'ruk Fragment and return them to Doan Karhan.",
+      "description": "Warlock class quest. The fragments come from Shadowfang Keep and Blackfathom Deeps.",
       "start": {
-        "npc": "Doan Karhan"
+        "npc": "Doan Karhan",
+        "location": [1413, 49.3, 57.2],
+        "description": "Doan Karhan, The Barrens"
       },
       "turnIn": {
-        "npc": "Doan Karhan"
+        "npc": "Doan Karhan",
+        "description": "Doan Karhan, The Barrens"
       },
       "items": [
         {
@@ -234,10 +255,13 @@
       "objective": "Recover the Lorgalis Manuscript from Blackfathom Deeps.",
       "description": "The Lorgalis Manuscript is inside a Pitted Iron Chest underwater in the Pool of Ask'ar, in the northern alcove just past Ghamoo-ra's turtle room.",
       "start": {
-        "npc": "Gerrig Bonegrip"
+        "npc": "Gerrig Bonegrip",
+        "location": [1455, 50.83, 5.61],
+        "description": "Gerrig Bonegrip, Forlorn Cavern, Ironforge (50.8, 5.6)"
       },
       "turnIn": {
-        "npc": "Gerrig Bonegrip"
+        "npc": "Gerrig Bonegrip",
+        "description": "Gerrig Bonegrip, Forlorn Cavern, Ironforge"
       },
       "items": [
         {
@@ -253,11 +277,15 @@
       "requiredLevel": 17,
       "xp": 1750,
       "objective": "Collect 20 Sapphires of Aku'Mai in Blackfathom Deeps.",
+      "description": "Optional introductory quest:",
       "start": {
-        "npc": "Je'neu Sancrea"
+        "npc": "Je'neu Sancrea",
+        "location": [1440, 12, 34],
+        "description": "Je'neu Sancrea, Zoram'gar Outpost, Ashenvale (12, 34)"
       },
       "turnIn": {
-        "npc": "Je'neu Sancrea"
+        "npc": "Je'neu Sancrea",
+        "description": "Je'neu Sancrea, Zoram'gar Outpost, Ashenvale"
       },
       "items": []
     },
@@ -268,12 +296,15 @@
       "requiredLevel": 17,
       "xp": 435,
       "objective": "Speak to Je'neu Sancrea in Ashenvale.",
+      "description": "Introductory step leading to The Essence of Aku'Mai.",
       "start": {
         "npc": "Tsunaman",
-        "location": [1442, 47.2, 64.2]
+        "location": [1442, 47.2, 64.2],
+        "description": "Tsunaman, Stonetalon Mountains"
       },
       "turnIn": {
-        "npc": "Je'neu Sancrea"
+        "npc": "Je'neu Sancrea",
+        "description": "Je'neu Sancrea, Zoram'gar Outpost, Ashenvale"
       },
       "items": []
     },
@@ -286,10 +317,13 @@
       "objective": "Find Argent Guard Thaelrid inside Blackfathom Deeps.",
       "description": "Required before the Alliance version of Blackfathom Villainy.",
       "start": {
-        "npc": "Dawnwatcher Shaedlass"
+        "npc": "Dawnwatcher Shaedlass",
+        "location": [1457, 55, 24],
+        "description": "Dawnwatcher Shaedlass, Craftsmen's Terrace, Darnassus"
       },
       "turnIn": {
-        "npc": "Argent Guard Thaelrid"
+        "npc": "Argent Guard Thaelrid",
+        "description": "Argent Guard Thaelrid, inside Blackfathom Deeps"
       },
       "items": []
     },
@@ -298,14 +332,17 @@
       "name": "Amongst the Ruins",
       "side": "Horde",
       "requiredLevel": 21,
-      "xp": 6746,
+      "xp": 2750,
       "objective": "Recover the Fathom Core from the Fathom Stone in Blackfathom Deeps.",
       "description": "The Fathom Stone is also associated with the optional Baron Aquanis encounter.",
       "start": {
-        "npc": "Je'neu Sancrea"
+        "npc": "Je'neu Sancrea",
+        "location": [1440, 12, 34],
+        "description": "Je'neu Sancrea, Zoram'gar Outpost, Ashenvale (12, 34)"
       },
       "turnIn": {
-        "npc": "Je'neu Sancrea"
+        "npc": "Je'neu Sancrea",
+        "description": "Je'neu Sancrea, Zoram'gar Outpost, Ashenvale"
       },
       "items": []
     },
@@ -319,10 +356,12 @@
       "description": "Alliance breadcrumb required before Researching the Corruption.",
       "start": {
         "npc": "Argos Nightwhisper",
-        "location": [1453, 36.3, 67.4]
+        "location": [1453, 36.3, 67.4],
+        "description": "Argos Nightwhisper, The Park, Stormwind"
       },
       "turnIn": {
-        "npc": "Gershala Nightwhisper"
+        "npc": "Gershala Nightwhisper",
+        "description": "Gershala Nightwhisper, Auberdine, Darkshore"
       },
       "items": []
     },
@@ -335,10 +374,12 @@
       "objective": "Bring the Strange Water Globe to Je'neu Sancrea at Zoram'gar Outpost, Ashenvale.",
       "description": "Drops from Baron Aquanis.",
       "start": {
-        "item": 16782
+        "item": 16782,
+        "description": "Strange Water Globe, dropped by Baron Aquanis inside Blackfathom Deeps"
       },
       "turnIn": {
-        "npc": "Je'neu Sancrea"
+        "npc": "Je'neu Sancrea",
+        "description": "Je'neu Sancrea, Zoram'gar Outpost, Ashenvale"
       },
       "items": [
         {
@@ -362,6 +403,7 @@
       "requiredLevel": 18,
       "objective": "Speak with Lumina Windsinger in the Sepulcher.",
       "description": "The questline starts at level 18 with Diplomatic Incident from Danitha Morr at Bandarion Keep, Tirisfal Glades. It takes you to Fenris Isle, where you free Lumina Windsinger from Fenris Keep.",
+      "requires": [96204],
       "start": {
         "npc": "Lumina Windsinger",
         "location": [1421, 43.3, 41],
@@ -481,6 +523,111 @@
           "name": "Wolfsbane"
         }
       ]
+    },
+    {
+      "id": 91858,
+      "name": "Diplomatic Incident",
+      "requiredLevel": 18,
+      "objective": "Travel to The Sepulcher in Silverpine Forest and speak with Trevan Rol about the missing Earthen Ring travelers.",
+      "start": {
+        "npc": "Danitha Morr",
+        "location": [1420, 22, 44.6],
+        "description": "Danitha Morr, Bandarion Keep, Tirisfal Glades"
+      },
+      "turnIn": {
+        "npc": "Trevan Rol",
+        "location": [1421, 43.4, 41],
+        "description": "Trevan Rol, The Sepulcher, Silverpine Forest"
+      },
+      "items": []
+    },
+    {
+      "id": 91859,
+      "name": "A Curious Pair",
+      "requiredLevel": 18,
+      "objective": "Speak with Deathguard Baldren about the mysterious Earthen Ring travelers who recently passed through The Sepulcher.",
+      "requires": [91858],
+      "start": {
+        "npc": "Trevan Rol",
+        "location": [1421, 43.4, 41],
+        "description": "Trevan Rol, The Sepulcher, Silverpine Forest"
+      },
+      "turnIn": {
+        "npc": "Deathguard Baldren",
+        "location": [1421, 45.6, 41.8],
+        "description": "Deathguard Baldren, The Sepulcher, Silverpine Forest"
+      },
+      "items": []
+    },
+    {
+      "id": 91860,
+      "name": "A Grim Fate",
+      "requiredLevel": 18,
+      "objective": "Investigate Fenris Isle to the east and learn the fate of the Earthen Ring traveling party.",
+      "requires": [91859],
+      "start": {
+        "npc": "Deathguard Baldren",
+        "location": [1421, 45.6, 41.8],
+        "description": "Deathguard Baldren, The Sepulcher, Silverpine Forest"
+      },
+      "turnIn": {
+        "npc": "Charred Remains",
+        "location": [1421, 65, 34.2],
+        "description": "Charred Remains, Fenris Isle, Silverpine Forest"
+      },
+      "items": []
+    },
+    {
+      "id": 91861,
+      "name": "Into Fenris Keep",
+      "requiredLevel": 18,
+      "objective": "Investigate Fenris Keep to the north and attempt to locate the missing member of the Earthen Ring party.",
+      "requires": [91860],
+      "start": {
+        "npc": "Charred Remains",
+        "location": [1421, 65, 34.2],
+        "description": "Charred Remains, Fenris Isle, Silverpine Forest"
+      },
+      "turnIn": {
+        "npc": "Lumina Windsinger",
+        "location": [1421, 65.7, 27.4],
+        "description": "Lumina Windsinger, Fenris Keep, Silverpine Forest"
+      },
+      "items": []
+    },
+    {
+      "id": 91862,
+      "name": "Lumina Windsinger",
+      "requiredLevel": 18,
+      "objective": "Retrieve the Fenris Isle Key from the Rot Hide Gnolls and use it to free Lumina Windsinger.",
+      "requires": [91861],
+      "start": {
+        "npc": "Lumina Windsinger",
+        "location": [1421, 65.7, 27.4],
+        "description": "Lumina Windsinger, Fenris Keep, Silverpine Forest"
+      },
+      "turnIn": {
+        "description": "Lumina Windsinger, Fenris Keep, Silverpine Forest"
+      },
+      "items": []
+    },
+    {
+      "id": 96204,
+      "name": "The Windshaper's Wrath",
+      "requiredLevel": 18,
+      "objective": "Accompany Lumina Windsinger and help her escape Fenris Keep.",
+      "requires": [91862],
+      "start": {
+        "npc": "Lumina Windsinger",
+        "location": [1421, 65.7, 27.4],
+        "description": "Lumina Windsinger, Fenris Keep, Silverpine Forest"
+      },
+      "turnIn": {
+        "npc": "Lumina Windsinger",
+        "location": [1421, 43.3, 41],
+        "description": "Lumina Windsinger, The Sepulcher, Silverpine Forest"
+      },
+      "items": []
     }
   ]
 }

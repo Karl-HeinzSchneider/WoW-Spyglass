@@ -7,6 +7,7 @@
       "requiredLevel": 24,
       "xp": 3950,
       "objective": "Retrieve a Fel Infused Blossom from Dalaran's central garden.",
+      "description": "Quest data is recorded in the beta; dungeon access may be unavailable.",
       "start": {
         "npc": "Shylamiir",
         "location": [1453, 31.4, 62.8],
@@ -35,6 +36,7 @@
       "requiredLevel": 24,
       "xp": 3950,
       "objective": "Slay Arcanic Enigma, the Mana Elemental in the City of Dalaran, and return to High Sorcerer Andromath in Stormwind City.",
+      "description": "Quest data is recorded in the beta; dungeon access may be unavailable.",
       "start": {
         "npc": "High Sorcerer Andromath",
         "location": [1453, 48.8, 87.6],
@@ -67,7 +69,7 @@
       "requires": [92432],
       "start": {
         "npc": "Image of Archmage Modera",
-        "location": [1416, 9.2, 60],
+        "location": [1416, 7.7, 58.8],
         "description": "Lordamere Lake near Dalaran."
       },
       "turnIn": {
@@ -113,7 +115,7 @@
       "requires": [92432],
       "start": {
         "npc": "Image of Archmage Modera",
-        "location": [1416, 9.2, 60],
+        "location": [1416, 7.7, 58.8],
         "description": "Lordamere Lake near Dalaran."
       },
       "turnIn": {
@@ -147,7 +149,7 @@
       "requires": [92434],
       "start": {
         "npc": "Image of Archmage Modera",
-        "location": [1416, 9.2, 60],
+        "location": [1416, 7.7, 58.8],
         "description": "Lordamere Lake near Dalaran."
       },
       "turnIn": {
@@ -242,7 +244,7 @@
       },
       "turnIn": {
         "npc": "Image of Archmage Modera",
-        "location": [1416, 9.2, 60],
+        "location": [1416, 7.7, 58.8],
         "description": "Lordamere Lake near Dalaran."
       },
       "items": []
@@ -254,6 +256,7 @@
       "requiredLevel": 24,
       "xp": 3950,
       "objective": "Recover The Founding of Dalaran and deliver it to Rexxie Copperclutch.",
+      "description": "Quest data is recorded in the beta; dungeon access may be unavailable.",
       "start": {
         "npc": "Rexxie Copperclutch",
         "description": "Inside the dungeon, near the sewer entrance."
@@ -280,6 +283,7 @@
       "requiredLevel": 24,
       "xp": 3950,
       "objective": "Collect 6 Cracked Sentry Cores from the constructs in Dalaran.",
+      "description": "Quest data is recorded in the beta; dungeon access may be unavailable.",
       "start": {
         "npc": "Doctor Martin Felben",
         "location": [1458, 46.6, 74.1],
@@ -308,6 +312,7 @@
       "requiredLevel": 24,
       "xp": 3950,
       "objective": "Defeat Atrexis the Grave Knight in the Dalaran Underbelly.",
+      "description": "Quest data is recorded in the beta; dungeon access may be unavailable.",
       "start": {
         "npc": "Melisara",
         "location": [1424, 62.6, 20.6],
