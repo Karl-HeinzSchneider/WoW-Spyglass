@@ -8033,6 +8033,31 @@
       "STRENGTH": 3
     }
   },
+  "282027": {
+    "names": {
+      "enUS": "Scales of the Devourer"
+    },
+    "quality": 3,
+    "itemLevel": 62,
+    "reqLevel": 57,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_CHEST",
+    "bind": 1,
+    "icon": 132628,
+    "sellPrice": 34000,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 14,
+      "RESISTANCE0_NAME": 365,
+      "SPELL_POWER": 16,
+      "STAMINA": 18,
+      "STRENGTH": 15
+    }
+  },
   "282028": {
     "names": {
       "enUS": "Broken Frond of Celastrus"

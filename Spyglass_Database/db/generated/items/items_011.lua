@@ -3,6 +3,7 @@ local Data = Spyglass.Data
 
 -- { quality, itemLevel, reqLevel, classID, subclassID, slot, bind, icon, stats, sellPrice, stackCount, setID, expansionID, craftingReagent }; see Data.ITEM.
 Data:AddItems({
+    [285286] = { 2, 1, 1, 9, 3, "INVTYPE_NON_EQUIP_IGNORE", 1, 134942, nil, 1000, 1, 0, 0, false },
     [285287] = { 2, 1, 1, 9, 3, "INVTYPE_NON_EQUIP_IGNORE", 1, 134942, nil, 1000, 1, 0, 0, false },
     [285288] = { 2, 1, 1, 9, 3, "INVTYPE_NON_EQUIP_IGNORE", 1, 134942, nil, 1000, 1, 0, 0, false },
     [285289] = { 2, 1, 1, 9, 4, "INVTYPE_NON_EQUIP_IGNORE", 1, 134942, nil, 1000, 1, 0, 0, false },

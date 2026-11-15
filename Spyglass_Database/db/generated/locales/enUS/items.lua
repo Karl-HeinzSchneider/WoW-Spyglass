@@ -24745,6 +24745,7 @@ Data:AddNames("enUS", "items", {
     [282021] = "Dreadscorn's Spaulders",
     [282023] = "Clack's Claw",
     [282026] = "Unyielding Battle Signet",
+    [282027] = "Scales of the Devourer",
     [282028] = "Broken Frond of Celastrus",
     [282029] = "Reaver's Repeater",
     [282046] = "Gnome Skull",
