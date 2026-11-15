@@ -12,12 +12,15 @@ scanned item is browsable immediately. Trainer snapshots are saved alongside the
 
 ## Scanning (`/sg scan`)
 
-`/sg scan <from> [to]`, `missing`, `resume`, `stop`, `limit <n|off>`, `<from> <to> force`.
+`/sg scan <from> [to]`, `missing`, `resume`, `stop`, `limit <n|off>`, `batch [n|reset]`, `<from> <to> force`.
 
 - `StartScan` / `ScanTick` request `SCAN_BATCH` = 25 ids per `SCAN_INTERVAL` = 0.25 s (about 100 per
   second) through `C_Item.RequestLoadItemDataByID`. `ITEM_DATA_LOAD_RESULT` records each existing
   item with everything `C_Item.GetItemInfo` + `C_Item.GetItemStats` return (`RecordItem`; stat
   keys are shortened, `ITEM_MOD_X_SHORT` → `X`).
+- `/sg scan batch 50` sets the IDs checked per tick, including during a running scan. The positive
+  integer is saved in `global.scan.batch` across reloads. `/sg scan batch` shows the current rate,
+  and `/sg scan batch reset` restores 25. Higher rates may be throttled by the server.
 - Ids the shipped database already has are skipped unless `force`. The scraper depends on
   `Spyglass_Database` for exactly this: it tells new items from known ones by the scanned item
   rows (`Data:GetItem`), without which every item would count as new.

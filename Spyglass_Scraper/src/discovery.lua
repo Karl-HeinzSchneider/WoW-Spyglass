@@ -27,7 +27,7 @@ local ITEM = Data.ITEM
 
 -- A loot window or roll this long after a successful encounter end counts as that boss's loot.
 local KILL_WINDOW = 300
--- /sg scan: item requests per tick and the tick length (~50 ids per second).
+-- /sg scan: default IDs checked per tick and the tick length (~100 IDs per second).
 local SCAN_BATCH, SCAN_INTERVAL = 25, 0.25
 -- Newly recorded items after which a scan stops, so /sg export stays a handy size. The default;
 -- `/sg scan limit <n|off>` overrides it (off when the SavedVariables file is imported instead).
@@ -443,7 +443,7 @@ function module:StartScan(from, to, force, ids)
             "Scanning item ids from %d%s at %d per second; %s. The server may throttle item queries, so keep ranges modest; /sg scan stop aborts.",
             from,
             to and (" to " .. to) or "",
-            SCAN_BATCH / SCAN_INTERVAL,
+            self:ScanBatch() / SCAN_INTERVAL,
             limit and ("stops after %d new items"):format(limit) or "no item limit"
         )
     end
@@ -487,12 +487,18 @@ function module:ScanLimit()
     return limit > 0 and limit or nil
 end
 
+-- Read on every tick so changes also apply to a running scan.
+---@return integer
+function module:ScanBatch()
+    return app.db.global.scan.batch or SCAN_BATCH
+end
+
 function module:ScanTick()
     local scan = self.scan
     if not scan or scan.done then
         return
     end
-    local last = scan.next + SCAN_BATCH - 1
+    local last = scan.next + self:ScanBatch() - 1
     if scan.to then
         last = math.min(last, scan.to)
     end
@@ -587,6 +593,23 @@ function module:ScanCommand(a, b, c)
         self:StopScan()
     elseif a == "missing" then
         self:ScanMissingDungeonLoot()
+    elseif a == "batch" then
+        if b == "reset" then
+            progress.batch = nil
+        elseif b ~= nil then
+            local batch = tonumber(b)
+            if not batch or batch < 1 or batch == math.huge or batch ~= math.floor(batch) then
+                log:chat("Usage: /sg scan batch <positive integer|reset>")
+                return
+            end
+            progress.batch = batch
+        end
+        log:chat(
+            "Scan batch: %d IDs every %.2f seconds (about %g IDs/second).",
+            self:ScanBatch(),
+            SCAN_INTERVAL,
+            self:ScanBatch() / SCAN_INTERVAL
+        )
     elseif a == "limit" then
         local limit = tonumber(b)
         if b == "off" or (limit and limit <= 0) then
@@ -650,7 +673,7 @@ function module:ScanCommand(a, b, c)
         end
     else
         log:chat(
-            "Usage: /sg scan <from> [to], /sg scan <from> <to> force, /sg scan resume, /sg scan stop, /sg scan limit <n|off>"
+            "Usage: /sg scan <from> [to], /sg scan <from> <to> force, /sg scan resume, /sg scan stop, /sg scan limit <n|off>, /sg scan batch <n|reset>"
         )
     end
 end

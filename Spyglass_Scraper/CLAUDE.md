@@ -21,7 +21,7 @@ read it before changing this addon. The contributor workflow it feeds is in
   `Spyglass.LogAt`, so output shares the core's prefix and level setting.
 - `src/db.lua` — `app.dbDefaults` for AceDB: `global.dbVersion`,
   `global.discovered = { build?, locale?, items = { [id] = DiscoveredItem }, loot = { [encounterID] = { id, kills, items = { [itemID] = count } } } }`,
-  `global.discovered.trainers = { [npcID] = trainer snapshot }`, `global.scan = { next?, to?, limit? }`
+  `global.discovered.trainers = { [npcID] = trainer snapshot }`, `global.scan = { next?, to?, limit?, batch? }`
   (progress that survives `/reload`). The Lua classes
   `DiscoveredItem/DiscoveredLoot/DiscoveredTrainer/Discovered/ScanProgress` are the shape
   `src/discovered.ts` reads.
