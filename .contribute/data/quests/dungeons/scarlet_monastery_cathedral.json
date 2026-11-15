@@ -1,3 +1,240 @@
 {
-  "quests": []
+  "quests": [
+    {
+      "id": 79946,
+      "name": "A Brother In Need",
+      "side": "Alliance",
+      "class": "Paladin",
+      "requiredLevel": 35,
+      "xp": 3150,
+      "objective": "Find Aeonas in the Scarlet Monastery.",
+      "description": "Aeonas is in the rear chamber of the Cathedral. Finish Katherine's talk about Aeonas before you leave: players report that skipping it can block the next step. The chain before it (players' reports): the Strange Orb chain from Darkshore, then Katherine's quests from level 35.",
+      "requires": [79945],
+      "followUps": [79963],
+      "start": {
+        "npc": "Katherine the Pure",
+        "location": [1453, 48.5, 49.1],
+        "description": "Katherine the Pure, Cathedral of Light, Stormwind"
+      },
+      "turnIn": {
+        "description": "Aeonas, rear chamber of the Cathedral, inside the dungeon"
+      },
+      "items": []
+    },
+    {
+      "id": 79963,
+      "name": "By The Light's Grace",
+      "side": "Alliance",
+      "class": "Paladin",
+      "requiredLevel": 35,
+      "objective": "Heal Aeonas (players report: to full health).",
+      "description": "Follows A Brother In Need, inside the Cathedral.",
+      "requires": [79946],
+      "followUps": [79970],
+      "start": {
+        "description": "Aeonas, rear chamber of the Cathedral, inside the dungeon"
+      },
+      "turnIn": {
+        "description": "Aeonas, inside the dungeon"
+      },
+      "items": []
+    },
+    {
+      "id": 78088,
+      "name": "A Strange Artifact",
+      "side": "Alliance",
+      "class": "Paladin",
+      "objective": "Loot the Strange Orb on top of the Tower of Althalaxx in Darkshore and bring it to Delgren the Purifier in Ashenvale.",
+      "start": {
+        "location": [1439, 56.2, 26.4],
+        "description": "Strange Orb, top of the Tower of Althalaxx, Darkshore"
+      },
+      "turnIn": {
+        "npc": "Delgren the Purifier",
+        "location": [1440, 26.2, 38.7],
+        "description": "Delgren the Purifier, Maestra's Post, Ashenvale"
+      },
+      "items": []
+    },
+    {
+      "id": 78089,
+      "name": "Advice From Stormwind",
+      "side": "Alliance",
+      "class": "Paladin",
+      "objective": "Speak with Katherine the Pure in the Cathedral of Light in Stormwind.",
+      "requires": [78088],
+      "start": {
+        "npc": "Delgren the Purifier",
+        "location": [1440, 26.2, 38.7],
+        "description": "Delgren the Purifier, Ashenvale"
+      },
+      "turnIn": {
+        "npc": "Katherine the Pure",
+        "location": [1453, 48.5, 49.1],
+        "description": "Katherine the Pure, Cathedral of Light, Stormwind"
+      },
+      "items": []
+    },
+    {
+      "id": 78090,
+      "name": "A Second Opinion",
+      "side": "Alliance",
+      "class": "Paladin",
+      "objective": "Speak with Ursula Deline in the Mage Quarter of Stormwind.",
+      "requires": [78089],
+      "start": {
+        "npc": "Katherine the Pure",
+        "location": [1453, 48.5, 49.1],
+        "description": "Katherine the Pure, Cathedral of Light, Stormwind"
+      },
+      "turnIn": {
+        "description": "Ursula Deline, Mage Quarter, Stormwind"
+      },
+      "items": []
+    },
+    {
+      "id": 78091,
+      "name": "Earning Your Salt",
+      "side": "Alliance",
+      "class": "Paladin",
+      "objective": "Collect 14 Summoner's Salt from the Blackrock orcs in Redridge Mountains and return to Ursula Deline.",
+      "requires": [78090],
+      "start": {
+        "description": "Ursula Deline, Mage Quarter, Stormwind"
+      },
+      "turnIn": {
+        "description": "Ursula Deline, Mage Quarter, Stormwind"
+      },
+      "items": []
+    },
+    {
+      "id": 78092,
+      "name": "It Must Be Destroyed",
+      "side": "Alliance",
+      "class": "Paladin",
+      "objective": "Collect 12 Motes of Mannoroth from the demons in Demon Fall Canyon, Ashenvale, then use the Spear of Mannoroth there to destroy the orb.",
+      "requires": [78091],
+      "start": {
+        "description": "Ursula Deline, Mage Quarter, Stormwind"
+      },
+      "turnIn": {
+        "description": "Spear of Mannoroth, Demon Fall Canyon, Ashenvale"
+      },
+      "items": []
+    },
+    {
+      "id": 78093,
+      "name": "Return to Delgren",
+      "side": "Alliance",
+      "class": "Paladin",
+      "objective": "Bring the Orb Fragments to Delgren the Purifier in Ashenvale. Reward: Cloak of the Divine Storm.",
+      "requires": [78092],
+      "start": {
+        "location": [1440, 89, 77],
+        "description": "Shattered Orb, Demon Fall Canyon, Ashenvale"
+      },
+      "turnIn": {
+        "npc": "Delgren the Purifier",
+        "location": [1440, 26.2, 38.7],
+        "description": "Delgren the Purifier, Ashenvale"
+      },
+      "items": []
+    },
+    {
+      "id": 96438,
+      "name": "Battle at the Mannoroc Coven",
+      "side": "Alliance",
+      "class": "Paladin",
+      "requiredLevel": 35,
+      "objective": "Investigate the Broken Warhammer at the Mannoroc Coven in Desolace.",
+      "requires": [78093],
+      "start": {
+        "npc": "Katherine the Pure",
+        "location": [1453, 48.5, 49.1],
+        "description": "Katherine the Pure, Cathedral of Light, Stormwind"
+      },
+      "turnIn": {
+        "location": [1443, 52.7, 84.8],
+        "description": "Broken Warhammer, Mannoroc Coven, Desolace"
+      },
+      "items": []
+    },
+    {
+      "id": 79939,
+      "name": "The Broken Hammer",
+      "side": "Alliance",
+      "class": "Paladin",
+      "requiredLevel": 35,
+      "objective": "Find the Torn Letter (a player reports it from a Burning Blade Summoner) and return to Katherine the Pure.",
+      "requires": [96438],
+      "start": {
+        "location": [1443, 52.7, 84.8],
+        "description": "Broken Warhammer, Mannoroc Coven, Desolace"
+      },
+      "turnIn": {
+        "npc": "Katherine the Pure",
+        "location": [1453, 48.5, 49.1],
+        "description": "Katherine the Pure, Cathedral of Light, Stormwind"
+      },
+      "items": []
+    },
+    {
+      "id": 79940,
+      "name": "A Lost Brother",
+      "side": "Alliance",
+      "class": "Paladin",
+      "requiredLevel": 35,
+      "objective": "Listen to Katherine the Pure about the hammer and Aeonas.",
+      "requires": [79939],
+      "start": {
+        "npc": "Katherine the Pure",
+        "location": [1453, 48.5, 49.1],
+        "description": "Katherine the Pure, Cathedral of Light, Stormwind"
+      },
+      "turnIn": {
+        "description": "Katherine the Pure, Cathedral of Light, Stormwind"
+      },
+      "items": []
+    },
+    {
+      "id": 79945,
+      "name": "Orders from the Grand Crusader",
+      "side": "Alliance",
+      "class": "Paladin",
+      "requiredLevel": 35,
+      "objective": "Players report: speak to the fishing trainer by the docks of Menethil Harbor, take the small boat south of the docks to Aeonas's hut on the coast, inspect the fallen Scarlet Crusader, defeat the level 40 elite assassin and loot the orders. Use them and return to Katherine the Pure.",
+      "requires": [79940],
+      "start": {
+        "description": "Orders, looted from the assassin at Aeonas's hut, Wetlands coast"
+      },
+      "turnIn": {
+        "npc": "Katherine the Pure",
+        "location": [1453, 48.5, 49.1],
+        "description": "Katherine the Pure, Cathedral of Light, Stormwind"
+      },
+      "items": []
+    },
+    {
+      "id": 79970,
+      "name": "Aeonas the Vindicated",
+      "side": "Alliance",
+      "class": "Paladin",
+      "requiredLevel": 35,
+      "objective": "Meet Aeonas in the Cathedral of Light in Stormwind.",
+      "description": "The end of the chain, after By The Light's Grace.",
+      "requires": [79963],
+      "start": {
+        "description": "Aeonas, inside the dungeon"
+      },
+      "turnIn": {
+        "description": "Aeonas, Cathedral of Light, Stormwind"
+      },
+      "items": [
+        {
+          "item": 277236,
+          "name": "Pauldrons of Vindication"
+        }
+      ]
+    }
+  ]
 }

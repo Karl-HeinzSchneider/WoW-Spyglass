@@ -179,7 +179,7 @@
       "requiredLevel": 28,
       "xp": 7350,
       "objective": "Bring Ambassador Malcin's Head to Varimathras in the Undercity.",
-      "description": "This quest is completed in the area OUTSIDE Razorfen Downs.",
+      "description": "This quest is completed in the area OUTSIDE Razorfen Downs.\n\nThis quest is done OUTSIDE Razorfen Downs, do it before entering the dungeon.",
       "requires": [6522],
       "start": {
         "npc": "Varimathras",
@@ -213,9 +213,11 @@
     {
       "id": 6522,
       "name": "An Unholy Alliance",
+      "side": "Horde",
       "requiredLevel": 28,
       "xp": 5900,
       "objective": "Take the Small Scroll to Varimathras in the Undercity.",
+      "followUps": [6521],
       "start": {
         "item": 17008,
         "description": "Drops from Charlga Razorflank in Razorfen Kraul."

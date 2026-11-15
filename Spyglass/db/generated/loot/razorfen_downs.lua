@@ -161,7 +161,7 @@ Data:AddQuests(129, {
         { 10824 }, -- Amberglow Talisman
         { 270081 }, -- Purified Ring
     } },
-    { id = 6521, name = "An Unholy Alliance", side = "Horde", requiredLevel = 28, xp = 7350, objective = "Bring Ambassador Malcin's Head to Varimathras in the Undercity.", description = "This quest is completed in the area OUTSIDE Razorfen Downs.", requires = { { id = 6522, name = "An Unholy Alliance" } }, start = { description = "Royal Quarter, Undercity.", location = { 1458, 56.2, 92.6 }, npc = "Varimathras" }, turnIn = { description = "Royal Quarter, Undercity.", location = { 1458, 56.2, 92.6 }, npc = "Varimathras" }, items = {
+    { id = 6521, name = "An Unholy Alliance", side = "Horde", requiredLevel = 28, xp = 7350, objective = "Bring Ambassador Malcin's Head to Varimathras in the Undercity.", description = "This quest is completed in the area OUTSIDE Razorfen Downs.\n\nThis quest is done OUTSIDE Razorfen Downs, do it before entering the dungeon.", requires = { { id = 6522, name = "An Unholy Alliance" } }, start = { description = "Royal Quarter, Undercity.", location = { 1458, 56.2, 92.6 }, npc = "Varimathras" }, turnIn = { description = "Royal Quarter, Undercity.", location = { 1458, 56.2, 92.6 }, npc = "Varimathras" }, items = {
         { 17039 }, -- Skullbreaker
         { 17042 }, -- Nail Spitter
         { 17043 }, -- Zealot's Robe

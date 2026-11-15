@@ -417,21 +417,28 @@
     {
       "id": 94483,
       "name": "Show Them How It's Done",
-      "requiredLevel": 38,
+      "side": "Horde",
+      "requiredLevel": 36,
       "xp": 3000,
       "objective": "Slay 8 Farholde Priests and 12 Farholde Scouts south of the river.",
       "description": "Needed before the Twilight's Hammer quests (a player's report on the Discord).",
+      "requires": [93787],
       "start": {
-        "description": "Riverglades (giver not known yet)"
+        "npc": "Krom'rosh",
+        "location": [2548, 59.4, 45.6],
+        "description": "Krom'rosh, Rog'mar, Riverglades (59.4, 45.6)"
       },
       "turnIn": {
-        "description": "Riverglades (not known yet)"
+        "npc": "Krom'rosh",
+        "location": [2548, 59.4, 45.6],
+        "description": "Krom'rosh, Rog'mar, Riverglades (59.4, 45.6)"
       },
       "items": []
     },
     {
       "id": 94672,
       "name": "Encroaching Twilight",
+      "side": "Horde",
       "requiredLevel": 36,
       "xp": 3300,
       "objective": "Defeat 8 Twilight Raiders, 8 Twilight Shadowmancers and 8 Twilight Neophytes within Sunnyglade for Tran'gul in Rog'mar.",
@@ -452,10 +459,11 @@
     {
       "id": 95428,
       "name": "Clugfist's Decree",
+      "side": "Horde",
       "requiredLevel": 36,
       "xp": 330,
       "objective": "Report to Krom'rosh in Rog'mar.",
-      "requires": [94672],
+      "requires": [95425],
       "start": {
         "npc": "Clugfist",
         "location": [2548, 64.4, 14.8],
@@ -471,6 +479,7 @@
     {
       "id": 94744,
       "name": "The Wayward Warrior",
+      "side": "Horde",
       "requiredLevel": 38,
       "xp": 360,
       "objective": "Find Da'grosh in the hills west of Rog'mar.",
@@ -490,6 +499,7 @@
     {
       "id": 94748,
       "name": "Break Their Chains",
+      "side": "Horde",
       "requiredLevel": 38,
       "xp": 3750,
       "objective": "Rescue 5 Rog'mar Scouts within the Twilight's Shroud for Da'grosh.",
@@ -510,6 +520,7 @@
     {
       "id": 94745,
       "name": "Carving a Path",
+      "side": "Horde",
       "requiredLevel": 38,
       "xp": 3750,
       "objective": "Defeat 8 Twilight Fanatics, 8 Twilight Corrupters and 8 Twilight Champions within the Twilight's Shroud for Da'grosh.",
@@ -530,11 +541,12 @@
     {
       "id": 95432,
       "name": "Rise Up!",
+      "side": "Horde",
       "requiredLevel": 36,
       "xp": 1800,
       "objective": "Recruit 5 Ogre Miners.",
       "description": "Done alongside Break Their Chains and Carving a Path.",
-      "requires": [94745],
+      "requires": [95431],
       "start": {
         "npc": "Crag'rog",
         "location": [2548, 27.4, 37],
@@ -550,6 +562,7 @@
     {
       "id": 94768,
       "name": "Bring Me His Head",
+      "side": "Horde",
       "requiredLevel": 38,
       "xp": 5050,
       "objective": "Defeat Overlord Kilgar within the Twilight's Shroud and bring his head to Da'grosh.",
@@ -570,6 +583,7 @@
     {
       "id": 95278,
       "name": "It Is Time, Brother...",
+      "side": "Horde",
       "requiredLevel": 38,
       "xp": 390,
       "objective": "Deliver the missive to Krom'rosh at Rog'mar.",
@@ -680,6 +694,275 @@
         "npc": "Demar Brant",
         "location": [2548, 66.6, 81],
         "description": "Demar Brant, Farholde Keep, Riverglades (66.6, 81.0)"
+      },
+      "items": []
+    },
+    {
+      "id": 93786,
+      "name": "A Message in Blood",
+      "side": "Horde",
+      "requiredLevel": 35,
+      "xp": 2800,
+      "objective": "Slay 12 Meadowsbrook Farmhands, then return to Krom'rosh with news of your success.",
+      "description": "Done alongside Food for the Taking.",
+      "start": {
+        "npc": "Krom'rosh",
+        "location": [2548, 59.4, 45.6],
+        "description": "Krom'rosh, Rog'mar, Riverglades (59.4, 45.6)"
+      },
+      "turnIn": {
+        "npc": "Krom'rosh",
+        "location": [2548, 59.4, 45.6],
+        "description": "Krom'rosh, Rog'mar, Riverglades (59.4, 45.6)"
+      },
+      "items": []
+    },
+    {
+      "id": 93787,
+      "name": "Food for the Taking",
+      "side": "Horde",
+      "requiredLevel": 36,
+      "xp": 2800,
+      "objective": "Steal 6 Feed Satchels from the Alliance farm in Meadowsbrook then return to Krom'rosh.",
+      "description": "Done alongside A Message in Blood. Krom'rosh offers Show Them How It's Done once this is handed in.",
+      "requires": [93786],
+      "start": {
+        "npc": "Krom'rosh",
+        "location": [2548, 59.4, 45.6],
+        "description": "Krom'rosh, Rog'mar, Riverglades (59.4, 45.6)"
+      },
+      "turnIn": {
+        "npc": "Krom'rosh",
+        "location": [2548, 59.4, 45.6],
+        "description": "Krom'rosh, Rog'mar, Riverglades (59.4, 45.6)"
+      },
+      "items": []
+    },
+    {
+      "id": 94680,
+      "name": "Twilight Missives",
+      "side": "Horde",
+      "requiredLevel": 36,
+      "xp": 2450,
+      "objective": "Retrieve 3 Twilight Missives from Twilight Shadowmancers in Sunnyglade for Tran'gul in Rog'mar.",
+      "description": "Done alongside Encroaching Twilight; Tran'gul gives Digging for Answers once both are handed in.",
+      "requires": [94672],
+      "start": {
+        "npc": "Tran'gul",
+        "location": [2548, 59.4, 44],
+        "description": "Tran'gul, Rog'mar, Riverglades (59.5, 44.0)"
+      },
+      "turnIn": {
+        "npc": "Tran'gul",
+        "location": [2548, 59.4, 44],
+        "description": "Tran'gul, Rog'mar, Riverglades (59.5, 44.0)"
+      },
+      "items": []
+    },
+    {
+      "id": 94727,
+      "name": "Digging for Answers",
+      "side": "Horde",
+      "requiredLevel": 36,
+      "xp": 320,
+      "objective": "Convince a Twilight's Hammer miner in Sunnyglade to divulge their secrets.",
+      "requires": [94680],
+      "start": {
+        "npc": "Tran'gul",
+        "location": [2548, 59.4, 44],
+        "description": "Tran'gul, Rog'mar, Riverglades (59.5, 44.0)"
+      },
+      "turnIn": {
+        "npc": "Clubtoe",
+        "location": [2548, 50, 47],
+        "description": "Clubtoe, in the cave under Sunnyglade, Riverglades (50.0, 47.0; the cave's entrance is near 50, 46)"
+      },
+      "items": []
+    },
+    {
+      "id": 95417,
+      "name": "The Purple Ones",
+      "side": "Horde",
+      "requiredLevel": 36,
+      "xp": 320,
+      "objective": "Find missing ogres in the caves beneath Sunnyglade for Clubtoe.",
+      "description": "The first of two quests called The Purple Ones. Clubtoe gives Sickening Lights at the same time.",
+      "requires": [94727],
+      "start": {
+        "npc": "Clubtoe",
+        "location": [2548, 50, 47],
+        "description": "Clubtoe, in the cave under Sunnyglade, Riverglades (50.0, 47.0; the cave's entrance is near 50, 46)"
+      },
+      "turnIn": {
+        "npc": "Twilight Brute",
+        "location": [2548, 49.2, 46.7],
+        "description": "Twilight Brute, in the cave under Sunnyglade, Riverglades (49.2, 46.7)"
+      },
+      "items": []
+    },
+    {
+      "id": 95601,
+      "name": "The Purple Ones",
+      "side": "Horde",
+      "requiredLevel": 36,
+      "xp": 3150,
+      "objective": "Kill 5 Empowered Brutes and 10 Twilight Ritualists then return to Clubtoe in Sunnyglade.",
+      "description": "The second of two quests called The Purple Ones. Done alongside Sickening Lights; both are needed for Twilight No More!.",
+      "requires": [95417],
+      "start": {
+        "npc": "Twilight Brute",
+        "location": [2548, 49.2, 46.7],
+        "description": "Twilight Brute, in the cave under Sunnyglade, Riverglades (49.2, 46.7)"
+      },
+      "turnIn": {
+        "npc": "Clubtoe",
+        "location": [2548, 50, 47],
+        "description": "Clubtoe, in the cave under Sunnyglade, Riverglades (50.0, 47.0; the cave's entrance is near 50, 46)"
+      },
+      "items": []
+    },
+    {
+      "id": 95602,
+      "name": "Sickening Lights",
+      "side": "Horde",
+      "requiredLevel": 36,
+      "xp": 3150,
+      "objective": "Destroy 5 Twilight Ritual Circles found throughout the caves underneath Sunnyglade.",
+      "description": "Done alongside The Purple Ones; both are needed for Twilight No More!.",
+      "requires": [95601],
+      "start": {
+        "npc": "Clubtoe",
+        "location": [2548, 50, 47],
+        "description": "Clubtoe, in the cave under Sunnyglade, Riverglades (50.0, 47.0; the cave's entrance is near 50, 46)"
+      },
+      "turnIn": {
+        "npc": "Clubtoe",
+        "location": [2548, 50, 47],
+        "description": "Clubtoe, in the cave under Sunnyglade, Riverglades (50.0, 47.0; the cave's entrance is near 50, 46)"
+      },
+      "items": []
+    },
+    {
+      "id": 95427,
+      "name": "Twilight No More!",
+      "side": "Horde",
+      "requiredLevel": 36,
+      "xp": 3300,
+      "objective": "Kill Chogg'Zac in the Sunnyglade cave and collect their heads for Clubtoe.",
+      "description": "Chogg'Zac is an elite.",
+      "requires": [95602],
+      "start": {
+        "npc": "Clubtoe",
+        "location": [2548, 50, 47],
+        "description": "Clubtoe, in the cave under Sunnyglade, Riverglades (50.0, 47.0; the cave's entrance is near 50, 46)"
+      },
+      "turnIn": {
+        "npc": "Clubtoe",
+        "location": [2548, 50, 47],
+        "description": "Clubtoe, in the cave under Sunnyglade, Riverglades (50.0, 47.0; the cave's entrance is near 50, 46)"
+      },
+      "items": []
+    },
+    {
+      "id": 95418,
+      "name": "Spread the Word",
+      "side": "Horde",
+      "requiredLevel": 36,
+      "xp": 320,
+      "objective": "Deliver the head of Chogg to Tran'gul in Rog'mar.",
+      "requires": [95427],
+      "start": {
+        "npc": "Clubtoe",
+        "location": [2548, 50, 47],
+        "description": "Clubtoe, in the cave under Sunnyglade, Riverglades (50.0, 47.0; the cave's entrance is near 50, 46)"
+      },
+      "turnIn": {
+        "npc": "Tran'gul",
+        "location": [2548, 59.4, 44],
+        "description": "Tran'gul, Rog'mar, Riverglades (59.5, 44.0)"
+      },
+      "items": []
+    },
+    {
+      "id": 95420,
+      "name": "Land of Giants",
+      "side": "Horde",
+      "requiredLevel": 36,
+      "xp": 320,
+      "objective": "Deliver Chogg's head to the ogre city to the north.",
+      "requires": [95418],
+      "start": {
+        "npc": "Tran'gul",
+        "location": [2548, 59.4, 44],
+        "description": "Tran'gul, Rog'mar, Riverglades (59.5, 44.0)"
+      },
+      "turnIn": {
+        "npc": "Clugfist",
+        "location": [2548, 64.4, 14.8],
+        "description": "Clugfist, Bolder'ok, Riverglades (64.4, 14.8)"
+      },
+      "items": []
+    },
+    {
+      "id": 95424,
+      "name": "Might Makes Right",
+      "side": "Horde",
+      "requiredLevel": 36,
+      "xp": 3300,
+      "objective": "Kill 7 Twilight Maulers and 7 Twilight Firecallers for Clugfist in Bolder'ok.",
+      "description": "Done alongside Unworthy Champion; both are needed for Clugfist's Decree.",
+      "requires": [95420],
+      "start": {
+        "npc": "Clugfist",
+        "location": [2548, 64.4, 14.8],
+        "description": "Clugfist, Bolder'ok, Riverglades (64.4, 14.8)"
+      },
+      "turnIn": {
+        "npc": "Clugfist",
+        "location": [2548, 64.4, 14.8],
+        "description": "Clugfist, Bolder'ok, Riverglades (64.4, 14.8)"
+      },
+      "items": []
+    },
+    {
+      "id": 95425,
+      "name": "Unworthy Champion",
+      "side": "Horde",
+      "requiredLevel": 36,
+      "xp": 3450,
+      "objective": "Collect Skullthumper from Klunk for Clugfist in Bolder'ok.",
+      "description": "Done alongside Might Makes Right; both are needed for Clugfist's Decree. Skullthumper is reported to drop near 75, 27.",
+      "requires": [95424],
+      "start": {
+        "npc": "Clugfist",
+        "location": [2548, 64.4, 14.8],
+        "description": "Clugfist, Bolder'ok, Riverglades (64.4, 14.8)"
+      },
+      "turnIn": {
+        "npc": "Clugfist",
+        "location": [2548, 64.4, 14.8],
+        "description": "Clugfist, Bolder'ok, Riverglades (64.4, 14.8)"
+      },
+      "items": []
+    },
+    {
+      "id": 95431,
+      "name": "Rumblings of Discontent",
+      "side": "Horde",
+      "requiredLevel": 38,
+      "xp": 330,
+      "objective": "Look for the Bolder'ok ogre in the nearby cave.",
+      "description": "Leads to Rise Up!. Not confirmed as needed for Bring Me His Head: a player reports it, the quest databases don't list it.",
+      "requires": [94745],
+      "start": {
+        "npc": "Da'grosh",
+        "location": [2548, 33.4, 38],
+        "description": "Da'grosh, Twilight's Shroud, Riverglades (33.4, 38.0)"
+      },
+      "turnIn": {
+        "npc": "Crag'rog",
+        "location": [2548, 27.4, 37],
+        "description": "Crag'rog, Riverglades (27.4, 37.0)"
       },
       "items": []
     }

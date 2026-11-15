@@ -39,10 +39,9 @@
       "name": "Dragonmaw Rumors",
       "requiredLevel": 24,
       "objective": "Travel to the Wetlands and meet the Deathstalker Agent in the hills above the Dragonmaw camp.",
-      "description": "Required before Open the Maw.",
       "start": {
         "npc": "Zaruk",
-        "location": [1417, 74, 36],
+        "location": [1417, 74.54, 35.63],
         "description": "Hammerfall, Arathi Highlands."
       },
       "turnIn": {
