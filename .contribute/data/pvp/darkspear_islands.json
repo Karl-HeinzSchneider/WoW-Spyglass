@@ -1,0 +1,132 @@
+{
+  "name": "Darkspear Islands",
+  "icon": "Interface\\Icons\\INV_BannerPVP_02",
+  "panel": [
+    {
+      "factionDropdown": "Faction",
+      "field": "side"
+    },
+    {
+      "header": "Alliance vendor",
+      "side": "Alliance"
+    },
+    {
+      "text": "Bryanna Embreeze, Theramore Expeditionary Force Quartermaster, is at Northwatch Hold in The Barrens.",
+      "side": "Alliance"
+    },
+    {
+      "row": "Coordinates",
+      "value": "63.4, 58.8",
+      "side": "Alliance"
+    },
+    {
+      "button": "Show Bryanna on map",
+      "map": [1413, 63.4, 58.8],
+      "side": "Alliance"
+    },
+    {
+      "header": "Horde vendor",
+      "side": "Horde"
+    },
+    {
+      "text": "Creeg Bothunk, Darkspear Raiders Quartermaster, is north of Ratchet in The Barrens.",
+      "side": "Horde"
+    },
+    {
+      "row": "Coordinates",
+      "value": "65.0, 34.6",
+      "side": "Horde"
+    },
+    {
+      "button": "Show Creeg on map",
+      "map": [1413, 65, 34.6],
+      "side": "Horde"
+    }
+  ],
+  "rewards": [
+    {
+      "item": 272057,
+      "name": "Darkspear Islands Mageweave Bandage",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 272058,
+      "name": "Darkspear Islands Runecloth Bandage",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 272957,
+      "name": "Theramore Shoulderguards",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 272099,
+      "name": "Raider Gloves",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 272100,
+      "name": "Raider Gloves",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 272101,
+      "name": "Raider Handguards",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 272102,
+      "name": "Raider Handguards",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 272103,
+      "name": "Darkspear Shoulderpads",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 272104,
+      "name": "Darkspear Shoulders",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 272105,
+      "name": "Darkspear Pauldrons",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 272106,
+      "name": "Darkspear Epaulets",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 272107,
+      "name": "Darkspear Mantle",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 272108,
+      "name": "Darkspear Spaulders",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 272958,
+      "name": "Darkspear Shoulderguards",
+      "standing": "Exalted",
+      "side": "Horde"
+    }
+  ]
+}
