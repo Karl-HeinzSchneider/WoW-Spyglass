@@ -7,21 +7,29 @@ Data:AddList("pvp", "alterac_valley", {
     icon = "Interface\\Icons\\Achievement_BG_winAV",
     panel = {
         { factionDropdown = "Faction", field = "side" },
-        { side = "Alliance", text = "Alliance vendor rewards have yet to be recorded." },
-        { header = "Horde vendor", side = "Horde" },
+        { header = "Alliance vendor", side = "Alliance" },
+        { side = "Alliance", text = "Thanthaldis Snowgleam, Stormpike Supply Officer, is near the Alliance entrance to Alterac Valley in Alterac Mountains." },
+        { row = "Coordinates", side = "Alliance", value = "39.6, 81.6" },
+        { button = "Show Thanthaldis on map", map = { 1416, 39.6, 81.6 }, side = "Alliance" },
+        { header = "Main vendor", side = "Horde" },
+        { side = "Horde", text = "Jekyll Flandring, Frostwolf Supply Officer, is near the Horde entrance to Alterac Valley in Alterac Mountains." },
+        { row = "Coordinates", side = "Horde", value = "62.8, 59.6" },
+        { button = "Show Jekyll on map", map = { 1416, 62.8, 59.6 }, side = "Horde" },
+        { header = "Battleground vendor", side = "Horde" },
         { side = "Horde", text = "Grunnda Wolfheart, Frostwolf Supply Officer, is in Frostwolf Keep, Alterac Valley." },
         { row = "Coordinates", side = "Horde", value = "49.3, 82.5" },
-        { button = "Show vendor on map", map = { 1459, 49.3, 82.5 }, side = "Horde" },
+        { button = "Show Grunnda on map", map = { 1459, 49.3, 82.5 }, side = "Horde" },
     },
 })
 Data:AddListLoot("pvp", "alterac_valley", {
-    { 17349, standing = "Friendly", side = "Horde" }, -- Superior Healing Draught
-    { 17352, standing = "Friendly", side = "Horde" }, -- Superior Mana Draught
+    { 17349, standing = "Friendly" }, -- Superior Healing Draught
+    { 17352, standing = "Friendly" }, -- Superior Mana Draught
     { 19031, standing = "Friendly", side = "Horde" }, -- Frostwolf Battle Tabard
-    { 19307, standing = "Friendly", side = "Horde" }, -- Alterac Heavy Runecloth Bandage
-    { 19318, standing = "Friendly", side = "Horde" }, -- Bottled Alterac Spring Water
-    { 17348, standing = "Honored", side = "Horde" }, -- Major Healing Draught
-    { 17351, standing = "Honored", side = "Horde" }, -- Major Mana Draught
+    { 19307, standing = "Friendly" }, -- Alterac Heavy Runecloth Bandage
+    { 19318, standing = "Friendly" }, -- Bottled Alterac Spring Water
+    { 19032, standing = "Friendly", side = "Alliance" }, -- Stormpike Battle Tabard
+    { 17348, standing = "Honored" }, -- Major Healing Draught
+    { 17351, standing = "Honored" }, -- Major Mana Draught
     { 19083, standing = "Honored", side = "Horde" }, -- Frostwolf Legionnaire's Cloak
     { 19085, standing = "Honored", side = "Horde" }, -- Frostwolf Advisor's Cloak
     { 19087, standing = "Honored", side = "Horde" }, -- Frostwolf Plate Belt
@@ -30,25 +38,38 @@ Data:AddListLoot("pvp", "alterac_valley", {
     { 19090, standing = "Honored", side = "Horde" }, -- Frostwolf Cloth Belt
     { 19095, standing = "Honored", side = "Horde" }, -- Frostwolf Legionnaire's Pendant
     { 19096, standing = "Honored", side = "Horde" }, -- Frostwolf Advisor's Pendant
-    { 19301, standing = "Honored", side = "Horde" }, -- Alterac Manna Biscuit
-    { 19316, standing = "Honored", side = "Horde" }, -- Ice Threaded Arrow
-    { 19317, standing = "Honored", side = "Horde" }, -- Ice Threaded Bullet
+    { 19301, standing = "Honored" }, -- Alterac Manna Biscuit
+    { 19316, standing = "Honored" }, -- Ice Threaded Arrow
+    { 19317, standing = "Honored" }, -- Ice Threaded Bullet
+    { 19084, standing = "Honored", side = "Alliance" }, -- Stormpike Soldier's Cloak
+    { 19086, standing = "Honored", side = "Alliance" }, -- Stormpike Sage's Cloak
+    { 19091, standing = "Honored", side = "Alliance" }, -- Stormpike Plate Girdle
+    { 19092, standing = "Honored", side = "Alliance" }, -- Stormpike Mail Girdle
+    { 19093, standing = "Honored", side = "Alliance" }, -- Stormpike Leather Girdle
+    { 19094, standing = "Honored", side = "Alliance" }, -- Stormpike Cloth Girdle
+    { 19097, standing = "Honored", side = "Alliance" }, -- Stormpike Soldier's Pendant
+    { 19098, standing = "Honored", side = "Alliance" }, -- Stormpike Sage's Pendant
     { 19046, standing = "Revered", side = "Horde" }, -- Frostwolf Battle Standard
     { 19099, standing = "Revered", side = "Horde" }, -- Glacial Blade
     { 19101, standing = "Revered", side = "Horde" }, -- Whiteout Staff
     { 19103, standing = "Revered", side = "Horde" }, -- Frostbite
-    { 19319, standing = "Revered", side = "Horde" }, -- Harpy Hide Quiver
-    { 19320, standing = "Revered", side = "Horde" }, -- Gnoll Skin Bandolier
+    { 19319, standing = "Revered" }, -- Harpy Hide Quiver
+    { 19320, standing = "Revered" }, -- Gnoll Skin Bandolier
+    { 19045, standing = "Revered", side = "Alliance" }, -- Stormpike Battle Standard
+    { 19100, standing = "Revered", side = "Alliance" }, -- Electrified Dagger
+    { 19102, standing = "Revered", side = "Alliance" }, -- Crackling Staff
+    { 19104, standing = "Revered", side = "Alliance" }, -- Stormstrike Hammer
     { 19029, standing = "Exalted", side = "Horde" }, -- Horn of the Frostwolf Howler
-    { 19308, standing = "Exalted", side = "Horde" }, -- Tome of Arcane Domination
-    { 19309, standing = "Exalted", side = "Horde" }, -- Tome of Shadow Force
-    { 19310, standing = "Exalted", side = "Horde" }, -- Tome of the Ice Lord
-    { 19311, standing = "Exalted", side = "Horde" }, -- Tome of Fiery Arcana
-    { 19312, standing = "Exalted", side = "Horde" }, -- Lei of the Lifegiver
-    { 19315, standing = "Exalted", side = "Horde" }, -- Therazane's Touch
-    { 19321, standing = "Exalted", side = "Horde" }, -- The Immovable Object
-    { 19323, standing = "Exalted", side = "Horde" }, -- The Unstoppable Force
-    { 19324, standing = "Exalted", side = "Horde" }, -- The Lobotomizer
-    { 19325, standing = "Exalted", side = "Horde" }, -- Don Julio's Band
-    { 21563, standing = "Exalted", side = "Horde" }, -- Don Rodrigo's Band
+    { 19308, standing = "Exalted" }, -- Tome of Arcane Domination
+    { 19309, standing = "Exalted" }, -- Tome of Shadow Force
+    { 19310, standing = "Exalted" }, -- Tome of the Ice Lord
+    { 19311, standing = "Exalted" }, -- Tome of Fiery Arcana
+    { 19312, standing = "Exalted" }, -- Lei of the Lifegiver
+    { 19315, standing = "Exalted" }, -- Therazane's Touch
+    { 19321, standing = "Exalted" }, -- The Immovable Object
+    { 19323, standing = "Exalted" }, -- The Unstoppable Force
+    { 19324, standing = "Exalted" }, -- The Lobotomizer
+    { 19325, standing = "Exalted" }, -- Don Julio's Band
+    { 21563, standing = "Exalted" }, -- Don Rodrigo's Band
+    { 19030, standing = "Exalted", side = "Alliance" }, -- Stormpike Battle Charger
 })

@@ -7,11 +7,43 @@
       "field": "side"
     },
     {
-      "text": "Alliance vendor rewards have yet to be recorded.",
+      "header": "Alliance vendor",
       "side": "Alliance"
     },
     {
-      "header": "Horde vendor",
+      "text": "Thanthaldis Snowgleam, Stormpike Supply Officer, is near the Alliance entrance to Alterac Valley in Alterac Mountains.",
+      "side": "Alliance"
+    },
+    {
+      "row": "Coordinates",
+      "value": "39.6, 81.6",
+      "side": "Alliance"
+    },
+    {
+      "button": "Show Thanthaldis on map",
+      "map": [1416, 39.6, 81.6],
+      "side": "Alliance"
+    },
+    {
+      "header": "Main vendor",
+      "side": "Horde"
+    },
+    {
+      "text": "Jekyll Flandring, Frostwolf Supply Officer, is near the Horde entrance to Alterac Valley in Alterac Mountains.",
+      "side": "Horde"
+    },
+    {
+      "row": "Coordinates",
+      "value": "62.8, 59.6",
+      "side": "Horde"
+    },
+    {
+      "button": "Show Jekyll on map",
+      "map": [1416, 62.8, 59.6],
+      "side": "Horde"
+    },
+    {
+      "header": "Battleground vendor",
       "side": "Horde"
     },
     {
@@ -24,7 +56,7 @@
       "side": "Horde"
     },
     {
-      "button": "Show vendor on map",
+      "button": "Show Grunnda on map",
       "map": [1459, 49.3, 82.5],
       "side": "Horde"
     }
@@ -33,14 +65,12 @@
     {
       "item": 17349,
       "name": "Superior Healing Draught",
-      "standing": "Friendly",
-      "side": "Horde"
+      "standing": "Friendly"
     },
     {
       "item": 17352,
       "name": "Superior Mana Draught",
-      "standing": "Friendly",
-      "side": "Horde"
+      "standing": "Friendly"
     },
     {
       "item": 19031,
@@ -51,26 +81,28 @@
     {
       "item": 19307,
       "name": "Alterac Heavy Runecloth Bandage",
-      "standing": "Friendly",
-      "side": "Horde"
+      "standing": "Friendly"
     },
     {
       "item": 19318,
       "name": "Bottled Alterac Spring Water",
+      "standing": "Friendly"
+    },
+    {
+      "item": 19032,
+      "name": "Stormpike Battle Tabard",
       "standing": "Friendly",
-      "side": "Horde"
+      "side": "Alliance"
     },
     {
       "item": 17348,
       "name": "Major Healing Draught",
-      "standing": "Honored",
-      "side": "Horde"
+      "standing": "Honored"
     },
     {
       "item": 17351,
       "name": "Major Mana Draught",
-      "standing": "Honored",
-      "side": "Horde"
+      "standing": "Honored"
     },
     {
       "item": 19083,
@@ -123,20 +155,65 @@
     {
       "item": 19301,
       "name": "Alterac Manna Biscuit",
-      "standing": "Honored",
-      "side": "Horde"
+      "standing": "Honored"
     },
     {
       "item": 19316,
       "name": "Ice Threaded Arrow",
-      "standing": "Honored",
-      "side": "Horde"
+      "standing": "Honored"
     },
     {
       "item": 19317,
       "name": "Ice Threaded Bullet",
+      "standing": "Honored"
+    },
+    {
+      "item": 19084,
+      "name": "Stormpike Soldier's Cloak",
       "standing": "Honored",
-      "side": "Horde"
+      "side": "Alliance"
+    },
+    {
+      "item": 19086,
+      "name": "Stormpike Sage's Cloak",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19091,
+      "name": "Stormpike Plate Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19092,
+      "name": "Stormpike Mail Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19093,
+      "name": "Stormpike Leather Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19094,
+      "name": "Stormpike Cloth Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19097,
+      "name": "Stormpike Soldier's Pendant",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19098,
+      "name": "Stormpike Sage's Pendant",
+      "standing": "Honored",
+      "side": "Alliance"
     },
     {
       "item": 19046,
@@ -165,14 +242,36 @@
     {
       "item": 19319,
       "name": "Harpy Hide Quiver",
-      "standing": "Revered",
-      "side": "Horde"
+      "standing": "Revered"
     },
     {
       "item": 19320,
       "name": "Gnoll Skin Bandolier",
+      "standing": "Revered"
+    },
+    {
+      "item": 19045,
+      "name": "Stormpike Battle Standard",
       "standing": "Revered",
-      "side": "Horde"
+      "side": "Alliance"
+    },
+    {
+      "item": 19100,
+      "name": "Electrified Dagger",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 19102,
+      "name": "Crackling Staff",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 19104,
+      "name": "Stormstrike Hammer",
+      "standing": "Revered",
+      "side": "Alliance"
     },
     {
       "item": 19029,
@@ -183,68 +282,63 @@
     {
       "item": 19308,
       "name": "Tome of Arcane Domination",
-      "standing": "Exalted",
-      "side": "Horde"
+      "standing": "Exalted"
     },
     {
       "item": 19309,
       "name": "Tome of Shadow Force",
-      "standing": "Exalted",
-      "side": "Horde"
+      "standing": "Exalted"
     },
     {
       "item": 19310,
       "name": "Tome of the Ice Lord",
-      "standing": "Exalted",
-      "side": "Horde"
+      "standing": "Exalted"
     },
     {
       "item": 19311,
       "name": "Tome of Fiery Arcana",
-      "standing": "Exalted",
-      "side": "Horde"
+      "standing": "Exalted"
     },
     {
       "item": 19312,
       "name": "Lei of the Lifegiver",
-      "standing": "Exalted",
-      "side": "Horde"
+      "standing": "Exalted"
     },
     {
       "item": 19315,
       "name": "Therazane's Touch",
-      "standing": "Exalted",
-      "side": "Horde"
+      "standing": "Exalted"
     },
     {
       "item": 19321,
       "name": "The Immovable Object",
-      "standing": "Exalted",
-      "side": "Horde"
+      "standing": "Exalted"
     },
     {
       "item": 19323,
       "name": "The Unstoppable Force",
-      "standing": "Exalted",
-      "side": "Horde"
+      "standing": "Exalted"
     },
     {
       "item": 19324,
       "name": "The Lobotomizer",
-      "standing": "Exalted",
-      "side": "Horde"
+      "standing": "Exalted"
     },
     {
       "item": 19325,
       "name": "Don Julio's Band",
-      "standing": "Exalted",
-      "side": "Horde"
+      "standing": "Exalted"
     },
     {
       "item": 21563,
       "name": "Don Rodrigo's Band",
+      "standing": "Exalted"
+    },
+    {
+      "item": 19030,
+      "name": "Stormpike Battle Charger",
       "standing": "Exalted",
-      "side": "Horde"
+      "side": "Alliance"
     }
   ]
 }
