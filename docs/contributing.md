@@ -498,6 +498,10 @@ Each widget is an object with exactly one of these keys, plus that widget's opti
 | `button`      | `open` **or** `map` | `open`: goes to another collection, `"<module>/<list id>"`, optionally deeper (a crafting category by id: `"crafting/blacksmithing/2469"`). `map`: `[uiMapID, x, y]` opens the map there with a waypoint |
 | `spacer`      |                     | `true`: a little empty space                                                                                                                                                                             |
 
+A widget with `"factionDropdown": "Faction", "field": "side"` switches between Alliance and
+Horde rewards and defaults to the character's faction. A header, text, row, or button in the
+same panel can set `"side": "Alliance"` or `"side": "Horde"` to appear for that selection.
+
 Checkboxes and dropdowns act on the list in that tab only and are forgotten when the tab is
 closed. `npm run check` reports unknown widgets and options, a bar without the file's id, a
 filter or field the kind doesn't have, and an `open` naming a module or list that doesn't exist.

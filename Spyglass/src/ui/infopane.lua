@@ -135,10 +135,19 @@ function SpyglassInfoPaneMixin:Refresh()
         if current and current.query then
             self:AddQueryControls(view, current)
         end
+        local faction
         for index, widget in ipairs(widgets or {}) do
-            local ok, err = pcall(self.AddWidget, self, view, node, index, widget)
-            if not ok then
-                log:error("%s: panel widget %d failed: %s", tostring(node.name), index, tostring(err))
+            if widget.factionDropdown and widget.field == "side" then
+                faction = view:GetRewardFaction(node, index)
+                break
+            end
+        end
+        for index, widget in ipairs(widgets or {}) do
+            if not widget.side or widget.side == faction then
+                local ok, err = pcall(self.AddWidget, self, view, node, index, widget)
+                if not ok then
+                    log:error("%s: panel widget %d failed: %s", tostring(node.name), index, tostring(err))
+                end
             end
         end
     end
@@ -244,12 +253,20 @@ function SpyglassInfoPaneMixin:AddWidget(view, node, index, widget)
     elseif widget.factionDropdown then
         local frame = self:Acquire("dropdown") --[[@as Frame|{ Label: FontString, Dropdown: WowStyle1FilterDropdownMixin }]]
         frame.Label:SetText(widget.factionDropdown)
+        local isRewardSelector = widget.field == "side"
         frame.Dropdown:SetupMenu(function(_, root)
-            for _, side in ipairs({ "Alliance", "Horde", "Both" }) do
+            local sides = isRewardSelector and { "Alliance", "Horde" } or { "Alliance", "Horde", "Both" }
+            for _, side in ipairs(sides) do
                 root:CreateRadio(side, function()
-                    return (view:GetPanelValue(node, index) or UnitFactionGroup("player")) == side
+                    local selected = isRewardSelector and view:GetRewardFaction(node, index)
+                        or view:GetPanelValue(node, index)
+                        or UnitFactionGroup("player")
+                    return selected == side
                 end, function()
                     view:SetPanelValue(node, index, side)
+                    if isRewardSelector then
+                        self:QueueRefresh()
+                    end
                 end)
             end
         end)

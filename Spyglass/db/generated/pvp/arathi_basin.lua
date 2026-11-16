@@ -6,11 +6,17 @@ Data:AddList("pvp", "arathi_basin", {
     name = "Arathi Basin",
     icon = "Interface\\Icons\\Achievement_BG_winAB",
     panel = {
-        { header = "Alliance vendor" },
-        { text = "Samuel Hawke, League of Arathor Supply Officer, is in Refuge Pointe, Arathi Highlands." },
-        { row = "Coordinates", value = "46.0, 45.6" },
-        { button = "Show vendor on map", map = { 1417, 46, 45.6 } },
-        { text = "Arathor Battle Tabard is a reward from Control Five Bases. The source for Tabard Project (Aidan) is unknown." },
+        { factionDropdown = "Faction", field = "side" },
+        { header = "Alliance vendor", side = "Alliance" },
+        { side = "Alliance", text = "Samuel Hawke, League of Arathor Supply Officer, is in Refuge Pointe, Arathi Highlands." },
+        { row = "Coordinates", side = "Alliance", value = "46.0, 45.6" },
+        { button = "Show vendor on map", map = { 1417, 46, 45.6 }, side = "Alliance" },
+        { side = "Alliance", text = "Arathor Battle Tabard is a reward from Control Five Bases. The source for Tabard Project (Aidan) is unknown." },
+        { header = "Horde vendor", side = "Horde" },
+        { side = "Horde", text = "Rutherford Twing, Defilers Supply Officer, is in Hammerfall, Arathi Highlands." },
+        { row = "Coordinates", side = "Horde", value = "73.4, 29.8" },
+        { button = "Show vendor on map", map = { 1417, 73.4, 29.8 }, side = "Horde" },
+        { side = "Horde", text = "Battle Tabard of the Defilers is a reward from Control Five Bases." },
     },
 })
 Data:AddListLoot("pvp", "arathi_basin", {
@@ -92,4 +98,81 @@ Data:AddListLoot("pvp", "arathi_basin", {
     { 20058, standing = "Exalted", side = "Alliance" }, -- Highlander's Lamellar Spaulders
     { 20055, standing = "Exalted", side = "Alliance" }, -- Highlander's Chain Pauldrons
     { 20060, standing = "Exalted", side = "Alliance" }, -- Highlander's Lizardhide Shoulders
+    { 20232, standing = "Friendly", side = "Horde" }, -- Defiler's Mageweave Bandage
+    { 20223, standing = "Friendly", side = "Horde" }, -- Defiler's Field Ration
+    { 20222, standing = "Friendly", side = "Horde" }, -- Defiler's Enriched Ration
+    { 20224, standing = "Friendly", side = "Horde" }, -- Defiler's Iron Ration
+    { 21120, standing = "Friendly", side = "Horde" }, -- Defiler's Talisman
+    { 21116, standing = "Friendly", side = "Horde" }, -- Defiler's Talisman
+    { 20072, standing = "Friendly", side = "Horde" }, -- Defiler's Talisman
+    { 21115, standing = "Friendly", side = "Horde" }, -- Defiler's Talisman
+    { 20234, standing = "Friendly", side = "Horde" }, -- Defiler's Runecloth Bandage
+    { 20235, standing = "Friendly", side = "Horde" }, -- Defiler's Silk Bandage
+    { 20177, standing = "Honored", side = "Horde" }, -- Defiler's Lamellar Girdle
+    { 20197, standing = "Honored", side = "Horde" }, -- Defiler's Mail Girdle
+    { 20171, standing = "Honored", side = "Horde" }, -- Defiler's Lizardhide Girdle
+    { 20174, standing = "Honored", side = "Horde" }, -- Defiler's Lizardhide Girdle
+    { 20172, standing = "Honored", side = "Horde" }, -- Defiler's Lizardhide Girdle
+    { 20180, standing = "Honored", side = "Horde" }, -- Defiler's Lamellar Girdle
+    { 20153, standing = "Honored", side = "Horde" }, -- Defiler's Chain Girdle
+    { 20205, standing = "Honored", side = "Horde" }, -- Defiler's Plate Girdle
+    { 20207, standing = "Honored", side = "Horde" }, -- Defiler's Plate Girdle
+    { 20173, standing = "Honored", side = "Horde" }, -- Defiler's Lizardhide Girdle
+    { 20198, standing = "Honored", side = "Horde" }, -- Defiler's Mail Girdle
+    { 20206, standing = "Honored", side = "Horde" }, -- Defiler's Plate Girdle
+    { 20196, standing = "Honored", side = "Horde" }, -- Defiler's Mail Girdle
+    { 20163, standing = "Honored", side = "Horde" }, -- Defiler's Cloth Girdle
+    { 20192, standing = "Honored", side = "Horde" }, -- Defiler's Leather Girdle
+    { 20164, standing = "Honored", side = "Horde" }, -- Defiler's Cloth Girdle
+    { 20150, standing = "Honored", side = "Horde" }, -- Defiler's Chain Girdle
+    { 20195, standing = "Honored", side = "Horde" }, -- Defiler's Mail Girdle
+    { 20178, standing = "Honored", side = "Horde" }, -- Defiler's Lamellar Girdle
+    { 20152, standing = "Honored", side = "Horde" }, -- Defiler's Chain Girdle
+    { 20204, standing = "Honored", side = "Horde" }, -- Defiler's Plate Girdle
+    { 20190, standing = "Honored", side = "Horde" }, -- Defiler's Leather Girdle
+    { 20165, standing = "Honored", side = "Horde" }, -- Defiler's Cloth Girdle
+    { 20166, standing = "Honored", side = "Horde" }, -- Defiler's Cloth Girdle
+    { 20191, standing = "Honored", side = "Horde" }, -- Defiler's Leather Girdle
+    { 20193, standing = "Honored", side = "Horde" }, -- Defiler's Leather Girdle
+    { 20151, standing = "Honored", side = "Horde" }, -- Defiler's Chain Girdle
+    { 20179, standing = "Honored", side = "Horde" }, -- Defiler's Lamellar Girdle
+    { 20189, standing = "Revered", side = "Horde" }, -- Defiler's Leather Boots
+    { 20170, standing = "Revered", side = "Horde" }, -- Defiler's Lizardhide Boots
+    { 20161, standing = "Revered", side = "Horde" }, -- Defiler's Cloth Boots
+    { 20209, standing = "Revered", side = "Horde" }, -- Defiler's Plate Greaves
+    { 20211, standing = "Revered", side = "Horde" }, -- Defiler's Plate Greaves
+    { 20156, standing = "Revered", side = "Horde" }, -- Defiler's Chain Greaves
+    { 20181, standing = "Revered", side = "Horde" }, -- Defiler's Lamellar Greaves
+    { 20155, standing = "Revered", side = "Horde" }, -- Defiler's Chain Greaves
+    { 20200, standing = "Revered", side = "Horde" }, -- Defiler's Mail Greaves
+    { 20202, standing = "Revered", side = "Horde" }, -- Defiler's Mail Greaves
+    { 20157, standing = "Revered", side = "Horde" }, -- Defiler's Chain Greaves
+    { 20186, standing = "Revered", side = "Horde" }, -- Defiler's Leather Boots
+    { 20159, standing = "Revered", side = "Horde" }, -- Defiler's Cloth Boots
+    { 20154, standing = "Revered", side = "Horde" }, -- Defiler's Chain Greaves
+    { 20162, standing = "Revered", side = "Horde" }, -- Defiler's Cloth Boots
+    { 20188, standing = "Revered", side = "Horde" }, -- Defiler's Leather Boots
+    { 20182, standing = "Revered", side = "Horde" }, -- Defiler's Lamellar Greaves
+    { 20187, standing = "Revered", side = "Horde" }, -- Defiler's Leather Boots
+    { 20168, standing = "Revered", side = "Horde" }, -- Defiler's Lizardhide Boots
+    { 20208, standing = "Revered", side = "Horde" }, -- Defiler's Plate Greaves
+    { 20160, standing = "Revered", side = "Horde" }, -- Defiler's Cloth Boots
+    { 20169, standing = "Revered", side = "Horde" }, -- Defiler's Lizardhide Boots
+    { 20210, standing = "Revered", side = "Horde" }, -- Defiler's Plate Greaves
+    { 20183, standing = "Revered", side = "Horde" }, -- Defiler's Lamellar Greaves
+    { 20185, standing = "Revered", side = "Horde" }, -- Defiler's Lamellar Greaves
+    { 20167, standing = "Revered", side = "Horde" }, -- Defiler's Lizardhide Boots
+    { 20199, standing = "Revered", side = "Horde" }, -- Defiler's Mail Greaves
+    { 20201, standing = "Revered", side = "Horde" }, -- Defiler's Mail Greaves
+    { 20220, standing = "Exalted", side = "Horde" }, -- Ironbark Staff
+    { 20131, standing = "Exalted", side = "Horde" }, -- Battle Tabard of the Defilers
+    { 20212, standing = "Exalted", side = "Horde" }, -- Defiler's Plate Spaulders
+    { 20214, standing = "Exalted", side = "Horde" }, -- Mindfang
+    { 20203, standing = "Exalted", side = "Horde" }, -- Defiler's Mail Pauldrons
+    { 20068, standing = "Exalted", side = "Horde" }, -- Deathguard's Cloak
+    { 20194, standing = "Exalted", side = "Horde" }, -- Defiler's Leather Shoulders
+    { 20176, standing = "Exalted", side = "Horde" }, -- Defiler's Epaulets
+    { 20158, standing = "Exalted", side = "Horde" }, -- Defiler's Chain Pauldrons
+    { 20175, standing = "Exalted", side = "Horde" }, -- Defiler's Lizardhide Shoulders
+    { 20184, standing = "Exalted", side = "Horde" }, -- Defiler's Lamellar Spaulders
 })

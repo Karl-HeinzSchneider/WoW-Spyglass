@@ -1596,6 +1596,13 @@ function SpyglassViewMixin:GetPanelValue(node, index)
     return state and state[index]
 end
 
+---@param node Spyglass.Node
+---@param index integer
+---@return "Alliance"|"Horde"
+function SpyglassViewMixin:GetRewardFaction(node, index)
+    return self:GetPanelValue(node, index) or (UnitFactionGroup("player") == "Horde" and "Horde" or "Alliance")
+end
+
 -- A checkbox, dropdown or grouping changed: the list is filtered and grouped again, from page 1.
 ---@param node Spyglass.Node
 ---@param index integer
@@ -1656,7 +1663,13 @@ function SpyglassViewMixin:GetEntryFilter()
             end
         elseif widget.factionDropdown then
             local side = value or UnitFactionGroup("player")
-            if side ~= "Both" then
+            if widget.field == "side" then
+                local rewardSide = self:GetRewardFaction(node, index)
+                tests[#tests + 1] = function(entry)
+                    local entrySide = entry.meta and entry.meta.side
+                    return not entrySide or entrySide == rewardSide
+                end
+            elseif side ~= "Both" then
                 tests[#tests + 1] = function(entry)
                     local quest = entry.quest and app.data:GetQuest(entry.quest)
                     return not quest or not quest.side or quest.side == "Both" or quest.side == side
