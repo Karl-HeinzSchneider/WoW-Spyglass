@@ -98,9 +98,36 @@ function panelFile(panel: unknown[]): ListFile {
 }
 
 test("a panel keeps its widgets through a fix rewrite", () => {
-  const panel = [{ header: "Where" }, { button: "Show on map", map: [1451, 51.2, 38.3] }];
+  const panel = [{ header: "Where" }, { item: 226404 }, { button: "Show on map", map: [1451, 51.2, 38.3] }];
+  const checker = sectionChecker(false);
+  validateLists([panelFile(panel)], checker);
+  assert.deepEqual(checker.problems, []);
   const serialized = JSON.parse(serializeList(panelFile(panel))) as Record<string, unknown>;
   assert.deepEqual(serialized.panel, panel, "fix must not drop the panel it rewrites");
+});
+
+test("a priced reward keeps all payment components through a fix rewrite", () => {
+  const file = panelFile([]);
+  const costs = [
+    { item: 226404, amount: 125, icon: 133799 },
+    { item: 200, amount: 2, icon: 134400 },
+  ];
+  file.data.items = [{ item: 100, name: "Vendor Reward", costs }];
+  const checker = sectionChecker(false);
+  validateLists([file], checker);
+  assert.deepEqual(checker.problems.filter((p) => !p.warning), []);
+  assert.deepEqual(JSON.parse(serializeList(file)).items[0].costs, costs);
+});
+
+test("invalid cost components and item widgets fail validation", () => {
+  const file = panelFile([{ item: 0 }]);
+  file.data.items = [{ item: 200, name: "Reward", costs: [{ item: 226404, amount: 0, icon: 133799 }] }];
+  const checker = sectionChecker(false);
+  validateLists([file], checker);
+  const errors = checker.problems.filter((p) => !p.warning).map((p) => p.message);
+  assert.equal(errors.length, 2, errors.join("\n"));
+  assert.match(errors.join("\n"), /item` must be a positive item id/);
+  assert.match(errors.join("\n"), /costs` must contain only item, amount and icon as positive integers/);
 });
 
 test("panel widgets are checked against the list's kind and the other lists", () => {

@@ -303,14 +303,15 @@ first), as wide as the tooltip, in the recipe popup's look (tooltip border over
 ## Item tooltips (`tooltip.lua`)
 
 `app.tooltip`, an Ace module, appends an item's sources (`Data:GetItemSources` kinds `boss`,
-`trash`, `quest`, `recipe`) to every item tooltip. After a blank line comes one gold line per
+`trash`, `quest`, `recipe`, and list rows with `costs`) to every item tooltip. After a blank line comes one gold line per
 user list that has the item and is shown in tooltips, with the list's marker: `[star] Favorite`,
 `[skull] Warrior BiS`. Then the instance name in
 gold over its bosses, "Trash" and `Quest: <title>` lines, indented and sorted by encounter order.
 Drops start with the `ParagonReputation_Bag` atlas (a loot sack, used by the Camelot reputation
 frame), quests with `Interface\GossipFrame\AvailableQuestIcon`. Then one gold
 `Crafted by <profession>` line per profession with a recipe for the item, with the icon of that
-profession's crafting list.
+profession's crafting list. Each priced list row adds a `Cost` line with the quantities and
+icons of the payment items. The names appear when they're available in the database or client.
 
 It hooks once in `OnInitialize`: through `TooltipDataProcessor.AddTooltipPostCall` when
 `GameTooltip` is built on the tooltip data handler, else `OnTooltipSetItem` on `GameTooltip` and

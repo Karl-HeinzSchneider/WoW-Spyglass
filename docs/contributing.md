@@ -375,6 +375,11 @@ row. Every file may carry `icon`, `background` + `backgroundCoords` (as for inst
 the client's `Profession-overview-Card-<Profession>` art this way), `info` (small text on the
 tile) and `order` (tile position; by name otherwise).
 
+An item row in any list may carry `"costs": [{ "item": 226404, "amount": 125, "icon": 133799 }]`.
+Use the payment item's ID, the quantity due, and the icon's texture file ID. Each must be a
+positive integer. To price an offer in several payment items, put all components in that row's
+`costs` array. The tooltip displays the price with its icons.
+
 Reputation files must state the game's `faction` id, a faction with a reputation bar; the addon
 uses it at runtime for the localized name, description and the character's standing, and `fix`
 rewrites `name` to the game's. Valid standings: `Hated`, `Hostile`, `Unfriendly`, `Neutral`,
@@ -484,6 +489,7 @@ Each widget is an object with exactly one of these keys, plus that widget's opti
 | ------------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `header`      |                     | a section plate with the text                                                                                                                                                                            |
 | `text`        |                     | wrapped text                                                                                                                                                                                             |
+| `item`        |                     | a positive item ID, displayed with its icon, name and hover tooltip                                                                                                                                       |
 | `description` |                     | `true`: the list's own description (a faction's, from the game, in the player's language)                                                                                                                |
 | `row`         | `value`             | a label on the left, `value` on the right                                                                                                                                                                |
 | `bar`         |                     | `"reputation"`: the character's standing with the file's `faction`; `"skill"`: the character's rank in the file's `skillLine`                                                                            |

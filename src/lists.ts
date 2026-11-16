@@ -58,6 +58,8 @@ export interface ListSection {
 export interface PanelWidget {
   header?: string;
   text?: string;
+  /** An item link with its icon and tooltip. */
+  item?: number;
   /** The list's own description (a faction's, from the client). */
   description?: true;
   row?: string;
@@ -81,6 +83,7 @@ export interface PanelWidget {
 const PANEL_WIDGETS: Record<string, { options: string[]; required?: string[] }> = {
   header: { options: [] },
   text: { options: [] },
+  item: { options: [] },
   description: { options: [] },
   row: { options: ["value"], required: ["value"] },
   bar: { options: [] },
@@ -109,6 +112,8 @@ export type ReputationRewards = Partial<Record<Standing, CuratedListRow[]>>;
  */
 export interface CuratedListRow extends CuratedItemRow {
   group?: string;
+  /** Items paid together to buy this reward. */
+  costs?: ItemCost[];
   /** crafting: the recipe's spell id (`fix` fills it in from the recipe database when the item is made by exactly one recipe of the profession, and the other way round). */
   spell?: number;
   /** crafting: the skill needed to learn the recipe (trainer / recipe item requirement); the game's tables don't carry it. */
@@ -121,6 +126,12 @@ export interface CuratedListRow extends CuratedItemRow {
   standing?: string;
   /** Faction restriction, "Alliance" or "Horde"; omitted = both. */
   side?: string;
+}
+
+interface ItemCost {
+  item: number;
+  amount: number;
+  icon: number;
 }
 
 export interface ListFile {
@@ -162,10 +173,14 @@ const SIDES = ["Alliance", "Horde"];
 
 /** What a row field must look like: a number range, a string, or one of a fixed set of strings. */
 type FieldSpec =
-  { type: "integer"; min?: number; max?: number } | { type: "string" } | { type: "enum"; values: readonly string[] };
+  | { type: "integer"; min?: number; max?: number }
+  | { type: "string" }
+  | { type: "enum"; values: readonly string[] }
+  | { type: "costs" };
 
 const FIELD_SPECS: Record<string, FieldSpec> = {
   group: { type: "string" },
+  costs: { type: "costs" },
   spell: { type: "integer", min: 1 },
   skill: { type: "integer", min: 0 },
   source: { type: "string" },
@@ -176,10 +191,10 @@ const FIELD_SPECS: Record<string, FieldSpec> = {
 
 /** Row fields each kind accepts (besides `item`, `name` and `group`); the emit order in Lua. */
 export const ROW_FIELDS: Record<ListKind, (keyof CuratedListRow)[]> = {
-  crafting: ["spell", "skill", "source"],
-  pvp: ["rank", "standing", "side"],
-  collections: ["source", "side"],
-  reputation: ["standing", "side"],
+  crafting: ["spell", "skill", "source", "costs"],
+  pvp: ["rank", "standing", "side", "costs"],
+  collections: ["source", "side", "costs"],
+  reputation: ["standing", "side", "costs"],
 };
 
 export function rowsOf(file: ListFile): CuratedListRow[] {
@@ -211,6 +226,10 @@ export function loadLists(): ListFile[] {
   return files;
 }
 
+function isPositiveInteger(value: unknown): boolean {
+  return typeof value === "number" && Number.isSafeInteger(value) && value > 0;
+}
+
 function checkField(value: unknown, spec: FieldSpec): string | undefined {
   switch (spec.type) {
     case "integer":
@@ -222,6 +241,17 @@ function checkField(value: unknown, spec: FieldSpec): string | undefined {
       return typeof value === "string" && value !== "" ? undefined : "must be a non-empty string";
     case "enum":
       return spec.values.includes(value as string) ? undefined : `must be one of ${spec.values.join(", ")}`;
+    case "costs":
+      if (!Array.isArray(value) || value.length === 0) return "must be a non-empty array";
+      for (const cost of value) {
+        if (
+          !cost || typeof cost !== "object" || Array.isArray(cost) || Object.keys(cost).length !== 3 ||
+          ![cost.item, cost.amount, cost.icon].every(isPositiveInteger)
+        ) {
+          return "must contain only item, amount and icon as positive integers for each cost";
+        }
+      }
+      return undefined;
   }
 }
 
@@ -436,7 +466,7 @@ function validatePanel(file: ListFile, listIDs: Set<string>, checker: Checker): 
     checker.report(file, "`panel` must be an array of widgets");
     return;
   }
-  const fields = new Set<string>([...ROW_FIELDS[file.kind], "group"]);
+  const fields = new Set<string>([...ROW_FIELDS[file.kind].filter((field) => field !== "costs"), "group"]);
   for (const [index, widget] of d.panel.entries()) {
     const where = `panel[${index}]`;
     if (typeof widget !== "object" || widget === null || Array.isArray(widget)) {
@@ -464,6 +494,9 @@ function validatePanel(file: ListFile, listIDs: Set<string>, checker: Checker): 
     }
     const w = widget;
     switch (type) {
+      case "item":
+        if (!isPositiveInteger(w.item)) checker.report(file, `${where}: \`item\` must be a positive item id`);
+        break;
       case "description":
       case "spacer":
         if (w[type] !== true) checker.report(file, `${where}: \`${type}\` must be true`);

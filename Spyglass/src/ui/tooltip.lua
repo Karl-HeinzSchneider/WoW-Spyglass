@@ -159,6 +159,28 @@ local function craftedLines(sources)
     return out
 end
 
+-- Each list row is a separate offer. Its cost components are all paid together.
+---@param sources Spyglass.ItemSource[]
+---@return string[]
+local function costLines(sources)
+    local out = {}
+    for _, source in ipairs(sources) do
+        if source.costs then
+            local parts = {}
+            for i, cost in ipairs(source.costs) do
+                local icon = CreateSimpleTextureMarkup(cost.icon, ICON_SIZE, ICON_SIZE)
+                local name, known = Data:GetItemName(cost.item)
+                parts[i] = ("%d %s%s"):format(cost.amount, icon, known and (" " .. name) or "")
+            end
+            if #parts > 0 then
+                out[#out + 1] = "Cost: " .. table.concat(parts, " + ")
+            end
+        end
+    end
+    table.sort(out)
+    return out
+end
+
 ---@param tooltip GameTooltip
 ---@param itemID integer?
 function module:AddSources(tooltip, itemID)
@@ -172,7 +194,8 @@ function module:AddSources(tooltip, itemID)
     end
     local crafted = craftedLines(sources)
     local lists = listLines(itemID)
-    if #lines == 0 and #crafted == 0 and #lists == 0 then
+    local costs = costLines(sources)
+    if #lines == 0 and #crafted == 0 and #lists == 0 and #costs == 0 then
         return
     end
     table.sort(lines, lineBefore)
@@ -191,6 +214,9 @@ function module:AddSources(tooltip, itemID)
         tooltip:AddLine(INDENT .. icon .. " " .. line.text, HIGHLIGHT_FONT_COLOR:GetRGB())
     end
     for _, text in ipairs(crafted) do
+        tooltip:AddLine(text, NORMAL_FONT_COLOR:GetRGB())
+    end
+    for _, text in ipairs(costs) do
         tooltip:AddLine(text, NORMAL_FONT_COLOR:GetRGB())
     end
 end

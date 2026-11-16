@@ -162,6 +162,11 @@ local RECIPE = {
 -- A crafting row for a recipe that makes no item (an enchant) has no item, only its `spell`.
 ---@alias Spyglass.ListLootRow { [1]: integer?, [string]: any }
 
+---@class Spyglass.ItemCost
+---@field item integer
+---@field amount integer
+---@field icon integer
+
 -- Where an item comes from: a boss or an instance's trash (`chance`), a quest (`instanceID`,
 -- `side`), a row of a list (`kind`, `id` and that row's named fields, e.g. `standing`) or a
 -- recipe that makes it (`skillLineID`).
@@ -170,6 +175,7 @@ local RECIPE = {
 ---@field id integer|string  # bossID for "boss", the instance id for "trash", the quest id for "quest", the recipe's spell id for "recipe", the list id otherwise
 ---@field chance? number
 ---@field skillLineID? integer
+---@field costs? Spyglass.ItemCost[]
 ---@field [string] any
 
 ---@alias Spyglass.NameKind "items"|"bosses"|"instances"|"skillLines"|"categories"|"tools"
