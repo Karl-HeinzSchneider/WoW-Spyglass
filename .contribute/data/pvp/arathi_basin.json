@@ -1,0 +1,190 @@
+{
+  "name": "Arathi Basin",
+  "icon": "Interface\\Icons\\Achievement_BG_winAB",
+  "panel": [
+    {
+      "header": "Alliance vendor"
+    },
+    {
+      "text": "Samuel Hawke, League of Arathor Supply Officer, is in Refuge Pointe, Arathi Highlands."
+    },
+    {
+      "row": "Coordinates",
+      "value": "46.0, 45.6"
+    },
+    {
+      "button": "Show vendor on map",
+      "map": [1417, 46, 45.6]
+    }
+  ],
+  "rewards": [
+    {
+      "item": 20244,
+      "name": "Highlander's Silk Bandage",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 20226,
+      "name": "Highlander's Field Ration",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 20227,
+      "name": "Highlander's Iron Ration",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 20243,
+      "name": "Highlander's Runecloth Bandage",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 20225,
+      "name": "Highlander's Enriched Ration",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 20126,
+      "name": "Highlander's Plate Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20089,
+      "name": "Highlander's Chain Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20104,
+      "name": "Highlander's Lizardhide Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20119,
+      "name": "Highlander's Mail Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20125,
+      "name": "Highlander's Plate Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20107,
+      "name": "Highlander's Lamellar Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20097,
+      "name": "Highlander's Cloth Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20115,
+      "name": "Highlander's Leather Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20124,
+      "name": "Highlander's Plate Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20088,
+      "name": "Highlander's Chain Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20103,
+      "name": "Highlander's Lizardhide Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20042,
+      "name": "Highlander's Lamellar Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20092,
+      "name": "Highlander's Chain Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20128,
+      "name": "Highlander's Plate Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20110,
+      "name": "Highlander's Lamellar Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20094,
+      "name": "Highlander's Cloth Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20109,
+      "name": "Highlander's Lamellar Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20112,
+      "name": "Highlander's Leather Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20091,
+      "name": "Highlander's Chain Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20100,
+      "name": "Highlander's Lizardhide Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20121,
+      "name": "Highlander's Mail Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20127,
+      "name": "Highlander's Plate Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20049,
+      "name": "Highlander's Lamellar Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    }
+  ]
+}
