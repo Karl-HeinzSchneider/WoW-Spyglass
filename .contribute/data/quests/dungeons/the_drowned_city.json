@@ -28,7 +28,6 @@
       "xp": 2700,
       "objective": "Bring 7 Jungle Remedies and 1 Venom Fern Extract to Sergeant Yohwa.",
       "description": "Done together with the other of Sergeant Yohwa's two quests (The Second Rebellion and Bad Medicine); Brother Nimetz offers Kurzen's Mystery once both are handed in.",
-      "requires": [203],
       "start": {
         "npc": "Sergeant Yohwa",
         "location": [1434, 38, 3.4],

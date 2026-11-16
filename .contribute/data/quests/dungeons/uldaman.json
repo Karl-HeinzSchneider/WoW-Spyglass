@@ -69,7 +69,7 @@
       "description": "Introductory step leading to Agmond's Fate.\n\nOPTIONAL, not required",
       "start": {
         "npc": "Prospector Stormpike",
-        "location": [1455, 73.8, 13],
+        "location": [1455, 74.6, 11.7],
         "description": "Hall of Explorers, Ironforge"
       },
       "turnIn": {
@@ -754,7 +754,7 @@
       "description": "Introductory step leading to The Hidden Chamber.\n\nOPTIONAL, not required",
       "start": {
         "npc": "Prospector Stormpike",
-        "location": [1455, 73.8, 13],
+        "location": [1455, 74.6, 11.7],
         "description": "Hall of Explorers, Ironforge"
       },
       "turnIn": {

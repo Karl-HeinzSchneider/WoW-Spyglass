@@ -114,9 +114,9 @@
     {
       "id": 2842,
       "name": "Chief Engineer Scooty",
+      "side": "Horde",
       "requiredLevel": 20,
       "objective": "Speak with Scooty in Booty Bay.",
-      "description": "Required before Gnomer-gooooone!",
       "requires": [2841],
       "start": {
         "location": [1454, 75.6, 25.2],
@@ -332,6 +332,7 @@
     {
       "id": 2945,
       "name": "Grime-Encrusted Ring",
+      "side": "Horde",
       "requiredLevel": 28,
       "objective": "Find a way to remove the grime from the Grime-Encrusted Ring by using the Sparklematic 5200.",
       "start": {
@@ -389,9 +390,9 @@
     {
       "id": 2949,
       "name": "Return of the Ring",
+      "side": "Horde",
       "requiredLevel": 28,
       "objective": "Take the Brilliant Gold Ring to Nogg in Orgrimmar.",
-      "description": "Horde step required before Nogg's Ring Redo.",
       "requires": [2945],
       "start": {
         "npc": "The Sparklematic 5200",

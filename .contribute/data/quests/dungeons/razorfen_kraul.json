@@ -125,7 +125,6 @@
       "name": "Lonebrow's Journal",
       "requiredLevel": 23,
       "objective": "Read Henrig Lonebrow's Journal and take it to Falfindel Waywarder in Thalanaar.",
-      "description": "Required before The Crone of the Kraul.",
       "start": {
         "location": [1441, 30.7, 24.4],
         "description": "Henrig Lonebrow's Journal beside his corpse at the bottom of the Great Lift."
@@ -481,13 +480,13 @@
       "requires": [1701],
       "start": {
         "npc": "Furen Longbeard",
-        "location": [1453, 58, 16.8],
-        "description": "Dwarven District, Stormwind"
+        "location": [1453, 64.6, 37.2],
+        "description": "Furen Longbeard, Dwarven District, Stormwind (64.6, 37.2)"
       },
       "turnIn": {
         "npc": "Furen Longbeard",
         "location": [1453, 58, 16.8],
-        "description": "Dwarven District, Stormwind (58.0, 16.8)"
+        "description": "Furen Longbeard, Dwarven District, Stormwind (64.6, 37.2)"
       },
       "items": [
         {
@@ -532,8 +531,8 @@
       },
       "turnIn": {
         "npc": "Furen Longbeard",
-        "location": [1453, 58, 16.8],
-        "description": "Dwarven District, Stormwind"
+        "location": [1453, 64.6, 37.2],
+        "description": "Furen Longbeard, Dwarven District, Stormwind (64.6, 37.2)"
       },
       "items": []
     },
@@ -550,13 +549,13 @@
       "followUps": [1782],
       "start": {
         "npc": "Furen Longbeard",
-        "location": [1453, 58, 16.8],
-        "description": "Dwarven District, Stormwind"
+        "location": [1453, 64.6, 37.2],
+        "description": "Furen Longbeard, Dwarven District, Stormwind (64.6, 37.2)"
       },
       "turnIn": {
         "npc": "Furen Longbeard",
         "location": [1453, 58, 16.8],
-        "description": "Dwarven District, Stormwind (58.0, 16.8)"
+        "description": "Furen Longbeard, Dwarven District, Stormwind (64.6, 37.2)"
       },
       "items": []
     },

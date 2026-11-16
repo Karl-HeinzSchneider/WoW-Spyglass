@@ -38,6 +38,7 @@ Data:AddBossLoot(475, { -- Cannon Master Willey
     { 22404 }, -- Willey's Back Scratcher
     { 22406 }, -- Redemption
     { 12839 }, -- Plans: Heartseeker
+    { 13377 }, -- Miniature Cannon Balls
 })
 
 Data:AddBossLoot(477, { -- Archivist Galford
@@ -83,6 +84,7 @@ Data:AddBossLoot(479, { -- Baroness Anastari
     { 13537 }, -- Chillhide Bracers
     { 13538 }, -- Windshrieker Pauldrons
     { 13539 }, -- Banshee's Touch
+    { 273124 }, -- Blueprint: Loom
 })
 
 Data:AddBossLoot(480, { -- Nerub'enkan
@@ -95,6 +97,7 @@ Data:AddBossLoot(480, { -- Nerub'enkan
     { 13531 }, -- Crypt Stalker Leggings
     { 13532 }, -- Darkspinner Claws
     { 13533 }, -- Acid-etched Pauldrons
+    { 13508 }, -- Eye of Arachnida
 })
 
 Data:AddBossLoot(481, { -- Maleki the Pallid
@@ -183,6 +186,14 @@ Data:AddBossLoot(2800, { -- Stonespine
     { 13399 }, -- Gargoyle Shredder Talons
     { 13397 }, -- Stoneskin Gargoyle Cape
     { 13954 }, -- Verdant Footpads
+})
+
+Data:AddBossLoot(-16101, { -- Jarien and Sothos
+    { 22301 }, -- Ironweave Robe
+    { 22327 }, -- Amulet of the Redeemed
+    { 22328 }, -- Legplates of Vigilance
+    { 22329 }, -- Scepter of Interminable Focus
+    { 22334 }, -- Band of Mending
 })
 
 Data:AddTrashLoot(329, {

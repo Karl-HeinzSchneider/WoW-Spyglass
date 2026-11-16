@@ -65,6 +65,13 @@ Data:AddTrashLoot(2970, {
     { 287002 }, -- Risen Sentry's Links
     { 286997 }, -- Depth-Risen Leggings
     { 287005 }, -- Sword of Dismemberment
+    { 286998 }, -- Deep Flora Bindings
+    { 286999 }, -- Deathcrawler's Chest
+    { 287000 }, -- Skin-Flayed Footguards
+    { 287001 }, -- Waterlogged Shoulderpads
+    { 287003 }, -- Corroded Handguards
+    { 287004 }, -- Touch of the Depths
+    { 287006 }, -- Resurged Axe
 })
 
 Data:AddQuests(2970, {

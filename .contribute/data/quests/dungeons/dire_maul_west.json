@@ -331,7 +331,7 @@
       "objective": "Travel to Ironforge and get High Priest Rohan's Exorcism Censer. You will need to make a donation of 150 gold in order to secure it.",
       "start": {
         "npc": "Lord Grayson Shadowbreaker",
-        "location": [1453, 49.4, 47.6],
+        "location": [1453, 48.4, 50.2],
         "description": "Stormwind"
       },
       "turnIn": {
@@ -349,7 +349,7 @@
       "requires": [7637],
       "start": {
         "npc": "High Priest Rohan",
-        "location": [1455, 23.4, 6.4],
+        "location": [1455, 24.7, 8.2],
         "description": "Ironforge"
       },
       "turnIn": {
@@ -367,7 +367,7 @@
       "requires": [7639],
       "start": {
         "npc": "Lord Grayson Shadowbreaker",
-        "location": [1453, 49.4, 47.6],
+        "location": [1453, 48.4, 50.2],
         "description": "Stormwind"
       },
       "turnIn": {
@@ -386,7 +386,7 @@
       "requires": [7640],
       "start": {
         "npc": "Lord Grayson Shadowbreaker",
-        "location": [1453, 49.4, 47.6],
+        "location": [1453, 48.4, 50.2],
         "description": "Stormwind"
       },
       "turnIn": {
@@ -404,7 +404,7 @@
       "requires": [7641],
       "start": {
         "npc": "Grimand Elmore",
-        "location": [1453, 51.6, 12.2],
+        "location": [1453, 59.7, 33.8],
         "description": "Stormwind"
       },
       "turnIn": {
@@ -426,7 +426,7 @@
       "requires": [7645],
       "start": {
         "npc": "Lord Grayson Shadowbreaker",
-        "location": [1453, 49.4, 47.6],
+        "location": [1453, 48.4, 50.2],
         "description": "Cathedral of Light, Stormwind"
       },
       "turnIn": {
@@ -463,7 +463,7 @@
       "requires": [7642],
       "start": {
         "npc": "Grimand Elmore",
-        "location": [1453, 51.6, 12.2],
+        "location": [1453, 59.7, 33.8],
         "description": "Stormwind"
       },
       "turnIn": {

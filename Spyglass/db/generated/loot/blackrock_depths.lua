@@ -108,6 +108,7 @@ Data:AddBossLoot(241, { -- Plugger Spazzring
     { 12793 }, -- Mixologist's Tunic
     { 12791 }, -- Barman Shanker
     { 18653 }, -- Schematic: Goblin Jumper Cables XL
+    { 276877 }, -- Brewmancer Nightcap
 })
 
 Data:AddBossLoot(242, { -- Ambassador Flamelash
@@ -116,6 +117,7 @@ Data:AddBossLoot(242, { -- Ambassador Flamelash
     { 11809 }, -- Flame Wrath
     { 11832 }, -- Burst of Knowledge
     { 11808 }, -- Circle of Flame
+    { 273122 }, -- Blueprint: Molten Foundry
 })
 
 Data:AddBossLoot(243, { -- The Seven

@@ -124,6 +124,19 @@ Data:AddBossLoot(-9718, { -- Ghok Bashguud
     { 13198 }, -- Hurd Smasher
 })
 
+Data:AddBossLoot(-16080, { -- Mor Grayhoof
+    { 22306 }, -- Ironweave Belt
+    { 22319 }, -- #22319
+    { 22322 }, -- The Jaw Breaker
+    { 22325 }, -- Belt of the Trickster
+    { 22398 }, -- #22398
+})
+
+Data:AddBossLoot(-10263, { -- Burning Felguard
+    { 13181 }, -- Demonskin Gloves
+    { 13182 }, -- Phase Blade
+})
+
 Data:AddTrashLoot(22901, {
     { 16673 }, -- Cord of Elements
     { 16680 }, -- Beaststalker's Belt

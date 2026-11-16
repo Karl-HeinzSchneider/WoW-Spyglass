@@ -448,6 +448,48 @@
           "name": "Hurd Smasher"
         }
       ]
+    },
+    {
+      "id": -16080,
+      "name": "Mor Grayhoof",
+      "npc": 16080,
+      "loot": [
+        {
+          "item": 22306,
+          "name": "Ironweave Belt"
+        },
+        {
+          "item": 22319,
+          "name": "Tome of Divine Right"
+        },
+        {
+          "item": 22322,
+          "name": "The Jaw Breaker"
+        },
+        {
+          "item": 22325,
+          "name": "Belt of the Trickster"
+        },
+        {
+          "item": 22398,
+          "name": "Idol of Rejuvenation"
+        }
+      ]
+    },
+    {
+      "id": -10263,
+      "name": "Burning Felguard",
+      "npc": 10263,
+      "loot": [
+        {
+          "item": 13181,
+          "name": "Demonskin Gloves"
+        },
+        {
+          "item": 13182,
+          "name": "Phase Blade"
+        }
+      ]
     }
   ],
   "trash": [

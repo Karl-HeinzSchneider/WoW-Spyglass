@@ -200,7 +200,7 @@
       "objective": "Kill 8 Ragefire Troggs and 8 Ragefire Shamans inside Ragefire Chasm.",
       "start": {
         "npc": "Rahauro",
-        "location": [1456, 70.4, 32.2],
+        "location": [1456, 70.1, 29.5],
         "description": "Rahauro, Elder Rise, Thunder Bluff"
       },
       "turnIn": {
@@ -220,7 +220,7 @@
       "followUps": [5724],
       "start": {
         "npc": "Rahauro",
-        "location": [1456, 70.4, 32.2],
+        "location": [1456, 70.1, 29.5],
         "description": "Rahauro, Elder Rise, Thunder Bluff"
       },
       "turnIn": {

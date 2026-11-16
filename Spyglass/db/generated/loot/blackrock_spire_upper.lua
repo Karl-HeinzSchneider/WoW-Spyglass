@@ -25,6 +25,7 @@ Data:AddBossLoot(3063, { -- Warchief Rend Blackhand
     { 18103 }, -- Band of Rumination
     { 18104 }, -- Feralsurge Girdle
     { 22247 }, -- Faith Healer's Boots
+    { 12590 }, -- Felstriker
 })
 
 Data:AddBossLoot(3068, { -- The Beast
@@ -38,6 +39,7 @@ Data:AddBossLoot(3068, { -- The Beast
     { 12968 }, -- Frostweaver Cape
     { 12969 }, -- Seeping Willow
     { 22311 }, -- Ironweave Boots
+    { 273109 }, -- Blueprint: Trapper's Workbench
 })
 
 Data:AddBossLoot(3069, { -- General Drakkisath
@@ -106,6 +108,7 @@ Data:AddBossLoot(-10339, { -- Gyth
     { 16669 }, -- Pauldrons of Elements
     { 22225 }, -- Dragonskin Cowl
     { 13522 }, -- Recipe: Flask of Chromatic Resistance
+    { 12871 }, -- Chromatic Carapace
 })
 
 Data:AddTrashLoot(22902, {
@@ -117,6 +120,13 @@ Data:AddTrashLoot(22902, {
     { 16703 }, -- Dreadmist Bracers
     { 16735 }, -- Bracers of Valor
     { 16247 }, -- Formula: Enchant 2H Weapon - Superior Impact
+    { 16717 }, -- Wildheart Gloves
+    { 16685 }, -- Magister's Belt
+    { 16736 }, -- Belt of Valor
+    { 16681 }, -- Beaststalker's Bindings
+    { 16710 }, -- Shadowcraft Bracers
+    { 16716 }, -- Wildheart Belt
+    { 13260 }, -- Wind Dancer Boots
 })
 
 Data:AddQuests(22902, {

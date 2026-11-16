@@ -142,6 +142,10 @@
         {
           "item": 12839,
           "name": "Plans: Heartseeker"
+        },
+        {
+          "item": 13377,
+          "name": "Miniature Cannon Balls"
         }
       ]
     },
@@ -310,6 +314,10 @@
         {
           "item": 13539,
           "name": "Banshee's Touch"
+        },
+        {
+          "item": 273124,
+          "name": "Blueprint: Loom"
         }
       ]
     },
@@ -355,6 +363,10 @@
         {
           "item": 13533,
           "name": "Acid-etched Pauldrons"
+        },
+        {
+          "item": 13508,
+          "name": "Eye of Arachnida"
         }
       ]
     },
@@ -690,6 +702,33 @@
         {
           "item": 13954,
           "name": "Verdant Footpads"
+        }
+      ]
+    },
+    {
+      "id": -16101,
+      "name": "Jarien and Sothos",
+      "npc": 16101,
+      "loot": [
+        {
+          "item": 22301,
+          "name": "Ironweave Robe"
+        },
+        {
+          "item": 22327,
+          "name": "Amulet of the Redeemed"
+        },
+        {
+          "item": 22328,
+          "name": "Legplates of Vigilance"
+        },
+        {
+          "item": 22329,
+          "name": "Scepter of Interminable Focus"
+        },
+        {
+          "item": 22334,
+          "name": "Band of Mending"
         }
       ]
     }

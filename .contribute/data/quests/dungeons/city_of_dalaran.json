@@ -10,7 +10,7 @@
       "description": "Quest data is recorded in the beta; dungeon access may be unavailable.",
       "start": {
         "npc": "Shylamiir",
-        "location": [1453, 31.4, 62.8],
+        "location": [1453, 31.5, 62.6],
         "description": "Stormwind City."
       },
       "turnIn": {

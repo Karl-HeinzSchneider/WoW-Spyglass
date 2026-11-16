@@ -258,9 +258,9 @@
       "xp": 1300,
       "objective": "Seek out the SI:7 agent stationed on Theramore Isle.",
       "start": {
-        "npc": "Mathias Shaw",
-        "location": [1453, 75.8, 59.8],
-        "description": "Master Mathias Shaw, SI:7, Old Town, Stormwind City (75.8, 59.8)"
+        "npc": "Master Mathias Shaw",
+        "location": [1453, 78.3, 70.7],
+        "description": "Master Mathias Shaw, SI:7, Old Town, Stormwind City (78.3, 70.7)"
       },
       "turnIn": {
         "npc": "Sully McCleary",

@@ -141,12 +141,12 @@ Data:AddQuests(36, {
         { 2042 }, -- Staff of Westfall
         { 6087 }, -- Chausses of Westfall
     } },
-    { id = 168, name = "Collecting Memories", side = "Alliance", requiredLevel = 14, xp = 1350, objective = "Collect 4 Miners' Union Cards from undead miners in the tunnels outside the instance.", description = "The undead side tunnel is before the instance portal.", start = { description = "Wilder Thistlenettle, the Dwarven District, Stormwind", location = { 1453, 66.8, 43.8 }, npc = "Wilder Thistlenettle" }, turnIn = { description = "Wilder Thistlenettle, Stormwind", location = { 1453, 66.8, 43.8 }, npc = "Wilder Thistlenettle" }, items = {
+    { id = 168, name = "Collecting Memories", side = "Alliance", requiredLevel = 14, xp = 1350, objective = "Collect 4 Miners' Union Cards from undead miners in the tunnels outside the instance.", description = "The undead side tunnel is before the instance portal.", start = { description = "Wilder Thistlenettle, the Dwarven District, Stormwind", location = { 1453, 70.3, 40.8 }, npc = "Wilder Thistlenettle" }, turnIn = { description = "Wilder Thistlenettle, Stormwind", location = { 1453, 66.8, 43.8 }, npc = "Wilder Thistlenettle" }, items = {
         { 2036 }, -- Dusty Mining Gloves
         { 2037 }, -- Tunneler's Boots
         { 270007 }, -- Worn Miner's Waistcord
     } },
-    { id = 167, name = "Oh Brother. . .", side = "Alliance", requiredLevel = 15, xp = 1550, objective = "Recover Thistlenettle's Badge from Foreman Thistlenettle in the undead side tunnel.", description = "The foreman is in the tunnels before the instance portal.", start = { description = "Wilder Thistlenettle, the Dwarven District, Stormwind", location = { 1453, 66.8, 43.8 }, npc = "Wilder Thistlenettle" }, turnIn = { description = "Wilder Thistlenettle, Stormwind", location = { 1453, 66.8, 43.8 }, npc = "Wilder Thistlenettle" }, items = {
+    { id = 167, name = "Oh Brother. . .", side = "Alliance", requiredLevel = 15, xp = 1550, objective = "Recover Thistlenettle's Badge from Foreman Thistlenettle in the undead side tunnel.", description = "The foreman is in the tunnels before the instance portal.", start = { description = "Wilder Thistlenettle, the Dwarven District, Stormwind", location = { 1453, 70.3, 40.8 }, npc = "Wilder Thistlenettle" }, turnIn = { description = "Wilder Thistlenettle, Stormwind", location = { 1453, 66.8, 43.8 }, npc = "Wilder Thistlenettle" }, items = {
         { 1893 }, -- Miner's Revenge
         { 270012 }, -- Miner's Workgloves
         { 270013 }, -- Miner's Workboots

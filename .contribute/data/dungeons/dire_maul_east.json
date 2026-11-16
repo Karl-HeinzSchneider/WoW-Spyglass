@@ -161,6 +161,18 @@
     {
       "item": 18296,
       "name": "Marksman Bands"
+    },
+    {
+      "item": 18289,
+      "name": "Barbed Thorn Necklace"
+    },
+    {
+      "item": 18298,
+      "name": "Unbridled Leggings"
+    },
+    {
+      "item": 18295,
+      "name": "Phasing Boots"
     }
   ],
   "quests": [7441, 7488, 7489, 5526, 7463]

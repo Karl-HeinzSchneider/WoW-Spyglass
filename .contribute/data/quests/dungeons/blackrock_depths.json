@@ -624,7 +624,7 @@
       "requires": [4184],
       "start": {
         "npc": "Highlord Bolvar Fordragon",
-        "location": [1453, 77.4, 18.8],
+        "location": [1453, 80.2, 38.3],
         "description": "Stormwind"
       },
       "turnIn": {
@@ -643,7 +643,7 @@
       "requires": [4185],
       "start": {
         "npc": "Highlord Bolvar Fordragon",
-        "location": [1453, 77.4, 18.8],
+        "location": [1453, 80.2, 38.3],
         "description": "Stormwind"
       },
       "turnIn": {

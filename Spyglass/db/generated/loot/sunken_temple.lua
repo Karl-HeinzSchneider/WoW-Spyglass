@@ -173,7 +173,7 @@ Data:AddTrashLoot(109, {
 })
 
 Data:AddQuests(109, {
-    { id = 1475, name = "Into The Temple of Atal'Hakkar", side = "Alliance", requiredLevel = 38, xp = 13850, objective = "Gather 10 Atal'ai Tablets for Brohann Caskbelly in Stormwind.", description = "Collect 10 Atal'ai Tablets around the temple; tablets in the outer temple also count.", requires = { { id = 1469, name = "Rhapsody's Tale" } }, start = { description = "Stormwind", location = { 1453, 66.8, 43.4 }, npc = "Brohann Caskbelly" }, turnIn = { description = "Stormwind", location = { 1453, 66.8, 43.4 }, npc = "Brohann Caskbelly" }, items = {
+    { id = 1475, name = "Into The Temple of Atal'Hakkar", side = "Alliance", requiredLevel = 38, xp = 13850, objective = "Gather 10 Atal'ai Tablets for Brohann Caskbelly in Stormwind.", description = "Collect 10 Atal'ai Tablets around the temple; tablets in the outer temple also count.", requires = { { id = 1469, name = "Rhapsody's Tale" } }, start = { description = "Stormwind", location = { 1453, 69.5, 40.4 }, npc = "Brohann Caskbelly" }, turnIn = { description = "Stormwind", location = { 1453, 66.8, 43.4 }, npc = "Brohann Caskbelly" }, items = {
         { 1490 }, -- Guardian Talisman
     } },
     { id = 1445, name = "The Temple of Atal'Hakkar", side = "Horde", requiredLevel = 38, xp = 10600, objective = "Collect 20 Fetishes of Hakkar and bring them to Fel'Zerul in Stonard.", description = "Collect 20 Fetishes of Hakkar from Atal'ai trolls; outer-temple trolls also drop them.", requires = { { id = 1444, name = "Return to Fel'Zerul" } }, start = { description = "Fel'Zerul, Stonard, Swamp of Sorrows", location = { 1435, 48, 55 }, npc = "Fel'zerul" }, turnIn = { description = "Stonard, Swamp of Sorrows", npc = "Fel'Zerul" }, items = {
@@ -186,11 +186,13 @@ Data:AddQuests(109, {
     { id = 1446, name = "Jammal'an the Prophet", side = "Both", requiredLevel = 38, xp = 12750, objective = "The Atal'ai Exile in The Hinterlands wants the Head of Jammal'an.", description = "Kill the six troll guardians on the balconies to drop Jammal'an's barrier, then bring back his head.", start = { description = "The Hinterlands", location = { 1425, 33.6, 75.2 }, npc = "Atal'ai Exile" }, turnIn = { description = "The Hinterlands", location = { 1425, 33.6, 75.2 }, npc = "Atal'ai Exile" }, items = {
         { 11123 }, -- Rainstrider Leggings
         { 11124 }, -- Helm of Exile
+        { 270115 }, -- Leggings of Freedom and Sorrow
     } },
     { id = 3528, name = "The God Hakkar", side = "Both", requiredLevel = 40, xp = 15400, objective = "Bring the Filled Egg of Hakkar to Yeh'kinya in Tanaris.", description = "Fill the Egg of Hakkar from the Hakkari Bloodkeepers to summon the Avatar of Hakkar.", requires = { { id = 4787, name = "The Ancient Egg" } }, start = { description = "Steamwheedle Port, Tanaris", location = { 1446, 67, 22.4 }, npc = "Yeh'kinya" }, turnIn = { description = "Steamwheedle Port, Tanaris", location = { 1446, 67, 22.4 }, npc = "Yeh'kinya" }, items = {
         { 10749 }, -- Avenguard Helm
         { 10750 }, -- Lifeforce Dirk
         { 10751 }, -- Gemburst Circlet
+        { 270117 }, -- Shapeshifter's Helm
     } },
     { id = 3373, name = "The Essence of Eranikus", side = "Both", requiredLevel = 44, xp = 5450, objective = "Place the Essence of Eranikus in the Essence Font located in this lair in the Sunken Temple.", start = { description = "Essence of Eranikus (drops from the Shade of Eranikus)", item = 10454 }, turnIn = { description = "Sunken Temple", npc = "Essence Font" }, items = {
         { 10455 }, -- Chained Essence of Eranikus

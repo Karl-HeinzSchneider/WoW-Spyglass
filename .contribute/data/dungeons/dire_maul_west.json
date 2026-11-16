@@ -32,6 +32,10 @@
         {
           "item": 18352,
           "name": "Petrified Bark Shield"
+        },
+        {
+          "item": 273120,
+          "name": "Blueprint: Seed Hybridizer"
         }
       ]
     },
@@ -240,6 +244,19 @@
       ]
     }
   ],
-  "trash": [],
+  "trash": [
+    {
+      "item": 18340,
+      "name": "Eidolon Talisman"
+    },
+    {
+      "item": 18338,
+      "name": "Wand of Arcane Potency"
+    },
+    {
+      "item": 18344,
+      "name": "Stonebark Gauntlets"
+    }
+  ],
   "quests": [7461, 7481, 7482, 5247, 7643, 7703, 7631]
 }

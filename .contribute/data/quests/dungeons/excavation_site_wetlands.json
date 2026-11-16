@@ -390,6 +390,7 @@
     {
       "id": 95664,
       "name": "Elder Knowledge",
+      "side": "Horde",
       "requiredLevel": 24,
       "xp": 1400,
       "objective": "Take the Titan Relic to the Elder Rise in Thunder Bluff and look for someone who can tell you more about it.",

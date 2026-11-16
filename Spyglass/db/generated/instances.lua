@@ -266,7 +266,7 @@ Data:AddInstance(18902, {
     icon = "Interface\\Icons\\Achievement_Dungeon_ClassicDungeonMaster",
     background = "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenScarletMonastery2",
     backgroundCoords = { 0, 1, 0.305, 0.695 },
-    entrance = { 1420, 83, 34 },
+    entrance = { 1420, 85.35, 32.39 },
     bosses = { 446, 447 },
 })
 Data:AddBoss(446, { instanceID = 18902, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Houndmaster Loksey", level = 34 }) -- Houndmaster Loksey
@@ -348,7 +348,7 @@ Data:AddInstance(22901, {
     background = "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenBlackrockSpire",
     backgroundCoords = { 0, 1, 0.305, 0.695 },
     entrance = { 1428, 29, 38 },
-    bosses = { 267, 268, 269, 270, 271, 272, 274, 273, 275, -9219, -9218, -9217, -10376, -9596, -9718 },
+    bosses = { 267, 268, 269, 270, 271, 272, 274, 273, 275, -9219, -9218, -9217, -10376, -9596, -9718, -16080, -10263 },
 })
 Data:AddBoss(267, { instanceID = 22901, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Highlord Omokk", level = 59 }) -- Highlord Omokk
 Data:AddBoss(268, { instanceID = 22901, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Shadow Hunter Voshgajin", level = 58 }) -- Shadow Hunter Vosh'gajin
@@ -365,6 +365,8 @@ Data:AddBoss(-9217, { instanceID = 22901, displayID = 11578, level = 58 }) -- Sp
 Data:AddBoss(-10376, { instanceID = 22901, displayID = 9755, level = 60 }) -- Crystal Fang
 Data:AddBoss(-9596, { instanceID = 22901, displayID = 9668, level = 59 }) -- Bannok Grimaxe
 Data:AddBoss(-9718, { instanceID = 22901, displayID = 11809, level = 59 }) -- Ghok Bashguud
+Data:AddBoss(-16080, { instanceID = 22901 }) -- Mor Grayhoof
+Data:AddBoss(-10263, { instanceID = 22901 }) -- Burning Felguard
 
 -- Blackrock Spire: Upper
 Data:AddInstance(22902, {
@@ -508,7 +510,7 @@ Data:AddInstance(329, {
     background = "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenStrathome",
     backgroundCoords = { 0, 1, 0.305, 0.695 },
     entrance = { 1423, 31, 16 },
-    bosses = { 473, 474, 476, 475, 477, 478, 472, 479, 480, 481, 482, 483, 484, 2795, 2796, 2797, 2798, 2799, 2800 },
+    bosses = { 473, 474, 476, 475, 477, 478, 472, 479, 480, 481, 482, 483, 484, 2795, 2796, 2797, 2798, 2799, 2800, -16101 },
 })
 Data:AddBoss(473, { instanceID = 329, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hearthsinger Forresten", level = 57 }) -- Hearthsinger Forresten
 Data:AddBoss(474, { instanceID = 329, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Timmy the Cruel", level = 58 }) -- Timmy the Cruel
@@ -529,6 +531,7 @@ Data:AddBoss(2797, { instanceID = 329, order = 15000 }) -- Ezra Grimm
 Data:AddBoss(2798, { instanceID = 329, order = 16000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-PostmasterMalown", level = 60 }) -- Postmaster Malown
 Data:AddBoss(2799, { instanceID = 329, order = 17000, displayID = 2606, level = 58 }) -- Skul
 Data:AddBoss(2800, { instanceID = 329, order = 18000, displayID = 7856, level = 60 }) -- Stonespine
+Data:AddBoss(-16101, { instanceID = 329 }) -- Jarien and Sothos
 
 -- Maraudon
 Data:AddInstance(349, {

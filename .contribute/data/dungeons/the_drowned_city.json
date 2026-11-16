@@ -217,6 +217,34 @@
     {
       "item": 287005,
       "name": "Sword of Dismemberment"
+    },
+    {
+      "item": 286998,
+      "name": "Deep Flora Bindings"
+    },
+    {
+      "item": 286999,
+      "name": "Deathcrawler's Chest"
+    },
+    {
+      "item": 287000,
+      "name": "Skin-Flayed Footguards"
+    },
+    {
+      "item": 287001,
+      "name": "Waterlogged Shoulderpads"
+    },
+    {
+      "item": 287003,
+      "name": "Corroded Handguards"
+    },
+    {
+      "item": 287004,
+      "name": "Touch of the Depths"
+    },
+    {
+      "item": 287006,
+      "name": "Resurged Axe"
     }
   ],
   "quests": [96078, 95776, 96774, 95799, 95798, 97130, 95789, 95791, 95775, 95787, 95788]

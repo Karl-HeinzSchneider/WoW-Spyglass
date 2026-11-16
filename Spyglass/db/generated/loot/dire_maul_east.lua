@@ -45,6 +45,9 @@ Data:AddBossLoot(346, { -- Alzzin the Wildshaper
 
 Data:AddTrashLoot(42901, {
     { 18296 }, -- Marksman Bands
+    { 18289 }, -- Barbed Thorn Necklace
+    { 18298 }, -- Unbridled Leggings
+    { 18295 }, -- Phasing Boots
 })
 
 Data:AddQuests(42901, {

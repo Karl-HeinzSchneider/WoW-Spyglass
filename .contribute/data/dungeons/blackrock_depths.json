@@ -397,6 +397,10 @@
         {
           "item": 18653,
           "name": "Schematic: Goblin Jumper Cables XL"
+        },
+        {
+          "item": 276877,
+          "name": "Brewmancer Nightcap"
         }
       ]
     },
@@ -431,6 +435,10 @@
         {
           "item": 11808,
           "name": "Circle of Flame"
+        },
+        {
+          "item": 273122,
+          "name": "Blueprint: Molten Foundry"
         }
       ]
     },

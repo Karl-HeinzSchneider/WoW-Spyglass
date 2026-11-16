@@ -9,7 +9,7 @@
   "zone": 1420,
   "background": "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenScarletMonastery2",
   "backgroundCoords": [0, 1, 0.305, 0.695],
-  "entrance": [1420, 83, 34],
+  "entrance": [1420, 85.35, 32.39],
   "encounters": [
     {
       "id": 446,

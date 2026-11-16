@@ -89,7 +89,7 @@
       "description": "The undead side tunnel is before the instance portal.",
       "start": {
         "npc": "Wilder Thistlenettle",
-        "location": [1453, 66.8, 43.8],
+        "location": [1453, 70.3, 40.8],
         "description": "Wilder Thistlenettle, the Dwarven District, Stormwind"
       },
       "turnIn": {
@@ -121,7 +121,7 @@
       "description": "The foreman is in the tunnels before the instance portal.",
       "start": {
         "npc": "Wilder Thistlenettle",
-        "location": [1453, 66.8, 43.8],
+        "location": [1453, 70.3, 40.8],
         "description": "Wilder Thistlenettle, the Dwarven District, Stormwind"
       },
       "turnIn": {

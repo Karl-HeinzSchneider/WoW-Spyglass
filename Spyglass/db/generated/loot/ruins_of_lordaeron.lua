@@ -27,7 +27,6 @@ Data:AddBossLoot(3354, { -- Rath'mael
     { 271214 }, -- Rotmender's Treads
     { 271215 }, -- Coldspire Staff
     { 273085 }, -- Blueprint: Fermenter
-    { 273103 }, -- Blueprint: Arcane Salvager
 })
 
 Data:AddBossLoot(3408, { -- Lordaeron Captain

@@ -145,6 +145,26 @@
     {
       "item": 287020,
       "name": "Defias Enforcer's Chest"
+    },
+    {
+      "item": 287017,
+      "name": "Chaplain's Mitre"
+    },
+    {
+      "item": 287022,
+      "name": "Spaulders of Containment"
+    },
+    {
+      "item": 287023,
+      "name": "Iron-Wrought Cuffs"
+    },
+    {
+      "item": 287024,
+      "name": "Mark of Captivity"
+    },
+    {
+      "item": 287025,
+      "name": "Enchantresses' Spire"
     }
   ],
   "quests": [96772, 95483, 96334, 96332, 95263, 96381, 96337]

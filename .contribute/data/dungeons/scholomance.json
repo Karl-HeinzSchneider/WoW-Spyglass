@@ -159,6 +159,10 @@
         {
           "item": 18691,
           "name": "Dark Advisor's Pendant"
+        },
+        {
+          "item": 273121,
+          "name": "Blueprint: Sewing Machine"
         }
       ]
     },
@@ -186,6 +190,14 @@
         {
           "item": 22046,
           "name": "Right Piece of Lord Valthalak's Amulet"
+        },
+        {
+          "item": 22331,
+          "name": "Band of the Steadfast Hero"
+        },
+        {
+          "item": 22333,
+          "name": "Hammer of Divine Might"
         }
       ]
     },
@@ -501,6 +513,10 @@
         {
           "item": 18681,
           "name": "Burial Shawl"
+        },
+        {
+          "item": 273118,
+          "name": "Blueprint: Plague Doctor's Laboratory"
         }
       ]
     },

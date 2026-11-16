@@ -92,7 +92,7 @@
       "objective": "Collect 10 Red Wool Bandanas from Defias prisoners in The Stockade.",
       "start": {
         "npc": "Nikova Raskol",
-        "location": [1453, 74.4, 60],
+        "location": [1453, 76.4, 63.7],
         "description": "Nikova Raskol, Old Town, Stormwind"
       },
       "turnIn": {

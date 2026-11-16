@@ -97,6 +97,10 @@
         {
           "item": 22247,
           "name": "Faith Healer's Boots"
+        },
+        {
+          "item": 12590,
+          "name": "Felstriker"
         }
       ]
     },
@@ -146,6 +150,10 @@
         {
           "item": 22311,
           "name": "Ironweave Boots"
+        },
+        {
+          "item": 273109,
+          "name": "Blueprint: Trapper's Workbench"
         }
       ]
     },
@@ -401,6 +409,10 @@
         {
           "item": 13522,
           "name": "Recipe: Flask of Chromatic Resistance"
+        },
+        {
+          "item": 12871,
+          "name": "Chromatic Carapace"
         }
       ]
     }
@@ -437,6 +449,34 @@
     {
       "item": 16247,
       "name": "Formula: Enchant 2H Weapon - Superior Impact"
+    },
+    {
+      "item": 16717,
+      "name": "Wildheart Gloves"
+    },
+    {
+      "item": 16685,
+      "name": "Magister's Belt"
+    },
+    {
+      "item": 16736,
+      "name": "Belt of Valor"
+    },
+    {
+      "item": 16681,
+      "name": "Beaststalker's Bindings"
+    },
+    {
+      "item": 16710,
+      "name": "Shadowcraft Bracers"
+    },
+    {
+      "item": 16716,
+      "name": "Wildheart Belt"
+    },
+    {
+      "item": 13260,
+      "name": "Wind Dancer Boots"
     }
   ],
   "quests": [4743, 4735, 5102, 6502, 6602, 5127, 4764, 4768, 5047, 5160]

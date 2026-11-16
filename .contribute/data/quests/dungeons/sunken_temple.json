@@ -108,6 +108,10 @@
         {
           "item": 11124,
           "name": "Helm of Exile"
+        },
+        {
+          "item": 270115,
+          "name": "Leggings of Freedom and Sorrow"
         }
       ]
     },
@@ -120,7 +124,7 @@
       "objective": "Brohann Caskbelly in Stormwind wants you to search for the Temple of Atal'Hakkar.",
       "start": {
         "npc": "Brohann Caskbelly",
-        "location": [1453, 66.8, 43.4],
+        "location": [1453, 69.5, 40.4],
         "description": "Stormwind"
       },
       "turnIn": {
@@ -140,7 +144,7 @@
       "requires": [1448],
       "start": {
         "npc": "Brohann Caskbelly",
-        "location": [1453, 66.8, 43.4],
+        "location": [1453, 69.5, 40.4],
         "description": "Stormwind"
       },
       "turnIn": {
@@ -237,7 +241,7 @@
       "requires": [1469],
       "start": {
         "npc": "Brohann Caskbelly",
-        "location": [1453, 66.8, 43.4],
+        "location": [1453, 69.5, 40.4],
         "description": "Stormwind"
       },
       "turnIn": {
@@ -917,7 +921,7 @@
       "description": "Introductory step leading to Forging the Mightstone.\n\nOPTIONAL, not required",
       "start": {
         "npc": "Lord Grayson Shadowbreaker",
-        "location": [1453, 49.4, 47.6],
+        "location": [1453, 48.4, 50.2],
         "description": "Cathedral of Light, Stormwind"
       },
       "turnIn": {

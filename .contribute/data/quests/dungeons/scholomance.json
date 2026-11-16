@@ -345,7 +345,7 @@
       "requires": [7644],
       "start": {
         "npc": "Lord Grayson Shadowbreaker",
-        "location": [1453, 49.4, 47.6],
+        "location": [1453, 48.4, 50.2],
         "description": "Stormwind"
       },
       "turnIn": {
@@ -367,7 +367,7 @@
       "requires": [7646],
       "start": {
         "npc": "Lord Grayson Shadowbreaker",
-        "location": [1453, 49.4, 47.6],
+        "location": [1453, 48.4, 50.2],
         "description": "Cathedral of Light, Stormwind"
       },
       "turnIn": {

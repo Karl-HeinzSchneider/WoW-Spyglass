@@ -43,6 +43,7 @@ Data:AddBossLoot(2809, { -- Marduk Blackpool
 Data:AddBossLoot(2813, { -- Vectus
     { 14577 }, -- Skullsmoke Pants
     { 18691 }, -- Dark Advisor's Pendant
+    { 273121 }, -- Blueprint: Sewing Machine
 })
 
 Data:AddBossLoot(3055, { -- Kormok
@@ -51,6 +52,8 @@ Data:AddBossLoot(3055, { -- Kormok
     { 22326 }, -- #22326
     { 21984 }, -- Left Piece of Lord Valthalak's Amulet
     { 22046 }, -- Right Piece of Lord Valthalak's Amulet
+    { 22331 }, -- #22331
+    { 22333 }, -- Hammer of Divine Might
 })
 
 Data:AddBossLoot(2810, { -- Ras Frostwhisperer
@@ -132,6 +135,7 @@ Data:AddBossLoot(2802, { -- Doctor Theolen Krastinov
     { 14626 }, -- Necropile Robe
     { 18680 }, -- Ancient Bone Bow
     { 18681 }, -- Burial Shawl
+    { 273118 }, -- Blueprint: Plague Doctor's Laboratory
 })
 
 Data:AddBossLoot(2808, { -- Lorekeeper Polkelt
@@ -329,7 +333,7 @@ Data:AddQuests(289, {
     } },
     { id = 5529, name = "Plagued Hatchlings", side = "Both", requiredLevel = 55, xp = 6200, objective = "Kill 20 Plagued Hatchlings, then return to Betina Bigglezink at the Light's Hope Chapel.", description = "Kill 20 Plagued Hatchlings. After turning this in, hatchlings can drop Healthy Dragon Scales, which start a repeatable turn-in to Betina.", start = { description = "Light's Hope Chapel, Eastern Plaguelands", location = { 1423, 73.7, 50.5 }, npc = "Betina Bigglezink" }, turnIn = { description = "Light's Hope Chapel, Eastern Plaguelands", location = { 1423, 73.7, 50.5 }, npc = "Betina Bigglezink" }, items = {} },
     { id = 7629, name = "Imp Delivery", side = "Both", class = "WARLOCK", requiredLevel = 60, xp = 6600, objective = "Bring the Imp in a Jar to the alchemy lab in the Scholomance. After the parchment is created, return the jar to Gorzeeki Wildeyes.", description = "Warlock dreadsteed quest. Release the Imp in a Jar at the alchemy lab in Ras Frostwhisper's room and wait for the parchment.", requires = { { id = 7625, name = "Xorothian Stardust" }, { id = 7628, name = "Doomsday Candle" } }, start = { description = "Altar of Storms, Burning Steppes", location = { 1428, 12.4, 31.4 }, npc = "Gorzeeki Wildeyes" }, turnIn = { description = "Altar of Storms, Burning Steppes", location = { 1428, 12.4, 31.4 }, npc = "Gorzeeki Wildeyes" }, items = {} },
-    { id = 7647, name = "Judgment and Redemption", side = "Alliance", class = "PALADIN", requiredLevel = 60, xp = 9950, objective = "Use the Divination Scryer in the heart of the Great Ossuary's basement in the Scholomance. Doing so will bring forth the spirits you must judge. Defeating these spirits will summon forth Death Knight Darkreaver. Defeat him and reclaim the lost soul of the fallen charger. Give the Charger's Redeemed Soul and the Blessed Enchanted Barding to Darkreaver's Fallen Charger.", description = "Paladin charger quest. Clear Rattlegore's basement in the Great Ossuary, use the Divination Scryer and defeat the spirits and Death Knight Darkreaver.", requires = { { id = 7646, name = "The Divination Scryer" } }, start = { description = "Cathedral of Light, Stormwind", location = { 1453, 49.4, 47.6 }, npc = "Lord Grayson Shadowbreaker" }, turnIn = { description = "Scholomance", npc = "Darkreaver's Fallen Charger" }, items = {} },
+    { id = 7647, name = "Judgment and Redemption", side = "Alliance", class = "PALADIN", requiredLevel = 60, xp = 9950, objective = "Use the Divination Scryer in the heart of the Great Ossuary's basement in the Scholomance. Doing so will bring forth the spirits you must judge. Defeating these spirits will summon forth Death Knight Darkreaver. Defeat him and reclaim the lost soul of the fallen charger. Give the Charger's Redeemed Soul and the Blessed Enchanted Barding to Darkreaver's Fallen Charger.", description = "Paladin charger quest. Clear Rattlegore's basement in the Great Ossuary, use the Divination Scryer and defeat the spirits and Death Knight Darkreaver.", requires = { { id = 7646, name = "The Divination Scryer" } }, start = { description = "Cathedral of Light, Stormwind", location = { 1453, 48.4, 50.2 }, npc = "Lord Grayson Shadowbreaker" }, turnIn = { description = "Scholomance", npc = "Darkreaver's Fallen Charger" }, items = {} },
     { id = 7668, name = "The Darkreaver Menace", side = "Horde", class = "SHAMAN", requiredLevel = 58, xp = 9950, objective = "Use the Divination Scryer in the heart of the Great Ossuary's basement in the Scholomance. Doing so will bring forth spirits you must fight. Defeating these spirits will summon forth Death Knight Darkreaver; defeat him. Bring Darkreaver's Head to Sagorne Creststrider in the Valley of Wisdom, Orgrimmar.", description = "Shaman quest. Clear Rattlegore's basement, use the scryer and defeat Death Knight Darkreaver; return his head.", requires = { { id = 7667, name = "Material Assistance" } }, start = { description = "Valley of Wisdom, Orgrimmar", location = { 1454, 38.4, 36 }, npc = "Sagorne Creststrider" }, turnIn = { description = "Valley of Wisdom, Orgrimmar", location = { 1454, 38.4, 36 }, npc = "Sagorne Creststrider" }, items = {
         { 18807 }, -- Helm of Latent Power
     } },

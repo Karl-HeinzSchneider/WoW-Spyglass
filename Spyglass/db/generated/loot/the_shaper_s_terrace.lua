@@ -32,6 +32,7 @@ Data:AddBossLoot(3502, { -- Nanaya
     { 280025 }, -- Leggings of Curation
     { 273128 }, -- Maker's Spark
     { 280024 }, -- Legplates of Reinforced Crystal
+    { 273116 }, -- Blueprint: Arcane Forge
 })
 
 Data:AddBossLoot(3503, { -- Cinder

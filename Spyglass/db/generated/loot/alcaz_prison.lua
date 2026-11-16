@@ -41,6 +41,11 @@ Data:AddTrashLoot(2994, {
     { 287019 }, -- Defias Enforcer's Mask
     { 287018 }, -- Compound Gloves
     { 287020 }, -- Defias Enforcer's Chest
+    { 287017 }, -- Chaplain's Mitre
+    { 287022 }, -- Spaulders of Containment
+    { 287023 }, -- Iron-Wrought Cuffs
+    { 287024 }, -- Mark of Captivity
+    { 287025 }, -- Enchantresses' Spire
 })
 
 Data:AddQuests(2994, {
