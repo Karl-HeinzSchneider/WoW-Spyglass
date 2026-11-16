@@ -7,7 +7,21 @@
       "field": "side"
     },
     {
-      "text": "Alliance vendor rewards have yet to be recorded.",
+      "header": "Alliance vendor",
+      "side": "Alliance"
+    },
+    {
+      "text": "Illiyana Moonblaze, Silverwing Supply Officer, is near the Alliance entrance to Warsong Gulch in Ashenvale.",
+      "side": "Alliance"
+    },
+    {
+      "row": "Coordinates",
+      "value": "61.4, 83.8",
+      "side": "Alliance"
+    },
+    {
+      "button": "Show Illiyana on map",
+      "map": [1440, 61.4, 83.8],
       "side": "Alliance"
     },
     {
@@ -33,86 +47,72 @@
     {
       "item": 17349,
       "name": "Superior Healing Draught",
-      "standing": "Friendly",
-      "side": "Horde"
+      "standing": "Friendly"
     },
     {
       "item": 17352,
       "name": "Superior Mana Draught",
-      "standing": "Friendly",
-      "side": "Horde"
+      "standing": "Friendly"
     },
     {
       "item": 19060,
       "name": "Warsong Gulch Enriched Ration",
-      "standing": "Friendly",
-      "side": "Horde"
+      "standing": "Friendly"
     },
     {
       "item": 19061,
       "name": "Warsong Gulch Iron Ration",
-      "standing": "Friendly",
-      "side": "Horde"
+      "standing": "Friendly"
     },
     {
       "item": 19062,
       "name": "Warsong Gulch Field Ration",
-      "standing": "Friendly",
-      "side": "Horde"
+      "standing": "Friendly"
     },
     {
       "item": 19066,
       "name": "Warsong Gulch Runecloth Bandage",
-      "standing": "Friendly",
-      "side": "Horde"
+      "standing": "Friendly"
     },
     {
       "item": 19067,
       "name": "Warsong Gulch Mageweave Bandage",
-      "standing": "Friendly",
-      "side": "Horde"
+      "standing": "Friendly"
     },
     {
       "item": 19068,
       "name": "Warsong Gulch Silk Bandage",
-      "standing": "Friendly",
-      "side": "Horde"
+      "standing": "Friendly"
     },
     {
       "item": 21565,
       "name": "Rune of Perfection",
-      "standing": "Friendly",
-      "side": "Horde"
+      "standing": "Friendly"
     },
     {
       "item": 21566,
       "name": "Rune of Perfection",
-      "standing": "Friendly",
-      "side": "Horde"
+      "standing": "Friendly"
     },
     {
       "item": 21567,
       "name": "Rune of Duty",
-      "standing": "Friendly",
-      "side": "Horde"
+      "standing": "Friendly"
     },
     {
       "item": 21568,
       "name": "Rune of Duty",
-      "standing": "Friendly",
-      "side": "Horde"
+      "standing": "Friendly"
     },
     {
       "item": 17348,
       "name": "Major Healing Draught",
-      "standing": "Honored",
-      "side": "Horde"
+      "standing": "Honored"
     },
     {
       "item": 17351,
       "name": "Major Mana Draught",
-      "standing": "Honored",
-      "side": "Horde"
+      "standing": "Honored"
     },
     {
       "item": 19510,
@@ -235,6 +235,126 @@
       "side": "Horde"
     },
     {
+      "item": 19514,
+      "name": "Protector's Band",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19515,
+      "name": "Protector's Band",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19516,
+      "name": "Protector's Band",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19517,
+      "name": "Protector's Band",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19522,
+      "name": "Lorekeeper's Ring",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19523,
+      "name": "Lorekeeper's Ring",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19524,
+      "name": "Lorekeeper's Ring",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19525,
+      "name": "Lorekeeper's Ring",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19530,
+      "name": "Caretaker's Cape",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19531,
+      "name": "Caretaker's Cape",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19532,
+      "name": "Caretaker's Cape",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19533,
+      "name": "Caretaker's Cape",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19538,
+      "name": "Sentinel's Medallion",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19539,
+      "name": "Sentinel's Medallion",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19540,
+      "name": "Sentinel's Medallion",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19541,
+      "name": "Sentinel's Medallion",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20428,
+      "name": "Caretaker's Cape",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20431,
+      "name": "Lorekeeper's Ring",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20439,
+      "name": "Protector's Band",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20444,
+      "name": "Sentinel's Medallion",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
       "item": 19542,
       "name": "Scout's Blade",
       "standing": "Revered",
@@ -355,76 +475,184 @@
       "side": "Horde"
     },
     {
+      "item": 19546,
+      "name": "Sentinel's Blade",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 19547,
+      "name": "Sentinel's Blade",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 19548,
+      "name": "Sentinel's Blade",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 19549,
+      "name": "Sentinel's Blade",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 19554,
+      "name": "Protector's Sword",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 19555,
+      "name": "Protector's Sword",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 19556,
+      "name": "Protector's Sword",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 19557,
+      "name": "Protector's Sword",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 19562,
+      "name": "Outrunner's Bow",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 19563,
+      "name": "Outrunner's Bow",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 19564,
+      "name": "Outrunner's Bow",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 19565,
+      "name": "Outrunner's Bow",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 19570,
+      "name": "Lorekeeper's Staff",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 19571,
+      "name": "Lorekeeper's Staff",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 19572,
+      "name": "Lorekeeper's Staff",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 19573,
+      "name": "Lorekeeper's Staff",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20434,
+      "name": "Lorekeeper's Staff",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20438,
+      "name": "Outrunner's Bow",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20440,
+      "name": "Protector's Sword",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20443,
+      "name": "Sentinel's Blade",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
       "item": 19578,
       "name": "Berserker Bracers",
-      "standing": "Exalted",
-      "side": "Horde"
+      "standing": "Exalted"
     },
     {
       "item": 19580,
       "name": "Berserker Bracers",
-      "standing": "Exalted",
-      "side": "Horde"
+      "standing": "Exalted"
     },
     {
       "item": 19581,
       "name": "Berserker Bracers",
-      "standing": "Exalted",
-      "side": "Horde"
+      "standing": "Exalted"
     },
     {
       "item": 19582,
       "name": "Windtalker's Wristguards",
-      "standing": "Exalted",
-      "side": "Horde"
+      "standing": "Exalted"
     },
     {
       "item": 19583,
       "name": "Windtalker's Wristguards",
-      "standing": "Exalted",
-      "side": "Horde"
+      "standing": "Exalted"
     },
     {
       "item": 19584,
       "name": "Windtalker's Wristguards",
-      "standing": "Exalted",
-      "side": "Horde"
+      "standing": "Exalted"
     },
     {
       "item": 19587,
       "name": "Forest Stalker's Bracers",
-      "standing": "Exalted",
-      "side": "Horde"
+      "standing": "Exalted"
     },
     {
       "item": 19589,
       "name": "Forest Stalker's Bracers",
-      "standing": "Exalted",
-      "side": "Horde"
+      "standing": "Exalted"
     },
     {
       "item": 19590,
       "name": "Forest Stalker's Bracers",
-      "standing": "Exalted",
-      "side": "Horde"
+      "standing": "Exalted"
     },
     {
       "item": 19595,
       "name": "Dryad's Wrist Bindings",
-      "standing": "Exalted",
-      "side": "Horde"
+      "standing": "Exalted"
     },
     {
       "item": 19596,
       "name": "Dryad's Wrist Bindings",
-      "standing": "Exalted",
-      "side": "Horde"
+      "standing": "Exalted"
     },
     {
       "item": 19597,
       "name": "Dryad's Wrist Bindings",
-      "standing": "Exalted",
-      "side": "Horde"
+      "standing": "Exalted"
     },
     {
       "item": 22651,
@@ -463,6 +691,42 @@
       "side": "Horde"
     },
     {
+      "item": 22672,
+      "name": "Sentinel's Plate Legguards",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 22748,
+      "name": "Sentinel's Chain Leggings",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 22749,
+      "name": "Sentinel's Leather Pants",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 22750,
+      "name": "Sentinel's Lizardhide Pants",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 22752,
+      "name": "Sentinel's Silk Leggings",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 22753,
+      "name": "Sentinel's Lamellar Legguards",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
       "item": 19505,
       "name": "Warsong Battle Tabard",
       "side": "Horde"
@@ -474,18 +738,15 @@
     },
     {
       "item": 211500,
-      "name": "Resilient Cloth Headband",
-      "side": "Horde"
+      "name": "Resilient Cloth Headband"
     },
     {
       "item": 211856,
-      "name": "Resilient Mail Coif",
-      "side": "Horde"
+      "name": "Resilient Mail Coif"
     },
     {
       "item": 211857,
-      "name": "Resilient Leather Mask",
-      "side": "Horde"
+      "name": "Resilient Leather Mask"
     },
     {
       "item": 212584,
@@ -506,6 +767,66 @@
       "item": 212587,
       "name": "Scout's Blade",
       "side": "Horde"
+    },
+    {
+      "item": 19506,
+      "name": "Silverwing Battle Tabard",
+      "side": "Alliance"
+    },
+    {
+      "item": 211498,
+      "name": "Trainee's Sentinel Nightsaber",
+      "side": "Alliance"
+    },
+    {
+      "item": 212580,
+      "name": "Lorekeeper's Staff",
+      "side": "Alliance"
+    },
+    {
+      "item": 212581,
+      "name": "Outrunner's Bow",
+      "side": "Alliance"
+    },
+    {
+      "item": 212582,
+      "name": "Protector's Sword",
+      "side": "Alliance"
+    },
+    {
+      "item": 212583,
+      "name": "Sentinel's Blade",
+      "side": "Alliance"
+    },
+    {
+      "item": 237814,
+      "name": "Sentinel's Lamellar Legguards",
+      "side": "Alliance"
+    },
+    {
+      "item": 237815,
+      "name": "Sentinel's Silk Leggings",
+      "side": "Alliance"
+    },
+    {
+      "item": 237817,
+      "name": "Sentinel's Lizardhide Pants",
+      "side": "Alliance"
+    },
+    {
+      "item": 237818,
+      "name": "Sentinel's Leather Pants",
+      "side": "Alliance"
+    },
+    {
+      "item": 237819,
+      "name": "Sentinel's Chain Leggings",
+      "side": "Alliance"
+    },
+    {
+      "item": 237825,
+      "name": "Sentinel's Plate Legguards",
+      "side": "Alliance"
     }
   ]
 }
