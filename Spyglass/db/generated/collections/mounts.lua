@@ -6,3 +6,144 @@ Data:AddList("collections", "mounts", {
     name = "Mounts",
     icon = "Interface\\Icons\\Ability_Mount_RidingHorse",
 })
+Data:AddListLoot("collections", "mounts", {
+    { 1041 }, -- Horn of the Black Wolf
+    { 1132 }, -- Horn of the Timber Wolf
+    { 1133 }, -- Horn of the Winter Wolf
+    { 1134 }, -- Horn of the Gray Wolf
+    { 2411 }, -- Black Stallion Bridle
+    { 2414 }, -- Pinto Bridle
+    { 2415 }, -- White Stallion
+    { 5655 }, -- Chestnut Mare Bridle
+    { 5656 }, -- Brown Horse Bridle
+    { 5663 }, -- Horn of the Red Wolf
+    { 5665 }, -- Horn of the Dire Wolf
+    { 5668 }, -- Horn of the Brown Wolf
+    { 5864 }, -- Gray Ram
+    { 5872 }, -- Brown Ram
+    { 5873 }, -- White Ram
+    { 5874 }, -- Harness: Black Ram
+    { 5875 }, -- Harness: Blue Ram
+    { 8563 }, -- Red Mechanostrider
+    { 8583 }, -- Horn of the Skeletal Mount
+    { 8586 }, -- Whistle of the Mottled Red Raptor
+    { 8588 }, -- Whistle of the Emerald Raptor
+    { 8589 }, -- Old Whistle of the Ivory Raptor
+    { 8590 }, -- Old Whistle of the Obsidian Raptor
+    { 8591 }, -- Whistle of the Turquoise Raptor
+    { 8592 }, -- Whistle of the Violet Raptor
+    { 8595 }, -- Blue Mechanostrider
+    { 8627 }, -- Reins of the Night saber
+    { 8628 }, -- Reins of the Spotted Nightsaber
+    { 8629 }, -- Reins of the Striped Nightsaber
+    { 8630 }, -- Reins of the Bengal Tiger
+    { 8631 }, -- Reins of the Striped Frostsaber
+    { 8632 }, -- Reins of the Spotted Frostsaber
+    { 8633 }, -- Reins of the Leopard
+    { 12302 }, -- Reins of the Frostsaber
+    { 12303 }, -- Reins of the Nightsaber
+    { 12325 }, -- Reins of the Primal Leopard
+    { 12326 }, -- Reins of the Tawny Sabercat
+    { 12327 }, -- Reins of the Golden Sabercat
+    { 12330 }, -- Horn of the Red Wolf
+    { 12351 }, -- Horn of the Arctic Wolf
+    { 12353 }, -- White Stallion Bridle
+    { 12354 }, -- Palomino Bridle
+    { 13086 }, -- Reins of the Winterspring Frostsaber
+    { 13317 }, -- Whistle of the Ivory Raptor
+    { 13321 }, -- Green Mechanostrider
+    { 13322 }, -- Unpainted Mechanostrider
+    { 13323 }, -- Purple Mechanostrider
+    { 13324 }, -- Red & Blue Mechanostrider
+    { 13325 }, -- Fluorescent Green Mechanostrider
+    { 13326 }, -- White Mechanostrider Mod A
+    { 13327 }, -- Icy Blue Mechanostrider Mod A
+    { 13328 }, -- Black Ram
+    { 13329 }, -- Frost Ram
+    { 13331 }, -- Red Skeletal Horse
+    { 13332 }, -- Blue Skeletal Horse
+    { 13333 }, -- Brown Skeletal Horse
+    { 13334 }, -- Green Skeletal Warhorse
+    { 13335 }, -- Deathcharger's Reins
+    { 14062 }, -- Kodo Mount
+    { 15277 }, -- Gray Kodo
+    { 15290 }, -- Brown Kodo
+    { 15292 }, -- Green Kodo
+    { 15293 }, -- Teal Kodo
+    { 16338 }, -- Knight-Lieutenant's Steed
+    { 16339 }, -- Commander's Steed
+    { 16343 }, -- Blood Guard's Mount
+    { 16344 }, -- Lieutenant General's Mount
+    { 18241 }, -- Black War Steed Bridle
+    { 18242 }, -- Reins of the Black War Tiger
+    { 18243 }, -- Black Battlestrider
+    { 18244 }, -- Black War Ram
+    { 18245 }, -- Horn of the Black War Wolf
+    { 18246 }, -- Whistle of the Black War Raptor
+    { 18247 }, -- Black War Kodo
+    { 18248 }, -- Red Skeletal Warhorse
+    { 18766 }, -- Reins of the Swift Frostsaber
+    { 18767 }, -- Reins of the Swift Mistsaber
+    { 18768 }, -- Reins of the Swift Dawnsaber
+    { 18772 }, -- Swift Green Mechanostrider
+    { 18773 }, -- Swift White Mechanostrider
+    { 18774 }, -- Swift Yellow Mechanostrider
+    { 18776 }, -- Swift Palomino
+    { 18777 }, -- Swift Brown Steed
+    { 18778 }, -- Swift White Steed
+    { 18785 }, -- Swift White Ram
+    { 18786 }, -- Swift Brown Ram
+    { 18787 }, -- Swift Gray Ram
+    { 18788 }, -- Swift Blue Raptor
+    { 18789 }, -- Swift Olive Raptor
+    { 18790 }, -- Swift Orange Raptor
+    { 18791 }, -- Purple Skeletal Warhorse
+    { 18793 }, -- Great White Kodo
+    { 18794 }, -- Great Brown Kodo
+    { 18795 }, -- Great Gray Kodo
+    { 18796 }, -- Horn of the Swift Brown Wolf
+    { 18797 }, -- Horn of the Swift Timber Wolf
+    { 18798 }, -- Horn of the Swift Gray Wolf
+    { 18902 }, -- Reins of the Swift Stormsaber
+    { 19029 }, -- Horn of the Frostwolf Howler
+    { 19030 }, -- Stormpike Battle Charger
+    { 19872 }, -- Swift Razzashi Raptor
+    { 19902 }, -- Swift Zulian Tiger
+    { 20221 }, -- Fabled Steed
+    { 21176 }, -- Black Qiraji Resonating Crystal
+    { 21218 }, -- Blue Qiraji Resonating Crystal
+    { 21321 }, -- Red Qiraji Resonating Crystal
+    { 21323 }, -- Green Qiraji Resonating Crystal
+    { 21324 }, -- Yellow Qiraji Resonating Crystal
+    { 21736 }, -- Riding Gryphon Reins
+    { 23193 }, -- Skeletal Steed Reins
+    { 23720 }, -- Riding Turtle
+    { 191480 }, -- Skeletal Steed
+    { 211498 }, -- Trainee's Sentinel Nightsaber
+    { 211499 }, -- Trainee's Outrider Wolf
+    { 216492 }, -- Whistle of the Mottled Raptor
+    { 234465 }, -- Reins of the Swift Spectral Tiger
+    { 262766 }, -- Reins of the Pack Kodo
+    { 265838 }, -- Green Skeletal Horse
+    { 265839 }, -- Dark Skeletal Horse
+    { 265840 }, -- Purple Skeletal Horse
+    { 269671 }, -- Swift Empyrean Galestrider
+    { 269673 }, -- Swift Regal Galestrider
+    { 269678 }, -- Swift Stormy Galestrider
+    { 269681 }, -- Empyrean Galestrider
+    { 269682 }, -- Regal Galestrider
+    { 269683 }, -- Stormy Galestrider
+    { 274706 }, -- Reins of the Striped Dawnsaber
+    { 274799 }, -- Ochre Skeletal Warhorse
+    { 274930 }, -- Umber Galestrider
+    { 274933 }, -- Swift Umber Galestrider
+    { 275993 }, -- White Kodo
+    { 276063 }, -- Black Skeletal Horse
+    { 277718 }, -- Reins of the Spectral Bear
+    { 277960 }, -- Lavender Kodo
+    { 280544 }, -- Cerulean Prideclaw
+    { 280611 }, -- Veteran Adventurer's Loyal Companion
+    { 286724 }, -- Verdant Sea Turtle
+    { 286727 }, -- Crimson Rooster
+    { 286756 }, -- Spectral Wolf Pack
+})

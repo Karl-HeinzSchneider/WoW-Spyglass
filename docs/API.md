@@ -48,11 +48,8 @@ Spyglass:AddToModule("dungeons", dungeon)
 
 Built-in module ids: `"raids"`, `"dungeons"`, `"crafting"`, `"pvp"`, `"collections"`,
 `"reputation"`, `"lists"` (the user's [item lists](#lists-and-favorites)); `Spyglass_Database` adds
-`"items"` (the item browser). `"collections"` lists its curated lists, then the database's item sets as one tile per source — Dungeon, Raid, PvP,
-Crafted, Reputation and Other Sets — each set going to the source most of its items have
-(`Data:GetItemSources`), grouped by armor type inside. The set tiles are always there and
-find their sets when opened (a module's entries are built while the core loads, before an
-addon has added the item rows). The built-in
+`"items"` (the item browser). `"collections"` shows curated lists and ships with one tile,
+Mounts. The built-in
 dungeons sort by level range (`minLevel`, then `maxLevel`; none last), then name; the raids keep
 the order they are listed in. If your instance is in the game's data, prefer adding its drops to the item database (`Spyglass.Data:AddBossLoot`)
 — it then shows up in the built-in modules and in the item browser's filters automatically. The
