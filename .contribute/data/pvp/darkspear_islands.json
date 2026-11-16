@@ -167,6 +167,12 @@
       "side": "Alliance"
     },
     {
+      "item": 271911,
+      "name": "Theramore Signet",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
       "item": 271913,
       "name": "Militant's Band",
       "standing": "Honored",
@@ -180,6 +186,12 @@
     },
     {
       "item": 271915,
+      "name": "Militant's Band",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 271916,
       "name": "Militant's Band",
       "standing": "Honored",
       "side": "Alliance"
@@ -203,6 +215,12 @@
       "side": "Alliance"
     },
     {
+      "item": 271920,
+      "name": "Seal of the Expedition",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
       "item": 271921,
       "name": "Expeditionary's Cape",
       "standing": "Honored",
@@ -210,6 +228,12 @@
     },
     {
       "item": 271922,
+      "name": "Expeditionary's Cape",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 271923,
       "name": "Expeditionary's Cape",
       "standing": "Honored",
       "side": "Alliance"
@@ -329,6 +353,12 @@
       "side": "Alliance"
     },
     {
+      "item": 271927,
+      "name": "Rebels' Rugged Reaper",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
       "item": 271928,
       "name": "Clever Expeditionary's Spellblade",
       "standing": "Revered",
@@ -342,6 +372,12 @@
     },
     {
       "item": 271930,
+      "name": "Clever Expeditionary's Spellblade",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 271931,
       "name": "Clever Expeditionary's Spellblade",
       "standing": "Revered",
       "side": "Alliance"
@@ -365,6 +401,12 @@
       "side": "Alliance"
     },
     {
+      "item": 271935,
+      "name": "Insurgent's Manifesto",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
       "item": 271936,
       "name": "Guerrilla's Jagged Mace",
       "standing": "Revered",
@@ -378,6 +420,12 @@
     },
     {
       "item": 271938,
+      "name": "Guerrilla's Jagged Mace",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 271939,
       "name": "Guerrilla's Jagged Mace",
       "standing": "Revered",
       "side": "Alliance"

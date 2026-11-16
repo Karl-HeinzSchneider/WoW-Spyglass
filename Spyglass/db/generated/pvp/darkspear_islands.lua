@@ -40,14 +40,18 @@ Data:AddListLoot("pvp", "darkspear_islands", {
     { 271908, standing = "Honored", side = "Alliance" }, -- Theramore Signet
     { 271909, standing = "Honored", side = "Alliance" }, -- Theramore Signet
     { 271910, standing = "Honored", side = "Alliance" }, -- Theramore Signet
+    { 271911, standing = "Honored", side = "Alliance" }, -- Theramore Signet
     { 271913, standing = "Honored", side = "Alliance" }, -- Militant's Band
     { 271914, standing = "Honored", side = "Alliance" }, -- Militant's Band
     { 271915, standing = "Honored", side = "Alliance" }, -- Militant's Band
+    { 271916, standing = "Honored", side = "Alliance" }, -- Militant's Band
     { 271917, standing = "Honored", side = "Alliance" }, -- Seal of the Expedition
     { 271918, standing = "Honored", side = "Alliance" }, -- Seal of the Expedition
     { 271919, standing = "Honored", side = "Alliance" }, -- Seal of the Expedition
+    { 271920, standing = "Honored", side = "Alliance" }, -- Seal of the Expedition
     { 271921, standing = "Honored", side = "Alliance" }, -- Expeditionary's Cape
     { 271922, standing = "Honored", side = "Alliance" }, -- Expeditionary's Cape
+    { 271923, standing = "Honored", side = "Alliance" }, -- Expeditionary's Cape
     { 272063, standing = "Honored", side = "Horde" }, -- Darkspear Raider's Cloak
     { 272064, standing = "Honored", side = "Horde" }, -- Insurgent's Band
     { 272065, standing = "Honored", side = "Horde" }, -- Insurgent's Band
@@ -67,15 +71,19 @@ Data:AddListLoot("pvp", "darkspear_islands", {
     { 271924, standing = "Revered", side = "Alliance" }, -- Rebels' Rugged Reaper
     { 271925, standing = "Revered", side = "Alliance" }, -- Rebels' Rugged Reaper
     { 271926, standing = "Revered", side = "Alliance" }, -- Rebels' Rugged Reaper
+    { 271927, standing = "Revered", side = "Alliance" }, -- Rebels' Rugged Reaper
     { 271928, standing = "Revered", side = "Alliance" }, -- Clever Expeditionary's Spellblade
     { 271929, standing = "Revered", side = "Alliance" }, -- Clever Expeditionary's Spellblade
     { 271930, standing = "Revered", side = "Alliance" }, -- Clever Expeditionary's Spellblade
+    { 271931, standing = "Revered", side = "Alliance" }, -- Clever Expeditionary's Spellblade
     { 271932, standing = "Revered", side = "Alliance" }, -- Insurgent's Manifesto
     { 271933, standing = "Revered", side = "Alliance" }, -- Insurgent's Manifesto
     { 271934, standing = "Revered", side = "Alliance" }, -- Insurgent's Manifesto
+    { 271935, standing = "Revered", side = "Alliance" }, -- Insurgent's Manifesto
     { 271936, standing = "Revered", side = "Alliance" }, -- Guerrilla's Jagged Mace
     { 271937, standing = "Revered", side = "Alliance" }, -- Guerrilla's Jagged Mace
     { 271938, standing = "Revered", side = "Alliance" }, -- Guerrilla's Jagged Mace
+    { 271939, standing = "Revered", side = "Alliance" }, -- Guerrilla's Jagged Mace
     { 272079, standing = "Revered", side = "Horde" }, -- Darkspear Raider's Reaper
     { 272080, standing = "Revered", side = "Horde" }, -- Darkspear Raider's Reaper
     { 272081, standing = "Revered", side = "Horde" }, -- Darkspear Raider's Reaper
