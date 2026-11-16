@@ -5,4 +5,137 @@ local Data = Spyglass.Data
 Data:AddList("pvp", "warsong_gulch", {
     name = "Warsong Gulch",
     icon = "Interface\\Icons\\Achievement_BG_captureflag_WSG",
+    panel = {
+        { factionDropdown = "Faction", field = "side" },
+        { header = "Alliance vendor", side = "Alliance" },
+        { side = "Alliance", text = "Illiyana Moonblaze, Silverwing Supply Officer, is near the Alliance entrance to Warsong Gulch in Ashenvale." },
+        { row = "Coordinates", side = "Alliance", value = "61.4, 83.8" },
+        { button = "Show Illiyana on map", map = { 1440, 61.4, 83.8 }, side = "Alliance" },
+        { header = "Horde vendor", side = "Horde" },
+        { side = "Horde", text = "Kelm Hargunth, Warsong Supply Officer, is at the Mor'shan Rampart in The Barrens." },
+        { row = "Coordinates", side = "Horde", value = "46.6, 8.4" },
+        { button = "Show Kelm on map", map = { 1413, 46.6, 8.4 }, side = "Horde" },
+    },
+})
+Data:AddListLoot("pvp", "warsong_gulch", {
+    { 17349, standing = "Friendly" }, -- Superior Healing Draught
+    { 17352, standing = "Friendly" }, -- Superior Mana Draught
+    { 19060, standing = "Friendly" }, -- Warsong Gulch Enriched Ration
+    { 19061, standing = "Friendly" }, -- Warsong Gulch Iron Ration
+    { 19062, standing = "Friendly" }, -- Warsong Gulch Field Ration
+    { 19066, standing = "Friendly" }, -- Warsong Gulch Runecloth Bandage
+    { 19067, standing = "Friendly" }, -- Warsong Gulch Mageweave Bandage
+    { 19068, standing = "Friendly" }, -- Warsong Gulch Silk Bandage
+    { 21565, standing = "Friendly" }, -- Rune of Perfection
+    { 21566, standing = "Friendly" }, -- Rune of Perfection
+    { 21567, standing = "Friendly" }, -- Rune of Duty
+    { 21568, standing = "Friendly" }, -- Rune of Duty
+    { 17348, standing = "Honored" }, -- Major Healing Draught
+    { 17351, standing = "Honored" }, -- Major Mana Draught
+    { 19510, standing = "Honored", side = "Horde" }, -- Legionnaire's Band
+    { 19511, standing = "Honored", side = "Horde" }, -- Legionnaire's Band
+    { 19512, standing = "Honored", side = "Horde" }, -- Legionnaire's Band
+    { 19513, standing = "Honored", side = "Horde" }, -- Legionnaire's Band
+    { 19518, standing = "Honored", side = "Horde" }, -- Advisor's Ring
+    { 19519, standing = "Honored", side = "Horde" }, -- Advisor's Ring
+    { 19520, standing = "Honored", side = "Horde" }, -- Advisor's Ring
+    { 19521, standing = "Honored", side = "Horde" }, -- Advisor's Ring
+    { 19526, standing = "Honored", side = "Horde" }, -- Battle Healer's Cloak
+    { 19527, standing = "Honored", side = "Horde" }, -- Battle Healer's Cloak
+    { 19528, standing = "Honored", side = "Horde" }, -- Battle Healer's Cloak
+    { 19529, standing = "Honored", side = "Horde" }, -- Battle Healer's Cloak
+    { 19534, standing = "Honored", side = "Horde" }, -- Scout's Medallion
+    { 19535, standing = "Honored", side = "Horde" }, -- Scout's Medallion
+    { 19536, standing = "Honored", side = "Horde" }, -- Scout's Medallion
+    { 19537, standing = "Honored", side = "Horde" }, -- Scout's Medallion
+    { 20426, standing = "Honored", side = "Horde" }, -- Advisor's Ring
+    { 20427, standing = "Honored", side = "Horde" }, -- Battle Healer's Cloak
+    { 20429, standing = "Honored", side = "Horde" }, -- Legionnaire's Band
+    { 20442, standing = "Honored", side = "Horde" }, -- Scout's Medallion
+    { 19514, standing = "Honored", side = "Alliance" }, -- Protector's Band
+    { 19515, standing = "Honored", side = "Alliance" }, -- Protector's Band
+    { 19516, standing = "Honored", side = "Alliance" }, -- Protector's Band
+    { 19517, standing = "Honored", side = "Alliance" }, -- Protector's Band
+    { 19522, standing = "Honored", side = "Alliance" }, -- Lorekeeper's Ring
+    { 19523, standing = "Honored", side = "Alliance" }, -- Lorekeeper's Ring
+    { 19524, standing = "Honored", side = "Alliance" }, -- Lorekeeper's Ring
+    { 19525, standing = "Honored", side = "Alliance" }, -- Lorekeeper's Ring
+    { 19530, standing = "Honored", side = "Alliance" }, -- Caretaker's Cape
+    { 19531, standing = "Honored", side = "Alliance" }, -- Caretaker's Cape
+    { 19532, standing = "Honored", side = "Alliance" }, -- Caretaker's Cape
+    { 19533, standing = "Honored", side = "Alliance" }, -- Caretaker's Cape
+    { 19538, standing = "Honored", side = "Alliance" }, -- Sentinel's Medallion
+    { 19539, standing = "Honored", side = "Alliance" }, -- Sentinel's Medallion
+    { 19540, standing = "Honored", side = "Alliance" }, -- Sentinel's Medallion
+    { 19541, standing = "Honored", side = "Alliance" }, -- Sentinel's Medallion
+    { 20428, standing = "Honored", side = "Alliance" }, -- Caretaker's Cape
+    { 20431, standing = "Honored", side = "Alliance" }, -- Lorekeeper's Ring
+    { 20439, standing = "Honored", side = "Alliance" }, -- Protector's Band
+    { 20444, standing = "Honored", side = "Alliance" }, -- Sentinel's Medallion
+    { 19542, standing = "Revered", side = "Horde" }, -- Scout's Blade
+    { 19543, standing = "Revered", side = "Horde" }, -- Scout's Blade
+    { 19544, standing = "Revered", side = "Horde" }, -- Scout's Blade
+    { 19545, standing = "Revered", side = "Horde" }, -- Scout's Blade
+    { 19550, standing = "Revered", side = "Horde" }, -- Legionnaire's Sword
+    { 19551, standing = "Revered", side = "Horde" }, -- Legionnaire's Sword
+    { 19552, standing = "Revered", side = "Horde" }, -- Legionnaire's Sword
+    { 19553, standing = "Revered", side = "Horde" }, -- Legionnaire's Sword
+    { 19558, standing = "Revered", side = "Horde" }, -- Outrider's Bow
+    { 19559, standing = "Revered", side = "Horde" }, -- Outrider's Bow
+    { 19560, standing = "Revered", side = "Horde" }, -- Outrider's Bow
+    { 19561, standing = "Revered", side = "Horde" }, -- Outrider's Bow
+    { 19566, standing = "Revered", side = "Horde" }, -- Advisor's Gnarled Staff
+    { 19567, standing = "Revered", side = "Horde" }, -- Advisor's Gnarled Staff
+    { 19568, standing = "Revered", side = "Horde" }, -- Advisor's Gnarled Staff
+    { 19569, standing = "Revered", side = "Horde" }, -- Advisor's Gnarled Staff
+    { 20425, standing = "Revered", side = "Horde" }, -- Advisor's Gnarled Staff
+    { 20430, standing = "Revered", side = "Horde" }, -- Legionnaire's Sword
+    { 20437, standing = "Revered", side = "Horde" }, -- Outrider's Bow
+    { 20441, standing = "Revered", side = "Horde" }, -- Scout's Blade
+    { 19546, standing = "Revered", side = "Alliance" }, -- Sentinel's Blade
+    { 19547, standing = "Revered", side = "Alliance" }, -- Sentinel's Blade
+    { 19548, standing = "Revered", side = "Alliance" }, -- Sentinel's Blade
+    { 19549, standing = "Revered", side = "Alliance" }, -- Sentinel's Blade
+    { 19554, standing = "Revered", side = "Alliance" }, -- Protector's Sword
+    { 19555, standing = "Revered", side = "Alliance" }, -- Protector's Sword
+    { 19556, standing = "Revered", side = "Alliance" }, -- Protector's Sword
+    { 19557, standing = "Revered", side = "Alliance" }, -- Protector's Sword
+    { 19562, standing = "Revered", side = "Alliance" }, -- Outrunner's Bow
+    { 19563, standing = "Revered", side = "Alliance" }, -- Outrunner's Bow
+    { 19564, standing = "Revered", side = "Alliance" }, -- Outrunner's Bow
+    { 19565, standing = "Revered", side = "Alliance" }, -- Outrunner's Bow
+    { 19570, standing = "Revered", side = "Alliance" }, -- Lorekeeper's Staff
+    { 19571, standing = "Revered", side = "Alliance" }, -- Lorekeeper's Staff
+    { 19572, standing = "Revered", side = "Alliance" }, -- Lorekeeper's Staff
+    { 19573, standing = "Revered", side = "Alliance" }, -- Lorekeeper's Staff
+    { 20434, standing = "Revered", side = "Alliance" }, -- Lorekeeper's Staff
+    { 20438, standing = "Revered", side = "Alliance" }, -- Outrunner's Bow
+    { 20440, standing = "Revered", side = "Alliance" }, -- Protector's Sword
+    { 20443, standing = "Revered", side = "Alliance" }, -- Sentinel's Blade
+    { 19578, standing = "Exalted" }, -- Berserker Bracers
+    { 19580, standing = "Exalted" }, -- Berserker Bracers
+    { 19581, standing = "Exalted" }, -- Berserker Bracers
+    { 19582, standing = "Exalted" }, -- Windtalker's Wristguards
+    { 19583, standing = "Exalted" }, -- Windtalker's Wristguards
+    { 19584, standing = "Exalted" }, -- Windtalker's Wristguards
+    { 19587, standing = "Exalted" }, -- Forest Stalker's Bracers
+    { 19589, standing = "Exalted" }, -- Forest Stalker's Bracers
+    { 19590, standing = "Exalted" }, -- Forest Stalker's Bracers
+    { 19595, standing = "Exalted" }, -- Dryad's Wrist Bindings
+    { 19596, standing = "Exalted" }, -- Dryad's Wrist Bindings
+    { 19597, standing = "Exalted" }, -- Dryad's Wrist Bindings
+    { 22651, standing = "Exalted", side = "Horde" }, -- Outrider's Plate Legguards
+    { 22673, standing = "Exalted", side = "Horde" }, -- Outrider's Chain Leggings
+    { 22676, standing = "Exalted", side = "Horde" }, -- Outrider's Mail Leggings
+    { 22740, standing = "Exalted", side = "Horde" }, -- Outrider's Leather Pants
+    { 22741, standing = "Exalted", side = "Horde" }, -- Outrider's Lizardhide Pants
+    { 22747, standing = "Exalted", side = "Horde" }, -- Outrider's Silk Leggings
+    { 22672, standing = "Exalted", side = "Alliance" }, -- Sentinel's Plate Legguards
+    { 22748, standing = "Exalted", side = "Alliance" }, -- Sentinel's Chain Leggings
+    { 22749, standing = "Exalted", side = "Alliance" }, -- Sentinel's Leather Pants
+    { 22750, standing = "Exalted", side = "Alliance" }, -- Sentinel's Lizardhide Pants
+    { 22752, standing = "Exalted", side = "Alliance" }, -- Sentinel's Silk Leggings
+    { 22753, standing = "Exalted", side = "Alliance" }, -- Sentinel's Lamellar Legguards
+    { 19505, standing = "Exalted", side = "Horde" }, -- Warsong Battle Tabard
+    { 19506, standing = "Exalted", side = "Alliance" }, -- Silverwing Battle Tabard
 })

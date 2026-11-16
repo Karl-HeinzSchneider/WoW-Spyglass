@@ -1,0 +1,344 @@
+{
+  "name": "Alterac Valley",
+  "icon": "Interface\\Icons\\Achievement_BG_winAV",
+  "panel": [
+    {
+      "factionDropdown": "Faction",
+      "field": "side"
+    },
+    {
+      "header": "Alliance vendor",
+      "side": "Alliance"
+    },
+    {
+      "text": "Thanthaldis Snowgleam, Stormpike Supply Officer, is near the Alliance entrance to Alterac Valley in Alterac Mountains.",
+      "side": "Alliance"
+    },
+    {
+      "row": "Coordinates",
+      "value": "39.6, 81.6",
+      "side": "Alliance"
+    },
+    {
+      "button": "Show Thanthaldis on map",
+      "map": [1416, 39.6, 81.6],
+      "side": "Alliance"
+    },
+    {
+      "header": "Main vendor",
+      "side": "Horde"
+    },
+    {
+      "text": "Jekyll Flandring, Frostwolf Supply Officer, is near the Horde entrance to Alterac Valley in Alterac Mountains.",
+      "side": "Horde"
+    },
+    {
+      "row": "Coordinates",
+      "value": "62.8, 59.6",
+      "side": "Horde"
+    },
+    {
+      "button": "Show Jekyll on map",
+      "map": [1416, 62.8, 59.6],
+      "side": "Horde"
+    },
+    {
+      "header": "Battleground vendor",
+      "side": "Horde"
+    },
+    {
+      "text": "Grunnda Wolfheart, Frostwolf Supply Officer, is in Frostwolf Keep, Alterac Valley.",
+      "side": "Horde"
+    },
+    {
+      "row": "Coordinates",
+      "value": "49.3, 82.5",
+      "side": "Horde"
+    },
+    {
+      "button": "Show Grunnda on map",
+      "map": [1459, 49.3, 82.5],
+      "side": "Horde"
+    }
+  ],
+  "rewards": [
+    {
+      "item": 17349,
+      "name": "Superior Healing Draught",
+      "standing": "Friendly"
+    },
+    {
+      "item": 17352,
+      "name": "Superior Mana Draught",
+      "standing": "Friendly"
+    },
+    {
+      "item": 19031,
+      "name": "Frostwolf Battle Tabard",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 19307,
+      "name": "Alterac Heavy Runecloth Bandage",
+      "standing": "Friendly"
+    },
+    {
+      "item": 19318,
+      "name": "Bottled Alterac Spring Water",
+      "standing": "Friendly"
+    },
+    {
+      "item": 19032,
+      "name": "Stormpike Battle Tabard",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 17348,
+      "name": "Major Healing Draught",
+      "standing": "Honored"
+    },
+    {
+      "item": 17351,
+      "name": "Major Mana Draught",
+      "standing": "Honored"
+    },
+    {
+      "item": 19083,
+      "name": "Frostwolf Legionnaire's Cloak",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19085,
+      "name": "Frostwolf Advisor's Cloak",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19087,
+      "name": "Frostwolf Plate Belt",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19088,
+      "name": "Frostwolf Mail Belt",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19089,
+      "name": "Frostwolf Leather Belt",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19090,
+      "name": "Frostwolf Cloth Belt",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19095,
+      "name": "Frostwolf Legionnaire's Pendant",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19096,
+      "name": "Frostwolf Advisor's Pendant",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19301,
+      "name": "Alterac Manna Biscuit",
+      "standing": "Honored"
+    },
+    {
+      "item": 19316,
+      "name": "Ice Threaded Arrow",
+      "standing": "Honored"
+    },
+    {
+      "item": 19317,
+      "name": "Ice Threaded Bullet",
+      "standing": "Honored"
+    },
+    {
+      "item": 19084,
+      "name": "Stormpike Soldier's Cloak",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19086,
+      "name": "Stormpike Sage's Cloak",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19091,
+      "name": "Stormpike Plate Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19092,
+      "name": "Stormpike Mail Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19093,
+      "name": "Stormpike Leather Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19094,
+      "name": "Stormpike Cloth Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19097,
+      "name": "Stormpike Soldier's Pendant",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19098,
+      "name": "Stormpike Sage's Pendant",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 19046,
+      "name": "Frostwolf Battle Standard",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19099,
+      "name": "Glacial Blade",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19101,
+      "name": "Whiteout Staff",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19103,
+      "name": "Frostbite",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19319,
+      "name": "Harpy Hide Quiver",
+      "standing": "Revered"
+    },
+    {
+      "item": 19320,
+      "name": "Gnoll Skin Bandolier",
+      "standing": "Revered"
+    },
+    {
+      "item": 19045,
+      "name": "Stormpike Battle Standard",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 19100,
+      "name": "Electrified Dagger",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 19102,
+      "name": "Crackling Staff",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 19104,
+      "name": "Stormstrike Hammer",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 19029,
+      "name": "Horn of the Frostwolf Howler",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 19308,
+      "name": "Tome of Arcane Domination",
+      "standing": "Exalted"
+    },
+    {
+      "item": 19309,
+      "name": "Tome of Shadow Force",
+      "standing": "Exalted"
+    },
+    {
+      "item": 19310,
+      "name": "Tome of the Ice Lord",
+      "standing": "Exalted"
+    },
+    {
+      "item": 19311,
+      "name": "Tome of Fiery Arcana",
+      "standing": "Exalted"
+    },
+    {
+      "item": 19312,
+      "name": "Lei of the Lifegiver",
+      "standing": "Exalted"
+    },
+    {
+      "item": 19315,
+      "name": "Therazane's Touch",
+      "standing": "Exalted"
+    },
+    {
+      "item": 19321,
+      "name": "The Immovable Object",
+      "standing": "Exalted"
+    },
+    {
+      "item": 19323,
+      "name": "The Unstoppable Force",
+      "standing": "Exalted"
+    },
+    {
+      "item": 19324,
+      "name": "The Lobotomizer",
+      "standing": "Exalted"
+    },
+    {
+      "item": 19325,
+      "name": "Don Julio's Band",
+      "standing": "Exalted"
+    },
+    {
+      "item": 21563,
+      "name": "Don Rodrigo's Band",
+      "standing": "Exalted"
+    },
+    {
+      "item": 19030,
+      "name": "Stormpike Battle Charger",
+      "standing": "Exalted",
+      "side": "Alliance"
+    }
+  ]
+}

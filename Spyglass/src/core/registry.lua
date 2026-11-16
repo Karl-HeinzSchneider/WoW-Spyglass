@@ -86,7 +86,8 @@ local log = app.logger
 ---@field checkbox? string  # label of a checkbox that switches `filter` on
 ---@field filter? string|fun(entry: Spyglass.Node, node: Spyglass.Node): boolean  # checkbox: a built-in filter id ("side", "standing") or a test; false hides the entry
 ---@field dropdown? string  # label of a dropdown that shows only entries with the picked `meta[field]`
----@field factionDropdown? string  # quest-list dropdown: Alliance, Horde, or Both (default: player's faction)
+---@field factionDropdown? string  # defaults to the player's faction; field "side" filters rewards, otherwise filters quests and offers Both
+---@field side? "Alliance"|"Horde"  # show only for this reward faction selection
 ---@field field? string  # dropdown: the entry `meta` field it offers the values of
 ---@field grouping? string  # label of a dropdown that picks how the list is grouped, among `options`
 ---@field options? Spyglass.GroupingOption[]  # grouping: the choices, the first one until another is picked

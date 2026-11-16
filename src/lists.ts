@@ -69,6 +69,9 @@ export interface PanelWidget {
   /** checkbox: the built-in filter it switches on (PANEL_FILTERS). */
   filter?: string;
   dropdown?: string;
+  factionDropdown?: string;
+  /** Show this widget when the panel's faction selector picks this side. */
+  side?: "Alliance" | "Horde";
   /** dropdown: the row field whose values it offers. */
   field?: string;
   button?: string;
@@ -81,15 +84,16 @@ export interface PanelWidget {
 
 /** A widget's type key -> the option keys it may carry (and the ones it needs). */
 const PANEL_WIDGETS: Record<string, { options: string[]; required?: string[] }> = {
-  header: { options: [] },
-  text: { options: [] },
+  header: { options: ["side"] },
+  text: { options: ["side"] },
   item: { options: [] },
   description: { options: [] },
-  row: { options: ["value"], required: ["value"] },
+  row: { options: ["value", "side"], required: ["value"] },
   bar: { options: [] },
   checkbox: { options: ["filter"], required: ["filter"] },
   dropdown: { options: ["field"], required: ["field"] },
-  button: { options: ["open", "map"] },
+  factionDropdown: { options: ["field"], required: ["field"] },
+  button: { options: ["open", "map", "side"] },
   spacer: { options: [] },
 };
 
@@ -467,6 +471,8 @@ function validatePanel(file: ListFile, listIDs: Set<string>, checker: Checker): 
     return;
   }
   const fields = new Set<string>([...ROW_FIELDS[file.kind].filter((field) => field !== "costs"), "group"]);
+  const factionSelectors = d.panel.filter((widget) => widget?.factionDropdown && widget.field === "side");
+  if (factionSelectors.length > 1) checker.report(file, "panel: only one faction selector is allowed");
   for (const [index, widget] of d.panel.entries()) {
     const where = `panel[${index}]`;
     if (typeof widget !== "object" || widget === null || Array.isArray(widget)) {
@@ -493,7 +499,15 @@ function validatePanel(file: ListFile, listIDs: Set<string>, checker: Checker): 
         checker.report(file, `${where} (${type}): \`${key}\` is missing`);
     }
     const w = widget;
+    if (w.side !== undefined && (!SIDES.includes(w.side) || !factionSelectors.length))
+      checker.report(file, `${where}: side must be Alliance or Horde and requires a faction selector`);
     switch (type) {
+      case "factionDropdown":
+        if (typeof w.factionDropdown !== "string" || !w.factionDropdown)
+          checker.report(file, `${where}: factionDropdown must be its label`);
+        if (w.field !== "side" || !fields.has("side"))
+          checker.report(file, `${where}: factionDropdown requires field "side" on a list with faction-tagged rows`);
+        break;
       case "item":
         if (!isPositiveInteger(w.item)) checker.report(file, `${where}: \`item\` must be a positive item id`);
         break;

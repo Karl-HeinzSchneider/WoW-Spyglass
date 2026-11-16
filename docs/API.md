@@ -367,6 +367,11 @@ modified click links it in chat.
 | `{ quests = ids }`            |                                                 | One line per quest id: the title (`Data:GetQuestName`) and the character's progress, "Done", "Ready" (objectives complete), "Active" or "Not started". Quests the database marks for the other faction or another class are left out. Hover shows the quest tooltip (the game's when the client has the quest, else the curated title, `requiredLevel` and `objective`), followed by the quest's reward items with their icons and its `xp`; shift-click links the quest in chat. |
 | `{ spacer = true }`           |                                                 | Empty space; a number is its height.                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
+Set `field = "side"` on a `factionDropdown` to offer Alliance and Horde for a reward list.
+It defaults to the character's faction and filters entries by `meta.side`. A header, text, row,
+or button in the same panel may specify `side = "Alliance"` or `side = "Horde"` to appear for
+that selection.
+
 Checkbox and dropdown filters and the grouping apply to the entries of whatever list the tab
 shows below the panel's node (folders remain visible except quest banners under the faction
 selector) and are kept per tab and panel node until

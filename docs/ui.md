@@ -219,7 +219,8 @@ registers itself with the character frame, so it can't be inherited): the title 
 - `checkbox`: `checkbox-minimal` / `checkmark-minimal`, the label beside it inside the hit rect;
   `dropdown`: `WowStyle1DropdownTemplate` with an "All" radio and one per value; `grouping`:
   the same dropdown with one radio per option. The quest list's `factionDropdown` uses that
-  dropdown for Alliance, Horde, and Both.
+  dropdown for Alliance, Horde, and Both. With `field = "side"`, it offers Alliance and Horde,
+  defaults to the character's faction, and filters reward rows and faction-specific panel widgets.
 - `button`: `SharedGoldRedButtonSmallTemplate`. A `map` button sets a user waypoint from a plain
   `{ uiMapID, position }` table (`UiMapPoint` isn't loaded in this client) and calls
   `OpenWorldMap`.

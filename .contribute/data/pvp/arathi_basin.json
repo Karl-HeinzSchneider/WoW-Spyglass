@@ -1,0 +1,976 @@
+{
+  "name": "Arathi Basin",
+  "icon": "Interface\\Icons\\Achievement_BG_winAB",
+  "panel": [
+    {
+      "factionDropdown": "Faction",
+      "field": "side"
+    },
+    {
+      "header": "Alliance vendor",
+      "side": "Alliance"
+    },
+    {
+      "text": "Samuel Hawke, League of Arathor Supply Officer, is in Refuge Pointe, Arathi Highlands.",
+      "side": "Alliance"
+    },
+    {
+      "row": "Coordinates",
+      "value": "46.0, 45.6",
+      "side": "Alliance"
+    },
+    {
+      "button": "Show vendor on map",
+      "map": [1417, 46, 45.6],
+      "side": "Alliance"
+    },
+    {
+      "header": "Horde vendor",
+      "side": "Horde"
+    },
+    {
+      "text": "Rutherford Twing, Defilers Supply Officer, is in Hammerfall, Arathi Highlands.",
+      "side": "Horde"
+    },
+    {
+      "row": "Coordinates",
+      "value": "73.4, 29.8",
+      "side": "Horde"
+    },
+    {
+      "button": "Show vendor on map",
+      "map": [1417, 73.4, 29.8],
+      "side": "Horde"
+    },
+    {
+      "text": "Battle Tabard of the Defilers is a reward from Control Five Bases.",
+      "side": "Horde"
+    }
+  ],
+  "rewards": [
+    {
+      "item": 20244,
+      "name": "Highlander's Silk Bandage",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 20226,
+      "name": "Highlander's Field Ration",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 20227,
+      "name": "Highlander's Iron Ration",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 20243,
+      "name": "Highlander's Runecloth Bandage",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 20225,
+      "name": "Highlander's Enriched Ration",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 21119,
+      "name": "Talisman of Arathor",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 21118,
+      "name": "Talisman of Arathor",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 20071,
+      "name": "Talisman of Arathor",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 21117,
+      "name": "Talisman of Arathor",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 20237,
+      "name": "Highlander's Mageweave Bandage",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 20126,
+      "name": "Highlander's Plate Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20089,
+      "name": "Highlander's Chain Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20104,
+      "name": "Highlander's Lizardhide Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20119,
+      "name": "Highlander's Mail Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20125,
+      "name": "Highlander's Plate Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20107,
+      "name": "Highlander's Lamellar Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20097,
+      "name": "Highlander's Cloth Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20115,
+      "name": "Highlander's Leather Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20124,
+      "name": "Highlander's Plate Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20088,
+      "name": "Highlander's Chain Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20103,
+      "name": "Highlander's Lizardhide Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20042,
+      "name": "Highlander's Lamellar Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20047,
+      "name": "Highlander's Cloth Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20099,
+      "name": "Highlander's Cloth Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20116,
+      "name": "Highlander's Leather Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20117,
+      "name": "Highlander's Leather Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20041,
+      "name": "Highlander's Plate Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20090,
+      "name": "Highlander's Chain Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20043,
+      "name": "Highlander's Chain Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20045,
+      "name": "Highlander's Leather Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20098,
+      "name": "Highlander's Cloth Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20044,
+      "name": "Highlander's Mail Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20046,
+      "name": "Highlander's Lizardhide Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20108,
+      "name": "Highlander's Lamellar Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20118,
+      "name": "Highlander's Mail Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20105,
+      "name": "Highlander's Lizardhide Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20106,
+      "name": "Highlander's Lamellar Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20120,
+      "name": "Highlander's Mail Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20092,
+      "name": "Highlander's Chain Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20128,
+      "name": "Highlander's Plate Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20110,
+      "name": "Highlander's Lamellar Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20094,
+      "name": "Highlander's Cloth Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20109,
+      "name": "Highlander's Lamellar Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20112,
+      "name": "Highlander's Leather Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20091,
+      "name": "Highlander's Chain Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20100,
+      "name": "Highlander's Lizardhide Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20121,
+      "name": "Highlander's Mail Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20127,
+      "name": "Highlander's Plate Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20049,
+      "name": "Highlander's Lamellar Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20114,
+      "name": "Highlander's Leather Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20113,
+      "name": "Highlander's Leather Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20052,
+      "name": "Highlander's Leather Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20093,
+      "name": "Highlander's Chain Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20054,
+      "name": "Highlander's Cloth Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20096,
+      "name": "Highlander's Cloth Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20111,
+      "name": "Highlander's Lamellar Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20051,
+      "name": "Highlander's Mail Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20101,
+      "name": "Highlander's Lizardhide Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20048,
+      "name": "Highlander's Plate Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20095,
+      "name": "Highlander's Cloth Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20129,
+      "name": "Highlander's Plate Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20123,
+      "name": "Highlander's Mail Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20053,
+      "name": "Highlander's Lizardhide Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20122,
+      "name": "Highlander's Mail Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20050,
+      "name": "Highlander's Chain Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20102,
+      "name": "Highlander's Lizardhide Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20069,
+      "name": "Ironbark Staff",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 20070,
+      "name": "Sageclaw",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 20132,
+      "name": "Arathor Battle Tabard",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 20061,
+      "name": "Highlander's Epaulets",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 20073,
+      "name": "Cloak of the Honor Guard",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 20059,
+      "name": "Highlander's Leather Shoulders",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 20056,
+      "name": "Highlander's Mail Pauldrons",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 20057,
+      "name": "Highlander's Plate Spaulders",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 20058,
+      "name": "Highlander's Lamellar Spaulders",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 20055,
+      "name": "Highlander's Chain Pauldrons",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 20060,
+      "name": "Highlander's Lizardhide Shoulders",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 20232,
+      "name": "Defiler's Mageweave Bandage",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 20223,
+      "name": "Defiler's Field Ration",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 20222,
+      "name": "Defiler's Enriched Ration",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 20224,
+      "name": "Defiler's Iron Ration",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 21120,
+      "name": "Defiler's Talisman",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 21116,
+      "name": "Defiler's Talisman",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 20072,
+      "name": "Defiler's Talisman",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 21115,
+      "name": "Defiler's Talisman",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 20234,
+      "name": "Defiler's Runecloth Bandage",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 20235,
+      "name": "Defiler's Silk Bandage",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 20177,
+      "name": "Defiler's Lamellar Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20197,
+      "name": "Defiler's Mail Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20171,
+      "name": "Defiler's Lizardhide Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20174,
+      "name": "Defiler's Lizardhide Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20172,
+      "name": "Defiler's Lizardhide Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20180,
+      "name": "Defiler's Lamellar Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20153,
+      "name": "Defiler's Chain Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20205,
+      "name": "Defiler's Plate Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20207,
+      "name": "Defiler's Plate Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20173,
+      "name": "Defiler's Lizardhide Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20198,
+      "name": "Defiler's Mail Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20206,
+      "name": "Defiler's Plate Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20196,
+      "name": "Defiler's Mail Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20163,
+      "name": "Defiler's Cloth Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20192,
+      "name": "Defiler's Leather Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20164,
+      "name": "Defiler's Cloth Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20150,
+      "name": "Defiler's Chain Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20195,
+      "name": "Defiler's Mail Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20178,
+      "name": "Defiler's Lamellar Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20152,
+      "name": "Defiler's Chain Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20204,
+      "name": "Defiler's Plate Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20190,
+      "name": "Defiler's Leather Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20165,
+      "name": "Defiler's Cloth Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20166,
+      "name": "Defiler's Cloth Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20191,
+      "name": "Defiler's Leather Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20193,
+      "name": "Defiler's Leather Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20151,
+      "name": "Defiler's Chain Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20179,
+      "name": "Defiler's Lamellar Girdle",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20189,
+      "name": "Defiler's Leather Boots",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20170,
+      "name": "Defiler's Lizardhide Boots",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20161,
+      "name": "Defiler's Cloth Boots",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20209,
+      "name": "Defiler's Plate Greaves",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20211,
+      "name": "Defiler's Plate Greaves",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20156,
+      "name": "Defiler's Chain Greaves",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20181,
+      "name": "Defiler's Lamellar Greaves",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20155,
+      "name": "Defiler's Chain Greaves",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20200,
+      "name": "Defiler's Mail Greaves",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20202,
+      "name": "Defiler's Mail Greaves",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20157,
+      "name": "Defiler's Chain Greaves",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20186,
+      "name": "Defiler's Leather Boots",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20159,
+      "name": "Defiler's Cloth Boots",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20154,
+      "name": "Defiler's Chain Greaves",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20162,
+      "name": "Defiler's Cloth Boots",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20188,
+      "name": "Defiler's Leather Boots",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20182,
+      "name": "Defiler's Lamellar Greaves",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20187,
+      "name": "Defiler's Leather Boots",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20168,
+      "name": "Defiler's Lizardhide Boots",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20208,
+      "name": "Defiler's Plate Greaves",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20160,
+      "name": "Defiler's Cloth Boots",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20169,
+      "name": "Defiler's Lizardhide Boots",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20210,
+      "name": "Defiler's Plate Greaves",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20183,
+      "name": "Defiler's Lamellar Greaves",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20185,
+      "name": "Defiler's Lamellar Greaves",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20167,
+      "name": "Defiler's Lizardhide Boots",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20199,
+      "name": "Defiler's Mail Greaves",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20201,
+      "name": "Defiler's Mail Greaves",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20220,
+      "name": "Ironbark Staff",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 20131,
+      "name": "Battle Tabard of the Defilers",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 20212,
+      "name": "Defiler's Plate Spaulders",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 20214,
+      "name": "Mindfang",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 20203,
+      "name": "Defiler's Mail Pauldrons",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 20068,
+      "name": "Deathguard's Cloak",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 20194,
+      "name": "Defiler's Leather Shoulders",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 20176,
+      "name": "Defiler's Epaulets",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 20158,
+      "name": "Defiler's Chain Pauldrons",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 20175,
+      "name": "Defiler's Lizardhide Shoulders",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 20184,
+      "name": "Defiler's Lamellar Spaulders",
+      "standing": "Exalted",
+      "side": "Horde"
+    }
+  ]
+}

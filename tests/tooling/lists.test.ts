@@ -106,6 +106,20 @@ test("a panel keeps its widgets through a fix rewrite", () => {
   assert.deepEqual(serialized.panel, panel, "fix must not drop the panel it rewrites");
 });
 
+test("faction-specific waypoints require a reward faction selector", () => {
+  const selector = { factionDropdown: "Faction", field: "side" };
+  const waypoint = { button: "Show vendor on map", map: [1417, 73.4, 29.8], side: "Horde" };
+  const panel = [selector, waypoint];
+  const checker = sectionChecker(false);
+  validateLists([panelFile(panel)], checker);
+  assert.deepEqual(checker.problems, []);
+  assert.deepEqual(JSON.parse(serializeList(panelFile(panel))).panel, panel);
+
+  const invalid = sectionChecker(false);
+  validateLists([panelFile([waypoint])], invalid);
+  assert.match(invalid.problems[0]!.message, /requires a faction selector/);
+});
+
 test("a priced reward keeps all payment components through a fix rewrite", () => {
   const file = panelFile([]);
   const costs = [
