@@ -11603,6 +11603,7 @@ Data:AddNames("frFR", "items", {
     [21544] = "Habit de fête bleu",
     [21545] = "Marchandises des Gourmandises Fumebois",
     [21546] = "Élixir de puissance sacrée",
+    [21547] = "Recette : élixir de puissance sacrée",
     [21548] = "Patron : Gants tempétueux",
     [21549] = "Monster - Shield, Shieldguard",
     [21550] = "Monster - Bow, Kaldorei",

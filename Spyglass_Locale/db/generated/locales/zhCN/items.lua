@@ -11603,6 +11603,7 @@ Data:AddNames("zhCN", "items", {
     [21544] = "蓝色节庆裤装",
     [21545] = "烟林补给品",
     [21546] = "神圣能量药剂",
+    [21547] = "配方：神圣能量药剂",
     [21548] = "图样：雷暴手套",
     [21549] = "Monster - Shield, Shieldguard",
     [21550] = "Monster - Bow, Kaldorei",

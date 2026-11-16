@@ -17,7 +17,7 @@ Data:AddBossLoot(3583, { -- Avatar of Hakkar
     { 10845 }, -- Warrior's Embrace
     { 10846 }, -- Bloodshot Greaves
     { 10663 }, -- Essence of Hakkar
-    { 12462 }, -- #12462
+    { 12462 }, -- Embrace of the Wind Serpent
 })
 
 Data:AddBossLoot(3584, { -- Shade of Eranikus
@@ -155,13 +155,13 @@ Data:AddBossLoot(-5716, { -- Zul'Lor
 })
 
 Data:AddTrashLoot(109, {
-    { 10630 }, -- #10630
-    { 10629 }, -- #10629
+    { 10630 }, -- Soulcatcher Halo
+    { 10629 }, -- Mistwalker Boots
     { 10631 }, -- Murkwater Gauntlets
     { 10632 }, -- Slimescale Bracers
     { 10633 }, -- Silvershell Leggings
     { 10634 }, -- Mindseye Circle
-    { 10623 }, -- #10623
+    { 10623 }, -- Winter's Bite
     { 10625 }, -- Stealthblade
     { 10626 }, -- Ragehammer
     { 10628 }, -- Deathblow

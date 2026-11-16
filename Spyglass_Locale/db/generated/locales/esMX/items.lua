@@ -11603,6 +11603,7 @@ Data:AddNames("esMX", "items", {
     [21544] = "Traje pantalón de fiesta azul",
     [21545] = "Provisiones de Bosquehumeante",
     [21546] = "Elixir de poder sagrado",
+    [21547] = "Receta: elixir de poder sagrado",
     [21548] = "Patrón: guantes de embozo de tormenta",
     [21549] = "Monster - Shield, Shieldguard",
     [21550] = "Monster - Bow, Kaldorei",

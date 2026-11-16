@@ -79,9 +79,9 @@ Data:AddBossLoot(479, { -- Baroness Anastari
     { 18730 }, -- Shadowy Laced Handwraps
     { 18729 }, -- Screeching Bow
     { 13514 }, -- Wail of the Banshee
-    { 13535 }, -- #13535
+    { 13535 }, -- Coldtouch Phantom Wraps
     { 13537 }, -- Chillhide Bracers
-    { 13538 }, -- #13538
+    { 13538 }, -- Windshrieker Pauldrons
     { 13539 }, -- Banshee's Touch
 })
 
@@ -93,8 +93,8 @@ Data:AddBossLoot(480, { -- Nerub'enkan
     { 18740 }, -- Thuzadin Sash
     { 13530 }, -- Fangdrip Runners
     { 13531 }, -- Crypt Stalker Leggings
-    { 13532 }, -- #13532
-    { 13533 }, -- #13533
+    { 13532 }, -- Darkspinner Claws
+    { 13533 }, -- Acid-etched Pauldrons
 })
 
 Data:AddBossLoot(481, { -- Maleki the Pallid
@@ -107,7 +107,7 @@ Data:AddBossLoot(481, { -- Maleki the Pallid
     { 13525 }, -- Darkbind Fingers
     { 13526 }, -- Flamescarred Girdle
     { 13527 }, -- Lavawalker Greaves
-    { 13528 }, -- #13528
+    { 13528 }, -- Twilight Void Bracers
 })
 
 Data:AddBossLoot(482, { -- Magistrate Barthilas
@@ -149,8 +149,8 @@ Data:AddBossLoot(484, { -- Baron Rivendare
     { 22410 }, -- Gauntlets of Deftness
     { 22411 }, -- Helm of the Executioner
     { 13345 }, -- Seal of Rivendare
-    { 13505 }, -- #13505
-    { 13361 }, -- #13361
+    { 13505 }, -- Runeblade of Baron Rivendare
+    { 13361 }, -- Skullforge Reaver
     { 13368 }, -- Bonescraper
     { 13251 }, -- Head of Baron Rivendare
 })
@@ -196,13 +196,13 @@ Data:AddTrashLoot(329, {
     { 16681 }, -- Beaststalker's Bindings
     { 16671 }, -- Bindings of Elements
     { 16736 }, -- Belt of Valor
-    { 18743 }, -- #18743
+    { 18743 }, -- Gracious Cape
     { 18745 }, -- Sacred Cloth Leggings
-    { 18736 }, -- #18736
-    { 18741 }, -- #18741
-    { 18742 }, -- #18742
-    { 18744 }, -- #18744
-    { 17061 }, -- #17061
+    { 18736 }, -- Plaguehound Leggings
+    { 18741 }, -- Morlune's Bracer
+    { 18742 }, -- Stratholme Militia Shoulderguard
+    { 18744 }, -- Plaguebat Fur Gloves
+    { 17061 }, -- Juno's Shadow
     { 16248 }, -- Formula: Enchant Weapon - Unholy Weapon
     { 14495 }, -- Pattern: Ghostweave Pants
     { 15768 }, -- Pattern: Wicked Leather Belt

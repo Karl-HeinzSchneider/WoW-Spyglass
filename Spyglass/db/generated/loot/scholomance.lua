@@ -12,7 +12,7 @@ Data:AddBossLoot(2805, { -- Kirtonos
     { 13957 }, -- Gargoyle Slashers
     { 13955 }, -- Stoneform Shoulders
     { 13983 }, -- Gravestone War Axe
-    { 13956 }, -- #13956
+    { 13956 }, -- Clutch of Andros
 })
 
 Data:AddBossLoot(2804, { -- Jandice Barov
@@ -36,17 +36,17 @@ Data:AddBossLoot(2811, { -- Rattlegore
 })
 
 Data:AddBossLoot(2809, { -- Marduk Blackpool
-    { 14576 }, -- #14576
-    { 18692 }, -- #18692
+    { 14576 }, -- Ebon Hilt of Marduk
+    { 18692 }, -- Death Knight Sabatons
 })
 
 Data:AddBossLoot(2813, { -- Vectus
-    { 14577 }, -- #14577
+    { 14577 }, -- Skullsmoke Pants
     { 18691 }, -- Dark Advisor's Pendant
 })
 
 Data:AddBossLoot(3055, { -- Kormok
-    { 22332 }, -- #22332
+    { 22332 }, -- Blade of Necromancy
     { 22303 }, -- Ironweave Pants
     { 22326 }, -- #22326
     { 21984 }, -- Left Piece of Lord Valthalak's Amulet
@@ -67,7 +67,7 @@ Data:AddBossLoot(2810, { -- Ras Frostwhisperer
     { 13521 }, -- Recipe: Flask of Supreme Power
     { 273112 }, -- Blueprint: Alchemy Laboratory
     { 13314 }, -- Alanna's Embrace
-    { 14503 }, -- #14503
+    { 14503 }, -- Death's Clutch
     { 18695 }, -- Spellbound Tome
 })
 
@@ -280,10 +280,10 @@ Data:AddBossLoot(2801, { -- Darkmaster Gandling
 })
 
 Data:AddBossLoot(-14516, { -- Death Knight Darkreaver
-    { 18758 }, -- #18758
-    { 18759 }, -- #18759
+    { 18758 }, -- Specter's Blade
+    { 18759 }, -- Malicious Axe
     { 18760 }, -- Necromantic Band
-    { 18761 }, -- #18761
+    { 18761 }, -- Oblivion's Touch
     { 18749 }, -- Charger's Lost Soul
     { 18880 }, -- Darkreaver's Head
 })
@@ -298,13 +298,13 @@ Data:AddTrashLoot(289, {
     { 16710 }, -- Shadowcraft Bracers
     { 16716 }, -- Wildheart Belt
     { 16671 }, -- Bindings of Elements
-    { 18697 }, -- #18697
+    { 18697 }, -- Coldstone Slippers
     { 18698 }, -- Tattered Leather Hood
-    { 18699 }, -- #18699
-    { 18700 }, -- #18700
-    { 18701 }, -- #18701
+    { 18699 }, -- Icy Tomb Spaulders
+    { 18700 }, -- Malefic Bracers
+    { 18701 }, -- Innervating Band
     { 18702 }, -- Belt of the Ordained
-    { 14536 }, -- #14536
+    { 14536 }, -- Bonebrace Hauberk
     { 16254 }, -- Formula: Enchant Weapon - Lifestealing
     { 16255 }, -- Formula: Enchant 2H Weapon - Major Spirit
     { 15776 }, -- Pattern: Runic Leather Armor
@@ -324,8 +324,8 @@ Data:AddQuests(289, {
     { id = 5343, name = "Barov Family Fortune", side = "Alliance", requiredLevel = 52, xp = 6600, objective = "Venture to the Scholomance and recover the Barov family fortune. Four deeds make up this fortune: The Deed to Caer Darrow; The Deed to Brill; The Deed to Tarren Mill; and The Deed to Southshore. Return to Weldon Barov when you have completed this task.", description = "The four deeds: Southshore in the first large chamber, Tarren Mill before the hatchlings, Brill by Ras Frostwhisper, Caer Darrow by Lord Alexei Barov. The follow-up The Last Barov sends you to kill the rival brother.", start = { description = "Chillwind Camp, Western Plaguelands", location = { 1422, 43.4, 83.4 }, npc = "Weldon Barov" }, turnIn = { description = "Chillwind Camp, Western Plaguelands", location = { 1422, 43.4, 83.4 }, npc = "Weldon Barov" }, items = {} },
     { id = 5341, name = "Barov Family Fortune", side = "Horde", requiredLevel = 52, xp = 6600, objective = "Venture to the Scholomance and recover the Barov family fortune. Four deeds make up this fortune: The Deed to Caer Darrow; The Deed to Brill; The Deed to Tarren Mill; and The Deed to Southshore. Return to Alexi Barov when you have completed this task.", description = "The four deeds: Southshore in the first large chamber, Tarren Mill before the hatchlings, Brill by Ras Frostwhisper, Caer Darrow by Lord Alexei Barov. The follow-up The Last Barov sends you to kill the rival brother.", start = { description = "The Bulwark, Tirisfal Glades", location = { 1420, 83, 71.4 }, npc = "Alexi Barov" }, turnIn = { description = "The Bulwark, Tirisfal Glades", location = { 1420, 83, 71.4 }, npc = "Alexi Barov" }, items = {} },
     { id = 4771, name = "Dawn's Gambit", side = "Both", requiredLevel = 57, xp = 9950, objective = "Place Dawn's Gambit in the Viewing Room of the Scholomance. Defeat Vectus, then return to Betina Bigglezink.", description = "Use Dawn's Gambit in the Viewing Room and defeat Vectus.", requires = { { id = 5531, name = "Betina Bigglezink" } }, start = { description = "Light's Hope Chapel, Eastern Plaguelands", location = { 1423, 73.7, 50.5 }, npc = "Betina Bigglezink" }, turnIn = { description = "Light's Hope Chapel, Eastern Plaguelands", location = { 1423, 73.7, 50.5 }, npc = "Betina Bigglezink" }, items = {
-        { 15853 }, -- #15853
-        { 15854 }, -- #15854
+        { 15853 }, -- Windreaper
+        { 15854 }, -- Dancing Sliver
     } },
     { id = 5529, name = "Plagued Hatchlings", side = "Both", requiredLevel = 55, xp = 6200, objective = "Kill 20 Plagued Hatchlings, then return to Betina Bigglezink at the Light's Hope Chapel.", description = "Kill 20 Plagued Hatchlings. After turning this in, hatchlings can drop Healthy Dragon Scales, which start a repeatable turn-in to Betina.", start = { description = "Light's Hope Chapel, Eastern Plaguelands", location = { 1423, 73.7, 50.5 }, npc = "Betina Bigglezink" }, turnIn = { description = "Light's Hope Chapel, Eastern Plaguelands", location = { 1423, 73.7, 50.5 }, npc = "Betina Bigglezink" }, items = {} },
     { id = 7629, name = "Imp Delivery", side = "Both", class = "WARLOCK", requiredLevel = 60, xp = 6600, objective = "Bring the Imp in a Jar to the alchemy lab in the Scholomance. After the parchment is created, return the jar to Gorzeeki Wildeyes.", description = "Warlock dreadsteed quest. Release the Imp in a Jar at the alchemy lab in Ras Frostwhisper's room and wait for the parchment.", requires = { { id = 7625, name = "Xorothian Stardust" }, { id = 7628, name = "Doomsday Candle" } }, start = { description = "Altar of Storms, Burning Steppes", location = { 1428, 12.4, 31.4 }, npc = "Gorzeeki Wildeyes" }, turnIn = { description = "Altar of Storms, Burning Steppes", location = { 1428, 12.4, 31.4 }, npc = "Gorzeeki Wildeyes" }, items = {} },

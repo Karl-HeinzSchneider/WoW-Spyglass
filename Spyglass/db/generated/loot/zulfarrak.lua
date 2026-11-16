@@ -34,7 +34,7 @@ Data:AddBossLoot(595, { -- Antu'sul
     { 252870 }, -- Pattern: Skycaller's Leather Gauntlets
     { 251403 }, -- Plans: Officer's Gloves
     { 251405 }, -- Plans: Warder's Gloves
-    { 9484 }, -- #9484
+    { 9484 }, -- Spellshock Leggings
 })
 
 Data:AddBossLoot(596, { -- Theka the Martyr

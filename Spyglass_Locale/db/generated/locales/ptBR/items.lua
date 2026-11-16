@@ -11603,6 +11603,7 @@ Data:AddNames("ptBR", "items", {
     [21544] = "Conjunto Festivo Azul",
     [21545] = "Suprimento do Bosque Defumado",
     [21546] = "Elixir de Poder Sagrado",
+    [21547] = "Receita: Elixir de Poder Sagrado",
     [21548] = "Molde: Luvas do Véu da Tempestade",
     [21549] = "Monster - Shield, Shieldguard",
     [21550] = "Monster - Bow, Kaldorei",

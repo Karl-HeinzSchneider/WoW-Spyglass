@@ -44,7 +44,7 @@ Data:AddBossLoot(346, { -- Alzzin the Wildshaper
 })
 
 Data:AddTrashLoot(42901, {
-    { 18296 }, -- #18296
+    { 18296 }, -- Marksman Bands
 })
 
 Data:AddQuests(42901, {

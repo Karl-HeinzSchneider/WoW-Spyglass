@@ -86,7 +86,7 @@ Data:AddBossLoot(275, { -- Overlord Wyrmthalak
     { 13162 }, -- Reiver Claws
     { 13163 }, -- Relentless Scythe
     { 22321 }, -- Heart of Wyrmthalak
-    { 13143 }, -- #13143
+    { 13143 }, -- Mark of the Dragon Lord
 })
 
 Data:AddBossLoot(-9219, { -- Spirestone Butcher

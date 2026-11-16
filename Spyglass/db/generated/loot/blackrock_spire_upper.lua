@@ -60,16 +60,16 @@ Data:AddBossLoot(3069, { -- General Drakkisath
     { 22268 }, -- Draconic Infused Emblem
     { 15730 }, -- Pattern: Red Dragonscale Breastplate
     { 13519 }, -- Recipe: Flask of the Titans
-    { 12592 }, -- #12592
+    { 12592 }, -- Blackblade of Shahram
 })
 
 Data:AddBossLoot(3070, { -- Lord Valthalak
-    { 22335 }, -- #22335
+    { 22335 }, -- Lord Valthalak's Staff of Command
     { 22336 }, -- #22336
-    { 22337 }, -- #22337
-    { 22339 }, -- #22339
-    { 22340 }, -- #22340
-    { 22342 }, -- #22342
+    { 22337 }, -- Shroud of Domination
+    { 22339 }, -- Rune Band of Wizardry
+    { 22340 }, -- Pendant of Celerity
+    { 22342 }, -- Leggings of Torment
     { 22343 }, -- #22343
     { 22302 }, -- Ironweave Cowl
 })

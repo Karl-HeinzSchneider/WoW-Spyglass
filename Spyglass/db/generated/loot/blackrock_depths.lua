@@ -212,9 +212,9 @@ Data:AddBossLoot(-8923, { -- Panzor the Invincible
 
 Data:AddBossLoot(-16059, { -- Theldren
     { 22305 }, -- Ironweave Mantle
-    { 22330 }, -- #22330
-    { 22317 }, -- #22317
-    { 22318 }, -- #22318
+    { 22330 }, -- Shroud of Arcane Mastery
+    { 22317 }, -- Lefty's Brass Knuckle
+    { 22318 }, -- Malgen's Long Bow
 })
 
 Data:AddTrashLoot(230, {
@@ -225,12 +225,12 @@ Data:AddTrashLoot(230, {
     { 12555 }, -- Battlechaser's Greaves
     { 12527 }, -- Ribsplitter
     { 12531 }, -- Searing Needle
-    { 12547 }, -- #12547
-    { 12551 }, -- #12551
-    { 12552 }, -- #12552
-    { 12535 }, -- #12535
-    { 12528 }, -- #12528
-    { 12532 }, -- #12532
+    { 12547 }, -- Mar Alom's Grip
+    { 12551 }, -- Stoneshield Cloak
+    { 12552 }, -- Blisterbane Wrap
+    { 12535 }, -- Doomforged Straightedge
+    { 12528 }, -- The Judge's Gavel
+    { 12532 }, -- Spire of the Stoneshaper
     { 11611 }, -- Plans: Dark Iron Sunderer
     { 11614 }, -- Plans: Dark Iron Mail
     { 11615 }, -- Plans: Dark Iron Shoulders

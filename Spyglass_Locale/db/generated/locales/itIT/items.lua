@@ -11603,6 +11603,7 @@ Data:AddNames("itIT", "items", {
     [21544] = "Festive Blue Pant Suit",
     [21545] = "Smokywood Supplies",
     [21546] = "Elixir of Holy Power",
+    [21547] = "Recipe: Elixir of Holy Power",
     [21548] = "Pattern: Stormshroud Gloves",
     [21549] = "Monster - Shield, Shieldguard",
     [21550] = "Monster - Bow, Kaldorei",

@@ -11603,6 +11603,7 @@ Data:AddNames("deDE", "items", {
     [21544] = "Festlicher blauer Hosenanzug",
     [21545] = "Vorräte der Kokelwälder",
     [21546] = "Elixier der heiligen Kraft",
+    [21547] = "Rezept: Elixier der heiligen Kraft",
     [21548] = "Muster: Sturmschleierhandschuhe",
     [21549] = "Monster - Shield, Shieldguard",
     [21550] = "Monster - Bow, Kaldorei",

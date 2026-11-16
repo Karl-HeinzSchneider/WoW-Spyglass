@@ -23771,7 +23771,7 @@
   },
   "21547": {
     "names": {
-      "enUS": "Recipe: Elixir of Greater Firepower"
+      "enUS": "Recipe: Elixir of Holy Power"
     },
     "quality": 2,
     "itemLevel": 50,
@@ -33576,6 +33576,29 @@
       "STAMINA": 14
     }
   },
+  "22314": {
+    "names": {
+      "enUS": "Huntsman's Harpoon"
+    },
+    "quality": 3,
+    "itemLevel": 61,
+    "reqLevel": 56,
+    "classID": 2,
+    "subclassID": 6,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 1,
+    "icon": 135129,
+    "sellPrice": 65286,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 30,
+      "ATTACK_POWER_VS_BEAST": 36,
+      "DAMAGE_PER_SECOND": 52.22
+    }
+  },
   "22316": {
     "names": {
       "enUS": "Test Relic"
@@ -33599,6 +33622,52 @@
       "RESISTANCE2_NAME": 10,
       "RESISTANCE5_NAME": 10,
       "SHADOW_RESISTANCE": 10
+    }
+  },
+  "22317": {
+    "names": {
+      "enUS": "Lefty's Brass Knuckle"
+    },
+    "quality": 3,
+    "itemLevel": 61,
+    "reqLevel": 56,
+    "classID": 2,
+    "subclassID": 13,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 1,
+    "icon": 132945,
+    "sellPrice": 52093,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 12,
+      "DAMAGE_PER_SECOND": 40,
+      "STRENGTH": 8
+    }
+  },
+  "22318": {
+    "names": {
+      "enUS": "Malgen's Long Bow"
+    },
+    "quality": 3,
+    "itemLevel": 61,
+    "reqLevel": 56,
+    "classID": 2,
+    "subclassID": 2,
+    "slot": "INVTYPE_RANGED",
+    "bind": 1,
+    "icon": 135500,
+    "sellPrice": 39171,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ATTACK_POWER": 18,
+      "DAMAGE_PER_SECOND": 31.21,
+      "STAMINA": 4
     }
   },
   "22320": {
@@ -33641,6 +33710,30 @@
       "RESISTANCE2_NAME": 13
     }
   },
+  "22322": {
+    "names": {
+      "enUS": "The Jaw Breaker"
+    },
+    "quality": 3,
+    "itemLevel": 61,
+    "reqLevel": 56,
+    "classID": 2,
+    "subclassID": 4,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 1,
+    "icon": 133490,
+    "sellPrice": 52229,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ATTACK_POWER": 6,
+      "ATTACK_POWER_VS_HUMANOID": 6,
+      "CRIT_RATING": 14,
+      "DAMAGE_PER_SECOND": 40.31
+    }
+  },
   "22324": {
     "names": {
       "enUS": "Winter Kimchi"
@@ -33659,6 +33752,246 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "22325": {
+    "names": {
+      "enUS": "Belt of the Trickster"
+    },
+    "quality": 3,
+    "itemLevel": 61,
+    "reqLevel": 56,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_WAIST",
+    "bind": 1,
+    "icon": 132515,
+    "sellPrice": 13161,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 22,
+      "RESISTANCE0_NAME": 97,
+      "STAMINA": 9
+    }
+  },
+  "22327": {
+    "names": {
+      "enUS": "Amulet of the Redeemed"
+    },
+    "quality": 3,
+    "itemLevel": 63,
+    "reqLevel": 58,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_NECK",
+    "bind": 1,
+    "icon": 133295,
+    "sellPrice": 23033,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 10,
+      "SPELL_DAMAGE_DONE": 5,
+      "SPELL_HEALING_DONE": 15,
+      "SPIRIT": 8,
+      "STAMINA": 9
+    }
+  },
+  "22328": {
+    "names": {
+      "enUS": "Legplates of Vigilance"
+    },
+    "quality": 3,
+    "itemLevel": 63,
+    "reqLevel": 58,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_LEGS",
+    "bind": 1,
+    "icon": 134584,
+    "sellPrice": 40307,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DEFENSE_SKILL_RATING": 15,
+      "HIT_RATING": 10,
+      "RESISTANCE0_NAME": 575,
+      "STAMINA": 22
+    }
+  },
+  "22329": {
+    "names": {
+      "enUS": "Scepter of Interminable Focus"
+    },
+    "quality": 3,
+    "itemLevel": 63,
+    "reqLevel": 58,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_HOLDABLE",
+    "bind": 1,
+    "icon": 135469,
+    "sellPrice": 23033,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 14,
+      "HIT_RATING": 5,
+      "INTELLECT": 8,
+      "SPIRIT": 8
+    }
+  },
+  "22330": {
+    "names": {
+      "enUS": "Shroud of Arcane Mastery"
+    },
+    "quality": 3,
+    "itemLevel": 61,
+    "reqLevel": 56,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_CLOAK",
+    "bind": 1,
+    "icon": 133768,
+    "sellPrice": 15668,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 10,
+      "RESISTANCE0_NAME": 43,
+      "SPELL_PENETRATION": 4,
+      "STAMINA": 10
+    }
+  },
+  "22332": {
+    "names": {
+      "enUS": "Blade of Necromancy"
+    },
+    "quality": 3,
+    "itemLevel": 62,
+    "reqLevel": 57,
+    "classID": 2,
+    "subclassID": 7,
+    "slot": "INVTYPE_WEAPONMAINHAND",
+    "bind": 1,
+    "icon": 135326,
+    "sellPrice": 54840,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 27,
+      "SPELL_POWER": 72
+    }
+  },
+  "22333": {
+    "names": {
+      "enUS": "Hammer of Divine Might"
+    },
+    "quality": 3,
+    "itemLevel": 62,
+    "reqLevel": 57,
+    "classID": 2,
+    "subclassID": 5,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 1,
+    "icon": 133041,
+    "sellPrice": 68550,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 39.29,
+      "INTELLECT": 26,
+      "SPELL_DAMAGE_DONE": 45,
+      "SPELL_HEALING_DONE": 135,
+      "STAMINA": 21
+    }
+  },
+  "22334": {
+    "names": {
+      "enUS": "Band of Mending"
+    },
+    "quality": 3,
+    "itemLevel": 62,
+    "reqLevel": 57,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_FINGER",
+    "bind": 1,
+    "icon": 133347,
+    "sellPrice": 21936,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 7,
+      "SPELL_DAMAGE_DONE": 10,
+      "SPELL_HEALING_DONE": 31,
+      "SPIRIT": 6,
+      "STAMINA": 7
+    }
+  },
+  "22335": {
+    "names": {
+      "enUS": "Lord Valthalak's Staff of Command"
+    },
+    "quality": 3,
+    "itemLevel": 63,
+    "reqLevel": 58,
+    "classID": 2,
+    "subclassID": 10,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 1,
+    "icon": 135144,
+    "sellPrice": 71978,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 40,
+      "HIT_RATING": 10,
+      "INTELLECT": 21,
+      "SPELL_POWER": 72,
+      "STAMINA": 21
+    }
+  },
+  "22337": {
+    "names": {
+      "enUS": "Shroud of Domination"
+    },
+    "quality": 3,
+    "itemLevel": 63,
+    "reqLevel": 58,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_CLOAK",
+    "bind": 1,
+    "icon": 133771,
+    "sellPrice": 17274,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 45,
+      "STAMINA": 8,
+      "STRENGTH": 17
+    }
+  },
   "22338": {
     "names": {
       "enUS": "Volcanic Ash"
@@ -33676,6 +34009,55 @@
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
+  },
+  "22339": {
+    "names": {
+      "enUS": "Rune Band of Wizardry"
+    },
+    "quality": 3,
+    "itemLevel": 63,
+    "reqLevel": 58,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_FINGER",
+    "bind": 1,
+    "icon": 133377,
+    "sellPrice": 23033,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ARCANE_RESISTANCE": 7,
+      "HIT_RATING": 10,
+      "RESISTANCE6_NAME": 7,
+      "SPELL_POWER": 13,
+      "STAMINA": 7
+    }
+  },
+  "22340": {
+    "names": {
+      "enUS": "Pendant of Celerity"
+    },
+    "quality": 3,
+    "itemLevel": 63,
+    "reqLevel": 58,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_NECK",
+    "bind": 1,
+    "icon": 133291,
+    "sellPrice": 23033,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 10,
+      "FROST_RESISTANCE": 10,
+      "HIT_RATING": 10,
+      "RESISTANCE4_NAME": 10
+    }
   },
   "22341": {
     "names": {
@@ -33696,6 +34078,30 @@
     "craftingReagent": false,
     "stats": {
       "DAMAGE_PER_SECOND": 0.75
+    }
+  },
+  "22342": {
+    "names": {
+      "enUS": "Leggings of Torment"
+    },
+    "quality": 3,
+    "itemLevel": 63,
+    "reqLevel": 58,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_LEGS",
+    "bind": 1,
+    "icon": 134589,
+    "sellPrice": 23033,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 16,
+      "RESISTANCE0_NAME": 78,
+      "SHADOW_DAMAGE_DONE": 34,
+      "STAMINA": 16
     }
   },
   "22344": {

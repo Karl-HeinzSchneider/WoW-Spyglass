@@ -4660,6 +4660,27 @@
       "RESISTANCE0_NAME": 16
     }
   },
+  "862": {
+    "names": {
+      "enUS": "Runed Ring"
+    },
+    "quality": 3,
+    "itemLevel": 50,
+    "reqLevel": 45,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_FINGER",
+    "bind": 2,
+    "icon": 132523,
+    "sellPrice": 11217,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "SPELL_POWER": 7
+    }
+  },
   "863": {
     "names": {
       "enUS": "Gloom Reaper"
@@ -7332,7 +7353,7 @@
     "classID": 15,
     "subclassID": 5,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 3,
+    "bind": 1,
     "icon": 132224,
     "sellPrice": 0,
     "stackCount": 1,
@@ -8456,7 +8477,7 @@
     "classID": 15,
     "subclassID": 5,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 3,
+    "bind": 1,
     "icon": 132224,
     "sellPrice": 0,
     "stackCount": 1,
@@ -8930,6 +8951,31 @@
     "craftingReagent": false,
     "stats": {
       "RESISTANCE0_NAME": 161
+    }
+  },
+  "1168": {
+    "names": {
+      "enUS": "Skullflame Shield"
+    },
+    "quality": 4,
+    "itemLevel": 59,
+    "reqLevel": 54,
+    "classID": 4,
+    "subclassID": 6,
+    "slot": "INVTYPE_SHIELD",
+    "bind": 2,
+    "icon": 134947,
+    "sellPrice": 42296,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "FIRE_RESISTANCE": 10,
+      "RESISTANCE0_NAME": 2256,
+      "RESISTANCE2_NAME": 10,
+      "RESISTANCE5_NAME": 10,
+      "SHADOW_RESISTANCE": 10
     }
   },
   "1169": {
@@ -10373,6 +10419,29 @@
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
+  },
+  "1263": {
+    "names": {
+      "enUS": "Brain Hacker"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 55,
+    "classID": 2,
+    "subclassID": 1,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 2,
+    "icon": 135580,
+    "sellPrice": 79064,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 14,
+      "DAMAGE_PER_SECOND": 56.57,
+      "STAMINA": 16
+    }
   },
   "1264": {
     "names": {
@@ -28037,7 +28106,7 @@
     "classID": 15,
     "subclassID": 5,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 3,
+    "bind": 1,
     "icon": 132261,
     "sellPrice": 0,
     "stackCount": 1,
@@ -28091,7 +28160,7 @@
     "classID": 15,
     "subclassID": 5,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 3,
+    "bind": 1,
     "icon": 132261,
     "sellPrice": 0,
     "stackCount": 1,
@@ -37057,8 +37126,8 @@
     "craftingReagent": false,
     "stats": {
       "DAMAGE_PER_SECOND": 49.74,
-      "MACES": 1,
-      "STAMINA": 14
+      "STAMINA": 14,
+      "TWOHANDED_MACES": 1
     }
   },
   "2916": {
@@ -66111,7 +66180,7 @@
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 0,
     "icon": 133716,
-    "sellPrice": 500,
+    "sellPrice": 125,
     "stackCount": 10,
     "setID": 0,
     "expansionID": 0,
@@ -89526,6 +89595,27 @@
       "STAMINA": 5
     }
   },
+  "5616": {
+    "names": {
+      "enUS": "Gutwrencher"
+    },
+    "quality": 3,
+    "itemLevel": 47,
+    "reqLevel": 42,
+    "classID": 2,
+    "subclassID": 15,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 2,
+    "icon": 135341,
+    "sellPrice": 22679,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 31.56
+    }
+  },
   "5617": {
     "names": {
       "enUS": "Vagabond Leggings"
@@ -90224,7 +90314,7 @@
     "classID": 15,
     "subclassID": 5,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 3,
+    "bind": 1,
     "icon": 132261,
     "sellPrice": 0,
     "stackCount": 1,
@@ -90242,7 +90332,7 @@
     "classID": 15,
     "subclassID": 5,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 3,
+    "bind": 1,
     "icon": 132261,
     "sellPrice": 0,
     "stackCount": 1,
@@ -90404,7 +90494,7 @@
     "classID": 15,
     "subclassID": 5,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 3,
+    "bind": 1,
     "icon": 132266,
     "sellPrice": 0,
     "stackCount": 1,
@@ -90458,7 +90548,7 @@
     "classID": 15,
     "subclassID": 5,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 3,
+    "bind": 1,
     "icon": 132224,
     "sellPrice": 0,
     "stackCount": 1,
@@ -94125,7 +94215,7 @@
     "classID": 15,
     "subclassID": 5,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 3,
+    "bind": 1,
     "icon": 132248,
     "sellPrice": 0,
     "stackCount": 1,
@@ -94272,7 +94362,7 @@
     "classID": 15,
     "subclassID": 5,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 3,
+    "bind": 1,
     "icon": 132248,
     "sellPrice": 0,
     "stackCount": 1,
@@ -94290,7 +94380,7 @@
     "classID": 15,
     "subclassID": 5,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 3,
+    "bind": 1,
     "icon": 132248,
     "sellPrice": 0,
     "stackCount": 1,
@@ -130507,7 +130597,7 @@
     "classID": 15,
     "subclassID": 5,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 3,
+    "bind": 1,
     "icon": 132247,
     "sellPrice": 0,
     "stackCount": 1,
@@ -130597,7 +130687,7 @@
     "classID": 15,
     "subclassID": 5,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 3,
+    "bind": 1,
     "icon": 132253,
     "sellPrice": 0,
     "stackCount": 1,
@@ -130633,7 +130723,7 @@
     "classID": 15,
     "subclassID": 5,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 3,
+    "bind": 1,
     "icon": 132253,
     "sellPrice": 0,
     "stackCount": 1,
@@ -130687,7 +130777,7 @@
     "classID": 15,
     "subclassID": 5,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 3,
+    "bind": 1,
     "icon": 132253,
     "sellPrice": 0,
     "stackCount": 1,
@@ -130705,7 +130795,7 @@
     "classID": 15,
     "subclassID": 5,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 3,
+    "bind": 1,
     "icon": 132253,
     "sellPrice": 0,
     "stackCount": 1,
@@ -130759,7 +130849,7 @@
     "classID": 15,
     "subclassID": 5,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 3,
+    "bind": 1,
     "icon": 132247,
     "sellPrice": 0,
     "stackCount": 1,
@@ -130903,7 +130993,7 @@
     "classID": 15,
     "subclassID": 5,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 3,
+    "bind": 1,
     "icon": 132225,
     "sellPrice": 0,
     "stackCount": 1,
@@ -130939,7 +131029,7 @@
     "classID": 15,
     "subclassID": 5,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 3,
+    "bind": 1,
     "icon": 132267,
     "sellPrice": 0,
     "stackCount": 1,
@@ -130957,7 +131047,7 @@
     "classID": 15,
     "subclassID": 5,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 3,
+    "bind": 1,
     "icon": 132267,
     "sellPrice": 0,
     "stackCount": 1,
@@ -141667,6 +141757,31 @@
       "DAMAGE_PER_SECOND": 52.12
     }
   },
+  "9375": {
+    "names": {
+      "enUS": "Expert Goldminer's Helmet"
+    },
+    "quality": 3,
+    "itemLevel": 40,
+    "reqLevel": 35,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_HEAD",
+    "bind": 2,
+    "icon": 133120,
+    "sellPrice": 4220,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 7,
+      "AXES": 1,
+      "EXPERTISE_RATING": 11,
+      "RESISTANCE0_NAME": 99,
+      "STAMINA": 8
+    }
+  },
   "9378": {
     "names": {
       "enUS": "Shovelphlange's Mining Axe"
@@ -144018,6 +144133,30 @@
       "DAMAGE_PER_SECOND": 47.22,
       "FIRE_RESISTANCE": 6,
       "RESISTANCE2_NAME": 6
+    }
+  },
+  "9484": {
+    "names": {
+      "enUS": "Spellshock Leggings"
+    },
+    "quality": 3,
+    "itemLevel": 50,
+    "reqLevel": 45,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_LEGS",
+    "bind": 2,
+    "icon": 134588,
+    "sellPrice": 11217,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 10,
+      "RESISTANCE0_NAME": 63,
+      "SPELL_POWER": 23,
+      "STAMINA": 9
     }
   },
   "9485": {

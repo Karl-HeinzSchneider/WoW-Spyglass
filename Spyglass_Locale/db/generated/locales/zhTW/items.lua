@@ -11603,6 +11603,7 @@ Data:AddNames("zhTW", "items", {
     [21544] = "藍色節慶褲裝",
     [21545] = "燻木補給品",
     [21546] = "神聖之力藥劑",
+    [21547] = "配方：神聖之力藥劑",
     [21548] = "圖樣：雷暴手套",
     [21549] = "Monster - Shield, Shieldguard",
     [21550] = "Monster - Bow, Kaldorei",

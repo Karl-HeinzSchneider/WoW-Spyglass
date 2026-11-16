@@ -9,9 +9,9 @@ Data:AddBossLoot(362, { -- Guard Mol'dar
     { 18496 }, -- Heliotrope Cloak
     { 18497 }, -- Sublime Wristguards
     { 18498 }, -- Hedgecutter
-    { 18450 }, -- #18450
+    { 18450 }, -- Robe of Combustion
     { 18451 }, -- Hyena Hide Belt
-    { 18458 }, -- #18458
+    { 18458 }, -- Modest Armguards
     { 18459 }, -- Gallant's Wristguards
     { 18460 }, -- Unsophisticated Hand Cannon
     { 18462 }, -- Jagged Bone Fist
@@ -29,9 +29,9 @@ Data:AddBossLoot(364, { -- Guard Fengus
     { 18496 }, -- Heliotrope Cloak
     { 18497 }, -- Sublime Wristguards
     { 18498 }, -- Hedgecutter
-    { 18450 }, -- #18450
+    { 18450 }, -- Robe of Combustion
     { 18451 }, -- Hyena Hide Belt
-    { 18458 }, -- #18458
+    { 18458 }, -- Modest Armguards
     { 18459 }, -- Gallant's Wristguards
     { 18460 }, -- Unsophisticated Hand Cannon
     { 18462 }, -- Jagged Bone Fist
@@ -45,9 +45,9 @@ Data:AddBossLoot(365, { -- Guard Slip'kik
     { 18496 }, -- Heliotrope Cloak
     { 18497 }, -- Sublime Wristguards
     { 18498 }, -- Hedgecutter
-    { 18450 }, -- #18450
+    { 18450 }, -- Robe of Combustion
     { 18451 }, -- Hyena Hide Belt
-    { 18458 }, -- #18458
+    { 18458 }, -- Modest Armguards
     { 18459 }, -- Gallant's Wristguards
     { 18460 }, -- Unsophisticated Hand Cannon
     { 18462 }, -- Jagged Bone Fist
@@ -100,13 +100,13 @@ Data:AddQuests(42903, {
         { 18473 }, -- Royal Seal of Eldre'Thalas
     } },
     { id = 7500, name = "The Arcanist's Cookbook", side = "Both", class = "MAGE", requiredLevel = 54, xp = 6600, objective = "Return the book to its rightful owners.", description = "Mage class book. Click the book to start the quest.", start = { description = "The Arcanist's Cookbook (book, Dire Maul drop)", item = 18358 }, turnIn = { description = "Dire Maul", npc = "Lorekeeper Kildrath" }, items = {
-        { 18468 }, -- #18468
+        { 18468 }, -- Royal Seal of Eldre'Thalas
     } },
     { id = 7501, name = "The Light and How To Swing It", side = "Alliance", class = "PALADIN", requiredLevel = 54, xp = 6600, objective = "Return the book to its rightful owners.", description = "Paladin class book. Click the book to start the quest.", start = { description = "The Light and How To Swing It (book, Dire Maul drop)", item = 18359 }, turnIn = { description = "Dire Maul", npc = "Lorekeeper Mykos" }, items = {
-        { 18472 }, -- #18472
+        { 18472 }, -- Royal Seal of Eldre'Thalas
     } },
     { id = 7504, name = "Holy Bologna: What the Light Won't Tell You", side = "Both", class = "PRIEST", requiredLevel = 54, xp = 6600, objective = "Return the book to its rightful owners.", description = "Priest class book. Click the book to start the quest.", start = { description = "Holy Bologna: What the Light Won't Tell You (book, Dire Maul drop)", item = 18362 }, turnIn = { description = "Dire Maul", npc = "Lorekeeper Javon" }, items = {
-        { 18469 }, -- #18469
+        { 18469 }, -- Royal Seal of Eldre'Thalas
     } },
     { id = 7498, name = "Garona: A Study on Stealth and Treachery", side = "Both", class = "ROGUE", requiredLevel = 54, xp = 6600, objective = "Return the book to its rightful owners.", description = "Rogue class book. Click the book to start the quest.", start = { description = "Garona: A Study on Stealth and Treachery (book, Dire Maul drop)", item = 18356 }, turnIn = { description = "Dire Maul", npc = "Lorekeeper Kildrath" }, items = {
         { 18465 }, -- Royal Seal of Eldre'Thalas
@@ -115,10 +115,10 @@ Data:AddQuests(42903, {
         { 18471 }, -- Royal Seal of Eldre'Thalas
     } },
     { id = 7502, name = "Harnessing Shadows", side = "Both", class = "WARLOCK", requiredLevel = 54, xp = 6600, objective = "Return the book to its rightful owners.", description = "Warlock class book. Click the book to start the quest.", start = { description = "Harnessing Shadows (book, Dire Maul drop)", item = 18360 }, turnIn = { description = "Dire Maul", npc = "Lorekeeper Mykos" }, items = {
-        { 18467 }, -- #18467
+        { 18467 }, -- Royal Seal of Eldre'Thalas
     } },
     { id = 7499, name = "Codex of Defense", side = "Both", class = "WARRIOR", requiredLevel = 54, xp = 6600, objective = "Return the book to its rightful owners.", description = "Warrior class book. Click the book to start the quest.", start = { description = "Codex of Defense (book, Dire Maul drop)", item = 18357 }, turnIn = { description = "Dire Maul", npc = "Lorekeeper Kildrath" }, items = {
-        { 18466 }, -- #18466
+        { 18466 }, -- Royal Seal of Eldre'Thalas
     } },
     { id = 7507, name = "Nostro's Compendium", side = "Both", requiredLevel = 60, xp = 0, objective = "Return Nostro's Compendium of Dragon Slaying to the Athenaeum.", description = "Warriors and Paladins. Lydros then gives The Forging of Quel'Serrar, which is finished in Onyxia's Lair.", start = { description = "Nostro's Compendium of Dragon Slaying (rare Dire Maul drop)" }, turnIn = { description = "Athenaeum, Dire Maul", npc = "Lorekeeper Lydros" }, items = {} },
     { id = 7483, name = "Libram of Rapidity", side = "Both", requiredLevel = 54, xp = 0, objective = "Bring a Libram of Rapidity, 1 Pristine Black Diamond, 2 Large Brilliant Shards, and 2 Blood of Heroes to Lorekeeper Lydros in Dire Maul to receive an Arcanum of Rapidity.", description = "Repeatable. Needs your faction's Elven Legends turned in first.", start = { description = "Athenaeum, Dire Maul", npc = "Lorekeeper Lydros" }, turnIn = { description = "Athenaeum, Dire Maul", npc = "Lorekeeper Lydros" }, items = {

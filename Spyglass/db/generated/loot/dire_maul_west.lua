@@ -13,7 +13,7 @@ Data:AddBossLoot(350, { -- Tendris Warpwood
 Data:AddBossLoot(347, { -- Illyanna Ravenoak
     { 18383 }, -- Force Imbued Gauntlets
     { 18386 }, -- Padre's Trousers
-    { 18347 }, -- #18347
+    { 18347 }, -- Well Balanced Axe
     { 18349 }, -- Gauntlets of Accuracy
 })
 
@@ -23,7 +23,7 @@ Data:AddBossLoot(348, { -- Magister Kalendris
     { 18371 }, -- Mindtap Talisman
     { 22309 }, -- Pattern: Big Bag of Enchantment
     { 18350 }, -- Amplifying Cloak
-    { 18351 }, -- #18351
+    { 18351 }, -- Magically Sealed Bracers
 })
 
 Data:AddBossLoot(349, { -- Immol'thar
@@ -53,16 +53,16 @@ Data:AddBossLoot(361, { -- Prince Tortheldrin
 })
 
 Data:AddBossLoot(2793, { -- Lord Hel'nurath
-    { 18755 }, -- #18755
-    { 18756 }, -- #18756
-    { 18754 }, -- #18754
-    { 18757 }, -- #18757
+    { 18755 }, -- Xorothian Firestick
+    { 18756 }, -- Dreadguard's Protector
+    { 18754 }, -- Fel Hardened Bracers
+    { 18757 }, -- Diabolic Mantle
 })
 
 Data:AddBossLoot(2794, { -- Tsu'zee
     { 18387 }, -- Brightspark Gloves
-    { 18345 }, -- #18345
-    { 18346 }, -- #18346
+    { 18345 }, -- Murmuring Ring
+    { 18346 }, -- Threadbare Trousers
 })
 
 Data:AddQuests(42902, {
