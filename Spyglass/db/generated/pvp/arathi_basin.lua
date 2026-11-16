@@ -10,6 +10,7 @@ Data:AddList("pvp", "arathi_basin", {
         { text = "Samuel Hawke, League of Arathor Supply Officer, is in Refuge Pointe, Arathi Highlands." },
         { row = "Coordinates", value = "46.0, 45.6" },
         { button = "Show vendor on map", map = { 1417, 46, 45.6 } },
+        { text = "Arathor Battle Tabard is a reward from Control Five Bases. The source for Tabard Project (Aidan) is unknown." },
     },
 })
 Data:AddListLoot("pvp", "arathi_basin", {
@@ -18,6 +19,11 @@ Data:AddListLoot("pvp", "arathi_basin", {
     { 20227, standing = "Friendly", side = "Alliance" }, -- Highlander's Iron Ration
     { 20243, standing = "Friendly", side = "Alliance" }, -- Highlander's Runecloth Bandage
     { 20225, standing = "Friendly", side = "Alliance" }, -- Highlander's Enriched Ration
+    { 21119, standing = "Friendly", side = "Alliance" }, -- Talisman of Arathor
+    { 21118, standing = "Friendly", side = "Alliance" }, -- Talisman of Arathor
+    { 20071, standing = "Friendly", side = "Alliance" }, -- Talisman of Arathor
+    { 21117, standing = "Friendly", side = "Alliance" }, -- Talisman of Arathor
+    { 20237, standing = "Friendly", side = "Alliance" }, -- Highlander's Mageweave Bandage
     { 20126, standing = "Honored", side = "Alliance" }, -- Highlander's Plate Girdle
     { 20089, standing = "Honored", side = "Alliance" }, -- Highlander's Chain Girdle
     { 20104, standing = "Honored", side = "Alliance" }, -- Highlander's Lizardhide Girdle
@@ -30,6 +36,22 @@ Data:AddListLoot("pvp", "arathi_basin", {
     { 20088, standing = "Honored", side = "Alliance" }, -- Highlander's Chain Girdle
     { 20103, standing = "Honored", side = "Alliance" }, -- Highlander's Lizardhide Girdle
     { 20042, standing = "Honored", side = "Alliance" }, -- Highlander's Lamellar Girdle
+    { 20047, standing = "Honored", side = "Alliance" }, -- Highlander's Cloth Girdle
+    { 20099, standing = "Honored", side = "Alliance" }, -- Highlander's Cloth Girdle
+    { 20116, standing = "Honored", side = "Alliance" }, -- Highlander's Leather Girdle
+    { 20117, standing = "Honored", side = "Alliance" }, -- Highlander's Leather Girdle
+    { 20041, standing = "Honored", side = "Alliance" }, -- Highlander's Plate Girdle
+    { 20090, standing = "Honored", side = "Alliance" }, -- Highlander's Chain Girdle
+    { 20043, standing = "Honored", side = "Alliance" }, -- Highlander's Chain Girdle
+    { 20045, standing = "Honored", side = "Alliance" }, -- Highlander's Leather Girdle
+    { 20098, standing = "Honored", side = "Alliance" }, -- Highlander's Cloth Girdle
+    { 20044, standing = "Honored", side = "Alliance" }, -- Highlander's Mail Girdle
+    { 20046, standing = "Honored", side = "Alliance" }, -- Highlander's Lizardhide Girdle
+    { 20108, standing = "Honored", side = "Alliance" }, -- Highlander's Lamellar Girdle
+    { 20118, standing = "Honored", side = "Alliance" }, -- Highlander's Mail Girdle
+    { 20105, standing = "Honored", side = "Alliance" }, -- Highlander's Lizardhide Girdle
+    { 20106, standing = "Honored", side = "Alliance" }, -- Highlander's Lamellar Girdle
+    { 20120, standing = "Honored", side = "Alliance" }, -- Highlander's Mail Girdle
     { 20092, standing = "Revered", side = "Alliance" }, -- Highlander's Chain Greaves
     { 20128, standing = "Revered", side = "Alliance" }, -- Highlander's Plate Greaves
     { 20110, standing = "Revered", side = "Alliance" }, -- Highlander's Lamellar Greaves
@@ -41,4 +63,33 @@ Data:AddListLoot("pvp", "arathi_basin", {
     { 20121, standing = "Revered", side = "Alliance" }, -- Highlander's Mail Greaves
     { 20127, standing = "Revered", side = "Alliance" }, -- Highlander's Plate Greaves
     { 20049, standing = "Revered", side = "Alliance" }, -- Highlander's Lamellar Greaves
+    { 20114, standing = "Revered", side = "Alliance" }, -- Highlander's Leather Boots
+    { 20113, standing = "Revered", side = "Alliance" }, -- Highlander's Leather Boots
+    { 20052, standing = "Revered", side = "Alliance" }, -- Highlander's Leather Boots
+    { 20093, standing = "Revered", side = "Alliance" }, -- Highlander's Chain Greaves
+    { 20054, standing = "Revered", side = "Alliance" }, -- Highlander's Cloth Boots
+    { 20096, standing = "Revered", side = "Alliance" }, -- Highlander's Cloth Boots
+    { 20111, standing = "Revered", side = "Alliance" }, -- Highlander's Lamellar Greaves
+    { 20051, standing = "Revered", side = "Alliance" }, -- Highlander's Mail Greaves
+    { 20101, standing = "Revered", side = "Alliance" }, -- Highlander's Lizardhide Boots
+    { 20048, standing = "Revered", side = "Alliance" }, -- Highlander's Plate Greaves
+    { 20095, standing = "Revered", side = "Alliance" }, -- Highlander's Cloth Boots
+    { 20129, standing = "Revered", side = "Alliance" }, -- Highlander's Plate Greaves
+    { 20123, standing = "Revered", side = "Alliance" }, -- Highlander's Mail Greaves
+    { 20053, standing = "Revered", side = "Alliance" }, -- Highlander's Lizardhide Boots
+    { 20122, standing = "Revered", side = "Alliance" }, -- Highlander's Mail Greaves
+    { 20050, standing = "Revered", side = "Alliance" }, -- Highlander's Chain Greaves
+    { 20102, standing = "Revered", side = "Alliance" }, -- Highlander's Lizardhide Boots
+    { 20069, standing = "Exalted", side = "Alliance" }, -- Ironbark Staff
+    { 20070, standing = "Exalted", side = "Alliance" }, -- Sageclaw
+    { 20132, standing = "Exalted", side = "Alliance" }, -- Arathor Battle Tabard
+    { 215450, standing = "Exalted", side = "Alliance" }, -- Tabard Project (Aidan)
+    { 20061, standing = "Exalted", side = "Alliance" }, -- Highlander's Epaulets
+    { 20073, standing = "Exalted", side = "Alliance" }, -- Cloak of the Honor Guard
+    { 20059, standing = "Exalted", side = "Alliance" }, -- Highlander's Leather Shoulders
+    { 20056, standing = "Exalted", side = "Alliance" }, -- Highlander's Mail Pauldrons
+    { 20057, standing = "Exalted", side = "Alliance" }, -- Highlander's Plate Spaulders
+    { 20058, standing = "Exalted", side = "Alliance" }, -- Highlander's Lamellar Spaulders
+    { 20055, standing = "Exalted", side = "Alliance" }, -- Highlander's Chain Pauldrons
+    { 20060, standing = "Exalted", side = "Alliance" }, -- Highlander's Lizardhide Shoulders
 })

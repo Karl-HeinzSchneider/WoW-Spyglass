@@ -15,6 +15,9 @@
     {
       "button": "Show vendor on map",
       "map": [1417, 46, 45.6]
+    },
+    {
+      "text": "Arathor Battle Tabard is a reward from Control Five Bases. The source for Tabard Project (Aidan) is unknown."
     }
   ],
   "rewards": [
@@ -45,6 +48,36 @@
     {
       "item": 20225,
       "name": "Highlander's Enriched Ration",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 21119,
+      "name": "Talisman of Arathor",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 21118,
+      "name": "Talisman of Arathor",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 20071,
+      "name": "Talisman of Arathor",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 21117,
+      "name": "Talisman of Arathor",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 20237,
+      "name": "Highlander's Mageweave Bandage",
       "standing": "Friendly",
       "side": "Alliance"
     },
@@ -121,6 +154,102 @@
       "side": "Alliance"
     },
     {
+      "item": 20047,
+      "name": "Highlander's Cloth Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20099,
+      "name": "Highlander's Cloth Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20116,
+      "name": "Highlander's Leather Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20117,
+      "name": "Highlander's Leather Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20041,
+      "name": "Highlander's Plate Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20090,
+      "name": "Highlander's Chain Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20043,
+      "name": "Highlander's Chain Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20045,
+      "name": "Highlander's Leather Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20098,
+      "name": "Highlander's Cloth Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20044,
+      "name": "Highlander's Mail Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20046,
+      "name": "Highlander's Lizardhide Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20108,
+      "name": "Highlander's Lamellar Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20118,
+      "name": "Highlander's Mail Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20105,
+      "name": "Highlander's Lizardhide Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20106,
+      "name": "Highlander's Lamellar Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 20120,
+      "name": "Highlander's Mail Girdle",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
       "item": 20092,
       "name": "Highlander's Chain Greaves",
       "standing": "Revered",
@@ -184,6 +313,180 @@
       "item": 20049,
       "name": "Highlander's Lamellar Greaves",
       "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20114,
+      "name": "Highlander's Leather Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20113,
+      "name": "Highlander's Leather Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20052,
+      "name": "Highlander's Leather Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20093,
+      "name": "Highlander's Chain Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20054,
+      "name": "Highlander's Cloth Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20096,
+      "name": "Highlander's Cloth Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20111,
+      "name": "Highlander's Lamellar Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20051,
+      "name": "Highlander's Mail Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20101,
+      "name": "Highlander's Lizardhide Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20048,
+      "name": "Highlander's Plate Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20095,
+      "name": "Highlander's Cloth Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20129,
+      "name": "Highlander's Plate Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20123,
+      "name": "Highlander's Mail Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20053,
+      "name": "Highlander's Lizardhide Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20122,
+      "name": "Highlander's Mail Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20050,
+      "name": "Highlander's Chain Greaves",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20102,
+      "name": "Highlander's Lizardhide Boots",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 20069,
+      "name": "Ironbark Staff",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 20070,
+      "name": "Sageclaw",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 20132,
+      "name": "Arathor Battle Tabard",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 215450,
+      "name": "Tabard Project (Aidan)",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 20061,
+      "name": "Highlander's Epaulets",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 20073,
+      "name": "Cloak of the Honor Guard",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 20059,
+      "name": "Highlander's Leather Shoulders",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 20056,
+      "name": "Highlander's Mail Pauldrons",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 20057,
+      "name": "Highlander's Plate Spaulders",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 20058,
+      "name": "Highlander's Lamellar Spaulders",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 20055,
+      "name": "Highlander's Chain Pauldrons",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 20060,
+      "name": "Highlander's Lizardhide Shoulders",
+      "standing": "Exalted",
       "side": "Alliance"
     }
   ]
