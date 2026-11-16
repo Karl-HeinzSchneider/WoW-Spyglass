@@ -11,7 +11,6 @@ Data:AddList("pvp", "arathi_basin", {
         { side = "Alliance", text = "Samuel Hawke, League of Arathor Supply Officer, is in Refuge Pointe, Arathi Highlands." },
         { row = "Coordinates", side = "Alliance", value = "46.0, 45.6" },
         { button = "Show vendor on map", map = { 1417, 46, 45.6 }, side = "Alliance" },
-        { side = "Alliance", text = "Arathor Battle Tabard is a reward from Control Five Bases. The source for Tabard Project (Aidan) is unknown." },
         { header = "Horde vendor", side = "Horde" },
         { side = "Horde", text = "Rutherford Twing, Defilers Supply Officer, is in Hammerfall, Arathi Highlands." },
         { row = "Coordinates", side = "Horde", value = "73.4, 29.8" },
@@ -89,7 +88,6 @@ Data:AddListLoot("pvp", "arathi_basin", {
     { 20069, standing = "Exalted", side = "Alliance" }, -- Ironbark Staff
     { 20070, standing = "Exalted", side = "Alliance" }, -- Sageclaw
     { 20132, standing = "Exalted", side = "Alliance" }, -- Arathor Battle Tabard
-    { 215450, standing = "Exalted", side = "Alliance" }, -- Tabard Project (Aidan)
     { 20061, standing = "Exalted", side = "Alliance" }, -- Highlander's Epaulets
     { 20073, standing = "Exalted", side = "Alliance" }, -- Cloak of the Honor Guard
     { 20059, standing = "Exalted", side = "Alliance" }, -- Highlander's Leather Shoulders

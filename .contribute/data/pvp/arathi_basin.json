@@ -25,10 +25,6 @@
       "side": "Alliance"
     },
     {
-      "text": "Arathor Battle Tabard is a reward from Control Five Bases. The source for Tabard Project (Aidan) is unknown.",
-      "side": "Alliance"
-    },
-    {
       "header": "Horde vendor",
       "side": "Horde"
     },
@@ -463,12 +459,6 @@
     {
       "item": 20132,
       "name": "Arathor Battle Tabard",
-      "standing": "Exalted",
-      "side": "Alliance"
-    },
-    {
-      "item": 215450,
-      "name": "Tabard Project (Aidan)",
       "standing": "Exalted",
       "side": "Alliance"
     },
