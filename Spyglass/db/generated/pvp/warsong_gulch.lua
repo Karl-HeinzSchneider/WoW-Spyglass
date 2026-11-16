@@ -5,4 +5,95 @@ local Data = Spyglass.Data
 Data:AddList("pvp", "warsong_gulch", {
     name = "Warsong Gulch",
     icon = "Interface\\Icons\\Achievement_BG_captureflag_WSG",
+    panel = {
+        { factionDropdown = "Faction", field = "side" },
+        { side = "Alliance", text = "Alliance vendor rewards have yet to be recorded." },
+        { header = "Horde vendor", side = "Horde" },
+        { side = "Horde", text = "Kelm Hargunth, Warsong Supply Officer, is at the Mor'shan Rampart in The Barrens." },
+        { row = "Coordinates", side = "Horde", value = "46.6, 8.4" },
+        { button = "Show Kelm on map", map = { 1413, 46.6, 8.4 }, side = "Horde" },
+    },
+})
+Data:AddListLoot("pvp", "warsong_gulch", {
+    { 17349, standing = "Friendly", side = "Horde" }, -- Superior Healing Draught
+    { 17352, standing = "Friendly", side = "Horde" }, -- Superior Mana Draught
+    { 19060, standing = "Friendly", side = "Horde" }, -- Warsong Gulch Enriched Ration
+    { 19061, standing = "Friendly", side = "Horde" }, -- Warsong Gulch Iron Ration
+    { 19062, standing = "Friendly", side = "Horde" }, -- Warsong Gulch Field Ration
+    { 19066, standing = "Friendly", side = "Horde" }, -- Warsong Gulch Runecloth Bandage
+    { 19067, standing = "Friendly", side = "Horde" }, -- Warsong Gulch Mageweave Bandage
+    { 19068, standing = "Friendly", side = "Horde" }, -- Warsong Gulch Silk Bandage
+    { 21565, standing = "Friendly", side = "Horde" }, -- Rune of Perfection
+    { 21566, standing = "Friendly", side = "Horde" }, -- Rune of Perfection
+    { 21567, standing = "Friendly", side = "Horde" }, -- Rune of Duty
+    { 21568, standing = "Friendly", side = "Horde" }, -- Rune of Duty
+    { 17348, standing = "Honored", side = "Horde" }, -- Major Healing Draught
+    { 17351, standing = "Honored", side = "Horde" }, -- Major Mana Draught
+    { 19510, standing = "Honored", side = "Horde" }, -- Legionnaire's Band
+    { 19511, standing = "Honored", side = "Horde" }, -- Legionnaire's Band
+    { 19512, standing = "Honored", side = "Horde" }, -- Legionnaire's Band
+    { 19513, standing = "Honored", side = "Horde" }, -- Legionnaire's Band
+    { 19518, standing = "Honored", side = "Horde" }, -- Advisor's Ring
+    { 19519, standing = "Honored", side = "Horde" }, -- Advisor's Ring
+    { 19520, standing = "Honored", side = "Horde" }, -- Advisor's Ring
+    { 19521, standing = "Honored", side = "Horde" }, -- Advisor's Ring
+    { 19526, standing = "Honored", side = "Horde" }, -- Battle Healer's Cloak
+    { 19527, standing = "Honored", side = "Horde" }, -- Battle Healer's Cloak
+    { 19528, standing = "Honored", side = "Horde" }, -- Battle Healer's Cloak
+    { 19529, standing = "Honored", side = "Horde" }, -- Battle Healer's Cloak
+    { 19534, standing = "Honored", side = "Horde" }, -- Scout's Medallion
+    { 19535, standing = "Honored", side = "Horde" }, -- Scout's Medallion
+    { 19536, standing = "Honored", side = "Horde" }, -- Scout's Medallion
+    { 19537, standing = "Honored", side = "Horde" }, -- Scout's Medallion
+    { 20426, standing = "Honored", side = "Horde" }, -- Advisor's Ring
+    { 20427, standing = "Honored", side = "Horde" }, -- Battle Healer's Cloak
+    { 20429, standing = "Honored", side = "Horde" }, -- Legionnaire's Band
+    { 20442, standing = "Honored", side = "Horde" }, -- Scout's Medallion
+    { 19542, standing = "Revered", side = "Horde" }, -- Scout's Blade
+    { 19543, standing = "Revered", side = "Horde" }, -- Scout's Blade
+    { 19544, standing = "Revered", side = "Horde" }, -- Scout's Blade
+    { 19545, standing = "Revered", side = "Horde" }, -- Scout's Blade
+    { 19550, standing = "Revered", side = "Horde" }, -- Legionnaire's Sword
+    { 19551, standing = "Revered", side = "Horde" }, -- Legionnaire's Sword
+    { 19552, standing = "Revered", side = "Horde" }, -- Legionnaire's Sword
+    { 19553, standing = "Revered", side = "Horde" }, -- Legionnaire's Sword
+    { 19558, standing = "Revered", side = "Horde" }, -- Outrider's Bow
+    { 19559, standing = "Revered", side = "Horde" }, -- Outrider's Bow
+    { 19560, standing = "Revered", side = "Horde" }, -- Outrider's Bow
+    { 19561, standing = "Revered", side = "Horde" }, -- Outrider's Bow
+    { 19566, standing = "Revered", side = "Horde" }, -- Advisor's Gnarled Staff
+    { 19567, standing = "Revered", side = "Horde" }, -- Advisor's Gnarled Staff
+    { 19568, standing = "Revered", side = "Horde" }, -- Advisor's Gnarled Staff
+    { 19569, standing = "Revered", side = "Horde" }, -- Advisor's Gnarled Staff
+    { 20425, standing = "Revered", side = "Horde" }, -- Advisor's Gnarled Staff
+    { 20430, standing = "Revered", side = "Horde" }, -- Legionnaire's Sword
+    { 20437, standing = "Revered", side = "Horde" }, -- Outrider's Bow
+    { 20441, standing = "Revered", side = "Horde" }, -- Scout's Blade
+    { 19578, standing = "Exalted", side = "Horde" }, -- Berserker Bracers
+    { 19580, standing = "Exalted", side = "Horde" }, -- Berserker Bracers
+    { 19581, standing = "Exalted", side = "Horde" }, -- Berserker Bracers
+    { 19582, standing = "Exalted", side = "Horde" }, -- Windtalker's Wristguards
+    { 19583, standing = "Exalted", side = "Horde" }, -- Windtalker's Wristguards
+    { 19584, standing = "Exalted", side = "Horde" }, -- Windtalker's Wristguards
+    { 19587, standing = "Exalted", side = "Horde" }, -- Forest Stalker's Bracers
+    { 19589, standing = "Exalted", side = "Horde" }, -- Forest Stalker's Bracers
+    { 19590, standing = "Exalted", side = "Horde" }, -- Forest Stalker's Bracers
+    { 19595, standing = "Exalted", side = "Horde" }, -- Dryad's Wrist Bindings
+    { 19596, standing = "Exalted", side = "Horde" }, -- Dryad's Wrist Bindings
+    { 19597, standing = "Exalted", side = "Horde" }, -- Dryad's Wrist Bindings
+    { 22651, standing = "Exalted", side = "Horde" }, -- Outrider's Plate Legguards
+    { 22673, standing = "Exalted", side = "Horde" }, -- Outrider's Chain Leggings
+    { 22676, standing = "Exalted", side = "Horde" }, -- Outrider's Mail Leggings
+    { 22740, standing = "Exalted", side = "Horde" }, -- Outrider's Leather Pants
+    { 22741, standing = "Exalted", side = "Horde" }, -- Outrider's Lizardhide Pants
+    { 22747, standing = "Exalted", side = "Horde" }, -- Outrider's Silk Leggings
+    { 19505, side = "Horde" }, -- Warsong Battle Tabard
+    { 211499, side = "Horde" }, -- Trainee's Outrider Wolf
+    { 211500, side = "Horde" }, -- Resilient Cloth Headband
+    { 211856, side = "Horde" }, -- Resilient Mail Coif
+    { 211857, side = "Horde" }, -- Resilient Leather Mask
+    { 212584, side = "Horde" }, -- Advisor's Gnarled Staff
+    { 212585, side = "Horde" }, -- Outrider's Bow
+    { 212586, side = "Horde" }, -- Legionnaire's Sword
+    { 212587, side = "Horde" }, -- Scout's Blade
 })

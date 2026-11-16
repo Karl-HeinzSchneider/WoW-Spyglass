@@ -1,5 +1,511 @@
 {
   "name": "Warsong Gulch",
   "icon": "Interface\\Icons\\Achievement_BG_captureflag_WSG",
-  "rewards": []
+  "panel": [
+    {
+      "factionDropdown": "Faction",
+      "field": "side"
+    },
+    {
+      "text": "Alliance vendor rewards have yet to be recorded.",
+      "side": "Alliance"
+    },
+    {
+      "header": "Horde vendor",
+      "side": "Horde"
+    },
+    {
+      "text": "Kelm Hargunth, Warsong Supply Officer, is at the Mor'shan Rampart in The Barrens.",
+      "side": "Horde"
+    },
+    {
+      "row": "Coordinates",
+      "value": "46.6, 8.4",
+      "side": "Horde"
+    },
+    {
+      "button": "Show Kelm on map",
+      "map": [1413, 46.6, 8.4],
+      "side": "Horde"
+    }
+  ],
+  "rewards": [
+    {
+      "item": 17349,
+      "name": "Superior Healing Draught",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 17352,
+      "name": "Superior Mana Draught",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 19060,
+      "name": "Warsong Gulch Enriched Ration",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 19061,
+      "name": "Warsong Gulch Iron Ration",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 19062,
+      "name": "Warsong Gulch Field Ration",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 19066,
+      "name": "Warsong Gulch Runecloth Bandage",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 19067,
+      "name": "Warsong Gulch Mageweave Bandage",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 19068,
+      "name": "Warsong Gulch Silk Bandage",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 21565,
+      "name": "Rune of Perfection",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 21566,
+      "name": "Rune of Perfection",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 21567,
+      "name": "Rune of Duty",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 21568,
+      "name": "Rune of Duty",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 17348,
+      "name": "Major Healing Draught",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 17351,
+      "name": "Major Mana Draught",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19510,
+      "name": "Legionnaire's Band",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19511,
+      "name": "Legionnaire's Band",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19512,
+      "name": "Legionnaire's Band",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19513,
+      "name": "Legionnaire's Band",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19518,
+      "name": "Advisor's Ring",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19519,
+      "name": "Advisor's Ring",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19520,
+      "name": "Advisor's Ring",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19521,
+      "name": "Advisor's Ring",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19526,
+      "name": "Battle Healer's Cloak",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19527,
+      "name": "Battle Healer's Cloak",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19528,
+      "name": "Battle Healer's Cloak",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19529,
+      "name": "Battle Healer's Cloak",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19534,
+      "name": "Scout's Medallion",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19535,
+      "name": "Scout's Medallion",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19536,
+      "name": "Scout's Medallion",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19537,
+      "name": "Scout's Medallion",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20426,
+      "name": "Advisor's Ring",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20427,
+      "name": "Battle Healer's Cloak",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20429,
+      "name": "Legionnaire's Band",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 20442,
+      "name": "Scout's Medallion",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19542,
+      "name": "Scout's Blade",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19543,
+      "name": "Scout's Blade",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19544,
+      "name": "Scout's Blade",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19545,
+      "name": "Scout's Blade",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19550,
+      "name": "Legionnaire's Sword",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19551,
+      "name": "Legionnaire's Sword",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19552,
+      "name": "Legionnaire's Sword",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19553,
+      "name": "Legionnaire's Sword",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19558,
+      "name": "Outrider's Bow",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19559,
+      "name": "Outrider's Bow",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19560,
+      "name": "Outrider's Bow",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19561,
+      "name": "Outrider's Bow",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19566,
+      "name": "Advisor's Gnarled Staff",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19567,
+      "name": "Advisor's Gnarled Staff",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19568,
+      "name": "Advisor's Gnarled Staff",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19569,
+      "name": "Advisor's Gnarled Staff",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20425,
+      "name": "Advisor's Gnarled Staff",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20430,
+      "name": "Legionnaire's Sword",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20437,
+      "name": "Outrider's Bow",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 20441,
+      "name": "Scout's Blade",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19578,
+      "name": "Berserker Bracers",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 19580,
+      "name": "Berserker Bracers",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 19581,
+      "name": "Berserker Bracers",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 19582,
+      "name": "Windtalker's Wristguards",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 19583,
+      "name": "Windtalker's Wristguards",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 19584,
+      "name": "Windtalker's Wristguards",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 19587,
+      "name": "Forest Stalker's Bracers",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 19589,
+      "name": "Forest Stalker's Bracers",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 19590,
+      "name": "Forest Stalker's Bracers",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 19595,
+      "name": "Dryad's Wrist Bindings",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 19596,
+      "name": "Dryad's Wrist Bindings",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 19597,
+      "name": "Dryad's Wrist Bindings",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 22651,
+      "name": "Outrider's Plate Legguards",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 22673,
+      "name": "Outrider's Chain Leggings",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 22676,
+      "name": "Outrider's Mail Leggings",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 22740,
+      "name": "Outrider's Leather Pants",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 22741,
+      "name": "Outrider's Lizardhide Pants",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 22747,
+      "name": "Outrider's Silk Leggings",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 19505,
+      "name": "Warsong Battle Tabard",
+      "side": "Horde"
+    },
+    {
+      "item": 211499,
+      "name": "Trainee's Outrider Wolf",
+      "side": "Horde"
+    },
+    {
+      "item": 211500,
+      "name": "Resilient Cloth Headband",
+      "side": "Horde"
+    },
+    {
+      "item": 211856,
+      "name": "Resilient Mail Coif",
+      "side": "Horde"
+    },
+    {
+      "item": 211857,
+      "name": "Resilient Leather Mask",
+      "side": "Horde"
+    },
+    {
+      "item": 212584,
+      "name": "Advisor's Gnarled Staff",
+      "side": "Horde"
+    },
+    {
+      "item": 212585,
+      "name": "Outrider's Bow",
+      "side": "Horde"
+    },
+    {
+      "item": 212586,
+      "name": "Legionnaire's Sword",
+      "side": "Horde"
+    },
+    {
+      "item": 212587,
+      "name": "Scout's Blade",
+      "side": "Horde"
+    }
+  ]
 }
