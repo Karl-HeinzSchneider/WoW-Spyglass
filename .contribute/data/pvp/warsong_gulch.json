@@ -729,103 +729,13 @@
     {
       "item": 19505,
       "name": "Warsong Battle Tabard",
-      "side": "Horde"
-    },
-    {
-      "item": 211499,
-      "name": "Trainee's Outrider Wolf",
-      "side": "Horde"
-    },
-    {
-      "item": 211500,
-      "name": "Resilient Cloth Headband"
-    },
-    {
-      "item": 211856,
-      "name": "Resilient Mail Coif"
-    },
-    {
-      "item": 211857,
-      "name": "Resilient Leather Mask"
-    },
-    {
-      "item": 212584,
-      "name": "Advisor's Gnarled Staff",
-      "side": "Horde"
-    },
-    {
-      "item": 212585,
-      "name": "Outrider's Bow",
-      "side": "Horde"
-    },
-    {
-      "item": 212586,
-      "name": "Legionnaire's Sword",
-      "side": "Horde"
-    },
-    {
-      "item": 212587,
-      "name": "Scout's Blade",
+      "standing": "Exalted",
       "side": "Horde"
     },
     {
       "item": 19506,
       "name": "Silverwing Battle Tabard",
-      "side": "Alliance"
-    },
-    {
-      "item": 211498,
-      "name": "Trainee's Sentinel Nightsaber",
-      "side": "Alliance"
-    },
-    {
-      "item": 212580,
-      "name": "Lorekeeper's Staff",
-      "side": "Alliance"
-    },
-    {
-      "item": 212581,
-      "name": "Outrunner's Bow",
-      "side": "Alliance"
-    },
-    {
-      "item": 212582,
-      "name": "Protector's Sword",
-      "side": "Alliance"
-    },
-    {
-      "item": 212583,
-      "name": "Sentinel's Blade",
-      "side": "Alliance"
-    },
-    {
-      "item": 237814,
-      "name": "Sentinel's Lamellar Legguards",
-      "side": "Alliance"
-    },
-    {
-      "item": 237815,
-      "name": "Sentinel's Silk Leggings",
-      "side": "Alliance"
-    },
-    {
-      "item": 237817,
-      "name": "Sentinel's Lizardhide Pants",
-      "side": "Alliance"
-    },
-    {
-      "item": 237818,
-      "name": "Sentinel's Leather Pants",
-      "side": "Alliance"
-    },
-    {
-      "item": 237819,
-      "name": "Sentinel's Chain Leggings",
-      "side": "Alliance"
-    },
-    {
-      "item": 237825,
-      "name": "Sentinel's Plate Legguards",
+      "standing": "Exalted",
       "side": "Alliance"
     }
   ]

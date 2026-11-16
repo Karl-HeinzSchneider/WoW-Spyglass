@@ -136,25 +136,6 @@ Data:AddListLoot("pvp", "warsong_gulch", {
     { 22750, standing = "Exalted", side = "Alliance" }, -- Sentinel's Lizardhide Pants
     { 22752, standing = "Exalted", side = "Alliance" }, -- Sentinel's Silk Leggings
     { 22753, standing = "Exalted", side = "Alliance" }, -- Sentinel's Lamellar Legguards
-    { 19505, side = "Horde" }, -- Warsong Battle Tabard
-    { 211499, side = "Horde" }, -- Trainee's Outrider Wolf
-    { 211500 }, -- Resilient Cloth Headband
-    { 211856 }, -- Resilient Mail Coif
-    { 211857 }, -- Resilient Leather Mask
-    { 212584, side = "Horde" }, -- Advisor's Gnarled Staff
-    { 212585, side = "Horde" }, -- Outrider's Bow
-    { 212586, side = "Horde" }, -- Legionnaire's Sword
-    { 212587, side = "Horde" }, -- Scout's Blade
-    { 19506, side = "Alliance" }, -- Silverwing Battle Tabard
-    { 211498, side = "Alliance" }, -- Trainee's Sentinel Nightsaber
-    { 212580, side = "Alliance" }, -- Lorekeeper's Staff
-    { 212581, side = "Alliance" }, -- Outrunner's Bow
-    { 212582, side = "Alliance" }, -- Protector's Sword
-    { 212583, side = "Alliance" }, -- Sentinel's Blade
-    { 237814, side = "Alliance" }, -- Sentinel's Lamellar Legguards
-    { 237815, side = "Alliance" }, -- Sentinel's Silk Leggings
-    { 237817, side = "Alliance" }, -- Sentinel's Lizardhide Pants
-    { 237818, side = "Alliance" }, -- Sentinel's Leather Pants
-    { 237819, side = "Alliance" }, -- Sentinel's Chain Leggings
-    { 237825, side = "Alliance" }, -- Sentinel's Plate Legguards
+    { 19505, standing = "Exalted", side = "Horde" }, -- Warsong Battle Tabard
+    { 19506, standing = "Exalted", side = "Alliance" }, -- Silverwing Battle Tabard
 })
