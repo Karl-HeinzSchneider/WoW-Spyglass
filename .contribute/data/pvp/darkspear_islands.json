@@ -47,18 +47,524 @@
     {
       "item": 272057,
       "name": "Darkspear Islands Mageweave Bandage",
-      "standing": "Friendly",
-      "side": "Alliance"
+      "standing": "Friendly"
     },
     {
       "item": 272058,
       "name": "Darkspear Islands Runecloth Bandage",
+      "standing": "Friendly"
+    },
+    {
+      "item": 17349,
+      "name": "Superior Healing Draught",
+      "standing": "Friendly"
+    },
+    {
+      "item": 17352,
+      "name": "Superior Mana Draught",
+      "standing": "Friendly"
+    },
+    {
+      "item": 271903,
+      "name": "Enriched Seal",
       "standing": "Friendly",
       "side": "Alliance"
     },
     {
+      "item": 271904,
+      "name": "Volunteer's Lucky Seal",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 271905,
+      "name": "Enriched Seal",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 271906,
+      "name": "Volunteer's Lucky Seal",
+      "standing": "Friendly",
+      "side": "Alliance"
+    },
+    {
+      "item": 272053,
+      "name": "Darkspear Islands Field Ration",
+      "standing": "Friendly"
+    },
+    {
+      "item": 272054,
+      "name": "Darkspear Islands Iron Ration",
+      "standing": "Friendly"
+    },
+    {
+      "item": 272055,
+      "name": "Darkspear Islands Enriched Ration",
+      "standing": "Friendly"
+    },
+    {
+      "item": 272056,
+      "name": "Darkspear Islands Silk Bandage",
+      "standing": "Friendly"
+    },
+    {
+      "item": 272059,
+      "name": "Darkspear Voodoo Seal",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 272060,
+      "name": "Relentless Raider's Seal",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 272061,
+      "name": "Darkspear Voodoo Seal",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 272062,
+      "name": "Relentless Raider's Seal",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 17348,
+      "name": "Major Healing Draught",
+      "standing": "Honored"
+    },
+    {
+      "item": 17351,
+      "name": "Major Mana Draught",
+      "standing": "Honored"
+    },
+    {
+      "item": 271907,
+      "name": "Expeditionary's Cape",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 271908,
+      "name": "Theramore Signet",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 271909,
+      "name": "Theramore Signet",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 271910,
+      "name": "Theramore Signet",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 271913,
+      "name": "Militant's Band",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 271914,
+      "name": "Militant's Band",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 271915,
+      "name": "Militant's Band",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 271917,
+      "name": "Seal of the Expedition",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 271918,
+      "name": "Seal of the Expedition",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 271919,
+      "name": "Seal of the Expedition",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 271921,
+      "name": "Expeditionary's Cape",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 271922,
+      "name": "Expeditionary's Cape",
+      "standing": "Honored",
+      "side": "Alliance"
+    },
+    {
+      "item": 272063,
+      "name": "Darkspear Raider's Cloak",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 272064,
+      "name": "Insurgent's Band",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 272065,
+      "name": "Insurgent's Band",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 272066,
+      "name": "Insurgent's Band",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 272067,
+      "name": "Insurgent's Band",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 272068,
+      "name": "Darkspear Signet",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 272069,
+      "name": "Darkspear Signet",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 272070,
+      "name": "Darkspear Signet",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 272071,
+      "name": "Darkspear Signet",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 272072,
+      "name": "Darkspear Warding Pendant",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 272073,
+      "name": "Darkspear Warding Pendant",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 272074,
+      "name": "Darkspear Warding Pendant",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 272075,
+      "name": "Darkspear Warding Pendant",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 272076,
+      "name": "Darkspear Raider's Cloak",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 272077,
+      "name": "Darkspear Raider's Cloak",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 272078,
+      "name": "Darkspear Raider's Cloak",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 271924,
+      "name": "Rebels' Rugged Reaper",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 271925,
+      "name": "Rebels' Rugged Reaper",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 271926,
+      "name": "Rebels' Rugged Reaper",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 271928,
+      "name": "Clever Expeditionary's Spellblade",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 271929,
+      "name": "Clever Expeditionary's Spellblade",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 271930,
+      "name": "Clever Expeditionary's Spellblade",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 271932,
+      "name": "Insurgent's Manifesto",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 271933,
+      "name": "Insurgent's Manifesto",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 271934,
+      "name": "Insurgent's Manifesto",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 271936,
+      "name": "Guerrilla's Jagged Mace",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 271937,
+      "name": "Guerrilla's Jagged Mace",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 271938,
+      "name": "Guerrilla's Jagged Mace",
+      "standing": "Revered",
+      "side": "Alliance"
+    },
+    {
+      "item": 272079,
+      "name": "Darkspear Raider's Reaper",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 272080,
+      "name": "Darkspear Raider's Reaper",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 272081,
+      "name": "Darkspear Raider's Reaper",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 272082,
+      "name": "Darkspear Raider's Reaper",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 272083,
+      "name": "Darkspear Insurgent's Spellblade",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 272084,
+      "name": "Darkspear Insurgent's Spellblade",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 272085,
+      "name": "Darkspear Insurgent's Spellblade",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 272086,
+      "name": "Darkspear Insurgent's Spellblade",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 272087,
+      "name": "Tome of the Darkspear Prophecy",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 272088,
+      "name": "Tome of the Darkspear Prophecy",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 272089,
+      "name": "Tome of the Darkspear Prophecy",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 272090,
+      "name": "Tome of the Darkspear Prophecy",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 272091,
+      "name": "Darkspear Skirmisher's Bludgeon",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 272092,
+      "name": "Darkspear Skirmisher's Bludgeon",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 272093,
+      "name": "Darkspear Skirmisher's Bludgeon",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 272094,
+      "name": "Darkspear Skirmisher's Bludgeon",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
       "item": 272957,
       "name": "Theramore Shoulderguards",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 271940,
+      "name": "Theramore Gauntlets",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 271941,
+      "name": "Theramore Gauntlets",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 271945,
+      "name": "Theramore Handwraps",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 271946,
+      "name": "Theramore Handwraps",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 271948,
+      "name": "Theramore Gloves",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 271949,
+      "name": "Theramore Gloves",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 271950,
+      "name": "Theramore Handguards",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 271951,
+      "name": "Theramore Handguards",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 271953,
+      "name": "Theramore Shoulderpads",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 271954,
+      "name": "Theramore Shoulders",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 271955,
+      "name": "Theramore Pauldrons",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 271956,
+      "name": "Theramore Epaulets",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 271957,
+      "name": "Theramore Mantle",
+      "standing": "Exalted",
+      "side": "Alliance"
+    },
+    {
+      "item": 271959,
+      "name": "Theramore Spaulders",
       "standing": "Exalted",
       "side": "Alliance"
     },
@@ -125,6 +631,30 @@
     {
       "item": 272958,
       "name": "Darkspear Shoulderguards",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 272095,
+      "name": "Raider Gauntlets",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 272096,
+      "name": "Raider Gauntlets",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 272097,
+      "name": "Raider Handwraps",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 272098,
+      "name": "Raider Handwraps",
       "standing": "Exalted",
       "side": "Horde"
     }

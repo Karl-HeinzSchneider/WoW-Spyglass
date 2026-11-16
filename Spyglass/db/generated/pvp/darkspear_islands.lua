@@ -18,9 +18,95 @@ Data:AddList("pvp", "darkspear_islands", {
     },
 })
 Data:AddListLoot("pvp", "darkspear_islands", {
-    { 272057, standing = "Friendly", side = "Alliance" }, -- Darkspear Islands Mageweave Bandage
-    { 272058, standing = "Friendly", side = "Alliance" }, -- Darkspear Islands Runecloth Bandage
+    { 272057, standing = "Friendly" }, -- Darkspear Islands Mageweave Bandage
+    { 272058, standing = "Friendly" }, -- Darkspear Islands Runecloth Bandage
+    { 17349, standing = "Friendly" }, -- Superior Healing Draught
+    { 17352, standing = "Friendly" }, -- Superior Mana Draught
+    { 271903, standing = "Friendly", side = "Alliance" }, -- Enriched Seal
+    { 271904, standing = "Friendly", side = "Alliance" }, -- Volunteer's Lucky Seal
+    { 271905, standing = "Friendly", side = "Alliance" }, -- Enriched Seal
+    { 271906, standing = "Friendly", side = "Alliance" }, -- Volunteer's Lucky Seal
+    { 272053, standing = "Friendly" }, -- Darkspear Islands Field Ration
+    { 272054, standing = "Friendly" }, -- Darkspear Islands Iron Ration
+    { 272055, standing = "Friendly" }, -- Darkspear Islands Enriched Ration
+    { 272056, standing = "Friendly" }, -- Darkspear Islands Silk Bandage
+    { 272059, standing = "Friendly", side = "Horde" }, -- Darkspear Voodoo Seal
+    { 272060, standing = "Friendly", side = "Horde" }, -- Relentless Raider's Seal
+    { 272061, standing = "Friendly", side = "Horde" }, -- Darkspear Voodoo Seal
+    { 272062, standing = "Friendly", side = "Horde" }, -- Relentless Raider's Seal
+    { 17348, standing = "Honored" }, -- Major Healing Draught
+    { 17351, standing = "Honored" }, -- Major Mana Draught
+    { 271907, standing = "Honored", side = "Alliance" }, -- Expeditionary's Cape
+    { 271908, standing = "Honored", side = "Alliance" }, -- Theramore Signet
+    { 271909, standing = "Honored", side = "Alliance" }, -- Theramore Signet
+    { 271910, standing = "Honored", side = "Alliance" }, -- Theramore Signet
+    { 271913, standing = "Honored", side = "Alliance" }, -- Militant's Band
+    { 271914, standing = "Honored", side = "Alliance" }, -- Militant's Band
+    { 271915, standing = "Honored", side = "Alliance" }, -- Militant's Band
+    { 271917, standing = "Honored", side = "Alliance" }, -- Seal of the Expedition
+    { 271918, standing = "Honored", side = "Alliance" }, -- Seal of the Expedition
+    { 271919, standing = "Honored", side = "Alliance" }, -- Seal of the Expedition
+    { 271921, standing = "Honored", side = "Alliance" }, -- Expeditionary's Cape
+    { 271922, standing = "Honored", side = "Alliance" }, -- Expeditionary's Cape
+    { 272063, standing = "Honored", side = "Horde" }, -- Darkspear Raider's Cloak
+    { 272064, standing = "Honored", side = "Horde" }, -- Insurgent's Band
+    { 272065, standing = "Honored", side = "Horde" }, -- Insurgent's Band
+    { 272066, standing = "Honored", side = "Horde" }, -- Insurgent's Band
+    { 272067, standing = "Honored", side = "Horde" }, -- Insurgent's Band
+    { 272068, standing = "Honored", side = "Horde" }, -- Darkspear Signet
+    { 272069, standing = "Honored", side = "Horde" }, -- Darkspear Signet
+    { 272070, standing = "Honored", side = "Horde" }, -- Darkspear Signet
+    { 272071, standing = "Honored", side = "Horde" }, -- Darkspear Signet
+    { 272072, standing = "Honored", side = "Horde" }, -- Darkspear Warding Pendant
+    { 272073, standing = "Honored", side = "Horde" }, -- Darkspear Warding Pendant
+    { 272074, standing = "Honored", side = "Horde" }, -- Darkspear Warding Pendant
+    { 272075, standing = "Honored", side = "Horde" }, -- Darkspear Warding Pendant
+    { 272076, standing = "Honored", side = "Horde" }, -- Darkspear Raider's Cloak
+    { 272077, standing = "Honored", side = "Horde" }, -- Darkspear Raider's Cloak
+    { 272078, standing = "Honored", side = "Horde" }, -- Darkspear Raider's Cloak
+    { 271924, standing = "Revered", side = "Alliance" }, -- Rebels' Rugged Reaper
+    { 271925, standing = "Revered", side = "Alliance" }, -- Rebels' Rugged Reaper
+    { 271926, standing = "Revered", side = "Alliance" }, -- Rebels' Rugged Reaper
+    { 271928, standing = "Revered", side = "Alliance" }, -- Clever Expeditionary's Spellblade
+    { 271929, standing = "Revered", side = "Alliance" }, -- Clever Expeditionary's Spellblade
+    { 271930, standing = "Revered", side = "Alliance" }, -- Clever Expeditionary's Spellblade
+    { 271932, standing = "Revered", side = "Alliance" }, -- Insurgent's Manifesto
+    { 271933, standing = "Revered", side = "Alliance" }, -- Insurgent's Manifesto
+    { 271934, standing = "Revered", side = "Alliance" }, -- Insurgent's Manifesto
+    { 271936, standing = "Revered", side = "Alliance" }, -- Guerrilla's Jagged Mace
+    { 271937, standing = "Revered", side = "Alliance" }, -- Guerrilla's Jagged Mace
+    { 271938, standing = "Revered", side = "Alliance" }, -- Guerrilla's Jagged Mace
+    { 272079, standing = "Revered", side = "Horde" }, -- Darkspear Raider's Reaper
+    { 272080, standing = "Revered", side = "Horde" }, -- Darkspear Raider's Reaper
+    { 272081, standing = "Revered", side = "Horde" }, -- Darkspear Raider's Reaper
+    { 272082, standing = "Revered", side = "Horde" }, -- Darkspear Raider's Reaper
+    { 272083, standing = "Revered", side = "Horde" }, -- Darkspear Insurgent's Spellblade
+    { 272084, standing = "Revered", side = "Horde" }, -- Darkspear Insurgent's Spellblade
+    { 272085, standing = "Revered", side = "Horde" }, -- Darkspear Insurgent's Spellblade
+    { 272086, standing = "Revered", side = "Horde" }, -- Darkspear Insurgent's Spellblade
+    { 272087, standing = "Revered", side = "Horde" }, -- Tome of the Darkspear Prophecy
+    { 272088, standing = "Revered", side = "Horde" }, -- Tome of the Darkspear Prophecy
+    { 272089, standing = "Revered", side = "Horde" }, -- Tome of the Darkspear Prophecy
+    { 272090, standing = "Revered", side = "Horde" }, -- Tome of the Darkspear Prophecy
+    { 272091, standing = "Revered", side = "Horde" }, -- Darkspear Skirmisher's Bludgeon
+    { 272092, standing = "Revered", side = "Horde" }, -- Darkspear Skirmisher's Bludgeon
+    { 272093, standing = "Revered", side = "Horde" }, -- Darkspear Skirmisher's Bludgeon
+    { 272094, standing = "Revered", side = "Horde" }, -- Darkspear Skirmisher's Bludgeon
     { 272957, standing = "Exalted", side = "Alliance" }, -- Theramore Shoulderguards
+    { 271940, standing = "Exalted", side = "Alliance" }, -- Theramore Gauntlets
+    { 271941, standing = "Exalted", side = "Alliance" }, -- Theramore Gauntlets
+    { 271945, standing = "Exalted", side = "Alliance" }, -- Theramore Handwraps
+    { 271946, standing = "Exalted", side = "Alliance" }, -- Theramore Handwraps
+    { 271948, standing = "Exalted", side = "Alliance" }, -- Theramore Gloves
+    { 271949, standing = "Exalted", side = "Alliance" }, -- Theramore Gloves
+    { 271950, standing = "Exalted", side = "Alliance" }, -- Theramore Handguards
+    { 271951, standing = "Exalted", side = "Alliance" }, -- Theramore Handguards
+    { 271953, standing = "Exalted", side = "Alliance" }, -- Theramore Shoulderpads
+    { 271954, standing = "Exalted", side = "Alliance" }, -- Theramore Shoulders
+    { 271955, standing = "Exalted", side = "Alliance" }, -- Theramore Pauldrons
+    { 271956, standing = "Exalted", side = "Alliance" }, -- Theramore Epaulets
+    { 271957, standing = "Exalted", side = "Alliance" }, -- Theramore Mantle
+    { 271959, standing = "Exalted", side = "Alliance" }, -- Theramore Spaulders
     { 272099, standing = "Exalted", side = "Horde" }, -- Raider Gloves
     { 272100, standing = "Exalted", side = "Horde" }, -- Raider Gloves
     { 272101, standing = "Exalted", side = "Horde" }, -- Raider Handguards
@@ -32,4 +118,8 @@ Data:AddListLoot("pvp", "darkspear_islands", {
     { 272107, standing = "Exalted", side = "Horde" }, -- Darkspear Mantle
     { 272108, standing = "Exalted", side = "Horde" }, -- Darkspear Spaulders
     { 272958, standing = "Exalted", side = "Horde" }, -- Darkspear Shoulderguards
+    { 272095, standing = "Exalted", side = "Horde" }, -- Raider Gauntlets
+    { 272096, standing = "Exalted", side = "Horde" }, -- Raider Gauntlets
+    { 272097, standing = "Exalted", side = "Horde" }, -- Raider Handwraps
+    { 272098, standing = "Exalted", side = "Horde" }, -- Raider Handwraps
 })
