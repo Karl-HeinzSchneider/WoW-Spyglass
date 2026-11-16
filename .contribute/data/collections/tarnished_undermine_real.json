@@ -1,0 +1,469 @@
+{
+  "name": "Tarnished Undermine Real",
+  "icon": "Interface\\Icons\\INV_Misc_Coin_16",
+  "panel": [
+    {
+      "header": "Vendor"
+    },
+    {
+      "text": "Spend Tarnished Undermine Reals at Pix Xizzix in Booty Bay, Stranglethorn Vale."
+    },
+    {
+      "item": 226404
+    },
+    {
+      "row": "Coordinates",
+      "value": "28.4, 75.8"
+    },
+    {
+      "button": "Show vendor on map",
+      "map": [1434, 28.4, 75.8]
+    }
+  ],
+  "items": [
+    {
+      "item": 272437,
+      "name": "Adaptive Combat Assistant",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 125,
+          "icon": 133799
+        }
+      ],
+      "group": "Trinkets"
+    },
+    {
+      "item": 272440,
+      "name": "Defender's Grip Stabilizer",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 125,
+          "icon": 133799
+        }
+      ],
+      "group": "Trinkets"
+    },
+    {
+      "item": 272439,
+      "name": "Serenity Field",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 125,
+          "icon": 133799
+        }
+      ],
+      "group": "Trinkets"
+    },
+    {
+      "item": 272438,
+      "name": "Weakness Analyzer",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 125,
+          "icon": 133799
+        }
+      ],
+      "group": "Trinkets"
+    },
+    {
+      "item": 272411,
+      "name": "Arcanoweave Cloak",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 75,
+          "icon": 133799
+        }
+      ],
+      "group": "Cloaks"
+    },
+    {
+      "item": 272413,
+      "name": "Drape of Recovery",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 75,
+          "icon": 133799
+        }
+      ],
+      "group": "Cloaks"
+    },
+    {
+      "item": 272414,
+      "name": "Howler's Furs",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 75,
+          "icon": 133799
+        }
+      ],
+      "group": "Cloaks"
+    },
+    {
+      "item": 272415,
+      "name": "Stalwart Cloak",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 75,
+          "icon": 133799
+        }
+      ],
+      "group": "Cloaks"
+    },
+    {
+      "item": 272407,
+      "name": "Blessed Band of Light",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 75,
+          "icon": 133799
+        }
+      ],
+      "group": "Rings"
+    },
+    {
+      "item": 272406,
+      "name": "Channeler's Ring",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 75,
+          "icon": 133799
+        }
+      ],
+      "group": "Rings"
+    },
+    {
+      "item": 272408,
+      "name": "Cutthroat's Signet",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 75,
+          "icon": 133799
+        }
+      ],
+      "group": "Rings"
+    },
+    {
+      "item": 272409,
+      "name": "Ring of Awareness",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 75,
+          "icon": 133799
+        }
+      ],
+      "group": "Rings"
+    },
+    {
+      "item": 272393,
+      "name": "Magician's Cord",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 100,
+          "icon": 133799
+        }
+      ],
+      "group": "Belts"
+    },
+    {
+      "item": 272394,
+      "name": "Penitent's Cinch",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 100,
+          "icon": 133799
+        }
+      ],
+      "group": "Belts"
+    },
+    {
+      "item": 272395,
+      "name": "Assassin's Waistguard",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 100,
+          "icon": 133799
+        }
+      ],
+      "group": "Belts"
+    },
+    {
+      "item": 272398,
+      "name": "Caretaker's Cord",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 100,
+          "icon": 133799
+        }
+      ],
+      "group": "Belts"
+    },
+    {
+      "item": 272401,
+      "name": "Elunite Cord",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 100,
+          "icon": 133799
+        }
+      ],
+      "group": "Belts"
+    },
+    {
+      "item": 272396,
+      "name": "Shifter's Belt",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 100,
+          "icon": 133799
+        }
+      ],
+      "group": "Belts"
+    },
+    {
+      "item": 272402,
+      "name": "Prophet's Waistcord",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 100,
+          "icon": 133799
+        }
+      ],
+      "group": "Belts"
+    },
+    {
+      "item": 272397,
+      "name": "Ranger's Belt",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 100,
+          "icon": 133799
+        }
+      ],
+      "group": "Belts"
+    },
+    {
+      "item": 272399,
+      "name": "Stormseeker's Girdle",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 100,
+          "icon": 133799
+        }
+      ],
+      "group": "Belts"
+    },
+    {
+      "item": 272410,
+      "name": "Windseeker's Belt",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 100,
+          "icon": 133799
+        }
+      ],
+      "group": "Belts"
+    },
+    {
+      "item": 272405,
+      "name": "Redeemer's Waistcord",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 100,
+          "icon": 133799
+        }
+      ],
+      "group": "Belts"
+    },
+    {
+      "item": 272403,
+      "name": "Valiant's Waistguard",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 100,
+          "icon": 133799
+        }
+      ],
+      "group": "Belts"
+    },
+    {
+      "item": 272404,
+      "name": "Vindicator's Belt",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 100,
+          "icon": 133799
+        }
+      ],
+      "group": "Belts"
+    },
+    {
+      "item": 272428,
+      "name": "Enraged Idol",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 50,
+          "icon": 133799
+        }
+      ],
+      "group": "Idols, Librams and Totems"
+    },
+    {
+      "item": 272427,
+      "name": "Howling Idol",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 50,
+          "icon": 133799
+        }
+      ],
+      "group": "Idols, Librams and Totems"
+    },
+    {
+      "item": 272429,
+      "name": "Idol of Synthesis",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 50,
+          "icon": 133799
+        }
+      ],
+      "group": "Idols, Librams and Totems"
+    },
+    {
+      "item": 272430,
+      "name": "Swarming Idol",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 50,
+          "icon": 133799
+        }
+      ],
+      "group": "Idols, Librams and Totems"
+    },
+    {
+      "item": 272436,
+      "name": "Libram of Economy",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 50,
+          "icon": 133799
+        }
+      ],
+      "group": "Idols, Librams and Totems"
+    },
+    {
+      "item": 228175,
+      "name": "Libram of Holy Alacrity",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 15,
+          "icon": 133799
+        }
+      ],
+      "group": "Idols, Librams and Totems"
+    },
+    {
+      "item": 272435,
+      "name": "Libram of Law",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 50,
+          "icon": 133799
+        }
+      ],
+      "group": "Idols, Librams and Totems"
+    },
+    {
+      "item": 272434,
+      "name": "Sentinel's Libram",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 50,
+          "icon": 133799
+        }
+      ],
+      "group": "Idols, Librams and Totems"
+    },
+    {
+      "item": 272433,
+      "name": "Burning Totem",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 50,
+          "icon": 133799
+        }
+      ],
+      "group": "Idols, Librams and Totems"
+    },
+    {
+      "item": 272431,
+      "name": "Tidal Totem",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 50,
+          "icon": 133799
+        }
+      ],
+      "group": "Idols, Librams and Totems"
+    },
+    {
+      "item": 228176,
+      "name": "Totem of Thunder",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 15,
+          "icon": 133799
+        }
+      ],
+      "group": "Idols, Librams and Totems"
+    },
+    {
+      "item": 272432,
+      "name": "Totem of the Storm",
+      "costs": [
+        {
+          "item": 226404,
+          "amount": 50,
+          "icon": 133799
+        }
+      ],
+      "group": "Idols, Librams and Totems"
+    }
+  ]
+}

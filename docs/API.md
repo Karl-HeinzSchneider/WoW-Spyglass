@@ -48,8 +48,8 @@ Spyglass:AddToModule("dungeons", dungeon)
 
 Built-in module ids: `"raids"`, `"dungeons"`, `"crafting"`, `"pvp"`, `"collections"`,
 `"reputation"`, `"lists"` (the user's [item lists](#lists-and-favorites)); `Spyglass_Database` adds
-`"items"` (the item browser). `"collections"` shows curated lists and ships with one tile,
-Mounts. The built-in
+`"items"` (the item browser). `"collections"` shows curated lists, including Mounts and
+Tarnished Undermine Real rewards. The built-in
 dungeons sort by level range (`minLevel`, then `maxLevel`; none last), then name; the raids keep
 the order they are listed in. If your instance is in the game's data, prefer adding its drops to the item database (`Spyglass.Data:AddBossLoot`)
 — it then shows up in the built-in modules and in the item browser's filters automatically. The
@@ -581,6 +581,7 @@ Reading:
 - `Data:GetItemName(id) -> name, known` — client locale, then enUS, then `C_Item.GetItemInfo`, then `"Item #id"`
 - `Data:GetItemStats(id) -> { INTELLECT = 4, ... }?`, `Data.StatLabel("INTELLECT") -> "Intellect"` (the game's `ITEM_MOD_*_SHORT`)
 - `Data:GetItemSources(id) -> { { kind = "boss", id = bossID, chance = 0.18 }, { kind = "trash", id = instanceID, chance = 0.01 }, { kind = "quest", id = questID, instanceID = 36, side = "Alliance" }, { kind = "reputation", id = "argent_dawn", standing = "Honored" }, { kind = "recipe", id = spellID, skillLineID = 164 }, ... }`
+
   — inverted index over boss loot, instance trash, quest rewards, every list (a list source carries its row's fields) and the recipes that make the item, built lazily
 - `Data:GetInstance(id)`, `Data:GetInstanceIDs()` (by level, then name), `Data:GetBoss(id)`, `Data:GetBossLoot(bossID)`,
   `Data:GetInstanceName(id)`, `Data:GetBossName(id)`
@@ -588,6 +589,10 @@ Reading:
   `Data:GetQuest(questID)`, `Data:GetQuestName(questID)` — the client's title when it knows the quest,
   then the curated one, then `"#id"`
 - `Data:GetList(kind, id)`, `Data:GetListIDs(kind)` (by `order`, then name), `Data:GetListLoot(kind, id)`
+  — list loot rows can include `costs = { { item = 226404, amount = 125, icon = 133799 } }`.
+  Each component gives the payment item ID, quantity and texture file ID. Components in one row
+  are paid together. The list source returned by `Data:GetItemSources` carries these costs for
+  item tooltips.
 - `Data:GetSetItems(setID) -> itemID[]` (the set's items in the database, ascending), `Data:GetSetIDs()`
   (every set id an item belongs to, ascending; cached), `Data:GetSetName(setID)` — the client's
   `C_Item.GetItemSetInfo`, else `"Set #id"`. Built from the rows' `setID` (`Data.ITEM.SET`)
