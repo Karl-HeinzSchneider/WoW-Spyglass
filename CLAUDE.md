@@ -11,6 +11,17 @@ and the detailed descriptions live in `docs/`.
 - Make small, focused changes limited to what was asked.
 - Read each request carefully and account for its details and constraints.
 
+## Worktrees and pull requests
+
+- Start every new task in a fresh linked Git worktree under `.worktrees/<task>/`. For new changes,
+  create a descriptive `codex/` branch from the latest remote base branch. Keep the original
+  checkout available for the user's review and testing.
+- Run the repository checks, push the task changes, and open a draft pull request for the user
+  to review. Share the PR link. For follow-up work, start the new worktree from the PR's current
+  remote head and update that PR.
+- After publishing, detach the task worktree at the published commit so the user can check out
+  the PR branch in the original checkout.
+
 ## What this is
 
 Spyglass is a World of Warcraft addon for the _WoW Forever_ Classic client
