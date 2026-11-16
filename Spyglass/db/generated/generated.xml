@@ -52,6 +52,7 @@
 	<Script file="crafting\poisons.lua" />
 	<Script file="crafting\skinning.lua" />
 	<Script file="crafting\tailoring.lua" />
+	<Script file="pvp\alterac_valley.lua" />
 	<Script file="pvp\arathi_basin.lua" />
 	<Script file="pvp\warsong_gulch.lua" />
 	<Script file="reputation\azeroth_commerce_authority.lua" />

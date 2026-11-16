@@ -1,0 +1,250 @@
+{
+  "name": "Alterac Valley",
+  "icon": "Interface\\Icons\\Achievement_BG_winAV",
+  "panel": [
+    {
+      "factionDropdown": "Faction",
+      "field": "side"
+    },
+    {
+      "text": "Alliance vendor rewards have yet to be recorded.",
+      "side": "Alliance"
+    },
+    {
+      "header": "Horde vendor",
+      "side": "Horde"
+    },
+    {
+      "text": "Grunnda Wolfheart, Frostwolf Supply Officer, is in Frostwolf Keep, Alterac Valley.",
+      "side": "Horde"
+    },
+    {
+      "row": "Coordinates",
+      "value": "49.3, 82.5",
+      "side": "Horde"
+    },
+    {
+      "button": "Show vendor on map",
+      "map": [1459, 49.3, 82.5],
+      "side": "Horde"
+    }
+  ],
+  "rewards": [
+    {
+      "item": 17349,
+      "name": "Superior Healing Draught",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 17352,
+      "name": "Superior Mana Draught",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 19031,
+      "name": "Frostwolf Battle Tabard",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 19307,
+      "name": "Alterac Heavy Runecloth Bandage",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 19318,
+      "name": "Bottled Alterac Spring Water",
+      "standing": "Friendly",
+      "side": "Horde"
+    },
+    {
+      "item": 17348,
+      "name": "Major Healing Draught",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 17351,
+      "name": "Major Mana Draught",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19083,
+      "name": "Frostwolf Legionnaire's Cloak",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19085,
+      "name": "Frostwolf Advisor's Cloak",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19087,
+      "name": "Frostwolf Plate Belt",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19088,
+      "name": "Frostwolf Mail Belt",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19089,
+      "name": "Frostwolf Leather Belt",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19090,
+      "name": "Frostwolf Cloth Belt",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19095,
+      "name": "Frostwolf Legionnaire's Pendant",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19096,
+      "name": "Frostwolf Advisor's Pendant",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19301,
+      "name": "Alterac Manna Biscuit",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19316,
+      "name": "Ice Threaded Arrow",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19317,
+      "name": "Ice Threaded Bullet",
+      "standing": "Honored",
+      "side": "Horde"
+    },
+    {
+      "item": 19046,
+      "name": "Frostwolf Battle Standard",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19099,
+      "name": "Glacial Blade",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19101,
+      "name": "Whiteout Staff",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19103,
+      "name": "Frostbite",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19319,
+      "name": "Harpy Hide Quiver",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19320,
+      "name": "Gnoll Skin Bandolier",
+      "standing": "Revered",
+      "side": "Horde"
+    },
+    {
+      "item": 19029,
+      "name": "Horn of the Frostwolf Howler",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 19308,
+      "name": "Tome of Arcane Domination",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 19309,
+      "name": "Tome of Shadow Force",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 19310,
+      "name": "Tome of the Ice Lord",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 19311,
+      "name": "Tome of Fiery Arcana",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 19312,
+      "name": "Lei of the Lifegiver",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 19315,
+      "name": "Therazane's Touch",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 19321,
+      "name": "The Immovable Object",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 19323,
+      "name": "The Unstoppable Force",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 19324,
+      "name": "The Lobotomizer",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 19325,
+      "name": "Don Julio's Band",
+      "standing": "Exalted",
+      "side": "Horde"
+    },
+    {
+      "item": 21563,
+      "name": "Don Rodrigo's Band",
+      "standing": "Exalted",
+      "side": "Horde"
+    }
+  ]
+}
