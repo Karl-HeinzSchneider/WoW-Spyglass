@@ -39,7 +39,7 @@
       "name": "Blueleaf Tubers",
       "side": "Both",
       "requiredLevel": 20,
-      "xp": 2100,
+      "xp": 5000,
       "objective": "Use the Crate with Holes to summon a Snufflenose Gopher and the Command Stick to make it find 6 Blueleaf Tubers. Bring them, the Command Stick and the Crate back to Mebok Mizzyrix.",
       "start": {
         "npc": "Mebok Mizzyrix",
@@ -51,7 +51,12 @@
         "location": [1413, 62, 37],
         "description": "Mebok Mizzyrix, Ratchet, The Barrens"
       },
-      "items": []
+      "items": [
+        {
+          "item": 6755,
+          "name": "A Small Container of Gems"
+        }
+      ]
     },
     {
       "id": 1142,
@@ -223,7 +228,8 @@
       },
       "turnIn": {
         "npc": "Varimathras",
-        "description": "Royal Quarter, Undercity."
+        "location": [1458, 56.2, 92.6],
+        "description": "Royal Quarter, Undercity"
       },
       "items": []
     },

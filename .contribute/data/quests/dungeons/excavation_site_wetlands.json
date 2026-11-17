@@ -5,7 +5,7 @@
       "name": "Open the Maw",
       "side": "Horde",
       "requiredLevel": 24,
-      "xp": 7158,
+      "xp": 6950,
       "objective": "Defeat 2 Dragonmaw Saboteurs and 4 Dragonmaw Warders, recover the Dragonmaw Dispatch, and report to the Deathstalker Agent outside the dungeon.",
       "description": "Related lead-in: Dragonmaw Rumors. The Dragonmaw Dispatch is recovered from the Dragonmaw forces inside the dungeon.",
       "requires": [95663],

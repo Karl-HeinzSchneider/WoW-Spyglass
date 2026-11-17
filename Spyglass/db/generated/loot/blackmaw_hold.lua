@@ -82,7 +82,7 @@ Data:AddQuests(2974, {
         { 260214 }, -- Staff of Wild Beasts
         { 260215 }, -- Wild Malleus
     } },
-    { id = 92070, name = "A Lost Memento", side = "Both", requiredLevel = 47, xp = 11300, objective = "Find the owner of the Feathered Charm Necklace.", description = "Item-start quest. The necklace is a handmade furbolg keepsake. The exact NPC and hand-in location are still being verified.", start = { description = "Looted in Blackmaw Hold; specific drop source not yet confirmed", item = 249698 }, turnIn = { description = "The necklace's original Blackmaw owner (location not yet confirmed)", location = { 1447, 43.4, 17.4 }, npc = "Unele" }, items = {
+    { id = 92070, name = "A Lost Memento", side = "Both", requiredLevel = 47, xp = 11300, objective = "Find the owner of the Feathered Charm Necklace.", description = "The necklace is a handmade furbolg keepsake. Return it to Unele in Ursolan.", start = { description = "Looted from satyrs and imps in Blackmaw Hold.", item = 249698 }, turnIn = { description = "Ursolan, Azshara", location = { 1447, 43.4, 17.4 }, npc = "Unele" }, items = {
         { 279893 }, -- Nama's Cherished Necklace
     } },
     { id = 97327, name = "Blackmaw Pouches", side = "Both", requiredLevel = 55, xp = 13200, objective = "Enter Blackmaw Hold and recover 5 Blackmaw Pouches for Ekkal at the Ruins of Eldarath in Azshara.", description = "Afterwards Ekkal takes more pouches as a repeatable quest (Timbermaw Hold +100).", followUps = { 96246 }, start = { description = "Ruins of Eldarath, Azshara", location = { 1447, 42, 38.9 }, npc = "Ekkal" }, turnIn = { description = "Ruins of Eldarath, Azshara", location = { 1447, 42, 38.9 }, npc = "Ekkal" }, items = {} },
@@ -99,5 +99,8 @@ Data:AddQuests(2974, {
     { id = 96246, name = "Blackmaw Pouches", side = "Both", requiredLevel = 55, objective = "Enter Blackmaw Hold and recover 5 Blackmaw Pouches for Ekkal at the Ruins of Eldarath in Azshara.", description = "Repeatable, after the first Blackmaw Pouches.", requires = { { id = 97327, name = "Blackmaw Pouches" } }, start = { description = "Ruins of Eldarath, Azshara", location = { 1447, 42, 38.9 }, npc = "Ekkal" }, turnIn = { description = "Ruins of Eldarath, Azshara", location = { 1447, 42, 38.9 }, npc = "Ekkal" }, items = {} },
     { id = 92067, name = "Feeding Time!", side = "Both", requiredLevel = 45, objective = "Bring Fel-Tainted Flesh.", description = "Repeatable. The quest text sends you after the Legashi satyrs. Who gives it isn't known yet.", start = { description = "Not known yet" }, turnIn = { description = "Not known yet" }, items = {
         { 249900 }, -- Regurgitated Seed Pod
+    } },
+    { id = 99187, name = "The Reliquary of Tyr", side = "Horde", class = "PALADIN", requiredLevel = 50, xp = 13550, objective = "Travel to Blackmaw Hold in Kalimdor, and recover the Reliquary of Tyr.", description = "Forsaken paladin class quest. The Reliquary of Tyr drops from Elder Shaman Bloodmane.", requires = { { id = 93030, name = "The Knight of Mourning" } }, start = { description = "Tirisfal Glades", location = { 1420, 17.6, 67.4 }, npc = "Knight of Mourning" }, turnIn = { description = "Tirisfal Glades", location = { 1420, 17.6, 67.4 }, npc = "Knight of Mourning" }, items = {
+        { 286408 }, -- Sword of Mourning
     } },
 })

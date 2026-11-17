@@ -605,27 +605,16 @@
       "objective": "Take the miniature version of the Discs of Norgannon to the one of the sages in Thunder Bluff.",
       "description": "Speak with the Stone Watcher and activate the discs first. Then hand the reward voucher to Bena Winterhoof in Thunder Bluff and choose your reward.",
       "requires": [2278],
+      "followUps": [2440],
       "start": {
         "description": "The Discs of Norgannon, Uldaman"
       },
       "turnIn": {
         "npc": "Sage Truthseeker",
+        "location": [1456, 34.4, 47.2],
         "description": "Thunder Bluff"
       },
-      "items": [
-        {
-          "item": 3928,
-          "name": "Superior Healing Potion"
-        },
-        {
-          "item": 6149,
-          "name": "Greater Mana Potion"
-        },
-        {
-          "item": 9587,
-          "name": "Thawpelt Sack"
-        }
-      ]
+      "items": []
     },
     {
       "id": 2283,
@@ -906,6 +895,39 @@
         "npc": "Dinita Stonemantle",
         "location": [1455, 33.8, 60.2],
         "description": "The Vault, Ironforge"
+      },
+      "items": [
+        {
+          "item": 3928,
+          "name": "Superior Healing Potion"
+        },
+        {
+          "item": 6149,
+          "name": "Greater Mana Potion"
+        },
+        {
+          "item": 9587,
+          "name": "Thawpelt Sack"
+        }
+      ]
+    },
+    {
+      "id": 2440,
+      "name": "The Platinum Discs",
+      "side": "Horde",
+      "requiredLevel": 40,
+      "xp": 420,
+      "objective": "Take the reward voucher to Bena Winterhoof in Thunder Bluff.",
+      "requires": [2280],
+      "start": {
+        "npc": "Sage Truthseeker",
+        "location": [1456, 34.4, 47.2],
+        "description": "Thunder Bluff"
+      },
+      "turnIn": {
+        "npc": "Bena Winterhoof",
+        "location": [1456, 46.8, 33.4],
+        "description": "Thunder Bluff"
       },
       "items": [
         {

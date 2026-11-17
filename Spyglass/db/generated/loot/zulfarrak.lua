@@ -153,10 +153,12 @@ Data:AddQuests(209, {
     { id = 2846, name = "Tiara of the Deep", side = "Both", requiredLevel = 40, xp = 12100, objective = "Bring the Tiara of the Deep to Tabetha in Dustwallow Marsh.", description = "The Tiara drops from Hydromancer Velratha.\n\nOptional introductory quest:", start = { description = "Dustwallow Marsh", location = { 1445, 46, 57 }, npc = "Tabetha" }, turnIn = { description = "Dustwallow Marsh", location = { 1445, 46, 57 }, npc = "Tabetha" }, items = {
         { 9527 }, -- Spellshifter Rod
         { 9531 }, -- Gemshale Pauldrons
+        { 270098 }, -- Dank Shoulderpads
     } },
     { id = 2768, name = "Divino-matic Rod", side = "Both", requiredLevel = 40, xp = 12600, objective = "Bring the Divino-matic Rod to Chief Engineer Bilgewhizzle in Gadgetzan.", description = "The rod drops from Sergeant Bly after the pyramid event.", start = { description = "Gadgetzan, Tanaris", location = { 1446, 52.4, 28.4 }, npc = "Chief Engineer Bilgewhizzle" }, turnIn = { description = "Gadgetzan, Tanaris", location = { 1446, 52.4, 28.4 }, npc = "Chief Engineer Bilgewhizzle" }, items = {
         { 9533 }, -- Masons Fraternity Ring
         { 9534 }, -- Engineer's Guild Headpiece
+        { 270099 }, -- Magister Cowl
     } },
     { id = 2865, name = "Scarab Shells", side = "Both", requiredLevel = 40, xp = 7800, objective = "Bring 5 Uncracked Scarab Shells to Tran'rek in Gadgetzan.", description = "Optional introductory quest:", start = { description = "Gadgetzan, Tanaris", location = { 1446, 51.4, 26.8 }, npc = "Tran'rek" }, turnIn = { description = "Gadgetzan, Tanaris", location = { 1446, 51.4, 26.8 }, npc = "Tran'rek" }, items = {} },
     { id = 3042, name = "Troll Temper", side = "Both", requiredLevel = 40, xp = 7800, objective = "Bring 20 Vials of Troll Temper to Trenton Lighthammer in Gadgetzan.", start = { description = "Gadgetzan, Tanaris", location = { 1446, 51.4, 28.6 }, npc = "Trenton Lighthammer" }, turnIn = { description = "Gadgetzan, Tanaris", location = { 1446, 51.4, 28.6 }, npc = "Trenton Lighthammer" }, items = {} },

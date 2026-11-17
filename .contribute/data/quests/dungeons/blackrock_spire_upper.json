@@ -250,6 +250,7 @@
       "name": "Eitrigg's Wisdom",
       "side": "Horde",
       "requiredLevel": 55,
+      "xp": 6600,
       "objective": "Speak with Eitrigg in Orgrimmar. When you have discussed matters with Eitrigg, seek council from Thrall. You recall having seen Eitrigg in Thrall's chamber.",
       "requires": [4903],
       "start": {
@@ -268,7 +269,7 @@
       "name": "For The Horde!",
       "side": "Horde",
       "requiredLevel": 55,
-      "xp": 9950,
+      "xp": 26600,
       "objective": "Travel to Blackrock Spire and slay Warchief Rend Blackhand. Take his head and return to Orgrimmar.",
       "requires": [4941],
       "start": {
@@ -403,6 +404,7 @@
       "name": "Stormwind Rendezvous",
       "side": "Alliance",
       "requiredLevel": 50,
+      "xp": 660,
       "objective": "Travel to Stormwind City and venture to the city gates. Speak with Squire Rowe so that he may let Marshal Windsor know that you have arrived.",
       "requires": [4322],
       "start": {
@@ -421,6 +423,7 @@
       "name": "The Great Masquerade",
       "side": "Alliance",
       "requiredLevel": 50,
+      "xp": 9950,
       "objective": "Follow Reginald Windsor through Stormwind. Protect him from harm!",
       "requires": [6402],
       "start": {
@@ -439,6 +442,7 @@
       "name": "The Dragon's Eye",
       "side": "Alliance",
       "requiredLevel": 50,
+      "xp": 6600,
       "objective": "You must search the world for a being capable of restoring the power to the Fragment of the Dragon's Eye. The only information you possess about such a being is that they exist.",
       "requires": [6403],
       "start": {
@@ -457,7 +461,7 @@
       "name": "Drakefire Amulet",
       "side": "Alliance",
       "requiredLevel": 50,
-      "xp": 8300,
+      "xp": 22200,
       "objective": "You must retrieve the Blood of the Black Dragon Champion from General Drakkisath. Drakkisath can be found in his throne room behind the Halls of Ascension in Blackrock Spire.",
       "description": "Part of the Onyxia attunement.",
       "requires": [6501],
@@ -483,6 +487,7 @@
       "name": "What the Wind Carries",
       "side": "Horde",
       "requiredLevel": 55,
+      "xp": 660,
       "objective": "Listen to Thrall.",
       "requires": [4974],
       "start": {
@@ -502,6 +507,7 @@
       "name": "The Champion of the Horde",
       "side": "Horde",
       "requiredLevel": 55,
+      "xp": 3300,
       "objective": "Seek out Rexxar. The Warchief has instructed you as to his whereabouts. Search the paths of Desolace, between the Stonetalon Mountains and Feralas.",
       "requires": [6566],
       "start": {
@@ -520,6 +526,7 @@
       "name": "The Testament of Rexxar",
       "side": "Horde",
       "requiredLevel": 55,
+      "xp": 4950,
       "objective": "Deliver Rexxar's Testament to Myranda the Hag in the Western Plaguelands.",
       "requires": [6567],
       "start": {
@@ -559,6 +566,7 @@
       "name": "Emberstrife",
       "side": "Horde",
       "requiredLevel": 55,
+      "xp": 4950,
       "objective": "Travel to the Wyrmbog in Dustwallow Marsh and seek out Emberstrife's Den. Once inside, wear the Amulet of Draconic Subversion and speak with Emberstrife.",
       "requires": [6569],
       "start": {
@@ -577,6 +585,7 @@
       "name": "The Test of Skulls, Scryer",
       "side": "Horde",
       "requiredLevel": 55,
+      "xp": 6600,
       "objective": "You must find the blue dragonflight drake champion, Scryer, and slay him. Pry his skull from his corpse and return it to Emberstrife. You know that Scryer can be found in Winterspring.",
       "requires": [6570],
       "start": {
@@ -596,6 +605,7 @@
       "name": "The Test of Skulls, Somnus",
       "side": "Horde",
       "requiredLevel": 55,
+      "xp": 6600,
       "objective": "Destroy the drake champion of the Green Flight, Somnus. Take his skull and return it to Emberstrife.",
       "requires": [6582],
       "start": {
@@ -615,6 +625,7 @@
       "name": "The Test of Skulls, Chronalis",
       "side": "Horde",
       "requiredLevel": 55,
+      "xp": 6600,
       "objective": "Guarding the Caverns of Time in the Tanaris Desert is Chronalis, child of Nozdormu. Destroy him and return his skull to Emberstrife.",
       "requires": [6583],
       "start": {
@@ -634,6 +645,7 @@
       "name": "The Test of Skulls, Axtroz",
       "side": "Horde",
       "requiredLevel": 55,
+      "xp": 6600,
       "objective": "Travel to Grim Batol and track down Axtroz, drake champion of the Red Flight. Destroy him and take his skull. Return the skull to Emberstrife.",
       "requires": [6584],
       "start": {
@@ -653,6 +665,7 @@
       "name": "Ascension...",
       "side": "Horde",
       "requiredLevel": 55,
+      "xp": 4950,
       "objective": "It would appear as if the charade is over. You know that the Amulet of Draconic Subversion that Myranda the Hag created for you will not function inside Blackrock Spire. Perhaps you should find Rexxar and explain your predicament. Show him the Dull Drakefire Amulet. Hopefully he will know what to do next.",
       "requires": [6585],
       "start": {
@@ -671,7 +684,7 @@
       "name": "Blood of the Black Dragon Champion",
       "side": "Horde",
       "requiredLevel": 55,
-      "xp": 9950,
+      "xp": 26600,
       "objective": "Travel to Blackrock Spire and slay General Drakkisath. Gather his blood and return it to Rexxar.",
       "description": "Part of the Onyxia attunement.",
       "requires": [6601],

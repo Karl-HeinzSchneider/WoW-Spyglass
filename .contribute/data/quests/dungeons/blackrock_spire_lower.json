@@ -301,7 +301,7 @@
       "name": "Warlord's Command",
       "side": "Horde",
       "requiredLevel": 55,
-      "xp": 8300,
+      "xp": 15350,
       "objective": "Slay Highlord Omokk, War Master Voone, and Overlord Wyrmthalak. Recover Important Blackrock Documents. Return to Warlord Goretooth in Kargath when the mission has been accomplished.",
       "description": "Talk to Goretooth to receive his Command item and click it to start the quest. The Important Blackrock Documents spawn near the three generals.",
       "requires": [98325],
