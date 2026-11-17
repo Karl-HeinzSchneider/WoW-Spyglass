@@ -7,8 +7,9 @@ How `Spyglass_Scraper` records the data the repository is built from. The contri
 
 Everything lives in `src/discovery.lua` (`app.discovery`), apart from the two windows at the end.
 Scans and loot observations are both written to `SpyglassScraperDB.global.discovered` and
-merged into `Spyglass.Data` right away (`MergeIntoData`, tracked in `module.merged`), so a
-scanned item is browsable immediately. Trainer snapshots are saved alongside them for import.
+merged into `Spyglass.Data` (tracked in `module.merged`). Loot observations are merged immediately.
+Scanned items are merged on the scan timer and flushed when the scan ends, so an entire batch
+shares its cache invalidations and browser refreshes. Trainer snapshots are saved alongside them for import.
 
 ## Scanning (`/sg scan`)
 

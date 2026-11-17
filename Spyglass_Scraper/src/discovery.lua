@@ -8,8 +8,7 @@ local ITEM = Data.ITEM
 
 -- Learns from the game what the shipped database doesn't have yet. WoW Forever's items are
 -- server-side, so no data export describes them; the client does, once it has fetched an item.
--- Two ways in, both recorded in `SpyglassScraperDB.global.discovered` and merged into
--- Spyglass.Data right away:
+-- Two ways in, both recorded in `SpyglassScraperDB.global.discovered` and merged into Spyglass.Data:
 --
 --   /sg scan   asks the server about id ranges and records every item that exists — the way
 --              the shipped item database is built (.contribute/data/items/*.json via `npm run import`)
@@ -55,6 +54,8 @@ local LOOT_SLOT_ITEM = LOOT_SLOT_ITEM or 1
 ---@field force boolean  # re-record ids the DB has; no SCAN_LIMIT
 ---@field gap integer  # consecutive ids that didn't exist
 ---@field pending table<integer, boolean>  # requested, no result yet
+---@field rows table<integer, Spyglass.ItemRow>  # recorded since the last DB update
+---@field names table<integer, string>
 ---@field done boolean  # no more requests; waiting for the last results
 ---@field ticker any
 
@@ -256,9 +257,11 @@ end
 -- Returns true when something was recorded.
 ---@param itemID integer
 ---@param force? boolean
+---@param scan? SpyglassScraper.Scan
 ---@return boolean
-function module:RecordItem(itemID, force)
-    if not force and Data:GetItem(itemID) then
+function module:RecordItem(itemID, force, scan)
+    local activeScan = self.scan
+    if not force and (Data:GetItem(itemID) or (activeScan and activeScan.rows[itemID])) then
         return false
     end
     local name, link, quality, itemLevel, reqLevel, _, _, stackCount, slot, icon, sellPrice, classID, subclassID, bind, expansionID, setID, craftingReagent =
@@ -289,8 +292,13 @@ function module:RecordItem(itemID, force)
     d.items[itemID] = item
     d.locale = GetLocale()
     self.merged[itemID] = true
-    Data:AddItems({ [itemID] = toRow(item) })
-    Data:AddNames(d.locale, "items", { [itemID] = name })
+    if scan then
+        scan.rows[itemID] = toRow(item)
+        scan.names[itemID] = name
+    else
+        Data:AddItems({ [itemID] = toRow(item) })
+        Data:AddNames(d.locale, "items", { [itemID] = name })
+    end
     log:debug("Item recorded: %s (%d)", name, itemID)
     return true
 end
@@ -397,7 +405,7 @@ function module:ITEM_DATA_LOAD_RESULT(_, itemID, success)
     scan.pending[itemID] = nil
     if success then
         scan.gap = 0
-        if self:RecordItem(itemID, scan.force) then
+        if self:RecordItem(itemID, scan.force, scan) then
             scan.found = scan.found + 1
             local limit = self:ScanLimit()
             if not scan.force and not scan.ids and limit and scan.found >= limit and not scan.done then
@@ -429,6 +437,7 @@ function module:StartScan(from, to, force, ids)
     local scan =
         { from = from, to = to, next = from, found = 0, force = force or false, gap = 0, pending = {}, done = false }
     scan.ids = ids
+    scan.rows, scan.names = {}, {}
     self.scan = scan
     scan.ticker = C_Timer.NewTicker(SCAN_INTERVAL, function()
         self:ScanTick()
@@ -493,9 +502,25 @@ function module:ScanBatch()
     return app.db.global.scan.batch or SCAN_BATCH
 end
 
+-- Each bulk write invalidates the DB's caches and can redraw the item browser.
+---@param scan SpyglassScraper.Scan
+local function flushScanItems(scan)
+    if not next(scan.rows) then
+        return
+    end
+    local rows, names = scan.rows, scan.names
+    scan.rows, scan.names = {}, {}
+    Data:AddItems(rows)
+    Data:AddNames(GetLocale(), "items", names)
+end
+
 function module:ScanTick()
     local scan = self.scan
-    if not scan or scan.done then
+    if not scan then
+        return
+    end
+    flushScanItems(scan)
+    if scan.done then
         return
     end
     local last = scan.next + self:ScanBatch() - 1
@@ -505,7 +530,7 @@ function module:ScanTick()
     for index = scan.next, last do
         local id = scan.ids and scan.ids[index] or index
         if scan.force or not Data:GetItem(id) then
-            if scan.ids and self:RecordItem(id) then
+            if scan.ids and self:RecordItem(id, false, scan) then
                 scan.found = scan.found + 1
             else
                 scan.pending[id] = true
@@ -534,11 +559,12 @@ function module:FinishScan(reason)
         return
     end
     scan.done = true
-    scan.ticker:Cancel()
     C_Timer.After(SCAN_SETTLE, function()
         if self.scan ~= scan then
             return
         end
+        scan.ticker:Cancel()
+        flushScanItems(scan)
         self.scan = nil
         if scan.ids then
             local missing = 0
@@ -576,6 +602,7 @@ function module:StopScan(silent)
     end
     if silent then
         self.scan.ticker:Cancel()
+        flushScanItems(self.scan)
         self.scan = nil
     else
         self:FinishScan("stopped")
