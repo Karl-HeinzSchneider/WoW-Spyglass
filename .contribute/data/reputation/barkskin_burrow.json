@@ -10,6 +10,24 @@
       "description": true
     },
     {
+      "header": "Quartermaster"
+    },
+    {
+      "text": "Dala Fairmaw is in Mount Hyjal."
+    },
+    {
+      "row": "Coordinates",
+      "value": "21.0, 78.6"
+    },
+    {
+      "button": "Show vendor on map",
+      "map": [2482, 21, 78.6]
+    },
+    {
+      "row": "Handful of Dirt",
+      "value": "4s 30c"
+    },
+    {
       "header": "Rewards"
     },
     {
@@ -21,5 +39,130 @@
       "field": "standing"
     }
   ],
-  "rewards": {}
+  "rewards": {
+    "Neutral": [
+      {
+        "item": 256036,
+        "name": "Handful of Dirt"
+      }
+    ],
+    "Friendly": [
+      {
+        "item": 274415,
+        "name": "Recipe: Sweetpaw Jam",
+        "costs": [
+          {
+            "item": 263439,
+            "amount": 5,
+            "icon": 237185
+          }
+        ]
+      }
+    ],
+    "Honored": [
+      {
+        "item": 254134,
+        "name": "Pattern: Mooncloth Reagent Bag",
+        "costs": [
+          {
+            "item": 263439,
+            "amount": 10,
+            "icon": 237185
+          }
+        ]
+      },
+      {
+        "item": 262801,
+        "name": "Barkskin Satchel",
+        "costs": [
+          {
+            "item": 263439,
+            "amount": 15,
+            "icon": 237185
+          }
+        ]
+      },
+      {
+        "item": 274424,
+        "name": "Formula: Enchant Gloves - Lotus Claw",
+        "costs": [
+          {
+            "item": 263439,
+            "amount": 10,
+            "icon": 237185
+          }
+        ]
+      }
+    ],
+    "Revered": [
+      {
+        "item": 274417,
+        "name": "Barkskin Baubles",
+        "costs": [
+          {
+            "item": 263439,
+            "amount": 10,
+            "icon": 237185
+          }
+        ]
+      },
+      {
+        "item": 274418,
+        "name": "Burrow Barricade",
+        "costs": [
+          {
+            "item": 263439,
+            "amount": 10,
+            "icon": 237185
+          }
+        ]
+      },
+      {
+        "item": 274419,
+        "name": "Bear Poking Stick",
+        "costs": [
+          {
+            "item": 263439,
+            "amount": 20,
+            "icon": 237185
+          }
+        ]
+      },
+      {
+        "item": 274420,
+        "name": "Wisepaw Totem",
+        "costs": [
+          {
+            "item": 263439,
+            "amount": 20,
+            "icon": 237185
+          }
+        ]
+      }
+    ],
+    "Exalted": [
+      {
+        "item": 13517,
+        "name": "Recipe: Alchemist's Stone",
+        "costs": [
+          {
+            "item": 263439,
+            "amount": 10,
+            "icon": 237185
+          }
+        ]
+      },
+      {
+        "item": 268873,
+        "name": "Defender of the Barkskin",
+        "costs": [
+          {
+            "item": 263439,
+            "amount": 25,
+            "icon": 237185
+          }
+        ]
+      }
+    ]
+  }
 }
