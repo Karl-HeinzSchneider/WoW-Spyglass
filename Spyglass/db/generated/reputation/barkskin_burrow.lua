@@ -9,8 +9,24 @@ Data:AddList("reputation", "barkskin_burrow", {
     panel = {
         { bar = "reputation" },
         { description = true },
+        { header = "Quartermaster" },
+        { text = "Dala Fairmaw is in Mount Hyjal." },
+        { row = "Coordinates", value = "21.0, 78.6" },
+        { button = "Show vendor on map", map = { 2482, 21, 78.6 } },
         { header = "Rewards" },
         { checkbox = "Only reached standings", filter = "standing" },
         { dropdown = "Standing", field = "standing" },
     },
+})
+Data:AddListLoot("reputation", "barkskin_burrow", {
+    { 274415, standing = "Friendly", costs = { { amount = 5, icon = 237185, item = 263439 } } }, -- Recipe: Sweetpaw Jam
+    { 254134, standing = "Honored", costs = { { amount = 10, icon = 237185, item = 263439 } } }, -- Pattern: Mooncloth Reagent Bag
+    { 262801, standing = "Honored", costs = { { amount = 15, icon = 237185, item = 263439 } } }, -- Barkskin Satchel
+    { 274424, standing = "Honored", costs = { { amount = 10, icon = 237185, item = 263439 } } }, -- Formula: Enchant Gloves - Lotus Claw
+    { 274417, standing = "Revered", costs = { { amount = 10, icon = 237185, item = 263439 } } }, -- Barkskin Baubles
+    { 274418, standing = "Revered", costs = { { amount = 10, icon = 237185, item = 263439 } } }, -- Burrow Barricade
+    { 274419, standing = "Revered", costs = { { amount = 20, icon = 237185, item = 263439 } } }, -- Bear Poking Stick
+    { 274420, standing = "Revered", costs = { { amount = 20, icon = 237185, item = 263439 } } }, -- Wisepaw Totem
+    { 13517, standing = "Exalted", costs = { { amount = 10, icon = 237185, item = 263439 } } }, -- Recipe: Alchemist's Stone
+    { 268873, standing = "Exalted", costs = { { amount = 25, icon = 237185, item = 263439 } } }, -- Defender of the Barkskin
 })
