@@ -651,6 +651,8 @@ local ids = Spyglass.Query.Run({
 Different filters are AND-ed. Values of one filter are OR-ed by default; filters registered with
 `combine = "all"` require every selected value. `Query.New()`, `Query.Copy(q)`
 and `Query.IsEmpty(q)` are helpers. Each view (tab) keeps its own query per query folder.
+In the browser, entering a positive item ID in the search box opens an exact lookup and
+can fetch item data from the client on demand. See [Views](ui.md#views-viewlua--templatesxml).
 
 ## Events
 

@@ -67,6 +67,10 @@ row (44px) with the two class filter buttons on the left, then the active list d
   available to queries through the API but has no control in the pane. Search text and
   filters stay with the query in that tab while navigating. Each active filter and a non-default
   sort shows a red X that resets just that control; Reset clears all filters and sorting.
+  Entering a positive item ID opens a single result even when active filters would hide it.
+  For an ID missing from the database and client cache, the view shows an `Item #ID` row
+  and requests its data from the client. The row updates when the data arrives or shows
+  “Item not found” if the client reports a failure.
 - **Regrouping.** Items the grouping couldn't place (`app.unknownItemKinds`, filled by
   `registry.lua` and cleared before each build: no database row and not fetched yet) are all
   requested after the build and marked in `view.regroupItems`. When one arrives the deferred

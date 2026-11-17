@@ -55,6 +55,16 @@ app.ui.SetItemBadges = setItemBadges
 -- Delay between the last keystroke in the search box and running the query.
 local SEARCH_DEBOUNCE = 0.25
 
+---@param search string?
+---@return integer?
+local function searchItemID(search)
+    local digits = search and search:match("^%s*(%d+)%s*$")
+    local itemID = digits and tonumber(digits)
+    if itemID and itemID > 0 and itemID <= 2147483647 then
+        return itemID
+    end
+end
+
 -- One node per DB item, shared by every query result so lists don't re-allocate 20k tables.
 ---@type table<integer, Spyglass.Node>
 local itemNodes = {}
@@ -330,7 +340,9 @@ function SpyglassListRowMixin:InitItem(view, node)
     if cached then
         self.link = link
     else
-        view:RequestItem(itemID)
+        if view.failedItemLookup ~= itemID then
+            view:RequestItem(itemID)
+        end
         local row = Data:GetItem(itemID)
         if row then
             name = Data:GetItemName(itemID)
@@ -344,7 +356,7 @@ function SpyglassListRowMixin:InitItem(view, node)
         self:SetDisplay({
             name = "Item #" .. itemID,
             icon = icon,
-            sub = RETRIEVING_ITEM_INFO or "Loading...",
+            sub = view.failedItemLookup == itemID and "Item not found" or (RETRIEVING_ITEM_INFO or "Loading..."),
             chance = node.chance,
             right = node.infoRight,
         })
@@ -1164,6 +1176,7 @@ end
 ---@field pathPages integer[]  # pathPages[i] = the page path[i] was on when a deeper node was opened
 ---@field onNavigate? fun(view: Spyglass.View)
 ---@field pendingItems table<integer, boolean>  # itemIDs whose info hasn't arrived yet
+---@field failedItemLookup integer?  # exact lookup that the client failed to load
 ---@field regroupItems table<integer, boolean>  # items grouped without their kind: true = waiting to regroup, false = done
 ---@field renderQueued? boolean  # a deferred Render is scheduled (item info arrived)
 ---@field refreshQueued? boolean  # the deferred redraw is a Refresh (an item to regroup arrived)
@@ -1245,6 +1258,7 @@ function SpyglassViewMixin:OnLoad()
     self.classFilterMode = "fade"
     self.resultCount = 0
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
+    self:RegisterEvent("ITEM_DATA_LOAD_RESULT")
     -- Quest banners show the character's progress and the client's quest title.
     self:RegisterEvent("QUEST_LOG_UPDATE")
     self:RegisterEvent("QUEST_TURNED_IN")
@@ -1301,12 +1315,24 @@ end
 -- per item, so an item the server never answers for can't loop.
 ---@param event string
 ---@param itemID integer
-function SpyglassViewMixin:OnEvent(event, itemID)
-    if event == "GET_ITEM_INFO_RECEIVED" then
+---@param success? boolean
+function SpyglassViewMixin:OnEvent(event, itemID, success)
+    if event == "GET_ITEM_INFO_RECEIVED" or event == "ITEM_DATA_LOAD_RESULT" then
         if not self.pendingItems[itemID] then
             return
         end
+        local exactLookup
+        if event == "ITEM_DATA_LOAD_RESULT" or success == false then
+            local query = self:GetCurrentQuery()
+            exactLookup = query and searchItemID(query.search) == itemID
+        end
+        if event == "ITEM_DATA_LOAD_RESULT" and not exactLookup then
+            return
+        end
         self.pendingItems[itemID] = nil
+        if success == false and exactLookup then
+            self.failedItemLookup = itemID
+        end
         if self.regroupItems[itemID] then
             self.regroupItems[itemID] = false
             self.refreshQueued = true
@@ -1885,6 +1911,7 @@ end
 function SpyglassViewMixin:SetSearch(text)
     local q = self:GetCurrentQuery()
     if q and q.search ~= text then
+        self.failedItemLookup = nil
         q.search = text
         self:OnQueryChanged()
     end
@@ -2064,6 +2091,15 @@ function SpyglassViewMixin:BuildElements(node)
     self.showsQuests = false
     if not node then
         return elements
+    end
+
+    -- An exact lookup always shows the requested ID. A normal item row requests
+    -- missing data and redraws from the client cache as soon as it arrives.
+    local query = node.query and self:GetQuery(node)
+    local itemID = query and searchItemID(query.search)
+    if itemID then
+        self.resultCount = 1
+        return { { kind = entryKindOf(node), node = { itemID = itemID } } }
     end
 
     local groupBy = node.groupBy
