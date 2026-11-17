@@ -3,6 +3,7 @@ local Data = Spyglass.Data
 
 -- { quality, itemLevel, reqLevel, classID, subclassID, slot, bind, icon, stats, sellPrice, stackCount, setID, expansionID, craftingReagent }; see Data.ITEM.
 Data:AddItems({
+    [16507] = { 3, 63, 58, 4, 2, "INVTYPE_SHOULDER", 1, 135045, { AGILITY = 7, ATTACK_POWER = 12, RESISTANCE0_NAME = 132, STAMINA = 23 }, 11002, 1, 347, 0, false },
     [16508] = { 3, 63, 58, 4, 2, "INVTYPE_LEGS", 1, 134588, { CRIT_RATING = 28, RESISTANCE0_NAME = 154, STAMINA = 13, STRENGTH = 7 }, 14723, 1, 347, 0, false },
     [16509] = { 3, 63, 58, 4, 4, "INVTYPE_FEET", 1, 132590, { AGILITY = 5, RESISTANCE0_NAME = 452, STAMINA = 23, STRENGTH = 8 }, 8866, 1, 0, 0, false },
     [16510] = { 3, 63, 58, 4, 4, "INVTYPE_HAND", 1, 132960, { RESISTANCE0_NAME = 410, STAMINA = 15, STRENGTH = 16 }, 5931, 1, 0, 0, false },
@@ -891,7 +892,7 @@ Data:AddItems({
     [18403] = { 4, 65, 0, 4, 0, "INVTYPE_FINGER", 1, 133369, { CRIT_RATING = 14, FIRE_RESISTANCE = 6, INTELLECT = 11, RESISTANCE2_NAME = 6, SPELL_POWER = 7, STAMINA = 11 }, 33858, 1, 0, 0, false },
     [18404] = { 4, 65, 0, 4, 0, "INVTYPE_NECK", 1, 133296, { AGILITY = 7, CRIT_RATING = 14, FIRE_RESISTANCE = 10, HIT_RATING = 10, RESISTANCE2_NAME = 10, STAMINA = 8 }, 33858, 1, 0, 0, false },
     [18405] = { 4, 62, 57, 4, 1, "INVTYPE_WAIST", 2, 132520, { CRIT_RATING = 14, INTELLECT = 16, RESISTANCE0_NAME = 54, SPELL_POWER = 20, STAMINA = 10 }, 14744, 1, 0, 0, false },
-    [18406] = { 4, 65, 0, 4, 0, "INVTYPE_TRINKET", 1, 136168, { FIRE_RESISTANCE = 20, HEALTH_REGEN = 9, RESISTANCE2_NAME = 20 }, 33858, 1, 0, 0, false },
+    [18406] = { 4, 65, 0, 4, 0, "INVTYPE_TRINKET", 1, 136168, { DEFENSE_SKILL_RATING = 8, FIRE_RESISTANCE = 25, HEALTH_REGEN = 12, PARRY_RATING = 15, RESISTANCE2_NAME = 25 }, 33858, 1, 0, 0, false },
     [18407] = { 3, 62, 57, 4, 1, "INVTYPE_HAND", 2, 132953, { RESISTANCE0_NAME = 55, SHADOW_DAMAGE_DONE = 33, STAMINA = 9 }, 11139, 1, 0, 0, false },
     [18408] = { 3, 62, 57, 4, 1, "INVTYPE_HAND", 2, 132953, { FIRE_DAMAGE_DONE = 33, INTELLECT = 9, RESISTANCE0_NAME = 55 }, 11178, 1, 0, 0, false },
     [18409] = { 3, 62, 57, 4, 1, "INVTYPE_HAND", 2, 132951, { INTELLECT = 16, RESISTANCE0_NAME = 55, SPELL_DAMAGE_DONE = 11, SPELL_HEALING_DONE = 33, STAMINA = 9 }, 11219, 1, 0, 0, false },
@@ -1565,10 +1566,10 @@ Data:AddItems({
     [19283] = { 3, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 134492, nil, 12500, 1, 0, 0, false },
     [19284] = { 3, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 134492, nil, 12500, 1, 0, 0, false },
     [19286] = { 0, 45, 1, 6, 3, "INVTYPE_AMMO", 0, 132385, { DAMAGE_PER_SECOND = 16 }, 10, 200, 0, 0, false },
-    [19287] = { 4, 66, 60, 4, 0, "INVTYPE_TRINKET", 1, 134488, nil, 100000, 1, 0, 0, false },
-    [19288] = { 4, 66, 60, 4, 0, "INVTYPE_TRINKET", 1, 134484, nil, 100000, 1, 0, 0, false },
-    [19289] = { 4, 66, 60, 4, 0, "INVTYPE_TRINKET", 1, 134491, nil, 100000, 1, 0, 0, false },
-    [19290] = { 4, 66, 60, 4, 0, "INVTYPE_TRINKET", 1, 134495, nil, 100000, 1, 0, 0, false },
+    [19287] = { 4, 65, 60, 4, 0, "INVTYPE_TRINKET", 1, 134488, nil, 100000, 1, 0, 0, false },
+    [19288] = { 4, 65, 60, 4, 0, "INVTYPE_TRINKET", 1, 134484, nil, 100000, 1, 0, 0, false },
+    [19289] = { 4, 65, 60, 4, 0, "INVTYPE_TRINKET", 1, 134491, nil, 100000, 1, 0, 0, false },
+    [19290] = { 4, 65, 60, 4, 0, "INVTYPE_TRINKET", 1, 134495, nil, 100000, 1, 0, 0, false },
     [19291] = { 1, 45, 0, 1, 0, "INVTYPE_BAG", 0, 132597, nil, 25000, 1, 0, 0, false },
     [19292] = { 1, 34, 29, 2, 4, "INVTYPE_WEAPON", 0, 133974, { DAMAGE_PER_SECOND = 16.6 }, 4022, 1, 0, 0, false },
     [19293] = { 1, 55, 50, 2, 4, "INVTYPE_WEAPON", 0, 133974, { DAMAGE_PER_SECOND = 31.5 }, 19376, 1, 0, 0, false },
@@ -2502,5 +2503,4 @@ Data:AddItems({
     [20543] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 134943, nil, 1250, 20, 0, 0, false },
     [20544] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 134943, nil, 1250, 20, 0, 0, false },
     [20545] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 134331, nil, 500, 20, 0, 0, false },
-    [20546] = { 3, 62, 0, 9, 2, "INVTYPE_NON_EQUIP_IGNORE", 0, 134941, nil, 10000, 1, 0, 0, false },
 })

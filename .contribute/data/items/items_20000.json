@@ -33599,6 +33599,31 @@
       "DAMAGE_PER_SECOND": 52.22
     }
   },
+  "22315": {
+    "names": {
+      "enUS": "Hammer of Revitalization"
+    },
+    "quality": 3,
+    "itemLevel": 61,
+    "reqLevel": 56,
+    "classID": 2,
+    "subclassID": 4,
+    "slot": "INVTYPE_WEAPONMAINHAND",
+    "bind": 1,
+    "icon": 133039,
+    "sellPrice": 52229,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 26.67,
+      "MANA_REGENERATION": 5,
+      "SPELL_DAMAGE_DONE": 43,
+      "SPELL_HEALING_DONE": 131,
+      "STAMINA": 5
+    }
+  },
   "22316": {
     "names": {
       "enUS": "Test Relic"
@@ -33668,6 +33693,31 @@
       "ATTACK_POWER": 18,
       "DAMAGE_PER_SECOND": 31.21,
       "STAMINA": 4
+    }
+  },
+  "22319": {
+    "names": {
+      "enUS": "Tome of Divine Right"
+    },
+    "quality": 3,
+    "itemLevel": 61,
+    "reqLevel": 56,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_HOLDABLE",
+    "bind": 1,
+    "icon": 133739,
+    "sellPrice": 20891,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 6,
+      "MANA_REGENERATION": 4,
+      "SPELL_DAMAGE_DONE": 9,
+      "SPELL_HEALING_DONE": 26,
+      "STAMINA": 6
     }
   },
   "22320": {
@@ -33775,6 +33825,30 @@
       "STAMINA": 9
     }
   },
+  "22326": {
+    "names": {
+      "enUS": "Amalgam's Band"
+    },
+    "quality": 3,
+    "itemLevel": 63,
+    "reqLevel": 58,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_FINGER",
+    "bind": 1,
+    "icon": 133361,
+    "sellPrice": 23033,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 14,
+      "INTELLECT": 6,
+      "MANA_REGENERATION": 3,
+      "STAMINA": 5
+    }
+  },
   "22327": {
     "names": {
       "enUS": "Amulet of the Redeemed"
@@ -33872,6 +33946,29 @@
       "STAMINA": 10
     }
   },
+  "22331": {
+    "names": {
+      "enUS": "Band of the Steadfast Hero"
+    },
+    "quality": 3,
+    "itemLevel": 62,
+    "reqLevel": 57,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_FINGER",
+    "bind": 1,
+    "icon": 133375,
+    "sellPrice": 21936,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DEFENSE_SKILL_RATING": 7,
+      "STAMINA": 12,
+      "STRENGTH": 7
+    }
+  },
   "22332": {
     "names": {
       "enUS": "Blade of Necromancy"
@@ -33967,6 +34064,30 @@
       "INTELLECT": 21,
       "SPELL_POWER": 72,
       "STAMINA": 21
+    }
+  },
+  "22336": {
+    "names": {
+      "enUS": "Draconian Aegis of the Legion"
+    },
+    "quality": 3,
+    "itemLevel": 63,
+    "reqLevel": 58,
+    "classID": 4,
+    "subclassID": 6,
+    "slot": "INVTYPE_SHIELD",
+    "bind": 1,
+    "icon": 134948,
+    "sellPrice": 36852,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 2153,
+      "SPELL_DAMAGE_VS_DRAGONKIN": 9,
+      "SPELL_POWER": 18,
+      "STAMINA": 7
     }
   },
   "22337": {
@@ -34104,6 +34225,30 @@
       "STAMINA": 16
     }
   },
+  "22343": {
+    "names": {
+      "enUS": "Handguards of Savagery"
+    },
+    "quality": 3,
+    "itemLevel": 63,
+    "reqLevel": 58,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_HAND",
+    "bind": 1,
+    "icon": 132945,
+    "sellPrice": 17274,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ATTACK_POWER": 36,
+      "INTELLECT": 10,
+      "RESISTANCE0_NAME": 231,
+      "STAMINA": 13
+    }
+  },
   "22344": {
     "names": {
       "enUS": "Brazier of Invocation: User's Manual"
@@ -34117,6 +34262,24 @@
     "bind": 1,
     "icon": 133741,
     "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "22345": {
+    "names": {
+      "enUS": "Totem of Tides"
+    },
+    "quality": 3,
+    "itemLevel": 62,
+    "reqLevel": 57,
+    "classID": 4,
+    "subclassID": 9,
+    "slot": "INVTYPE_RELIC",
+    "bind": 1,
+    "icon": 134920,
+    "sellPrice": 16452,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -35155,6 +35318,24 @@
     "bind": 1,
     "icon": 134917,
     "sellPrice": 12769,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "22401": {
+    "names": {
+      "enUS": "Libram of Hope"
+    },
+    "quality": 3,
+    "itemLevel": 62,
+    "reqLevel": 57,
+    "classID": 4,
+    "subclassID": 7,
+    "slot": "INVTYPE_RELIC",
+    "bind": 1,
+    "icon": 134916,
+    "sellPrice": 16452,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,

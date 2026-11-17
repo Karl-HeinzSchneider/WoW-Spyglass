@@ -4844,7 +4844,7 @@
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 0,
     "icon": 134728,
-    "sellPrice": 25,
+    "sellPrice": 5,
     "stackCount": 20,
     "setID": 0,
     "expansionID": 0,

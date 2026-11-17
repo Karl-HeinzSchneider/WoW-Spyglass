@@ -8663,6 +8663,24 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "217716": {
+    "names": {
+      "enUS": "Vile Concoction"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 0,
+    "subclassID": 8,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 0,
+    "icon": 134799,
+    "sellPrice": 0,
+    "stackCount": 5,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
   "217717": {
     "names": {
       "enUS": "Hollow Emblem"
@@ -8747,6 +8765,24 @@
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
     "bind": 1,
     "icon": 133724,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "217727": {
+    "names": {
+      "enUS": "Ward of the Dead"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_TRINKET",
+    "bind": 1,
+    "icon": 136232,
     "sellPrice": 0,
     "stackCount": 1,
     "setID": 0,

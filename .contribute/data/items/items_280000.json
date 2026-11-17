@@ -9341,6 +9341,27 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "282700": {
+    "names": {
+      "enUS": "Shadow Scalper"
+    },
+    "quality": 2,
+    "itemLevel": 42,
+    "reqLevel": 37,
+    "classID": 2,
+    "subclassID": 0,
+    "slot": "INVTYPE_WEAPON",
+    "bind": 2,
+    "icon": 132392,
+    "sellPrice": 13054,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 24.04
+    }
+  },
   "282702": {
     "names": {
       "enUS": "Molok's Masher"
@@ -9452,6 +9473,24 @@
       "SPELL_DAMAGE_DONE": 8,
       "STAMINA": 12
     }
+  },
+  "282707": {
+    "names": {
+      "enUS": "Arcanum of Binding"
+    },
+    "quality": 2,
+    "itemLevel": 50,
+    "reqLevel": 0,
+    "classID": 12,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134072,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
   },
   "282710": {
     "names": {
@@ -9781,6 +9820,24 @@
       "RESISTANCE0_NAME": 49,
       "STAMINA": 1
     }
+  },
+  "283387": {
+    "names": {
+      "enUS": "Scrawled Note"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 1,
+    "classID": 15,
+    "subclassID": 4,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134331,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
   },
   "283389": {
     "names": {
@@ -11246,6 +11303,29 @@
       "MANA_REGENERATION": 5,
       "RESISTANCE0_NAME": 88,
       "STRENGTH": 14
+    }
+  },
+  "284270": {
+    "names": {
+      "enUS": "Ancient Giant's Gaze"
+    },
+    "quality": 3,
+    "itemLevel": 56,
+    "reqLevel": 51,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_HEAD",
+    "bind": 1,
+    "icon": 133078,
+    "sellPrice": 14087,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 585,
+      "STAMINA": 16,
+      "STRENGTH": 21
     }
   },
   "284271": {
@@ -16887,6 +16967,73 @@
       "STAMINA": 23
     }
   },
+  "286641": {
+    "names": {
+      "enUS": "Cannibal's Cleaver"
+    },
+    "quality": 3,
+    "itemLevel": 50,
+    "reqLevel": 45,
+    "classID": 2,
+    "subclassID": 1,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 1,
+    "icon": 132395,
+    "sellPrice": 34699,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "ATTACK_POWER": 17,
+      "ATTACK_POWER_VS_HUMANOID": 25,
+      "AXES": 1,
+      "DAMAGE_PER_SECOND": 43.47,
+      "STAMINA": 19
+    }
+  },
+  "286644": {
+    "names": {
+      "enUS": "Shattered Atal'ai Spear"
+    },
+    "quality": 3,
+    "itemLevel": 50,
+    "reqLevel": 45,
+    "classID": 7,
+    "subclassID": 11,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 135131,
+    "sellPrice": 15000,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "286645": {
+    "names": {
+      "enUS": "Reforged Atal'ai Spear"
+    },
+    "quality": 3,
+    "itemLevel": 50,
+    "reqLevel": 45,
+    "classID": 2,
+    "subclassID": 6,
+    "slot": "INVTYPE_2HWEAPON",
+    "bind": 1,
+    "icon": 135131,
+    "sellPrice": 35214,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 14,
+      "DAMAGE_PER_SECOND": 43.42,
+      "STAMINA": 14,
+      "STRENGTH": 19
+    }
+  },
   "286646": {
     "names": {
       "enUS": "Gill's Gills"
@@ -21002,7 +21149,7 @@
     "classID": 9,
     "subclassID": 8,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 0,
+    "bind": 1,
     "icon": 134327,
     "sellPrice": 1550,
     "stackCount": 1,

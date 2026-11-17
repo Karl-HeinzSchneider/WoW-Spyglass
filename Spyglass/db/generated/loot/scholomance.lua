@@ -49,10 +49,10 @@ Data:AddBossLoot(2813, { -- Vectus
 Data:AddBossLoot(3055, { -- Kormok
     { 22332 }, -- Blade of Necromancy
     { 22303 }, -- Ironweave Pants
-    { 22326 }, -- #22326
+    { 22326 }, -- Amalgam's Band
     { 21984 }, -- Left Piece of Lord Valthalak's Amulet
     { 22046 }, -- Right Piece of Lord Valthalak's Amulet
-    { 22331 }, -- #22331
+    { 22331 }, -- Band of the Steadfast Hero
     { 22333 }, -- Hammer of Divine Might
 })
 

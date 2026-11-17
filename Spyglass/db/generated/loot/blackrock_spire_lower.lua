@@ -126,7 +126,7 @@ Data:AddBossLoot(-9718, { -- Ghok Bashguud
 
 Data:AddBossLoot(-16080, { -- Mor Grayhoof
     { 22306 }, -- Ironweave Belt
-    { 22319 }, -- #22319
+    { 22319 }, -- Tome of Divine Right
     { 22322 }, -- The Jaw Breaker
     { 22325 }, -- Belt of the Trickster
     { 22398 }, -- #22398

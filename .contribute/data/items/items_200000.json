@@ -2925,7 +2925,7 @@
     "names": {
       "enUS": "Old Guard Retaliator"
     },
-    "quality": 2,
+    "quality": 3,
     "itemLevel": 57,
     "reqLevel": 0,
     "classID": 2,
@@ -2939,10 +2939,9 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "AGILITY": 5,
-      "DAMAGE_PER_SECOND": 44.32,
-      "STAMINA": 8,
-      "STRENGTH": 5
+      "DAMAGE_PER_SECOND": 49.05,
+      "STAMINA": 6,
+      "TWOHANDED_AXES": 2
     }
   },
   "208223": {

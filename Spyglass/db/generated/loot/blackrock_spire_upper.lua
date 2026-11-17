@@ -67,12 +67,12 @@ Data:AddBossLoot(3069, { -- General Drakkisath
 
 Data:AddBossLoot(3070, { -- Lord Valthalak
     { 22335 }, -- Lord Valthalak's Staff of Command
-    { 22336 }, -- #22336
+    { 22336 }, -- Draconian Aegis of the Legion
     { 22337 }, -- Shroud of Domination
     { 22339 }, -- Rune Band of Wizardry
     { 22340 }, -- Pendant of Celerity
     { 22342 }, -- Leggings of Torment
-    { 22343 }, -- #22343
+    { 22343 }, -- Handguards of Savagery
     { 22302 }, -- Ironweave Cowl
 })
 

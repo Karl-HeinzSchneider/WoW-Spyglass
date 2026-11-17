@@ -10163,6 +10163,24 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "226697": {
+    "names": {
+      "enUS": "Red Bag"
+    },
+    "quality": 1,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 1,
+    "subclassID": 0,
+    "slot": "INVTYPE_BAG",
+    "bind": 4,
+    "icon": 133655,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
   "226698": {
     "names": {
       "enUS": "Vertically Composited Patch Hampler"
@@ -11020,6 +11038,225 @@
       "STRENGTH": 18
     }
   },
+  "226815": {
+    "names": {
+      "enUS": "Feralheart Wrists"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_WRIST",
+    "bind": 1,
+    "icon": 132608,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1667,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 6,
+      "INTELLECT": 12,
+      "RESISTANCE0_NAME": 79,
+      "SPELL_POWER": 5,
+      "SPIRIT": 5,
+      "STAMINA": 6,
+      "STRENGTH": 6
+    }
+  },
+  "226816": {
+    "names": {
+      "enUS": "Feralheart Waist"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_WAIST",
+    "bind": 1,
+    "icon": 132504,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1667,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 7,
+      "INTELLECT": 12,
+      "RESISTANCE0_NAME": 102,
+      "SPELL_POWER": 7,
+      "SPIRIT": 8,
+      "STAMINA": 9,
+      "STRENGTH": 6
+    }
+  },
+  "226817": {
+    "names": {
+      "enUS": "Feralheart Shoulders"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_SHOULDER",
+    "bind": 1,
+    "icon": 135032,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1667,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 5,
+      "INTELLECT": 16,
+      "MANA_REGENERATION": 2,
+      "RESISTANCE0_NAME": 136,
+      "SPELL_POWER": 6,
+      "SPIRIT": 8,
+      "STAMINA": 9,
+      "STRENGTH": 8
+    }
+  },
+  "226818": {
+    "names": {
+      "enUS": "Feralheart Legs"
+    },
+    "quality": 3,
+    "itemLevel": 66,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_LEGS",
+    "bind": 1,
+    "icon": 134588,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1667,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 12,
+      "INTELLECT": 14,
+      "RESISTANCE0_NAME": 160,
+      "SPELL_POWER": 9,
+      "SPIRIT": 14,
+      "STAMINA": 14,
+      "STRENGTH": 14
+    }
+  },
+  "226819": {
+    "names": {
+      "enUS": "Feralheart Helm"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_HEAD",
+    "bind": 1,
+    "icon": 133129,
+    "sellPrice": 200000,
+    "stackCount": 1,
+    "setID": 1667,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 9,
+      "INTELLECT": 17,
+      "RESISTANCE0_NAME": 150,
+      "SPELL_POWER": 16,
+      "SPIRIT": 16,
+      "STAMINA": 17,
+      "STRENGTH": 14
+    }
+  },
+  "226820": {
+    "names": {
+      "enUS": "Feralheart Gloves"
+    },
+    "quality": 4,
+    "itemLevel": 55,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_HAND",
+    "bind": 1,
+    "icon": 132951,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1667,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 9,
+      "INTELLECT": 12,
+      "RESISTANCE0_NAME": 108,
+      "SPELL_POWER": 11,
+      "SPIRIT": 10,
+      "STAMINA": 10,
+      "STRENGTH": 10
+    }
+  },
+  "226821": {
+    "names": {
+      "enUS": "Feralheart Boots"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_FEET",
+    "bind": 1,
+    "icon": 132542,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1667,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 7,
+      "INTELLECT": 12,
+      "MANA_REGENERATION": 2,
+      "RESISTANCE0_NAME": 127,
+      "SPELL_POWER": 11,
+      "SPIRIT": 10,
+      "STAMINA": 13,
+      "STRENGTH": 12
+    }
+  },
+  "226822": {
+    "names": {
+      "enUS": "Feralheart Chest"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_CHEST",
+    "bind": 1,
+    "icon": 132741,
+    "sellPrice": 200000,
+    "stackCount": 1,
+    "setID": 1667,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 9,
+      "INTELLECT": 17,
+      "MANA_REGENERATION": 4,
+      "RESISTANCE0_NAME": 185,
+      "SPELL_POWER": 12,
+      "SPIRIT": 14,
+      "STAMINA": 17,
+      "STRENGTH": 16
+    }
+  },
   "226825": {
     "names": {
       "enUS": "Darkmantle Tunic"
@@ -11216,6 +11453,197 @@
       "SPIRIT": 7,
       "STAMINA": 13,
       "STRENGTH": 10
+    }
+  },
+  "226845": {
+    "names": {
+      "enUS": "Darkmantle Wrists"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_WRIST",
+    "bind": 1,
+    "icon": 132606,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1676,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 15,
+      "RESISTANCE0_NAME": 79,
+      "STAMINA": 7,
+      "STRENGTH": 7
+    }
+  },
+  "226846": {
+    "names": {
+      "enUS": "Darkmantle Waist"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_WAIST",
+    "bind": 1,
+    "icon": 132492,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1676,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 17,
+      "RESISTANCE0_NAME": 102,
+      "STAMINA": 13,
+      "STRENGTH": 10
+    }
+  },
+  "226847": {
+    "names": {
+      "enUS": "Darkmantle Shoulders"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_SHOULDER",
+    "bind": 1,
+    "icon": 135038,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1676,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 24,
+      "RESISTANCE0_NAME": 136,
+      "STAMINA": 10
+    }
+  },
+  "226848": {
+    "names": {
+      "enUS": "Darkmantle Legs"
+    },
+    "quality": 3,
+    "itemLevel": 66,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_LEGS",
+    "bind": 1,
+    "icon": 134582,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1676,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 25,
+      "RESISTANCE0_NAME": 160,
+      "STAMINA": 15,
+      "STRENGTH": 15
+    }
+  },
+  "226849": {
+    "names": {
+      "enUS": "Darkmantle Helm"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_HEAD",
+    "bind": 1,
+    "icon": 133143,
+    "sellPrice": 200000,
+    "stackCount": 1,
+    "setID": 1676,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 26,
+      "CRIT_RATING": 14,
+      "RESISTANCE0_NAME": 150,
+      "STAMINA": 18,
+      "STRENGTH": 13
+    }
+  },
+  "226850": {
+    "names": {
+      "enUS": "Darkmantle Gloves"
+    },
+    "quality": 4,
+    "itemLevel": 55,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_HAND",
+    "bind": 1,
+    "icon": 132958,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1676,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 22,
+      "RESISTANCE0_NAME": 108,
+      "STAMINA": 9,
+      "STRENGTH": 12
+    }
+  },
+  "226851": {
+    "names": {
+      "enUS": "Darkmantle Boots"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_FEET",
+    "bind": 1,
+    "icon": 132542,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1676,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 24,
+      "RESISTANCE0_NAME": 127,
+      "STAMINA": 10
+    }
+  },
+  "226852": {
+    "names": {
+      "enUS": "Darkmantle Chest"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_CHEST",
+    "bind": 1,
+    "icon": 132722,
+    "sellPrice": 200000,
+    "stackCount": 1,
+    "setID": 1676,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 31,
+      "HIT_RATING": 20,
+      "RESISTANCE0_NAME": 185,
+      "STAMINA": 15
     }
   },
   "226856": {
@@ -11631,6 +12059,202 @@
       "STRENGTH": 18
     }
   },
+  "226873": {
+    "names": {
+      "enUS": "Wrists of Heroism"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_WRIST",
+    "bind": 1,
+    "icon": 132617,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1778,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 5,
+      "DEFENSE_SKILL_RATING": 3,
+      "RESISTANCE0_NAME": 296,
+      "STAMINA": 14,
+      "STRENGTH": 9
+    }
+  },
+  "226874": {
+    "names": {
+      "enUS": "Waist of Heroism"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_WAIST",
+    "bind": 1,
+    "icon": 132523,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1778,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 9,
+      "DEFENSE_SKILL_RATING": 7,
+      "RESISTANCE0_NAME": 380,
+      "STAMINA": 12,
+      "STRENGTH": 15
+    }
+  },
+  "226875": {
+    "names": {
+      "enUS": "Shoulders of Heroism"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_SHOULDER",
+    "bind": 1,
+    "icon": 135061,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1778,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 12,
+      "RESISTANCE0_NAME": 507,
+      "STAMINA": 18,
+      "STRENGTH": 12
+    }
+  },
+  "226876": {
+    "names": {
+      "enUS": "Legs of Heroism"
+    },
+    "quality": 3,
+    "itemLevel": 66,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_LEGS",
+    "bind": 1,
+    "icon": 134584,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1778,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 11,
+      "DEFENSE_SKILL_RATING": 5,
+      "RESISTANCE0_NAME": 601,
+      "STAMINA": 16,
+      "STRENGTH": 25
+    }
+  },
+  "226877": {
+    "names": {
+      "enUS": "Helm of Heroism"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_HEAD",
+    "bind": 1,
+    "icon": 133070,
+    "sellPrice": 200000,
+    "stackCount": 1,
+    "setID": 1778,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 14,
+      "RESISTANCE0_NAME": 556,
+      "STAMINA": 32,
+      "STRENGTH": 18
+    }
+  },
+  "226878": {
+    "names": {
+      "enUS": "Gloves of Heroism"
+    },
+    "quality": 4,
+    "itemLevel": 55,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_HAND",
+    "bind": 1,
+    "icon": 132960,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1778,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 14,
+      "RESISTANCE0_NAME": 393,
+      "STAMINA": 12,
+      "STRENGTH": 18
+    }
+  },
+  "226879": {
+    "names": {
+      "enUS": "Boots of Heroism"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_FEET",
+    "bind": 1,
+    "icon": 132584,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1778,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "HIT_RATING": 10,
+      "RESISTANCE0_NAME": 470,
+      "STAMINA": 20,
+      "STRENGTH": 20
+    }
+  },
+  "226880": {
+    "names": {
+      "enUS": "Chest of Heroism"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_CHEST",
+    "bind": 1,
+    "icon": 132738,
+    "sellPrice": 200000,
+    "stackCount": 1,
+    "setID": 1778,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 13,
+      "HIT_RATING": 10,
+      "RESISTANCE0_NAME": 684,
+      "STAMINA": 26,
+      "STRENGTH": 21
+    }
+  },
   "226881": {
     "names": {
       "enUS": "Beastmaster's Treads"
@@ -11823,6 +12447,199 @@
       "AGILITY": 16,
       "INTELLECT": 10,
       "RESISTANCE0_NAME": 214,
+      "STAMINA": 16
+    }
+  },
+  "226897": {
+    "names": {
+      "enUS": "Beastmaster's Wrists"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_WRIST",
+    "bind": 1,
+    "icon": 132616,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1669,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 16,
+      "INTELLECT": 5,
+      "RESISTANCE0_NAME": 167,
+      "STAMINA": 7
+    }
+  },
+  "226898": {
+    "names": {
+      "enUS": "Beastmaster's Waist"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_WAIST",
+    "bind": 1,
+    "icon": 132517,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1669,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 16,
+      "INTELLECT": 10,
+      "RESISTANCE0_NAME": 214,
+      "STAMINA": 16
+    }
+  },
+  "226899": {
+    "names": {
+      "enUS": "Beastmaster's Shoulders"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_SHOULDER",
+    "bind": 1,
+    "icon": 135041,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1669,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 12,
+      "INTELLECT": 10,
+      "RESISTANCE0_NAME": 286,
+      "STAMINA": 18
+    }
+  },
+  "226900": {
+    "names": {
+      "enUS": "Beastmaster's Legs"
+    },
+    "quality": 3,
+    "itemLevel": 66,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_LEGS",
+    "bind": 1,
+    "icon": 134583,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1669,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 28,
+      "INTELLECT": 9,
+      "RESISTANCE0_NAME": 339,
+      "STAMINA": 14
+    }
+  },
+  "226901": {
+    "names": {
+      "enUS": "Beastmaster's Helm"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_HEAD",
+    "bind": 1,
+    "icon": 133126,
+    "sellPrice": 200000,
+    "stackCount": 1,
+    "setID": 1669,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 22,
+      "HIT_RATING": 10,
+      "INTELLECT": 12,
+      "RESISTANCE0_NAME": 314,
+      "STAMINA": 21
+    }
+  },
+  "226902": {
+    "names": {
+      "enUS": "Beastmaster's Gloves"
+    },
+    "quality": 4,
+    "itemLevel": 55,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_HAND",
+    "bind": 1,
+    "icon": 132944,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1669,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 14,
+      "INTELLECT": 10,
+      "RESISTANCE0_NAME": 223,
+      "STAMINA": 12
+    }
+  },
+  "226903": {
+    "names": {
+      "enUS": "Beastmaster's Boots"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_FEET",
+    "bind": 1,
+    "icon": 132588,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1669,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 24,
+      "RESISTANCE0_NAME": 266,
+      "STAMINA": 9
+    }
+  },
+  "226904": {
+    "names": {
+      "enUS": "Beastmaster's Chest"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_CHEST",
+    "bind": 1,
+    "icon": 132625,
+    "sellPrice": 200000,
+    "stackCount": 1,
+    "setID": 1669,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 25,
+      "CRIT_RATING": 14,
+      "INTELLECT": 13,
+      "RESISTANCE0_NAME": 387,
       "STAMINA": 16
     }
   },
@@ -12028,6 +12845,201 @@
       "STAMINA": 13
     }
   },
+  "226921": {
+    "names": {
+      "enUS": "Deathmist Wrists"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_WRIST",
+    "bind": 1,
+    "icon": 132612,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1681,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 12,
+      "RESISTANCE0_NAME": 40,
+      "SPELL_POWER": 8,
+      "STAMINA": 12
+    }
+  },
+  "226922": {
+    "names": {
+      "enUS": "Deathmist Waist"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_WAIST",
+    "bind": 1,
+    "icon": 132501,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1681,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 16,
+      "RESISTANCE0_NAME": 52,
+      "SPELL_POWER": 12,
+      "STAMINA": 16
+    }
+  },
+  "226923": {
+    "names": {
+      "enUS": "Deathmist Shoulders"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_SHOULDER",
+    "bind": 1,
+    "icon": 133732,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1681,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 16,
+      "RESISTANCE0_NAME": 69,
+      "SPELL_POWER": 12,
+      "STAMINA": 16
+    }
+  },
+  "226924": {
+    "names": {
+      "enUS": "Deathmist Legs"
+    },
+    "quality": 3,
+    "itemLevel": 66,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_LEGS",
+    "bind": 1,
+    "icon": 134588,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1681,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 21,
+      "RESISTANCE0_NAME": 81,
+      "SPELL_POWER": 16,
+      "STAMINA": 22
+    }
+  },
+  "226925": {
+    "names": {
+      "enUS": "Deathmist Helm"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_HEAD",
+    "bind": 1,
+    "icon": 133131,
+    "sellPrice": 200000,
+    "stackCount": 1,
+    "setID": 1681,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "HIT_RATING": 10,
+      "INTELLECT": 24,
+      "RESISTANCE0_NAME": 75,
+      "SPELL_POWER": 16,
+      "STAMINA": 24
+    }
+  },
+  "226926": {
+    "names": {
+      "enUS": "Deathmist Gloves"
+    },
+    "quality": 4,
+    "itemLevel": 55,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_HAND",
+    "bind": 1,
+    "icon": 132966,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1681,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "HIT_RATING": 10,
+      "INTELLECT": 13,
+      "RESISTANCE0_NAME": 54,
+      "SPELL_POWER": 13,
+      "STAMINA": 16
+    }
+  },
+  "226927": {
+    "names": {
+      "enUS": "Deathmist Boots"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_FEET",
+    "bind": 1,
+    "icon": 132539,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1681,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 14,
+      "RESISTANCE0_NAME": 64,
+      "SPELL_POWER": 12,
+      "STAMINA": 24
+    }
+  },
+  "226928": {
+    "names": {
+      "enUS": "Deathmist Chest"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_ROBE",
+    "bind": 1,
+    "icon": 132690,
+    "sellPrice": 200000,
+    "stackCount": 1,
+    "setID": 1681,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 14,
+      "INTELLECT": 22,
+      "RESISTANCE0_NAME": 93,
+      "SPELL_POWER": 12,
+      "STAMINA": 27
+    }
+  },
   "226929": {
     "names": {
       "enUS": "Sorcerer's Bindings"
@@ -12230,6 +13242,209 @@
       "RESISTANCE0_NAME": 69,
       "SPELL_POWER": 7,
       "STAMINA": 11
+    }
+  },
+  "226937": {
+    "names": {
+      "enUS": "Sorcerer's Wrists"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_WRIST",
+    "bind": 1,
+    "icon": 133365,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1671,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 12,
+      "RESISTANCE0_NAME": 40,
+      "SPELL_POWER": 8,
+      "SPIRIT": 5,
+      "STAMINA": 8
+    }
+  },
+  "226938": {
+    "names": {
+      "enUS": "Sorcerer's Waist"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_WAIST",
+    "bind": 1,
+    "icon": 132497,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1671,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 14,
+      "RESISTANCE0_NAME": 52,
+      "SPELL_POWER": 14,
+      "SPIRIT": 7,
+      "STAMINA": 12
+    }
+  },
+  "226939": {
+    "names": {
+      "enUS": "Sorcerer's Shoulders"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_SHOULDER",
+    "bind": 1,
+    "icon": 135054,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1671,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 17,
+      "RESISTANCE0_NAME": 69,
+      "SPELL_POWER": 9,
+      "SPIRIT": 7,
+      "STAMINA": 11
+    }
+  },
+  "226940": {
+    "names": {
+      "enUS": "Sorcerer's Legs"
+    },
+    "quality": 3,
+    "itemLevel": 66,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_LEGS",
+    "bind": 1,
+    "icon": 134586,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1671,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 22,
+      "RESISTANCE0_NAME": 81,
+      "SPELL_POWER": 16,
+      "SPIRIT": 10,
+      "STAMINA": 17
+    }
+  },
+  "226941": {
+    "names": {
+      "enUS": "Sorcerer's Helm"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_HEAD",
+    "bind": 1,
+    "icon": 132768,
+    "sellPrice": 200000,
+    "stackCount": 1,
+    "setID": 1671,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 14,
+      "INTELLECT": 25,
+      "RESISTANCE0_NAME": 75,
+      "SPELL_POWER": 11,
+      "SPIRIT": 14,
+      "STAMINA": 16
+    }
+  },
+  "226942": {
+    "names": {
+      "enUS": "Sorcerer's Gloves"
+    },
+    "quality": 4,
+    "itemLevel": 55,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_HAND",
+    "bind": 1,
+    "icon": 132951,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1671,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "HIT_RATING": 10,
+      "INTELLECT": 14,
+      "RESISTANCE0_NAME": 54,
+      "SPELL_POWER": 12,
+      "SPIRIT": 10,
+      "STAMINA": 12
+    }
+  },
+  "226943": {
+    "names": {
+      "enUS": "Sorcerer's Boots"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_FEET",
+    "bind": 1,
+    "icon": 132536,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1671,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 16,
+      "RESISTANCE0_NAME": 64,
+      "SPELL_POWER": 21,
+      "SPIRIT": 10,
+      "STAMINA": 14
+    }
+  },
+  "226944": {
+    "names": {
+      "enUS": "Sorcerer's Chest"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_ROBE",
+    "bind": 1,
+    "icon": 132666,
+    "sellPrice": 200000,
+    "stackCount": 1,
+    "setID": 1671,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 25,
+      "RESISTANCE0_NAME": 93,
+      "SPELL_PENETRATION": 5,
+      "SPELL_POWER": 16,
+      "SPIRIT": 9,
+      "STAMINA": 14
     }
   },
   "226945": {
@@ -12643,6 +13858,212 @@
       "SPELL_POWER": 26,
       "SPIRIT": 18,
       "STAMINA": 17
+    }
+  },
+  "226961": {
+    "names": {
+      "enUS": "Virtuous Wrists"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_WRIST",
+    "bind": 1,
+    "icon": 132520,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1675,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 8,
+      "MANA_REGENERATION": 2,
+      "RESISTANCE0_NAME": 40,
+      "SPELL_POWER": 9,
+      "SPIRIT": 8,
+      "STAMINA": 8
+    }
+  },
+  "226962": {
+    "names": {
+      "enUS": "Virtuous Waist"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_WAIST",
+    "bind": 1,
+    "icon": 132499,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1675,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 13,
+      "RESISTANCE0_NAME": 52,
+      "SPELL_POWER": 12,
+      "SPIRIT": 12,
+      "STAMINA": 12
+    }
+  },
+  "226963": {
+    "names": {
+      "enUS": "Virtuous Shoulders"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_SHOULDER",
+    "bind": 1,
+    "icon": 135033,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1675,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 13,
+      "RESISTANCE0_NAME": 69,
+      "SPELL_POWER": 12,
+      "SPIRIT": 12,
+      "STAMINA": 12
+    }
+  },
+  "226964": {
+    "names": {
+      "enUS": "Virtuous Legs"
+    },
+    "quality": 3,
+    "itemLevel": 66,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_LEGS",
+    "bind": 1,
+    "icon": 134588,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1675,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 14,
+      "MANA_REGENERATION": 6,
+      "RESISTANCE0_NAME": 81,
+      "SPELL_POWER": 16,
+      "SPIRIT": 12,
+      "STAMINA": 13
+    }
+  },
+  "226965": {
+    "names": {
+      "enUS": "Virtuous Helm"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_HEAD",
+    "bind": 1,
+    "icon": 132767,
+    "sellPrice": 200000,
+    "stackCount": 1,
+    "setID": 1675,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 14,
+      "INTELLECT": 17,
+      "MANA_REGENERATION": 6,
+      "RESISTANCE0_NAME": 75,
+      "SPELL_POWER": 11,
+      "SPIRIT": 16,
+      "STAMINA": 16
+    }
+  },
+  "226966": {
+    "names": {
+      "enUS": "Virtuous Gloves"
+    },
+    "quality": 4,
+    "itemLevel": 55,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_HAND",
+    "bind": 1,
+    "icon": 132948,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1675,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 15,
+      "RESISTANCE0_NAME": 54,
+      "SPELL_POWER": 11,
+      "SPIRIT": 12,
+      "STAMINA": 14
+    }
+  },
+  "226967": {
+    "names": {
+      "enUS": "Virtuous Boots"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_FEET",
+    "bind": 1,
+    "icon": 132539,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1675,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 13,
+      "MANA_REGENERATION": 7,
+      "RESISTANCE0_NAME": 64,
+      "SPELL_POWER": 12,
+      "SPIRIT": 12,
+      "STAMINA": 12
+    }
+  },
+  "226968": {
+    "names": {
+      "enUS": "Virtuous Chest"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_ROBE",
+    "bind": 1,
+    "icon": 132652,
+    "sellPrice": 200000,
+    "stackCount": 1,
+    "setID": 1675,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 22,
+      "MANA_REGENERATION": 6,
+      "RESISTANCE0_NAME": 93,
+      "SPELL_POWER": 14,
+      "SPIRIT": 12,
+      "STAMINA": 21
     }
   },
   "226969": {
@@ -13267,6 +14688,216 @@
       "STRENGTH": 18
     }
   },
+  "226993": {
+    "names": {
+      "enUS": "Soulforge Wrists"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_WRIST",
+    "bind": 1,
+    "icon": 132613,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1673,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 9,
+      "RESISTANCE0_NAME": 296,
+      "SPELL_POWER": 8,
+      "STAMINA": 10,
+      "STRENGTH": 9
+    }
+  },
+  "226994": {
+    "names": {
+      "enUS": "Soulforge Waist"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_WAIST",
+    "bind": 1,
+    "icon": 132500,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1673,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 11,
+      "MANA_REGENERATION": 4,
+      "RESISTANCE0_NAME": 380,
+      "SPELL_POWER": 12,
+      "STAMINA": 11,
+      "STRENGTH": 10
+    }
+  },
+  "226995": {
+    "names": {
+      "enUS": "Soulforge Shoulders"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_SHOULDER",
+    "bind": 1,
+    "icon": 135041,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1673,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 11,
+      "MANA_REGENERATION": 4,
+      "RESISTANCE0_NAME": 507,
+      "SPELL_POWER": 12,
+      "STAMINA": 11,
+      "STRENGTH": 10
+    }
+  },
+  "226996": {
+    "names": {
+      "enUS": "Soulforge Legs"
+    },
+    "quality": 3,
+    "itemLevel": 66,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_LEGS",
+    "bind": 1,
+    "icon": 134584,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1673,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 17,
+      "RESISTANCE0_NAME": 601,
+      "SPELL_POWER": 11,
+      "SPIRIT": 10,
+      "STAMINA": 17,
+      "STRENGTH": 16
+    }
+  },
+  "226997": {
+    "names": {
+      "enUS": "Soulforge Helm"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_HEAD",
+    "bind": 1,
+    "icon": 133076,
+    "sellPrice": 200000,
+    "stackCount": 1,
+    "setID": 1673,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 14,
+      "INTELLECT": 17,
+      "RESISTANCE0_NAME": 556,
+      "SPELL_POWER": 14,
+      "SPIRIT": 12,
+      "STAMINA": 17,
+      "STRENGTH": 16
+    }
+  },
+  "226998": {
+    "names": {
+      "enUS": "Soulforge Gloves"
+    },
+    "quality": 4,
+    "itemLevel": 55,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_HAND",
+    "bind": 1,
+    "icon": 132953,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1673,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 14,
+      "INTELLECT": 10,
+      "RESISTANCE0_NAME": 393,
+      "SPELL_POWER": 11,
+      "STAMINA": 10,
+      "STRENGTH": 9
+    }
+  },
+  "226999": {
+    "names": {
+      "enUS": "Soulforge Boots"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_FEET",
+    "bind": 1,
+    "icon": 132584,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1673,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 12,
+      "MANA_REGENERATION": 4,
+      "RESISTANCE0_NAME": 470,
+      "SPELL_POWER": 12,
+      "SPIRIT": 10,
+      "STAMINA": 13,
+      "STRENGTH": 12
+    }
+  },
+  "227000": {
+    "names": {
+      "enUS": "Soulforge Chest"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 4,
+    "slot": "INVTYPE_CHEST",
+    "bind": 1,
+    "icon": 132738,
+    "sellPrice": 200000,
+    "stackCount": 1,
+    "setID": 1673,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 14,
+      "INTELLECT": 17,
+      "RESISTANCE0_NAME": 684,
+      "SPELL_POWER": 14,
+      "SPIRIT": 12,
+      "STAMINA": 17,
+      "STRENGTH": 16
+    }
+  },
   "227001": {
     "names": {
       "enUS": "Bindings of The Five Thunders"
@@ -13888,6 +15519,215 @@
       "SPELL_POWER": 18,
       "STAMINA": 17,
       "STRENGTH": 16
+    }
+  },
+  "227033": {
+    "names": {
+      "enUS": "Wrists of The Five Thunders"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_WRIST",
+    "bind": 1,
+    "icon": 132601,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1679,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 9,
+      "RESISTANCE0_NAME": 167,
+      "SPELL_POWER": 8,
+      "SPIRIT": 9,
+      "STAMINA": 10
+    }
+  },
+  "227034": {
+    "names": {
+      "enUS": "Waist of The Five Thunders"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_WAIST",
+    "bind": 1,
+    "icon": 132505,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1679,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 11,
+      "MANA_REGENERATION": 4,
+      "RESISTANCE0_NAME": 214,
+      "SPELL_POWER": 12,
+      "STAMINA": 11,
+      "STRENGTH": 10
+    }
+  },
+  "227035": {
+    "names": {
+      "enUS": "Shoulders of The Five Thunders"
+    },
+    "quality": 3,
+    "itemLevel": 65,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_SHOULDER",
+    "bind": 1,
+    "icon": 135060,
+    "sellPrice": 50000,
+    "stackCount": 1,
+    "setID": 1679,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 11,
+      "RESISTANCE0_NAME": 286,
+      "SPELL_POWER": 12,
+      "SPIRIT": 10,
+      "STAMINA": 11,
+      "STRENGTH": 10
+    }
+  },
+  "227036": {
+    "names": {
+      "enUS": "Legs of The Five Thunders"
+    },
+    "quality": 3,
+    "itemLevel": 66,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_LEGS",
+    "bind": 1,
+    "icon": 134583,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1679,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 17,
+      "RESISTANCE0_NAME": 339,
+      "SPELL_POWER": 11,
+      "SPIRIT": 16,
+      "STAMINA": 17,
+      "STRENGTH": 10
+    }
+  },
+  "227037": {
+    "names": {
+      "enUS": "Helm of The Five Thunders"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_HEAD",
+    "bind": 1,
+    "icon": 133072,
+    "sellPrice": 200000,
+    "stackCount": 1,
+    "setID": 1679,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 14,
+      "INTELLECT": 21,
+      "RESISTANCE0_NAME": 314,
+      "SPELL_POWER": 14,
+      "SPIRIT": 12,
+      "STAMINA": 22
+    }
+  },
+  "227038": {
+    "names": {
+      "enUS": "Gloves of The Five Thunders"
+    },
+    "quality": 4,
+    "itemLevel": 55,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_HAND",
+    "bind": 1,
+    "icon": 132945,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1679,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 14,
+      "MANA_REGENERATION": 4,
+      "RESISTANCE0_NAME": 223,
+      "SPELL_POWER": 12,
+      "STAMINA": 12,
+      "STRENGTH": 9
+    }
+  },
+  "227039": {
+    "names": {
+      "enUS": "Boots of The Five Thunders"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_FEET",
+    "bind": 1,
+    "icon": 132592,
+    "sellPrice": 100000,
+    "stackCount": 1,
+    "setID": 1679,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 12,
+      "MANA_REGENERATION": 4,
+      "RESISTANCE0_NAME": 266,
+      "SPELL_POWER": 12,
+      "SPIRIT": 10,
+      "STAMINA": 13,
+      "STRENGTH": 12
+    }
+  },
+  "227040": {
+    "names": {
+      "enUS": "Chest of The Five Thunders"
+    },
+    "quality": 4,
+    "itemLevel": 60,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 3,
+    "slot": "INVTYPE_CHEST",
+    "bind": 1,
+    "icon": 132633,
+    "sellPrice": 200000,
+    "stackCount": 1,
+    "setID": 1679,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "CRIT_RATING": 14,
+      "INTELLECT": 17,
+      "RESISTANCE0_NAME": 387,
+      "SPELL_POWER": 14,
+      "SPIRIT": 16,
+      "STAMINA": 17,
+      "STRENGTH": 12
     }
   },
   "227041": {

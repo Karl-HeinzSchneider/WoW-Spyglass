@@ -65887,6 +65887,29 @@
       "DEFENSE_SKILL_RATING": 8
     }
   },
+  "14558": {
+    "names": {
+      "enUS": "Lady Maye's Pendant"
+    },
+    "quality": 4,
+    "itemLevel": 64,
+    "reqLevel": 59,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_NECK",
+    "bind": 2,
+    "icon": 133295,
+    "sellPrice": 10500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "INTELLECT": 19,
+      "SPELL_POWER": 11,
+      "STAMINA": 10
+    }
+  },
   "14559": {
     "names": {
       "enUS": "Prospector's Sash"
@@ -119674,9 +119697,11 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "FIRE_RESISTANCE": 20,
-      "HEALTH_REGEN": 9,
-      "RESISTANCE2_NAME": 20
+      "DEFENSE_SKILL_RATING": 8,
+      "FIRE_RESISTANCE": 25,
+      "HEALTH_REGEN": 12,
+      "PARRY_RATING": 15,
+      "RESISTANCE2_NAME": 25
     }
   },
   "18407": {
@@ -133705,7 +133730,7 @@
       "enUS": "Darkmoon Card: Heroism"
     },
     "quality": 4,
-    "itemLevel": 66,
+    "itemLevel": 65,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 0,
@@ -133723,7 +133748,7 @@
       "enUS": "Darkmoon Card: Blue Dragon"
     },
     "quality": 4,
-    "itemLevel": 66,
+    "itemLevel": 65,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 0,
@@ -133741,7 +133766,7 @@
       "enUS": "Darkmoon Card: Maelstrom"
     },
     "quality": 4,
-    "itemLevel": 66,
+    "itemLevel": 65,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 0,
@@ -133759,7 +133784,7 @@
       "enUS": "Darkmoon Card: Twisting Nether"
     },
     "quality": 4,
-    "itemLevel": 66,
+    "itemLevel": 65,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 0,
