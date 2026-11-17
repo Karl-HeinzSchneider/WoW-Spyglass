@@ -9,19 +9,24 @@ Data:AddList("reputation", "kirin_tor", {
     panel = {
         { bar = "reputation" },
         { description = true },
+        { factionDropdown = "Faction", field = "side" },
+        { header = "Alliance vendor", side = "Alliance" },
+        { side = "Alliance", text = "Archmage Alvareaux, Quartermaster, is in Alterac Mountains." },
+        { row = "Coordinates", side = "Alliance", value = "14.0, 63.2" },
+        { button = "Show vendor on map", map = { 1416, 14, 63.2 }, side = "Alliance" },
         { header = "Rewards" },
         { checkbox = "Only reached standings", filter = "standing" },
         { dropdown = "Standing", field = "standing" },
     },
 })
 Data:AddListLoot("reputation", "kirin_tor", {
-    { 276986, standing = "Friendly" }, -- Pattern: Azure Gustwoven Hood
-    { 276987, standing = "Friendly" }, -- Pattern: Azure Gustwoven Spaulders
-    { 276990, standing = "Friendly" }, -- Pattern: Azure Stormsewn Cowl
-    { 276991, standing = "Friendly" }, -- Pattern: Azure Stormsewn Epaulets
-    { 276988, standing = "Friendly" }, -- Pattern: Azure Windraveled Cover
-    { 276989, standing = "Friendly" }, -- Pattern: Azure Windraveled Drapes
-    { 276984, standing = "Friendly" }, -- Plans: Azure Skyforged Helm
-    { 276985, standing = "Friendly" }, -- Plans: Azure Skyforged Pauldrons
-    { 285327, standing = "Exalted" }, -- Kirin Tor Tabard
+    { 276986, standing = "Friendly", side = "Alliance" }, -- Pattern: Azure Gustwoven Hood
+    { 276987, standing = "Friendly", side = "Alliance" }, -- Pattern: Azure Gustwoven Spaulders
+    { 276990, standing = "Friendly", side = "Alliance" }, -- Pattern: Azure Stormsewn Cowl
+    { 276991, standing = "Friendly", side = "Alliance" }, -- Pattern: Azure Stormsewn Epaulets
+    { 276988, standing = "Friendly", side = "Alliance" }, -- Pattern: Azure Windraveled Cover
+    { 276989, standing = "Friendly", side = "Alliance" }, -- Pattern: Azure Windraveled Drapes
+    { 276984, standing = "Friendly", side = "Alliance" }, -- Plans: Azure Skyforged Helm
+    { 276985, standing = "Friendly", side = "Alliance" }, -- Plans: Azure Skyforged Pauldrons
+    { 285327, standing = "Exalted", side = "Alliance" }, -- Kirin Tor Tabard
 })

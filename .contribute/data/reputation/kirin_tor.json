@@ -10,6 +10,28 @@
       "description": true
     },
     {
+      "factionDropdown": "Faction",
+      "field": "side"
+    },
+    {
+      "header": "Alliance vendor",
+      "side": "Alliance"
+    },
+    {
+      "text": "Archmage Alvareaux, Quartermaster, is in Alterac Mountains.",
+      "side": "Alliance"
+    },
+    {
+      "row": "Coordinates",
+      "value": "14.0, 63.2",
+      "side": "Alliance"
+    },
+    {
+      "button": "Show vendor on map",
+      "map": [1416, 14, 63.2],
+      "side": "Alliance"
+    },
+    {
       "header": "Rewards"
     },
     {
@@ -25,41 +47,50 @@
     "Friendly": [
       {
         "item": 276986,
-        "name": "Pattern: Azure Gustwoven Hood"
+        "name": "Pattern: Azure Gustwoven Hood",
+        "side": "Alliance"
       },
       {
         "item": 276987,
-        "name": "Pattern: Azure Gustwoven Spaulders"
+        "name": "Pattern: Azure Gustwoven Spaulders",
+        "side": "Alliance"
       },
       {
         "item": 276990,
-        "name": "Pattern: Azure Stormsewn Cowl"
+        "name": "Pattern: Azure Stormsewn Cowl",
+        "side": "Alliance"
       },
       {
         "item": 276991,
-        "name": "Pattern: Azure Stormsewn Epaulets"
+        "name": "Pattern: Azure Stormsewn Epaulets",
+        "side": "Alliance"
       },
       {
         "item": 276988,
-        "name": "Pattern: Azure Windraveled Cover"
+        "name": "Pattern: Azure Windraveled Cover",
+        "side": "Alliance"
       },
       {
         "item": 276989,
-        "name": "Pattern: Azure Windraveled Drapes"
+        "name": "Pattern: Azure Windraveled Drapes",
+        "side": "Alliance"
       },
       {
         "item": 276984,
-        "name": "Plans: Azure Skyforged Helm"
+        "name": "Plans: Azure Skyforged Helm",
+        "side": "Alliance"
       },
       {
         "item": 276985,
-        "name": "Plans: Azure Skyforged Pauldrons"
+        "name": "Plans: Azure Skyforged Pauldrons",
+        "side": "Alliance"
       }
     ],
     "Exalted": [
       {
         "item": 285327,
-        "name": "Kirin Tor Tabard"
+        "name": "Kirin Tor Tabard",
+        "side": "Alliance"
       }
     ]
   }
