@@ -160,7 +160,7 @@
       "name": "Allegiance to the Old Gods",
       "side": "Horde",
       "requiredLevel": 17,
-      "xp": 2650,
+      "xp": 6300,
       "objective": "Defeat Lorgus Jett in Blackfathom Deeps.",
       "description": "Follows the Damp Note version of Allegiance to the Old Gods.",
       "requires": [6564],
@@ -332,7 +332,7 @@
       "name": "Amongst the Ruins",
       "side": "Horde",
       "requiredLevel": 21,
-      "xp": 2750,
+      "xp": 6550,
       "objective": "Recover the Fathom Core from the Fathom Stone in Blackfathom Deeps.",
       "description": "The Fathom Stone is also associated with the optional Baron Aquanis encounter.",
       "start": {
@@ -370,7 +370,7 @@
       "name": "Baron Aquanis",
       "side": "Horde",
       "requiredLevel": 21,
-      "xp": 7468,
+      "xp": 7250,
       "objective": "Bring the Strange Water Globe to Je'neu Sancrea at Zoram'gar Outpost, Ashenvale.",
       "description": "Drops from Baron Aquanis.",
       "start": {

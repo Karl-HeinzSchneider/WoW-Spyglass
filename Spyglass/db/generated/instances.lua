@@ -905,7 +905,7 @@ Data:AddBoss(3315, { instanceID = 2974, order = 0, displayID = 140708, level = 5
 Data:AddBoss(3316, { instanceID = 2974, order = 1000, displayID = 130432, level = 57 }) -- Impaan the Imprisoner
 Data:AddBoss(3322, { instanceID = 2974, order = 3000, displayID = 130427, level = 58 }) -- Bonesnout the Unbroken
 Data:AddBoss(3323, { instanceID = 2974, order = 5000, displayID = 130436, level = 59 }) -- Blackmaw Behemoth
-Data:AddBoss(3327, { instanceID = 2974, order = 2000, displayID = 130440, level = 59 }) -- Elder Shaman Bloodmane
+Data:AddBoss(3327, { instanceID = 2974, order = 2000, displayID = 130440, level = 59, quests = { 99187 } }) -- Elder Shaman Bloodmane
 Data:AddBoss(3334, { instanceID = 2974, order = 4000, displayID = 130447, level = 60, quests = { 92065 } }) -- Varrox Bleakhoof
 Data:AddBoss(3336, { instanceID = 2974, order = 6000, displayID = 131644, level = 59 }) -- Unbound Spirit
 Data:AddBoss(-269104, { instanceID = 2974, displayID = 12235, level = 55 }) -- Moontouched Wanderer

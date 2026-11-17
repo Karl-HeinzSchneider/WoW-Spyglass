@@ -221,7 +221,9 @@ Data:AddQuests(47, {
         { 6749 }, -- Tiger Band
         { 274078 }, -- Boar Signet
     } },
-    { id = 1221, name = "Blueleaf Tubers", side = "Both", requiredLevel = 20, xp = 2100, objective = "Use the Crate with Holes to summon a Snufflenose Gopher and the Command Stick to make it find 6 Blueleaf Tubers. Bring them, the Command Stick and the Crate back to Mebok Mizzyrix.", start = { description = "Mebok Mizzyrix, Ratchet, The Barrens", location = { 1413, 62.4, 37.6 }, npc = "Mebok Mizzyrix" }, turnIn = { description = "Mebok Mizzyrix, Ratchet, The Barrens", location = { 1413, 62, 37 }, npc = "Mebok Mizzyrix" }, items = {} },
+    { id = 1221, name = "Blueleaf Tubers", side = "Both", requiredLevel = 20, xp = 5000, objective = "Use the Crate with Holes to summon a Snufflenose Gopher and the Command Stick to make it find 6 Blueleaf Tubers. Bring them, the Command Stick and the Crate back to Mebok Mizzyrix.", start = { description = "Mebok Mizzyrix, Ratchet, The Barrens", location = { 1413, 62.4, 37.6 }, npc = "Mebok Mizzyrix" }, turnIn = { description = "Mebok Mizzyrix, Ratchet, The Barrens", location = { 1413, 62, 37 }, npc = "Mebok Mizzyrix" }, items = {
+        { 6755 }, -- A Small Container of Gems
+    } },
     { id = 1142, name = "Mortality Wanes", side = "Alliance", requiredLevel = 25, xp = 3050, objective = "Find Treshala's Pendant and return it to Treshala Fallowbrook in Darnassus.", start = { description = "Inside Razorfen Kraul.", npc = "Heralath Fallowbrook" }, turnIn = { description = "Darnassus.", npc = "Treshala Fallowbrook" }, items = {
         { 6751 }, -- Mourning Shawl
         { 6752 }, -- Lancer Boots
@@ -261,5 +263,5 @@ Data:AddQuests(47, {
     { id = 1848, name = "Brutal Hauberk", side = "Horde", class = "WARRIOR", requiredLevel = 20, xp = 3050, objective = "Wait for Thun'grim Firegaze to finish your armor.", description = "This is a chain quest with a step in Razorfen Kraul", requires = { { id = 1838, name = "Brutal Armor" } }, start = { description = "hills east of the Crossroads, The Barrens", location = { 1413, 57, 30 }, npc = "Thun'grim Firegaze" }, turnIn = { description = "hills east of the Crossroads, The Barrens (57, 30)", location = { 1413, 57, 30 }, npc = "Thun'grim Firegaze" }, items = {
         { 7133 }, -- Brutal Hauberk
     } },
-    { id = 6522, name = "An Unholy Alliance", side = "Horde", requiredLevel = 28, xp = 5900, objective = "Take the Small Scroll to Varimathras in the Undercity.", followUps = { 6521 }, start = { description = "Drops from Charlga Razorflank in Razorfen Kraul.", item = 17008 }, turnIn = { description = "Royal Quarter, Undercity.", npc = "Varimathras" }, items = {} },
+    { id = 6522, name = "An Unholy Alliance", side = "Horde", requiredLevel = 28, xp = 5900, objective = "Take the Small Scroll to Varimathras in the Undercity.", followUps = { 6521 }, start = { description = "Drops from Charlga Razorflank in Razorfen Kraul.", item = 17008 }, turnIn = { description = "Royal Quarter, Undercity", location = { 1458, 56.2, 92.6 }, npc = "Varimathras" }, items = {} },
 })

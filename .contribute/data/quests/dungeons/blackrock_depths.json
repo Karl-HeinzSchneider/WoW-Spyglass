@@ -115,7 +115,24 @@
         "location": [1418, 3.4, 48.2],
         "description": "Kargath, Badlands"
       },
-      "items": []
+      "items": [
+        {
+          "item": 12112,
+          "name": "Crypt Demon Bracers"
+        },
+        {
+          "item": 12113,
+          "name": "Sunborne Cape"
+        },
+        {
+          "item": 12114,
+          "name": "Nightfall Gloves"
+        },
+        {
+          "item": 12115,
+          "name": "Stalwart Clutch"
+        }
+      ]
     },
     {
       "id": 3981,
@@ -230,6 +247,7 @@
       "xp": 11450,
       "objective": "Travel to Blackrock Depths and slay Bael'Gar. Use the Altered Black Dragonflight Molt on Bael'Gar's remains to capture the Fiery Essence. Return the Encased Fiery Essence to Cyrus Therepentous.",
       "description": "Show Cyrus a Black Dragonflight Molt first (A Taste of Flame, or kill the drake he summons). Then kill Bael'Gar and use the Altered Black Dragonflight Molt on his remains to collect the Encased Fiery Essence.",
+      "requires": [4022],
       "start": {
         "npc": "Cyrus Therepentous",
         "location": [1428, 94.8, 31.6],
@@ -240,7 +258,20 @@
         "location": [1428, 94.8, 31.6],
         "description": "Burning Steppes"
       },
-      "items": []
+      "items": [
+        {
+          "item": 12066,
+          "name": "Shaleskin Cape"
+        },
+        {
+          "item": 12083,
+          "name": "Valconian Sash"
+        },
+        {
+          "item": 12082,
+          "name": "Wyrmhide Spaulders"
+        }
+      ]
     },
     {
       "id": 4061,
@@ -447,7 +478,24 @@
         "location": [1426, 46.8, 52.4],
         "description": "Kharanos, Dun Morogh"
       },
-      "items": []
+      "items": [
+        {
+          "item": 12000,
+          "name": "Limb Cleaver"
+        },
+        {
+          "item": 270123,
+          "name": "Ragnar's Favorite Hat"
+        },
+        {
+          "item": 11964,
+          "name": "Swiftstrike Cudgel"
+        },
+        {
+          "item": 12003,
+          "name": "Dark Dwarven Lager"
+        }
+      ]
     },
     {
       "id": 4128,
@@ -487,7 +535,16 @@
         "location": [1418, 3, 47.6],
         "description": "Kargath, Badlands"
       },
-      "items": []
+      "items": [
+        {
+          "item": 12059,
+          "name": "Conqueror's Medallion"
+        },
+        {
+          "item": 270126,
+          "name": "Conqueror's Pendant"
+        }
+      ]
     },
     {
       "id": 4133,
@@ -526,7 +583,28 @@
         "location": [1418, 3, 47.6],
         "description": "Kargath, Badlands"
       },
-      "items": []
+      "items": [
+        {
+          "item": 12000,
+          "name": "Limb Cleaver"
+        },
+        {
+          "item": 6149,
+          "name": "Greater Mana Potion"
+        },
+        {
+          "item": 3928,
+          "name": "Superior Healing Potion"
+        },
+        {
+          "item": 270123,
+          "name": "Ragnar's Favorite Hat"
+        },
+        {
+          "item": 11964,
+          "name": "Swiftstrike Cudgel"
+        }
+      ]
     },
     {
       "id": 4136,
@@ -566,6 +644,7 @@
       "name": "Dragonkin Menace",
       "side": "Alliance",
       "requiredLevel": 48,
+      "xp": 5450,
       "objective": "Slay 15 Black Broodlings, 10 Black Dragonspawn, 4 Black Wyrmkin and 1 Black Drake. Return to Helendis Riverhorn when the task is complete.",
       "start": {
         "npc": "Helendis Riverhorn",
@@ -584,6 +663,7 @@
       "name": "The True Masters",
       "side": "Alliance",
       "requiredLevel": 48,
+      "xp": 4100,
       "objective": "Travel to Lakeshire and deliver Helendis Riverhorn's Letter to Magistrate Solomon.",
       "requires": [4182],
       "start": {
@@ -602,6 +682,7 @@
       "name": "The True Masters",
       "side": "Alliance",
       "requiredLevel": 48,
+      "xp": 4100,
       "objective": "Travel to Stormwind and deliver Solomon's Plea to Highlord Bolvar Fordragon. Bolvar resides in Stormwind Keep.",
       "requires": [4183],
       "start": {
@@ -620,6 +701,7 @@
       "name": "The True Masters",
       "side": "Alliance",
       "requiredLevel": 48,
+      "xp": 540,
       "objective": "Speak with Highlord Bolvar Fordragon after speaking with Lady Katrana Prestor.",
       "requires": [4184],
       "start": {
@@ -639,6 +721,7 @@
       "name": "The True Masters",
       "side": "Alliance",
       "requiredLevel": 48,
+      "xp": 5450,
       "objective": "Take Bolvar's Decree to Magistrate Solomon in Lakeshire.",
       "requires": [4185],
       "start": {
@@ -684,6 +767,7 @@
       "name": "The True Masters",
       "side": "Alliance",
       "requiredLevel": 48,
+      "xp": 540,
       "objective": "Speak with Marshal Maxwell in the Burning Steppes.",
       "requires": [4186],
       "start": {
@@ -702,6 +786,7 @@
       "name": "The True Masters",
       "side": "Alliance",
       "requiredLevel": 48,
+      "xp": 540,
       "objective": "Speak with Ragged John to learn of Marshal Windsor's fate and return to Marshal Maxwell when you have completed this task. You recall Marshal Maxwell telling you to search for him in a cave to the north.",
       "requires": [4223],
       "start": {
@@ -905,7 +990,20 @@
         "npc": "Marshal Maxwell",
         "description": "Morgan's Vigil, Burning Steppes"
       },
-      "items": []
+      "items": [
+        {
+          "item": 12065,
+          "name": "Ward of the Elements"
+        },
+        {
+          "item": 12061,
+          "name": "Blade of Reckoning"
+        },
+        {
+          "item": 12062,
+          "name": "Skilled Fighting Blade"
+        }
+      ]
     },
     {
       "id": 4324,
@@ -1166,6 +1264,87 @@
       "turnIn": {
         "npc": "Falrin Treeshaper",
         "description": "the Athenaeum, Dire Maul (West)"
+      },
+      "items": []
+    },
+    {
+      "id": 3462,
+      "name": "Squire Maltrake",
+      "side": "Both",
+      "requiredLevel": 40,
+      "xp": 470,
+      "objective": "Speak with Squire Maltrake.",
+      "start": {
+        "npc": "Velarok Windblade",
+        "location": [1427, 39, 39],
+        "description": "Searing Gorge"
+      },
+      "turnIn": {
+        "npc": "Squire Maltrake",
+        "location": [1427, 39, 39],
+        "description": "Searing Gorge"
+      },
+      "items": []
+    },
+    {
+      "id": 3463,
+      "name": "Set Them Ablaze!",
+      "side": "Both",
+      "requiredLevel": 40,
+      "xp": 7600,
+      "objective": "Set the North, South, East, and West Sentry Towers on fire by using the Torch of Retribution inside each of the buildings.",
+      "description": "Elite quest.",
+      "requires": [3462],
+      "start": {
+        "npc": "Squire Maltrake",
+        "location": [1427, 39, 39],
+        "description": "Searing Gorge"
+      },
+      "turnIn": {
+        "npc": "Squire Maltrake",
+        "location": [1427, 39, 39],
+        "description": "Searing Gorge"
+      },
+      "items": []
+    },
+    {
+      "id": 3481,
+      "name": "Trinkets...",
+      "side": "Both",
+      "requiredLevel": 40,
+      "xp": 470,
+      "objective": "Open the chest.",
+      "requires": [3463],
+      "start": {
+        "npc": "Hoard of the Black Dragonflight",
+        "location": [1427, 39, 38.9],
+        "description": "Searing Gorge"
+      },
+      "turnIn": {
+        "npc": "Hoard of the Black Dragonflight",
+        "location": [1427, 39, 38.9],
+        "description": "Searing Gorge"
+      },
+      "items": []
+    },
+    {
+      "id": 4022,
+      "name": "A Taste of Flame",
+      "side": "Both",
+      "requiredLevel": 52,
+      "xp": 5450,
+      "objective": "Show Cyrus Therepentous the Black Dragonflight Molt you received from Velarok Windblade.",
+      "description": "No molt? Cyrus has another A Taste of Flame (elite): after accepting it, ask him how to prove your worth and kill the Frenzied Black Drake he summons for its molt. It opens the Blackrock Depths quest too.",
+      "requires": [3481],
+      "start": {
+        "npc": "Cyrus Therepentous",
+        "location": [1428, 94.8, 31.6],
+        "description": "Burning Steppes"
+      },
+      "turnIn": {
+        "npc": "Cyrus Therepentous",
+        "location": [1428, 94.8, 31.6],
+        "description": "Burning Steppes"
       },
       "items": []
     }

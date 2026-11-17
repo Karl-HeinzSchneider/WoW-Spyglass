@@ -258,27 +258,54 @@ Data:AddQuests(230, {
         { 11866 }, -- Nagmara's Whipping Belt
         { 11962 }, -- Manacle Cuffs
     } },
-    { id = 4126, name = "Hurley Blackbreath", side = "Alliance", requiredLevel = 50, xp = 14800, objective = "Bring the Lost Thunderbrew Recipe to Ragnar Thunderbrew in Kharanos.", description = "Break the three kegs in the Grim Guzzler storeroom to spawn Hurley Blackbreath and his guards.\n\nOptional introductory quest:", start = { description = "Kharanos, Dun Morogh", location = { 1426, 46.8, 52.4 }, npc = "Ragnar Thunderbrew" }, turnIn = { description = "Kharanos, Dun Morogh", location = { 1426, 46.8, 52.4 }, npc = "Ragnar Thunderbrew" }, items = {} },
-    { id = 4134, name = "Lost Thunderbrew Recipe", side = "Horde", requiredLevel = 50, xp = 11300, objective = "Bring the Lost Thunderbrew Recipe to Vivian Lagrave in Kargath.", description = "Break the three kegs in the Grim Guzzler storeroom to spawn Hurley Blackbreath and his guards.\n\nOptional introductory quest:", start = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Shadowmage Vivian Lagrave" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Shadowmage Vivian Lagrave" }, items = {} },
+    { id = 4126, name = "Hurley Blackbreath", side = "Alliance", requiredLevel = 50, xp = 14800, objective = "Bring the Lost Thunderbrew Recipe to Ragnar Thunderbrew in Kharanos.", description = "Break the three kegs in the Grim Guzzler storeroom to spawn Hurley Blackbreath and his guards.\n\nOptional introductory quest:", start = { description = "Kharanos, Dun Morogh", location = { 1426, 46.8, 52.4 }, npc = "Ragnar Thunderbrew" }, turnIn = { description = "Kharanos, Dun Morogh", location = { 1426, 46.8, 52.4 }, npc = "Ragnar Thunderbrew" }, items = {
+        { 12000 }, -- Limb Cleaver
+        { 270123 }, -- Ragnar's Favorite Hat
+        { 11964 }, -- Swiftstrike Cudgel
+        { 12003 }, -- Dark Dwarven Lager
+    } },
+    { id = 4134, name = "Lost Thunderbrew Recipe", side = "Horde", requiredLevel = 50, xp = 11300, objective = "Bring the Lost Thunderbrew Recipe to Vivian Lagrave in Kargath.", description = "Break the three kegs in the Grim Guzzler storeroom to spawn Hurley Blackbreath and his guards.\n\nOptional introductory quest:", start = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Shadowmage Vivian Lagrave" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Shadowmage Vivian Lagrave" }, items = {
+        { 12000 }, -- Limb Cleaver
+        { 6149 }, -- Greater Mana Potion
+        { 3928 }, -- Superior Healing Potion
+        { 270123 }, -- Ragnar's Favorite Hat
+        { 11964 }, -- Swiftstrike Cudgel
+    } },
     { id = 4263, name = "Incendius!", side = "Alliance", requiredLevel = 48, xp = 10450, objective = "Find Lord Incendius in Blackrock Depths and destroy him!", description = "Kill Lord Incendius at the Black Anvil inside BRD.", requires = { { id = 4262, name = "Overmaster Pyron" } }, start = { description = "Morgan's Vigil, Burning Steppes", location = { 1428, 85.4, 70 }, npc = "Jalinda Sprig" }, turnIn = { description = "Morgan's Vigil, Burning Steppes", location = { 1428, 85.4, 70 }, npc = "Jalinda Sprig" }, items = {
         { 12113 }, -- Sunborne Cape
         { 12114 }, -- Nightfall Gloves
         { 12112 }, -- Crypt Demon Bracers
         { 12115 }, -- Stalwart Clutch
     } },
-    { id = 3907, name = "Disharmony of Fire", side = "Horde", requiredLevel = 48, xp = 13500, objective = "Enter Blackrock Depths and track down Lord Incendius. Slay him and return any source of information you may find to Thunderheart.", description = "Kill Lord Incendius at the Black Anvil inside BRD and bring back the Tablet of Kurniya.", requires = { { id = 3906, name = "Disharmony of Flame" } }, start = { description = "Kargath, Badlands", location = { 1418, 3.4, 48.2 }, npc = "Thunderheart" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 3.4, 48.2 }, npc = "Thunderheart" }, items = {} },
+    { id = 3907, name = "Disharmony of Fire", side = "Horde", requiredLevel = 48, xp = 13500, objective = "Enter Blackrock Depths and track down Lord Incendius. Slay him and return any source of information you may find to Thunderheart.", description = "Kill Lord Incendius at the Black Anvil inside BRD and bring back the Tablet of Kurniya.", requires = { { id = 3906, name = "Disharmony of Flame" } }, start = { description = "Kargath, Badlands", location = { 1418, 3.4, 48.2 }, npc = "Thunderheart" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 3.4, 48.2 }, npc = "Thunderheart" }, items = {
+        { 12112 }, -- Crypt Demon Bracers
+        { 12113 }, -- Sunborne Cape
+        { 12114 }, -- Nightfall Gloves
+        { 12115 }, -- Stalwart Clutch
+    } },
     { id = 7201, name = "The Last Element", side = "Horde", requiredLevel = 48, xp = 10100, objective = "Travel to Blackrock Depths and recover 10 Essence of the Elements. Your first inclination is to search the golems and golem makers. You remember Vivian Lagrave also muttering something about elementals.", description = "Essence of the Elements drops from BRD elementals and golems.", requires = { { id = 3906, name = "Disharmony of Flame" } }, start = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Shadowmage Vivian Lagrave" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Shadowmage Vivian Lagrave" }, items = {
         { 12038 }, -- Lagrave's Seal
     } },
-    { id = 4322, name = "Jail Break!", side = "Alliance", requiredLevel = 50, xp = 13950, objective = "Help Marshal Windsor get his gear back and free his friends. Return to Marshal Maxwell if you succeed.", description = "Escort Marshal Windsor through the prison. Clear the patrols first and have everyone ready before you start.", requires = { { id = 4282, name = "A Shred of Hope" } }, start = { description = "Blackrock Depths", npc = "Marshal Windsor" }, turnIn = { description = "Morgan's Vigil, Burning Steppes", npc = "Marshal Maxwell" }, items = {} },
+    { id = 4322, name = "Jail Break!", side = "Alliance", requiredLevel = 50, xp = 13950, objective = "Help Marshal Windsor get his gear back and free his friends. Return to Marshal Maxwell if you succeed.", description = "Escort Marshal Windsor through the prison. Clear the patrols first and have everyone ready before you start.", requires = { { id = 4282, name = "A Shred of Hope" } }, start = { description = "Blackrock Depths", npc = "Marshal Windsor" }, turnIn = { description = "Morgan's Vigil, Burning Steppes", npc = "Marshal Maxwell" }, items = {
+        { 12065 }, -- Ward of the Elements
+        { 12061 }, -- Blade of Reckoning
+        { 12062 }, -- Skilled Fighting Blade
+    } },
     { id = 4063, name = "The Rise of the Machines", side = "Horde", requiredLevel = 52, xp = 12400, objective = "Find and slay Golem Lord Argelmach. Return his head to Lotwil. You will also need to collect 10 Intact Elemental Cores from the Ragereaver Golems and Warbringer Constructs protecting Argelmach.", description = "Kill Golem Lord Argelmach for his head and collect 10 Intact Elemental Cores from the constructs guarding him.", requires = { { id = 4062, name = "The Rise of the Machines" } }, start = { description = "Badlands", location = { 1418, 25.8, 45 }, npc = "Lotwil Veriatus" }, turnIn = { description = "Badlands", location = { 1418, 25.8, 45 }, npc = "Lotwil Veriatus" }, items = {
         { 12109 }, -- Azure Moon Amice
         { 12110 }, -- Raincaster Drape
         { 12108 }, -- Basaltscale Armor
         { 12111 }, -- Lavaplate Gauntlets
     } },
-    { id = 4132, name = "Operation: Death to Angerforge", side = "Horde", requiredLevel = 52, xp = 15500, objective = "Travel to Blackrock Depths and slay General Angerforge! Return to Warlord Goretooth when the task is complete.", description = "Needs both KILL ON SIGHT quests and the Grark Lorkrub escort first.", requires = { { id = 4121, name = "Precarious Predicament" } }, start = { description = "Kargath, Badlands", location = { 1418, 5.8, 47.4 }, npc = "Warlord Goretooth" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Warlord Goretooth" }, items = {} },
-    { id = 4024, name = "A Taste of Flame", side = "Both", requiredLevel = 52, xp = 11450, objective = "Travel to Blackrock Depths and slay Bael'Gar. Use the Altered Black Dragonflight Molt on Bael'Gar's remains to capture the Fiery Essence. Return the Encased Fiery Essence to Cyrus Therepentous.", description = "Show Cyrus a Black Dragonflight Molt first (A Taste of Flame, or kill the drake he summons). Then kill Bael'Gar and use the Altered Black Dragonflight Molt on his remains to collect the Encased Fiery Essence.", start = { description = "Burning Steppes", location = { 1428, 94.8, 31.6 }, npc = "Cyrus Therepentous" }, turnIn = { description = "Burning Steppes", location = { 1428, 94.8, 31.6 }, npc = "Cyrus Therepentous" }, items = {} },
+    { id = 4132, name = "Operation: Death to Angerforge", side = "Horde", requiredLevel = 52, xp = 15500, objective = "Travel to Blackrock Depths and slay General Angerforge! Return to Warlord Goretooth when the task is complete.", description = "Needs both KILL ON SIGHT quests and the Grark Lorkrub escort first.", requires = { { id = 4121, name = "Precarious Predicament" } }, start = { description = "Kargath, Badlands", location = { 1418, 5.8, 47.4 }, npc = "Warlord Goretooth" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Warlord Goretooth" }, items = {
+        { 12059 }, -- Conqueror's Medallion
+        { 270126 }, -- Conqueror's Pendant
+    } },
+    { id = 4024, name = "A Taste of Flame", side = "Both", requiredLevel = 52, xp = 11450, objective = "Travel to Blackrock Depths and slay Bael'Gar. Use the Altered Black Dragonflight Molt on Bael'Gar's remains to capture the Fiery Essence. Return the Encased Fiery Essence to Cyrus Therepentous.", description = "Show Cyrus a Black Dragonflight Molt first (A Taste of Flame, or kill the drake he summons). Then kill Bael'Gar and use the Altered Black Dragonflight Molt on his remains to collect the Encased Fiery Essence.", requires = { { id = 4022, name = "A Taste of Flame" } }, start = { description = "Burning Steppes", location = { 1428, 94.8, 31.6 }, npc = "Cyrus Therepentous" }, turnIn = { description = "Burning Steppes", location = { 1428, 94.8, 31.6 }, npc = "Cyrus Therepentous" }, items = {
+        { 12066 }, -- Shaleskin Cape
+        { 12083 }, -- Valconian Sash
+        { 12082 }, -- Wyrmhide Spaulders
+    } },
     { id = 4362, name = "The Fate of the Kingdom", side = "Alliance", requiredLevel = 50, xp = 16900, objective = "Return to Blackrock Depths and rescue Princess Moira Bronzebeard from the evil clutches of Emperor Dagran Thaurissan.", description = "Keep Princess Moira alive and speak to her after Emperor Thaurissan dies. Her The Princess's Surprise sends you back to Magni for the reward.", requires = { { id = 4361, name = "The Bearer of Bad News" } }, start = { description = "Ironforge", location = { 1455, 39.4, 55.8 }, npc = "King Magni Bronzebeard" }, turnIn = { description = "Blackrock Depths", npc = "Princess Moira Bronzebeard" }, items = {
         { 12548 }, -- Magni's Will
         { 12543 }, -- Songstone of Ironforge

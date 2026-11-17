@@ -158,15 +158,15 @@
       "requiredLevel": 47,
       "xp": 11300,
       "objective": "Find the owner of the Feathered Charm Necklace.",
-      "description": "Item-start quest. The necklace is a handmade furbolg keepsake. The exact NPC and hand-in location are still being verified.",
+      "description": "The necklace is a handmade furbolg keepsake. Return it to Unele in Ursolan.",
       "start": {
         "item": 249698,
-        "description": "Looted in Blackmaw Hold; specific drop source not yet confirmed"
+        "description": "Looted from satyrs and imps in Blackmaw Hold."
       },
       "turnIn": {
         "npc": "Unele",
         "location": [1447, 43.4, 17.4],
-        "description": "The necklace's original Blackmaw owner (location not yet confirmed)"
+        "description": "Ursolan, Azshara"
       },
       "items": [
         {
@@ -434,6 +434,51 @@
         "npc": "Gatekeeper Rageroar",
         "location": [1447, 42.4, 20.2],
         "description": "Gatekeeper Rageroar, Ursolan, Azshara (42.4, 20.2)"
+      },
+      "items": []
+    },
+    {
+      "id": 99187,
+      "name": "The Reliquary of Tyr",
+      "side": "Horde",
+      "class": "Paladin",
+      "requiredLevel": 50,
+      "xp": 13550,
+      "objective": "Travel to Blackmaw Hold in Kalimdor, and recover the Reliquary of Tyr.",
+      "description": "Forsaken paladin class quest. The Reliquary of Tyr drops from Elder Shaman Bloodmane.",
+      "requires": [93030],
+      "start": {
+        "npc": "Knight of Mourning",
+        "location": [1420, 17.6, 67.4],
+        "description": "Tirisfal Glades"
+      },
+      "turnIn": {
+        "npc": "Knight of Mourning",
+        "location": [1420, 17.6, 67.4],
+        "description": "Tirisfal Glades"
+      },
+      "items": [
+        {
+          "item": 286408,
+          "name": "Sword of Mourning"
+        }
+      ]
+    },
+    {
+      "id": 93030,
+      "name": "The Knight of Mourning",
+      "side": "Horde",
+      "class": "Paladin",
+      "requiredLevel": 50,
+      "xp": 620,
+      "objective": "Speak with the Knight of Mourning to learn more about his unfinished quest.",
+      "start": {
+        "npc": "Knight of Mourning",
+        "location": [1420, 17.6, 67.4],
+        "description": "Tirisfal Glades"
+      },
+      "turnIn": {
+        "description": "Knight of Mourning, Tirisfal Glades (17.6, 67.4)"
       },
       "items": []
     }

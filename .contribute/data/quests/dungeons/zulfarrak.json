@@ -26,6 +26,10 @@
         {
           "item": 9534,
           "name": "Engineer's Guild Headpiece"
+        },
+        {
+          "item": 270099,
+          "name": "Magister Cowl"
         }
       ]
     },
@@ -99,6 +103,10 @@
         {
           "item": 9531,
           "name": "Gemshale Pauldrons"
+        },
+        {
+          "item": 270098,
+          "name": "Dank Shoulderpads"
         }
       ]
     },
