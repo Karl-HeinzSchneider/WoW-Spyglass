@@ -24,10 +24,6 @@
       "map": [2482, 21, 78.6]
     },
     {
-      "row": "Handful of Dirt",
-      "value": "4s 30c"
-    },
-    {
       "header": "Rewards"
     },
     {
@@ -40,12 +36,6 @@
     }
   ],
   "rewards": {
-    "Neutral": [
-      {
-        "item": 256036,
-        "name": "Handful of Dirt"
-      }
-    ],
     "Friendly": [
       {
         "item": 274415,

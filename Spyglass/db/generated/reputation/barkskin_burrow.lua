@@ -13,14 +13,12 @@ Data:AddList("reputation", "barkskin_burrow", {
         { text = "Dala Fairmaw is in Mount Hyjal." },
         { row = "Coordinates", value = "21.0, 78.6" },
         { button = "Show vendor on map", map = { 2482, 21, 78.6 } },
-        { row = "Handful of Dirt", value = "4s 30c" },
         { header = "Rewards" },
         { checkbox = "Only reached standings", filter = "standing" },
         { dropdown = "Standing", field = "standing" },
     },
 })
 Data:AddListLoot("reputation", "barkskin_burrow", {
-    { 256036, standing = "Neutral" }, -- Handful of Dirt
     { 274415, standing = "Friendly", costs = { { amount = 5, icon = 237185, item = 263439 } } }, -- Recipe: Sweetpaw Jam
     { 254134, standing = "Honored", costs = { { amount = 10, icon = 237185, item = 263439 } } }, -- Pattern: Mooncloth Reagent Bag
     { 262801, standing = "Honored", costs = { { amount = 15, icon = 237185, item = 263439 } } }, -- Barkskin Satchel
