@@ -372,7 +372,8 @@ modified click links it in chat.
 Set `field = "side"` on a `factionDropdown` to offer Alliance and Horde for a reward list.
 It defaults to the character's faction and filters entries by `meta.side`. A header, text, row,
 or button in the same panel may specify `side = "Alliance"` or `side = "Horde"` to appear for
-that selection. On a PvP list with `groupFolders` enabled, those widgets may also set
+that selection. The built-in PvP module shares its reward faction selection across its panels
+and tabs for the session. On a PvP list with `groupFolders` enabled, those widgets may also set
 `group` to a curated reward group to appear only inside its subcategory.
 
 Checkbox and dropdown filters and the grouping apply to the entries of whatever list the tab

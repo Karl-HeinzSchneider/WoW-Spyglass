@@ -1622,11 +1622,39 @@ function SpyglassViewMixin:GetPanelValue(node, index)
     return state and state[index]
 end
 
+-- Shared by every PvP panel and tab for the current session.
+---@type ("Alliance"|"Horde")?
+local pvpRewardFaction
+
+---@param view Spyglass.View
+local function isPvPView(view)
+    local module = view.path[2]
+    return module and module.moduleID == "pvp"
+end
+
 ---@param node Spyglass.Node
 ---@param index integer
 ---@return "Alliance"|"Horde"
 function SpyglassViewMixin:GetRewardFaction(node, index)
-    return self:GetPanelValue(node, index) or (UnitFactionGroup("player") == "Horde" and "Horde" or "Alliance")
+    local selected
+    if isPvPView(self) then
+        selected = pvpRewardFaction
+    else
+        selected = self:GetPanelValue(node, index)
+    end
+    return selected or (UnitFactionGroup("player") == "Horde" and "Horde" or "Alliance")
+end
+
+---@param node Spyglass.Node
+---@param index integer
+---@param side "Alliance"|"Horde"
+function SpyglassViewMixin:SetRewardFaction(node, index, side)
+    if isPvPView(self) then
+        pvpRewardFaction = side
+        self:OnQueryChanged()
+    else
+        self:SetPanelValue(node, index, side)
+    end
 end
 
 -- A checkbox, dropdown or grouping changed: the list is filtered and grouped again, from page 1.
@@ -1885,8 +1913,9 @@ end
 function SpyglassViewMixin:RestorePath(names)
     local nodes = { self.path[1] }
     for _, name in ipairs(names) do
+        local parent = nodes[#nodes]
         local found
-        for _, child in ipairs(getNodeChildren(self, nodes[#nodes])) do
+        for _, child in ipairs(getNodeChildren(self, parent)) do
             for _, entry in ipairs(child.items or { child }) do
                 if app.api.IsFolder(entry) and entry.name == name then
                     found = entry
@@ -1897,10 +1926,12 @@ function SpyglassViewMixin:RestorePath(names)
                 break
             end
         end
-        if not found then
+        -- Older PvP tabs include the former Honor Gear folder in their saved path.
+        if found then
+            nodes[#nodes + 1] = found
+        elseif parent.moduleID ~= "pvp" or name ~= "Honor Gear" then
             break
         end
-        nodes[#nodes + 1] = found
     end
     self.path = nodes
     self.pathPages = {}

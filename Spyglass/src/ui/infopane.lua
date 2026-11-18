@@ -265,9 +265,11 @@ function SpyglassInfoPaneMixin:AddWidget(view, node, index, widget)
                         or UnitFactionGroup("player")
                     return selected == side
                 end, function()
-                    view:SetPanelValue(node, index, side)
                     if isRewardSelector then
+                        view:SetRewardFaction(node, index, side)
                         self:QueueRefresh()
+                    else
+                        view:SetPanelValue(node, index, side)
                     end
                 end)
             end

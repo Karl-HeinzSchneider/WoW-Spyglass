@@ -1,6 +1,4 @@
--- Built-in module: PvP. One tile per reward source (a battleground's vendors, the honor
--- ranks), each listing its rewards grouped by the rank or standing they need. The sources
--- are curated lists in .contribute/data/pvp/*.json; this module holds no data of its own.
+-- PvP's battleground and honor gear tiles, built from the curated reward lists.
 local SG = Spyglass
 
 SG:RegisterModule({
@@ -10,7 +8,24 @@ SG:RegisterModule({
     order = 50,
     description = "Honor and battleground rewards.",
     display = "tiles",
+    panel = { { factionDropdown = "Faction", field = "side" } },
     getChildren = function()
-        return SG.ListFolders("pvp")
+        local entries = { SG.Header("Battlegrounds") }
+        local honorGear
+        for _, folder in ipairs(SG.ListFolders("pvp")) do
+            if folder.meta and folder.meta.listID == "honor_gear" then
+                honorGear = folder
+            else
+                entries[#entries + 1] = folder
+            end
+        end
+        if honorGear then
+            entries[#entries + 1] = SG.Header("Honor Gear")
+            for _, folder in ipairs(honorGear.children or {}) do
+                folder.panel = honorGear.panel
+                entries[#entries + 1] = folder
+            end
+        end
+        return entries
     end,
 })

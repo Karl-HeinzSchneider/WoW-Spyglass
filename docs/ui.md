@@ -208,6 +208,11 @@ page 1. The checkbox filter ids (`PANEL_FILTERS`: `side`, `standing`) must match
 `src/lists.ts` accepts. `OpenPath(path)` resolves a button's `open` path from the root and
 replaces the tab's path with the nodes it passed.
 
+The PvP module shares one reward faction selection across its landing page, subcollections,
+and tabs for the session. It starts on the character's faction. The landing page groups the
+tiles under Battlegrounds and Honor Gear, and vendor locations appear in the matching
+subcollection's panel.
+
 ## Info pane (`infopane.lua` / `.xml`)
 
 `SpyglassInfoPaneMixin` is `RightPane.Info`, inset like the character frame's side panes. It
