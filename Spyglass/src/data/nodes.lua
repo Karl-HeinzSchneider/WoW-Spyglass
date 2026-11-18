@@ -11,6 +11,8 @@ local RECIPE = Data.RECIPE
 
 local ICON_BOSS = "Interface\\Icons\\Ability_Creature_Cursed_02"
 local ICON_TRASH = "Interface\\Icons\\INV_Misc_Bag_10"
+local ICON_RECIPES = "Interface\\Icons\\INV_Scroll_03"
+local ICON_BLUEPRINT = 1001491 -- The icon shared by station blueprints.
 local ICON_QUEST = "Interface\\Icons\\Achievement_Quests_Completed_01"
 local ICON_MISSING = "Interface\\Icons\\INV_Misc_QuestionMark"
 
@@ -418,6 +420,48 @@ local function allBossesFolder(instanceID, instance)
     })
 end
 
+-- Collect recipe drops in one list. Station blueprints also appear in boss loot.
+---@param cards Spyglass.Node[]
+---@return Spyglass.Node?
+local function dungeonRecipesFolder(cards)
+    local recipes, seen = {}, {}
+    for _, card in ipairs(cards) do
+        local loot = {}
+        local children = card.children or {}
+        local keepBlueprints = card.meta and (card.meta.allBosses or card.meta.bossID)
+        for _, entry in ipairs(children) do
+            local itemID = entry.itemID
+            if itemID and app.itemKind(itemID) == Enum.ItemClass.Recipe then
+                if not seen[itemID] then
+                    seen[itemID] = true
+                    recipes[#recipes + 1] = entry
+                end
+                if keepBlueprints then
+                    local icon = select(5, C_Item.GetItemInfoInstant(itemID))
+                        or Data:GetItemField(itemID, Data.ITEM.ICON)
+                    if icon == ICON_BLUEPRINT then
+                        loot[#loot + 1] = entry
+                    end
+                end
+            else
+                loot[#loot + 1] = entry
+            end
+        end
+        if #loot < #children then
+            if card.meta and (card.meta.allBosses or card.meta.trash) then
+                card.info = countText(#loot, "drop", "drops")
+            end
+            card.children = loot
+        end
+    end
+    if #recipes > 0 then
+        return api.Folder("Recipes", ICON_RECIPES, recipes, {
+            columns = 2,
+            info = countText(#recipes, "recipe", "recipes"),
+        })
+    end
+end
+
 -- The right pane of an instance: the zone its entrance is in (the client's name for the map, so
 -- it is localized), its level range, the level needed to enter and its boss count, the dungeon
 -- loading screen when available, a button to its entrance, and its quests with progress.
@@ -488,6 +532,12 @@ function api.InstanceFolder(instanceID)
     local entries = { allBossesFolder(instanceID, instance), api.TrashFolder(instanceID) }
     for _, bossID in ipairs(instance.bosses) do
         entries[#entries + 1] = api.BossFolder(bossID)
+    end
+    if instance.type == "dungeon" then
+        local recipes = dungeonRecipesFolder(entries)
+        if recipes then
+            table.insert(entries, 3, recipes)
+        end
     end
     local questFolder = api.QuestFolder(instanceID)
     questFolder.hidden = true

@@ -157,7 +157,9 @@ open.
   it (boss level, optional "rare", creature type, "N drops on your lists" for distinct drops saved in Favorites or
   any other item list, a quest "!" for `quests`). The count updates when lists change and stays hidden
   when no drops are saved.
-  An instance lists All Bosses, then trash loot, then its bosses. A button under the right
+  An instance lists All Bosses, Trash, and its bosses. Dungeons with recipe drops show a Recipes
+  card after Trash, with recipe drops from bosses and trash together. Station blueprints also
+  appear in All Bosses and on their individual boss cards. A button under the right
   pane's quest list opens the quest folder.
 
 The dungeon info panel shows "Show loading screen art" above "Show entrance" when the dungeon
