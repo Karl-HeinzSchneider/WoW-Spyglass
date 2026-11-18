@@ -41,6 +41,20 @@
     {
       "row": "Required honor rank",
       "value": "14 (Grand Marshal)"
+    },
+    {
+      "header": "Master Sergeant Biggins"
+    },
+    {
+      "text": "Officer Accessories Quartermaster in Stormwind City"
+    },
+    {
+      "row": "Coordinates",
+      "value": "75.2, 67.6"
+    },
+    {
+      "button": "Show officer accessories quartermaster on map",
+      "map": [1453, 75.2, 67.6]
     }
   ],
   "rewards": [
@@ -489,6 +503,151 @@
         }
       ],
       "group": "Grand Marshal Weapons"
+    },
+    {
+      "item": 15198,
+      "name": "Knight's Colors",
+      "side": "Alliance",
+      "costs": [
+        {
+          "copper": 36000
+        }
+      ],
+      "group": "Officer Accessories"
+    },
+    {
+      "item": 18606,
+      "name": "Alliance Battle Standard",
+      "rank": 7,
+      "side": "Alliance",
+      "costs": [
+        {
+          "copper": 45000
+        }
+      ],
+      "group": "Officer Accessories"
+    },
+    {
+      "item": 18839,
+      "name": "Combat Healing Potion",
+      "rank": 5,
+      "side": "Alliance",
+      "costs": [
+        {
+          "copper": 900
+        }
+      ],
+      "group": "Officer Accessories"
+    },
+    {
+      "item": 18841,
+      "name": "Combat Mana Potion",
+      "rank": 5,
+      "side": "Alliance",
+      "costs": [
+        {
+          "copper": 990
+        }
+      ],
+      "group": "Officer Accessories"
+    },
+    {
+      "item": 272694,
+      "name": "Private's Tabard",
+      "rank": 1,
+      "side": "Alliance",
+      "costs": [
+        {
+          "copper": 9000
+        }
+      ],
+      "group": "Officer Accessories"
+    },
+    {
+      "item": 272695,
+      "name": "Knight's Colors",
+      "rank": 6,
+      "side": "Alliance",
+      "costs": [
+        {
+          "copper": 36000
+        }
+      ],
+      "group": "Officer Accessories"
+    },
+    {
+      "item": 272698,
+      "name": "Premier Sergeant's Cloak",
+      "rank": 3,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Officer Accessories"
+    },
+    {
+      "item": 272699,
+      "name": "Premier Sergeant's Cape",
+      "rank": 3,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Officer Accessories"
+    },
+    {
+      "item": 274445,
+      "name": "Greater Insignia of the Alliance",
+      "rank": 2,
+      "side": "Alliance",
+      "costs": [
+        {
+          "copper": 13500
+        },
+        {
+          "currency": 1792,
+          "amount": 5250,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Officer Accessories"
+    },
+    {
+      "item": 274969,
+      "name": "Premier Master Sergeant's Insignia",
+      "rank": 4,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Officer Accessories"
     }
   ]
 }

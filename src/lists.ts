@@ -132,7 +132,10 @@ export interface CuratedListRow extends CuratedItemRow {
   side?: string;
 }
 
-type ItemCost = { item: number; amount: number; icon: number } | { currency: number; amount: number; name: string };
+type ItemCost =
+  | { item: number; amount: number; icon: number }
+  | { currency: number; amount: number; name: string }
+  | { copper: number };
 
 export interface ListFile {
   path: string;
@@ -244,17 +247,15 @@ function checkField(value: unknown, spec: FieldSpec): string | undefined {
     case "costs":
       if (!Array.isArray(value) || value.length === 0) return "must be a non-empty array";
       for (const cost of value) {
-        if (
-          cost &&
-          typeof cost === "object" &&
-          !Array.isArray(cost) &&
-          Object.keys(cost).length === 3 &&
-          isPositiveInteger(cost.amount)
-        ) {
-          if (isPositiveInteger(cost.item) && isPositiveInteger(cost.icon)) continue;
-          if (isPositiveInteger(cost.currency) && typeof cost.name === "string" && cost.name.trim()) continue;
+        if (cost && typeof cost === "object" && !Array.isArray(cost)) {
+          const keys = Object.keys(cost).length;
+          if (keys === 1 && isPositiveInteger(cost.copper)) continue;
+          if (keys === 3 && isPositiveInteger(cost.amount)) {
+            if (isPositiveInteger(cost.item) && isPositiveInteger(cost.icon)) continue;
+            if (isPositiveInteger(cost.currency) && typeof cost.name === "string" && cost.name.trim()) continue;
+          }
         }
-        return "must contain only item, amount and icon as positive integers, or currency and amount as positive integers with a name";
+        return "must contain only item, amount and icon as positive integers, currency and amount as positive integers with a name, or a positive copper amount";
       }
       return undefined;
   }

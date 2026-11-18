@@ -164,10 +164,11 @@ local RECIPE = {
 
 ---@class Spyglass.ItemCost
 ---@field item? integer
----@field amount integer
+---@field amount? integer
 ---@field icon? integer
 ---@field currency? integer
 ---@field name? string # fallback name for a currency
+---@field copper? integer
 
 -- Where an item comes from: a boss or an instance's trash (`chance`), a quest (`instanceID`,
 -- `side`), a row of a list (`kind`, `id` and that row's named fields, e.g. `standing`) or a

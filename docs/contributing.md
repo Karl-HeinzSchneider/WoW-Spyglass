@@ -380,7 +380,8 @@ Use the payment item's ID, the quantity due, and the icon's texture file ID. Eac
 positive integer. To price an offer in several payment items, put all components in that row's
 `costs` array. For game currency use a currency ID, amount, and fallback name, for example
 `{ "currency": 1792, "amount": 12000, "name": "Honor Points" }`. The tooltip uses the client's
-currency name and icon when available.
+currency name and icon when available. Use `{ "copper": 36000 }` for a coin price of
+3 gold 60 silver.
 
 Reputation files must state the game's `faction` id, a faction with a reputation bar; the addon
 uses it at runtime for the localized name, description and the character's standing, and `fix`

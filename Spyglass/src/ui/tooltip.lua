@@ -159,6 +159,29 @@ local function craftedLines(sources)
     return out
 end
 
+---@param cost Spyglass.ItemCost
+---@return string
+local function formatCost(cost)
+    if cost.copper then
+        return C_CurrencyInfo.GetCoinTextureString(cost.copper, ICON_SIZE)
+    end
+    local iconID, name = cost.icon, cost.name
+    if cost.currency then
+        local info = C_CurrencyInfo and C_CurrencyInfo.GetCurrencyInfo(cost.currency)
+        if info then
+            iconID = info.iconFileID
+            if info.name and info.name ~= "" then
+                name = info.name
+            end
+        end
+    elseif cost.item then
+        local itemName, known = Data:GetItemName(cost.item)
+        name = known and itemName or nil
+    end
+    local icon = iconID and (" " .. CreateSimpleTextureMarkup(iconID, ICON_SIZE, ICON_SIZE)) or ""
+    return ("%d%s%s"):format(cost.amount, icon, name and (" " .. name) or "")
+end
+
 -- Each list row is a separate offer. Its cost components are all paid together.
 ---@param sources Spyglass.ItemSource[]
 ---@return string[]
@@ -168,21 +191,7 @@ local function costLines(sources)
         if source.costs then
             local parts = {}
             for i, cost in ipairs(source.costs) do
-                local iconID, name = cost.icon, cost.name
-                if cost.currency then
-                    local info = C_CurrencyInfo and C_CurrencyInfo.GetCurrencyInfo(cost.currency)
-                    if info then
-                        iconID = info.iconFileID
-                        if info.name and info.name ~= "" then
-                            name = info.name
-                        end
-                    end
-                elseif cost.item then
-                    local itemName, known = Data:GetItemName(cost.item)
-                    name = known and itemName or nil
-                end
-                local icon = iconID and (" " .. CreateSimpleTextureMarkup(iconID, ICON_SIZE, ICON_SIZE)) or ""
-                parts[i] = ("%d%s%s"):format(cost.amount, icon, name and (" " .. name) or "")
+                parts[i] = formatCost(cost)
             end
             if #parts > 0 then
                 out[#out + 1] = "Cost: " .. table.concat(parts, " + ")

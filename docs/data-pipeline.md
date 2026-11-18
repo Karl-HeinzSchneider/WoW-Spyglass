@@ -93,8 +93,9 @@ the scans and warns on unscanned ids.
   missing start and turn-in details from it while keeping per-quest overrides.
 - **Item lists** (`validateLists`, `src/lists.ts`): the rows key and row fields per kind
   (`ROWS_KEY`, `ROW_FIELDS`, per-field specs); reputation's standing-keyed object is flattened by
-  `rowsOf`. Each cost component accepts an item with an icon or a currency with a fallback name,
-  plus a positive quantity. A reputation `faction` must be in the `Faction` table, and fix rewrites `name` from
+  `rowsOf`. Each cost component accepts an item with an icon and quantity, a currency with a
+  fallback name and quantity, or a coin price in copper. A reputation `faction` must be in the
+  `Faction` table, and fix rewrites `name` from
   it. A crafting `skillLine` must be a profession with recipes; `checkRecipeSpell` checks a row's
   `spell` against the recipe database (profession and created item; unknown spells warn) and on
   fix fills `item` from `spell`, `fillRecipeSpell` fills `spell` from `item` when exactly one

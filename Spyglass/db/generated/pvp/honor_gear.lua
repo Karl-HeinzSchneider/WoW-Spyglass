@@ -17,6 +17,10 @@ Data:AddList("pvp", "honor_gear", {
         { row = "Coordinates", value = "74.4, 67.6" },
         { button = "Show weapons quartermaster on map", map = { 1453, 74.4, 67.6 } },
         { row = "Required honor rank", value = "14 (Grand Marshal)" },
+        { header = "Master Sergeant Biggins" },
+        { text = "Officer Accessories Quartermaster in Stormwind City" },
+        { row = "Coordinates", value = "75.2, 67.6" },
+        { button = "Show officer accessories quartermaster on map", map = { 1453, 75.2, 67.6 } },
     },
 })
 Data:AddListLoot("pvp", "honor_gear", {
@@ -46,4 +50,14 @@ Data:AddListLoot("pvp", "honor_gear", {
     { 278157, rank = 14, side = "Alliance", costs = { { amount = 10, icon = 237427, item = 274895 }, { amount = 10500, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Tome of Restoration
     { 278158, rank = 14, side = "Alliance", costs = { { amount = 10, icon = 237427, item = 274895 }, { amount = 10500, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Tome of Power
     { 278468, rank = 14, side = "Alliance", costs = { { amount = 10, icon = 237427, item = 274895 }, { amount = 10500, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Barricade
+    { 15198, side = "Alliance", costs = { { copper = 36000 } }, group = "Officer Accessories" }, -- Knight's Colors
+    { 18606, rank = 7, side = "Alliance", costs = { { copper = 45000 } }, group = "Officer Accessories" }, -- Alliance Battle Standard
+    { 18839, rank = 5, side = "Alliance", costs = { { copper = 900 } }, group = "Officer Accessories" }, -- Combat Healing Potion
+    { 18841, rank = 5, side = "Alliance", costs = { { copper = 990 } }, group = "Officer Accessories" }, -- Combat Mana Potion
+    { 272694, rank = 1, side = "Alliance", costs = { { copper = 9000 } }, group = "Officer Accessories" }, -- Private's Tabard
+    { 272695, rank = 6, side = "Alliance", costs = { { copper = 36000 } }, group = "Officer Accessories" }, -- Knight's Colors
+    { 272698, rank = 3, side = "Alliance", costs = { { amount = 10, icon = 133282, item = 20559 }, { amount = 4500, currency = 1792, name = "Honor Points" } }, group = "Officer Accessories" }, -- Premier Sergeant's Cloak
+    { 272699, rank = 3, side = "Alliance", costs = { { amount = 10, icon = 133282, item = 20559 }, { amount = 4500, currency = 1792, name = "Honor Points" } }, group = "Officer Accessories" }, -- Premier Sergeant's Cape
+    { 274445, rank = 2, side = "Alliance", costs = { { copper = 13500 }, { amount = 5250, currency = 1792, name = "Honor Points" } }, group = "Officer Accessories" }, -- Greater Insignia of the Alliance
+    { 274969, rank = 4, side = "Alliance", costs = { { amount = 10, icon = 237427, item = 274895 }, { amount = 7500, currency = 1792, name = "Honor Points" } }, group = "Officer Accessories" }, -- Premier Master Sergeant's Insignia
 })
