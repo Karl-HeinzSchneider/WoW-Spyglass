@@ -50,7 +50,7 @@ The root node comes from `app.api:GetRootNode()`; the window listens to `OnModul
 A view fills the left column: a header row (breadcrumbs starting right of the
 window portrait) over a divider, then one `Content`
 page of rows, then under a second divider (`FooterDivider`) a footer row as high as the header
-row (44px) with the class and transmog filter buttons on the left, then the active list dropdown
+row (44px) with the class, transmog and recipe filter buttons on the left, then the active list dropdown
 (`ActiveList`, see [Item lists](#item-lists)), and Blizzard's `PagingControls` on the right.
 
 - **Navigation** is a `path` stack over `Spyglass.Node` trees (`Push` / `PopTo` / `Back`, then
@@ -94,6 +94,11 @@ row (44px) with the class and transmog filter buttons on the left, then the acti
   whose look is collected. Each tab starts on Show, and query Reset returns it to Show.
   Fade only checks the visible page. Hide checks eligible results before pagination, sharing
   the appearance cache with the row badges. Items with unknown collection status stay visible.
+- **Recipe filter.** The scroll button cycles through showing, fading and hiding recipes
+  the current character has learned. It checks crafting entries by recipe spell and recipe
+  items by the spells the database links to them. Each tab starts on Show, and query Reset
+  returns it to Show. Items with unknown recipe status stay visible. Spell and recipe learning
+  events update the visible view.
 
 ### Rows
 
@@ -108,7 +113,8 @@ followed by the node's `tooltip` lines (a list, or a function of the node).
 
 On a weapon or armor row, a checkmark at the bottom right of the item icon means the
 transmog appearance is collected. The row checks after item data loads. Resolved results
-are shared across pages until `TRANSMOG_COLLECTION_UPDATED`.
+are shared across pages until `TRANSMOG_COLLECTION_UPDATED`. A learned recipe row uses the
+same checkmark. Recipe tooltips show learned, not learned, or unknown status.
 
 Alt-click on an item row (or an item slot in a popup) toggles the item in the active list of
 `app.lists` (`Spyglass.Lists`, see [API.md](API.md#lists-and-favorites)) and rebuilds the
