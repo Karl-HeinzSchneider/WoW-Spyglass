@@ -1,0 +1,58 @@
+{
+  "name": "Honor Gear",
+  "icon": "Interface\\Icons\\INV_BannerPVP_02",
+  "panel": [
+    {
+      "header": "Lieutenant Karter"
+    },
+    {
+      "text": "Mount Vendor in Stormwind City"
+    },
+    {
+      "row": "Coordinates",
+      "value": "74.6, 67.6"
+    },
+    {
+      "button": "Show vendor on map",
+      "map": [1453, 74.6, 67.6]
+    },
+    {
+      "row": "Required honor rank",
+      "value": "11 (Commander)"
+    },
+    {
+      "row": "Price per mount",
+      "value": "90 gold"
+    }
+  ],
+  "rewards": [
+    {
+      "item": 18241,
+      "name": "Black War Steed Bridle",
+      "rank": 11,
+      "side": "Alliance",
+      "group": "Mounts"
+    },
+    {
+      "item": 18242,
+      "name": "Reins of the Black War Tiger",
+      "rank": 11,
+      "side": "Alliance",
+      "group": "Mounts"
+    },
+    {
+      "item": 18243,
+      "name": "Black Battlestrider",
+      "rank": 11,
+      "side": "Alliance",
+      "group": "Mounts"
+    },
+    {
+      "item": 18244,
+      "name": "Black War Ram",
+      "rank": 11,
+      "side": "Alliance",
+      "group": "Mounts"
+    }
+  ]
+}
