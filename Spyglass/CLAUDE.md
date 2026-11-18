@@ -103,7 +103,7 @@ Spyglass`, no private table); never give them private hooks.
   lines, commented out until the instance has curated loot (a split dungeon's parts by their own
   ids, e.g. `18901`). Crafting, reputation, pvp and collections return `SG.ListFolders(kind)`;
   `reputation` groups its tiles by parent faction, `crafting` sets `showIcon` on each tile, and
-  `collections` ships with curated lists for Mounts and Tarnished Undermine Real rewards.
+  `collections` ships with curated lists for Mounts, Toys, and Tarnished Undermine Real rewards.
 - `lists` is a `display = "tiles"` module built through `getEntries` (rebuilt on every open):
   one tile per `SG.Lists` list (kept per list id, so an open tab's node survives a rename), then
   "New list" and "Import list". A list's panel has the `grouping` dropdown (source, kind of
