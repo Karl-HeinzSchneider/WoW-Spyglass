@@ -179,6 +179,7 @@ local RECIPE = {
 ---@field id integer|string  # bossID for "boss", the instance id for "trash", the quest id for "quest", the recipe's spell id for "recipe", the list id otherwise
 ---@field chance? number
 ---@field skillLineID? integer
+---@field rank? integer  # minimum PvP rank for this offer
 ---@field costs? Spyglass.ItemCost[]
 ---@field upgradeFrom? integer
 ---@field [string] any
