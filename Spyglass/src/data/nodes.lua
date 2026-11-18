@@ -12,6 +12,7 @@ local RECIPE = Data.RECIPE
 local ICON_BOSS = "Interface\\Icons\\Ability_Creature_Cursed_02"
 local ICON_TRASH = "Interface\\Icons\\INV_Misc_Bag_10"
 local ICON_RECIPES = "Interface\\Icons\\INV_Scroll_03"
+local ICON_BLUEPRINT = 1001491 -- The icon shared by station blueprints.
 local ICON_QUEST = "Interface\\Icons\\Achievement_Quests_Completed_01"
 local ICON_MISSING = "Interface\\Icons\\INV_Misc_QuestionMark"
 
@@ -419,7 +420,7 @@ local function allBossesFolder(instanceID, instance)
     })
 end
 
--- Move recipe drops from the dungeon's loot cards into one deduplicated list.
+-- Collect recipe drops in one list. Station blueprints also appear in boss loot.
 ---@param cards Spyglass.Node[]
 ---@return Spyglass.Node?
 local function dungeonRecipesFolder(cards)
@@ -427,12 +428,20 @@ local function dungeonRecipesFolder(cards)
     for _, card in ipairs(cards) do
         local loot = {}
         local children = card.children or {}
+        local keepBlueprints = card.meta and (card.meta.allBosses or card.meta.bossID)
         for _, entry in ipairs(children) do
             local itemID = entry.itemID
             if itemID and app.itemKind(itemID) == Enum.ItemClass.Recipe then
                 if not seen[itemID] then
                     seen[itemID] = true
                     recipes[#recipes + 1] = entry
+                end
+                if keepBlueprints then
+                    local icon = select(5, C_Item.GetItemInfoInstant(itemID))
+                        or Data:GetItemField(itemID, Data.ITEM.ICON)
+                    if icon == ICON_BLUEPRINT then
+                        loot[#loot + 1] = entry
+                    end
                 end
             else
                 loot[#loot + 1] = entry
