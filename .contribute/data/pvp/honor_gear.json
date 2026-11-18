@@ -117,6 +117,112 @@
       "map": [1453, 75.8, 67],
       "side": "Alliance",
       "group": "Armor"
+    },
+    {
+      "header": "Raider Bork",
+      "side": "Horde",
+      "group": "Mounts"
+    },
+    {
+      "text": "Mount Quartermaster in the Hall of Legends, Orgrimmar",
+      "side": "Horde",
+      "group": "Mounts"
+    },
+    {
+      "row": "Coordinates",
+      "value": "37.8, 64.4",
+      "side": "Horde",
+      "group": "Mounts"
+    },
+    {
+      "button": "Show vendor on map",
+      "map": [1454, 37.8, 64.4],
+      "side": "Horde",
+      "group": "Mounts"
+    },
+    {
+      "row": "Required honor rank",
+      "value": "11 (Lieutenant General)",
+      "side": "Horde",
+      "group": "Mounts"
+    },
+    {
+      "row": "Price per mount",
+      "value": "100 gold before discounts",
+      "side": "Horde",
+      "group": "Mounts"
+    },
+    {
+      "header": "Sergeant Thunderhorn",
+      "side": "Horde",
+      "group": "High Warlord Weapons"
+    },
+    {
+      "text": "Weapons Quartermaster in the Hall of Legends, Orgrimmar",
+      "side": "Horde",
+      "group": "High Warlord Weapons"
+    },
+    {
+      "row": "Coordinates",
+      "value": "37.0, 67.0",
+      "side": "Horde",
+      "group": "High Warlord Weapons"
+    },
+    {
+      "button": "Show vendor on map",
+      "map": [1454, 37, 67],
+      "side": "Horde",
+      "group": "High Warlord Weapons"
+    },
+    {
+      "row": "Required honor rank",
+      "value": "14 (High Warlord)",
+      "side": "Horde",
+      "group": "High Warlord Weapons"
+    },
+    {
+      "header": "Brave Stonehide",
+      "side": "Horde",
+      "group": "Officer Accessories"
+    },
+    {
+      "text": "Officer Accessories Quartermaster in the Hall of Legends, Orgrimmar",
+      "side": "Horde",
+      "group": "Officer Accessories"
+    },
+    {
+      "row": "Coordinates",
+      "value": "36.7, 65.8",
+      "side": "Horde",
+      "group": "Officer Accessories"
+    },
+    {
+      "button": "Show vendor on map",
+      "map": [1454, 36.7, 65.8],
+      "side": "Horde",
+      "group": "Officer Accessories"
+    },
+    {
+      "header": "Lady Palanseer",
+      "side": "Horde",
+      "group": "Armor"
+    },
+    {
+      "text": "Armor Quartermaster in the Hall of Legends, Orgrimmar",
+      "side": "Horde",
+      "group": "Armor"
+    },
+    {
+      "row": "Coordinates",
+      "value": "37.2, 64.8",
+      "side": "Horde",
+      "group": "Armor"
+    },
+    {
+      "button": "Show vendor on map",
+      "map": [1454, 37.2, 64.8],
+      "side": "Horde",
+      "group": "Armor"
     }
   ],
   "rewards": [
@@ -593,7 +699,6 @@
       "item": 18839,
       "name": "Combat Healing Potion",
       "rank": 5,
-      "side": "Alliance",
       "costs": [
         {
           "copper": 900
@@ -605,7 +710,6 @@
       "item": 18841,
       "name": "Combat Mana Potion",
       "rank": 5,
-      "side": "Alliance",
       "costs": [
         {
           "copper": 990
@@ -1171,7 +1275,6 @@
       "item": 275229,
       "name": "Premier Emboldened Shoulder Seal",
       "rank": 12,
-      "side": "Alliance",
       "section": "Epic Upgrades",
       "costs": [
         {
@@ -1186,7 +1289,6 @@
       "item": 275238,
       "name": "Premier Emboldened Chest Seal",
       "rank": 13,
-      "side": "Alliance",
       "section": "Epic Upgrades",
       "costs": [
         {
@@ -1201,7 +1303,6 @@
       "item": 275239,
       "name": "Premier Emboldened Hands Seal",
       "rank": 10,
-      "side": "Alliance",
       "section": "Epic Upgrades",
       "costs": [
         {
@@ -1216,7 +1317,6 @@
       "item": 275240,
       "name": "Premier Emboldened Wrist Seal",
       "rank": 8,
-      "side": "Alliance",
       "section": "Epic Upgrades",
       "costs": [
         {
@@ -1231,7 +1331,6 @@
       "item": 275241,
       "name": "Premier Emboldened Head Seal",
       "rank": 13,
-      "side": "Alliance",
       "section": "Epic Upgrades",
       "costs": [
         {
@@ -1246,7 +1345,6 @@
       "item": 275242,
       "name": "Premier Emboldened Legs Seal",
       "rank": 12,
-      "side": "Alliance",
       "section": "Epic Upgrades",
       "costs": [
         {
@@ -1261,7 +1359,6 @@
       "item": 275243,
       "name": "Premier Emboldened Feet Seal",
       "rank": 9,
-      "side": "Alliance",
       "section": "Epic Upgrades",
       "costs": [
         {
@@ -1276,7 +1373,6 @@
       "item": 275244,
       "name": "Premier Emboldened Belt Seal",
       "rank": 8,
-      "side": "Alliance",
       "section": "Epic Upgrades",
       "costs": [
         {
@@ -4997,6 +5093,4732 @@
           "item": 275229,
           "amount": 1,
           "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 18245,
+      "name": "Horn of the Black War Wolf",
+      "rank": 11,
+      "side": "Horde",
+      "group": "Mounts"
+    },
+    {
+      "item": 18246,
+      "name": "Whistle of the Black War Raptor",
+      "rank": 11,
+      "side": "Horde",
+      "group": "Mounts"
+    },
+    {
+      "item": 18247,
+      "name": "Black War Kodo",
+      "rank": 11,
+      "side": "Horde",
+      "group": "Mounts"
+    },
+    {
+      "item": 18248,
+      "name": "Red Skeletal Warhorse",
+      "rank": 11,
+      "side": "Horde",
+      "group": "Mounts"
+    },
+    {
+      "item": 272452,
+      "name": "Premier High Warlord's Blade",
+      "rank": 14,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "High Warlord Weapons"
+    },
+    {
+      "item": 272591,
+      "name": "Premier High Warlord's Shield Wall",
+      "rank": 14,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 10500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "High Warlord Weapons"
+    },
+    {
+      "item": 272592,
+      "name": "Premier High Warlord's Cleaver",
+      "rank": 14,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "High Warlord Weapons"
+    },
+    {
+      "item": 272593,
+      "name": "Premier High Warlord's Battle Axe",
+      "rank": 14,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 20,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 22500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "High Warlord Weapons"
+    },
+    {
+      "item": 272594,
+      "name": "Premier High Warlord's Recurve",
+      "rank": 14,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "High Warlord Weapons"
+    },
+    {
+      "item": 272595,
+      "name": "Premier High Warlord's Crossbow",
+      "rank": 14,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "High Warlord Weapons"
+    },
+    {
+      "item": 272596,
+      "name": "Premier High Warlord's Razor",
+      "rank": 14,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "High Warlord Weapons"
+    },
+    {
+      "item": 272597,
+      "name": "Premier High Warlord's Right Claw",
+      "rank": 14,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "High Warlord Weapons"
+    },
+    {
+      "item": 272598,
+      "name": "Premier High Warlord's Left Claw",
+      "rank": 14,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "High Warlord Weapons"
+    },
+    {
+      "item": 272599,
+      "name": "Premier High Warlord's Street Sweeper",
+      "rank": 14,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "High Warlord Weapons"
+    },
+    {
+      "item": 272600,
+      "name": "Premier High Warlord's Bludgeon",
+      "rank": 14,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "High Warlord Weapons"
+    },
+    {
+      "item": 272601,
+      "name": "Premier High Warlord's Pulverizer",
+      "rank": 14,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 20,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 22500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "High Warlord Weapons"
+    },
+    {
+      "item": 272602,
+      "name": "Premier High Warlord's Pig Sticker",
+      "rank": 14,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 20,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 22500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "High Warlord Weapons"
+    },
+    {
+      "item": 272603,
+      "name": "Premier High Warlord's War Staff",
+      "rank": 14,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 20,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 22500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "High Warlord Weapons"
+    },
+    {
+      "item": 272604,
+      "name": "Premier High Warlord's Greatsword",
+      "rank": 14,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 20,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 22500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "High Warlord Weapons"
+    },
+    {
+      "item": 272683,
+      "name": "Premier High Warlord's Spellblade",
+      "rank": 14,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "High Warlord Weapons"
+    },
+    {
+      "item": 272681,
+      "name": "Premier High Warlord's Battle Mace",
+      "rank": 14,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "High Warlord Weapons"
+    },
+    {
+      "item": 272682,
+      "name": "Premier High Warlord's Destroyer",
+      "rank": 14,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 20,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 22500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "High Warlord Weapons"
+    },
+    {
+      "item": 272684,
+      "name": "Premier High Warlord's Quickblade",
+      "rank": 14,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "High Warlord Weapons"
+    },
+    {
+      "item": 272686,
+      "name": "Premier High Warlord's Tome of Mending",
+      "rank": 14,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 10500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "High Warlord Weapons"
+    },
+    {
+      "item": 272685,
+      "name": "Premier High Warlord's Tome of Destruction",
+      "rank": 14,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 10500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "High Warlord Weapons"
+    },
+    {
+      "item": 278469,
+      "name": "Premier High Warlord's Barricade",
+      "rank": 14,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 10500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "High Warlord Weapons"
+    },
+    {
+      "item": 272449,
+      "name": "Scout's Tabard",
+      "rank": 1,
+      "side": "Horde",
+      "costs": [
+        {
+          "copper": 10000
+        }
+      ],
+      "group": "Officer Accessories"
+    },
+    {
+      "item": 272450,
+      "name": "Stone Guard's Herald",
+      "rank": 6,
+      "side": "Horde",
+      "costs": [
+        {
+          "copper": 40000
+        }
+      ],
+      "group": "Officer Accessories"
+    },
+    {
+      "item": 18607,
+      "name": "Horde Battle Standard",
+      "rank": 7,
+      "side": "Horde",
+      "costs": [
+        {
+          "copper": 50000
+        }
+      ],
+      "group": "Officer Accessories"
+    },
+    {
+      "item": 272578,
+      "name": "Premier Sergeant's Cloak",
+      "rank": 3,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Officer Accessories"
+    },
+    {
+      "item": 272589,
+      "name": "Premier Sergeant's Cape",
+      "rank": 3,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Officer Accessories"
+    },
+    {
+      "item": 274444,
+      "name": "Greater Insignia of the Horde",
+      "rank": 2,
+      "side": "Horde",
+      "costs": [
+        {
+          "copper": 15000
+        },
+        {
+          "currency": 1792,
+          "amount": 5250,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Officer Accessories"
+    },
+    {
+      "item": 274968,
+      "name": "Premier Senior Sergeant's Insignia",
+      "rank": 4,
+      "side": "Horde",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Officer Accessories"
+    },
+    {
+      "item": 272471,
+      "name": "Premier Dragonhide Helm",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272515,
+      "name": "Premier Warlord's Dragonhide Helmet",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Druid",
+      "upgradeFrom": 272471,
+      "costs": [
+        {
+          "item": 272471,
+          "amount": 1,
+          "icon": 133077
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272469,
+      "name": "Premier Dragonhide Spaulders",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272516,
+      "name": "Premier General's Dragonhide Epaulets",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Druid",
+      "upgradeFrom": 272469,
+      "costs": [
+        {
+          "item": 272469,
+          "amount": 1,
+          "icon": 135038
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272472,
+      "name": "Premier Dragonhide Breastplate",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272514,
+      "name": "Premier Warlord's Dragonhide Hauberk",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Druid",
+      "upgradeFrom": 272472,
+      "costs": [
+        {
+          "item": 272472,
+          "amount": 1,
+          "icon": 132722
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272582,
+      "name": "Premier Dragonhide Armguards",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272614,
+      "name": "Premier Dragonhide Grips",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272520,
+      "name": "Premier Champion's Dragonhide Gloves",
+      "rank": 10,
+      "side": "Horde",
+      "section": "Druid",
+      "upgradeFrom": 272614,
+      "costs": [
+        {
+          "item": 272614,
+          "amount": 1,
+          "icon": 132959
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272463,
+      "name": "Premier Dragonhide Waistband",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272470,
+      "name": "Premier Dragonhide Trousers",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272517,
+      "name": "Premier General's Dragonhide Leggings",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Druid",
+      "upgradeFrom": 272470,
+      "costs": [
+        {
+          "item": 272470,
+          "amount": 1,
+          "icon": 134586
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272462,
+      "name": "Premier Dragonhide Boots",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272519,
+      "name": "Premier Centurion's Dragonhide Boots",
+      "rank": 9,
+      "side": "Horde",
+      "section": "Druid",
+      "upgradeFrom": 272462,
+      "costs": [
+        {
+          "item": 272462,
+          "amount": 1,
+          "icon": 132542
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272641,
+      "name": "Premier Kodohide Headguard",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273414,
+      "name": "Premier Warlord's Kodohide Helmet",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Druid",
+      "upgradeFrom": 272641,
+      "costs": [
+        {
+          "item": 272641,
+          "amount": 1,
+          "icon": 133077
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272642,
+      "name": "Premier Kodohide Shoulders",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273415,
+      "name": "Premier General's Kodohide Epaulets",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Druid",
+      "upgradeFrom": 272642,
+      "costs": [
+        {
+          "item": 272642,
+          "amount": 1,
+          "icon": 135038
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272626,
+      "name": "Premier Kodohide Chestpiece",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273413,
+      "name": "Premier Warlord's Kodohide Hauberk",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Druid",
+      "upgradeFrom": 272626,
+      "costs": [
+        {
+          "item": 272626,
+          "amount": 1,
+          "icon": 132722
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272461,
+      "name": "Premier Kodohide Armguards",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272464,
+      "name": "Premier Kodohide Gauntlets",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273419,
+      "name": "Premier Champion's Kodohide Gloves",
+      "rank": 10,
+      "side": "Horde",
+      "section": "Druid",
+      "upgradeFrom": 272464,
+      "costs": [
+        {
+          "item": 272464,
+          "amount": 1,
+          "icon": 132959
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273367,
+      "name": "Premier Kodohide Waistband",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272627,
+      "name": "Premier Kodohide Leggings",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273416,
+      "name": "Premier General's Kodohide Leggings",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Druid",
+      "upgradeFrom": 272627,
+      "costs": [
+        {
+          "item": 272627,
+          "amount": 1,
+          "icon": 134586
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272606,
+      "name": "Premier Kodohide Treads",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273418,
+      "name": "Premier Centurion's Kodohide Boots",
+      "rank": 9,
+      "side": "Horde",
+      "section": "Druid",
+      "upgradeFrom": 272606,
+      "costs": [
+        {
+          "item": 272606,
+          "amount": 1,
+          "icon": 132542
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273386,
+      "name": "Premier Wyrmhide Headguard",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273406,
+      "name": "Premier Warlord's Wyrmhide Helmet",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Druid",
+      "upgradeFrom": 273386,
+      "costs": [
+        {
+          "item": 273386,
+          "amount": 1,
+          "icon": 133077
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273387,
+      "name": "Premier Wyrmhide Shoulders",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273407,
+      "name": "Premier General's Wyrmhide Epaulets",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Druid",
+      "upgradeFrom": 273387,
+      "costs": [
+        {
+          "item": 273387,
+          "amount": 1,
+          "icon": 135038
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273384,
+      "name": "Premier Wyrmhide Chestpiece",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273405,
+      "name": "Premier Warlord's Wyrmhide Hauberk",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Druid",
+      "upgradeFrom": 273384,
+      "costs": [
+        {
+          "item": 273384,
+          "amount": 1,
+          "icon": 132722
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273381,
+      "name": "Premier Wyrmhide Armguards",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273382,
+      "name": "Premier Wyrmhide Gauntlets",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273411,
+      "name": "Premier Champion's Wyrmhide Gloves",
+      "rank": 10,
+      "side": "Horde",
+      "section": "Druid",
+      "upgradeFrom": 273382,
+      "costs": [
+        {
+          "item": 273382,
+          "amount": 1,
+          "icon": 132959
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273388,
+      "name": "Premier Wyrmhide Waistband",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273385,
+      "name": "Premier Wyrmhide Leggings",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273408,
+      "name": "Premier General's Wyrmhide Leggings",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Druid",
+      "upgradeFrom": 273385,
+      "costs": [
+        {
+          "item": 273385,
+          "amount": 1,
+          "icon": 134586
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273383,
+      "name": "Premier Wyrmhide Treads",
+      "side": "Horde",
+      "section": "Druid",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273410,
+      "name": "Premier Centurion's Wyrmhide Boots",
+      "rank": 9,
+      "side": "Horde",
+      "section": "Druid",
+      "upgradeFrom": 273383,
+      "costs": [
+        {
+          "item": 273383,
+          "amount": 1,
+          "icon": 132542
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272491,
+      "name": "Premier Chain Headguard",
+      "side": "Horde",
+      "section": "Hunter",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272531,
+      "name": "Premier Warlord's Chain Helmet",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Hunter",
+      "upgradeFrom": 272491,
+      "costs": [
+        {
+          "item": 272491,
+          "amount": 1,
+          "icon": 133071
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272640,
+      "name": "Premier Chain Shoulders",
+      "side": "Horde",
+      "section": "Hunter",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272533,
+      "name": "Premier General's Chain Shoulders",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Hunter",
+      "upgradeFrom": 272640,
+      "costs": [
+        {
+          "item": 272640,
+          "amount": 1,
+          "icon": 135032
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272490,
+      "name": "Premier Chain Breastplate",
+      "side": "Horde",
+      "section": "Hunter",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272530,
+      "name": "Premier Warlord's Chain Chestpiece",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Hunter",
+      "upgradeFrom": 272490,
+      "costs": [
+        {
+          "item": 272490,
+          "amount": 1,
+          "icon": 132626
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272483,
+      "name": "Premier Chain Bracers",
+      "side": "Horde",
+      "section": "Hunter",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272495,
+      "name": "Premier Chain Gauntlets",
+      "side": "Horde",
+      "section": "Hunter",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272536,
+      "name": "Premier Champion's Chain Gloves",
+      "rank": 10,
+      "side": "Horde",
+      "section": "Hunter",
+      "upgradeFrom": 272495,
+      "costs": [
+        {
+          "item": 272495,
+          "amount": 1,
+          "icon": 132951
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272494,
+      "name": "Premier Chain Girdle",
+      "side": "Horde",
+      "section": "Hunter",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272492,
+      "name": "Premier Chain Leggings",
+      "side": "Horde",
+      "section": "Hunter",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272532,
+      "name": "Premier General's Chain Legguards",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Hunter",
+      "upgradeFrom": 272492,
+      "costs": [
+        {
+          "item": 272492,
+          "amount": 1,
+          "icon": 134583
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272496,
+      "name": "Premier Chain Boots",
+      "side": "Horde",
+      "section": "Hunter",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272534,
+      "name": "Premier Centurion's Chain Sabatons",
+      "rank": 9,
+      "side": "Horde",
+      "section": "Hunter",
+      "upgradeFrom": 272496,
+      "costs": [
+        {
+          "item": 272496,
+          "amount": 1,
+          "icon": 132539
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272457,
+      "name": "Premier Magus Hood",
+      "side": "Horde",
+      "section": "Mage",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272498,
+      "name": "Premier Warlord's Magus Cowl",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Mage",
+      "upgradeFrom": 272457,
+      "costs": [
+        {
+          "item": 272457,
+          "amount": 1,
+          "icon": 133074
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272680,
+      "name": "Premier Magus Mantle",
+      "side": "Horde",
+      "section": "Mage",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272501,
+      "name": "Premier General's Magus Amice",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Mage",
+      "upgradeFrom": 272680,
+      "costs": [
+        {
+          "item": 272680,
+          "amount": 1,
+          "icon": 135033
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272459,
+      "name": "Premier Magus Robes",
+      "side": "Horde",
+      "section": "Mage",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272500,
+      "name": "Premier Warlord's Magus Raiment",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Mage",
+      "upgradeFrom": 272459,
+      "costs": [
+        {
+          "item": 272459,
+          "amount": 1,
+          "icon": 132669
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272454,
+      "name": "Premier Magus Cuffs",
+      "side": "Horde",
+      "section": "Mage",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272455,
+      "name": "Premier Magus Gloves",
+      "side": "Horde",
+      "section": "Mage",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272505,
+      "name": "Premier Champion's Magus Handguards",
+      "rank": 10,
+      "side": "Horde",
+      "section": "Mage",
+      "upgradeFrom": 272455,
+      "costs": [
+        {
+          "item": 272455,
+          "amount": 1,
+          "icon": 132940
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272456,
+      "name": "Premier Magus Belt",
+      "side": "Horde",
+      "section": "Mage",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272458,
+      "name": "Premier Magus Pants",
+      "side": "Horde",
+      "section": "Mage",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272499,
+      "name": "Premier General's Magus Trousers",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Mage",
+      "upgradeFrom": 272458,
+      "costs": [
+        {
+          "item": 272458,
+          "amount": 1,
+          "icon": 134591
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272453,
+      "name": "Premier Magus Footwraps",
+      "side": "Horde",
+      "section": "Mage",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272504,
+      "name": "Premier Centurion's Magus Boots",
+      "rank": 9,
+      "side": "Horde",
+      "section": "Mage",
+      "upgradeFrom": 272453,
+      "costs": [
+        {
+          "item": 272453,
+          "amount": 1,
+          "icon": 132539
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274231,
+      "name": "Premier Scaled Headguard",
+      "side": "Horde",
+      "section": "Paladin",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274239,
+      "name": "Premier Warlord's Scaled Faceguard",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Paladin",
+      "upgradeFrom": 274231,
+      "costs": [
+        {
+          "item": 274231,
+          "amount": 1,
+          "icon": 133073
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274233,
+      "name": "Premier Scaled Shoulders",
+      "side": "Horde",
+      "section": "Paladin",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274241,
+      "name": "Premier General's Scaled Pauldrons",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Paladin",
+      "upgradeFrom": 274233,
+      "costs": [
+        {
+          "item": 274233,
+          "amount": 1,
+          "icon": 135059
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274230,
+      "name": "Premier Scaled Breastplate",
+      "side": "Horde",
+      "section": "Paladin",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274238,
+      "name": "Premier Warlord's Scaled Chestplate",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Paladin",
+      "upgradeFrom": 274230,
+      "costs": [
+        {
+          "item": 274230,
+          "amount": 1,
+          "icon": 132738
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274229,
+      "name": "Premier Scaled Armsplints",
+      "side": "Horde",
+      "section": "Paladin",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274227,
+      "name": "Premier Scaled Gauntlets",
+      "side": "Horde",
+      "section": "Paladin",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274236,
+      "name": "Premier Champion's Scaled Gloves",
+      "rank": 10,
+      "side": "Horde",
+      "section": "Paladin",
+      "upgradeFrom": 274227,
+      "costs": [
+        {
+          "item": 274227,
+          "amount": 1,
+          "icon": 132963
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274228,
+      "name": "Premier Scaled Cinch",
+      "side": "Horde",
+      "section": "Paladin",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274232,
+      "name": "Premier Scaled Leggings",
+      "side": "Horde",
+      "section": "Paladin",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274240,
+      "name": "Premier General's Scaled Legplates",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Paladin",
+      "upgradeFrom": 274232,
+      "costs": [
+        {
+          "item": 274232,
+          "amount": 1,
+          "icon": 134586
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274226,
+      "name": "Premier Scaled Sabatons",
+      "side": "Horde",
+      "section": "Paladin",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274237,
+      "name": "Premier Centurion's Scaled Boots",
+      "rank": 9,
+      "side": "Horde",
+      "section": "Paladin",
+      "upgradeFrom": 274226,
+      "costs": [
+        {
+          "item": 274226,
+          "amount": 1,
+          "icon": 132584
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274246,
+      "name": "Premier Lamellar Headguard",
+      "side": "Horde",
+      "section": "Paladin",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274253,
+      "name": "Premier Warlord's Lamellar Faceguard",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Paladin",
+      "upgradeFrom": 274246,
+      "costs": [
+        {
+          "item": 274246,
+          "amount": 1,
+          "icon": 133073
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274247,
+      "name": "Premier Lamellar Shoulders",
+      "side": "Horde",
+      "section": "Paladin",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274255,
+      "name": "Premier General's Lamellar Pauldrons",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Paladin",
+      "upgradeFrom": 274247,
+      "costs": [
+        {
+          "item": 274247,
+          "amount": 1,
+          "icon": 135059
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274244,
+      "name": "Premier Lamellar Breastplate",
+      "side": "Horde",
+      "section": "Paladin",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274252,
+      "name": "Premier Warlord's Lamellar Chestplate",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Paladin",
+      "upgradeFrom": 274244,
+      "costs": [
+        {
+          "item": 274244,
+          "amount": 1,
+          "icon": 132738
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274257,
+      "name": "Premier Lamellar Armsplints",
+      "side": "Horde",
+      "section": "Paladin",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274256,
+      "name": "Premier Lamellar Gauntlets",
+      "side": "Horde",
+      "section": "Paladin",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274250,
+      "name": "Premier Champion's Lamellar Gloves",
+      "rank": 10,
+      "side": "Horde",
+      "section": "Paladin",
+      "upgradeFrom": 274256,
+      "costs": [
+        {
+          "item": 274256,
+          "amount": 1,
+          "icon": 132963
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274259,
+      "name": "Premier Lamellar Cinch",
+      "side": "Horde",
+      "section": "Paladin",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274245,
+      "name": "Premier Lamellar Leggings",
+      "side": "Horde",
+      "section": "Paladin",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274254,
+      "name": "Premier General's Lamellar Legplates",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Paladin",
+      "upgradeFrom": 274245,
+      "costs": [
+        {
+          "item": 274245,
+          "amount": 1,
+          "icon": 134586
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274258,
+      "name": "Premier Lamellar Sabatons",
+      "side": "Horde",
+      "section": "Paladin",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274251,
+      "name": "Premier Centurion's Lamellar Boots",
+      "rank": 9,
+      "side": "Horde",
+      "section": "Paladin",
+      "upgradeFrom": 274258,
+      "costs": [
+        {
+          "item": 274258,
+          "amount": 1,
+          "icon": 132584
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272649,
+      "name": "Premier Silken Hood",
+      "side": "Horde",
+      "section": "Priest",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273434,
+      "name": "Premier Warlord's Silken Cowl",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Priest",
+      "upgradeFrom": 272649,
+      "costs": [
+        {
+          "item": 272649,
+          "amount": 1,
+          "icon": 133119
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272650,
+      "name": "Premier Silken Mantle",
+      "side": "Horde",
+      "section": "Priest",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273433,
+      "name": "Premier General's Silken Mantle",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Priest",
+      "upgradeFrom": 272650,
+      "costs": [
+        {
+          "item": 272650,
+          "amount": 1,
+          "icon": 135032
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272634,
+      "name": "Premier Silken Tunic",
+      "side": "Horde",
+      "section": "Priest",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273435,
+      "name": "Premier Warlord's Silken Robes",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Priest",
+      "upgradeFrom": 272634,
+      "costs": [
+        {
+          "item": 272634,
+          "amount": 1,
+          "icon": 132716
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273450,
+      "name": "Premier Silken Cuffs",
+      "side": "Horde",
+      "section": "Priest",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272619,
+      "name": "Premier Silken Handwraps",
+      "side": "Horde",
+      "section": "Priest",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273431,
+      "name": "Premier Champion's Silken Gloves",
+      "rank": 10,
+      "side": "Horde",
+      "section": "Priest",
+      "upgradeFrom": 272619,
+      "costs": [
+        {
+          "item": 272619,
+          "amount": 1,
+          "icon": 132951
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 275437,
+      "name": "Premier Silken Sash",
+      "side": "Horde",
+      "section": "Priest",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272663,
+      "name": "Premier Silken Legguards",
+      "side": "Horde",
+      "section": "Priest",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273436,
+      "name": "Premier General's Silken Leggings",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Priest",
+      "upgradeFrom": 272663,
+      "costs": [
+        {
+          "item": 272663,
+          "amount": 1,
+          "icon": 134591
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272611,
+      "name": "Premier Silken Walkers",
+      "side": "Horde",
+      "section": "Priest",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273429,
+      "name": "Premier Centurion's Silken Boots",
+      "rank": 9,
+      "side": "Horde",
+      "section": "Priest",
+      "upgradeFrom": 272611,
+      "costs": [
+        {
+          "item": 272611,
+          "amount": 1,
+          "icon": 132539
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272562,
+      "name": "Premier Satin Cowl",
+      "side": "Horde",
+      "section": "Priest",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272575,
+      "name": "Premier Warlord's Satin Cowl",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Priest",
+      "upgradeFrom": 272562,
+      "costs": [
+        {
+          "item": 272562,
+          "amount": 1,
+          "icon": 133119
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272565,
+      "name": "Premier Satin Shoulderpads",
+      "side": "Horde",
+      "section": "Priest",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272574,
+      "name": "Premier General's Satin Mantle",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Priest",
+      "upgradeFrom": 272565,
+      "costs": [
+        {
+          "item": 272565,
+          "amount": 1,
+          "icon": 135032
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272564,
+      "name": "Premier Satin Vestments",
+      "side": "Horde",
+      "section": "Priest",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272576,
+      "name": "Premier Warlord's Satin Robes",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Priest",
+      "upgradeFrom": 272564,
+      "costs": [
+        {
+          "item": 272564,
+          "amount": 1,
+          "icon": 132716
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272567,
+      "name": "Premier Satin Cuffs",
+      "side": "Horde",
+      "section": "Priest",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272569,
+      "name": "Premier Satin Gloves",
+      "side": "Horde",
+      "section": "Priest",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272572,
+      "name": "Premier Champion's Satin Gloves",
+      "rank": 10,
+      "side": "Horde",
+      "section": "Priest",
+      "upgradeFrom": 272569,
+      "costs": [
+        {
+          "item": 272569,
+          "amount": 1,
+          "icon": 132951
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272566,
+      "name": "Premier Satin Sash",
+      "side": "Horde",
+      "section": "Priest",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272563,
+      "name": "Premier Satin Trousers",
+      "side": "Horde",
+      "section": "Priest",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272577,
+      "name": "Premier General's Satin Leggings",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Priest",
+      "upgradeFrom": 272563,
+      "costs": [
+        {
+          "item": 272563,
+          "amount": 1,
+          "icon": 134591
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272568,
+      "name": "Premier Satin Boots",
+      "side": "Horde",
+      "section": "Priest",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272570,
+      "name": "Premier Centurion's Satin Boots",
+      "rank": 9,
+      "side": "Horde",
+      "section": "Priest",
+      "upgradeFrom": 272568,
+      "costs": [
+        {
+          "item": 272568,
+          "amount": 1,
+          "icon": 132539
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272474,
+      "name": "Premier Shadowhide Headguard",
+      "side": "Horde",
+      "section": "Rogue",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272526,
+      "name": "Premier Warlord's Shadowhide Helm",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Rogue",
+      "upgradeFrom": 272474,
+      "costs": [
+        {
+          "item": 272474,
+          "amount": 1,
+          "icon": 133077
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272475,
+      "name": "Premier Shadowhide Mantle",
+      "side": "Horde",
+      "section": "Rogue",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272527,
+      "name": "Premier General's Shadowhide Spaulders",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Rogue",
+      "upgradeFrom": 272475,
+      "costs": [
+        {
+          "item": 272475,
+          "amount": 1,
+          "icon": 135045
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272473,
+      "name": "Premier Shadowhide Hauberk",
+      "side": "Horde",
+      "section": "Rogue",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272528,
+      "name": "Premier Warlord's Shadowhide Breastplate",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Rogue",
+      "upgradeFrom": 272473,
+      "costs": [
+        {
+          "item": 272473,
+          "amount": 1,
+          "icon": 132720
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272465,
+      "name": "Premier Shadowhide Armguards",
+      "side": "Horde",
+      "section": "Rogue",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272467,
+      "name": "Premier Shadowhide Vices",
+      "side": "Horde",
+      "section": "Rogue",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272525,
+      "name": "Premier Champion's Shadowhide Mitts",
+      "rank": 10,
+      "side": "Horde",
+      "section": "Rogue",
+      "upgradeFrom": 272467,
+      "costs": [
+        {
+          "item": 272467,
+          "amount": 1,
+          "icon": 132949
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272468,
+      "name": "Premier Shadowhide Girdle",
+      "side": "Horde",
+      "section": "Rogue",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272476,
+      "name": "Premier Shadowhide Leggings",
+      "side": "Horde",
+      "section": "Rogue",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272529,
+      "name": "Premier General's Shadowhide Legguards",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Rogue",
+      "upgradeFrom": 272476,
+      "costs": [
+        {
+          "item": 272476,
+          "amount": 1,
+          "icon": 134588
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272608,
+      "name": "Premier Shadowhide Walkers",
+      "side": "Horde",
+      "section": "Rogue",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272523,
+      "name": "Premier Centurion's Shadowhide Treads",
+      "rank": 9,
+      "side": "Horde",
+      "section": "Rogue",
+      "upgradeFrom": 272608,
+      "costs": [
+        {
+          "item": 272608,
+          "amount": 1,
+          "icon": 132539
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272647,
+      "name": "Premier Linked Headguard",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272543,
+      "name": "Premier Warlord's Linked Helm",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Shaman",
+      "upgradeFrom": 272647,
+      "costs": [
+        {
+          "item": 272647,
+          "amount": 1,
+          "icon": 133077
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272489,
+      "name": "Premier Linked Shoulders",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272545,
+      "name": "Premier General's Linked Spaulders",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Shaman",
+      "upgradeFrom": 272489,
+      "costs": [
+        {
+          "item": 272489,
+          "amount": 1,
+          "icon": 135035
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272625,
+      "name": "Premier Linked Hauberk",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272542,
+      "name": "Premier Warlord's Linked Armor",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Shaman",
+      "upgradeFrom": 272625,
+      "costs": [
+        {
+          "item": 272625,
+          "amount": 1,
+          "icon": 132638
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272497,
+      "name": "Premier Linked Wristguards",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272485,
+      "name": "Premier Linked Grips",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272539,
+      "name": "Premier Champion's Linked Gauntlets",
+      "rank": 10,
+      "side": "Horde",
+      "section": "Shaman",
+      "upgradeFrom": 272485,
+      "costs": [
+        {
+          "item": 272485,
+          "amount": 1,
+          "icon": 132945
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273352,
+      "name": "Premier Linked Girdle",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272488,
+      "name": "Premier Linked Leggings",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272544,
+      "name": "Premier General's Linked Leggings",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Shaman",
+      "upgradeFrom": 272488,
+      "costs": [
+        {
+          "item": 272488,
+          "amount": 1,
+          "icon": 134589
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272609,
+      "name": "Premier Linked Greaves",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272538,
+      "name": "Premier Centurion's Linked Boots",
+      "rank": 9,
+      "side": "Horde",
+      "section": "Shaman",
+      "upgradeFrom": 272609,
+      "costs": [
+        {
+          "item": 272609,
+          "amount": 1,
+          "icon": 132541
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273356,
+      "name": "Premier Ringmail Helm",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273349,
+      "name": "Premier Warlord's Ringmail Helm",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Shaman",
+      "upgradeFrom": 273356,
+      "costs": [
+        {
+          "item": 273356,
+          "amount": 1,
+          "icon": 133077
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273360,
+      "name": "Premier Ringmail Pauldrons",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273351,
+      "name": "Premier General's Ringmail Spaulders",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Shaman",
+      "upgradeFrom": 273360,
+      "costs": [
+        {
+          "item": 273360,
+          "amount": 1,
+          "icon": 135035
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273357,
+      "name": "Premier Ringmail Chestpiece",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273348,
+      "name": "Premier Warlord's Ringmail Armor",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Shaman",
+      "upgradeFrom": 273357,
+      "costs": [
+        {
+          "item": 273357,
+          "amount": 1,
+          "icon": 132638
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273361,
+      "name": "Premier Ringmail Wristguards",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273358,
+      "name": "Premier Ringmail Vices",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273345,
+      "name": "Premier Champion's Ringmail Gauntlets",
+      "rank": 10,
+      "side": "Horde",
+      "section": "Shaman",
+      "upgradeFrom": 273358,
+      "costs": [
+        {
+          "item": 273358,
+          "amount": 1,
+          "icon": 132945
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273362,
+      "name": "Premier Ringmail Girdle",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273359,
+      "name": "Premier Ringmail Legguards",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273350,
+      "name": "Premier General's Ringmail Leggings",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Shaman",
+      "upgradeFrom": 273359,
+      "costs": [
+        {
+          "item": 273359,
+          "amount": 1,
+          "icon": 134589
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273355,
+      "name": "Premier Ringmail Walkers",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273344,
+      "name": "Premier Centurion's Ringmail Boots",
+      "rank": 9,
+      "side": "Horde",
+      "section": "Shaman",
+      "upgradeFrom": 273355,
+      "costs": [
+        {
+          "item": 273355,
+          "amount": 1,
+          "icon": 132541
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272486,
+      "name": "Premier Mail Helm",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273341,
+      "name": "Premier Warlord's Mail Helm",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Shaman",
+      "upgradeFrom": 272486,
+      "costs": [
+        {
+          "item": 272486,
+          "amount": 1,
+          "icon": 133077
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272648,
+      "name": "Premier Mail Pauldrons",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273343,
+      "name": "Premier General's Mail Spaulders",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Shaman",
+      "upgradeFrom": 272648,
+      "costs": [
+        {
+          "item": 272648,
+          "amount": 1,
+          "icon": 135035
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272487,
+      "name": "Premier Mail Chestpiece",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273340,
+      "name": "Premier Warlord's Mail Armor",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Shaman",
+      "upgradeFrom": 272487,
+      "costs": [
+        {
+          "item": 272487,
+          "amount": 1,
+          "icon": 132638
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273353,
+      "name": "Premier Mail Wristguards",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272617,
+      "name": "Premier Mail Vices",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273337,
+      "name": "Premier Champion's Mail Gauntlets",
+      "rank": 10,
+      "side": "Horde",
+      "section": "Shaman",
+      "upgradeFrom": 272617,
+      "costs": [
+        {
+          "item": 272617,
+          "amount": 1,
+          "icon": 132945
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273372,
+      "name": "Premier Mail Girdle",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272636,
+      "name": "Premier Mail Legguards",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273342,
+      "name": "Premier General's Mail Leggings",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Shaman",
+      "upgradeFrom": 272636,
+      "costs": [
+        {
+          "item": 272636,
+          "amount": 1,
+          "icon": 134589
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272484,
+      "name": "Premier Mail Walkers",
+      "side": "Horde",
+      "section": "Shaman",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273336,
+      "name": "Premier Centurion's Mail Boots",
+      "rank": 9,
+      "side": "Horde",
+      "section": "Shaman",
+      "upgradeFrom": 272484,
+      "costs": [
+        {
+          "item": 272484,
+          "amount": 1,
+          "icon": 132541
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272643,
+      "name": "Premier Felweave Cowl",
+      "side": "Horde",
+      "section": "Warlock",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272559,
+      "name": "Premier Warlord's Felweave Hood",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Warlock",
+      "upgradeFrom": 272643,
+      "costs": [
+        {
+          "item": 272643,
+          "amount": 1,
+          "icon": 133076
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272549,
+      "name": "Premier Felweave Shoulders",
+      "side": "Horde",
+      "section": "Warlock",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272558,
+      "name": "Premier General's Felweave Mantle",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Warlock",
+      "upgradeFrom": 272549,
+      "costs": [
+        {
+          "item": 272549,
+          "amount": 1,
+          "icon": 135032
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272548,
+      "name": "Premier Felweave Robe",
+      "side": "Horde",
+      "section": "Warlock",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272560,
+      "name": "Premier Warlord's Felweave Robe",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Warlock",
+      "upgradeFrom": 272548,
+      "costs": [
+        {
+          "item": 272548,
+          "amount": 1,
+          "icon": 132716
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272551,
+      "name": "Premier Felweave Bracers",
+      "side": "Horde",
+      "section": "Warlock",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272553,
+      "name": "Premier Felweave Gloves",
+      "side": "Horde",
+      "section": "Warlock",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272556,
+      "name": "Premier Champion's Felweave Gloves",
+      "rank": 10,
+      "side": "Horde",
+      "section": "Warlock",
+      "upgradeFrom": 272553,
+      "costs": [
+        {
+          "item": 272553,
+          "amount": 1,
+          "icon": 132953
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272550,
+      "name": "Premier Felweave Belt",
+      "side": "Horde",
+      "section": "Warlock",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272630,
+      "name": "Premier Felweave Legguards",
+      "side": "Horde",
+      "section": "Warlock",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272561,
+      "name": "Premier General's Felweave Pants",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Warlock",
+      "upgradeFrom": 272630,
+      "costs": [
+        {
+          "item": 272630,
+          "amount": 1,
+          "icon": 134586
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272552,
+      "name": "Premier Felweave Boots",
+      "side": "Horde",
+      "section": "Warlock",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272554,
+      "name": "Premier Centurion's Felweave Boots",
+      "rank": 9,
+      "side": "Horde",
+      "section": "Warlock",
+      "upgradeFrom": 272552,
+      "costs": [
+        {
+          "item": 272552,
+          "amount": 1,
+          "icon": 132539
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272480,
+      "name": "Premier Mortarplate Headguard",
+      "side": "Horde",
+      "section": "Warrior",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272507,
+      "name": "Premier Warlord's Mortarplate Headpiece",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Warrior",
+      "upgradeFrom": 272480,
+      "costs": [
+        {
+          "item": 272480,
+          "amount": 1,
+          "icon": 133077
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272637,
+      "name": "Premier Mortarplate Shoulders",
+      "side": "Horde",
+      "section": "Warrior",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272509,
+      "name": "Premier General's Mortarplate Shoulders",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Warrior",
+      "upgradeFrom": 272637,
+      "costs": [
+        {
+          "item": 272637,
+          "amount": 1,
+          "icon": 135042
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272479,
+      "name": "Premier Mortarplate Armor",
+      "side": "Horde",
+      "section": "Warrior",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272506,
+      "name": "Premier Warlord's Mortarplate Armor",
+      "rank": 13,
+      "side": "Horde",
+      "section": "Warrior",
+      "upgradeFrom": 272479,
+      "costs": [
+        {
+          "item": 272479,
+          "amount": 1,
+          "icon": 132751
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272579,
+      "name": "Premier Mortarplate Bracers",
+      "side": "Horde",
+      "section": "Warrior",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272478,
+      "name": "Premier Mortarplate Gloves",
+      "side": "Horde",
+      "section": "Warrior",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272513,
+      "name": "Premier Champion's Mortarplate Gauntlets",
+      "rank": 10,
+      "side": "Horde",
+      "section": "Warrior",
+      "upgradeFrom": 272478,
+      "costs": [
+        {
+          "item": 272478,
+          "amount": 1,
+          "icon": 132960
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273324,
+      "name": "Premier Mortarplate Girdle",
+      "side": "Horde",
+      "section": "Warrior",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272481,
+      "name": "Premier Mortarplate Legguards",
+      "side": "Horde",
+      "section": "Warrior",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272508,
+      "name": "Premier General's Mortarplate Leggings",
+      "rank": 12,
+      "side": "Horde",
+      "section": "Warrior",
+      "upgradeFrom": 272481,
+      "costs": [
+        {
+          "item": 272481,
+          "amount": 1,
+          "icon": 134586
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272477,
+      "name": "Premier Mortarplate Boots",
+      "side": "Horde",
+      "section": "Warrior",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272510,
+      "name": "Premier Centurion's Mortarplate Boots",
+      "rank": 9,
+      "side": "Horde",
+      "section": "Warrior",
+      "upgradeFrom": 272477,
+      "costs": [
+        {
+          "item": 272477,
+          "amount": 1,
+          "icon": 132590
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
         }
       ],
       "group": "Armor"
