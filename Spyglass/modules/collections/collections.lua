@@ -6,7 +6,7 @@ SG:RegisterModule({
     name = "Collections",
     icon = "Interface\\Icons\\Ability_Mount_RidingHorse",
     order = 60,
-    description = "Mounts and vendor rewards.",
+    description = "Mounts, toys, and vendor rewards.",
     display = "tiles",
     getChildren = function()
         return SG.ListFolders("collections")
