@@ -4,124 +4,124 @@ local Data = Spyglass.Data
 -- Blackrock Spire: Lower (map 229)
 
 Data:AddBossLoot(267, { -- Highlord Omokk
-    { 16670 }, -- Boots of Elements
+    { 16670, 0.175 }, -- Boots of Elements
     { 12336 }, -- Gemstone of Spirestone
-    { 13166 }, -- Slamshot Shoulders
-    { 13167 }, -- Fist of Omokk
-    { 13168 }, -- Plate of the Shaman King
-    { 13169 }, -- Tressermane Leggings
-    { 13170 }, -- Skyshroud Leggings
+    { 13166, 0.11 }, -- Slamshot Shoulders
+    { 13167, 0.152 }, -- Fist of Omokk
+    { 13168, 0.145 }, -- Plate of the Shaman King
+    { 13169, 0.192 }, -- Tressermane Leggings
+    { 13170, 0.157 }, -- Skyshroud Leggings
 })
 
 Data:AddBossLoot(268, { -- Shadow Hunter Vosh'gajin
-    { 16712 }, -- Shadowcraft Gloves
-    { 13255 }, -- Trueaim Gauntlets
-    { 12626 }, -- Funeral Cuffs
-    { 13257 }, -- Demonic Runed Spaulders
-    { 12651 }, -- Blackcrow
-    { 12653 }, -- Riphook
-    { 12654 }, -- Doomshot
+    { 16712, 0.202 }, -- Shadowcraft Gloves
+    { 13255, 0.125 }, -- Trueaim Gauntlets
+    { 12626, 0.143 }, -- Funeral Cuffs
+    { 13257, 0.14 }, -- Demonic Runed Spaulders
+    { 12651, 0.115 }, -- Blackcrow
+    { 12653, 0.146 }, -- Riphook
+    { 12654, 0.869 }, -- Doomshot
 })
 
 Data:AddBossLoot(269, { -- War Master Voone
-    { 16676 }, -- Beaststalker's Gloves
+    { 16676, 0.152 }, -- Beaststalker's Gloves
     { 12335 }, -- Gemstone of Smolderthorn
-    { 13177 }, -- Talisman of Evasion
-    { 13179 }, -- Brazecore Armguards
-    { 12582 }, -- Keris of Zul'Serak
-    { 22231 }, -- Kayser's Boots of Precision
-    { 13173 }, -- Flightblade Throwing Axe
+    { 13177, 0.168 }, -- Talisman of Evasion
+    { 13179, 0.17 }, -- Brazecore Armguards
+    { 12582, 0.141 }, -- Keris of Zul'Serak
+    { 22231, 0.154 }, -- Kayser's Boots of Precision
+    { 13173, 0.194 }, -- Flightblade Throwing Axe
 })
 
 Data:AddBossLoot(270, { -- Mother Smolderweb
-    { 16715 }, -- Wildheart Boots
-    { 13244 }, -- Gilded Gauntlets
-    { 13213 }, -- Smolderweb's Eye
-    { 13183 }, -- Venomspitter
-    { 249521 }, -- Formula: Dormant Heart of the Mountain
+    { 16715, 0.154 }, -- Wildheart Boots
+    { 13244, 0.183 }, -- Gilded Gauntlets
+    { 13213, 0.297 }, -- Smolderweb's Eye
+    { 13183, 0.236 }, -- Venomspitter
+    { 249521, 0.154 }, -- Formula: Dormant Heart of the Mountain
 })
 
 Data:AddBossLoot(271, { -- Urok Doomhowl
-    { 13258 }, -- Slaghide Gauntlets
-    { 13259 }, -- Ribsteel Footguards
-    { 22232 }, -- Marksman's Girdle
-    { 13178 }, -- Rosewine Circle
+    { 13258, 0.156 }, -- Slaghide Gauntlets
+    { 13259, 0.203 }, -- Ribsteel Footguards
+    { 22232, 0.281 }, -- Marksman's Girdle
+    { 13178, 0.245 }, -- Rosewine Circle
     { 13053 }, -- Doombringer
 })
 
 Data:AddBossLoot(272, { -- Quartermaster Zigris
-    { 13252 }, -- Cloudrunner Girdle
-    { 13253 }, -- Hands of Power
-    { 12835 }, -- Plans: Annihilator
-    { 273115 }, -- Blueprint: Iron Oven
-    { 16673 }, -- Cord of Elements
-    { 16680 }, -- Beaststalker's Belt
-    { 16683 }, -- Magister's Bindings
-    { 16696 }, -- Devout Belt
-    { 16703 }, -- Dreadmist Bracers
-    { 16713 }, -- Shadowcraft Belt
-    { 16735 }, -- Bracers of Valor
-    { 16716 }, -- Wildheart Belt
+    { 13252, 0.105 }, -- Cloudrunner Girdle
+    { 13253, 0.065 }, -- Hands of Power
+    { 12835, 0.108 }, -- Plans: Annihilator
+    { 273115, 0.031 }, -- Blueprint: Iron Oven
+    { 16673, 0.062 }, -- Cord of Elements
+    { 16680, 0.105 }, -- Beaststalker's Belt
+    { 16683, 0.077 }, -- Magister's Bindings
+    { 16696, 0.095 }, -- Devout Belt
+    { 16703, 0.138 }, -- Dreadmist Bracers
+    { 16713, 0.071 }, -- Shadowcraft Belt
+    { 16735, 0.129 }, -- Bracers of Valor
+    { 16716, 0.105 }, -- Wildheart Belt
 })
 
 Data:AddBossLoot(274, { -- Halycon
-    { 13212 }, -- Halycon's Spiked Collar
-    { 13211 }, -- Slashclaw Bracers
-    { 13210 }, -- Pads of the Dread Wolf
-    { 22313 }, -- Ironweave Bracers
+    { 13212, 0.212 }, -- Halycon's Spiked Collar
+    { 13211, 0.243 }, -- Slashclaw Bracers
+    { 13210, 0.224 }, -- Pads of the Dread Wolf
+    { 22313, 0.22 }, -- Ironweave Bracers
 })
 
 Data:AddBossLoot(273, { -- Gizrul the Slavener
-    { 16718 }, -- Wildheart Spaulders
-    { 13206 }, -- Wolfshear Leggings
-    { 13205 }, -- Rhombeard Protector
-    { 13208 }, -- Bleak Howler Armguards
+    { 16718, 0.164 }, -- Wildheart Spaulders
+    { 13206, 0.263 }, -- Wolfshear Leggings
+    { 13205, 0.238 }, -- Rhombeard Protector
+    { 13208, 0.254 }, -- Bleak Howler Armguards
 })
 
 Data:AddBossLoot(275, { -- Overlord Wyrmthalak
-    { 13164 }, -- Heart of the Scale
-    { 16679 }, -- Beaststalker's Mantle
+    { 13164, 0.057 }, -- Heart of the Scale
+    { 16679, 0.136 }, -- Beaststalker's Mantle
     { 12337 }, -- Gemstone of Bloodaxe
-    { 13161 }, -- Trindlehaven Staff
-    { 13162 }, -- Reiver Claws
-    { 13163 }, -- Relentless Scythe
-    { 22321 }, -- Heart of Wyrmthalak
-    { 13143 }, -- Mark of the Dragon Lord
+    { 13161, 0.162 }, -- Trindlehaven Staff
+    { 13162, 0.128 }, -- Reiver Claws
+    { 13163, 0.181 }, -- Relentless Scythe
+    { 22321, 0.155 }, -- Heart of Wyrmthalak
+    { 13143, 0.015 }, -- Mark of the Dragon Lord
 })
 
 Data:AddBossLoot(-9219, { -- Spirestone Butcher
-    { 12608 }, -- Butcher's Apron
-    { 13286 }, -- Rivenspike
+    { 12608, 0.472 }, -- Butcher's Apron
+    { 13286, 0.494 }, -- Rivenspike
 })
 
 Data:AddBossLoot(-9218, { -- Spirestone Battle Lord
-    { 13284 }, -- Swiftdart Battleboots
-    { 13285 }, -- The Blackrock Slicer
+    { 13284, 0.446 }, -- Swiftdart Battleboots
+    { 13285, 0.518 }, -- The Blackrock Slicer
 })
 
 Data:AddBossLoot(-9217, { -- Spirestone Lord Magus
-    { 13283 }, -- Magus Ring
-    { 13282 }, -- Ogreseer Tower Boots
-    { 13261 }, -- Globe of D'sak
+    { 13283, 0.393 }, -- Magus Ring
+    { 13282, 0.393 }, -- Ogreseer Tower Boots
+    { 13261, 0.214 }, -- Globe of D'sak
 })
 
 Data:AddBossLoot(-10376, { -- Crystal Fang
-    { 13185 }, -- Sunderseer Mantle
-    { 13184 }, -- Fallbrush Handgrips
-    { 13218 }, -- Fang of the Crystal Spider
+    { 13185, 0.35 }, -- Sunderseer Mantle
+    { 13184, 0.3 }, -- Fallbrush Handgrips
+    { 13218, 0.325 }, -- Fang of the Crystal Spider
 })
 
 Data:AddBossLoot(-9596, { -- Bannok Grimaxe
-    { 12634 }, -- Chiselbrand Girdle
-    { 12637 }, -- Backusarian Gauntlets
-    { 12621 }, -- Demonfork
-    { 12838 }, -- Plans: Arcanite Reaper
+    { 12634, 0.5 }, -- Chiselbrand Girdle
+    { 12637, 0.19 }, -- Backusarian Gauntlets
+    { 12621, 0.286 }, -- Demonfork
+    { 12838, 0.071 }, -- Plans: Arcanite Reaper
 })
 
 Data:AddBossLoot(-9718, { -- Ghok Bashguud
-    { 13203 }, -- Armswake Cloak
-    { 13204 }, -- Bashguuder
-    { 13198 }, -- Hurd Smasher
+    { 13203, 0.312 }, -- Armswake Cloak
+    { 13204, 0.375 }, -- Bashguuder
+    { 13198, 0.292 }, -- Hurd Smasher
 })
 
 Data:AddBossLoot(-16080, { -- Mor Grayhoof

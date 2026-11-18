@@ -4,49 +4,49 @@ local Data = Spyglass.Data
 -- Stratholme (map 329)
 
 Data:AddBossLoot(473, { -- Hearthsinger Forresten
-    { 16682 }, -- Magister's Boots
-    { 13378 }, -- Songbird Blouse
-    { 13379 }, -- Piccolo of the Flaming Fire
-    { 13384 }, -- Rainbow Girdle
-    { 13383 }, -- Woollies of the Prancing Minstrel
+    { 16682, 0.18 }, -- Magister's Boots
+    { 13378, 0.192 }, -- Songbird Blouse
+    { 13379, 0.244 }, -- Piccolo of the Flaming Fire
+    { 13384, 0.157 }, -- Rainbow Girdle
+    { 13383, 0.14 }, -- Woollies of the Prancing Minstrel
 })
 
 Data:AddBossLoot(474, { -- Timmy the Cruel
-    { 13400 }, -- Vambraces of the Sadist
-    { 13402 }, -- Timmy's Galoshes
-    { 13401 }, -- The Cruel Hand of Timmy
-    { 13403 }, -- Grimgore Noose
-    { 16724 }, -- Lightforge Gauntlets
+    { 13400, 0.169 }, -- Vambraces of the Sadist
+    { 13402, 0.18 }, -- Timmy's Galoshes
+    { 13401, 0.224 }, -- The Cruel Hand of Timmy
+    { 13403, 0.202 }, -- Grimgore Noose
+    { 16724, 0.142 }, -- Lightforge Gauntlets
 })
 
 Data:AddBossLoot(476, { -- Malor the Zealous
-    { 276398 }, -- Scarlet Malice
-    { 276399 }, -- Plate of the Scarlet Bastion
+    { 276398, 0.298 }, -- Scarlet Malice
+    { 276399, 0.286 }, -- Plate of the Scarlet Bastion
     { 12845 }, -- Medallion of Faith
-    { 276397 }, -- Hand of the Zealous
+    { 276397, 0.375 }, -- Hand of the Zealous
 })
 
 Data:AddBossLoot(475, { -- Cannon Master Willey
-    { 16708 }, -- Shadowcraft Spaulders
-    { 22403 }, -- Nacreous Shell Necklace
-    { 13380 }, -- Willey's Portable Howitzer
-    { 13382 }, -- Cannonball Runner
-    { 18721 }, -- Barrage Girdle
-    { 22407 }, -- Helm of the New Moon
-    { 13381 }, -- Master Cannoneer Boots
-    { 22405 }, -- Mantle of the Scarlet Crusade
-    { 22404 }, -- Willey's Back Scratcher
-    { 22406 }, -- Redemption
-    { 12839 }, -- Plans: Heartseeker
-    { 13377 }, -- Miniature Cannon Balls
+    { 16708, 0.219 }, -- Shadowcraft Spaulders
+    { 22403, 0.181 }, -- Nacreous Shell Necklace
+    { 13380, 0.181 }, -- Willey's Portable Howitzer
+    { 13382, 0.168 }, -- Cannonball Runner
+    { 18721, 0.187 }, -- Barrage Girdle
+    { 22407, 0.129 }, -- Helm of the New Moon
+    { 13381, 0.168 }, -- Master Cannoneer Boots
+    { 22405, 0.174 }, -- Mantle of the Scarlet Crusade
+    { 22404, 0.232 }, -- Willey's Back Scratcher
+    { 22406, 0.174 }, -- Redemption
+    { 12839, 0.013 }, -- Plans: Heartseeker
+    { 13377, 0.839 }, -- Miniature Cannon Balls
 })
 
 Data:AddBossLoot(477, { -- Archivist Galford
-    { 16692 }, -- Devout Gloves
-    { 13387 }, -- Foresight Girdle
-    { 13386 }, -- Archivist Cape
-    { 18716 }, -- Ash Covered Boots
-    { 13385 }, -- Tome of Knowledge
+    { 16692, 0.18 }, -- Devout Gloves
+    { 13387, 0.18 }, -- Foresight Girdle
+    { 13386, 0.196 }, -- Archivist Cape
+    { 18716, 0.131 }, -- Ash Covered Boots
+    { 13385, 0.229 }, -- Tome of Knowledge
 })
 
 Data:AddBossLoot(478, { -- Balnazzar
@@ -66,126 +66,126 @@ Data:AddBossLoot(478, { -- Balnazzar
 })
 
 Data:AddBossLoot(472, { -- The Unforgiven
-    { 13405 }, -- Wailing Nightbane Pauldrons
-    { 13404 }, -- Mask of the Unforgiven
-    { 13408 }, -- Soul Breaker
-    { 13409 }, -- Tearfall Bracers
-    { 16717 }, -- Wildheart Gloves
+    { 13405, 0.192 }, -- Wailing Nightbane Pauldrons
+    { 13404, 0.188 }, -- Mask of the Unforgiven
+    { 13408, 0.163 }, -- Soul Breaker
+    { 13409, 0.208 }, -- Tearfall Bracers
+    { 16717, 0.147 }, -- Wildheart Gloves
 })
 
 Data:AddBossLoot(479, { -- Baroness Anastari
-    { 16704 }, -- Dreadmist Sandals
-    { 13534 }, -- Banshee Finger
-    { 18728 }, -- Anastari Heirloom
-    { 18730 }, -- Shadowy Laced Handwraps
-    { 18729 }, -- Screeching Bow
-    { 13514 }, -- Wail of the Banshee
-    { 13535 }, -- Coldtouch Phantom Wraps
-    { 13537 }, -- Chillhide Bracers
-    { 13538 }, -- Windshrieker Pauldrons
-    { 13539 }, -- Banshee's Touch
-    { 273124 }, -- Blueprint: Loom
+    { 16704, 0.151 }, -- Dreadmist Sandals
+    { 13534, 0.221 }, -- Banshee Finger
+    { 18728, 0.151 }, -- Anastari Heirloom
+    { 18730, 0.209 }, -- Shadowy Laced Handwraps
+    { 18729, 0.14 }, -- Screeching Bow
+    { 13514, 0.062 }, -- Wail of the Banshee
+    { 13535, 0.112 }, -- Coldtouch Phantom Wraps
+    { 13537, 0.109 }, -- Chillhide Bracers
+    { 13538, 0.081 }, -- Windshrieker Pauldrons
+    { 13539, 0.093 }, -- Banshee's Touch
+    { 273124, 0.081 }, -- Blueprint: Loom
 })
 
 Data:AddBossLoot(480, { -- Nerub'enkan
-    { 16675 }, -- Beaststalker's Boots
-    { 13529 }, -- Husk of Nerub'enkan
-    { 18738 }, -- Carapace Spine Crossbow
-    { 18739 }, -- Chitinous Plate Legguards
-    { 18740 }, -- Thuzadin Sash
-    { 13530 }, -- Fangdrip Runners
-    { 13531 }, -- Crypt Stalker Leggings
-    { 13532 }, -- Darkspinner Claws
-    { 13533 }, -- Acid-etched Pauldrons
-    { 13508 }, -- Eye of Arachnida
+    { 16675, 0.184 }, -- Beaststalker's Boots
+    { 13529, 0.201 }, -- Husk of Nerub'enkan
+    { 18738, 0.197 }, -- Carapace Spine Crossbow
+    { 18739, 0.156 }, -- Chitinous Plate Legguards
+    { 18740, 0.176 }, -- Thuzadin Sash
+    { 13530, 0.111 }, -- Fangdrip Runners
+    { 13531, 0.09 }, -- Crypt Stalker Leggings
+    { 13532, 0.086 }, -- Darkspinner Claws
+    { 13533, 0.135 }, -- Acid-etched Pauldrons
+    { 13508, 0.098 }, -- Eye of Arachnida
 })
 
 Data:AddBossLoot(481, { -- Maleki the Pallid
-    { 16691 }, -- Devout Sandals
-    { 18737 }, -- Bone Slicing Hatchet
-    { 13524 }, -- Skull of Burning Shadows
-    { 18734 }, -- Pale Moon Cloak
-    { 18735 }, -- Maleki's Footwraps
-    { 12833 }, -- Plans: Hammer of the Titans
-    { 13525 }, -- Darkbind Fingers
-    { 13526 }, -- Flamescarred Girdle
-    { 13527 }, -- Lavawalker Greaves
-    { 13528 }, -- Twilight Void Bracers
+    { 16691, 0.186 }, -- Devout Sandals
+    { 18737, 0.227 }, -- Bone Slicing Hatchet
+    { 13524, 0.15 }, -- Skull of Burning Shadows
+    { 18734, 0.15 }, -- Pale Moon Cloak
+    { 18735, 0.186 }, -- Maleki's Footwraps
+    { 12833, 0.085 }, -- Plans: Hammer of the Titans
+    { 13525, 0.134 }, -- Darkbind Fingers
+    { 13526, 0.093 }, -- Flamescarred Girdle
+    { 13527, 0.101 }, -- Lavawalker Greaves
+    { 13528, 0.081 }, -- Twilight Void Bracers
 })
 
 Data:AddBossLoot(482, { -- Magistrate Barthilas
-    { 18722 }, -- Death Grips
-    { 13376 }, -- Royal Tribunal Cloak
-    { 18725 }, -- Peacemaker
-    { 18727 }, -- Crimson Felt Hat
-    { 18726 }, -- Magistrate's Cuffs
-    { 23198 }, -- Idol of Brutality
+    { 18722, 0.146 }, -- Death Grips
+    { 13376, 0.189 }, -- Royal Tribunal Cloak
+    { 18725, 0.142 }, -- Peacemaker
+    { 18727, 0.136 }, -- Crimson Felt Hat
+    { 18726, 0.132 }, -- Magistrate's Cuffs
+    { 23198, 0.179 }, -- Idol of Brutality
 })
 
 Data:AddBossLoot(483, { -- Ramstein the Gorger
-    { 16737 }, -- Gauntlets of Valor
-    { 13372 }, -- Slavedriver's Cane
-    { 13373 }, -- Band of Flesh
-    { 13374 }, -- Soulstealer Mantle
-    { 13375 }, -- Crest of Retribution
-    { 13515 }, -- Ramstein's Lightning Bolts
-    { 18723 }, -- Animated Chain Necklace
+    { 16737, 0.139 }, -- Gauntlets of Valor
+    { 13372, 0.139 }, -- Slavedriver's Cane
+    { 13373, 0.109 }, -- Band of Flesh
+    { 13374, 0.091 }, -- Soulstealer Mantle
+    { 13375, 0.091 }, -- Crest of Retribution
+    { 13515, 0.135 }, -- Ramstein's Lightning Bolts
+    { 18723, 0.152 }, -- Animated Chain Necklace
 })
 
 Data:AddBossLoot(484, { -- Baron Rivendare
-    { 16668 }, -- Kilt of Elements
-    { 16678 }, -- Beaststalker's Pants
-    { 16687 }, -- Magister's Leggings
-    { 16694 }, -- Devout Skirt
-    { 16699 }, -- Dreadmist Leggings
-    { 16709 }, -- Shadowcraft Pants
-    { 16719 }, -- Wildheart Kilt
-    { 16728 }, -- Lightforge Legplates
-    { 16732 }, -- Legplates of Valor
-    { 13340 }, -- Cape of the Black Baron
-    { 22408 }, -- Ritssyn's Wand of Bad Mojo
-    { 22409 }, -- Tunic of the Crescent Moon
-    { 13346 }, -- Robes of the Exalted
-    { 22412 }, -- Thuzadin Mantle
-    { 13344 }, -- Dracorian Gauntlets
-    { 13349 }, -- Scepter of the Unholy
-    { 22410 }, -- Gauntlets of Deftness
-    { 22411 }, -- Helm of the Executioner
-    { 13345 }, -- Seal of Rivendare
-    { 13505 }, -- Runeblade of Baron Rivendare
-    { 13361 }, -- Skullforge Reaver
-    { 13368 }, -- Bonescraper
+    { 16668, 0.132 }, -- Kilt of Elements
+    { 16678, 0.09 }, -- Beaststalker's Pants
+    { 16687, 0.086 }, -- Magister's Leggings
+    { 16694, 0.079 }, -- Devout Skirt
+    { 16699, 0.113 }, -- Dreadmist Leggings
+    { 16709, 0.083 }, -- Shadowcraft Pants
+    { 16719, 0.109 }, -- Wildheart Kilt
+    { 16728, 0.094 }, -- Lightforge Legplates
+    { 16732, 0.086 }, -- Legplates of Valor
+    { 13340, 0.117 }, -- Cape of the Black Baron
+    { 22408, 0.158 }, -- Ritssyn's Wand of Bad Mojo
+    { 22409, 0.147 }, -- Tunic of the Crescent Moon
+    { 13346, 0.158 }, -- Robes of the Exalted
+    { 22412, 0.214 }, -- Thuzadin Mantle
+    { 13344, 0.143 }, -- Dracorian Gauntlets
+    { 13349, 0.135 }, -- Scepter of the Unholy
+    { 22410, 0.162 }, -- Gauntlets of Deftness
+    { 22411, 0.207 }, -- Helm of the Executioner
+    { 13345, 0.128 }, -- Seal of Rivendare
+    { 13505, 0.001 }, -- Runeblade of Baron Rivendare
+    { 13361, 0.105 }, -- Skullforge Reaver
+    { 13368, 0.113 }, -- Bonescraper
     { 13251 }, -- Head of Baron Rivendare
 })
 
 Data:AddBossLoot(2797, { -- Ezra Grimm
-    { 276396 }, -- Ezra's Seal of Authenticity
-    { 276395 }, -- Grimm's Packing Gloves
-    { 276394 }, -- Luxurious Smoking Jacket
+    { 276396, 0.301 }, -- Ezra's Seal of Authenticity
+    { 276395, 0.301 }, -- Grimm's Packing Gloves
+    { 276394, 0.282 }, -- Luxurious Smoking Jacket
     { 13172 }, -- Grimm's Premium Tobacco
-    { 273129 }, -- Essence of Anarchy
-    { 273117 }, -- Blueprint: Anarchist's Workbench
+    { 273129, 0.914 }, -- Essence of Anarchy
+    { 273117, 0.061 }, -- Blueprint: Anarchist's Workbench
 })
 
 Data:AddBossLoot(2798, { -- Postmaster Malown
-    { 13392 }, -- The Postmaster's Seal
-    { 13388 }, -- The Postmaster's Tunic
-    { 13389 }, -- The Postmaster's Trousers
-    { 13391 }, -- The Postmaster's Treads
-    { 13393 }, -- Malown's Slam
-    { 13390 }, -- The Postmaster's Band
+    { 13392, 0.18 }, -- The Postmaster's Seal
+    { 13388, 0.295 }, -- The Postmaster's Tunic
+    { 13389, 0.23 }, -- The Postmaster's Trousers
+    { 13391, 0.098 }, -- The Postmaster's Treads
+    { 13393, 0.098 }, -- Malown's Slam
+    { 13390, 0.016 }, -- The Postmaster's Band
 })
 
 Data:AddBossLoot(2799, { -- Skul
-    { 13394 }, -- Skul's Cold Embrace
-    { 13396 }, -- Skul's Ghastly Touch
-    { 13395 }, -- Skul's Fingerbone Claws
+    { 13394, 0.179 }, -- Skul's Cold Embrace
+    { 13396, 0.321 }, -- Skul's Ghastly Touch
+    { 13395, 0.5 }, -- Skul's Fingerbone Claws
 })
 
 Data:AddBossLoot(2800, { -- Stonespine
-    { 13399 }, -- Gargoyle Shredder Talons
-    { 13397 }, -- Stoneskin Gargoyle Cape
-    { 13954 }, -- Verdant Footpads
+    { 13399, 0.306 }, -- Gargoyle Shredder Talons
+    { 13397, 0.388 }, -- Stoneskin Gargoyle Cape
+    { 13954, 0.265 }, -- Verdant Footpads
 })
 
 Data:AddBossLoot(-16101, { -- Jarien and Sothos

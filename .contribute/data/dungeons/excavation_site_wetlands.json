@@ -17,15 +17,18 @@
       "loot": [
         {
           "item": 273022,
-          "name": "Supple Bellyskin Leggings"
+          "name": "Supple Bellyskin Leggings",
+          "chance": 0.339
         },
         {
           "item": 273023,
-          "name": "Saltscale Girdle"
+          "name": "Saltscale Girdle",
+          "chance": 0.293
         },
         {
           "item": 273024,
-          "name": "Glinteye Slippers"
+          "name": "Glinteye Slippers",
+          "chance": 0.31
         }
       ]
     },
@@ -38,19 +41,23 @@
       "loot": [
         {
           "item": 273025,
-          "name": "Raptorclaw Greaves"
+          "name": "Raptorclaw Greaves",
+          "chance": 0.289
         },
         {
           "item": 273026,
-          "name": "Garb of Florid Feathers"
+          "name": "Garb of Florid Feathers",
+          "chance": 0.309
         },
         {
           "item": 273027,
-          "name": "Raptor's Gaze"
+          "name": "Raptor's Gaze",
+          "chance": 0.292
         },
         {
           "item": 273106,
-          "name": "Blueprint: Greenhouse"
+          "name": "Blueprint: Greenhouse",
+          "chance": 0.071
         }
       ]
     },
@@ -70,15 +77,18 @@
       "loot": [
         {
           "item": 273028,
-          "name": "Reliquary Mantle"
+          "name": "Reliquary Mantle",
+          "chance": 0.309
         },
         {
           "item": 273029,
-          "name": "Golemsight Long Gun"
+          "name": "Golemsight Long Gun",
+          "chance": 0.316
         },
         {
           "item": 273030,
-          "name": "Ring of Power Regulation"
+          "name": "Ring of Power Regulation",
+          "chance": 0.293
         },
         {
           "item": 270866,
@@ -90,7 +100,8 @@
         },
         {
           "item": 273097,
-          "name": "Blueprint: Rock Garden"
+          "name": "Blueprint: Rock Garden",
+          "chance": 0.065
         }
       ]
     }

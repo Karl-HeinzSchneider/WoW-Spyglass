@@ -4,73 +4,73 @@ local Data = Spyglass.Data
 -- Deadmines (map 36)
 
 Data:AddBossLoot(2741, { -- Rhahk'Zor
-    { 872 }, -- Rockslicer
-    { 273289 }, -- Ogre Loincloth
-    { 5187 }, -- Rhahk'Zor's Hammer
+    { 872, 0.326 }, -- Rockslicer
+    { 273289, 0.322 }, -- Ogre Loincloth
+    { 5187, 0.315 }, -- Rhahk'Zor's Hammer
     { 251362 }, -- Plans: Protector's Gloves
     { 251364 }, -- Plans: Crusader's Gloves
-    { 253906 }, -- Pattern: Filigreed Flame Gown
+    { 253906, 0.0038 }, -- Pattern: Filigreed Flame Gown
     { 251363 }, -- Plans: Acolyte's Gloves
 })
 
 Data:AddBossLoot(-642, { -- Sneed's Shredder
-    { 1937 }, -- Buzz Saw
-    { 2169 }, -- Buzzer Blade
-    { 285292 }, -- Dull Sawblade
+    { 1937, 0.294 }, -- Buzz Saw
+    { 2169, 0.294 }, -- Buzzer Blade
+    { 285292, 0.282 }, -- Dull Sawblade
 })
 
 Data:AddBossLoot(2742, { -- Sneed
-    { 5194 }, -- Taskmaster Axe
-    { 5195 }, -- Gold-flecked Gloves
-    { 273293 }, -- Bandsaw Wristbands
-    { 273092 }, -- Blueprint: Repair Bot
+    { 5194, 0.3 }, -- Taskmaster Axe
+    { 5195, 0.322 }, -- Gold-flecked Gloves
+    { 273293, 0.309 }, -- Bandsaw Wristbands
+    { 273092, 0.069 }, -- Blueprint: Repair Bot
     { 251360 }, -- Plans: Veteran's Gloves
     { 251364 }, -- Plans: Crusader's Gloves
-    { 253902 }, -- Pattern: Filigreed Pristine Gown
+    { 253902, 0.0084 }, -- Pattern: Filigreed Pristine Gown
     { 251361 }, -- Plans: Guard's Gloves
 })
 
 Data:AddBossLoot(3676, { -- Miner Johnson
-    { 5444 }, -- Miner's Cape
-    { 5443 }, -- Gold-plated Buckler
+    { 5444, 0.521 }, -- Miner's Cape
+    { 5443, 0.456 }, -- Gold-plated Buckler
 })
 
 Data:AddBossLoot(2743, { -- Gilnid
-    { 273297 }, -- Goblin Hammer
-    { 1156 }, -- Lavishly Jeweled Ring
-    { 5199 }, -- Smelting Pants
+    { 273297, 0.317 }, -- Goblin Hammer
+    { 1156, 0.317 }, -- Lavishly Jeweled Ring
+    { 5199, 0.319 }, -- Smelting Pants
     { 252777 }, -- Pattern: Brawler's Leather Gloves
     { 252778 }, -- Pattern: Trapper's Leather Gloves
     { 252780 }, -- Pattern: Totemic Leather Gloves
     { 252782 }, -- Pattern: Wisdom's Leather Gloves
-    { 253904 }, -- Pattern: Filigreed Silky Gown
-    { 253906 }, -- Pattern: Filigreed Flame Gown
-    { 273086 }, -- Blueprint: Anvil
-    { 251340 }, -- Plans: Veteran's Chain Shirt
-    { 251341 }, -- Plans: Guard's Chain Shirt
-    { 251342 }, -- Plans: Protector's Chain Shirt
-    { 251343 }, -- Plans: Acolyte's Chain Shirt
-    { 251344 }, -- Plans: Crusader's Chain Shirt
-    { 252771 }, -- Pattern: Brawler's Leather Armor
-    { 252772 }, -- Pattern: Trapper's Leather Armor
-    { 252773 }, -- Pattern: Defender's Leather Armor
-    { 252774 }, -- Pattern: Totemic Leather Armor
-    { 252775 }, -- Pattern: Stormrider's Leather Armor
-    { 252776 }, -- Pattern: Wisdom's Leather Armor
-    { 253908 }, -- Pattern: Filigreed Shadow Gown
+    { 253904, 0.0056 }, -- Pattern: Filigreed Silky Gown
+    { 253906, 0.0041 }, -- Pattern: Filigreed Flame Gown
+    { 273086, 0.068 }, -- Blueprint: Anvil
+    { 251340, 0.0041 }, -- Plans: Veteran's Chain Shirt
+    { 251341, 0.0062 }, -- Plans: Guard's Chain Shirt
+    { 251342, 0.0043 }, -- Plans: Protector's Chain Shirt
+    { 251343, 0.0045 }, -- Plans: Acolyte's Chain Shirt
+    { 251344, 0.006 }, -- Plans: Crusader's Chain Shirt
+    { 252771, 0.0041 }, -- Pattern: Brawler's Leather Armor
+    { 252772, 0.0028 }, -- Pattern: Trapper's Leather Armor
+    { 252773, 0.0045 }, -- Pattern: Defender's Leather Armor
+    { 252774, 0.003 }, -- Pattern: Totemic Leather Armor
+    { 252775, 0.0056 }, -- Pattern: Stormrider's Leather Armor
+    { 252776, 0.006 }, -- Pattern: Wisdom's Leather Armor
+    { 253908, 0.0045 }, -- Pattern: Filigreed Shadow Gown
 })
 
 Data:AddBossLoot(2744, { -- Captain Greenskin
-    { 5200 }, -- Impaling Harpoon
-    { 5201 }, -- Emberstone Staff
-    { 10403 }, -- Blackened Defias Belt
+    { 5200, 0.319 }, -- Impaling Harpoon
+    { 5201, 0.309 }, -- Emberstone Staff
+    { 10403, 0.31 }, -- Blackened Defias Belt
 })
 
 Data:AddBossLoot(2745, { -- Mr. Smite
-    { 7230 }, -- Smite's Mighty Hammer
-    { 5192 }, -- Thief's Blade
-    { 284715 }, -- First Mate Band
-    { 5196 }, -- Smite's Reaver
+    { 7230, 0.246 }, -- Smite's Mighty Hammer
+    { 5192, 0.248 }, -- Thief's Blade
+    { 284715, 0.236 }, -- First Mate Band
+    { 5196, 0.236 }, -- Smite's Reaver
     { 251362 }, -- Plans: Protector's Gloves
     { 252779 }, -- Pattern: Defender's Leather Gloves
     { 252780 }, -- Pattern: Totemic Leather Gloves
@@ -79,45 +79,45 @@ Data:AddBossLoot(2745, { -- Mr. Smite
 })
 
 Data:AddBossLoot(2746, { -- Cookie
-    { 273298 }, -- Lookie's Spyglass
-    { 5198 }, -- Cookie's Stirring Rod
-    { 5197 }, -- Cookie's Tenderizer
+    { 273298, 0.291 }, -- Lookie's Spyglass
+    { 5198, 0.291 }, -- Cookie's Stirring Rod
+    { 5197, 0.306 }, -- Cookie's Tenderizer
     { 251360 }, -- Plans: Veteran's Gloves
     { 252778 }, -- Pattern: Trapper's Leather Gloves
     { 252779 }, -- Pattern: Defender's Leather Gloves
-    { 253910 }, -- Pattern: Filigreed Pearly Gown
-    { 253912 }, -- Pattern: Filigreed Shining Gown
-    { 273102 }, -- Blueprint: Cookie's Feast
+    { 253910, 0.0026 }, -- Pattern: Filigreed Pearly Gown
+    { 253912, 0.0043 }, -- Pattern: Filigreed Shining Gown
+    { 273102, 0.071 }, -- Blueprint: Cookie's Feast
 })
 
 Data:AddBossLoot(2747, { -- Edwin VanCleef
-    { 5191 }, -- Cruel Barb
-    { 5193 }, -- Cape of the Brotherhood
-    { 5202 }, -- Corsair's Overshirt
-    { 10399 }, -- Blackened Defias Armor
+    { 5191, 0.212 }, -- Cruel Barb
+    { 5193, 0.193 }, -- Cape of the Brotherhood
+    { 5202, 0.188 }, -- Corsair's Overshirt
+    { 10399, 0.204 }, -- Blackened Defias Armor
     { 2874 }, -- An Unsent Letter
     { 252799 }, -- Pattern: Trapper's Leather Hood
     { 252800 }, -- Pattern: Defender's Leather Hood
     { 252801 }, -- Pattern: Totemic Leather Hood
     { 252803 }, -- Pattern: Wisdom's Leather Hood
-    { 253938 }, -- Pattern: Filigreed Pristine Leggings
-    { 253948 }, -- Pattern: Filigreed Shining Leggings
-    { 251345 }, -- Plans: Veteran's Chain Leggings
-    { 251346 }, -- Plans: Guard's Chain Leggings
-    { 251347 }, -- Plans: Protector's Chain Leggings
-    { 251348 }, -- Plans: Acolyte's Chain Leggings
-    { 251349 }, -- Plans: Crusader's Chain Leggings
+    { 253938, 0.0074 }, -- Pattern: Filigreed Pristine Leggings
+    { 253948, 0.0046 }, -- Pattern: Filigreed Shining Leggings
+    { 251345, 0.006 }, -- Plans: Veteran's Chain Leggings
+    { 251346, 0.005 }, -- Plans: Guard's Chain Leggings
+    { 251347, 0.0046 }, -- Plans: Protector's Chain Leggings
+    { 251348, 0.0044 }, -- Plans: Acolyte's Chain Leggings
+    { 251349, 0.0066 }, -- Plans: Crusader's Chain Leggings
     { 251383 }, -- Plans: Acolyte's Silvered Chain Helm
-    { 252792 }, -- Pattern: Brawler's Leather Pants
-    { 252793 }, -- Pattern: Trapper's Leather Pants
-    { 252794 }, -- Pattern: Defender's Leather Pants
-    { 252795 }, -- Pattern: Totemic Leather Pants
-    { 252796 }, -- Pattern: Stormrider's Leather Pants
-    { 252797 }, -- Pattern: Wisdom's Leather Pants
-    { 253940 }, -- Pattern: Filigreed Silky Leggings
-    { 253942 }, -- Pattern: Filigreed Flame Leggings
-    { 253944 }, -- Pattern: Filigreed Shadow Leggings
-    { 253946 }, -- Pattern: Filigreed Pearly Leggings
+    { 252792, 0.0032 }, -- Pattern: Brawler's Leather Pants
+    { 252793, 0.0034 }, -- Pattern: Trapper's Leather Pants
+    { 252794, 0.0038 }, -- Pattern: Defender's Leather Pants
+    { 252795, 0.0052 }, -- Pattern: Totemic Leather Pants
+    { 252796, 0.0028 }, -- Pattern: Stormrider's Leather Pants
+    { 252797, 0.0066 }, -- Pattern: Wisdom's Leather Pants
+    { 253940, 0.0058 }, -- Pattern: Filigreed Silky Leggings
+    { 253942, 0.0038 }, -- Pattern: Filigreed Flame Leggings
+    { 253944, 0.0038 }, -- Pattern: Filigreed Shadow Leggings
+    { 253946, 0.0048 }, -- Pattern: Filigreed Pearly Leggings
 })
 
 Data:AddTrashLoot(36, {

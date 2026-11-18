@@ -19,15 +19,18 @@
       "loot": [
         {
           "item": 272996,
-          "name": "Trogg Scepter"
+          "name": "Trogg Scepter",
+          "chance": 0.318
         },
         {
           "item": 272998,
-          "name": "Bone Knuckles"
+          "name": "Bone Knuckles",
+          "chance": 0.338
         },
         {
           "item": 272999,
-          "name": "Barbaric Crossbow"
+          "name": "Barbaric Crossbow",
+          "chance": 0.308
         },
         {
           "item": 252781,
@@ -49,15 +52,18 @@
       "loot": [
         {
           "item": 14145,
-          "name": "Cursed Felblade"
+          "name": "Cursed Felblade",
+          "chance": 0.299
         },
         {
           "item": 14148,
-          "name": "Crystalline Cuffs"
+          "name": "Crystalline Cuffs",
+          "chance": 0.28
         },
         {
           "item": 14149,
-          "name": "Subterranean Cape"
+          "name": "Subterranean Cape",
+          "chance": 0.299
         },
         {
           "item": 251361,
@@ -87,15 +93,18 @@
       "loot": [
         {
           "item": 14147,
-          "name": "Cavedweller Bracers"
+          "name": "Cavedweller Bracers",
+          "chance": 0.3
         },
         {
           "item": 14150,
-          "name": "Robe of Evocation"
+          "name": "Robe of Evocation",
+          "chance": 0.317
         },
         {
           "item": 14151,
-          "name": "Chanting Blade"
+          "name": "Chanting Blade",
+          "chance": 0.321
         },
         {
           "item": 251360,
@@ -103,7 +112,8 @@
         },
         {
           "item": 253906,
-          "name": "Pattern: Filigreed Flame Gown"
+          "name": "Pattern: Filigreed Flame Gown",
+          "chance": 0.0033
         }
       ]
     },
@@ -117,15 +127,18 @@
       "loot": [
         {
           "item": 273003,
-          "name": "Searing Dagger"
+          "name": "Searing Dagger",
+          "chance": 0.333
         },
         {
           "item": 273007,
-          "name": "Chasm Walkers"
+          "name": "Chasm Walkers",
+          "chance": 0.304
         },
         {
           "item": 273005,
-          "name": "Satyrskin Cloak"
+          "name": "Satyrskin Cloak",
+          "chance": 0.329
         },
         {
           "item": 252780,
@@ -137,11 +150,13 @@
         },
         {
           "item": 253908,
-          "name": "Pattern: Filigreed Shadow Gown"
+          "name": "Pattern: Filigreed Shadow Gown",
+          "chance": 0.0058
         },
         {
           "item": 253910,
-          "name": "Pattern: Filigreed Pearly Gown"
+          "name": "Pattern: Filigreed Pearly Gown",
+          "chance": 0.0056
         }
       ]
     }

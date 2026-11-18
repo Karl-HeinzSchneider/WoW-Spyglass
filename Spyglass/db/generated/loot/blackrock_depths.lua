@@ -4,120 +4,120 @@ local Data = Spyglass.Data
 -- Blackrock Depths (map 230)
 
 Data:AddBossLoot(227, { -- High Interrogator Gerstahn
-    { 11624 }, -- Kentic Amice
-    { 11625 }, -- Enthralled Sphere
-    { 11626 }, -- Blackveil Cape
-    { 22240 }, -- Greaves of Withering Despair
+    { 11624, 0.235 }, -- Kentic Amice
+    { 11625, 0.26 }, -- Enthralled Sphere
+    { 11626, 0.229 }, -- Blackveil Cape
+    { 22240, 0.229 }, -- Greaves of Withering Despair
 })
 
 Data:AddBossLoot(228, { -- Lord Roccor
-    { 11632 }, -- Earthslag Shoulders
-    { 11631 }, -- Stoneshell Guard
-    { 22234 }, -- Mantle of Lost Hope
-    { 22397 }, -- Idol of Ferocity
-    { 11630 }, -- Rockshard Pellets
-    { 11813 }, -- Formula: Smoking Heart of the Mountain
+    { 11632, 0.217 }, -- Earthslag Shoulders
+    { 11631, 0.262 }, -- Stoneshell Guard
+    { 22234, 0.211 }, -- Mantle of Lost Hope
+    { 22397, 0.214 }, -- Idol of Ferocity
+    { 11630, 0.885 }, -- Rockshard Pellets
+    { 11813, 0.172 }, -- Formula: Smoking Heart of the Mountain
 })
 
 Data:AddBossLoot(229, { -- Houndmaster Grebmar
-    { 11627 }, -- Fleetfoot Greaves
-    { 11623 }, -- Spritecaster Cape
-    { 11628 }, -- Houndmaster's Bow
-    { 11629 }, -- Houndmaster's Rifle
+    { 11627, 0.216 }, -- Fleetfoot Greaves
+    { 11623, 0.253 }, -- Spritecaster Cape
+    { 11628, 0.257 }, -- Houndmaster's Bow
+    { 11629, 0.247 }, -- Houndmaster's Rifle
 })
 
 Data:AddBossLoot(231, { -- Pyromancer Loregrain
-    { 11747 }, -- Flamestrider Robes
-    { 11748 }, -- Pyric Caduceus
-    { 11749 }, -- Searingscale Leggings
-    { 11750 }, -- Kindling Stave
-    { 11207 }, -- Formula: Enchant Weapon - Fiery Weapon
+    { 11747, 0.22 }, -- Flamestrider Robes
+    { 11748, 0.231 }, -- Pyric Caduceus
+    { 11749, 0.243 }, -- Searingscale Leggings
+    { 11750, 0.246 }, -- Kindling Stave
+    { 11207, 0.19 }, -- Formula: Enchant Weapon - Fiery Weapon
 })
 
 Data:AddBossLoot(232, { -- Lord Incendius
-    { 11764 }, -- Cinderhide Armsplints
-    { 11765 }, -- Pyremail Wristguards
-    { 11766 }, -- Flameweave Cuffs
-    { 11767 }, -- Emberplate Armguards
+    { 11764, 0.252 }, -- Cinderhide Armsplints
+    { 11765, 0.238 }, -- Pyremail Wristguards
+    { 11766, 0.214 }, -- Flameweave Cuffs
+    { 11767, 0.242 }, -- Emberplate Armguards
     { 11768 }, -- #11768
 })
 
 Data:AddBossLoot(233, { -- Warder Stilgiss
-    { 11782 }, -- Boreal Mantle
-    { 11783 }, -- Chillsteel Girdle
-    { 11784 }, -- Arbiter's Blade
-    { 22241 }, -- Dark Warder's Pauldrons
+    { 11782, 0.234 }, -- Boreal Mantle
+    { 11783, 0.245 }, -- Chillsteel Girdle
+    { 11784, 0.211 }, -- Arbiter's Blade
+    { 22241, 0.257 }, -- Dark Warder's Pauldrons
     { 11755 }, -- Verek's Collar
     { 22242 }, -- Verek's Leash
 })
 
 Data:AddBossLoot(234, { -- Fineous Darkvire
-    { 11841 }, -- Senior Designer's Pantaloons
-    { 11842 }, -- Lead Surveyor's Mantle
-    { 11839 }, -- Chief Architect's Monocle
-    { 22223 }, -- Foreman's Head Protector
+    { 11841, 0.258 }, -- Senior Designer's Pantaloons
+    { 11842, 0.228 }, -- Lead Surveyor's Mantle
+    { 11839, 0.211 }, -- Chief Architect's Monocle
+    { 22223, 0.228 }, -- Foreman's Head Protector
 })
 
 Data:AddBossLoot(235, { -- Bael'Gar
-    { 11802 }, -- Lavacrest Leggings
-    { 11803 }, -- Force of Magma
-    { 11805 }, -- Rubidium Hammer
-    { 11807 }, -- Sash of the Burning Heart
+    { 11802, 0.228 }, -- Lavacrest Leggings
+    { 11803, 0.214 }, -- Force of Magma
+    { 11805, 0.238 }, -- Rubidium Hammer
+    { 11807, 0.228 }, -- Sash of the Burning Heart
 })
 
 Data:AddBossLoot(236, { -- General Angerforge
-    { 11816 }, -- Angerforge's Battle Axe
-    { 11820 }, -- Royal Decorated Armor
-    { 11821 }, -- Warstrife Leggings
-    { 11817 }, -- Lord General's Sword
-    { 11810 }, -- Force of Will
+    { 11816, 0.222 }, -- Angerforge's Battle Axe
+    { 11820, 0.18 }, -- Royal Decorated Armor
+    { 11821, 0.13 }, -- Warstrife Leggings
+    { 11817, 0.168 }, -- Lord General's Sword
+    { 11810, 0.13 }, -- Force of Will
 })
 
 Data:AddBossLoot(237, { -- Golem Lord Argelmach
-    { 11822 }, -- Omnicast Boots
-    { 11823 }, -- Luminary Kilt
-    { 11669 }, -- Naglering
-    { 11819 }, -- Second Wind
-    { 273113 }, -- Blueprint: Master Forge
+    { 11822, 0.212 }, -- Omnicast Boots
+    { 11823, 0.237 }, -- Luminary Kilt
+    { 11669, 0.205 }, -- Naglering
+    { 11819, 0.242 }, -- Second Wind
+    { 273113, 0.062 }, -- Blueprint: Master Forge
 })
 
 Data:AddBossLoot(238, { -- Hurley Blackbreath
-    { 18044 }, -- Hurley's Tankard
-    { 18043 }, -- Coal Miner Boots
-    { 22275 }, -- Firemoss Boots
-    { 11735 }, -- Ragefury Eyepatch
+    { 18044, 0.245 }, -- Hurley's Tankard
+    { 18043, 0.223 }, -- Coal Miner Boots
+    { 22275, 0.202 }, -- Firemoss Boots
+    { 11735, 0.234 }, -- Ragefury Eyepatch
 })
 
 Data:AddBossLoot(239, { -- Phalanx
-    { 11745 }, -- Fists of Phalanx
-    { 11744 }, -- Bloodfist
-    { 22212 }, -- Golem Fitted Pauldrons
+    { 11745, 0.207 }, -- Fists of Phalanx
+    { 11744, 0.241 }, -- Bloodfist
+    { 22212, 0.266 }, -- Golem Fitted Pauldrons
     { 11746 }, -- Golem Skull Helm
     { 11743 }, -- #11743
-    { 276879 }, -- Backroom Bulwark
+    { 276879, 0.235 }, -- Backroom Bulwark
 })
 
 Data:AddBossLoot(240, { -- Ribbly Screwspigot
-    { 11612 }, -- Plans: Dark Iron Plate
-    { 11742 }, -- Wayfarer's Knapsack
-    { 2662 }, -- Ribbly's Quiver
-    { 2663 }, -- Ribbly's Bandolier
+    { 11612, 0.235 }, -- Plans: Dark Iron Plate
+    { 11742, 0.206 }, -- Wayfarer's Knapsack
+    { 2662, 0.175 }, -- Ribbly's Quiver
+    { 2663, 0.21 }, -- Ribbly's Bandolier
 })
 
 Data:AddBossLoot(241, { -- Plugger Spazzring
-    { 12793 }, -- Mixologist's Tunic
-    { 12791 }, -- Barman Shanker
-    { 18653 }, -- Schematic: Goblin Jumper Cables XL
-    { 276877 }, -- Brewmancer Nightcap
+    { 12793, 0.222 }, -- Mixologist's Tunic
+    { 12791, 0.319 }, -- Barman Shanker
+    { 18653, 0.252 }, -- Schematic: Goblin Jumper Cables XL
+    { 276877, 0.193 }, -- Brewmancer Nightcap
 })
 
 Data:AddBossLoot(242, { -- Ambassador Flamelash
-    { 11812 }, -- Cape of the Fire Salamander
-    { 11814 }, -- Molten Fists
-    { 11809 }, -- Flame Wrath
-    { 11832 }, -- Burst of Knowledge
-    { 11808 }, -- Circle of Flame
-    { 273122 }, -- Blueprint: Molten Foundry
+    { 11812, 0.256 }, -- Cape of the Fire Salamander
+    { 11814, 0.227 }, -- Molten Fists
+    { 11809, 0.199 }, -- Flame Wrath
+    { 11832, 0.269 }, -- Burst of Knowledge
+    { 11808, 0.0052 }, -- Circle of Flame
+    { 273122, 0.039 }, -- Blueprint: Molten Foundry
 })
 
 Data:AddBossLoot(243, { -- The Seven
@@ -132,84 +132,84 @@ Data:AddBossLoot(243, { -- The Seven
 })
 
 Data:AddBossLoot(244, { -- Magmus
-    { 11935 }, -- Magmus Stone
-    { 22208 }, -- Lavastone Hammer
-    { 22395 }, -- Totem of Rage
-    { 22400 }, -- Libram of Truth
-    { 11746 }, -- Golem Skull Helm
+    { 11935, 0.181 }, -- Magmus Stone
+    { 22208, 0.202 }, -- Lavastone Hammer
+    { 22395, 0.202 }, -- Totem of Rage
+    { 22400, 0.145 }, -- Libram of Truth
+    { 11746, 0.189 }, -- Golem Skull Helm
     { 277129 }, -- Fragment of the Firelands
 })
 
 Data:AddBossLoot(2789, { -- Princess Moira Bronzebeard
-    { 12553 }, -- Swiftwalker Boots
-    { 12554 }, -- Hands of the Exalted Herald
-    { 12556 }, -- High Priestess Boots
-    { 12557 }, -- Ebonsteel Spaulders
+    { 12553, 0.222 }, -- Swiftwalker Boots
+    { 12554, 0.148 }, -- Hands of the Exalted Herald
+    { 12556, 0.148 }, -- High Priestess Boots
+    { 12557, 0.222 }, -- Ebonsteel Spaulders
 })
 
 Data:AddBossLoot(2790, { -- Emperor Dagran Thaurissan
-    { 11815 }, -- Hand of Justice
-    { 11924 }, -- Robes of the Royal Crown
-    { 11928 }, -- Thaurissan's Royal Scepter
-    { 11930 }, -- The Emperor's New Cape
-    { 11931 }, -- Dreadforge Retaliator
-    { 11932 }, -- Guiding Stave of Wisdom
-    { 11933 }, -- Imperial Jewel
-    { 11934 }, -- Emperor's Seal
-    { 22204 }, -- Wristguards of Renown
-    { 22207 }, -- Sash of the Grand Hunt
-    { 11684 }, -- Ironfoe
+    { 11815, 0.192 }, -- Hand of Justice
+    { 11924, 0.19 }, -- Robes of the Royal Crown
+    { 11928, 0.23 }, -- Thaurissan's Royal Scepter
+    { 11930, 0.197 }, -- The Emperor's New Cape
+    { 11931, 0.173 }, -- Dreadforge Retaliator
+    { 11932, 0.147 }, -- Guiding Stave of Wisdom
+    { 11933, 0.206 }, -- Imperial Jewel
+    { 11934, 0.192 }, -- Emperor's Seal
+    { 22204, 0.166 }, -- Wristguards of Renown
+    { 22207, 0.182 }, -- Sash of the Grand Hunt
+    { 11684, 0.012 }, -- Ironfoe
 })
 
 Data:AddBossLoot(-9027, { -- Gorosh the Dervish
-    { 11726 }, -- Savage Gladiator Chain
-    { 22257 }, -- Bloodclot Band
-    { 22266 }, -- Flarethorn
-    { 22271 }, -- Leggings of Frenzied Magic
+    { 11726, 0.103 }, -- Savage Gladiator Chain
+    { 22257, 0.345 }, -- Bloodclot Band
+    { 22266, 0.328 }, -- Flarethorn
+    { 22271, 0.207 }, -- Leggings of Frenzied Magic
 })
 
 Data:AddBossLoot(-9028, { -- Grizzle
-    { 11702 }, -- Grizzle's Skinner
-    { 11703 }, -- Stonewall Girdle
-    { 11722 }, -- Dregmetal Spaulders
-    { 22270 }, -- Entrenching Boots
-    { 11610 }, -- Plans: Dark Iron Pulverizer
-    { 277117 }, -- Savage Gladiator Shoulders
+    { 11702, 0.183 }, -- Grizzle's Skinner
+    { 11703, 0.19 }, -- Stonewall Girdle
+    { 11722, 0.23 }, -- Dregmetal Spaulders
+    { 22270, 0.175 }, -- Entrenching Boots
+    { 11610, 0.96 }, -- Plans: Dark Iron Pulverizer
+    { 277117, 0.19 }, -- Savage Gladiator Shoulders
 })
 
 Data:AddBossLoot(-9029, { -- Eviscerator
-    { 11679 }, -- Rubicund Armguards
-    { 11685 }, -- Splinthide Shoulders
-    { 11686 }, -- Girdle of Beastial Fury
-    { 11730 }, -- Savage Gladiator Grips
+    { 11679, 0.286 }, -- Rubicund Armguards
+    { 11685, 0.257 }, -- Splinthide Shoulders
+    { 11686, 0.219 }, -- Girdle of Beastial Fury
+    { 11730, 0.229 }, -- Savage Gladiator Grips
 })
 
 Data:AddBossLoot(-9030, { -- Ok'thor the Breaker
-    { 11662 }, -- Ban'thok Sash
-    { 11665 }, -- Ogreseer Fists
-    { 11824 }, -- Cyclopean Band
-    { 11728 }, -- Savage Gladiator Leggings
+    { 11662, 0.271 }, -- Ban'thok Sash
+    { 11665, 0.206 }, -- Ogreseer Fists
+    { 11824, 0.28 }, -- Cyclopean Band
+    { 11728, 0.243 }, -- Savage Gladiator Leggings
 })
 
 Data:AddBossLoot(-9031, { -- Anub'shiah
-    { 11675 }, -- Shadefiend Boots
-    { 11677 }, -- Graverot Cape
-    { 11678 }, -- Carapace of Anub'shiah
-    { 11731 }, -- Savage Gladiator Greaves
+    { 11675, 0.227 }, -- Shadefiend Boots
+    { 11677, 0.159 }, -- Graverot Cape
+    { 11678, 0.261 }, -- Carapace of Anub'shiah
+    { 11731, 0.352 }, -- Savage Gladiator Greaves
 })
 
 Data:AddBossLoot(-9032, { -- Hedrum the Creeper
-    { 11633 }, -- Spiderfang Carapace
-    { 11634 }, -- Silkweb Gloves
-    { 11635 }, -- Hookfang Shanker
-    { 11729 }, -- Savage Gladiator Helm
+    { 11633, 0.294 }, -- Spiderfang Carapace
+    { 11634, 0.245 }, -- Silkweb Gloves
+    { 11635, 0.186 }, -- Hookfang Shanker
+    { 11729, 0.275 }, -- Savage Gladiator Helm
 })
 
 Data:AddBossLoot(-8923, { -- Panzor the Invincible
-    { 11787 }, -- Shalehusk Boots
-    { 11786 }, -- Stone of the Earth
-    { 11785 }, -- Rock Golem Bulwark
-    { 22245 }, -- Soot Encrusted Footwear
+    { 11787, 0.22 }, -- Shalehusk Boots
+    { 11786, 0.203 }, -- Stone of the Earth
+    { 11785, 0.22 }, -- Rock Golem Bulwark
+    { 22245, 0.322 }, -- Soot Encrusted Footwear
 })
 
 Data:AddBossLoot(-16059, { -- Theldren
@@ -323,5 +323,4 @@ Data:AddQuests(230, {
     } },
     { id = 4295, name = "Rocknot's Ale", side = "Both", requiredLevel = 50, xp = 0, objective = "Bring Private Rocknot two Dark Iron Ale Mugs.", description = "Buy Dark Iron Ale Mugs from Plugger Spazzring and keep handing them to Rocknot. The drunken event opens the bar route and can turn Phalanx hostile.", start = { description = "Grim Guzzler, Blackrock Depths", npc = "Private Rocknot" }, turnIn = { description = "Grim Guzzler, Blackrock Depths", npc = "Private Rocknot" }, items = {} },
     { id = 97197, name = "Fragment of the Firelands", side = "Horde", requiredLevel = 49, xp = 14800, objective = "Recover a Fragment of the Firelands from Magmus in Blackrock Depths for Alaana Stormwalker in Mulgore.", description = "Get the fragment from the Firelands elementals inside Blackrock Depths. Which one drops it isn't confirmed yet. Seen picked up at level 49.", start = { description = "Skywatcher Plateau, Mulgore", location = { 1412, 33.4, 22.5 }, npc = "Alaana Stormwalker" }, turnIn = { description = "Skywatcher Plateau, Mulgore (33.4, 22.5)", location = { 1412, 33.4, 22.5 }, npc = "Alaana Stormwalker" }, items = {} },
-    { id = 9015, name = "The Challenge", side = "Both", requiredLevel = 58, xp = 1450, objective = "Use the Banner of Provocation in the center of the Ring of Law as High Justice Grimstone sentences you, slay Theldren and his gladiators, and bring the Top Piece of Lord Valthalak's Amulet to Anthion Harmon in the Eastern Plaguelands.", description = "Plant the banner before the normal challenger comes out. Theldren and his gladiators then fight you, and an Arena Spoils chest appears afterwards. You keep the banner (10 min cooldown) to summon him again.", requires = { { id = 8950, name = "The Instigator's Enchantment" } }, start = { description = "the Athenaeum, Dire Maul (West)", npc = "Falrin Treeshaper" }, turnIn = { description = "outside Stratholme, Eastern Plaguelands", npc = "Anthion Harmon" }, items = {} },
 })

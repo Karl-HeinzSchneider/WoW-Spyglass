@@ -4,9 +4,9 @@ local Data = Spyglass.Data
 -- Sunken Temple (map 109)
 
 Data:AddBossLoot(3582, { -- Atal'alarion
-    { 10800 }, -- Darkwater Bracers
-    { 10798 }, -- Atal'alarion's Tusk Ring
-    { 10799 }, -- Headspike
+    { 10800, 0.328 }, -- Darkwater Bracers
+    { 10798, 0.299 }, -- Atal'alarion's Tusk Ring
+    { 10799, 0.318 }, -- Headspike
 })
 
 Data:AddBossLoot(3583, { -- Avatar of Hakkar
@@ -21,16 +21,16 @@ Data:AddBossLoot(3583, { -- Avatar of Hakkar
 })
 
 Data:AddBossLoot(3584, { -- Shade of Eranikus
-    { 10829 }, -- Dragon's Eye
-    { 10833 }, -- Horns of Eranikus
-    { 10835 }, -- Crest of Supremacy
-    { 10836 }, -- Rod of Corrosion
-    { 10828 }, -- Dire Nail
-    { 10837 }, -- Tooth of Eranikus
-    { 10847 }, -- Dragon's Call
-    { 254106 }, -- Pattern: Radiant Gloves
-    { 252919 }, -- Pattern: Skycaller's Mail Gauntlets
-    { 251403 }, -- Plans: Officer's Gloves
+    { 10829, 0.26 }, -- Dragon's Eye
+    { 10833, 0.307 }, -- Horns of Eranikus
+    { 10835, 0.252 }, -- Crest of Supremacy
+    { 10836, 0.268 }, -- Rod of Corrosion
+    { 10828, 0.313 }, -- Dire Nail
+    { 10837, 0.264 }, -- Tooth of Eranikus
+    { 10847, 0.02 }, -- Dragon's Call
+    { 254106, 0.0098 }, -- Pattern: Radiant Gloves
+    { 252919, 0.0078 }, -- Pattern: Skycaller's Mail Gauntlets
+    { 251403, 0.0059 }, -- Plans: Officer's Gloves
     { 10454 }, -- Essence of Eranikus
 })
 
@@ -46,14 +46,14 @@ Data:AddBossLoot(3585, { -- Hazzas
 })
 
 Data:AddBossLoot(3586, { -- Morphaz
-    { 12465 }, -- Nightfall Drape
-    { 12466 }, -- Dawnspire Cord
-    { 12243 }, -- Smoldering Claw
-    { 10795 }, -- Drakeclaw Band
-    { 10796 }, -- Drakestone
-    { 10797 }, -- Firebreather
-    { 12463 }, -- Drakefang Butcher
-    { 12464 }, -- Bloodfire Talons
+    { 12465, 0.042 }, -- Nightfall Drape
+    { 12466, 0.086 }, -- Dawnspire Cord
+    { 12243, 0.044 }, -- Smoldering Claw
+    { 10795, 0.05 }, -- Drakeclaw Band
+    { 10796, 0.052 }, -- Drakestone
+    { 10797, 0.037 }, -- Firebreather
+    { 12463, 0.047 }, -- Drakefang Butcher
+    { 12464, 0.047 }, -- Bloodfire Talons
     { 20019 }, -- Tooth of Morphaz
     { 20022 }, -- Azure Key
     { 20025 }, -- Blood of Morphaz
@@ -72,86 +72,86 @@ Data:AddBossLoot(3587, { -- Weaver
 })
 
 Data:AddBossLoot(3588, { -- Dreamscythe
-    { 12465 }, -- Nightfall Drape
-    { 12466 }, -- Dawnspire Cord
-    { 12243 }, -- Smoldering Claw
-    { 10795 }, -- Drakeclaw Band
-    { 10796 }, -- Drakestone
-    { 10797 }, -- Firebreather
-    { 12463 }, -- Drakefang Butcher
-    { 12464 }, -- Bloodfire Talons
+    { 12465, 0.054 }, -- Nightfall Drape
+    { 12466, 0.042 }, -- Dawnspire Cord
+    { 12243, 0.077 }, -- Smoldering Claw
+    { 10795, 0.045 }, -- Drakeclaw Band
+    { 10796, 0.045 }, -- Drakestone
+    { 10797, 0.042 }, -- Firebreather
+    { 12463, 0.027 }, -- Drakefang Butcher
+    { 12464, 0.054 }, -- Bloodfire Talons
 })
 
 Data:AddBossLoot(3589, { -- Jammal'an the Prophet
-    { 10806 }, -- Vestments of the Atal'ai Prophet
-    { 10807 }, -- Kilt of the Atal'ai Prophet
-    { 10808 }, -- Gloves of the Atal'ai Prophet
-    { 254102 }, -- Pattern: Black Gloves
-    { 252919 }, -- Pattern: Skycaller's Mail Gauntlets
-    { 252918 }, -- Pattern: Stalker's Mail Gauntlets
-    { 252869 }, -- Pattern: Warden's Leather Gauntlets
-    { 251405 }, -- Plans: Warder's Gloves
-    { 273119 }, -- Blueprint: Fishing Hut
+    { 10806, 0.291 }, -- Vestments of the Atal'ai Prophet
+    { 10807, 0.337 }, -- Kilt of the Atal'ai Prophet
+    { 10808, 0.307 }, -- Gloves of the Atal'ai Prophet
+    { 254102, 0.0019 }, -- Pattern: Black Gloves
+    { 252919, 0.0057 }, -- Pattern: Skycaller's Mail Gauntlets
+    { 252918, 0.0019 }, -- Pattern: Stalker's Mail Gauntlets
+    { 252869, 0.0019 }, -- Pattern: Warden's Leather Gauntlets
+    { 251405, 0.0019 }, -- Plans: Warder's Gloves
+    { 273119, 0.027 }, -- Blueprint: Fishing Hut
 })
 
 Data:AddBossLoot(-5711, { -- Ogom the Wretched
-    { 10804 }, -- Fist of the Damned
-    { 10803 }, -- Blade of the Wretched
-    { 10805 }, -- Eater of the Dead
+    { 10804, 0.317 }, -- Fist of the Damned
+    { 10803, 0.344 }, -- Blade of the Wretched
+    { 10805, 0.328 }, -- Eater of the Dead
 })
 
 Data:AddBossLoot(-5713, { -- Gasher
-    { 10783 }, -- Atal'ai Spaulders
-    { 10784 }, -- Atal'ai Breastplate
-    { 10787 }, -- Atal'ai Gloves
-    { 10785 }, -- Atal'ai Leggings
-    { 10786 }, -- Atal'ai Boots
-    { 10788 }, -- Atal'ai Girdle
+    { 10783, 0.058 }, -- Atal'ai Spaulders
+    { 10784, 0.053 }, -- Atal'ai Breastplate
+    { 10787, 0.074 }, -- Atal'ai Gloves
+    { 10785, 0.074 }, -- Atal'ai Leggings
+    { 10786, 0.095 }, -- Atal'ai Boots
+    { 10788, 0.143 }, -- Atal'ai Girdle
 })
 
 Data:AddBossLoot(-5715, { -- Hukku
-    { 10783 }, -- Atal'ai Spaulders
-    { 10784 }, -- Atal'ai Breastplate
-    { 10787 }, -- Atal'ai Gloves
-    { 10785 }, -- Atal'ai Leggings
-    { 10786 }, -- Atal'ai Boots
-    { 10788 }, -- Atal'ai Girdle
+    { 10783, 0.034 }, -- Atal'ai Spaulders
+    { 10784, 0.048 }, -- Atal'ai Breastplate
+    { 10787, 0.116 }, -- Atal'ai Gloves
+    { 10785, 0.055 }, -- Atal'ai Leggings
+    { 10786, 0.089 }, -- Atal'ai Boots
+    { 10788, 0.075 }, -- Atal'ai Girdle
 })
 
 Data:AddBossLoot(-5714, { -- Loro
-    { 10783 }, -- Atal'ai Spaulders
-    { 10784 }, -- Atal'ai Breastplate
-    { 10787 }, -- Atal'ai Gloves
-    { 10785 }, -- Atal'ai Leggings
-    { 10786 }, -- Atal'ai Boots
-    { 10788 }, -- Atal'ai Girdle
+    { 10783, 0.032 }, -- Atal'ai Spaulders
+    { 10784, 0.038 }, -- Atal'ai Breastplate
+    { 10787, 0.102 }, -- Atal'ai Gloves
+    { 10785, 0.081 }, -- Atal'ai Leggings
+    { 10786, 0.102 }, -- Atal'ai Boots
+    { 10788, 0.14 }, -- Atal'ai Girdle
 })
 
 Data:AddBossLoot(-5717, { -- Mijan
-    { 10783 }, -- Atal'ai Spaulders
-    { 10784 }, -- Atal'ai Breastplate
-    { 10787 }, -- Atal'ai Gloves
-    { 10785 }, -- Atal'ai Leggings
-    { 10786 }, -- Atal'ai Boots
-    { 10788 }, -- Atal'ai Girdle
+    { 10783, 0.048 }, -- Atal'ai Spaulders
+    { 10784, 0.052 }, -- Atal'ai Breastplate
+    { 10787, 0.095 }, -- Atal'ai Gloves
+    { 10785, 0.076 }, -- Atal'ai Leggings
+    { 10786, 0.124 }, -- Atal'ai Boots
+    { 10788, 0.143 }, -- Atal'ai Girdle
 })
 
 Data:AddBossLoot(-5712, { -- Zolo
-    { 10783 }, -- Atal'ai Spaulders
-    { 10784 }, -- Atal'ai Breastplate
-    { 10787 }, -- Atal'ai Gloves
-    { 10785 }, -- Atal'ai Leggings
-    { 10786 }, -- Atal'ai Boots
-    { 10788 }, -- Atal'ai Girdle
+    { 10783, 0.064 }, -- Atal'ai Spaulders
+    { 10784, 0.024 }, -- Atal'ai Breastplate
+    { 10787, 0.136 }, -- Atal'ai Gloves
+    { 10785, 0.048 }, -- Atal'ai Leggings
+    { 10786, 0.176 }, -- Atal'ai Boots
+    { 10788, 0.128 }, -- Atal'ai Girdle
 })
 
 Data:AddBossLoot(-5716, { -- Zul'Lor
-    { 10783 }, -- Atal'ai Spaulders
-    { 10784 }, -- Atal'ai Breastplate
-    { 10787 }, -- Atal'ai Gloves
-    { 10785 }, -- Atal'ai Leggings
-    { 10786 }, -- Atal'ai Boots
-    { 10788 }, -- Atal'ai Girdle
+    { 10783, 0.071 }, -- Atal'ai Spaulders
+    { 10784, 0.026 }, -- Atal'ai Breastplate
+    { 10787, 0.077 }, -- Atal'ai Gloves
+    { 10785, 0.082 }, -- Atal'ai Leggings
+    { 10786, 0.122 }, -- Atal'ai Boots
+    { 10788, 0.143 }, -- Atal'ai Girdle
 })
 
 Data:AddTrashLoot(109, {
@@ -230,7 +230,7 @@ Data:AddQuests(109, {
         { 20255 }, -- Whisperwalk Boots
         { 19982 }, -- Duskbat Drape
     } },
-    { id = 8413, name = "Da Voodoo", side = "Horde", class = "SHAMAN", requiredLevel = 50, xp = 12400, objective = "Bring the voodoo feathers to Bath'rah the Windwatcher.", description = "Shaman class quest. Needs 2 amber, 2 blue and 2 green Voodoo Feathers from the six troll guardians: Gasher, Mijan, Zolo, Hukku, Zul'Lor and Loro.", requires = { { id = 8412, name = "Spirit Totem" } }, start = { description = "Alterac Mountains", location = { 1416, 80.4, 66.8 }, npc = "Bath'rah the Windwatcher" }, turnIn = { description = "Alterac Mountains", location = { 1416, 80.4, 66.8 }, npc = "Bath'rah the Windwatcher" }, items = {
+    { id = 8413, name = "Da Voodoo", side = "Both", class = "SHAMAN", requiredLevel = 50, xp = 12400, objective = "Bring the voodoo feathers to Bath'rah the Windwatcher.", description = "Shaman class quest. Needs 2 amber, 2 blue and 2 green Voodoo Feathers from the six troll guardians: Gasher, Mijan, Zolo, Hukku, Zul'Lor and Loro.", requires = { { id = 8412, name = "Spirit Totem" } }, start = { description = "Alterac Mountains", location = { 1416, 80.4, 66.8 }, npc = "Bath'rah the Windwatcher" }, turnIn = { description = "Alterac Mountains", location = { 1416, 80.4, 66.8 }, npc = "Bath'rah the Windwatcher" }, items = {
         { 20369 }, -- Azurite Fists
         { 20503 }, -- Enamored Water Spirit
         { 20556 }, -- Wildstaff

@@ -19,15 +19,18 @@
       "loot": [
         {
           "item": 18313,
-          "name": "Helm of Awareness"
+          "name": "Helm of Awareness",
+          "chance": 0.22
         },
         {
           "item": 18323,
-          "name": "Satyr's Bow"
+          "name": "Satyr's Bow",
+          "chance": 0.145
         },
         {
           "item": 18319,
-          "name": "Fervent Helm"
+          "name": "Fervent Helm",
+          "chance": 0.235
         }
       ]
     },
@@ -40,27 +43,33 @@
       "loot": [
         {
           "item": 18322,
-          "name": "Waterspout Boots"
+          "name": "Waterspout Boots",
+          "chance": 0.226
         },
         {
           "item": 18317,
-          "name": "Tempest Talisman"
+          "name": "Tempest Talisman",
+          "chance": 0.129
         },
         {
           "item": 18324,
-          "name": "Waveslicer"
+          "name": "Waveslicer",
+          "chance": 0.21
         },
         {
           "item": 7091,
-          "name": "Pattern: Truefaith Gloves"
+          "name": "Pattern: Truefaith Gloves",
+          "chance": 0.024
         },
         {
           "item": 18305,
-          "name": "Breakwater Legguards"
+          "name": "Breakwater Legguards",
+          "chance": 0.177
         },
         {
           "item": 18307,
-          "name": "Riptide Shoes"
+          "name": "Riptide Shoes",
+          "chance": 0.198
         }
       ]
     },
@@ -73,15 +82,18 @@
       "loot": [
         {
           "item": 18325,
-          "name": "Felhide Cap"
+          "name": "Felhide Cap",
+          "chance": 0.228
         },
         {
           "item": 18311,
-          "name": "Quel'dorai Channeling Rod"
+          "name": "Quel'dorai Channeling Rod",
+          "chance": 0.216
         },
         {
           "item": 18302,
-          "name": "Band of Vigor"
+          "name": "Band of Vigor",
+          "chance": 0.241
         },
         {
           "item": 18354,
@@ -99,11 +111,13 @@
       "loot": [
         {
           "item": 18316,
-          "name": "Obsidian Bauble"
+          "name": "Obsidian Bauble",
+          "chance": 0.244
         },
         {
           "item": 18267,
-          "name": "Recipe: Runn Tum Tuber Surprise"
+          "name": "Recipe: Runn Tum Tuber Surprise",
+          "chance": 0.88
         }
       ]
     },
@@ -116,43 +130,53 @@
       "loot": [
         {
           "item": 18309,
-          "name": "Gloves of Restoration"
+          "name": "Gloves of Restoration",
+          "chance": 0.201
         },
         {
           "item": 18310,
-          "name": "Fiendish Machete"
+          "name": "Fiendish Machete",
+          "chance": 0.213
         },
         {
           "item": 18312,
-          "name": "Energized Chestplate"
+          "name": "Energized Chestplate",
+          "chance": 0.157
         },
         {
           "item": 18314,
-          "name": "Ring of Demonic Guile"
+          "name": "Ring of Demonic Guile",
+          "chance": 0.142
         },
         {
           "item": 18315,
-          "name": "Ring of Demonic Potency"
+          "name": "Ring of Demonic Potency",
+          "chance": 0.173
         },
         {
           "item": 18318,
-          "name": "Merciful Greaves"
+          "name": "Merciful Greaves",
+          "chance": 0.173
         },
         {
           "item": 18321,
-          "name": "Energetic Rod"
+          "name": "Energetic Rod",
+          "chance": 0.181
         },
         {
           "item": 18326,
-          "name": "Razor Gauntlets"
+          "name": "Razor Gauntlets",
+          "chance": 0.205
         },
         {
           "item": 18327,
-          "name": "Whipvine Cord"
+          "name": "Whipvine Cord",
+          "chance": 0.161
         },
         {
           "item": 18328,
-          "name": "Shadewood Cloak"
+          "name": "Shadewood Cloak",
+          "chance": 0.193
         }
       ]
     }

@@ -4,50 +4,50 @@ local Data = Spyglass.Data
 -- Blackmaw Hold (map 2974)
 
 Data:AddBossLoot(3315, { -- Withermaw
-    { 280064 }, -- Withering Grips
-    { 280063 }, -- Bloodfur Bulwark
-    { 280062 }, -- Cloak of the Fleshborer
+    { 280064, 0.328 }, -- Withering Grips
+    { 280063, 0.278 }, -- Bloodfur Bulwark
+    { 280062, 0.308 }, -- Cloak of the Fleshborer
 })
 
 Data:AddBossLoot(3316, { -- Impaan the Imprisoner
-    { 280057 }, -- Robes of Dark Summons
-    { 280056 }, -- Flameslash Crescent
-    { 280058 }, -- Impish Chain Hood
+    { 280057, 0.315 }, -- Robes of Dark Summons
+    { 280056, 0.347 }, -- Flameslash Crescent
+    { 280058, 0.291 }, -- Impish Chain Hood
 })
 
 Data:AddBossLoot(3322, { -- Bonesnout the Unbroken
-    { 280059 }, -- Tuskblade Halberd
-    { 280060 }, -- Lucky Shovelnose Tuft
-    { 280061 }, -- Spike Crested Bracers
+    { 280059, 0.353 }, -- Tuskblade Halberd
+    { 280060, 0.348 }, -- Lucky Shovelnose Tuft
+    { 280061, 0.271 }, -- Spike Crested Bracers
 })
 
 Data:AddBossLoot(3323, { -- Blackmaw Behemoth
-    { 280065 }, -- Behemoth Bones
-    { 280066 }, -- Trousers of the Ebon Giant
-    { 280067 }, -- Blackmaw Chain Belt
+    { 280065, 0.349 }, -- Behemoth Bones
+    { 280066, 0.366 }, -- Trousers of the Ebon Giant
+    { 280067, 0.255 }, -- Blackmaw Chain Belt
 })
 
 Data:AddBossLoot(3327, { -- Elder Shaman Bloodmane
-    { 280068 }, -- Bloody Claws of Attack
-    { 280070 }, -- Veilpiercer Girdle
-    { 280069 }, -- Shamanic Wristguards
+    { 280068, 0.373 }, -- Bloody Claws of Attack
+    { 280070, 0.239 }, -- Veilpiercer Girdle
+    { 280069, 0.204 }, -- Shamanic Wristguards
 })
 
 Data:AddBossLoot(3334, { -- Varrox Bleakhoof
-    { 280074 }, -- Scalding Flamehoof
-    { 280076 }, -- Horns of Varrox
-    { 280075 }, -- Bleak Eye Shoulderplates
+    { 280074, 0.352 }, -- Scalding Flamehoof
+    { 280076, 0.314 }, -- Horns of Varrox
+    { 280075, 0.292 }, -- Bleak Eye Shoulderplates
 })
 
 Data:AddBossLoot(3336, { -- Unbound Spirit
-    { 280071 }, -- Flamebreak Talisman
-    { 280072 }, -- Cowl of Dark Ambition
-    { 280073 }, -- Burnished Pridescales
+    { 280071, 0.327 }, -- Flamebreak Talisman
+    { 280072, 0.282 }, -- Cowl of Dark Ambition
+    { 280073, 0.361 }, -- Burnished Pridescales
 })
 
 Data:AddBossLoot(-269104, { -- Moontouched Wanderer
-    { 280080 }, -- Claymore of Two Moons
-    { 280079 }, -- Lunarlight Robe
+    { 280080, 0.618 }, -- Claymore of Two Moons
+    { 280079, 0.368 }, -- Lunarlight Robe
 })
 
 Data:AddBossLoot(-269111, { -- Gortek the Apprentice
@@ -56,8 +56,8 @@ Data:AddBossLoot(-269111, { -- Gortek the Apprentice
 })
 
 Data:AddBossLoot(-250034, { -- Tunnelweb Matriarch
-    { 280085 }, -- Tunnelweb Pincer
-    { 280086 }, -- Octofinger Gauntlets
+    { 280085, 0.429 }, -- Tunnelweb Pincer
+    { 280086, 0.543 }, -- Octofinger Gauntlets
 })
 
 Data:AddTrashLoot(2974, {

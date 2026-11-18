@@ -4,53 +4,53 @@ local Data = Spyglass.Data
 -- Dire Maul: West (map 429)
 
 Data:AddBossLoot(350, { -- Tendris Warpwood
-    { 18390 }, -- Tanglemoss Leggings
-    { 18393 }, -- Warpwood Binding
-    { 18353 }, -- Stoneflower Staff
-    { 18352 }, -- Petrified Bark Shield
-    { 273120 }, -- Blueprint: Seed Hybridizer
+    { 18390, 0.217 }, -- Tanglemoss Leggings
+    { 18393, 0.251 }, -- Warpwood Binding
+    { 18353, 0.261 }, -- Stoneflower Staff
+    { 18352, 0.232 }, -- Petrified Bark Shield
+    { 273120, 0.092 }, -- Blueprint: Seed Hybridizer
 })
 
 Data:AddBossLoot(347, { -- Illyanna Ravenoak
-    { 18383 }, -- Force Imbued Gauntlets
-    { 18386 }, -- Padre's Trousers
-    { 18347 }, -- Well Balanced Axe
-    { 18349 }, -- Gauntlets of Accuracy
+    { 18383, 0.283 }, -- Force Imbued Gauntlets
+    { 18386, 0.145 }, -- Padre's Trousers
+    { 18347, 0.239 }, -- Well Balanced Axe
+    { 18349, 0.217 }, -- Gauntlets of Accuracy
 })
 
 Data:AddBossLoot(348, { -- Magister Kalendris
-    { 18374 }, -- Flamescarred Shoulders
-    { 18397 }, -- Elder Magus Pendant
-    { 18371 }, -- Mindtap Talisman
-    { 22309 }, -- Pattern: Big Bag of Enchantment
-    { 18350 }, -- Amplifying Cloak
-    { 18351 }, -- Magically Sealed Bracers
+    { 18374, 0.214 }, -- Flamescarred Shoulders
+    { 18397, 0.258 }, -- Elder Magus Pendant
+    { 18371, 0.151 }, -- Mindtap Talisman
+    { 22309, 0.226 }, -- Pattern: Big Bag of Enchantment
+    { 18350, 0.145 }, -- Amplifying Cloak
+    { 18351, 0.182 }, -- Magically Sealed Bracers
 })
 
 Data:AddBossLoot(349, { -- Immol'thar
-    { 18377 }, -- Quickdraw Gloves
-    { 18379 }, -- Odious Greaves
-    { 18381 }, -- Evil Eye Pendant
-    { 18391 }, -- Eyestalk Cord
-    { 18385 }, -- Robe of Everlasting Night
-    { 18384 }, -- Bile-etched Spaulders
-    { 18389 }, -- Cloak of the Cosmos
-    { 18394 }, -- Demon Howl Wristguards
-    { 18372 }, -- Blade of the New Moon
-    { 18370 }, -- Vigilance Charm
+    { 18377, 0.18 }, -- Quickdraw Gloves
+    { 18379, 0.131 }, -- Odious Greaves
+    { 18381, 0.246 }, -- Evil Eye Pendant
+    { 18391, 0.172 }, -- Eyestalk Cord
+    { 18385, 0.213 }, -- Robe of Everlasting Night
+    { 18384, 0.197 }, -- Bile-etched Spaulders
+    { 18389, 0.131 }, -- Cloak of the Cosmos
+    { 18394, 0.246 }, -- Demon Howl Wristguards
+    { 18372, 0.172 }, -- Blade of the New Moon
+    { 18370, 0.189 }, -- Vigilance Charm
 })
 
 Data:AddBossLoot(361, { -- Prince Tortheldrin
-    { 18382 }, -- Fluctuating Cloak
-    { 18395 }, -- Emerald Flame Ring
-    { 18380 }, -- Eldritch Reinforced Legplates
-    { 18378 }, -- Silvermoon Leggings
-    { 18396 }, -- Mind Carver
-    { 18392 }, -- Distracting Dagger
-    { 18376 }, -- Timeworn Mace
-    { 18375 }, -- Bracers of the Eclipse
-    { 18388 }, -- Stoneshatter
-    { 18373 }, -- Chestplate of Tranquility
+    { 18382, 0.197 }, -- Fluctuating Cloak
+    { 18395, 0.183 }, -- Emerald Flame Ring
+    { 18380, 0.178 }, -- Eldritch Reinforced Legplates
+    { 18378, 0.216 }, -- Silvermoon Leggings
+    { 18396, 0.231 }, -- Mind Carver
+    { 18392, 0.236 }, -- Distracting Dagger
+    { 18376, 0.149 }, -- Timeworn Mace
+    { 18375, 0.202 }, -- Bracers of the Eclipse
+    { 18388, 0.149 }, -- Stoneshatter
+    { 18373, 0.188 }, -- Chestplate of Tranquility
 })
 
 Data:AddBossLoot(2793, { -- Lord Hel'nurath

@@ -4,61 +4,61 @@ local Data = Spyglass.Data
 -- The Drowned City (map 2970)
 
 Data:AddBossLoot(3474, { -- Zul'Alai
-    { 274599 }, -- Oathbound Bracers
-    { 274600 }, -- Berserker Shackles
-    { 274598 }, -- Bloodslash Axe
+    { 274599, 0.342 }, -- Oathbound Bracers
+    { 274600, 0.337 }, -- Berserker Shackles
+    { 274598, 0.321 }, -- Bloodslash Axe
     { 271718 }, -- Linken's Boots of Iron
 })
 
 Data:AddBossLoot(3475, { -- Var'Taka
-    { 274602 }, -- Brinebelly Leggings
-    { 274601 }, -- Harpoon of Command
-    { 274613 }, -- Priestess Cloak
+    { 274602, 0.326 }, -- Brinebelly Leggings
+    { 274601, 0.342 }, -- Harpoon of Command
+    { 274613, 0.331 }, -- Priestess Cloak
     { 271718 }, -- Linken's Boots of Iron
 })
 
 Data:AddBossLoot(3476, { -- Captain Dreadrise
-    { 274603 }, -- Dreadfrost Saber
-    { 274604 }, -- Frosty Blunderbuss
-    { 274605 }, -- Briny Sash
+    { 274603, 0.334 }, -- Dreadfrost Saber
+    { 274604, 0.331 }, -- Frosty Blunderbuss
+    { 274605, 0.335 }, -- Briny Sash
     { 271718 }, -- Linken's Boots of Iron
 })
 
 Data:AddBossLoot(3478, { -- Deathless Guardians
-    { 274607 }, -- Viscera Spaulders
-    { 274606 }, -- Bloodspine Staff
-    { 274614 }, -- Knucklebone Ring
+    { 274607, 0.279 }, -- Viscera Spaulders
+    { 274606, 0.282 }, -- Bloodspine Staff
+    { 274614, 0.331 }, -- Knucklebone Ring
     { 271718 }, -- Linken's Boots of Iron
 })
 
 Data:AddBossLoot(3479, { -- Min'loth the Serpent
-    { 274608 }, -- Maw of Min'loth
-    { 274610 }, -- Ritual-Binder's Gloves
-    { 274609 }, -- Serpentbane Crown
+    { 274608, 0.317 }, -- Maw of Min'loth
+    { 274610, 0.333 }, -- Ritual-Binder's Gloves
+    { 274609, 0.349 }, -- Serpentbane Crown
     { 271718 }, -- Linken's Boots of Iron
 })
 
 Data:AddBossLoot(3511, { -- Primeval Elemental
-    { 274611 }, -- Robe of the Drowned
-    { 274612 }, -- Waterlogged Burial Shroud
-    { 274615 }, -- Heart of the Primeval
+    { 274611, 0.314 }, -- Robe of the Drowned
+    { 274612, 0.324 }, -- Waterlogged Burial Shroud
+    { 274615, 0.362 }, -- Heart of the Primeval
     { 271718 }, -- Linken's Boots of Iron
 })
 
 Data:AddBossLoot(-264177, { -- Gill
-    { 286646 }, -- Gill's Gills
-    { 286649 }, -- Tidebound Dagger
+    { 286646, 0.516 }, -- Gill's Gills
+    { 286649, 0.484 }, -- Tidebound Dagger
     { 271718 }, -- Linken's Boots of Iron
 })
 
 Data:AddBossLoot(-264172, { -- Umbra
-    { 286662 }, -- Deep-Dweller's Grips
-    { 286658 }, -- Umbral Scaled Belt
+    { 286662, 0.497 }, -- Deep-Dweller's Grips
+    { 286658, 0.503 }, -- Umbral Scaled Belt
 })
 
 Data:AddBossLoot(-260468, { -- "Pyromancer" Braxton
-    { 286650 }, -- Pyromancer's Baton
-    { 286651 }, -- Flamestarter's Signet
+    { 286650, 0.449 }, -- Pyromancer's Baton
+    { 286651, 0.551 }, -- Flamestarter's Signet
 })
 
 Data:AddTrashLoot(2970, {

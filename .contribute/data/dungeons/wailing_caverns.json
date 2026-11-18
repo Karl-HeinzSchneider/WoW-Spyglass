@@ -19,19 +19,23 @@
       "loot": [
         {
           "item": 5404,
-          "name": "Serpent's Shoulders"
+          "name": "Serpent's Shoulders",
+          "chance": 0.265
         },
         {
           "item": 273088,
-          "name": "Snake Eye Kaleidoscope"
+          "name": "Snake Eye Kaleidoscope",
+          "chance": 0.269
         },
         {
           "item": 10412,
-          "name": "Belt of the Fang"
+          "name": "Belt of the Fang",
+          "chance": 0.267
         },
         {
           "item": 6446,
-          "name": "Snakeskin Bag"
+          "name": "Snakeskin Bag",
+          "chance": 0.089
         },
         {
           "item": 9739,
@@ -39,7 +43,8 @@
         },
         {
           "item": 273098,
-          "name": "Blueprint: Field Guide"
+          "name": "Blueprint: Field Guide",
+          "chance": 0.058
         }
       ]
     },
@@ -53,15 +58,18 @@
       "loot": [
         {
           "item": 6460,
-          "name": "Cobrahn's Grasp"
+          "name": "Cobrahn's Grasp",
+          "chance": 0.304
         },
         {
           "item": 6465,
-          "name": "Robe of the Moccasin"
+          "name": "Robe of the Moccasin",
+          "chance": 0.304
         },
         {
           "item": 10410,
-          "name": "Leggings of the Fang"
+          "name": "Leggings of the Fang",
+          "chance": 0.31
         },
         {
           "item": 9738,
@@ -83,15 +91,18 @@
       "loot": [
         {
           "item": 13245,
-          "name": "Kresh's Back"
+          "name": "Kresh's Back",
+          "chance": 0.401
         },
         {
           "item": 273084,
-          "name": "Cloak of Hermitic Bliss"
+          "name": "Cloak of Hermitic Bliss",
+          "chance": 0.097
         },
         {
           "item": 6447,
-          "name": "Worn Turtle Shell Shield"
+          "name": "Worn Turtle Shell Shield",
+          "chance": 0.393
         }
       ]
     },
@@ -105,15 +116,18 @@
       "loot": [
         {
           "item": 6472,
-          "name": "Stinging Viper"
+          "name": "Stinging Viper",
+          "chance": 0.292
         },
         {
           "item": 6473,
-          "name": "Armor of the Fang"
+          "name": "Armor of the Fang",
+          "chance": 0.284
         },
         {
           "item": 273089,
-          "name": "Slither Cord"
+          "name": "Slither Cord",
+          "chance": 0.287
         },
         {
           "item": 9740,
@@ -121,15 +135,18 @@
         },
         {
           "item": 253938,
-          "name": "Pattern: Filigreed Pristine Leggings"
+          "name": "Pattern: Filigreed Pristine Leggings",
+          "chance": 0.0068
         },
         {
           "item": 253940,
-          "name": "Pattern: Filigreed Silky Leggings"
+          "name": "Pattern: Filigreed Silky Leggings",
+          "chance": 0.0039
         },
         {
           "item": 253946,
-          "name": "Pattern: Filigreed Pearly Leggings"
+          "name": "Pattern: Filigreed Pearly Leggings",
+          "chance": 0.0068
         }
       ]
     },
@@ -143,19 +160,23 @@
       "loot": [
         {
           "item": 6449,
-          "name": "Glowing Lizardscale Cloak"
+          "name": "Glowing Lizardscale Cloak",
+          "chance": 0.303
         },
         {
           "item": 273137,
-          "name": "Skum's Bucket"
+          "name": "Skum's Bucket",
+          "chance": 0.307
         },
         {
           "item": 6448,
-          "name": "Tail Spike"
+          "name": "Tail Spike",
+          "chance": 0.286
         },
         {
           "item": 253944,
-          "name": "Pattern: Filigreed Shadow Leggings"
+          "name": "Pattern: Filigreed Shadow Leggings",
+          "chance": 0.005
         }
       ]
     },
@@ -169,19 +190,23 @@
       "loot": [
         {
           "item": 6469,
-          "name": "Venomstrike"
+          "name": "Venomstrike",
+          "chance": 0.141
         },
         {
           "item": 5970,
-          "name": "Serpent Gloves"
+          "name": "Serpent Gloves",
+          "chance": 0.173
         },
         {
           "item": 6459,
-          "name": "Savage Trodders"
+          "name": "Savage Trodders",
+          "chance": 0.337
         },
         {
           "item": 10411,
-          "name": "Footpads of the Fang"
+          "name": "Footpads of the Fang",
+          "chance": 0.156
         },
         {
           "item": 9741,
@@ -189,11 +214,13 @@
         },
         {
           "item": 273087,
-          "name": "Blueprint: Journeyman Campfire"
+          "name": "Blueprint: Journeyman Campfire",
+          "chance": 0.061
         },
         {
           "item": 253942,
-          "name": "Pattern: Filigreed Flame Leggings"
+          "name": "Pattern: Filigreed Flame Leggings",
+          "chance": 0.0035
         }
       ]
     },
@@ -207,19 +234,23 @@
       "loot": [
         {
           "item": 6630,
-          "name": "Seedcloud Buckler"
+          "name": "Seedcloud Buckler",
+          "chance": 0.322
         },
         {
           "item": 6631,
-          "name": "Living Root"
+          "name": "Living Root",
+          "chance": 0.316
         },
         {
           "item": 6629,
-          "name": "Sporid Cape"
+          "name": "Sporid Cape",
+          "chance": 0.329
         },
         {
           "item": 253948,
-          "name": "Pattern: Filigreed Shining Leggings"
+          "name": "Pattern: Filigreed Shining Leggings",
+          "chance": 0.0041
         }
       ]
     },
@@ -233,15 +264,18 @@
       "loot": [
         {
           "item": 6461,
-          "name": "Slime-encrusted Pads"
+          "name": "Slime-encrusted Pads",
+          "chance": 0.273
         },
         {
           "item": 6463,
-          "name": "Deep Fathom Ring"
+          "name": "Deep Fathom Ring",
+          "chance": 0.291
         },
         {
           "item": 6627,
-          "name": "Mutant Scale Breastplate"
+          "name": "Mutant Scale Breastplate",
+          "chance": 0.288
         },
         {
           "item": 10441,
@@ -263,11 +297,13 @@
       "loot": [
         {
           "item": 5243,
-          "name": "Firebelcher"
+          "name": "Firebelcher",
+          "chance": 0.393
         },
         {
           "item": 6632,
-          "name": "Feyscale Cloak"
+          "name": "Feyscale Cloak",
+          "chance": 0.461
         },
         {
           "item": 252781,

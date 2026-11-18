@@ -4,43 +4,43 @@ local Data = Spyglass.Data
 -- Dire Maul: East (map 429)
 
 Data:AddBossLoot(343, { -- Zevrim Thornhoof
-    { 18313 }, -- Helm of Awareness
-    { 18323 }, -- Satyr's Bow
-    { 18319 }, -- Fervent Helm
+    { 18313, 0.22 }, -- Helm of Awareness
+    { 18323, 0.145 }, -- Satyr's Bow
+    { 18319, 0.235 }, -- Fervent Helm
 })
 
 Data:AddBossLoot(344, { -- Hydrospawn
-    { 18322 }, -- Waterspout Boots
-    { 18317 }, -- Tempest Talisman
-    { 18324 }, -- Waveslicer
-    { 7091 }, -- Pattern: Truefaith Gloves
-    { 18305 }, -- Breakwater Legguards
-    { 18307 }, -- Riptide Shoes
+    { 18322, 0.226 }, -- Waterspout Boots
+    { 18317, 0.129 }, -- Tempest Talisman
+    { 18324, 0.21 }, -- Waveslicer
+    { 7091, 0.024 }, -- Pattern: Truefaith Gloves
+    { 18305, 0.177 }, -- Breakwater Legguards
+    { 18307, 0.198 }, -- Riptide Shoes
 })
 
 Data:AddBossLoot(345, { -- Lethtendris
-    { 18325 }, -- Felhide Cap
-    { 18311 }, -- Quel'dorai Channeling Rod
-    { 18302 }, -- Band of Vigor
+    { 18325, 0.228 }, -- Felhide Cap
+    { 18311, 0.216 }, -- Quel'dorai Channeling Rod
+    { 18302, 0.241 }, -- Band of Vigor
     { 18354 }, -- Pimgib's Collar
 })
 
 Data:AddBossLoot(2792, { -- Pusillin
-    { 18316 }, -- Obsidian Bauble
-    { 18267 }, -- Recipe: Runn Tum Tuber Surprise
+    { 18316, 0.244 }, -- Obsidian Bauble
+    { 18267, 0.88 }, -- Recipe: Runn Tum Tuber Surprise
 })
 
 Data:AddBossLoot(346, { -- Alzzin the Wildshaper
-    { 18309 }, -- Gloves of Restoration
-    { 18310 }, -- Fiendish Machete
-    { 18312 }, -- Energized Chestplate
-    { 18314 }, -- Ring of Demonic Guile
-    { 18315 }, -- Ring of Demonic Potency
-    { 18318 }, -- Merciful Greaves
-    { 18321 }, -- Energetic Rod
-    { 18326 }, -- Razor Gauntlets
-    { 18327 }, -- Whipvine Cord
-    { 18328 }, -- Shadewood Cloak
+    { 18309, 0.201 }, -- Gloves of Restoration
+    { 18310, 0.213 }, -- Fiendish Machete
+    { 18312, 0.157 }, -- Energized Chestplate
+    { 18314, 0.142 }, -- Ring of Demonic Guile
+    { 18315, 0.173 }, -- Ring of Demonic Potency
+    { 18318, 0.173 }, -- Merciful Greaves
+    { 18321, 0.181 }, -- Energetic Rod
+    { 18326, 0.205 }, -- Razor Gauntlets
+    { 18327, 0.161 }, -- Whipvine Cord
+    { 18328, 0.193 }, -- Shadewood Cloak
 })
 
 Data:AddTrashLoot(42901, {

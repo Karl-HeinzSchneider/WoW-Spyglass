@@ -826,6 +826,7 @@
       "requiredLevel": 50,
       "xp": 3800,
       "objective": "Collect a sample of air, fire, earth and water for Bath'rah the Windwatcher.",
+      "description": "Bring Elemental Air, Elemental Earth, Elemental Fire, and Elemental Water.",
       "start": {
         "npc": "Beram Skychaser",
         "location": [1456, 22.2, 19],
@@ -838,13 +839,34 @@
       "items": []
     },
     {
+      "id": 8411,
+      "name": "Mastering the Elements",
+      "side": "Alliance",
+      "requiredLevel": 50,
+      "xp": 3800,
+      "objective": "Bring the elements earth, air, fire and water to Bath'rah the Windwatcher.",
+      "description": "Bring Elemental Air, Elemental Earth, Elemental Fire, and Elemental Water.",
+      "start": {
+        "npc": "Bath'rah the Windwatcher",
+        "location": [1416, 80.4, 66.8],
+        "description": "Alterac Mountains"
+      },
+      "turnIn": {
+        "npc": "Bath'rah the Windwatcher",
+        "location": [1416, 80.4, 66.8],
+        "description": "Alterac Mountains"
+      },
+      "items": []
+    },
+    {
       "id": 8412,
       "name": "Spirit Totem",
-      "side": "Horde",
+      "side": "Both",
       "requiredLevel": 50,
       "xp": 5100,
       "objective": "Bring the pieces for the spirit totem to Bath'rah the Windwatcher.",
-      "requires": [8410],
+      "description": "Horde shamans start with Elemental Mastery. Alliance shamans start with Mastering the Elements.",
+      "requires": [8410, 8411],
       "start": {
         "npc": "Bath'rah the Windwatcher",
         "location": [1416, 80.4, 66.8],
@@ -860,7 +882,7 @@
     {
       "id": 8413,
       "name": "Da Voodoo",
-      "side": "Horde",
+      "side": "Both",
       "class": "Shaman",
       "requiredLevel": 50,
       "xp": 12400,

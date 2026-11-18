@@ -18,39 +18,48 @@
       "loot": [
         {
           "item": 16734,
-          "name": "Boots of Valor"
+          "name": "Boots of Valor",
+          "chance": 0.2
         },
         {
           "item": 13960,
-          "name": "Heart of the Fiend"
+          "name": "Heart of the Fiend",
+          "chance": 0.232
         },
         {
           "item": 13967,
-          "name": "Windreaver Greaves"
+          "name": "Windreaver Greaves",
+          "chance": 0.184
         },
         {
           "item": 13969,
-          "name": "Loomguard Armbraces"
+          "name": "Loomguard Armbraces",
+          "chance": 0.184
         },
         {
           "item": 14024,
-          "name": "Frightalon"
+          "name": "Frightalon",
+          "chance": 0.268
         },
         {
           "item": 13957,
-          "name": "Gargoyle Slashers"
+          "name": "Gargoyle Slashers",
+          "chance": 0.164
         },
         {
           "item": 13955,
-          "name": "Stoneform Shoulders"
+          "name": "Stoneform Shoulders",
+          "chance": 0.24
         },
         {
           "item": 13983,
-          "name": "Gravestone War Axe"
+          "name": "Gravestone War Axe",
+          "chance": 0.232
         },
         {
           "item": 13956,
-          "name": "Clutch of Andros"
+          "name": "Clutch of Andros",
+          "chance": 0.196
         }
       ]
     },
@@ -63,31 +72,38 @@
       "loot": [
         {
           "item": 16701,
-          "name": "Dreadmist Mantle"
+          "name": "Dreadmist Mantle",
+          "chance": 0.2
         },
         {
           "item": 14545,
-          "name": "Ghostloom Leggings"
+          "name": "Ghostloom Leggings",
+          "chance": 0.125
         },
         {
           "item": 14541,
-          "name": "Barovian Family Sword"
+          "name": "Barovian Family Sword",
+          "chance": 0.12
         },
         {
           "item": 14548,
-          "name": "Royal Cap Spaulders"
+          "name": "Royal Cap Spaulders",
+          "chance": 0.095
         },
         {
           "item": 18690,
-          "name": "Wraithplate Leggings"
+          "name": "Wraithplate Leggings",
+          "chance": 0.1
         },
         {
           "item": 18689,
-          "name": "Phantasmal Cloak"
+          "name": "Phantasmal Cloak",
+          "chance": 0.115
         },
         {
           "item": 22394,
-          "name": "Staff of Metanoia"
+          "name": "Staff of Metanoia",
+          "chance": 0.14
         }
       ]
     },
@@ -100,31 +116,38 @@
       "loot": [
         {
           "item": 16711,
-          "name": "Shadowcraft Boots"
+          "name": "Shadowcraft Boots",
+          "chance": 0.161
         },
         {
           "item": 14528,
-          "name": "Rattlecage Buckler"
+          "name": "Rattlecage Buckler",
+          "chance": 0.11
         },
         {
           "item": 14531,
-          "name": "Frightskull Shaft"
+          "name": "Frightskull Shaft",
+          "chance": 0.138
         },
         {
           "item": 14537,
-          "name": "Corpselight Greaves"
+          "name": "Corpselight Greaves",
+          "chance": 0.126
         },
         {
           "item": 14538,
-          "name": "Deadwalker Mantle"
+          "name": "Deadwalker Mantle",
+          "chance": 0.165
         },
         {
           "item": 14539,
-          "name": "Bone Ring Helm"
+          "name": "Bone Ring Helm",
+          "chance": 0.11
         },
         {
           "item": 18686,
-          "name": "Bone Golem Shoulders"
+          "name": "Bone Golem Shoulders",
+          "chance": 0.134
         }
       ]
     },
@@ -137,11 +160,13 @@
       "loot": [
         {
           "item": 14576,
-          "name": "Ebon Hilt of Marduk"
+          "name": "Ebon Hilt of Marduk",
+          "chance": 0.078
         },
         {
           "item": 18692,
-          "name": "Death Knight Sabatons"
+          "name": "Death Knight Sabatons",
+          "chance": 0.044
         }
       ]
     },
@@ -154,15 +179,18 @@
       "loot": [
         {
           "item": 14577,
-          "name": "Skullsmoke Pants"
+          "name": "Skullsmoke Pants",
+          "chance": 0.054
         },
         {
           "item": 18691,
-          "name": "Dark Advisor's Pendant"
+          "name": "Dark Advisor's Pendant",
+          "chance": 0.043
         },
         {
           "item": 273121,
-          "name": "Blueprint: Sewing Machine"
+          "name": "Blueprint: Sewing Machine",
+          "chance": 0.054
         }
       ]
     },
@@ -210,63 +238,78 @@
       "loot": [
         {
           "item": 16689,
-          "name": "Magister's Mantle"
+          "name": "Magister's Mantle",
+          "chance": 0.193
         },
         {
           "item": 14487,
-          "name": "Bonechill Hammer"
+          "name": "Bonechill Hammer",
+          "chance": 0.189
         },
         {
           "item": 14502,
-          "name": "Frostbite Girdle"
+          "name": "Frostbite Girdle",
+          "chance": 0.14
         },
         {
           "item": 18694,
-          "name": "Shadowy Mail Greaves"
+          "name": "Shadowy Mail Greaves",
+          "chance": 0.123
         },
         {
           "item": 18696,
-          "name": "Intricately Runed Shield"
+          "name": "Intricately Runed Shield",
+          "chance": 0.168
         },
         {
           "item": 13952,
-          "name": "Iceblade Hacker"
+          "name": "Iceblade Hacker",
+          "chance": 0.158
         },
         {
           "item": 14340,
-          "name": "Freezing Lich Robes"
+          "name": "Freezing Lich Robes",
+          "chance": 0.133
         },
         {
           "item": 14522,
-          "name": "Maelstrom Leggings"
+          "name": "Maelstrom Leggings",
+          "chance": 0.133
         },
         {
           "item": 14525,
-          "name": "Boneclenched Gauntlets"
+          "name": "Boneclenched Gauntlets",
+          "chance": 0.133
         },
         {
           "item": 18693,
-          "name": "Shivery Handwraps"
+          "name": "Shivery Handwraps",
+          "chance": 0.158
         },
         {
           "item": 13521,
-          "name": "Recipe: Flask of Supreme Power"
+          "name": "Recipe: Flask of Supreme Power",
+          "chance": 0.046
         },
         {
           "item": 273112,
-          "name": "Blueprint: Alchemy Laboratory"
+          "name": "Blueprint: Alchemy Laboratory",
+          "chance": 0.025
         },
         {
           "item": 13314,
-          "name": "Alanna's Embrace"
+          "name": "Alanna's Embrace",
+          "chance": 0.042
         },
         {
           "item": 14503,
-          "name": "Death's Clutch"
+          "name": "Death's Clutch",
+          "chance": 0.165
         },
         {
           "item": 18695,
-          "name": "Spellbound Tome"
+          "name": "Spellbound Tome",
+          "chance": 0.179
         }
       ]
     },
@@ -279,115 +322,143 @@
       "loot": [
         {
           "item": 16710,
-          "name": "Shadowcraft Bracers"
+          "name": "Shadowcraft Bracers",
+          "chance": 0.04
         },
         {
           "item": 23201,
-          "name": "Libram of Divinity"
+          "name": "Libram of Divinity",
+          "chance": 0.012
         },
         {
           "item": 23200,
-          "name": "Totem of Sustaining"
+          "name": "Totem of Sustaining",
+          "chance": 0.032
         },
         {
           "item": 14614,
-          "name": "Bloodmail Belt"
+          "name": "Bloodmail Belt",
+          "chance": 0.012
         },
         {
           "item": 14616,
-          "name": "Bloodmail Boots"
+          "name": "Bloodmail Boots",
+          "chance": 0.0079
         },
         {
           "item": 14615,
-          "name": "Bloodmail Gauntlets"
+          "name": "Bloodmail Gauntlets",
+          "chance": 0.0079
         },
         {
           "item": 14611,
-          "name": "Bloodmail Hauberk"
+          "name": "Bloodmail Hauberk",
+          "chance": 0.016
         },
         {
           "item": 14612,
-          "name": "Bloodmail Legguards"
+          "name": "Bloodmail Legguards",
+          "chance": 0.004
         },
         {
           "item": 14637,
-          "name": "Cadaverous Armor"
+          "name": "Cadaverous Armor",
+          "chance": 0.0079
         },
         {
           "item": 14636,
-          "name": "Cadaverous Belt"
+          "name": "Cadaverous Belt",
+          "chance": 0.012
         },
         {
           "item": 14640,
-          "name": "Cadaverous Gloves"
+          "name": "Cadaverous Gloves",
+          "chance": 0.004
         },
         {
           "item": 14638,
-          "name": "Cadaverous Leggings"
+          "name": "Cadaverous Leggings",
+          "chance": 0.004
         },
         {
           "item": 14641,
-          "name": "Cadaverous Walkers"
+          "name": "Cadaverous Walkers",
+          "chance": 0.012
         },
         {
           "item": 14624,
-          "name": "Deathbone Chestplate"
+          "name": "Deathbone Chestplate",
+          "chance": 0.0079
         },
         {
           "item": 14622,
-          "name": "Deathbone Gauntlets"
+          "name": "Deathbone Gauntlets",
+          "chance": 0.0079
         },
         {
           "item": 14620,
-          "name": "Deathbone Girdle"
+          "name": "Deathbone Girdle",
+          "chance": 0.0079
         },
         {
           "item": 14623,
-          "name": "Deathbone Legguards"
+          "name": "Deathbone Legguards",
+          "chance": 0.0079
         },
         {
           "item": 14621,
-          "name": "Deathbone Sabatons"
+          "name": "Deathbone Sabatons",
+          "chance": 0.004
         },
         {
           "item": 18684,
-          "name": "Dimly Opalescent Ring"
+          "name": "Dimly Opalescent Ring",
+          "chance": 0.004
         },
         {
           "item": 18682,
-          "name": "Ghoul Skin Leggings"
+          "name": "Ghoul Skin Leggings",
+          "chance": 0.012
         },
         {
           "item": 18683,
-          "name": "Hammer of the Vesper"
+          "name": "Hammer of the Vesper",
+          "chance": 0.004
         },
         {
           "item": 14631,
-          "name": "Necropile Boots"
+          "name": "Necropile Boots",
+          "chance": 0.0079
         },
         {
           "item": 14629,
-          "name": "Necropile Cuffs"
+          "name": "Necropile Cuffs",
+          "chance": 0.028
         },
         {
           "item": 14632,
-          "name": "Necropile Leggings"
+          "name": "Necropile Leggings",
+          "chance": 0.016
         },
         {
           "item": 14633,
-          "name": "Necropile Mantle"
+          "name": "Necropile Mantle",
+          "chance": 0.004
         },
         {
           "item": 14626,
-          "name": "Necropile Robe"
+          "name": "Necropile Robe",
+          "chance": 0.012
         },
         {
           "item": 18680,
-          "name": "Ancient Bone Bow"
+          "name": "Ancient Bone Bow",
+          "chance": 0.004
         },
         {
           "item": 18681,
-          "name": "Burial Shawl"
+          "name": "Burial Shawl",
+          "chance": 0.016
         }
       ]
     },
@@ -400,123 +471,153 @@
       "loot": [
         {
           "item": 16684,
-          "name": "Magister's Gloves"
+          "name": "Magister's Gloves",
+          "chance": 0.179
         },
         {
           "item": 14617,
-          "name": "Sawbones Shirt"
+          "name": "Sawbones Shirt",
+          "chance": 0.014
         },
         {
           "item": 23201,
-          "name": "Libram of Divinity"
+          "name": "Libram of Divinity",
+          "chance": 0.104
         },
         {
           "item": 23200,
-          "name": "Totem of Sustaining"
+          "name": "Totem of Sustaining",
+          "chance": 0.065
         },
         {
           "item": 14614,
-          "name": "Bloodmail Belt"
+          "name": "Bloodmail Belt",
+          "chance": 0.018
         },
         {
           "item": 14616,
-          "name": "Bloodmail Boots"
+          "name": "Bloodmail Boots",
+          "chance": 0.039
         },
         {
           "item": 14615,
-          "name": "Bloodmail Gauntlets"
+          "name": "Bloodmail Gauntlets",
+          "chance": 0.036
         },
         {
           "item": 14611,
-          "name": "Bloodmail Hauberk"
+          "name": "Bloodmail Hauberk",
+          "chance": 0.025
         },
         {
           "item": 14612,
-          "name": "Bloodmail Legguards"
+          "name": "Bloodmail Legguards",
+          "chance": 0.025
         },
         {
           "item": 14637,
-          "name": "Cadaverous Armor"
+          "name": "Cadaverous Armor",
+          "chance": 0.022
         },
         {
           "item": 14636,
-          "name": "Cadaverous Belt"
+          "name": "Cadaverous Belt",
+          "chance": 0.014
         },
         {
           "item": 14640,
-          "name": "Cadaverous Gloves"
+          "name": "Cadaverous Gloves",
+          "chance": 0.032
         },
         {
           "item": 14638,
-          "name": "Cadaverous Leggings"
+          "name": "Cadaverous Leggings",
+          "chance": 0.039
         },
         {
           "item": 14641,
-          "name": "Cadaverous Walkers"
+          "name": "Cadaverous Walkers",
+          "chance": 0.032
         },
         {
           "item": 14624,
-          "name": "Deathbone Chestplate"
+          "name": "Deathbone Chestplate",
+          "chance": 0.014
         },
         {
           "item": 14622,
-          "name": "Deathbone Gauntlets"
+          "name": "Deathbone Gauntlets",
+          "chance": 0.018
         },
         {
           "item": 14620,
-          "name": "Deathbone Girdle"
+          "name": "Deathbone Girdle",
+          "chance": 0.011
         },
         {
           "item": 14623,
-          "name": "Deathbone Legguards"
+          "name": "Deathbone Legguards",
+          "chance": 0.022
         },
         {
           "item": 14621,
-          "name": "Deathbone Sabatons"
+          "name": "Deathbone Sabatons",
+          "chance": 0.022
         },
         {
           "item": 18684,
-          "name": "Dimly Opalescent Ring"
+          "name": "Dimly Opalescent Ring",
+          "chance": 0.025
         },
         {
           "item": 18682,
-          "name": "Ghoul Skin Leggings"
+          "name": "Ghoul Skin Leggings",
+          "chance": 0.0036
         },
         {
           "item": 18683,
-          "name": "Hammer of the Vesper"
+          "name": "Hammer of the Vesper",
+          "chance": 0.014
         },
         {
           "item": 14631,
-          "name": "Necropile Boots"
+          "name": "Necropile Boots",
+          "chance": 0.036
         },
         {
           "item": 14629,
-          "name": "Necropile Cuffs"
+          "name": "Necropile Cuffs",
+          "chance": 0.032
         },
         {
           "item": 14632,
-          "name": "Necropile Leggings"
+          "name": "Necropile Leggings",
+          "chance": 0.025
         },
         {
           "item": 14633,
-          "name": "Necropile Mantle"
+          "name": "Necropile Mantle",
+          "chance": 0.032
         },
         {
           "item": 14626,
-          "name": "Necropile Robe"
+          "name": "Necropile Robe",
+          "chance": 0.018
         },
         {
           "item": 18680,
-          "name": "Ancient Bone Bow"
+          "name": "Ancient Bone Bow",
+          "chance": 0.022
         },
         {
           "item": 18681,
-          "name": "Burial Shawl"
+          "name": "Burial Shawl",
+          "chance": 0.018
         },
         {
           "item": 273118,
-          "name": "Blueprint: Plague Doctor's Laboratory"
+          "name": "Blueprint: Plague Doctor's Laboratory",
+          "chance": 0.025
         }
       ]
     },
@@ -529,115 +630,143 @@
       "loot": [
         {
           "item": 16705,
-          "name": "Dreadmist Wraps"
+          "name": "Dreadmist Wraps",
+          "chance": 0.211
         },
         {
           "item": 23201,
-          "name": "Libram of Divinity"
+          "name": "Libram of Divinity",
+          "chance": 0.0041
         },
         {
           "item": 23200,
-          "name": "Totem of Sustaining"
+          "name": "Totem of Sustaining",
+          "chance": 0.0088
         },
         {
           "item": 14614,
-          "name": "Bloodmail Belt"
+          "name": "Bloodmail Belt",
+          "chance": 0.0044
         },
         {
           "item": 14616,
-          "name": "Bloodmail Boots"
+          "name": "Bloodmail Boots",
+          "chance": 0.013
         },
         {
           "item": 14615,
-          "name": "Bloodmail Gauntlets"
+          "name": "Bloodmail Gauntlets",
+          "chance": 0.022
         },
         {
           "item": 14611,
-          "name": "Bloodmail Hauberk"
+          "name": "Bloodmail Hauberk",
+          "chance": 0.011
         },
         {
           "item": 14612,
-          "name": "Bloodmail Legguards"
+          "name": "Bloodmail Legguards",
+          "chance": 0.022
         },
         {
           "item": 14637,
-          "name": "Cadaverous Armor"
+          "name": "Cadaverous Armor",
+          "chance": 0.012
         },
         {
           "item": 14636,
-          "name": "Cadaverous Belt"
+          "name": "Cadaverous Belt",
+          "chance": 0.0044
         },
         {
           "item": 14640,
-          "name": "Cadaverous Gloves"
+          "name": "Cadaverous Gloves",
+          "chance": 0.0088
         },
         {
           "item": 14638,
-          "name": "Cadaverous Leggings"
+          "name": "Cadaverous Leggings",
+          "chance": 0.022
         },
         {
           "item": 14641,
-          "name": "Cadaverous Walkers"
+          "name": "Cadaverous Walkers",
+          "chance": 0.0044
         },
         {
           "item": 14624,
-          "name": "Deathbone Chestplate"
+          "name": "Deathbone Chestplate",
+          "chance": 0.013
         },
         {
           "item": 14622,
-          "name": "Deathbone Gauntlets"
+          "name": "Deathbone Gauntlets",
+          "chance": 0.022
         },
         {
           "item": 14620,
-          "name": "Deathbone Girdle"
+          "name": "Deathbone Girdle",
+          "chance": 0.018
         },
         {
           "item": 14623,
-          "name": "Deathbone Legguards"
+          "name": "Deathbone Legguards",
+          "chance": 0.022
         },
         {
           "item": 14621,
-          "name": "Deathbone Sabatons"
+          "name": "Deathbone Sabatons",
+          "chance": 0.022
         },
         {
           "item": 18684,
-          "name": "Dimly Opalescent Ring"
+          "name": "Dimly Opalescent Ring",
+          "chance": 0.012
         },
         {
           "item": 18682,
-          "name": "Ghoul Skin Leggings"
+          "name": "Ghoul Skin Leggings",
+          "chance": 0.012
         },
         {
           "item": 18683,
-          "name": "Hammer of the Vesper"
+          "name": "Hammer of the Vesper",
+          "chance": 0.0088
         },
         {
           "item": 14631,
-          "name": "Necropile Boots"
+          "name": "Necropile Boots",
+          "chance": 0.0044
         },
         {
           "item": 14629,
-          "name": "Necropile Cuffs"
+          "name": "Necropile Cuffs",
+          "chance": 0.0044
         },
         {
           "item": 14632,
-          "name": "Necropile Leggings"
+          "name": "Necropile Leggings",
+          "chance": 0.022
         },
         {
           "item": 14633,
-          "name": "Necropile Mantle"
+          "name": "Necropile Mantle",
+          "chance": 0.022
         },
         {
           "item": 14626,
-          "name": "Necropile Robe"
+          "name": "Necropile Robe",
+          "chance": 0.0088
         },
         {
           "item": 18680,
-          "name": "Ancient Bone Bow"
+          "name": "Ancient Bone Bow",
+          "chance": 0.0088
         },
         {
           "item": 18681,
-          "name": "Burial Shawl"
+          "name": "Burial Shawl",
+          "chance": 0.012
         }
       ]
     },
@@ -650,115 +779,143 @@
       "loot": [
         {
           "item": 16716,
-          "name": "Wildheart Belt"
+          "name": "Wildheart Belt",
+          "chance": 0.034
         },
         {
           "item": 23201,
-          "name": "Libram of Divinity"
+          "name": "Libram of Divinity",
+          "chance": 0.0075
         },
         {
           "item": 23200,
-          "name": "Totem of Sustaining"
+          "name": "Totem of Sustaining",
+          "chance": 0.026
         },
         {
           "item": 14614,
-          "name": "Bloodmail Belt"
+          "name": "Bloodmail Belt",
+          "chance": 0.011
         },
         {
           "item": 14616,
-          "name": "Bloodmail Boots"
+          "name": "Bloodmail Boots",
+          "chance": 0.011
         },
         {
           "item": 14615,
-          "name": "Bloodmail Gauntlets"
+          "name": "Bloodmail Gauntlets",
+          "chance": 0.011
         },
         {
           "item": 14611,
-          "name": "Bloodmail Hauberk"
+          "name": "Bloodmail Hauberk",
+          "chance": 0.0037
         },
         {
           "item": 14612,
-          "name": "Bloodmail Legguards"
+          "name": "Bloodmail Legguards",
+          "chance": 0.0037
         },
         {
           "item": 14637,
-          "name": "Cadaverous Armor"
+          "name": "Cadaverous Armor",
+          "chance": 0.015
         },
         {
           "item": 14636,
-          "name": "Cadaverous Belt"
+          "name": "Cadaverous Belt",
+          "chance": 0.022
         },
         {
           "item": 14640,
-          "name": "Cadaverous Gloves"
+          "name": "Cadaverous Gloves",
+          "chance": 0.0037
         },
         {
           "item": 14638,
-          "name": "Cadaverous Leggings"
+          "name": "Cadaverous Leggings",
+          "chance": 0.011
         },
         {
           "item": 14641,
-          "name": "Cadaverous Walkers"
+          "name": "Cadaverous Walkers",
+          "chance": 0.0075
         },
         {
           "item": 14624,
-          "name": "Deathbone Chestplate"
+          "name": "Deathbone Chestplate",
+          "chance": 0.011
         },
         {
           "item": 14622,
-          "name": "Deathbone Gauntlets"
+          "name": "Deathbone Gauntlets",
+          "chance": 0.019
         },
         {
           "item": 14620,
-          "name": "Deathbone Girdle"
+          "name": "Deathbone Girdle",
+          "chance": 0.0075
         },
         {
           "item": 14623,
-          "name": "Deathbone Legguards"
+          "name": "Deathbone Legguards",
+          "chance": 0.015
         },
         {
           "item": 14621,
-          "name": "Deathbone Sabatons"
+          "name": "Deathbone Sabatons",
+          "chance": 0.0075
         },
         {
           "item": 18684,
-          "name": "Dimly Opalescent Ring"
+          "name": "Dimly Opalescent Ring",
+          "chance": 0.0037
         },
         {
           "item": 18682,
-          "name": "Ghoul Skin Leggings"
+          "name": "Ghoul Skin Leggings",
+          "chance": 0.0075
         },
         {
           "item": 18683,
-          "name": "Hammer of the Vesper"
+          "name": "Hammer of the Vesper",
+          "chance": 0.019
         },
         {
           "item": 14631,
-          "name": "Necropile Boots"
+          "name": "Necropile Boots",
+          "chance": 0.0037
         },
         {
           "item": 14629,
-          "name": "Necropile Cuffs"
+          "name": "Necropile Cuffs",
+          "chance": 0.0037
         },
         {
           "item": 14632,
-          "name": "Necropile Leggings"
+          "name": "Necropile Leggings",
+          "chance": 0.0037
         },
         {
           "item": 14633,
-          "name": "Necropile Mantle"
+          "name": "Necropile Mantle",
+          "chance": 0.0037
         },
         {
           "item": 14626,
-          "name": "Necropile Robe"
+          "name": "Necropile Robe",
+          "chance": 0.0075
         },
         {
           "item": 18680,
-          "name": "Ancient Bone Bow"
+          "name": "Ancient Bone Bow",
+          "chance": 0.011
         },
         {
           "item": 18681,
-          "name": "Burial Shawl"
+          "name": "Burial Shawl",
+          "chance": 0.0075
         }
       ]
     },
@@ -771,115 +928,143 @@
       "loot": [
         {
           "item": 14626,
-          "name": "Necropile Robe"
+          "name": "Necropile Robe",
+          "chance": 0.014
         },
         {
           "item": 14637,
-          "name": "Cadaverous Armor"
+          "name": "Cadaverous Armor",
+          "chance": 0.032
         },
         {
           "item": 18680,
-          "name": "Ancient Bone Bow"
+          "name": "Ancient Bone Bow",
+          "chance": 0.023
         },
         {
           "item": 18681,
-          "name": "Burial Shawl"
+          "name": "Burial Shawl",
+          "chance": 0.0046
         },
         {
           "item": 18682,
-          "name": "Ghoul Skin Leggings"
+          "name": "Ghoul Skin Leggings",
+          "chance": 0.028
         },
         {
           "item": 18683,
-          "name": "Hammer of the Vesper"
+          "name": "Hammer of the Vesper",
+          "chance": 0.037
         },
         {
           "item": 18684,
-          "name": "Dimly Opalescent Ring"
+          "name": "Dimly Opalescent Ring",
+          "chance": 0.037
         },
         {
           "item": 14611,
-          "name": "Bloodmail Hauberk"
+          "name": "Bloodmail Hauberk",
+          "chance": 0.032
         },
         {
           "item": 14624,
-          "name": "Deathbone Chestplate"
+          "name": "Deathbone Chestplate",
+          "chance": 0.018
         },
         {
           "item": 16722,
-          "name": "Lightforge Bracers"
+          "name": "Lightforge Bracers",
+          "chance": 0.023
         },
         {
           "item": 23201,
-          "name": "Libram of Divinity"
+          "name": "Libram of Divinity",
+          "chance": 0.11
         },
         {
           "item": 23200,
-          "name": "Totem of Sustaining"
+          "name": "Totem of Sustaining",
+          "chance": 0.133
         },
         {
           "item": 14614,
-          "name": "Bloodmail Belt"
+          "name": "Bloodmail Belt",
+          "chance": 0.028
         },
         {
           "item": 14616,
-          "name": "Bloodmail Boots"
+          "name": "Bloodmail Boots",
+          "chance": 0.023
         },
         {
           "item": 14615,
-          "name": "Bloodmail Gauntlets"
+          "name": "Bloodmail Gauntlets",
+          "chance": 0.023
         },
         {
           "item": 14612,
-          "name": "Bloodmail Legguards"
+          "name": "Bloodmail Legguards",
+          "chance": 0.028
         },
         {
           "item": 14636,
-          "name": "Cadaverous Belt"
+          "name": "Cadaverous Belt",
+          "chance": 0.037
         },
         {
           "item": 14640,
-          "name": "Cadaverous Gloves"
+          "name": "Cadaverous Gloves",
+          "chance": 0.023
         },
         {
           "item": 14638,
-          "name": "Cadaverous Leggings"
+          "name": "Cadaverous Leggings",
+          "chance": 0.018
         },
         {
           "item": 14641,
-          "name": "Cadaverous Walkers"
+          "name": "Cadaverous Walkers",
+          "chance": 0.041
         },
         {
           "item": 14622,
-          "name": "Deathbone Gauntlets"
+          "name": "Deathbone Gauntlets",
+          "chance": 0.0092
         },
         {
           "item": 14620,
-          "name": "Deathbone Girdle"
+          "name": "Deathbone Girdle",
+          "chance": 0.0092
         },
         {
           "item": 14623,
-          "name": "Deathbone Legguards"
+          "name": "Deathbone Legguards",
+          "chance": 0.055
         },
         {
           "item": 14621,
-          "name": "Deathbone Sabatons"
+          "name": "Deathbone Sabatons",
+          "chance": 0.018
         },
         {
           "item": 14631,
-          "name": "Necropile Boots"
+          "name": "Necropile Boots",
+          "chance": 0.023
         },
         {
           "item": 14629,
-          "name": "Necropile Cuffs"
+          "name": "Necropile Cuffs",
+          "chance": 0.023
         },
         {
           "item": 14632,
-          "name": "Necropile Leggings"
+          "name": "Necropile Leggings",
+          "chance": 0.023
         },
         {
           "item": 14633,
-          "name": "Necropile Mantle"
+          "name": "Necropile Mantle",
+          "chance": 0.032
         }
       ]
     },
@@ -892,23 +1077,28 @@
       "loot": [
         {
           "item": 23201,
-          "name": "Libram of Divinity"
+          "name": "Libram of Divinity",
+          "chance": 0.032
         },
         {
           "item": 23200,
-          "name": "Totem of Sustaining"
+          "name": "Totem of Sustaining",
+          "chance": 0.049
         },
         {
           "item": 14614,
-          "name": "Bloodmail Belt"
+          "name": "Bloodmail Belt",
+          "chance": 0.004
         },
         {
           "item": 14616,
-          "name": "Bloodmail Boots"
+          "name": "Bloodmail Boots",
+          "chance": 0.004
         },
         {
           "item": 14615,
-          "name": "Bloodmail Gauntlets"
+          "name": "Bloodmail Gauntlets",
+          "chance": 0.004
         },
         {
           "item": 14611,
@@ -916,55 +1106,68 @@
         },
         {
           "item": 14612,
-          "name": "Bloodmail Legguards"
+          "name": "Bloodmail Legguards",
+          "chance": 0.024
         },
         {
           "item": 14637,
-          "name": "Cadaverous Armor"
+          "name": "Cadaverous Armor",
+          "chance": 0.004
         },
         {
           "item": 14636,
-          "name": "Cadaverous Belt"
+          "name": "Cadaverous Belt",
+          "chance": 0.012
         },
         {
           "item": 14640,
-          "name": "Cadaverous Gloves"
+          "name": "Cadaverous Gloves",
+          "chance": 0.004
         },
         {
           "item": 14638,
-          "name": "Cadaverous Leggings"
+          "name": "Cadaverous Leggings",
+          "chance": 0.0081
         },
         {
           "item": 14641,
-          "name": "Cadaverous Walkers"
+          "name": "Cadaverous Walkers",
+          "chance": 0.0081
         },
         {
           "item": 14624,
-          "name": "Deathbone Chestplate"
+          "name": "Deathbone Chestplate",
+          "chance": 0.0081
         },
         {
           "item": 14622,
-          "name": "Deathbone Gauntlets"
+          "name": "Deathbone Gauntlets",
+          "chance": 0.0081
         },
         {
           "item": 14620,
-          "name": "Deathbone Girdle"
+          "name": "Deathbone Girdle",
+          "chance": 0.004
         },
         {
           "item": 14623,
-          "name": "Deathbone Legguards"
+          "name": "Deathbone Legguards",
+          "chance": 0.004
         },
         {
           "item": 14621,
-          "name": "Deathbone Sabatons"
+          "name": "Deathbone Sabatons",
+          "chance": 0.004
         },
         {
           "item": 18684,
-          "name": "Dimly Opalescent Ring"
+          "name": "Dimly Opalescent Ring",
+          "chance": 0.004
         },
         {
           "item": 18682,
-          "name": "Ghoul Skin Leggings"
+          "name": "Ghoul Skin Leggings",
+          "chance": 0.0081
         },
         {
           "item": 18683,
@@ -972,27 +1175,33 @@
         },
         {
           "item": 14631,
-          "name": "Necropile Boots"
+          "name": "Necropile Boots",
+          "chance": 0.004
         },
         {
           "item": 14629,
-          "name": "Necropile Cuffs"
+          "name": "Necropile Cuffs",
+          "chance": 0.004
         },
         {
           "item": 14632,
-          "name": "Necropile Leggings"
+          "name": "Necropile Leggings",
+          "chance": 0.004
         },
         {
           "item": 14633,
-          "name": "Necropile Mantle"
+          "name": "Necropile Mantle",
+          "chance": 0.012
         },
         {
           "item": 14626,
-          "name": "Necropile Robe"
+          "name": "Necropile Robe",
+          "chance": 0.004
         },
         {
           "item": 18680,
-          "name": "Ancient Bone Bow"
+          "name": "Ancient Bone Bow",
+          "chance": 0.012
         },
         {
           "item": 18681,
@@ -1009,79 +1218,98 @@
       "loot": [
         {
           "item": 16667,
-          "name": "Coif of Elements"
+          "name": "Coif of Elements",
+          "chance": 0.122
         },
         {
           "item": 16677,
-          "name": "Beaststalker's Cap"
+          "name": "Beaststalker's Cap",
+          "chance": 0.111
         },
         {
           "item": 16686,
-          "name": "Magister's Crown"
+          "name": "Magister's Crown",
+          "chance": 0.07
         },
         {
           "item": 16693,
-          "name": "Devout Crown"
+          "name": "Devout Crown",
+          "chance": 0.074
         },
         {
           "item": 16698,
-          "name": "Dreadmist Mask"
+          "name": "Dreadmist Mask",
+          "chance": 0.1
         },
         {
           "item": 16707,
-          "name": "Shadowcraft Cap"
+          "name": "Shadowcraft Cap",
+          "chance": 0.092
         },
         {
           "item": 16720,
-          "name": "Wildheart Cowl"
+          "name": "Wildheart Cowl",
+          "chance": 0.077
         },
         {
           "item": 16727,
-          "name": "Lightforge Helm"
+          "name": "Lightforge Helm",
+          "chance": 0.118
         },
         {
           "item": 16731,
-          "name": "Helm of Valor"
+          "name": "Helm of Valor",
+          "chance": 0.125
         },
         {
           "item": 13951,
-          "name": "Vigorsteel Vambraces"
+          "name": "Vigorsteel Vambraces",
+          "chance": 0.122
         },
         {
           "item": 13398,
-          "name": "Boots of the Shrieker"
+          "name": "Boots of the Shrieker",
+          "chance": 0.118
         },
         {
           "item": 13938,
-          "name": "Bonecreeper Stylus"
+          "name": "Bonecreeper Stylus",
+          "chance": 0.14
         },
         {
           "item": 13944,
-          "name": "Tombstone Breastplate"
+          "name": "Tombstone Breastplate",
+          "chance": 0.133
         },
         {
           "item": 13953,
-          "name": "Silent Fang"
+          "name": "Silent Fang",
+          "chance": 0.118
         },
         {
           "item": 13964,
-          "name": "Witchblade"
+          "name": "Witchblade",
+          "chance": 0.148
         },
         {
           "item": 22433,
-          "name": "Don Mauricio's Band of Domination"
+          "name": "Don Mauricio's Band of Domination",
+          "chance": 0.122
         },
         {
           "item": 14514,
-          "name": "Pattern: Robe of the Void"
+          "name": "Pattern: Robe of the Void",
+          "chance": 0.111
         },
         {
           "item": 13501,
-          "name": "Recipe: Major Mana Potion"
+          "name": "Recipe: Major Mana Potion",
+          "chance": 0.096
         },
         {
           "item": 13937,
-          "name": "Headmaster's Charge"
+          "name": "Headmaster's Charge",
+          "chance": 0.026
         }
       ]
     },
@@ -1093,19 +1321,23 @@
       "loot": [
         {
           "item": 18758,
-          "name": "Specter's Blade"
+          "name": "Specter's Blade",
+          "chance": 0.257
         },
         {
           "item": 18759,
-          "name": "Malicious Axe"
+          "name": "Malicious Axe",
+          "chance": 0.2
         },
         {
           "item": 18760,
-          "name": "Necromantic Band"
+          "name": "Necromantic Band",
+          "chance": 0.143
         },
         {
           "item": 18761,
-          "name": "Oblivion's Touch"
+          "name": "Oblivion's Touch",
+          "chance": 0.371
         },
         {
           "item": 18749,

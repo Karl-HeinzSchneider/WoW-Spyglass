@@ -4,73 +4,73 @@ local Data = Spyglass.Data
 -- Wailing Caverns (map 43)
 
 Data:AddBossLoot(585, { -- Lady Anacondra
-    { 5404 }, -- Serpent's Shoulders
-    { 273088 }, -- Snake Eye Kaleidoscope
-    { 10412 }, -- Belt of the Fang
-    { 6446 }, -- Snakeskin Bag
+    { 5404, 0.265 }, -- Serpent's Shoulders
+    { 273088, 0.269 }, -- Snake Eye Kaleidoscope
+    { 10412, 0.267 }, -- Belt of the Fang
+    { 6446, 0.089 }, -- Snakeskin Bag
     { 9739 }, -- Gem of Anacondra
-    { 273098 }, -- Blueprint: Field Guide
+    { 273098, 0.058 }, -- Blueprint: Field Guide
 })
 
 Data:AddBossLoot(586, { -- Lord Cobrahn
-    { 6460 }, -- Cobrahn's Grasp
-    { 6465 }, -- Robe of the Moccasin
-    { 10410 }, -- Leggings of the Fang
+    { 6460, 0.304 }, -- Cobrahn's Grasp
+    { 6465, 0.304 }, -- Robe of the Moccasin
+    { 10410, 0.31 }, -- Leggings of the Fang
     { 9738 }, -- Gem of Cobrahn
     { 252782 }, -- Pattern: Wisdom's Leather Gloves
 })
 
 Data:AddBossLoot(587, { -- Kresh
-    { 13245 }, -- Kresh's Back
-    { 273084 }, -- Cloak of Hermitic Bliss
-    { 6447 }, -- Worn Turtle Shell Shield
+    { 13245, 0.401 }, -- Kresh's Back
+    { 273084, 0.097 }, -- Cloak of Hermitic Bliss
+    { 6447, 0.393 }, -- Worn Turtle Shell Shield
 })
 
 Data:AddBossLoot(588, { -- Lord Pythas
-    { 6472 }, -- Stinging Viper
-    { 6473 }, -- Armor of the Fang
-    { 273089 }, -- Slither Cord
+    { 6472, 0.292 }, -- Stinging Viper
+    { 6473, 0.284 }, -- Armor of the Fang
+    { 273089, 0.287 }, -- Slither Cord
     { 9740 }, -- Gem of Pythas
-    { 253938 }, -- Pattern: Filigreed Pristine Leggings
-    { 253940 }, -- Pattern: Filigreed Silky Leggings
-    { 253946 }, -- Pattern: Filigreed Pearly Leggings
+    { 253938, 0.0068 }, -- Pattern: Filigreed Pristine Leggings
+    { 253940, 0.0039 }, -- Pattern: Filigreed Silky Leggings
+    { 253946, 0.0068 }, -- Pattern: Filigreed Pearly Leggings
 })
 
 Data:AddBossLoot(589, { -- Skum
-    { 6449 }, -- Glowing Lizardscale Cloak
-    { 273137 }, -- Skum's Bucket
-    { 6448 }, -- Tail Spike
-    { 253944 }, -- Pattern: Filigreed Shadow Leggings
+    { 6449, 0.303 }, -- Glowing Lizardscale Cloak
+    { 273137, 0.307 }, -- Skum's Bucket
+    { 6448, 0.286 }, -- Tail Spike
+    { 253944, 0.005 }, -- Pattern: Filigreed Shadow Leggings
 })
 
 Data:AddBossLoot(590, { -- Lord Serpentis
-    { 6469 }, -- Venomstrike
-    { 5970 }, -- Serpent Gloves
-    { 6459 }, -- Savage Trodders
-    { 10411 }, -- Footpads of the Fang
+    { 6469, 0.141 }, -- Venomstrike
+    { 5970, 0.173 }, -- Serpent Gloves
+    { 6459, 0.337 }, -- Savage Trodders
+    { 10411, 0.156 }, -- Footpads of the Fang
     { 9741 }, -- Gem of Serpentis
-    { 273087 }, -- Blueprint: Journeyman Campfire
-    { 253942 }, -- Pattern: Filigreed Flame Leggings
+    { 273087, 0.061 }, -- Blueprint: Journeyman Campfire
+    { 253942, 0.0035 }, -- Pattern: Filigreed Flame Leggings
 })
 
 Data:AddBossLoot(591, { -- Verdan the Everliving
-    { 6630 }, -- Seedcloud Buckler
-    { 6631 }, -- Living Root
-    { 6629 }, -- Sporid Cape
-    { 253948 }, -- Pattern: Filigreed Shining Leggings
+    { 6630, 0.322 }, -- Seedcloud Buckler
+    { 6631, 0.316 }, -- Living Root
+    { 6629, 0.329 }, -- Sporid Cape
+    { 253948, 0.0041 }, -- Pattern: Filigreed Shining Leggings
 })
 
 Data:AddBossLoot(592, { -- Mutanus the Devourer
-    { 6461 }, -- Slime-encrusted Pads
-    { 6463 }, -- Deep Fathom Ring
-    { 6627 }, -- Mutant Scale Breastplate
+    { 6461, 0.273 }, -- Slime-encrusted Pads
+    { 6463, 0.291 }, -- Deep Fathom Ring
+    { 6627, 0.288 }, -- Mutant Scale Breastplate
     { 10441 }, -- Glowing Shard
     { 252798 }, -- Pattern: Brawler's Leather Hood
 })
 
 Data:AddBossLoot(-5912, { -- Deviate Faerie Dragon
-    { 5243 }, -- Firebelcher
-    { 6632 }, -- Feyscale Cloak
+    { 5243, 0.393 }, -- Firebelcher
+    { 6632, 0.461 }, -- Feyscale Cloak
     { 252781 }, -- Pattern: Stormrider's Leather Gloves
 })
 

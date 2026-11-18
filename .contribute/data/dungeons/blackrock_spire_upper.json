@@ -19,27 +19,33 @@
       "loot": [
         {
           "item": 16672,
-          "name": "Gauntlets of Elements"
+          "name": "Gauntlets of Elements",
+          "chance": 0.219
         },
         {
           "item": 12905,
-          "name": "Wildfire Cape"
+          "name": "Wildfire Cape",
+          "chance": 0.206
         },
         {
           "item": 12926,
-          "name": "Flaming Band"
+          "name": "Flaming Band",
+          "chance": 0.179
         },
         {
           "item": 12927,
-          "name": "Truestrike Shoulders"
+          "name": "Truestrike Shoulders",
+          "chance": 0.156
         },
         {
           "item": 12929,
-          "name": "Emberfury Talisman"
+          "name": "Emberfury Talisman",
+          "chance": 0.219
         },
         {
           "item": 249520,
-          "name": "Formula: Molten Heart of the Mountain"
+          "name": "Formula: Molten Heart of the Mountain",
+          "chance": 0.143
         }
       ]
     },
@@ -52,7 +58,8 @@
       "loot": [
         {
           "item": 16733,
-          "name": "Spaulders of Valor"
+          "name": "Spaulders of Valor",
+          "chance": 0.196
         },
         {
           "item": 16669,
@@ -60,47 +67,58 @@
         },
         {
           "item": 12583,
-          "name": "Blackhand Doomsaw"
+          "name": "Blackhand Doomsaw",
+          "chance": 0.182
         },
         {
           "item": 12587,
-          "name": "Eye of Rend"
+          "name": "Eye of Rend",
+          "chance": 0.151
         },
         {
           "item": 12935,
-          "name": "Warmaster Legguards"
+          "name": "Warmaster Legguards",
+          "chance": 0.161
         },
         {
           "item": 12936,
-          "name": "Battleborn Armbraces"
+          "name": "Battleborn Armbraces",
+          "chance": 0.182
         },
         {
           "item": 12939,
-          "name": "Dal'Rend's Tribal Guardian"
+          "name": "Dal'Rend's Tribal Guardian",
+          "chance": 0.2
         },
         {
           "item": 12940,
-          "name": "Dal'Rend's Sacred Charge"
+          "name": "Dal'Rend's Sacred Charge",
+          "chance": 0.116
         },
         {
           "item": 18102,
-          "name": "Dragonrider Boots"
+          "name": "Dragonrider Boots",
+          "chance": 0.186
         },
         {
           "item": 18103,
-          "name": "Band of Rumination"
+          "name": "Band of Rumination",
+          "chance": 0.161
         },
         {
           "item": 18104,
-          "name": "Feralsurge Girdle"
+          "name": "Feralsurge Girdle",
+          "chance": 0.211
         },
         {
           "item": 22247,
-          "name": "Faith Healer's Boots"
+          "name": "Faith Healer's Boots",
+          "chance": 0.144
         },
         {
           "item": 12590,
-          "name": "Felstriker"
+          "name": "Felstriker",
+          "chance": 0.014
         }
       ]
     },
@@ -113,47 +131,58 @@
       "loot": [
         {
           "item": 16729,
-          "name": "Lightforge Spaulders"
+          "name": "Lightforge Spaulders",
+          "chance": 0.182
         },
         {
           "item": 12709,
-          "name": "Pip's Skinner"
+          "name": "Pip's Skinner",
+          "chance": 0.214
         },
         {
           "item": 12963,
-          "name": "Blademaster Leggings"
+          "name": "Blademaster Leggings",
+          "chance": 0.132
         },
         {
           "item": 12964,
-          "name": "Tristam Legguards"
+          "name": "Tristam Legguards",
+          "chance": 0.227
         },
         {
           "item": 12965,
-          "name": "Spiritshroud Leggings"
+          "name": "Spiritshroud Leggings",
+          "chance": 0.191
         },
         {
           "item": 12966,
-          "name": "Blackmist Armguards"
+          "name": "Blackmist Armguards",
+          "chance": 0.255
         },
         {
           "item": 12967,
-          "name": "Bloodmoon Cloak"
+          "name": "Bloodmoon Cloak",
+          "chance": 0.164
         },
         {
           "item": 12968,
-          "name": "Frostweaver Cape"
+          "name": "Frostweaver Cape",
+          "chance": 0.164
         },
         {
           "item": 12969,
-          "name": "Seeping Willow"
+          "name": "Seeping Willow",
+          "chance": 0.2
         },
         {
           "item": 22311,
-          "name": "Ironweave Boots"
+          "name": "Ironweave Boots",
+          "chance": 0.25
         },
         {
           "item": 273109,
-          "name": "Blueprint: Trapper's Workbench"
+          "name": "Blueprint: Trapper's Workbench",
+          "chance": 0.073
         }
       ]
     },
@@ -166,83 +195,103 @@
       "loot": [
         {
           "item": 16666,
-          "name": "Vest of Elements"
+          "name": "Vest of Elements",
+          "chance": 0.094
         },
         {
           "item": 16674,
-          "name": "Beaststalker's Tunic"
+          "name": "Beaststalker's Tunic",
+          "chance": 0.094
         },
         {
           "item": 16688,
-          "name": "Magister's Robes"
+          "name": "Magister's Robes",
+          "chance": 0.104
         },
         {
           "item": 16690,
-          "name": "Devout Robe"
+          "name": "Devout Robe",
+          "chance": 0.1
         },
         {
           "item": 16700,
-          "name": "Dreadmist Robe"
+          "name": "Dreadmist Robe",
+          "chance": 0.09
         },
         {
           "item": 16706,
-          "name": "Wildheart Vest"
+          "name": "Wildheart Vest",
+          "chance": 0.094
         },
         {
           "item": 16721,
-          "name": "Shadowcraft Tunic"
+          "name": "Shadowcraft Tunic",
+          "chance": 0.117
         },
         {
           "item": 16726,
-          "name": "Lightforge Breastplate"
+          "name": "Lightforge Breastplate",
+          "chance": 0.097
         },
         {
           "item": 16730,
-          "name": "Breastplate of Valor"
+          "name": "Breastplate of Valor",
+          "chance": 0.104
         },
         {
           "item": 13141,
-          "name": "Tooth of Gnarr"
+          "name": "Tooth of Gnarr",
+          "chance": 0.284
         },
         {
           "item": 13098,
-          "name": "Painweaver Band"
+          "name": "Painweaver Band",
+          "chance": 0.211
         },
         {
           "item": 13142,
-          "name": "Brigam Girdle"
+          "name": "Brigam Girdle",
+          "chance": 0.231
         },
         {
           "item": 12602,
-          "name": "Draconian Deflector"
+          "name": "Draconian Deflector",
+          "chance": 0.214
         },
         {
           "item": 22253,
-          "name": "Tome of the Lost"
+          "name": "Tome of the Lost",
+          "chance": 0.201
         },
         {
           "item": 22267,
-          "name": "Spellweaver's Turban"
+          "name": "Spellweaver's Turban",
+          "chance": 0.181
         },
         {
           "item": 22269,
-          "name": "Shadow Prowler's Cloak"
+          "name": "Shadow Prowler's Cloak",
+          "chance": 0.244
         },
         {
           "item": 22268,
-          "name": "Draconic Infused Emblem"
+          "name": "Draconic Infused Emblem",
+          "chance": 0.237
         },
         {
           "item": 15730,
-          "name": "Pattern: Red Dragonscale Breastplate"
+          "name": "Pattern: Red Dragonscale Breastplate",
+          "chance": 0.06
         },
         {
           "item": 13519,
-          "name": "Recipe: Flask of the Titans"
+          "name": "Recipe: Flask of the Titans",
+          "chance": 0.057
         },
         {
           "item": 12592,
-          "name": "Blackblade of Shahram"
+          "name": "Blackblade of Shahram",
+          "chance": 0.01
         }
       ]
     },
@@ -297,27 +346,33 @@
       "loot": [
         {
           "item": 12589,
-          "name": "Dustfeather Sash"
+          "name": "Dustfeather Sash",
+          "chance": 0.268
         },
         {
           "item": 12603,
-          "name": "Nightbrace Tunic"
+          "name": "Nightbrace Tunic",
+          "chance": 0.183
         },
         {
           "item": 12606,
-          "name": "Crystallized Girdle"
+          "name": "Crystallized Girdle",
+          "chance": 0.171
         },
         {
           "item": 12609,
-          "name": "Polychromatic Visionwrap"
+          "name": "Polychromatic Visionwrap",
+          "chance": 0.146
         },
         {
           "item": 16695,
-          "name": "Devout Mantle"
+          "name": "Devout Mantle",
+          "chance": 0.146
         },
         {
           "item": 18657,
-          "name": "Schematic: Hyper-Radiant Flame Reflector"
+          "name": "Schematic: Hyper-Radiant Flame Reflector",
+          "chance": 0.073
         }
       ]
     },
@@ -330,15 +385,18 @@
       "loot": [
         {
           "item": 12604,
-          "name": "Starfire Tiara"
+          "name": "Starfire Tiara",
+          "chance": 0.329
         },
         {
           "item": 12605,
-          "name": "Serpentine Skuller"
+          "name": "Serpentine Skuller",
+          "chance": 0.354
         },
         {
           "item": 12930,
-          "name": "Briarwood Reed"
+          "name": "Briarwood Reed",
+          "chance": 0.293
         }
       ]
     },
@@ -351,31 +409,38 @@
       "loot": [
         {
           "item": 18048,
-          "name": "Mastersmith's Hammer"
+          "name": "Mastersmith's Hammer",
+          "chance": 0.182
         },
         {
           "item": 13498,
-          "name": "Handcrafted Mastersmith Leggings"
+          "name": "Handcrafted Mastersmith Leggings",
+          "chance": 0.294
         },
         {
           "item": 18047,
-          "name": "Flame Walkers"
+          "name": "Flame Walkers",
+          "chance": 0.171
         },
         {
           "item": 13502,
-          "name": "Handcrafted Mastersmith Girdle"
+          "name": "Handcrafted Mastersmith Girdle",
+          "chance": 0.229
         },
         {
           "item": 12834,
-          "name": "Plans: Arcanite Champion"
+          "name": "Plans: Arcanite Champion",
+          "chance": 0.041
         },
         {
           "item": 12837,
-          "name": "Plans: Masterwork Stormhammer"
+          "name": "Plans: Masterwork Stormhammer",
+          "chance": 0.041
         },
         {
           "item": 12728,
-          "name": "Pattern: Invulnerable Mail"
+          "name": "Pattern: Invulnerable Mail",
+          "chance": 0.012
         }
       ]
     },
@@ -388,31 +453,38 @@
       "loot": [
         {
           "item": 12952,
-          "name": "Gyth's Skull"
+          "name": "Gyth's Skull",
+          "chance": 0.158
         },
         {
           "item": 12953,
-          "name": "Dragoneye Coif"
+          "name": "Dragoneye Coif",
+          "chance": 0.201
         },
         {
           "item": 12960,
-          "name": "Tribal War Feathers"
+          "name": "Tribal War Feathers",
+          "chance": 0.198
         },
         {
           "item": 16669,
-          "name": "Pauldrons of Elements"
+          "name": "Pauldrons of Elements",
+          "chance": 0.216
         },
         {
           "item": 22225,
-          "name": "Dragonskin Cowl"
+          "name": "Dragonskin Cowl",
+          "chance": 0.194
         },
         {
           "item": 13522,
-          "name": "Recipe: Flask of Chromatic Resistance"
+          "name": "Recipe: Flask of Chromatic Resistance",
+          "chance": 0.047
         },
         {
           "item": 12871,
-          "name": "Chromatic Carapace"
+          "name": "Chromatic Carapace",
+          "chance": 0.032
         }
       ]
     }

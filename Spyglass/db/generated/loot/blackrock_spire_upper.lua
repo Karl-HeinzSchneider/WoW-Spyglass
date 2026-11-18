@@ -4,65 +4,65 @@ local Data = Spyglass.Data
 -- Blackrock Spire: Upper (map 229)
 
 Data:AddBossLoot(3062, { -- Pyroguard Emberseer
-    { 16672 }, -- Gauntlets of Elements
-    { 12905 }, -- Wildfire Cape
-    { 12926 }, -- Flaming Band
-    { 12927 }, -- Truestrike Shoulders
-    { 12929 }, -- Emberfury Talisman
-    { 249520 }, -- Formula: Molten Heart of the Mountain
+    { 16672, 0.219 }, -- Gauntlets of Elements
+    { 12905, 0.206 }, -- Wildfire Cape
+    { 12926, 0.179 }, -- Flaming Band
+    { 12927, 0.156 }, -- Truestrike Shoulders
+    { 12929, 0.219 }, -- Emberfury Talisman
+    { 249520, 0.143 }, -- Formula: Molten Heart of the Mountain
 })
 
 Data:AddBossLoot(3063, { -- Warchief Rend Blackhand
-    { 16733 }, -- Spaulders of Valor
+    { 16733, 0.196 }, -- Spaulders of Valor
     { 16669 }, -- Pauldrons of Elements
-    { 12583 }, -- Blackhand Doomsaw
-    { 12587 }, -- Eye of Rend
-    { 12935 }, -- Warmaster Legguards
-    { 12936 }, -- Battleborn Armbraces
-    { 12939 }, -- Dal'Rend's Tribal Guardian
-    { 12940 }, -- Dal'Rend's Sacred Charge
-    { 18102 }, -- Dragonrider Boots
-    { 18103 }, -- Band of Rumination
-    { 18104 }, -- Feralsurge Girdle
-    { 22247 }, -- Faith Healer's Boots
-    { 12590 }, -- Felstriker
+    { 12583, 0.182 }, -- Blackhand Doomsaw
+    { 12587, 0.151 }, -- Eye of Rend
+    { 12935, 0.161 }, -- Warmaster Legguards
+    { 12936, 0.182 }, -- Battleborn Armbraces
+    { 12939, 0.2 }, -- Dal'Rend's Tribal Guardian
+    { 12940, 0.116 }, -- Dal'Rend's Sacred Charge
+    { 18102, 0.186 }, -- Dragonrider Boots
+    { 18103, 0.161 }, -- Band of Rumination
+    { 18104, 0.211 }, -- Feralsurge Girdle
+    { 22247, 0.144 }, -- Faith Healer's Boots
+    { 12590, 0.014 }, -- Felstriker
 })
 
 Data:AddBossLoot(3068, { -- The Beast
-    { 16729 }, -- Lightforge Spaulders
-    { 12709 }, -- Pip's Skinner
-    { 12963 }, -- Blademaster Leggings
-    { 12964 }, -- Tristam Legguards
-    { 12965 }, -- Spiritshroud Leggings
-    { 12966 }, -- Blackmist Armguards
-    { 12967 }, -- Bloodmoon Cloak
-    { 12968 }, -- Frostweaver Cape
-    { 12969 }, -- Seeping Willow
-    { 22311 }, -- Ironweave Boots
-    { 273109 }, -- Blueprint: Trapper's Workbench
+    { 16729, 0.182 }, -- Lightforge Spaulders
+    { 12709, 0.214 }, -- Pip's Skinner
+    { 12963, 0.132 }, -- Blademaster Leggings
+    { 12964, 0.227 }, -- Tristam Legguards
+    { 12965, 0.191 }, -- Spiritshroud Leggings
+    { 12966, 0.255 }, -- Blackmist Armguards
+    { 12967, 0.164 }, -- Bloodmoon Cloak
+    { 12968, 0.164 }, -- Frostweaver Cape
+    { 12969, 0.2 }, -- Seeping Willow
+    { 22311, 0.25 }, -- Ironweave Boots
+    { 273109, 0.073 }, -- Blueprint: Trapper's Workbench
 })
 
 Data:AddBossLoot(3069, { -- General Drakkisath
-    { 16666 }, -- Vest of Elements
-    { 16674 }, -- Beaststalker's Tunic
-    { 16688 }, -- Magister's Robes
-    { 16690 }, -- Devout Robe
-    { 16700 }, -- Dreadmist Robe
-    { 16706 }, -- Wildheart Vest
-    { 16721 }, -- Shadowcraft Tunic
-    { 16726 }, -- Lightforge Breastplate
-    { 16730 }, -- Breastplate of Valor
-    { 13141 }, -- Tooth of Gnarr
-    { 13098 }, -- Painweaver Band
-    { 13142 }, -- Brigam Girdle
-    { 12602 }, -- Draconian Deflector
-    { 22253 }, -- Tome of the Lost
-    { 22267 }, -- Spellweaver's Turban
-    { 22269 }, -- Shadow Prowler's Cloak
-    { 22268 }, -- Draconic Infused Emblem
-    { 15730 }, -- Pattern: Red Dragonscale Breastplate
-    { 13519 }, -- Recipe: Flask of the Titans
-    { 12592 }, -- Blackblade of Shahram
+    { 16666, 0.094 }, -- Vest of Elements
+    { 16674, 0.094 }, -- Beaststalker's Tunic
+    { 16688, 0.104 }, -- Magister's Robes
+    { 16690, 0.1 }, -- Devout Robe
+    { 16700, 0.09 }, -- Dreadmist Robe
+    { 16706, 0.094 }, -- Wildheart Vest
+    { 16721, 0.117 }, -- Shadowcraft Tunic
+    { 16726, 0.097 }, -- Lightforge Breastplate
+    { 16730, 0.104 }, -- Breastplate of Valor
+    { 13141, 0.284 }, -- Tooth of Gnarr
+    { 13098, 0.211 }, -- Painweaver Band
+    { 13142, 0.231 }, -- Brigam Girdle
+    { 12602, 0.214 }, -- Draconian Deflector
+    { 22253, 0.201 }, -- Tome of the Lost
+    { 22267, 0.181 }, -- Spellweaver's Turban
+    { 22269, 0.244 }, -- Shadow Prowler's Cloak
+    { 22268, 0.237 }, -- Draconic Infused Emblem
+    { 15730, 0.06 }, -- Pattern: Red Dragonscale Breastplate
+    { 13519, 0.057 }, -- Recipe: Flask of the Titans
+    { 12592, 0.01 }, -- Blackblade of Shahram
 })
 
 Data:AddBossLoot(3070, { -- Lord Valthalak
@@ -77,38 +77,38 @@ Data:AddBossLoot(3070, { -- Lord Valthalak
 })
 
 Data:AddBossLoot(-10264, { -- Solakar Flamewreath
-    { 12589 }, -- Dustfeather Sash
-    { 12603 }, -- Nightbrace Tunic
-    { 12606 }, -- Crystallized Girdle
-    { 12609 }, -- Polychromatic Visionwrap
-    { 16695 }, -- Devout Mantle
-    { 18657 }, -- Schematic: Hyper-Radiant Flame Reflector
+    { 12589, 0.268 }, -- Dustfeather Sash
+    { 12603, 0.183 }, -- Nightbrace Tunic
+    { 12606, 0.171 }, -- Crystallized Girdle
+    { 12609, 0.146 }, -- Polychromatic Visionwrap
+    { 16695, 0.146 }, -- Devout Mantle
+    { 18657, 0.073 }, -- Schematic: Hyper-Radiant Flame Reflector
 })
 
 Data:AddBossLoot(-10509, { -- Jed Runewatcher
-    { 12604 }, -- Starfire Tiara
-    { 12605 }, -- Serpentine Skuller
-    { 12930 }, -- Briarwood Reed
+    { 12604, 0.329 }, -- Starfire Tiara
+    { 12605, 0.354 }, -- Serpentine Skuller
+    { 12930, 0.293 }, -- Briarwood Reed
 })
 
 Data:AddBossLoot(-10899, { -- Goraluk Anvilcrack
-    { 18048 }, -- Mastersmith's Hammer
-    { 13498 }, -- Handcrafted Mastersmith Leggings
-    { 18047 }, -- Flame Walkers
-    { 13502 }, -- Handcrafted Mastersmith Girdle
-    { 12834 }, -- Plans: Arcanite Champion
-    { 12837 }, -- Plans: Masterwork Stormhammer
-    { 12728 }, -- Pattern: Invulnerable Mail
+    { 18048, 0.182 }, -- Mastersmith's Hammer
+    { 13498, 0.294 }, -- Handcrafted Mastersmith Leggings
+    { 18047, 0.171 }, -- Flame Walkers
+    { 13502, 0.229 }, -- Handcrafted Mastersmith Girdle
+    { 12834, 0.041 }, -- Plans: Arcanite Champion
+    { 12837, 0.041 }, -- Plans: Masterwork Stormhammer
+    { 12728, 0.012 }, -- Pattern: Invulnerable Mail
 })
 
 Data:AddBossLoot(-10339, { -- Gyth
-    { 12952 }, -- Gyth's Skull
-    { 12953 }, -- Dragoneye Coif
-    { 12960 }, -- Tribal War Feathers
-    { 16669 }, -- Pauldrons of Elements
-    { 22225 }, -- Dragonskin Cowl
-    { 13522 }, -- Recipe: Flask of Chromatic Resistance
-    { 12871 }, -- Chromatic Carapace
+    { 12952, 0.158 }, -- Gyth's Skull
+    { 12953, 0.201 }, -- Dragoneye Coif
+    { 12960, 0.198 }, -- Tribal War Feathers
+    { 16669, 0.216 }, -- Pauldrons of Elements
+    { 22225, 0.194 }, -- Dragonskin Cowl
+    { 13522, 0.047 }, -- Recipe: Flask of Chromatic Resistance
+    { 12871, 0.032 }, -- Chromatic Carapace
 })
 
 Data:AddTrashLoot(22902, {

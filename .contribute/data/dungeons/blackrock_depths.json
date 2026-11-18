@@ -18,19 +18,23 @@
       "loot": [
         {
           "item": 11624,
-          "name": "Kentic Amice"
+          "name": "Kentic Amice",
+          "chance": 0.235
         },
         {
           "item": 11625,
-          "name": "Enthralled Sphere"
+          "name": "Enthralled Sphere",
+          "chance": 0.26
         },
         {
           "item": 11626,
-          "name": "Blackveil Cape"
+          "name": "Blackveil Cape",
+          "chance": 0.229
         },
         {
           "item": 22240,
-          "name": "Greaves of Withering Despair"
+          "name": "Greaves of Withering Despair",
+          "chance": 0.229
         }
       ]
     },
@@ -43,27 +47,33 @@
       "loot": [
         {
           "item": 11632,
-          "name": "Earthslag Shoulders"
+          "name": "Earthslag Shoulders",
+          "chance": 0.217
         },
         {
           "item": 11631,
-          "name": "Stoneshell Guard"
+          "name": "Stoneshell Guard",
+          "chance": 0.262
         },
         {
           "item": 22234,
-          "name": "Mantle of Lost Hope"
+          "name": "Mantle of Lost Hope",
+          "chance": 0.211
         },
         {
           "item": 22397,
-          "name": "Idol of Ferocity"
+          "name": "Idol of Ferocity",
+          "chance": 0.214
         },
         {
           "item": 11630,
-          "name": "Rockshard Pellets"
+          "name": "Rockshard Pellets",
+          "chance": 0.885
         },
         {
           "item": 11813,
-          "name": "Formula: Smoking Heart of the Mountain"
+          "name": "Formula: Smoking Heart of the Mountain",
+          "chance": 0.172
         }
       ]
     },
@@ -76,19 +86,23 @@
       "loot": [
         {
           "item": 11627,
-          "name": "Fleetfoot Greaves"
+          "name": "Fleetfoot Greaves",
+          "chance": 0.216
         },
         {
           "item": 11623,
-          "name": "Spritecaster Cape"
+          "name": "Spritecaster Cape",
+          "chance": 0.253
         },
         {
           "item": 11628,
-          "name": "Houndmaster's Bow"
+          "name": "Houndmaster's Bow",
+          "chance": 0.257
         },
         {
           "item": 11629,
-          "name": "Houndmaster's Rifle"
+          "name": "Houndmaster's Rifle",
+          "chance": 0.247
         }
       ]
     },
@@ -106,23 +120,28 @@
       "loot": [
         {
           "item": 11747,
-          "name": "Flamestrider Robes"
+          "name": "Flamestrider Robes",
+          "chance": 0.22
         },
         {
           "item": 11748,
-          "name": "Pyric Caduceus"
+          "name": "Pyric Caduceus",
+          "chance": 0.231
         },
         {
           "item": 11749,
-          "name": "Searingscale Leggings"
+          "name": "Searingscale Leggings",
+          "chance": 0.243
         },
         {
           "item": 11750,
-          "name": "Kindling Stave"
+          "name": "Kindling Stave",
+          "chance": 0.246
         },
         {
           "item": 11207,
-          "name": "Formula: Enchant Weapon - Fiery Weapon"
+          "name": "Formula: Enchant Weapon - Fiery Weapon",
+          "chance": 0.19
         }
       ]
     },
@@ -135,19 +154,23 @@
       "loot": [
         {
           "item": 11764,
-          "name": "Cinderhide Armsplints"
+          "name": "Cinderhide Armsplints",
+          "chance": 0.252
         },
         {
           "item": 11765,
-          "name": "Pyremail Wristguards"
+          "name": "Pyremail Wristguards",
+          "chance": 0.238
         },
         {
           "item": 11766,
-          "name": "Flameweave Cuffs"
+          "name": "Flameweave Cuffs",
+          "chance": 0.214
         },
         {
           "item": 11767,
-          "name": "Emberplate Armguards"
+          "name": "Emberplate Armguards",
+          "chance": 0.242
         },
         {
           "item": 11768,
@@ -164,19 +187,23 @@
       "loot": [
         {
           "item": 11782,
-          "name": "Boreal Mantle"
+          "name": "Boreal Mantle",
+          "chance": 0.234
         },
         {
           "item": 11783,
-          "name": "Chillsteel Girdle"
+          "name": "Chillsteel Girdle",
+          "chance": 0.245
         },
         {
           "item": 11784,
-          "name": "Arbiter's Blade"
+          "name": "Arbiter's Blade",
+          "chance": 0.211
         },
         {
           "item": 22241,
-          "name": "Dark Warder's Pauldrons"
+          "name": "Dark Warder's Pauldrons",
+          "chance": 0.257
         },
         {
           "item": 11755,
@@ -197,19 +224,23 @@
       "loot": [
         {
           "item": 11841,
-          "name": "Senior Designer's Pantaloons"
+          "name": "Senior Designer's Pantaloons",
+          "chance": 0.258
         },
         {
           "item": 11842,
-          "name": "Lead Surveyor's Mantle"
+          "name": "Lead Surveyor's Mantle",
+          "chance": 0.228
         },
         {
           "item": 11839,
-          "name": "Chief Architect's Monocle"
+          "name": "Chief Architect's Monocle",
+          "chance": 0.211
         },
         {
           "item": 22223,
-          "name": "Foreman's Head Protector"
+          "name": "Foreman's Head Protector",
+          "chance": 0.228
         }
       ]
     },
@@ -222,19 +253,23 @@
       "loot": [
         {
           "item": 11802,
-          "name": "Lavacrest Leggings"
+          "name": "Lavacrest Leggings",
+          "chance": 0.228
         },
         {
           "item": 11803,
-          "name": "Force of Magma"
+          "name": "Force of Magma",
+          "chance": 0.214
         },
         {
           "item": 11805,
-          "name": "Rubidium Hammer"
+          "name": "Rubidium Hammer",
+          "chance": 0.238
         },
         {
           "item": 11807,
-          "name": "Sash of the Burning Heart"
+          "name": "Sash of the Burning Heart",
+          "chance": 0.228
         }
       ]
     },
@@ -247,23 +282,28 @@
       "loot": [
         {
           "item": 11816,
-          "name": "Angerforge's Battle Axe"
+          "name": "Angerforge's Battle Axe",
+          "chance": 0.222
         },
         {
           "item": 11820,
-          "name": "Royal Decorated Armor"
+          "name": "Royal Decorated Armor",
+          "chance": 0.18
         },
         {
           "item": 11821,
-          "name": "Warstrife Leggings"
+          "name": "Warstrife Leggings",
+          "chance": 0.13
         },
         {
           "item": 11817,
-          "name": "Lord General's Sword"
+          "name": "Lord General's Sword",
+          "chance": 0.168
         },
         {
           "item": 11810,
-          "name": "Force of Will"
+          "name": "Force of Will",
+          "chance": 0.13
         }
       ]
     },
@@ -276,23 +316,28 @@
       "loot": [
         {
           "item": 11822,
-          "name": "Omnicast Boots"
+          "name": "Omnicast Boots",
+          "chance": 0.212
         },
         {
           "item": 11823,
-          "name": "Luminary Kilt"
+          "name": "Luminary Kilt",
+          "chance": 0.237
         },
         {
           "item": 11669,
-          "name": "Naglering"
+          "name": "Naglering",
+          "chance": 0.205
         },
         {
           "item": 11819,
-          "name": "Second Wind"
+          "name": "Second Wind",
+          "chance": 0.242
         },
         {
           "item": 273113,
-          "name": "Blueprint: Master Forge"
+          "name": "Blueprint: Master Forge",
+          "chance": 0.062
         }
       ]
     },
@@ -305,19 +350,23 @@
       "loot": [
         {
           "item": 18044,
-          "name": "Hurley's Tankard"
+          "name": "Hurley's Tankard",
+          "chance": 0.245
         },
         {
           "item": 18043,
-          "name": "Coal Miner Boots"
+          "name": "Coal Miner Boots",
+          "chance": 0.223
         },
         {
           "item": 22275,
-          "name": "Firemoss Boots"
+          "name": "Firemoss Boots",
+          "chance": 0.202
         },
         {
           "item": 11735,
-          "name": "Ragefury Eyepatch"
+          "name": "Ragefury Eyepatch",
+          "chance": 0.234
         }
       ]
     },
@@ -330,15 +379,18 @@
       "loot": [
         {
           "item": 11745,
-          "name": "Fists of Phalanx"
+          "name": "Fists of Phalanx",
+          "chance": 0.207
         },
         {
           "item": 11744,
-          "name": "Bloodfist"
+          "name": "Bloodfist",
+          "chance": 0.241
         },
         {
           "item": 22212,
-          "name": "Golem Fitted Pauldrons"
+          "name": "Golem Fitted Pauldrons",
+          "chance": 0.266
         },
         {
           "item": 11746,
@@ -350,7 +402,8 @@
         },
         {
           "item": 276879,
-          "name": "Backroom Bulwark"
+          "name": "Backroom Bulwark",
+          "chance": 0.235
         }
       ]
     },
@@ -363,19 +416,23 @@
       "loot": [
         {
           "item": 11612,
-          "name": "Plans: Dark Iron Plate"
+          "name": "Plans: Dark Iron Plate",
+          "chance": 0.235
         },
         {
           "item": 11742,
-          "name": "Wayfarer's Knapsack"
+          "name": "Wayfarer's Knapsack",
+          "chance": 0.206
         },
         {
           "item": 2662,
-          "name": "Ribbly's Quiver"
+          "name": "Ribbly's Quiver",
+          "chance": 0.175
         },
         {
           "item": 2663,
-          "name": "Ribbly's Bandolier"
+          "name": "Ribbly's Bandolier",
+          "chance": 0.21
         }
       ]
     },
@@ -388,19 +445,23 @@
       "loot": [
         {
           "item": 12793,
-          "name": "Mixologist's Tunic"
+          "name": "Mixologist's Tunic",
+          "chance": 0.222
         },
         {
           "item": 12791,
-          "name": "Barman Shanker"
+          "name": "Barman Shanker",
+          "chance": 0.319
         },
         {
           "item": 18653,
-          "name": "Schematic: Goblin Jumper Cables XL"
+          "name": "Schematic: Goblin Jumper Cables XL",
+          "chance": 0.252
         },
         {
           "item": 276877,
-          "name": "Brewmancer Nightcap"
+          "name": "Brewmancer Nightcap",
+          "chance": 0.193
         }
       ]
     },
@@ -418,27 +479,33 @@
       "loot": [
         {
           "item": 11812,
-          "name": "Cape of the Fire Salamander"
+          "name": "Cape of the Fire Salamander",
+          "chance": 0.256
         },
         {
           "item": 11814,
-          "name": "Molten Fists"
+          "name": "Molten Fists",
+          "chance": 0.227
         },
         {
           "item": 11809,
-          "name": "Flame Wrath"
+          "name": "Flame Wrath",
+          "chance": 0.199
         },
         {
           "item": 11832,
-          "name": "Burst of Knowledge"
+          "name": "Burst of Knowledge",
+          "chance": 0.269
         },
         {
           "item": 11808,
-          "name": "Circle of Flame"
+          "name": "Circle of Flame",
+          "chance": 0.0052
         },
         {
           "item": 273122,
-          "name": "Blueprint: Molten Foundry"
+          "name": "Blueprint: Molten Foundry",
+          "chance": 0.039
         }
       ]
     },
@@ -492,23 +559,28 @@
       "loot": [
         {
           "item": 11935,
-          "name": "Magmus Stone"
+          "name": "Magmus Stone",
+          "chance": 0.181
         },
         {
           "item": 22208,
-          "name": "Lavastone Hammer"
+          "name": "Lavastone Hammer",
+          "chance": 0.202
         },
         {
           "item": 22395,
-          "name": "Totem of Rage"
+          "name": "Totem of Rage",
+          "chance": 0.202
         },
         {
           "item": 22400,
-          "name": "Libram of Truth"
+          "name": "Libram of Truth",
+          "chance": 0.145
         },
         {
           "item": 11746,
-          "name": "Golem Skull Helm"
+          "name": "Golem Skull Helm",
+          "chance": 0.189
         },
         {
           "item": 277129,
@@ -525,19 +597,23 @@
       "loot": [
         {
           "item": 12553,
-          "name": "Swiftwalker Boots"
+          "name": "Swiftwalker Boots",
+          "chance": 0.222
         },
         {
           "item": 12554,
-          "name": "Hands of the Exalted Herald"
+          "name": "Hands of the Exalted Herald",
+          "chance": 0.148
         },
         {
           "item": 12556,
-          "name": "High Priestess Boots"
+          "name": "High Priestess Boots",
+          "chance": 0.148
         },
         {
           "item": 12557,
-          "name": "Ebonsteel Spaulders"
+          "name": "Ebonsteel Spaulders",
+          "chance": 0.222
         }
       ]
     },
@@ -550,47 +626,58 @@
       "loot": [
         {
           "item": 11815,
-          "name": "Hand of Justice"
+          "name": "Hand of Justice",
+          "chance": 0.192
         },
         {
           "item": 11924,
-          "name": "Robes of the Royal Crown"
+          "name": "Robes of the Royal Crown",
+          "chance": 0.19
         },
         {
           "item": 11928,
-          "name": "Thaurissan's Royal Scepter"
+          "name": "Thaurissan's Royal Scepter",
+          "chance": 0.23
         },
         {
           "item": 11930,
-          "name": "The Emperor's New Cape"
+          "name": "The Emperor's New Cape",
+          "chance": 0.197
         },
         {
           "item": 11931,
-          "name": "Dreadforge Retaliator"
+          "name": "Dreadforge Retaliator",
+          "chance": 0.173
         },
         {
           "item": 11932,
-          "name": "Guiding Stave of Wisdom"
+          "name": "Guiding Stave of Wisdom",
+          "chance": 0.147
         },
         {
           "item": 11933,
-          "name": "Imperial Jewel"
+          "name": "Imperial Jewel",
+          "chance": 0.206
         },
         {
           "item": 11934,
-          "name": "Emperor's Seal"
+          "name": "Emperor's Seal",
+          "chance": 0.192
         },
         {
           "item": 22204,
-          "name": "Wristguards of Renown"
+          "name": "Wristguards of Renown",
+          "chance": 0.166
         },
         {
           "item": 22207,
-          "name": "Sash of the Grand Hunt"
+          "name": "Sash of the Grand Hunt",
+          "chance": 0.182
         },
         {
           "item": 11684,
-          "name": "Ironfoe"
+          "name": "Ironfoe",
+          "chance": 0.012
         }
       ]
     },
@@ -603,19 +690,23 @@
       "loot": [
         {
           "item": 11726,
-          "name": "Savage Gladiator Chain"
+          "name": "Savage Gladiator Chain",
+          "chance": 0.103
         },
         {
           "item": 22257,
-          "name": "Bloodclot Band"
+          "name": "Bloodclot Band",
+          "chance": 0.345
         },
         {
           "item": 22266,
-          "name": "Flarethorn"
+          "name": "Flarethorn",
+          "chance": 0.328
         },
         {
           "item": 22271,
-          "name": "Leggings of Frenzied Magic"
+          "name": "Leggings of Frenzied Magic",
+          "chance": 0.207
         }
       ]
     },
@@ -628,27 +719,33 @@
       "loot": [
         {
           "item": 11702,
-          "name": "Grizzle's Skinner"
+          "name": "Grizzle's Skinner",
+          "chance": 0.183
         },
         {
           "item": 11703,
-          "name": "Stonewall Girdle"
+          "name": "Stonewall Girdle",
+          "chance": 0.19
         },
         {
           "item": 11722,
-          "name": "Dregmetal Spaulders"
+          "name": "Dregmetal Spaulders",
+          "chance": 0.23
         },
         {
           "item": 22270,
-          "name": "Entrenching Boots"
+          "name": "Entrenching Boots",
+          "chance": 0.175
         },
         {
           "item": 11610,
-          "name": "Plans: Dark Iron Pulverizer"
+          "name": "Plans: Dark Iron Pulverizer",
+          "chance": 0.96
         },
         {
           "item": 277117,
-          "name": "Savage Gladiator Shoulders"
+          "name": "Savage Gladiator Shoulders",
+          "chance": 0.19
         }
       ]
     },
@@ -661,19 +758,23 @@
       "loot": [
         {
           "item": 11679,
-          "name": "Rubicund Armguards"
+          "name": "Rubicund Armguards",
+          "chance": 0.286
         },
         {
           "item": 11685,
-          "name": "Splinthide Shoulders"
+          "name": "Splinthide Shoulders",
+          "chance": 0.257
         },
         {
           "item": 11686,
-          "name": "Girdle of Beastial Fury"
+          "name": "Girdle of Beastial Fury",
+          "chance": 0.219
         },
         {
           "item": 11730,
-          "name": "Savage Gladiator Grips"
+          "name": "Savage Gladiator Grips",
+          "chance": 0.229
         }
       ]
     },
@@ -686,19 +787,23 @@
       "loot": [
         {
           "item": 11662,
-          "name": "Ban'thok Sash"
+          "name": "Ban'thok Sash",
+          "chance": 0.271
         },
         {
           "item": 11665,
-          "name": "Ogreseer Fists"
+          "name": "Ogreseer Fists",
+          "chance": 0.206
         },
         {
           "item": 11824,
-          "name": "Cyclopean Band"
+          "name": "Cyclopean Band",
+          "chance": 0.28
         },
         {
           "item": 11728,
-          "name": "Savage Gladiator Leggings"
+          "name": "Savage Gladiator Leggings",
+          "chance": 0.243
         }
       ]
     },
@@ -711,19 +816,23 @@
       "loot": [
         {
           "item": 11675,
-          "name": "Shadefiend Boots"
+          "name": "Shadefiend Boots",
+          "chance": 0.227
         },
         {
           "item": 11677,
-          "name": "Graverot Cape"
+          "name": "Graverot Cape",
+          "chance": 0.159
         },
         {
           "item": 11678,
-          "name": "Carapace of Anub'shiah"
+          "name": "Carapace of Anub'shiah",
+          "chance": 0.261
         },
         {
           "item": 11731,
-          "name": "Savage Gladiator Greaves"
+          "name": "Savage Gladiator Greaves",
+          "chance": 0.352
         }
       ]
     },
@@ -736,19 +845,23 @@
       "loot": [
         {
           "item": 11633,
-          "name": "Spiderfang Carapace"
+          "name": "Spiderfang Carapace",
+          "chance": 0.294
         },
         {
           "item": 11634,
-          "name": "Silkweb Gloves"
+          "name": "Silkweb Gloves",
+          "chance": 0.245
         },
         {
           "item": 11635,
-          "name": "Hookfang Shanker"
+          "name": "Hookfang Shanker",
+          "chance": 0.186
         },
         {
           "item": 11729,
-          "name": "Savage Gladiator Helm"
+          "name": "Savage Gladiator Helm",
+          "chance": 0.275
         }
       ]
     },
@@ -761,19 +874,23 @@
       "loot": [
         {
           "item": 11787,
-          "name": "Shalehusk Boots"
+          "name": "Shalehusk Boots",
+          "chance": 0.22
         },
         {
           "item": 11786,
-          "name": "Stone of the Earth"
+          "name": "Stone of the Earth",
+          "chance": 0.203
         },
         {
           "item": 11785,
-          "name": "Rock Golem Bulwark"
+          "name": "Rock Golem Bulwark",
+          "chance": 0.22
         },
         {
           "item": 22245,
-          "name": "Soot Encrusted Footwear"
+          "name": "Soot Encrusted Footwear",
+          "chance": 0.322
         }
       ]
     },
@@ -783,7 +900,6 @@
       "npc": 16059,
       "level": 60,
       "rare": true,
-      "quests": [9015],
       "loot": [
         {
           "item": 22305,
@@ -892,6 +1008,6 @@
   ],
   "quests": [
     3802, 4123, 4083, 4136, 4201, 4126, 4134, 4263, 3907, 7201, 4322, 4063, 4132, 4024, 4362, 4003, 4286, 7848, 7604,
-    4295, 97197, 9015
+    4295, 97197
   ]
 }

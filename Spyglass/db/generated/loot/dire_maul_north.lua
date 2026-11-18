@@ -4,19 +4,19 @@ local Data = Spyglass.Data
 -- Dire Maul: North (map 429)
 
 Data:AddBossLoot(362, { -- Guard Mol'dar
-    { 18494 }, -- Denwatcher's Shoulders
-    { 18493 }, -- Bulky Iron Spaulders
-    { 18496 }, -- Heliotrope Cloak
-    { 18497 }, -- Sublime Wristguards
-    { 18498 }, -- Hedgecutter
-    { 18450 }, -- Robe of Combustion
-    { 18451 }, -- Hyena Hide Belt
-    { 18458 }, -- Modest Armguards
-    { 18459 }, -- Gallant's Wristguards
-    { 18460 }, -- Unsophisticated Hand Cannon
-    { 18462 }, -- Jagged Bone Fist
-    { 18463 }, -- Ogre Pocket Knife
-    { 18464 }, -- Gordok Nose Ring
+    { 18494, 0.076 }, -- Denwatcher's Shoulders
+    { 18493, 0.083 }, -- Bulky Iron Spaulders
+    { 18496, 0.062 }, -- Heliotrope Cloak
+    { 18497, 0.048 }, -- Sublime Wristguards
+    { 18498, 0.062 }, -- Hedgecutter
+    { 18450, 0.069 }, -- Robe of Combustion
+    { 18451, 0.09 }, -- Hyena Hide Belt
+    { 18458, 0.138 }, -- Modest Armguards
+    { 18459, 0.076 }, -- Gallant's Wristguards
+    { 18460, 0.076 }, -- Unsophisticated Hand Cannon
+    { 18462, 0.062 }, -- Jagged Bone Fist
+    { 18463, 0.09 }, -- Ogre Pocket Knife
+    { 18464, 0.041 }, -- Gordok Nose Ring
 })
 
 Data:AddBossLoot(363, { -- Stomper Kreeg
@@ -29,55 +29,55 @@ Data:AddBossLoot(364, { -- Guard Fengus
     { 18496 }, -- Heliotrope Cloak
     { 18497 }, -- Sublime Wristguards
     { 18498 }, -- Hedgecutter
-    { 18450 }, -- Robe of Combustion
-    { 18451 }, -- Hyena Hide Belt
-    { 18458 }, -- Modest Armguards
-    { 18459 }, -- Gallant's Wristguards
-    { 18460 }, -- Unsophisticated Hand Cannon
-    { 18462 }, -- Jagged Bone Fist
-    { 18463 }, -- Ogre Pocket Knife
-    { 18464 }, -- Gordok Nose Ring
+    { 18450, 0.119 }, -- Robe of Combustion
+    { 18451, 0.128 }, -- Hyena Hide Belt
+    { 18458, 0.138 }, -- Modest Armguards
+    { 18459, 0.037 }, -- Gallant's Wristguards
+    { 18460, 0.128 }, -- Unsophisticated Hand Cannon
+    { 18462, 0.119 }, -- Jagged Bone Fist
+    { 18463, 0.165 }, -- Ogre Pocket Knife
+    { 18464, 0.156 }, -- Gordok Nose Ring
 })
 
 Data:AddBossLoot(365, { -- Guard Slip'kik
-    { 18494 }, -- Denwatcher's Shoulders
-    { 18493 }, -- Bulky Iron Spaulders
-    { 18496 }, -- Heliotrope Cloak
-    { 18497 }, -- Sublime Wristguards
-    { 18498 }, -- Hedgecutter
-    { 18450 }, -- Robe of Combustion
-    { 18451 }, -- Hyena Hide Belt
-    { 18458 }, -- Modest Armguards
-    { 18459 }, -- Gallant's Wristguards
-    { 18460 }, -- Unsophisticated Hand Cannon
-    { 18462 }, -- Jagged Bone Fist
-    { 18463 }, -- Ogre Pocket Knife
-    { 18464 }, -- Gordok Nose Ring
+    { 18494, 0.041 }, -- Denwatcher's Shoulders
+    { 18493, 0.057 }, -- Bulky Iron Spaulders
+    { 18496, 0.09 }, -- Heliotrope Cloak
+    { 18497, 0.049 }, -- Sublime Wristguards
+    { 18498, 0.074 }, -- Hedgecutter
+    { 18450, 0.09 }, -- Robe of Combustion
+    { 18451, 0.057 }, -- Hyena Hide Belt
+    { 18458, 0.066 }, -- Modest Armguards
+    { 18459, 0.123 }, -- Gallant's Wristguards
+    { 18460, 0.041 }, -- Unsophisticated Hand Cannon
+    { 18462, 0.164 }, -- Jagged Bone Fist
+    { 18463, 0.098 }, -- Ogre Pocket Knife
+    { 18464, 0.049 }, -- Gordok Nose Ring
 })
 
 Data:AddBossLoot(366, { -- Captain Kromcrush
-    { 18503 }, -- Kromcrush's Chestplate
-    { 18507 }, -- Boots of the Full Moon
-    { 18502 }, -- Monstrous Glaive
-    { 18505 }, -- Mugger's Belt
+    { 18503, 0.092 }, -- Kromcrush's Chestplate
+    { 18507, 0.246 }, -- Boots of the Full Moon
+    { 18502, 0.215 }, -- Monstrous Glaive
+    { 18505, 0.354 }, -- Mugger's Belt
 })
 
 Data:AddBossLoot(367, { -- Cho'Rush the Observer
-    { 18483 }, -- Mana Channeling Wand
-    { 18484 }, -- Cho'Rush's Blade
-    { 18485 }, -- Observer's Shield
-    { 18490 }, -- Insightful Hood
+    { 18483, 0.424 }, -- Mana Channeling Wand
+    { 18484, 0.364 }, -- Cho'Rush's Blade
+    { 18485, 0.515 }, -- Observer's Shield
+    { 18490, 0.409 }, -- Insightful Hood
 })
 
 Data:AddBossLoot(368, { -- King Gordok
-    { 18526 }, -- Crown of the Ogre King
-    { 18525 }, -- Bracers of Prosperity
-    { 18527 }, -- Harmonious Gauntlets
-    { 18524 }, -- Leggings of Destruction
-    { 18521 }, -- Grimy Metal Boots
-    { 18520 }, -- Barbarous Blade
-    { 18522 }, -- Band of the Ogre King
-    { 18523 }, -- Brightly Glowing Stone
+    { 18526, 0.22 }, -- Crown of the Ogre King
+    { 18525, 0.209 }, -- Bracers of Prosperity
+    { 18527, 0.209 }, -- Harmonious Gauntlets
+    { 18524, 0.253 }, -- Leggings of Destruction
+    { 18521, 0.22 }, -- Grimy Metal Boots
+    { 18520, 0.203 }, -- Barbarous Blade
+    { 18522, 0.22 }, -- Band of the Ogre King
+    { 18523, 0.269 }, -- Brightly Glowing Stone
 })
 
 Data:AddQuests(42903, {

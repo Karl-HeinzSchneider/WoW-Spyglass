@@ -4,109 +4,109 @@ local Data = Spyglass.Data
 -- Stormwind Stockade (map 34)
 
 Data:AddBossLoot(2756, { -- Targorr the Dread
-    { 273804 }, -- Executioner Mantle
-    { 273805 }, -- Blackrock Harness
-    { 273806 }, -- Dark Horde Band
+    { 273804, 0.276 }, -- Executioner Mantle
+    { 273805, 0.301 }, -- Blackrock Harness
+    { 273806, 0.304 }, -- Dark Horde Band
     { 251380 }, -- Plans: Veteran's Silvered Chain Helm
     { 251382 }, -- Plans: Protector's Silvered Chain Helm
-    { 253942 }, -- Pattern: Filigreed Flame Leggings
-    { 251345 }, -- Plans: Veteran's Chain Leggings
-    { 251346 }, -- Plans: Guard's Chain Leggings
-    { 251347 }, -- Plans: Protector's Chain Leggings
-    { 251348 }, -- Plans: Acolyte's Chain Leggings
-    { 251349 }, -- Plans: Crusader's Chain Leggings
-    { 252792 }, -- Pattern: Brawler's Leather Pants
-    { 252793 }, -- Pattern: Trapper's Leather Pants
-    { 252794 }, -- Pattern: Defender's Leather Pants
-    { 252795 }, -- Pattern: Totemic Leather Pants
-    { 252796 }, -- Pattern: Stormrider's Leather Pants
-    { 252797 }, -- Pattern: Wisdom's Leather Pants
-    { 253938 }, -- Pattern: Filigreed Pristine Leggings
-    { 253940 }, -- Pattern: Filigreed Silky Leggings
-    { 253944 }, -- Pattern: Filigreed Shadow Leggings
-    { 253946 }, -- Pattern: Filigreed Pearly Leggings
-    { 253948 }, -- Pattern: Filigreed Shining Leggings
+    { 253942, 0.0049 }, -- Pattern: Filigreed Flame Leggings
+    { 251345, 0.0066 }, -- Plans: Veteran's Chain Leggings
+    { 251346, 0.0046 }, -- Plans: Guard's Chain Leggings
+    { 251347, 0.0049 }, -- Plans: Protector's Chain Leggings
+    { 251348, 0.0049 }, -- Plans: Acolyte's Chain Leggings
+    { 251349, 0.0057 }, -- Plans: Crusader's Chain Leggings
+    { 252792, 0.0043 }, -- Pattern: Brawler's Leather Pants
+    { 252793, 0.0063 }, -- Pattern: Trapper's Leather Pants
+    { 252794, 0.004 }, -- Pattern: Defender's Leather Pants
+    { 252795, 0.0069 }, -- Pattern: Totemic Leather Pants
+    { 252796, 0.006 }, -- Pattern: Stormrider's Leather Pants
+    { 252797, 0.0051 }, -- Pattern: Wisdom's Leather Pants
+    { 253938, 0.0051 }, -- Pattern: Filigreed Pristine Leggings
+    { 253940, 0.004 }, -- Pattern: Filigreed Silky Leggings
+    { 253944, 0.0046 }, -- Pattern: Filigreed Shadow Leggings
+    { 253946, 0.0054 }, -- Pattern: Filigreed Pearly Leggings
+    { 253948, 0.0054 }, -- Pattern: Filigreed Shining Leggings
 })
 
 Data:AddBossLoot(2757, { -- Kam Deepfury
-    { 2280 }, -- Kam's Walking Stick
-    { 273808 }, -- Bridgebreaker Bindings
-    { 273807 }, -- Demolition Girdle
+    { 2280, 0.325 }, -- Kam's Walking Stick
+    { 273808, 0.276 }, -- Bridgebreaker Bindings
+    { 273807, 0.304 }, -- Demolition Girdle
     { 251379 }, -- Plans: Crusader's Silvered Chain Leggings
     { 252825 }, -- Pattern: Wisdom's Leather Leggings
     { 252512 }, -- Brawler's Leather Helm
     { 252513 }, -- Trapper's Leather Helm
     { 252455 }, -- Defender's Leather Helm
     { 252515 }, -- Wisdom's Leather Helm
-    { 252815 }, -- Pattern: Trapper's Leather Helm
-    { 251350 }, -- Plans: Veteran's Chain Helm
-    { 251351 }, -- Plans: Guard's Chain Helm
-    { 251352 }, -- Plans: Protector's Chain Helm
-    { 251353 }, -- Plans: Acolyte's Chain Helm
-    { 251354 }, -- Plans: Crusader's Chain Helm
-    { 252814 }, -- Pattern: Brawler's Leather Helm
-    { 252816 }, -- Pattern: Defender's Leather Helm
-    { 252817 }, -- Pattern: Totemic Leather Helm
-    { 252818 }, -- Pattern: Stormrider's Leather Helm
-    { 252819 }, -- Pattern: Wisdom's Leather Helm
-    { 253976 }, -- Pattern: Filigreed Pristine Circlet
-    { 253978 }, -- Pattern: Filigreed Silky Circlet
-    { 253980 }, -- Pattern: Filigreed Flame Circlet
-    { 253982 }, -- Pattern: Filigreed Shadow Circlet
-    { 253984 }, -- Pattern: Filigreed Pearly Circlet
-    { 253986 }, -- Pattern: Filigreed Shining Circlet
+    { 252815, 0.0061 }, -- Pattern: Trapper's Leather Helm
+    { 251350, 0.0041 }, -- Plans: Veteran's Chain Helm
+    { 251351, 0.0054 }, -- Plans: Guard's Chain Helm
+    { 251352, 0.0034 }, -- Plans: Protector's Chain Helm
+    { 251353, 0.0075 }, -- Plans: Acolyte's Chain Helm
+    { 251354, 0.0048 }, -- Plans: Crusader's Chain Helm
+    { 252814, 0.0031 }, -- Pattern: Brawler's Leather Helm
+    { 252816, 0.0048 }, -- Pattern: Defender's Leather Helm
+    { 252817, 0.0082 }, -- Pattern: Totemic Leather Helm
+    { 252818, 0.0031 }, -- Pattern: Stormrider's Leather Helm
+    { 252819, 0.0051 }, -- Pattern: Wisdom's Leather Helm
+    { 253976, 0.0082 }, -- Pattern: Filigreed Pristine Circlet
+    { 253978, 0.0068 }, -- Pattern: Filigreed Silky Circlet
+    { 253980, 0.0082 }, -- Pattern: Filigreed Flame Circlet
+    { 253982, 0.0075 }, -- Pattern: Filigreed Shadow Circlet
+    { 253984, 0.0024 }, -- Pattern: Filigreed Pearly Circlet
+    { 253986, 0.0048 }, -- Pattern: Filigreed Shining Circlet
 })
 
 Data:AddBossLoot(2758, { -- Hamhock
-    { 273809 }, -- Hamhock's Cleaver
-    { 273810 }, -- Ogre Grips
-    { 273811 }, -- Repurposed Rack
+    { 273809, 0.343 }, -- Hamhock's Cleaver
+    { 273810, 0.267 }, -- Ogre Grips
+    { 273811, 0.315 }, -- Repurposed Rack
     { 251377 }, -- Plans: Protector's Silvered Chain Leggings
     { 252513 }, -- Trapper's Leather Helm
-    { 251350 }, -- Plans: Veteran's Chain Helm
-    { 251351 }, -- Plans: Guard's Chain Helm
-    { 251352 }, -- Plans: Protector's Chain Helm
-    { 251353 }, -- Plans: Acolyte's Chain Helm
-    { 251354 }, -- Plans: Crusader's Chain Helm
-    { 252814 }, -- Pattern: Brawler's Leather Helm
-    { 252815 }, -- Pattern: Trapper's Leather Helm
-    { 252816 }, -- Pattern: Defender's Leather Helm
-    { 252817 }, -- Pattern: Totemic Leather Helm
-    { 252818 }, -- Pattern: Stormrider's Leather Helm
-    { 252819 }, -- Pattern: Wisdom's Leather Helm
-    { 253976 }, -- Pattern: Filigreed Pristine Circlet
-    { 253978 }, -- Pattern: Filigreed Silky Circlet
-    { 253980 }, -- Pattern: Filigreed Flame Circlet
-    { 253982 }, -- Pattern: Filigreed Shadow Circlet
-    { 253984 }, -- Pattern: Filigreed Pearly Circlet
-    { 253986 }, -- Pattern: Filigreed Shining Circlet
+    { 251350, 0.0087 }, -- Plans: Veteran's Chain Helm
+    { 251351, 0.0053 }, -- Plans: Guard's Chain Helm
+    { 251352, 0.0063 }, -- Plans: Protector's Chain Helm
+    { 251353, 0.0048 }, -- Plans: Acolyte's Chain Helm
+    { 251354, 0.0063 }, -- Plans: Crusader's Chain Helm
+    { 252814, 0.0063 }, -- Pattern: Brawler's Leather Helm
+    { 252815, 0.0034 }, -- Pattern: Trapper's Leather Helm
+    { 252816, 0.0058 }, -- Pattern: Defender's Leather Helm
+    { 252817, 0.0072 }, -- Pattern: Totemic Leather Helm
+    { 252818, 0.0034 }, -- Pattern: Stormrider's Leather Helm
+    { 252819, 0.0024 }, -- Pattern: Wisdom's Leather Helm
+    { 253976, 0.0039 }, -- Pattern: Filigreed Pristine Circlet
+    { 253978, 0.0043 }, -- Pattern: Filigreed Silky Circlet
+    { 253980, 0.0058 }, -- Pattern: Filigreed Flame Circlet
+    { 253982, 0.0039 }, -- Pattern: Filigreed Shadow Circlet
+    { 253984, 0.0039 }, -- Pattern: Filigreed Pearly Circlet
+    { 253986, 0.0087 }, -- Pattern: Filigreed Shining Circlet
 })
 
 Data:AddBossLoot(-1720, { -- Bruegal Ironknuckle
-    { 3228 }, -- Jimmied Handcuffs
-    { 2942 }, -- Iron Knuckles
-    { 2941 }, -- Prison Shank
-    { 251350 }, -- Plans: Veteran's Chain Helm
-    { 251351 }, -- Plans: Guard's Chain Helm
-    { 251352 }, -- Plans: Protector's Chain Helm
+    { 3228, 0.292 }, -- Jimmied Handcuffs
+    { 2942, 0.356 }, -- Iron Knuckles
+    { 2941, 0.305 }, -- Prison Shank
+    { 251350, 0.0042 }, -- Plans: Veteran's Chain Helm
+    { 251351, 0.0042 }, -- Plans: Guard's Chain Helm
+    { 251352, 0.0042 }, -- Plans: Protector's Chain Helm
     { 251353 }, -- Plans: Acolyte's Chain Helm
-    { 251354 }, -- Plans: Crusader's Chain Helm
-    { 252814 }, -- Pattern: Brawler's Leather Helm
-    { 252816 }, -- Pattern: Defender's Leather Helm
-    { 252817 }, -- Pattern: Totemic Leather Helm
-    { 252818 }, -- Pattern: Stormrider's Leather Helm
-    { 252819 }, -- Pattern: Wisdom's Leather Helm
+    { 251354, 0.0042 }, -- Plans: Crusader's Chain Helm
+    { 252814, 0.0085 }, -- Pattern: Brawler's Leather Helm
+    { 252816, 0.0085 }, -- Pattern: Defender's Leather Helm
+    { 252817, 0.013 }, -- Pattern: Totemic Leather Helm
+    { 252818, 0.0042 }, -- Pattern: Stormrider's Leather Helm
+    { 252819, 0.0085 }, -- Pattern: Wisdom's Leather Helm
     { 253976 }, -- Pattern: Filigreed Pristine Circlet
-    { 253978 }, -- Pattern: Filigreed Silky Circlet
-    { 253980 }, -- Pattern: Filigreed Flame Circlet
+    { 253978, 0.0085 }, -- Pattern: Filigreed Silky Circlet
+    { 253980, 0.0042 }, -- Pattern: Filigreed Flame Circlet
     { 253984 }, -- Pattern: Filigreed Pearly Circlet
-    { 253986 }, -- Pattern: Filigreed Shining Circlet
+    { 253986, 0.0085 }, -- Pattern: Filigreed Shining Circlet
 })
 
 Data:AddBossLoot(2759, { -- Dextren Ward
-    { 273817 }, -- Graverobber's Shovel
-    { 273819 }, -- Boneslicer
-    { 273820 }, -- Nightskulker Ring
+    { 273817, 0.309 }, -- Graverobber's Shovel
+    { 273819, 0.28 }, -- Boneslicer
+    { 273820, 0.282 }, -- Nightskulker Ring
     { 251375 }, -- Plans: Veteran's Silvered Chain Leggings
     { 251376 }, -- Plans: Guard's Silvered Chain Leggings
     { 252820 }, -- Pattern: Brawler's Leather Legguards
@@ -115,51 +115,51 @@ Data:AddBossLoot(2759, { -- Dextren Ward
     { 252456 }, -- Totemic Leather Helm
     { 252514 }, -- Stormrider's Leather Helm
     { 252515 }, -- Wisdom's Leather Helm
-    { 251350 }, -- Plans: Veteran's Chain Helm
-    { 251351 }, -- Plans: Guard's Chain Helm
-    { 251352 }, -- Plans: Protector's Chain Helm
-    { 251353 }, -- Plans: Acolyte's Chain Helm
-    { 251354 }, -- Plans: Crusader's Chain Helm
-    { 252814 }, -- Pattern: Brawler's Leather Helm
-    { 252815 }, -- Pattern: Trapper's Leather Helm
-    { 252816 }, -- Pattern: Defender's Leather Helm
-    { 252817 }, -- Pattern: Totemic Leather Helm
-    { 252818 }, -- Pattern: Stormrider's Leather Helm
-    { 252819 }, -- Pattern: Wisdom's Leather Helm
-    { 253976 }, -- Pattern: Filigreed Pristine Circlet
-    { 253978 }, -- Pattern: Filigreed Silky Circlet
-    { 253980 }, -- Pattern: Filigreed Flame Circlet
-    { 253982 }, -- Pattern: Filigreed Shadow Circlet
-    { 253984 }, -- Pattern: Filigreed Pearly Circlet
-    { 253986 }, -- Pattern: Filigreed Shining Circlet
+    { 251350, 0.0054 }, -- Plans: Veteran's Chain Helm
+    { 251351, 0.0054 }, -- Plans: Guard's Chain Helm
+    { 251352, 0.0045 }, -- Plans: Protector's Chain Helm
+    { 251353, 0.0039 }, -- Plans: Acolyte's Chain Helm
+    { 251354, 0.0033 }, -- Plans: Crusader's Chain Helm
+    { 252814, 0.0051 }, -- Pattern: Brawler's Leather Helm
+    { 252815, 0.0054 }, -- Pattern: Trapper's Leather Helm
+    { 252816, 0.0081 }, -- Pattern: Defender's Leather Helm
+    { 252817, 0.0036 }, -- Pattern: Totemic Leather Helm
+    { 252818, 0.0051 }, -- Pattern: Stormrider's Leather Helm
+    { 252819, 0.0048 }, -- Pattern: Wisdom's Leather Helm
+    { 253976, 0.0051 }, -- Pattern: Filigreed Pristine Circlet
+    { 253978, 0.0084 }, -- Pattern: Filigreed Silky Circlet
+    { 253980, 0.0045 }, -- Pattern: Filigreed Flame Circlet
+    { 253982, 0.0051 }, -- Pattern: Filigreed Shadow Circlet
+    { 253984, 0.0036 }, -- Pattern: Filigreed Pearly Circlet
+    { 253986, 0.0045 }, -- Pattern: Filigreed Shining Circlet
 })
 
 Data:AddBossLoot(2760, { -- Bazil Thredd
-    { 273824 }, -- Defias Jailbreakers
-    { 273825 }, -- Red Wool Cloak
-    { 273827 }, -- Debt Collector
-    { 273829 }, -- Concealed Hand Crossbow
+    { 273824, 0.201 }, -- Defias Jailbreakers
+    { 273825, 0.211 }, -- Red Wool Cloak
+    { 273827, 0.241 }, -- Debt Collector
+    { 273829, 0.18 }, -- Concealed Hand Crossbow
     { 252824 }, -- Pattern: Stormrider's Leather Kilt
-    { 253976 }, -- Pattern: Filigreed Pristine Circlet
-    { 253986 }, -- Pattern: Filigreed Shining Circlet
+    { 253976, 0.0032 }, -- Pattern: Filigreed Pristine Circlet
+    { 253986, 0.0041 }, -- Pattern: Filigreed Shining Circlet
     { 252455 }, -- Defender's Leather Helm
     { 252456 }, -- Totemic Leather Helm
     { 252515 }, -- Wisdom's Leather Helm
-    { 251350 }, -- Plans: Veteran's Chain Helm
-    { 251351 }, -- Plans: Guard's Chain Helm
-    { 251352 }, -- Plans: Protector's Chain Helm
-    { 251353 }, -- Plans: Acolyte's Chain Helm
-    { 251354 }, -- Plans: Crusader's Chain Helm
-    { 252814 }, -- Pattern: Brawler's Leather Helm
-    { 252815 }, -- Pattern: Trapper's Leather Helm
-    { 252816 }, -- Pattern: Defender's Leather Helm
-    { 252817 }, -- Pattern: Totemic Leather Helm
-    { 252818 }, -- Pattern: Stormrider's Leather Helm
-    { 252819 }, -- Pattern: Wisdom's Leather Helm
-    { 253978 }, -- Pattern: Filigreed Silky Circlet
-    { 253980 }, -- Pattern: Filigreed Flame Circlet
-    { 253982 }, -- Pattern: Filigreed Shadow Circlet
-    { 253984 }, -- Pattern: Filigreed Pearly Circlet
+    { 251350, 0.0025 }, -- Plans: Veteran's Chain Helm
+    { 251351, 0.0035 }, -- Plans: Guard's Chain Helm
+    { 251352, 0.0035 }, -- Plans: Protector's Chain Helm
+    { 251353, 0.007 }, -- Plans: Acolyte's Chain Helm
+    { 251354, 0.0041 }, -- Plans: Crusader's Chain Helm
+    { 252814, 0.0061 }, -- Pattern: Brawler's Leather Helm
+    { 252815, 0.0048 }, -- Pattern: Trapper's Leather Helm
+    { 252816, 0.0057 }, -- Pattern: Defender's Leather Helm
+    { 252817, 0.0051 }, -- Pattern: Totemic Leather Helm
+    { 252818, 0.0057 }, -- Pattern: Stormrider's Leather Helm
+    { 252819, 0.0041 }, -- Pattern: Wisdom's Leather Helm
+    { 253978, 0.0038 }, -- Pattern: Filigreed Silky Circlet
+    { 253980, 0.0061 }, -- Pattern: Filigreed Flame Circlet
+    { 253982, 0.0051 }, -- Pattern: Filigreed Shadow Circlet
+    { 253984, 0.0076 }, -- Pattern: Filigreed Pearly Circlet
 })
 
 Data:AddTrashLoot(34, {

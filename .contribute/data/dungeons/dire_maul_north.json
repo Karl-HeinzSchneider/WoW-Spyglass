@@ -19,55 +19,68 @@
       "loot": [
         {
           "item": 18494,
-          "name": "Denwatcher's Shoulders"
+          "name": "Denwatcher's Shoulders",
+          "chance": 0.076
         },
         {
           "item": 18493,
-          "name": "Bulky Iron Spaulders"
+          "name": "Bulky Iron Spaulders",
+          "chance": 0.083
         },
         {
           "item": 18496,
-          "name": "Heliotrope Cloak"
+          "name": "Heliotrope Cloak",
+          "chance": 0.062
         },
         {
           "item": 18497,
-          "name": "Sublime Wristguards"
+          "name": "Sublime Wristguards",
+          "chance": 0.048
         },
         {
           "item": 18498,
-          "name": "Hedgecutter"
+          "name": "Hedgecutter",
+          "chance": 0.062
         },
         {
           "item": 18450,
-          "name": "Robe of Combustion"
+          "name": "Robe of Combustion",
+          "chance": 0.069
         },
         {
           "item": 18451,
-          "name": "Hyena Hide Belt"
+          "name": "Hyena Hide Belt",
+          "chance": 0.09
         },
         {
           "item": 18458,
-          "name": "Modest Armguards"
+          "name": "Modest Armguards",
+          "chance": 0.138
         },
         {
           "item": 18459,
-          "name": "Gallant's Wristguards"
+          "name": "Gallant's Wristguards",
+          "chance": 0.076
         },
         {
           "item": 18460,
-          "name": "Unsophisticated Hand Cannon"
+          "name": "Unsophisticated Hand Cannon",
+          "chance": 0.076
         },
         {
           "item": 18462,
-          "name": "Jagged Bone Fist"
+          "name": "Jagged Bone Fist",
+          "chance": 0.062
         },
         {
           "item": 18463,
-          "name": "Ogre Pocket Knife"
+          "name": "Ogre Pocket Knife",
+          "chance": 0.09
         },
         {
           "item": 18464,
-          "name": "Gordok Nose Ring"
+          "name": "Gordok Nose Ring",
+          "chance": 0.041
         }
       ]
     },
@@ -113,35 +126,43 @@
         },
         {
           "item": 18450,
-          "name": "Robe of Combustion"
+          "name": "Robe of Combustion",
+          "chance": 0.119
         },
         {
           "item": 18451,
-          "name": "Hyena Hide Belt"
+          "name": "Hyena Hide Belt",
+          "chance": 0.128
         },
         {
           "item": 18458,
-          "name": "Modest Armguards"
+          "name": "Modest Armguards",
+          "chance": 0.138
         },
         {
           "item": 18459,
-          "name": "Gallant's Wristguards"
+          "name": "Gallant's Wristguards",
+          "chance": 0.037
         },
         {
           "item": 18460,
-          "name": "Unsophisticated Hand Cannon"
+          "name": "Unsophisticated Hand Cannon",
+          "chance": 0.128
         },
         {
           "item": 18462,
-          "name": "Jagged Bone Fist"
+          "name": "Jagged Bone Fist",
+          "chance": 0.119
         },
         {
           "item": 18463,
-          "name": "Ogre Pocket Knife"
+          "name": "Ogre Pocket Knife",
+          "chance": 0.165
         },
         {
           "item": 18464,
-          "name": "Gordok Nose Ring"
+          "name": "Gordok Nose Ring",
+          "chance": 0.156
         }
       ]
     },
@@ -154,55 +175,68 @@
       "loot": [
         {
           "item": 18494,
-          "name": "Denwatcher's Shoulders"
+          "name": "Denwatcher's Shoulders",
+          "chance": 0.041
         },
         {
           "item": 18493,
-          "name": "Bulky Iron Spaulders"
+          "name": "Bulky Iron Spaulders",
+          "chance": 0.057
         },
         {
           "item": 18496,
-          "name": "Heliotrope Cloak"
+          "name": "Heliotrope Cloak",
+          "chance": 0.09
         },
         {
           "item": 18497,
-          "name": "Sublime Wristguards"
+          "name": "Sublime Wristguards",
+          "chance": 0.049
         },
         {
           "item": 18498,
-          "name": "Hedgecutter"
+          "name": "Hedgecutter",
+          "chance": 0.074
         },
         {
           "item": 18450,
-          "name": "Robe of Combustion"
+          "name": "Robe of Combustion",
+          "chance": 0.09
         },
         {
           "item": 18451,
-          "name": "Hyena Hide Belt"
+          "name": "Hyena Hide Belt",
+          "chance": 0.057
         },
         {
           "item": 18458,
-          "name": "Modest Armguards"
+          "name": "Modest Armguards",
+          "chance": 0.066
         },
         {
           "item": 18459,
-          "name": "Gallant's Wristguards"
+          "name": "Gallant's Wristguards",
+          "chance": 0.123
         },
         {
           "item": 18460,
-          "name": "Unsophisticated Hand Cannon"
+          "name": "Unsophisticated Hand Cannon",
+          "chance": 0.041
         },
         {
           "item": 18462,
-          "name": "Jagged Bone Fist"
+          "name": "Jagged Bone Fist",
+          "chance": 0.164
         },
         {
           "item": 18463,
-          "name": "Ogre Pocket Knife"
+          "name": "Ogre Pocket Knife",
+          "chance": 0.098
         },
         {
           "item": 18464,
-          "name": "Gordok Nose Ring"
+          "name": "Gordok Nose Ring",
+          "chance": 0.049
         }
       ]
     },
@@ -215,19 +249,23 @@
       "loot": [
         {
           "item": 18503,
-          "name": "Kromcrush's Chestplate"
+          "name": "Kromcrush's Chestplate",
+          "chance": 0.092
         },
         {
           "item": 18507,
-          "name": "Boots of the Full Moon"
+          "name": "Boots of the Full Moon",
+          "chance": 0.246
         },
         {
           "item": 18502,
-          "name": "Monstrous Glaive"
+          "name": "Monstrous Glaive",
+          "chance": 0.215
         },
         {
           "item": 18505,
-          "name": "Mugger's Belt"
+          "name": "Mugger's Belt",
+          "chance": 0.354
         }
       ]
     },
@@ -240,19 +278,23 @@
       "loot": [
         {
           "item": 18483,
-          "name": "Mana Channeling Wand"
+          "name": "Mana Channeling Wand",
+          "chance": 0.424
         },
         {
           "item": 18484,
-          "name": "Cho'Rush's Blade"
+          "name": "Cho'Rush's Blade",
+          "chance": 0.364
         },
         {
           "item": 18485,
-          "name": "Observer's Shield"
+          "name": "Observer's Shield",
+          "chance": 0.515
         },
         {
           "item": 18490,
-          "name": "Insightful Hood"
+          "name": "Insightful Hood",
+          "chance": 0.409
         }
       ]
     },
@@ -265,35 +307,43 @@
       "loot": [
         {
           "item": 18526,
-          "name": "Crown of the Ogre King"
+          "name": "Crown of the Ogre King",
+          "chance": 0.22
         },
         {
           "item": 18525,
-          "name": "Bracers of Prosperity"
+          "name": "Bracers of Prosperity",
+          "chance": 0.209
         },
         {
           "item": 18527,
-          "name": "Harmonious Gauntlets"
+          "name": "Harmonious Gauntlets",
+          "chance": 0.209
         },
         {
           "item": 18524,
-          "name": "Leggings of Destruction"
+          "name": "Leggings of Destruction",
+          "chance": 0.253
         },
         {
           "item": 18521,
-          "name": "Grimy Metal Boots"
+          "name": "Grimy Metal Boots",
+          "chance": 0.22
         },
         {
           "item": 18520,
-          "name": "Barbarous Blade"
+          "name": "Barbarous Blade",
+          "chance": 0.203
         },
         {
           "item": 18522,
-          "name": "Band of the Ogre King"
+          "name": "Band of the Ogre King",
+          "chance": 0.22
         },
         {
           "item": 18523,
-          "name": "Brightly Glowing Stone"
+          "name": "Brightly Glowing Stone",
+          "chance": 0.269
         }
       ]
     }

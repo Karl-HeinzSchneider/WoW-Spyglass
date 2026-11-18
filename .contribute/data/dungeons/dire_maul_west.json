@@ -19,23 +19,28 @@
       "loot": [
         {
           "item": 18390,
-          "name": "Tanglemoss Leggings"
+          "name": "Tanglemoss Leggings",
+          "chance": 0.217
         },
         {
           "item": 18393,
-          "name": "Warpwood Binding"
+          "name": "Warpwood Binding",
+          "chance": 0.251
         },
         {
           "item": 18353,
-          "name": "Stoneflower Staff"
+          "name": "Stoneflower Staff",
+          "chance": 0.261
         },
         {
           "item": 18352,
-          "name": "Petrified Bark Shield"
+          "name": "Petrified Bark Shield",
+          "chance": 0.232
         },
         {
           "item": 273120,
-          "name": "Blueprint: Seed Hybridizer"
+          "name": "Blueprint: Seed Hybridizer",
+          "chance": 0.092
         }
       ]
     },
@@ -48,19 +53,23 @@
       "loot": [
         {
           "item": 18383,
-          "name": "Force Imbued Gauntlets"
+          "name": "Force Imbued Gauntlets",
+          "chance": 0.283
         },
         {
           "item": 18386,
-          "name": "Padre's Trousers"
+          "name": "Padre's Trousers",
+          "chance": 0.145
         },
         {
           "item": 18347,
-          "name": "Well Balanced Axe"
+          "name": "Well Balanced Axe",
+          "chance": 0.239
         },
         {
           "item": 18349,
-          "name": "Gauntlets of Accuracy"
+          "name": "Gauntlets of Accuracy",
+          "chance": 0.217
         }
       ]
     },
@@ -73,27 +82,33 @@
       "loot": [
         {
           "item": 18374,
-          "name": "Flamescarred Shoulders"
+          "name": "Flamescarred Shoulders",
+          "chance": 0.214
         },
         {
           "item": 18397,
-          "name": "Elder Magus Pendant"
+          "name": "Elder Magus Pendant",
+          "chance": 0.258
         },
         {
           "item": 18371,
-          "name": "Mindtap Talisman"
+          "name": "Mindtap Talisman",
+          "chance": 0.151
         },
         {
           "item": 22309,
-          "name": "Pattern: Big Bag of Enchantment"
+          "name": "Pattern: Big Bag of Enchantment",
+          "chance": 0.226
         },
         {
           "item": 18350,
-          "name": "Amplifying Cloak"
+          "name": "Amplifying Cloak",
+          "chance": 0.145
         },
         {
           "item": 18351,
-          "name": "Magically Sealed Bracers"
+          "name": "Magically Sealed Bracers",
+          "chance": 0.182
         }
       ]
     },
@@ -106,43 +121,53 @@
       "loot": [
         {
           "item": 18377,
-          "name": "Quickdraw Gloves"
+          "name": "Quickdraw Gloves",
+          "chance": 0.18
         },
         {
           "item": 18379,
-          "name": "Odious Greaves"
+          "name": "Odious Greaves",
+          "chance": 0.131
         },
         {
           "item": 18381,
-          "name": "Evil Eye Pendant"
+          "name": "Evil Eye Pendant",
+          "chance": 0.246
         },
         {
           "item": 18391,
-          "name": "Eyestalk Cord"
+          "name": "Eyestalk Cord",
+          "chance": 0.172
         },
         {
           "item": 18385,
-          "name": "Robe of Everlasting Night"
+          "name": "Robe of Everlasting Night",
+          "chance": 0.213
         },
         {
           "item": 18384,
-          "name": "Bile-etched Spaulders"
+          "name": "Bile-etched Spaulders",
+          "chance": 0.197
         },
         {
           "item": 18389,
-          "name": "Cloak of the Cosmos"
+          "name": "Cloak of the Cosmos",
+          "chance": 0.131
         },
         {
           "item": 18394,
-          "name": "Demon Howl Wristguards"
+          "name": "Demon Howl Wristguards",
+          "chance": 0.246
         },
         {
           "item": 18372,
-          "name": "Blade of the New Moon"
+          "name": "Blade of the New Moon",
+          "chance": 0.172
         },
         {
           "item": 18370,
-          "name": "Vigilance Charm"
+          "name": "Vigilance Charm",
+          "chance": 0.189
         }
       ]
     },
@@ -155,43 +180,53 @@
       "loot": [
         {
           "item": 18382,
-          "name": "Fluctuating Cloak"
+          "name": "Fluctuating Cloak",
+          "chance": 0.197
         },
         {
           "item": 18395,
-          "name": "Emerald Flame Ring"
+          "name": "Emerald Flame Ring",
+          "chance": 0.183
         },
         {
           "item": 18380,
-          "name": "Eldritch Reinforced Legplates"
+          "name": "Eldritch Reinforced Legplates",
+          "chance": 0.178
         },
         {
           "item": 18378,
-          "name": "Silvermoon Leggings"
+          "name": "Silvermoon Leggings",
+          "chance": 0.216
         },
         {
           "item": 18396,
-          "name": "Mind Carver"
+          "name": "Mind Carver",
+          "chance": 0.231
         },
         {
           "item": 18392,
-          "name": "Distracting Dagger"
+          "name": "Distracting Dagger",
+          "chance": 0.236
         },
         {
           "item": 18376,
-          "name": "Timeworn Mace"
+          "name": "Timeworn Mace",
+          "chance": 0.149
         },
         {
           "item": 18375,
-          "name": "Bracers of the Eclipse"
+          "name": "Bracers of the Eclipse",
+          "chance": 0.202
         },
         {
           "item": 18388,
-          "name": "Stoneshatter"
+          "name": "Stoneshatter",
+          "chance": 0.149
         },
         {
           "item": 18373,
-          "name": "Chestplate of Tranquility"
+          "name": "Chestplate of Tranquility",
+          "chance": 0.188
         }
       ]
     },

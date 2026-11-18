@@ -19,7 +19,8 @@
       "loot": [
         {
           "item": 16670,
-          "name": "Boots of Elements"
+          "name": "Boots of Elements",
+          "chance": 0.175
         },
         {
           "item": 12336,
@@ -27,23 +28,28 @@
         },
         {
           "item": 13166,
-          "name": "Slamshot Shoulders"
+          "name": "Slamshot Shoulders",
+          "chance": 0.11
         },
         {
           "item": 13167,
-          "name": "Fist of Omokk"
+          "name": "Fist of Omokk",
+          "chance": 0.152
         },
         {
           "item": 13168,
-          "name": "Plate of the Shaman King"
+          "name": "Plate of the Shaman King",
+          "chance": 0.145
         },
         {
           "item": 13169,
-          "name": "Tressermane Leggings"
+          "name": "Tressermane Leggings",
+          "chance": 0.192
         },
         {
           "item": 13170,
-          "name": "Skyshroud Leggings"
+          "name": "Skyshroud Leggings",
+          "chance": 0.157
         }
       ]
     },
@@ -56,31 +62,38 @@
       "loot": [
         {
           "item": 16712,
-          "name": "Shadowcraft Gloves"
+          "name": "Shadowcraft Gloves",
+          "chance": 0.202
         },
         {
           "item": 13255,
-          "name": "Trueaim Gauntlets"
+          "name": "Trueaim Gauntlets",
+          "chance": 0.125
         },
         {
           "item": 12626,
-          "name": "Funeral Cuffs"
+          "name": "Funeral Cuffs",
+          "chance": 0.143
         },
         {
           "item": 13257,
-          "name": "Demonic Runed Spaulders"
+          "name": "Demonic Runed Spaulders",
+          "chance": 0.14
         },
         {
           "item": 12651,
-          "name": "Blackcrow"
+          "name": "Blackcrow",
+          "chance": 0.115
         },
         {
           "item": 12653,
-          "name": "Riphook"
+          "name": "Riphook",
+          "chance": 0.146
         },
         {
           "item": 12654,
-          "name": "Doomshot"
+          "name": "Doomshot",
+          "chance": 0.869
         }
       ]
     },
@@ -93,7 +106,8 @@
       "loot": [
         {
           "item": 16676,
-          "name": "Beaststalker's Gloves"
+          "name": "Beaststalker's Gloves",
+          "chance": 0.152
         },
         {
           "item": 12335,
@@ -101,23 +115,28 @@
         },
         {
           "item": 13177,
-          "name": "Talisman of Evasion"
+          "name": "Talisman of Evasion",
+          "chance": 0.168
         },
         {
           "item": 13179,
-          "name": "Brazecore Armguards"
+          "name": "Brazecore Armguards",
+          "chance": 0.17
         },
         {
           "item": 12582,
-          "name": "Keris of Zul'Serak"
+          "name": "Keris of Zul'Serak",
+          "chance": 0.141
         },
         {
           "item": 22231,
-          "name": "Kayser's Boots of Precision"
+          "name": "Kayser's Boots of Precision",
+          "chance": 0.154
         },
         {
           "item": 13173,
-          "name": "Flightblade Throwing Axe"
+          "name": "Flightblade Throwing Axe",
+          "chance": 0.194
         }
       ]
     },
@@ -130,23 +149,28 @@
       "loot": [
         {
           "item": 16715,
-          "name": "Wildheart Boots"
+          "name": "Wildheart Boots",
+          "chance": 0.154
         },
         {
           "item": 13244,
-          "name": "Gilded Gauntlets"
+          "name": "Gilded Gauntlets",
+          "chance": 0.183
         },
         {
           "item": 13213,
-          "name": "Smolderweb's Eye"
+          "name": "Smolderweb's Eye",
+          "chance": 0.297
         },
         {
           "item": 13183,
-          "name": "Venomspitter"
+          "name": "Venomspitter",
+          "chance": 0.236
         },
         {
           "item": 249521,
-          "name": "Formula: Dormant Heart of the Mountain"
+          "name": "Formula: Dormant Heart of the Mountain",
+          "chance": 0.154
         }
       ]
     },
@@ -159,19 +183,23 @@
       "loot": [
         {
           "item": 13258,
-          "name": "Slaghide Gauntlets"
+          "name": "Slaghide Gauntlets",
+          "chance": 0.156
         },
         {
           "item": 13259,
-          "name": "Ribsteel Footguards"
+          "name": "Ribsteel Footguards",
+          "chance": 0.203
         },
         {
           "item": 22232,
-          "name": "Marksman's Girdle"
+          "name": "Marksman's Girdle",
+          "chance": 0.281
         },
         {
           "item": 13178,
-          "name": "Rosewine Circle"
+          "name": "Rosewine Circle",
+          "chance": 0.245
         },
         {
           "item": 13053,
@@ -188,51 +216,63 @@
       "loot": [
         {
           "item": 13252,
-          "name": "Cloudrunner Girdle"
+          "name": "Cloudrunner Girdle",
+          "chance": 0.105
         },
         {
           "item": 13253,
-          "name": "Hands of Power"
+          "name": "Hands of Power",
+          "chance": 0.065
         },
         {
           "item": 12835,
-          "name": "Plans: Annihilator"
+          "name": "Plans: Annihilator",
+          "chance": 0.108
         },
         {
           "item": 273115,
-          "name": "Blueprint: Iron Oven"
+          "name": "Blueprint: Iron Oven",
+          "chance": 0.031
         },
         {
           "item": 16673,
-          "name": "Cord of Elements"
+          "name": "Cord of Elements",
+          "chance": 0.062
         },
         {
           "item": 16680,
-          "name": "Beaststalker's Belt"
+          "name": "Beaststalker's Belt",
+          "chance": 0.105
         },
         {
           "item": 16683,
-          "name": "Magister's Bindings"
+          "name": "Magister's Bindings",
+          "chance": 0.077
         },
         {
           "item": 16696,
-          "name": "Devout Belt"
+          "name": "Devout Belt",
+          "chance": 0.095
         },
         {
           "item": 16703,
-          "name": "Dreadmist Bracers"
+          "name": "Dreadmist Bracers",
+          "chance": 0.138
         },
         {
           "item": 16713,
-          "name": "Shadowcraft Belt"
+          "name": "Shadowcraft Belt",
+          "chance": 0.071
         },
         {
           "item": 16735,
-          "name": "Bracers of Valor"
+          "name": "Bracers of Valor",
+          "chance": 0.129
         },
         {
           "item": 16716,
-          "name": "Wildheart Belt"
+          "name": "Wildheart Belt",
+          "chance": 0.105
         }
       ]
     },
@@ -245,19 +285,23 @@
       "loot": [
         {
           "item": 13212,
-          "name": "Halycon's Spiked Collar"
+          "name": "Halycon's Spiked Collar",
+          "chance": 0.212
         },
         {
           "item": 13211,
-          "name": "Slashclaw Bracers"
+          "name": "Slashclaw Bracers",
+          "chance": 0.243
         },
         {
           "item": 13210,
-          "name": "Pads of the Dread Wolf"
+          "name": "Pads of the Dread Wolf",
+          "chance": 0.224
         },
         {
           "item": 22313,
-          "name": "Ironweave Bracers"
+          "name": "Ironweave Bracers",
+          "chance": 0.22
         }
       ]
     },
@@ -270,19 +314,23 @@
       "loot": [
         {
           "item": 16718,
-          "name": "Wildheart Spaulders"
+          "name": "Wildheart Spaulders",
+          "chance": 0.164
         },
         {
           "item": 13206,
-          "name": "Wolfshear Leggings"
+          "name": "Wolfshear Leggings",
+          "chance": 0.263
         },
         {
           "item": 13205,
-          "name": "Rhombeard Protector"
+          "name": "Rhombeard Protector",
+          "chance": 0.238
         },
         {
           "item": 13208,
-          "name": "Bleak Howler Armguards"
+          "name": "Bleak Howler Armguards",
+          "chance": 0.254
         }
       ]
     },
@@ -295,11 +343,13 @@
       "loot": [
         {
           "item": 13164,
-          "name": "Heart of the Scale"
+          "name": "Heart of the Scale",
+          "chance": 0.057
         },
         {
           "item": 16679,
-          "name": "Beaststalker's Mantle"
+          "name": "Beaststalker's Mantle",
+          "chance": 0.136
         },
         {
           "item": 12337,
@@ -307,23 +357,28 @@
         },
         {
           "item": 13161,
-          "name": "Trindlehaven Staff"
+          "name": "Trindlehaven Staff",
+          "chance": 0.162
         },
         {
           "item": 13162,
-          "name": "Reiver Claws"
+          "name": "Reiver Claws",
+          "chance": 0.128
         },
         {
           "item": 13163,
-          "name": "Relentless Scythe"
+          "name": "Relentless Scythe",
+          "chance": 0.181
         },
         {
           "item": 22321,
-          "name": "Heart of Wyrmthalak"
+          "name": "Heart of Wyrmthalak",
+          "chance": 0.155
         },
         {
           "item": 13143,
-          "name": "Mark of the Dragon Lord"
+          "name": "Mark of the Dragon Lord",
+          "chance": 0.015
         }
       ]
     },
@@ -336,11 +391,13 @@
       "loot": [
         {
           "item": 12608,
-          "name": "Butcher's Apron"
+          "name": "Butcher's Apron",
+          "chance": 0.472
         },
         {
           "item": 13286,
-          "name": "Rivenspike"
+          "name": "Rivenspike",
+          "chance": 0.494
         }
       ]
     },
@@ -353,11 +410,13 @@
       "loot": [
         {
           "item": 13284,
-          "name": "Swiftdart Battleboots"
+          "name": "Swiftdart Battleboots",
+          "chance": 0.446
         },
         {
           "item": 13285,
-          "name": "The Blackrock Slicer"
+          "name": "The Blackrock Slicer",
+          "chance": 0.518
         }
       ]
     },
@@ -370,15 +429,18 @@
       "loot": [
         {
           "item": 13283,
-          "name": "Magus Ring"
+          "name": "Magus Ring",
+          "chance": 0.393
         },
         {
           "item": 13282,
-          "name": "Ogreseer Tower Boots"
+          "name": "Ogreseer Tower Boots",
+          "chance": 0.393
         },
         {
           "item": 13261,
-          "name": "Globe of D'sak"
+          "name": "Globe of D'sak",
+          "chance": 0.214
         }
       ]
     },
@@ -391,15 +453,18 @@
       "loot": [
         {
           "item": 13185,
-          "name": "Sunderseer Mantle"
+          "name": "Sunderseer Mantle",
+          "chance": 0.35
         },
         {
           "item": 13184,
-          "name": "Fallbrush Handgrips"
+          "name": "Fallbrush Handgrips",
+          "chance": 0.3
         },
         {
           "item": 13218,
-          "name": "Fang of the Crystal Spider"
+          "name": "Fang of the Crystal Spider",
+          "chance": 0.325
         }
       ]
     },
@@ -412,19 +477,23 @@
       "loot": [
         {
           "item": 12634,
-          "name": "Chiselbrand Girdle"
+          "name": "Chiselbrand Girdle",
+          "chance": 0.5
         },
         {
           "item": 12637,
-          "name": "Backusarian Gauntlets"
+          "name": "Backusarian Gauntlets",
+          "chance": 0.19
         },
         {
           "item": 12621,
-          "name": "Demonfork"
+          "name": "Demonfork",
+          "chance": 0.286
         },
         {
           "item": 12838,
-          "name": "Plans: Arcanite Reaper"
+          "name": "Plans: Arcanite Reaper",
+          "chance": 0.071
         }
       ]
     },
@@ -437,15 +506,18 @@
       "loot": [
         {
           "item": 13203,
-          "name": "Armswake Cloak"
+          "name": "Armswake Cloak",
+          "chance": 0.312
         },
         {
           "item": 13204,
-          "name": "Bashguuder"
+          "name": "Bashguuder",
+          "chance": 0.375
         },
         {
           "item": 13198,
-          "name": "Hurd Smasher"
+          "name": "Hurd Smasher",
+          "chance": 0.292
         }
       ]
     },
