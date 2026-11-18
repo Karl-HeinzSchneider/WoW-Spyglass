@@ -385,6 +385,10 @@
         {
           "item": 279881,
           "name": "Intrepid Explorer's Chainmail"
+        },
+        {
+          "item": 272124,
+          "name": "Translated Tale of I'lalai"
         }
       ]
     },
@@ -418,6 +422,14 @@
         {
           "item": 279887,
           "name": "I'lalai Flayer"
+        },
+        {
+          "item": 270312,
+          "name": "Translated Tale of I'lalai"
+        },
+        {
+          "item": 270313,
+          "name": "Tale of I'lalai in Zandali"
         }
       ]
     },

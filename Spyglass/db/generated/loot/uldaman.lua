@@ -111,10 +111,10 @@ Data:AddQuests(70, {
         { 270060 }, -- Excavator Gauntlets
     } },
     { id = 17, name = "Uldaman Reagent Run", side = "Alliance", requiredLevel = 38, xp = 6050, objective = "Bring 12 Magenta Fungus Caps to Ghak Healtouch in Thelsamar.", requires = { { id = 2500, name = "Badlands Reagent Run" } }, start = { description = "Thelsamar, Loch Modan", location = { 1432, 37, 49.2 }, npc = "Ghak Healtouch" }, turnIn = { description = "Thelsamar, Loch Modan", location = { 2548, 66.6, 79.9 }, npc = "Ghak Healtouch" }, items = {
-        { 9030 }, -- Restorative Potion
+        { 250947 }, -- Greater Mender's Potion
     } },
     { id = 2202, name = "Uldaman Reagent Run", side = "Horde", requiredLevel = 36, xp = 6750, objective = "Bring 12 Magenta Fungus Caps to Jarkal Mossmeld in Kargath.", requires = { { id = 2258, name = "Badlands Reagent Run" } }, start = { description = "Kargath, Badlands", location = { 1418, 2.4, 46 }, npc = "Jarkal Mossmeld" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 2.4, 46 }, npc = "Jarkal Mossmeld" }, items = {
-        { 9030 }, -- Restorative Potion
+        { 250947 }, -- Greater Mender's Potion
     } },
     { id = 709, name = "Solution to Doom", side = "Both", requiredLevel = 30, xp = 6150, objective = "Bring the Tablet of Ryun'eh to Theldurin the Lost.", start = { description = "Badlands", location = { 1418, 51.4, 76.4 }, npc = "Theldurin the Lost" }, turnIn = { description = "Badlands", location = { 1418, 51.4, 76.4 }, npc = "Theldurin the Lost" }, items = {
         { 4746 }, -- Doomsayer's Robe
@@ -131,6 +131,7 @@ Data:AddQuests(70, {
     { id = 2342, name = "Reclaimed Treasures", side = "Horde", requiredLevel = 33, xp = 7000, objective = "Get Patrick Garrett's family treasure from their family chest in the South Common Hall of Uldaman, and bring it to him in the Undercity.", start = { description = "Undercity", location = { 1458, 62.4, 48.4 }, npc = "Patrick Garrett" }, turnIn = { description = "Undercity", location = { 1458, 62.4, 48.4 }, npc = "Patrick Garrett" }, items = {} },
     { id = 1139, name = "The Lost Tablets of Will", side = "Alliance", requiredLevel = 35, xp = 10250, objective = "Find the Tablet of Will, and return them to Advisor Belgrum in Ironforge.", requires = { { id = 762, name = "An Ambassador of Evil" } }, start = { description = "Ironforge", location = { 1455, 76.4, 10.8 }, npc = "Advisor Belgrum" }, turnIn = { description = "Ironforge", location = { 1455, 76.4, 10.8 }, npc = "Advisor Belgrum" }, items = {
         { 6723 }, -- Medal of Courage
+        { 270095 }, -- Medal of Valor
     } },
     { id = 2204, name = "Restoring the Necklace", side = "Alliance", requiredLevel = 37, xp = 1650, objective = "Obtain a power source from the most powerful construct you can find in Uldaman, and deliver it to Talvash del Kissel in Ironforge.", description = "The power source drops from Archaedas. Finishing it unlocks Talvash's Enhancing Necklace.", requires = { { id = 2201, name = "Find the Gems" } }, followUps = { 2361 }, start = { description = "Uldaman", npc = "Talvash's Scrying Bowl" }, turnIn = { description = "Ironforge", npc = "Talvash del Kissel" }, items = {} },
     { id = 2339, name = "Find the Gems and Power Source", side = "Horde", requiredLevel = 37, xp = 7300, objective = "Recover all three gems and a power source for the necklace from Uldaman, and then bring them to Jarkal Mossmeld in Kargath. Jarkal believes a power source might be found on the strongest construct present in Uldaman.", description = "The sapphire drops from Grimlok and the power source from Archaedas.", requires = { { id = 2338, name = "Translating the Journal" } }, followUps = { 2340, 2341 }, start = { description = "Kargath, Badlands", location = { 1418, 2.4, 46 }, npc = "Jarkal Mossmeld" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 2.4, 46 }, npc = "Jarkal Mossmeld" }, items = {} },

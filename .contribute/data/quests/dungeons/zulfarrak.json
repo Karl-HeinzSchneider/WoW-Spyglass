@@ -38,7 +38,7 @@
       "name": "The Brassbolts Brothers",
       "side": "Alliance",
       "requiredLevel": 40,
-      "xp": 405,
+      "xp": 410,
       "objective": "Speak with Wizzle Brassbolts in the Shimmering Flats.",
       "description": "Introductory step leading to Gahz'rilla.\n\nOPTIONAL, not required",
       "start": {

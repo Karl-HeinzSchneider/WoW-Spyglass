@@ -5,7 +5,7 @@
       "name": "Willix the Importer",
       "side": "Both",
       "requiredLevel": 23,
-      "xp": 3050,
+      "xp": 7250,
       "objective": "Escort Willix the Importer out of Razorfen Kraul.",
       "start": {
         "npc": "Willix the Importer",
@@ -63,7 +63,7 @@
       "name": "Mortality Wanes",
       "side": "Alliance",
       "requiredLevel": 25,
-      "xp": 3050,
+      "xp": 7250,
       "objective": "Find Treshala's Pendant and return it to Treshala Fallowbrook in Darnassus.",
       "start": {
         "npc": "Heralath Fallowbrook",
@@ -93,7 +93,7 @@
       "name": "The Crone of the Kraul",
       "side": "Alliance",
       "requiredLevel": 29,
-      "xp": 3350,
+      "xp": 7950,
       "objective": "Bring Razorflank's Medallion to Falfindel Waywarder in Thalanaar.",
       "requires": [1100],
       "start": {
@@ -145,7 +145,7 @@
       "name": "A Vengeful Fate",
       "side": "Horde",
       "requiredLevel": 29,
-      "xp": 4050,
+      "xp": 8500,
       "objective": "Bring Razorflank's Heart to Auld Stonespire in Thunder Bluff.",
       "start": {
         "npc": "Auld Stonespire",
@@ -238,7 +238,7 @@
       "name": "Going, Going, Guano!",
       "side": "Horde",
       "requiredLevel": 30,
-      "xp": 3300,
+      "xp": 6950,
       "objective": "Bring 1 pile of Kraul Guano from the Kraul bats to Master Apothecary Faranell.",
       "description": "Required before Hearts of Zeal.",
       "start": {

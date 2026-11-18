@@ -311,7 +311,7 @@
       "name": "Prehistoric Prism",
       "side": "Alliance",
       "requiredLevel": 24,
-      "xp": 3150,
+      "xp": 6150,
       "objective": "Deliver the Titan Relic to High Explorer Magellas in the Hall of Explorers.",
       "requires": [95810],
       "start": {
@@ -359,7 +359,7 @@
       "name": "Earthen Echo",
       "side": "Horde",
       "requiredLevel": 24,
-      "xp": 3150,
+      "xp": 6950,
       "objective": "Deliver the Titan Relic to Muln Earthfury on Skywatcher Plateau in northwest Mulgore.",
       "requires": [95664],
       "start": {
@@ -409,7 +409,7 @@
       "name": "Fallen in the Fen",
       "side": "Alliance",
       "requiredLevel": 24,
-      "xp": 3150,
+      "xp": 6150,
       "objective": "Report Daewyn's fate to Dorin Songblade in Lakeshire.",
       "start": {
         "npc": "Daewyn Songblade",

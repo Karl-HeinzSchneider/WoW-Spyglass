@@ -85,7 +85,7 @@
       "name": "Doomrigger's Clasp",
       "side": "Alliance",
       "requiredLevel": 57,
-      "xp": 1650,
+      "xp": 4400,
       "objective": "Bring Doomrigger's Clasp to Mayara Brightwing in the Burning Steppes.",
       "description": "Doomrigger's Coffer is in the Rookery. Then take Delivery to Ridgewell to Count Remington Ridgewell in Stormwind Keep for the reward.\n\nOptional introductory quest:",
       "start": {
@@ -114,7 +114,7 @@
       "name": "Mayara Brightwing",
       "side": "Alliance",
       "requiredLevel": 57,
-      "xp": 0,
+      "xp": 660,
       "objective": "Speak with Mayara Brightwing in the Burning Steppes.",
       "description": "Introductory step leading to Doomrigger's Clasp.\n\nOPTIONAL, not required",
       "start": {
@@ -133,7 +133,7 @@
       "name": "The Darkstone Tablet",
       "side": "Horde",
       "requiredLevel": 57,
-      "xp": 8300,
+      "xp": 22200,
       "objective": "Bring the Darkstone Tablet to Shadow Mage Vivian Lagrave in Kargath.",
       "description": "The Darkstone Tablet lies on the ground in the Rookery.\n\nOptional introductory quest:",
       "start": {
@@ -162,7 +162,7 @@
       "name": "Vivian Lagrave and the Darkstone Tablet",
       "side": "Horde",
       "requiredLevel": 57,
-      "xp": 0,
+      "xp": 660,
       "objective": "Speak with Shadowmage Vivian Lagrave.",
       "description": "Introductory step leading to The Darkstone Tablet.\n\nOPTIONAL, not required",
       "start": {
@@ -302,7 +302,7 @@
       "name": "Finkle Einhorn, At Your Service!",
       "side": "Both",
       "requiredLevel": 57,
-      "xp": 6600,
+      "xp": 17650,
       "objective": "Talk to Malyfous Darkhammer in Everlook.",
       "description": "He appears from The Beast's corpse after the fight. Malyfous then offers the Pristine Hide of the Beast exchanges.",
       "start": {
@@ -319,7 +319,7 @@
       "name": "General Drakkisath's Demise",
       "side": "Alliance",
       "requiredLevel": 55,
-      "xp": 9950,
+      "xp": 26600,
       "objective": "Travel to Blackrock Spire and destroy General Drakkisath. Return to Marshal Maxwell when the job is done.",
       "description": "Kill General Drakkisath at the end of UBRS.",
       "requires": [5089],
@@ -353,7 +353,7 @@
       "name": "The Demon Forge",
       "side": "Both",
       "requiredLevel": 55,
-      "xp": 8300,
+      "xp": 16600,
       "objective": "Travel to Blackrock Spire, slay Goraluk Anvilcrack and use the Blood Stained Pike on his corpse. Also find the Unforged Rune Covered Breastplate. Return the Soul Stained Pike and the breastplate to Lorax in Winterspring.",
       "description": "Blacksmithing 270 (Armorsmith). Use the Blood Stained Pike on Goraluk's corpse and loot the Unforged Rune Covered Breastplate nearby.",
       "start": {
@@ -386,7 +386,7 @@
       "name": "The Matron Protectorate",
       "side": "Both",
       "requiredLevel": 57,
-      "xp": 6600,
+      "xp": 17650,
       "objective": "Travel to Winterspring and find Haleh. Give her Awbee's scale.",
       "description": "Awbee is the wounded blue dragon near the arena route after Rend. Use the rune deep in the Mazthoril cave to reach Haleh.",
       "start": {

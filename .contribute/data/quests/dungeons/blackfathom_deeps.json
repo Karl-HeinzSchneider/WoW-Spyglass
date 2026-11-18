@@ -42,7 +42,7 @@
       "name": "Blackfathom Villainy",
       "side": "Alliance",
       "requiredLevel": 18,
-      "xp": 3300,
+      "xp": 7850,
       "objective": "Defeat Twilight Lord Kelris and recover the Head of Kelris.",
       "requires": [1198],
       "start": {
@@ -77,7 +77,7 @@
       "name": "Blackfathom Villainy",
       "side": "Horde",
       "requiredLevel": 18,
-      "xp": 3300,
+      "xp": 7850,
       "objective": "Defeat Twilight Lord Kelris and recover the Head of Kelris.",
       "start": {
         "npc": "Argent Guard Thaelrid",
@@ -111,7 +111,7 @@
       "name": "Twilight Falls",
       "side": "Alliance",
       "requiredLevel": 20,
-      "xp": 2550,
+      "xp": 6050,
       "objective": "Collect 10 Twilight Pendants from Twilight's Hammer members in Blackfathom Deeps.",
       "start": {
         "npc": "Argent Guard Manados",
@@ -223,7 +223,7 @@
       "side": "Both",
       "class": "Warlock",
       "requiredLevel": 20,
-      "xp": 2550,
+      "xp": 5100,
       "objective": "Find 3 Soran'ruk Fragments and 1 Large Soran'ruk Fragment and return them to Doan Karhan.",
       "description": "Warlock class quest. The fragments come from Shadowfang Keep and Blackfathom Deeps.",
       "start": {
@@ -251,7 +251,7 @@
       "name": "Knowledge in the Deeps",
       "side": "Alliance",
       "requiredLevel": 18,
-      "xp": 2750,
+      "xp": 6550,
       "objective": "Recover the Lorgalis Manuscript from Blackfathom Deeps.",
       "description": "The Lorgalis Manuscript is inside a Pitted Iron Chest underwater in the Pool of Ask'ar, in the northern alcove just past Ghamoo-ra's turtle room.",
       "start": {
@@ -294,7 +294,7 @@
       "name": "Trouble in the Deeps",
       "side": "Horde",
       "requiredLevel": 17,
-      "xp": 435,
+      "xp": 440,
       "objective": "Speak to Je'neu Sancrea in Ashenvale.",
       "description": "Introductory step leading to The Essence of Aku'Mai.",
       "start": {
@@ -313,7 +313,7 @@
       "name": "In Search of Thaelrid",
       "side": "Alliance",
       "requiredLevel": 18,
-      "xp": 2400,
+      "xp": 5700,
       "objective": "Find Argent Guard Thaelrid inside Blackfathom Deeps.",
       "description": "Required before the Alliance version of Blackfathom Villainy.",
       "start": {

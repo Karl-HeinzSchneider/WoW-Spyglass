@@ -82,7 +82,7 @@
       "name": "Put Her Down",
       "side": "Alliance",
       "requiredLevel": 55,
-      "xp": 6400,
+      "xp": 12500,
       "objective": "Travel to Blackrock Spire and destroy the source of the worg menace. As you left Helendis, he shouted a name: Halycon. It is what the orcs refer to in regards to the worg.",
       "description": "Kill Halycon, the worg den mother. Be ready for Gizrul the Slavener, who comes for you right after.",
       "start": {
@@ -115,7 +115,7 @@
       "name": "The Pack Mistress",
       "side": "Horde",
       "requiredLevel": 55,
-      "xp": 6400,
+      "xp": 11850,
       "objective": "Slay Halycon, pack mistress of the Bloodaxe worg.",
       "description": "Kill Halycon, the worg den mother. Be ready for Gizrul the Slavener, who comes for you right after.",
       "start": {
@@ -148,7 +148,7 @@
       "name": "Kibler's Exotic Pets",
       "side": "Both",
       "requiredLevel": 55,
-      "xp": 6400,
+      "xp": 12500,
       "objective": "Travel to Blackrock Spire and find Bloodaxe Worg Pups. Use the cage to carry the ferocious little beasts. Bring back a Caged Worg Pup to Kibler.",
       "description": "Use the supplied cage on a Bloodaxe Worg Pup in the worg area.",
       "start": {
@@ -173,7 +173,7 @@
       "name": "Seal of Ascension",
       "side": "Both",
       "requiredLevel": 57,
-      "xp": 8300,
+      "xp": 16200,
       "objective": "Find the three gemstones of command: the Gemstone of Smolderthorn, Gemstone of Spirestone and Gemstone of Bloodaxe. Return them, along with the Unadorned Seal of Ascension, to Vaelan. The generals are War Master Voone of the Smolderthorn, Highlord Omokk of the Spirestone and Overlord Wyrmthalak of the Bloodaxe.",
       "start": {
         "description": "Vaelan (Scarshield Infiltrator), Lower Blackrock Spire"
@@ -207,7 +207,7 @@
       "name": "The Final Tablets",
       "side": "Both",
       "requiredLevel": 40,
-      "xp": 7750,
+      "xp": 15100,
       "objective": "Bring the Fifth and Sixth Mosh'aru Tablets to Prospector Ironboot in Tanaris.",
       "description": "The fifth and sixth Mosh'aru tablets are in the Smolderthorn troll area. Continues with Confront Yeh'kinya and The Hand of Rastakhan.",
       "requires": [5065],
@@ -228,7 +228,7 @@
       "name": "En-Ay-Es-Tee-Why",
       "side": "Both",
       "requiredLevel": 55,
-      "xp": 6400,
+      "xp": 12500,
       "objective": "Travel to Blackrock Spire and collect 15 Spire Spider Eggs for Kibler. By the sound of it, these eggs could be found near spiders.",
       "description": "Spire Spider Eggs are in the spider tunnels.",
       "start": {
@@ -253,7 +253,7 @@
       "name": "Mother's Milk",
       "side": "Both",
       "requiredLevel": 55,
-      "xp": 9950,
+      "xp": 18900,
       "objective": "In the heart of Blackrock Spire you will find Mother Smolderweb. Engage her and get her to poison you. Return to Ragged John while poisoned so that he can 'milk' you.",
       "description": "Get poisoned by Mother Smolderweb and reach Ragged John while still poisoned. Don't let anyone cleanse it.",
       "start": {
@@ -278,7 +278,7 @@
       "name": "Urok Doomhowl",
       "side": "Both",
       "requiredLevel": 55,
-      "xp": 9950,
+      "xp": 18900,
       "objective": "Read Warosh's Scroll. Bring Warosh's Mojo to Warosh.",
       "description": "Bring Highlord Omokk's Head and a Roughshod Pike to Urok's Tribute Pile beyond the spiders to start the waves.",
       "start": {
@@ -343,6 +343,7 @@
       "name": "Operative Bijou",
       "side": "Horde",
       "requiredLevel": 55,
+      "xp": 11850,
       "objective": "Travel to Blackrock Spire and find out what happened to Bijou.",
       "followUps": [4982],
       "start": {
@@ -361,7 +362,7 @@
       "name": "Bijou's Belongings",
       "side": "Horde",
       "requiredLevel": 55,
-      "xp": 6400,
+      "xp": 11850,
       "objective": "Find Bijou's Belongings and return them to her. You recall her mentioning that she stashed them on the bottom floor of the city.",
       "description": "Then take Bijou's Reconnaissance Report to Lexlort in Kargath for the reward.",
       "start": {
@@ -388,7 +389,7 @@
       "name": "Bijou's Belongings",
       "side": "Alliance",
       "requiredLevel": 55,
-      "xp": 6400,
+      "xp": 12500,
       "objective": "Find Bijou's Belongings and return them to her. Good luck!",
       "description": "Bijou hides in a recess beyond the early bridges. Her belongings spawn in one of several places around the troll and orc rooms.",
       "start": {
@@ -441,7 +442,7 @@
       "name": "Maxwell's Mission",
       "side": "Alliance",
       "requiredLevel": 55,
-      "xp": 8300,
+      "xp": 16200,
       "objective": "Travel to Blackrock Spire and destroy War Master Voone, Highlord Omokk, and Overlord Wyrmthalak. Return to Marshal Maxwell when the job is done.",
       "requires": [5002],
       "start": {
@@ -482,7 +483,7 @@
       "name": "General Drakkisath's Command",
       "side": "Alliance",
       "requiredLevel": 55,
-      "xp": 0,
+      "xp": 12850,
       "objective": "Take General Drakkisath's Command to Marshal Maxwell in Burning Steppes.",
       "description": "Leads to General Drakkisath's Demise in Upper Blackrock Spire.",
       "start": {

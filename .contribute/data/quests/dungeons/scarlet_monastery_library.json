@@ -5,7 +5,7 @@
       "name": "Mythology of the Titans",
       "side": "Alliance",
       "requiredLevel": 28,
-      "xp": 3550,
+      "xp": 8900,
       "objective": "Retrieve Mythology of the Titans from the Monastery and bring it to Librarian Mae Paledust in Ironforge.",
       "start": {
         "npc": "Librarian Mae Paledust",
@@ -58,7 +58,7 @@
       "name": "Compendium of the Fallen",
       "side": "Horde",
       "requiredLevel": 28,
-      "xp": 3550,
+      "xp": 8450,
       "objective": "Retrieve the Compendium of the Fallen from the Monastery and return to Sage Truthseeker in Thunder Bluff.",
       "description": "Undead cannot take this quest.",
       "start": {
@@ -291,7 +291,7 @@
       "name": "Hearts of Zeal",
       "side": "Horde",
       "requiredLevel": 30,
-      "xp": 3300,
+      "xp": 7850,
       "objective": "Master Apothecary Faranell in the Undercity wants 20 Hearts of Zeal.",
       "description": "Monastery-wide collection: any Scarlet humanoid on the way to the Armory can drop Hearts of Zeal.",
       "requires": [1109],
