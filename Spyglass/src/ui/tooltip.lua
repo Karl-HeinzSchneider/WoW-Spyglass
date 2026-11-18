@@ -206,8 +206,11 @@ local function costLines(sources)
                 parts[i] = formatCost(cost)
             end
             if #parts > 0 then
-                local label = source.upgradeFrom and "Upgrade: " or "Cost: "
-                out[#out + 1] = label .. table.concat(parts, " + ")
+                if source.upgradeFrom then
+                    out[#out + 1] = "Upgrade: " .. table.concat(parts, "\n" .. INDENT .. "+ ")
+                else
+                    out[#out + 1] = "Cost: " .. table.concat(parts, " + ")
+                end
             end
         end
     end
@@ -250,8 +253,10 @@ function module:AddSources(tooltip, itemID)
     for _, text in ipairs(crafted) do
         tooltip:AddLine(text, NORMAL_FONT_COLOR:GetRGB())
     end
-    for _, text in ipairs(costs) do
-        tooltip:AddLine(text, NORMAL_FONT_COLOR:GetRGB())
+    for _, cost in ipairs(costs) do
+        for line in cost:gmatch("[^\n]+") do
+            tooltip:AddLine(line, NORMAL_FONT_COLOR:GetRGB())
+        end
     end
 end
 

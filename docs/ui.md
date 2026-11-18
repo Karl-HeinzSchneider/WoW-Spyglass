@@ -216,7 +216,7 @@ Armor's Class selector starts on the character's class. It filters the class sec
 keeps Epic Upgrades visible for every class selection.
 Each class section begins with paired set buttons, rare on the left and epic on the right.
 The buttons use the class icon and open the same set popup. Individual items appear below.
-The epic item's tooltip lists its base item and seal as upgrade materials.
+The epic item's tooltip lists its base item and seal on separate lines.
 
 ## Info pane (`infopane.lua` / `.xml`)
 
