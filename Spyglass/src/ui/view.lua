@@ -83,6 +83,49 @@ local function getCollectedLook(itemID, classID)
 end
 app.ui.GetCollectedLook = getCollectedLook
 
+-- Recipe items teach spells; the items made by those spells are only recipe rows when
+-- the node explicitly names the recipe. Build the reverse lookup when first needed.
+---@type table<integer, integer[]>
+local taughtRecipes = {}
+local taughtRecipesVersion
+
+---@param node Spyglass.Node
+---@return boolean? learned  # nil when the recipe cannot be identified
+local function getLearnedRecipe(node)
+    local spellID = node.meta and node.meta.spell or node.spellID
+    if type(spellID) == "number" and Data:GetRecipe(spellID) then
+        return C_SpellBook.IsSpellKnown(spellID)
+    end
+
+    local itemID = node.itemID
+    if not itemID then
+        return nil
+    end
+    local version = Data:GetVersion()
+    if taughtRecipesVersion ~= version then
+        wipe(taughtRecipes)
+        for id, recipe in pairs(Data.recipes) do
+            local source = recipe[Data.RECIPE.TAUGHT_BY]
+            if source then
+                local spells = taughtRecipes[source] or {}
+                spells[#spells + 1] = id
+                taughtRecipes[source] = spells
+            end
+        end
+        taughtRecipesVersion = version
+    end
+
+    local spells = taughtRecipes[itemID]
+    if spells then
+        for _, id in ipairs(spells) do
+            if not C_SpellBook.IsSpellKnown(id) then
+                return false
+            end
+        end
+        return true
+    end
+end
+
 -- Delay between the last keystroke in the search box and running the query.
 local SEARCH_DEBOUNCE = 0.25
 
@@ -356,6 +399,9 @@ function SpyglassListRowMixin:Init(view, node)
             quality = node.quality,
         })
     end
+    if getLearnedRecipe(node) then
+        self.CollectedLook:Show()
+    end
 end
 
 -- Items: the client's item cache, when it has the item, is exact, provides the link and lets the
@@ -494,6 +540,14 @@ function SpyglassListRowMixin:OnEnter()
         for _, line in ipairs(extraTooltipLines(node)) do
             GameTooltip:AddLine(line, 1, 1, 1, true)
         end
+    end
+    local learned = getLearnedRecipe(node)
+    if learned == true then
+        GameTooltip:AddLine("Recipe learned", 0.3, 1, 0.3)
+    elseif learned == false then
+        GameTooltip:AddLine("Recipe not learned", 1, 0.82, 0)
+    elseif node.itemID and app.itemKind(node.itemID) == Enum.ItemClass.Recipe then
+        GameTooltip:AddLine("Recipe status unknown", 0.7, 0.7, 0.7)
     end
     GameTooltip:Show()
     if node.itemID then
@@ -1111,21 +1165,25 @@ function SpyglassClassFilterModeButtonMixin:OnEnter()
     GameTooltip:Show()
 end
 
-local TRANSMOG_FILTER_MODES = {
-    show = { next = "fade", label = "Show collected looks" },
-    fade = { next = "hide", label = "Fade collected looks", icon = CLASS_FILTER_MODE_ICONS.fade },
-    hide = { next = "show", label = "Hide collected looks", icon = CLASS_FILTER_MODE_ICONS.hide },
+local COLLECTION_FILTER_MODES = {
+    show = { next = "fade", label = "Show" },
+    fade = { next = "hide", label = "Fade", icon = CLASS_FILTER_MODE_ICONS.fade },
+    hide = { next = "show", label = "Hide", icon = CLASS_FILTER_MODE_ICONS.hide },
 }
 
----@class Spyglass.TransmogFilterButton : Spyglass.ClassFilterButton
-SpyglassTransmogFilterButtonMixin = {
+---@class Spyglass.CollectionFilterButton : Spyglass.ClassFilterButton
+---@field modeField "transmogFilterMode"|"recipeFilterMode"
+---@field title string
+---@field subject string
+---@field defaultIcon? string
+local CollectionFilterButtonMixin = {
     GetView = SpyglassClassFilterButtonMixin.GetView,
     OnLeave = SpyglassClassFilterButtonMixin.OnLeave,
 }
 
-function SpyglassTransmogFilterButtonMixin:Update()
-    local mode = self:GetView().transmogFilterMode
-    local icon = TRANSMOG_FILTER_MODES[mode].icon
+function CollectionFilterButtonMixin:Update()
+    local mode = self:GetView()[self.modeField]
+    local icon = COLLECTION_FILTER_MODES[mode].icon or self.defaultIcon
     if icon then
         self.Icon:SetTexture(icon)
         self.Icon:SetTexCoord(0.07, 0.93, 0.07, 0.93)
@@ -1137,13 +1195,13 @@ function SpyglassTransmogFilterButtonMixin:Update()
     self.IconRing:SetVertexColor(color.r, color.g, color.b)
 end
 
-function SpyglassTransmogFilterButtonMixin:OnClick(button)
+function CollectionFilterButtonMixin:OnClick(button)
     if button ~= "LeftButton" then
         return
     end
     local view = self:GetView()
-    local mode = view.transmogFilterMode
-    view.transmogFilterMode = TRANSMOG_FILTER_MODES[mode].next
+    local mode = view[self.modeField]
+    view[self.modeField] = COLLECTION_FILTER_MODES[mode].next
     if mode == "fade" or mode == "hide" then
         view:Refresh()
     else
@@ -1154,14 +1212,32 @@ function SpyglassTransmogFilterButtonMixin:OnClick(button)
     end
 end
 
-function SpyglassTransmogFilterButtonMixin:OnEnter()
-    local state = TRANSMOG_FILTER_MODES[self:GetView().transmogFilterMode]
+function CollectionFilterButtonMixin:OnEnter()
+    local state = COLLECTION_FILTER_MODES[self:GetView()[self.modeField]]
     GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-    GameTooltip:SetText("Transmog")
-    GameTooltip:AddLine(state.label, 1, 1, 1)
-    GameTooltip:AddLine("Click to " .. TRANSMOG_FILTER_MODES[state.next].label:lower(), 0.5, 0.5, 0.5)
+    GameTooltip:SetText(self.title)
+    GameTooltip:AddLine(state.label .. " " .. self.subject, 1, 1, 1)
+    GameTooltip:AddLine(
+        "Click to " .. COLLECTION_FILTER_MODES[state.next].label:lower() .. " " .. self.subject,
+        0.5,
+        0.5,
+        0.5
+    )
     GameTooltip:Show()
 end
+
+SpyglassTransmogFilterButtonMixin = CreateFromMixins(CollectionFilterButtonMixin, {
+    modeField = "transmogFilterMode",
+    title = "Transmog",
+    subject = "collected looks",
+})
+
+SpyglassRecipeFilterButtonMixin = CreateFromMixins(CollectionFilterButtonMixin, {
+    modeField = "recipeFilterMode",
+    title = "Recipes",
+    subject = "learned recipes",
+    defaultIcon = "Interface\\Icons\\INV_Scroll_03",
+})
 
 ----------------------------------------------------------------------------------------------------
 -- Options page: "Spyglass > Options", opened by the window's gear button
@@ -1238,7 +1314,9 @@ end
 ---@field PagingControls Spyglass.PagingControls
 ---@field ClassFilter Spyglass.ClassFilterButton
 ---@field ClassFilterMode Spyglass.ClassFilterModeButton
----@field TransmogFilter Spyglass.TransmogFilterButton
+---@field TransmogFilter Spyglass.CollectionFilterButton
+---@field RecipeFilter Spyglass.CollectionFilterButton
+---@field recipeFilterMode "show"|"fade"|"hide"
 ---@field transmogFilterMode "show"|"fade"|"hide"
 ---@field ActiveList WowStyle1FilterDropdownMixin|Frame  # the footer's active list dropdown
 ---@field classFilterOn boolean  # the footer's class filter is on, for this tab
@@ -1346,10 +1424,13 @@ function SpyglassViewMixin:OnLoad()
     self.classFilterOn = false
     self.classFilterMode = "fade"
     self.transmogFilterMode = "show"
+    self.recipeFilterMode = "show"
     self.resultCount = 0
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
     self:RegisterEvent("ITEM_DATA_LOAD_RESULT")
     self:RegisterEvent("TRANSMOG_COLLECTION_UPDATED")
+    self:RegisterEvent("SPELLS_CHANGED")
+    self:RegisterEvent("NEW_RECIPE_LEARNED")
     -- Quest banners show the character's progress and the client's quest title.
     self:RegisterEvent("QUEST_LOG_UPDATE")
     self:RegisterEvent("QUEST_TURNED_IN")
@@ -1437,6 +1518,13 @@ function SpyglassViewMixin:OnEvent(event, itemID, success)
             return
         end
         if self.transmogFilterMode == "hide" then
+            self.refreshQueued = true
+        end
+    elseif event == "SPELLS_CHANGED" or event == "NEW_RECIPE_LEARNED" then
+        if not self:IsVisible() then
+            return
+        end
+        if self.recipeFilterMode == "hide" then
             self.refreshQueued = true
         end
     elseif not self.showsQuests then
@@ -1930,17 +2018,22 @@ function SpyglassViewMixin:GetClassFilterTest()
     end
 end
 
--- Is the entry faded by either footer filter?
+-- Is the entry faded by a footer filter?
 ---@param node Spyglass.Node
 ---@return boolean
 function SpyglassViewMixin:IsFaded(node)
+    if self.recipeFilterMode == "fade" and getLearnedRecipe(node) then
+        return true
+    end
     local itemID = node.itemID or node.setItemID
     if not itemID then
         return false
     end
-    return (self.classFilterOn and self.classFilterMode == "fade"
-        and not app.classFilter:CanUse(self:GetFilterClass(), itemID))
-        or (self.transmogFilterMode == "fade" and node.itemID ~= nil and getCollectedLook(itemID) == true)
+    return (
+        self.classFilterOn
+        and self.classFilterMode == "fade"
+        and not app.classFilter:CanUse(self:GetFilterClass(), itemID)
+    ) or (self.transmogFilterMode == "fade" and node.itemID ~= nil and getCollectedLook(itemID) == true)
 end
 
 -- The values `field` has in the current list's `meta` (entries under subheaders and groups
@@ -2141,6 +2234,7 @@ function SpyglassViewMixin:ResetFilters(q)
     -- Off, keeping class and mode; the redraw updates the footer buttons.
     self.classFilterOn = false
     self.transmogFilterMode = "show"
+    self.recipeFilterMode = "show"
     self:OnQueryChanged()
     app.ui.mainWindow:SaveTabs()
 end
@@ -2229,10 +2323,12 @@ function SpyglassViewMixin:Render()
     self.ClassFilter:SetShown(not isOptions)
     self.ClassFilterMode:SetShown(not isOptions)
     self.TransmogFilter:SetShown(not isOptions)
+    self.RecipeFilter:SetShown(not isOptions)
     self.ActiveList:SetShown(not isOptions)
     self.ClassFilter:Update()
     self.ClassFilterMode:Update()
     self.TransmogFilter:Update()
+    self.RecipeFilter:Update()
     -- The active list may have changed, or been renamed, since the menu was last built.
     self.ActiveList:GenerateMenu()
 end
@@ -2325,6 +2421,7 @@ function SpyglassViewMixin:BuildElements(node)
     local pending = {}
     local panelTest = self:GetEntryFilter()
     local hideCollected = self.transmogFilterMode == "hide"
+    local hideLearned = self.recipeFilterMode == "hide"
     local filter = panelTest
     local classTest = self:GetClassFilterTest()
     if filter and classTest then
@@ -2355,6 +2452,7 @@ function SpyglassViewMixin:BuildElements(node)
         end
         return (not filter or filter(entry))
             and (not hideCollected or not entry.itemID or not getCollectedLook(entry.itemID))
+            and (not hideLearned or not getLearnedRecipe(entry))
     end
 
     local function addRows(entries)
