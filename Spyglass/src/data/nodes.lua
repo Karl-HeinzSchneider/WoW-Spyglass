@@ -1129,7 +1129,9 @@ function api.ListFolder(kind, id, opts)
     local entries = api.ListEntries(kind, id)
     local panel = list.panel or defaultPanel(kind, list, #entries)
     local groupBy = listGroupKey(kind) ---@type ("auto"|fun(node: Spyglass.Node): string?, string?)?
-    if kind == "crafting" and entries[1] and (entries[1].itemID or entries[1].spellID) then
+    if kind == "collections" and id == "toys" then
+        groupBy = nil
+    elseif kind == "crafting" and entries[1] and (entries[1].itemID or entries[1].spellID) then
         entries, groupBy = groupedListFolders(kind, id, entries), nil
         local sections = sectionsOf(list, id, opts)
         if sections then

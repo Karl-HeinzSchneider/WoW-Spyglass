@@ -287,7 +287,8 @@ Constructors (optional sugar):
 - `Spyglass.ListFolder(kind, id, opts?)` / `Spyglass.ListEntries(kind, id)` — one list as a two-column
   folder; its item nodes carry the row's fields in `meta` (`standing`, `rank`, `skill`, `spell`, `source`,
   `side`, `group`) and are grouped by the row's `group`, else the kind's default (standing / honor rank /
-  trade skill category, then skill tier), else the item's type. A crafting list with a `skillLineID`
+  trade skill category, then skill tier), else the item's type. The built-in Toys collection shows
+  all entries in a single list without group headings. A crafting list with a `skillLineID`
   starts from the recipe database: every recipe of that profession becomes an entry (the item it
   makes, or the spell for enchants) with `meta.spell` and `meta.category`, the skill thresholds as
   `infoRight` and reagents/tools in the tooltip; the list's own rows then add their fields to the
