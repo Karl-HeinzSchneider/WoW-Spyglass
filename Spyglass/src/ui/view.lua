@@ -52,6 +52,37 @@ local function setItemBadges(frame, itemID)
 end
 app.ui.SetItemBadges = setItemBadges
 
+-- Rows use base item IDs. Share resolved results across pages and the Hide filter.
+---@type table<integer, boolean>
+local collectedLooks = {}
+
+---@param itemID integer
+---@param classID? Enum.ItemClass
+---@return boolean? collected  # nil when there is no confirmed transmog appearance
+local function getCollectedLook(itemID, classID)
+    local collected = collectedLooks[itemID]
+    if collected ~= nil then
+        return collected
+    end
+
+    if not classID then
+        local row = Data:GetItem(itemID)
+        classID = row and row[ITEM.CLASS] or select(6, C_Item.GetItemInfoInstant(itemID))
+    end
+    if classID ~= Enum.ItemClass.Armor and classID ~= Enum.ItemClass.Weapon then
+        return nil
+    end
+
+    local _, sourceID = C_TransmogCollection.GetItemInfo(itemID)
+    local info = sourceID and C_TransmogCollection.GetAppearanceInfoBySource(sourceID)
+    if info then
+        collected = info.appearanceIsCollected
+        collectedLooks[itemID] = collected
+    end
+    return collected
+end
+app.ui.GetCollectedLook = getCollectedLook
+
 -- Delay between the last keystroke in the search box and running the query.
 local SEARCH_DEBOUNCE = 0.25
 
@@ -245,6 +276,7 @@ end
 ---@field Arrow Texture
 ---@field Favorite Texture  # the star on a favorite item's icon
 ---@field ListMarker Texture  # the marker of a list with the item (setItemBadges)
+---@field CollectedLook Texture
 ---@field node Spyglass.Node
 ---@field view Spyglass.View
 ---@field link? string  # item/spell link for chat linking
@@ -304,6 +336,7 @@ function SpyglassListRowMixin:Init(view, node)
     self.link = nil
     self.Arrow:SetShown(app.api.IsFolder(node))
     setItemBadges(self, node.itemID)
+    self.CollectedLook:Hide()
 
     if node.itemID then
         self:InitItem(view, node)
@@ -339,6 +372,7 @@ function SpyglassListRowMixin:InitItem(view, node)
     local cached = name ~= nil
     if cached then
         self.link = link
+        self.CollectedLook:SetShown(getCollectedLook(itemID, classID) == true)
     else
         if view.failedItemLookup ~= itemID then
             view:RequestItem(itemID)
@@ -1077,6 +1111,58 @@ function SpyglassClassFilterModeButtonMixin:OnEnter()
     GameTooltip:Show()
 end
 
+local TRANSMOG_FILTER_MODES = {
+    show = { next = "fade", label = "Show collected looks" },
+    fade = { next = "hide", label = "Fade collected looks", icon = CLASS_FILTER_MODE_ICONS.fade },
+    hide = { next = "show", label = "Hide collected looks", icon = CLASS_FILTER_MODE_ICONS.hide },
+}
+
+---@class Spyglass.TransmogFilterButton : Spyglass.ClassFilterButton
+SpyglassTransmogFilterButtonMixin = {
+    GetView = SpyglassClassFilterButtonMixin.GetView,
+    OnLeave = SpyglassClassFilterButtonMixin.OnLeave,
+}
+
+function SpyglassTransmogFilterButtonMixin:Update()
+    local mode = self:GetView().transmogFilterMode
+    local icon = TRANSMOG_FILTER_MODES[mode].icon
+    if icon then
+        self.Icon:SetTexture(icon)
+        self.Icon:SetTexCoord(0.07, 0.93, 0.07, 0.93)
+    else
+        self.Icon:SetAtlas("common-icon-checkmark")
+    end
+    self.Icon:SetDesaturated(mode == "show")
+    local color = mode == "show" and HIGHLIGHT_FONT_COLOR or CLASS_FILTER_ON_COLOR
+    self.IconRing:SetVertexColor(color.r, color.g, color.b)
+end
+
+function SpyglassTransmogFilterButtonMixin:OnClick(button)
+    if button ~= "LeftButton" then
+        return
+    end
+    local view = self:GetView()
+    local mode = view.transmogFilterMode
+    view.transmogFilterMode = TRANSMOG_FILTER_MODES[mode].next
+    if mode == "fade" or mode == "hide" then
+        view:Refresh()
+    else
+        view:Render()
+    end
+    if GameTooltip:IsOwned(self) then
+        self:OnEnter()
+    end
+end
+
+function SpyglassTransmogFilterButtonMixin:OnEnter()
+    local state = TRANSMOG_FILTER_MODES[self:GetView().transmogFilterMode]
+    GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+    GameTooltip:SetText("Transmog")
+    GameTooltip:AddLine(state.label, 1, 1, 1)
+    GameTooltip:AddLine("Click to " .. TRANSMOG_FILTER_MODES[state.next].label:lower(), 0.5, 0.5, 0.5)
+    GameTooltip:Show()
+end
+
 ----------------------------------------------------------------------------------------------------
 -- Options page: "Spyglass > Options", opened by the window's gear button
 ----------------------------------------------------------------------------------------------------
@@ -1152,6 +1238,8 @@ end
 ---@field PagingControls Spyglass.PagingControls
 ---@field ClassFilter Spyglass.ClassFilterButton
 ---@field ClassFilterMode Spyglass.ClassFilterModeButton
+---@field TransmogFilter Spyglass.TransmogFilterButton
+---@field transmogFilterMode "show"|"fade"|"hide"
 ---@field ActiveList WowStyle1FilterDropdownMixin|Frame  # the footer's active list dropdown
 ---@field classFilterOn boolean  # the footer's class filter is on, for this tab
 ---@field classFilterMode "hide"|"fade"  # what it does to the items the class can't use
@@ -1257,9 +1345,11 @@ function SpyglassViewMixin:OnLoad()
     self.panelState = {}
     self.classFilterOn = false
     self.classFilterMode = "fade"
+    self.transmogFilterMode = "show"
     self.resultCount = 0
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
     self:RegisterEvent("ITEM_DATA_LOAD_RESULT")
+    self:RegisterEvent("TRANSMOG_COLLECTION_UPDATED")
     -- Quest banners show the character's progress and the client's quest title.
     self:RegisterEvent("QUEST_LOG_UPDATE")
     self:RegisterEvent("QUEST_TURNED_IN")
@@ -1336,6 +1426,17 @@ function SpyglassViewMixin:OnEvent(event, itemID, success)
         end
         if self.regroupItems[itemID] then
             self.regroupItems[itemID] = false
+            self.refreshQueued = true
+        end
+        if success ~= false and self.transmogFilterMode == "hide" and getCollectedLook(itemID) then
+            self.refreshQueued = true
+        end
+    elseif event == "TRANSMOG_COLLECTION_UPDATED" then
+        wipe(collectedLooks)
+        if not self:IsVisible() then
+            return
+        end
+        if self.transmogFilterMode == "hide" then
             self.refreshQueued = true
         end
     elseif not self.showsQuests then
@@ -1829,15 +1930,17 @@ function SpyglassViewMixin:GetClassFilterTest()
     end
 end
 
--- Is `node` an item the class filter fades out?
----@param node Spyglass.Node?
+-- Is the entry faded by either footer filter?
+---@param node Spyglass.Node
 ---@return boolean
 function SpyglassViewMixin:IsFaded(node)
-    local itemID = node and (node.itemID or node.setItemID)
-    return self.classFilterOn
-        and self.classFilterMode == "fade"
-        and itemID ~= nil
-        and not app.classFilter:CanUse(self:GetFilterClass(), itemID)
+    local itemID = node.itemID or node.setItemID
+    if not itemID then
+        return false
+    end
+    return (self.classFilterOn and self.classFilterMode == "fade"
+        and not app.classFilter:CanUse(self:GetFilterClass(), itemID))
+        or (self.transmogFilterMode == "fade" and node.itemID ~= nil and getCollectedLook(itemID) == true)
 end
 
 -- The values `field` has in the current list's `meta` (entries under subheaders and groups
@@ -2029,7 +2132,7 @@ function SpyglassViewMixin:SetSort(q, sort)
     end
 end
 
--- Clears filters and sort and turns the class filter off, but keeps the search text (that's what
+-- Clears filters and sort and resets the footer filters, but keeps the search text (that's what
 -- the search box's X is for).
 ---@param q Spyglass.Query
 function SpyglassViewMixin:ResetFilters(q)
@@ -2037,6 +2140,7 @@ function SpyglassViewMixin:ResetFilters(q)
     q.sort = "name"
     -- Off, keeping class and mode; the redraw updates the footer buttons.
     self.classFilterOn = false
+    self.transmogFilterMode = "show"
     self:OnQueryChanged()
     app.ui.mainWindow:SaveTabs()
 end
@@ -2121,12 +2225,14 @@ function SpyglassViewMixin:Render()
     end
 
     self:RefreshBreadcrumbs()
-    -- The footer's class filter and active list act on items; the options page has none.
+    -- The footer's filters and active list act on items; the options page has none.
     self.ClassFilter:SetShown(not isOptions)
     self.ClassFilterMode:SetShown(not isOptions)
+    self.TransmogFilter:SetShown(not isOptions)
     self.ActiveList:SetShown(not isOptions)
     self.ClassFilter:Update()
     self.ClassFilterMode:Update()
+    self.TransmogFilter:Update()
     -- The active list may have changed, or been renamed, since the menu was last built.
     self.ActiveList:GenerateMenu()
 end
@@ -2218,6 +2324,7 @@ function SpyglassViewMixin:BuildElements(node)
     local entryKind = entryKindOf(node)
     local pending = {}
     local panelTest = self:GetEntryFilter()
+    local hideCollected = self.transmogFilterMode == "hide"
     local filter = panelTest
     local classTest = self:GetClassFilterTest()
     if filter and classTest then
@@ -2246,7 +2353,8 @@ function SpyglassViewMixin:BuildElements(node)
             end
             return true
         end
-        return not filter or filter(entry)
+        return (not filter or filter(entry))
+            and (not hideCollected or not entry.itemID or not getCollectedLook(entry.itemID))
     end
 
     local function addRows(entries)
@@ -2339,7 +2447,7 @@ function SpyglassViewMixin:BuildElements(node)
     end
     -- The query counted its result before the filters above removed entries from it: the count
     -- next to the search box is what is listed.
-    if filter and node.query then
+    if (filter or hideCollected) and node.query then
         local count = 0
         for _, element in ipairs(elements) do
             if element.kind == entryKind then

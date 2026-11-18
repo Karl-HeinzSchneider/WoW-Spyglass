@@ -50,7 +50,7 @@ The root node comes from `app.api:GetRootNode()`; the window listens to `OnModul
 A view fills the left column: a header row (breadcrumbs starting right of the
 window portrait) over a divider, then one `Content`
 page of rows, then under a second divider (`FooterDivider`) a footer row as high as the header
-row (44px) with the two class filter buttons on the left, then the active list dropdown
+row (44px) with the class and transmog filter buttons on the left, then the active list dropdown
 (`ActiveList`, see [Item lists](#item-lists)), and Blizzard's `PagingControls` on the right.
 
 - **Navigation** is a `path` stack over `Spyglass.Node` trees (`Push` / `PopTo` / `Back`, then
@@ -90,6 +90,10 @@ row (44px) with the two class filter buttons on the left, then the active list d
   blocked subclasses, so a lookup is the item's kind (`app.itemKind`) plus two table reads.
   Subclasses not in the table, and every item that is neither armor nor a weapon, are usable
   by all; an item whose kind isn't known yet counts as usable.
+- **Transmog filter.** The next button cycles through showing, fading and hiding items
+  whose look is collected. Each tab starts on Show, and query Reset returns it to Show.
+  Fade only checks the visible page. Hide checks eligible results before pagination, sharing
+  the appearance cache with the row badges. Items with unknown collection status stay visible.
 
 ### Rows
 
@@ -101,6 +105,10 @@ read from the tooltip's slot line through the hidden `SpyglassScanTooltip`
 followed by the node's `tooltip` lines (a list, or a function of the node).
 
 ### Item lists
+
+On a weapon or armor row, a checkmark at the bottom right of the item icon means the
+transmog appearance is collected. The row checks after item data loads. Resolved results
+are shared across pages until `TRANSMOG_COLLECTION_UPDATED`.
 
 Alt-click on an item row (or an item slot in a popup) toggles the item in the active list of
 `app.lists` (`Spyglass.Lists`, see [API.md](API.md#lists-and-favorites)) and rebuilds the
@@ -333,6 +341,8 @@ Currency names come from the client or the curated fallback. Battleground marks 
 battleground name in cost lines, and Honor Points appear as Honor.
 For PvP rewards with a recorded rank requirement, Spyglass adds the rank to the tooltip when
 the client has not already drawn it. The line is red when the character's rank is too low.
+For Spyglass item hovers, the tooltip adds the game's localized uncollected appearance
+line when the wardrobe confirms the look is missing and the line is absent.
 
 It hooks once in `OnInitialize`: through `TooltipDataProcessor.AddTooltipPostCall` when
 `GameTooltip` is built on the tooltip data handler, else `OnTooltipSetItem` on `GameTooltip` and

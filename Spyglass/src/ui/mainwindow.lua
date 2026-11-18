@@ -240,6 +240,7 @@ end
 ---@return Spyglass.View
 function SpyglassMainWindowMixin:OpenView()
     local view = self.viewPool:Acquire() --[[@as Spyglass.View]]
+    view.transmogFilterMode = "show"
     view:SetAllPoints(self.LeftPane)
     view.onNavigate = function(v)
         self:UpdateTab(v)
