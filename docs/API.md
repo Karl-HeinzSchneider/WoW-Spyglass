@@ -377,6 +377,9 @@ that selection. The built-in PvP module shares its reward faction selection acro
 and tabs for the session. On a PvP list with `groupFolders` enabled, those widgets may also set
 `group` to a curated reward group to appear only inside its subcategory.
 
+A `classDropdown` widget filters the named reward `group` by its class section. It starts
+on the character's class, offers All, and always includes the named `includeSection`.
+
 Checkbox and dropdown filters and the grouping apply to the entries of whatever list the tab
 shows below the panel's node (folders remain visible except quest banners under the faction
 selector) and are kept per tab and panel node until

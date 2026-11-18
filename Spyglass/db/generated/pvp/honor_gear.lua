@@ -23,6 +23,7 @@ Data:AddList("pvp", "honor_gear", {
         { group = "Officer Accessories", side = "Alliance", text = "Officer Accessories Quartermaster in Stormwind City" },
         { group = "Officer Accessories", row = "Coordinates", side = "Alliance", value = "75.2, 67.6" },
         { button = "Show officer accessories quartermaster on map", group = "Officer Accessories", map = { 1453, 75.2, 67.6 }, side = "Alliance" },
+        { classDropdown = "Class", group = "Armor", includeSection = "Epic Upgrades" },
         { group = "Armor", header = "Captain Dirgehammer", side = "Alliance" },
         { group = "Armor", side = "Alliance", text = "Armor Quartermaster in Stormwind City" },
         { group = "Armor", row = "Coordinates", side = "Alliance", value = "75.8, 67.0" },

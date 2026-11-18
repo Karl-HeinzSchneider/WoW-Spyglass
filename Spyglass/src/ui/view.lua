@@ -1657,6 +1657,18 @@ function SpyglassViewMixin:SetRewardFaction(node, index, side)
     end
 end
 
+---@param node Spyglass.Node
+---@param index integer
+---@return string|false
+function SpyglassViewMixin:GetRewardClass(node, index)
+    local selected = self:GetPanelValue(node, index)
+    if selected ~= nil then
+        return selected
+    end
+    local class = app.classFilter:GetPlayerClass()
+    return class:sub(1, 1) .. class:sub(2):lower()
+end
+
 -- A checkbox, dropdown or grouping changed: the list is filtered and grouped again, from page 1.
 ---@param node Spyglass.Node
 ---@param index integer
@@ -1699,6 +1711,8 @@ function SpyglassViewMixin:GetEntryFilter()
     if not node or not widgets then
         return nil
     end
+    local current = self:GetCurrentNode()
+    local groupKey = current and current.meta and current.meta.groupKey
     local tests = {}
     for index, widget in ipairs(widgets) do
         local value = state and state[index]
@@ -1714,6 +1728,14 @@ function SpyglassViewMixin:GetEntryFilter()
             local field = widget.field
             tests[#tests + 1] = function(entry)
                 return entry.meta ~= nil and entry.meta[field] == value
+            end
+        elseif widget.classDropdown and widget.group and groupKey == "CUSTOM:" .. widget.group then
+            local selected = self:GetRewardClass(node, index)
+            if selected then
+                tests[#tests + 1] = function(entry)
+                    local section = entry.meta and entry.meta.section
+                    return section ~= nil and (section == selected or section == widget.includeSection)
+                end
             end
         elseif widget.factionDropdown then
             local side = value or UnitFactionGroup("player")

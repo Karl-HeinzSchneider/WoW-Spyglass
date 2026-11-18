@@ -71,6 +71,8 @@ export interface PanelWidget {
   /** checkbox: the built-in filter it switches on (PANEL_FILTERS). */
   filter?: string;
   dropdown?: string;
+  classDropdown?: string;
+  includeSection?: string;
   factionDropdown?: string;
   /** Show this widget when the panel's faction selector picks this side. */
   side?: "Alliance" | "Horde";
@@ -95,6 +97,7 @@ const PANEL_WIDGETS: Record<string, { options: string[]; required?: string[] }> 
   bar: { options: [] },
   checkbox: { options: ["filter"], required: ["filter"] },
   dropdown: { options: ["field"], required: ["field"] },
+  classDropdown: { options: ["group", "includeSection"], required: ["group", "includeSection"] },
   factionDropdown: { options: ["field"], required: ["field"] },
   button: { options: ["open", "map", "side", "group"] },
   spacer: { options: [] },
@@ -520,6 +523,18 @@ function validatePanel(file: ListFile, listIDs: Set<string>, checker: Checker): 
     if (w.group !== undefined && (typeof w.group !== "string" || !w.group.trim() || !rewardGroups.has(w.group)))
       checker.report(file, `${where}: group must name a reward subcategory on a PvP list with groupFolders enabled`);
     switch (type) {
+      case "classDropdown":
+        if (typeof w.classDropdown !== "string" || !w.classDropdown.trim())
+          checker.report(file, `${where}: classDropdown must be its label`);
+        if (
+          typeof w.includeSection !== "string" ||
+          !w.includeSection.trim() ||
+          file.kind !== "pvp" ||
+          !rowsOf(file).some((row) => row?.group === w.group && row?.section === w.includeSection)
+        ) {
+          checker.report(file, `${where}: includeSection must name a section in the selected reward subcategory`);
+        }
+        break;
       case "factionDropdown":
         if (typeof w.factionDropdown !== "string" || !w.factionDropdown)
           checker.report(file, `${where}: factionDropdown must be its label`);

@@ -510,6 +510,8 @@ Horde rewards and defaults to the character's faction. A header, text, row, or b
 same panel can set `"side": "Alliance"` or `"side": "Horde"` to appear for that selection.
 On a PvP list with `groupFolders` enabled, these widgets can also name a row's `group` to
 appear only inside that subcategory.
+For class-named sections, `{ "classDropdown": "Class", "group": "Armor", "includeSection": "Epic Upgrades" }`
+starts on the character's class. The included section stays visible for every class selection.
 
 Checkboxes and dropdowns act on the list in that tab only and are forgotten when the tab is
 closed. `npm run check` reports unknown widgets and options, a bar without the file's id, a

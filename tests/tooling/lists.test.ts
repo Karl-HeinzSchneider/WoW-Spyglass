@@ -64,8 +64,14 @@ test("reward folders survive a PvP rewrite and are rejected on crafting lists", 
     data: {
       name: "Honor Gear",
       groupFolders: true,
-      rewards: [{ item: 100, name: "Armor", group: "Armor", section: "Warrior" }],
-      panel: [{ header: "Armor Vendor", group: "Armor" }],
+      rewards: [
+        { item: 100, name: "Armor", group: "Armor", section: "Warrior" },
+        { item: 200, name: "Seal", group: "Armor", section: "Epic Upgrades" },
+      ],
+      panel: [
+        { header: "Armor Vendor", group: "Armor" },
+        { classDropdown: "Class", group: "Armor", includeSection: "Epic Upgrades" },
+      ],
     },
   };
   const checker = sectionChecker(true);
@@ -78,9 +84,13 @@ test("reward folders survive a PvP rewrite and are rejected on crafting lists", 
   assert.deepEqual(JSON.parse(serializeList(file)).panel, file.data.panel);
   assert.equal(JSON.parse(serializeList(file)).rewards[0].section, "Warrior");
 
-  file.data.panel = [{ header: "Armor Vendor", group: "Unknown" }];
+  file.data.panel = [
+    { header: "Armor Vendor", group: "Unknown" },
+    { classDropdown: "Class", group: "Armor", includeSection: "Missing" },
+  ];
   validateLists([file], checker);
   assert.match(checker.problems.map((p) => p.message).join("\n"), /group must name a reward subcategory/);
+  assert.match(checker.problems.map((p) => p.message).join("\n"), /includeSection must name a section/);
   file.data.groupFolders = false;
   validateLists([file], checker);
   assert.match(checker.problems.map((p) => p.message).join("\n"), /section requires groupFolders/);

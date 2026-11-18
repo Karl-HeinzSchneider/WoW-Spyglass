@@ -92,6 +92,11 @@
       "group": "Officer Accessories"
     },
     {
+      "classDropdown": "Class",
+      "group": "Armor",
+      "includeSection": "Epic Upgrades"
+    },
+    {
       "header": "Captain Dirgehammer",
       "side": "Alliance",
       "group": "Armor"

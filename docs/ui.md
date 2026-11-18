@@ -212,6 +212,8 @@ The PvP module shares one reward faction selection across its landing page, subc
 and tabs for the session. It starts on the character's faction. The landing page groups the
 tiles under Battlegrounds and Honor Gear, and vendor locations appear in the matching
 subcollection's panel.
+Armor's Class selector starts on the character's class. It filters the class sections and
+keeps Epic Upgrades visible for every class selection.
 
 ## Info pane (`infopane.lua` / `.xml`)
 
