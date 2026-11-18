@@ -74,6 +74,7 @@ export interface PanelWidget {
   factionDropdown?: string;
   /** Show this widget when the panel's faction selector picks this side. */
   side?: "Alliance" | "Horde";
+  group?: string;
   /** dropdown: the row field whose values it offers. */
   field?: string;
   button?: string;
@@ -86,16 +87,16 @@ export interface PanelWidget {
 
 /** A widget's type key -> the option keys it may carry (and the ones it needs). */
 const PANEL_WIDGETS: Record<string, { options: string[]; required?: string[] }> = {
-  header: { options: ["side"] },
-  text: { options: ["side"] },
+  header: { options: ["side", "group"] },
+  text: { options: ["side", "group"] },
   item: { options: [] },
   description: { options: [] },
-  row: { options: ["value", "side"], required: ["value"] },
+  row: { options: ["value", "side", "group"], required: ["value"] },
   bar: { options: [] },
   checkbox: { options: ["filter"], required: ["filter"] },
   dropdown: { options: ["field"], required: ["field"] },
   factionDropdown: { options: ["field"], required: ["field"] },
-  button: { options: ["open", "map", "side"] },
+  button: { options: ["open", "map", "side", "group"] },
   spacer: { options: [] },
 };
 
@@ -479,6 +480,8 @@ function validatePanel(file: ListFile, listIDs: Set<string>, checker: Checker): 
   }
   const fields = new Set<string>([...ROW_FIELDS[file.kind].filter((field) => field !== "costs"), "group"]);
   const factionSelectors = d.panel.filter((widget) => widget?.factionDropdown && widget.field === "side");
+  const rewardGroups =
+    file.kind === "pvp" && d.groupFolders === true ? new Set(rowsOf(file).map((row) => row?.group)) : new Set<string>();
   if (factionSelectors.length > 1) checker.report(file, "panel: only one faction selector is allowed");
   for (const [index, widget] of d.panel.entries()) {
     const where = `panel[${index}]`;
@@ -508,6 +511,8 @@ function validatePanel(file: ListFile, listIDs: Set<string>, checker: Checker): 
     const w = widget;
     if (w.side !== undefined && (!SIDES.includes(w.side) || !factionSelectors.length))
       checker.report(file, `${where}: side must be Alliance or Horde and requires a faction selector`);
+    if (w.group !== undefined && (typeof w.group !== "string" || !w.group.trim() || !rewardGroups.has(w.group)))
+      checker.report(file, `${where}: group must name a reward subcategory on a PvP list with groupFolders enabled`);
     switch (type) {
       case "factionDropdown":
         if (typeof w.factionDropdown !== "string" || !w.factionDropdown)

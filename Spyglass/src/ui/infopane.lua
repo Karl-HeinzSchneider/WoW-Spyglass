@@ -132,6 +132,7 @@ function SpyglassInfoPaneMixin:Refresh()
     self.Title:SetText(node and node.name or "")
     if node and view then
         local current = view:GetCurrentNode()
+        local groupKey = current and current.meta and current.meta.groupKey
         if current and current.query then
             self:AddQueryControls(view, current)
         end
@@ -143,7 +144,8 @@ function SpyglassInfoPaneMixin:Refresh()
             end
         end
         for index, widget in ipairs(widgets or {}) do
-            if not widget.side or widget.side == faction then
+            local matchesGroup = not widget.group or groupKey == "CUSTOM:" .. widget.group
+            if matchesGroup and (not widget.side or widget.side == faction) then
                 local ok, err = pcall(self.AddWidget, self, view, node, index, widget)
                 if not ok then
                     log:error("%s: panel widget %d failed: %s", tostring(node.name), index, tostring(err))

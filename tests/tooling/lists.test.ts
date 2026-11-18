@@ -61,7 +61,12 @@ test("reward folders survive a PvP rewrite and are rejected on crafting lists", 
     path: ".contribute/data/pvp/honor_gear.json",
     kind: "pvp",
     slug: "honor_gear",
-    data: { name: "Honor Gear", groupFolders: true, rewards: [] },
+    data: {
+      name: "Honor Gear",
+      groupFolders: true,
+      rewards: [{ item: 100, name: "Mount", group: "Mounts" }],
+      panel: [{ header: "Mount Vendor", group: "Mounts" }],
+    },
   };
   const checker = sectionChecker(true);
   validateLists([file], checker);
@@ -70,6 +75,11 @@ test("reward folders survive a PvP rewrite and are rejected on crafting lists", 
     [],
   );
   assert.equal(JSON.parse(serializeList(file)).groupFolders, true);
+  assert.deepEqual(JSON.parse(serializeList(file)).panel, file.data.panel);
+
+  file.data.panel = [{ header: "Mount Vendor", group: "Unknown" }];
+  validateLists([file], checker);
+  assert.match(checker.problems.map((p) => p.message).join("\n"), /group must name a reward subcategory/);
 
   const crafting = craftingFile([]);
   crafting.data.groupFolders = true;

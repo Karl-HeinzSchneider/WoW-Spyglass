@@ -507,6 +507,8 @@ Each widget is an object with exactly one of these keys, plus that widget's opti
 A widget with `"factionDropdown": "Faction", "field": "side"` switches between Alliance and
 Horde rewards and defaults to the character's faction. A header, text, row, or button in the
 same panel can set `"side": "Alliance"` or `"side": "Horde"` to appear for that selection.
+On a PvP list with `groupFolders` enabled, these widgets can also name a row's `group` to
+appear only inside that subcategory.
 
 Checkboxes and dropdowns act on the list in that tab only and are forgotten when the tab is
 closed. `npm run check` reports unknown widgets and options, a bar without the file's id, a
