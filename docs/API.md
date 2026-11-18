@@ -595,7 +595,8 @@ Reading:
   then the curated one, then `"#id"`
 - `Data:GetList(kind, id)`, `Data:GetListIDs(kind)` (by `order`, then name), `Data:GetListLoot(kind, id)`
   — list loot rows can include `costs = { { item = 226404, amount = 125, icon = 133799 } }`.
-  Each component gives the payment item ID, quantity and texture file ID. Components in one row
+  A component gives the payment item ID, quantity and texture file ID, or a currency ID, quantity
+  and fallback name, e.g. `{ currency = 1792, amount = 12000, name = "Honor Points" }`. Components in one row
   are paid together. The list source returned by `Data:GetItemSources` carries these costs for
   item tooltips.
 - `Data:GetSetItems(setID) -> itemID[]` (the set's items in the database, ascending), `Data:GetSetIDs()`

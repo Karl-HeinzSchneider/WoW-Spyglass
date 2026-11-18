@@ -316,7 +316,8 @@ Drops start with the `ParagonReputation_Bag` atlas (a loot sack, used by the Cam
 frame), quests with `Interface\GossipFrame\AvailableQuestIcon`. Then one gold
 `Crafted by <profession>` line per profession with a recipe for the item, with the icon of that
 profession's crafting list. Each priced list row adds a `Cost` line with the quantities and
-icons of the payment items. The names appear when they're available in the database or client.
+icons of the payment items and currencies. Item names come from the database or client.
+Currency names come from the client or the curated fallback.
 
 It hooks once in `OnInitialize`: through `TooltipDataProcessor.AddTooltipPostCall` when
 `GameTooltip` is built on the tooltip data handler, else `OnTooltipSetItem` on `GameTooltip` and

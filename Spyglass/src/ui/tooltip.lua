@@ -168,9 +168,21 @@ local function costLines(sources)
         if source.costs then
             local parts = {}
             for i, cost in ipairs(source.costs) do
-                local icon = CreateSimpleTextureMarkup(cost.icon, ICON_SIZE, ICON_SIZE)
-                local name, known = Data:GetItemName(cost.item)
-                parts[i] = ("%d %s%s"):format(cost.amount, icon, known and (" " .. name) or "")
+                local iconID, name = cost.icon, cost.name
+                if cost.currency then
+                    local info = C_CurrencyInfo and C_CurrencyInfo.GetCurrencyInfo(cost.currency)
+                    if info then
+                        iconID = info.iconFileID
+                        if info.name and info.name ~= "" then
+                            name = info.name
+                        end
+                    end
+                elseif cost.item then
+                    local itemName, known = Data:GetItemName(cost.item)
+                    name = known and itemName or nil
+                end
+                local icon = iconID and (" " .. CreateSimpleTextureMarkup(iconID, ICON_SIZE, ICON_SIZE)) or ""
+                parts[i] = ("%d%s%s"):format(cost.amount, icon, name and (" " .. name) or "")
             end
             if #parts > 0 then
                 out[#out + 1] = "Cost: " .. table.concat(parts, " + ")

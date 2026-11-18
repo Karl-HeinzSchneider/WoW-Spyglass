@@ -12,6 +12,11 @@ Data:AddList("pvp", "honor_gear", {
         { button = "Show vendor on map", map = { 1453, 74.6, 67.6 } },
         { row = "Required honor rank", value = "11 (Commander)" },
         { row = "Price per mount", value = "90 gold" },
+        { header = "Captain O'Neal" },
+        { text = "Weapons Quartermaster in Stormwind City" },
+        { row = "Coordinates", value = "74.4, 67.6" },
+        { button = "Show weapons quartermaster on map", map = { 1453, 74.4, 67.6 } },
+        { row = "Required honor rank", value = "14 (Grand Marshal)" },
     },
 })
 Data:AddListLoot("pvp", "honor_gear", {
@@ -19,4 +24,26 @@ Data:AddListLoot("pvp", "honor_gear", {
     { 18242, rank = 11, side = "Alliance", group = "Mounts" }, -- Reins of the Black War Tiger
     { 18243, rank = 11, side = "Alliance", group = "Mounts" }, -- Black Battlestrider
     { 18244, rank = 11, side = "Alliance", group = "Mounts" }, -- Black War Ram
+    { 272693, rank = 14, side = "Alliance", costs = { { amount = 10, icon = 237427, item = 274895 }, { amount = 12000, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Longsword
+    { 272838, rank = 14, side = "Alliance", costs = { { amount = 10, icon = 237427, item = 274895 }, { amount = 10500, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Aegis
+    { 272839, rank = 14, side = "Alliance", costs = { { amount = 10, icon = 237427, item = 274895 }, { amount = 12000, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Handaxe
+    { 272840, rank = 14, side = "Alliance", costs = { { amount = 20, icon = 133308, item = 20560 }, { amount = 22500, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Sunderer
+    { 272841, rank = 14, side = "Alliance", costs = { { amount = 10, icon = 237427, item = 274895 }, { amount = 12000, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Bullseye
+    { 272842, rank = 14, side = "Alliance", costs = { { amount = 10, icon = 237427, item = 274895 }, { amount = 12000, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Repeater
+    { 272843, rank = 14, side = "Alliance", costs = { { amount = 10, icon = 237427, item = 274895 }, { amount = 12000, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Dirk
+    { 272844, rank = 14, side = "Alliance", costs = { { amount = 10, icon = 237427, item = 274895 }, { amount = 12000, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Right Hand Blade
+    { 272845, rank = 14, side = "Alliance", costs = { { amount = 10, icon = 237427, item = 274895 }, { amount = 12000, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Left Hand Blade
+    { 272846, rank = 14, side = "Alliance", costs = { { amount = 10, icon = 237427, item = 274895 }, { amount = 12000, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Hand Cannon
+    { 272847, rank = 14, side = "Alliance", costs = { { amount = 10, icon = 237427, item = 274895 }, { amount = 12000, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Punisher
+    { 272848, rank = 14, side = "Alliance", costs = { { amount = 20, icon = 133308, item = 20560 }, { amount = 22500, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Battle Hammer
+    { 272849, rank = 14, side = "Alliance", costs = { { amount = 20, icon = 133308, item = 20560 }, { amount = 22500, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Glaive
+    { 272850, rank = 14, side = "Alliance", costs = { { amount = 20, icon = 133308, item = 20560 }, { amount = 22500, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Stave
+    { 272851, rank = 14, side = "Alliance", costs = { { amount = 20, icon = 133308, item = 20560 }, { amount = 22500, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Claymore
+    { 272856, rank = 14, side = "Alliance", costs = { { amount = 10, icon = 237427, item = 274895 }, { amount = 12000, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Mageblade
+    { 272857, rank = 14, side = "Alliance", costs = { { amount = 10, icon = 237427, item = 274895 }, { amount = 12000, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Warhammer
+    { 272858, rank = 14, side = "Alliance", costs = { { amount = 20, icon = 133308, item = 20560 }, { amount = 22500, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Demolisher
+    { 272859, rank = 14, side = "Alliance", costs = { { amount = 10, icon = 237427, item = 274895 }, { amount = 12000, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Swiftblade
+    { 278157, rank = 14, side = "Alliance", costs = { { amount = 10, icon = 237427, item = 274895 }, { amount = 10500, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Tome of Restoration
+    { 278158, rank = 14, side = "Alliance", costs = { { amount = 10, icon = 237427, item = 274895 }, { amount = 10500, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Tome of Power
+    { 278468, rank = 14, side = "Alliance", costs = { { amount = 10, icon = 237427, item = 274895 }, { amount = 10500, currency = 1792, name = "Honor Points" } }, group = "Grand Marshal Weapons" }, -- Premier Grand Marshal's Barricade
 })

@@ -378,7 +378,9 @@ tile) and `order` (tile position; by name otherwise).
 An item row in any list may carry `"costs": [{ "item": 226404, "amount": 125, "icon": 133799 }]`.
 Use the payment item's ID, the quantity due, and the icon's texture file ID. Each must be a
 positive integer. To price an offer in several payment items, put all components in that row's
-`costs` array. The tooltip displays the price with its icons.
+`costs` array. For game currency use a currency ID, amount, and fallback name, for example
+`{ "currency": 1792, "amount": 12000, "name": "Honor Points" }`. The tooltip uses the client's
+currency name and icon when available.
 
 Reputation files must state the game's `faction` id, a faction with a reputation bar; the addon
 uses it at runtime for the localized name, description and the character's standing, and `fix`

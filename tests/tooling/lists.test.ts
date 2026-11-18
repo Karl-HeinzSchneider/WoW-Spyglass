@@ -124,22 +124,28 @@ test("a priced reward keeps all payment components through a fix rewrite", () =>
   const file = panelFile([]);
   const costs = [
     { item: 226404, amount: 125, icon: 133799 },
-    { item: 200, amount: 2, icon: 134400 },
+    { currency: 1792, amount: 12000, name: "Honor Points" },
   ];
   file.data.items = [{ item: 100, name: "Vendor Reward", costs }];
   const checker = sectionChecker(false);
   validateLists([file], checker);
-  assert.deepEqual(checker.problems.filter((p) => !p.warning), []);
+  assert.deepEqual(
+    checker.problems.filter((p) => !p.warning),
+    [],
+  );
   assert.deepEqual(JSON.parse(serializeList(file)).items[0].costs, costs);
 });
 
 test("invalid cost components and item widgets fail validation", () => {
   const file = panelFile([{ item: 0 }]);
-  file.data.items = [{ item: 200, name: "Reward", costs: [{ item: 226404, amount: 0, icon: 133799 }] }];
+  file.data.items = [
+    { item: 200, name: "Reward", costs: [{ item: 226404, amount: 0, icon: 133799 }] },
+    { item: 100, name: "Other Reward", costs: [{ currency: 1792, amount: 12000, name: " " }] },
+  ];
   const checker = sectionChecker(false);
   validateLists([file], checker);
   const errors = checker.problems.filter((p) => !p.warning).map((p) => p.message);
-  assert.equal(errors.length, 2, errors.join("\n"));
+  assert.equal(errors.length, 3, errors.join("\n"));
   assert.match(errors.join("\n"), /item` must be a positive item id/);
   assert.match(errors.join("\n"), /costs` must contain only item, amount and icon as positive integers/);
 });

@@ -132,11 +132,7 @@ export interface CuratedListRow extends CuratedItemRow {
   side?: string;
 }
 
-interface ItemCost {
-  item: number;
-  amount: number;
-  icon: number;
-}
+type ItemCost = { item: number; amount: number; icon: number } | { currency: number; amount: number; name: string };
 
 export interface ListFile {
   path: string;
@@ -249,11 +245,16 @@ function checkField(value: unknown, spec: FieldSpec): string | undefined {
       if (!Array.isArray(value) || value.length === 0) return "must be a non-empty array";
       for (const cost of value) {
         if (
-          !cost || typeof cost !== "object" || Array.isArray(cost) || Object.keys(cost).length !== 3 ||
-          ![cost.item, cost.amount, cost.icon].every(isPositiveInteger)
+          cost &&
+          typeof cost === "object" &&
+          !Array.isArray(cost) &&
+          Object.keys(cost).length === 3 &&
+          isPositiveInteger(cost.amount)
         ) {
-          return "must contain only item, amount and icon as positive integers for each cost";
+          if (isPositiveInteger(cost.item) && isPositiveInteger(cost.icon)) continue;
+          if (isPositiveInteger(cost.currency) && typeof cost.name === "string" && cost.name.trim()) continue;
         }
+        return "must contain only item, amount and icon as positive integers, or currency and amount as positive integers with a name";
       }
       return undefined;
   }

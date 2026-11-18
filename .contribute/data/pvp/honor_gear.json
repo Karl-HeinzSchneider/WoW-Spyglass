@@ -23,6 +23,24 @@
     {
       "row": "Price per mount",
       "value": "90 gold"
+    },
+    {
+      "header": "Captain O'Neal"
+    },
+    {
+      "text": "Weapons Quartermaster in Stormwind City"
+    },
+    {
+      "row": "Coordinates",
+      "value": "74.4, 67.6"
+    },
+    {
+      "button": "Show weapons quartermaster on map",
+      "map": [1453, 74.4, 67.6]
+    },
+    {
+      "row": "Required honor rank",
+      "value": "14 (Grand Marshal)"
     }
   ],
   "rewards": [
@@ -53,6 +71,424 @@
       "rank": 11,
       "side": "Alliance",
       "group": "Mounts"
+    },
+    {
+      "item": 272693,
+      "name": "Premier Grand Marshal's Longsword",
+      "rank": 14,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Grand Marshal Weapons"
+    },
+    {
+      "item": 272838,
+      "name": "Premier Grand Marshal's Aegis",
+      "rank": 14,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 10500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Grand Marshal Weapons"
+    },
+    {
+      "item": 272839,
+      "name": "Premier Grand Marshal's Handaxe",
+      "rank": 14,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Grand Marshal Weapons"
+    },
+    {
+      "item": 272840,
+      "name": "Premier Grand Marshal's Sunderer",
+      "rank": 14,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 20,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 22500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Grand Marshal Weapons"
+    },
+    {
+      "item": 272841,
+      "name": "Premier Grand Marshal's Bullseye",
+      "rank": 14,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Grand Marshal Weapons"
+    },
+    {
+      "item": 272842,
+      "name": "Premier Grand Marshal's Repeater",
+      "rank": 14,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Grand Marshal Weapons"
+    },
+    {
+      "item": 272843,
+      "name": "Premier Grand Marshal's Dirk",
+      "rank": 14,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Grand Marshal Weapons"
+    },
+    {
+      "item": 272844,
+      "name": "Premier Grand Marshal's Right Hand Blade",
+      "rank": 14,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Grand Marshal Weapons"
+    },
+    {
+      "item": 272845,
+      "name": "Premier Grand Marshal's Left Hand Blade",
+      "rank": 14,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Grand Marshal Weapons"
+    },
+    {
+      "item": 272846,
+      "name": "Premier Grand Marshal's Hand Cannon",
+      "rank": 14,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Grand Marshal Weapons"
+    },
+    {
+      "item": 272847,
+      "name": "Premier Grand Marshal's Punisher",
+      "rank": 14,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Grand Marshal Weapons"
+    },
+    {
+      "item": 272848,
+      "name": "Premier Grand Marshal's Battle Hammer",
+      "rank": 14,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 20,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 22500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Grand Marshal Weapons"
+    },
+    {
+      "item": 272849,
+      "name": "Premier Grand Marshal's Glaive",
+      "rank": 14,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 20,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 22500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Grand Marshal Weapons"
+    },
+    {
+      "item": 272850,
+      "name": "Premier Grand Marshal's Stave",
+      "rank": 14,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 20,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 22500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Grand Marshal Weapons"
+    },
+    {
+      "item": 272851,
+      "name": "Premier Grand Marshal's Claymore",
+      "rank": 14,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 20,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 22500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Grand Marshal Weapons"
+    },
+    {
+      "item": 272856,
+      "name": "Premier Grand Marshal's Mageblade",
+      "rank": 14,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Grand Marshal Weapons"
+    },
+    {
+      "item": 272857,
+      "name": "Premier Grand Marshal's Warhammer",
+      "rank": 14,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Grand Marshal Weapons"
+    },
+    {
+      "item": 272858,
+      "name": "Premier Grand Marshal's Demolisher",
+      "rank": 14,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 20,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 22500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Grand Marshal Weapons"
+    },
+    {
+      "item": 272859,
+      "name": "Premier Grand Marshal's Swiftblade",
+      "rank": 14,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 12000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Grand Marshal Weapons"
+    },
+    {
+      "item": 278157,
+      "name": "Premier Grand Marshal's Tome of Restoration",
+      "rank": 14,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 10500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Grand Marshal Weapons"
+    },
+    {
+      "item": 278158,
+      "name": "Premier Grand Marshal's Tome of Power",
+      "rank": 14,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 10500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Grand Marshal Weapons"
+    },
+    {
+      "item": 278468,
+      "name": "Premier Grand Marshal's Barricade",
+      "rank": 14,
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 10500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Grand Marshal Weapons"
     }
   ]
 }
