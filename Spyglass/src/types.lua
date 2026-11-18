@@ -35,6 +35,7 @@
 ---@field modelPreview Spyglass.ModelPreview  # set in SpyglassModelPreviewMixin:OnLoad
 ---@field SetIconQuality fun(ring: Texture, quality?: Enum.ItemQuality)  # tints an icon's ring in the quality color, nil = plain (view.lua)
 ---@field SetItemBadges fun(frame: { Favorite: Texture, ListMarker: Texture }, itemID?: integer)  # the list star/marker on an item's icon (view.lua)
+---@field GetCollectedLook fun(itemID: integer, classID?: Enum.ItemClass): boolean?
 ---@field listDialog Spyglass.ListDialog  # set in SpyglassListDialogMixin:OnLoad
 ---@field ListDialogMixin Spyglass.ListDialog
 ---@field MainWindowMixin Spyglass.MainWindow

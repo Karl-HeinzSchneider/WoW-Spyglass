@@ -58,7 +58,8 @@ local collectedLooks = {}
 
 ---@param itemID integer
 ---@param classID? Enum.ItemClass
-local function hasCollectedLook(itemID, classID)
+---@return boolean? collected  # nil when there is no confirmed transmog appearance
+local function getCollectedLook(itemID, classID)
     local collected = collectedLooks[itemID]
     if collected ~= nil then
         return collected
@@ -69,7 +70,7 @@ local function hasCollectedLook(itemID, classID)
         classID = row and row[ITEM.CLASS] or select(6, C_Item.GetItemInfoInstant(itemID))
     end
     if classID ~= Enum.ItemClass.Armor and classID ~= Enum.ItemClass.Weapon then
-        return false
+        return nil
     end
 
     local _, sourceID = C_TransmogCollection.GetItemInfo(itemID)
@@ -78,8 +79,9 @@ local function hasCollectedLook(itemID, classID)
         collected = info.appearanceIsCollected
         collectedLooks[itemID] = collected
     end
-    return collected == true
+    return collected
 end
+app.ui.GetCollectedLook = getCollectedLook
 
 -- Delay between the last keystroke in the search box and running the query.
 local SEARCH_DEBOUNCE = 0.25
@@ -370,7 +372,7 @@ function SpyglassListRowMixin:InitItem(view, node)
     local cached = name ~= nil
     if cached then
         self.link = link
-        self.CollectedLook:SetShown(hasCollectedLook(itemID, classID))
+        self.CollectedLook:SetShown(getCollectedLook(itemID, classID) == true)
     else
         if view.failedItemLookup ~= itemID then
             view:RequestItem(itemID)
@@ -1426,7 +1428,7 @@ function SpyglassViewMixin:OnEvent(event, itemID, success)
             self.regroupItems[itemID] = false
             self.refreshQueued = true
         end
-        if success ~= false and self.transmogFilterMode == "hide" and hasCollectedLook(itemID) then
+        if success ~= false and self.transmogFilterMode == "hide" and getCollectedLook(itemID) then
             self.refreshQueued = true
         end
     elseif event == "TRANSMOG_COLLECTION_UPDATED" then
@@ -1938,7 +1940,7 @@ function SpyglassViewMixin:IsFaded(node)
     end
     return (self.classFilterOn and self.classFilterMode == "fade"
         and not app.classFilter:CanUse(self:GetFilterClass(), itemID))
-        or (self.transmogFilterMode == "fade" and node.itemID ~= nil and hasCollectedLook(itemID))
+        or (self.transmogFilterMode == "fade" and node.itemID ~= nil and getCollectedLook(itemID) == true)
 end
 
 -- The values `field` has in the current list's `meta` (entries under subheaders and groups
@@ -2352,7 +2354,7 @@ function SpyglassViewMixin:BuildElements(node)
             return true
         end
         return (not filter or filter(entry))
-            and (not hideCollected or not entry.itemID or not hasCollectedLook(entry.itemID))
+            and (not hideCollected or not entry.itemID or not getCollectedLook(entry.itemID))
     end
 
     local function addRows(entries)

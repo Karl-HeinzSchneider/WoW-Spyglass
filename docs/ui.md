@@ -341,6 +341,8 @@ Currency names come from the client or the curated fallback. Battleground marks 
 battleground name in cost lines, and Honor Points appear as Honor.
 For PvP rewards with a recorded rank requirement, Spyglass adds the rank to the tooltip when
 the client has not already drawn it. The line is red when the character's rank is too low.
+For Spyglass item hovers, the tooltip adds the game's localized uncollected appearance
+line when the wardrobe confirms the look is missing and the line is absent.
 
 It hooks once in `OnInitialize`: through `TooltipDataProcessor.AddTooltipPostCall` when
 `GameTooltip` is built on the tooltip data handler, else `OnTooltipSetItem` on `GameTooltip` and

@@ -20,6 +20,7 @@ local INDENT = "   "
 local QUEST_LABEL = "Quest: "
 local CRAFTED_LABEL = "Crafted by "
 local ICON_SIZE = 14
+local UNCOLLECTED_LOOK = TRANSMOGRIFY_TOOLTIP_APPEARANCE_UNKNOWN or "You haven't collected this appearance"
 
 -- Inline markup of an atlas, ICON_SIZE high and as wide as its aspect ratio asks.
 ---@param atlas string
@@ -278,12 +279,38 @@ local function addPvPRankLine(tooltip, rank, data)
 end
 
 ---@param tooltip GameTooltip
+---@param itemID integer
+local function addUncollectedLookLine(tooltip, itemID)
+    if tooltip ~= GameTooltip or not app.ui.mainWindow then
+        return
+    end
+    local owner = tooltip:GetOwner()
+    while owner and owner ~= app.ui.mainWindow do
+        owner = owner:GetParent()
+    end
+    if not owner or app.ui.GetCollectedLook(itemID) ~= false then
+        return
+    end
+
+    -- Inspect the rendered lines so this also sees native text added by tooltip handlers.
+    for i = 1, tooltip:NumLines() do
+        local line = tooltip:GetLeftLine(i)
+        if line and line:GetText() == UNCOLLECTED_LOOK then
+            return
+        end
+    end
+    local r, g, b = LIGHTBLUE_FONT_COLOR:GetRGB()
+    tooltip:AddLine(UNCOLLECTED_LOOK, r, g, b, true)
+end
+
+---@param tooltip GameTooltip
 ---@param itemID integer?
 ---@param tooltipData? TooltipData
 function module:AddSources(tooltip, itemID, tooltipData)
     if not itemID then
         return
     end
+    addUncollectedLookLine(tooltip, itemID)
     local sources = Data:GetItemSources(itemID)
     local rank = requiredPvPRank(sources)
     if rank then
