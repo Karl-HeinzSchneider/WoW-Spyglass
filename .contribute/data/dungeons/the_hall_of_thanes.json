@@ -18,15 +18,18 @@
       "loot": [
         {
           "item": 270227,
-          "name": "Ephemeral Choker"
+          "name": "Ephemeral Choker",
+          "chance": 0.338
         },
         {
           "item": 271096,
-          "name": "Aetherwisp Bracers"
+          "name": "Aetherwisp Bracers",
+          "chance": 0.322
         },
         {
           "item": 271097,
-          "name": "Spiritwraith Drape"
+          "name": "Spiritwraith Drape",
+          "chance": 0.34
         }
       ]
     },
@@ -40,15 +43,18 @@
       "loot": [
         {
           "item": 270230,
-          "name": "Kindlegem Girdle"
+          "name": "Kindlegem Girdle",
+          "chance": 0.315
         },
         {
           "item": 270231,
-          "name": "Flamefist Grips"
+          "name": "Flamefist Grips",
+          "chance": 0.329
         },
         {
           "item": 271095,
-          "name": "Fang of Magmatus"
+          "name": "Fang of Magmatus",
+          "chance": 0.356
         }
       ]
     },
@@ -62,15 +68,18 @@
       "loot": [
         {
           "item": 270228,
-          "name": "Golemheart Stave"
+          "name": "Golemheart Stave",
+          "chance": 0.348
         },
         {
           "item": 270229,
-          "name": "Treads of the Protector Golem"
+          "name": "Treads of the Protector Golem",
+          "chance": 0.333
         },
         {
           "item": 271098,
-          "name": "Golemguard Chest"
+          "name": "Golemguard Chest",
+          "chance": 0.319
         }
       ]
     },
@@ -84,15 +93,18 @@
       "loot": [
         {
           "item": 270256,
-          "name": "Durgen's Crescent Axe"
+          "name": "Durgen's Crescent Axe",
+          "chance": 0.287
         },
         {
           "item": 270260,
-          "name": "Direhammer Leggings"
+          "name": "Direhammer Leggings",
+          "chance": 0.273
         },
         {
           "item": 270261,
-          "name": "Robes of the Disgraced Thane"
+          "name": "Robes of the Disgraced Thane",
+          "chance": 0.247
         },
         {
           "item": 274286,

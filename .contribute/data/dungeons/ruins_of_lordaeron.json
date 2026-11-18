@@ -19,15 +19,18 @@
       "loot": [
         {
           "item": 271201,
-          "name": "Atrophic Girdle"
+          "name": "Atrophic Girdle",
+          "chance": 0.284
         },
         {
           "item": 271202,
-          "name": "Witherbite Bracers"
+          "name": "Witherbite Bracers",
+          "chance": 0.317
         },
         {
           "item": 271203,
-          "name": "Segmented Spider Leg"
+          "name": "Segmented Spider Leg",
+          "chance": 0.319
         }
       ]
     },
@@ -41,15 +44,18 @@
       "loot": [
         {
           "item": 271207,
-          "name": "Rotmender's Leggings"
+          "name": "Rotmender's Leggings",
+          "chance": 0.325
         },
         {
           "item": 271208,
-          "name": "Grip of Fear"
+          "name": "Grip of Fear",
+          "chance": 0.328
         },
         {
           "item": 271216,
-          "name": "Scepter of the Abandoned"
+          "name": "Scepter of the Abandoned",
+          "chance": 0.348
         }
       ]
     },
@@ -63,15 +69,18 @@
       "loot": [
         {
           "item": 271204,
-          "name": "Meathook Slicer"
+          "name": "Meathook Slicer",
+          "chance": 0.312
         },
         {
           "item": 271205,
-          "name": "Abomination Bones"
+          "name": "Abomination Bones",
+          "chance": 0.299
         },
         {
           "item": 271206,
-          "name": "Leftover Abomination Skin"
+          "name": "Leftover Abomination Skin",
+          "chance": 0.307
         },
         {
           "item": 280438,
@@ -89,19 +98,23 @@
       "loot": [
         {
           "item": 271213,
-          "name": "Mirror of Rath'mael"
+          "name": "Mirror of Rath'mael",
+          "chance": 0.34
         },
         {
           "item": 271214,
-          "name": "Rotmender's Treads"
+          "name": "Rotmender's Treads",
+          "chance": 0.325
         },
         {
           "item": 271215,
-          "name": "Coldspire Staff"
+          "name": "Coldspire Staff",
+          "chance": 0.327
         },
         {
           "item": 273085,
-          "name": "Blueprint: Fermenter"
+          "name": "Blueprint: Fermenter",
+          "chance": 0.07
         }
       ]
     },
@@ -116,11 +129,13 @@
       "loot": [
         {
           "item": 6641,
-          "name": "Haunting Blade"
+          "name": "Haunting Blade",
+          "chance": 0.472
         },
         {
           "item": 6642,
-          "name": "Phantom Armor"
+          "name": "Phantom Armor",
+          "chance": 0.472
         }
       ]
     },
@@ -134,15 +149,18 @@
       "loot": [
         {
           "item": 271211,
-          "name": "Vilewalkers"
+          "name": "Vilewalkers",
+          "chance": 0.327
         },
         {
           "item": 271212,
-          "name": "Bloodied Chestwraps"
+          "name": "Bloodied Chestwraps",
+          "chance": 0.331
         },
         {
           "item": 271218,
-          "name": "Vileblood Scimitar"
+          "name": "Vileblood Scimitar",
+          "chance": 0.342
         }
       ]
     },
@@ -156,15 +174,18 @@
       "loot": [
         {
           "item": 271209,
-          "name": "Bonerust Leggings"
+          "name": "Bonerust Leggings",
+          "chance": 0.327
         },
         {
           "item": 271210,
-          "name": "Tuskwrap Belt"
+          "name": "Tuskwrap Belt",
+          "chance": 0.321
         },
         {
           "item": 271217,
-          "name": "Corpse Chopper"
+          "name": "Corpse Chopper",
+          "chance": 0.351
         }
       ]
     }

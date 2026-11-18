@@ -17,15 +17,18 @@
       "loot": [
         {
           "item": 273034,
-          "name": "Ephemeral Grips"
+          "name": "Ephemeral Grips",
+          "chance": 0.333
         },
         {
           "item": 273031,
-          "name": "Runemender's Seal"
+          "name": "Runemender's Seal",
+          "chance": 0.332
         },
         {
           "item": 273035,
-          "name": "Mana-Warped Chain Shirt"
+          "name": "Mana-Warped Chain Shirt",
+          "chance": 0.335
         }
       ]
     },
@@ -38,15 +41,18 @@
       "loot": [
         {
           "item": 273037,
-          "name": "Felbough Arm"
+          "name": "Felbough Arm",
+          "chance": 0.347
         },
         {
           "item": 273039,
-          "name": "Blightleaf Rope"
+          "name": "Blightleaf Rope",
+          "chance": 0.309
         },
         {
           "item": 273038,
-          "name": "Garb of Fallen Felbark"
+          "name": "Garb of Fallen Felbark",
+          "chance": 0.343
         }
       ]
     },
@@ -59,15 +65,18 @@
       "loot": [
         {
           "item": 273041,
-          "name": "Slitherwrap Girdle"
+          "name": "Slitherwrap Girdle",
+          "chance": 0.325
         },
         {
           "item": 273040,
-          "name": "Spine of the Devourer"
+          "name": "Spine of the Devourer",
+          "chance": 0.338
         },
         {
           "item": 273042,
-          "name": "Manascale Treads"
+          "name": "Manascale Treads",
+          "chance": 0.336
         }
       ]
     },
@@ -80,15 +89,18 @@
       "loot": [
         {
           "item": 273045,
-          "name": "Drape of Shifting Energy"
+          "name": "Drape of Shifting Energy",
+          "chance": 0.356
         },
         {
           "item": 273044,
-          "name": "Violet Sorcerer's Robes"
+          "name": "Violet Sorcerer's Robes",
+          "chance": 0.338
         },
         {
           "item": 273043,
-          "name": "Wand of Mana Concentration"
+          "name": "Wand of Mana Concentration",
+          "chance": 0.306
         }
       ]
     },
@@ -101,19 +113,23 @@
       "loot": [
         {
           "item": 273046,
-          "name": "Guardian's Dualblade"
+          "name": "Guardian's Dualblade",
+          "chance": 0.348
         },
         {
           "item": 273047,
-          "name": "Unstable Crystalline Shoulderpads"
+          "name": "Unstable Crystalline Shoulderpads",
+          "chance": 0.33
         },
         {
           "item": 273048,
-          "name": "Refractory Scaleguards"
+          "name": "Refractory Scaleguards",
+          "chance": 0.307
         },
         {
           "item": 273099,
-          "name": "Blueprint: Spinning Wheel"
+          "name": "Blueprint: Spinning Wheel",
+          "chance": 0.068
         }
       ]
     },
@@ -126,19 +142,23 @@
       "loot": [
         {
           "item": 273052,
-          "name": "Ponderous Orb"
+          "name": "Ponderous Orb",
+          "chance": 0.315
         },
         {
           "item": 273049,
-          "name": "Archmagister's Faceted Pendant"
+          "name": "Archmagister's Faceted Pendant",
+          "chance": 0.343
         },
         {
           "item": 273051,
-          "name": "Violet Sorcerer's Mantle"
+          "name": "Violet Sorcerer's Mantle",
+          "chance": 0.3
         },
         {
           "item": 273103,
-          "name": "Blueprint: Arcane Salvager"
+          "name": "Blueprint: Arcane Salvager",
+          "chance": 0.07
         }
       ]
     },
@@ -150,15 +170,18 @@
       "loot": [
         {
           "item": 273055,
-          "name": "Bonepile Gaze"
+          "name": "Bonepile Gaze",
+          "chance": 0.306
         },
         {
           "item": 273054,
-          "name": "Cartilage Shapers"
+          "name": "Cartilage Shapers",
+          "chance": 0.324
         },
         {
           "item": 273053,
-          "name": "Tendonscraper Dagger"
+          "name": "Tendonscraper Dagger",
+          "chance": 0.37
         }
       ]
     },
@@ -171,15 +194,18 @@
       "loot": [
         {
           "item": 273032,
-          "name": "Bonebinder's Signet"
+          "name": "Bonebinder's Signet",
+          "chance": 0.35
         },
         {
           "item": 273036,
-          "name": "Graveweave Bindings"
+          "name": "Graveweave Bindings",
+          "chance": 0.353
         },
         {
           "item": 273033,
-          "name": "Gravespike Repeater"
+          "name": "Gravespike Repeater",
+          "chance": 0.297
         }
       ]
     },

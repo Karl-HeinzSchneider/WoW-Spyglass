@@ -4,53 +4,53 @@ local Data = Spyglass.Data
 -- City of Dalaran (map 2959)
 
 Data:AddBossLoot(3298, { -- Arcane Anomaly
-    { 273034 }, -- Ephemeral Grips
-    { 273031 }, -- Runemender's Seal
-    { 273035 }, -- Mana-Warped Chain Shirt
+    { 273034, 0.333 }, -- Ephemeral Grips
+    { 273031, 0.332 }, -- Runemender's Seal
+    { 273035, 0.335 }, -- Mana-Warped Chain Shirt
 })
 
 Data:AddBossLoot(3299, { -- Fel Ancient
-    { 273037 }, -- Felbough Arm
-    { 273039 }, -- Blightleaf Rope
-    { 273038 }, -- Garb of Fallen Felbark
+    { 273037, 0.347 }, -- Felbough Arm
+    { 273039, 0.309 }, -- Blightleaf Rope
+    { 273038, 0.343 }, -- Garb of Fallen Felbark
 })
 
 Data:AddBossLoot(3300, { -- Mana Devourer
-    { 273041 }, -- Slitherwrap Girdle
-    { 273040 }, -- Spine of the Devourer
-    { 273042 }, -- Manascale Treads
+    { 273041, 0.325 }, -- Slitherwrap Girdle
+    { 273040, 0.338 }, -- Spine of the Devourer
+    { 273042, 0.336 }, -- Manascale Treads
 })
 
 Data:AddBossLoot(3301, { -- Mana Elemental
-    { 273045 }, -- Drape of Shifting Energy
-    { 273044 }, -- Violet Sorcerer's Robes
-    { 273043 }, -- Wand of Mana Concentration
+    { 273045, 0.356 }, -- Drape of Shifting Energy
+    { 273044, 0.338 }, -- Violet Sorcerer's Robes
+    { 273043, 0.306 }, -- Wand of Mana Concentration
 })
 
 Data:AddBossLoot(3302, { -- Unstable Sentinel
-    { 273046 }, -- Guardian's Dualblade
-    { 273047 }, -- Unstable Crystalline Shoulderpads
-    { 273048 }, -- Refractory Scaleguards
-    { 273099 }, -- Blueprint: Spinning Wheel
+    { 273046, 0.348 }, -- Guardian's Dualblade
+    { 273047, 0.33 }, -- Unstable Crystalline Shoulderpads
+    { 273048, 0.307 }, -- Refractory Scaleguards
+    { 273099, 0.068 }, -- Blueprint: Spinning Wheel
 })
 
 Data:AddBossLoot(3303, { -- Shade of the Archmage
-    { 273052 }, -- Ponderous Orb
-    { 273049 }, -- Archmagister's Faceted Pendant
-    { 273051 }, -- Violet Sorcerer's Mantle
-    { 273103 }, -- Blueprint: Arcane Salvager
+    { 273052, 0.315 }, -- Ponderous Orb
+    { 273049, 0.343 }, -- Archmagister's Faceted Pendant
+    { 273051, 0.3 }, -- Violet Sorcerer's Mantle
+    { 273103, 0.07 }, -- Blueprint: Arcane Salvager
 })
 
 Data:AddBossLoot(3310, { -- Lyn the Ignored
-    { 273055 }, -- Bonepile Gaze
-    { 273054 }, -- Cartilage Shapers
-    { 273053 }, -- Tendonscraper Dagger
+    { 273055, 0.306 }, -- Bonepile Gaze
+    { 273054, 0.324 }, -- Cartilage Shapers
+    { 273053, 0.37 }, -- Tendonscraper Dagger
 })
 
 Data:AddBossLoot(3311, { -- Atrexis the Grave Knight
-    { 273032 }, -- Bonebinder's Signet
-    { 273036 }, -- Graveweave Bindings
-    { 273033 }, -- Gravespike Repeater
+    { 273032, 0.35 }, -- Bonebinder's Signet
+    { 273036, 0.353 }, -- Graveweave Bindings
+    { 273033, 0.297 }, -- Gravespike Repeater
 })
 
 Data:AddTrashLoot(2959, {

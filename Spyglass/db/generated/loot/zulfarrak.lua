@@ -4,145 +4,145 @@ local Data = Spyglass.Data
 -- Zul'Farrak (map 209)
 
 Data:AddBossLoot(593, { -- Hydromancer Velratha
-    { 274653 }, -- Deep Ritual Girdle
-    { 274651 }, -- Zealot Plate
-    { 274652 }, -- Wall of Water
+    { 274653, 0.287 }, -- Deep Ritual Girdle
+    { 274651, 0.292 }, -- Zealot Plate
+    { 274652, 0.299 }, -- Wall of Water
 })
 
 Data:AddBossLoot(594, { -- Gahz'rilla
-    { 9467 }, -- Gahz'rilla Fang
-    { 9469 }, -- Gahz'rilla Scale Armor
-    { 274657 }, -- Hydra Leather Legs
-    { 254096 }, -- Pattern: Gilded Gloves
-    { 252871 }, -- Pattern: Mender's Leather Gauntlets
-    { 254106 }, -- Pattern: Radiant Gloves
-    { 254098 }, -- Pattern: Frothing Gloves
-    { 252867 }, -- Pattern: Prowler's Leather Gauntlets
-    { 252868 }, -- Pattern: Skulker's Leather Gauntlets
+    { 9467, 0.312 }, -- Gahz'rilla Fang
+    { 9469, 0.335 }, -- Gahz'rilla Scale Armor
+    { 274657, 0.297 }, -- Hydra Leather Legs
+    { 254096, 0.0029 }, -- Pattern: Gilded Gloves
+    { 252871, 0.0086 }, -- Pattern: Mender's Leather Gauntlets
+    { 254106, 0.0029 }, -- Pattern: Radiant Gloves
+    { 254098, 0.0076 }, -- Pattern: Frothing Gloves
+    { 252867, 0.0057 }, -- Pattern: Prowler's Leather Gauntlets
+    { 252868, 0.0048 }, -- Pattern: Skulker's Leather Gauntlets
     { 252869 }, -- Pattern: Warden's Leather Gauntlets
 })
 
 Data:AddBossLoot(595, { -- Antu'sul
-    { 9640 }, -- Vice Grips
-    { 9639 }, -- The Hand of Antu'sul
-    { 9641 }, -- Lifeblood Amulet
-    { 9379 }, -- Sang'thraze the Deflector
-    { 251407 }, -- Plans: Justicar's Gloves
-    { 252920 }, -- Pattern: Skirmisher's Mail Gauntlets
-    { 252869 }, -- Pattern: Warden's Leather Gauntlets
-    { 252868 }, -- Pattern: Skulker's Leather Gauntlets
-    { 252870 }, -- Pattern: Skycaller's Leather Gauntlets
-    { 251403 }, -- Plans: Officer's Gloves
+    { 9640, 0.243 }, -- Vice Grips
+    { 9639, 0.301 }, -- The Hand of Antu'sul
+    { 9641, 0.258 }, -- Lifeblood Amulet
+    { 9379, 0.113 }, -- Sang'thraze the Deflector
+    { 251407, 0.011 }, -- Plans: Justicar's Gloves
+    { 252920, 0.0022 }, -- Pattern: Skirmisher's Mail Gauntlets
+    { 252869, 0.0034 }, -- Pattern: Warden's Leather Gauntlets
+    { 252868, 0.0034 }, -- Pattern: Skulker's Leather Gauntlets
+    { 252870, 0.0056 }, -- Pattern: Skycaller's Leather Gauntlets
+    { 251403, 0.0034 }, -- Plans: Officer's Gloves
     { 251405 }, -- Plans: Warder's Gloves
-    { 9484 }, -- Spellshock Leggings
+    { 9484, 0.0011 }, -- Spellshock Leggings
 })
 
 Data:AddBossLoot(596, { -- Theka the Martyr
-    { 274641 }, -- Theka's Last Breath
-    { 274639 }, -- Sacrificial Chain Vest
-    { 274638 }, -- Sandfury Pauldrons
+    { 274641, 0.348 }, -- Theka's Last Breath
+    { 274639, 0.289 }, -- Sacrificial Chain Vest
+    { 274638, 0.3 }, -- Sandfury Pauldrons
     { 254098 }, -- Pattern: Frothing Gloves
-    { 254096 }, -- Pattern: Gilded Gloves
+    { 254096, 0.0019 }, -- Pattern: Gilded Gloves
     { 252920 }, -- Pattern: Skirmisher's Mail Gauntlets
-    { 251403 }, -- Plans: Officer's Gloves
+    { 251403, 0.0013 }, -- Plans: Officer's Gloves
 })
 
 Data:AddBossLoot(597, { -- Witch Doctor Zum'rah
-    { 18082 }, -- Zum'rah's Vexing Cane
-    { 18083 }, -- Jumanza Grips
-    { 274642 }, -- Blood Ritual Ring
-    { 252868 }, -- Pattern: Skulker's Leather Gauntlets
-    { 252918 }, -- Pattern: Stalker's Mail Gauntlets
-    { 252869 }, -- Pattern: Warden's Leather Gauntlets
-    { 251403 }, -- Plans: Officer's Gloves
+    { 18082, 0.318 }, -- Zum'rah's Vexing Cane
+    { 18083, 0.283 }, -- Jumanza Grips
+    { 274642, 0.256 }, -- Blood Ritual Ring
+    { 252868, 0.0054 }, -- Pattern: Skulker's Leather Gauntlets
+    { 252918, 0.0036 }, -- Pattern: Stalker's Mail Gauntlets
+    { 252869, 0.0045 }, -- Pattern: Warden's Leather Gauntlets
+    { 251403, 0.0027 }, -- Plans: Officer's Gloves
     { 252871 }, -- Pattern: Mender's Leather Gauntlets
-    { 254106 }, -- Pattern: Radiant Gloves
-    { 252870 }, -- Pattern: Skycaller's Leather Gauntlets
-    { 251404 }, -- Plans: Sentinel's Gloves
+    { 254106, 0.0036 }, -- Pattern: Radiant Gloves
+    { 252870, 0.0063 }, -- Pattern: Skycaller's Leather Gauntlets
+    { 251404, 0.0036 }, -- Plans: Sentinel's Gloves
     { 251405 }, -- Plans: Warder's Gloves
 })
 
 Data:AddBossLoot(598, { -- Nekrum Gutchewer
-    { 274644 }, -- Undying Headdress
-    { 274645 }, -- Desert Ziggurat Drape
-    { 274643 }, -- Gutcutter Hatchet
-    { 252871 }, -- Pattern: Mender's Leather Gauntlets
-    { 252868 }, -- Pattern: Skulker's Leather Gauntlets
-    { 251400 }, -- Plans: Warder's Boots
+    { 274644, 0.328 }, -- Undying Headdress
+    { 274645, 0.264 }, -- Desert Ziggurat Drape
+    { 274643, 0.309 }, -- Gutcutter Hatchet
+    { 252871, 0.0034 }, -- Pattern: Mender's Leather Gauntlets
+    { 252868, 0.0034 }, -- Pattern: Skulker's Leather Gauntlets
+    { 251400, 0.0034 }, -- Plans: Warder's Boots
 })
 
 Data:AddBossLoot(599, { -- Shadowpriest Sezz'ziz
-    { 9470 }, -- Bad Mojo Mask
-    { 9473 }, -- Jinxed Hoodoo Skin
-    { 9474 }, -- Jinxed Hoodoo Kilt
-    { 9475 }, -- Diabolic Skiver
-    { 254102 }, -- Pattern: Black Gloves
-    { 251404 }, -- Plans: Sentinel's Gloves
-    { 254098 }, -- Pattern: Frothing Gloves
-    { 252919 }, -- Pattern: Skycaller's Mail Gauntlets
-    { 252918 }, -- Pattern: Stalker's Mail Gauntlets
-    { 251407 }, -- Plans: Justicar's Gloves
+    { 9470, 0.216 }, -- Bad Mojo Mask
+    { 9473, 0.244 }, -- Jinxed Hoodoo Skin
+    { 9474, 0.241 }, -- Jinxed Hoodoo Kilt
+    { 9475, 0.239 }, -- Diabolic Skiver
+    { 254102, 0.0027 }, -- Pattern: Black Gloves
+    { 251404, 0.0027 }, -- Plans: Sentinel's Gloves
+    { 254098, 0.0027 }, -- Pattern: Frothing Gloves
+    { 252919, 0.0072 }, -- Pattern: Skycaller's Mail Gauntlets
+    { 252918, 0.012 }, -- Pattern: Stalker's Mail Gauntlets
+    { 251407, 0.0099 }, -- Plans: Justicar's Gloves
     { 251403 }, -- Plans: Officer's Gloves
 })
 
 Data:AddBossLoot(600, { -- Chief Ukorz Sandscalp
-    { 9476 }, -- Big Bad Pauldrons
-    { 9477 }, -- The Chief's Enforcer
-    { 9478 }, -- Ripsaw
-    { 9479 }, -- Embrace of the Lycan
-    { 11086 }, -- Jang'thraze the Protector
-    { 254100 }, -- Pattern: Fiery Gloves
-    { 254096 }, -- Pattern: Gilded Gloves
-    { 254102 }, -- Pattern: Black Gloves
+    { 9476, 0.245 }, -- Big Bad Pauldrons
+    { 9477, 0.296 }, -- The Chief's Enforcer
+    { 9478, 0.299 }, -- Ripsaw
+    { 9479, 0.101 }, -- Embrace of the Lycan
+    { 11086, 0.118 }, -- Jang'thraze the Protector
+    { 254100, 0.0052 }, -- Pattern: Fiery Gloves
+    { 254096, 0.0034 }, -- Pattern: Gilded Gloves
+    { 254102, 0.0034 }, -- Pattern: Black Gloves
     { 251407 }, -- Plans: Justicar's Gloves
     { 254098 }, -- Pattern: Frothing Gloves
-    { 252871 }, -- Pattern: Mender's Leather Gauntlets
-    { 252867 }, -- Pattern: Prowler's Leather Gauntlets
-    { 254106 }, -- Pattern: Radiant Gloves
-    { 251404 }, -- Plans: Sentinel's Gloves
-    { 251405 }, -- Plans: Warder's Gloves
+    { 252871, 0.006 }, -- Pattern: Mender's Leather Gauntlets
+    { 252867, 0.0026 }, -- Pattern: Prowler's Leather Gauntlets
+    { 254106, 0.0043 }, -- Pattern: Radiant Gloves
+    { 251404, 0.0077 }, -- Plans: Sentinel's Gloves
+    { 251405, 0.0026 }, -- Plans: Warder's Gloves
 })
 
 Data:AddBossLoot(-10082, { -- Zerillis
-    { 12470 }, -- Sandstalker Ankleguards
-    { 274658 }, -- Dune Hacker
-    { 251400 }, -- Plans: Warder's Boots
+    { 12470, 0.425 }, -- Sandstalker Ankleguards
+    { 274658, 0.509 }, -- Dune Hacker
+    { 251400, 0.003 }, -- Plans: Warder's Boots
 })
 
 Data:AddBossLoot(-10081, { -- Dustwraith
-    { 12471 }, -- Desertwalker Cane
-    { 12469 }, -- Mutilator
+    { 12471, 0.376 }, -- Desertwalker Cane
+    { 12469, 0.53 }, -- Mutilator
     { 251399 }, -- Plans: Sentinel's Boots
 })
 
 Data:AddBossLoot(-7604, { -- Sergeant Bly
-    { 274646 }, -- Arch of the Covenant
-    { 274647 }, -- Farraki Kris
-    { 274648 }, -- The Desert Rose
-    { 252896 }, -- Pattern: Stalker's Mail Boots
+    { 274646, 0.32 }, -- Arch of the Covenant
+    { 274647, 0.307 }, -- Farraki Kris
+    { 274648, 0.325 }, -- The Desert Rose
+    { 252896, 0.0026 }, -- Pattern: Stalker's Mail Boots
     { 8548 }, -- Divino-matic Rod
-    { 251399 }, -- Plans: Sentinel's Boots
-    { 251400 }, -- Plans: Warder's Boots
-    { 251402 }, -- Plans: Justicar's Boots
+    { 251399, 0.0039 }, -- Plans: Sentinel's Boots
+    { 251400, 0.0039 }, -- Plans: Warder's Boots
+    { 251402, 0.0013 }, -- Plans: Justicar's Boots
 })
 
 Data:AddBossLoot(-10080, { -- Sandarr Dunereaver
-    { 274660 }, -- Sandarr's Shoulders
-    { 274659 }, -- Bloodsand Belt
+    { 274660, 0.438 }, -- Sandarr's Shoulders
+    { 274659, 0.516 }, -- Bloodsand Belt
 })
 
 Data:AddBossLoot(-7797, { -- Ruuzlu
-    { 274654 }, -- Sandfury Guillotine
-    { 274655 }, -- Peacekeeper Wand
-    { 252919 }, -- Pattern: Skycaller's Mail Gauntlets
-    { 254100 }, -- Pattern: Fiery Gloves
-    { 252869 }, -- Pattern: Warden's Leather Gauntlets
-    { 254102 }, -- Pattern: Black Gloves
-    { 254096 }, -- Pattern: Gilded Gloves
-    { 252870 }, -- Pattern: Skycaller's Leather Gauntlets
-    { 252918 }, -- Pattern: Stalker's Mail Gauntlets
-    { 251407 }, -- Plans: Justicar's Gloves
-    { 251405 }, -- Plans: Warder's Gloves
+    { 274654, 0.363 }, -- Sandfury Guillotine
+    { 274655, 0.283 }, -- Peacekeeper Wand
+    { 252919, 0.0033 }, -- Pattern: Skycaller's Mail Gauntlets
+    { 254100, 0.005 }, -- Pattern: Fiery Gloves
+    { 252869, 0.0041 }, -- Pattern: Warden's Leather Gauntlets
+    { 254102, 0.0058 }, -- Pattern: Black Gloves
+    { 254096, 0.0041 }, -- Pattern: Gilded Gloves
+    { 252870, 0.0025 }, -- Pattern: Skycaller's Leather Gauntlets
+    { 252918, 0.0075 }, -- Pattern: Stalker's Mail Gauntlets
+    { 251407, 0.0033 }, -- Plans: Justicar's Gloves
+    { 251405, 0.0058 }, -- Plans: Warder's Gloves
     { 9511 }, -- Bloodletter Scalpel
 })
 

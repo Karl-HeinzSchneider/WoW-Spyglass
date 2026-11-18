@@ -18,15 +18,18 @@
       "loot": [
         {
           "item": 276734,
-          "name": "Wrex's Pinky Ring"
+          "name": "Wrex's Pinky Ring",
+          "chance": 0.329
         },
         {
           "item": 276733,
-          "name": "Grips of Control"
+          "name": "Grips of Control",
+          "chance": 0.318
         },
         {
           "item": 276732,
-          "name": "Alcaz Willcrusher"
+          "name": "Alcaz Willcrusher",
+          "chance": 0.337
         }
       ]
     },
@@ -39,15 +42,18 @@
       "loot": [
         {
           "item": 276744,
-          "name": "Zarla's Snack Pouch"
+          "name": "Zarla's Snack Pouch",
+          "chance": 0.351
         },
         {
           "item": 276745,
-          "name": "Beastbond Robe"
+          "name": "Beastbond Robe",
+          "chance": 0.286
         },
         {
           "item": 276746,
-          "name": "Defias Enforcer's Legguards"
+          "name": "Defias Enforcer's Legguards",
+          "chance": 0.338
         },
         {
           "item": 276890,
@@ -65,15 +71,18 @@
       "loot": [
         {
           "item": 276736,
-          "name": "Seascale Bracers"
+          "name": "Seascale Bracers",
+          "chance": 0.318
         },
         {
           "item": 276735,
-          "name": "Tidesong Wand"
+          "name": "Tidesong Wand",
+          "chance": 0.305
         },
         {
           "item": 276737,
-          "name": "Cloak of the Tidemistress"
+          "name": "Cloak of the Tidemistress",
+          "chance": 0.316
         },
         {
           "item": 273883,
@@ -91,15 +100,18 @@
       "loot": [
         {
           "item": 276742,
-          "name": "Girdle of Extracted Answers"
+          "name": "Girdle of Extracted Answers",
+          "chance": 0.305
         },
         {
           "item": 276743,
-          "name": "Fingerbreaker Stamp"
+          "name": "Fingerbreaker Stamp",
+          "chance": 0.361
         },
         {
           "item": 276741,
-          "name": "Defias Enforcer's Shoulderpads"
+          "name": "Defias Enforcer's Shoulderpads",
+          "chance": 0.319
         },
         {
           "item": 274029,
@@ -116,15 +128,18 @@
       "loot": [
         {
           "item": 276739,
-          "name": "Cutthroat Chestguard"
+          "name": "Cutthroat Chestguard",
+          "chance": 0.307
         },
         {
           "item": 276738,
-          "name": "Katerina's Shanker"
+          "name": "Katerina's Shanker",
+          "chance": 0.335
         },
         {
           "item": 276740,
-          "name": "Sentimental Locket"
+          "name": "Sentimental Locket",
+          "chance": 0.353
         }
       ]
     }

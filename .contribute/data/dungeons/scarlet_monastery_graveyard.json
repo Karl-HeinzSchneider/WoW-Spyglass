@@ -20,15 +20,18 @@
       "loot": [
         {
           "item": 7682,
-          "name": "Torturing Poker"
+          "name": "Torturing Poker",
+          "chance": 0.321
         },
         {
           "item": 7683,
-          "name": "Bloody Brass Knuckles"
+          "name": "Bloody Brass Knuckles",
+          "chance": 0.301
         },
         {
           "item": 274290,
-          "name": "Painwalker Buckler"
+          "name": "Painwalker Buckler",
+          "chance": 0.322
         },
         {
           "item": 252513,
@@ -40,71 +43,88 @@
         },
         {
           "item": 251350,
-          "name": "Plans: Veteran's Chain Helm"
+          "name": "Plans: Veteran's Chain Helm",
+          "chance": 0.0032
         },
         {
           "item": 251351,
-          "name": "Plans: Guard's Chain Helm"
+          "name": "Plans: Guard's Chain Helm",
+          "chance": 0.0046
         },
         {
           "item": 251352,
-          "name": "Plans: Protector's Chain Helm"
+          "name": "Plans: Protector's Chain Helm",
+          "chance": 0.0018
         },
         {
           "item": 251353,
-          "name": "Plans: Acolyte's Chain Helm"
+          "name": "Plans: Acolyte's Chain Helm",
+          "chance": 0.0032
         },
         {
           "item": 251354,
-          "name": "Plans: Crusader's Chain Helm"
+          "name": "Plans: Crusader's Chain Helm",
+          "chance": 0.0073
         },
         {
           "item": 252814,
-          "name": "Pattern: Brawler's Leather Helm"
+          "name": "Pattern: Brawler's Leather Helm",
+          "chance": 0.0046
         },
         {
           "item": 252815,
-          "name": "Pattern: Trapper's Leather Helm"
+          "name": "Pattern: Trapper's Leather Helm",
+          "chance": 0.0082
         },
         {
           "item": 252816,
-          "name": "Pattern: Defender's Leather Helm"
+          "name": "Pattern: Defender's Leather Helm",
+          "chance": 0.0046
         },
         {
           "item": 252817,
-          "name": "Pattern: Totemic Leather Helm"
+          "name": "Pattern: Totemic Leather Helm",
+          "chance": 0.0069
         },
         {
           "item": 252818,
-          "name": "Pattern: Stormrider's Leather Helm"
+          "name": "Pattern: Stormrider's Leather Helm",
+          "chance": 0.0055
         },
         {
           "item": 252819,
-          "name": "Pattern: Wisdom's Leather Helm"
+          "name": "Pattern: Wisdom's Leather Helm",
+          "chance": 0.0078
         },
         {
           "item": 253976,
-          "name": "Pattern: Filigreed Pristine Circlet"
+          "name": "Pattern: Filigreed Pristine Circlet",
+          "chance": 0.0032
         },
         {
           "item": 253978,
-          "name": "Pattern: Filigreed Silky Circlet"
+          "name": "Pattern: Filigreed Silky Circlet",
+          "chance": 0.0027
         },
         {
           "item": 253980,
-          "name": "Pattern: Filigreed Flame Circlet"
+          "name": "Pattern: Filigreed Flame Circlet",
+          "chance": 0.006
         },
         {
           "item": 253982,
-          "name": "Pattern: Filigreed Shadow Circlet"
+          "name": "Pattern: Filigreed Shadow Circlet",
+          "chance": 0.0078
         },
         {
           "item": 253984,
-          "name": "Pattern: Filigreed Pearly Circlet"
+          "name": "Pattern: Filigreed Pearly Circlet",
+          "chance": 0.0037
         },
         {
           "item": 253986,
-          "name": "Pattern: Filigreed Shining Circlet"
+          "name": "Pattern: Filigreed Shining Circlet",
+          "chance": 0.0078
         }
       ]
     },
@@ -118,15 +138,18 @@
       "loot": [
         {
           "item": 7709,
-          "name": "Blighted Leggings"
+          "name": "Blighted Leggings",
+          "chance": 0.284
         },
         {
           "item": 7708,
-          "name": "Necrotic Wand"
+          "name": "Necrotic Wand",
+          "chance": 0.308
         },
         {
           "item": 7731,
-          "name": "Ghostshard Talisman"
+          "name": "Ghostshard Talisman",
+          "chance": 0.341
         },
         {
           "item": 252512,
@@ -138,43 +161,53 @@
         },
         {
           "item": 251350,
-          "name": "Plans: Veteran's Chain Helm"
+          "name": "Plans: Veteran's Chain Helm",
+          "chance": 0.0095
         },
         {
           "item": 251351,
-          "name": "Plans: Guard's Chain Helm"
+          "name": "Plans: Guard's Chain Helm",
+          "chance": 0.0047
         },
         {
           "item": 251352,
-          "name": "Plans: Protector's Chain Helm"
+          "name": "Plans: Protector's Chain Helm",
+          "chance": 0.014
         },
         {
           "item": 251353,
-          "name": "Plans: Acolyte's Chain Helm"
+          "name": "Plans: Acolyte's Chain Helm",
+          "chance": 0.0047
         },
         {
           "item": 251354,
-          "name": "Plans: Crusader's Chain Helm"
+          "name": "Plans: Crusader's Chain Helm",
+          "chance": 0.0095
         },
         {
           "item": 252814,
-          "name": "Pattern: Brawler's Leather Helm"
+          "name": "Pattern: Brawler's Leather Helm",
+          "chance": 0.0047
         },
         {
           "item": 252815,
-          "name": "Pattern: Trapper's Leather Helm"
+          "name": "Pattern: Trapper's Leather Helm",
+          "chance": 0.0047
         },
         {
           "item": 252816,
-          "name": "Pattern: Defender's Leather Helm"
+          "name": "Pattern: Defender's Leather Helm",
+          "chance": 0.0047
         },
         {
           "item": 252817,
-          "name": "Pattern: Totemic Leather Helm"
+          "name": "Pattern: Totemic Leather Helm",
+          "chance": 0.0095
         },
         {
           "item": 252819,
-          "name": "Pattern: Wisdom's Leather Helm"
+          "name": "Pattern: Wisdom's Leather Helm",
+          "chance": 0.0095
         },
         {
           "item": 253976,
@@ -182,19 +215,23 @@
         },
         {
           "item": 253980,
-          "name": "Pattern: Filigreed Flame Circlet"
+          "name": "Pattern: Filigreed Flame Circlet",
+          "chance": 0.0047
         },
         {
           "item": 253982,
-          "name": "Pattern: Filigreed Shadow Circlet"
+          "name": "Pattern: Filigreed Shadow Circlet",
+          "chance": 0.0095
         },
         {
           "item": 253984,
-          "name": "Pattern: Filigreed Pearly Circlet"
+          "name": "Pattern: Filigreed Pearly Circlet",
+          "chance": 0.0095
         },
         {
           "item": 253986,
-          "name": "Pattern: Filigreed Shining Circlet"
+          "name": "Pattern: Filigreed Shining Circlet",
+          "chance": 0.0095
         }
       ]
     },
@@ -208,15 +245,18 @@
       "loot": [
         {
           "item": 7691,
-          "name": "Embalmed Shroud"
+          "name": "Embalmed Shroud",
+          "chance": 0.279
         },
         {
           "item": 7690,
-          "name": "Ebon Vise"
+          "name": "Ebon Vise",
+          "chance": 0.342
         },
         {
           "item": 7689,
-          "name": "Morbid Dawn"
+          "name": "Morbid Dawn",
+          "chance": 0.338
         },
         {
           "item": 252513,
@@ -224,15 +264,18 @@
         },
         {
           "item": 251350,
-          "name": "Plans: Veteran's Chain Helm"
+          "name": "Plans: Veteran's Chain Helm",
+          "chance": 0.009
         },
         {
           "item": 251352,
-          "name": "Plans: Protector's Chain Helm"
+          "name": "Plans: Protector's Chain Helm",
+          "chance": 0.018
         },
         {
           "item": 251353,
-          "name": "Plans: Acolyte's Chain Helm"
+          "name": "Plans: Acolyte's Chain Helm",
+          "chance": 0.018
         },
         {
           "item": 251354,
@@ -240,23 +283,28 @@
         },
         {
           "item": 252818,
-          "name": "Pattern: Stormrider's Leather Helm"
+          "name": "Pattern: Stormrider's Leather Helm",
+          "chance": 0.014
         },
         {
           "item": 252819,
-          "name": "Pattern: Wisdom's Leather Helm"
+          "name": "Pattern: Wisdom's Leather Helm",
+          "chance": 0.018
         },
         {
           "item": 253976,
-          "name": "Pattern: Filigreed Pristine Circlet"
+          "name": "Pattern: Filigreed Pristine Circlet",
+          "chance": 0.009
         },
         {
           "item": 253982,
-          "name": "Pattern: Filigreed Shadow Circlet"
+          "name": "Pattern: Filigreed Shadow Circlet",
+          "chance": 0.0045
         },
         {
           "item": 253986,
-          "name": "Pattern: Filigreed Shining Circlet"
+          "name": "Pattern: Filigreed Shining Circlet",
+          "chance": 0.023
         }
       ]
     },
@@ -270,31 +318,38 @@
       "loot": [
         {
           "item": 7688,
-          "name": "Ironspine's Ribcage"
+          "name": "Ironspine's Ribcage",
+          "chance": 0.366
         },
         {
           "item": 7687,
-          "name": "Ironspine's Fist"
+          "name": "Ironspine's Fist",
+          "chance": 0.297
         },
         {
           "item": 7686,
-          "name": "Ironspine's Eye"
+          "name": "Ironspine's Eye",
+          "chance": 0.313
         },
         {
           "item": 251350,
-          "name": "Plans: Veteran's Chain Helm"
+          "name": "Plans: Veteran's Chain Helm",
+          "chance": 0.0081
         },
         {
           "item": 251351,
-          "name": "Plans: Guard's Chain Helm"
+          "name": "Plans: Guard's Chain Helm",
+          "chance": 0.016
         },
         {
           "item": 251352,
-          "name": "Plans: Protector's Chain Helm"
+          "name": "Plans: Protector's Chain Helm",
+          "chance": 0.0081
         },
         {
           "item": 251353,
-          "name": "Plans: Acolyte's Chain Helm"
+          "name": "Plans: Acolyte's Chain Helm",
+          "chance": 0.012
         },
         {
           "item": 251354,
@@ -302,31 +357,38 @@
         },
         {
           "item": 252814,
-          "name": "Pattern: Brawler's Leather Helm"
+          "name": "Pattern: Brawler's Leather Helm",
+          "chance": 0.0041
         },
         {
           "item": 252815,
-          "name": "Pattern: Trapper's Leather Helm"
+          "name": "Pattern: Trapper's Leather Helm",
+          "chance": 0.02
         },
         {
           "item": 252816,
-          "name": "Pattern: Defender's Leather Helm"
+          "name": "Pattern: Defender's Leather Helm",
+          "chance": 0.0041
         },
         {
           "item": 252817,
-          "name": "Pattern: Totemic Leather Helm"
+          "name": "Pattern: Totemic Leather Helm",
+          "chance": 0.0041
         },
         {
           "item": 252818,
-          "name": "Pattern: Stormrider's Leather Helm"
+          "name": "Pattern: Stormrider's Leather Helm",
+          "chance": 0.0081
         },
         {
           "item": 253976,
-          "name": "Pattern: Filigreed Pristine Circlet"
+          "name": "Pattern: Filigreed Pristine Circlet",
+          "chance": 0.012
         },
         {
           "item": 253978,
-          "name": "Pattern: Filigreed Silky Circlet"
+          "name": "Pattern: Filigreed Silky Circlet",
+          "chance": 0.0041
         },
         {
           "item": 253980,
@@ -334,11 +396,13 @@
         },
         {
           "item": 253984,
-          "name": "Pattern: Filigreed Pearly Circlet"
+          "name": "Pattern: Filigreed Pearly Circlet",
+          "chance": 0.0041
         },
         {
           "item": 253986,
-          "name": "Pattern: Filigreed Shining Circlet"
+          "name": "Pattern: Filigreed Shining Circlet",
+          "chance": 0.012
         }
       ]
     },
@@ -351,15 +415,18 @@
       "loot": [
         {
           "item": 7685,
-          "name": "Orb of the Forgotten Seer"
+          "name": "Orb of the Forgotten Seer",
+          "chance": 0.308
         },
         {
           "item": 7684,
-          "name": "Bloodmage Mantle"
+          "name": "Bloodmage Mantle",
+          "chance": 0.336
         },
         {
           "item": 274291,
-          "name": "Polished Skullcap"
+          "name": "Polished Skullcap",
+          "chance": 0.338
         },
         {
           "item": 252822,
@@ -375,71 +442,88 @@
         },
         {
           "item": 251350,
-          "name": "Plans: Veteran's Chain Helm"
+          "name": "Plans: Veteran's Chain Helm",
+          "chance": 0.0045
         },
         {
           "item": 251351,
-          "name": "Plans: Guard's Chain Helm"
+          "name": "Plans: Guard's Chain Helm",
+          "chance": 0.0045
         },
         {
           "item": 251352,
-          "name": "Plans: Protector's Chain Helm"
+          "name": "Plans: Protector's Chain Helm",
+          "chance": 0.0055
         },
         {
           "item": 251353,
-          "name": "Plans: Acolyte's Chain Helm"
+          "name": "Plans: Acolyte's Chain Helm",
+          "chance": 0.0055
         },
         {
           "item": 251354,
-          "name": "Plans: Crusader's Chain Helm"
+          "name": "Plans: Crusader's Chain Helm",
+          "chance": 0.0072
         },
         {
           "item": 252814,
-          "name": "Pattern: Brawler's Leather Helm"
+          "name": "Pattern: Brawler's Leather Helm",
+          "chance": 0.0038
         },
         {
           "item": 252815,
-          "name": "Pattern: Trapper's Leather Helm"
+          "name": "Pattern: Trapper's Leather Helm",
+          "chance": 0.0038
         },
         {
           "item": 252816,
-          "name": "Pattern: Defender's Leather Helm"
+          "name": "Pattern: Defender's Leather Helm",
+          "chance": 0.0041
         },
         {
           "item": 252817,
-          "name": "Pattern: Totemic Leather Helm"
+          "name": "Pattern: Totemic Leather Helm",
+          "chance": 0.0072
         },
         {
           "item": 252818,
-          "name": "Pattern: Stormrider's Leather Helm"
+          "name": "Pattern: Stormrider's Leather Helm",
+          "chance": 0.0048
         },
         {
           "item": 252819,
-          "name": "Pattern: Wisdom's Leather Helm"
+          "name": "Pattern: Wisdom's Leather Helm",
+          "chance": 0.0045
         },
         {
           "item": 253976,
-          "name": "Pattern: Filigreed Pristine Circlet"
+          "name": "Pattern: Filigreed Pristine Circlet",
+          "chance": 0.0058
         },
         {
           "item": 253978,
-          "name": "Pattern: Filigreed Silky Circlet"
+          "name": "Pattern: Filigreed Silky Circlet",
+          "chance": 0.0062
         },
         {
           "item": 253980,
-          "name": "Pattern: Filigreed Flame Circlet"
+          "name": "Pattern: Filigreed Flame Circlet",
+          "chance": 0.0058
         },
         {
           "item": 253982,
-          "name": "Pattern: Filigreed Shadow Circlet"
+          "name": "Pattern: Filigreed Shadow Circlet",
+          "chance": 0.0034
         },
         {
           "item": 253984,
-          "name": "Pattern: Filigreed Pearly Circlet"
+          "name": "Pattern: Filigreed Pearly Circlet",
+          "chance": 0.0062
         },
         {
           "item": 253986,
-          "name": "Pattern: Filigreed Shining Circlet"
+          "name": "Pattern: Filigreed Shining Circlet",
+          "chance": 0.0041
         }
       ]
     }

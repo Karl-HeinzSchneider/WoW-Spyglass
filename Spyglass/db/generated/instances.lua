@@ -434,7 +434,7 @@ Data:AddBoss(-9030, { instanceID = 230, displayID = 11538, level = 53 }) -- Ok't
 Data:AddBoss(-9031, { instanceID = 230, displayID = 3004, level = 54 }) -- Anub'shiah
 Data:AddBoss(-9032, { instanceID = 230, displayID = 8271, level = 53 }) -- Hedrum the Creeper
 Data:AddBoss(-8923, { instanceID = 230, displayID = 8270, level = 57 }) -- Panzor the Invincible
-Data:AddBoss(-16059, { instanceID = 230, level = 60, rare = true, quests = { 9015 } }) -- Theldren
+Data:AddBoss(-16059, { instanceID = 230, level = 60, rare = true }) -- Theldren
 
 -- Onyxia's Lair
 Data:AddInstance(249, {

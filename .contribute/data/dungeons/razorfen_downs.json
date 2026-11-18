@@ -18,79 +18,98 @@
       "loot": [
         {
           "item": 10776,
-          "name": "Silky Spider Cape"
+          "name": "Silky Spider Cape",
+          "chance": 0.338
         },
         {
           "item": 10775,
-          "name": "Carapace of Tuten'kash"
+          "name": "Carapace of Tuten'kash",
+          "chance": 0.327
         },
         {
           "item": 10777,
-          "name": "Arachnid Gloves"
+          "name": "Arachnid Gloves",
+          "chance": 0.32
         },
         {
           "item": 251398,
-          "name": "Plans: Officer's Boots"
+          "name": "Plans: Officer's Boots",
+          "chance": 0.003
         },
         {
           "item": 254042,
-          "name": "Pattern: Fiery Cord"
+          "name": "Pattern: Fiery Cord",
+          "chance": 0.009
         },
         {
           "item": 254040,
-          "name": "Pattern: Frothing Cord"
+          "name": "Pattern: Frothing Cord",
+          "chance": 0.0024
         },
         {
           "item": 251402,
-          "name": "Plans: Justicar's Boots"
+          "name": "Plans: Justicar's Boots",
+          "chance": 0.0072
         },
         {
           "item": 254038,
-          "name": "Pattern: Gilded Cord"
+          "name": "Pattern: Gilded Cord",
+          "chance": 0.0054
         },
         {
           "item": 254046,
-          "name": "Pattern: Golden Cord"
+          "name": "Pattern: Golden Cord",
+          "chance": 0.0036
         },
         {
           "item": 252844,
-          "name": "Pattern: Skulker's Leather Shoes"
+          "name": "Pattern: Skulker's Leather Shoes",
+          "chance": 0.0042
         },
         {
           "item": 252846,
-          "name": "Pattern: Skycaller's Leather Shoes"
+          "name": "Pattern: Skycaller's Leather Shoes",
+          "chance": 0.0036
         },
         {
           "item": 251401,
-          "name": "Plans: Prefect's Boots"
+          "name": "Plans: Prefect's Boots",
+          "chance": 0.0048
         },
         {
           "item": 252896,
-          "name": "Pattern: Stalker's Mail Boots"
+          "name": "Pattern: Stalker's Mail Boots",
+          "chance": 0.0042
         },
         {
           "item": 252847,
-          "name": "Pattern: Mender's Leather Shoes"
+          "name": "Pattern: Mender's Leather Shoes",
+          "chance": 0.003
         },
         {
           "item": 252843,
-          "name": "Pattern: Prowler's Leather Shoes"
+          "name": "Pattern: Prowler's Leather Shoes",
+          "chance": 0.0078
         },
         {
           "item": 254048,
-          "name": "Pattern: Radiant Cord"
+          "name": "Pattern: Radiant Cord",
+          "chance": 0.006
         },
         {
           "item": 252845,
-          "name": "Pattern: Warden's Leather Shoes"
+          "name": "Pattern: Warden's Leather Shoes",
+          "chance": 0.0042
         },
         {
           "item": 251399,
-          "name": "Plans: Sentinel's Boots"
+          "name": "Plans: Sentinel's Boots",
+          "chance": 0.0042
         },
         {
           "item": 251400,
-          "name": "Plans: Warder's Boots"
+          "name": "Plans: Warder's Boots",
+          "chance": 0.0042
         }
       ]
     },
@@ -104,83 +123,103 @@
       "loot": [
         {
           "item": 10760,
-          "name": "Swine Fists"
+          "name": "Swine Fists",
+          "chance": 0.334
         },
         {
           "item": 10766,
-          "name": "Plaguerot Sprig"
+          "name": "Plaguerot Sprig",
+          "chance": 0.305
         },
         {
           "item": 274380,
-          "name": "Decaying Flesh Bands"
+          "name": "Decaying Flesh Bands",
+          "chance": 0.342
         },
         {
           "item": 254042,
-          "name": "Pattern: Fiery Cord"
+          "name": "Pattern: Fiery Cord",
+          "chance": 0.0056
         },
         {
           "item": 254038,
-          "name": "Pattern: Gilded Cord"
+          "name": "Pattern: Gilded Cord",
+          "chance": 0.0014
         },
         {
           "item": 252845,
-          "name": "Pattern: Warden's Leather Shoes"
+          "name": "Pattern: Warden's Leather Shoes",
+          "chance": 0.0028
         },
         {
           "item": 254044,
-          "name": "Pattern: Black Cord"
+          "name": "Pattern: Black Cord",
+          "chance": 0.007
         },
         {
           "item": 254040,
-          "name": "Pattern: Frothing Cord"
+          "name": "Pattern: Frothing Cord",
+          "chance": 0.0035
         },
         {
           "item": 251398,
-          "name": "Plans: Officer's Boots"
+          "name": "Plans: Officer's Boots",
+          "chance": 0.0049
         },
         {
           "item": 251401,
-          "name": "Plans: Prefect's Boots"
+          "name": "Plans: Prefect's Boots",
+          "chance": 0.0049
         },
         {
           "item": 252844,
-          "name": "Pattern: Skulker's Leather Shoes"
+          "name": "Pattern: Skulker's Leather Shoes",
+          "chance": 0.0042
         },
         {
           "item": 252897,
-          "name": "Pattern: Skycaller's Mail Boots"
+          "name": "Pattern: Skycaller's Mail Boots",
+          "chance": 0.012
         },
         {
           "item": 252896,
-          "name": "Pattern: Stalker's Mail Boots"
+          "name": "Pattern: Stalker's Mail Boots",
+          "chance": 0.0056
         },
         {
           "item": 252847,
-          "name": "Pattern: Mender's Leather Shoes"
+          "name": "Pattern: Mender's Leather Shoes",
+          "chance": 0.0063
         },
         {
           "item": 252899,
-          "name": "Pattern: Mender's Mail Boots"
+          "name": "Pattern: Mender's Mail Boots",
+          "chance": 0.007
         },
         {
           "item": 252843,
-          "name": "Pattern: Prowler's Leather Shoes"
+          "name": "Pattern: Prowler's Leather Shoes",
+          "chance": 0.0028
         },
         {
           "item": 252898,
-          "name": "Pattern: Skirmisher's Mail Boots"
+          "name": "Pattern: Skirmisher's Mail Boots",
+          "chance": 0.0021
         },
         {
           "item": 252846,
-          "name": "Pattern: Skycaller's Leather Shoes"
+          "name": "Pattern: Skycaller's Leather Shoes",
+          "chance": 0.0049
         },
         {
           "item": 251399,
-          "name": "Plans: Sentinel's Boots"
+          "name": "Plans: Sentinel's Boots",
+          "chance": 0.0042
         },
         {
           "item": 251400,
-          "name": "Plans: Warder's Boots"
+          "name": "Plans: Warder's Boots",
+          "chance": 0.0042
         }
       ]
     },
@@ -193,87 +232,108 @@
       "loot": [
         {
           "item": 10770,
-          "name": "Mordresh's Lifeless Skull"
+          "name": "Mordresh's Lifeless Skull",
+          "chance": 0.341
         },
         {
           "item": 10769,
-          "name": "Glowing Eye of Mordresh"
+          "name": "Glowing Eye of Mordresh",
+          "chance": 0.316
         },
         {
           "item": 10771,
-          "name": "Deathmage Sash"
+          "name": "Deathmage Sash",
+          "chance": 0.33
         },
         {
           "item": 254044,
-          "name": "Pattern: Black Cord"
+          "name": "Pattern: Black Cord",
+          "chance": 0.0065
         },
         {
           "item": 254042,
-          "name": "Pattern: Fiery Cord"
+          "name": "Pattern: Fiery Cord",
+          "chance": 0.0036
         },
         {
           "item": 252843,
-          "name": "Pattern: Prowler's Leather Shoes"
+          "name": "Pattern: Prowler's Leather Shoes",
+          "chance": 0.0058
         },
         {
           "item": 251402,
-          "name": "Plans: Justicar's Boots"
+          "name": "Plans: Justicar's Boots",
+          "chance": 0.0007
         },
         {
           "item": 254040,
-          "name": "Pattern: Frothing Cord"
+          "name": "Pattern: Frothing Cord",
+          "chance": 0.0051
         },
         {
           "item": 252847,
-          "name": "Pattern: Mender's Leather Shoes"
+          "name": "Pattern: Mender's Leather Shoes",
+          "chance": 0.0072
         },
         {
           "item": 254048,
-          "name": "Pattern: Radiant Cord"
+          "name": "Pattern: Radiant Cord",
+          "chance": 0.01
         },
         {
           "item": 252898,
-          "name": "Pattern: Skirmisher's Mail Boots"
+          "name": "Pattern: Skirmisher's Mail Boots",
+          "chance": 0.0065
         },
         {
           "item": 252896,
-          "name": "Pattern: Stalker's Mail Boots"
+          "name": "Pattern: Stalker's Mail Boots",
+          "chance": 0.0065
         },
         {
           "item": 254046,
-          "name": "Pattern: Golden Cord"
+          "name": "Pattern: Golden Cord",
+          "chance": 0.0065
         },
         {
           "item": 252897,
-          "name": "Pattern: Skycaller's Mail Boots"
+          "name": "Pattern: Skycaller's Mail Boots",
+          "chance": 0.0072
         },
         {
           "item": 252845,
-          "name": "Pattern: Warden's Leather Shoes"
+          "name": "Pattern: Warden's Leather Shoes",
+          "chance": 0.0043
         },
         {
           "item": 251398,
-          "name": "Plans: Officer's Boots"
+          "name": "Plans: Officer's Boots",
+          "chance": 0.0051
         },
         {
           "item": 251401,
-          "name": "Plans: Prefect's Boots"
+          "name": "Plans: Prefect's Boots",
+          "chance": 0.0029
         },
         {
           "item": 251399,
-          "name": "Plans: Sentinel's Boots"
+          "name": "Plans: Sentinel's Boots",
+          "chance": 0.0051
         },
         {
           "item": 254038,
-          "name": "Pattern: Gilded Cord"
+          "name": "Pattern: Gilded Cord",
+          "chance": 0.0036
         },
         {
           "item": 252846,
-          "name": "Pattern: Skycaller's Leather Shoes"
+          "name": "Pattern: Skycaller's Leather Shoes",
+          "chance": 0.0043
         },
         {
           "item": 251400,
-          "name": "Plans: Warder's Boots"
+          "name": "Plans: Warder's Boots",
+          "chance": 0.0043
         }
       ]
     },
@@ -287,19 +347,23 @@
       "loot": [
         {
           "item": 10758,
-          "name": "X'caliboar"
+          "name": "X'caliboar",
+          "chance": 0.384
         },
         {
           "item": 10767,
-          "name": "Savage Boar's Guard"
+          "name": "Savage Boar's Guard",
+          "chance": 0.287
         },
         {
           "item": 10768,
-          "name": "Boar Champion's Belt"
+          "name": "Boar Champion's Belt",
+          "chance": 0.316
         },
         {
           "item": 251399,
-          "name": "Plans: Sentinel's Boots"
+          "name": "Plans: Sentinel's Boots",
+          "chance": 0.0042
         },
         {
           "item": 252897,
@@ -307,7 +371,8 @@
         },
         {
           "item": 254038,
-          "name": "Pattern: Gilded Cord"
+          "name": "Pattern: Gilded Cord",
+          "chance": 0.0042
         },
         {
           "item": 252899,
@@ -315,15 +380,18 @@
         },
         {
           "item": 252843,
-          "name": "Pattern: Prowler's Leather Shoes"
+          "name": "Pattern: Prowler's Leather Shoes",
+          "chance": 0.0042
         },
         {
           "item": 252898,
-          "name": "Pattern: Skirmisher's Mail Boots"
+          "name": "Pattern: Skirmisher's Mail Boots",
+          "chance": 0.017
         },
         {
           "item": 252845,
-          "name": "Pattern: Warden's Leather Shoes"
+          "name": "Pattern: Warden's Leather Shoes",
+          "chance": 0.0042
         }
       ]
     },
@@ -336,83 +404,103 @@
       "loot": [
         {
           "item": 10772,
-          "name": "Glutton's Cleaver"
+          "name": "Glutton's Cleaver",
+          "chance": 0.332
         },
         {
           "item": 10774,
-          "name": "Fleshhide Shoulders"
+          "name": "Fleshhide Shoulders",
+          "chance": 0.323
         },
         {
           "item": 274385,
-          "name": "Abomination Chain"
+          "name": "Abomination Chain",
+          "chance": 0.327
         },
         {
           "item": 251402,
-          "name": "Plans: Justicar's Boots"
+          "name": "Plans: Justicar's Boots",
+          "chance": 0.0015
         },
         {
           "item": 252846,
-          "name": "Pattern: Skycaller's Leather Shoes"
+          "name": "Pattern: Skycaller's Leather Shoes",
+          "chance": 0.0053
         },
         {
           "item": 254038,
-          "name": "Pattern: Gilded Cord"
+          "name": "Pattern: Gilded Cord",
+          "chance": 0.0045
         },
         {
           "item": 252843,
-          "name": "Pattern: Prowler's Leather Shoes"
+          "name": "Pattern: Prowler's Leather Shoes",
+          "chance": 0.003
         },
         {
           "item": 252897,
-          "name": "Pattern: Skycaller's Mail Boots"
+          "name": "Pattern: Skycaller's Mail Boots",
+          "chance": 0.0045
         },
         {
           "item": 252896,
-          "name": "Pattern: Stalker's Mail Boots"
+          "name": "Pattern: Stalker's Mail Boots",
+          "chance": 0.0038
         },
         {
           "item": 252845,
-          "name": "Pattern: Warden's Leather Shoes"
+          "name": "Pattern: Warden's Leather Shoes",
+          "chance": 0.0075
         },
         {
           "item": 254044,
-          "name": "Pattern: Black Cord"
+          "name": "Pattern: Black Cord",
+          "chance": 0.0053
         },
         {
           "item": 252847,
-          "name": "Pattern: Mender's Leather Shoes"
+          "name": "Pattern: Mender's Leather Shoes",
+          "chance": 0.0068
         },
         {
           "item": 254048,
-          "name": "Pattern: Radiant Cord"
+          "name": "Pattern: Radiant Cord",
+          "chance": 0.006
         },
         {
           "item": 252844,
-          "name": "Pattern: Skulker's Leather Shoes"
+          "name": "Pattern: Skulker's Leather Shoes",
+          "chance": 0.0083
         },
         {
           "item": 254042,
-          "name": "Pattern: Fiery Cord"
+          "name": "Pattern: Fiery Cord",
+          "chance": 0.003
         },
         {
           "item": 254046,
-          "name": "Pattern: Golden Cord"
+          "name": "Pattern: Golden Cord",
+          "chance": 0.0053
         },
         {
           "item": 252899,
-          "name": "Pattern: Mender's Mail Boots"
+          "name": "Pattern: Mender's Mail Boots",
+          "chance": 0.0038
         },
         {
           "item": 251398,
-          "name": "Plans: Officer's Boots"
+          "name": "Plans: Officer's Boots",
+          "chance": 0.0045
         },
         {
           "item": 251401,
-          "name": "Plans: Prefect's Boots"
+          "name": "Plans: Prefect's Boots",
+          "chance": 0.0015
         },
         {
           "item": 251400,
-          "name": "Plans: Warder's Boots"
+          "name": "Plans: Warder's Boots",
+          "chance": 0.006
         }
       ]
     },
@@ -425,87 +513,108 @@
       "loot": [
         {
           "item": 10762,
-          "name": "Robes of the Lich"
+          "name": "Robes of the Lich",
+          "chance": 0.297
         },
         {
           "item": 10763,
-          "name": "Icemetal Barbute"
+          "name": "Icemetal Barbute",
+          "chance": 0.282
         },
         {
           "item": 10764,
-          "name": "Deathchill Armor"
+          "name": "Deathchill Armor",
+          "chance": 0.288
         },
         {
           "item": 10765,
-          "name": "Bonefingers"
+          "name": "Bonefingers",
+          "chance": 0.258
         },
         {
           "item": 10761,
-          "name": "Coldrage Dagger"
+          "name": "Coldrage Dagger",
+          "chance": 0.338
         },
         {
           "item": 274381,
-          "name": "Coldbringer Spine"
+          "name": "Coldbringer Spine",
+          "chance": 0.278
         },
         {
           "item": 252899,
-          "name": "Pattern: Mender's Mail Boots"
+          "name": "Pattern: Mender's Mail Boots",
+          "chance": 0.003
         },
         {
           "item": 252896,
-          "name": "Pattern: Stalker's Mail Boots"
+          "name": "Pattern: Stalker's Mail Boots",
+          "chance": 0.0061
         },
         {
           "item": 251402,
-          "name": "Plans: Justicar's Boots"
+          "name": "Plans: Justicar's Boots",
+          "chance": 0.0036
         },
         {
           "item": 254044,
-          "name": "Pattern: Black Cord"
+          "name": "Pattern: Black Cord",
+          "chance": 0.0049
         },
         {
           "item": 254042,
-          "name": "Pattern: Fiery Cord"
+          "name": "Pattern: Fiery Cord",
+          "chance": 0.0061
         },
         {
           "item": 252847,
-          "name": "Pattern: Mender's Leather Shoes"
+          "name": "Pattern: Mender's Leather Shoes",
+          "chance": 0.0042
         },
         {
           "item": 252843,
-          "name": "Pattern: Prowler's Leather Shoes"
+          "name": "Pattern: Prowler's Leather Shoes",
+          "chance": 0.0036
         },
         {
           "item": 252845,
-          "name": "Pattern: Warden's Leather Shoes"
+          "name": "Pattern: Warden's Leather Shoes",
+          "chance": 0.0049
         },
         {
           "item": 251401,
-          "name": "Plans: Prefect's Boots"
+          "name": "Plans: Prefect's Boots",
+          "chance": 0.0042
         },
         {
           "item": 251400,
-          "name": "Plans: Warder's Boots"
+          "name": "Plans: Warder's Boots",
+          "chance": 0.0024
         },
         {
           "item": 254040,
-          "name": "Pattern: Frothing Cord"
+          "name": "Pattern: Frothing Cord",
+          "chance": 0.003
         },
         {
           "item": 252898,
-          "name": "Pattern: Skirmisher's Mail Boots"
+          "name": "Pattern: Skirmisher's Mail Boots",
+          "chance": 0.003
         },
         {
           "item": 252846,
-          "name": "Pattern: Skycaller's Leather Shoes"
+          "name": "Pattern: Skycaller's Leather Shoes",
+          "chance": 0.0024
         },
         {
           "item": 252897,
-          "name": "Pattern: Skycaller's Mail Boots"
+          "name": "Pattern: Skycaller's Mail Boots",
+          "chance": 0.0024
         },
         {
           "item": 251398,
-          "name": "Plans: Officer's Boots"
+          "name": "Plans: Officer's Boots",
+          "chance": 0.0018
         }
       ]
     }

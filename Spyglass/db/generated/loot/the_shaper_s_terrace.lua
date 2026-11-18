@@ -4,9 +4,9 @@ local Data = Spyglass.Data
 -- The Shaper's Terrace (map 3001)
 
 Data:AddBossLoot(3498, { -- Titanosaur
-    { 280009 }, -- Titanosaur Scale Pendant
-    { 280011 }, -- Deeproar Cord
-    { 280010 }, -- Gargantuan Wristguards
+    { 280009, 0.623 }, -- Titanosaur Scale Pendant
+    { 280011, 0.453 }, -- Deeproar Cord
+    { 280010, 0.509 }, -- Gargantuan Wristguards
 })
 
 Data:AddBossLoot(3499, { -- Ravasaur Hunters
@@ -16,50 +16,50 @@ Data:AddBossLoot(3499, { -- Ravasaur Hunters
 })
 
 Data:AddBossLoot(3500, { -- Thunderhoof
-    { 280020 }, -- Deep Jungle Rifle
-    { 280019 }, -- Dinofrill Casque
-    { 280018 }, -- Hammer of Thundering Hooves
+    { 280020, 0.353 }, -- Deep Jungle Rifle
+    { 280019, 0.328 }, -- Dinofrill Casque
+    { 280018, 0.259 }, -- Hammer of Thundering Hooves
 })
 
 Data:AddBossLoot(3501, { -- Venomridge
-    { 280015 }, -- Venomvessel Ring
-    { 280017 }, -- Octoclaw Chain Boots
-    { 280016 }, -- Spiderchitin Wrap
+    { 280015, 0.331 }, -- Venomvessel Ring
+    { 280017, 0.294 }, -- Octoclaw Chain Boots
+    { 280016, 0.331 }, -- Spiderchitin Wrap
 })
 
 Data:AddBossLoot(3502, { -- Nanaya
-    { 280023 }, -- Nanaya's Control Spire
-    { 280025 }, -- Leggings of Curation
-    { 273128 }, -- Maker's Spark
-    { 280024 }, -- Legplates of Reinforced Crystal
-    { 273116 }, -- Blueprint: Arcane Forge
+    { 280023, 0.377 }, -- Nanaya's Control Spire
+    { 280025, 0.292 }, -- Leggings of Curation
+    { 273128, 0.946 }, -- Maker's Spark
+    { 280024, 0.269 }, -- Legplates of Reinforced Crystal
+    { 273116, 0.054 }, -- Blueprint: Arcane Forge
 })
 
 Data:AddBossLoot(3503, { -- Cinder
-    { 280029 }, -- Cinderedge Crescent
-    { 280028 }, -- Heartflame Gauntlets
+    { 280029, 0.407 }, -- Cinderedge Crescent
+    { 280028, 0.578 }, -- Heartflame Gauntlets
 })
 
 Data:AddBossLoot(3505, { -- Bolt
-    { 280032 }, -- Bolt's Charged Eyeball
-    { 280031 }, -- Sparklance Wand
+    { 280032, 0.5 }, -- Bolt's Charged Eyeball
+    { 280031, 0.492 }, -- Sparklance Wand
 })
 
 Data:AddBossLoot(3507, { -- Direhorn Matriarch
-    { 280022 }, -- Scaleguard Scimitar
-    { 280021 }, -- Tooth of the Matriarch
-    { 280045 }, -- Regal Direhorn Drape
+    { 280022, 0.391 }, -- Scaleguard Scimitar
+    { 280021, 0.336 }, -- Tooth of the Matriarch
+    { 280045, 0.273 }, -- Regal Direhorn Drape
 })
 
 Data:AddBossLoot(3597, { -- Snowtalon
-    { 280026 }, -- Albinofur Grips
-    { 280027 }, -- Crownroar Chestplate
+    { 280026, 0.464 }, -- Albinofur Grips
+    { 280027, 0.536 }, -- Crownroar Chestplate
 })
 
 Data:AddBossLoot(3600, { -- Vitrix
-    { 280031 }, -- Sparklance Wand
-    { 280028 }, -- Heartflame Gauntlets
-    { 280032 }, -- Bolt's Charged Eyeball
+    { 280031, 0.16 }, -- Sparklance Wand
+    { 280028, 0.13 }, -- Heartflame Gauntlets
+    { 280032, 0.24 }, -- Bolt's Charged Eyeball
 })
 
 Data:AddTrashLoot(3001, {

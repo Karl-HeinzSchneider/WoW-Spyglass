@@ -18,15 +18,18 @@
       "loot": [
         {
           "item": 274653,
-          "name": "Deep Ritual Girdle"
+          "name": "Deep Ritual Girdle",
+          "chance": 0.287
         },
         {
           "item": 274651,
-          "name": "Zealot Plate"
+          "name": "Zealot Plate",
+          "chance": 0.292
         },
         {
           "item": 274652,
-          "name": "Wall of Water"
+          "name": "Wall of Water",
+          "chance": 0.299
         }
       ]
     },
@@ -39,39 +42,48 @@
       "loot": [
         {
           "item": 9467,
-          "name": "Gahz'rilla Fang"
+          "name": "Gahz'rilla Fang",
+          "chance": 0.312
         },
         {
           "item": 9469,
-          "name": "Gahz'rilla Scale Armor"
+          "name": "Gahz'rilla Scale Armor",
+          "chance": 0.335
         },
         {
           "item": 274657,
-          "name": "Hydra Leather Legs"
+          "name": "Hydra Leather Legs",
+          "chance": 0.297
         },
         {
           "item": 254096,
-          "name": "Pattern: Gilded Gloves"
+          "name": "Pattern: Gilded Gloves",
+          "chance": 0.0029
         },
         {
           "item": 252871,
-          "name": "Pattern: Mender's Leather Gauntlets"
+          "name": "Pattern: Mender's Leather Gauntlets",
+          "chance": 0.0086
         },
         {
           "item": 254106,
-          "name": "Pattern: Radiant Gloves"
+          "name": "Pattern: Radiant Gloves",
+          "chance": 0.0029
         },
         {
           "item": 254098,
-          "name": "Pattern: Frothing Gloves"
+          "name": "Pattern: Frothing Gloves",
+          "chance": 0.0076
         },
         {
           "item": 252867,
-          "name": "Pattern: Prowler's Leather Gauntlets"
+          "name": "Pattern: Prowler's Leather Gauntlets",
+          "chance": 0.0057
         },
         {
           "item": 252868,
-          "name": "Pattern: Skulker's Leather Gauntlets"
+          "name": "Pattern: Skulker's Leather Gauntlets",
+          "chance": 0.0048
         },
         {
           "item": 252869,
@@ -88,43 +100,53 @@
       "loot": [
         {
           "item": 9640,
-          "name": "Vice Grips"
+          "name": "Vice Grips",
+          "chance": 0.243
         },
         {
           "item": 9639,
-          "name": "The Hand of Antu'sul"
+          "name": "The Hand of Antu'sul",
+          "chance": 0.301
         },
         {
           "item": 9641,
-          "name": "Lifeblood Amulet"
+          "name": "Lifeblood Amulet",
+          "chance": 0.258
         },
         {
           "item": 9379,
-          "name": "Sang'thraze the Deflector"
+          "name": "Sang'thraze the Deflector",
+          "chance": 0.113
         },
         {
           "item": 251407,
-          "name": "Plans: Justicar's Gloves"
+          "name": "Plans: Justicar's Gloves",
+          "chance": 0.011
         },
         {
           "item": 252920,
-          "name": "Pattern: Skirmisher's Mail Gauntlets"
+          "name": "Pattern: Skirmisher's Mail Gauntlets",
+          "chance": 0.0022
         },
         {
           "item": 252869,
-          "name": "Pattern: Warden's Leather Gauntlets"
+          "name": "Pattern: Warden's Leather Gauntlets",
+          "chance": 0.0034
         },
         {
           "item": 252868,
-          "name": "Pattern: Skulker's Leather Gauntlets"
+          "name": "Pattern: Skulker's Leather Gauntlets",
+          "chance": 0.0034
         },
         {
           "item": 252870,
-          "name": "Pattern: Skycaller's Leather Gauntlets"
+          "name": "Pattern: Skycaller's Leather Gauntlets",
+          "chance": 0.0056
         },
         {
           "item": 251403,
-          "name": "Plans: Officer's Gloves"
+          "name": "Plans: Officer's Gloves",
+          "chance": 0.0034
         },
         {
           "item": 251405,
@@ -132,7 +154,8 @@
         },
         {
           "item": 9484,
-          "name": "Spellshock Leggings"
+          "name": "Spellshock Leggings",
+          "chance": 0.0011
         }
       ]
     },
@@ -145,15 +168,18 @@
       "loot": [
         {
           "item": 274641,
-          "name": "Theka's Last Breath"
+          "name": "Theka's Last Breath",
+          "chance": 0.348
         },
         {
           "item": 274639,
-          "name": "Sacrificial Chain Vest"
+          "name": "Sacrificial Chain Vest",
+          "chance": 0.289
         },
         {
           "item": 274638,
-          "name": "Sandfury Pauldrons"
+          "name": "Sandfury Pauldrons",
+          "chance": 0.3
         },
         {
           "item": 254098,
@@ -161,7 +187,8 @@
         },
         {
           "item": 254096,
-          "name": "Pattern: Gilded Gloves"
+          "name": "Pattern: Gilded Gloves",
+          "chance": 0.0019
         },
         {
           "item": 252920,
@@ -169,7 +196,8 @@
         },
         {
           "item": 251403,
-          "name": "Plans: Officer's Gloves"
+          "name": "Plans: Officer's Gloves",
+          "chance": 0.0013
         }
       ]
     },
@@ -182,31 +210,38 @@
       "loot": [
         {
           "item": 18082,
-          "name": "Zum'rah's Vexing Cane"
+          "name": "Zum'rah's Vexing Cane",
+          "chance": 0.318
         },
         {
           "item": 18083,
-          "name": "Jumanza Grips"
+          "name": "Jumanza Grips",
+          "chance": 0.283
         },
         {
           "item": 274642,
-          "name": "Blood Ritual Ring"
+          "name": "Blood Ritual Ring",
+          "chance": 0.256
         },
         {
           "item": 252868,
-          "name": "Pattern: Skulker's Leather Gauntlets"
+          "name": "Pattern: Skulker's Leather Gauntlets",
+          "chance": 0.0054
         },
         {
           "item": 252918,
-          "name": "Pattern: Stalker's Mail Gauntlets"
+          "name": "Pattern: Stalker's Mail Gauntlets",
+          "chance": 0.0036
         },
         {
           "item": 252869,
-          "name": "Pattern: Warden's Leather Gauntlets"
+          "name": "Pattern: Warden's Leather Gauntlets",
+          "chance": 0.0045
         },
         {
           "item": 251403,
-          "name": "Plans: Officer's Gloves"
+          "name": "Plans: Officer's Gloves",
+          "chance": 0.0027
         },
         {
           "item": 252871,
@@ -214,15 +249,18 @@
         },
         {
           "item": 254106,
-          "name": "Pattern: Radiant Gloves"
+          "name": "Pattern: Radiant Gloves",
+          "chance": 0.0036
         },
         {
           "item": 252870,
-          "name": "Pattern: Skycaller's Leather Gauntlets"
+          "name": "Pattern: Skycaller's Leather Gauntlets",
+          "chance": 0.0063
         },
         {
           "item": 251404,
-          "name": "Plans: Sentinel's Gloves"
+          "name": "Plans: Sentinel's Gloves",
+          "chance": 0.0036
         },
         {
           "item": 251405,
@@ -239,27 +277,33 @@
       "loot": [
         {
           "item": 274644,
-          "name": "Undying Headdress"
+          "name": "Undying Headdress",
+          "chance": 0.328
         },
         {
           "item": 274645,
-          "name": "Desert Ziggurat Drape"
+          "name": "Desert Ziggurat Drape",
+          "chance": 0.264
         },
         {
           "item": 274643,
-          "name": "Gutcutter Hatchet"
+          "name": "Gutcutter Hatchet",
+          "chance": 0.309
         },
         {
           "item": 252871,
-          "name": "Pattern: Mender's Leather Gauntlets"
+          "name": "Pattern: Mender's Leather Gauntlets",
+          "chance": 0.0034
         },
         {
           "item": 252868,
-          "name": "Pattern: Skulker's Leather Gauntlets"
+          "name": "Pattern: Skulker's Leather Gauntlets",
+          "chance": 0.0034
         },
         {
           "item": 251400,
-          "name": "Plans: Warder's Boots"
+          "name": "Plans: Warder's Boots",
+          "chance": 0.0034
         }
       ]
     },
@@ -272,43 +316,53 @@
       "loot": [
         {
           "item": 9470,
-          "name": "Bad Mojo Mask"
+          "name": "Bad Mojo Mask",
+          "chance": 0.216
         },
         {
           "item": 9473,
-          "name": "Jinxed Hoodoo Skin"
+          "name": "Jinxed Hoodoo Skin",
+          "chance": 0.244
         },
         {
           "item": 9474,
-          "name": "Jinxed Hoodoo Kilt"
+          "name": "Jinxed Hoodoo Kilt",
+          "chance": 0.241
         },
         {
           "item": 9475,
-          "name": "Diabolic Skiver"
+          "name": "Diabolic Skiver",
+          "chance": 0.239
         },
         {
           "item": 254102,
-          "name": "Pattern: Black Gloves"
+          "name": "Pattern: Black Gloves",
+          "chance": 0.0027
         },
         {
           "item": 251404,
-          "name": "Plans: Sentinel's Gloves"
+          "name": "Plans: Sentinel's Gloves",
+          "chance": 0.0027
         },
         {
           "item": 254098,
-          "name": "Pattern: Frothing Gloves"
+          "name": "Pattern: Frothing Gloves",
+          "chance": 0.0027
         },
         {
           "item": 252919,
-          "name": "Pattern: Skycaller's Mail Gauntlets"
+          "name": "Pattern: Skycaller's Mail Gauntlets",
+          "chance": 0.0072
         },
         {
           "item": 252918,
-          "name": "Pattern: Stalker's Mail Gauntlets"
+          "name": "Pattern: Stalker's Mail Gauntlets",
+          "chance": 0.012
         },
         {
           "item": 251407,
-          "name": "Plans: Justicar's Gloves"
+          "name": "Plans: Justicar's Gloves",
+          "chance": 0.0099
         },
         {
           "item": 251403,
@@ -325,35 +379,43 @@
       "loot": [
         {
           "item": 9476,
-          "name": "Big Bad Pauldrons"
+          "name": "Big Bad Pauldrons",
+          "chance": 0.245
         },
         {
           "item": 9477,
-          "name": "The Chief's Enforcer"
+          "name": "The Chief's Enforcer",
+          "chance": 0.296
         },
         {
           "item": 9478,
-          "name": "Ripsaw"
+          "name": "Ripsaw",
+          "chance": 0.299
         },
         {
           "item": 9479,
-          "name": "Embrace of the Lycan"
+          "name": "Embrace of the Lycan",
+          "chance": 0.101
         },
         {
           "item": 11086,
-          "name": "Jang'thraze the Protector"
+          "name": "Jang'thraze the Protector",
+          "chance": 0.118
         },
         {
           "item": 254100,
-          "name": "Pattern: Fiery Gloves"
+          "name": "Pattern: Fiery Gloves",
+          "chance": 0.0052
         },
         {
           "item": 254096,
-          "name": "Pattern: Gilded Gloves"
+          "name": "Pattern: Gilded Gloves",
+          "chance": 0.0034
         },
         {
           "item": 254102,
-          "name": "Pattern: Black Gloves"
+          "name": "Pattern: Black Gloves",
+          "chance": 0.0034
         },
         {
           "item": 251407,
@@ -365,23 +427,28 @@
         },
         {
           "item": 252871,
-          "name": "Pattern: Mender's Leather Gauntlets"
+          "name": "Pattern: Mender's Leather Gauntlets",
+          "chance": 0.006
         },
         {
           "item": 252867,
-          "name": "Pattern: Prowler's Leather Gauntlets"
+          "name": "Pattern: Prowler's Leather Gauntlets",
+          "chance": 0.0026
         },
         {
           "item": 254106,
-          "name": "Pattern: Radiant Gloves"
+          "name": "Pattern: Radiant Gloves",
+          "chance": 0.0043
         },
         {
           "item": 251404,
-          "name": "Plans: Sentinel's Gloves"
+          "name": "Plans: Sentinel's Gloves",
+          "chance": 0.0077
         },
         {
           "item": 251405,
-          "name": "Plans: Warder's Gloves"
+          "name": "Plans: Warder's Gloves",
+          "chance": 0.0026
         }
       ]
     },
@@ -394,15 +461,18 @@
       "loot": [
         {
           "item": 12470,
-          "name": "Sandstalker Ankleguards"
+          "name": "Sandstalker Ankleguards",
+          "chance": 0.425
         },
         {
           "item": 274658,
-          "name": "Dune Hacker"
+          "name": "Dune Hacker",
+          "chance": 0.509
         },
         {
           "item": 251400,
-          "name": "Plans: Warder's Boots"
+          "name": "Plans: Warder's Boots",
+          "chance": 0.003
         }
       ]
     },
@@ -415,11 +485,13 @@
       "loot": [
         {
           "item": 12471,
-          "name": "Desertwalker Cane"
+          "name": "Desertwalker Cane",
+          "chance": 0.376
         },
         {
           "item": 12469,
-          "name": "Mutilator"
+          "name": "Mutilator",
+          "chance": 0.53
         },
         {
           "item": 251399,
@@ -436,19 +508,23 @@
       "loot": [
         {
           "item": 274646,
-          "name": "Arch of the Covenant"
+          "name": "Arch of the Covenant",
+          "chance": 0.32
         },
         {
           "item": 274647,
-          "name": "Farraki Kris"
+          "name": "Farraki Kris",
+          "chance": 0.307
         },
         {
           "item": 274648,
-          "name": "The Desert Rose"
+          "name": "The Desert Rose",
+          "chance": 0.325
         },
         {
           "item": 252896,
-          "name": "Pattern: Stalker's Mail Boots"
+          "name": "Pattern: Stalker's Mail Boots",
+          "chance": 0.0026
         },
         {
           "item": 8548,
@@ -456,15 +532,18 @@
         },
         {
           "item": 251399,
-          "name": "Plans: Sentinel's Boots"
+          "name": "Plans: Sentinel's Boots",
+          "chance": 0.0039
         },
         {
           "item": 251400,
-          "name": "Plans: Warder's Boots"
+          "name": "Plans: Warder's Boots",
+          "chance": 0.0039
         },
         {
           "item": 251402,
-          "name": "Plans: Justicar's Boots"
+          "name": "Plans: Justicar's Boots",
+          "chance": 0.0013
         }
       ]
     },
@@ -477,11 +556,13 @@
       "loot": [
         {
           "item": 274660,
-          "name": "Sandarr's Shoulders"
+          "name": "Sandarr's Shoulders",
+          "chance": 0.438
         },
         {
           "item": 274659,
-          "name": "Bloodsand Belt"
+          "name": "Bloodsand Belt",
+          "chance": 0.516
         }
       ]
     },
@@ -493,47 +574,58 @@
       "loot": [
         {
           "item": 274654,
-          "name": "Sandfury Guillotine"
+          "name": "Sandfury Guillotine",
+          "chance": 0.363
         },
         {
           "item": 274655,
-          "name": "Peacekeeper Wand"
+          "name": "Peacekeeper Wand",
+          "chance": 0.283
         },
         {
           "item": 252919,
-          "name": "Pattern: Skycaller's Mail Gauntlets"
+          "name": "Pattern: Skycaller's Mail Gauntlets",
+          "chance": 0.0033
         },
         {
           "item": 254100,
-          "name": "Pattern: Fiery Gloves"
+          "name": "Pattern: Fiery Gloves",
+          "chance": 0.005
         },
         {
           "item": 252869,
-          "name": "Pattern: Warden's Leather Gauntlets"
+          "name": "Pattern: Warden's Leather Gauntlets",
+          "chance": 0.0041
         },
         {
           "item": 254102,
-          "name": "Pattern: Black Gloves"
+          "name": "Pattern: Black Gloves",
+          "chance": 0.0058
         },
         {
           "item": 254096,
-          "name": "Pattern: Gilded Gloves"
+          "name": "Pattern: Gilded Gloves",
+          "chance": 0.0041
         },
         {
           "item": 252870,
-          "name": "Pattern: Skycaller's Leather Gauntlets"
+          "name": "Pattern: Skycaller's Leather Gauntlets",
+          "chance": 0.0025
         },
         {
           "item": 252918,
-          "name": "Pattern: Stalker's Mail Gauntlets"
+          "name": "Pattern: Stalker's Mail Gauntlets",
+          "chance": 0.0075
         },
         {
           "item": 251407,
-          "name": "Plans: Justicar's Gloves"
+          "name": "Plans: Justicar's Gloves",
+          "chance": 0.0033
         },
         {
           "item": 251405,
-          "name": "Plans: Warder's Gloves"
+          "name": "Plans: Warder's Gloves",
+          "chance": 0.0058
         },
         {
           "item": 9511,

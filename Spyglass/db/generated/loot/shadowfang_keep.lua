@@ -4,94 +4,94 @@ local Data = Spyglass.Data
 -- Shadowfang Keep (map 33)
 
 Data:AddBossLoot(2748, { -- Rethilgore
-    { 5254 }, -- Rugged Spaulders
-    { 273456 }, -- Cell Keeper's Claws
-    { 273457 }, -- Sorcerer Collar
+    { 5254, 0.287 }, -- Rugged Spaulders
+    { 273456, 0.292 }, -- Cell Keeper's Claws
+    { 273457, 0.3 }, -- Sorcerer Collar
 })
 
 Data:AddBossLoot(2749, { -- Razorclaw the Butcher
-    { 1292 }, -- Butcher's Cleaver
-    { 6226 }, -- Bloody Apron
-    { 6633 }, -- Butcher's Slicer
-    { 273096 }, -- Blueprint: Tanning Rack
-    { 253938 }, -- Pattern: Filigreed Pristine Leggings
-    { 253942 }, -- Pattern: Filigreed Flame Leggings
-    { 253944 }, -- Pattern: Filigreed Shadow Leggings
+    { 1292, 0.296 }, -- Butcher's Cleaver
+    { 6226, 0.309 }, -- Bloody Apron
+    { 6633, 0.303 }, -- Butcher's Slicer
+    { 273096, 0.077 }, -- Blueprint: Tanning Rack
+    { 253938, 0.0038 }, -- Pattern: Filigreed Pristine Leggings
+    { 253942, 0.0046 }, -- Pattern: Filigreed Flame Leggings
+    { 253944, 0.0029 }, -- Pattern: Filigreed Shadow Leggings
 })
 
 Data:AddBossLoot(-3864, { -- Fel Steed
-    { 932 }, -- Fel Steed Saddlebags
-    { 6341 }, -- Eerie Stable Lantern
-    { 251341 }, -- Plans: Guard's Chain Shirt
+    { 932, 0.192 }, -- Fel Steed Saddlebags
+    { 6341, 0.186 }, -- Eerie Stable Lantern
+    { 251341, 0.015 }, -- Plans: Guard's Chain Shirt
     { 251362 }, -- Plans: Protector's Gloves
     { 251363 }, -- Plans: Acolyte's Gloves
     { 251364 }, -- Plans: Crusader's Gloves
     { 252781 }, -- Pattern: Stormrider's Leather Gloves
     { 252782 }, -- Pattern: Wisdom's Leather Gloves
-    { 253902 }, -- Pattern: Filigreed Pristine Gown
-    { 253904 }, -- Pattern: Filigreed Silky Gown
-    { 253906 }, -- Pattern: Filigreed Flame Gown
-    { 253908 }, -- Pattern: Filigreed Shadow Gown
-    { 253910 }, -- Pattern: Filigreed Pearly Gown
-    { 253912 }, -- Pattern: Filigreed Shining Gown
+    { 253902, 0.0079 }, -- Pattern: Filigreed Pristine Gown
+    { 253904, 0.01 }, -- Pattern: Filigreed Silky Gown
+    { 253906, 0.012 }, -- Pattern: Filigreed Flame Gown
+    { 253908, 0.0092 }, -- Pattern: Filigreed Shadow Gown
+    { 253910, 0.0089 }, -- Pattern: Filigreed Pearly Gown
+    { 253912, 0.01 }, -- Pattern: Filigreed Shining Gown
     { 251381 }, -- Plans: Guard's Silvered Chain Helm
     { 251382 }, -- Plans: Protector's Silvered Chain Helm
     { 252799 }, -- Pattern: Trapper's Leather Hood
     { 252801 }, -- Pattern: Totemic Leather Hood
     { 252803 }, -- Pattern: Wisdom's Leather Hood
     { 253940 }, -- Pattern: Filigreed Silky Leggings
-    { 253946 }, -- Pattern: Filigreed Pearly Leggings
+    { 253946, 0.0003 }, -- Pattern: Filigreed Pearly Leggings
     { 253948 }, -- Pattern: Filigreed Shining Leggings
 })
 
 Data:AddBossLoot(2750, { -- Baron Silverlaine
-    { 6321 }, -- Silverlaine's Family Seal
-    { 6323 }, -- Baron's Scepter
-    { 273637 }, -- Blade of Silverlaine
+    { 6321, 0.32 }, -- Silverlaine's Family Seal
+    { 6323, 0.334 }, -- Baron's Scepter
+    { 273637, 0.32 }, -- Blade of Silverlaine
 })
 
 Data:AddBossLoot(2751, { -- Commander Springvale
-    { 3191 }, -- Arced War Axe
-    { 6320 }, -- Commander's Crest
-    { 273643 }, -- Worgenbane Talisman
-    { 273105 }, -- Blueprint: Toxin Study
-    { 6341 }, -- Eerie Stable Lantern
+    { 3191, 0.333 }, -- Arced War Axe
+    { 6320, 0.309 }, -- Commander's Crest
+    { 273643, 0.321 }, -- Worgenbane Talisman
+    { 273105, 0.072 }, -- Blueprint: Toxin Study
+    { 6341, 0.094 }, -- Eerie Stable Lantern
 })
 
 Data:AddBossLoot(2752, { -- Odo the Blindwatcher
-    { 6318 }, -- Odo's Ley Staff
-    { 6319 }, -- Girdle of the Blindwatcher
-    { 273645 }, -- Blindwatcher's Sight
+    { 6318, 0.305 }, -- Odo's Ley Staff
+    { 6319, 0.309 }, -- Girdle of the Blindwatcher
+    { 273645, 0.326 }, -- Blindwatcher's Sight
 })
 
 Data:AddBossLoot(-3872, { -- Deathsworn Captain
-    { 6641 }, -- Haunting Blade
-    { 6642 }, -- Phantom Armor
+    { 6641, 0.513 }, -- Haunting Blade
+    { 6642, 0.445 }, -- Phantom Armor
 })
 
 Data:AddBossLoot(2753, { -- Fenrus the Devourer
-    { 3230 }, -- Black Wolf Bracers
-    { 6340 }, -- Fenrus' Hide
-    { 273646 }, -- Half-Eaten Boots
+    { 3230, 0.31 }, -- Black Wolf Bracers
+    { 6340, 0.311 }, -- Fenrus' Hide
+    { 273646, 0.304 }, -- Half-Eaten Boots
     { 251380 }, -- Plans: Veteran's Silvered Chain Helm
 })
 
 Data:AddBossLoot(-4627, { -- Arugal's Voidwalker
-    { 5943 }, -- Rift Bracers
+    { 5943, 0.098 }, -- Rift Bracers
 })
 
 Data:AddBossLoot(2754, { -- Wolf Master Nandos
-    { 3748 }, -- Feline Mantle
-    { 6314 }, -- Wolfmaster Cape
+    { 3748, 0.324 }, -- Feline Mantle
+    { 6314, 0.306 }, -- Wolfmaster Cape
     { 1318 }, -- Night Reaver
     { 2292 }, -- Necrology Robes
-    { 273647 }, -- Worgpelt Leggings
+    { 273647, 0.278 }, -- Worgpelt Leggings
 })
 
 Data:AddBossLoot(2755, { -- Archmage Arugal
-    { 6220 }, -- Meteor Shard
-    { 6324 }, -- Robes of Arugal
-    { 6392 }, -- Belt of Arugal
+    { 6220, 0.294 }, -- Meteor Shard
+    { 6324, 0.296 }, -- Robes of Arugal
+    { 6392, 0.28 }, -- Belt of Arugal
 })
 
 Data:AddTrashLoot(33, {

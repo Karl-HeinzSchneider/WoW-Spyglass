@@ -19,15 +19,18 @@
       "loot": [
         {
           "item": 5254,
-          "name": "Rugged Spaulders"
+          "name": "Rugged Spaulders",
+          "chance": 0.287
         },
         {
           "item": 273456,
-          "name": "Cell Keeper's Claws"
+          "name": "Cell Keeper's Claws",
+          "chance": 0.292
         },
         {
           "item": 273457,
-          "name": "Sorcerer Collar"
+          "name": "Sorcerer Collar",
+          "chance": 0.3
         }
       ]
     },
@@ -41,31 +44,38 @@
       "loot": [
         {
           "item": 1292,
-          "name": "Butcher's Cleaver"
+          "name": "Butcher's Cleaver",
+          "chance": 0.296
         },
         {
           "item": 6226,
-          "name": "Bloody Apron"
+          "name": "Bloody Apron",
+          "chance": 0.309
         },
         {
           "item": 6633,
-          "name": "Butcher's Slicer"
+          "name": "Butcher's Slicer",
+          "chance": 0.303
         },
         {
           "item": 273096,
-          "name": "Blueprint: Tanning Rack"
+          "name": "Blueprint: Tanning Rack",
+          "chance": 0.077
         },
         {
           "item": 253938,
-          "name": "Pattern: Filigreed Pristine Leggings"
+          "name": "Pattern: Filigreed Pristine Leggings",
+          "chance": 0.0038
         },
         {
           "item": 253942,
-          "name": "Pattern: Filigreed Flame Leggings"
+          "name": "Pattern: Filigreed Flame Leggings",
+          "chance": 0.0046
         },
         {
           "item": 253944,
-          "name": "Pattern: Filigreed Shadow Leggings"
+          "name": "Pattern: Filigreed Shadow Leggings",
+          "chance": 0.0029
         }
       ]
     },
@@ -79,15 +89,18 @@
       "loot": [
         {
           "item": 932,
-          "name": "Fel Steed Saddlebags"
+          "name": "Fel Steed Saddlebags",
+          "chance": 0.192
         },
         {
           "item": 6341,
-          "name": "Eerie Stable Lantern"
+          "name": "Eerie Stable Lantern",
+          "chance": 0.186
         },
         {
           "item": 251341,
-          "name": "Plans: Guard's Chain Shirt"
+          "name": "Plans: Guard's Chain Shirt",
+          "chance": 0.015
         },
         {
           "item": 251362,
@@ -111,27 +124,33 @@
         },
         {
           "item": 253902,
-          "name": "Pattern: Filigreed Pristine Gown"
+          "name": "Pattern: Filigreed Pristine Gown",
+          "chance": 0.0079
         },
         {
           "item": 253904,
-          "name": "Pattern: Filigreed Silky Gown"
+          "name": "Pattern: Filigreed Silky Gown",
+          "chance": 0.01
         },
         {
           "item": 253906,
-          "name": "Pattern: Filigreed Flame Gown"
+          "name": "Pattern: Filigreed Flame Gown",
+          "chance": 0.012
         },
         {
           "item": 253908,
-          "name": "Pattern: Filigreed Shadow Gown"
+          "name": "Pattern: Filigreed Shadow Gown",
+          "chance": 0.0092
         },
         {
           "item": 253910,
-          "name": "Pattern: Filigreed Pearly Gown"
+          "name": "Pattern: Filigreed Pearly Gown",
+          "chance": 0.0089
         },
         {
           "item": 253912,
-          "name": "Pattern: Filigreed Shining Gown"
+          "name": "Pattern: Filigreed Shining Gown",
+          "chance": 0.01
         },
         {
           "item": 251381,
@@ -159,7 +178,8 @@
         },
         {
           "item": 253946,
-          "name": "Pattern: Filigreed Pearly Leggings"
+          "name": "Pattern: Filigreed Pearly Leggings",
+          "chance": 0.0003
         },
         {
           "item": 253948,
@@ -177,15 +197,18 @@
       "loot": [
         {
           "item": 6321,
-          "name": "Silverlaine's Family Seal"
+          "name": "Silverlaine's Family Seal",
+          "chance": 0.32
         },
         {
           "item": 6323,
-          "name": "Baron's Scepter"
+          "name": "Baron's Scepter",
+          "chance": 0.334
         },
         {
           "item": 273637,
-          "name": "Blade of Silverlaine"
+          "name": "Blade of Silverlaine",
+          "chance": 0.32
         }
       ]
     },
@@ -199,23 +222,28 @@
       "loot": [
         {
           "item": 3191,
-          "name": "Arced War Axe"
+          "name": "Arced War Axe",
+          "chance": 0.333
         },
         {
           "item": 6320,
-          "name": "Commander's Crest"
+          "name": "Commander's Crest",
+          "chance": 0.309
         },
         {
           "item": 273643,
-          "name": "Worgenbane Talisman"
+          "name": "Worgenbane Talisman",
+          "chance": 0.321
         },
         {
           "item": 273105,
-          "name": "Blueprint: Toxin Study"
+          "name": "Blueprint: Toxin Study",
+          "chance": 0.072
         },
         {
           "item": 6341,
-          "name": "Eerie Stable Lantern"
+          "name": "Eerie Stable Lantern",
+          "chance": 0.094
         }
       ]
     },
@@ -229,15 +257,18 @@
       "loot": [
         {
           "item": 6318,
-          "name": "Odo's Ley Staff"
+          "name": "Odo's Ley Staff",
+          "chance": 0.305
         },
         {
           "item": 6319,
-          "name": "Girdle of the Blindwatcher"
+          "name": "Girdle of the Blindwatcher",
+          "chance": 0.309
         },
         {
           "item": 273645,
-          "name": "Blindwatcher's Sight"
+          "name": "Blindwatcher's Sight",
+          "chance": 0.326
         }
       ]
     },
@@ -252,11 +283,13 @@
       "loot": [
         {
           "item": 6641,
-          "name": "Haunting Blade"
+          "name": "Haunting Blade",
+          "chance": 0.513
         },
         {
           "item": 6642,
-          "name": "Phantom Armor"
+          "name": "Phantom Armor",
+          "chance": 0.445
         }
       ]
     },
@@ -270,15 +303,18 @@
       "loot": [
         {
           "item": 3230,
-          "name": "Black Wolf Bracers"
+          "name": "Black Wolf Bracers",
+          "chance": 0.31
         },
         {
           "item": 6340,
-          "name": "Fenrus' Hide"
+          "name": "Fenrus' Hide",
+          "chance": 0.311
         },
         {
           "item": 273646,
-          "name": "Half-Eaten Boots"
+          "name": "Half-Eaten Boots",
+          "chance": 0.304
         },
         {
           "item": 251380,
@@ -296,7 +332,8 @@
       "loot": [
         {
           "item": 5943,
-          "name": "Rift Bracers"
+          "name": "Rift Bracers",
+          "chance": 0.098
         }
       ]
     },
@@ -310,11 +347,13 @@
       "loot": [
         {
           "item": 3748,
-          "name": "Feline Mantle"
+          "name": "Feline Mantle",
+          "chance": 0.324
         },
         {
           "item": 6314,
-          "name": "Wolfmaster Cape"
+          "name": "Wolfmaster Cape",
+          "chance": 0.306
         },
         {
           "item": 1318,
@@ -326,7 +365,8 @@
         },
         {
           "item": 273647,
-          "name": "Worgpelt Leggings"
+          "name": "Worgpelt Leggings",
+          "chance": 0.278
         }
       ]
     },
@@ -340,15 +380,18 @@
       "loot": [
         {
           "item": 6220,
-          "name": "Meteor Shard"
+          "name": "Meteor Shard",
+          "chance": 0.294
         },
         {
           "item": 6324,
-          "name": "Robes of Arugal"
+          "name": "Robes of Arugal",
+          "chance": 0.296
         },
         {
           "item": 6392,
-          "name": "Belt of Arugal"
+          "name": "Belt of Arugal",
+          "chance": 0.28
         }
       ]
     }

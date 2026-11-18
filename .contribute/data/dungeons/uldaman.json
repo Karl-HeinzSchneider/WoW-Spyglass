@@ -18,19 +18,23 @@
       "loot": [
         {
           "item": 9389,
-          "name": "Revelosh's Spaulders"
+          "name": "Revelosh's Spaulders",
+          "chance": 0.225
         },
         {
           "item": 9388,
-          "name": "Revelosh's Armguards"
+          "name": "Revelosh's Armguards",
+          "chance": 0.245
         },
         {
           "item": 9387,
-          "name": "Revelosh's Boots"
+          "name": "Revelosh's Boots",
+          "chance": 0.248
         },
         {
           "item": 9390,
-          "name": "Revelosh's Gloves"
+          "name": "Revelosh's Gloves",
+          "chance": 0.206
         }
       ]
     },
@@ -43,11 +47,13 @@
       "loot": [
         {
           "item": 9400,
-          "name": "Baelog's Shortbow"
+          "name": "Baelog's Shortbow",
+          "chance": 0.415
         },
         {
           "item": 9401,
-          "name": "Nordic Longshank"
+          "name": "Nordic Longshank",
+          "chance": 0.494
         },
         {
           "item": 9398,
@@ -67,11 +73,13 @@
         },
         {
           "item": 9399,
-          "name": "Precision Arrow"
+          "name": "Precision Arrow",
+          "chance": 0.81
         },
         {
           "item": 251400,
-          "name": "Plans: Warder's Boots"
+          "name": "Plans: Warder's Boots",
+          "chance": 0.0029
         },
         {
           "item": 252896,
@@ -88,19 +96,23 @@
       "loot": [
         {
           "item": 9407,
-          "name": "Stoneweaver Leggings"
+          "name": "Stoneweaver Leggings",
+          "chance": 0.29
         },
         {
           "item": 9409,
-          "name": "Ironaya's Bracers"
+          "name": "Ironaya's Bracers",
+          "chance": 0.284
         },
         {
           "item": 9408,
-          "name": "Ironshod Bludgeon"
+          "name": "Ironshod Bludgeon",
+          "chance": 0.299
         },
         {
           "item": 274484,
-          "name": "Axe of Inevitable Ruin"
+          "name": "Axe of Inevitable Ruin",
+          "chance": 0.114
         }
       ]
     },
@@ -113,23 +125,28 @@
       "loot": [
         {
           "item": 274430,
-          "name": "Rock Sentinel Slicer"
+          "name": "Rock Sentinel Slicer",
+          "chance": 0.288
         },
         {
           "item": 274428,
-          "name": "Dark Golem Breastplate"
+          "name": "Dark Golem Breastplate",
+          "chance": 0.264
         },
         {
           "item": 274425,
-          "name": "White Obsidian Wand"
+          "name": "White Obsidian Wand",
+          "chance": 0.273
         },
         {
           "item": 274485,
-          "name": "Axe of Lingering Dread"
+          "name": "Axe of Lingering Dread",
+          "chance": 0.113
         },
         {
           "item": 251400,
-          "name": "Plans: Warder's Boots"
+          "name": "Plans: Warder's Boots",
+          "chance": 0.0058
         }
       ]
     },
@@ -142,15 +159,18 @@
       "loot": [
         {
           "item": 9410,
-          "name": "Cragfists"
+          "name": "Cragfists",
+          "chance": 0.302
         },
         {
           "item": 9411,
-          "name": "Rockshard Pauldrons"
+          "name": "Rockshard Pauldrons",
+          "chance": 0.324
         },
         {
           "item": 274431,
-          "name": "Sandstorm Staff"
+          "name": "Sandstorm Staff",
+          "chance": 0.329
         }
       ]
     },
@@ -163,23 +183,28 @@
       "loot": [
         {
           "item": 11311,
-          "name": "Emberscale Cape"
+          "name": "Emberscale Cape",
+          "chance": 0.267
         },
         {
           "item": 11310,
-          "name": "Flameseer Mantle"
+          "name": "Flameseer Mantle",
+          "chance": 0.233
         },
         {
           "item": 9419,
-          "name": "Galgann's Firehammer"
+          "name": "Galgann's Firehammer",
+          "chance": 0.239
         },
         {
           "item": 9412,
-          "name": "Galgann's Fireblaster"
+          "name": "Galgann's Fireblaster",
+          "chance": 0.241
         },
         {
           "item": 251402,
-          "name": "Plans: Justicar's Boots"
+          "name": "Plans: Justicar's Boots",
+          "chance": 0.0044
         }
       ]
     },
@@ -192,15 +217,18 @@
       "loot": [
         {
           "item": 9415,
-          "name": "Grimlok's Tribal Vestments"
+          "name": "Grimlok's Tribal Vestments",
+          "chance": 0.323
         },
         {
           "item": 9414,
-          "name": "Oilskin Leggings"
+          "name": "Oilskin Leggings",
+          "chance": 0.312
         },
         {
           "item": 9416,
-          "name": "Grimlok's Charge"
+          "name": "Grimlok's Charge",
+          "chance": 0.326
         }
       ]
     },
@@ -213,55 +241,68 @@
       "loot": [
         {
           "item": 11118,
-          "name": "Archaedic Stone"
+          "name": "Archaedic Stone",
+          "chance": 0.947
         },
         {
           "item": 9413,
-          "name": "The Rockpounder"
+          "name": "The Rockpounder",
+          "chance": 0.287
         },
         {
           "item": 9418,
-          "name": "Stoneslayer"
+          "name": "Stoneslayer",
+          "chance": 0.332
         },
         {
           "item": 274432,
-          "name": "Stone Keeper Spire"
+          "name": "Stone Keeper Spire",
+          "chance": 0.322
         },
         {
           "item": 252868,
-          "name": "Pattern: Skulker's Leather Gauntlets"
+          "name": "Pattern: Skulker's Leather Gauntlets",
+          "chance": 0.0034
         },
         {
           "item": 254100,
-          "name": "Pattern: Fiery Gloves"
+          "name": "Pattern: Fiery Gloves",
+          "chance": 0.0067
         },
         {
           "item": 252871,
-          "name": "Pattern: Mender's Leather Gauntlets"
+          "name": "Pattern: Mender's Leather Gauntlets",
+          "chance": 0.0017
         },
         {
           "item": 254096,
-          "name": "Pattern: Gilded Gloves"
+          "name": "Pattern: Gilded Gloves",
+          "chance": 0.0067
         },
         {
           "item": 254106,
-          "name": "Pattern: Radiant Gloves"
+          "name": "Pattern: Radiant Gloves",
+          "chance": 0.0059
         },
         {
           "item": 252870,
-          "name": "Pattern: Skycaller's Leather Gauntlets"
+          "name": "Pattern: Skycaller's Leather Gauntlets",
+          "chance": 0.0067
         },
         {
           "item": 252919,
-          "name": "Pattern: Skycaller's Mail Gauntlets"
+          "name": "Pattern: Skycaller's Mail Gauntlets",
+          "chance": 0.0025
         },
         {
           "item": 251404,
-          "name": "Plans: Sentinel's Gloves"
+          "name": "Plans: Sentinel's Gloves",
+          "chance": 0.0051
         },
         {
           "item": 251405,
-          "name": "Plans: Warder's Gloves"
+          "name": "Plans: Warder's Gloves",
+          "chance": 0.0025
         }
       ]
     }

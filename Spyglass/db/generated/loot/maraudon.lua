@@ -4,102 +4,102 @@ local Data = Spyglass.Data
 -- Maraudon (map 349)
 
 Data:AddBossLoot(422, { -- Noxxion
-    { 17744 }, -- Heart of Noxxion
-    { 17746 }, -- Noxxion's Shackles
-    { 17745 }, -- Noxious Shooter
-    { 254100 }, -- Pattern: Fiery Gloves
-    { 254096 }, -- Pattern: Gilded Gloves
-    { 252918 }, -- Pattern: Stalker's Mail Gauntlets
-    { 251405 }, -- Plans: Warder's Gloves
+    { 17744, 0.32 }, -- Heart of Noxxion
+    { 17746, 0.294 }, -- Noxxion's Shackles
+    { 17745, 0.308 }, -- Noxious Shooter
+    { 254100, 0.0054 }, -- Pattern: Fiery Gloves
+    { 254096, 0.015 }, -- Pattern: Gilded Gloves
+    { 252918, 0.0027 }, -- Pattern: Stalker's Mail Gauntlets
+    { 251405, 0.0067 }, -- Plans: Warder's Gloves
 })
 
 Data:AddBossLoot(423, { -- Razorlash
-    { 17748 }, -- Vinerot Sandals
-    { 17749 }, -- Phytoskin Spaulders
-    { 17750 }, -- Chloromesh Girdle
-    { 17751 }, -- Brusslehide Leggings
-    { 252869 }, -- Pattern: Warden's Leather Gauntlets
-    { 254100 }, -- Pattern: Fiery Gloves
-    { 254096 }, -- Pattern: Gilded Gloves
-    { 252871 }, -- Pattern: Mender's Leather Gauntlets
-    { 251407 }, -- Plans: Justicar's Gloves
+    { 17748, 0.251 }, -- Vinerot Sandals
+    { 17749, 0.242 }, -- Phytoskin Spaulders
+    { 17750, 0.239 }, -- Chloromesh Girdle
+    { 17751, 0.249 }, -- Brusslehide Leggings
+    { 252869, 0.0042 }, -- Pattern: Warden's Leather Gauntlets
+    { 254100, 0.0056 }, -- Pattern: Fiery Gloves
+    { 254096, 0.0042 }, -- Pattern: Gilded Gloves
+    { 252871, 0.0042 }, -- Pattern: Mender's Leather Gauntlets
+    { 251407, 0.0028 }, -- Plans: Justicar's Gloves
 })
 
 Data:AddBossLoot(427, { -- Tinkerer Gizlock
-    { 17717 }, -- Megashot Rifle
-    { 17718 }, -- Gizlock's Hypertech Buckler
-    { 17719 }, -- Inventor's Focal Sword
-    { 254098 }, -- Pattern: Frothing Gloves
-    { 252867 }, -- Pattern: Prowler's Leather Gauntlets
-    { 254106 }, -- Pattern: Radiant Gloves
-    { 252920 }, -- Pattern: Skirmisher's Mail Gauntlets
-    { 252868 }, -- Pattern: Skulker's Leather Gauntlets
-    { 251404 }, -- Plans: Sentinel's Gloves
+    { 17717, 0.293 }, -- Megashot Rifle
+    { 17718, 0.299 }, -- Gizlock's Hypertech Buckler
+    { 17719, 0.379 }, -- Inventor's Focal Sword
+    { 254098, 0.002 }, -- Pattern: Frothing Gloves
+    { 252867, 0.004 }, -- Pattern: Prowler's Leather Gauntlets
+    { 254106, 0.008 }, -- Pattern: Radiant Gloves
+    { 252920, 0.004 }, -- Pattern: Skirmisher's Mail Gauntlets
+    { 252868, 0.004 }, -- Pattern: Skulker's Leather Gauntlets
+    { 251404, 0.002 }, -- Plans: Sentinel's Gloves
 })
 
 Data:AddBossLoot(424, { -- Lord Vyletongue
-    { 17752 }, -- Satyr's Lash
-    { 17754 }, -- Infernal Trickster Leggings
-    { 17755 }, -- Satyrmane Sash
-    { 275864 }, -- Putridus Wall
+    { 17752, 0.25 }, -- Satyr's Lash
+    { 17754, 0.241 }, -- Infernal Trickster Leggings
+    { 17755, 0.22 }, -- Satyrmane Sash
+    { 275864, 0.213 }, -- Putridus Wall
 })
 
 Data:AddBossLoot(425, { -- Celebras the Cursed
-    { 17738 }, -- Claw of Celebras
-    { 17739 }, -- Grovekeeper's Drape
-    { 17740 }, -- Soothsayer's Headdress
-    { 251405 }, -- Plans: Warder's Gloves
-    { 254098 }, -- Pattern: Frothing Gloves
-    { 252920 }, -- Pattern: Skirmisher's Mail Gauntlets
-    { 252868 }, -- Pattern: Skulker's Leather Gauntlets
+    { 17738, 0.344 }, -- Claw of Celebras
+    { 17739, 0.289 }, -- Grovekeeper's Drape
+    { 17740, 0.351 }, -- Soothsayer's Headdress
+    { 251405, 0.0017 }, -- Plans: Warder's Gloves
+    { 254098, 0.0017 }, -- Pattern: Frothing Gloves
+    { 252920, 0.0034 }, -- Pattern: Skirmisher's Mail Gauntlets
+    { 252868, 0.0034 }, -- Pattern: Skulker's Leather Gauntlets
 })
 
 Data:AddBossLoot(426, { -- Landslide
-    { 17943 }, -- Fist of Stone
-    { 17736 }, -- Rockgrip Gauntlets
-    { 17737 }, -- Cloud Stone
-    { 17734 }, -- Helm of the Mountain
-    { 252868 }, -- Pattern: Skulker's Leather Gauntlets
-    { 252918 }, -- Pattern: Stalker's Mail Gauntlets
-    { 254098 }, -- Pattern: Frothing Gloves
-    { 252867 }, -- Pattern: Prowler's Leather Gauntlets
-    { 254106 }, -- Pattern: Radiant Gloves
-    { 252920 }, -- Pattern: Skirmisher's Mail Gauntlets
-    { 252919 }, -- Pattern: Skycaller's Mail Gauntlets
-    { 251404 }, -- Plans: Sentinel's Gloves
+    { 17943, 0.232 }, -- Fist of Stone
+    { 17736, 0.219 }, -- Rockgrip Gauntlets
+    { 17737, 0.255 }, -- Cloud Stone
+    { 17734, 0.259 }, -- Helm of the Mountain
+    { 252868, 0.004 }, -- Pattern: Skulker's Leather Gauntlets
+    { 252918, 0.004 }, -- Pattern: Stalker's Mail Gauntlets
+    { 254098, 0.004 }, -- Pattern: Frothing Gloves
+    { 252867, 0.0013 }, -- Pattern: Prowler's Leather Gauntlets
+    { 254106, 0.0053 }, -- Pattern: Radiant Gloves
+    { 252920, 0.004 }, -- Pattern: Skirmisher's Mail Gauntlets
+    { 252919, 0.004 }, -- Pattern: Skycaller's Mail Gauntlets
+    { 251404, 0.0053 }, -- Plans: Sentinel's Gloves
 })
 
 Data:AddBossLoot(428, { -- Rotgrip
-    { 17732 }, -- Rotgrip Mantle
-    { 17728 }, -- Albino Crocscale Boots
-    { 17730 }, -- Gatorbite Axe
+    { 17732, 0.308 }, -- Rotgrip Mantle
+    { 17728, 0.312 }, -- Albino Crocscale Boots
+    { 17730, 0.341 }, -- Gatorbite Axe
     { 252918 }, -- Pattern: Stalker's Mail Gauntlets
-    { 254102 }, -- Pattern: Black Gloves
-    { 254100 }, -- Pattern: Fiery Gloves
-    { 252919 }, -- Pattern: Skycaller's Mail Gauntlets
+    { 254102, 0.003 }, -- Pattern: Black Gloves
+    { 254100, 0.0075 }, -- Pattern: Fiery Gloves
+    { 252919, 0.01 }, -- Pattern: Skycaller's Mail Gauntlets
 })
 
 Data:AddBossLoot(429, { -- Princess Theradras
-    { 17713 }, -- Blackstone Ring
-    { 17714 }, -- Bracers of the Stone Princess
-    { 17707 }, -- Gemshard Heart
-    { 17715 }, -- Eye of Theradras
-    { 17766 }, -- Princess Theradras' Scepter
-    { 17710 }, -- Charstone Dirk
-    { 17711 }, -- Elemental Rockridge Leggings
-    { 17780 }, -- Blade of Eternal Darkness
-    { 254100 }, -- Pattern: Fiery Gloves
-    { 252868 }, -- Pattern: Skulker's Leather Gauntlets
-    { 252869 }, -- Pattern: Warden's Leather Gauntlets
-    { 251407 }, -- Plans: Justicar's Gloves
-    { 251403 }, -- Plans: Officer's Gloves
+    { 17713, 0.468 }, -- Blackstone Ring
+    { 17714, 0.46 }, -- Bracers of the Stone Princess
+    { 17707, 0.209 }, -- Gemshard Heart
+    { 17715, 0.203 }, -- Eye of Theradras
+    { 17766, 0.171 }, -- Princess Theradras' Scepter
+    { 17710, 0.173 }, -- Charstone Dirk
+    { 17711, 0.194 }, -- Elemental Rockridge Leggings
+    { 17780, 0.0012 }, -- Blade of Eternal Darkness
+    { 254100, 0.0092 }, -- Pattern: Fiery Gloves
+    { 252868, 0.0069 }, -- Pattern: Skulker's Leather Gauntlets
+    { 252869, 0.0069 }, -- Pattern: Warden's Leather Gauntlets
+    { 251407, 0.0046 }, -- Plans: Justicar's Gloves
+    { 251403, 0.0046 }, -- Plans: Officer's Gloves
 })
 
 Data:AddBossLoot(-12237, { -- Meshlok the Harvester
-    { 17767 }, -- Bloomsprout Headpiece
-    { 17741 }, -- Nature's Embrace
-    { 17742 }, -- Fungus Shroud Armor
-    { 251407 }, -- Plans: Justicar's Gloves
+    { 17767, 0.269 }, -- Bloomsprout Headpiece
+    { 17741, 0.388 }, -- Nature's Embrace
+    { 17742, 0.313 }, -- Fungus Shroud Armor
+    { 251407, 0.0075 }, -- Plans: Justicar's Gloves
 })
 
 Data:AddQuests(349, {

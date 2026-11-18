@@ -4,36 +4,36 @@ local Data = Spyglass.Data
 -- Alcaz Prison (map 2994)
 
 Data:AddBossLoot(3403, { -- Overseer Wrex
-    { 276734 }, -- Wrex's Pinky Ring
-    { 276733 }, -- Grips of Control
-    { 276732 }, -- Alcaz Willcrusher
+    { 276734, 0.329 }, -- Wrex's Pinky Ring
+    { 276733, 0.318 }, -- Grips of Control
+    { 276732, 0.337 }, -- Alcaz Willcrusher
 })
 
 Data:AddBossLoot(3409, { -- Blazeroar
-    { 276744 }, -- Zarla's Snack Pouch
-    { 276745 }, -- Beastbond Robe
-    { 276746 }, -- Defias Enforcer's Legguards
+    { 276744, 0.351 }, -- Zarla's Snack Pouch
+    { 276745, 0.286 }, -- Beastbond Robe
+    { 276746, 0.338 }, -- Defias Enforcer's Legguards
     { 276890 }, -- Zarla's Journal
 })
 
 Data:AddBossLoot(3410, { -- Tidemistress Ca'zass
-    { 276736 }, -- Seascale Bracers
-    { 276735 }, -- Tidesong Wand
-    { 276737 }, -- Cloak of the Tidemistress
+    { 276736, 0.318 }, -- Seascale Bracers
+    { 276735, 0.305 }, -- Tidesong Wand
+    { 276737, 0.316 }, -- Cloak of the Tidemistress
     { 273883 }, -- Ca'zass's Head
 })
 
 Data:AddBossLoot(3415, { -- The Questioner
-    { 276742 }, -- Girdle of Extracted Answers
-    { 276743 }, -- Fingerbreaker Stamp
-    { 276741 }, -- Defias Enforcer's Shoulderpads
+    { 276742, 0.305 }, -- Girdle of Extracted Answers
+    { 276743, 0.361 }, -- Fingerbreaker Stamp
+    { 276741, 0.319 }, -- Defias Enforcer's Shoulderpads
     { 274029 }, -- Ornate Shackle Key
 })
 
 Data:AddBossLoot(3418, { -- Katerina the Cleaner
-    { 276739 }, -- Cutthroat Chestguard
-    { 276738 }, -- Katerina's Shanker
-    { 276740 }, -- Sentimental Locket
+    { 276739, 0.307 }, -- Cutthroat Chestguard
+    { 276738, 0.335 }, -- Katerina's Shanker
+    { 276740, 0.353 }, -- Sentimental Locket
 })
 
 Data:AddTrashLoot(2994, {

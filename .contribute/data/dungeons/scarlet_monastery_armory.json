@@ -20,103 +20,128 @@
       "loot": [
         {
           "item": 7718,
-          "name": "Herod's Shoulder"
+          "name": "Herod's Shoulder",
+          "chance": 0.241
         },
         {
           "item": 7719,
-          "name": "Raging Berserker's Helm"
+          "name": "Raging Berserker's Helm",
+          "chance": 0.239
         },
         {
           "item": 7717,
-          "name": "Ravager"
+          "name": "Ravager",
+          "chance": 0.252
         },
         {
           "item": 10330,
-          "name": "Scarlet Leggings"
+          "name": "Scarlet Leggings",
+          "chance": 0.118
         },
         {
           "item": 274295,
-          "name": "Band of Crimson Light"
+          "name": "Band of Crimson Light",
+          "chance": 0.25
         },
         {
           "item": 251398,
-          "name": "Plans: Officer's Boots"
+          "name": "Plans: Officer's Boots",
+          "chance": 0.0077
         },
         {
           "item": 251399,
-          "name": "Plans: Sentinel's Boots"
+          "name": "Plans: Sentinel's Boots",
+          "chance": 0.0052
         },
         {
           "item": 251400,
-          "name": "Plans: Warder's Boots"
+          "name": "Plans: Warder's Boots",
+          "chance": 0.0037
         },
         {
           "item": 251401,
-          "name": "Plans: Prefect's Boots"
+          "name": "Plans: Prefect's Boots",
+          "chance": 0.0037
         },
         {
           "item": 251402,
-          "name": "Plans: Justicar's Boots"
+          "name": "Plans: Justicar's Boots",
+          "chance": 0.0033
         },
         {
           "item": 252843,
-          "name": "Pattern: Prowler's Leather Shoes"
+          "name": "Pattern: Prowler's Leather Shoes",
+          "chance": 0.0022
         },
         {
           "item": 252844,
-          "name": "Pattern: Skulker's Leather Shoes"
+          "name": "Pattern: Skulker's Leather Shoes",
+          "chance": 0.0055
         },
         {
           "item": 252845,
-          "name": "Pattern: Warden's Leather Shoes"
+          "name": "Pattern: Warden's Leather Shoes",
+          "chance": 0.0048
         },
         {
           "item": 252846,
-          "name": "Pattern: Skycaller's Leather Shoes"
+          "name": "Pattern: Skycaller's Leather Shoes",
+          "chance": 0.0063
         },
         {
           "item": 252847,
-          "name": "Pattern: Mender's Leather Shoes"
+          "name": "Pattern: Mender's Leather Shoes",
+          "chance": 0.0033
         },
         {
           "item": 252896,
-          "name": "Pattern: Stalker's Mail Boots"
+          "name": "Pattern: Stalker's Mail Boots",
+          "chance": 0.0037
         },
         {
           "item": 252897,
-          "name": "Pattern: Skycaller's Mail Boots"
+          "name": "Pattern: Skycaller's Mail Boots",
+          "chance": 0.0029
         },
         {
           "item": 252898,
-          "name": "Pattern: Skirmisher's Mail Boots"
+          "name": "Pattern: Skirmisher's Mail Boots",
+          "chance": 0.0026
         },
         {
           "item": 252899,
-          "name": "Pattern: Mender's Mail Boots"
+          "name": "Pattern: Mender's Mail Boots",
+          "chance": 0.0041
         },
         {
           "item": 254038,
-          "name": "Pattern: Gilded Cord"
+          "name": "Pattern: Gilded Cord",
+          "chance": 0.0011
         },
         {
           "item": 254040,
-          "name": "Pattern: Frothing Cord"
+          "name": "Pattern: Frothing Cord",
+          "chance": 0.0033
         },
         {
           "item": 254042,
-          "name": "Pattern: Fiery Cord"
+          "name": "Pattern: Fiery Cord",
+          "chance": 0.0026
         },
         {
           "item": 254044,
-          "name": "Pattern: Black Cord"
+          "name": "Pattern: Black Cord",
+          "chance": 0.0099
         },
         {
           "item": 254046,
-          "name": "Pattern: Golden Cord"
+          "name": "Pattern: Golden Cord",
+          "chance": 0.0044
         },
         {
           "item": 254048,
-          "name": "Pattern: Radiant Cord"
+          "name": "Pattern: Radiant Cord",
+          "chance": 0.0037
         }
       ]
     }

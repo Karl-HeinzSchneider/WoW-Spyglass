@@ -4,28 +4,28 @@ local Data = Spyglass.Data
 -- Scarlet Monastery: Cathedral (map 189)
 
 Data:AddBossLoot(449, { -- High Inquisitor Fairbanks
-    { 19507 }, -- Inquisitor's Shawl
-    { 19508 }, -- Branded Leather Bracers
-    { 19509 }, -- Dusty Mail Boots
-    { 251398 }, -- Plans: Officer's Boots
-    { 251399 }, -- Plans: Sentinel's Boots
-    { 251400 }, -- Plans: Warder's Boots
-    { 251401 }, -- Plans: Prefect's Boots
-    { 251402 }, -- Plans: Justicar's Boots
-    { 252843 }, -- Pattern: Prowler's Leather Shoes
-    { 252844 }, -- Pattern: Skulker's Leather Shoes
-    { 252845 }, -- Pattern: Warden's Leather Shoes
-    { 252846 }, -- Pattern: Skycaller's Leather Shoes
-    { 252847 }, -- Pattern: Mender's Leather Shoes
-    { 252896 }, -- Pattern: Stalker's Mail Boots
-    { 252897 }, -- Pattern: Skycaller's Mail Boots
-    { 252898 }, -- Pattern: Skirmisher's Mail Boots
-    { 252899 }, -- Pattern: Mender's Mail Boots
-    { 254038 }, -- Pattern: Gilded Cord
-    { 254040 }, -- Pattern: Frothing Cord
-    { 254042 }, -- Pattern: Fiery Cord
-    { 254046 }, -- Pattern: Golden Cord
-    { 254048 }, -- Pattern: Radiant Cord
+    { 19507, 0.304 }, -- Inquisitor's Shawl
+    { 19508, 0.333 }, -- Branded Leather Bracers
+    { 19509, 0.356 }, -- Dusty Mail Boots
+    { 251398, 0.0029 }, -- Plans: Officer's Boots
+    { 251399, 0.0043 }, -- Plans: Sentinel's Boots
+    { 251400, 0.0072 }, -- Plans: Warder's Boots
+    { 251401, 0.0036 }, -- Plans: Prefect's Boots
+    { 251402, 0.0062 }, -- Plans: Justicar's Boots
+    { 252843, 0.0033 }, -- Pattern: Prowler's Leather Shoes
+    { 252844, 0.0065 }, -- Pattern: Skulker's Leather Shoes
+    { 252845, 0.0062 }, -- Pattern: Warden's Leather Shoes
+    { 252846, 0.0043 }, -- Pattern: Skycaller's Leather Shoes
+    { 252847, 0.0062 }, -- Pattern: Mender's Leather Shoes
+    { 252896, 0.0054 }, -- Pattern: Stalker's Mail Boots
+    { 252897, 0.0036 }, -- Pattern: Skycaller's Mail Boots
+    { 252898, 0.0058 }, -- Pattern: Skirmisher's Mail Boots
+    { 252899, 0.0072 }, -- Pattern: Mender's Mail Boots
+    { 254038, 0.0043 }, -- Pattern: Gilded Cord
+    { 254040, 0.0043 }, -- Pattern: Frothing Cord
+    { 254042, 0.0043 }, -- Pattern: Fiery Cord
+    { 254046, 0.004 }, -- Pattern: Golden Cord
+    { 254048, 0.0033 }, -- Pattern: Radiant Cord
 })
 
 Data:AddBossLoot(450, { -- High Inquisitor Whitemane
@@ -33,54 +33,54 @@ Data:AddBossLoot(450, { -- High Inquisitor Whitemane
     { 7724 }, -- Gauntlets of Divinity
     { 7723 }, -- Mograine's Might
     { 10330 }, -- Scarlet Leggings
-    { 7722 }, -- Triune Amulet
-    { 7720 }, -- Whitemane's Chapeau
-    { 7721 }, -- Hand of Righteousness
-    { 251398 }, -- Plans: Officer's Boots
-    { 251399 }, -- Plans: Sentinel's Boots
-    { 251400 }, -- Plans: Warder's Boots
-    { 251401 }, -- Plans: Prefect's Boots
-    { 251402 }, -- Plans: Justicar's Boots
-    { 252843 }, -- Pattern: Prowler's Leather Shoes
-    { 252844 }, -- Pattern: Skulker's Leather Shoes
-    { 252845 }, -- Pattern: Warden's Leather Shoes
-    { 252846 }, -- Pattern: Skycaller's Leather Shoes
-    { 252847 }, -- Pattern: Mender's Leather Shoes
-    { 252896 }, -- Pattern: Stalker's Mail Boots
-    { 252898 }, -- Pattern: Skirmisher's Mail Boots
-    { 252899 }, -- Pattern: Mender's Mail Boots
-    { 254040 }, -- Pattern: Frothing Cord
-    { 254042 }, -- Pattern: Fiery Cord
-    { 254044 }, -- Pattern: Black Cord
-    { 254046 }, -- Pattern: Golden Cord
-    { 254048 }, -- Pattern: Radiant Cord
+    { 7722, 0.333 }, -- Triune Amulet
+    { 7720, 0.326 }, -- Whitemane's Chapeau
+    { 7721, 0.318 }, -- Hand of Righteousness
+    { 251398, 0.0041 }, -- Plans: Officer's Boots
+    { 251399, 0.005 }, -- Plans: Sentinel's Boots
+    { 251400, 0.007 }, -- Plans: Warder's Boots
+    { 251401, 0.0046 }, -- Plans: Prefect's Boots
+    { 251402, 0.0041 }, -- Plans: Justicar's Boots
+    { 252843, 0.0066 }, -- Pattern: Prowler's Leather Shoes
+    { 252844, 0.0033 }, -- Pattern: Skulker's Leather Shoes
+    { 252845, 0.0041 }, -- Pattern: Warden's Leather Shoes
+    { 252846, 0.0054 }, -- Pattern: Skycaller's Leather Shoes
+    { 252847, 0.007 }, -- Pattern: Mender's Leather Shoes
+    { 252896, 0.0062 }, -- Pattern: Stalker's Mail Boots
+    { 252898, 0.0058 }, -- Pattern: Skirmisher's Mail Boots
+    { 252899, 0.0041 }, -- Pattern: Mender's Mail Boots
+    { 254040, 0.0021 }, -- Pattern: Frothing Cord
+    { 254042, 0.0054 }, -- Pattern: Fiery Cord
+    { 254044, 0.0025 }, -- Pattern: Black Cord
+    { 254046, 0.0033 }, -- Pattern: Golden Cord
+    { 254048, 0.007 }, -- Pattern: Radiant Cord
 })
 
 Data:AddBossLoot(-3976, { -- Scarlet Commander Mograine
-    { 7726 }, -- Aegis of the Scarlet Commander
-    { 7724 }, -- Gauntlets of Divinity
-    { 7723 }, -- Mograine's Might
-    { 10330 }, -- Scarlet Leggings
-    { 251398 }, -- Plans: Officer's Boots
-    { 251399 }, -- Plans: Sentinel's Boots
-    { 251400 }, -- Plans: Warder's Boots
-    { 251401 }, -- Plans: Prefect's Boots
-    { 251402 }, -- Plans: Justicar's Boots
-    { 252843 }, -- Pattern: Prowler's Leather Shoes
-    { 252844 }, -- Pattern: Skulker's Leather Shoes
-    { 252845 }, -- Pattern: Warden's Leather Shoes
-    { 252846 }, -- Pattern: Skycaller's Leather Shoes
-    { 252847 }, -- Pattern: Mender's Leather Shoes
-    { 252896 }, -- Pattern: Stalker's Mail Boots
-    { 252897 }, -- Pattern: Skycaller's Mail Boots
-    { 252898 }, -- Pattern: Skirmisher's Mail Boots
-    { 252899 }, -- Pattern: Mender's Mail Boots
-    { 254038 }, -- Pattern: Gilded Cord
-    { 254040 }, -- Pattern: Frothing Cord
-    { 254042 }, -- Pattern: Fiery Cord
-    { 254044 }, -- Pattern: Black Cord
-    { 254046 }, -- Pattern: Golden Cord
-    { 254048 }, -- Pattern: Radiant Cord
+    { 7726, 0.244 }, -- Aegis of the Scarlet Commander
+    { 7724, 0.251 }, -- Gauntlets of Divinity
+    { 7723, 0.262 }, -- Mograine's Might
+    { 10330, 0.23 }, -- Scarlet Leggings
+    { 251398, 0.0056 }, -- Plans: Officer's Boots
+    { 251399, 0.0033 }, -- Plans: Sentinel's Boots
+    { 251400, 0.0052 }, -- Plans: Warder's Boots
+    { 251401, 0.0044 }, -- Plans: Prefect's Boots
+    { 251402, 0.0044 }, -- Plans: Justicar's Boots
+    { 252843, 0.003 }, -- Pattern: Prowler's Leather Shoes
+    { 252844, 0.0052 }, -- Pattern: Skulker's Leather Shoes
+    { 252845, 0.0048 }, -- Pattern: Warden's Leather Shoes
+    { 252846, 0.0056 }, -- Pattern: Skycaller's Leather Shoes
+    { 252847, 0.0074 }, -- Pattern: Mender's Leather Shoes
+    { 252896, 0.007 }, -- Pattern: Stalker's Mail Boots
+    { 252897, 0.0044 }, -- Pattern: Skycaller's Mail Boots
+    { 252898, 0.0048 }, -- Pattern: Skirmisher's Mail Boots
+    { 252899, 0.0026 }, -- Pattern: Mender's Mail Boots
+    { 254038, 0.0041 }, -- Pattern: Gilded Cord
+    { 254040, 0.003 }, -- Pattern: Frothing Cord
+    { 254042, 0.0052 }, -- Pattern: Fiery Cord
+    { 254044, 0.0033 }, -- Pattern: Black Cord
+    { 254046, 0.007 }, -- Pattern: Golden Cord
+    { 254048, 0.0041 }, -- Pattern: Radiant Cord
 })
 
 Data:AddTrashLoot(18904, {

@@ -4,46 +4,46 @@ local Data = Spyglass.Data
 -- Scholomance (map 289)
 
 Data:AddBossLoot(2805, { -- Kirtonos
-    { 16734 }, -- Boots of Valor
-    { 13960 }, -- Heart of the Fiend
-    { 13967 }, -- Windreaver Greaves
-    { 13969 }, -- Loomguard Armbraces
-    { 14024 }, -- Frightalon
-    { 13957 }, -- Gargoyle Slashers
-    { 13955 }, -- Stoneform Shoulders
-    { 13983 }, -- Gravestone War Axe
-    { 13956 }, -- Clutch of Andros
+    { 16734, 0.2 }, -- Boots of Valor
+    { 13960, 0.232 }, -- Heart of the Fiend
+    { 13967, 0.184 }, -- Windreaver Greaves
+    { 13969, 0.184 }, -- Loomguard Armbraces
+    { 14024, 0.268 }, -- Frightalon
+    { 13957, 0.164 }, -- Gargoyle Slashers
+    { 13955, 0.24 }, -- Stoneform Shoulders
+    { 13983, 0.232 }, -- Gravestone War Axe
+    { 13956, 0.196 }, -- Clutch of Andros
 })
 
 Data:AddBossLoot(2804, { -- Jandice Barov
-    { 16701 }, -- Dreadmist Mantle
-    { 14545 }, -- Ghostloom Leggings
-    { 14541 }, -- Barovian Family Sword
-    { 14548 }, -- Royal Cap Spaulders
-    { 18690 }, -- Wraithplate Leggings
-    { 18689 }, -- Phantasmal Cloak
-    { 22394 }, -- Staff of Metanoia
+    { 16701, 0.2 }, -- Dreadmist Mantle
+    { 14545, 0.125 }, -- Ghostloom Leggings
+    { 14541, 0.12 }, -- Barovian Family Sword
+    { 14548, 0.095 }, -- Royal Cap Spaulders
+    { 18690, 0.1 }, -- Wraithplate Leggings
+    { 18689, 0.115 }, -- Phantasmal Cloak
+    { 22394, 0.14 }, -- Staff of Metanoia
 })
 
 Data:AddBossLoot(2811, { -- Rattlegore
-    { 16711 }, -- Shadowcraft Boots
-    { 14528 }, -- Rattlecage Buckler
-    { 14531 }, -- Frightskull Shaft
-    { 14537 }, -- Corpselight Greaves
-    { 14538 }, -- Deadwalker Mantle
-    { 14539 }, -- Bone Ring Helm
-    { 18686 }, -- Bone Golem Shoulders
+    { 16711, 0.161 }, -- Shadowcraft Boots
+    { 14528, 0.11 }, -- Rattlecage Buckler
+    { 14531, 0.138 }, -- Frightskull Shaft
+    { 14537, 0.126 }, -- Corpselight Greaves
+    { 14538, 0.165 }, -- Deadwalker Mantle
+    { 14539, 0.11 }, -- Bone Ring Helm
+    { 18686, 0.134 }, -- Bone Golem Shoulders
 })
 
 Data:AddBossLoot(2809, { -- Marduk Blackpool
-    { 14576 }, -- Ebon Hilt of Marduk
-    { 18692 }, -- Death Knight Sabatons
+    { 14576, 0.078 }, -- Ebon Hilt of Marduk
+    { 18692, 0.044 }, -- Death Knight Sabatons
 })
 
 Data:AddBossLoot(2813, { -- Vectus
-    { 14577 }, -- Skullsmoke Pants
-    { 18691 }, -- Dark Advisor's Pendant
-    { 273121 }, -- Blueprint: Sewing Machine
+    { 14577, 0.054 }, -- Skullsmoke Pants
+    { 18691, 0.043 }, -- Dark Advisor's Pendant
+    { 273121, 0.054 }, -- Blueprint: Sewing Machine
 })
 
 Data:AddBossLoot(3055, { -- Kormok
@@ -57,237 +57,237 @@ Data:AddBossLoot(3055, { -- Kormok
 })
 
 Data:AddBossLoot(2810, { -- Ras Frostwhisperer
-    { 16689 }, -- Magister's Mantle
-    { 14487 }, -- Bonechill Hammer
-    { 14502 }, -- Frostbite Girdle
-    { 18694 }, -- Shadowy Mail Greaves
-    { 18696 }, -- Intricately Runed Shield
-    { 13952 }, -- Iceblade Hacker
-    { 14340 }, -- Freezing Lich Robes
-    { 14522 }, -- Maelstrom Leggings
-    { 14525 }, -- Boneclenched Gauntlets
-    { 18693 }, -- Shivery Handwraps
-    { 13521 }, -- Recipe: Flask of Supreme Power
-    { 273112 }, -- Blueprint: Alchemy Laboratory
-    { 13314 }, -- Alanna's Embrace
-    { 14503 }, -- Death's Clutch
-    { 18695 }, -- Spellbound Tome
+    { 16689, 0.193 }, -- Magister's Mantle
+    { 14487, 0.189 }, -- Bonechill Hammer
+    { 14502, 0.14 }, -- Frostbite Girdle
+    { 18694, 0.123 }, -- Shadowy Mail Greaves
+    { 18696, 0.168 }, -- Intricately Runed Shield
+    { 13952, 0.158 }, -- Iceblade Hacker
+    { 14340, 0.133 }, -- Freezing Lich Robes
+    { 14522, 0.133 }, -- Maelstrom Leggings
+    { 14525, 0.133 }, -- Boneclenched Gauntlets
+    { 18693, 0.158 }, -- Shivery Handwraps
+    { 13521, 0.046 }, -- Recipe: Flask of Supreme Power
+    { 273112, 0.025 }, -- Blueprint: Alchemy Laboratory
+    { 13314, 0.042 }, -- Alanna's Embrace
+    { 14503, 0.165 }, -- Death's Clutch
+    { 18695, 0.179 }, -- Spellbound Tome
 })
 
 Data:AddBossLoot(2803, { -- Instructor Malicia
-    { 16710 }, -- Shadowcraft Bracers
-    { 23201 }, -- Libram of Divinity
-    { 23200 }, -- Totem of Sustaining
-    { 14614 }, -- Bloodmail Belt
-    { 14616 }, -- Bloodmail Boots
-    { 14615 }, -- Bloodmail Gauntlets
-    { 14611 }, -- Bloodmail Hauberk
-    { 14612 }, -- Bloodmail Legguards
-    { 14637 }, -- Cadaverous Armor
-    { 14636 }, -- Cadaverous Belt
-    { 14640 }, -- Cadaverous Gloves
-    { 14638 }, -- Cadaverous Leggings
-    { 14641 }, -- Cadaverous Walkers
-    { 14624 }, -- Deathbone Chestplate
-    { 14622 }, -- Deathbone Gauntlets
-    { 14620 }, -- Deathbone Girdle
-    { 14623 }, -- Deathbone Legguards
-    { 14621 }, -- Deathbone Sabatons
-    { 18684 }, -- Dimly Opalescent Ring
-    { 18682 }, -- Ghoul Skin Leggings
-    { 18683 }, -- Hammer of the Vesper
-    { 14631 }, -- Necropile Boots
-    { 14629 }, -- Necropile Cuffs
-    { 14632 }, -- Necropile Leggings
-    { 14633 }, -- Necropile Mantle
-    { 14626 }, -- Necropile Robe
-    { 18680 }, -- Ancient Bone Bow
-    { 18681 }, -- Burial Shawl
+    { 16710, 0.04 }, -- Shadowcraft Bracers
+    { 23201, 0.012 }, -- Libram of Divinity
+    { 23200, 0.032 }, -- Totem of Sustaining
+    { 14614, 0.012 }, -- Bloodmail Belt
+    { 14616, 0.0079 }, -- Bloodmail Boots
+    { 14615, 0.0079 }, -- Bloodmail Gauntlets
+    { 14611, 0.016 }, -- Bloodmail Hauberk
+    { 14612, 0.004 }, -- Bloodmail Legguards
+    { 14637, 0.0079 }, -- Cadaverous Armor
+    { 14636, 0.012 }, -- Cadaverous Belt
+    { 14640, 0.004 }, -- Cadaverous Gloves
+    { 14638, 0.004 }, -- Cadaverous Leggings
+    { 14641, 0.012 }, -- Cadaverous Walkers
+    { 14624, 0.0079 }, -- Deathbone Chestplate
+    { 14622, 0.0079 }, -- Deathbone Gauntlets
+    { 14620, 0.0079 }, -- Deathbone Girdle
+    { 14623, 0.0079 }, -- Deathbone Legguards
+    { 14621, 0.004 }, -- Deathbone Sabatons
+    { 18684, 0.004 }, -- Dimly Opalescent Ring
+    { 18682, 0.012 }, -- Ghoul Skin Leggings
+    { 18683, 0.004 }, -- Hammer of the Vesper
+    { 14631, 0.0079 }, -- Necropile Boots
+    { 14629, 0.028 }, -- Necropile Cuffs
+    { 14632, 0.016 }, -- Necropile Leggings
+    { 14633, 0.004 }, -- Necropile Mantle
+    { 14626, 0.012 }, -- Necropile Robe
+    { 18680, 0.004 }, -- Ancient Bone Bow
+    { 18681, 0.016 }, -- Burial Shawl
 })
 
 Data:AddBossLoot(2802, { -- Doctor Theolen Krastinov
-    { 16684 }, -- Magister's Gloves
-    { 14617 }, -- Sawbones Shirt
-    { 23201 }, -- Libram of Divinity
-    { 23200 }, -- Totem of Sustaining
-    { 14614 }, -- Bloodmail Belt
-    { 14616 }, -- Bloodmail Boots
-    { 14615 }, -- Bloodmail Gauntlets
-    { 14611 }, -- Bloodmail Hauberk
-    { 14612 }, -- Bloodmail Legguards
-    { 14637 }, -- Cadaverous Armor
-    { 14636 }, -- Cadaverous Belt
-    { 14640 }, -- Cadaverous Gloves
-    { 14638 }, -- Cadaverous Leggings
-    { 14641 }, -- Cadaverous Walkers
-    { 14624 }, -- Deathbone Chestplate
-    { 14622 }, -- Deathbone Gauntlets
-    { 14620 }, -- Deathbone Girdle
-    { 14623 }, -- Deathbone Legguards
-    { 14621 }, -- Deathbone Sabatons
-    { 18684 }, -- Dimly Opalescent Ring
-    { 18682 }, -- Ghoul Skin Leggings
-    { 18683 }, -- Hammer of the Vesper
-    { 14631 }, -- Necropile Boots
-    { 14629 }, -- Necropile Cuffs
-    { 14632 }, -- Necropile Leggings
-    { 14633 }, -- Necropile Mantle
-    { 14626 }, -- Necropile Robe
-    { 18680 }, -- Ancient Bone Bow
-    { 18681 }, -- Burial Shawl
-    { 273118 }, -- Blueprint: Plague Doctor's Laboratory
+    { 16684, 0.179 }, -- Magister's Gloves
+    { 14617, 0.014 }, -- Sawbones Shirt
+    { 23201, 0.104 }, -- Libram of Divinity
+    { 23200, 0.065 }, -- Totem of Sustaining
+    { 14614, 0.018 }, -- Bloodmail Belt
+    { 14616, 0.039 }, -- Bloodmail Boots
+    { 14615, 0.036 }, -- Bloodmail Gauntlets
+    { 14611, 0.025 }, -- Bloodmail Hauberk
+    { 14612, 0.025 }, -- Bloodmail Legguards
+    { 14637, 0.022 }, -- Cadaverous Armor
+    { 14636, 0.014 }, -- Cadaverous Belt
+    { 14640, 0.032 }, -- Cadaverous Gloves
+    { 14638, 0.039 }, -- Cadaverous Leggings
+    { 14641, 0.032 }, -- Cadaverous Walkers
+    { 14624, 0.014 }, -- Deathbone Chestplate
+    { 14622, 0.018 }, -- Deathbone Gauntlets
+    { 14620, 0.011 }, -- Deathbone Girdle
+    { 14623, 0.022 }, -- Deathbone Legguards
+    { 14621, 0.022 }, -- Deathbone Sabatons
+    { 18684, 0.025 }, -- Dimly Opalescent Ring
+    { 18682, 0.0036 }, -- Ghoul Skin Leggings
+    { 18683, 0.014 }, -- Hammer of the Vesper
+    { 14631, 0.036 }, -- Necropile Boots
+    { 14629, 0.032 }, -- Necropile Cuffs
+    { 14632, 0.025 }, -- Necropile Leggings
+    { 14633, 0.032 }, -- Necropile Mantle
+    { 14626, 0.018 }, -- Necropile Robe
+    { 18680, 0.022 }, -- Ancient Bone Bow
+    { 18681, 0.018 }, -- Burial Shawl
+    { 273118, 0.025 }, -- Blueprint: Plague Doctor's Laboratory
 })
 
 Data:AddBossLoot(2808, { -- Lorekeeper Polkelt
-    { 16705 }, -- Dreadmist Wraps
-    { 23201 }, -- Libram of Divinity
-    { 23200 }, -- Totem of Sustaining
-    { 14614 }, -- Bloodmail Belt
-    { 14616 }, -- Bloodmail Boots
-    { 14615 }, -- Bloodmail Gauntlets
-    { 14611 }, -- Bloodmail Hauberk
-    { 14612 }, -- Bloodmail Legguards
-    { 14637 }, -- Cadaverous Armor
-    { 14636 }, -- Cadaverous Belt
-    { 14640 }, -- Cadaverous Gloves
-    { 14638 }, -- Cadaverous Leggings
-    { 14641 }, -- Cadaverous Walkers
-    { 14624 }, -- Deathbone Chestplate
-    { 14622 }, -- Deathbone Gauntlets
-    { 14620 }, -- Deathbone Girdle
-    { 14623 }, -- Deathbone Legguards
-    { 14621 }, -- Deathbone Sabatons
-    { 18684 }, -- Dimly Opalescent Ring
-    { 18682 }, -- Ghoul Skin Leggings
-    { 18683 }, -- Hammer of the Vesper
-    { 14631 }, -- Necropile Boots
-    { 14629 }, -- Necropile Cuffs
-    { 14632 }, -- Necropile Leggings
-    { 14633 }, -- Necropile Mantle
-    { 14626 }, -- Necropile Robe
-    { 18680 }, -- Ancient Bone Bow
-    { 18681 }, -- Burial Shawl
+    { 16705, 0.211 }, -- Dreadmist Wraps
+    { 23201, 0.0041 }, -- Libram of Divinity
+    { 23200, 0.0088 }, -- Totem of Sustaining
+    { 14614, 0.0044 }, -- Bloodmail Belt
+    { 14616, 0.013 }, -- Bloodmail Boots
+    { 14615, 0.022 }, -- Bloodmail Gauntlets
+    { 14611, 0.011 }, -- Bloodmail Hauberk
+    { 14612, 0.022 }, -- Bloodmail Legguards
+    { 14637, 0.012 }, -- Cadaverous Armor
+    { 14636, 0.0044 }, -- Cadaverous Belt
+    { 14640, 0.0088 }, -- Cadaverous Gloves
+    { 14638, 0.022 }, -- Cadaverous Leggings
+    { 14641, 0.0044 }, -- Cadaverous Walkers
+    { 14624, 0.013 }, -- Deathbone Chestplate
+    { 14622, 0.022 }, -- Deathbone Gauntlets
+    { 14620, 0.018 }, -- Deathbone Girdle
+    { 14623, 0.022 }, -- Deathbone Legguards
+    { 14621, 0.022 }, -- Deathbone Sabatons
+    { 18684, 0.012 }, -- Dimly Opalescent Ring
+    { 18682, 0.012 }, -- Ghoul Skin Leggings
+    { 18683, 0.0088 }, -- Hammer of the Vesper
+    { 14631, 0.0044 }, -- Necropile Boots
+    { 14629, 0.0044 }, -- Necropile Cuffs
+    { 14632, 0.022 }, -- Necropile Leggings
+    { 14633, 0.022 }, -- Necropile Mantle
+    { 14626, 0.0088 }, -- Necropile Robe
+    { 18680, 0.0088 }, -- Ancient Bone Bow
+    { 18681, 0.012 }, -- Burial Shawl
 })
 
 Data:AddBossLoot(2812, { -- The Ravenian
-    { 16716 }, -- Wildheart Belt
-    { 23201 }, -- Libram of Divinity
-    { 23200 }, -- Totem of Sustaining
-    { 14614 }, -- Bloodmail Belt
-    { 14616 }, -- Bloodmail Boots
-    { 14615 }, -- Bloodmail Gauntlets
-    { 14611 }, -- Bloodmail Hauberk
-    { 14612 }, -- Bloodmail Legguards
-    { 14637 }, -- Cadaverous Armor
-    { 14636 }, -- Cadaverous Belt
-    { 14640 }, -- Cadaverous Gloves
-    { 14638 }, -- Cadaverous Leggings
-    { 14641 }, -- Cadaverous Walkers
-    { 14624 }, -- Deathbone Chestplate
-    { 14622 }, -- Deathbone Gauntlets
-    { 14620 }, -- Deathbone Girdle
-    { 14623 }, -- Deathbone Legguards
-    { 14621 }, -- Deathbone Sabatons
-    { 18684 }, -- Dimly Opalescent Ring
-    { 18682 }, -- Ghoul Skin Leggings
-    { 18683 }, -- Hammer of the Vesper
-    { 14631 }, -- Necropile Boots
-    { 14629 }, -- Necropile Cuffs
-    { 14632 }, -- Necropile Leggings
-    { 14633 }, -- Necropile Mantle
-    { 14626 }, -- Necropile Robe
-    { 18680 }, -- Ancient Bone Bow
-    { 18681 }, -- Burial Shawl
+    { 16716, 0.034 }, -- Wildheart Belt
+    { 23201, 0.0075 }, -- Libram of Divinity
+    { 23200, 0.026 }, -- Totem of Sustaining
+    { 14614, 0.011 }, -- Bloodmail Belt
+    { 14616, 0.011 }, -- Bloodmail Boots
+    { 14615, 0.011 }, -- Bloodmail Gauntlets
+    { 14611, 0.0037 }, -- Bloodmail Hauberk
+    { 14612, 0.0037 }, -- Bloodmail Legguards
+    { 14637, 0.015 }, -- Cadaverous Armor
+    { 14636, 0.022 }, -- Cadaverous Belt
+    { 14640, 0.0037 }, -- Cadaverous Gloves
+    { 14638, 0.011 }, -- Cadaverous Leggings
+    { 14641, 0.0075 }, -- Cadaverous Walkers
+    { 14624, 0.011 }, -- Deathbone Chestplate
+    { 14622, 0.019 }, -- Deathbone Gauntlets
+    { 14620, 0.0075 }, -- Deathbone Girdle
+    { 14623, 0.015 }, -- Deathbone Legguards
+    { 14621, 0.0075 }, -- Deathbone Sabatons
+    { 18684, 0.0037 }, -- Dimly Opalescent Ring
+    { 18682, 0.0075 }, -- Ghoul Skin Leggings
+    { 18683, 0.019 }, -- Hammer of the Vesper
+    { 14631, 0.0037 }, -- Necropile Boots
+    { 14629, 0.0037 }, -- Necropile Cuffs
+    { 14632, 0.0037 }, -- Necropile Leggings
+    { 14633, 0.0037 }, -- Necropile Mantle
+    { 14626, 0.0075 }, -- Necropile Robe
+    { 18680, 0.011 }, -- Ancient Bone Bow
+    { 18681, 0.0075 }, -- Burial Shawl
 })
 
 Data:AddBossLoot(2807, { -- Lord Alexei Barov
-    { 14626 }, -- Necropile Robe
-    { 14637 }, -- Cadaverous Armor
-    { 18680 }, -- Ancient Bone Bow
-    { 18681 }, -- Burial Shawl
-    { 18682 }, -- Ghoul Skin Leggings
-    { 18683 }, -- Hammer of the Vesper
-    { 18684 }, -- Dimly Opalescent Ring
-    { 14611 }, -- Bloodmail Hauberk
-    { 14624 }, -- Deathbone Chestplate
-    { 16722 }, -- Lightforge Bracers
-    { 23201 }, -- Libram of Divinity
-    { 23200 }, -- Totem of Sustaining
-    { 14614 }, -- Bloodmail Belt
-    { 14616 }, -- Bloodmail Boots
-    { 14615 }, -- Bloodmail Gauntlets
-    { 14612 }, -- Bloodmail Legguards
-    { 14636 }, -- Cadaverous Belt
-    { 14640 }, -- Cadaverous Gloves
-    { 14638 }, -- Cadaverous Leggings
-    { 14641 }, -- Cadaverous Walkers
-    { 14622 }, -- Deathbone Gauntlets
-    { 14620 }, -- Deathbone Girdle
-    { 14623 }, -- Deathbone Legguards
-    { 14621 }, -- Deathbone Sabatons
-    { 14631 }, -- Necropile Boots
-    { 14629 }, -- Necropile Cuffs
-    { 14632 }, -- Necropile Leggings
-    { 14633 }, -- Necropile Mantle
+    { 14626, 0.014 }, -- Necropile Robe
+    { 14637, 0.032 }, -- Cadaverous Armor
+    { 18680, 0.023 }, -- Ancient Bone Bow
+    { 18681, 0.0046 }, -- Burial Shawl
+    { 18682, 0.028 }, -- Ghoul Skin Leggings
+    { 18683, 0.037 }, -- Hammer of the Vesper
+    { 18684, 0.037 }, -- Dimly Opalescent Ring
+    { 14611, 0.032 }, -- Bloodmail Hauberk
+    { 14624, 0.018 }, -- Deathbone Chestplate
+    { 16722, 0.023 }, -- Lightforge Bracers
+    { 23201, 0.11 }, -- Libram of Divinity
+    { 23200, 0.133 }, -- Totem of Sustaining
+    { 14614, 0.028 }, -- Bloodmail Belt
+    { 14616, 0.023 }, -- Bloodmail Boots
+    { 14615, 0.023 }, -- Bloodmail Gauntlets
+    { 14612, 0.028 }, -- Bloodmail Legguards
+    { 14636, 0.037 }, -- Cadaverous Belt
+    { 14640, 0.023 }, -- Cadaverous Gloves
+    { 14638, 0.018 }, -- Cadaverous Leggings
+    { 14641, 0.041 }, -- Cadaverous Walkers
+    { 14622, 0.0092 }, -- Deathbone Gauntlets
+    { 14620, 0.0092 }, -- Deathbone Girdle
+    { 14623, 0.055 }, -- Deathbone Legguards
+    { 14621, 0.018 }, -- Deathbone Sabatons
+    { 14631, 0.023 }, -- Necropile Boots
+    { 14629, 0.023 }, -- Necropile Cuffs
+    { 14632, 0.023 }, -- Necropile Leggings
+    { 14633, 0.032 }, -- Necropile Mantle
 })
 
 Data:AddBossLoot(2806, { -- Lady Illucia Barov
-    { 23201 }, -- Libram of Divinity
-    { 23200 }, -- Totem of Sustaining
-    { 14614 }, -- Bloodmail Belt
-    { 14616 }, -- Bloodmail Boots
-    { 14615 }, -- Bloodmail Gauntlets
+    { 23201, 0.032 }, -- Libram of Divinity
+    { 23200, 0.049 }, -- Totem of Sustaining
+    { 14614, 0.004 }, -- Bloodmail Belt
+    { 14616, 0.004 }, -- Bloodmail Boots
+    { 14615, 0.004 }, -- Bloodmail Gauntlets
     { 14611 }, -- Bloodmail Hauberk
-    { 14612 }, -- Bloodmail Legguards
-    { 14637 }, -- Cadaverous Armor
-    { 14636 }, -- Cadaverous Belt
-    { 14640 }, -- Cadaverous Gloves
-    { 14638 }, -- Cadaverous Leggings
-    { 14641 }, -- Cadaverous Walkers
-    { 14624 }, -- Deathbone Chestplate
-    { 14622 }, -- Deathbone Gauntlets
-    { 14620 }, -- Deathbone Girdle
-    { 14623 }, -- Deathbone Legguards
-    { 14621 }, -- Deathbone Sabatons
-    { 18684 }, -- Dimly Opalescent Ring
-    { 18682 }, -- Ghoul Skin Leggings
+    { 14612, 0.024 }, -- Bloodmail Legguards
+    { 14637, 0.004 }, -- Cadaverous Armor
+    { 14636, 0.012 }, -- Cadaverous Belt
+    { 14640, 0.004 }, -- Cadaverous Gloves
+    { 14638, 0.0081 }, -- Cadaverous Leggings
+    { 14641, 0.0081 }, -- Cadaverous Walkers
+    { 14624, 0.0081 }, -- Deathbone Chestplate
+    { 14622, 0.0081 }, -- Deathbone Gauntlets
+    { 14620, 0.004 }, -- Deathbone Girdle
+    { 14623, 0.004 }, -- Deathbone Legguards
+    { 14621, 0.004 }, -- Deathbone Sabatons
+    { 18684, 0.004 }, -- Dimly Opalescent Ring
+    { 18682, 0.0081 }, -- Ghoul Skin Leggings
     { 18683 }, -- Hammer of the Vesper
-    { 14631 }, -- Necropile Boots
-    { 14629 }, -- Necropile Cuffs
-    { 14632 }, -- Necropile Leggings
-    { 14633 }, -- Necropile Mantle
-    { 14626 }, -- Necropile Robe
-    { 18680 }, -- Ancient Bone Bow
+    { 14631, 0.004 }, -- Necropile Boots
+    { 14629, 0.004 }, -- Necropile Cuffs
+    { 14632, 0.004 }, -- Necropile Leggings
+    { 14633, 0.012 }, -- Necropile Mantle
+    { 14626, 0.004 }, -- Necropile Robe
+    { 18680, 0.012 }, -- Ancient Bone Bow
     { 18681 }, -- Burial Shawl
 })
 
 Data:AddBossLoot(2801, { -- Darkmaster Gandling
-    { 16667 }, -- Coif of Elements
-    { 16677 }, -- Beaststalker's Cap
-    { 16686 }, -- Magister's Crown
-    { 16693 }, -- Devout Crown
-    { 16698 }, -- Dreadmist Mask
-    { 16707 }, -- Shadowcraft Cap
-    { 16720 }, -- Wildheart Cowl
-    { 16727 }, -- Lightforge Helm
-    { 16731 }, -- Helm of Valor
-    { 13951 }, -- Vigorsteel Vambraces
-    { 13398 }, -- Boots of the Shrieker
-    { 13938 }, -- Bonecreeper Stylus
-    { 13944 }, -- Tombstone Breastplate
-    { 13953 }, -- Silent Fang
-    { 13964 }, -- Witchblade
-    { 22433 }, -- Don Mauricio's Band of Domination
-    { 14514 }, -- Pattern: Robe of the Void
-    { 13501 }, -- Recipe: Major Mana Potion
-    { 13937 }, -- Headmaster's Charge
+    { 16667, 0.122 }, -- Coif of Elements
+    { 16677, 0.111 }, -- Beaststalker's Cap
+    { 16686, 0.07 }, -- Magister's Crown
+    { 16693, 0.074 }, -- Devout Crown
+    { 16698, 0.1 }, -- Dreadmist Mask
+    { 16707, 0.092 }, -- Shadowcraft Cap
+    { 16720, 0.077 }, -- Wildheart Cowl
+    { 16727, 0.118 }, -- Lightforge Helm
+    { 16731, 0.125 }, -- Helm of Valor
+    { 13951, 0.122 }, -- Vigorsteel Vambraces
+    { 13398, 0.118 }, -- Boots of the Shrieker
+    { 13938, 0.14 }, -- Bonecreeper Stylus
+    { 13944, 0.133 }, -- Tombstone Breastplate
+    { 13953, 0.118 }, -- Silent Fang
+    { 13964, 0.148 }, -- Witchblade
+    { 22433, 0.122 }, -- Don Mauricio's Band of Domination
+    { 14514, 0.111 }, -- Pattern: Robe of the Void
+    { 13501, 0.096 }, -- Recipe: Major Mana Potion
+    { 13937, 0.026 }, -- Headmaster's Charge
 })
 
 Data:AddBossLoot(-14516, { -- Death Knight Darkreaver
-    { 18758 }, -- Specter's Blade
-    { 18759 }, -- Malicious Axe
-    { 18760 }, -- Necromantic Band
-    { 18761 }, -- Oblivion's Touch
+    { 18758, 0.257 }, -- Specter's Blade
+    { 18759, 0.2 }, -- Malicious Axe
+    { 18760, 0.143 }, -- Necromantic Band
+    { 18761, 0.371 }, -- Oblivion's Touch
     { 18749 }, -- Charger's Lost Soul
     { 18880 }, -- Darkreaver's Head
 })

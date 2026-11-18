@@ -626,7 +626,7 @@
       "start": {
         "npc": "Dran Droffers",
         "location": [1454, 59.4, 36.8],
-        "description": "Orgrimmar"
+        "description": "Orgrimmar. Accept the quest from Dran Droffers before collecting the Shattered Necklace."
       },
       "turnIn": {
         "npc": "Dran Droffers",

@@ -18,15 +18,18 @@
       "loot": [
         {
           "item": 275004,
-          "name": "Chain of the Corruptor"
+          "name": "Chain of the Corruptor",
+          "chance": 0.361
         },
         {
           "item": 275005,
-          "name": "Krol'dok Warplate Chest"
+          "name": "Krol'dok Warplate Chest",
+          "chance": 0.254
         },
         {
           "item": 275006,
-          "name": "Krol'dok Warplate Helmet"
+          "name": "Krol'dok Warplate Helmet",
+          "chance": 0.296
         }
       ]
     },
@@ -39,19 +42,23 @@
       "loot": [
         {
           "item": 274996,
-          "name": "Resistance Breaker Spaulder"
+          "name": "Resistance Breaker Spaulder",
+          "chance": 0.315
         },
         {
           "item": 274997,
-          "name": "Chain of Binding"
+          "name": "Chain of Binding",
+          "chance": 0.34
         },
         {
           "item": 274995,
-          "name": "Slavecrusher Scepter"
+          "name": "Slavecrusher Scepter",
+          "chance": 0.338
         },
         {
           "item": 273101,
-          "name": "Blueprint: Expert Campfire"
+          "name": "Blueprint: Expert Campfire",
+          "chance": 0.044
         }
       ]
     },
@@ -64,19 +71,23 @@
       "loot": [
         {
           "item": 275009,
-          "name": "Emblem of Slamming"
+          "name": "Emblem of Slamming",
+          "chance": 0.211
         },
         {
           "item": 275007,
-          "name": "Mugg's Jabber"
+          "name": "Mugg's Jabber",
+          "chance": 0.247
         },
         {
           "item": 275010,
-          "name": "Strongly Scented Hood"
+          "name": "Strongly Scented Hood",
+          "chance": 0.253
         },
         {
           "item": 275008,
-          "name": "Mugg's Crosser"
+          "name": "Mugg's Crosser",
+          "chance": 0.212
         }
       ]
     },
@@ -89,15 +100,18 @@
       "loot": [
         {
           "item": 275000,
-          "name": "Zarmok's Plated Signet"
+          "name": "Zarmok's Plated Signet",
+          "chance": 0.323
         },
         {
           "item": 274998,
-          "name": "Shadowlight Athame"
+          "name": "Shadowlight Athame",
+          "chance": 0.322
         },
         {
           "item": 274999,
-          "name": "Shadecaster's Leggings"
+          "name": "Shadecaster's Leggings",
+          "chance": 0.337
         }
       ]
     },
@@ -110,15 +124,18 @@
       "loot": [
         {
           "item": 275001,
-          "name": "Bloodied Gutslicer"
+          "name": "Bloodied Gutslicer",
+          "chance": 0.372
         },
         {
           "item": 275002,
-          "name": "War Handler's Gaze"
+          "name": "War Handler's Gaze",
+          "chance": 0.339
         },
         {
           "item": 275003,
-          "name": "Worgbinder's Treads"
+          "name": "Worgbinder's Treads",
+          "chance": 0.29
         }
       ]
     },
@@ -131,15 +148,18 @@
       "loot": [
         {
           "item": 286430,
-          "name": "Toofbreaker"
+          "name": "Toofbreaker",
+          "chance": 0.371
         },
         {
           "item": 286429,
-          "name": "Big-Belly Belt"
+          "name": "Big-Belly Belt",
+          "chance": 0.315
         },
         {
           "item": 286428,
-          "name": "Band of Bossman"
+          "name": "Band of Bossman",
+          "chance": 0.313
         }
       ]
     },
@@ -151,11 +171,13 @@
       "loot": [
         {
           "item": 279863,
-          "name": "Black Horn Necklace"
+          "name": "Black Horn Necklace",
+          "chance": 0.594
         },
         {
           "item": 279857,
-          "name": "Kroog's Backscratcher"
+          "name": "Kroog's Backscratcher",
+          "chance": 0.406
         }
       ]
     }

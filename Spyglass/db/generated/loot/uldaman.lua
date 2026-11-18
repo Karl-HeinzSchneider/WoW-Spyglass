@@ -4,73 +4,73 @@ local Data = Spyglass.Data
 -- Uldaman (map 70)
 
 Data:AddBossLoot(547, { -- Revelosh
-    { 9389 }, -- Revelosh's Spaulders
-    { 9388 }, -- Revelosh's Armguards
-    { 9387 }, -- Revelosh's Boots
-    { 9390 }, -- Revelosh's Gloves
+    { 9389, 0.225 }, -- Revelosh's Spaulders
+    { 9388, 0.245 }, -- Revelosh's Armguards
+    { 9387, 0.248 }, -- Revelosh's Boots
+    { 9390, 0.206 }, -- Revelosh's Gloves
 })
 
 Data:AddBossLoot(548, { -- The Lost Dwarves
-    { 9400 }, -- Baelog's Shortbow
-    { 9401 }, -- Nordic Longshank
+    { 9400, 0.415 }, -- Baelog's Shortbow
+    { 9401, 0.494 }, -- Nordic Longshank
     { 9398 }, -- Worn Running Boots
     { 9394 }, -- Horned Viking Helmet
     { 9403 }, -- Battered Viking Shield
     { 9404 }, -- Olaf's All Purpose Shield
-    { 9399 }, -- Precision Arrow
-    { 251400 }, -- Plans: Warder's Boots
+    { 9399, 0.81 }, -- Precision Arrow
+    { 251400, 0.0029 }, -- Plans: Warder's Boots
     { 252896 }, -- Pattern: Stalker's Mail Boots
 })
 
 Data:AddBossLoot(549, { -- Ironaya
-    { 9407 }, -- Stoneweaver Leggings
-    { 9409 }, -- Ironaya's Bracers
-    { 9408 }, -- Ironshod Bludgeon
-    { 274484 }, -- Axe of Inevitable Ruin
+    { 9407, 0.29 }, -- Stoneweaver Leggings
+    { 9409, 0.284 }, -- Ironaya's Bracers
+    { 9408, 0.299 }, -- Ironshod Bludgeon
+    { 274484, 0.114 }, -- Axe of Inevitable Ruin
 })
 
 Data:AddBossLoot(1887, { -- Obsidian Sentinel
-    { 274430 }, -- Rock Sentinel Slicer
-    { 274428 }, -- Dark Golem Breastplate
-    { 274425 }, -- White Obsidian Wand
-    { 274485 }, -- Axe of Lingering Dread
-    { 251400 }, -- Plans: Warder's Boots
+    { 274430, 0.288 }, -- Rock Sentinel Slicer
+    { 274428, 0.264 }, -- Dark Golem Breastplate
+    { 274425, 0.273 }, -- White Obsidian Wand
+    { 274485, 0.113 }, -- Axe of Lingering Dread
+    { 251400, 0.0058 }, -- Plans: Warder's Boots
 })
 
 Data:AddBossLoot(551, { -- Ancient Stone Keeper
-    { 9410 }, -- Cragfists
-    { 9411 }, -- Rockshard Pauldrons
-    { 274431 }, -- Sandstorm Staff
+    { 9410, 0.302 }, -- Cragfists
+    { 9411, 0.324 }, -- Rockshard Pauldrons
+    { 274431, 0.329 }, -- Sandstorm Staff
 })
 
 Data:AddBossLoot(552, { -- Galgann Firehammer
-    { 11311 }, -- Emberscale Cape
-    { 11310 }, -- Flameseer Mantle
-    { 9419 }, -- Galgann's Firehammer
-    { 9412 }, -- Galgann's Fireblaster
-    { 251402 }, -- Plans: Justicar's Boots
+    { 11311, 0.267 }, -- Emberscale Cape
+    { 11310, 0.233 }, -- Flameseer Mantle
+    { 9419, 0.239 }, -- Galgann's Firehammer
+    { 9412, 0.241 }, -- Galgann's Fireblaster
+    { 251402, 0.0044 }, -- Plans: Justicar's Boots
 })
 
 Data:AddBossLoot(553, { -- Grimlok
-    { 9415 }, -- Grimlok's Tribal Vestments
-    { 9414 }, -- Oilskin Leggings
-    { 9416 }, -- Grimlok's Charge
+    { 9415, 0.323 }, -- Grimlok's Tribal Vestments
+    { 9414, 0.312 }, -- Oilskin Leggings
+    { 9416, 0.326 }, -- Grimlok's Charge
 })
 
 Data:AddBossLoot(554, { -- Archaedas
-    { 11118 }, -- Archaedic Stone
-    { 9413 }, -- The Rockpounder
-    { 9418 }, -- Stoneslayer
-    { 274432 }, -- Stone Keeper Spire
-    { 252868 }, -- Pattern: Skulker's Leather Gauntlets
-    { 254100 }, -- Pattern: Fiery Gloves
-    { 252871 }, -- Pattern: Mender's Leather Gauntlets
-    { 254096 }, -- Pattern: Gilded Gloves
-    { 254106 }, -- Pattern: Radiant Gloves
-    { 252870 }, -- Pattern: Skycaller's Leather Gauntlets
-    { 252919 }, -- Pattern: Skycaller's Mail Gauntlets
-    { 251404 }, -- Plans: Sentinel's Gloves
-    { 251405 }, -- Plans: Warder's Gloves
+    { 11118, 0.947 }, -- Archaedic Stone
+    { 9413, 0.287 }, -- The Rockpounder
+    { 9418, 0.332 }, -- Stoneslayer
+    { 274432, 0.322 }, -- Stone Keeper Spire
+    { 252868, 0.0034 }, -- Pattern: Skulker's Leather Gauntlets
+    { 254100, 0.0067 }, -- Pattern: Fiery Gloves
+    { 252871, 0.0017 }, -- Pattern: Mender's Leather Gauntlets
+    { 254096, 0.0067 }, -- Pattern: Gilded Gloves
+    { 254106, 0.0059 }, -- Pattern: Radiant Gloves
+    { 252870, 0.0067 }, -- Pattern: Skycaller's Leather Gauntlets
+    { 252919, 0.0025 }, -- Pattern: Skycaller's Mail Gauntlets
+    { 251404, 0.0051 }, -- Plans: Sentinel's Gloves
+    { 251405, 0.0025 }, -- Plans: Warder's Gloves
 })
 
 Data:AddTrashLoot(70, {

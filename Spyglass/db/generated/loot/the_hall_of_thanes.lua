@@ -4,27 +4,27 @@ local Data = Spyglass.Data
 -- The Hall of Thanes (map 3065)
 
 Data:AddBossLoot(3493, { -- Faldrim Anvilmar
-    { 270227 }, -- Ephemeral Choker
-    { 271096 }, -- Aetherwisp Bracers
-    { 271097 }, -- Spiritwraith Drape
+    { 270227, 0.338 }, -- Ephemeral Choker
+    { 271096, 0.322 }, -- Aetherwisp Bracers
+    { 271097, 0.34 }, -- Spiritwraith Drape
 })
 
 Data:AddBossLoot(3495, { -- Magmatus
-    { 270230 }, -- Kindlegem Girdle
-    { 270231 }, -- Flamefist Grips
-    { 271095 }, -- Fang of Magmatus
+    { 270230, 0.315 }, -- Kindlegem Girdle
+    { 270231, 0.329 }, -- Flamefist Grips
+    { 271095, 0.356 }, -- Fang of Magmatus
 })
 
 Data:AddBossLoot(3494, { -- Plunder
-    { 270228 }, -- Golemheart Stave
-    { 270229 }, -- Treads of the Protector Golem
-    { 271098 }, -- Golemguard Chest
+    { 270228, 0.348 }, -- Golemheart Stave
+    { 270229, 0.333 }, -- Treads of the Protector Golem
+    { 271098, 0.319 }, -- Golemguard Chest
 })
 
 Data:AddBossLoot(3496, { -- Durgen Dirgehammer
-    { 270256 }, -- Durgen's Crescent Axe
-    { 270260 }, -- Direhammer Leggings
-    { 270261 }, -- Robes of the Disgraced Thane
+    { 270256, 0.287 }, -- Durgen's Crescent Axe
+    { 270260, 0.273 }, -- Direhammer Leggings
+    { 270261, 0.247 }, -- Robes of the Disgraced Thane
     { 274286 }, -- Durgen Dirgehammer's Head
 })
 

@@ -19,15 +19,18 @@
       "loot": [
         {
           "item": 872,
-          "name": "Rockslicer"
+          "name": "Rockslicer",
+          "chance": 0.326
         },
         {
           "item": 273289,
-          "name": "Ogre Loincloth"
+          "name": "Ogre Loincloth",
+          "chance": 0.322
         },
         {
           "item": 5187,
-          "name": "Rhahk'Zor's Hammer"
+          "name": "Rhahk'Zor's Hammer",
+          "chance": 0.315
         },
         {
           "item": 251362,
@@ -39,7 +42,8 @@
         },
         {
           "item": 253906,
-          "name": "Pattern: Filigreed Flame Gown"
+          "name": "Pattern: Filigreed Flame Gown",
+          "chance": 0.0038
         },
         {
           "item": 251363,
@@ -56,15 +60,18 @@
       "loot": [
         {
           "item": 1937,
-          "name": "Buzz Saw"
+          "name": "Buzz Saw",
+          "chance": 0.294
         },
         {
           "item": 2169,
-          "name": "Buzzer Blade"
+          "name": "Buzzer Blade",
+          "chance": 0.294
         },
         {
           "item": 285292,
-          "name": "Dull Sawblade"
+          "name": "Dull Sawblade",
+          "chance": 0.282
         }
       ]
     },
@@ -78,19 +85,23 @@
       "loot": [
         {
           "item": 5194,
-          "name": "Taskmaster Axe"
+          "name": "Taskmaster Axe",
+          "chance": 0.3
         },
         {
           "item": 5195,
-          "name": "Gold-flecked Gloves"
+          "name": "Gold-flecked Gloves",
+          "chance": 0.322
         },
         {
           "item": 273293,
-          "name": "Bandsaw Wristbands"
+          "name": "Bandsaw Wristbands",
+          "chance": 0.309
         },
         {
           "item": 273092,
-          "name": "Blueprint: Repair Bot"
+          "name": "Blueprint: Repair Bot",
+          "chance": 0.069
         },
         {
           "item": 251360,
@@ -102,7 +113,8 @@
         },
         {
           "item": 253902,
-          "name": "Pattern: Filigreed Pristine Gown"
+          "name": "Pattern: Filigreed Pristine Gown",
+          "chance": 0.0084
         },
         {
           "item": 251361,
@@ -121,11 +133,13 @@
       "loot": [
         {
           "item": 5444,
-          "name": "Miner's Cape"
+          "name": "Miner's Cape",
+          "chance": 0.521
         },
         {
           "item": 5443,
-          "name": "Gold-plated Buckler"
+          "name": "Gold-plated Buckler",
+          "chance": 0.456
         }
       ]
     },
@@ -139,15 +153,18 @@
       "loot": [
         {
           "item": 273297,
-          "name": "Goblin Hammer"
+          "name": "Goblin Hammer",
+          "chance": 0.317
         },
         {
           "item": 1156,
-          "name": "Lavishly Jeweled Ring"
+          "name": "Lavishly Jeweled Ring",
+          "chance": 0.317
         },
         {
           "item": 5199,
-          "name": "Smelting Pants"
+          "name": "Smelting Pants",
+          "chance": 0.319
         },
         {
           "item": 252777,
@@ -167,63 +184,78 @@
         },
         {
           "item": 253904,
-          "name": "Pattern: Filigreed Silky Gown"
+          "name": "Pattern: Filigreed Silky Gown",
+          "chance": 0.0056
         },
         {
           "item": 253906,
-          "name": "Pattern: Filigreed Flame Gown"
+          "name": "Pattern: Filigreed Flame Gown",
+          "chance": 0.0041
         },
         {
           "item": 273086,
-          "name": "Blueprint: Anvil"
+          "name": "Blueprint: Anvil",
+          "chance": 0.068
         },
         {
           "item": 251340,
-          "name": "Plans: Veteran's Chain Shirt"
+          "name": "Plans: Veteran's Chain Shirt",
+          "chance": 0.0041
         },
         {
           "item": 251341,
-          "name": "Plans: Guard's Chain Shirt"
+          "name": "Plans: Guard's Chain Shirt",
+          "chance": 0.0062
         },
         {
           "item": 251342,
-          "name": "Plans: Protector's Chain Shirt"
+          "name": "Plans: Protector's Chain Shirt",
+          "chance": 0.0043
         },
         {
           "item": 251343,
-          "name": "Plans: Acolyte's Chain Shirt"
+          "name": "Plans: Acolyte's Chain Shirt",
+          "chance": 0.0045
         },
         {
           "item": 251344,
-          "name": "Plans: Crusader's Chain Shirt"
+          "name": "Plans: Crusader's Chain Shirt",
+          "chance": 0.006
         },
         {
           "item": 252771,
-          "name": "Pattern: Brawler's Leather Armor"
+          "name": "Pattern: Brawler's Leather Armor",
+          "chance": 0.0041
         },
         {
           "item": 252772,
-          "name": "Pattern: Trapper's Leather Armor"
+          "name": "Pattern: Trapper's Leather Armor",
+          "chance": 0.0028
         },
         {
           "item": 252773,
-          "name": "Pattern: Defender's Leather Armor"
+          "name": "Pattern: Defender's Leather Armor",
+          "chance": 0.0045
         },
         {
           "item": 252774,
-          "name": "Pattern: Totemic Leather Armor"
+          "name": "Pattern: Totemic Leather Armor",
+          "chance": 0.003
         },
         {
           "item": 252775,
-          "name": "Pattern: Stormrider's Leather Armor"
+          "name": "Pattern: Stormrider's Leather Armor",
+          "chance": 0.0056
         },
         {
           "item": 252776,
-          "name": "Pattern: Wisdom's Leather Armor"
+          "name": "Pattern: Wisdom's Leather Armor",
+          "chance": 0.006
         },
         {
           "item": 253908,
-          "name": "Pattern: Filigreed Shadow Gown"
+          "name": "Pattern: Filigreed Shadow Gown",
+          "chance": 0.0045
         }
       ]
     },
@@ -237,15 +269,18 @@
       "loot": [
         {
           "item": 5200,
-          "name": "Impaling Harpoon"
+          "name": "Impaling Harpoon",
+          "chance": 0.319
         },
         {
           "item": 5201,
-          "name": "Emberstone Staff"
+          "name": "Emberstone Staff",
+          "chance": 0.309
         },
         {
           "item": 10403,
-          "name": "Blackened Defias Belt"
+          "name": "Blackened Defias Belt",
+          "chance": 0.31
         }
       ]
     },
@@ -259,19 +294,23 @@
       "loot": [
         {
           "item": 7230,
-          "name": "Smite's Mighty Hammer"
+          "name": "Smite's Mighty Hammer",
+          "chance": 0.246
         },
         {
           "item": 5192,
-          "name": "Thief's Blade"
+          "name": "Thief's Blade",
+          "chance": 0.248
         },
         {
           "item": 284715,
-          "name": "First Mate Band"
+          "name": "First Mate Band",
+          "chance": 0.236
         },
         {
           "item": 5196,
-          "name": "Smite's Reaver"
+          "name": "Smite's Reaver",
+          "chance": 0.236
         },
         {
           "item": 251362,
@@ -305,15 +344,18 @@
       "loot": [
         {
           "item": 273298,
-          "name": "Lookie's Spyglass"
+          "name": "Lookie's Spyglass",
+          "chance": 0.291
         },
         {
           "item": 5198,
-          "name": "Cookie's Stirring Rod"
+          "name": "Cookie's Stirring Rod",
+          "chance": 0.291
         },
         {
           "item": 5197,
-          "name": "Cookie's Tenderizer"
+          "name": "Cookie's Tenderizer",
+          "chance": 0.306
         },
         {
           "item": 251360,
@@ -329,15 +371,18 @@
         },
         {
           "item": 253910,
-          "name": "Pattern: Filigreed Pearly Gown"
+          "name": "Pattern: Filigreed Pearly Gown",
+          "chance": 0.0026
         },
         {
           "item": 253912,
-          "name": "Pattern: Filigreed Shining Gown"
+          "name": "Pattern: Filigreed Shining Gown",
+          "chance": 0.0043
         },
         {
           "item": 273102,
-          "name": "Blueprint: Cookie's Feast"
+          "name": "Blueprint: Cookie's Feast",
+          "chance": 0.071
         }
       ]
     },
@@ -351,19 +396,23 @@
       "loot": [
         {
           "item": 5191,
-          "name": "Cruel Barb"
+          "name": "Cruel Barb",
+          "chance": 0.212
         },
         {
           "item": 5193,
-          "name": "Cape of the Brotherhood"
+          "name": "Cape of the Brotherhood",
+          "chance": 0.193
         },
         {
           "item": 5202,
-          "name": "Corsair's Overshirt"
+          "name": "Corsair's Overshirt",
+          "chance": 0.188
         },
         {
           "item": 10399,
-          "name": "Blackened Defias Armor"
+          "name": "Blackened Defias Armor",
+          "chance": 0.204
         },
         {
           "item": 2874,
@@ -387,31 +436,38 @@
         },
         {
           "item": 253938,
-          "name": "Pattern: Filigreed Pristine Leggings"
+          "name": "Pattern: Filigreed Pristine Leggings",
+          "chance": 0.0074
         },
         {
           "item": 253948,
-          "name": "Pattern: Filigreed Shining Leggings"
+          "name": "Pattern: Filigreed Shining Leggings",
+          "chance": 0.0046
         },
         {
           "item": 251345,
-          "name": "Plans: Veteran's Chain Leggings"
+          "name": "Plans: Veteran's Chain Leggings",
+          "chance": 0.006
         },
         {
           "item": 251346,
-          "name": "Plans: Guard's Chain Leggings"
+          "name": "Plans: Guard's Chain Leggings",
+          "chance": 0.005
         },
         {
           "item": 251347,
-          "name": "Plans: Protector's Chain Leggings"
+          "name": "Plans: Protector's Chain Leggings",
+          "chance": 0.0046
         },
         {
           "item": 251348,
-          "name": "Plans: Acolyte's Chain Leggings"
+          "name": "Plans: Acolyte's Chain Leggings",
+          "chance": 0.0044
         },
         {
           "item": 251349,
-          "name": "Plans: Crusader's Chain Leggings"
+          "name": "Plans: Crusader's Chain Leggings",
+          "chance": 0.0066
         },
         {
           "item": 251383,
@@ -419,43 +475,53 @@
         },
         {
           "item": 252792,
-          "name": "Pattern: Brawler's Leather Pants"
+          "name": "Pattern: Brawler's Leather Pants",
+          "chance": 0.0032
         },
         {
           "item": 252793,
-          "name": "Pattern: Trapper's Leather Pants"
+          "name": "Pattern: Trapper's Leather Pants",
+          "chance": 0.0034
         },
         {
           "item": 252794,
-          "name": "Pattern: Defender's Leather Pants"
+          "name": "Pattern: Defender's Leather Pants",
+          "chance": 0.0038
         },
         {
           "item": 252795,
-          "name": "Pattern: Totemic Leather Pants"
+          "name": "Pattern: Totemic Leather Pants",
+          "chance": 0.0052
         },
         {
           "item": 252796,
-          "name": "Pattern: Stormrider's Leather Pants"
+          "name": "Pattern: Stormrider's Leather Pants",
+          "chance": 0.0028
         },
         {
           "item": 252797,
-          "name": "Pattern: Wisdom's Leather Pants"
+          "name": "Pattern: Wisdom's Leather Pants",
+          "chance": 0.0066
         },
         {
           "item": 253940,
-          "name": "Pattern: Filigreed Silky Leggings"
+          "name": "Pattern: Filigreed Silky Leggings",
+          "chance": 0.0058
         },
         {
           "item": 253942,
-          "name": "Pattern: Filigreed Flame Leggings"
+          "name": "Pattern: Filigreed Flame Leggings",
+          "chance": 0.0038
         },
         {
           "item": 253944,
-          "name": "Pattern: Filigreed Shadow Leggings"
+          "name": "Pattern: Filigreed Shadow Leggings",
+          "chance": 0.0038
         },
         {
           "item": 253946,
-          "name": "Pattern: Filigreed Pearly Leggings"
+          "name": "Pattern: Filigreed Pearly Leggings",
+          "chance": 0.0048
         }
       ]
     }

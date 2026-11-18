@@ -4,46 +4,46 @@ local Data = Spyglass.Data
 -- Krol'dok Stronghold (map 3039)
 
 Data:AddBossLoot(3449, { -- Nar'gurk
-    { 275004 }, -- Chain of the Corruptor
-    { 275005 }, -- Krol'dok Warplate Chest
-    { 275006 }, -- Krol'dok Warplate Helmet
+    { 275004, 0.361 }, -- Chain of the Corruptor
+    { 275005, 0.254 }, -- Krol'dok Warplate Chest
+    { 275006, 0.296 }, -- Krol'dok Warplate Helmet
 })
 
 Data:AddBossLoot(3450, { -- Slavecrusher Grox
-    { 274996 }, -- Resistance Breaker Spaulder
-    { 274997 }, -- Chain of Binding
-    { 274995 }, -- Slavecrusher Scepter
-    { 273101 }, -- Blueprint: Expert Campfire
+    { 274996, 0.315 }, -- Resistance Breaker Spaulder
+    { 274997, 0.34 }, -- Chain of Binding
+    { 274995, 0.338 }, -- Slavecrusher Scepter
+    { 273101, 0.044 }, -- Blueprint: Expert Campfire
 })
 
 Data:AddBossLoot(3451, { -- Overseer Mugg
-    { 275009 }, -- Emblem of Slamming
-    { 275007 }, -- Mugg's Jabber
-    { 275010 }, -- Strongly Scented Hood
-    { 275008 }, -- Mugg's Crosser
+    { 275009, 0.211 }, -- Emblem of Slamming
+    { 275007, 0.247 }, -- Mugg's Jabber
+    { 275010, 0.253 }, -- Strongly Scented Hood
+    { 275008, 0.212 }, -- Mugg's Crosser
 })
 
 Data:AddBossLoot(3452, { -- Twilight Commander Zarmok
-    { 275000 }, -- Zarmok's Plated Signet
-    { 274998 }, -- Shadowlight Athame
-    { 274999 }, -- Shadecaster's Leggings
+    { 275000, 0.323 }, -- Zarmok's Plated Signet
+    { 274998, 0.322 }, -- Shadowlight Athame
+    { 274999, 0.337 }, -- Shadecaster's Leggings
 })
 
 Data:AddBossLoot(3453, { -- Handler Ashka
-    { 275001 }, -- Bloodied Gutslicer
-    { 275002 }, -- War Handler's Gaze
-    { 275003 }, -- Worgbinder's Treads
+    { 275001, 0.372 }, -- Bloodied Gutslicer
+    { 275002, 0.339 }, -- War Handler's Gaze
+    { 275003, 0.29 }, -- Worgbinder's Treads
 })
 
 Data:AddBossLoot(-264773, { -- Bossman Toof
-    { 286430 }, -- Toofbreaker
-    { 286429 }, -- Big-Belly Belt
-    { 286428 }, -- Band of Bossman
+    { 286430, 0.371 }, -- Toofbreaker
+    { 286429, 0.315 }, -- Big-Belly Belt
+    { 286428, 0.313 }, -- Band of Bossman
 })
 
 Data:AddBossLoot(-262716, { -- Kroog
-    { 279863 }, -- Black Horn Necklace
-    { 279857 }, -- Kroog's Backscratcher
+    { 279863, 0.594 }, -- Black Horn Necklace
+    { 279857, 0.406 }, -- Kroog's Backscratcher
 })
 
 Data:AddTrashLoot(3039, {

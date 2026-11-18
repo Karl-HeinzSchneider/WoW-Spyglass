@@ -17,15 +17,18 @@
       "loot": [
         {
           "item": 274599,
-          "name": "Oathbound Bracers"
+          "name": "Oathbound Bracers",
+          "chance": 0.342
         },
         {
           "item": 274600,
-          "name": "Berserker Shackles"
+          "name": "Berserker Shackles",
+          "chance": 0.337
         },
         {
           "item": 274598,
-          "name": "Bloodslash Axe"
+          "name": "Bloodslash Axe",
+          "chance": 0.321
         },
         {
           "item": 271718,
@@ -41,15 +44,18 @@
       "loot": [
         {
           "item": 274602,
-          "name": "Brinebelly Leggings"
+          "name": "Brinebelly Leggings",
+          "chance": 0.326
         },
         {
           "item": 274601,
-          "name": "Harpoon of Command"
+          "name": "Harpoon of Command",
+          "chance": 0.342
         },
         {
           "item": 274613,
-          "name": "Priestess Cloak"
+          "name": "Priestess Cloak",
+          "chance": 0.331
         },
         {
           "item": 271718,
@@ -65,15 +71,18 @@
       "loot": [
         {
           "item": 274603,
-          "name": "Dreadfrost Saber"
+          "name": "Dreadfrost Saber",
+          "chance": 0.334
         },
         {
           "item": 274604,
-          "name": "Frosty Blunderbuss"
+          "name": "Frosty Blunderbuss",
+          "chance": 0.331
         },
         {
           "item": 274605,
-          "name": "Briny Sash"
+          "name": "Briny Sash",
+          "chance": 0.335
         },
         {
           "item": 271718,
@@ -88,15 +97,18 @@
       "loot": [
         {
           "item": 274607,
-          "name": "Viscera Spaulders"
+          "name": "Viscera Spaulders",
+          "chance": 0.279
         },
         {
           "item": 274606,
-          "name": "Bloodspine Staff"
+          "name": "Bloodspine Staff",
+          "chance": 0.282
         },
         {
           "item": 274614,
-          "name": "Knucklebone Ring"
+          "name": "Knucklebone Ring",
+          "chance": 0.331
         },
         {
           "item": 271718,
@@ -112,15 +124,18 @@
       "loot": [
         {
           "item": 274608,
-          "name": "Maw of Min'loth"
+          "name": "Maw of Min'loth",
+          "chance": 0.317
         },
         {
           "item": 274610,
-          "name": "Ritual-Binder's Gloves"
+          "name": "Ritual-Binder's Gloves",
+          "chance": 0.333
         },
         {
           "item": 274609,
-          "name": "Serpentbane Crown"
+          "name": "Serpentbane Crown",
+          "chance": 0.349
         },
         {
           "item": 271718,
@@ -136,15 +151,18 @@
       "loot": [
         {
           "item": 274611,
-          "name": "Robe of the Drowned"
+          "name": "Robe of the Drowned",
+          "chance": 0.314
         },
         {
           "item": 274612,
-          "name": "Waterlogged Burial Shroud"
+          "name": "Waterlogged Burial Shroud",
+          "chance": 0.324
         },
         {
           "item": 274615,
-          "name": "Heart of the Primeval"
+          "name": "Heart of the Primeval",
+          "chance": 0.362
         },
         {
           "item": 271718,
@@ -160,11 +178,13 @@
       "loot": [
         {
           "item": 286646,
-          "name": "Gill's Gills"
+          "name": "Gill's Gills",
+          "chance": 0.516
         },
         {
           "item": 286649,
-          "name": "Tidebound Dagger"
+          "name": "Tidebound Dagger",
+          "chance": 0.484
         },
         {
           "item": 271718,
@@ -180,11 +200,13 @@
       "loot": [
         {
           "item": 286662,
-          "name": "Deep-Dweller's Grips"
+          "name": "Deep-Dweller's Grips",
+          "chance": 0.497
         },
         {
           "item": 286658,
-          "name": "Umbral Scaled Belt"
+          "name": "Umbral Scaled Belt",
+          "chance": 0.503
         }
       ]
     },
@@ -196,11 +218,13 @@
       "loot": [
         {
           "item": 286650,
-          "name": "Pyromancer's Baton"
+          "name": "Pyromancer's Baton",
+          "chance": 0.449
         },
         {
           "item": 286651,
-          "name": "Flamestarter's Signet"
+          "name": "Flamestarter's Signet",
+          "chance": 0.551
         }
       ]
     }

@@ -18,15 +18,18 @@
       "loot": [
         {
           "item": 280009,
-          "name": "Titanosaur Scale Pendant"
+          "name": "Titanosaur Scale Pendant",
+          "chance": 0.623
         },
         {
           "item": 280011,
-          "name": "Deeproar Cord"
+          "name": "Deeproar Cord",
+          "chance": 0.453
         },
         {
           "item": 280010,
-          "name": "Gargantuan Wristguards"
+          "name": "Gargantuan Wristguards",
+          "chance": 0.509
         }
       ]
     },
@@ -60,15 +63,18 @@
       "loot": [
         {
           "item": 280020,
-          "name": "Deep Jungle Rifle"
+          "name": "Deep Jungle Rifle",
+          "chance": 0.353
         },
         {
           "item": 280019,
-          "name": "Dinofrill Casque"
+          "name": "Dinofrill Casque",
+          "chance": 0.328
         },
         {
           "item": 280018,
-          "name": "Hammer of Thundering Hooves"
+          "name": "Hammer of Thundering Hooves",
+          "chance": 0.259
         }
       ]
     },
@@ -82,15 +88,18 @@
       "loot": [
         {
           "item": 280015,
-          "name": "Venomvessel Ring"
+          "name": "Venomvessel Ring",
+          "chance": 0.331
         },
         {
           "item": 280017,
-          "name": "Octoclaw Chain Boots"
+          "name": "Octoclaw Chain Boots",
+          "chance": 0.294
         },
         {
           "item": 280016,
-          "name": "Spiderchitin Wrap"
+          "name": "Spiderchitin Wrap",
+          "chance": 0.331
         }
       ]
     },
@@ -103,23 +112,28 @@
       "loot": [
         {
           "item": 280023,
-          "name": "Nanaya's Control Spire"
+          "name": "Nanaya's Control Spire",
+          "chance": 0.377
         },
         {
           "item": 280025,
-          "name": "Leggings of Curation"
+          "name": "Leggings of Curation",
+          "chance": 0.292
         },
         {
           "item": 273128,
-          "name": "Maker's Spark"
+          "name": "Maker's Spark",
+          "chance": 0.946
         },
         {
           "item": 280024,
-          "name": "Legplates of Reinforced Crystal"
+          "name": "Legplates of Reinforced Crystal",
+          "chance": 0.269
         },
         {
           "item": 273116,
-          "name": "Blueprint: Arcane Forge"
+          "name": "Blueprint: Arcane Forge",
+          "chance": 0.054
         }
       ]
     },
@@ -132,11 +146,13 @@
       "loot": [
         {
           "item": 280029,
-          "name": "Cinderedge Crescent"
+          "name": "Cinderedge Crescent",
+          "chance": 0.407
         },
         {
           "item": 280028,
-          "name": "Heartflame Gauntlets"
+          "name": "Heartflame Gauntlets",
+          "chance": 0.578
         }
       ]
     },
@@ -154,11 +170,13 @@
       "loot": [
         {
           "item": 280032,
-          "name": "Bolt's Charged Eyeball"
+          "name": "Bolt's Charged Eyeball",
+          "chance": 0.5
         },
         {
           "item": 280031,
-          "name": "Sparklance Wand"
+          "name": "Sparklance Wand",
+          "chance": 0.492
         }
       ]
     },
@@ -171,15 +189,18 @@
       "loot": [
         {
           "item": 280022,
-          "name": "Scaleguard Scimitar"
+          "name": "Scaleguard Scimitar",
+          "chance": 0.391
         },
         {
           "item": 280021,
-          "name": "Tooth of the Matriarch"
+          "name": "Tooth of the Matriarch",
+          "chance": 0.336
         },
         {
           "item": 280045,
-          "name": "Regal Direhorn Drape"
+          "name": "Regal Direhorn Drape",
+          "chance": 0.273
         }
       ]
     },
@@ -192,11 +213,13 @@
       "loot": [
         {
           "item": 280026,
-          "name": "Albinofur Grips"
+          "name": "Albinofur Grips",
+          "chance": 0.464
         },
         {
           "item": 280027,
-          "name": "Crownroar Chestplate"
+          "name": "Crownroar Chestplate",
+          "chance": 0.536
         }
       ]
     },
@@ -209,15 +232,18 @@
       "loot": [
         {
           "item": 280031,
-          "name": "Sparklance Wand"
+          "name": "Sparklance Wand",
+          "chance": 0.16
         },
         {
           "item": 280028,
-          "name": "Heartflame Gauntlets"
+          "name": "Heartflame Gauntlets",
+          "chance": 0.13
         },
         {
           "item": 280032,
-          "name": "Bolt's Charged Eyeball"
+          "name": "Bolt's Charged Eyeball",
+          "chance": 0.24
         }
       ]
     }

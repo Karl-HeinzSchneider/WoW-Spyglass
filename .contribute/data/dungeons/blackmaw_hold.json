@@ -18,15 +18,18 @@
       "loot": [
         {
           "item": 280064,
-          "name": "Withering Grips"
+          "name": "Withering Grips",
+          "chance": 0.328
         },
         {
           "item": 280063,
-          "name": "Bloodfur Bulwark"
+          "name": "Bloodfur Bulwark",
+          "chance": 0.278
         },
         {
           "item": 280062,
-          "name": "Cloak of the Fleshborer"
+          "name": "Cloak of the Fleshborer",
+          "chance": 0.308
         }
       ]
     },
@@ -39,15 +42,18 @@
       "loot": [
         {
           "item": 280057,
-          "name": "Robes of Dark Summons"
+          "name": "Robes of Dark Summons",
+          "chance": 0.315
         },
         {
           "item": 280056,
-          "name": "Flameslash Crescent"
+          "name": "Flameslash Crescent",
+          "chance": 0.347
         },
         {
           "item": 280058,
-          "name": "Impish Chain Hood"
+          "name": "Impish Chain Hood",
+          "chance": 0.291
         }
       ]
     },
@@ -60,15 +66,18 @@
       "loot": [
         {
           "item": 280059,
-          "name": "Tuskblade Halberd"
+          "name": "Tuskblade Halberd",
+          "chance": 0.353
         },
         {
           "item": 280060,
-          "name": "Lucky Shovelnose Tuft"
+          "name": "Lucky Shovelnose Tuft",
+          "chance": 0.348
         },
         {
           "item": 280061,
-          "name": "Spike Crested Bracers"
+          "name": "Spike Crested Bracers",
+          "chance": 0.271
         }
       ]
     },
@@ -81,15 +90,18 @@
       "loot": [
         {
           "item": 280065,
-          "name": "Behemoth Bones"
+          "name": "Behemoth Bones",
+          "chance": 0.349
         },
         {
           "item": 280066,
-          "name": "Trousers of the Ebon Giant"
+          "name": "Trousers of the Ebon Giant",
+          "chance": 0.366
         },
         {
           "item": 280067,
-          "name": "Blackmaw Chain Belt"
+          "name": "Blackmaw Chain Belt",
+          "chance": 0.255
         }
       ]
     },
@@ -103,15 +115,18 @@
       "loot": [
         {
           "item": 280068,
-          "name": "Bloody Claws of Attack"
+          "name": "Bloody Claws of Attack",
+          "chance": 0.373
         },
         {
           "item": 280070,
-          "name": "Veilpiercer Girdle"
+          "name": "Veilpiercer Girdle",
+          "chance": 0.239
         },
         {
           "item": 280069,
-          "name": "Shamanic Wristguards"
+          "name": "Shamanic Wristguards",
+          "chance": 0.204
         }
       ]
     },
@@ -125,15 +140,18 @@
       "loot": [
         {
           "item": 280074,
-          "name": "Scalding Flamehoof"
+          "name": "Scalding Flamehoof",
+          "chance": 0.352
         },
         {
           "item": 280076,
-          "name": "Horns of Varrox"
+          "name": "Horns of Varrox",
+          "chance": 0.314
         },
         {
           "item": 280075,
-          "name": "Bleak Eye Shoulderplates"
+          "name": "Bleak Eye Shoulderplates",
+          "chance": 0.292
         }
       ]
     },
@@ -146,15 +164,18 @@
       "loot": [
         {
           "item": 280071,
-          "name": "Flamebreak Talisman"
+          "name": "Flamebreak Talisman",
+          "chance": 0.327
         },
         {
           "item": 280072,
-          "name": "Cowl of Dark Ambition"
+          "name": "Cowl of Dark Ambition",
+          "chance": 0.282
         },
         {
           "item": 280073,
-          "name": "Burnished Pridescales"
+          "name": "Burnished Pridescales",
+          "chance": 0.361
         }
       ]
     },
@@ -167,11 +188,13 @@
       "loot": [
         {
           "item": 280080,
-          "name": "Claymore of Two Moons"
+          "name": "Claymore of Two Moons",
+          "chance": 0.618
         },
         {
           "item": 280079,
-          "name": "Lunarlight Robe"
+          "name": "Lunarlight Robe",
+          "chance": 0.368
         }
       ]
     },
@@ -201,11 +224,13 @@
       "loot": [
         {
           "item": 280085,
-          "name": "Tunnelweb Pincer"
+          "name": "Tunnelweb Pincer",
+          "chance": 0.429
         },
         {
           "item": 280086,
-          "name": "Octofinger Gauntlets"
+          "name": "Octofinger Gauntlets",
+          "chance": 0.543
         }
       ]
     }

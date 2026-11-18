@@ -4,46 +4,46 @@ local Data = Spyglass.Data
 -- Ruins of Lordaeron (map 2999)
 
 Data:AddBossLoot(3353, { -- Witherfang
-    { 271201 }, -- Atrophic Girdle
-    { 271202 }, -- Witherbite Bracers
-    { 271203 }, -- Segmented Spider Leg
+    { 271201, 0.284 }, -- Atrophic Girdle
+    { 271202, 0.317 }, -- Witherbite Bracers
+    { 271203, 0.319 }, -- Segmented Spider Leg
 })
 
 Data:AddBossLoot(3357, { -- The Abandoned
-    { 271207 }, -- Rotmender's Leggings
-    { 271208 }, -- Grip of Fear
-    { 271216 }, -- Scepter of the Abandoned
+    { 271207, 0.325 }, -- Rotmender's Leggings
+    { 271208, 0.328 }, -- Grip of Fear
+    { 271216, 0.348 }, -- Scepter of the Abandoned
 })
 
 Data:AddBossLoot(3355, { -- The Baron
-    { 271204 }, -- Meathook Slicer
-    { 271205 }, -- Abomination Bones
-    { 271206 }, -- Leftover Abomination Skin
+    { 271204, 0.312 }, -- Meathook Slicer
+    { 271205, 0.299 }, -- Abomination Bones
+    { 271206, 0.307 }, -- Leftover Abomination Skin
     { 280438 }, -- Abominable Head
 })
 
 Data:AddBossLoot(3354, { -- Rath'mael
-    { 271213 }, -- Mirror of Rath'mael
-    { 271214 }, -- Rotmender's Treads
-    { 271215 }, -- Coldspire Staff
-    { 273085 }, -- Blueprint: Fermenter
+    { 271213, 0.34 }, -- Mirror of Rath'mael
+    { 271214, 0.325 }, -- Rotmender's Treads
+    { 271215, 0.327 }, -- Coldspire Staff
+    { 273085, 0.07 }, -- Blueprint: Fermenter
 })
 
 Data:AddBossLoot(3408, { -- Lordaeron Captain
-    { 6641 }, -- Haunting Blade
-    { 6642 }, -- Phantom Armor
+    { 6641, 0.472 }, -- Haunting Blade
+    { 6642, 0.472 }, -- Phantom Armor
 })
 
 Data:AddBossLoot(3411, { -- Viktor the Vile
-    { 271211 }, -- Vilewalkers
-    { 271212 }, -- Bloodied Chestwraps
-    { 271218 }, -- Vileblood Scimitar
+    { 271211, 0.327 }, -- Vilewalkers
+    { 271212, 0.331 }, -- Bloodied Chestwraps
+    { 271218, 0.342 }, -- Vileblood Scimitar
 })
 
 Data:AddBossLoot(3412, { -- Bjork
-    { 271209 }, -- Bonerust Leggings
-    { 271210 }, -- Tuskwrap Belt
-    { 271217 }, -- Corpse Chopper
+    { 271209, 0.327 }, -- Bonerust Leggings
+    { 271210, 0.321 }, -- Tuskwrap Belt
+    { 271217, 0.351 }, -- Corpse Chopper
 })
 
 Data:AddTrashLoot(2999, {
