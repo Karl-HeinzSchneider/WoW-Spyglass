@@ -107,6 +107,27 @@ test("crafting sections keep their shape through a fix rewrite", () => {
   assert.deepEqual(serialized.sections, sections, "fix must not drop the sections it rewrites");
 });
 
+test("a PvP upgrade references a base reward in the same group, section, and faction", () => {
+  const base = { item: 100, name: "Rare Armor", group: "Armor", section: "Warrior", side: "Alliance" };
+  const upgrade = { ...base, item: 200, name: "Epic Armor", upgradeFrom: base.item };
+  const file: ListFile = {
+    path: ".contribute/data/pvp/honor_gear.json",
+    kind: "pvp",
+    slug: "honor_gear",
+    data: { name: "Honor Gear", groupFolders: true, rewards: [base, upgrade] },
+  };
+  const checker = sectionChecker(true);
+  validateLists([file], checker);
+  assert.deepEqual(
+    checker.problems.filter((p) => !p.warning),
+    [],
+  );
+  assert.equal(JSON.parse(serializeList(file)).rewards[1].upgradeFrom, 100);
+  upgrade.side = "Horde";
+  validateLists([file], checker);
+  assert.match(checker.problems.map((p) => p.message).join("\n"), /upgradeFrom must reference a base reward/);
+});
+
 test("a section's categories may be named and are resolved to ids by fix", () => {
   const file = craftingFile([{ name: "Plate Armor", categories: ["Plate Helmets", 2470] }]);
   const checker = sectionChecker(true);

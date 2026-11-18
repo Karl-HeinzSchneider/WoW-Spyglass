@@ -206,7 +206,8 @@ local function costLines(sources)
                 parts[i] = formatCost(cost)
             end
             if #parts > 0 then
-                out[#out + 1] = "Cost: " .. table.concat(parts, " + ")
+                local label = source.upgradeFrom and "Upgrade: " or "Cost: "
+                out[#out + 1] = label .. table.concat(parts, " + ")
             end
         end
     end

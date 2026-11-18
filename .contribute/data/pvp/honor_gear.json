@@ -3110,6 +3110,1896 @@
         }
       ],
       "group": "Armor"
+    },
+    {
+      "item": 273393,
+      "name": "Premier Marshal's Lunarhide Legguards",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Druid",
+      "upgradeFrom": 272656,
+      "costs": [
+        {
+          "item": 272656,
+          "amount": 1,
+          "icon": 134586
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273394,
+      "name": "Premier Field Marshal's Lunarhide Helmet",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Druid",
+      "upgradeFrom": 272669,
+      "costs": [
+        {
+          "item": 272669,
+          "amount": 1,
+          "icon": 133077
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273392,
+      "name": "Premier Marshal's Lunarhide Spaulders",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Druid",
+      "upgradeFrom": 272670,
+      "costs": [
+        {
+          "item": 272670,
+          "amount": 1,
+          "icon": 135038
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272768,
+      "name": "Premier Knight-Champion's Beasthide Boots",
+      "rank": 9,
+      "side": "Alliance",
+      "section": "Druid",
+      "upgradeFrom": 272705,
+      "costs": [
+        {
+          "item": 272705,
+          "amount": 1,
+          "icon": 132541
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272757,
+      "name": "Premier Lieutenant Commander's Beasthide Gauntlets",
+      "rank": 10,
+      "side": "Alliance",
+      "section": "Druid",
+      "upgradeFrom": 272709,
+      "costs": [
+        {
+          "item": 272709,
+          "amount": 1,
+          "icon": 132960
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272761,
+      "name": "Premier Field Marshal's Beasthide Breastplate",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Druid",
+      "upgradeFrom": 272730,
+      "costs": [
+        {
+          "item": 272730,
+          "amount": 1,
+          "icon": 132725
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272759,
+      "name": "Premier Marshal's Beasthide Legguards",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Druid",
+      "upgradeFrom": 272731,
+      "costs": [
+        {
+          "item": 272731,
+          "amount": 1,
+          "icon": 134586
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272758,
+      "name": "Premier Marshal's Beasthide Spaulders",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Druid",
+      "upgradeFrom": 272732,
+      "costs": [
+        {
+          "item": 272732,
+          "amount": 1,
+          "icon": 135054
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272760,
+      "name": "Premier Field Marshal's Beasthide Helmet",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Druid",
+      "upgradeFrom": 272733,
+      "costs": [
+        {
+          "item": 272733,
+          "amount": 1,
+          "icon": 133143
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273391,
+      "name": "Premier Lieutenant Commander's Lunarhide Gauntlets",
+      "rank": 10,
+      "side": "Alliance",
+      "section": "Druid",
+      "upgradeFrom": 273368,
+      "costs": [
+        {
+          "item": 273368,
+          "amount": 1,
+          "icon": 132960
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273396,
+      "name": "Premier Knight-Champion's Lunarhide Boots",
+      "rank": 9,
+      "side": "Alliance",
+      "section": "Druid",
+      "upgradeFrom": 273370,
+      "costs": [
+        {
+          "item": 273370,
+          "amount": 1,
+          "icon": 132541
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273395,
+      "name": "Premier Field Marshal's Lunarhide Breastplate",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Druid",
+      "upgradeFrom": 273371,
+      "costs": [
+        {
+          "item": 273371,
+          "amount": 1,
+          "icon": 132725
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273401,
+      "name": "Premier Marshal's Dreamhide Legguards",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Druid",
+      "upgradeFrom": 273373,
+      "costs": [
+        {
+          "item": 273373,
+          "amount": 1,
+          "icon": 134586
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273402,
+      "name": "Premier Field Marshal's Dreamhide Helmet",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Druid",
+      "upgradeFrom": 273374,
+      "costs": [
+        {
+          "item": 273374,
+          "amount": 1,
+          "icon": 133077
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273400,
+      "name": "Premier Marshal's Dreamhide Spaulders",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Druid",
+      "upgradeFrom": 273375,
+      "costs": [
+        {
+          "item": 273375,
+          "amount": 1,
+          "icon": 135038
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273399,
+      "name": "Premier Lieutenant Commander's Dreamhide Gauntlets",
+      "rank": 10,
+      "side": "Alliance",
+      "section": "Druid",
+      "upgradeFrom": 273377,
+      "costs": [
+        {
+          "item": 273377,
+          "amount": 1,
+          "icon": 132960
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273404,
+      "name": "Premier Knight-Champion's Dreamhide Boots",
+      "rank": 9,
+      "side": "Alliance",
+      "section": "Druid",
+      "upgradeFrom": 273379,
+      "costs": [
+        {
+          "item": 273379,
+          "amount": 1,
+          "icon": 132541
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273403,
+      "name": "Premier Field Marshal's Dreamhide Breastplate",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Druid",
+      "upgradeFrom": 273380,
+      "costs": [
+        {
+          "item": 273380,
+          "amount": 1,
+          "icon": 132725
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272771,
+      "name": "Premier Knight-Champion's Chainmail Boots",
+      "rank": 9,
+      "side": "Alliance",
+      "section": "Hunter",
+      "upgradeFrom": 272713,
+      "costs": [
+        {
+          "item": 272713,
+          "amount": 1,
+          "icon": 132541
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272772,
+      "name": "Premier Lieutenant Commander's Chainmail Grips",
+      "rank": 10,
+      "side": "Alliance",
+      "section": "Hunter",
+      "upgradeFrom": 272715,
+      "costs": [
+        {
+          "item": 272715,
+          "amount": 1,
+          "icon": 132944
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272775,
+      "name": "Premier Field Marshal's Chainmail Breastplate",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Hunter",
+      "upgradeFrom": 272734,
+      "costs": [
+        {
+          "item": 272734,
+          "amount": 1,
+          "icon": 132628
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272776,
+      "name": "Premier Marshal's Chainmail Legguards",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Hunter",
+      "upgradeFrom": 272735,
+      "costs": [
+        {
+          "item": 272735,
+          "amount": 1,
+          "icon": 134590
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272777,
+      "name": "Premier Marshal's Chainmail Spaulders",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Hunter",
+      "upgradeFrom": 272736,
+      "costs": [
+        {
+          "item": 272736,
+          "amount": 1,
+          "icon": 135049
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272774,
+      "name": "Premier Field Marshal's Chainmail Helm",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Hunter",
+      "upgradeFrom": 272737,
+      "costs": [
+        {
+          "item": 272737,
+          "amount": 1,
+          "icon": 133123
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272746,
+      "name": "Premier Knight-Champion's Silk Footwraps",
+      "rank": 9,
+      "side": "Alliance",
+      "section": "Mage",
+      "upgradeFrom": 272701,
+      "costs": [
+        {
+          "item": 272701,
+          "amount": 1,
+          "icon": 132539
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272749,
+      "name": "Premier Lieutenant Commander's Silk Gloves",
+      "rank": 10,
+      "side": "Alliance",
+      "section": "Mage",
+      "upgradeFrom": 272703,
+      "costs": [
+        {
+          "item": 272703,
+          "amount": 1,
+          "icon": 132951
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272752,
+      "name": "Premier Field Marshal's Silk Vestments",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Mage",
+      "upgradeFrom": 272722,
+      "costs": [
+        {
+          "item": 272722,
+          "amount": 1,
+          "icon": 132670
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272751,
+      "name": "Premier Marshal's Silk Leggings",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Mage",
+      "upgradeFrom": 272723,
+      "costs": [
+        {
+          "item": 272723,
+          "amount": 1,
+          "icon": 134588
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272753,
+      "name": "Premier Marshal's Silk Spaulders",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Mage",
+      "upgradeFrom": 272724,
+      "costs": [
+        {
+          "item": 272724,
+          "amount": 1,
+          "icon": 135033
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272750,
+      "name": "Premier Field Marshal's Silk Coronet",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Mage",
+      "upgradeFrom": 272725,
+      "costs": [
+        {
+          "item": 272725,
+          "amount": 1,
+          "icon": 133126
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272781,
+      "name": "Premier Knight-Champion's Chevalier Boots",
+      "rank": 9,
+      "side": "Alliance",
+      "section": "Paladin",
+      "upgradeFrom": 272718,
+      "costs": [
+        {
+          "item": 272718,
+          "amount": 1,
+          "icon": 132584
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272780,
+      "name": "Premier Lieutenant Commander's Chevalier Gloves",
+      "rank": 10,
+      "side": "Alliance",
+      "section": "Paladin",
+      "upgradeFrom": 272719,
+      "costs": [
+        {
+          "item": 272719,
+          "amount": 1,
+          "icon": 132963
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272782,
+      "name": "Premier Field Marshal's Chevalier Chestplate",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Paladin",
+      "upgradeFrom": 272742,
+      "costs": [
+        {
+          "item": 272742,
+          "amount": 1,
+          "icon": 132738
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272783,
+      "name": "Premier Field Marshal's Chevalier Faceguard",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Paladin",
+      "upgradeFrom": 272743,
+      "costs": [
+        {
+          "item": 272743,
+          "amount": 1,
+          "icon": 133073
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272784,
+      "name": "Premier Marshal's Chevalier Legplates",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Paladin",
+      "upgradeFrom": 272744,
+      "costs": [
+        {
+          "item": 272744,
+          "amount": 1,
+          "icon": 134586
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272785,
+      "name": "Premier Marshal's Chevalier Pauldrons",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Paladin",
+      "upgradeFrom": 272745,
+      "costs": [
+        {
+          "item": 272745,
+          "amount": 1,
+          "icon": 135059
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273331,
+      "name": "Premier Field Marshal's Luminous Chestplate",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Paladin",
+      "upgradeFrom": 272852,
+      "costs": [
+        {
+          "item": 272852,
+          "amount": 1,
+          "icon": 132738
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273333,
+      "name": "Premier Marshal's Luminous Legplates",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Paladin",
+      "upgradeFrom": 272853,
+      "costs": [
+        {
+          "item": 272853,
+          "amount": 1,
+          "icon": 134586
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273332,
+      "name": "Premier Field Marshal's Luminous Faceguard",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Paladin",
+      "upgradeFrom": 272854,
+      "costs": [
+        {
+          "item": 272854,
+          "amount": 1,
+          "icon": 133073
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273334,
+      "name": "Premier Marshal's Luminous Pauldrons",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Paladin",
+      "upgradeFrom": 272855,
+      "costs": [
+        {
+          "item": 272855,
+          "amount": 1,
+          "icon": 135059
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273329,
+      "name": "Premier Lieutenant Commander's Luminous Gloves",
+      "rank": 10,
+      "side": "Alliance",
+      "section": "Paladin",
+      "upgradeFrom": 273363,
+      "costs": [
+        {
+          "item": 273363,
+          "amount": 1,
+          "icon": 132963
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273330,
+      "name": "Premier Knight-Champion's Luminous Boots",
+      "rank": 9,
+      "side": "Alliance",
+      "section": "Paladin",
+      "upgradeFrom": 273365,
+      "costs": [
+        {
+          "item": 273365,
+          "amount": 1,
+          "icon": 132584
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273421,
+      "name": "Premier Field Marshal's Mooncloth Headdress",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Priest",
+      "upgradeFrom": 272677,
+      "costs": [
+        {
+          "item": 272677,
+          "amount": 1,
+          "icon": 133119
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273423,
+      "name": "Premier Marshal's Mooncloth Mantle",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Priest",
+      "upgradeFrom": 272678,
+      "costs": [
+        {
+          "item": 272678,
+          "amount": 1,
+          "icon": 135032
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272823,
+      "name": "Premier Knight-Champion's Voidcloth Sandals",
+      "rank": 9,
+      "side": "Alliance",
+      "section": "Priest",
+      "upgradeFrom": 272810,
+      "costs": [
+        {
+          "item": 272810,
+          "amount": 1,
+          "icon": 132541
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272824,
+      "name": "Premier Lieutenant Commander's Voidcloth Gloves",
+      "rank": 10,
+      "side": "Alliance",
+      "section": "Priest",
+      "upgradeFrom": 272812,
+      "costs": [
+        {
+          "item": 272812,
+          "amount": 1,
+          "icon": 132964
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272818,
+      "name": "Premier Field Marshal's Voidcloth Headdress",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Priest",
+      "upgradeFrom": 272814,
+      "costs": [
+        {
+          "item": 272814,
+          "amount": 1,
+          "icon": 133126
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272819,
+      "name": "Premier Marshal's Voidcloth Pants",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Priest",
+      "upgradeFrom": 272815,
+      "costs": [
+        {
+          "item": 272815,
+          "amount": 1,
+          "icon": 134586
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272821,
+      "name": "Premier Field Marshal's Voidcloth Vestments",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Priest",
+      "upgradeFrom": 272816,
+      "costs": [
+        {
+          "item": 272816,
+          "amount": 1,
+          "icon": 132652
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272820,
+      "name": "Premier Marshal's Voidcloth Mantle",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Priest",
+      "upgradeFrom": 272817,
+      "costs": [
+        {
+          "item": 272817,
+          "amount": 1,
+          "icon": 135033
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273426,
+      "name": "Premier Knight-Champion's Mooncloth Sandals",
+      "rank": 9,
+      "side": "Alliance",
+      "section": "Priest",
+      "upgradeFrom": 273443,
+      "costs": [
+        {
+          "item": 273443,
+          "amount": 1,
+          "icon": 132541
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273427,
+      "name": "Premier Lieutenant Commander's Mooncloth Gloves",
+      "rank": 10,
+      "side": "Alliance",
+      "section": "Priest",
+      "upgradeFrom": 273445,
+      "costs": [
+        {
+          "item": 273445,
+          "amount": 1,
+          "icon": 132964
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273422,
+      "name": "Premier Marshal's Mooncloth Pants",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Priest",
+      "upgradeFrom": 273447,
+      "costs": [
+        {
+          "item": 273447,
+          "amount": 1,
+          "icon": 134586
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273424,
+      "name": "Premier Field Marshal's Mooncloth Vestments",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Priest",
+      "upgradeFrom": 273448,
+      "costs": [
+        {
+          "item": 273448,
+          "amount": 1,
+          "icon": 132652
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272755,
+      "name": "Premier Knight-Champion's Leather Footguards",
+      "rank": 9,
+      "side": "Alliance",
+      "section": "Rogue",
+      "upgradeFrom": 272704,
+      "costs": [
+        {
+          "item": 272704,
+          "amount": 1,
+          "icon": 132539
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272763,
+      "name": "Premier Lieutenant Commander's Leather Handgrips",
+      "rank": 10,
+      "side": "Alliance",
+      "section": "Rogue",
+      "upgradeFrom": 272708,
+      "costs": [
+        {
+          "item": 272708,
+          "amount": 1,
+          "icon": 132949
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272762,
+      "name": "Premier Field Marshal's Leather Chestpiece",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Rogue",
+      "upgradeFrom": 272726,
+      "costs": [
+        {
+          "item": 272726,
+          "amount": 1,
+          "icon": 132722
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272764,
+      "name": "Premier Field Marshal's Leather Mask",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Rogue",
+      "upgradeFrom": 272727,
+      "costs": [
+        {
+          "item": 272727,
+          "amount": 1,
+          "icon": 133144
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272765,
+      "name": "Premier Marshal's Leather Leggings",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Rogue",
+      "upgradeFrom": 272728,
+      "costs": [
+        {
+          "item": 272728,
+          "amount": 1,
+          "icon": 134591
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272766,
+      "name": "Premier Marshal's Leather Epaulets",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Rogue",
+      "upgradeFrom": 272729,
+      "costs": [
+        {
+          "item": 272729,
+          "amount": 1,
+          "icon": 135056
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274198,
+      "name": "Premier Knight-Champion's Scalemail Boots",
+      "rank": 9,
+      "side": "Alliance",
+      "section": "Shaman",
+      "upgradeFrom": 274176,
+      "costs": [
+        {
+          "item": 274176,
+          "amount": 1,
+          "icon": 132541
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274184,
+      "name": "Premier Lieutenant Commander's Flatmail Gauntlets",
+      "rank": 10,
+      "side": "Alliance",
+      "section": "Shaman",
+      "upgradeFrom": 274177,
+      "costs": [
+        {
+          "item": 274177,
+          "amount": 1,
+          "icon": 132945
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274203,
+      "name": "Premier Field Marshal's Scalemail Helm",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Shaman",
+      "upgradeFrom": 274178,
+      "costs": [
+        {
+          "item": 274178,
+          "amount": 1,
+          "icon": 133077
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274202,
+      "name": "Premier Field Marshal's Scalemail Armor",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Shaman",
+      "upgradeFrom": 274179,
+      "costs": [
+        {
+          "item": 274179,
+          "amount": 1,
+          "icon": 132638
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274189,
+      "name": "Premier Marshal's Flatmail Leggings",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Shaman",
+      "upgradeFrom": 274180,
+      "costs": [
+        {
+          "item": 274180,
+          "amount": 1,
+          "icon": 134589
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274190,
+      "name": "Premier Marshal's Flatmail Spaulders",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Shaman",
+      "upgradeFrom": 274181,
+      "costs": [
+        {
+          "item": 274181,
+          "amount": 1,
+          "icon": 135035
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274183,
+      "name": "Premier Knight-Champion's Flatmail Boots",
+      "rank": 9,
+      "side": "Alliance",
+      "section": "Shaman",
+      "upgradeFrom": 274192,
+      "costs": [
+        {
+          "item": 274192,
+          "amount": 1,
+          "icon": 132541
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274199,
+      "name": "Premier Lieutenant Commander's Scalemail Gauntlets",
+      "rank": 10,
+      "side": "Alliance",
+      "section": "Shaman",
+      "upgradeFrom": 274193,
+      "costs": [
+        {
+          "item": 274193,
+          "amount": 1,
+          "icon": 132945
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274187,
+      "name": "Premier Field Marshal's Flatmail Armor",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Shaman",
+      "upgradeFrom": 274194,
+      "costs": [
+        {
+          "item": 274194,
+          "amount": 1,
+          "icon": 132638
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274204,
+      "name": "Premier Marshal's Scalemail Leggings",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Shaman",
+      "upgradeFrom": 274195,
+      "costs": [
+        {
+          "item": 274195,
+          "amount": 1,
+          "icon": 134589
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274188,
+      "name": "Premier Field Marshal's Flatmail Helm",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Shaman",
+      "upgradeFrom": 274196,
+      "costs": [
+        {
+          "item": 274196,
+          "amount": 1,
+          "icon": 133077
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274205,
+      "name": "Premier Marshal's Scalemail Spaulders",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Shaman",
+      "upgradeFrom": 274197,
+      "costs": [
+        {
+          "item": 274197,
+          "amount": 1,
+          "icon": 135035
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274206,
+      "name": "Premier Knight-Champion's Linkmail Boots",
+      "rank": 9,
+      "side": "Alliance",
+      "section": "Shaman",
+      "upgradeFrom": 274217,
+      "costs": [
+        {
+          "item": 274217,
+          "amount": 1,
+          "icon": 132541
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274211,
+      "name": "Premier Field Marshal's Linkmail Helm",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Shaman",
+      "upgradeFrom": 274218,
+      "costs": [
+        {
+          "item": 274218,
+          "amount": 1,
+          "icon": 133077
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274210,
+      "name": "Premier Field Marshal's Linkmail Armor",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Shaman",
+      "upgradeFrom": 274219,
+      "costs": [
+        {
+          "item": 274219,
+          "amount": 1,
+          "icon": 132638
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274207,
+      "name": "Premier Lieutenant Commander's Linkmail Gauntlets",
+      "rank": 10,
+      "side": "Alliance",
+      "section": "Shaman",
+      "upgradeFrom": 274220,
+      "costs": [
+        {
+          "item": 274220,
+          "amount": 1,
+          "icon": 132945
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274212,
+      "name": "Premier Marshal's Linkmail Leggings",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Shaman",
+      "upgradeFrom": 274221,
+      "costs": [
+        {
+          "item": 274221,
+          "amount": 1,
+          "icon": 134589
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274213,
+      "name": "Premier Marshal's Linkmail Spaulders",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Shaman",
+      "upgradeFrom": 274222,
+      "costs": [
+        {
+          "item": 274222,
+          "amount": 1,
+          "icon": 135035
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272803,
+      "name": "Premier Marshal's Dreadweave Leggings",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Warlock",
+      "upgradeFrom": 272657,
+      "costs": [
+        {
+          "item": 272657,
+          "amount": 1,
+          "icon": 134586
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272802,
+      "name": "Premier Field Marshal's Dreadweave Coronal",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Warlock",
+      "upgradeFrom": 272671,
+      "costs": [
+        {
+          "item": 272671,
+          "amount": 1,
+          "icon": 133076
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272807,
+      "name": "Premier Knight-Champion's Dreadweave Boots",
+      "rank": 9,
+      "side": "Alliance",
+      "section": "Warlock",
+      "upgradeFrom": 272794,
+      "costs": [
+        {
+          "item": 272794,
+          "amount": 1,
+          "icon": 132536
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272808,
+      "name": "Premier Lieutenant Commander's Dreadweave Gloves",
+      "rank": 10,
+      "side": "Alliance",
+      "section": "Warlock",
+      "upgradeFrom": 272796,
+      "costs": [
+        {
+          "item": 272796,
+          "amount": 1,
+          "icon": 132953
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272805,
+      "name": "Premier Field Marshal's Dreadweave Robe",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Warlock",
+      "upgradeFrom": 272800,
+      "costs": [
+        {
+          "item": 272800,
+          "amount": 1,
+          "icon": 132666
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272804,
+      "name": "Premier Marshal's Dreadweave Shoulders",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Warlock",
+      "upgradeFrom": 272801,
+      "costs": [
+        {
+          "item": 272801,
+          "amount": 1,
+          "icon": 135054
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272792,
+      "name": "Premier Knight-Champion's Plate Boots",
+      "rank": 9,
+      "side": "Alliance",
+      "section": "Warrior",
+      "upgradeFrom": 272716,
+      "costs": [
+        {
+          "item": 272716,
+          "amount": 1,
+          "icon": 132590
+        },
+        {
+          "item": 275243,
+          "amount": 1,
+          "icon": 359726
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272793,
+      "name": "Premier Lieutenant Commander's Plate Gauntlets",
+      "rank": 10,
+      "side": "Alliance",
+      "section": "Warrior",
+      "upgradeFrom": 272717,
+      "costs": [
+        {
+          "item": 272717,
+          "amount": 1,
+          "icon": 132957
+        },
+        {
+          "item": 275239,
+          "amount": 1,
+          "icon": 133832
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272787,
+      "name": "Premier Field Marshal's Plate Helm",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Warrior",
+      "upgradeFrom": 272738,
+      "costs": [
+        {
+          "item": 272738,
+          "amount": 1,
+          "icon": 133073
+        },
+        {
+          "item": 275241,
+          "amount": 1,
+          "icon": 133143
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272786,
+      "name": "Premier Field Marshal's Plate Armor",
+      "rank": 13,
+      "side": "Alliance",
+      "section": "Warrior",
+      "upgradeFrom": 272739,
+      "costs": [
+        {
+          "item": 272739,
+          "amount": 1,
+          "icon": 132751
+        },
+        {
+          "item": 275238,
+          "amount": 1,
+          "icon": 132691
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272788,
+      "name": "Premier Marshal's Plate Legguards",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Warrior",
+      "upgradeFrom": 272740,
+      "costs": [
+        {
+          "item": 272740,
+          "amount": 1,
+          "icon": 134584
+        },
+        {
+          "item": 275242,
+          "amount": 1,
+          "icon": 134692
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272789,
+      "name": "Premier Marshal's Plate Shoulderguards",
+      "rank": 12,
+      "side": "Alliance",
+      "section": "Warrior",
+      "upgradeFrom": 272741,
+      "costs": [
+        {
+          "item": 272741,
+          "amount": 1,
+          "icon": 135051
+        },
+        {
+          "item": 275229,
+          "amount": 1,
+          "icon": 135056
+        }
+      ],
+      "group": "Armor"
     }
   ]
 }

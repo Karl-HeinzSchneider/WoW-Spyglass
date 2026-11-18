@@ -214,8 +214,9 @@ tiles under Battlegrounds and Honor Gear, and vendor locations appear in the mat
 subcollection's panel.
 Armor's Class selector starts on the character's class. It filters the class sections and
 keeps Epic Upgrades visible for every class selection.
-Within each class section, pieces of the same known armor set appear as one button with
-the class icon. The button opens the set popup. Items without a set appear as individual rows.
+Each class section begins with paired set buttons, rare on the left and epic on the right.
+The buttons use the class icon and open the same set popup. Individual items appear below.
+The epic item's tooltip lists its base item and seal as upgrade materials.
 
 ## Info pane (`infopane.lua` / `.xml`)
 

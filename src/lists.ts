@@ -124,6 +124,8 @@ export interface CuratedListRow extends CuratedItemRow {
   group?: string;
   /** PvP: header inside a reward subcategory. */
   section?: string;
+  /** PvP: the rare item consumed to make this epic upgrade. */
+  upgradeFrom?: number;
   /** Items paid together to buy this reward. */
   costs?: ItemCost[];
   /** crafting: the recipe's spell id (`fix` fills it in from the recipe database when the item is made by exactly one recipe of the profession, and the other way round). */
@@ -192,6 +194,7 @@ type FieldSpec =
 const FIELD_SPECS: Record<string, FieldSpec> = {
   group: { type: "string" },
   section: { type: "string" },
+  upgradeFrom: { type: "integer", min: 1 },
   costs: { type: "costs" },
   spell: { type: "integer", min: 1 },
   skill: { type: "integer", min: 0 },
@@ -204,7 +207,7 @@ const FIELD_SPECS: Record<string, FieldSpec> = {
 /** Row fields each kind accepts (besides `item`, `name` and `group`); the emit order in Lua. */
 export const ROW_FIELDS: Record<ListKind, (keyof CuratedListRow)[]> = {
   crafting: ["spell", "skill", "source", "costs"],
-  pvp: ["rank", "standing", "side", "section", "costs"],
+  pvp: ["rank", "standing", "side", "section", "upgradeFrom", "costs"],
   collections: ["source", "side", "costs"],
   reputation: ["standing", "side", "costs"],
 };
@@ -362,9 +365,26 @@ export function validateLists(files: ListFile[], checker: Checker): void {
         });
     }
 
+    const rewardsByItem = file.kind === "pvp" ? new Map(groupedRows.map(({ row }) => [row.item, row])) : undefined;
     for (const { row, where } of groupedRows) {
       if (file.kind === "pvp" && row.section !== undefined && d.groupFolders !== true) {
         checker.report(file, `${where}: section requires groupFolders to be enabled`);
+      }
+      if (rewardsByItem && isPositiveInteger(row.upgradeFrom)) {
+        const base = rewardsByItem.get(row.upgradeFrom);
+        if (
+          !base ||
+          base === row ||
+          base.upgradeFrom ||
+          base.group !== row.group ||
+          base.section !== row.section ||
+          base.side !== row.side
+        ) {
+          checker.report(
+            file,
+            `${where}: upgradeFrom must reference a base reward in the same group, section, and faction`,
+          );
+        }
       }
       for (const [field, value] of Object.entries(row)) {
         if (!allowed.has(field)) {

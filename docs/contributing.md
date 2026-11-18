@@ -378,6 +378,8 @@ tile) and `order` (tile position; by name otherwise).
 A PvP list can set `"groupFolders": true` to open reward groups as subcategories. They share
 the list's info panel, and a subcategory appears when it has a reward matching the panel filters.
 Set a reward row's `section` to place it under a named header inside its subcategory.
+Set `upgradeFrom` to the base item ID for an upgrade. The base reward must be in the same
+group, section, and faction. List the consumed items in `costs` to show them in the upgrade tooltip.
 
 An item row in any list may carry `"costs": [{ "item": 226404, "amount": 125, "icon": 133799 }]`.
 Use the payment item's ID, the quantity due, and the icon's texture file ID. Each must be a

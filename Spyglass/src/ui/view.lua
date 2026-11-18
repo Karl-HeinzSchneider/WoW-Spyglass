@@ -1202,6 +1202,7 @@ app.ui.ViewMixin = SpyglassViewMixin
 ---@field text? string  # header, subheader, group
 ---@field node? Spyglass.Node  # quest, row, tile, card
 ---@field source? Spyglass.Node  # clickable subheader
+---@field startLine? boolean  # place this row at the start of a new line
 
 -- Where every element of the current layout goes, as parallel arrays indexed by placement
 -- order; a page is a range of them. Shared by all views: only the shown view lays out and
@@ -2130,6 +2131,59 @@ function SpyglassViewMixin:Render()
     self.ActiveList:GenerateMenu()
 end
 
+-- Keep related sets on one line, with the rare set first and standalone items below.
+---@param elements Spyglass.Element[]
+---@param entries Spyglass.Node[]
+---@param keep fun(entry: Spyglass.Node): boolean
+local function addSetRows(elements, entries, keep)
+    local buttons, setOrder, loose = {}, {}, {}
+    local upgrades, upgradeBase = {}, {}
+    for _, entry in ipairs(entries) do
+        if keep(entry) then
+            local item = entry.itemID and Data:GetItem(entry.itemID)
+            local setID = item and item[ITEM.SET]
+            if not setID or setID == 0 then
+                loose[#loose + 1] = entry
+            elseif not buttons[setID] then
+                local section = entry.meta and entry.meta.section
+                local class = type(section) == "string" and section:upper()
+                local classFilter = app.classFilter
+                local icon = class and tContains(classFilter:GetClasses(), class) and classFilter:GetIcon(class)
+                buttons[setID] = {
+                    name = Data:GetSetName(setID),
+                    icon = icon or item[ITEM.ICON],
+                    quality = item[ITEM.QUALITY],
+                    setItemID = entry.itemID,
+                }
+                setOrder[#setOrder + 1] = setID
+                local baseItem = entry.meta and entry.meta.upgradeFrom
+                local baseSet = baseItem and Data:GetItemField(baseItem, ITEM.SET)
+                if baseSet and baseSet ~= 0 and baseSet ~= setID then
+                    upgrades[baseSet] = upgrades[baseSet] or {}
+                    table.insert(upgrades[baseSet], setID)
+                    upgradeBase[setID] = baseSet
+                end
+            end
+        end
+    end
+    for _, setID in ipairs(setOrder) do
+        local base = upgradeBase[setID]
+        if not base or not buttons[base] then
+            elements[#elements + 1] = { kind = "row", node = buttons[setID], startLine = true }
+            for _, upgrade in ipairs(upgrades[setID] or {}) do
+                elements[#elements + 1] = { kind = "row", node = buttons[upgrade] }
+            end
+        end
+    end
+    for index, entry in ipairs(loose) do
+        if index == 1 and #setOrder > 0 then
+            elements[#elements + 1] = { kind = "row", node = entry, startLine = true }
+        else
+            elements[#elements + 1] = entryElement("row", entry)
+        end
+    end
+end
+
 -- Turns the current node into the flat list of things to draw: its children. `header` nodes become section headers,
 -- `subheader` nodes the smaller section titles under them, `quest` nodes quest banners (followed
 -- by their `items`), `group` nodes group labels (followed by their `items`), `spacer` nodes an
@@ -2196,28 +2250,13 @@ function SpyglassViewMixin:BuildElements(node)
     end
 
     local function addRows(entries)
-        local seenSets = node.combineSets and {}
+        if node.combineSets and entryKind == "row" then
+            addSetRows(elements, entries, keep)
+            return
+        end
         for _, entry in ipairs(entries) do
             if keep(entry) then
-                local item = seenSets and entry.itemID and Data:GetItem(entry.itemID)
-                local setID = item and item[ITEM.SET]
-                if setID and setID ~= 0 then
-                    if not seenSets[setID] then
-                        seenSets[setID] = true
-                        local section = entry.meta and entry.meta.section
-                        local class = type(section) == "string" and section:upper()
-                        local classFilter = app.classFilter
-                        local icon = class and tContains(classFilter:GetClasses(), class) and classFilter:GetIcon(class)
-                        elements[#elements + 1] = entryElement(entryKind, {
-                            name = Data:GetSetName(setID),
-                            icon = icon or item[ITEM.ICON],
-                            quality = item[ITEM.QUALITY],
-                            setItemID = entry.itemID,
-                        })
-                    end
-                else
-                    elements[#elements + 1] = entryElement(entryKind, entry)
-                end
+                elements[#elements + 1] = entryElement(entryKind, entry)
             end
         end
     end
@@ -2394,6 +2433,9 @@ function SpyglassViewMixin:LayoutPages(elements, columns)
                 y = y + self.rowHeight
             end
         else
+            if element.startLine then
+                newLine()
+            end
             local height, gap = self.rowHeight, 0
             if element.kind == "tile" then
                 height, gap = self.tileHeight, self.columnGap

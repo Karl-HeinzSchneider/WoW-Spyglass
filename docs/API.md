@@ -305,7 +305,8 @@ Constructors (optional sugar):
   the set popup: the set's name and every item of the set.
   A row folder with `combineSets = true` groups matching items from the same known set into
   one set button per section. A set button carries `setItemID` for a representative item and
-  opens the same popup.
+  opens the same popup. A PvP reward's `upgradeFrom` links the upgrade to its base item.
+  In a two-column folder, the upgraded set appears beside the base set.
 - `Spyglass.Log(fmt, ...)` — prefixed chat message
 - `Spyglass.LogAt(level, fmt, ...)` — threshold-aware diagnostic output using the core logger
 - `Spyglass.PlaceholderItem(name, quality, icon)` — hard-coded display data, for prototyping

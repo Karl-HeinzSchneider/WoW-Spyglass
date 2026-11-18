@@ -180,6 +180,7 @@ local RECIPE = {
 ---@field chance? number
 ---@field skillLineID? integer
 ---@field costs? Spyglass.ItemCost[]
+---@field upgradeFrom? integer
 ---@field [string] any
 
 ---@alias Spyglass.NameKind "items"|"bosses"|"instances"|"skillLines"|"categories"|"tools"
