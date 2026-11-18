@@ -23,6 +23,9 @@ SG:RegisterModule({
             entries[#entries + 1] = SG.Header("Honor Gear")
             for _, folder in ipairs(honorGear.children or {}) do
                 folder.panel = honorGear.panel
+                if folder.meta and folder.meta.groupKey == "CUSTOM:Armor" then
+                    folder.combineSets = true
+                end
                 entries[#entries + 1] = folder
             end
         end

@@ -1832,11 +1832,11 @@ end
 ---@param node Spyglass.Node?
 ---@return boolean
 function SpyglassViewMixin:IsFaded(node)
+    local itemID = node and (node.itemID or node.setItemID)
     return self.classFilterOn
         and self.classFilterMode == "fade"
-        and node ~= nil
-        and node.itemID ~= nil
-        and not app.classFilter:CanUse(self:GetFilterClass(), node.itemID)
+        and itemID ~= nil
+        and not app.classFilter:CanUse(self:GetFilterClass(), itemID)
 end
 
 -- The values `field` has in the current list's `meta` (entries under subheaders and groups
@@ -2196,9 +2196,24 @@ function SpyglassViewMixin:BuildElements(node)
     end
 
     local function addRows(entries)
+        local seenSets = node.combineSets and {}
         for _, entry in ipairs(entries) do
             if keep(entry) then
-                elements[#elements + 1] = entryElement(entryKind, entry)
+                local item = seenSets and entry.itemID and Data:GetItem(entry.itemID)
+                local setID = item and item[ITEM.SET]
+                if setID and setID ~= 0 then
+                    if not seenSets[setID] then
+                        seenSets[setID] = true
+                        elements[#elements + 1] = entryElement(entryKind, {
+                            name = Data:GetSetName(setID),
+                            icon = item[ITEM.ICON],
+                            quality = item[ITEM.QUALITY],
+                            setItemID = entry.itemID,
+                        })
+                    end
+                else
+                    elements[#elements + 1] = entryElement(entryKind, entry)
+                end
             end
         end
     end

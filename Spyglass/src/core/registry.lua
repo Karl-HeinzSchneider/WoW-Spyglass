@@ -29,6 +29,7 @@ local log = app.logger
 ---@field getChildren? fun(node: Spyglass.Node, view: Spyglass.View): Spyglass.Node[]  # dynamic folders; called on every open
 ---@field query? boolean  # folder showing Spyglass.Data items through the view's Spyglass.Query
 ---@field itemID? integer
+---@field setItemID? integer  # a representative item for opening the set popup from a set row
 ---@field chance? number  # items: drop chance 0..1, shown as a percentage
 ---@field spellID? integer
 ---@field quality? Enum.ItemQuality  # custom/placeholder entries: colors the name
@@ -39,6 +40,7 @@ local log = app.logger
 ---@field columns? integer  # folders: columns for this list; default 1 for rows, 3 for tiles
 ---@field display? "rows"|"tiles"|"cards"  # folders: how the entries are drawn; default "rows"
 ---@field groupBy? "auto"|fun(node: Spyglass.Node): string?, string?  # folders: auto-group ungrouped entries; see api.DefaultGroupKey
+---@field combineSets? boolean  # row folders: show a single button per known item set within each group or section
 --- Tile / card fields, read when the parent folder has `display = "tiles"` or `"cards"`:
 ---@field background? string|number  # tiles: wide picture filling the tile (texture path, fileID or atlas name)
 ---@field backgroundCoords? number[]  # tiles: { left, right, top, bottom } part of `background` to show (of an atlas: of its region); all of it by default

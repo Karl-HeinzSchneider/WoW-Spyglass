@@ -303,6 +303,9 @@ Constructors (optional sugar):
   (product and teaching item, recipe link and reagents); modified clicks still link the row's item.
   Likewise, a plain click on any item row whose item belongs to a set (`Data:GetSetItems`) opens
   the set popup: the set's name and every item of the set.
+  A row folder with `combineSets = true` groups matching items from the same known set into
+  one set button per section. A set button carries `setItemID` for a representative item and
+  opens the same popup.
 - `Spyglass.Log(fmt, ...)` — prefixed chat message
 - `Spyglass.LogAt(level, fmt, ...)` — threshold-aware diagnostic output using the core logger
 - `Spyglass.PlaceholderItem(name, quality, icon)` — hard-coded display data, for prototyping
