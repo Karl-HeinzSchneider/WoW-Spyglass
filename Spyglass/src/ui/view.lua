@@ -2204,9 +2204,13 @@ function SpyglassViewMixin:BuildElements(node)
                 if setID and setID ~= 0 then
                     if not seenSets[setID] then
                         seenSets[setID] = true
+                        local section = entry.meta and entry.meta.section
+                        local class = type(section) == "string" and section:upper()
+                        local classFilter = app.classFilter
+                        local icon = class and tContains(classFilter:GetClasses(), class) and classFilter:GetIcon(class)
                         elements[#elements + 1] = entryElement(entryKind, {
                             name = Data:GetSetName(setID),
-                            icon = item[ITEM.ICON],
+                            icon = icon or item[ITEM.ICON],
                             quality = item[ITEM.QUALITY],
                             setItemID = entry.itemID,
                         })
