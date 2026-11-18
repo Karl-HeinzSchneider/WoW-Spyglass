@@ -90,6 +90,28 @@
       "map": [1453, 75.2, 67.6],
       "side": "Alliance",
       "group": "Officer Accessories"
+    },
+    {
+      "header": "Captain Dirgehammer",
+      "side": "Alliance",
+      "group": "Armor"
+    },
+    {
+      "text": "Armor Quartermaster in Stormwind City",
+      "side": "Alliance",
+      "group": "Armor"
+    },
+    {
+      "row": "Coordinates",
+      "value": "75.8, 67.0",
+      "side": "Alliance",
+      "group": "Armor"
+    },
+    {
+      "button": "Show armor quartermaster on map",
+      "map": [1453, 75.8, 67],
+      "side": "Alliance",
+      "group": "Armor"
     }
   ],
   "rewards": [
@@ -683,6 +705,2278 @@
         }
       ],
       "group": "Officer Accessories"
+    },
+    {
+      "item": 272656,
+      "name": "Premier Lunarhide Leggings",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272657,
+      "name": "Premier Dreadweave Legguards",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272669,
+      "name": "Premier Lunarhide Headguard",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272670,
+      "name": "Premier Lunarhide Shoulders",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272671,
+      "name": "Premier Dreadweave Cowl",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272677,
+      "name": "Premier Mooncloth Hood",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272678,
+      "name": "Premier Mooncloth Mantle",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272700,
+      "name": "Premier Silk Sash",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272701,
+      "name": "Premier Silk Boots",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272702,
+      "name": "Premier Silk Cuffs",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272703,
+      "name": "Premier Silk Gloves",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272704,
+      "name": "Premier Leather Boots",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272705,
+      "name": "Premier Beasthide Footwraps",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272706,
+      "name": "Premier Leather Bracers",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272707,
+      "name": "Premier Beasthide Armsplints",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272708,
+      "name": "Premier Leather Gauntlets",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272709,
+      "name": "Premier Beasthide Gloves",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272710,
+      "name": "Premier Leather Belt",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272711,
+      "name": "Premier Beasthide Girdle",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272712,
+      "name": "Premier Chainmail Girdle",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272713,
+      "name": "Premier Chainmail Boots",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272715,
+      "name": "Premier Chainmail Gauntlets",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272716,
+      "name": "Premier Plate Boots",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272717,
+      "name": "Premier Plate Gauntlets",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272718,
+      "name": "Premier Chevalier Sabatons",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272719,
+      "name": "Premier Chevalier Gauntlets",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272720,
+      "name": "Premier Chevalier Cinch",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272721,
+      "name": "Premier Chevalier Armsplints",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272722,
+      "name": "Premier Silk Raiment",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272723,
+      "name": "Premier Silk Leggings",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272724,
+      "name": "Premier Silk Spaulders",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272725,
+      "name": "Premier Silk Crown",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272726,
+      "name": "Premier Leather Armor",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272727,
+      "name": "Premier Leather Veil",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272728,
+      "name": "Premier Leather Legguards",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272729,
+      "name": "Premier Leather Spaulders",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272730,
+      "name": "Premier Beasthide Tunic",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272731,
+      "name": "Premier Beasthide Leggings",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272732,
+      "name": "Premier Beasthide Epaulets",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272733,
+      "name": "Premier Beasthide Shroud",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272734,
+      "name": "Premier Chainmail Hauberk",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272735,
+      "name": "Premier Chainmail Leggings",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272736,
+      "name": "Premier Chainmail Pauldrons",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272737,
+      "name": "Premier Chainmail Helmet",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272738,
+      "name": "Premier Plate Helm",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272739,
+      "name": "Premier Plate Chestguard",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272740,
+      "name": "Premier Plate Leggings",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272741,
+      "name": "Premier Plate Pauldrons",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272742,
+      "name": "Premier Chevalier Breastplate",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272743,
+      "name": "Premier Chevalier Headguard",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272744,
+      "name": "Premier Chevalier Leggings",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272745,
+      "name": "Premier Chevalier Shoulders",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272794,
+      "name": "Premier Dreadweave Boots",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272795,
+      "name": "Premier Dreadweave Bracers",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272796,
+      "name": "Premier Dreadweave Gloves",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272797,
+      "name": "Premier Dreadweave Belt",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272800,
+      "name": "Premier Dreadweave Robe",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272801,
+      "name": "Premier Dreadweave Mantle",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272810,
+      "name": "Premier Voidcloth Boots",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272811,
+      "name": "Premier Voidcloth Cuffs",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272812,
+      "name": "Premier Voidcloth Gloves",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272813,
+      "name": "Premier Voidcloth Cord",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272814,
+      "name": "Premier Voidcloth Diadem",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272815,
+      "name": "Premier Voidcloth Leggings",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272816,
+      "name": "Premier Voidcloth Robes",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272817,
+      "name": "Premier Voidcloth Amice",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272828,
+      "name": "Premier Plate Wristguards",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272830,
+      "name": "Premier Chainmail Armguards",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272834,
+      "name": "Premier Dreamhide Armsplints",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272835,
+      "name": "Premier Lunarhide Armsplints",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272852,
+      "name": "Premier Luminous Breastplate",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272853,
+      "name": "Premier Luminous Leggings",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272854,
+      "name": "Premier Luminous Headguard",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 272855,
+      "name": "Premier Luminous Shoulders",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273325,
+      "name": "Premier Plate Girdle",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273363,
+      "name": "Premier Luminous Gauntlets",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273364,
+      "name": "Premier Luminous Armsplints",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273365,
+      "name": "Premier Luminous Sabatons",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273366,
+      "name": "Premier Luminous Cinch",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273368,
+      "name": "Premier Lunarhide Gloves",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273369,
+      "name": "Premier Lunarhide Girdle",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273370,
+      "name": "Premier Lunarhide Footwraps",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273371,
+      "name": "Premier Lunarhide Tunic",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273373,
+      "name": "Premier Dreamhide Leggings",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273374,
+      "name": "Premier Dreamhide Headguard",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273375,
+      "name": "Premier Dreamhide Shoulders",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273377,
+      "name": "Premier Dreamhide Gloves",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273378,
+      "name": "Premier Dreamhide Girdle",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273379,
+      "name": "Premier Dreamhide Footwraps",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273380,
+      "name": "Premier Dreamhide Tunic",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273443,
+      "name": "Premier Mooncloth Boots",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273444,
+      "name": "Premier Mooncloth Cuffs",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273445,
+      "name": "Premier Mooncloth Gloves",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273447,
+      "name": "Premier Mooncloth Leggings",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273448,
+      "name": "Premier Mooncloth Robes",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 273449,
+      "name": "Premier Mooncloth Cord",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274176,
+      "name": "Premier Scalemail Walkers",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274177,
+      "name": "Premier Flatmail Grips",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274178,
+      "name": "Premier Scalemail Helm",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274179,
+      "name": "Premier Scalemail Chestpiece",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274180,
+      "name": "Premier Flatmail Leggings",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274181,
+      "name": "Premier Flatmail Shoulders",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274182,
+      "name": "Premier Flatmail Wristguards",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274192,
+      "name": "Premier Flatmail Greaves",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274193,
+      "name": "Premier Scalemail Vices",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274194,
+      "name": "Premier Flatmail Hauberk",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274195,
+      "name": "Premier Scalemail Legguards",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274196,
+      "name": "Premier Flatmail Headguard",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274197,
+      "name": "Premier Scalemail Pauldrons",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274214,
+      "name": "Premier Flatmail Girdle",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274215,
+      "name": "Premier Scalemail Wristguards",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274217,
+      "name": "Premier Linkmail Walkers",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 274895,
+          "amount": 10,
+          "icon": 237427
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274218,
+      "name": "Premier Linkmail Helm",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20560,
+          "amount": 15,
+          "icon": 133308
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274219,
+      "name": "Premier Linkmail Chestpiece",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 15,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 9350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274220,
+      "name": "Premier Linkmail Vices",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 7500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274221,
+      "name": "Premier Linkmail Legguards",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 15,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 9000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274222,
+      "name": "Premier Linkmail Pauldrons",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6350,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274223,
+      "name": "Premier Linkmail Wristguards",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20558,
+          "amount": 10,
+          "icon": 134420
+        },
+        {
+          "currency": 1792,
+          "amount": 4500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274224,
+      "name": "Premier Linkmail Girdle",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 274225,
+      "name": "Premier Scalemail Girdle",
+      "side": "Alliance",
+      "costs": [
+        {
+          "item": 20559,
+          "amount": 10,
+          "icon": 133282
+        },
+        {
+          "currency": 1792,
+          "amount": 6000,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 275229,
+      "name": "Premier Emboldened Shoulder Seal",
+      "rank": 12,
+      "side": "Alliance",
+      "costs": [
+        {
+          "currency": 1792,
+          "amount": 2250,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 275238,
+      "name": "Premier Emboldened Chest Seal",
+      "rank": 13,
+      "side": "Alliance",
+      "costs": [
+        {
+          "currency": 1792,
+          "amount": 2650,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 275239,
+      "name": "Premier Emboldened Hands Seal",
+      "rank": 10,
+      "side": "Alliance",
+      "costs": [
+        {
+          "currency": 1792,
+          "amount": 2250,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 275240,
+      "name": "Premier Emboldened Wrist Seal",
+      "rank": 8,
+      "side": "Alliance",
+      "costs": [
+        {
+          "currency": 1792,
+          "amount": 1200,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 275241,
+      "name": "Premier Emboldened Head Seal",
+      "rank": 13,
+      "side": "Alliance",
+      "costs": [
+        {
+          "currency": 1792,
+          "amount": 2650,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 275242,
+      "name": "Premier Emboldened Legs Seal",
+      "rank": 12,
+      "side": "Alliance",
+      "costs": [
+        {
+          "currency": 1792,
+          "amount": 2650,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 275243,
+      "name": "Premier Emboldened Feet Seal",
+      "rank": 9,
+      "side": "Alliance",
+      "costs": [
+        {
+          "currency": 1792,
+          "amount": 1500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
+    },
+    {
+      "item": 275244,
+      "name": "Premier Emboldened Belt Seal",
+      "rank": 8,
+      "side": "Alliance",
+      "costs": [
+        {
+          "currency": 1792,
+          "amount": 1500,
+          "name": "Honor Points"
+        }
+      ],
+      "group": "Armor"
     }
   ]
 }
