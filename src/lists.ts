@@ -119,6 +119,8 @@ export type ReputationRewards = Partial<Record<Standing, CuratedListRow[]>>;
  */
 export interface CuratedListRow extends CuratedItemRow {
   group?: string;
+  /** PvP: header inside a reward subcategory. */
+  section?: string;
   /** Items paid together to buy this reward. */
   costs?: ItemCost[];
   /** crafting: the recipe's spell id (`fix` fills it in from the recipe database when the item is made by exactly one recipe of the profession, and the other way round). */
@@ -186,6 +188,7 @@ type FieldSpec =
 
 const FIELD_SPECS: Record<string, FieldSpec> = {
   group: { type: "string" },
+  section: { type: "string" },
   costs: { type: "costs" },
   spell: { type: "integer", min: 1 },
   skill: { type: "integer", min: 0 },
@@ -198,7 +201,7 @@ const FIELD_SPECS: Record<string, FieldSpec> = {
 /** Row fields each kind accepts (besides `item`, `name` and `group`); the emit order in Lua. */
 export const ROW_FIELDS: Record<ListKind, (keyof CuratedListRow)[]> = {
   crafting: ["spell", "skill", "source", "costs"],
-  pvp: ["rank", "standing", "side", "costs"],
+  pvp: ["rank", "standing", "side", "section", "costs"],
   collections: ["source", "side", "costs"],
   reputation: ["standing", "side", "costs"],
 };
@@ -357,6 +360,9 @@ export function validateLists(files: ListFile[], checker: Checker): void {
     }
 
     for (const { row, where } of groupedRows) {
+      if (file.kind === "pvp" && row.section !== undefined && d.groupFolders !== true) {
+        checker.report(file, `${where}: section requires groupFolders to be enabled`);
+      }
       for (const [field, value] of Object.entries(row)) {
         if (!allowed.has(field)) {
           checker.report(file, `${where}: unknown field \`${field}\``);

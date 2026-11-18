@@ -909,6 +909,28 @@ local function craftingFolderKey(node)
     return "OTHER", OTHER or "Other"
 end
 
+-- Insert a subheader at the first entry of each named section inside a reward folder.
+---@param entries Spyglass.Node[]
+---@return Spyglass.Node[]
+local function rewardSections(entries)
+    local children, bySection = {}, {}
+    for _, entry in ipairs(entries) do
+        local section = entry.meta and entry.meta.section
+        if type(section) == "string" and section ~= "" then
+            local items = bySection[section]
+            if not items then
+                items = {}
+                bySection[section] = items
+                children[#children + 1] = api.Subheader(section, items)
+            end
+            items[#items + 1] = entry
+        else
+            children[#children + 1] = entry
+        end
+    end
+    return children
+end
+
 -- A folder per trade skill category or PvP reward group, keeping the list's entry order.
 -- A curated group label takes precedence over the default grouping.
 ---@param kind Spyglass.ListKind
@@ -924,7 +946,8 @@ local function groupedListFolders(kind, id, entries)
     local folders = {}
     for _, group in ipairs(groups) do
         local first = group.entries[1]
-        folders[#folders + 1] = api.Folder(group.label, entryIcon(first) or ICON_LIST, group.entries, {
+        local children = crafting and group.entries or rewardSections(group.entries)
+        folders[#folders + 1] = api.Folder(group.label, entryIcon(first) or ICON_LIST, children, {
             columns = 2,
             description = crafting and ("%d recipes"):format(#group.entries) or nil,
             meta = { listKind = kind, listID = id, groupKey = group.key, rewardGroup = not crafting or nil },

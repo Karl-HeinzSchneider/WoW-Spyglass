@@ -298,6 +298,7 @@ Constructors (optional sugar):
   character's rank ("145 / 150") as `info` and the localized profession name.
   A PvP list with `groupFolders = true` opens each reward group as a subfolder. The subfolders
   inherit the list's panel and are visible when at least one reward matches its filters.
+  A reward row's optional `section` names a subheader inside its reward folder.
   A plain click on any row whose `meta.spell` is a recipe in `Data.recipes` opens the recipe popup
   (product and teaching item, recipe link and reagents); modified clicks still link the row's item.
   Likewise, a plain click on any item row whose item belongs to a set (`Data:GetSetItems`) opens

@@ -2157,9 +2157,13 @@ function SpyglassViewMixin:BuildElements(node)
         end
         if app.api.IsFolder(entry) then
             if panelTest and entry.meta and entry.meta.rewardGroup then
-                for _, reward in ipairs(entry.children or {}) do
-                    if not reward.hidden and panelTest(reward) then
-                        return true
+                for _, child in ipairs(entry.children or {}) do
+                    if not child.hidden then
+                        for _, reward in ipairs(child.items or { child }) do
+                            if not reward.hidden and panelTest(reward) then
+                                return true
+                            end
+                        end
                     end
                 end
                 return false
