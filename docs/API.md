@@ -147,10 +147,11 @@ picture standing on its left, the name and the two info texts beside it, two car
 | `portraitDisplayID` | integer          | CreatureDisplayID the client renders the picture from, for entries without a `portrait` (the game's own boss buttons draw creature portraits the same way). |
 | `quests`            | integer[]        | Quest ids the entry is involved in: the card shows a quest "!" and the tooltip lists the quests' titles.                                                    |
 
-`InstanceFolder` nodes are card folders. The first card, "All Bosses", lists every item any of
-the instance's bosses drops (each item once), so the whole loot table reads at a glance. The
-trash card follows, then each `BossFolder(bossID)` carries what the database
-knows about the boss — portrait (a texture, or the model's display id for bosses without art), `info` as "<level> [rare] <creature type>" (e.g. "19 rare" or "60 Beast"), `quests`,
+`InstanceFolder` nodes are card folders. The first card, "All Bosses", combines the bosses' drops
+(each item once). The Trash card follows. Dungeons with recipe drops have a Recipes card next,
+which collects those items from All Bosses, Trash, and the individual boss cards. Each recipe
+appears once, using its first drop entry in that order. Each `BossFolder(bossID)` carries what
+the database knows about the boss — portrait (a texture, or the model's display id for bosses without art), `info` as "<level> [rare] <creature type>" (e.g. "19 rare" or "60 Beast"), `quests`,
 and `infoRight` showing "1 drop on your lists" or "N drops on your lists" for distinct drops
 saved in Favorites or any other item list (hidden when none are saved). The right pane lists
 quests and has a button beneath them to open
