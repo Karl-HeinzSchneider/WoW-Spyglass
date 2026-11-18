@@ -159,6 +159,15 @@ local function craftedLines(sources)
     return out
 end
 
+local BATTLEGROUND_MARK_LABELS = {
+    [19322] = "Warsong Gulch",
+    [20558] = "Warsong Gulch",
+    [20559] = "Arathi Basin",
+    [20560] = "Alterac Valley",
+    [274895] = "Darkspear Island",
+}
+local HONOR_CURRENCY_ID = 1792
+
 ---@param cost Spyglass.ItemCost
 ---@return string
 local function formatCost(cost)
@@ -174,9 +183,12 @@ local function formatCost(cost)
                 name = info.name
             end
         end
+        if cost.currency == HONOR_CURRENCY_ID then
+            name = HONOR or "Honor"
+        end
     elseif cost.item then
         local itemName, known = Data:GetItemName(cost.item)
-        name = known and itemName or nil
+        name = BATTLEGROUND_MARK_LABELS[cost.item] or (known and itemName or nil)
     end
     local icon = iconID and (" " .. CreateSimpleTextureMarkup(iconID, ICON_SIZE, ICON_SIZE)) or ""
     return ("%d%s%s"):format(cost.amount, icon, name and (" " .. name) or "")

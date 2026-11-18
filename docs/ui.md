@@ -319,7 +319,8 @@ frame), quests with `Interface\GossipFrame\AvailableQuestIcon`. Then one gold
 profession's crafting list. Each priced list row adds a `Cost` line with the quantities and
 icons of the payment items and currencies, including gold, silver and copper for coin prices.
 Item names come from the database or client.
-Currency names come from the client or the curated fallback.
+Currency names come from the client or the curated fallback. Battleground marks use the
+battleground name in cost lines, and Honor Points appear as Honor.
 
 It hooks once in `OnInitialize`: through `TooltipDataProcessor.AddTooltipPostCall` when
 `GameTooltip` is built on the tooltip data handler, else `OnTooltipSetItem` on `GameTooltip` and
