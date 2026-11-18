@@ -79,6 +79,8 @@ Data:AddQuests(2970, {
         { 279885 }, -- Ceremonial Mallet
         { 279886 }, -- Sacrificial Sword
         { 279887 }, -- I'lalai Flayer
+        { 270312 }, -- Translated Tale of I'lalai
+        { 270313 }, -- Tale of I'lalai in Zandali
     } },
     { id = 95776, name = "The Only Good Brinescale...", side = "Horde", requiredLevel = 30, xp = 9500, objective = "Kill Var'Taka in the Drowned City.", description = "Commander Aggro'gosh offers it once Enemies in the Water and Locating the Lost City (Kin'weelay) are both handed in.", requires = { { id = 95770, name = "Locating the Lost City" }, { id = 95773, name = "Enemies in the Water" } }, start = { description = "Grom'gol Base Camp, Stranglethorn Vale", location = { 1434, 32.2, 28.8 }, npc = "Commander Aggro'gosh" }, turnIn = { description = "Grom'gol Base Camp, Stranglethorn Vale", location = { 1434, 32.2, 28.8 }, npc = "Commander Aggro'gosh" }, items = {
         { 279888 }, -- Tidesoaked Leggings
@@ -88,6 +90,7 @@ Data:AddQuests(2970, {
     { id = 95799, name = "Findings for the Explorer's League", side = "Alliance", requiredLevel = 30, xp = 2350, objective = "Take Dibbs' I'lalai Translations to Historian Karnik in Ironforge.", requires = { { id = 95787, name = "Take Two With Water" } }, start = { description = "Southshore, Hillsbrad Foothills", location = { 1424, 50.6, 57.1 }, npc = "Loremaster Dibbs" }, turnIn = { description = "Hall of Explorers, Ironforge", location = { 1455, 77.5, 11.8 }, npc = "Historian Karnik" }, items = {
         { 279880 }, -- Ancient Voodoo Pouch
         { 279881 }, -- Intrepid Explorer's Chainmail
+        { 272124 }, -- Translated Tale of I'lalai
     } },
     { id = 95798, name = "The Web of Magic", side = "Alliance", requiredLevel = 30, xp = 2350, objective = "Take the I'lalai Fetish to Abra Cadabra in Dalaran.", description = "The Kirin Tor only let noteworthy visitors into Dalaran.", requires = { { id = 95788, name = "Magics of the Drowned City" } }, start = { description = "Southshore, Hillsbrad Foothills", location = { 1424, 50.6, 57.1 }, npc = "Loremaster Dibbs" }, turnIn = { description = "Dalaran", location = { 1416, 13.2, 69.6 }, npc = "Abra Cadabra" }, items = {
         { 279879 }, -- Rune-Etched Epaulets

@@ -759,6 +759,14 @@
         {
           "item": 11962,
           "name": "Manacle Cuffs"
+        },
+        {
+          "item": 270120,
+          "name": "Boots of Requite"
+        },
+        {
+          "item": 270121,
+          "name": "Private Rocknot's Spare Bracers"
         }
       ]
     },
@@ -1131,6 +1139,10 @@
         {
           "item": 12038,
           "name": "Lagrave's Seal"
+        },
+        {
+          "item": 270119,
+          "name": "Dark Iron Signet"
         }
       ]
     },
@@ -1139,7 +1151,7 @@
       "name": "A Binding Contract",
       "side": "Both",
       "requiredLevel": 60,
-      "xp": 725,
+      "xp": 6600,
       "objective": "Turn the Thorium Brotherhood Contract in to Lokhtos Darkbargainer if you would like to receive the plans for Sulfuron.",
       "description": "Blacksmithing. Bring a Sulfuron Ingot (Golemagg, Molten Core) to Lokhtos in the Grim Guzzler to get the contract, then hand it back for the Sulfuron Hammer plans.",
       "start": {
@@ -1347,6 +1359,36 @@
         "description": "Burning Steppes"
       },
       "items": []
+    },
+    {
+      "id": 82062,
+      "name": "Ever After",
+      "side": "Both",
+      "requiredLevel": 48,
+      "xp": 8400,
+      "objective": "Speak with the Rugged Traveler.",
+      "start": {
+        "npc": "Rugged Traveler",
+        "description": "Cross the lava bridge east of the Ring of Law. Jump from the railing by the small brazier onto the platform, then follow the wall to the ledge below."
+      },
+      "turnIn": {
+        "npc": "Rugged Traveler",
+        "description": "On the hidden ledge in Blackrock Depths."
+      },
+      "items": [
+        {
+          "item": 221316,
+          "name": "Premo's Poise-Demanding Uniform"
+        },
+        {
+          "item": 216619,
+          "name": "Student Fodder"
+        },
+        {
+          "item": 221315,
+          "name": "Traveler's Symbols"
+        }
+      ]
     }
   ]
 }

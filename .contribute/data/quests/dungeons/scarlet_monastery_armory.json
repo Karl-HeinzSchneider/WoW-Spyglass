@@ -23,7 +23,7 @@
       "name": "Into The Scarlet Monastery",
       "side": "Horde",
       "requiredLevel": 33,
-      "xp": 5150,
+      "xp": 12250,
       "objective": "Kill High Inquisitor Whitemane, Scarlet Commander Mograine, Herod, the Scarlet Champion and Houndmaster Loksey and then report back to Varimathras in the Undercity.",
       "description": "Herod is in the Armory; Loksey in the Library; Mograine and Whitemane in the Cathedral.",
       "start": {
@@ -74,7 +74,7 @@
       "name": "In the Name of the Light",
       "side": "Alliance",
       "requiredLevel": 34,
-      "xp": 4700,
+      "xp": 15300,
       "objective": "Kill High Inquisitor Whitemane, Scarlet Commander Mograine, Herod, the Scarlet Champion and Houndmaster Loksey and then report back to Raleigh the Devout in Southshore.",
       "description": "Herod is in the Armory; Loksey in the Library; Mograine and Whitemane in the Cathedral.\n\nOptional introductory quest:",
       "requires": [1052],

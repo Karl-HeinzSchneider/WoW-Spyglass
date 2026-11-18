@@ -47,7 +47,7 @@
       "name": "Leaders of the Fang",
       "side": "Horde",
       "requiredLevel": 10,
-      "xp": 2200,
+      "xp": 4300,
       "objective": "Bring the Gems of Cobrahn, Anacondra, Pythas and Serpentis to Nara Wildmane.",
       "description": "Requires the Barrens oasis quest chain. Complete The Barrens Oases, The Forgotten Pools, The Stagnant Oasis and Altered Beings, then Hamuul Runetotem and Nara Wildmane before Leaders of the Fang becomes available.",
       "requires": [1490],
@@ -80,7 +80,7 @@
       "name": "Deviate Hides",
       "side": "Both",
       "requiredLevel": 13,
-      "xp": 1600,
+      "xp": 3100,
       "objective": "Bring 20 Deviate Hides to Nalpak.",
       "start": {
         "npc": "Nalpak",
@@ -107,7 +107,7 @@
       "name": "Serpentbloom",
       "side": "Horde",
       "requiredLevel": 14,
-      "xp": 1700,
+      "xp": 3300,
       "objective": "Collect 10 Serpentbloom from Wailing Caverns.",
       "start": {
         "npc": "Apothecary Zamah",
@@ -138,7 +138,7 @@
       "name": "Deviate Eradication",
       "side": "Both",
       "requiredLevel": 15,
-      "xp": 2050,
+      "xp": 4000,
       "objective": "Kill 7 Deviate Ravagers, 7 Deviate Vipers, 7 Deviate Shamblers and 7 Deviate Dreadfangs.",
       "start": {
         "npc": "Ebru",
@@ -209,7 +209,7 @@
       "name": "Smart Drinks",
       "side": "Both",
       "requiredLevel": 13,
-      "xp": 1350,
+      "xp": 2650,
       "objective": "Bring 6 Wailing Essence to Mebok Mizzyrix.",
       "requires": [865],
       "start": {
@@ -228,7 +228,7 @@
       "name": "Trouble at the Docks",
       "side": "Both",
       "requiredLevel": 14,
-      "xp": 1350,
+      "xp": 2650,
       "objective": "Retrieve the 99-Year-Old Port from Mad Magglish in Wailing Caverns.",
       "start": {
         "npc": "Crane Operator Bigglefuzz",
@@ -246,7 +246,7 @@
       "name": "The Glowing Shard",
       "side": "Both",
       "requiredLevel": 15,
-      "xp": 2650,
+      "xp": 5150,
       "objective": "Speak with Sputtervalve in Ratchet about the Glowing Shard, then deliver it to Falla Sagewind on top of the mountain above Wailing Caverns.",
       "description": "Dropped by: Mutanus the Devourer.\nVisit Sputtervalve in Ratchet near the flight master at [63.0, 37.2].",
       "start": {

@@ -5,7 +5,7 @@
       "name": "A Fine Mess",
       "side": "Both",
       "requiredLevel": 24,
-      "xp": 2450,
+      "xp": 5800,
       "objective": "Escort Kernobee to the Clockwerk Run exit, then report to Scooty in Booty Bay.",
       "start": {
         "npc": "Kernobee",
@@ -35,7 +35,7 @@
       "name": "Gyrodrillmatic Excavationators",
       "side": "Alliance",
       "requiredLevel": 20,
-      "xp": 2450,
+      "xp": 4400,
       "objective": "Bring twenty-four Robo-mechanical Guts to Shoni in Stormwind.",
       "start": {
         "npc": "Shoni the Shilent",
@@ -67,7 +67,7 @@
       "name": "Save Techbot's Brain!",
       "side": "Alliance",
       "requiredLevel": 20,
-      "xp": 2650,
+      "xp": 4750,
       "objective": "Bring Techbot's Memory Core to Tinkmaster Overspark in Ironforge.",
       "start": {
         "npc": "Tinkmaster Overspark",
@@ -91,7 +91,7 @@
       "name": "Gnogaine",
       "side": "Alliance",
       "requiredLevel": 20,
-      "xp": 2200,
+      "xp": 3950,
       "objective": "Use the Empty Leaden Collection Phial on Irradiated Invaders or Irradiated Pillagers, then take the full phial back to Ozzie Togglevolt.",
       "description": "Required before The Only Cure is More Green Glow.",
       "start": {
@@ -156,7 +156,7 @@
       "name": "The Only Cure is More Green Glow",
       "side": "Alliance",
       "requiredLevel": 20,
-      "xp": 2450,
+      "xp": 4400,
       "objective": "Bring High Potency Radioactive Fallout and the Heavy Leaden Collection Phial back to Ozzie. The fallout collapses quickly.",
       "requires": [2926],
       "start": {
@@ -176,7 +176,7 @@
       "name": "Essential Artificials",
       "side": "Alliance",
       "requiredLevel": 24,
-      "xp": 3050,
+      "xp": 5500,
       "objective": "Bring 12 Essential Artificials to Klockmort Spannerspan in Ironforge.",
       "start": {
         "npc": "Klockmort Spannerspan",
@@ -195,7 +195,7 @@
       "name": "Data Rescue",
       "side": "Alliance",
       "requiredLevel": 25,
-      "xp": 3650,
+      "xp": 6550,
       "objective": "Bring a Prismatic Punch Card to Master Mechanic Castpipe in Ironforge.",
       "start": {
         "npc": "Master Mechanic Castpipe",
@@ -223,7 +223,7 @@
       "name": "The Grand Betrayal",
       "side": "Alliance",
       "requiredLevel": 25,
-      "xp": 2750,
+      "xp": 6200,
       "objective": "Kill Mekgineer Thermaplugg and return to High Tinker Mekkatorque.",
       "start": {
         "npc": "High Tinker Mekkatorque",
@@ -255,7 +255,7 @@
       "name": "Rig Wars",
       "side": "Horde",
       "requiredLevel": 25,
-      "xp": 2750,
+      "xp": 8200,
       "objective": "Retrieve the Rig Blueprints and Thermaplugg's Safe Combination and bring them to Nogg in Orgrimmar.",
       "description": "Accept Rig Wars first; completion is not required for Chief Engineer Scooty. Accept Rig Wars before Chief Engineer Scooty. If Rig Wars disappears, abandon Chief Engineer Scooty and it will reappear.",
       "start": {

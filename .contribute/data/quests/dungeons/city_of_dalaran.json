@@ -5,7 +5,7 @@
       "name": "A Green Sample",
       "side": "Alliance",
       "requiredLevel": 24,
-      "xp": 3950,
+      "xp": 9400,
       "objective": "Retrieve a Fel Infused Blossom from Dalaran's central garden.",
       "description": "Quest data is recorded in the beta; dungeon access may be unavailable.",
       "start": {
@@ -34,7 +34,7 @@
       "name": "Power Overwhelming",
       "side": "Alliance",
       "requiredLevel": 24,
-      "xp": 3950,
+      "xp": 9400,
       "objective": "Slay Arcanic Enigma, the Mana Elemental in the City of Dalaran, and return to High Sorcerer Andromath in Stormwind City.",
       "description": "Quest data is recorded in the beta; dungeon access may be unavailable.",
       "start": {
@@ -254,7 +254,7 @@
       "name": "Opportunistic Education",
       "side": "Horde",
       "requiredLevel": 24,
-      "xp": 3950,
+      "xp": 9400,
       "objective": "Recover The Founding of Dalaran and deliver it to Rexxie Copperclutch.",
       "description": "Quest data is recorded in the beta; dungeon access may be unavailable.",
       "start": {
@@ -281,7 +281,7 @@
       "name": "Source of Power",
       "side": "Horde",
       "requiredLevel": 24,
-      "xp": 3950,
+      "xp": 9400,
       "objective": "Collect 6 Cracked Sentry Cores from the constructs in Dalaran.",
       "description": "Quest data is recorded in the beta; dungeon access may be unavailable.",
       "start": {
@@ -310,7 +310,7 @@
       "name": "The Grave Knight",
       "side": "Horde",
       "requiredLevel": 24,
-      "xp": 3950,
+      "xp": 9400,
       "objective": "Defeat Atrexis the Grave Knight in the Dalaran Underbelly.",
       "description": "Quest data is recorded in the beta; dungeon access may be unavailable.",
       "start": {

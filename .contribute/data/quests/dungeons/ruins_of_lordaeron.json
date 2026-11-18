@@ -38,7 +38,7 @@
       "name": "The Wrath of Rath'mael",
       "side": "Horde",
       "requiredLevel": 15,
-      "xp": 0,
+      "xp": 4600,
       "objective": "Kill Rath'mael in Ruins of Lordaeron.",
       "requires": [99156],
       "start": {
@@ -66,7 +66,7 @@
       "name": "Remember That I Love You",
       "side": "Alliance",
       "requiredLevel": 15,
-      "xp": 2600,
+      "xp": 6200,
       "objective": "Bring the Blood-Stained Letter to Orphan Matron Nightingale.",
       "description": "Found in the graveyard inside Ruins of Lordaeron",
       "start": {
@@ -89,7 +89,7 @@
       "name": "Light's Justice",
       "side": "Horde",
       "requiredLevel": 15,
-      "xp": 2200,
+      "xp": 4600,
       "objective": "Collect 25 Intact Limbs within Ruins of Lordaeron.",
       "start": {
         "npc": "Morbin Lightbane",
@@ -116,7 +116,7 @@
       "name": "Abominable Creatures",
       "side": "Alliance",
       "requiredLevel": 16,
-      "xp": 1650,
+      "xp": 3900,
       "objective": "Collect the Head of the Baron in Ruins of Lordaeron.",
       "start": {
         "npc": "Captain Truman",
@@ -146,7 +146,7 @@
       "name": "Bloodied Insignia",
       "side": "Alliance",
       "requiredLevel": 16,
-      "xp": 2600,
+      "xp": 6200,
       "objective": "Collect 10 Bloodied Insignias.",
       "description": "Dropped by: undead enemies inside Ruins of Lordaeron",
       "start": {
@@ -173,7 +173,7 @@
       "name": "The New Plague",
       "side": "Horde",
       "requiredLevel": 16,
-      "xp": 2600,
+      "xp": 5450,
       "objective": "Collect the Highly Toxic Strain from Witherfang.",
       "requires": [451],
       "start": {
@@ -201,7 +201,7 @@
       "name": "Unending Torment",
       "side": "Horde",
       "requiredLevel": 15,
-      "xp": 1650,
+      "xp": 3450,
       "objective": "Deliver the Abominable Head to the Undercity.",
       "description": "Dropped by: The Baron",
       "followUps": [97289, 97290, 97291, 97292],
@@ -314,7 +314,7 @@
       "name": "A Frightened Request",
       "side": "Horde",
       "requiredLevel": 15,
-      "xp": 2200,
+      "xp": 4600,
       "objective": "Investigate the disappearance of Edward Heartweaver in Ruins of Lordaeron.",
       "start": {
         "npc": "Tabitha Heartweaver",
@@ -341,7 +341,7 @@
       "name": "Crest of Lordaeron",
       "side": "Alliance",
       "requiredLevel": 16,
-      "xp": 2600,
+      "xp": 6200,
       "objective": "Return the Crest of Lordaeron to Stormwind.",
       "description": "Community reports indicate the Crest can spawn at one of several locations inside the dungeon. Reported spots include upper floors of towers, side/crypt rooms near The Baron, and the area around Bjork.",
       "start": {
@@ -364,7 +364,7 @@
       "name": "Crest of Lordaeron",
       "side": "Horde",
       "requiredLevel": 16,
-      "xp": 2600,
+      "xp": 5450,
       "objective": "Bring the Crest of Lordaeron to the Undercity.",
       "description": "Community reports indicate the Crest can spawn at one of several locations inside the dungeon. Reported spots include upper floors of towers, side/crypt rooms near The Baron, and the area around Bjork.",
       "start": {

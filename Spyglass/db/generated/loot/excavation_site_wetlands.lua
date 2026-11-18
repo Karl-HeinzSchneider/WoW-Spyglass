@@ -59,17 +59,17 @@ Data:AddQuests(2998, {
         { 2459 }, -- Swiftness Potion
         { 280766 }, -- Satchel of Potions
     } },
-    { id = 98824, name = "Prehistoric Prism", side = "Alliance", requiredLevel = 24, xp = 3150, objective = "Deliver the Titan Relic to High Explorer Magellas in the Hall of Explorers.", requires = { { id = 95810, name = "Lost Relic Carry" } }, start = { description = "Whelgar's Excavation Site, Wetlands.", location = { 1437, 38.8, 52.2 }, npc = "Prospector Whelgar" }, turnIn = { description = "Hall of Explorers, Ironforge.", npc = "High Explorer Magellas" }, items = {
+    { id = 98824, name = "Prehistoric Prism", side = "Alliance", requiredLevel = 24, xp = 6150, objective = "Deliver the Titan Relic to High Explorer Magellas in the Hall of Explorers.", requires = { { id = 95810, name = "Lost Relic Carry" } }, start = { description = "Whelgar's Excavation Site, Wetlands.", location = { 1437, 38.8, 52.2 }, npc = "Prospector Whelgar" }, turnIn = { description = "Hall of Explorers, Ironforge.", npc = "High Explorer Magellas" }, items = {
         { 271716 }, -- Explorer's League Dustcover
         { 271767 }, -- Healer's Staff
         { 271766 }, -- Heavehammer
     } },
-    { id = 98823, name = "Earthen Echo", side = "Horde", requiredLevel = 24, xp = 3150, objective = "Deliver the Titan Relic to Muln Earthfury on Skywatcher Plateau in northwest Mulgore.", requires = { { id = 95664, name = "Elder Knowledge" } }, start = { description = "Elder Rise, Thunder Bluff.", location = { 1456, 70.8, 33.4 }, npc = "Bashana Runetotem" }, turnIn = { description = "Skywatcher Plateau, Mulgore.", location = { 1412, 33.4, 22.4 }, npc = "Muln Earthfury" }, items = {
+    { id = 98823, name = "Earthen Echo", side = "Horde", requiredLevel = 24, xp = 6950, objective = "Deliver the Titan Relic to Muln Earthfury on Skywatcher Plateau in northwest Mulgore.", requires = { { id = 95664, name = "Elder Knowledge" } }, start = { description = "Elder Rise, Thunder Bluff.", location = { 1456, 70.8, 33.4 }, npc = "Bashana Runetotem" }, turnIn = { description = "Skywatcher Plateau, Mulgore.", location = { 1412, 33.4, 22.4 }, npc = "Muln Earthfury" }, items = {
         { 271766 }, -- Heavehammer
         { 271767 }, -- Healer's Staff
         { 271719 }, -- Furs of the Earthen Ring
     } },
-    { id = 95795, name = "Fallen in the Fen", side = "Alliance", requiredLevel = 24, xp = 3150, objective = "Report Daewyn's fate to Dorin Songblade in Lakeshire.", start = { description = "Inside Excavation Site: Wetlands.", npc = "Daewyn Songblade" }, turnIn = { description = "Lakeshire, Redridge Mountains.", npc = "Dorin Songblade" }, items = {
+    { id = 95795, name = "Fallen in the Fen", side = "Alliance", requiredLevel = 24, xp = 6150, objective = "Report Daewyn's fate to Dorin Songblade in Lakeshire.", start = { description = "Inside Excavation Site: Wetlands.", npc = "Daewyn Songblade" }, turnIn = { description = "Lakeshire, Redridge Mountains.", npc = "Dorin Songblade" }, items = {
         { 271769 }, -- Daewyn's Girdle
         { 271768 }, -- Songblade Stabilizer
     } },

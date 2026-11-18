@@ -67,11 +67,11 @@ Data:AddTrashLoot(2959, {
 })
 
 Data:AddQuests(2959, {
-    { id = 92456, name = "A Green Sample", side = "Alliance", requiredLevel = 24, xp = 3950, objective = "Retrieve a Fel Infused Blossom from Dalaran's central garden.", description = "Quest data is recorded in the beta; dungeon access may be unavailable.", start = { description = "Stormwind City.", location = { 1453, 31.5, 62.6 }, npc = "Shylamiir" }, turnIn = { description = "Stormwind City.", location = { 1453, 31.4, 62.8 }, npc = "Shylamiir" }, items = {
+    { id = 92456, name = "A Green Sample", side = "Alliance", requiredLevel = 24, xp = 9400, objective = "Retrieve a Fel Infused Blossom from Dalaran's central garden.", description = "Quest data is recorded in the beta; dungeon access may be unavailable.", start = { description = "Stormwind City.", location = { 1453, 31.5, 62.6 }, npc = "Shylamiir" }, turnIn = { description = "Stormwind City.", location = { 1453, 31.4, 62.8 }, npc = "Shylamiir" }, items = {
         { 279835 }, -- Vine Pruner's Cloak
         { 279836 }, -- Thorn Protecting Girdle
     } },
-    { id = 92489, name = "Power Overwhelming", side = "Alliance", requiredLevel = 24, xp = 3950, objective = "Slay Arcanic Enigma, the Mana Elemental in the City of Dalaran, and return to High Sorcerer Andromath in Stormwind City.", description = "Quest data is recorded in the beta; dungeon access may be unavailable.", start = { description = "Stormwind City.", location = { 1453, 48.8, 87.6 }, npc = "High Sorcerer Andromath" }, turnIn = { description = "Stormwind City.", location = { 1453, 48.8, 87.6 }, npc = "High Sorcerer Andromath" }, items = {
+    { id = 92489, name = "Power Overwhelming", side = "Alliance", requiredLevel = 24, xp = 9400, objective = "Slay Arcanic Enigma, the Mana Elemental in the City of Dalaran, and return to High Sorcerer Andromath in Stormwind City.", description = "Quest data is recorded in the beta; dungeon access may be unavailable.", start = { description = "Stormwind City.", location = { 1453, 48.8, 87.6 }, npc = "High Sorcerer Andromath" }, turnIn = { description = "Stormwind City.", location = { 1453, 48.8, 87.6 }, npc = "High Sorcerer Andromath" }, items = {
         { 251962 }, -- Violet Sash
         { 279849 }, -- Runebound Gloves
     } },
@@ -89,15 +89,15 @@ Data:AddQuests(2959, {
         { 279843 }, -- Enchanted Sandals
         { 279844 }, -- Striking Staff
     } },
-    { id = 96987, name = "Opportunistic Education", side = "Horde", requiredLevel = 24, xp = 3950, objective = "Recover The Founding of Dalaran and deliver it to Rexxie Copperclutch.", description = "Quest data is recorded in the beta; dungeon access may be unavailable.", start = { description = "Inside the dungeon, near the sewer entrance.", npc = "Rexxie Copperclutch" }, turnIn = { description = "Inside the dungeon, near the sewer entrance.", npc = "Rexxie Copperclutch" }, items = {
+    { id = 96987, name = "Opportunistic Education", side = "Horde", requiredLevel = 24, xp = 9400, objective = "Recover The Founding of Dalaran and deliver it to Rexxie Copperclutch.", description = "Quest data is recorded in the beta; dungeon access may be unavailable.", start = { description = "Inside the dungeon, near the sewer entrance.", npc = "Rexxie Copperclutch" }, turnIn = { description = "Inside the dungeon, near the sewer entrance.", npc = "Rexxie Copperclutch" }, items = {
         { 279845 }, -- Solid Gold Band
         { 279846 }, -- Larcenist's Belt
     } },
-    { id = 96988, name = "Source of Power", side = "Horde", requiredLevel = 24, xp = 3950, objective = "Collect 6 Cracked Sentry Cores from the constructs in Dalaran.", description = "Quest data is recorded in the beta; dungeon access may be unavailable.", start = { description = "Undercity.", location = { 1458, 46.6, 74.1 }, npc = "Doctor Martin Felben" }, turnIn = { description = "Undercity.", location = { 1458, 46.6, 74.1 }, npc = "Doctor Martin Felben" }, items = {
+    { id = 96988, name = "Source of Power", side = "Horde", requiredLevel = 24, xp = 9400, objective = "Collect 6 Cracked Sentry Cores from the constructs in Dalaran.", description = "Quest data is recorded in the beta; dungeon access may be unavailable.", start = { description = "Undercity.", location = { 1458, 46.6, 74.1 }, npc = "Doctor Martin Felben" }, turnIn = { description = "Undercity.", location = { 1458, 46.6, 74.1 }, npc = "Doctor Martin Felben" }, items = {
         { 279847 }, -- Unstable Power Core
         { 279848 }, -- Construct Cloak
     } },
-    { id = 96986, name = "The Grave Knight", side = "Horde", requiredLevel = 24, xp = 3950, objective = "Defeat Atrexis the Grave Knight in the Dalaran Underbelly.", description = "Quest data is recorded in the beta; dungeon access may be unavailable.", start = { description = "Tarren Mill, Hillsbrad Foothills.", location = { 1424, 62.6, 20.6 }, npc = "Melisara" }, turnIn = { description = "Tarren Mill, Hillsbrad Foothills.", location = { 1424, 62.6, 20.6 }, npc = "Melisara" }, items = {
+    { id = 96986, name = "The Grave Knight", side = "Horde", requiredLevel = 24, xp = 9400, objective = "Defeat Atrexis the Grave Knight in the Dalaran Underbelly.", description = "Quest data is recorded in the beta; dungeon access may be unavailable.", start = { description = "Tarren Mill, Hillsbrad Foothills.", location = { 1424, 62.6, 20.6 }, npc = "Melisara" }, turnIn = { description = "Tarren Mill, Hillsbrad Foothills.", location = { 1424, 62.6, 20.6 }, npc = "Melisara" }, items = {
         { 251963 }, -- Gravewalker Boots
         { 251965 }, -- Undead Knight's Bracers
     } },

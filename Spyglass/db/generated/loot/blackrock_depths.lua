@@ -257,6 +257,8 @@ Data:AddQuests(230, {
     { id = 4201, name = "The Love Potion", side = "Both", requiredLevel = 50, xp = 10900, objective = "Bring 4 Gromsblood, 10 Giant Silver Veins and Nagmara's Filled Vial to Mistress Nagmara in Blackrock Depths.", description = "Gromsblood, Giant Silver Veins (Azshara cliff giants) and the vial filled at Golakka Hot Springs in Un'Goro. Opens a peaceful way through the bar on later visits.", start = { description = "Blackrock Depths", npc = "Mistress Nagmara" }, turnIn = { description = "Blackrock Depths", npc = "Mistress Nagmara" }, items = {
         { 11866 }, -- Nagmara's Whipping Belt
         { 11962 }, -- Manacle Cuffs
+        { 270120 }, -- Boots of Requite
+        { 270121 }, -- Private Rocknot's Spare Bracers
     } },
     { id = 4126, name = "Hurley Blackbreath", side = "Alliance", requiredLevel = 50, xp = 14800, objective = "Bring the Lost Thunderbrew Recipe to Ragnar Thunderbrew in Kharanos.", description = "Break the three kegs in the Grim Guzzler storeroom to spawn Hurley Blackbreath and his guards.\n\nOptional introductory quest:", start = { description = "Kharanos, Dun Morogh", location = { 1426, 46.8, 52.4 }, npc = "Ragnar Thunderbrew" }, turnIn = { description = "Kharanos, Dun Morogh", location = { 1426, 46.8, 52.4 }, npc = "Ragnar Thunderbrew" }, items = {
         { 12000 }, -- Limb Cleaver
@@ -285,6 +287,7 @@ Data:AddQuests(230, {
     } },
     { id = 7201, name = "The Last Element", side = "Horde", requiredLevel = 48, xp = 10100, objective = "Travel to Blackrock Depths and recover 10 Essence of the Elements. Your first inclination is to search the golems and golem makers. You remember Vivian Lagrave also muttering something about elementals.", description = "Essence of the Elements drops from BRD elementals and golems.", requires = { { id = 3906, name = "Disharmony of Flame" } }, start = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Shadowmage Vivian Lagrave" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 3, 47.6 }, npc = "Shadowmage Vivian Lagrave" }, items = {
         { 12038 }, -- Lagrave's Seal
+        { 270119 }, -- Dark Iron Signet
     } },
     { id = 4322, name = "Jail Break!", side = "Alliance", requiredLevel = 50, xp = 13950, objective = "Help Marshal Windsor get his gear back and free his friends. Return to Marshal Maxwell if you succeed.", description = "Escort Marshal Windsor through the prison. Clear the patrols first and have everyone ready before you start.", requires = { { id = 4282, name = "A Shred of Hope" } }, start = { description = "Blackrock Depths", npc = "Marshal Windsor" }, turnIn = { description = "Morgan's Vigil, Burning Steppes", npc = "Marshal Maxwell" }, items = {
         { 12065 }, -- Ward of the Elements
@@ -318,9 +321,14 @@ Data:AddQuests(230, {
         { 11883 }, -- A Dingy Fanny Pack
     } },
     { id = 7848, name = "Attunement to the Core", side = "Both", requiredLevel = 55, xp = 6600, objective = "Venture to the Molten Core entry portal in Blackrock Depths and recover a Core Fragment. Return to Lothos Riftwaker in Blackrock Mountain when you have recovered the Core Fragment.", description = "The Core Fragment is on the rock beside the Molten Core portal deep inside BRD. Unlocks Lothos's teleport to Molten Core.", start = { description = "Blackrock Mountain", npc = "Lothos Riftwaker" }, turnIn = { description = "Blackrock Mountain", npc = "Lothos Riftwaker" }, items = {} },
-    { id = 7604, name = "A Binding Contract", side = "Both", requiredLevel = 60, xp = 725, objective = "Turn the Thorium Brotherhood Contract in to Lokhtos Darkbargainer if you would like to receive the plans for Sulfuron.", description = "Blacksmithing. Bring a Sulfuron Ingot (Golemagg, Molten Core) to Lokhtos in the Grim Guzzler to get the contract, then hand it back for the Sulfuron Hammer plans.", start = { description = "Thorium Brotherhood Contract (from Lokhtos Darkbargainer with a Sulfuron Ingot)" }, turnIn = { description = "Grim Guzzler, Blackrock Depths", npc = "Lokhtos Darkbargainer" }, items = {
+    { id = 7604, name = "A Binding Contract", side = "Both", requiredLevel = 60, xp = 6600, objective = "Turn the Thorium Brotherhood Contract in to Lokhtos Darkbargainer if you would like to receive the plans for Sulfuron.", description = "Blacksmithing. Bring a Sulfuron Ingot (Golemagg, Molten Core) to Lokhtos in the Grim Guzzler to get the contract, then hand it back for the Sulfuron Hammer plans.", start = { description = "Thorium Brotherhood Contract (from Lokhtos Darkbargainer with a Sulfuron Ingot)" }, turnIn = { description = "Grim Guzzler, Blackrock Depths", npc = "Lokhtos Darkbargainer" }, items = {
         { 18592 }, -- Plans: Sulfuron Hammer
     } },
     { id = 4295, name = "Rocknot's Ale", side = "Both", requiredLevel = 50, xp = 0, objective = "Bring Private Rocknot two Dark Iron Ale Mugs.", description = "Buy Dark Iron Ale Mugs from Plugger Spazzring and keep handing them to Rocknot. The drunken event opens the bar route and can turn Phalanx hostile.", start = { description = "Grim Guzzler, Blackrock Depths", npc = "Private Rocknot" }, turnIn = { description = "Grim Guzzler, Blackrock Depths", npc = "Private Rocknot" }, items = {} },
     { id = 97197, name = "Fragment of the Firelands", side = "Horde", requiredLevel = 49, xp = 14800, objective = "Recover a Fragment of the Firelands from Magmus in Blackrock Depths for Alaana Stormwalker in Mulgore.", description = "Get the fragment from the Firelands elementals inside Blackrock Depths. Which one drops it isn't confirmed yet. Seen picked up at level 49.", start = { description = "Skywatcher Plateau, Mulgore", location = { 1412, 33.4, 22.5 }, npc = "Alaana Stormwalker" }, turnIn = { description = "Skywatcher Plateau, Mulgore (33.4, 22.5)", location = { 1412, 33.4, 22.5 }, npc = "Alaana Stormwalker" }, items = {} },
+    { id = 82062, name = "Ever After", side = "Both", requiredLevel = 48, xp = 8400, objective = "Speak with the Rugged Traveler.", start = { description = "Cross the lava bridge east of the Ring of Law. Jump from the railing by the small brazier onto the platform, then follow the wall to the ledge below.", npc = "Rugged Traveler" }, turnIn = { description = "On the hidden ledge in Blackrock Depths.", npc = "Rugged Traveler" }, items = {
+        { 221316 }, -- Premo's Poise-Demanding Uniform
+        { 216619 }, -- Student Fodder
+        { 221315 }, -- Traveler's Symbols
+    } },
 })

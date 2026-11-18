@@ -5,7 +5,7 @@
       "name": "The Gordok Ogre Suit",
       "side": "Both",
       "requiredLevel": 56,
-      "xp": 6600,
+      "xp": 17650,
       "objective": "Bring 4 Bolts of Runecloth, 8 Rugged Leather, 2 Rune Threads, and Ogre Tannin to Knot Thimblejack. He is currently chained inside the Gordok wing of Dire Maul.",
       "description": "Bring 4 Bolts of Runecloth, 8 Rugged Leather, 2 Rune Threads and 1 Ogre Tannin (basket on the upper level beyond Knot). Make any suits and learn the pattern before freeing Knot, because he leaves.",
       "start": {
@@ -28,7 +28,7 @@
       "name": "Free Knot!",
       "side": "Both",
       "requiredLevel": 56,
-      "xp": 6600,
+      "xp": 17650,
       "objective": "Find a Gordok Shackle Key on the ogres of the Gordok wing and use it to free Knot Thimblejack.",
       "description": "Get a Gordok Shackle Key from the North ogres and free Knot; his cache has loot.",
       "start": {
@@ -46,7 +46,7 @@
       "name": "Elven Legends",
       "side": "Horde",
       "requiredLevel": 54,
-      "xp": 8300,
+      "xp": 19700,
       "objective": "Search Dire Maul for Kariel Winthalus. Report back to Sage Korolusk at Camp Mojache with whatever information that you may find.",
       "description": "Interact with the Skeletal Remains of Telmius Dreamseeker beside Lorekeeper Lydros in the Athenaeum. Unlocks Lydros's libram exchanges.",
       "start": {
@@ -66,7 +66,7 @@
       "name": "Elven Legends",
       "side": "Alliance",
       "requiredLevel": 54,
-      "xp": 8300,
+      "xp": 19700,
       "objective": "Search Dire Maul for Kariel Winthalus. Report back to Scholar Runethorn at Feathermoon with whatever information that you may find.",
       "description": "Interact with the Skeletal Remains of Telmius Dreamseeker beside Lorekeeper Lydros in the Athenaeum. Unlocks Lydros's libram exchanges.",
       "start": {
@@ -86,7 +86,7 @@
       "name": "Libram of Rapidity",
       "side": "Both",
       "requiredLevel": 54,
-      "xp": 0,
+      "xp": 3300,
       "objective": "Bring a Libram of Rapidity, 1 Pristine Black Diamond, 2 Large Brilliant Shards, and 2 Blood of Heroes to Lorekeeper Lydros in Dire Maul to receive an Arcanum of Rapidity.",
       "description": "Repeatable. Needs your faction's Elven Legends turned in first.",
       "start": {
@@ -109,7 +109,7 @@
       "name": "Libram of Focus",
       "side": "Both",
       "requiredLevel": 54,
-      "xp": 0,
+      "xp": 3300,
       "objective": "Bring a Libram of Focus, 1 Pristine Black Diamond, 4 Large Brilliant Shards, and 2 Skin of Shadow to Lorekeeper Lydros in Dire Maul to receive an Arcanum of Focus.",
       "description": "Repeatable. Needs your faction's Elven Legends turned in first.",
       "start": {
@@ -132,7 +132,7 @@
       "name": "Libram of Protection",
       "side": "Both",
       "requiredLevel": 54,
-      "xp": 0,
+      "xp": 3300,
       "objective": "Bring a Libram of Protection, 1 Pristine Black Diamond, 2 Large Brilliant Shards, and 1 Frayed Abomination Stitching to Lorekeeper Lydros in Dire Maul to receive an Arcanum of Protection.",
       "description": "Repeatable. Needs your faction's Elven Legends turned in first.",
       "start": {
@@ -156,7 +156,7 @@
       "side": "Both",
       "class": "Rogue",
       "requiredLevel": 54,
-      "xp": 6600,
+      "xp": 15700,
       "objective": "Return the book to its rightful owners.",
       "description": "Rogue class book. Click the book to start the quest.",
       "start": {
@@ -180,7 +180,7 @@
       "side": "Both",
       "class": "Warrior",
       "requiredLevel": 54,
-      "xp": 6600,
+      "xp": 15700,
       "objective": "Return the book to its rightful owners.",
       "description": "Warrior class book. Click the book to start the quest.",
       "start": {
@@ -204,7 +204,7 @@
       "side": "Both",
       "class": "Mage",
       "requiredLevel": 54,
-      "xp": 6600,
+      "xp": 15700,
       "objective": "Return the book to its rightful owners.",
       "description": "Mage class book. Click the book to start the quest.",
       "start": {
@@ -228,7 +228,7 @@
       "side": "Alliance",
       "class": "Paladin",
       "requiredLevel": 54,
-      "xp": 6600,
+      "xp": 15700,
       "objective": "Return the book to its rightful owners.",
       "description": "Paladin class book. Click the book to start the quest.",
       "start": {
@@ -252,7 +252,7 @@
       "side": "Both",
       "class": "Warlock",
       "requiredLevel": 54,
-      "xp": 6600,
+      "xp": 15700,
       "objective": "Return the book to its rightful owners.",
       "description": "Warlock class book. Click the book to start the quest.",
       "start": {
@@ -276,7 +276,7 @@
       "side": "Both",
       "class": "Hunter",
       "requiredLevel": 54,
-      "xp": 6600,
+      "xp": 15700,
       "objective": "Return the book to its rightful owners.",
       "description": "Hunter class book. Click the book to start the quest.",
       "start": {
@@ -300,7 +300,7 @@
       "side": "Both",
       "class": "Priest",
       "requiredLevel": 54,
-      "xp": 6600,
+      "xp": 15700,
       "objective": "Return the book to its rightful owners.",
       "description": "Priest class book. Click the book to start the quest.",
       "start": {
@@ -324,7 +324,7 @@
       "side": "Horde",
       "class": "Shaman",
       "requiredLevel": 54,
-      "xp": 6600,
+      "xp": 15700,
       "objective": "Return the book to its rightful owners.",
       "description": "Shaman class book. Click the book to start the quest.",
       "start": {
@@ -348,7 +348,7 @@
       "side": "Both",
       "class": "Druid",
       "requiredLevel": 54,
-      "xp": 6600,
+      "xp": 15700,
       "objective": "Return the book to its rightful owners.",
       "description": "Druid class book. Click the book to start the quest.",
       "start": {
@@ -371,7 +371,7 @@
       "name": "Nostro's Compendium",
       "side": "Both",
       "requiredLevel": 60,
-      "xp": 0,
+      "xp": 19900,
       "objective": "Return Nostro's Compendium of Dragon Slaying to the Athenaeum.",
       "description": "Warriors and Paladins. Lydros then gives The Forging of Quel'Serrar, which is finished in Onyxia's Lair.",
       "start": {
@@ -388,7 +388,7 @@
       "name": "Unfinished Gordok Business",
       "side": "Both",
       "requiredLevel": 56,
-      "xp": 8300,
+      "xp": 22200,
       "objective": "Find the Gauntlet of Gordok Might and return it to Captain Kromcrush in Dire Maul. According to Kromcrush, the \"old timey story\" says that Tortheldrin - a \"creepy\" elf who called himself a prince - stole it from one of the Gordok kings.",
       "description": "West objective: the Gauntlet of Gordok Might is in a chest near Prince Tortheldrin. The quest itself comes from a friendly Captain Kromcrush in Dire Maul North after you become the Gordok king.",
       "start": {

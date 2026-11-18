@@ -20,8 +20,8 @@
       },
       "items": [
         {
-          "item": 9030,
-          "name": "Restorative Potion"
+          "item": 250947,
+          "name": "Greater Mender's Potion"
         }
       ]
     },
@@ -64,7 +64,7 @@
       "name": "Ironband Wants You!",
       "side": "Alliance",
       "requiredLevel": 30,
-      "xp": 710,
+      "xp": 700,
       "objective": "Speak with Prospector Ironband at Ironband's Excavation Site in Loch Modan.",
       "description": "Introductory step leading to Agmond's Fate.\n\nOPTIONAL, not required",
       "start": {
@@ -312,6 +312,10 @@
         {
           "item": 6723,
           "name": "Medal of Courage"
+        },
+        {
+          "item": 270095,
+          "name": "Medal of Valor"
         }
       ]
     },
@@ -485,8 +489,8 @@
       },
       "items": [
         {
-          "item": 9030,
-          "name": "Restorative Potion"
+          "item": 250947,
+          "name": "Greater Mender's Potion"
         }
       ]
     },

@@ -215,7 +215,7 @@ Data:AddTrashLoot(47, {
 })
 
 Data:AddQuests(47, {
-    { id = 1144, name = "Willix the Importer", side = "Both", requiredLevel = 23, xp = 3050, objective = "Escort Willix the Importer out of Razorfen Kraul.", start = { description = "Willix the Importer, inside Razorfen Kraul", npc = "Willix the Importer" }, turnIn = { description = "Willix the Importer, inside Razorfen Kraul", npc = "Willix the Importer" }, items = {
+    { id = 1144, name = "Willix the Importer", side = "Both", requiredLevel = 23, xp = 7250, objective = "Escort Willix the Importer out of Razorfen Kraul.", start = { description = "Willix the Importer, inside Razorfen Kraul", npc = "Willix the Importer" }, turnIn = { description = "Willix the Importer, inside Razorfen Kraul", npc = "Willix the Importer" }, items = {
         { 6748 }, -- Monkey Ring
         { 6750 }, -- Snake Hoop
         { 6749 }, -- Tiger Band
@@ -224,24 +224,24 @@ Data:AddQuests(47, {
     { id = 1221, name = "Blueleaf Tubers", side = "Both", requiredLevel = 20, xp = 5000, objective = "Use the Crate with Holes to summon a Snufflenose Gopher and the Command Stick to make it find 6 Blueleaf Tubers. Bring them, the Command Stick and the Crate back to Mebok Mizzyrix.", start = { description = "Mebok Mizzyrix, Ratchet, The Barrens", location = { 1413, 62.4, 37.6 }, npc = "Mebok Mizzyrix" }, turnIn = { description = "Mebok Mizzyrix, Ratchet, The Barrens", location = { 1413, 62, 37 }, npc = "Mebok Mizzyrix" }, items = {
         { 6755 }, -- A Small Container of Gems
     } },
-    { id = 1142, name = "Mortality Wanes", side = "Alliance", requiredLevel = 25, xp = 3050, objective = "Find Treshala's Pendant and return it to Treshala Fallowbrook in Darnassus.", start = { description = "Inside Razorfen Kraul.", npc = "Heralath Fallowbrook" }, turnIn = { description = "Darnassus.", npc = "Treshala Fallowbrook" }, items = {
+    { id = 1142, name = "Mortality Wanes", side = "Alliance", requiredLevel = 25, xp = 7250, objective = "Find Treshala's Pendant and return it to Treshala Fallowbrook in Darnassus.", start = { description = "Inside Razorfen Kraul.", npc = "Heralath Fallowbrook" }, turnIn = { description = "Darnassus.", npc = "Treshala Fallowbrook" }, items = {
         { 6751 }, -- Mourning Shawl
         { 6752 }, -- Lancer Boots
         { 270047 }, -- Sentinel's Boots
     } },
-    { id = 1101, name = "The Crone of the Kraul", side = "Alliance", requiredLevel = 29, xp = 3350, objective = "Bring Razorflank's Medallion to Falfindel Waywarder in Thalanaar.", requires = { { id = 1100, name = "Lonebrow's Journal" } }, start = { description = "Thalanaar, Feralas.", location = { 1444, 89.6, 46.6 }, npc = "Falfindel Waywarder" }, turnIn = { description = "Thalanaar, Feralas.", location = { 1444, 89, 46 }, npc = "Falfindel Waywarder" }, items = {
+    { id = 1101, name = "The Crone of the Kraul", side = "Alliance", requiredLevel = 29, xp = 7950, objective = "Bring Razorflank's Medallion to Falfindel Waywarder in Thalanaar.", requires = { { id = 1100, name = "Lonebrow's Journal" } }, start = { description = "Thalanaar, Feralas.", location = { 1444, 89.6, 46.6 }, npc = "Falfindel Waywarder" }, turnIn = { description = "Thalanaar, Feralas.", location = { 1444, 89, 46 }, npc = "Falfindel Waywarder" }, items = {
         { 4197 }, -- Berylline Pads
         { 6742 }, -- Stonefist Girdle
         { 6725 }, -- Marbled Buckler
         { 274084 }, -- Quilboar Blaster
     } },
-    { id = 1102, name = "A Vengeful Fate", side = "Horde", requiredLevel = 29, xp = 4050, objective = "Bring Razorflank's Heart to Auld Stonespire in Thunder Bluff.", start = { description = "Thunder Bluff.", location = { 1456, 36, 59 }, npc = "Auld Stonespire" }, turnIn = { description = "Thunder Bluff.", location = { 1456, 36, 59 }, npc = "Auld Stonespire" }, items = {
+    { id = 1102, name = "A Vengeful Fate", side = "Horde", requiredLevel = 29, xp = 8500, objective = "Bring Razorflank's Heart to Auld Stonespire in Thunder Bluff.", start = { description = "Thunder Bluff.", location = { 1456, 36, 59 }, npc = "Auld Stonespire" }, turnIn = { description = "Thunder Bluff.", location = { 1456, 36, 59 }, npc = "Auld Stonespire" }, items = {
         { 4197 }, -- Berylline Pads
         { 6742 }, -- Stonefist Girdle
         { 6725 }, -- Marbled Buckler
         { 274084 }, -- Quilboar Blaster
     } },
-    { id = 1109, name = "Going, Going, Guano!", side = "Horde", requiredLevel = 30, xp = 3300, objective = "Bring 1 pile of Kraul Guano from the Kraul bats to Master Apothecary Faranell.", description = "Required before Hearts of Zeal.", start = { description = "Apothecarium, Undercity.", location = { 1458, 48, 69 }, npc = "Master Apothecary Faranell" }, turnIn = { description = "Apothecarium, Undercity.", location = { 1458, 48, 69 }, npc = "Master Apothecary Faranell" }, items = {} },
+    { id = 1109, name = "Going, Going, Guano!", side = "Horde", requiredLevel = 30, xp = 6950, objective = "Bring 1 pile of Kraul Guano from the Kraul bats to Master Apothecary Faranell.", description = "Required before Hearts of Zeal.", start = { description = "Apothecarium, Undercity.", location = { 1458, 48, 69 }, npc = "Master Apothecary Faranell" }, turnIn = { description = "Apothecarium, Undercity.", location = { 1458, 48, 69 }, npc = "Master Apothecary Faranell" }, items = {} },
     { id = 1701, name = "Fire Hardened Mail", side = "Alliance", class = "WARRIOR", requiredLevel = 20, xp = 2300, objective = "Gather the materials Furen Longbeard requires, and bring them to him in Stormwind.", description = "The Razorfen Kraul step.", requires = { { id = 1702, name = "The Shieldsmith" } }, followUps = { 1782 }, start = { description = "Furen Longbeard, Dwarven District, Stormwind (64.6, 37.2)", location = { 1453, 64.6, 37.2 }, npc = "Furen Longbeard" }, turnIn = { description = "Furen Longbeard, Dwarven District, Stormwind (64.6, 37.2)", location = { 1453, 58, 16.8 }, npc = "Furen Longbeard" }, items = {} },
     { id = 1838, name = "Brutal Armor", side = "Horde", class = "WARRIOR", requiredLevel = 20, xp = 3650, objective = "Bring Thun'grim Firegaze 15 Smoky Iron Ingots, 10 Powdered Azurite, 10 Iron Bars and a Vial of Phlogiston.", description = "The Razorfen Kraul step.", requires = { { id = 1825, name = "Speak with Thun'grim" } }, followUps = { 1848 }, start = { description = "hills east of the Crossroads, The Barrens", location = { 1413, 57, 30 }, npc = "Thun'grim Firegaze" }, turnIn = { description = "hills east of the Crossroads, The Barrens (57, 30)", location = { 1413, 57, 30 }, npc = "Thun'grim Firegaze" }, items = {} },
     { id = 96264, name = "Elemental Aid", side = "Alliance", class = "SHAMAN", requiredLevel = 30, xp = 6950, objective = "Defeat Charlga Razorflank in Razorfen Kraul and collect information on the quilboar's plans.", description = "The Razorfen Kraul step. Call of Air (from Eldrun Stormbreaker in Ironforge) sends you to Veyric. Alliance Shamans can share this quest.", followUps = { 79358, 96135, 96016 }, start = { description = "Arathi Highlands", location = { 1417, 59.6, 27.6 }, npc = "Veyric Thunderhame" }, turnIn = { description = "Arathi Highlands (59.6, 27.6)", location = { 1417, 59.6, 27.6 }, npc = "Veyric Thunderhame" }, items = {} },
