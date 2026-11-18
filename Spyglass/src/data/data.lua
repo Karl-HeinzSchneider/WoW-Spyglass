@@ -149,6 +149,7 @@ local RECIPE = {
 ---@field factionCategory? string  # name of the parent faction from the game data
 ---@field skillLineID? integer  # crafting lists
 ---@field sections? Spyglass.ListSection[]  # crafting lists: the categories grouped under subheaders
+---@field groupFolders? boolean  # PvP lists: show reward groups as navigable folders
 ---@field panel? Spyglass.PanelWidget[]  # the right pane while the list is open; replaces the kind's default
 
 -- One subheader of a crafting list and the trade skill categories under it, by category id,

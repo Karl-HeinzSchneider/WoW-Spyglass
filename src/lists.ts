@@ -30,6 +30,8 @@ export interface CuratedList {
   skillLine?: number;
   /** crafting: groups the profession's category folders under subheaders in the browser. */
   sections?: ListSection[];
+  /** PvP: show reward groups as navigable folders. */
+  groupFolders?: boolean;
   /** The window's right pane while the list is open, top to bottom; replaces the kind's default panel. */
   panel?: PanelWidget[];
   /** The rows, under the kind's key (ROWS_KEY): `recipes`, `rewards` or `items`. */
@@ -294,6 +296,9 @@ export function validateLists(files: ListFile[], checker: Checker): void {
       );
     }
     validateSections(file, checker);
+    if (d.groupFolders !== undefined && (file.kind !== "pvp" || typeof d.groupFolders !== "boolean")) {
+      checker.report(file, "`groupFolders` must be a boolean and is only allowed on PvP lists");
+    }
     validatePanel(file, listIDs, checker);
     for (const field of ["faction", "skillLine"] as const) {
       if (d[field] !== undefined && !LIST_ID_FIELDS[file.kind].includes(field)) {
@@ -653,6 +658,7 @@ export function serializeList(file: ListFile): string {
   };
   for (const field of LIST_ID_FIELDS[file.kind]) ordered[field] = d[field];
   ordered.sections = d.sections?.map((section) => ({ name: section.name, categories: section.categories }));
+  ordered.groupFolders = d.groupFolders;
   ordered.panel = d.panel;
   const serializeRow = (r: CuratedListRow) => {
     const row: Record<string, unknown> = { item: r.item, name: r.name };

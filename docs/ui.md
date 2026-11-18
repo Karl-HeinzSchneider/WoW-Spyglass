@@ -198,9 +198,9 @@ like the item-info redraw.
 A view keeps the state of the info panel's checkboxes, dropdowns and grouping in
 `view.panelState`, per panel node and widget index. `GetPanel()` finds the deepest node on the
 path with a `panel` (calling a function panel), `GetEntryFilter()` turns the set checkboxes and
-dropdowns into one test, and `BuildElements` drops the entries it rejects (quest banners can be
-filtered; other folders stay), along
-with a subheader or group label whose entries are all gone. `GetPanelGrouping()` returns the
+dropdowns into one test, and `BuildElements` drops the entries it rejects. A PvP reward
+subcategory stays visible while at least one reward matches that test. Quest banners,
+subheaders and group labels can also be filtered. `GetPanelGrouping()` returns the
 picked `grouping` option's `groupBy` (the option's index is the stored value, the first until
 one is picked), which `BuildElements` uses instead of the node's. `SetPanelValue` stores a value and refreshes from
 page 1. The checkbox filter ids (`PANEL_FILTERS`: `side`, `standing`) must match the ones

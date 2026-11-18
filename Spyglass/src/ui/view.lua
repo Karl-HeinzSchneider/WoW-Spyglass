@@ -2110,11 +2110,10 @@ function SpyglassViewMixin:BuildElements(node)
     local keyFn = type(groupBy) == "function" and groupBy or nil
     local entryKind = entryKindOf(node)
     local pending = {}
-    -- The info panel's checkboxes/dropdowns and the class filter; folders always stay.
-    local filter = self:GetEntryFilter()
+    local panelTest = self:GetEntryFilter()
+    local filter = panelTest
     local classTest = self:GetClassFilterTest()
     if filter and classTest then
-        local panelTest = filter
         filter = function(entry)
             return panelTest(entry) and classTest(entry)
         end
@@ -2122,7 +2121,21 @@ function SpyglassViewMixin:BuildElements(node)
         filter = filter or classTest
     end
     local function keep(entry)
-        return not entry.hidden and (not filter or app.api.IsFolder(entry) or filter(entry))
+        if entry.hidden then
+            return false
+        end
+        if app.api.IsFolder(entry) then
+            if panelTest and entry.meta and entry.meta.rewardGroup then
+                for _, reward in ipairs(entry.children or {}) do
+                    if not reward.hidden and panelTest(reward) then
+                        return true
+                    end
+                end
+                return false
+            end
+            return true
+        end
+        return not filter or filter(entry)
     end
 
     local function addRows(entries)
@@ -2206,6 +2219,8 @@ function SpyglassViewMixin:BuildElements(node)
     flush()
     if #elements == 0 and node.meta and node.meta.quests then
         elements[1] = { kind = "subheader", text = "No quests for this faction" }
+    elseif #elements == 0 and panelTest and node.meta and node.meta.rewardGroup then
+        elements[1] = { kind = "subheader", text = "No rewards match the selected filters" }
     end
     -- The query counted its result before the filters above removed entries from it: the count
     -- next to the search box is what is listed.

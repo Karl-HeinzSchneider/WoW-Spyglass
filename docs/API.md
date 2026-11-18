@@ -296,6 +296,8 @@ Constructors (optional sugar):
   profession page is a list of categories rather than hundreds of rows. Professions with many
   categories can put those folders under subheaders — see _Category sections_ below. Crafting folders show the
   character's rank ("145 / 150") as `info` and the localized profession name.
+  A PvP list with `groupFolders = true` opens each reward group as a subfolder. The subfolders
+  inherit the list's panel and are visible when at least one reward matches its filters.
   A plain click on any row whose `meta.spell` is a recipe in `Data.recipes` opens the recipe popup
   (product and teaching item, recipe link and reagents); modified clicks still link the row's item.
   Likewise, a plain click on any item row whose item belongs to a set (`Data:GetSetItems`) opens

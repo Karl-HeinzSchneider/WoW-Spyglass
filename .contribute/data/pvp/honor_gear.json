@@ -1,60 +1,80 @@
 {
   "name": "Honor Gear",
   "icon": "Interface\\Icons\\INV_BannerPVP_02",
+  "groupFolders": true,
   "panel": [
     {
-      "header": "Lieutenant Karter"
+      "factionDropdown": "Faction",
+      "field": "side"
     },
     {
-      "text": "Mount Vendor in Stormwind City"
+      "header": "Lieutenant Karter",
+      "side": "Alliance"
+    },
+    {
+      "text": "Mount Vendor in Stormwind City",
+      "side": "Alliance"
     },
     {
       "row": "Coordinates",
-      "value": "74.6, 67.6"
+      "value": "74.6, 67.6",
+      "side": "Alliance"
     },
     {
       "button": "Show vendor on map",
-      "map": [1453, 74.6, 67.6]
+      "map": [1453, 74.6, 67.6],
+      "side": "Alliance"
     },
     {
       "row": "Required honor rank",
-      "value": "11 (Commander)"
+      "value": "11 (Commander)",
+      "side": "Alliance"
     },
     {
       "row": "Price per mount",
-      "value": "90 gold"
+      "value": "90 gold",
+      "side": "Alliance"
     },
     {
-      "header": "Captain O'Neal"
+      "header": "Captain O'Neal",
+      "side": "Alliance"
     },
     {
-      "text": "Weapons Quartermaster in Stormwind City"
+      "text": "Weapons Quartermaster in Stormwind City",
+      "side": "Alliance"
     },
     {
       "row": "Coordinates",
-      "value": "74.4, 67.6"
+      "value": "74.4, 67.6",
+      "side": "Alliance"
     },
     {
       "button": "Show weapons quartermaster on map",
-      "map": [1453, 74.4, 67.6]
+      "map": [1453, 74.4, 67.6],
+      "side": "Alliance"
     },
     {
       "row": "Required honor rank",
-      "value": "14 (Grand Marshal)"
+      "value": "14 (Grand Marshal)",
+      "side": "Alliance"
     },
     {
-      "header": "Master Sergeant Biggins"
+      "header": "Master Sergeant Biggins",
+      "side": "Alliance"
     },
     {
-      "text": "Officer Accessories Quartermaster in Stormwind City"
+      "text": "Officer Accessories Quartermaster in Stormwind City",
+      "side": "Alliance"
     },
     {
       "row": "Coordinates",
-      "value": "75.2, 67.6"
+      "value": "75.2, 67.6",
+      "side": "Alliance"
     },
     {
       "button": "Show officer accessories quartermaster on map",
-      "map": [1453, 75.2, 67.6]
+      "map": [1453, 75.2, 67.6],
+      "side": "Alliance"
     }
   ],
   "rewards": [

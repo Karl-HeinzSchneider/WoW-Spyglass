@@ -101,6 +101,7 @@ the scans and warns on unscanned ids.
   fix fills `item` from `spell`, `fillRecipeSpell` fills `spell` from `item` when exactly one
   recipe of the profession makes it. `validateSections` checks `sections`: every category belongs
   to the file's profession and to one section only; a category given by name is fixed to its id.
+  The optional boolean `groupFolders` applies to PvP lists and is emitted when enabled.
   `validatePanel` checks `panel`: one known type key per widget (`PANEL_WIDGETS`) and only its
   options, bars only with the list's `faction` / `skillLine`, checkbox filters from
   `PANEL_FILTERS` (which must match the addon's in `view.lua`), dropdown fields from the kind's

@@ -56,6 +56,27 @@ function sectionChecker(fix: boolean): Checker {
   return new Checker({ categories, skillLines, recipes: new Map(), items: new Map() } as Reference, fix);
 }
 
+test("reward folders survive a PvP rewrite and are rejected on crafting lists", () => {
+  const file: ListFile = {
+    path: ".contribute/data/pvp/honor_gear.json",
+    kind: "pvp",
+    slug: "honor_gear",
+    data: { name: "Honor Gear", groupFolders: true, rewards: [] },
+  };
+  const checker = sectionChecker(true);
+  validateLists([file], checker);
+  assert.deepEqual(
+    checker.problems.filter((p) => !p.warning),
+    [],
+  );
+  assert.equal(JSON.parse(serializeList(file)).groupFolders, true);
+
+  const crafting = craftingFile([]);
+  crafting.data.groupFolders = true;
+  validateLists([crafting], checker);
+  assert.match(checker.problems.map((p) => p.message).join("\n"), /groupFolders.*only allowed on PvP/);
+});
+
 test("crafting sections keep their shape through a fix rewrite", () => {
   const sections = [{ name: "Plate Armor", categories: [2469, 2470] }];
   const serialized = JSON.parse(serializeList(craftingFile(sections))) as Record<string, unknown>;

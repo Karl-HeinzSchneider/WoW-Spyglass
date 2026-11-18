@@ -279,6 +279,7 @@ function emitList(file: ListFile, ref: Reference): string {
     ).map((l) => l + "\n"),
   );
   out.push(...emitSections(d.sections, ref));
+  if (d.groupFolders) out.push("    groupFolders = true,\n");
   if (d.panel && d.panel.length > 0) {
     out.push("    panel = {\n", ...d.panel.map((widget) => `        ${luaValue(widget)},\n`), "    },\n");
   }

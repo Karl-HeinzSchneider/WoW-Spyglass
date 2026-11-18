@@ -375,6 +375,9 @@ row. Every file may carry `icon`, `background` + `backgroundCoords` (as for inst
 the client's `Profession-overview-Card-<Profession>` art this way), `info` (small text on the
 tile) and `order` (tile position; by name otherwise).
 
+A PvP list can set `"groupFolders": true` to open reward groups as subcategories. They share
+the list's info panel, and a subcategory appears when it has a reward matching the panel filters.
+
 An item row in any list may carry `"costs": [{ "item": 226404, "amount": 125, "icon": 133799 }]`.
 Use the payment item's ID, the quantity due, and the icon's texture file ID. Each must be a
 positive integer. To price an offer in several payment items, put all components in that row's
