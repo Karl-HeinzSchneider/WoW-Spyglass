@@ -30,6 +30,8 @@ export interface CuratedList {
   skillLine?: number;
   /** crafting: groups the profession's category folders under subheaders in the browser. */
   sections?: ListSection[];
+  /** PvP: show reward groups as navigable folders. */
+  groupFolders?: boolean;
   /** The window's right pane while the list is open, top to bottom; replaces the kind's default panel. */
   panel?: PanelWidget[];
   /** The rows, under the kind's key (ROWS_KEY): `recipes`, `rewards` or `items`. */
@@ -69,9 +71,12 @@ export interface PanelWidget {
   /** checkbox: the built-in filter it switches on (PANEL_FILTERS). */
   filter?: string;
   dropdown?: string;
+  classDropdown?: string;
+  includeSection?: string;
   factionDropdown?: string;
   /** Show this widget when the panel's faction selector picks this side. */
   side?: "Alliance" | "Horde";
+  group?: string;
   /** dropdown: the row field whose values it offers. */
   field?: string;
   button?: string;
@@ -84,16 +89,17 @@ export interface PanelWidget {
 
 /** A widget's type key -> the option keys it may carry (and the ones it needs). */
 const PANEL_WIDGETS: Record<string, { options: string[]; required?: string[] }> = {
-  header: { options: ["side"] },
-  text: { options: ["side"] },
+  header: { options: ["side", "group"] },
+  text: { options: ["side", "group"] },
   item: { options: [] },
   description: { options: [] },
-  row: { options: ["value", "side"], required: ["value"] },
+  row: { options: ["value", "side", "group"], required: ["value"] },
   bar: { options: [] },
   checkbox: { options: ["filter"], required: ["filter"] },
   dropdown: { options: ["field"], required: ["field"] },
+  classDropdown: { options: ["group", "includeSection"], required: ["group", "includeSection"] },
   factionDropdown: { options: ["field"], required: ["field"] },
-  button: { options: ["open", "map", "side"] },
+  button: { options: ["open", "map", "side", "group"] },
   spacer: { options: [] },
 };
 
@@ -116,6 +122,10 @@ export type ReputationRewards = Partial<Record<Standing, CuratedListRow[]>>;
  */
 export interface CuratedListRow extends CuratedItemRow {
   group?: string;
+  /** PvP: header inside a reward subcategory. */
+  section?: string;
+  /** PvP: the rare item consumed to make this epic upgrade. */
+  upgradeFrom?: number;
   /** Items paid together to buy this reward. */
   costs?: ItemCost[];
   /** crafting: the recipe's spell id (`fix` fills it in from the recipe database when the item is made by exactly one recipe of the profession, and the other way round). */
@@ -132,11 +142,10 @@ export interface CuratedListRow extends CuratedItemRow {
   side?: string;
 }
 
-interface ItemCost {
-  item: number;
-  amount: number;
-  icon: number;
-}
+type ItemCost =
+  | { item: number; amount: number; icon: number }
+  | { currency: number; amount: number; name: string }
+  | { copper: number };
 
 export interface ListFile {
   path: string;
@@ -184,6 +193,8 @@ type FieldSpec =
 
 const FIELD_SPECS: Record<string, FieldSpec> = {
   group: { type: "string" },
+  section: { type: "string" },
+  upgradeFrom: { type: "integer", min: 1 },
   costs: { type: "costs" },
   spell: { type: "integer", min: 1 },
   skill: { type: "integer", min: 0 },
@@ -196,7 +207,7 @@ const FIELD_SPECS: Record<string, FieldSpec> = {
 /** Row fields each kind accepts (besides `item`, `name` and `group`); the emit order in Lua. */
 export const ROW_FIELDS: Record<ListKind, (keyof CuratedListRow)[]> = {
   crafting: ["spell", "skill", "source", "costs"],
-  pvp: ["rank", "standing", "side", "costs"],
+  pvp: ["rank", "standing", "side", "section", "upgradeFrom", "costs"],
   collections: ["source", "side", "costs"],
   reputation: ["standing", "side", "costs"],
 };
@@ -248,12 +259,15 @@ function checkField(value: unknown, spec: FieldSpec): string | undefined {
     case "costs":
       if (!Array.isArray(value) || value.length === 0) return "must be a non-empty array";
       for (const cost of value) {
-        if (
-          !cost || typeof cost !== "object" || Array.isArray(cost) || Object.keys(cost).length !== 3 ||
-          ![cost.item, cost.amount, cost.icon].every(isPositiveInteger)
-        ) {
-          return "must contain only item, amount and icon as positive integers for each cost";
+        if (cost && typeof cost === "object" && !Array.isArray(cost)) {
+          const keys = Object.keys(cost).length;
+          if (keys === 1 && isPositiveInteger(cost.copper)) continue;
+          if (keys === 3 && isPositiveInteger(cost.amount)) {
+            if (isPositiveInteger(cost.item) && isPositiveInteger(cost.icon)) continue;
+            if (isPositiveInteger(cost.currency) && typeof cost.name === "string" && cost.name.trim()) continue;
+          }
         }
+        return "must contain only item, amount and icon as positive integers, currency and amount as positive integers with a name, or a positive copper amount";
       }
       return undefined;
   }
@@ -292,6 +306,9 @@ export function validateLists(files: ListFile[], checker: Checker): void {
       );
     }
     validateSections(file, checker);
+    if (d.groupFolders !== undefined && (file.kind !== "pvp" || typeof d.groupFolders !== "boolean")) {
+      checker.report(file, "`groupFolders` must be a boolean and is only allowed on PvP lists");
+    }
     validatePanel(file, listIDs, checker);
     for (const field of ["faction", "skillLine"] as const) {
       if (d[field] !== undefined && !LIST_ID_FIELDS[file.kind].includes(field)) {
@@ -348,7 +365,27 @@ export function validateLists(files: ListFile[], checker: Checker): void {
         });
     }
 
+    const rewardsByItem = file.kind === "pvp" ? new Map(groupedRows.map(({ row }) => [row.item, row])) : undefined;
     for (const { row, where } of groupedRows) {
+      if (file.kind === "pvp" && row.section !== undefined && d.groupFolders !== true) {
+        checker.report(file, `${where}: section requires groupFolders to be enabled`);
+      }
+      if (rewardsByItem && isPositiveInteger(row.upgradeFrom)) {
+        const base = rewardsByItem.get(row.upgradeFrom);
+        if (
+          !base ||
+          base === row ||
+          base.upgradeFrom ||
+          base.group !== row.group ||
+          base.section !== row.section ||
+          base.side !== row.side
+        ) {
+          checker.report(
+            file,
+            `${where}: upgradeFrom must reference a base reward in the same group, section, and faction`,
+          );
+        }
+      }
       for (const [field, value] of Object.entries(row)) {
         if (!allowed.has(field)) {
           checker.report(file, `${where}: unknown field \`${field}\``);
@@ -472,6 +509,8 @@ function validatePanel(file: ListFile, listIDs: Set<string>, checker: Checker): 
   }
   const fields = new Set<string>([...ROW_FIELDS[file.kind].filter((field) => field !== "costs"), "group"]);
   const factionSelectors = d.panel.filter((widget) => widget?.factionDropdown && widget.field === "side");
+  const rewardGroups =
+    file.kind === "pvp" && d.groupFolders === true ? new Set(rowsOf(file).map((row) => row?.group)) : new Set<string>();
   if (factionSelectors.length > 1) checker.report(file, "panel: only one faction selector is allowed");
   for (const [index, widget] of d.panel.entries()) {
     const where = `panel[${index}]`;
@@ -501,7 +540,21 @@ function validatePanel(file: ListFile, listIDs: Set<string>, checker: Checker): 
     const w = widget;
     if (w.side !== undefined && (!SIDES.includes(w.side) || !factionSelectors.length))
       checker.report(file, `${where}: side must be Alliance or Horde and requires a faction selector`);
+    if (w.group !== undefined && (typeof w.group !== "string" || !w.group.trim() || !rewardGroups.has(w.group)))
+      checker.report(file, `${where}: group must name a reward subcategory on a PvP list with groupFolders enabled`);
     switch (type) {
+      case "classDropdown":
+        if (typeof w.classDropdown !== "string" || !w.classDropdown.trim())
+          checker.report(file, `${where}: classDropdown must be its label`);
+        if (
+          typeof w.includeSection !== "string" ||
+          !w.includeSection.trim() ||
+          file.kind !== "pvp" ||
+          !rowsOf(file).some((row) => row?.group === w.group && row?.section === w.includeSection)
+        ) {
+          checker.report(file, `${where}: includeSection must name a section in the selected reward subcategory`);
+        }
+        break;
       case "factionDropdown":
         if (typeof w.factionDropdown !== "string" || !w.factionDropdown)
           checker.report(file, `${where}: factionDropdown must be its label`);
@@ -651,6 +704,7 @@ export function serializeList(file: ListFile): string {
   };
   for (const field of LIST_ID_FIELDS[file.kind]) ordered[field] = d[field];
   ordered.sections = d.sections?.map((section) => ({ name: section.name, categories: section.categories }));
+  ordered.groupFolders = d.groupFolders;
   ordered.panel = d.panel;
   const serializeRow = (r: CuratedListRow) => {
     const row: Record<string, unknown> = { item: r.item, name: r.name };

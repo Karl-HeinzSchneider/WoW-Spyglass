@@ -375,10 +375,19 @@ row. Every file may carry `icon`, `background` + `backgroundCoords` (as for inst
 the client's `Profession-overview-Card-<Profession>` art this way), `info` (small text on the
 tile) and `order` (tile position; by name otherwise).
 
+A PvP list can set `"groupFolders": true` to open reward groups as subcategories. They share
+the list's info panel, and a subcategory appears when it has a reward matching the panel filters.
+Set a reward row's `section` to place it under a named header inside its subcategory.
+Set `upgradeFrom` to the base item ID for an upgrade. The base reward must be in the same
+group, section, and faction. List the consumed items in `costs` to show them in the upgrade tooltip.
+
 An item row in any list may carry `"costs": [{ "item": 226404, "amount": 125, "icon": 133799 }]`.
 Use the payment item's ID, the quantity due, and the icon's texture file ID. Each must be a
 positive integer. To price an offer in several payment items, put all components in that row's
-`costs` array. The tooltip displays the price with its icons.
+`costs` array. For game currency use a currency ID, amount, and fallback name, for example
+`{ "currency": 1792, "amount": 12000, "name": "Honor Points" }`. The tooltip uses the client's
+currency name and icon when available. Use `{ "copper": 36000 }` for a coin price of
+3 gold 60 silver.
 
 Reputation files must state the game's `faction` id, a faction with a reputation bar; the addon
 uses it at runtime for the localized name, description and the character's standing, and `fix`
@@ -501,6 +510,10 @@ Each widget is an object with exactly one of these keys, plus that widget's opti
 A widget with `"factionDropdown": "Faction", "field": "side"` switches between Alliance and
 Horde rewards and defaults to the character's faction. A header, text, row, or button in the
 same panel can set `"side": "Alliance"` or `"side": "Horde"` to appear for that selection.
+On a PvP list with `groupFolders` enabled, these widgets can also name a row's `group` to
+appear only inside that subcategory.
+For class-named sections, `{ "classDropdown": "Class", "group": "Armor", "includeSection": "Epic Upgrades" }`
+starts on the character's class. The included section stays visible for every class selection.
 
 Checkboxes and dropdowns act on the list in that tab only and are forgotten when the tab is
 closed. `npm run check` reports unknown widgets and options, a bar without the file's id, a

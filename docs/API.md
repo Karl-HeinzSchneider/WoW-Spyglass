@@ -296,10 +296,17 @@ Constructors (optional sugar):
   profession page is a list of categories rather than hundreds of rows. Professions with many
   categories can put those folders under subheaders — see _Category sections_ below. Crafting folders show the
   character's rank ("145 / 150") as `info` and the localized profession name.
+  A PvP list with `groupFolders = true` opens each reward group as a subfolder. The subfolders
+  inherit the list's panel and are visible when at least one reward matches its filters.
+  A reward row's optional `section` names a subheader inside its reward folder.
   A plain click on any row whose `meta.spell` is a recipe in `Data.recipes` opens the recipe popup
   (product and teaching item, recipe link and reagents); modified clicks still link the row's item.
   Likewise, a plain click on any item row whose item belongs to a set (`Data:GetSetItems`) opens
   the set popup: the set's name and every item of the set.
+  A row folder with `combineSets = true` groups matching items from the same known set into
+  one set button per section. A set button carries `setItemID` for a representative item and
+  opens the same popup. A PvP reward's `upgradeFrom` links the upgrade to its base item.
+  In a two-column folder, the upgraded set appears beside the base set.
 - `Spyglass.Log(fmt, ...)` — prefixed chat message
 - `Spyglass.LogAt(level, fmt, ...)` — threshold-aware diagnostic output using the core logger
 - `Spyglass.PlaceholderItem(name, quality, icon)` — hard-coded display data, for prototyping
@@ -370,7 +377,12 @@ modified click links it in chat.
 Set `field = "side"` on a `factionDropdown` to offer Alliance and Horde for a reward list.
 It defaults to the character's faction and filters entries by `meta.side`. A header, text, row,
 or button in the same panel may specify `side = "Alliance"` or `side = "Horde"` to appear for
-that selection.
+that selection. The built-in PvP module shares its reward faction selection across its panels
+and tabs for the session. On a PvP list with `groupFolders` enabled, those widgets may also set
+`group` to a curated reward group to appear only inside its subcategory.
+
+A `classDropdown` widget filters the named reward `group` by its class section. It starts
+on the character's class, offers All, and always includes the named `includeSection`.
 
 Checkbox and dropdown filters and the grouping apply to the entries of whatever list the tab
 shows below the panel's node (folders remain visible except quest banners under the faction
@@ -595,7 +607,9 @@ Reading:
   then the curated one, then `"#id"`
 - `Data:GetList(kind, id)`, `Data:GetListIDs(kind)` (by `order`, then name), `Data:GetListLoot(kind, id)`
   — list loot rows can include `costs = { { item = 226404, amount = 125, icon = 133799 } }`.
-  Each component gives the payment item ID, quantity and texture file ID. Components in one row
+  A component gives the payment item ID, quantity and texture file ID, or a currency ID, quantity
+  and fallback name, e.g. `{ currency = 1792, amount = 12000, name = "Honor Points" }`.
+  Use `{ copper = 36000 }` for a coin price of 3 gold 60 silver. Components in one row
   are paid together. The list source returned by `Data:GetItemSources` carries these costs for
   item tooltips.
 - `Data:GetSetItems(setID) -> itemID[]` (the set's items in the database, ascending), `Data:GetSetIDs()`

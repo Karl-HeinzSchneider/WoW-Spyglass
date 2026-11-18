@@ -10,11 +10,18 @@ local PADDING = 12
 local TITLE_GAP = 8
 local PER_LINE = 8
 
--- The set of an item node, when the database has the set's items; nil otherwise.
+---@param node Spyglass.Node?
+---@return integer?
+local function sourceItem(node)
+    return node and (node.setItemID or node.itemID)
+end
+
+-- The set of an item or set row, when the database has the set's items; nil otherwise.
 ---@param node Spyglass.Node
 ---@return integer?
 local function setOf(node)
-    local setID = node and node.itemID and Data:GetItemField(node.itemID, ITEM.SET)
+    local itemID = sourceItem(node)
+    local setID = itemID and Data:GetItemField(itemID, ITEM.SET)
     if type(setID) == "number" and setID ~= 0 and #Data:GetSetItems(setID) > 0 then
         return setID
     end
@@ -140,7 +147,7 @@ end
 -- The set part of the tooltip of the item the popup was opened from; until the client has that
 -- item's tooltip data, the set's name and the names of its items.
 function SpyglassSetPopupMixin:ShowSetTooltip()
-    local itemID, setID = self.node and self.node.itemID, self.setID
+    local itemID, setID = sourceItem(self.node), self.setID
     if not itemID or not setID then
         return
     end
@@ -164,7 +171,7 @@ end
 -- There is no chat link for an item set: shift-click links the item the popup was opened from,
 -- whose tooltip shows the whole set (ctrl-click tries it on, as on any item).
 function SpyglassSetPopupMixin:LinkSet()
-    local itemID = self.node and self.node.itemID
+    local itemID = sourceItem(self.node)
     if not itemID then
         return
     end
@@ -176,7 +183,7 @@ function SpyglassSetPopupMixin:LinkSet()
     end
 end
 
--- Whether a click on this node opens the popup: an item of a set the database knows.
+-- Whether a click on this node opens a set the database knows.
 ---@param node Spyglass.Node
 ---@return boolean
 function SpyglassSetPopupMixin:HasSet(node)

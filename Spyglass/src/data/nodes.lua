@@ -909,26 +909,48 @@ local function craftingFolderKey(node)
     return "OTHER", OTHER or "Other"
 end
 
--- A profession's recipes as one folder per trade skill category ("Weapon Stones", "Plate
--- Helmets", ...), in the trade skill window's order, so a profession's hundreds of recipes
--- don't make one long list. Rows with a curated `group` label get a folder of their own where
--- their first recipe sorts; rows with neither end up under "Other" at the end. Each folder
--- shows its first recipe's icon and its recipe count.
+-- Insert a subheader at the first entry of each named section inside a reward folder.
+---@param entries Spyglass.Node[]
+---@return Spyglass.Node[]
+local function rewardSections(entries)
+    local children, bySection = {}, {}
+    for _, entry in ipairs(entries) do
+        local section = entry.meta and entry.meta.section
+        if type(section) == "string" and section ~= "" then
+            local items = bySection[section]
+            if not items then
+                items = {}
+                bySection[section] = items
+                children[#children + 1] = api.Subheader(section, items)
+            end
+            items[#items + 1] = entry
+        else
+            children[#children + 1] = entry
+        end
+    end
+    return children
+end
+
+-- A folder per trade skill category or PvP reward group, keeping the list's entry order.
+-- A curated group label takes precedence over the default grouping.
 ---@param kind Spyglass.ListKind
 ---@param id string
 ---@param entries Spyglass.Node[]  # from api.ListEntries, already in category order
 ---@return Spyglass.Node[]
-local function categoryFolders(kind, id, entries)
-    local groups = api.GroupEntries(entries, craftingFolderKey, function()
-        return 0 -- keep ListEntries' order (category, then skill)
+local function groupedListFolders(kind, id, entries)
+    local crafting = kind == "crafting"
+    local key = crafting and craftingFolderKey or listGroupKey(kind)
+    local groups = api.GroupEntries(entries, key, function()
+        return 0 -- keep ListEntries' order
     end)
     local folders = {}
     for _, group in ipairs(groups) do
         local first = group.entries[1]
-        folders[#folders + 1] = api.Folder(group.label, entryIcon(first) or ICON_LIST, group.entries, {
+        local children = crafting and group.entries or rewardSections(group.entries)
+        folders[#folders + 1] = api.Folder(group.label, entryIcon(first) or ICON_LIST, children, {
             columns = 2,
-            description = ("%d recipes"):format(#group.entries),
-            meta = { listKind = kind, listID = id, groupKey = group.key },
+            description = crafting and ("%d recipes"):format(#group.entries) or nil,
+            meta = { listKind = kind, listID = id, groupKey = group.key, rewardGroup = not crafting or nil },
         })
     end
     return folders
@@ -940,7 +962,7 @@ end
 -- Categories no section claims keep their order and follow under "Other". Sections come from
 -- the list's `sections` (the crafting JSON) or from the caller (see api.ListFolder); when none
 -- of them matches anything, the plain folder list is left as it is.
----@param folders Spyglass.Node[]  # from categoryFolders, in the trade skill window's order
+---@param folders Spyglass.Node[]  # in the trade skill window's order
 ---@param sections Spyglass.ListSection[]
 ---@return Spyglass.Node[]
 local function sectionedFolders(folders, sections)
@@ -1058,14 +1080,17 @@ function api.ListFolder(kind, id, opts)
     local panel = list.panel or defaultPanel(kind, list, #entries)
     local groupBy = listGroupKey(kind) ---@type ("auto"|fun(node: Spyglass.Node): string?, string?)?
     if kind == "crafting" and entries[1] and (entries[1].itemID or entries[1].spellID) then
-        entries, groupBy = categoryFolders(kind, id, entries), nil
+        entries, groupBy = groupedListFolders(kind, id, entries), nil
         local sections = sectionsOf(list, id, opts)
         if sections then
             entries = sectionedFolders(entries, sections)
         end
+    elseif kind == "pvp" and list.groupFolders and entries[1] and entries[1].itemID then
+        entries, groupBy = groupedListFolders(kind, id, entries), nil
     end
     return api.Folder(name, list.icon or ICON_LIST, entries, {
         columns = 2,
+        display = kind == "pvp" and list.groupFolders and "tiles" or nil,
         groupBy = groupBy,
         order = list.order,
         info = list.info or standing or rank,
@@ -1076,6 +1101,7 @@ function api.ListFolder(kind, id, opts)
         meta = {
             listKind = kind,
             listID = id,
+            rewardGroup = kind == "pvp" and list.groupFolders or nil,
             factionID = list.factionID,
             skillLineID = list.skillLineID,
             reaction = faction and faction.reaction,

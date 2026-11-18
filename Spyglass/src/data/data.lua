@@ -149,6 +149,7 @@ local RECIPE = {
 ---@field factionCategory? string  # name of the parent faction from the game data
 ---@field skillLineID? integer  # crafting lists
 ---@field sections? Spyglass.ListSection[]  # crafting lists: the categories grouped under subheaders
+---@field groupFolders? boolean  # PvP lists: show reward groups as navigable folders
 ---@field panel? Spyglass.PanelWidget[]  # the right pane while the list is open; replaces the kind's default
 
 -- One subheader of a crafting list and the trade skill categories under it, by category id,
@@ -163,9 +164,12 @@ local RECIPE = {
 ---@alias Spyglass.ListLootRow { [1]: integer?, [string]: any }
 
 ---@class Spyglass.ItemCost
----@field item integer
----@field amount integer
----@field icon integer
+---@field item? integer
+---@field amount? integer
+---@field icon? integer
+---@field currency? integer
+---@field name? string # fallback name for a currency
+---@field copper? integer
 
 -- Where an item comes from: a boss or an instance's trash (`chance`), a quest (`instanceID`,
 -- `side`), a row of a list (`kind`, `id` and that row's named fields, e.g. `standing`) or a
@@ -175,7 +179,9 @@ local RECIPE = {
 ---@field id integer|string  # bossID for "boss", the instance id for "trash", the quest id for "quest", the recipe's spell id for "recipe", the list id otherwise
 ---@field chance? number
 ---@field skillLineID? integer
+---@field rank? integer  # minimum PvP rank for this offer
 ---@field costs? Spyglass.ItemCost[]
+---@field upgradeFrom? integer
 ---@field [string] any
 
 ---@alias Spyglass.NameKind "items"|"bosses"|"instances"|"skillLines"|"categories"|"tools"

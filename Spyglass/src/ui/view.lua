@@ -1202,6 +1202,7 @@ app.ui.ViewMixin = SpyglassViewMixin
 ---@field text? string  # header, subheader, group
 ---@field node? Spyglass.Node  # quest, row, tile, card
 ---@field source? Spyglass.Node  # clickable subheader
+---@field startLine? boolean  # place this row at the start of a new line
 
 -- Where every element of the current layout goes, as parallel arrays indexed by placement
 -- order; a page is a range of them. Shared by all views: only the shown view lays out and
@@ -1622,11 +1623,51 @@ function SpyglassViewMixin:GetPanelValue(node, index)
     return state and state[index]
 end
 
+-- Shared by every PvP panel and tab for the current session.
+---@type ("Alliance"|"Horde")?
+local pvpRewardFaction
+
+---@param view Spyglass.View
+local function isPvPView(view)
+    local module = view.path[2]
+    return module and module.moduleID == "pvp"
+end
+
 ---@param node Spyglass.Node
 ---@param index integer
 ---@return "Alliance"|"Horde"
 function SpyglassViewMixin:GetRewardFaction(node, index)
-    return self:GetPanelValue(node, index) or (UnitFactionGroup("player") == "Horde" and "Horde" or "Alliance")
+    local selected
+    if isPvPView(self) then
+        selected = pvpRewardFaction
+    else
+        selected = self:GetPanelValue(node, index)
+    end
+    return selected or (UnitFactionGroup("player") == "Horde" and "Horde" or "Alliance")
+end
+
+---@param node Spyglass.Node
+---@param index integer
+---@param side "Alliance"|"Horde"
+function SpyglassViewMixin:SetRewardFaction(node, index, side)
+    if isPvPView(self) then
+        pvpRewardFaction = side
+        self:OnQueryChanged()
+    else
+        self:SetPanelValue(node, index, side)
+    end
+end
+
+---@param node Spyglass.Node
+---@param index integer
+---@return string|false
+function SpyglassViewMixin:GetRewardClass(node, index)
+    local selected = self:GetPanelValue(node, index)
+    if selected ~= nil then
+        return selected
+    end
+    local class = app.classFilter:GetPlayerClass()
+    return class:sub(1, 1) .. class:sub(2):lower()
 end
 
 -- A checkbox, dropdown or grouping changed: the list is filtered and grouped again, from page 1.
@@ -1671,6 +1712,8 @@ function SpyglassViewMixin:GetEntryFilter()
     if not node or not widgets then
         return nil
     end
+    local current = self:GetCurrentNode()
+    local groupKey = current and current.meta and current.meta.groupKey
     local tests = {}
     for index, widget in ipairs(widgets) do
         local value = state and state[index]
@@ -1686,6 +1729,14 @@ function SpyglassViewMixin:GetEntryFilter()
             local field = widget.field
             tests[#tests + 1] = function(entry)
                 return entry.meta ~= nil and entry.meta[field] == value
+            end
+        elseif widget.classDropdown and widget.group and groupKey == "CUSTOM:" .. widget.group then
+            local selected = self:GetRewardClass(node, index)
+            if selected then
+                tests[#tests + 1] = function(entry)
+                    local section = entry.meta and entry.meta.section
+                    return section ~= nil and (section == selected or section == widget.includeSection)
+                end
             end
         elseif widget.factionDropdown then
             local side = value or UnitFactionGroup("player")
@@ -1782,11 +1833,11 @@ end
 ---@param node Spyglass.Node?
 ---@return boolean
 function SpyglassViewMixin:IsFaded(node)
+    local itemID = node and (node.itemID or node.setItemID)
     return self.classFilterOn
         and self.classFilterMode == "fade"
-        and node ~= nil
-        and node.itemID ~= nil
-        and not app.classFilter:CanUse(self:GetFilterClass(), node.itemID)
+        and itemID ~= nil
+        and not app.classFilter:CanUse(self:GetFilterClass(), itemID)
 end
 
 -- The values `field` has in the current list's `meta` (entries under subheaders and groups
@@ -1885,8 +1936,9 @@ end
 function SpyglassViewMixin:RestorePath(names)
     local nodes = { self.path[1] }
     for _, name in ipairs(names) do
+        local parent = nodes[#nodes]
         local found
-        for _, child in ipairs(getNodeChildren(self, nodes[#nodes])) do
+        for _, child in ipairs(getNodeChildren(self, parent)) do
             for _, entry in ipairs(child.items or { child }) do
                 if app.api.IsFolder(entry) and entry.name == name then
                     found = entry
@@ -1897,10 +1949,12 @@ function SpyglassViewMixin:RestorePath(names)
                 break
             end
         end
-        if not found then
+        -- Older PvP tabs include the former Honor Gear folder in their saved path.
+        if found then
+            nodes[#nodes + 1] = found
+        elseif parent.moduleID ~= "pvp" or name ~= "Honor Gear" then
             break
         end
-        nodes[#nodes + 1] = found
     end
     self.path = nodes
     self.pathPages = {}
@@ -2077,6 +2131,59 @@ function SpyglassViewMixin:Render()
     self.ActiveList:GenerateMenu()
 end
 
+-- Keep related sets on one line, with the rare set first and standalone items below.
+---@param elements Spyglass.Element[]
+---@param entries Spyglass.Node[]
+---@param keep fun(entry: Spyglass.Node): boolean
+local function addSetRows(elements, entries, keep)
+    local buttons, setOrder, loose = {}, {}, {}
+    local upgrades, upgradeBase = {}, {}
+    for _, entry in ipairs(entries) do
+        if keep(entry) then
+            local item = entry.itemID and Data:GetItem(entry.itemID)
+            local setID = item and item[ITEM.SET]
+            if not setID or setID == 0 then
+                loose[#loose + 1] = entry
+            elseif not buttons[setID] then
+                local section = entry.meta and entry.meta.section
+                local class = type(section) == "string" and section:upper()
+                local classFilter = app.classFilter
+                local icon = class and tContains(classFilter:GetClasses(), class) and classFilter:GetIcon(class)
+                buttons[setID] = {
+                    name = Data:GetSetName(setID),
+                    icon = icon or item[ITEM.ICON],
+                    quality = item[ITEM.QUALITY],
+                    setItemID = entry.itemID,
+                }
+                setOrder[#setOrder + 1] = setID
+                local baseItem = entry.meta and entry.meta.upgradeFrom
+                local baseSet = baseItem and Data:GetItemField(baseItem, ITEM.SET)
+                if baseSet and baseSet ~= 0 and baseSet ~= setID then
+                    upgrades[baseSet] = upgrades[baseSet] or {}
+                    table.insert(upgrades[baseSet], setID)
+                    upgradeBase[setID] = baseSet
+                end
+            end
+        end
+    end
+    for _, setID in ipairs(setOrder) do
+        local base = upgradeBase[setID]
+        if not base or not buttons[base] then
+            elements[#elements + 1] = { kind = "row", node = buttons[setID], startLine = true }
+            for _, upgrade in ipairs(upgrades[setID] or {}) do
+                elements[#elements + 1] = { kind = "row", node = buttons[upgrade] }
+            end
+        end
+    end
+    for index, entry in ipairs(loose) do
+        if index == 1 and #setOrder > 0 then
+            elements[#elements + 1] = { kind = "row", node = entry, startLine = true }
+        else
+            elements[#elements + 1] = entryElement("row", entry)
+        end
+    end
+end
+
 -- Turns the current node into the flat list of things to draw: its children. `header` nodes become section headers,
 -- `subheader` nodes the smaller section titles under them, `quest` nodes quest banners (followed
 -- by their `items`), `group` nodes group labels (followed by their `items`), `spacer` nodes an
@@ -2110,11 +2217,10 @@ function SpyglassViewMixin:BuildElements(node)
     local keyFn = type(groupBy) == "function" and groupBy or nil
     local entryKind = entryKindOf(node)
     local pending = {}
-    -- The info panel's checkboxes/dropdowns and the class filter; folders always stay.
-    local filter = self:GetEntryFilter()
+    local panelTest = self:GetEntryFilter()
+    local filter = panelTest
     local classTest = self:GetClassFilterTest()
     if filter and classTest then
-        local panelTest = filter
         filter = function(entry)
             return panelTest(entry) and classTest(entry)
         end
@@ -2122,10 +2228,32 @@ function SpyglassViewMixin:BuildElements(node)
         filter = filter or classTest
     end
     local function keep(entry)
-        return not entry.hidden and (not filter or app.api.IsFolder(entry) or filter(entry))
+        if entry.hidden then
+            return false
+        end
+        if app.api.IsFolder(entry) then
+            if panelTest and entry.meta and entry.meta.rewardGroup then
+                for _, child in ipairs(entry.children or {}) do
+                    if not child.hidden then
+                        for _, reward in ipairs(child.items or { child }) do
+                            if not reward.hidden and panelTest(reward) then
+                                return true
+                            end
+                        end
+                    end
+                end
+                return false
+            end
+            return true
+        end
+        return not filter or filter(entry)
     end
 
     local function addRows(entries)
+        if node.combineSets and entryKind == "row" then
+            addSetRows(elements, entries, keep)
+            return
+        end
         for _, entry in ipairs(entries) do
             if keep(entry) then
                 elements[#elements + 1] = entryElement(entryKind, entry)
@@ -2206,6 +2334,8 @@ function SpyglassViewMixin:BuildElements(node)
     flush()
     if #elements == 0 and node.meta and node.meta.quests then
         elements[1] = { kind = "subheader", text = "No quests for this faction" }
+    elseif #elements == 0 and panelTest and node.meta and node.meta.rewardGroup then
+        elements[1] = { kind = "subheader", text = "No rewards match the selected filters" }
     end
     -- The query counted its result before the filters above removed entries from it: the count
     -- next to the search box is what is listed.
@@ -2303,6 +2433,9 @@ function SpyglassViewMixin:LayoutPages(elements, columns)
                 y = y + self.rowHeight
             end
         else
+            if element.startLine then
+                newLine()
+            end
             local height, gap = self.rowHeight, 0
             if element.kind == "tile" then
                 height, gap = self.tileHeight, self.columnGap

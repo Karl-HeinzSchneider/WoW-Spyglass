@@ -197,15 +197,26 @@ like the item-info redraw.
 
 A view keeps the state of the info panel's checkboxes, dropdowns and grouping in
 `view.panelState`, per panel node and widget index. `GetPanel()` finds the deepest node on the
-path with a `panel` (calling a function panel), `GetEntryFilter()` turns the set checkboxes and
-dropdowns into one test, and `BuildElements` drops the entries it rejects (quest banners can be
-filtered; other folders stay), along
-with a subheader or group label whose entries are all gone. `GetPanelGrouping()` returns the
+path with a `panel` (calling a function panel). Display widgets scoped to a PvP reward group
+appear only in that subcategory. `GetEntryFilter()` turns the set checkboxes and
+dropdowns into one test, and `BuildElements` drops the entries it rejects. A PvP reward
+subcategory stays visible while at least one reward matches that test. Quest banners,
+subheaders and group labels can also be filtered. `GetPanelGrouping()` returns the
 picked `grouping` option's `groupBy` (the option's index is the stored value, the first until
 one is picked), which `BuildElements` uses instead of the node's. `SetPanelValue` stores a value and refreshes from
 page 1. The checkbox filter ids (`PANEL_FILTERS`: `side`, `standing`) must match the ones
 `src/lists.ts` accepts. `OpenPath(path)` resolves a button's `open` path from the root and
 replaces the tab's path with the nodes it passed.
+
+The PvP module shares one reward faction selection across its landing page, subcollections,
+and tabs for the session. It starts on the character's faction. The landing page groups the
+tiles under Battlegrounds and Honor Gear, and vendor locations appear in the matching
+subcollection's panel.
+Armor's Class selector starts on the character's class. It filters the class sections and
+keeps Epic Upgrades visible for every class selection.
+Each class section begins with paired set buttons, rare on the left and epic on the right.
+The buttons use the class icon and open the same set popup. Individual items appear below.
+The epic item's tooltip lists its base item and seal on separate lines.
 
 ## Info pane (`infopane.lua` / `.xml`)
 
@@ -316,7 +327,12 @@ Drops start with the `ParagonReputation_Bag` atlas (a loot sack, used by the Cam
 frame), quests with `Interface\GossipFrame\AvailableQuestIcon`. Then one gold
 `Crafted by <profession>` line per profession with a recipe for the item, with the icon of that
 profession's crafting list. Each priced list row adds a `Cost` line with the quantities and
-icons of the payment items. The names appear when they're available in the database or client.
+icons of the payment items and currencies, including gold, silver and copper for coin prices.
+Item names come from the database or client.
+Currency names come from the client or the curated fallback. Battleground marks use the
+battleground name in cost lines, and Honor Points appear as Honor.
+For PvP rewards with a recorded rank requirement, Spyglass adds the rank to the tooltip when
+the client has not already drawn it. The line is red when the character's rank is too low.
 
 It hooks once in `OnInitialize`: through `TooltipDataProcessor.AddTooltipPostCall` when
 `GameTooltip` is built on the tooltip data handler, else `OnTooltipSetItem` on `GameTooltip` and

@@ -55,6 +55,7 @@
 	<Script file="pvp\alterac_valley.lua" />
 	<Script file="pvp\arathi_basin.lua" />
 	<Script file="pvp\darkspear_islands.lua" />
+	<Script file="pvp\honor_gear.lua" />
 	<Script file="pvp\warsong_gulch.lua" />
 	<Script file="reputation\azeroth_commerce_authority.lua" />
 	<Script file="reputation\barkskin_burrow.lua" />

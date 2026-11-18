@@ -159,6 +159,41 @@ local function craftedLines(sources)
     return out
 end
 
+local BATTLEGROUND_MARK_LABELS = {
+    [19322] = "Warsong Gulch",
+    [20558] = "Warsong Gulch",
+    [20559] = "Arathi Basin",
+    [20560] = "Alterac Valley",
+    [274895] = "Darkspear Island",
+}
+local HONOR_CURRENCY_ID = 1792
+
+---@param cost Spyglass.ItemCost
+---@return string
+local function formatCost(cost)
+    if cost.copper then
+        return C_CurrencyInfo.GetCoinTextureString(cost.copper, ICON_SIZE)
+    end
+    local iconID, name = cost.icon, cost.name
+    if cost.currency then
+        local info = C_CurrencyInfo and C_CurrencyInfo.GetCurrencyInfo(cost.currency)
+        if info then
+            iconID = info.iconFileID
+            if info.name and info.name ~= "" then
+                name = info.name
+            end
+        end
+        if cost.currency == HONOR_CURRENCY_ID then
+            name = HONOR or "Honor"
+        end
+    elseif cost.item then
+        local itemName, known = Data:GetItemName(cost.item)
+        name = BATTLEGROUND_MARK_LABELS[cost.item] or (known and itemName or nil)
+    end
+    local icon = iconID and (" " .. CreateSimpleTextureMarkup(iconID, ICON_SIZE, ICON_SIZE)) or ""
+    return ("%d%s%s"):format(cost.amount, icon, name and (" " .. name) or "")
+end
+
 -- Each list row is a separate offer. Its cost components are all paid together.
 ---@param sources Spyglass.ItemSource[]
 ---@return string[]
@@ -168,12 +203,14 @@ local function costLines(sources)
         if source.costs then
             local parts = {}
             for i, cost in ipairs(source.costs) do
-                local icon = CreateSimpleTextureMarkup(cost.icon, ICON_SIZE, ICON_SIZE)
-                local name, known = Data:GetItemName(cost.item)
-                parts[i] = ("%d %s%s"):format(cost.amount, icon, known and (" " .. name) or "")
+                parts[i] = formatCost(cost)
             end
             if #parts > 0 then
-                out[#out + 1] = "Cost: " .. table.concat(parts, " + ")
+                if source.upgradeFrom then
+                    out[#out + 1] = "Upgrade: " .. table.concat(parts, "\n" .. INDENT .. "+ ")
+                else
+                    out[#out + 1] = "Cost: " .. table.concat(parts, " + ")
+                end
             end
         end
     end
@@ -181,13 +218,77 @@ local function costLines(sources)
     return out
 end
 
+local PVP_RANK_POINTS_FACTION_ID = 2800
+
+---@param sources Spyglass.ItemSource[]
+---@return integer?
+local function requiredPvPRank(sources)
+    local required
+    for _, source in ipairs(sources) do
+        if source.kind == "pvp" and type(source.rank) == "number" and source.rank > 0 then
+            required = math.min(required or source.rank, source.rank)
+        end
+    end
+    return required
+end
+
+---@param data? TooltipData
+---@param rankText string
+---@return boolean
+local function hasPvPRankLine(data, rankText)
+    local types = Enum and Enum.TooltipDataUsageRequirementType
+    local rankType = types and types.PvPRank
+    local rankLabel = "(" .. rankText .. ")"
+    for _, line in ipairs(data and data.lines or {}) do
+        if (rankType ~= nil and line.requirementType == rankType)
+            or (line.leftText and line.leftText:find(rankLabel, 1, true))
+        then
+            return true
+        end
+    end
+    return false
+end
+
+---@param tooltip GameTooltip
+---@param rank integer
+---@param data? TooltipData
+local function addPvPRankLine(tooltip, rank, data)
+    local rankText = (PVP_RANK_NUMBER or "Rank %d"):format(rank)
+    if hasPvPRankLine(data, rankText) then
+        return
+    end
+
+    local ranks = Enum and Enum.PvPRanks
+    local title
+    if ranks and ranks.Rank_1 and GetText then
+        local key = "PVP_RANK_" .. (ranks.Rank_1 + rank - 1) .. "_"
+        local gender = UnitSex("player")
+        local allianceKey, hordeKey = key .. "1", key .. "0"
+        local alliance, horde = GetText(allianceKey, gender), GetText(hordeKey, gender)
+        if alliance and alliance ~= "" and alliance ~= allianceKey and horde and horde ~= "" and horde ~= hordeKey then
+            title = alliance .. " / " .. horde
+        end
+    end
+    local requirement = title and ("Requires %s (%s)"):format(title, rankText) or ("Requires PvP %s"):format(rankText)
+    local progression = C_MajorFactions and C_MajorFactions.GetMajorFactionProgressionInfo(PVP_RANK_POINTS_FACTION_ID)
+    local unmet = progression and progression.renownLevel and progression.renownLevel < rank
+    local color = unmet and RED_FONT_COLOR or HIGHLIGHT_FONT_COLOR
+    local r, g, b = color:GetRGB()
+    tooltip:AddLine(requirement, r, g, b, true)
+end
+
 ---@param tooltip GameTooltip
 ---@param itemID integer?
-function module:AddSources(tooltip, itemID)
+---@param tooltipData? TooltipData
+function module:AddSources(tooltip, itemID, tooltipData)
     if not itemID then
         return
     end
     local sources = Data:GetItemSources(itemID)
+    local rank = requiredPvPRank(sources)
+    if rank then
+        addPvPRankLine(tooltip, rank, tooltipData)
+    end
     local lines = {}
     for _, source in ipairs(sources) do
         lines[#lines + 1] = sourceLine(source)
@@ -216,8 +317,10 @@ function module:AddSources(tooltip, itemID)
     for _, text in ipairs(crafted) do
         tooltip:AddLine(text, NORMAL_FONT_COLOR:GetRGB())
     end
-    for _, text in ipairs(costs) do
-        tooltip:AddLine(text, NORMAL_FONT_COLOR:GetRGB())
+    for _, cost in ipairs(costs) do
+        for line in cost:gmatch("[^\n]+") do
+            tooltip:AddLine(line, NORMAL_FONT_COLOR:GetRGB())
+        end
     end
 end
 
@@ -227,14 +330,14 @@ function module:OnInitialize()
     if TooltipDataProcessor and Enum.TooltipDataType and GameTooltip.ProcessInfo then
         TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, function(tooltip, data)
             if tooltip.AddLine and data then
-                self:AddSources(tooltip, data.id)
+                self:AddSources(tooltip, data.id, data)
             end
         end)
     else
         for _, tooltip in ipairs({ GameTooltip, ItemRefTooltip }) do
             tooltip:HookScript("OnTooltipSetItem", function(t)
                 local _, link = t:GetItem()
-                self:AddSources(t, link and tonumber(link:match("item:(%d+)")))
+                self:AddSources(t, link and tonumber(link:match("item:(%d+)")), t.GetTooltipData and t:GetTooltipData())
             end)
         end
     end

@@ -56,10 +56,76 @@ function sectionChecker(fix: boolean): Checker {
   return new Checker({ categories, skillLines, recipes: new Map(), items: new Map() } as Reference, fix);
 }
 
+test("reward folders survive a PvP rewrite and are rejected on crafting lists", () => {
+  const file: ListFile = {
+    path: ".contribute/data/pvp/honor_gear.json",
+    kind: "pvp",
+    slug: "honor_gear",
+    data: {
+      name: "Honor Gear",
+      groupFolders: true,
+      rewards: [
+        { item: 100, name: "Armor", group: "Armor", section: "Warrior" },
+        { item: 200, name: "Seal", group: "Armor", section: "Epic Upgrades" },
+      ],
+      panel: [
+        { header: "Armor Vendor", group: "Armor" },
+        { classDropdown: "Class", group: "Armor", includeSection: "Epic Upgrades" },
+      ],
+    },
+  };
+  const checker = sectionChecker(true);
+  validateLists([file], checker);
+  assert.deepEqual(
+    checker.problems.filter((p) => !p.warning),
+    [],
+  );
+  assert.equal(JSON.parse(serializeList(file)).groupFolders, true);
+  assert.deepEqual(JSON.parse(serializeList(file)).panel, file.data.panel);
+  assert.equal(JSON.parse(serializeList(file)).rewards[0].section, "Warrior");
+
+  file.data.panel = [
+    { header: "Armor Vendor", group: "Unknown" },
+    { classDropdown: "Class", group: "Armor", includeSection: "Missing" },
+  ];
+  validateLists([file], checker);
+  assert.match(checker.problems.map((p) => p.message).join("\n"), /group must name a reward subcategory/);
+  assert.match(checker.problems.map((p) => p.message).join("\n"), /includeSection must name a section/);
+  file.data.groupFolders = false;
+  validateLists([file], checker);
+  assert.match(checker.problems.map((p) => p.message).join("\n"), /section requires groupFolders/);
+
+  const crafting = craftingFile([]);
+  crafting.data.groupFolders = true;
+  validateLists([crafting], checker);
+  assert.match(checker.problems.map((p) => p.message).join("\n"), /groupFolders.*only allowed on PvP/);
+});
+
 test("crafting sections keep their shape through a fix rewrite", () => {
   const sections = [{ name: "Plate Armor", categories: [2469, 2470] }];
   const serialized = JSON.parse(serializeList(craftingFile(sections))) as Record<string, unknown>;
   assert.deepEqual(serialized.sections, sections, "fix must not drop the sections it rewrites");
+});
+
+test("a PvP upgrade references a base reward in the same group, section, and faction", () => {
+  const base = { item: 100, name: "Rare Armor", group: "Armor", section: "Warrior", side: "Alliance" };
+  const upgrade = { ...base, item: 200, name: "Epic Armor", upgradeFrom: base.item };
+  const file: ListFile = {
+    path: ".contribute/data/pvp/honor_gear.json",
+    kind: "pvp",
+    slug: "honor_gear",
+    data: { name: "Honor Gear", groupFolders: true, rewards: [base, upgrade] },
+  };
+  const checker = sectionChecker(true);
+  validateLists([file], checker);
+  assert.deepEqual(
+    checker.problems.filter((p) => !p.warning),
+    [],
+  );
+  assert.equal(JSON.parse(serializeList(file)).rewards[1].upgradeFrom, 100);
+  upgrade.side = "Horde";
+  validateLists([file], checker);
+  assert.match(checker.problems.map((p) => p.message).join("\n"), /upgradeFrom must reference a base reward/);
 });
 
 test("a section's categories may be named and are resolved to ids by fix", () => {
@@ -124,22 +190,30 @@ test("a priced reward keeps all payment components through a fix rewrite", () =>
   const file = panelFile([]);
   const costs = [
     { item: 226404, amount: 125, icon: 133799 },
-    { item: 200, amount: 2, icon: 134400 },
+    { currency: 1792, amount: 12000, name: "Honor Points" },
+    { copper: 13500 },
   ];
   file.data.items = [{ item: 100, name: "Vendor Reward", costs }];
   const checker = sectionChecker(false);
   validateLists([file], checker);
-  assert.deepEqual(checker.problems.filter((p) => !p.warning), []);
+  assert.deepEqual(
+    checker.problems.filter((p) => !p.warning),
+    [],
+  );
   assert.deepEqual(JSON.parse(serializeList(file)).items[0].costs, costs);
 });
 
 test("invalid cost components and item widgets fail validation", () => {
   const file = panelFile([{ item: 0 }]);
-  file.data.items = [{ item: 200, name: "Reward", costs: [{ item: 226404, amount: 0, icon: 133799 }] }];
+  file.data.items = [
+    { item: 200, name: "Reward", costs: [{ item: 226404, amount: 0, icon: 133799 }] },
+    { item: 100, name: "Other Reward", costs: [{ currency: 1792, amount: 12000, name: " " }] },
+    { item: 300, name: "Coin Reward", costs: [{ copper: 0 }] },
+  ];
   const checker = sectionChecker(false);
   validateLists([file], checker);
   const errors = checker.problems.filter((p) => !p.warning).map((p) => p.message);
-  assert.equal(errors.length, 2, errors.join("\n"));
+  assert.equal(errors.length, 4, errors.join("\n"));
   assert.match(errors.join("\n"), /item` must be a positive item id/);
   assert.match(errors.join("\n"), /costs` must contain only item, amount and icon as positive integers/);
 });

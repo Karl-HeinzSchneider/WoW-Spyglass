@@ -132,6 +132,7 @@ function SpyglassInfoPaneMixin:Refresh()
     self.Title:SetText(node and node.name or "")
     if node and view then
         local current = view:GetCurrentNode()
+        local groupKey = current and current.meta and current.meta.groupKey
         if current and current.query then
             self:AddQueryControls(view, current)
         end
@@ -143,7 +144,8 @@ function SpyglassInfoPaneMixin:Refresh()
             end
         end
         for index, widget in ipairs(widgets or {}) do
-            if not widget.side or widget.side == faction then
+            local matchesGroup = not widget.group or groupKey == "CUSTOM:" .. widget.group
+            if matchesGroup and (not widget.side or widget.side == faction) then
                 local ok, err = pcall(self.AddWidget, self, view, node, index, widget)
                 if not ok then
                     log:error("%s: panel widget %d failed: %s", tostring(node.name), index, tostring(err))
@@ -234,20 +236,29 @@ function SpyglassInfoPaneMixin:AddWidget(view, node, index, widget)
         frame:SetScript("OnClick", function(button)
             view:SetPanelValue(node, index, button:GetChecked() or nil)
         end)
-    elseif widget.dropdown then
+    elseif widget.dropdown or widget.classDropdown then
         local frame = self:Acquire("dropdown") --[[@as Frame|{ Label: FontString, Dropdown: WowStyle1FilterDropdownMixin }]]
-        frame.Label:SetText(widget.dropdown)
+        frame.Label:SetText(widget.dropdown or widget.classDropdown)
         frame.Dropdown:SetupMenu(function(_, root)
             local function radio(label, value)
                 root:CreateRadio(label, function()
+                    if widget.classDropdown then
+                        return view:GetRewardClass(node, index) == value
+                    end
                     return view:GetPanelValue(node, index) == value
                 end, function()
                     view:SetPanelValue(node, index, value)
                 end)
             end
-            radio(ALL or "All", nil)
-            for _, option in ipairs(view:GetFieldValues(widget.field)) do
-                radio(option.label, option.value)
+            local field, allValue = widget.field, nil
+            if widget.classDropdown then
+                field, allValue = "section", false
+            end
+            radio(ALL or "All", allValue)
+            for _, option in ipairs(view:GetFieldValues(field)) do
+                if not widget.classDropdown or option.value ~= widget.includeSection then
+                    radio(option.label, option.value)
+                end
             end
         end)
     elseif widget.factionDropdown then
@@ -263,9 +274,11 @@ function SpyglassInfoPaneMixin:AddWidget(view, node, index, widget)
                         or UnitFactionGroup("player")
                     return selected == side
                 end, function()
-                    view:SetPanelValue(node, index, side)
                     if isRewardSelector then
+                        view:SetRewardFaction(node, index, side)
                         self:QueueRefresh()
+                    else
+                        view:SetPanelValue(node, index, side)
                     end
                 end)
             end

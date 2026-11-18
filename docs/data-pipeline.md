@@ -93,12 +93,15 @@ the scans and warns on unscanned ids.
   missing start and turn-in details from it while keeping per-quest overrides.
 - **Item lists** (`validateLists`, `src/lists.ts`): the rows key and row fields per kind
   (`ROWS_KEY`, `ROW_FIELDS`, per-field specs); reputation's standing-keyed object is flattened by
-  `rowsOf`. A reputation `faction` must be in the `Faction` table, and fix rewrites `name` from
+  `rowsOf`. Each cost component accepts an item with an icon and quantity, a currency with a
+  fallback name and quantity, or a coin price in copper. A reputation `faction` must be in the
+  `Faction` table, and fix rewrites `name` from
   it. A crafting `skillLine` must be a profession with recipes; `checkRecipeSpell` checks a row's
   `spell` against the recipe database (profession and created item; unknown spells warn) and on
   fix fills `item` from `spell`, `fillRecipeSpell` fills `spell` from `item` when exactly one
   recipe of the profession makes it. `validateSections` checks `sections`: every category belongs
   to the file's profession and to one section only; a category given by name is fixed to its id.
+  The optional boolean `groupFolders` applies to PvP lists and is emitted when enabled.
   `validatePanel` checks `panel`: one known type key per widget (`PANEL_WIDGETS`) and only its
   options, bars only with the list's `faction` / `skillLine`, checkbox filters from
   `PANEL_FILTERS` (which must match the addon's in `view.lua`), dropdown fields from the kind's
