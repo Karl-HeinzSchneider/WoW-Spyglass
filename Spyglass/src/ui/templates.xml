@@ -101,6 +101,12 @@
 						<Anchor point="CENTER" relativeKey="$parent.Icon" relativePoint="TOPRIGHT" x="-2" y="-2"/>
 					</Anchors>
 				</Texture>
+				<Texture parentKey="CollectedLook" atlas="common-icon-checkmark" hidden="true">
+					<Size x="14" y="14"/>
+					<Anchors>
+						<Anchor point="CENTER" relativeKey="$parent.Icon" relativePoint="BOTTOMRIGHT" x="-2" y="2"/>
+					</Anchors>
+				</Texture>
 			</Layer>
 			<Layer level="HIGHLIGHT">
 				<Texture file="Interface\QuestFrame\UI-QuestTitleHighlight" alphaMode="ADD">

@@ -102,6 +102,10 @@ followed by the node's `tooltip` lines (a list, or a function of the node).
 
 ### Item lists
 
+On a weapon or armor row, a checkmark at the bottom right of the item icon means the
+transmog appearance is collected. The lookup runs as the page draws after item data loads.
+Resolved results are shared across pages until `TRANSMOG_COLLECTION_UPDATED`.
+
 Alt-click on an item row (or an item slot in a popup) toggles the item in the active list of
 `app.lists` (`Spyglass.Lists`, see [API.md](API.md#lists-and-favorites)) and rebuilds the
 tooltip under the cursor. The footer's `ActiveList` (`WowStyle1DropdownTemplate`) shows the

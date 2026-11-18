@@ -52,6 +52,25 @@ local function setItemBadges(frame, itemID)
 end
 app.ui.SetItemBadges = setItemBadges
 
+-- Only visible item rows populate this cache. A missing appearance result is retried on redraw.
+local collectedLooks = {}
+
+---@param link string
+local function hasCollectedLook(link)
+    local collected = collectedLooks[link]
+    if collected ~= nil then
+        return collected
+    end
+
+    local _, sourceID = C_TransmogCollection.GetItemInfo(link)
+    local info = sourceID and C_TransmogCollection.GetAppearanceInfoBySource(sourceID)
+    if info then
+        collected = info.appearanceIsCollected
+        collectedLooks[link] = collected
+    end
+    return collected == true
+end
+
 -- Delay between the last keystroke in the search box and running the query.
 local SEARCH_DEBOUNCE = 0.25
 
@@ -245,6 +264,7 @@ end
 ---@field Arrow Texture
 ---@field Favorite Texture  # the star on a favorite item's icon
 ---@field ListMarker Texture  # the marker of a list with the item (setItemBadges)
+---@field CollectedLook Texture
 ---@field node Spyglass.Node
 ---@field view Spyglass.View
 ---@field link? string  # item/spell link for chat linking
@@ -304,6 +324,7 @@ function SpyglassListRowMixin:Init(view, node)
     self.link = nil
     self.Arrow:SetShown(app.api.IsFolder(node))
     setItemBadges(self, node.itemID)
+    self.CollectedLook:Hide()
 
     if node.itemID then
         self:InitItem(view, node)
@@ -339,6 +360,9 @@ function SpyglassListRowMixin:InitItem(view, node)
     local cached = name ~= nil
     if cached then
         self.link = link
+        if link and (classID == Enum.ItemClass.Armor or classID == Enum.ItemClass.Weapon) then
+            self.CollectedLook:SetShown(hasCollectedLook(link))
+        end
     else
         if view.failedItemLookup ~= itemID then
             view:RequestItem(itemID)
@@ -1260,6 +1284,7 @@ function SpyglassViewMixin:OnLoad()
     self.resultCount = 0
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
     self:RegisterEvent("ITEM_DATA_LOAD_RESULT")
+    self:RegisterEvent("TRANSMOG_COLLECTION_UPDATED")
     -- Quest banners show the character's progress and the client's quest title.
     self:RegisterEvent("QUEST_LOG_UPDATE")
     self:RegisterEvent("QUEST_TURNED_IN")
@@ -1337,6 +1362,11 @@ function SpyglassViewMixin:OnEvent(event, itemID, success)
         if self.regroupItems[itemID] then
             self.regroupItems[itemID] = false
             self.refreshQueued = true
+        end
+    elseif event == "TRANSMOG_COLLECTION_UPDATED" then
+        wipe(collectedLooks)
+        if not self:IsVisible() then
+            return
         end
     elseif not self.showsQuests then
         -- A quest event: only quest banners show anything of it.
