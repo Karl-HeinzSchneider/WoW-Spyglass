@@ -134,7 +134,7 @@ right-click-to-go-back work as for rows. Headers and groups inside the folder ar
 usual. The built-in Raids/Dungeons modules are tile folders; `InstanceFolder` nodes carry the
 instance's picture from the database, and are named by the instance's `displayName` (a shorter
 curated name, e.g. "SM: Graveyard") when it has one, else by `Data:GetInstanceName`.
-Dungeon folders use `infoRight` for the icon and estimated Tarnished Undermine Real total.
+Dungeon folders with a positive estimate use `infoRight` for the Tarnished Undermine Real icon and total.
 
 ### Cards
 

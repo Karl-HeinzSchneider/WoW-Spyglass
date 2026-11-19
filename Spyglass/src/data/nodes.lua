@@ -555,14 +555,15 @@ function api.InstanceFolder(instanceID)
     local questFolder = api.QuestFolder(instanceID)
     questFolder.hidden = true
     entries[#entries + 1] = questFolder
+    local showRealTotal = realTotal and realTotal > 0
     local name = instance.displayName or Data:GetInstanceName(instanceID)
     return api.Folder(name, instance.icon or ICON_BOSS, entries, {
         display = "cards",
         instanceID = instanceID,
         minLevel = instance.minLevel,
         maxLevel = instance.maxLevel,
-        infoRight = realTotal and ("|T%d:12:12:0:0|t ~%d"):format(REAL_ICON, realTotal) or nil,
-        description = realTotal
+        infoRight = showRealTotal and ("|T%d:12:12:0:0|t ~%d"):format(REAL_ICON, realTotal) or nil,
+        description = showRealTotal
                 and "Estimated Tarnished Undermine Reals per clear. Counts listed bosses at level 55 or higher."
             or nil,
         expansionID = instance.expansionID,

@@ -155,7 +155,8 @@ open.
   before the first visit and never drop out.
 - **Dungeon tiles** show the Tarnished Undermine Real icon and an estimated full-clear total
   in the lower-right corner. The estimate counts listed WoW Forever bosses of known level 55 or
-  higher. Optional bosses can change the yield for a particular route.
+  higher. The badge appears only for positive estimates. Optional bosses can change the yield
+  for a particular route.
 - **Reputation** groups faction tiles under their parent faction from the game data. Categories
   are alphabetical, with **Other** last for factions without a named parent. Tiles are alphabetical
   within each category.
