@@ -1919,7 +1919,7 @@ function SpyglassViewMixin:GetEntryFilter()
             tests[#tests + 1] = function(entry)
                 return entry.meta ~= nil and entry.meta[field] == value
             end
-        elseif widget.classDropdown and widget.group and groupKey == "CUSTOM:" .. widget.group then
+        elseif widget.classDropdown and (not widget.group or groupKey == "CUSTOM:" .. widget.group) then
             local selected = self:GetRewardClass(node, index)
             if selected then
                 tests[#tests + 1] = function(entry)
@@ -2639,7 +2639,9 @@ function SpyglassViewMixin:LayoutPages(elements, columns)
                 y = y + self.rowHeight
             end
         else
-            if element.startLine then
+            local fixedColumn = element.kind == "row" and element.node.column
+            local target = fixedColumn and math.max(0, math.min(columns - 1, fixedColumn - 1))
+            if element.startLine or (target and column > target) then
                 newLine()
             end
             local height, gap = self.rowHeight, 0
@@ -2654,6 +2656,7 @@ function SpyglassViewMixin:LayoutPages(elements, columns)
                 end
                 lineHeight = height + gap
             end
+            column = target or column
             place(element, column * (columnWidth + self.columnGap), columnWidth, height)
             column = column + 1
             if column >= columns then

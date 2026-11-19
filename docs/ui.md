@@ -238,6 +238,11 @@ Each class section begins with paired set buttons, rare on the left and epic on 
 The buttons use the class icon and open the same set popup. Individual items appear below.
 The epic item's tooltip lists its base item and seal on separate lines.
 
+In Item Sets, Tier 0/0.5 shows the dungeon set in rare blue on the left and its quest upgrade
+variants in epic purple on the right. All rows use the class icon. The Class dropdown starts
+on the current character's class and also offers All. When a class has several upgrades, each
+row names its wrist reward and opens a popup with the eight pieces of that variant.
+
 ## Info pane (`infopane.lua` / `.xml`)
 
 `SpyglassInfoPaneMixin` is `RightPane.Info`, inset like the character frame's side panes. It

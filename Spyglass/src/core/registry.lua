@@ -30,6 +30,8 @@ local log = app.logger
 ---@field query? boolean  # folder showing Spyglass.Data items through the view's Spyglass.Query
 ---@field itemID? integer
 ---@field setItemID? integer  # a representative item for opening the set popup from a set row
+---@field setItems? integer[]  # the pieces to show for an explicit set variant
+---@field column? integer  # optional one-based column for a row in a multi-column folder
 ---@field chance? number  # items: drop chance 0..1, shown as a percentage
 ---@field spellID? integer
 ---@field quality? Enum.ItemQuality  # custom/placeholder entries: colors the name
@@ -88,7 +90,7 @@ local log = app.logger
 ---@field checkbox? string  # label of a checkbox that switches `filter` on
 ---@field filter? string|fun(entry: Spyglass.Node, node: Spyglass.Node): boolean  # checkbox: a built-in filter id ("side", "standing") or a test; false hides the entry
 ---@field dropdown? string  # label of a dropdown that shows only entries with the picked `meta[field]`
----@field classDropdown? string  # filters class sections in the named reward group; defaults to the player's class
+---@field classDropdown? string  # filters class sections, optionally in a named reward group; defaults to the player's class
 ---@field includeSection? string  # classDropdown: a section visible for every class
 ---@field factionDropdown? string  # defaults to the player's faction; field "side" filters rewards, otherwise filters quests and offers Both
 ---@field side? "Alliance"|"Horde"  # show only for this reward faction selection

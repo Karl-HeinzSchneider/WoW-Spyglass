@@ -29,11 +29,11 @@ local function setOf(node)
 end
 
 -- The set's items in the order a loot list shows them: armor type, then slot.
----@param setID integer
+---@param itemIDs integer[]
 ---@return integer[]
-local function sortedItems(setID)
+local function sortedItems(itemIDs)
     local items, rank = {}, {}
-    for _, itemID in ipairs(Data:GetSetItems(setID)) do
+    for _, itemID in ipairs(itemIDs) do
         items[#items + 1] = itemID
         rank[itemID] = app.api.DefaultEntryRank({ itemID = itemID })
     end
@@ -147,21 +147,26 @@ end
 -- The set part of the tooltip of the item the popup was opened from; until the client has that
 -- item's tooltip data, the set's name and the names of its items.
 function SpyglassSetPopupMixin:ShowSetTooltip()
-    local itemID, setID = sourceItem(self.node), self.setID
-    if not itemID or not setID then
+    local node = self.node
+    local itemID, setID = sourceItem(node), self.setID
+    local explicitItems = node and node.setItems
+    if not itemID or (not setID and not explicitItems) then
         return
     end
     self.Title:SetTextColor(HIGHLIGHT_FONT_COLOR:GetRGB())
     GameTooltip:SetOwner(self.TitleButton, "ANCHOR_RIGHT")
-    local lines = setTooltipLines(itemID, Data:GetSetName(setID))
+    local name = self.Title:GetText()
+    local lines = not explicitItems and setTooltipLines(itemID, name)
     if lines then
         for _, line in ipairs(lines) do
             GameTooltip:AddLine(line.text:match("%S") and line.text or " ", line.r, line.g, line.b, true)
         end
     else
-        C_Item.RequestLoadItemDataByID(itemID)
-        GameTooltip:AddLine(Data:GetSetName(setID))
-        for _, id in ipairs(sortedItems(setID)) do
+        if not explicitItems then
+            C_Item.RequestLoadItemDataByID(itemID)
+        end
+        GameTooltip:AddLine(name)
+        for _, id in ipairs(sortedItems(explicitItems or Data:GetSetItems(setID))) do
             GameTooltip:AddLine("  " .. Data:GetItemName(id), GRAY_FONT_COLOR:GetRGB())
         end
     end
@@ -187,21 +192,23 @@ end
 ---@param node Spyglass.Node
 ---@return boolean
 function SpyglassSetPopupMixin:HasSet(node)
-    return setOf(node) ~= nil
+    return (node.setItems and #node.setItems > 0) or setOf(node) ~= nil
 end
 
 function SpyglassSetPopupMixin:Refresh()
-    local setID = setOf(self.node)
-    if not setID then
+    local node = self.node
+    local explicitItems = node and node.setItems
+    local setID = not explicitItems and setOf(node) or nil
+    if not setID and not explicitItems then
         self:Hide()
         return
     end
     self.setID = setID
-    self.Title:SetText(Data:GetSetName(setID))
+    self.Title:SetText(explicitItems and node.name or Data:GetSetName(setID))
     self.TitleButton:SetSize(self.Title:GetStringWidth(), self.Title:GetStringHeight())
 
     self.slotPool:ReleaseAll()
-    local items = sortedItems(setID)
+    local items = sortedItems(explicitItems or Data:GetSetItems(setID))
     for i, itemID in ipairs(items) do
         local slot = self.slotPool:Acquire() --[[@as Spyglass.ItemSlot]]
         slot:SetItem(itemID)
