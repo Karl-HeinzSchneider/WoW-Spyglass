@@ -234,6 +234,10 @@ Each class section begins with paired set buttons, rare on the left and epic on 
 The buttons use the class icon and open the same set popup. Individual items appear below.
 The epic item's tooltip lists its base item and seal on separate lines.
 
+In Item Sets, Tier 0/0.5 shows each class's dungeon set in the left column and its quest
+upgrade in the right column. The Class dropdown starts on All and filters both columns together.
+Each set row opens the set popup when the item database has its pieces.
+
 ## Info pane (`infopane.lua` / `.xml`)
 
 `SpyglassInfoPaneMixin` is `RightPane.Info`, inset like the character frame's side panes. It
