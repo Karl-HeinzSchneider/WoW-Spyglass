@@ -104,7 +104,8 @@ Spyglass`, no private table); never give them private hooks.
   ids, e.g. `18901`). Crafting, reputation, pvp and collections return `SG.ListFolders(kind)`;
   `reputation` groups its tiles by parent faction, `crafting` sets `showIcon` on each tile, and
   `collections` ships with curated lists for Mounts, Toys, and Tarnished Undermine Real rewards.
-- `itemsets` shows the nine dungeon-set pairs in Tier 0/0.5 with class icons and tier colors.
+- `itemsets` shows dungeon sets and their Forever upgrade variants in Tier 0/0.5.
+  The Class dropdown defaults to the player's class.
 - `lists` is a `display = "tiles"` module built through `getEntries` (rebuilt on every open):
   one tile per `SG.Lists` list (kept per list id, so an open tab's node survives a rename), then
   "New list" and "Import list". A list's panel has the `grouping` dropdown (source, kind of

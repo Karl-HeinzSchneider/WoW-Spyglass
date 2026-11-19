@@ -49,7 +49,7 @@ Spyglass:AddToModule("dungeons", dungeon)
 Built-in module ids: `"raids"`, `"dungeons"`, `"itemsets"`, `"crafting"`, `"pvp"`, `"collections"`,
 `"reputation"`, `"lists"` (the user's [item lists](#lists-and-favorites)); `Spyglass_Database` adds
 `"items"` (the item browser). `"itemsets"` contains the Tier 0/0.5 comparison
-(`itemsets/tier-0`), with a pair of set rows for each class.
+(`itemsets/tier-0`), with a dungeon set and its Forever upgrade variants for each class.
 `"collections"` shows curated lists, including Mounts and
 Tarnished Undermine Real rewards. The built-in
 dungeons sort by level range (`minLevel`, then `maxLevel`; none last), then name; the raids keep
@@ -312,6 +312,8 @@ Constructors (optional sugar):
   one set button per section. A set button carries `setItemID` for a representative item and
   opens the same popup. A PvP reward's `upgradeFrom` links the upgrade to its base item.
   In a two-column folder, the upgraded set appears beside the base set.
+  A set row may specify `setItems` to show only those pieces when multiple variants share a
+  set ID. A row's optional one-based `column` fixes its position in a multi-column list.
 - `Spyglass.Log(fmt, ...)` — prefixed chat message
 - `Spyglass.LogAt(level, fmt, ...)` — threshold-aware diagnostic output using the core logger
 - `Spyglass.PlaceholderItem(name, quality, icon)` — hard-coded display data, for prototyping
@@ -386,8 +388,9 @@ that selection. The built-in PvP module shares its reward faction selection acro
 and tabs for the session. On a PvP list with `groupFolders` enabled, those widgets may also set
 `group` to a curated reward group to appear only inside its subcategory.
 
-A `classDropdown` widget filters the named reward `group` by its class section. It starts
-on the character's class, offers All, and always includes the named `includeSection`.
+A `classDropdown` widget filters entries by their class in `meta.section`. Set `group` to
+scope it to a named reward group. It starts on the character's class, offers All, and always
+includes the named `includeSection` when provided.
 
 Checkbox and dropdown filters and the grouping apply to the entries of whatever list the tab
 shows below the panel's node (folders remain visible except quest banners under the faction
