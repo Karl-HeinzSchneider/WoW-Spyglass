@@ -9,6 +9,9 @@ local RECIPE = Data.RECIPE
 -- present it without touching the raw tables: instance -> bosses -> drops, and the curated
 -- item lists (crafting, pvp, collections, reputation): list -> rows.
 
+local REAL_ICON = 133799 -- Tarnished Undermine Real (item 226404).
+local REAL_BOSS_MIN_LEVEL = 55
+
 local ICON_BOSS = "Interface\\Icons\\Ability_Creature_Cursed_02"
 local ICON_TRASH = "Interface\\Icons\\INV_Misc_Bag_10"
 local ICON_RECIPES = "Interface\\Icons\\INV_Scroll_03"
@@ -533,7 +536,17 @@ function api.InstanceFolder(instanceID)
     for _, bossID in ipairs(instance.bosses) do
         entries[#entries + 1] = api.BossFolder(bossID)
     end
+    local realTotal
     if instance.type == "dungeon" then
+        -- Forever reports one Real per eligible boss at level 55+. The curated boss
+        -- levels let us estimate a full clear, including the separate dungeon wings.
+        realTotal = 0
+        for _, bossID in ipairs(instance.bosses) do
+            local boss = Data:GetBoss(bossID)
+            if boss and boss.level and boss.level >= REAL_BOSS_MIN_LEVEL then
+                realTotal = realTotal + 1
+            end
+        end
         local recipes = dungeonRecipesFolder(entries)
         if recipes then
             table.insert(entries, 3, recipes)
@@ -542,12 +555,17 @@ function api.InstanceFolder(instanceID)
     local questFolder = api.QuestFolder(instanceID)
     questFolder.hidden = true
     entries[#entries + 1] = questFolder
+    local showRealTotal = realTotal and realTotal > 0
     local name = instance.displayName or Data:GetInstanceName(instanceID)
     return api.Folder(name, instance.icon or ICON_BOSS, entries, {
         display = "cards",
         instanceID = instanceID,
         minLevel = instance.minLevel,
         maxLevel = instance.maxLevel,
+        infoRight = showRealTotal and ("|T%d:12:12:0:0|t ~%d"):format(REAL_ICON, realTotal) or nil,
+        description = showRealTotal
+                and "Estimated Tarnished Undermine Reals per clear. Counts listed bosses at level 55 or higher."
+            or nil,
         expansionID = instance.expansionID,
         order = instance.minLevel,
         background = instance.background,
