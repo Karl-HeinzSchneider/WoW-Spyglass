@@ -235,7 +235,8 @@ The buttons use the class icon and open the same set popup. Individual items app
 The epic item's tooltip lists its base item and seal on separate lines.
 
 In Item Sets, Tier 0/0.5 shows each class's dungeon set in the left column and its quest
-upgrade in the right column. The Class dropdown starts on All and filters both columns together.
+upgrade in the right column. Both rows use the class icon. Tier 0 uses rare blue and Tier 0.5
+uses epic purple.
 Each set row opens the set popup when the item database has its pieces.
 
 ## Info pane (`infopane.lua` / `.xml`)

@@ -16,17 +16,17 @@ local pairsByClass = {
     { "WARRIOR", { 189, 16730, "Battlegear of Valor" }, { 511, 21997, "Battlegear of Heroism" } },
 }
 
-local function setRow(setID, itemID, fallbackName, className, tier)
+local function setRow(setID, itemID, fallbackName, classIcon, description, quality)
     local name = Data:GetSetName(setID)
     if name == ("Set #%d"):format(setID) then
         name = fallbackName
     end
     return SG.Custom({
         name = name,
-        icon = Data:GetItemField(itemID, Data.ITEM.ICON) or icon,
-        description = className .. " · " .. tier,
+        icon = classIcon,
+        description = description,
+        quality = quality,
         setItemID = itemID,
-        meta = { dungeonSetClass = className },
     })
 end
 
@@ -40,15 +40,17 @@ SG:RegisterModule({
         local rows = {}
         for _, pair in ipairs(pairsByClass) do
             local class, base, upgrade = pair[1], pair[2], pair[3]
-            local className = LOCALIZED_CLASS_NAMES_MALE and LOCALIZED_CLASS_NAMES_MALE[class] or class
-            rows[#rows + 1] = setRow(base[1], base[2], base[3], className, "Tier 0")
-            rows[#rows + 1] = setRow(upgrade[1], upgrade[2], upgrade[3], className, "Tier 0.5")
+            local classSuffix = class:sub(1, 1) .. class:sub(2):lower()
+            local classIcon = "Interface\\Icons\\ClassIcon_" .. classSuffix
+            local className = LOCALIZED_CLASS_NAMES_MALE and LOCALIZED_CLASS_NAMES_MALE[class] or classSuffix
+            rows[#rows + 1] = setRow(base[1], base[2], base[3], classIcon, className .. " · Tier 0", Enum.ItemQuality.Rare)
+            rows[#rows + 1] =
+                setRow(upgrade[1], upgrade[2], upgrade[3], classIcon, className .. " · Tier 0.5", Enum.ItemQuality.Epic)
         end
         local dungeonSets = SG.Folder("Tier 0/0.5", icon, rows, {
             columns = 2,
             meta = { listID = "tier-0" },
         })
-        dungeonSets.panel = { { dropdown = "Class", field = "dungeonSetClass" } }
         return { dungeonSets }
     end,
 })

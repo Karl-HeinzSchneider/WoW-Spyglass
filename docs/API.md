@@ -49,7 +49,7 @@ Spyglass:AddToModule("dungeons", dungeon)
 Built-in module ids: `"raids"`, `"dungeons"`, `"itemsets"`, `"crafting"`, `"pvp"`, `"collections"`,
 `"reputation"`, `"lists"` (the user's [item lists](#lists-and-favorites)); `Spyglass_Database` adds
 `"items"` (the item browser). `"itemsets"` contains the Tier 0/0.5 comparison
-(`itemsets/tier-0`), with a shared Class filter for the paired set rows.
+(`itemsets/tier-0`), with a pair of set rows for each class.
 `"collections"` shows curated lists, including Mounts and
 Tarnished Undermine Real rewards. The built-in
 dungeons sort by level range (`minLevel`, then `maxLevel`; none last), then name; the raids keep
