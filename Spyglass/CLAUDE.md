@@ -96,7 +96,7 @@ One folder per module, a `<name>.lua` + `<name>.xml` loader each, listed in `mod
 They hold no data and use **only the public API a third-party addon would** (`local SG =
 Spyglass`, no private table); never give them private hooks.
 
-- Root order by `order`: dungeons 10, raids 20, crafting 30, reputation 40, pvp 50,
+- Root order by `order`: dungeons 10, raids 20, itemsets 25, crafting 30, reputation 40, pvp 50,
   collections 60, lists 70. The database companion's `items` module follows at 1000, after a
   spacer.
 - `raids` and `dungeons` are `display = "tiles"` modules listing explicit `SG.InstanceFolder(id)`
@@ -104,6 +104,7 @@ Spyglass`, no private table); never give them private hooks.
   ids, e.g. `18901`). Crafting, reputation, pvp and collections return `SG.ListFolders(kind)`;
   `reputation` groups its tiles by parent faction, `crafting` sets `showIcon` on each tile, and
   `collections` ships with curated lists for Mounts, Toys, and Tarnished Undermine Real rewards.
+- `itemsets` lists the sets known to `SG.Data` by name, each with its member items.
 - `lists` is a `display = "tiles"` module built through `getEntries` (rebuilt on every open):
   one tile per `SG.Lists` list (kept per list id, so an open tab's node survives a rename), then
   "New list" and "Import list". A list's panel has the `grouping` dropdown (source, kind of

@@ -46,9 +46,10 @@ local dungeon = Spyglass.Folder("Gnomeregan", "Interface\\Icons\\...", { ...boss
 Spyglass:AddToModule("dungeons", dungeon)
 ```
 
-Built-in module ids: `"raids"`, `"dungeons"`, `"crafting"`, `"pvp"`, `"collections"`,
+Built-in module ids: `"raids"`, `"dungeons"`, `"itemsets"`, `"crafting"`, `"pvp"`, `"collections"`,
 `"reputation"`, `"lists"` (the user's [item lists](#lists-and-favorites)); `Spyglass_Database` adds
-`"items"` (the item browser). `"collections"` shows curated lists, including Mounts and
+`"items"` (the item browser). `"itemsets"` shows tiers and other gear sets from the item database.
+`"collections"` shows curated lists, including Mounts and
 Tarnished Undermine Real rewards. The built-in
 dungeons sort by level range (`minLevel`, then `maxLevel`; none last), then name; the raids keep
 the order they are listed in. If your instance is in the game's data, prefer adding its drops to the item database (`Spyglass.Data:AddBossLoot`)
