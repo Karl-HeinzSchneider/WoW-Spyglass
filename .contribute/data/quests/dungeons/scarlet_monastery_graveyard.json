@@ -37,6 +37,7 @@
       "xp": 1850,
       "objective": "Find The Horn of Xelthos inside of Shadowfang Keep. Then, return it to C's dead drop near Pyrewood Village. You must complete the job alone.",
       "description": "Solo job: you must do it alone, outside any group.",
+      "requires": [6681],
       "start": {
         "location": [1421, 47.1, 71.1],
         "description": "Dead Drop, Pyrewood Village, Silverpine Forest"

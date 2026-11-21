@@ -309,6 +309,7 @@
       "requiredLevel": 47,
       "xp": 5250,
       "objective": "Kill Master Feardred, and bring his amulet to Korsa.",
+      "requires": [86791],
       "start": {
         "npc": "Korsa",
         "location": [1447, 63, 23.3],
@@ -479,6 +480,66 @@
       },
       "turnIn": {
         "description": "Knight of Mourning, Tirisfal Glades (17.6, 67.4)"
+      },
+      "items": []
+    },
+    {
+      "id": 86746,
+      "name": "The Legashi Threat",
+      "side": "Both",
+      "requiredLevel": 47,
+      "xp": 5250,
+      "objective": "Kill 5 Legashi Satyrs, 5 Legashi Rogues and 5 Legashi Hellcallers for Ekkal at the Ruins of Eldarath.",
+      "start": {
+        "npc": "Ekkal",
+        "location": [1447, 42, 38.9],
+        "description": "Ruins of Eldarath, Azshara"
+      },
+      "turnIn": {
+        "npc": "Ekkal",
+        "location": [1447, 42, 38.9],
+        "description": "Ruins of Eldarath, Azshara"
+      },
+      "items": []
+    },
+    {
+      "id": 86752,
+      "name": "Report to Rageroar",
+      "side": "Both",
+      "requiredLevel": 47,
+      "xp": 530,
+      "objective": "Speak with Gatekeeper Rageroar at Ursolan.",
+      "description": "Needs Neutral reputation with Timbermaw Hold.",
+      "requires": [86746],
+      "start": {
+        "npc": "Ekkal",
+        "location": [1447, 42, 38.9],
+        "description": "Ruins of Eldarath, Azshara"
+      },
+      "turnIn": {
+        "npc": "Gatekeeper Rageroar",
+        "location": [1447, 42.4, 20.2],
+        "description": "Ursolan, Azshara"
+      },
+      "items": []
+    },
+    {
+      "id": 86791,
+      "name": "Missing Blackmaw Scouts",
+      "side": "Both",
+      "requiredLevel": 47,
+      "xp": 530,
+      "objective": "Find the Blackmaw scouting party near the Legashi camps east of Ursolan.",
+      "requires": [86752],
+      "start": {
+        "npc": "Gatekeeper Rageroar",
+        "location": [1447, 42.4, 20.2],
+        "description": "Ursolan, Azshara"
+      },
+      "turnIn": {
+        "npc": "Korsa",
+        "location": [1447, 63, 23.3],
+        "description": "outside Legashi Stronghold, Azshara"
       },
       "items": []
     }

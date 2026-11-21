@@ -1369,11 +1369,11 @@
       "objective": "Speak with the Rugged Traveler.",
       "start": {
         "npc": "Rugged Traveler",
-        "description": "Cross the lava bridge east of the Ring of Law. Jump from the railing by the small brazier onto the platform, then follow the wall to the ledge below."
+        "description": "on a hidden ledge above the lava, Blackrock Depths"
       },
       "turnIn": {
         "npc": "Rugged Traveler",
-        "description": "On the hidden ledge in Blackrock Depths."
+        "description": "Blackrock Depths"
       },
       "items": [
         {
@@ -1389,6 +1389,133 @@
           "name": "Traveler's Symbols"
         }
       ]
+    },
+    {
+      "id": 81790,
+      "name": "Materials of Significance",
+      "side": "Alliance",
+      "class": "Paladin",
+      "requiredLevel": 45,
+      "xp": 12750,
+      "objective": "Use the hints in Gregory's Note to determine where to find the magical components needed for the ritual. You will need help from allies for this.",
+      "description": "Collect three Fiery Infernal Cores from the infernals in Shatter Scar Vale, take Shimmering Grave Dust from the grave mound in Princess Theradras's area of Maraudon, and buy Triple-Brewed Molten Lager from Plugger Spazzring in Blackrock Depths. The Symbol of Faith comes from A Newly Discovered Purpose..., offered by Brave Stonetorch in the Hillsbrad Foothills.",
+      "requires": [96476],
+      "start": {
+        "npc": "Gregory",
+        "location": [1448, 44.6, 52],
+        "description": "near Bloodvenom Falls, Felwood"
+      },
+      "turnIn": {
+        "npc": "Gregory",
+        "location": [1448, 44.6, 52],
+        "description": "near Bloodvenom Falls, Felwood"
+      },
+      "items": []
+    },
+    {
+      "id": 81762,
+      "name": "Some Good News",
+      "side": "Alliance",
+      "class": "Paladin",
+      "requiredLevel": 45,
+      "xp": 2350,
+      "objective": "Speak with Katherine the Pure at the Cathedral of Light in Stormwind.",
+      "requires": [79970],
+      "start": {
+        "npc": "Aeonas the Vindicated",
+        "location": [1453, 48.6, 49.2],
+        "description": "Cathedral of Light, Stormwind"
+      },
+      "turnIn": {
+        "npc": "Katherine the Pure",
+        "location": [1453, 48.6, 49.2],
+        "description": "Cathedral of Light, Stormwind"
+      },
+      "items": []
+    },
+    {
+      "id": 81764,
+      "name": "The Mysterious Merchant",
+      "side": "Alliance",
+      "class": "Paladin",
+      "requiredLevel": 45,
+      "xp": 4700,
+      "objective": "Travel to Theramore and find the mysterious merchant.",
+      "requires": [81762],
+      "start": {
+        "npc": "Katherine the Pure",
+        "location": [1453, 48.6, 49.2],
+        "description": "Cathedral of Light, Stormwind"
+      },
+      "turnIn": {
+        "npc": "Elrick",
+        "location": [1445, 66.4, 45.4],
+        "description": "Theramore Inn, Dustwallow Marsh"
+      },
+      "items": []
+    },
+    {
+      "id": 81765,
+      "name": "Elrick, Paladin of the Silver Hand",
+      "side": "Alliance",
+      "class": "Paladin",
+      "requiredLevel": 45,
+      "xp": 5900,
+      "objective": "Speak with Elrick to learn more.",
+      "description": "In a group with other paladins only one of you can pick up the note Elrick drops (the Bloody Missive). If you didn't get it, don't hand this in to the innkeeper: abandon the quest and do it again.",
+      "requires": [81764],
+      "start": {
+        "npc": "Elrick",
+        "location": [1445, 66.4, 45.4],
+        "description": "Theramore Inn, Dustwallow Marsh"
+      },
+      "turnIn": {
+        "npc": "Innkeeper Janene",
+        "location": [1445, 66.6, 45.2],
+        "description": "Theramore Inn, Dustwallow Marsh"
+      },
+      "items": []
+    },
+    {
+      "id": 81766,
+      "name": "The Bloody Missive",
+      "side": "Alliance",
+      "class": "Paladin",
+      "requiredLevel": 45,
+      "xp": 5900,
+      "objective": "Bring the missive to Katherine the Pure at the Cathedral of Light in Stormwind.",
+      "requires": [81765],
+      "start": {
+        "item": 219929,
+        "description": "Found on the body of the \"paladin\": the search for the \"merchant\" was a trap"
+      },
+      "turnIn": {
+        "npc": "Katherine the Pure",
+        "location": [1453, 48.6, 49.2],
+        "description": "Cathedral of Light, Stormwind"
+      },
+      "items": []
+    },
+    {
+      "id": 96476,
+      "name": "In Search of Aeonas",
+      "side": "Alliance",
+      "class": "Paladin",
+      "requiredLevel": 45,
+      "xp": 2650,
+      "objective": "Search for signs of Aeonas the Vindicated at the Emerald Sanctuary in Felwood.",
+      "requires": [81766],
+      "start": {
+        "npc": "Katherine the Pure",
+        "location": [1453, 48.6, 49.2],
+        "description": "Cathedral of Light, Stormwind"
+      },
+      "turnIn": {
+        "npc": "Aeonas the Vindicated",
+        "location": [1448, 45, 52],
+        "description": "Felwood"
+      },
+      "items": []
     }
   ]
 }

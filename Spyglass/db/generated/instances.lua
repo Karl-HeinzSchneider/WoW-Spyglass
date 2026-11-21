@@ -607,13 +607,14 @@ Data:AddInstance(42901, {
     background = "Interface\\GLUES\\LOADINGSCREENS\\LoadScreenDireMaul",
     backgroundCoords = { 0, 1, 0.305, 0.695 },
     entrance = { 1444, 65, 30 },
-    bosses = { 343, 344, 345, 2792, 346 },
+    bosses = { 343, 344, 345, 2792, 346, -16097 },
 })
 Data:AddBoss(343, { instanceID = 42901, order = 0, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Zevrim Thornhoof", level = 57 }) -- Zevrim Thornhoof
 Data:AddBoss(344, { instanceID = 42901, order = 1000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Hydrospawn", level = 57 }) -- Hydrospawn
 Data:AddBoss(345, { instanceID = 42901, order = 2000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lethtendris", level = 57 }) -- Lethtendris
 Data:AddBoss(2792, { instanceID = 42901, order = 2500, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\pusillin.blp", displayID = 7552, level = 57 }) -- Pusillin
 Data:AddBoss(346, { instanceID = 42901, order = 3000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Alzzin the Wildshaper", level = 58 }) -- Alzzin the Wildshaper
+Data:AddBoss(-16097, { instanceID = 42901, rare = true }) -- Isalien
 
 -- Dire Maul: West
 Data:AddInstance(42902, {

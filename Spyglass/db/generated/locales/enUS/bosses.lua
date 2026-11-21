@@ -11,6 +11,7 @@ Data:AddNames("enUS", "bosses", {
     [-260468] = "\"Pyromancer\" Braxton",
     [-250034] = "Tunnelweb Matriarch",
     [-16101] = "Jarien and Sothos",
+    [-16097] = "Isalien",
     [-16080] = "Mor Grayhoof",
     [-16059] = "Theldren",
     [-14516] = "Death Knight Darkreaver",

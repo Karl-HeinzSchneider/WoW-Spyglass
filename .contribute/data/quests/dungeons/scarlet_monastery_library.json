@@ -336,6 +336,7 @@
       "class": "Mage",
       "requiredLevel": 30,
       "objective": "Speak with Magus Tirth in the Shimmering Flats.",
+      "requires": [1947],
       "start": {
         "npc": "Tabetha",
         "location": [1445, 46, 57],
@@ -365,6 +366,23 @@
         "npc": "Magus Tirth",
         "location": [1441, 78.2, 75.8],
         "description": "Shimmering Flats, Thousand Needles"
+      },
+      "items": []
+    },
+    {
+      "id": 1947,
+      "name": "Journey to the Marsh",
+      "side": "Both",
+      "class": "Mage",
+      "requiredLevel": 30,
+      "objective": "Speak with Tabetha.",
+      "start": {
+        "description": "Your mage trainer in a capital city: Jennea Cannon (Stormwind), Bink (Ironforge), Deino (Orgrimmar), Ursyn Ghull (Thunder Bluff) or Anastasia Hartwell (Undercity)"
+      },
+      "turnIn": {
+        "npc": "Tabetha",
+        "location": [1445, 46, 57],
+        "description": "Dustwallow Marsh"
       },
       "items": []
     }

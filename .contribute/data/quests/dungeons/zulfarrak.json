@@ -397,6 +397,69 @@
           "name": "Personal Spellbook"
         }
       ]
+    },
+    {
+      "id": 80411,
+      "name": "The Talisman of Kazdor",
+      "side": "Both",
+      "class": "Rogue",
+      "requiredLevel": 45,
+      "xp": 4700,
+      "objective": "Find The Talisman of Kazdor inside of Zul'Farrak. Then, bring it to Fahrad at Ravenholdt Manor. You must complete the job alone.",
+      "description": "At level 45, return to a major city for Fahrad's letter. Complete Fool Me Twice at Ravenholdt Manor, then accept The Talisman of Kazdor from Fahrad. Enter Zul'Farrak alone, outside any group.",
+      "requires": [80526],
+      "start": {
+        "npc": "Fahrad",
+        "location": [1416, 84.5, 80.3],
+        "description": "Ravenholdt Manor, Alterac Mountains"
+      },
+      "turnIn": {
+        "npc": "Fahrad",
+        "location": [1416, 84.5, 80.3],
+        "description": "Ravenholdt Manor, Alterac Mountains"
+      },
+      "items": []
+    },
+    {
+      "id": 6681,
+      "name": "The Manor, Ravenholdt",
+      "side": "Both",
+      "class": "Rogue",
+      "requiredLevel": 24,
+      "xp": 1950,
+      "objective": "Take the Seal of Ravenholdt to Fahrad at Ravenholdt Manor, hidden away in the hills of Hillsbrad.",
+      "description": "Train Detect Traps first: walking past the trapped chest in the cave passage into the manor completes the test (Fahrad teaches it too).",
+      "start": {
+        "item": 17126,
+        "description": "Horde: from a rogue trainer (\"May I have it, please.\"). Alliance: from Mathias Shaw, Stormwind"
+      },
+      "turnIn": {
+        "npc": "Fahrad",
+        "location": [1416, 84.5, 80.3],
+        "description": "Ravenholdt Manor, Alterac Mountains"
+      },
+      "items": []
+    },
+    {
+      "id": 80526,
+      "name": "Fool Me Twice",
+      "side": "Both",
+      "class": "Rogue",
+      "requiredLevel": 45,
+      "xp": 470,
+      "objective": "Speak to Fahrad when you're ready to hear his plan.",
+      "requires": [78699],
+      "start": {
+        "npc": "Fahrad",
+        "location": [1416, 84.5, 80.3],
+        "description": "Ravenholdt Manor, Alterac Mountains"
+      },
+      "turnIn": {
+        "npc": "Fahrad",
+        "location": [1416, 84.5, 80.3],
+        "description": "Ravenholdt Manor, Alterac Mountains"
+      },
+      "items": []
     }
   ]
 }

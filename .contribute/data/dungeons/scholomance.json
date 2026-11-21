@@ -167,6 +167,14 @@
           "item": 18692,
           "name": "Death Knight Sabatons",
           "chance": 0.044
+        },
+        {
+          "item": 276069,
+          "name": "Gravetoll Gavel"
+        },
+        {
+          "item": 276071,
+          "name": "The Black Helm"
         }
       ]
     },
@@ -191,6 +199,14 @@
           "item": 273121,
           "name": "Blueprint: Sewing Machine",
           "chance": 0.054
+        },
+        {
+          "item": 276073,
+          "name": "Band of the Damned"
+        },
+        {
+          "item": 276072,
+          "name": "Soulwoven Drape"
         }
       ]
     },

@@ -60,12 +60,16 @@ Data:AddBossLoot(3600, { -- Vitrix
     { 280031, 0.16 }, -- Sparklance Wand
     { 280028, 0.13 }, -- Heartflame Gauntlets
     { 280032, 0.24 }, -- Bolt's Charged Eyeball
+    { 280026 }, -- Albinofur Grips
+    { 280029 }, -- Cinderedge Crescent
+    { 280027 }, -- Crownroar Chestplate
 })
 
 Data:AddTrashLoot(3001, {
     { 287037 }, -- Shaper's Robe
     { 287044 }, -- Predator's Shroud
     { 287045 }, -- Ancient Mattock
+    { 252938 }, -- Pattern: Blue Dragonscale Helm
 })
 
 Data:AddQuests(3001, {

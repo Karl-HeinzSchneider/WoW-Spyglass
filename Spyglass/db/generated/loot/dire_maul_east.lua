@@ -7,6 +7,8 @@ Data:AddBossLoot(343, { -- Zevrim Thornhoof
     { 18313, 0.22 }, -- Helm of Awareness
     { 18323, 0.145 }, -- Satyr's Bow
     { 18319, 0.235 }, -- Fervent Helm
+    { 18308 }, -- Clever Hat
+    { 18306 }, -- Gloves of Shadowy Mist
 })
 
 Data:AddBossLoot(344, { -- Hydrospawn
@@ -23,11 +25,13 @@ Data:AddBossLoot(345, { -- Lethtendris
     { 18311, 0.216 }, -- Quel'dorai Channeling Rod
     { 18302, 0.241 }, -- Band of Vigor
     { 18354 }, -- Pimgib's Collar
+    { 18301 }, -- Lethtendris's Wand
 })
 
 Data:AddBossLoot(2792, { -- Pusillin
     { 18316, 0.244 }, -- Obsidian Bauble
     { 18267, 0.88 }, -- Recipe: Runn Tum Tuber Surprise
+    { 18320 }, -- Demondash Spaulders
 })
 
 Data:AddBossLoot(346, { -- Alzzin the Wildshaper
@@ -41,6 +45,15 @@ Data:AddBossLoot(346, { -- Alzzin the Wildshaper
     { 18326, 0.205 }, -- Razor Gauntlets
     { 18327, 0.161 }, -- Whipvine Cord
     { 18328, 0.193 }, -- Shadewood Cloak
+})
+
+Data:AddBossLoot(-16097, { -- Isalien
+    { 22314 }, -- Huntsman's Harpoon
+    { 22472 }, -- #22472
+    { 22315 }, -- Hammer of Revitalization
+    { 22304 }, -- Ironweave Gloves
+    { 22401 }, -- Libram of Hope
+    { 22345 }, -- Totem of Tides
 })
 
 Data:AddTrashLoot(42901, {
