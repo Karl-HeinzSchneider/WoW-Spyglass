@@ -60,6 +60,11 @@ Data:AddBossLoot(-250034, { -- Tunnelweb Matriarch
     { 280086, 0.543 }, -- Octofinger Gauntlets
 })
 
+Data:AddBossLoot(-269151, { -- Sabella No-Eyes
+    { 280083, 0.571 }, -- Truesight Rifle
+    { 280084, 0.429 }, -- Furbolg Rib Protector
+})
+
 Data:AddTrashLoot(2974, {
     { 287032 }, -- Den Champion's Binding
     { 251453 }, -- Plans: Breastplate of Salvation
@@ -70,6 +75,8 @@ Data:AddTrashLoot(2974, {
     { 287030 }, -- Blackmaw Bindings
     { 287033 }, -- Furbolg Berserker's Boots
     { 252893 }, -- Pattern: Timbermaw Tunic
+    { 287031 }, -- Spearfisher's Waders
+    { 287035 }, -- Demon Worshipper's Necklace
 })
 
 Data:AddQuests(2974, {

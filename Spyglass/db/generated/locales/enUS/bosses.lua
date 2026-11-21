@@ -2,6 +2,7 @@
 local Data = Spyglass.Data
 
 Data:AddNames("enUS", "bosses", {
+    [-269151] = "Sabella No-Eyes",
     [-269111] = "Gortek the Apprentice",
     [-269104] = "Moontouched Wanderer",
     [-264773] = "Bossman Toof",

@@ -635,7 +635,7 @@ Data:AddBoss(347, { instanceID = 42902, order = 4000, portrait = "Interface\\Enc
 Data:AddBoss(348, { instanceID = 42902, order = 5000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Magister Kalendris", level = 60 }) -- Magister Kalendris
 Data:AddBoss(349, { instanceID = 42902, order = 6000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Immolthar", level = 61 }) -- Immol'thar
 Data:AddBoss(361, { instanceID = 42902, order = 7000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Prince Tortheldrin", level = 61 }) -- Prince Tortheldrin
-Data:AddBoss(2793, { instanceID = 42902, order = 15000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\lord_helnurath.blp", displayID = 14556, level = 62 }) -- Lord Hel'nurath
+Data:AddBoss(2793, { instanceID = 42902, order = 15000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\lord_helnurath.blp", displayID = 14556, level = 62, rare = true }) -- Lord Hel'nurath
 Data:AddBoss(2794, { instanceID = 42902, order = 16000, portrait = "Interface\\AddOns\\Spyglass\\assets\\bosses\\tsuzee.blp", displayID = 11250, level = 59 }) -- Tsu'zee
 
 -- Dire Maul: North
@@ -900,7 +900,7 @@ Data:AddInstance(2974, {
     background = 7963784,
     backgroundCoords = { 0, 1, 0.154, 0.846 },
     entrance = { 1447, 38.6, 33.2 },
-    bosses = { 3315, 3316, 3322, 3323, 3327, 3334, 3336, -269104, -269111, -250034 },
+    bosses = { 3315, 3316, 3322, 3323, 3327, 3334, 3336, -269104, -269111, -250034, -269151 },
 })
 Data:AddBoss(3315, { instanceID = 2974, order = 0, displayID = 140708, level = 58 }) -- Withermaw
 Data:AddBoss(3316, { instanceID = 2974, order = 1000, displayID = 130432, level = 57 }) -- Impaan the Imprisoner
@@ -912,6 +912,7 @@ Data:AddBoss(3336, { instanceID = 2974, order = 6000, displayID = 131644, level 
 Data:AddBoss(-269104, { instanceID = 2974, displayID = 12235, level = 55 }) -- Moontouched Wanderer
 Data:AddBoss(-269111, { instanceID = 2974, displayID = 145808, level = 55 }) -- Gortek the Apprentice
 Data:AddBoss(-250034, { instanceID = 2974, level = 55, rare = true }) -- Tunnelweb Matriarch
+Data:AddBoss(-269151, { instanceID = 2974, displayID = 6829, rare = true }) -- Sabella No-Eyes
 
 -- Alcaz Prison
 Data:AddInstance(2994, {
