@@ -324,13 +324,13 @@
       "requires": [93594],
       "start": {
         "npc": "Woodwyrd",
-        "location": [2652, 53.5, 76],
-        "description": "Forlorn Gardens, Shen'dralas (just east of Mithera, about 53, 76)"
+        "location": [2652, 69.9, 72.1],
+        "description": "Forlorn Gardens, Shen'dralas"
       },
       "turnIn": {
         "npc": "Woodwyrd",
-        "location": [2652, 53.5, 76],
-        "description": "Forlorn Gardens, Shen'dralas (just east of Mithera, about 53, 76)"
+        "location": [2652, 69.9, 72.1],
+        "description": "Forlorn Gardens, Shen'dralas"
       },
       "items": [
         {
@@ -462,8 +462,8 @@
       },
       "turnIn": {
         "npc": "Woodwyrd",
-        "location": [2652, 53.5, 76],
-        "description": "Forlorn Gardens, Shen'dralas (just east of Mithera, about 53, 76)"
+        "location": [2652, 69.9, 72.1],
+        "description": "Forlorn Gardens, Shen'dralas"
       },
       "items": []
     },

@@ -38,12 +38,16 @@ Data:AddBossLoot(2811, { -- Rattlegore
 Data:AddBossLoot(2809, { -- Marduk Blackpool
     { 14576, 0.078 }, -- Ebon Hilt of Marduk
     { 18692, 0.044 }, -- Death Knight Sabatons
+    { 276069 }, -- Gravetoll Gavel
+    { 276071 }, -- The Black Helm
 })
 
 Data:AddBossLoot(2813, { -- Vectus
     { 14577, 0.054 }, -- Skullsmoke Pants
     { 18691, 0.043 }, -- Dark Advisor's Pendant
     { 273121, 0.054 }, -- Blueprint: Sewing Machine
+    { 276073 }, -- Band of the Damned
+    { 276072 }, -- Soulwoven Drape
 })
 
 Data:AddBossLoot(3055, { -- Kormok

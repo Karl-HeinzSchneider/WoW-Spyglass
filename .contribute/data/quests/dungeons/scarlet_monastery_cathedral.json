@@ -14,7 +14,7 @@
       "start": {
         "npc": "Katherine the Pure",
         "location": [1453, 48.5, 49.1],
-        "description": "Katherine the Pure, Cathedral of Light, Stormwind"
+        "description": "Cathedral of Light, Stormwind"
       },
       "turnIn": {
         "description": "Aeonas, rear chamber of the Cathedral, inside the dungeon"
@@ -220,6 +220,7 @@
       "side": "Alliance",
       "class": "Paladin",
       "requiredLevel": 35,
+      "xp": 2350,
       "objective": "Meet Aeonas in the Cathedral of Light in Stormwind.",
       "description": "The end of the chain, after By The Light's Grace.",
       "requires": [79963],

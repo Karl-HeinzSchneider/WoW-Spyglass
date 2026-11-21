@@ -58,16 +58,16 @@
       "side": "Horde",
       "requiredLevel": 48,
       "xp": 1300,
-      "objective": "Speak with Nazeer Bloodspike in Brackenwall Village.",
+      "objective": "Speak with Nazeer Bloodpike in Brackenwall Village.",
       "start": {
         "npc": "Eitrigg",
         "location": [1454, 34.4, 38.6],
         "description": "Eitrigg, Grommash Hold (Thrall's room), Orgrimmar"
       },
       "turnIn": {
-        "npc": "Nazeer Bloodspike",
-        "location": [1445, 36, 31],
-        "description": "Nazeer Bloodspike, Brackenwall Village, Dustwallow Marsh"
+        "npc": "Nazeer Bloodpike",
+        "location": [1445, 35.2, 30.7],
+        "description": "Brackenwall Village, Dustwallow Marsh"
       },
       "items": []
     },
@@ -81,9 +81,9 @@
       "description": "Nazeer offers it even before you hand in The Missing Kor'kron.",
       "requires": [95283],
       "start": {
-        "npc": "Nazeer Bloodspike",
-        "location": [1445, 36, 31],
-        "description": "Nazeer Bloodspike, Brackenwall Village, Dustwallow Marsh"
+        "npc": "Nazeer Bloodpike",
+        "location": [1445, 35.2, 30.7],
+        "description": "Brackenwall Village, Dustwallow Marsh"
       },
       "turnIn": {
         "npc": "Sergeant Ulka",

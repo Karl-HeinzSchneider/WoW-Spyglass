@@ -31,6 +31,14 @@
           "item": 18319,
           "name": "Fervent Helm",
           "chance": 0.235
+        },
+        {
+          "item": 18308,
+          "name": "Clever Hat"
+        },
+        {
+          "item": 18306,
+          "name": "Gloves of Shadowy Mist"
         }
       ]
     },
@@ -98,6 +106,10 @@
         {
           "item": 18354,
           "name": "Pimgib's Collar"
+        },
+        {
+          "item": 18301,
+          "name": "Lethtendris's Wand"
         }
       ]
     },
@@ -118,6 +130,10 @@
           "item": 18267,
           "name": "Recipe: Runn Tum Tuber Surprise",
           "chance": 0.88
+        },
+        {
+          "item": 18320,
+          "name": "Demondash Spaulders"
         }
       ]
     },
@@ -177,6 +193,38 @@
           "item": 18328,
           "name": "Shadewood Cloak",
           "chance": 0.193
+        }
+      ]
+    },
+    {
+      "id": -16097,
+      "name": "Isalien",
+      "npc": 16097,
+      "rare": true,
+      "loot": [
+        {
+          "item": 22314,
+          "name": "Huntsman's Harpoon"
+        },
+        {
+          "item": 22472,
+          "name": "Boots of Ferocity"
+        },
+        {
+          "item": 22315,
+          "name": "Hammer of Revitalization"
+        },
+        {
+          "item": 22304,
+          "name": "Ironweave Gloves"
+        },
+        {
+          "item": 22401,
+          "name": "Libram of Hope"
+        },
+        {
+          "item": 22345,
+          "name": "Totem of Tides"
         }
       ]
     }

@@ -244,6 +244,18 @@
           "item": 280032,
           "name": "Bolt's Charged Eyeball",
           "chance": 0.24
+        },
+        {
+          "item": 280026,
+          "name": "Albinofur Grips"
+        },
+        {
+          "item": 280029,
+          "name": "Cinderedge Crescent"
+        },
+        {
+          "item": 280027,
+          "name": "Crownroar Chestplate"
         }
       ]
     }
@@ -260,6 +272,10 @@
     {
       "item": 287045,
       "name": "Ancient Mattock"
+    },
+    {
+      "item": 252938,
+      "name": "Pattern: Blue Dragonscale Helm"
     }
   ],
   "quests": [95928, 97049, 95926, 95924, 95925, 95790]

@@ -256,6 +256,7 @@ Data:AddQuests(47, {
         { 280604 }, -- Rage of the Storm
         { 280607 }, -- Lightning's Grasp
         { 280605 }, -- Tidebringer's Claw
+        { 280696 }, -- Elementalist's Guard
     } },
     { id = 1782, name = "Furen's Armor", side = "Alliance", class = "WARRIOR", requiredLevel = 20, xp = 3400, objective = "Wait for Furen Longbeard to finish your armor.", description = "This is a chain quest with a step in Razorfen Kraul", requires = { { id = 1701, name = "Fire Hardened Mail" } }, start = { description = "Furen Longbeard, Dwarven District, Stormwind (64.6, 37.2)", location = { 1453, 64.6, 37.2 }, npc = "Furen Longbeard" }, turnIn = { description = "Furen Longbeard, Dwarven District, Stormwind (64.6, 37.2)", location = { 1453, 58, 16.8 }, npc = "Furen Longbeard" }, items = {
         { 6972 }, -- Fire Hardened Hauberk

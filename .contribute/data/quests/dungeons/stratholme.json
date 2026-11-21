@@ -6,7 +6,7 @@
       "side": "Both",
       "requiredLevel": 55,
       "objective": "Retrieve the Medallion of Faith from Malor the Zealous in the Scarlet Bastion and bring it back to Aurius.",
-      "description": "Malor's Strongbox in the Scarlet Bastion holds the medallion. Give it to Aurius in the chapel before fighting the Baron.",
+      "description": "Malor's Strongbox in the Scarlet Bastion holds the medallion. Give it to Aurius in the chapel before fighting the Baron. This quest is repeatable after the first turn-in.",
       "start": {
         "npc": "Aurius",
         "description": "Stratholme"

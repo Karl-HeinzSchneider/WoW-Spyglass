@@ -193,8 +193,8 @@
       "requires": [93404],
       "start": {
         "npc": "Woodwyrd",
-        "location": [2652, 53.5, 76],
-        "description": "Forlorn Gardens, Shen'dralas (just east of Mithera, about 53, 76)"
+        "location": [2652, 69.9, 72.1],
+        "description": "Forlorn Gardens, Shen'dralas"
       },
       "turnIn": {
         "npc": "Kog'thug the Brave",
