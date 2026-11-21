@@ -233,6 +233,25 @@
           "chance": 0.543
         }
       ]
+    },
+    {
+      "id": -269151,
+      "name": "Sabella No-Eyes",
+      "displayID": 6829,
+      "npc": 269151,
+      "rare": true,
+      "loot": [
+        {
+          "item": 280083,
+          "name": "Truesight Rifle",
+          "chance": 0.571
+        },
+        {
+          "item": 280084,
+          "name": "Furbolg Rib Protector",
+          "chance": 0.429
+        }
+      ]
     }
   ],
   "trash": [
@@ -271,6 +290,14 @@
     {
       "item": 252893,
       "name": "Pattern: Timbermaw Tunic"
+    },
+    {
+      "item": 287031,
+      "name": "Spearfisher's Waders"
+    },
+    {
+      "item": 287035,
+      "name": "Demon Worshipper's Necklace"
     }
   ],
   "quests": [92343, 92344, 97173, 97198, 92069, 92070, 97327, 92066, 92065, 96246, 92067, 99187]

@@ -237,6 +237,7 @@
       "displayID": 14556,
       "npc": 14506,
       "level": 62,
+      "rare": true,
       "loot": [
         {
           "item": 18755,
