@@ -29201,20 +29201,26 @@
       "enUS": "Grovekeeper Trousers"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 2,
     "slot": "INVTYPE_LEGS",
     "bind": 2,
     "icon": 7699562,
-    "sellPrice": 33238,
+    "sellPrice": 31655,
     "stackCount": 1,
     "setID": 2114,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 164
+      "INTELLECT": 19,
+      "NATURE_RESISTANCE": 9,
+      "RESISTANCE0_NAME": 162,
+      "RESISTANCE3_NAME": 9,
+      "SPELL_POWER": 21,
+      "SPIRIT": 13,
+      "STAMINA": 20
     }
   },
   "273885": {
@@ -29222,20 +29228,25 @@
       "enUS": "Grovekeeper Grips"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 2,
     "slot": "INVTYPE_HAND",
     "bind": 2,
     "icon": 7699545,
-    "sellPrice": 16817,
+    "sellPrice": 16016,
     "stackCount": 1,
     "setID": 2114,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 117
+      "INTELLECT": 14,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 115,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_POWER": 20,
+      "STAMINA": 15
     }
   },
   "273886": {
@@ -29243,20 +29254,26 @@
       "enUS": "Grovekeeper Shoulderpads"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 2,
     "slot": "INVTYPE_SHOULDER",
     "bind": 2,
     "icon": 7699585,
-    "sellPrice": 25189,
+    "sellPrice": 23989,
     "stackCount": 1,
     "setID": 2114,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 140
+      "INTELLECT": 16,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 138,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_PENETRATION": 5,
+      "SPELL_POWER": 13,
+      "STAMINA": 14
     }
   },
   "273887": {
@@ -29264,20 +29281,27 @@
       "enUS": "Grovekeeper Stompers"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 2,
     "slot": "INVTYPE_FEET",
     "bind": 2,
     "icon": 7699542,
-    "sellPrice": 25283,
+    "sellPrice": 24079,
     "stackCount": 1,
     "setID": 2114,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 129
+      "HIT_RATING": 9,
+      "INTELLECT": 12,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 127,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_POWER": 13,
+      "SPIRIT": 11,
+      "STAMINA": 14
     }
   },
   "273888": {
@@ -29285,20 +29309,27 @@
       "enUS": "Grovekeeper Kilt"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 2,
     "slot": "INVTYPE_LEGS",
     "bind": 2,
     "icon": 7699562,
-    "sellPrice": 33750,
+    "sellPrice": 32143,
     "stackCount": 1,
     "setID": 2115,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 164
+      "AGILITY": 16,
+      "ATTACK_POWER": 30,
+      "HIT_RATING": 14,
+      "INTELLECT": 12,
+      "NATURE_RESISTANCE": 9,
+      "RESISTANCE0_NAME": 162,
+      "RESISTANCE3_NAME": 9,
+      "STAMINA": 19
     }
   },
   "273889": {
@@ -29306,20 +29337,26 @@
       "enUS": "Grovekeeper Mitts"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 2,
     "slot": "INVTYPE_HAND",
     "bind": 2,
     "icon": 7699545,
-    "sellPrice": 17075,
+    "sellPrice": 16262,
     "stackCount": 1,
     "setID": 2115,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 117
+      "AGILITY": 14,
+      "INTELLECT": 11,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 115,
+      "RESISTANCE3_NAME": 7,
+      "STAMINA": 15,
+      "STRENGTH": 12
     }
   },
   "273890": {
@@ -29327,20 +29364,27 @@
       "enUS": "Grovekeeper Mantle"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 2,
     "slot": "INVTYPE_SHOULDER",
     "bind": 2,
     "icon": 7699585,
-    "sellPrice": 25574,
+    "sellPrice": 24356,
     "stackCount": 1,
     "setID": 2115,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 140
+      "AGILITY": 12,
+      "EXPERTISE_RATING": 9,
+      "INTELLECT": 11,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 138,
+      "RESISTANCE3_NAME": 7,
+      "STAMINA": 14,
+      "STRENGTH": 11
     }
   },
   "273891": {
@@ -29348,20 +29392,26 @@
       "enUS": "Grovekeeper Sandals"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 2,
     "slot": "INVTYPE_FEET",
     "bind": 2,
     "icon": 7699542,
-    "sellPrice": 25668,
+    "sellPrice": 24446,
     "stackCount": 1,
     "setID": 2115,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 129
+      "AGILITY": 18,
+      "INTELLECT": 7,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 127,
+      "RESISTANCE3_NAME": 7,
+      "STAMINA": 14,
+      "STRENGTH": 11
     }
   },
   "273892": {
@@ -29369,20 +29419,27 @@
       "enUS": "Grovekeeper Legguards"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 2,
     "slot": "INVTYPE_LEGS",
     "bind": 2,
     "icon": 7699562,
-    "sellPrice": 34262,
+    "sellPrice": 32630,
     "stackCount": 1,
     "setID": 2112,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 164
+      "INTELLECT": 19,
+      "NATURE_RESISTANCE": 9,
+      "RESISTANCE0_NAME": 162,
+      "RESISTANCE3_NAME": 9,
+      "SPELL_DAMAGE_DONE": 11,
+      "SPELL_HEALING_DONE": 33,
+      "SPIRIT": 16,
+      "STAMINA": 20
     }
   },
   "273893": {
@@ -29390,20 +29447,28 @@
       "enUS": "Grovekeeper Handguards"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 2,
     "slot": "INVTYPE_HAND",
     "bind": 2,
     "icon": 7699545,
-    "sellPrice": 17333,
+    "sellPrice": 16507,
     "stackCount": 1,
     "setID": 2112,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 117
+      "CRIT_RATING": 14,
+      "INTELLECT": 13,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 115,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_DAMAGE_DONE": 5,
+      "SPELL_HEALING_DONE": 14,
+      "SPIRIT": 7,
+      "STAMINA": 15
     }
   },
   "273894": {
@@ -29411,20 +29476,28 @@
       "enUS": "Grovekeeper Pauldrons"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 2,
     "slot": "INVTYPE_SHOULDER",
     "bind": 2,
     "icon": 7699585,
-    "sellPrice": 25959,
+    "sellPrice": 24722,
     "stackCount": 1,
     "setID": 2112,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 140
+      "INTELLECT": 12,
+      "MANA_REGENERATION": 4,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 138,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_DAMAGE_DONE": 8,
+      "SPELL_HEALING_DONE": 24,
+      "SPIRIT": 11,
+      "STAMINA": 14
     }
   },
   "273895": {
@@ -29432,20 +29505,26 @@
       "enUS": "Grovekeeper Boots"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 2,
     "slot": "INVTYPE_FEET",
     "bind": 2,
     "icon": 7699542,
-    "sellPrice": 26053,
+    "sellPrice": 24812,
     "stackCount": 1,
     "setID": 2112,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 129
+      "INTELLECT": 21,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 127,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_DAMAGE_DONE": 8,
+      "SPELL_HEALING_DONE": 24,
+      "STAMINA": 14
     }
   },
   "273896": {
@@ -29453,20 +29532,26 @@
       "enUS": "Grovekeeper Leggings"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 2,
     "slot": "INVTYPE_LEGS",
     "bind": 2,
     "icon": 7699562,
-    "sellPrice": 35696,
+    "sellPrice": 33997,
     "stackCount": 1,
     "setID": 2113,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 164
+      "DEFENSE_SKILL_RATING": 7,
+      "EXPERTISE_RATING": 15,
+      "NATURE_RESISTANCE": 9,
+      "RESISTANCE0_NAME": 162,
+      "RESISTANCE3_NAME": 9,
+      "STAMINA": 22,
+      "STRENGTH": 19
     }
   },
   "273897": {
@@ -29474,20 +29559,25 @@
       "enUS": "Grovekeeper Gauntlets"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 2,
     "slot": "INVTYPE_HAND",
     "bind": 2,
     "icon": 7699545,
-    "sellPrice": 18056,
+    "sellPrice": 17196,
     "stackCount": 1,
     "setID": 2113,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 117
+      "DEFENSE_SKILL_RATING": 7,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 115,
+      "RESISTANCE3_NAME": 7,
+      "STAMINA": 14,
+      "STRENGTH": 21
     }
   },
   "273898": {
@@ -29495,20 +29585,26 @@
       "enUS": "Grovekeeper Spaulders"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 2,
     "slot": "INVTYPE_SHOULDER",
     "bind": 2,
     "icon": 7699585,
-    "sellPrice": 27037,
+    "sellPrice": 25750,
     "stackCount": 1,
     "setID": 2113,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 140
+      "DEFENSE_SKILL_RATING": 7,
+      "HIT_RATING": 11,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 138,
+      "RESISTANCE3_NAME": 7,
+      "STAMINA": 17,
+      "STRENGTH": 11
     }
   },
   "273899": {
@@ -29516,20 +29612,26 @@
       "enUS": "Grovekeeper Treads"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 2,
     "slot": "INVTYPE_FEET",
     "bind": 2,
     "icon": 7699542,
-    "sellPrice": 27132,
+    "sellPrice": 25840,
     "stackCount": 1,
     "setID": 2113,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 129
+      "DEFENSE_SKILL_RATING": 7,
+      "DODGE_RATING": 12,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 127,
+      "RESISTANCE3_NAME": 7,
+      "STAMINA": 16,
+      "STRENGTH": 13
     }
   },
   "273900": {
@@ -29537,20 +29639,26 @@
       "enUS": "Wildstalker's Legguards"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 3,
     "slot": "INVTYPE_LEGS",
     "bind": 2,
     "icon": 7699439,
-    "sellPrice": 43450,
+    "sellPrice": 41381,
     "stackCount": 1,
     "setID": 2101,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 344
+      "AGILITY": 20,
+      "CRIT_RATING": 14,
+      "INTELLECT": 18,
+      "NATURE_RESISTANCE": 9,
+      "RESISTANCE0_NAME": 338,
+      "RESISTANCE3_NAME": 9,
+      "STAMINA": 18
     }
   },
   "273901": {
@@ -29558,20 +29666,27 @@
       "enUS": "Wildstalker's Gauntlets"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 3,
     "slot": "INVTYPE_HAND",
     "bind": 2,
     "icon": 7699437,
-    "sellPrice": 21802,
+    "sellPrice": 20764,
     "stackCount": 1,
     "setID": 2101,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 245
+      "AGILITY": 13,
+      "CRIT_RATING": 14,
+      "INTELLECT": 12,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 242,
+      "RESISTANCE3_NAME": 7,
+      "SPIRIT": 7,
+      "STAMINA": 11
     }
   },
   "273902": {
@@ -29579,20 +29694,26 @@
       "enUS": "Wildstalker's Spaulders"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 3,
     "slot": "INVTYPE_SHOULDER",
     "bind": 2,
     "icon": 7699440,
-    "sellPrice": 32962,
+    "sellPrice": 31392,
     "stackCount": 1,
     "setID": 2101,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 294
+      "AGILITY": 17,
+      "INTELLECT": 11,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 290,
+      "RESISTANCE3_NAME": 7,
+      "SPIRIT": 9,
+      "STAMINA": 17
     }
   },
   "273903": {
@@ -29600,20 +29721,27 @@
       "enUS": "Wildstalker's Greaves"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 3,
     "slot": "INVTYPE_FEET",
     "bind": 2,
     "icon": 7699433,
-    "sellPrice": 29928,
+    "sellPrice": 28503,
     "stackCount": 1,
     "setID": 2101,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 270
+      "AGILITY": 15,
+      "HIT_RATING": 9,
+      "INTELLECT": 10,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 266,
+      "RESISTANCE3_NAME": 7,
+      "SPIRIT": 12,
+      "STAMINA": 11
     }
   },
   "273904": {
@@ -29621,20 +29749,27 @@
       "enUS": "Manaflare Pants"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 1,
     "slot": "INVTYPE_LEGS",
     "bind": 2,
     "icon": 7672598,
-    "sellPrice": 26588,
+    "sellPrice": 25322,
     "stackCount": 1,
     "setID": 2098,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 83
+      "INTELLECT": 19,
+      "NATURE_RESISTANCE": 9,
+      "RESISTANCE0_NAME": 81,
+      "RESISTANCE3_NAME": 9,
+      "SPELL_PENETRATION": 5,
+      "SPELL_POWER": 20,
+      "SPIRIT": 9,
+      "STAMINA": 16
     }
   },
   "273905": {
@@ -29642,20 +29777,27 @@
       "enUS": "Manaflare Gloves"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 1,
     "slot": "INVTYPE_HAND",
     "bind": 2,
     "icon": 7672596,
-    "sellPrice": 13345,
+    "sellPrice": 12710,
     "stackCount": 1,
     "setID": 2098,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 59
+      "HIT_RATING": 9,
+      "INTELLECT": 14,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 58,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_POWER": 13,
+      "SPIRIT": 10,
+      "STAMINA": 12
     }
   },
   "273906": {
@@ -29663,20 +29805,27 @@
       "enUS": "Manaflare Mantle"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 1,
     "slot": "INVTYPE_SHOULDER",
     "bind": 2,
     "icon": 7672599,
-    "sellPrice": 20093,
+    "sellPrice": 19136,
     "stackCount": 1,
     "setID": 2098,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 71
+      "HIT_RATING": 9,
+      "INTELLECT": 12,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 70,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_PENETRATION": 4,
+      "SPELL_POWER": 13,
+      "STAMINA": 14
     }
   },
   "273907": {
@@ -29684,20 +29833,25 @@
       "enUS": "Manaflare Boots"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 1,
     "slot": "INVTYPE_FEET",
     "bind": 2,
     "icon": 7672592,
-    "sellPrice": 20170,
+    "sellPrice": 19210,
     "stackCount": 1,
     "setID": 2098,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 65
+      "INTELLECT": 11,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 64,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_POWER": 25,
+      "STAMINA": 14
     }
   },
   "273908": {
@@ -29705,20 +29859,27 @@
       "enUS": "Justice Leggings"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 4,
     "slot": "INVTYPE_LEGS",
     "bind": 2,
     "icon": 7699057,
-    "sellPrice": 47245,
+    "sellPrice": 44996,
     "stackCount": 1,
     "setID": 2106,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 608
+      "CRIT_RATING": 14,
+      "INTELLECT": 17,
+      "NATURE_RESISTANCE": 9,
+      "RESISTANCE0_NAME": 598,
+      "RESISTANCE3_NAME": 9,
+      "SPELL_POWER": 8,
+      "STAMINA": 19,
+      "STRENGTH": 18
     }
   },
   "273909": {
@@ -29726,20 +29887,27 @@
       "enUS": "Justice Gauntlets"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 4,
     "slot": "INVTYPE_HAND",
     "bind": 2,
     "icon": 7699055,
-    "sellPrice": 23848,
+    "sellPrice": 22713,
     "stackCount": 1,
     "setID": 2106,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 434
+      "HIT_RATING": 9,
+      "INTELLECT": 11,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 427,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_POWER": 13,
+      "STAMINA": 14,
+      "STRENGTH": 12
     }
   },
   "273910": {
@@ -29747,20 +29915,27 @@
       "enUS": "Justice Spaulders"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 4,
     "slot": "INVTYPE_SHOULDER",
     "bind": 2,
     "icon": 7699058,
-    "sellPrice": 35633,
+    "sellPrice": 33936,
     "stackCount": 1,
     "setID": 2106,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 521
+      "HIT_RATING": 9,
+      "INTELLECT": 11,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 513,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_POWER": 10,
+      "STAMINA": 11,
+      "STRENGTH": 15
     }
   },
   "273911": {
@@ -29768,20 +29943,25 @@
       "enUS": "Justice Greaves"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 4,
     "slot": "INVTYPE_FEET",
     "bind": 2,
     "icon": 7699051,
-    "sellPrice": 35768,
+    "sellPrice": 34065,
     "stackCount": 1,
     "setID": 2106,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 478
+      "CRIT_RATING": 14,
+      "INTELLECT": 9,
+      "RESISTANCE0_NAME": 470,
+      "SPELL_POWER": 11,
+      "STAMINA": 10,
+      "STRENGTH": 14
     }
   },
   "273912": {
@@ -29789,20 +29969,28 @@
       "enUS": "Justice Legplates"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 4,
     "slot": "INVTYPE_LEGS",
     "bind": 2,
     "icon": 7699057,
-    "sellPrice": 49254,
+    "sellPrice": 46908,
     "stackCount": 1,
     "setID": 2107,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 608
+      "CRIT_RATING": 14,
+      "INTELLECT": 16,
+      "NATURE_RESISTANCE": 9,
+      "RESISTANCE0_NAME": 598,
+      "RESISTANCE3_NAME": 9,
+      "SPELL_DAMAGE_DONE": 10,
+      "SPELL_HEALING_DONE": 31,
+      "SPIRIT": 13,
+      "STAMINA": 19
     }
   },
   "273913": {
@@ -29810,20 +29998,26 @@
       "enUS": "Justice Gloves"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 4,
     "slot": "INVTYPE_HAND",
     "bind": 2,
     "icon": 7699055,
-    "sellPrice": 24858,
+    "sellPrice": 23674,
     "stackCount": 1,
     "setID": 2107,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 434
+      "INTELLECT": 21,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 427,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_DAMAGE_DONE": 8,
+      "SPELL_HEALING_DONE": 24,
+      "STAMINA": 14
     }
   },
   "273914": {
@@ -29831,20 +30025,28 @@
       "enUS": "Justice Epaulets"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 4,
     "slot": "INVTYPE_SHOULDER",
     "bind": 2,
     "icon": 7699058,
-    "sellPrice": 37136,
+    "sellPrice": 35368,
     "stackCount": 1,
     "setID": 2107,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 521
+      "CRIT_RATING": 14,
+      "INTELLECT": 10,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 513,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_DAMAGE_DONE": 6,
+      "SPELL_HEALING_DONE": 20,
+      "SPIRIT": 9,
+      "STAMINA": 14
     }
   },
   "273915": {
@@ -29852,20 +30054,28 @@
       "enUS": "Justice Treads"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 4,
     "slot": "INVTYPE_FEET",
     "bind": 2,
     "icon": 7699051,
-    "sellPrice": 37271,
+    "sellPrice": 35496,
     "stackCount": 1,
     "setID": 2107,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 478
+      "CRIT_RATING": 14,
+      "INTELLECT": 11,
+      "MANA_REGENERATION": 5,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 470,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_DAMAGE_DONE": 6,
+      "SPELL_HEALING_DONE": 18,
+      "STAMINA": 13
     }
   },
   "273916": {
@@ -29873,20 +30083,27 @@
       "enUS": "Justice Legguards"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 4,
     "slot": "INVTYPE_LEGS",
     "bind": 2,
     "icon": 7699057,
-    "sellPrice": 49970,
+    "sellPrice": 47591,
     "stackCount": 1,
     "setID": 2108,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 608
+      "DEFENSE_SKILL_RATING": 7,
+      "HIT_RATING": 12,
+      "INTELLECT": 21,
+      "NATURE_RESISTANCE": 9,
+      "RESISTANCE0_NAME": 598,
+      "RESISTANCE3_NAME": 9,
+      "SPELL_POWER": 11,
+      "STAMINA": 23
     }
   },
   "273917": {
@@ -29894,20 +30111,26 @@
       "enUS": "Justice Handguards"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 4,
     "slot": "INVTYPE_HAND",
     "bind": 2,
     "icon": 7699055,
-    "sellPrice": 25216,
+    "sellPrice": 24015,
     "stackCount": 1,
     "setID": 2108,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 434
+      "DEFENSE_SKILL_RATING": 5,
+      "INTELLECT": 13,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 427,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_POWER": 18,
+      "STAMINA": 18
     }
   },
   "273918": {
@@ -29915,20 +30138,27 @@
       "enUS": "Justice Pauldrons"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 4,
     "slot": "INVTYPE_SHOULDER",
     "bind": 2,
     "icon": 7699058,
-    "sellPrice": 37673,
+    "sellPrice": 35879,
     "stackCount": 1,
     "setID": 2108,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 521
+      "BLOCK_VALUE": 11,
+      "DEFENSE_SKILL_RATING": 5,
+      "INTELLECT": 13,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 513,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_POWER": 11,
+      "STAMINA": 19
     }
   },
   "273919": {
@@ -29936,20 +30166,27 @@
       "enUS": "Justice Sabatons"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 4,
     "slot": "INVTYPE_FEET",
     "bind": 2,
     "icon": 7699051,
-    "sellPrice": 37808,
+    "sellPrice": 36007,
     "stackCount": 1,
     "setID": 2108,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 478
+      "DEFENSE_SKILL_RATING": 5,
+      "EXPERTISE_RATING": 7,
+      "INTELLECT": 13,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 470,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_POWER": 11,
+      "STAMINA": 19
     }
   },
   "273920": {
@@ -29957,20 +30194,27 @@
       "enUS": "Pants of Conviction"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 1,
     "slot": "INVTYPE_LEGS",
     "bind": 2,
     "icon": 7699046,
-    "sellPrice": 28964,
+    "sellPrice": 27585,
     "stackCount": 1,
     "setID": 2105,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 83
+      "CRIT_RATING": 14,
+      "INTELLECT": 18,
+      "NATURE_RESISTANCE": 9,
+      "RESISTANCE0_NAME": 81,
+      "RESISTANCE3_NAME": 9,
+      "SPELL_POWER": 15,
+      "SPIRIT": 10,
+      "STAMINA": 20
     }
   },
   "273921": {
@@ -29978,20 +30222,26 @@
       "enUS": "Gloves of Conviction"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 1,
     "slot": "INVTYPE_HAND",
     "bind": 2,
     "icon": 7699044,
-    "sellPrice": 14532,
+    "sellPrice": 13840,
     "stackCount": 1,
     "setID": 2105,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 59
+      "INTELLECT": 11,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 58,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_PENETRATION": 5,
+      "SPELL_POWER": 11,
+      "STAMINA": 15
     }
   },
   "273922": {
@@ -29999,20 +30249,26 @@
       "enUS": "Mantle of Conviction"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 1,
     "slot": "INVTYPE_SHOULDER",
     "bind": 2,
     "icon": 7699049,
-    "sellPrice": 21875,
+    "sellPrice": 20834,
     "stackCount": 1,
     "setID": 2105,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 71
+      "HIT_RATING": 9,
+      "INTELLECT": 17,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 70,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_POWER": 13,
+      "STAMINA": 14
     }
   },
   "273923": {
@@ -30020,20 +30276,27 @@
       "enUS": "Treads of Conviction"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 1,
     "slot": "INVTYPE_FEET",
     "bind": 2,
     "icon": 7699041,
-    "sellPrice": 19861,
+    "sellPrice": 18915,
     "stackCount": 1,
     "setID": 2105,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 65
+      "HIT_RATING": 9,
+      "INTELLECT": 12,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 64,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_POWER": 13,
+      "SPIRIT": 11,
+      "STAMINA": 14
     }
   },
   "273924": {
@@ -30041,20 +30304,27 @@
       "enUS": "Leggings of Conviction"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 1,
     "slot": "INVTYPE_LEGS",
     "bind": 2,
     "icon": 7699046,
-    "sellPrice": 26585,
+    "sellPrice": 25319,
     "stackCount": 1,
     "setID": 2104,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 83
+      "INTELLECT": 16,
+      "NATURE_RESISTANCE": 9,
+      "RESISTANCE0_NAME": 81,
+      "RESISTANCE3_NAME": 9,
+      "SPELL_DAMAGE_DONE": 11,
+      "SPELL_HEALING_DONE": 33,
+      "SPIRIT": 20,
+      "STAMINA": 19
     }
   },
   "273925": {
@@ -30062,20 +30332,28 @@
       "enUS": "Handguards of Conviction"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 1,
     "slot": "INVTYPE_HAND",
     "bind": 2,
     "icon": 7699044,
-    "sellPrice": 13342,
+    "sellPrice": 12707,
     "stackCount": 1,
     "setID": 2104,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 59
+      "INTELLECT": 12,
+      "MANA_REGENERATION": 5,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 58,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_DAMAGE_DONE": 6,
+      "SPELL_HEALING_DONE": 20,
+      "SPIRIT": 11,
+      "STAMINA": 14
     }
   },
   "273926": {
@@ -30083,20 +30361,27 @@
       "enUS": "Pauldrons of Conviction"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 1,
     "slot": "INVTYPE_SHOULDER",
     "bind": 2,
     "icon": 7699049,
-    "sellPrice": 20091,
+    "sellPrice": 19134,
     "stackCount": 1,
     "setID": 2104,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 71
+      "INTELLECT": 11,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 70,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_DAMAGE_DONE": 11,
+      "SPELL_HEALING_DONE": 32,
+      "SPIRIT": 13,
+      "STAMINA": 15
     }
   },
   "273927": {
@@ -30104,20 +30389,26 @@
       "enUS": "Boots of Conviction"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 1,
     "slot": "INVTYPE_FEET",
     "bind": 2,
     "icon": 7699041,
-    "sellPrice": 20168,
+    "sellPrice": 19208,
     "stackCount": 1,
     "setID": 2104,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 65
+      "INTELLECT": 21,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 64,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_DAMAGE_DONE": 8,
+      "SPELL_HEALING_DONE": 24,
+      "STAMINA": 14
     }
   },
   "273928": {
@@ -30125,20 +30416,26 @@
       "enUS": "Grimstitch Pants"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 2,
     "slot": "INVTYPE_LEGS",
     "bind": 2,
     "icon": 7583592,
-    "sellPrice": 34666,
+    "sellPrice": 33015,
     "stackCount": 1,
     "setID": 2099,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 164
+      "AGILITY": 19,
+      "HIT_RATING": 15,
+      "NATURE_RESISTANCE": 9,
+      "RESISTANCE0_NAME": 162,
+      "RESISTANCE3_NAME": 9,
+      "STAMINA": 19,
+      "STRENGTH": 16
     }
   },
   "273929": {
@@ -30146,20 +30443,26 @@
       "enUS": "Grimstitch Gloves"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 2,
     "slot": "INVTYPE_HAND",
     "bind": 2,
     "icon": 7583590,
-    "sellPrice": 17534,
+    "sellPrice": 16700,
     "stackCount": 1,
     "setID": 2099,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 117
+      "AGILITY": 13,
+      "CRIT_RATING": 14,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 115,
+      "RESISTANCE3_NAME": 7,
+      "STAMINA": 15,
+      "STRENGTH": 10
     }
   },
   "273930": {
@@ -30167,20 +30470,26 @@
       "enUS": "Grimstitch Spaulders"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 2,
     "slot": "INVTYPE_SHOULDER",
     "bind": 2,
     "icon": 7583594,
-    "sellPrice": 26260,
+    "sellPrice": 25009,
     "stackCount": 1,
     "setID": 2099,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 140
+      "AGILITY": 16,
+      "CRIT_RATING": 14,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 138,
+      "RESISTANCE3_NAME": 7,
+      "STAMINA": 16,
+      "STRENGTH": 9
     }
   },
   "273931": {
@@ -30188,20 +30497,25 @@
       "enUS": "Grimstitch Boots"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 2,
     "slot": "INVTYPE_FEET",
     "bind": 2,
     "icon": 7583587,
-    "sellPrice": 26357,
+    "sellPrice": 25102,
     "stackCount": 1,
     "setID": 2099,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 129
+      "AGILITY": 21,
+      "HIT_RATING": 11,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 127,
+      "RESISTANCE3_NAME": 7,
+      "STAMINA": 14
     }
   },
   "273932": {
@@ -30209,20 +30523,27 @@
       "enUS": "Spiritcaller Leggings"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 3,
     "slot": "INVTYPE_LEGS",
     "bind": 2,
     "icon": 7672673,
-    "sellPrice": 42209,
+    "sellPrice": 40199,
     "stackCount": 1,
     "setID": 2110,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 344
+      "AGILITY": 14,
+      "EXPERTISE_RATING": 12,
+      "INTELLECT": 15,
+      "NATURE_RESISTANCE": 9,
+      "RESISTANCE0_NAME": 338,
+      "RESISTANCE3_NAME": 9,
+      "STAMINA": 19,
+      "STRENGTH": 16
     }
   },
   "273933": {
@@ -30230,20 +30551,26 @@
       "enUS": "Spiritcaller Grips"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 3,
     "slot": "INVTYPE_HAND",
     "bind": 2,
     "icon": 7672671,
-    "sellPrice": 21182,
+    "sellPrice": 20173,
     "stackCount": 1,
     "setID": 2110,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 245
+      "CRIT_RATING": 14,
+      "INTELLECT": 10,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 242,
+      "RESISTANCE3_NAME": 7,
+      "STAMINA": 15,
+      "STRENGTH": 13
     }
   },
   "273934": {
@@ -30251,20 +30578,25 @@
       "enUS": "Spiritcaller Spaulders"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 3,
     "slot": "INVTYPE_SHOULDER",
     "bind": 2,
     "icon": 7672674,
-    "sellPrice": 32030,
+    "sellPrice": 30505,
     "stackCount": 1,
     "setID": 2110,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 294
+      "INTELLECT": 11,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 290,
+      "RESISTANCE3_NAME": 7,
+      "STAMINA": 14,
+      "STRENGTH": 21
     }
   },
   "273935": {
@@ -30272,20 +30604,27 @@
       "enUS": "Spiritcaller Treads"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 3,
     "slot": "INVTYPE_FEET",
     "bind": 2,
     "icon": 7672667,
-    "sellPrice": 32147,
+    "sellPrice": 30616,
     "stackCount": 1,
     "setID": 2110,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 270
+      "AGILITY": 11,
+      "HIT_RATING": 9,
+      "INTELLECT": 11,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 266,
+      "RESISTANCE3_NAME": 7,
+      "STAMINA": 14,
+      "STRENGTH": 12
     }
   },
   "273936": {
@@ -30293,20 +30632,28 @@
       "enUS": "Spiritcaller Pants"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 3,
     "slot": "INVTYPE_LEGS",
     "bind": 2,
     "icon": 7672673,
-    "sellPrice": 42823,
+    "sellPrice": 40784,
     "stackCount": 1,
     "setID": 2109,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 344
+      "CRIT_RATING": 14,
+      "INTELLECT": 19,
+      "NATURE_RESISTANCE": 9,
+      "RESISTANCE0_NAME": 338,
+      "RESISTANCE3_NAME": 9,
+      "SPELL_DAMAGE_DONE": 7,
+      "SPELL_HEALING_DONE": 22,
+      "SPIRIT": 12,
+      "STAMINA": 20
     }
   },
   "273937": {
@@ -30314,20 +30661,26 @@
       "enUS": "Spiritcaller Gauntlets"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 3,
     "slot": "INVTYPE_HAND",
     "bind": 2,
     "icon": 7672671,
-    "sellPrice": 21489,
+    "sellPrice": 20465,
     "stackCount": 1,
     "setID": 2109,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 245
+      "INTELLECT": 21,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 242,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_DAMAGE_DONE": 8,
+      "SPELL_HEALING_DONE": 24,
+      "STAMINA": 14
     }
   },
   "273938": {
@@ -30335,20 +30688,27 @@
       "enUS": "Spiritcaller Epaulets"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 3,
     "slot": "INVTYPE_SHOULDER",
     "bind": 2,
     "icon": 7672674,
-    "sellPrice": 32493,
+    "sellPrice": 30946,
     "stackCount": 1,
     "setID": 2109,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 294
+      "INTELLECT": 14,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 290,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_DAMAGE_DONE": 8,
+      "SPELL_HEALING_DONE": 24,
+      "SPIRIT": 12,
+      "STAMINA": 15
     }
   },
   "273939": {
@@ -30356,20 +30716,27 @@
       "enUS": "Spiritcaller Greaves"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 3,
     "slot": "INVTYPE_FEET",
     "bind": 2,
     "icon": 7672667,
-    "sellPrice": 32609,
+    "sellPrice": 31057,
     "stackCount": 1,
     "setID": 2109,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 270
+      "INTELLECT": 12,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 266,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_DAMAGE_DONE": 11,
+      "SPELL_HEALING_DONE": 34,
+      "SPIRIT": 11,
+      "STAMINA": 14
     }
   },
   "273940": {
@@ -30377,20 +30744,27 @@
       "enUS": "Demonheart Leggings"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 1,
     "slot": "INVTYPE_LEGS",
     "bind": 2,
     "icon": 7583602,
-    "sellPrice": 28958,
+    "sellPrice": 27579,
     "stackCount": 1,
     "setID": 2100,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 83
+      "HIT_RATING": 11,
+      "INTELLECT": 19,
+      "NATURE_RESISTANCE": 9,
+      "RESISTANCE0_NAME": 81,
+      "RESISTANCE3_NAME": 9,
+      "SPELL_POWER": 20,
+      "SPIRIT": 10,
+      "STAMINA": 16
     }
   },
   "273941": {
@@ -30398,20 +30772,26 @@
       "enUS": "Demonheart Gloves"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 1,
     "slot": "INVTYPE_HAND",
     "bind": 2,
     "icon": 7583600,
-    "sellPrice": 14530,
+    "sellPrice": 13838,
     "stackCount": 1,
     "setID": 2100,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 59
+      "CRIT_RATING": 14,
+      "INTELLECT": 13,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 58,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_POWER": 13,
+      "STAMINA": 15
     }
   },
   "273942": {
@@ -30419,20 +30799,27 @@
       "enUS": "Demonheart Spaulders"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 1,
     "slot": "INVTYPE_SHOULDER",
     "bind": 2,
     "icon": 7583603,
-    "sellPrice": 21873,
+    "sellPrice": 20832,
     "stackCount": 1,
     "setID": 2100,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 71
+      "CRIT_RATING": 14,
+      "HIT_RATING": 9,
+      "INTELLECT": 11,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 70,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_POWER": 13,
+      "STAMINA": 13
     }
   },
   "273943": {
@@ -30440,20 +30827,25 @@
       "enUS": "Demonheart Boots"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 1,
     "slot": "INVTYPE_FEET",
     "bind": 2,
     "icon": 7583596,
-    "sellPrice": 19859,
+    "sellPrice": 18913,
     "stackCount": 1,
     "setID": 2100,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 65
+      "INTELLECT": 15,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 64,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_POWER": 17,
+      "STAMINA": 19
     }
   },
   "273944": {
@@ -30461,20 +30853,26 @@
       "enUS": "Legplates of Glory"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 4,
     "slot": "INVTYPE_LEGS",
     "bind": 2,
     "icon": 7699251,
-    "sellPrice": 47806,
+    "sellPrice": 45530,
     "stackCount": 1,
     "setID": 2102,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 608
+      "AGILITY": 15,
+      "HIT_RATING": 9,
+      "NATURE_RESISTANCE": 9,
+      "RESISTANCE0_NAME": 598,
+      "RESISTANCE3_NAME": 9,
+      "STAMINA": 23,
+      "STRENGTH": 22
     }
   },
   "273945": {
@@ -30482,20 +30880,26 @@
       "enUS": "Gauntlets of Glory"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 4,
     "slot": "INVTYPE_HAND",
     "bind": 2,
     "icon": 7699249,
-    "sellPrice": 24130,
+    "sellPrice": 22981,
     "stackCount": 1,
     "setID": 2102,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 434
+      "AGILITY": 12,
+      "EXPERTISE_RATING": 11,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 427,
+      "RESISTANCE3_NAME": 7,
+      "STAMINA": 14,
+      "STRENGTH": 15
     }
   },
   "273946": {
@@ -30503,20 +30907,26 @@
       "enUS": "Shoulders of Glory"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 4,
     "slot": "INVTYPE_SHOULDER",
     "bind": 2,
     "icon": 7699252,
-    "sellPrice": 36056,
+    "sellPrice": 34339,
     "stackCount": 1,
     "setID": 2102,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 521
+      "AGILITY": 11,
+      "EXPERTISE_RATING": 9,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 513,
+      "RESISTANCE3_NAME": 7,
+      "STAMINA": 17,
+      "STRENGTH": 17
     }
   },
   "273947": {
@@ -30524,20 +30934,25 @@
       "enUS": "Greaves of Glory"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 4,
     "slot": "INVTYPE_FEET",
     "bind": 2,
     "icon": 7699245,
-    "sellPrice": 36187,
+    "sellPrice": 34464,
     "stackCount": 1,
     "setID": 2102,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 478
+      "CRIT_RATING": 14,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 470,
+      "RESISTANCE3_NAME": 7,
+      "STAMINA": 13,
+      "STRENGTH": 21
     }
   },
   "273948": {
@@ -30545,20 +30960,26 @@
       "enUS": "Legguards of Glory"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 4,
     "slot": "INVTYPE_LEGS",
     "bind": 2,
     "icon": 7699251,
-    "sellPrice": 48523,
+    "sellPrice": 46212,
     "stackCount": 1,
     "setID": 2103,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 608
+      "DEFENSE_SKILL_RATING": 10,
+      "NATURE_RESISTANCE": 9,
+      "PARRY_RATING": 15,
+      "RESISTANCE0_NAME": 598,
+      "RESISTANCE3_NAME": 9,
+      "STAMINA": 20,
+      "STRENGTH": 19
     }
   },
   "273949": {
@@ -30566,20 +30987,26 @@
       "enUS": "Handguards of Glory"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 4,
     "slot": "INVTYPE_HAND",
     "bind": 2,
     "icon": 7699249,
-    "sellPrice": 24490,
+    "sellPrice": 23324,
     "stackCount": 1,
     "setID": 2103,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 434
+      "AGILITY": 6,
+      "DEFENSE_SKILL_RATING": 8,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 427,
+      "RESISTANCE3_NAME": 7,
+      "STAMINA": 20,
+      "STRENGTH": 14
     }
   },
   "273950": {
@@ -30587,20 +31014,26 @@
       "enUS": "Pauldrons of Glory"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 4,
     "slot": "INVTYPE_SHOULDER",
     "bind": 2,
     "icon": 7699252,
-    "sellPrice": 36593,
+    "sellPrice": 34850,
     "stackCount": 1,
     "setID": 2103,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 521
+      "DEFENSE_SKILL_RATING": 7,
+      "EXPERTISE_RATING": 9,
+      "NATURE_RESISTANCE": 6,
+      "RESISTANCE0_NAME": 513,
+      "RESISTANCE3_NAME": 6,
+      "STAMINA": 21,
+      "STRENGTH": 13
     }
   },
   "273951": {
@@ -30608,20 +31041,26 @@
       "enUS": "Sabatons of Glory"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 4,
     "slot": "INVTYPE_FEET",
     "bind": 2,
     "icon": 7699245,
-    "sellPrice": 36724,
+    "sellPrice": 34975,
     "stackCount": 1,
     "setID": 2103,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 478
+      "DEFENSE_SKILL_RATING": 8,
+      "EXPERTISE_RATING": 7,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 470,
+      "RESISTANCE3_NAME": 7,
+      "STAMINA": 20,
+      "STRENGTH": 13
     }
   },
   "273952": {
@@ -36144,7 +36583,7 @@
     "slot": "INVTYPE_WEAPON",
     "bind": 2,
     "icon": 135321,
-    "sellPrice": 2,
+    "sellPrice": 33799,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -39275,7 +39714,7 @@
     "classID": 15,
     "subclassID": 4,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 0,
+    "bind": 1,
     "icon": 132849,
     "sellPrice": 200,
     "stackCount": 250,
@@ -45351,20 +45790,25 @@
       "enUS": "Spiritcaller Kilt"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 3,
     "slot": "INVTYPE_LEGS",
     "bind": 2,
     "icon": 7672673,
-    "sellPrice": 40208,
+    "sellPrice": 38293,
     "stackCount": 1,
     "setID": 2111,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 344
+      "INTELLECT": 19,
+      "NATURE_RESISTANCE": 9,
+      "RESISTANCE0_NAME": 338,
+      "RESISTANCE3_NAME": 9,
+      "SPELL_POWER": 27,
+      "STAMINA": 20
     }
   },
   "276539": {
@@ -45372,20 +45816,27 @@
       "enUS": "Spiritcaller Gloves"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 3,
     "slot": "INVTYPE_HAND",
     "bind": 2,
     "icon": 7672671,
-    "sellPrice": 20181,
+    "sellPrice": 19220,
     "stackCount": 1,
     "setID": 2111,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 245
+      "HIT_RATING": 9,
+      "INTELLECT": 12,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 242,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_POWER": 13,
+      "SPIRIT": 11,
+      "STAMINA": 14
     }
   },
   "276540": {
@@ -45393,20 +45844,26 @@
       "enUS": "Spiritcaller Mantle"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 3,
     "slot": "INVTYPE_SHOULDER",
     "bind": 2,
     "icon": 7672674,
-    "sellPrice": 30523,
+    "sellPrice": 29069,
     "stackCount": 1,
     "setID": 2111,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 294
+      "CRIT_RATING": 14,
+      "INTELLECT": 13,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 290,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_POWER": 12,
+      "STAMINA": 15
     }
   },
   "276541": {
@@ -45414,20 +45871,25 @@
       "enUS": "Spiritcaller Boots"
     },
     "quality": 4,
-    "itemLevel": 61,
+    "itemLevel": 60,
     "reqLevel": 60,
     "classID": 4,
     "subclassID": 3,
     "slot": "INVTYPE_FEET",
     "bind": 2,
     "icon": 7672667,
-    "sellPrice": 30639,
+    "sellPrice": 29180,
     "stackCount": 1,
     "setID": 2111,
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "RESISTANCE0_NAME": 270
+      "INTELLECT": 11,
+      "NATURE_RESISTANCE": 7,
+      "RESISTANCE0_NAME": 266,
+      "RESISTANCE3_NAME": 7,
+      "SPELL_POWER": 25,
+      "STAMINA": 14
     }
   },
   "276542": {

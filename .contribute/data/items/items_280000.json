@@ -11256,6 +11256,7 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
+      "RANGED_ATTACK_POWER": -60,
       "RESISTANCE0_NAME": 37,
       "STRENGTH": 12
     }
