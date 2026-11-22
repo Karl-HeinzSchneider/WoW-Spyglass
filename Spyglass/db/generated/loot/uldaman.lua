@@ -29,14 +29,6 @@ Data:AddBossLoot(549, { -- Ironaya
     { 274484, 0.114 }, -- Axe of Inevitable Ruin
 })
 
-Data:AddBossLoot(1887, { -- Obsidian Sentinel
-    { 274430, 0.288 }, -- Rock Sentinel Slicer
-    { 274428, 0.264 }, -- Dark Golem Breastplate
-    { 274425, 0.273 }, -- White Obsidian Wand
-    { 274485, 0.113 }, -- Axe of Lingering Dread
-    { 251400, 0.0058 }, -- Plans: Warder's Boots
-})
-
 Data:AddBossLoot(551, { -- Ancient Stone Keeper
     { 9410, 0.302 }, -- Cragfists
     { 9411, 0.324 }, -- Rockshard Pauldrons
@@ -110,25 +102,25 @@ Data:AddQuests(70, {
         { 270059 }, -- Restorer's Fine Gloves
         { 270060 }, -- Excavator Gauntlets
     } },
-    { id = 17, name = "Uldaman Reagent Run", side = "Alliance", requiredLevel = 38, xp = 6050, objective = "Bring 12 Magenta Fungus Caps to Ghak Healtouch in Thelsamar.", requires = { { id = 2500, name = "Badlands Reagent Run" } }, start = { description = "Thelsamar, Loch Modan", location = { 1432, 37, 49.2 }, npc = "Ghak Healtouch" }, turnIn = { description = "Thelsamar, Loch Modan", location = { 2548, 66.6, 79.9 }, npc = "Ghak Healtouch" }, items = {
+    { id = 17, name = "Uldaman Reagent Run", side = "Alliance", requiredLevel = 38, xp = 6050, objective = "Bring 12 Magenta Fungus Caps to Ghak Healtouch in Thelsamar.", description = "Magenta Fungus Caps can also be gathered outside the instance.", requires = { { id = 2500, name = "Badlands Reagent Run" } }, start = { description = "Thelsamar, Loch Modan", location = { 1432, 37, 49.2 }, npc = "Ghak Healtouch" }, turnIn = { description = "Thelsamar, Loch Modan", location = { 2548, 66.6, 79.9 }, npc = "Ghak Healtouch" }, items = {
         { 250947 }, -- Greater Mender's Potion
     } },
-    { id = 2202, name = "Uldaman Reagent Run", side = "Horde", requiredLevel = 36, xp = 6750, objective = "Bring 12 Magenta Fungus Caps to Jarkal Mossmeld in Kargath.", requires = { { id = 2258, name = "Badlands Reagent Run" } }, start = { description = "Kargath, Badlands", location = { 1418, 2.4, 46 }, npc = "Jarkal Mossmeld" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 2.4, 46 }, npc = "Jarkal Mossmeld" }, items = {
+    { id = 2202, name = "Uldaman Reagent Run", side = "Horde", requiredLevel = 36, xp = 6750, objective = "Bring 12 Magenta Fungus Caps to Jarkal Mossmeld in Kargath.", description = "Magenta Fungus Caps can also be gathered outside the instance.", requires = { { id = 2258, name = "Badlands Reagent Run" } }, start = { description = "Kargath, Badlands", location = { 1418, 2.4, 46 }, npc = "Jarkal Mossmeld" }, turnIn = { description = "Kargath, Badlands", location = { 1418, 2.4, 46 }, npc = "Jarkal Mossmeld" }, items = {
         { 250947 }, -- Greater Mender's Potion
     } },
-    { id = 709, name = "Solution to Doom", side = "Both", requiredLevel = 30, xp = 6150, objective = "Bring the Tablet of Ryun'eh to Theldurin the Lost.", start = { description = "Badlands", location = { 1418, 51.4, 76.4 }, npc = "Theldurin the Lost" }, turnIn = { description = "Badlands", location = { 1418, 51.4, 76.4 }, npc = "Theldurin the Lost" }, items = {
+    { id = 709, name = "Solution to Doom", side = "Both", requiredLevel = 30, xp = 6150, objective = "Bring the Tablet of Ryun'eh to Theldurin the Lost.", description = "Find the Tablet of Ryun'eh in the Ancient Chest in the excavation outside the instance.", start = { description = "Badlands", location = { 1418, 51.4, 76.4 }, npc = "Theldurin the Lost" }, turnIn = { description = "Badlands", location = { 1418, 51.4, 76.4 }, npc = "Theldurin the Lost" }, items = {
         { 4746 }, -- Doomsayer's Robe
         { 270074 }, -- Doomcaller's Pants
         { 270075 }, -- Fists of Impending Doom
     } },
-    { id = 2418, name = "Power Stones", side = "Both", requiredLevel = 30, xp = 3500, objective = "Bring 8 Dentrium Power Stones and 8 An'Alleum Power Stones to Rigglefuzz in the Badlands.", description = "The power stones drop from Shadowforge dwarves in the outer cave.", start = { description = "Badlands", location = { 1418, 42.4, 52.4 }, npc = "Rigglefuzz" }, turnIn = { description = "Badlands", location = { 1418, 42.4, 52.4 }, npc = "Rigglefuzz" }, items = {
+    { id = 2418, name = "Power Stones", side = "Both", requiredLevel = 30, xp = 3500, objective = "Bring 8 Dentrium Power Stones and 8 An'Alleum Power Stones to Rigglefuzz in the Badlands.", description = "Elite Shadowforge dwarves outside the instance can also drop the power stones.", start = { description = "Badlands", location = { 1418, 42.4, 52.4 }, npc = "Rigglefuzz" }, turnIn = { description = "Badlands", location = { 1418, 42.4, 52.4 }, npc = "Rigglefuzz" }, items = {
         { 9522 }, -- Energized Stone Circle
         { 10358 }, -- Duracin Bracers
         { 10359 }, -- Everlast Boots
         { 270055 }, -- Charged Leather Bracers
     } },
-    { id = 1360, name = "Reclaimed Treasures", side = "Alliance", requiredLevel = 33, xp = 6300, objective = "Get Krom Stoutarm's treasured possession from his chest in the North Common Hall of Uldaman, and bring it to him in Ironforge.", start = { description = "Ironforge", location = { 1455, 74.2, 9.8 }, npc = "Krom Stoutarm" }, turnIn = { description = "Ironforge", location = { 1455, 74.2, 9.8 }, npc = "Krom Stoutarm" }, items = {} },
-    { id = 2342, name = "Reclaimed Treasures", side = "Horde", requiredLevel = 33, xp = 7000, objective = "Get Patrick Garrett's family treasure from their family chest in the South Common Hall of Uldaman, and bring it to him in the Undercity.", start = { description = "Undercity", location = { 1458, 62.4, 48.4 }, npc = "Patrick Garrett" }, turnIn = { description = "Undercity", location = { 1458, 62.4, 48.4 }, npc = "Patrick Garrett" }, items = {} },
+    { id = 1360, name = "Reclaimed Treasures", side = "Alliance", requiredLevel = 33, xp = 6300, objective = "Get Krom Stoutarm's treasured possession from his chest in the North Common Hall of Uldaman, and bring it to him in Ironforge.", description = "Krom Stoutarm's treasure is in his chest outside the instance.", start = { description = "Ironforge", location = { 1455, 74.2, 9.8 }, npc = "Krom Stoutarm" }, turnIn = { description = "Ironforge", location = { 1455, 74.2, 9.8 }, npc = "Krom Stoutarm" }, items = {} },
+    { id = 2342, name = "Reclaimed Treasures", side = "Horde", requiredLevel = 33, xp = 7000, objective = "Get Patrick Garrett's family treasure from their family chest in the South Common Hall of Uldaman, and bring it to him in the Undercity.", description = "The Garrett Family Treasure is in the family chest outside the instance.", start = { description = "Undercity", location = { 1458, 62.4, 48.4 }, npc = "Patrick Garrett" }, turnIn = { description = "Undercity", location = { 1458, 62.4, 48.4 }, npc = "Patrick Garrett" }, items = {} },
     { id = 1139, name = "The Lost Tablets of Will", side = "Alliance", requiredLevel = 35, xp = 10250, objective = "Find the Tablet of Will, and return them to Advisor Belgrum in Ironforge.", requires = { { id = 762, name = "An Ambassador of Evil" } }, start = { description = "Ironforge", location = { 1455, 76.4, 10.8 }, npc = "Advisor Belgrum" }, turnIn = { description = "Ironforge", location = { 1455, 76.4, 10.8 }, npc = "Advisor Belgrum" }, items = {
         { 6723 }, -- Medal of Courage
         { 270095 }, -- Medal of Valor

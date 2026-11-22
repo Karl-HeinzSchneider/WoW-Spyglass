@@ -133,6 +133,7 @@ Data:AddBossLoot(483, { -- Ramstein the Gorger
 })
 
 Data:AddBossLoot(484, { -- Baron Rivendare
+    { 13335 }, -- Deathcharger's Reins
     { 16668, 0.132 }, -- Kilt of Elements
     { 16678, 0.09 }, -- Beaststalker's Pants
     { 16687, 0.086 }, -- Magister's Leggings
@@ -233,7 +234,7 @@ Data:AddQuests(329, {
         { 13209 }, -- Seal of the Dawn
         { 19812 }, -- Rune of the Dawn
     } },
-    { id = 5282, name = "The Restless Souls", side = "Both", requiredLevel = 55, xp = 17450, objective = "Use Egan's Blaster on the ghostly and spectral citizens of Stratholme. When the restless souls break free from their ghostly shells, use the blaster again - freedom will be theirs! Free 15 Restless Souls and return to Egan.", description = "Optional introductory quest:", start = { description = "Terrordale, Eastern Plaguelands", location = { 1423, 10.9, 27.2 }, npc = "Egan" }, turnIn = { description = "Terrordale, Eastern Plaguelands", location = { 1423, 10.9, 27.2 }, npc = "Egan" }, items = {
+    { id = 5282, name = "The Restless Souls", side = "Both", requiredLevel = 55, xp = 17450, objective = "Use Egan's Blaster on the ghostly and spectral citizens of Stratholme. When the restless souls break free from their ghostly shells, use the blaster again - freedom will be theirs! Free 15 Restless Souls and return to Egan.", requires = { { id = 5281, name = "The Restless Souls" } }, start = { description = "Terrordale, Eastern Plaguelands", location = { 1423, 10.9, 27.2 }, npc = "Egan" }, turnIn = { description = "Terrordale, Eastern Plaguelands", location = { 1423, 10.9, 27.2 }, npc = "Egan" }, items = {
         { 13315 }, -- Testament of Hope
     } },
     { id = 6163, name = "Ramstein", side = "Horde", requiredLevel = 56, xp = 9900, objective = "Travel to Stratholme and slay Ramstein the Gorger. Take his head as a souvenir for Nathanos.", description = "Optional introductory quest:", requires = { { id = 6136, name = "The Corpulent One" } }, start = { description = "Marris Stead, Eastern Plaguelands", location = { 1423, 22.2, 64.3 }, npc = "Nathanos Blightcaller" }, turnIn = { description = "Marris Stead, Eastern Plaguelands", location = { 1423, 22.2, 64.3 }, npc = "Nathanos Blightcaller" }, items = {

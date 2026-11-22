@@ -87,7 +87,7 @@
       "requiredLevel": 30,
       "xp": 2850,
       "objective": "Bring a Tablet Shard to Kin'weelay at Grom'gol Base Camp.",
-      "description": "Group quest: the Saltscale murlocs at the Vile Reef are elite.",
+      "description": "Group quest: the Saltscale murlocs at the Vile Reef are elite. The tablet is on the reef floor around 24.8, 23.0.",
       "start": {
         "npc": "Kin'weelay",
         "location": [1434, 32.3, 27.7],
@@ -127,8 +127,8 @@
       "requiredLevel": 30,
       "xp": 3150,
       "objective": "Explore just west of the Vile Reef and find the cavern entrance, then report back to Kin'weelay.",
-      "description": "The cave is in Sunken Hollow, underwater around 21, 28: the entrance to the Drowned City.",
-      "requires": [95748, 95773],
+      "description": "The underwater entrance to the Drowned City is in Sunken Hollow at 21.8, 27.6. You can complete Enemies in the Water on the same trip.",
+      "requires": [95748],
       "start": {
         "npc": "Kin'weelay",
         "location": [1434, 32.3, 27.7],
@@ -148,7 +148,7 @@
       "requiredLevel": 30,
       "xp": 2850,
       "objective": "Gather 10 Brinescale Tridents from Brinescale Skirmishers.",
-      "description": "Commander Aggro'gosh offers it once The Gurubashi Legends of Old is handed in.",
+      "description": "Commander Aggro'gosh offers it once The Gurubashi Legends of Old is handed in. The skirmishers are on the sea floor west of Grom'gol, near 22.5, 25.6.",
       "requires": [95748],
       "start": {
         "npc": "Commander Aggro'gosh",

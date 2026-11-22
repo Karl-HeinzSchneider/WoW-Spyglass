@@ -122,33 +122,7 @@
       "portrait": "Interface\\EncounterJournal\\UI-EJ-BOSS-Obsidian Sentinel",
       "npc": 7023,
       "level": 42,
-      "loot": [
-        {
-          "item": 274430,
-          "name": "Rock Sentinel Slicer",
-          "chance": 0.288
-        },
-        {
-          "item": 274428,
-          "name": "Dark Golem Breastplate",
-          "chance": 0.264
-        },
-        {
-          "item": 274425,
-          "name": "White Obsidian Wand",
-          "chance": 0.273
-        },
-        {
-          "item": 274485,
-          "name": "Axe of Lingering Dread",
-          "chance": 0.113
-        },
-        {
-          "item": 251400,
-          "name": "Plans: Warder's Boots",
-          "chance": 0.0058
-        }
-      ]
+      "loot": []
     },
     {
       "id": 551,

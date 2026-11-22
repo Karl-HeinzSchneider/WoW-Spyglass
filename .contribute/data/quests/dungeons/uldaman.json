@@ -7,6 +7,7 @@
       "requiredLevel": 38,
       "xp": 6050,
       "objective": "Bring 12 Magenta Fungus Caps to Ghak Healtouch in Thelsamar.",
+      "description": "Magenta Fungus Caps can also be gathered outside the instance.",
       "requires": [2500],
       "start": {
         "npc": "Ghak Healtouch",
@@ -85,6 +86,7 @@
       "requiredLevel": 30,
       "xp": 6150,
       "objective": "Bring the Tablet of Ryun'eh to Theldurin the Lost.",
+      "description": "Find the Tablet of Ryun'eh in the Ancient Chest in the excavation outside the instance.",
       "start": {
         "npc": "Theldurin the Lost",
         "location": [1418, 51.4, 76.4],
@@ -134,6 +136,7 @@
       "requiredLevel": 35,
       "xp": 4800,
       "objective": "Find Hammertoe Grez in Uldaman.",
+      "description": "Find Hammertoe Grez in the excavation tunnels before the instance portal.",
       "requires": [720],
       "start": {
         "npc": "Prospector Ryedol",
@@ -142,7 +145,8 @@
       },
       "turnIn": {
         "npc": "Hammertoe Grez",
-        "description": "Uldaman"
+        "location": [1418, 37.9, 10.6],
+        "description": "Uldaman excavation, before the instance portal"
       },
       "items": []
     },
@@ -153,16 +157,17 @@
       "requiredLevel": 35,
       "xp": 5500,
       "objective": "Find Hammertoe's Amulet and return it to him in Uldaman.",
+      "description": "Magregan Deepshadow drops the amulet in the excavation outside the instance.",
       "requires": [721],
       "start": {
         "npc": "Hammertoe Grez",
-        "location": [1418, 44.3, 12],
-        "description": "Uldaman excavation (outside the instance)"
+        "location": [1418, 37.9, 10.6],
+        "description": "Uldaman excavation, before the instance portal"
       },
       "turnIn": {
         "npc": "Hammertoe Grez",
-        "location": [1418, 44.3, 12],
-        "description": "Uldaman excavation (outside the instance)"
+        "location": [1418, 37.9, 10.6],
+        "description": "Uldaman excavation, before the instance portal"
       },
       "items": []
     },
@@ -172,10 +177,12 @@
       "side": "Alliance",
       "requiredLevel": 35,
       "objective": "Take Hammertoe's Amulet to Prospector Ryedol in the Badlands.",
+      "description": "Hammertoe Grez gives this quest in the excavation outside the instance.",
       "requires": [722],
       "start": {
         "npc": "Hammertoe Grez",
-        "description": "Hammertoe Grez"
+        "location": [1418, 37.9, 10.6],
+        "description": "Uldaman excavation, before the instance portal"
       },
       "turnIn": {
         "npc": "Prospector Ryedol",
@@ -326,6 +333,7 @@
       "requiredLevel": 33,
       "xp": 6300,
       "objective": "Get Krom Stoutarm's treasured possession from his chest in the North Common Hall of Uldaman, and bring it to him in Ironforge.",
+      "description": "Krom Stoutarm's treasure is in his chest outside the instance.",
       "start": {
         "npc": "Krom Stoutarm",
         "location": [1455, 74.2, 9.8],
@@ -404,7 +412,7 @@
       "objective": "Search for the original creator of the shattered necklace to learn of its potential value.",
       "start": {
         "item": 7666,
-        "description": "Shattered Necklace (drops in Uldaman)"
+        "description": "Drops from elite troggs and Shadowforge dwarves outside the instance and from troggs inside."
       },
       "turnIn": {
         "npc": "Talvash del Kissel",
@@ -458,7 +466,7 @@
       "requiredLevel": 37,
       "xp": 6300,
       "objective": "Find the ruby, sapphire, and topaz that are scattered throughout Uldaman. Once acquired, contact Talvash del Kissel remotely by using the Phial of Scrying he previously gave you.",
-      "description": "The sapphire drops from Grimlok.",
+      "description": "Complete this quest before killing Archaedas. The ruby is in the Shadowforge Stash in Galgann Firehammer's room, Grimlok drops the sapphire, and the topaz is in the Conspicuous Urn in the Lost Dwarves' room.",
       "requires": [2200],
       "start": {
         "npc": "Remains of a Paladin",
@@ -476,6 +484,7 @@
       "requiredLevel": 36,
       "xp": 6750,
       "objective": "Bring 12 Magenta Fungus Caps to Jarkal Mossmeld in Kargath.",
+      "description": "Magenta Fungus Caps can also be gathered outside the instance.",
       "requires": [2258],
       "start": {
         "npc": "Jarkal Mossmeld",
@@ -627,6 +636,7 @@
       "requiredLevel": 37,
       "xp": 4800,
       "objective": "Look for a valuable necklace within the Uldaman dig site and bring it back to Dran Droffers in Orgrimmar. The necklace may be damaged.",
+      "description": "Elite troggs and Shadowforge dwarves outside the instance can drop the necklace.",
       "start": {
         "npc": "Dran Droffers",
         "location": [1454, 59.4, 36.8],
@@ -725,6 +735,7 @@
       "requiredLevel": 33,
       "xp": 7000,
       "objective": "Get Patrick Garrett's family treasure from their family chest in the South Common Hall of Uldaman, and bring it to him in the Undercity.",
+      "description": "The Garrett Family Treasure is in the family chest outside the instance.",
       "start": {
         "npc": "Patrick Garrett",
         "location": [1458, 62.4, 48.4],
@@ -763,7 +774,7 @@
       "requiredLevel": 30,
       "xp": 3500,
       "objective": "Bring 8 Dentrium Power Stones and 8 An'Alleum Power Stones to Rigglefuzz in the Badlands.",
-      "description": "The power stones drop from Shadowforge dwarves in the outer cave.",
+      "description": "Elite Shadowforge dwarves outside the instance can also drop the power stones.",
       "start": {
         "npc": "Rigglefuzz",
         "location": [1418, 42.4, 52.4],
