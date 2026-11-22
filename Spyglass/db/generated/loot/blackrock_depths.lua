@@ -156,6 +156,7 @@ Data:AddBossLoot(2790, { -- Emperor Dagran Thaurissan
     { 11932, 0.147 }, -- Guiding Stave of Wisdom
     { 11933, 0.206 }, -- Imperial Jewel
     { 11934, 0.192 }, -- Emperor's Seal
+    { 12033 }, -- Thaurissan Family Jewels
     { 22204, 0.166 }, -- Wristguards of Renown
     { 22207, 0.182 }, -- Sash of the Grand Hunt
     { 11684, 0.012 }, -- Ironfoe

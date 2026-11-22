@@ -665,6 +665,10 @@
           "chance": 0.192
         },
         {
+          "item": 12033,
+          "name": "Thaurissan Family Jewels"
+        },
+        {
           "item": 22204,
           "name": "Wristguards of Renown",
           "chance": 0.166
