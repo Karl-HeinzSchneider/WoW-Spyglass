@@ -8843,6 +8843,47 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "219326": {
+    "names": {
+      "enUS": "Seed of Renewal"
+    },
+    "quality": 3,
+    "itemLevel": 50,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 0,
+    "slot": "INVTYPE_TRINKET",
+    "bind": 1,
+    "icon": 236155,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "219343": {
+    "names": {
+      "enUS": "Filcher's Cowl"
+    },
+    "quality": 3,
+    "itemLevel": 50,
+    "reqLevel": 0,
+    "classID": 4,
+    "subclassID": 1,
+    "slot": "INVTYPE_CLOAK",
+    "bind": 1,
+    "icon": 133754,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 11,
+      "RESISTANCE0_NAME": 36,
+      "SPIRIT": 7
+    }
+  },
   "219345": {
     "names": {
       "enUS": "Infernal Lasso"

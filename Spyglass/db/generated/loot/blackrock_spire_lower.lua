@@ -129,7 +129,7 @@ Data:AddBossLoot(-16080, { -- Mor Grayhoof
     { 22319 }, -- Tome of Divine Right
     { 22322 }, -- The Jaw Breaker
     { 22325 }, -- Belt of the Trickster
-    { 22398 }, -- #22398
+    { 22398 }, -- Idol of Rejuvenation
 })
 
 Data:AddBossLoot(-10263, { -- Burning Felguard

@@ -29322,14 +29322,13 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "AGILITY": 16,
-      "ATTACK_POWER": 30,
-      "HIT_RATING": 14,
-      "INTELLECT": 12,
-      "NATURE_RESISTANCE": 9,
+      "AGILITY": 14,
+      "INTELLECT": 16,
+      "NATURE_RESISTANCE": 10,
       "RESISTANCE0_NAME": 162,
-      "RESISTANCE3_NAME": 9,
-      "STAMINA": 19
+      "RESISTANCE3_NAME": 10,
+      "STAMINA": 21,
+      "STRENGTH": 18
     }
   },
   "273889": {
@@ -29377,14 +29376,13 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "AGILITY": 12,
-      "EXPERTISE_RATING": 9,
-      "INTELLECT": 11,
+      "AGILITY": 8,
+      "INTELLECT": 12,
       "NATURE_RESISTANCE": 7,
       "RESISTANCE0_NAME": 138,
       "RESISTANCE3_NAME": 7,
-      "STAMINA": 14,
-      "STRENGTH": 11
+      "STAMINA": 18,
+      "STRENGTH": 15
     }
   },
   "273891": {
@@ -29545,8 +29543,8 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
+      "AGILITY": 15,
       "DEFENSE_SKILL_RATING": 7,
-      "EXPERTISE_RATING": 15,
       "NATURE_RESISTANCE": 9,
       "RESISTANCE0_NAME": 162,
       "RESISTANCE3_NAME": 9,
@@ -29573,11 +29571,12 @@
     "craftingReagent": false,
     "stats": {
       "DEFENSE_SKILL_RATING": 7,
+      "EXPERTISE_RATING": 9,
       "NATURE_RESISTANCE": 7,
       "RESISTANCE0_NAME": 115,
       "RESISTANCE3_NAME": 7,
-      "STAMINA": 14,
-      "STRENGTH": 21
+      "STAMINA": 18,
+      "STRENGTH": 15
     }
   },
   "273898": {
@@ -29598,13 +29597,13 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
+      "AGILITY": 8,
       "DEFENSE_SKILL_RATING": 7,
-      "HIT_RATING": 11,
       "NATURE_RESISTANCE": 7,
       "RESISTANCE0_NAME": 138,
       "RESISTANCE3_NAME": 7,
-      "STAMINA": 17,
-      "STRENGTH": 11
+      "STAMINA": 22,
+      "STRENGTH": 13
     }
   },
   "273899": {
@@ -29626,12 +29625,12 @@
     "craftingReagent": false,
     "stats": {
       "DEFENSE_SKILL_RATING": 7,
-      "DODGE_RATING": 12,
+      "HIT_RATING": 7,
       "NATURE_RESISTANCE": 7,
       "RESISTANCE0_NAME": 127,
       "RESISTANCE3_NAME": 7,
-      "STAMINA": 16,
-      "STRENGTH": 13
+      "STAMINA": 18,
+      "STRENGTH": 15
     }
   },
   "273900": {
@@ -30536,14 +30535,14 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "AGILITY": 14,
-      "EXPERTISE_RATING": 12,
-      "INTELLECT": 15,
-      "NATURE_RESISTANCE": 9,
+      "AGILITY": 12,
+      "INTELLECT": 14,
+      "NATURE_RESISTANCE": 10,
       "RESISTANCE0_NAME": 338,
-      "RESISTANCE3_NAME": 9,
+      "RESISTANCE3_NAME": 10,
+      "SPELL_POWER": 11,
       "STAMINA": 19,
-      "STRENGTH": 16
+      "STRENGTH": 18
     }
   },
   "273933": {
@@ -30564,13 +30563,13 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "CRIT_RATING": 14,
-      "INTELLECT": 10,
+      "INTELLECT": 13,
       "NATURE_RESISTANCE": 7,
       "RESISTANCE0_NAME": 242,
       "RESISTANCE3_NAME": 7,
+      "SPELL_POWER": 12,
       "STAMINA": 15,
-      "STRENGTH": 13
+      "STRENGTH": 14
     }
   },
   "273934": {
@@ -30591,12 +30590,13 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "INTELLECT": 11,
+      "INTELLECT": 10,
       "NATURE_RESISTANCE": 7,
       "RESISTANCE0_NAME": 290,
       "RESISTANCE3_NAME": 7,
-      "STAMINA": 14,
-      "STRENGTH": 21
+      "SPELL_POWER": 11,
+      "STAMINA": 19,
+      "STRENGTH": 14
     }
   },
   "273935": {
@@ -30617,14 +30617,13 @@
     "expansionID": 0,
     "craftingReagent": false,
     "stats": {
-      "AGILITY": 11,
-      "HIT_RATING": 9,
-      "INTELLECT": 11,
+      "INTELLECT": 12,
       "NATURE_RESISTANCE": 7,
       "RESISTANCE0_NAME": 266,
       "RESISTANCE3_NAME": 7,
-      "STAMINA": 14,
-      "STRENGTH": 12
+      "SPELL_POWER": 13,
+      "STAMINA": 15,
+      "STRENGTH": 14
     }
   },
   "273936": {

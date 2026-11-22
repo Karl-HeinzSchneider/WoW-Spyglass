@@ -1786,7 +1786,7 @@ Data:AddItems({
     [2845] = { 1, 9, 4, 2, 0, "INVTYPE_WEAPON", 0, 132417, { DAMAGE_PER_SECOND = 3.75 }, 109, 1, 0, 0, false },
     [2846] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 4, 133981, nil, 0, 20, 0, 0, false },
     [2847] = { 2, 10, 4, 2, 7, "INVTYPE_WEAPON", 2, 135327, { DAMAGE_PER_SECOND = 5.4, STRENGTH = 1 }, 110, 1, 0, 0, false },
-    [2848] = { 2, 22, 17, 2, 4, "INVTYPE_WEAPON", 0, 133483, { DAMAGE_PER_SECOND = 11.15, STAMINA = 3 }, 898, 1, 0, 0, false },
+    [2848] = { 2, 22, 17, 2, 4, "INVTYPE_WEAPON", 2, 133483, { DAMAGE_PER_SECOND = 11.15, STAMINA = 3 }, 898, 1, 0, 0, false },
     [2849] = { 2, 23, 18, 2, 0, "INVTYPE_WEAPON", 2, 132408, { DAMAGE_PER_SECOND = 11.6, STRENGTH = 3 }, 917, 1, 0, 0, false },
     [2850] = { 2, 24, 19, 2, 7, "INVTYPE_WEAPON", 2, 135274, { AGILITY = 3, DAMAGE_PER_SECOND = 12.2 }, 1136, 1, 0, 0, false },
     [2851] = { 2, 11, 6, 4, 3, "INVTYPE_WAIST", 2, 132491, { RESISTANCE0_NAME = 65, STAMINA = 1 }, 56, 1, 0, 0, false },

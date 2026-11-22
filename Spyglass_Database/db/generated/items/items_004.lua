@@ -3,6 +3,7 @@ local Data = Spyglass.Data
 
 -- { quality, itemLevel, reqLevel, classID, subclassID, slot, bind, icon, stats, sellPrice, stackCount, setID, expansionID, craftingReagent }; see Data.ITEM.
 Data:AddItems({
+    [9824] = { 2, 32, 27, 4, 1, "INVTYPE_SHOULDER", 2, 135037, { RESISTANCE0_NAME = 33 }, 1599, 1, 0, 0, false },
     [9825] = { 2, 33, 28, 4, 1, "INVTYPE_LEGS", 2, 134589, { RESISTANCE0_NAME = 39 }, 2355, 1, 0, 0, false },
     [9826] = { 2, 34, 29, 4, 1, "INVTYPE_ROBE", 2, 132661, { RESISTANCE0_NAME = 46 }, 2600, 1, 0, 0, false },
     [9827] = { 2, 30, 25, 4, 2, "INVTYPE_WAIST", 2, 132498, { RESISTANCE0_NAME = 53 }, 1114, 1, 0, 0, false },
@@ -202,7 +203,7 @@ Data:AddItems({
     [10050] = { 1, 35, 0, 1, 0, "INVTYPE_BAG", 0, 133640, nil, 2500, 1, 0, 0, false },
     [10051] = { 1, 35, 0, 1, 0, "INVTYPE_BAG", 0, 133643, nil, 2500, 1, 0, 0, false },
     [10052] = { 1, 40, 0, 4, 0, "INVTYPE_BODY", 0, 135027, nil, 1500, 1, 0, 0, false },
-    [10053] = { 1, 47, 0, 4, 0, "INVTYPE_ROBE", 0, 132662, nil, 4499, 1, 0, 0, false },
+    [10053] = { 1, 47, 0, 4, 1, "INVTYPE_ROBE", 0, 132662, { RESISTANCE0_NAME = 58 }, 4499, 1, 0, 0, false },
     [10054] = { 1, 46, 0, 4, 0, "INVTYPE_BODY", 0, 135028, nil, 3000, 1, 0, 0, false },
     [10055] = { 1, 47, 0, 4, 0, "INVTYPE_BODY", 0, 135029, nil, 3000, 1, 0, 0, false },
     [10056] = { 1, 43, 0, 4, 0, "INVTYPE_BODY", 0, 135027, nil, 1500, 1, 0, 0, false },
@@ -1085,6 +1086,8 @@ Data:AddItems({
     [11418] = { 0, 1, 0, 15, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 133718, nil, 604, 5, 0, 0, false },
     [11419] = { 0, 1, 0, 15, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 132833, nil, 1900, 10, 0, 0, false },
     [11420] = { 0, 1, 0, 15, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 132920, nil, 1712, 10, 0, 0, false },
+    [11422] = { 1, 1, 0, 15, 0, "INVTYPE_NON_EQUIP_IGNORE", 1, 134143, nil, 0, 1, 0, 0, false },
+    [11423] = { 1, 1, 0, 15, 0, "INVTYPE_NON_EQUIP_IGNORE", 1, 134144, nil, 0, 1, 0, 0, false },
     [11424] = { 0, 1, 1, 2, 10, "INVTYPE_2HWEAPON", 0, 135138, { DAMAGE_PER_SECOND = 0.88 }, 2, 1, 0, 0, false },
     [11442] = { 1, 1, 0, 15, 0, "INVTYPE_NON_EQUIP_IGNORE", 4, 132597, nil, 0, 1, 0, 0, false },
     [11443] = { 1, 1, 0, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 0, 133969, nil, 0, 20, 0, 0, false },
@@ -1148,6 +1151,7 @@ Data:AddItems({
     [11590] = { 1, 40, 0, 0, 14, "INVTYPE_NON_EQUIP_IGNORE", 0, 132997, nil, 250, 5, 0, 0, false },
     [11591] = { 0, 1, 1, 2, 8, "INVTYPE_WEAPON", 0, 135280, { DAMAGE_PER_SECOND = 0.75 }, 2, 1, 0, 0, false },
     [11602] = { 1, 1, 0, 13, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 134237, nil, 0, 1, 0, 0, false },
+    [11603] = { 3, 51, 46, 2, 13, "INVTYPE_WEAPONMAINHAND", 2, 132369, { DAMAGE_PER_SECOND = 33.93 }, 30656, 1, 0, 0, false },
     [11604] = { 3, 59, 54, 4, 4, "INVTYPE_CHEST", 1, 132743, { FIRE_RESISTANCE = 19, RESISTANCE0_NAME = 817, RESISTANCE2_NAME = 19, STAMINA = 12 }, 19428, 1, 0, 0, false },
     [11605] = { 2, 58, 53, 4, 4, "INVTYPE_SHOULDER", 2, 135040, { FIRE_RESISTANCE = 10, RESISTANCE0_NAME = 514, RESISTANCE2_NAME = 10, STAMINA = 10 }, 10776, 1, 0, 0, false },
     [11606] = { 2, 56, 51, 4, 3, "INVTYPE_CHEST", 2, 132638, { FIRE_RESISTANCE = 12, RESISTANCE0_NAME = 433, RESISTANCE2_NAME = 12, STAMINA = 13 }, 19255, 1, 0, 0, false },
@@ -2499,8 +2503,4 @@ Data:AddItems({
     [13482] = { 2, 55, 0, 9, 6, "INVTYPE_NON_EQUIP_IGNORE", 1, 134942, nil, 0, 1, 0, 0, false },
     [13483] = { 2, 55, 0, 9, 6, "INVTYPE_NON_EQUIP_IGNORE", 1, 134942, nil, 0, 1, 0, 0, false },
     [13484] = { 2, 55, 0, 9, 6, "INVTYPE_NON_EQUIP_IGNORE", 1, 134942, nil, 3000, 1, 0, 0, false },
-    [13485] = { 2, 55, 0, 9, 6, "INVTYPE_NON_EQUIP_IGNORE", 1, 134942, nil, 0, 1, 0, 0, false },
-    [13486] = { 2, 55, 0, 9, 6, "INVTYPE_NON_EQUIP_IGNORE", 0, 134942, nil, 3750, 1, 0, 0, false },
-    [13487] = { 2, 55, 0, 9, 6, "INVTYPE_NON_EQUIP_IGNORE", 0, 134942, nil, 3750, 1, 0, 0, false },
-    [13488] = { 2, 55, 0, 9, 6, "INVTYPE_NON_EQUIP_IGNORE", 0, 134942, nil, 3750, 1, 0, 0, false },
 })

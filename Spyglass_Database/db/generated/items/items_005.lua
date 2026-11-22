@@ -3,6 +3,10 @@ local Data = Spyglass.Data
 
 -- { quality, itemLevel, reqLevel, classID, subclassID, slot, bind, icon, stats, sellPrice, stackCount, setID, expansionID, craftingReagent }; see Data.ITEM.
 Data:AddItems({
+    [13485] = { 2, 55, 0, 9, 6, "INVTYPE_NON_EQUIP_IGNORE", 1, 134942, nil, 0, 1, 0, 0, false },
+    [13486] = { 2, 55, 0, 9, 6, "INVTYPE_NON_EQUIP_IGNORE", 0, 134942, nil, 3750, 1, 0, 0, false },
+    [13487] = { 2, 55, 0, 9, 6, "INVTYPE_NON_EQUIP_IGNORE", 0, 134942, nil, 3750, 1, 0, 0, false },
+    [13488] = { 2, 55, 0, 9, 6, "INVTYPE_NON_EQUIP_IGNORE", 0, 134942, nil, 3750, 1, 0, 0, false },
     [13489] = { 2, 55, 0, 9, 6, "INVTYPE_NON_EQUIP_IGNORE", 0, 134942, nil, 3750, 1, 0, 0, false },
     [13490] = { 2, 56, 0, 9, 6, "INVTYPE_NON_EQUIP_IGNORE", 0, 134942, nil, 4000, 1, 0, 0, false },
     [13491] = { 2, 56, 0, 9, 6, "INVTYPE_NON_EQUIP_IGNORE", 0, 134942, nil, 4000, 1, 0, 0, false },
@@ -2499,8 +2503,4 @@ Data:AddItems({
     [16500] = { 3, 60, 55, 4, 2, "INVTYPE_WAIST", 1, 132495, { AGILITY = 15, RESISTANCE0_NAME = 95, STAMINA = 14, STRENGTH = 9 }, 6011, 1, 0, 0, false },
     [16501] = { 3, 63, 58, 4, 2, "INVTYPE_SHOULDER", 1, 135038, { AGILITY = 10, INTELLECT = 6, RESISTANCE0_NAME = 132, SPELL_POWER = 8, SPIRIT = 10, STAMINA = 10, STRENGTH = 10 }, 10479, 1, 0, 0, false },
     [16502] = { 3, 63, 58, 4, 2, "INVTYPE_LEGS", 1, 134586, { AGILITY = 12, ATTACK_POWER = 18, DODGE_RATING = 12, INTELLECT = 9, RESISTANCE0_NAME = 154, SPIRIT = 12, STAMINA = 12, STRENGTH = 12 }, 14025, 1, 0, 0, false },
-    [16503] = { 3, 63, 58, 4, 2, "INVTYPE_HEAD", 1, 133077, { AGILITY = 11, ATTACK_POWER = 16, INTELLECT = 11, RESISTANCE0_NAME = 143, SPELL_POWER = 13, SPIRIT = 9, STAMINA = 16, STRENGTH = 11 }, 10558, 1, 0, 0, false },
-    [16504] = { 3, 63, 58, 4, 2, "INVTYPE_CHEST", 1, 132722, { AGILITY = 9, CRIT_RATING = 14, INTELLECT = 8, RESISTANCE0_NAME = 176, SPELL_POWER = 16, STAMINA = 14, STRENGTH = 13 }, 14130, 1, 0, 0, false },
-    [16505] = { 3, 63, 58, 4, 2, "INVTYPE_CHEST", 1, 132720, { AGILITY = 13, CRIT_RATING = 14, RESISTANCE0_NAME = 176, STAMINA = 25 }, 14184, 1, 347, 0, false },
-    [16506] = { 3, 63, 58, 4, 2, "INVTYPE_HEAD", 1, 133077, { ATTACK_POWER = 12, DODGE_RATING = 12, HIT_RATING = 10, RESISTANCE0_NAME = 143, STAMINA = 26 }, 10676, 1, 347, 0, false },
 })

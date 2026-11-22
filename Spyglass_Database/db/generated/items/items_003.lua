@@ -483,7 +483,7 @@ Data:AddItems({
     [6783] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 4, 134235, nil, 0, 1, 0, 0, false },
     [6784] = { 2, 36, 0, 4, 2, "INVTYPE_HAND", 1, 132938, { AGILITY = 7, RESISTANCE0_NAME = 64, STAMINA = 7 }, 2031, 1, 0, 0, false },
     [6785] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 4, 133743, nil, 0, 1, 0, 0, false },
-    [6786] = { 1, 10, 0, 4, 0, "INVTYPE_ROBE", 0, 135016, nil, 59, 1, 0, 0, false },
+    [6786] = { 1, 10, 0, 4, 1, "INVTYPE_ROBE", 0, 135016, { RESISTANCE0_NAME = 18 }, 59, 1, 0, 0, false },
     [6787] = { 2, 22, 17, 4, 1, "INVTYPE_ROBE", 2, 135016, { RESISTANCE0_NAME = 36, SPIRIT = 4, STAMINA = 5 }, 466, 1, 0, 0, false },
     [6788] = { 2, 42, 35, 4, 2, "INVTYPE_WAIST", 1, 132500, { AGILITY = 8, RESISTANCE0_NAME = 65, STAMINA = 9 }, 3331, 1, 0, 0, false },
     [6789] = { 2, 42, 35, 4, 1, "INVTYPE_CLOAK", 1, 133764, { INTELLECT = 2, RESISTANCE0_NAME = 28, SPIRIT = 9 }, 4012, 1, 0, 0, false },
@@ -1181,6 +1181,7 @@ Data:AddItems({
     [7991] = { 3, 47, 0, 9, 4, "INVTYPE_NON_EQUIP_IGNORE", 0, 134939, nil, 2500, 1, 0, 0, false },
     [7992] = { 2, 44, 0, 9, 4, "INVTYPE_NON_EQUIP_IGNORE", 0, 134942, nil, 2000, 1, 0, 0, false },
     [7993] = { 2, 48, 0, 9, 4, "INVTYPE_NON_EQUIP_IGNORE", 0, 134942, nil, 2500, 1, 0, 0, false },
+    [7994] = { 2, 46, 0, 9, 4, "INVTYPE_NON_EQUIP_IGNORE", 1, 134942, nil, 100, 1, 0, 0, false },
     [7995] = { 1, 43, 0, 9, 4, "INVTYPE_NON_EQUIP_IGNORE", 1, 134939, nil, 1500, 1, 0, 0, false },
     [7996] = { 1, 20, 15, 4, 1, "INVTYPE_HEAD", 0, 133133, { FISHING = 5, RESISTANCE0_NAME = 26 }, 244, 1, 0, 0, false },
     [7997] = { 0, 15, 0, 4, 2, "INVTYPE_HEAD", 1, 133694, { RESISTANCE0_NAME = 51 }, 81, 1, 0, 0, false },
@@ -2502,5 +2503,4 @@ Data:AddItems({
     [9821] = { 2, 30, 25, 4, 1, "INVTYPE_WRIST", 2, 132610, { RESISTANCE0_NAME = 19 }, 871, 1, 0, 0, false },
     [9822] = { 2, 29, 24, 4, 1, "INVTYPE_CLOAK", 2, 133762, { RESISTANCE0_NAME = 21 }, 1192, 1, 0, 0, false },
     [9823] = { 2, 31, 26, 4, 1, "INVTYPE_HAND", 2, 132939, { RESISTANCE0_NAME = 27 }, 965, 1, 0, 0, false },
-    [9824] = { 2, 32, 27, 4, 1, "INVTYPE_SHOULDER", 2, 135037, { RESISTANCE0_NAME = 33 }, 1599, 1, 0, 0, false },
 })

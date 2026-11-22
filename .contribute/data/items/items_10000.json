@@ -1023,7 +1023,7 @@
     "itemLevel": 47,
     "reqLevel": 0,
     "classID": 4,
-    "subclassID": 0,
+    "subclassID": 1,
     "slot": "INVTYPE_ROBE",
     "bind": 0,
     "icon": 132662,
@@ -1031,7 +1031,10 @@
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
-    "craftingReagent": false
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 58
+    }
   },
   "10054": {
     "names": {
@@ -18836,6 +18839,42 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "11422": {
+    "names": {
+      "enUS": "Goblin Engineer's Renewal Gift"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134143,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "11423": {
+    "names": {
+      "enUS": "Gnome Engineer's Renewal Gift"
+    },
+    "quality": 1,
+    "itemLevel": 1,
+    "reqLevel": 0,
+    "classID": 15,
+    "subclassID": 0,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134144,
+    "sellPrice": 0,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
   "11424": {
     "names": {
       "enUS": "Monster - Staff, Wooden Handle Spiral Head"
@@ -20016,6 +20055,27 @@
     "setID": 0,
     "expansionID": 0,
     "craftingReagent": false
+  },
+  "11603": {
+    "names": {
+      "enUS": "Vilerend Slicer"
+    },
+    "quality": 3,
+    "itemLevel": 51,
+    "reqLevel": 46,
+    "classID": 2,
+    "subclassID": 13,
+    "slot": "INVTYPE_WEAPONMAINHAND",
+    "bind": 2,
+    "icon": 132369,
+    "sellPrice": 30656,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "DAMAGE_PER_SECOND": 33.93
+    }
   },
   "11604": {
     "names": {
@@ -124216,6 +124276,29 @@
       "STAMINA": 11
     }
   },
+  "18673": {
+    "names": {
+      "enUS": "Avalanchion's Stony Hide"
+    },
+    "quality": 3,
+    "itemLevel": 60,
+    "reqLevel": 55,
+    "classID": 4,
+    "subclassID": 6,
+    "slot": "INVTYPE_SHIELD",
+    "bind": 2,
+    "icon": 134949,
+    "sellPrice": 28918,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "BLOCK_VALUE": 12,
+      "RESISTANCE0_NAME": 2057,
+      "STAMINA": 16
+    }
+  },
   "18674": {
     "names": {
       "enUS": "Hardened Stone Band"
@@ -130695,7 +130778,7 @@
     "craftingReagent": false,
     "stats": {
       "DAMAGE_PER_SECOND": 41.29,
-      "INTELLECT": 16,
+      "INTELLECT": 25,
       "SPELL_POWER": 74,
       "STAMINA": 25
     }
@@ -130720,7 +130803,8 @@
     "stats": {
       "DAMAGE_PER_SECOND": 41.29,
       "INTELLECT": 25,
-      "SPELL_POWER": 99
+      "SPELL_POWER": 74,
+      "STAMINA": 25
     }
   },
   "19103": {

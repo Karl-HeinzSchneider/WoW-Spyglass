@@ -3,6 +3,11 @@ local Data = Spyglass.Data
 
 -- { quality, itemLevel, reqLevel, classID, subclassID, slot, bind, icon, stats, sellPrice, stackCount, setID, expansionID, craftingReagent }; see Data.ITEM.
 Data:AddItems({
+    [20541] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 134331, nil, 500, 20, 0, 0, false },
+    [20542] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 134943, nil, 1250, 20, 0, 0, false },
+    [20543] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 134943, nil, 1250, 20, 0, 0, false },
+    [20544] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 134943, nil, 1250, 20, 0, 0, false },
+    [20545] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 134331, nil, 500, 20, 0, 0, false },
     [20546] = { 3, 62, 0, 9, 2, "INVTYPE_NON_EQUIP_IGNORE", 0, 134941, nil, 10000, 1, 0, 0, false },
     [20547] = { 3, 62, 0, 9, 2, "INVTYPE_NON_EQUIP_IGNORE", 0, 134941, nil, 10000, 1, 0, 0, false },
     [20548] = { 3, 62, 0, 9, 2, "INVTYPE_NON_EQUIP_IGNORE", 0, 134941, nil, 10000, 1, 0, 0, false },
@@ -1187,6 +1192,7 @@ Data:AddItems({
     [22395] = { 3, 57, 52, 4, 9, "INVTYPE_RELIC", 1, 134919, nil, 12769, 1, 0, 0, false },
     [22396] = { 4, 78, 60, 4, 9, "INVTYPE_RELIC", 1, 134918, nil, 48827, 1, 0, 0, false },
     [22397] = { 3, 57, 52, 4, 8, "INVTYPE_RELIC", 1, 134912, nil, 12769, 1, 0, 0, false },
+    [22398] = { 3, 62, 57, 4, 8, "INVTYPE_RELIC", 1, 134914, nil, 16452, 1, 0, 0, false },
     [22399] = { 4, 78, 60, 4, 8, "INVTYPE_RELIC", 1, 134913, nil, 49354, 1, 0, 0, false },
     [22400] = { 3, 57, 52, 4, 7, "INVTYPE_RELIC", 1, 134917, nil, 12769, 1, 0, 0, false },
     [22401] = { 3, 62, 57, 4, 7, "INVTYPE_RELIC", 1, 134916, nil, 16452, 1, 0, 0, false },
@@ -1239,6 +1245,7 @@ Data:AddItems({
     [22469] = { 4, 88, 60, 4, 3, "INVTYPE_HAND", 1, 132959, { INTELLECT = 28, MANA_REGENERATION = 6, RESISTANCE0_NAME = 346, SPELL_HEALING_DONE = 35, STAMINA = 21 }, 77491, 1, 527, 0, false },
     [22470] = { 4, 88, 60, 4, 3, "INVTYPE_WAIST", 1, 132511, { INTELLECT = 25, MANA_REGENERATION = 7, RESISTANCE0_NAME = 311, SPELL_HEALING_DONE = 42, STAMINA = 18 }, 79846, 1, 527, 0, false },
     [22471] = { 4, 88, 60, 4, 3, "INVTYPE_WRIST", 1, 132601, { INTELLECT = 18, MANA_REGENERATION = 4, RESISTANCE0_NAME = 242, SPELL_HEALING_DONE = 33, STAMINA = 17 }, 80127, 1, 527, 0, false },
+    [22472] = { 3, 61, 56, 4, 2, "INVTYPE_FEET", 1, 132542, { AGILITY = 9, DEFENSE_SKILL_RATING = 6, RESISTANCE0_NAME = 118, STAMINA = 13, STRENGTH = 12 }, 19638, 1, 0, 0, false },
     [22476] = { 4, 92, 60, 4, 2, "INVTYPE_CHEST", 1, 132737, { ATTACK_POWER = 80, CRIT_RATING = 28, HIT_RATING = 10, RESISTANCE0_NAME = 262, STAMINA = 29 }, 165232, 1, 524, 0, false },
     [22477] = { 4, 88, 60, 4, 2, "INVTYPE_LEGS", 1, 134681, { AGILITY = 32, CRIT_RATING = 14, HIT_RATING = 10, RESISTANCE0_NAME = 221, STAMINA = 25, STRENGTH = 31 }, 136418, 1, 524, 0, false },
     [22478] = { 4, 88, 60, 4, 2, "INVTYPE_HEAD", 1, 133160, { AGILITY = 30, CRIT_RATING = 28, HIT_RATING = 10, RESISTANCE0_NAME = 205, STAMINA = 29, STRENGTH = 18 }, 92905, 1, 524, 0, false },
@@ -2496,11 +2503,4 @@ Data:AddItems({
     [216949] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 1, 133509, nil, 0, 1, 0, 0, false },
     [216950] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 1, 338485, nil, 0, 1, 0, 0, false },
     [216951] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 1, 237309, nil, 0, 1, 0, 0, false },
-    [216956] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 4, 133471, nil, 0, 1, 0, 0, false },
-    [217014] = { 2, 40, 0, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 1, 133666, nil, 0, 1, 0, 0, false },
-    [217017] = { 1, 1, 0, 15, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 134331, nil, 0, 1, 0, 0, false },
-    [217161] = { 1, 40, 35, 15, 0, "INVTYPE_NON_EQUIP_IGNORE", 1, 134939, nil, 0, 1, 0, 0, false },
-    [217244] = { 1, 41, 0, 9, 2, "INVTYPE_NON_EQUIP_IGNORE", 0, 134939, nil, 1250, 1, 0, 0, false },
-    [217249] = { 2, 39, 0, 9, 2, "INVTYPE_NON_EQUIP_IGNORE", 0, 134942, nil, 375, 1, 0, 0, false },
-    [217251] = { 2, 38, 0, 9, 2, "INVTYPE_NON_EQUIP_IGNORE", 0, 134942, nil, 350, 1, 0, 0, false },
 })

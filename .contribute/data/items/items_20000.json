@@ -35287,6 +35287,24 @@
     "expansionID": 0,
     "craftingReagent": false
   },
+  "22398": {
+    "names": {
+      "enUS": "Idol of Rejuvenation"
+    },
+    "quality": 3,
+    "itemLevel": 62,
+    "reqLevel": 57,
+    "classID": 4,
+    "subclassID": 8,
+    "slot": "INVTYPE_RELIC",
+    "bind": 1,
+    "icon": 134914,
+    "sellPrice": 16452,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
   "22399": {
     "names": {
       "enUS": "Idol of Health"
@@ -36535,6 +36553,31 @@
       "RESISTANCE0_NAME": 242,
       "SPELL_HEALING_DONE": 33,
       "STAMINA": 17
+    }
+  },
+  "22472": {
+    "names": {
+      "enUS": "Boots of Ferocity"
+    },
+    "quality": 3,
+    "itemLevel": 61,
+    "reqLevel": 56,
+    "classID": 4,
+    "subclassID": 2,
+    "slot": "INVTYPE_FEET",
+    "bind": 1,
+    "icon": 132542,
+    "sellPrice": 19638,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false,
+    "stats": {
+      "AGILITY": 9,
+      "DEFENSE_SKILL_RATING": 6,
+      "RESISTANCE0_NAME": 118,
+      "STAMINA": 13,
+      "STRENGTH": 12
     }
   },
   "22476": {

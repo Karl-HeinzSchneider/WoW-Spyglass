@@ -3,6 +3,15 @@ local Data = Spyglass.Data
 
 -- { quality, itemLevel, reqLevel, classID, subclassID, slot, bind, icon, stats, sellPrice, stackCount, setID, expansionID, craftingReagent }; see Data.ITEM.
 Data:AddItems({
+    [282658] = { 2, 32, 27, 4, 1, "INVTYPE_CLOAK", 2, 133760, { RESISTANCE0_NAME = 22, SPIRIT = 1, STRENGTH = 7 }, 1643, 1, 0, 0, false },
+    [282699] = { 2, 1, 1, 15, 4, "INVTYPE_NON_EQUIP_IGNORE", 1, 134333, nil, 0, 1, 0, 0, false },
+    [282700] = { 2, 42, 37, 2, 0, "INVTYPE_WEAPON", 2, 132392, { DAMAGE_PER_SECOND = 24.04 }, 13054, 1, 0, 0, false },
+    [282702] = { 2, 41, 36, 2, 5, "INVTYPE_2HWEAPON", 2, 133046, { DAMAGE_PER_SECOND = 30.14, STAMINA = 17 }, 15217, 1, 0, 0, false },
+    [282703] = { 2, 37, 32, 2, 15, "INVTYPE_WEAPON", 2, 134298, { DAMAGE_PER_SECOND = 19.71 }, 703, 1, 0, 0, false },
+    [282704] = { 3, 41, 36, 4, 1, "INVTYPE_SHOULDER", 1, 135036, { HIT_RATING = 10, INTELLECT = 12, RESISTANCE0_NAME = 44 }, 2223, 1, 0, 0, false },
+    [282705] = { 3, 41, 36, 4, 0, "INVTYPE_FINGER", 1, 133351, { SPELL_DAMAGE_DONE = 9, SPIRIT = 9 }, 837, 1, 0, 0, false },
+    [282706] = { 3, 44, 39, 4, 0, "INVTYPE_HOLDABLE", 1, 133974, { NATURE_RESISTANCE = -5, RESISTANCE3_NAME = -5, SPELL_DAMAGE_DONE = 8, STAMINA = 12 }, 6937, 1, 0, 0, false },
+    [282707] = { 2, 50, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 1, 134072, nil, 0, 1, 0, 0, false },
     [282710] = { 3, 30, 25, 2, 3, "INVTYPE_RANGEDRIGHT", 1, 135612, { AGILITY = 3, DAMAGE_PER_SECOND = 14.81, SPIRIT = 3 }, 3954, 1, 0, 0, false },
     [282711] = { 2, 35, 30, 4, 1, "INVTYPE_CHEST", 2, 132679, { INTELLECT = 9, RESISTANCE0_NAME = 46, STAMINA = 9 }, 2841, 1, 0, 0, false },
     [282712] = { 2, 50, 50, 9, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 133739, nil, 10000, 1, 0, 0, false },

@@ -14503,10 +14503,10 @@
     "craftingReagent": false,
     "stats": {
       "DEFENSE_SKILL_RATING": 3,
-      "INTELLECT": 5,
+      "INTELLECT": 8,
       "RESISTANCE0_NAME": 296,
-      "STAMINA": 16,
-      "STRENGTH": 8
+      "SPELL_POWER": 6,
+      "STAMINA": 16
     }
   },
   "226986": {
@@ -14528,10 +14528,10 @@
     "craftingReagent": false,
     "stats": {
       "DEFENSE_SKILL_RATING": 3,
-      "INTELLECT": 10,
+      "INTELLECT": 13,
       "RESISTANCE0_NAME": 380,
-      "STAMINA": 18,
-      "STRENGTH": 13
+      "SPELL_POWER": 12,
+      "STAMINA": 18
     }
   },
   "226987": {
@@ -14554,10 +14554,10 @@
     "stats": {
       "BLOCK_RATING": 5,
       "DEFENSE_SKILL_RATING": 5,
-      "INTELLECT": 8,
+      "INTELLECT": 12,
       "RESISTANCE0_NAME": 507,
-      "STAMINA": 18,
-      "STRENGTH": 12
+      "SPELL_POWER": 9,
+      "STAMINA": 18
     }
   },
   "226988": {
@@ -14580,10 +14580,10 @@
     "stats": {
       "BLOCK_VALUE": 14,
       "DEFENSE_SKILL_RATING": 9,
-      "INTELLECT": 14,
+      "INTELLECT": 16,
       "RESISTANCE0_NAME": 601,
-      "STAMINA": 24,
-      "STRENGTH": 16
+      "SPELL_POWER": 16,
+      "STAMINA": 24
     }
   },
   "226989": {
@@ -14605,10 +14605,10 @@
     "craftingReagent": false,
     "stats": {
       "DEFENSE_SKILL_RATING": 4,
-      "INTELLECT": 11,
+      "INTELLECT": 18,
       "RESISTANCE0_NAME": 556,
-      "STAMINA": 33,
-      "STRENGTH": 18
+      "SPELL_POWER": 13,
+      "STAMINA": 33
     }
   },
   "226990": {
@@ -14630,11 +14630,11 @@
     "craftingReagent": false,
     "stats": {
       "DEFENSE_SKILL_RATING": 5,
-      "INTELLECT": 10,
+      "INTELLECT": 11,
       "PARRY_RATING": 12,
       "RESISTANCE0_NAME": 393,
-      "STAMINA": 15,
-      "STRENGTH": 11
+      "SPELL_POWER": 12,
+      "STAMINA": 15
     }
   },
   "226991": {
@@ -14656,10 +14656,10 @@
     "craftingReagent": false,
     "stats": {
       "DEFENSE_SKILL_RATING": 3,
-      "INTELLECT": 7,
+      "INTELLECT": 12,
       "RESISTANCE0_NAME": 470,
-      "STAMINA": 26,
-      "STRENGTH": 12
+      "SPELL_POWER": 8,
+      "STAMINA": 26
     }
   },
   "226992": {
@@ -14682,10 +14682,10 @@
     "stats": {
       "DEFENSE_SKILL_RATING": 5,
       "EXPERTISE_RATING": 12,
-      "INTELLECT": 12,
+      "INTELLECT": 18,
       "RESISTANCE0_NAME": 684,
-      "STAMINA": 29,
-      "STRENGTH": 18
+      "SPELL_POWER": 14,
+      "STAMINA": 29
     }
   },
   "226993": {

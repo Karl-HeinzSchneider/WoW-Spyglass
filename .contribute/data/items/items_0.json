@@ -35857,7 +35857,7 @@
     "classID": 2,
     "subclassID": 4,
     "slot": "INVTYPE_WEAPON",
-    "bind": 0,
+    "bind": 2,
     "icon": 133483,
     "sellPrice": 898,
     "stackCount": 1,
@@ -109366,7 +109366,7 @@
     "itemLevel": 10,
     "reqLevel": 0,
     "classID": 4,
-    "subclassID": 0,
+    "subclassID": 1,
     "slot": "INVTYPE_ROBE",
     "bind": 0,
     "icon": 135016,
@@ -109374,7 +109374,10 @@
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
-    "craftingReagent": false
+    "craftingReagent": false,
+    "stats": {
+      "RESISTANCE0_NAME": 18
+    }
   },
   "6787": {
     "names": {
@@ -123536,6 +123539,24 @@
     "bind": 0,
     "icon": 134942,
     "sellPrice": 2500,
+    "stackCount": 1,
+    "setID": 0,
+    "expansionID": 0,
+    "craftingReagent": false
+  },
+  "7994": {
+    "names": {
+      "enUS": "Plans: Orcish War Leggings"
+    },
+    "quality": 2,
+    "itemLevel": 46,
+    "reqLevel": 0,
+    "classID": 9,
+    "subclassID": 4,
+    "slot": "INVTYPE_NON_EQUIP_IGNORE",
+    "bind": 1,
+    "icon": 134942,
+    "sellPrice": 100,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,

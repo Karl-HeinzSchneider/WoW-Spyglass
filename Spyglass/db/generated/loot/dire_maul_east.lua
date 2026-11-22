@@ -49,7 +49,7 @@ Data:AddBossLoot(346, { -- Alzzin the Wildshaper
 
 Data:AddBossLoot(-16097, { -- Isalien
     { 22314 }, -- Huntsman's Harpoon
-    { 22472 }, -- #22472
+    { 22472 }, -- Boots of Ferocity
     { 22315 }, -- Hammer of Revitalization
     { 22304 }, -- Ironweave Gloves
     { 22401 }, -- Libram of Hope
