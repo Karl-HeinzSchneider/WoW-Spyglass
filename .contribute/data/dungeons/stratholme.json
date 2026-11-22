@@ -576,6 +576,10 @@
       "level": 62,
       "loot": [
         {
+          "item": 13335,
+          "name": "Deathcharger's Reins"
+        },
+        {
           "item": 16668,
           "name": "Kilt of Elements",
           "chance": 0.132

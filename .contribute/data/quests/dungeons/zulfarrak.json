@@ -59,7 +59,7 @@
       "requiredLevel": 40,
       "xp": 14200,
       "objective": "Bring Gahz'rilla's Electrified Scale to Wizzle Brassbolts in the Shimmering Flats.",
-      "description": "Optional introductory quest:",
+      "description": "Optional introductory quest:\n\nTo summon Gahz'rilla, loot the Sacred Mallet from Qiaga the Keeper at the Altar of Zul (48.6, 68.0), then use it at the altar atop Jintha'Alor (58.5, 77.5). Use the resulting Mallet of Zul'Farrak on the gong by the pool.",
       "start": {
         "npc": "Wizzle Brassbolts",
         "location": [1441, 78, 77],

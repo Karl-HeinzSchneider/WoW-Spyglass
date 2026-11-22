@@ -223,7 +223,6 @@
       "requiredLevel": 55,
       "xp": 6600,
       "objective": "Find Egan. You only know that he was last seen around Stratholme.",
-      "description": "Introductory step leading to The Restless Souls.\n\nOPTIONAL, not required",
       "start": {
         "npc": "Caretaker Alen",
         "location": [1423, 71.8, 54.4],
@@ -231,6 +230,7 @@
       },
       "turnIn": {
         "npc": "Egan",
+        "location": [1423, 10.9, 27.2],
         "description": "Terrordale, Eastern Plaguelands"
       },
       "items": []
@@ -242,7 +242,7 @@
       "requiredLevel": 55,
       "xp": 17450,
       "objective": "Use Egan's Blaster on the ghostly and spectral citizens of Stratholme. When the restless souls break free from their ghostly shells, use the blaster again - freedom will be theirs! Free 15 Restless Souls and return to Egan.",
-      "description": "Optional introductory quest:",
+      "requires": [5281],
       "start": {
         "npc": "Egan",
         "location": [1423, 10.9, 27.2],
