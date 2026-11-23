@@ -46,6 +46,7 @@ Data:AddTrashLoot(2994, {
     { 287023 }, -- Iron-Wrought Cuffs
     { 287024 }, -- Mark of Captivity
     { 287025 }, -- Enchantresses' Spire
+    { 287026 }, -- Escape Plan
 })
 
 Data:AddQuests(2994, {
@@ -64,13 +65,13 @@ Data:AddQuests(2994, {
         { 279826 }, -- Marshdweller's Pants
         { 279829 }, -- Naga Scale Spaulders
     } },
-    { id = 95263, name = "Somber News", side = "Alliance", requiredLevel = 48, xp = 2850, objective = "Return to Sully McCleary in Dustwallow Marsh.", requires = { { id = 95262, name = "The Secret Prison" } }, start = { description = "Inside Alcaz Prison, once you learn what became of King Varian Wrynn" }, turnIn = { description = "Sully McCleary, in the inn in Theramore, Dustwallow Marsh (66.2, 45.2)", location = { 1445, 66.2, 45.2 }, npc = "Sully McCleary" }, items = {} },
-    { id = 96381, name = "A Bit of Wet Work", side = "Alliance", requiredLevel = 48, xp = 11550, objective = "Enter the Alcaz Prison and slay 15 Strashaz Soldiers, 8 Strashaz Enchantresses, and bring the head of Tidemistress Ca'zass to Sully McCleary.", requires = { { id = 95198, name = "The Return of the King?" } }, start = { description = "Sully McCleary, in the inn in Theramore, Dustwallow Marsh (66.2, 45.2)", location = { 1445, 66.2, 45.2 }, npc = "Sully McCleary" }, turnIn = { description = "Sully McCleary, in the inn in Theramore, Dustwallow Marsh (66.2, 45.2)", location = { 1445, 66.2, 45.2 }, npc = "Sully McCleary" }, items = {
+    { id = 95263, name = "Somber News", side = "Alliance", requiredLevel = 48, xp = 2850, objective = "Return to Sully McCleary in Dustwallow Marsh.", requires = { { id = 95262, name = "The Secret Prison" } }, start = { description = "Inside Alcaz Prison, once you learn what became of King Varian Wrynn" }, turnIn = { description = "Across the bridge outside Theramore, Dustwallow Marsh", location = { 1445, 63.4, 42.4 }, npc = "Sully McCleary" }, items = {} },
+    { id = 96381, name = "A Bit of Wet Work", side = "Alliance", requiredLevel = 48, xp = 11550, objective = "Enter the Alcaz Prison and slay 15 Strashaz Soldiers, 8 Strashaz Enchantresses, and bring the head of Tidemistress Ca'zass to Sully McCleary.", requires = { { id = 95198, name = "The Return of the King?" } }, start = { description = "Across the bridge outside Theramore, Dustwallow Marsh", location = { 1445, 63.4, 42.4 }, npc = "Sully McCleary" }, turnIn = { description = "Across the bridge outside Theramore, Dustwallow Marsh", location = { 1445, 63.4, 42.4 }, npc = "Sully McCleary" }, items = {
         { 279825 }, -- Theramore Defender's Gauntlets
         { 279826 }, -- Marshdweller's Pants
         { 279829 }, -- Naga Scale Spaulders
     } },
-    { id = 96337, name = "More Valuable Than Gold", side = "Both", requiredLevel = 48, xp = 11550, objective = "Use the note provided by Mason Connery to find his hidden treasure.", description = "The Document Box sells for 25g, and it starts State Secrets (a Horde, an Alliance and a Steamwheedle Cartel version); who takes it is not known yet.\nDon't kill The Questioner before the last boss, or you can't get this quest.", requires = { { id = 96335, name = "The Man in the Iron Chains" } }, start = { description = "Mason Connery, inside Alcaz Prison, once you free him", npc = "Mason Connery" }, turnIn = { description = "Mason Connery's treasure: a loose floorboard upstairs in the middle room of the Moonbrook inn, Westfall (43.4, 67.8)", location = { 1436, 43.4, 67.8 }, npc = "Loose Floorboard" }, items = {
+    { id = 96337, name = "More Valuable Than Gold", side = "Both", requiredLevel = 48, xp = 11550, objective = "Use the note provided by Mason Connery to find his hidden treasure.", description = "Keep the Document Box for State Secrets or sell it for 25 gold. Defeat the last boss before killing The Questioner so you can pick up this quest.", requires = { { id = 96335, name = "The Man in the Iron Chains" } }, followUps = { 96377, 96376 }, start = { description = "Mason Connery, inside Alcaz Prison, once you free him", npc = "Mason Connery" }, turnIn = { description = "Mason Connery's treasure: a loose floorboard upstairs in the middle room of the Moonbrook inn, Westfall (43.4, 67.8)", location = { 1436, 43.4, 67.8 }, npc = "Loose Floorboard" }, items = {
         { 274041 }, -- Document Box
     } },
 })

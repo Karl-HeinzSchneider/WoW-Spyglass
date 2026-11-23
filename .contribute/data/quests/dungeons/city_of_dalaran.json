@@ -154,6 +154,7 @@
       },
       "turnIn": {
         "npc": "Magus Wordeen Voidglare",
+        "location": [1424, 61.5, 20.7],
         "description": "Tarren Mill, Hillsbrad Foothills."
       },
       "items": [

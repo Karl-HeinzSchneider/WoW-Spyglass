@@ -401,12 +401,13 @@
       "class": "Shaman",
       "requiredLevel": 30,
       "objective": "Defeat Charlga Razorflank in Razorfen Kraul and collect information on the quilboar's plans.",
-      "description": "The Razorfen Kraul step. After Call of Air, Prate Cloudseer sends you to Rau Cliffrunner. It can't be shared on the Horde side.",
+      "description": "Prate Cloudseer offers this quest after Call of Air. Turn it in to Rau Cliffrunner at Freewind Post.",
+      "requires": [1531],
       "followUps": [79364, 79361, 79366, 79442],
       "start": {
-        "npc": "Rau Cliffrunner",
-        "location": [1441, 46, 51.6],
-        "description": "Freewind Post, Thousand Needles"
+        "npc": "Prate Cloudseer",
+        "location": [1441, 53, 42],
+        "description": "The Weathered Nook, Thousand Needles"
       },
       "turnIn": {
         "npc": "Rau Cliffrunner",
@@ -656,6 +657,27 @@
         "npc": "Thun'grim Firegaze",
         "location": [1413, 57, 30],
         "description": "hills east of the Crossroads, The Barrens (57, 30)"
+      },
+      "items": []
+    },
+    {
+      "id": 1531,
+      "name": "Call of Air",
+      "side": "Horde",
+      "class": "Shaman",
+      "requiredLevel": 30,
+      "xp": 2450,
+      "objective": "Find Prate Cloudseer in Thousand Needles.",
+      "description": "Xanis Flameweaver in Thunder Bluff and Alaana Stormwalker in Mulgore also offer this quest.",
+      "start": {
+        "npc": "Searn Firewarder",
+        "location": [1454, 38, 37.7],
+        "description": "Orgrimmar"
+      },
+      "turnIn": {
+        "npc": "Prate Cloudseer",
+        "location": [1441, 53, 42],
+        "description": "The Weathered Nook, Thousand Needles"
       },
       "items": []
     }

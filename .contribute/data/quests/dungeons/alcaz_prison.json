@@ -245,8 +245,8 @@
       },
       "turnIn": {
         "npc": "Sully McCleary",
-        "location": [1445, 66.2, 45.2],
-        "description": "Sully McCleary, in the inn in Theramore, Dustwallow Marsh (66.2, 45.2)"
+        "location": [1445, 63.4, 42.4],
+        "description": "Across the bridge outside Theramore, Dustwallow Marsh"
       },
       "items": []
     },
@@ -305,8 +305,8 @@
       },
       "turnIn": {
         "npc": "Sully McCleary",
-        "location": [1445, 66.2, 45.2],
-        "description": "Sully McCleary, in the inn in Theramore, Dustwallow Marsh (66.2, 45.2)"
+        "location": [1445, 63.4, 42.4],
+        "description": "Across the bridge outside Theramore, Dustwallow Marsh"
       },
       "items": []
     },
@@ -321,8 +321,8 @@
       "followUps": [95263],
       "start": {
         "npc": "Sully McCleary",
-        "location": [1445, 66.2, 45.2],
-        "description": "Sully McCleary, in the inn in Theramore, Dustwallow Marsh (66.2, 45.2)"
+        "location": [1445, 63.4, 42.4],
+        "description": "Across the bridge outside Theramore, Dustwallow Marsh"
       },
       "turnIn": {
         "description": "Inside Alcaz Prison (who takes it is not known yet)"
@@ -339,13 +339,13 @@
       "requires": [95198],
       "start": {
         "npc": "Sully McCleary",
-        "location": [1445, 66.2, 45.2],
-        "description": "Sully McCleary, in the inn in Theramore, Dustwallow Marsh (66.2, 45.2)"
+        "location": [1445, 63.4, 42.4],
+        "description": "Across the bridge outside Theramore, Dustwallow Marsh"
       },
       "turnIn": {
         "npc": "Sully McCleary",
-        "location": [1445, 66.2, 45.2],
-        "description": "Sully McCleary, in the inn in Theramore, Dustwallow Marsh (66.2, 45.2)"
+        "location": [1445, 63.4, 42.4],
+        "description": "Across the bridge outside Theramore, Dustwallow Marsh"
       },
       "items": [
         {
@@ -369,8 +369,9 @@
       "requiredLevel": 48,
       "xp": 11550,
       "objective": "Use the note provided by Mason Connery to find his hidden treasure.",
-      "description": "The Document Box sells for 25g, and it starts State Secrets (a Horde, an Alliance and a Steamwheedle Cartel version); who takes it is not known yet.\nDon't kill The Questioner before the last boss, or you can't get this quest.",
+      "description": "Keep the Document Box for State Secrets or sell it for 25 gold. Defeat the last boss before killing The Questioner so you can pick up this quest.",
       "requires": [96335],
+      "followUps": [96377, 96376],
       "start": {
         "npc": "Mason Connery",
         "description": "Mason Connery, inside Alcaz Prison, once you free him"
@@ -404,6 +405,56 @@
         "description": "Mason Connery, inside Alcaz Prison"
       },
       "items": []
+    },
+    {
+      "id": 96377,
+      "name": "State Secrets",
+      "side": "Alliance",
+      "requiredLevel": 48,
+      "xp": 6550,
+      "objective": "Show the Document Box to Renzik \"The Shiv\".",
+      "requires": [96337],
+      "start": {
+        "npc": "Renzik \"The Shiv\"",
+        "location": [1453, 78.3, 71.1],
+        "description": "Upstairs at SI:7, Old Town, Stormwind"
+      },
+      "turnIn": {
+        "npc": "Renzik \"The Shiv\"",
+        "location": [1453, 78.3, 71.1],
+        "description": "Upstairs at SI:7, Old Town, Stormwind"
+      },
+      "items": [
+        {
+          "item": 279450,
+          "name": "Fractured Insignia"
+        }
+      ]
+    },
+    {
+      "id": 96376,
+      "name": "State Secrets",
+      "side": "Horde",
+      "requiredLevel": 48,
+      "xp": 6550,
+      "objective": "Show the Document Box to Nazgrel.",
+      "requires": [96337],
+      "start": {
+        "npc": "Nazgrel",
+        "location": [1454, 32.3, 35.8],
+        "description": "Grommash Hold, Orgrimmar"
+      },
+      "turnIn": {
+        "npc": "Nazgrel",
+        "location": [1454, 32.3, 35.8],
+        "description": "Grommash Hold, Orgrimmar"
+      },
+      "items": [
+        {
+          "item": 279450,
+          "name": "Fractured Insignia"
+        }
+      ]
     }
   ]
 }

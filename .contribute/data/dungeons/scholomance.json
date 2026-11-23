@@ -1334,6 +1334,7 @@
       "name": "Death Knight Darkreaver",
       "npc": 14516,
       "level": 62,
+      "quests": [8258, 97169],
       "loot": [
         {
           "item": 18758,
@@ -1460,5 +1461,5 @@
       "name": "Pattern: Pristine Scorpid Leggings"
     }
   ],
-  "quests": [5466, 5343, 5341, 4771, 5529, 7629, 7647, 7668]
+  "quests": [5466, 5343, 5341, 4771, 5529, 7629, 7647, 8258, 97169]
 }

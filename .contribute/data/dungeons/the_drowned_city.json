@@ -207,6 +207,10 @@
           "item": 286658,
           "name": "Umbral Scaled Belt",
           "chance": 0.503
+        },
+        {
+          "item": 271718,
+          "name": "Linken's Boots of Iron"
         }
       ]
     },
@@ -225,6 +229,10 @@
           "item": 286651,
           "name": "Flamestarter's Signet",
           "chance": 0.551
+        },
+        {
+          "item": 271718,
+          "name": "Linken's Boots of Iron"
         }
       ]
     }

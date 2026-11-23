@@ -478,7 +478,7 @@ Data:AddBoss(2812, { instanceID = 289, order = 11000, portrait = "Interface\\Enc
 Data:AddBoss(2807, { instanceID = 289, order = 11250, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lord Alexei Barov", level = 60 }) -- Lord Alexei Barov
 Data:AddBoss(2806, { instanceID = 289, order = 11500, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Lady Illucia Barov", level = 60 }) -- Lady Illucia Barov
 Data:AddBoss(2801, { instanceID = 289, order = 12000, portrait = "Interface\\EncounterJournal\\UI-EJ-BOSS-Darkmaster Gandling", level = 61 }) -- Darkmaster Gandling
-Data:AddBoss(-14516, { instanceID = 289, level = 62 }) -- Death Knight Darkreaver
+Data:AddBoss(-14516, { instanceID = 289, level = 62, quests = { 8258, 97169 } }) -- Death Knight Darkreaver
 
 -- Zul'Gurub
 Data:AddInstance(309, {

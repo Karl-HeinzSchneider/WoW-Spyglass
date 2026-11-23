@@ -54,11 +54,13 @@ Data:AddBossLoot(-264177, { -- Gill
 Data:AddBossLoot(-264172, { -- Umbra
     { 286662, 0.497 }, -- Deep-Dweller's Grips
     { 286658, 0.503 }, -- Umbral Scaled Belt
+    { 271718 }, -- Linken's Boots of Iron
 })
 
 Data:AddBossLoot(-260468, { -- "Pyromancer" Braxton
     { 286650, 0.449 }, -- Pyromancer's Baton
     { 286651, 0.551 }, -- Flamestarter's Signet
+    { 271718 }, -- Linken's Boots of Iron
 })
 
 Data:AddTrashLoot(2970, {

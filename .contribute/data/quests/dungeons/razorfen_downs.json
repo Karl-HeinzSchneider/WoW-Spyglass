@@ -111,7 +111,7 @@
       "requiredLevel": 28,
       "xp": 8200,
       "objective": "Kill 8 Razorfen Battleguard, 8 Razorfen Thornweavers, and 8 Death's Head Cultists and return to Myriam Moonsinger near the entrance to Razorfen Downs.",
-      "description": "These mobs are outside the instance, around the entrance.",
+      "description": "These mobs are outside the instance, around the entrance. Complete this step outside the instance.",
       "start": {
         "npc": "Myriam Moonsinger",
         "location": [1413, 49, 94.8],
