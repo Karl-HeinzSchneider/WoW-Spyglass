@@ -232,7 +232,7 @@
       "requiredLevel": 47,
       "xp": 13200,
       "objective": "Bring Varrox Bleakhoof's Head to Gatekeeper Rageroar at Ursolan.",
-      "description": "Varrox Bleakhoof, the last boss, has the head. Needs Timbermaw Hold reputation Neutral or better. The required level isn't confirmed yet.",
+      "description": "Varrox Bleakhoof drops the head. Requires Neutral or better reputation with Timbermaw Hold.",
       "requires": [86814],
       "start": {
         "npc": "Gatekeeper Rageroar",

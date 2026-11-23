@@ -97,7 +97,7 @@ Data:AddQuests(2974, {
         { 279891 }, -- Guidance of Ursoc
         { 279892 }, -- Wisdom of Ursol
     } },
-    { id = 92065, name = "Blackmaw Reclamation", side = "Both", requiredLevel = 47, xp = 13200, objective = "Bring Varrox Bleakhoof's Head to Gatekeeper Rageroar at Ursolan.", description = "Varrox Bleakhoof, the last boss, has the head. Needs Timbermaw Hold reputation Neutral or better. The required level isn't confirmed yet.", requires = { { id = 86814, name = "Blackmaw Counter-Offensive" } }, start = { description = "Gatekeeper Rageroar, Ursolan (probably; he takes the head)", location = { 1447, 42.4, 20.2 }, npc = "Gatekeeper Rageroar" }, turnIn = { description = "Ursolan", location = { 1447, 42.4, 20.2 }, npc = "Gatekeeper Rageroar" }, items = {
+    { id = 92065, name = "Blackmaw Reclamation", side = "Both", requiredLevel = 47, xp = 13200, objective = "Bring Varrox Bleakhoof's Head to Gatekeeper Rageroar at Ursolan.", description = "Varrox Bleakhoof drops the head. Requires Neutral or better reputation with Timbermaw Hold.", requires = { { id = 86814, name = "Blackmaw Counter-Offensive" } }, start = { description = "Gatekeeper Rageroar, Ursolan (probably; he takes the head)", location = { 1447, 42.4, 20.2 }, npc = "Gatekeeper Rageroar" }, turnIn = { description = "Ursolan", location = { 1447, 42.4, 20.2 }, npc = "Gatekeeper Rageroar" }, items = {
         { 260216 }, -- Ouroboros Ring
         { 260217 }, -- Eagle's Head Signet
         { 260218 }, -- Malefactor's End

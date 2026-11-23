@@ -84,7 +84,7 @@ Data:AddQuests(2959, {
         { 279840 }, -- Renewing Footpads
         { 279841 }, -- Defender of Dalaran
     } },
-    { id = 96984, name = "Heart of Disruption", side = "Horde", requiredLevel = 30, xp = 9400, objective = "Collect the Arcane Mote in the City of Dalaran for Magus Wordeen Voidglare in Tarren Mill.", description = "Horde Dalaran attunement. Stone Tokens and Bracers of Binding can be done alongside the chain, but they are optional and are not required for attunement.", requires = { { id = 92434, name = "Blood in the Streets" } }, start = { description = "Lordamere Lake near Dalaran.", location = { 1416, 7.7, 58.8 }, npc = "Image of Archmage Modera" }, turnIn = { description = "Tarren Mill, Hillsbrad Foothills.", npc = "Magus Wordeen Voidglare" }, items = {
+    { id = 96984, name = "Heart of Disruption", side = "Horde", requiredLevel = 30, xp = 9400, objective = "Collect the Arcane Mote in the City of Dalaran for Magus Wordeen Voidglare in Tarren Mill.", description = "Horde Dalaran attunement. Stone Tokens and Bracers of Binding can be done alongside the chain, but they are optional and are not required for attunement.", requires = { { id = 92434, name = "Blood in the Streets" } }, start = { description = "Lordamere Lake near Dalaran.", location = { 1416, 7.7, 58.8 }, npc = "Image of Archmage Modera" }, turnIn = { description = "Tarren Mill, Hillsbrad Foothills.", location = { 1424, 61.5, 20.7 }, npc = "Magus Wordeen Voidglare" }, items = {
         { 279842 }, -- Battle Spaulders
         { 279843 }, -- Enchanted Sandals
         { 279844 }, -- Striking Staff

@@ -157,7 +157,7 @@
       "requiredLevel": 35,
       "xp": 5500,
       "objective": "Find Hammertoe's Amulet and return it to him in Uldaman.",
-      "description": "Magregan Deepshadow drops the amulet in the excavation outside the instance.",
+      "description": "Magregan Deepshadow, a level 38 elite, drops the amulet in the excavation outside the instance near 39.0, 19.7 in the Badlands.",
       "requires": [721],
       "start": {
         "npc": "Hammertoe Grez",

@@ -130,6 +130,7 @@
       "name": "Rage of Blood",
       "requiredLevel": 60,
       "objective": "Bring 30 bottles of Raging Beast's Blood to Mor'zul Bloodbringer in the Burning Steppes.",
+      "requires": [7562],
       "start": {
         "npc": "Mor'zul Bloodbringer",
         "location": [1428, 12.6, 31.4],
@@ -469,6 +470,23 @@
       "turnIn": {
         "npc": "Lord Grayson Shadowbreaker",
         "description": "Stormwind"
+      },
+      "items": []
+    },
+    {
+      "id": 7562,
+      "name": "Mor'zul Bloodbringer",
+      "side": "Both",
+      "class": "Warlock",
+      "requiredLevel": 60,
+      "objective": "Speak with Mor'zul Bloodbringer in the Burning Steppes.",
+      "start": {
+        "description": "Speak to your demon trainer in Stormwind, Ironforge, Undercity, or Orgrimmar."
+      },
+      "turnIn": {
+        "npc": "Mor'zul Bloodbringer",
+        "location": [1428, 12.6, 31.4],
+        "description": "Burning Steppes"
       },
       "items": []
     }

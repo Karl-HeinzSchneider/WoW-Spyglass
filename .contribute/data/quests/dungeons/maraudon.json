@@ -44,7 +44,7 @@
       "requiredLevel": 41,
       "xp": 10250,
       "objective": "Fill the Coated Cerulean Vial at the orange crystal pool in Maraudon. Use the Filled Cerulean Vial on the Vylestem Vines to force the corrupted Noxxious Scion to emerge. Heal 8 plants by killing these Noxxious Scion, then return to Vark Battlescar in Shadowprey Village.",
-      "description": "Fill the Coated Cerulean Vial at the orange crystal pool in the outer caves, then use it on Vylestem Vines inside (orange side) and kill the Noxxious Scions to heal 8 plants.",
+      "description": "Fill the Coated Cerulean Vial at the orange crystal pool in the outer caves, then use it on Vylestem Vines inside (orange side) and kill the Noxxious Scions to heal 8 plants. Use the Filled Cerulean Vial on Vylestem Vines in the orange wing. The vines cannot be targeted.",
       "start": {
         "npc": "Vark Battlescar",
         "location": [1443, 23.2, 70.2],
@@ -77,7 +77,7 @@
       "requiredLevel": 41,
       "xp": 10250,
       "objective": "Fill the Coated Cerulean Vial at the orange crystal pool in Maraudon. Use the Filled Cerulean Vial on the Vylestem Vines to force the corrupted Noxxious Scion to emerge. Heal 8 plants by killing these Noxxious Scion, then return to Talendria in Nijel's Point.",
-      "description": "Fill the Coated Cerulean Vial at the orange crystal pool in the outer caves, then use it on Vylestem Vines inside (orange side) and kill the Noxxious Scions to heal 8 plants.",
+      "description": "Fill the Coated Cerulean Vial at the orange crystal pool in the outer caves, then use it on Vylestem Vines inside (orange side) and kill the Noxxious Scions to heal 8 plants. Use the Filled Cerulean Vial on Vylestem Vines in the orange wing. The vines cannot be targeted.",
       "start": {
         "npc": "Talendria",
         "location": [1443, 68.4, 8.8],
@@ -262,7 +262,7 @@
       "requiredLevel": 39,
       "xp": 6750,
       "objective": "Collect 10 Shadowshard Fragments from Maraudon and return them to Uthel'nay in Orgrimmar.",
-      "description": "Shadowshard elementals in the outer purple-crystal caves. It can be done without entering the instance.",
+      "description": "Shadowshard elementals in the outer purple-crystal caves. It can be done without entering the instance. Complete this step outside the instance.",
       "start": {
         "npc": "Uthel'nay",
         "location": [1454, 38.8, 85.4],
@@ -291,7 +291,7 @@
       "requiredLevel": 39,
       "xp": 6750,
       "objective": "Collect 10 Shadowshard Fragments from Maraudon and return them to Archmage Tervosh in Theramore on the coast of Dustwallow Marsh.",
-      "description": "Shadowshard elementals in the outer purple-crystal caves. It can be done without entering the instance.",
+      "description": "Shadowshard elementals in the outer purple-crystal caves. It can be done without entering the instance. Complete this step outside the instance.",
       "start": {
         "npc": "Archmage Tervosh",
         "location": [1445, 66.4, 49.3],

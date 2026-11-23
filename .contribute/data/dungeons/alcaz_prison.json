@@ -180,6 +180,10 @@
     {
       "item": 287025,
       "name": "Enchantresses' Spire"
+    },
+    {
+      "item": 287026,
+      "name": "Escape Plan"
     }
   ],
   "quests": [96772, 95483, 96334, 96332, 95263, 96381, 96337]
