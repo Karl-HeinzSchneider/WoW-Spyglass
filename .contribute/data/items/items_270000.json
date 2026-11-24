@@ -11210,7 +11210,7 @@
   },
   "272432": {
     "names": {
-      "enUS": "Totem of the Storm"
+      "enUS": "Totem of the Maelstrom"
     },
     "quality": 3,
     "itemLevel": 65,
@@ -36162,7 +36162,7 @@
     "slot": "INVTYPE_RANGEDRIGHT",
     "bind": 1,
     "icon": 135469,
-    "sellPrice": 13687,
+    "sellPrice": 6844,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -36202,7 +36202,7 @@
     "slot": "INVTYPE_CHEST",
     "bind": 1,
     "icon": 132745,
-    "sellPrice": 11986,
+    "sellPrice": 5993,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -36247,7 +36247,7 @@
     "slot": "INVTYPE_2HWEAPON",
     "bind": 1,
     "icon": 132395,
-    "sellPrice": 21568,
+    "sellPrice": 10784,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,
@@ -36497,7 +36497,7 @@
     "slot": "INVTYPE_2HWEAPON",
     "bind": 1,
     "icon": 132392,
-    "sellPrice": 23400,
+    "sellPrice": 11700,
     "stackCount": 1,
     "setID": 0,
     "expansionID": 0,

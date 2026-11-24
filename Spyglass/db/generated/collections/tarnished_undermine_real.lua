@@ -50,5 +50,5 @@ Data:AddListLoot("collections", "tarnished_undermine_real", {
     { 272433, costs = { { amount = 50, icon = 133799, item = 226404 } }, group = "Idols, Librams and Totems" }, -- Burning Totem
     { 272431, costs = { { amount = 50, icon = 133799, item = 226404 } }, group = "Idols, Librams and Totems" }, -- Tidal Totem
     { 228176, costs = { { amount = 15, icon = 133799, item = 226404 } }, group = "Idols, Librams and Totems" }, -- Totem of Thunder
-    { 272432, costs = { { amount = 50, icon = 133799, item = 226404 } }, group = "Idols, Librams and Totems" }, -- Totem of the Storm
+    { 272432, costs = { { amount = 50, icon = 133799, item = 226404 } }, group = "Idols, Librams and Totems" }, -- Totem of the Maelstrom
 })
