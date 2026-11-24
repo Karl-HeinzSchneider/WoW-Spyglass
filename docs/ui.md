@@ -341,12 +341,21 @@ first), as wide as the tooltip, in the recipe popup's look (tooltip border over
   mount instead: the scene switches to the mount's `uiModelSceneID` and its `unwrapped` actor gets
   the mount's creature display, without a rider.
 
+## Best in Slot
+
+The Best in Slot category opens class folders and their specializations. A populated
+specialization offers separate loadouts, each displayed in two equipment columns with named
+slots. The right pane switches between Best in Slot and Low Effort when both are available.
+Gear pages keep the standard item row interactions, including hover tooltips, shift-click
+item links, and alt-click to add or remove an item from the active list.
+
 ## Item tooltips (`tooltip.lua`)
 
 `app.tooltip`, an Ace module, appends an item's sources (`Data:GetItemSources` kinds `boss`,
 `trash`, `quest`, `recipe`, and list rows with `costs`) to every item tooltip. After a blank line comes one gold line per
 user list that has the item and is shown in tooltips, with the list's marker: `[star] Favorite`,
-`[skull] Warrior BiS`. Then the instance name in
+`[skull] Warrior BiS`. Built-in gear recommendations follow, with one line per specialization
+listing every variant that includes the item. Then the instance name in
 gold over its bosses, "Trash" and `Quest: <title>` lines, indented and sorted by encounter order.
 Drops start with the `ParagonReputation_Bag` atlas (a loot sack, used by the Camelot reputation
 frame), quests with `Interface\GossipFrame\AvailableQuestIcon`. Then one gold
