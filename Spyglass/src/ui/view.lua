@@ -452,7 +452,7 @@ function SpyglassListRowMixin:InitItem(view, node)
         name = name,
         icon = icon,
         quality = quality,
-        sub = slot,
+        sub = node.gearSlot or slot,
         type = kind,
         subInvalid = slotInvalid,
         typeInvalid = typeInvalid,
@@ -2264,6 +2264,9 @@ local COLUMNS = {
 ---@param node Spyglass.Node?
 ---@return integer
 function SpyglassViewMixin:GetColumns(node)
+    if node and node.display == "gear" then
+        return 2
+    end
     local range = COLUMNS[entryKindOf(node)]
     local columns = node and node.columns or range[1]
     return math.max(1, math.min(range[2], columns))
@@ -2320,10 +2323,11 @@ function SpyglassViewMixin:Render()
 
     self:RefreshBreadcrumbs()
     -- The footer's filters and active list act on items; the options page has none.
-    self.ClassFilter:SetShown(not isOptions)
-    self.ClassFilterMode:SetShown(not isOptions)
-    self.TransmogFilter:SetShown(not isOptions)
-    self.RecipeFilter:SetShown(not isOptions)
+    local showFilters = not isOptions and (not node or node.display ~= "gear")
+    self.ClassFilter:SetShown(showFilters)
+    self.ClassFilterMode:SetShown(showFilters)
+    self.TransmogFilter:SetShown(showFilters)
+    self.RecipeFilter:SetShown(showFilters)
     self.ActiveList:SetShown(not isOptions)
     self.ClassFilter:Update()
     self.ClassFilterMode:Update()
@@ -2399,6 +2403,22 @@ function SpyglassViewMixin:BuildElements(node)
     local elements = {}
     self.showsQuests = false
     if not node then
+        return elements
+    end
+
+    -- Gear recommendations retain their slot positions regardless of the tab's loot filters.
+    if node.display == "gear" then
+        local previousRow
+        for _, entry in ipairs(getNodeChildren(self, node)) do
+            if not entry.hidden then
+                elements[#elements + 1] = {
+                    kind = "row",
+                    node = entry,
+                    startLine = entry.gearRow ~= previousRow,
+                }
+                previousRow = entry.gearRow
+            end
+        end
         return elements
     end
 
@@ -2679,6 +2699,8 @@ function SpyglassViewMixin:RenderPage(page, range)
     page.subheaderPool:ReleaseAll()
     page.questPool:ReleaseAll()
     page.groupPool:ReleaseAll()
+    local node = self:GetCurrentNode()
+    local applyFilters = not node or node.display ~= "gear"
     for i = range and range.first or 1, range and range.last or 0 do
         local element = layout.element[i]
         local frame
@@ -2706,7 +2728,7 @@ function SpyglassViewMixin:RenderPage(page, range)
         end
         if element.node then
             -- Pooled frames come back from other lists: reset what fading changed.
-            local faded = self:IsFaded(element.node)
+            local faded = applyFilters and self:IsFaded(element.node)
             frame:SetAlpha(faded and FADED_ALPHA or 1)
             frame.Icon:SetDesaturated(faded)
         end

@@ -7,7 +7,7 @@ local Data = app.data
 -- Adds where an item comes from to every item tooltip: one block per instance, the instance's
 -- name over the bosses, trash and quests that give the item, a loot sack before drops and the
 -- quest giver's "!" before quests; then one line per profession whose recipes make the item.
--- First, one line per list of the user's that has the item (app.lists, those shown in tooltips).
+-- First, the user's lists shown in tooltips and the built-in gear recommendations.
 --
 --   [star] Favorite
 --   [skull] Warrior BiS
@@ -54,6 +54,47 @@ end
 
 -- Order of the kinds under one instance.
 local BOSS, TRASH, QUEST = 1, 2, 3
+
+-- Index the same gear nodes the browser draws. Items in both variants get one line per spec.
+---@type table<integer, string[]>?
+local bisLines
+
+---@param itemID integer
+---@return string[]?
+local function getBiSLines(itemID)
+    if not bisLines then
+        local def = app.api:GetModule("bis")
+        bisLines = {}
+        for _, class in ipairs(def and def.children or {}) do
+            for _, spec in ipairs(class.children or {}) do
+                local byItem = {}
+                for _, variant in ipairs(spec.children or {}) do
+                    if variant.display == "gear" then
+                        local seen = {}
+                        for _, entry in ipairs(variant.children or {}) do
+                            local id = entry.itemID
+                            if id and not seen[id] then
+                                seen[id] = true
+                                byItem[id] = byItem[id] or {}
+                                byItem[id][#byItem[id] + 1] = variant.name or ""
+                            end
+                        end
+                    end
+                end
+                for id, variants in pairs(byItem) do
+                    local lines = bisLines[id] or {}
+                    lines[#lines + 1] = ("%s %s (%s)"):format(
+                        spec.name or "",
+                        class.name or "",
+                        table.concat(variants, ", ")
+                    )
+                    bisLines[id] = lines
+                end
+            end
+        end
+    end
+    return bisLines[itemID]
+end
 
 ---@class Spyglass.Tooltip : AceModule
 local module = {}
@@ -241,7 +282,8 @@ local function hasPvPRankLine(data, rankText)
     local rankType = types and types.PvPRank
     local rankLabel = "(" .. rankText .. ")"
     for _, line in ipairs(data and data.lines or {}) do
-        if (rankType ~= nil and line.requirementType == rankType)
+        if
+            (rankType ~= nil and line.requirementType == rankType)
             or (line.leftText and line.leftText:find(rankLabel, 1, true))
         then
             return true
@@ -322,14 +364,18 @@ function module:AddSources(tooltip, itemID, tooltipData)
     end
     local crafted = craftedLines(sources)
     local lists = listLines(itemID)
+    local bis = getBiSLines(itemID)
     local costs = costLines(sources)
-    if #lines == 0 and #crafted == 0 and #lists == 0 and #costs == 0 then
+    if #lines == 0 and #crafted == 0 and #lists == 0 and not bis and #costs == 0 then
         return
     end
     table.sort(lines, lineBefore)
 
     tooltip:AddLine(" ")
     for _, text in ipairs(lists) do
+        tooltip:AddLine(text, NORMAL_FONT_COLOR:GetRGB())
+    end
+    for _, text in ipairs(bis or {}) do
         tooltip:AddLine(text, NORMAL_FONT_COLOR:GetRGB())
     end
     local instanceID
@@ -354,6 +400,9 @@ end
 -- Hooks the item tooltips once. Tooltips built by the tooltip data handler report every item
 -- they show through TooltipDataProcessor; older ones fire OnTooltipSetItem instead.
 function module:OnInitialize()
+    app.api.RegisterCallback(self, "OnModulesChanged", function()
+        bisLines = nil
+    end)
     if TooltipDataProcessor and Enum.TooltipDataType and GameTooltip.ProcessInfo then
         TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, function(tooltip, data)
             if tooltip.AddLine and data then

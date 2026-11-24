@@ -46,10 +46,12 @@ local dungeon = Spyglass.Folder("Gnomeregan", "Interface\\Icons\\...", { ...boss
 Spyglass:AddToModule("dungeons", dungeon)
 ```
 
-Built-in module ids: `"raids"`, `"dungeons"`, `"itemsets"`, `"crafting"`, `"pvp"`, `"collections"`,
+Built-in module ids: `"raids"`, `"dungeons"`, `"itemsets"`, `"bis"`, `"crafting"`, `"pvp"`, `"collections"`,
 `"reputation"`, `"lists"` (the user's [item lists](#lists-and-favorites)); `Spyglass_Database` adds
 `"items"` (the item browser). `"itemsets"` contains the Tier 0/0.5 comparison
 (`itemsets/tier-0`), with a dungeon set and its Forever upgrade variants for each class.
+`"bis"` contains curated gear by class, specialization and variant, such as
+`bis/druid/restoration/best` and `bis/druid/restoration/low-effort`.
 `"collections"` shows curated lists, including Mounts and
 Tarnished Undermine Real rewards. The built-in
 dungeons sort by level range (`minLevel`, then `maxLevel`; none last), then name; the raids keep
@@ -117,6 +119,13 @@ it) is open. See [Info panel](#info-panel).
 Folders may also set `columns = 1 | 2` to control how their children are laid out: one
 full-width column (the default) or two columns per page. This is decided by the collection,
 not by a user setting, so choose it per list (e.g. `columns = 2` for a boss's loot table).
+
+### Gear
+
+A folder with `display = "gear"` draws its item children in two equipment columns, in the
+order supplied. Give each entry a `gearSlot` label, a `column` of 1 or 2, and a `gearRow`
+number shared by the items on the same line. A line can have one or two items. Gear folders
+retain their loadout when the tab's class, recipe, or appearance filters are active.
 
 ### Tiles
 

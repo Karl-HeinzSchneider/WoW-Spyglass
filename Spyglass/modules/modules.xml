@@ -3,6 +3,7 @@
 	<Include file="raids\raids.xml" />
 	<Include file="dungeons\dungeons.xml" />
 	<Include file="itemsets\itemsets.xml" />
+	<Include file="bis\bis.xml" />
 	<Include file="crafting\crafting.xml" />
 	<Include file="pvp\pvp.xml" />
 	<Include file="collections\collections.xml" />

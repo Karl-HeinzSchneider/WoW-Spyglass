@@ -40,7 +40,9 @@ local log = app.logger
 ---@field onClick? fun(node: Spyglass.Node, button: string)  # custom entries
 ---@field moduleID? string  # set on the root's module nodes
 ---@field columns? integer  # folders: columns for this list; default 1 for rows, 3 for tiles
----@field display? "rows"|"tiles"|"cards"  # folders: how the entries are drawn; default "rows"
+---@field display? "rows"|"tiles"|"cards"|"gear"  # folders: how the entries are drawn; default "rows"
+---@field gearSlot? string  # named equipment slot on item rows
+---@field gearRow? integer  # rows with the same number share a line in a gear folder
 ---@field groupBy? "auto"|fun(node: Spyglass.Node): string?, string?  # folders: auto-group ungrouped entries; see api.DefaultGroupKey
 ---@field combineSets? boolean  # row folders: show a single button per known item set within each group or section
 --- Tile / card fields, read when the parent folder has `display = "tiles"` or `"cards"`:
@@ -130,7 +132,7 @@ local log = app.logger
 ---@field getEntries? fun(node: Spyglass.Node, view: Spyglass.View): Spyglass.Node[]  # the module's own list, built each time it is drawn (a dynamic folder's getChildren); `children` may be `{}`
 ---@field query? boolean  # the module node lists the item DB (see Spyglass.Node.query); `children` may be empty
 ---@field columns? integer  # layout of the module's own list, as on folder nodes
----@field display? "rows"|"tiles"|"cards"
+---@field display? "rows"|"tiles"|"cards"|"gear"
 ---@field groupBy? "auto"|fun(node: Spyglass.Node): string?, string?
 ---@field sortChildren? boolean|fun(a: Spyglass.Node, b: Spyglass.Node): boolean  # true = by node `order`, then name; a function gets the full nodes incl. metadata
 ---@field panel? Spyglass.PanelWidget[]|fun(node: Spyglass.Node, view: Spyglass.View): Spyglass.PanelWidget[]?  # the right pane inside the module, as on folder nodes
@@ -271,7 +273,7 @@ Spyglass = api
 -- Anything in here is copied onto the folder node: layout options and metadata alike.
 ---@class Spyglass.FolderOptions
 ---@field columns? integer  # columns per page: 1 (default) or 2 for rows and cards, up to 4 (default 3) for tiles
----@field display? "rows"|"tiles"|"cards"  # draw the entries as rows (default), picture tiles or portrait cards
+---@field display? "rows"|"tiles"|"cards"|"gear"  # rows (default), picture tiles, portrait cards, or equipment columns
 ---@field description? string
 ---@field quality? Enum.ItemQuality  # colors the folder's name
 ---@field background? string|number  # when this folder is itself listed as a tile
@@ -686,8 +688,14 @@ local function validate(def)
     if def.query ~= nil and type(def.query) ~= "boolean" then
         return false, "field `query` must be a boolean"
     end
-    if def.display ~= nil and def.display ~= "rows" and def.display ~= "tiles" and def.display ~= "cards" then
-        return false, 'field `display` must be "rows", "tiles" or "cards"'
+    if
+        def.display ~= nil
+        and def.display ~= "rows"
+        and def.display ~= "tiles"
+        and def.display ~= "cards"
+        and def.display ~= "gear"
+    then
+        return false, 'field `display` must be "rows", "tiles", "cards" or "gear"'
     end
     return true
 end
