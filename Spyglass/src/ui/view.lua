@@ -1892,26 +1892,44 @@ function SpyglassViewMixin:GetPanelGrouping()
     return false, nil
 end
 
--- The test the current panel's checkboxes and dropdowns put on the list's entries, or nil when
--- none is set. BuildElements keeps ordinary folders but can hide quest banners by faction.
----@return (fun(entry: Spyglass.Node): boolean)?
+local function combineEntryTests(tests)
+    if #tests == 0 then
+        return nil
+    end
+    return function(entry)
+        for _, test in ipairs(tests) do
+            if not test(entry) then
+                return false
+            end
+        end
+        return true
+    end
+end
+
+-- The panel's filters for list entries and, separately, its opt-in filters for folder tiles.
+---@return (fun(entry: Spyglass.Node): boolean)?, (fun(entry: Spyglass.Node): boolean)?
 function SpyglassViewMixin:GetEntryFilter()
     local node, widgets = self:GetPanel()
     local state = node and self.panelState[node]
     if not node or not widgets then
-        return nil
+        return nil, nil
     end
     local current = self:GetCurrentNode()
     local groupKey = current and current.meta and current.meta.groupKey
     local tests = {}
+    local folderTests = {}
     for index, widget in ipairs(widgets) do
         local value = state and state[index]
         if widget.checkbox and value then
             local filter = widget.filter
             local test = type(filter) == "function" and filter or PANEL_FILTERS[filter]
             if test then
-                tests[#tests + 1] = function(entry)
+                local function matches(entry)
                     return test(entry, node)
+                end
+                tests[#tests + 1] = matches
+                if widget.filterFolders and current == node then
+                    folderTests[#folderTests + 1] = matches
                 end
             end
         elseif widget.dropdown and value ~= nil then
@@ -1943,17 +1961,7 @@ function SpyglassViewMixin:GetEntryFilter()
             end
         end
     end
-    if #tests == 0 then
-        return nil
-    end
-    return function(entry)
-        for _, test in ipairs(tests) do
-            if not test(entry) then
-                return false
-            end
-        end
-        return true
-    end
+    return combineEntryTests(tests), combineEntryTests(folderTests)
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -2419,7 +2427,7 @@ function SpyglassViewMixin:BuildElements(node)
     local keyFn = type(groupBy) == "function" and groupBy or nil
     local entryKind = entryKindOf(node)
     local pending = {}
-    local panelTest = self:GetEntryFilter()
+    local panelTest, folderTest = self:GetEntryFilter()
     local hideCollected = self.transmogFilterMode == "hide"
     local hideLearned = self.recipeFilterMode == "hide"
     local filter = panelTest
@@ -2436,6 +2444,9 @@ function SpyglassViewMixin:BuildElements(node)
             return false
         end
         if app.api.IsFolder(entry) then
+            if folderTest and not folderTest(entry) then
+                return false
+            end
             if panelTest and entry.meta and entry.meta.rewardGroup then
                 for _, child in ipairs(entry.children or {}) do
                     if not child.hidden then

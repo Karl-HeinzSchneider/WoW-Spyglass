@@ -394,8 +394,8 @@ scope it to a named reward group. It starts on the character's class, offers All
 includes the named `includeSection` when provided.
 
 Checkbox and dropdown filters and the grouping apply to the entries of whatever list the tab
-shows below the panel's node (folders remain visible except quest banners under the faction
-selector) and are kept per tab and panel node until
+shows below the panel's node. Set `filterFolders = true` on a checkbox to also filter folders
+directly in the panel node's list. These selections are kept per tab and panel node until
 the tab is closed. An `open` path is `/`-separated: each segment picks a folder among the entries of the
 one before it, starting at the root, by module id, list id (`meta.listID`), crafting category id
 or curated group label (category folders), `instanceID`, or name. The tab navigates there as if

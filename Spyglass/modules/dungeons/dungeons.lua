@@ -2,6 +2,20 @@
 -- line) so only dungeons with curated loot show up; uncomment a line once its drops are in
 -- .contribute/data/dungeons/*.json. Bosses and levels come from the item database (Spyglass/db/generated).
 local SG = Spyglass
+local ALCAZ_PRISON = 2994
+
+-- By level range (instances without a curated one go last), then name.
+local function sortsBefore(a, b)
+    local la, lb = a.minLevel or 999, b.minLevel or 999
+    if la ~= lb then
+        return la < lb
+    end
+    local ha, hb = a.maxLevel or 999, b.maxLevel or 999
+    if ha ~= hb then
+        return ha < hb
+    end
+    return (a.name or "") < (b.name or "")
+end
 
 SG:RegisterModule({
     id = "dungeons",
@@ -10,6 +24,23 @@ SG:RegisterModule({
     order = 10,
     description = "Loot tables for 5-man dungeons.",
     display = "tiles",
+    panel = {
+        {
+            checkbox = "Hide low-level dungeons",
+            filterFolders = true,
+            filter = function(entry, node)
+                if not entry.instanceID then
+                    return true
+                end
+                for _, dungeon in ipairs(node.children or {}) do
+                    if dungeon.instanceID == ALCAZ_PRISON then
+                        return not sortsBefore(entry, dungeon)
+                    end
+                end
+                return true
+            end,
+        },
+    },
     getChildren = function()
         return {
             SG.InstanceFolder(389), -- Ragefire Chasm
@@ -37,7 +68,7 @@ SG:RegisterModule({
             SG.InstanceFolder(42903), -- Dire Maul: North
             SG.InstanceFolder(329), -- Stratholme
             SG.InstanceFolder(289), -- Scholomance
-            SG.InstanceFolder(2994),
+            SG.InstanceFolder(ALCAZ_PRISON),
             SG.InstanceFolder(2970),
             SG.InstanceFolder(3001),
             SG.InstanceFolder(2974),
@@ -50,16 +81,5 @@ SG:RegisterModule({
             SG.InstanceFolder(3065), -- The Hall of Thanes
         }
     end,
-    -- By level range (instances without a curated one go last), then name.
-    sortChildren = function(a, b)
-        local la, lb = a.minLevel or 999, b.minLevel or 999
-        if la ~= lb then
-            return la < lb
-        end
-        local ha, hb = a.maxLevel or 999, b.maxLevel or 999
-        if ha ~= hb then
-            return ha < hb
-        end
-        return (a.name or "") < (b.name or "")
-    end,
+    sortChildren = sortsBefore,
 })

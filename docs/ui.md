@@ -228,6 +228,9 @@ page 1. The checkbox filter ids (`PANEL_FILTERS`: `side`, `standing`) must match
 `src/lists.ts` accepts. `OpenPath(path)` resolves a button's `open` path from the root and
 replaces the tab's path with the nodes it passed.
 
+The Dungeons side panel's **Hide low-level dungeons** checkbox starts off. Checking it hides
+the dungeons that sort before Alcaz Prison by level range and name.
+
 The PvP module shares one reward faction selection across its landing page, subcollections,
 and tabs for the session. It starts on the character's faction. The landing page groups the
 tiles under Battlegrounds and Honor Gear, and vendor locations appear in the matching

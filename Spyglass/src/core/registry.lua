@@ -88,6 +88,7 @@ local log = app.logger
 ---@field max? number  # bar "value"
 ---@field label? string  # bar "value": the text on the bar; default "value / max"
 ---@field checkbox? string  # label of a checkbox that switches `filter` on
+---@field filterFolders? boolean  # also apply this checkbox's filter to folders on the panel node itself
 ---@field filter? string|fun(entry: Spyglass.Node, node: Spyglass.Node): boolean  # checkbox: a built-in filter id ("side", "standing") or a test; false hides the entry
 ---@field dropdown? string  # label of a dropdown that shows only entries with the picked `meta[field]`
 ---@field classDropdown? string  # filters class sections, optionally in a named reward group; defaults to the player's class
