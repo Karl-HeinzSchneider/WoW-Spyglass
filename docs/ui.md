@@ -351,6 +351,9 @@ first), as wide as the tooltip, in the recipe popup's look (tooltip border over
 user list that has the item and is shown in tooltips, with the list's marker: `[star] Favorite`,
 `[skull] Warrior BiS`. Then the instance name in
 gold over its bosses, "Trash" and `Quest: <title>` lines, indented and sorted by encounter order.
+Recipe items that drop in more than one instance show "Drops in multiple instances" in place of
+their drop list. In a single instance, more than four distinct bosses are shown as "Drops from
+multiple bosses" under the instance name.
 Drops start with the `ParagonReputation_Bag` atlas (a loot sack, used by the Camelot reputation
 frame), quests with `Interface\GossipFrame\AvailableQuestIcon`. Then one gold
 `Crafted by <profession>` line per profession with a recipe for the item, with the icon of that
