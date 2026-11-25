@@ -320,8 +320,9 @@
       "requiredLevel": 35,
       "xp": 11100,
       "objective": "Venture to Maraudon and recover a Vial of Earth Song Water, then use it to put out Woodwyrd's flame at the Forlorn Gardens.",
-      "description": "Back at the Forlorn Gardens, use the vial on the burning tree next to Woodwyrd, not on Woodwyrd himself. Afterwards Woodwyrd sends you to the Bristleback Retreat (Passing the Blame), which leads to Agamaggan's Blood in Razorfen Downs.",
+      "description": "At the Forlorn Gardens, use the vial on the burning tree beside Woodwyrd. Continue with Passing the Blame at Bristleback Retreat, then Agamaggan's Blood.",
       "requires": [93594],
+      "followUps": [93601],
       "start": {
         "npc": "Woodwyrd",
         "location": [2652, 69.9, 72.1],

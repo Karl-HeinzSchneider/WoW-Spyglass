@@ -40,6 +40,11 @@ Data:AddBossLoot(3503, { -- Cinder
     { 280028, 0.578 }, -- Heartflame Gauntlets
 })
 
+Data:AddBossLoot(3504, { -- King Op
+    { 280026, 0.455 }, -- Albinofur Grips
+    { 280027, 0.545 }, -- Crownroar Chestplate
+})
+
 Data:AddBossLoot(3505, { -- Bolt
     { 280032, 0.5 }, -- Bolt's Charged Eyeball
     { 280031, 0.492 }, -- Sparklance Wand

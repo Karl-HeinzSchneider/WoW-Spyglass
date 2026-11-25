@@ -65,6 +65,11 @@ Data:AddBossLoot(-269151, { -- Sabella No-Eyes
     { 280084, 0.429 }, -- Furbolg Rib Protector
 })
 
+Data:AddBossLoot(-247412, { -- Mopes
+    { 280082, 0.591 }, -- Staff of Sorrow
+    { 280081, 0.409 }, -- Sad-Sack Sandals
+})
+
 Data:AddTrashLoot(2974, {
     { 287032 }, -- Den Champion's Binding
     { 251453 }, -- Plans: Breastplate of Salvation

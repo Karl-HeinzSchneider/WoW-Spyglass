@@ -252,6 +252,25 @@
           "chance": 0.429
         }
       ]
+    },
+    {
+      "id": -247412,
+      "name": "Mopes",
+      "displayID": 130499,
+      "npc": 247412,
+      "rare": true,
+      "loot": [
+        {
+          "item": 280082,
+          "name": "Staff of Sorrow",
+          "chance": 0.591
+        },
+        {
+          "item": 280081,
+          "name": "Sad-Sack Sandals",
+          "chance": 0.409
+        }
+      ]
     }
   ],
   "trash": [

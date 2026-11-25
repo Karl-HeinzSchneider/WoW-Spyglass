@@ -900,7 +900,7 @@ Data:AddInstance(2974, {
     background = 7963784,
     backgroundCoords = { 0, 1, 0.154, 0.846 },
     entrance = { 1447, 38.6, 33.2 },
-    bosses = { 3315, 3316, 3322, 3323, 3327, 3334, 3336, -269104, -269111, -250034, -269151 },
+    bosses = { 3315, 3316, 3322, 3323, 3327, 3334, 3336, -269104, -269111, -250034, -269151, -247412 },
 })
 Data:AddBoss(3315, { instanceID = 2974, order = 0, displayID = 140708, level = 58 }) -- Withermaw
 Data:AddBoss(3316, { instanceID = 2974, order = 1000, displayID = 130432, level = 57 }) -- Impaan the Imprisoner
@@ -913,6 +913,7 @@ Data:AddBoss(-269104, { instanceID = 2974, displayID = 12235, level = 55 }) -- M
 Data:AddBoss(-269111, { instanceID = 2974, displayID = 145808, level = 55 }) -- Gortek the Apprentice
 Data:AddBoss(-250034, { instanceID = 2974, level = 55, rare = true }) -- Tunnelweb Matriarch
 Data:AddBoss(-269151, { instanceID = 2974, displayID = 6829, rare = true }) -- Sabella No-Eyes
+Data:AddBoss(-247412, { instanceID = 2974, displayID = 130499, rare = true }) -- Mopes
 
 -- Alcaz Prison
 Data:AddInstance(2994, {
@@ -992,7 +993,7 @@ Data:AddBoss(3500, { instanceID = 3001, order = 2000, displayID = 144514, level 
 Data:AddBoss(3501, { instanceID = 3001, order = 3000, displayID = 144511, level = 61, quests = { 95924 } }) -- Venomridge
 Data:AddBoss(3507, { instanceID = 3001, order = 3500, displayID = 144515, level = 61 }) -- Direhorn Matriarch
 Data:AddBoss(3503, { instanceID = 3001, order = 5000, displayID = 143035, level = 61 }) -- Cinder
-Data:AddBoss(3504, { instanceID = 3001, order = 6000 }) -- King Op
+Data:AddBoss(3504, { instanceID = 3001, order = 6000, displayID = 143129, rare = true }) -- King Op
 Data:AddBoss(3597, { instanceID = 3001, order = 6500, displayID = 143122, level = 62 }) -- Snowtalon
 Data:AddBoss(3505, { instanceID = 3001, order = 7000, displayID = 143063, level = 62 }) -- Bolt
 Data:AddBoss(3600, { instanceID = 3001, order = 7500, displayID = 147098, level = 62 }) -- Vitrix

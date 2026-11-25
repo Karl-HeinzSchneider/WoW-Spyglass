@@ -1051,7 +1051,7 @@
       "requiredLevel": 50,
       "xp": 3800,
       "objective": "Bring a piece of felcloth to Impsy in Felwood.",
-      "requires": [8419],
+      "description": "Either Hot and Itchy or An Imp's Request can satisfy the felcloth step.",
       "start": {
         "npc": "Impsy",
         "location": [1448, 41.4, 44.8],
@@ -1070,6 +1070,7 @@
       "requiredLevel": 50,
       "xp": 5100,
       "objective": "Bring 10 Rotting Wood and 4 Bloodvenom Essence to Impsy in Felwood.",
+      "description": "Complete the felcloth step with Impsy first. Either Hot and Itchy or An Imp's Request counts.",
       "requires": [8420],
       "start": {
         "npc": "Impsy",
