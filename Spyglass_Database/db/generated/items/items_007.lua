@@ -171,7 +171,7 @@ Data:AddItems({
     [20809] = { 1, 1, 0, 15, 0, "INVTYPE_NON_EQUIP_IGNORE", 1, 133460, nil, 12, 1, 0, 0, false },
     [20810] = { 1, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 1, 134328, nil, 0, 1, 0, 0, false },
     [20814] = { 1, 65, 60, 2, 16, "INVTYPE_THROWN", 0, 135427, { DAMAGE_PER_SECOND = 33.86 }, 23806, 1, 0, 0, false },
-    [20844] = { 1, 60, 60, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 0, 132290, nil, 150, 20, 0, 0, false },
+    [20844] = { 1, 60, 60, 0, 8, "INVTYPE_NON_EQUIP_IGNORE", 1, 132290, nil, 0, 20, 0, 0, false },
     [20858] = { 2, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 134936, nil, 0, 250, 0, 0, false },
     [20859] = { 2, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 134933, nil, 0, 250, 0, 0, false },
     [20860] = { 2, 1, 0, 12, 0, "INVTYPE_NON_EQUIP_IGNORE", 0, 134935, nil, 0, 250, 0, 0, false },

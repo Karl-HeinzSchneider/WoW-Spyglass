@@ -6224,7 +6224,7 @@
     "classID": 0,
     "subclassID": 8,
     "slot": "INVTYPE_NON_EQUIP_IGNORE",
-    "bind": 0,
+    "bind": 1,
     "icon": 135935,
     "sellPrice": 250,
     "stackCount": 20,
