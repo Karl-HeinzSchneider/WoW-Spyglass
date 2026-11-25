@@ -18,6 +18,7 @@ Data:AddBossLoot(3583, { -- Avatar of Hakkar
     { 10846 }, -- Bloodshot Greaves
     { 10663 }, -- Essence of Hakkar
     { 12462 }, -- Embrace of the Wind Serpent
+    { 252871 }, -- Pattern: Mender's Leather Gauntlets
 })
 
 Data:AddBossLoot(3584, { -- Shade of Eranikus

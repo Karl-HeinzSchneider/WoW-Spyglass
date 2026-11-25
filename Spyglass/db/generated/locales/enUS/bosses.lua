@@ -11,6 +11,7 @@ Data:AddNames("enUS", "bosses", {
     [-262716] = "Kroog",
     [-260468] = "\"Pyromancer\" Braxton",
     [-250034] = "Tunnelweb Matriarch",
+    [-247412] = "Mopes",
     [-16101] = "Jarien and Sothos",
     [-16097] = "Isalien",
     [-16080] = "Mor Grayhoof",

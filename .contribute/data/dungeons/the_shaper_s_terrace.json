@@ -159,7 +159,21 @@
     {
       "id": 3504,
       "name": "King Op",
-      "loot": []
+      "displayID": 143129,
+      "npc": 261993,
+      "rare": true,
+      "loot": [
+        {
+          "item": 280026,
+          "name": "Albinofur Grips",
+          "chance": 0.455
+        },
+        {
+          "item": 280027,
+          "name": "Crownroar Chestplate",
+          "chance": 0.545
+        }
+      ]
     },
     {
       "id": 3505,
