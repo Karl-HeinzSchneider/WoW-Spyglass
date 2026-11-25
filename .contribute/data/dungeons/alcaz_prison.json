@@ -12,6 +12,7 @@
     {
       "id": 3403,
       "name": "Overseer Wrex",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\overseer_wrex.blp",
       "displayID": 7914,
       "npc": 255391,
       "level": 50,
@@ -36,6 +37,7 @@
     {
       "id": 3409,
       "name": "Blazeroar",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\blazeroar.blp",
       "displayID": 6374,
       "npc": 255702,
       "level": 53,
@@ -64,6 +66,7 @@
     {
       "id": 3410,
       "name": "Tidemistress Ca'zass",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\tidemistress_cazass.blp",
       "displayID": 4973,
       "npc": 255997,
       "level": 50,
@@ -93,6 +96,7 @@
     {
       "id": 3415,
       "name": "The Questioner",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\the_questioner.blp",
       "displayID": 140092,
       "npc": 256236,
       "level": 51,
@@ -122,6 +126,7 @@
     {
       "id": 3418,
       "name": "Katerina the Cleaner",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\katerina_the_cleaner.blp",
       "displayID": 2317,
       "npc": 257016,
       "level": 52,

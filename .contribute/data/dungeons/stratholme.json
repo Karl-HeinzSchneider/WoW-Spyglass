@@ -782,6 +782,7 @@
     {
       "id": 2799,
       "name": "Skul",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\skul.blp",
       "displayID": 2606,
       "npc": 10393,
       "level": 58,
@@ -806,6 +807,7 @@
     {
       "id": 2800,
       "name": "Stonespine",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\stonespine.blp",
       "displayID": 7856,
       "npc": 10809,
       "level": 60,

@@ -11,6 +11,7 @@
     {
       "id": 3298,
       "name": "Arcane Anomaly",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\arcane_anomaly.blp",
       "displayID": 129891,
       "npc": 245999,
       "level": 30,
@@ -35,6 +36,7 @@
     {
       "id": 3299,
       "name": "Fel Ancient",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\fel_ancient.blp",
       "displayID": 129894,
       "npc": 246003,
       "level": 32,
@@ -59,6 +61,7 @@
     {
       "id": 3300,
       "name": "Mana Devourer",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\mana_devourer.blp",
       "displayID": 129895,
       "npc": 246008,
       "level": 31,
@@ -83,6 +86,7 @@
     {
       "id": 3301,
       "name": "Mana Elemental",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\mana_elemental.blp",
       "displayID": 14253,
       "npc": 14689,
       "level": 30,
@@ -136,6 +140,7 @@
     {
       "id": 3303,
       "name": "Shade of the Archmage",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\shade_of_the_archmage.blp",
       "displayID": 130061,
       "npc": 246020,
       "level": 33,
@@ -165,6 +170,7 @@
     {
       "id": 3310,
       "name": "Lyn the Ignored",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\lyn_the_ignored.blp",
       "displayID": 130235,
       "npc": 247032,
       "loot": [
@@ -188,6 +194,7 @@
     {
       "id": 3311,
       "name": "Atrexis the Grave Knight",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\atrexis_the_grave_knight.blp",
       "displayID": 145787,
       "npc": 247126,
       "level": 29,
@@ -212,6 +219,7 @@
     {
       "id": 3312,
       "name": "Mana Wraith",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\mana_wraith.blp",
       "displayID": 130220,
       "npc": 246931,
       "loot": []

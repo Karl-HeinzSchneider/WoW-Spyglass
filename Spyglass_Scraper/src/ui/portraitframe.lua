@@ -59,8 +59,7 @@ app.PortraitFrameMixin = SpyglassScraperPortraitFrameMixin
 
 local mixin = SpyglassScraperPortraitFrameMixin
 
--- Every boss the core's database knows a display id for, in browsing order, so < Boss / Boss >
--- walks exactly the bosses whose picture is still to be made.
+-- Bosses that still use the model fallback, in browsing order.
 ---@return { bossID: integer, displayID: integer, name: string, instance: string }[]
 local function bossList()
     local Data = SG.Data
@@ -69,7 +68,7 @@ local function bossList()
         local instance = Data:GetInstance(instanceID)
         for _, bossID in ipairs(instance and instance.bosses or {}) do
             local boss = Data:GetBoss(bossID)
-            if boss and type(boss.displayID) == "number" and boss.displayID > 0 then
+            if boss and not boss.portrait and type(boss.displayID) == "number" and boss.displayID > 0 then
                 list[#list + 1] = {
                     bossID = bossID,
                     displayID = boss.displayID,
@@ -273,17 +272,21 @@ function mixin:SetDisplayID(displayID, subject)
     self:Show()
 end
 
--- Steps through the bosses that carry a display id; `step` is +1 or -1.
+-- Steps through the capture queue; `step` is +1 or -1.
 ---@param step integer
 function mixin:Step(step)
     local list = bossList()
     if #list == 0 then
-        log:chat("No boss in the database carries a displayID yet; type one in the box instead.")
+        log:chat("No bosses with a model are missing a portrait texture. Enter a display ID to capture it manually.")
         return
     end
-    self.index = (self.index + step - 1) % #list + 1
+    local index = self.index == 0 and (step > 0 and 1 or #list) or (self.index + step - 1) % #list + 1
+    self.index = index
     local boss = list[self.index]
-    self:SetDisplayID(boss.displayID, ("%s (%s), boss %d"):format(boss.name, boss.instance, boss.bossID))
+    self:SetDisplayID(
+        boss.displayID,
+        ("%d/%d | %s (%s), boss %d"):format(index, #list, boss.name, boss.instance, boss.bossID)
+    )
 end
 
 ---@param field "zoom"|"facing"|"x"|"y"

@@ -12,6 +12,7 @@
     {
       "id": 3449,
       "name": "Nar'gurk",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\nargurk.blp",
       "displayID": 141215,
       "npc": 258964,
       "level": 44,
@@ -36,6 +37,7 @@
     {
       "id": 3450,
       "name": "Slavecrusher Grox",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\slavecrusher_grox.blp",
       "displayID": 141217,
       "npc": 258966,
       "level": 42,
@@ -65,6 +67,7 @@
     {
       "id": 3451,
       "name": "Overseer Mugg",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\overseer_mugg.blp",
       "displayID": 141218,
       "npc": 258968,
       "level": 45,
@@ -94,6 +97,7 @@
     {
       "id": 3452,
       "name": "Twilight Commander Zarmok",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\twilight_commander_zarmok.blp",
       "displayID": 141219,
       "npc": 258972,
       "level": 43,
@@ -118,6 +122,7 @@
     {
       "id": 3453,
       "name": "Handler Ashka",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\handler_ashka.blp",
       "displayID": 141443,
       "npc": 259281,
       "level": 43,
@@ -142,6 +147,7 @@
     {
       "id": -264773,
       "name": "Bossman Toof",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\bossman_toof.blp",
       "displayID": 14424,
       "npc": 264773,
       "level": 42,

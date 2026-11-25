@@ -12,6 +12,7 @@
     {
       "id": 3315,
       "name": "Withermaw",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\withermaw.blp",
       "displayID": 140708,
       "npc": 247195,
       "level": 58,
@@ -36,6 +37,7 @@
     {
       "id": 3316,
       "name": "Impaan the Imprisoner",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\impaan_the_imprisoner.blp",
       "displayID": 130432,
       "npc": 247206,
       "level": 57,
@@ -60,6 +62,7 @@
     {
       "id": 3322,
       "name": "Bonesnout the Unbroken",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\bonesnout_the_unbroken.blp",
       "displayID": 130427,
       "npc": 247198,
       "level": 58,
@@ -84,6 +87,7 @@
     {
       "id": 3323,
       "name": "Blackmaw Behemoth",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\blackmaw_behemoth.blp",
       "displayID": 130436,
       "npc": 247207,
       "level": 59,
@@ -108,6 +112,7 @@
     {
       "id": 3327,
       "name": "Elder Shaman Bloodmane",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\elder_shaman_bloodmane.blp",
       "displayID": 130440,
       "npc": 247209,
       "level": 59,
@@ -133,6 +138,7 @@
     {
       "id": 3334,
       "name": "Varrox Bleakhoof",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\varrox_bleakhoof.blp",
       "displayID": 130447,
       "npc": 247234,
       "level": 60,
@@ -182,6 +188,7 @@
     {
       "id": -269104,
       "name": "Moontouched Wanderer",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\moontouched_wanderer.blp",
       "displayID": 12235,
       "npc": 269104,
       "level": 55,
@@ -201,6 +208,7 @@
     {
       "id": -269111,
       "name": "Gortek the Apprentice",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\gortek_the_apprentice.blp",
       "displayID": 145808,
       "npc": 269111,
       "level": 55,
@@ -237,6 +245,7 @@
     {
       "id": -269151,
       "name": "Sabella No-Eyes",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\sabella_no_eyes.blp",
       "displayID": 6829,
       "npc": 269151,
       "rare": true,
@@ -256,6 +265,7 @@
     {
       "id": -247412,
       "name": "Mopes",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\mopes.blp",
       "displayID": 130499,
       "npc": 247412,
       "rare": true,

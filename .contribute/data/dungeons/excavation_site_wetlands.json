@@ -11,6 +11,7 @@
     {
       "id": 3480,
       "name": "Saltspine",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\saltspine.blp",
       "displayID": 144209,
       "npc": 260322,
       "level": 28,
@@ -35,6 +36,7 @@
     {
       "id": 3481,
       "name": "Shadetooth",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\shadetooth.blp",
       "displayID": 144210,
       "npc": 260325,
       "level": 29,
@@ -64,6 +66,7 @@
     {
       "id": 3644,
       "name": "Highland Horror",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\highland_horror.blp",
       "displayID": 9010,
       "npc": 260808,
       "loot": []
@@ -71,6 +74,7 @@
     {
       "id": 3482,
       "name": "Relic Guardian",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\relic_guardian.blp",
       "displayID": 144224,
       "npc": 260326,
       "level": 31,

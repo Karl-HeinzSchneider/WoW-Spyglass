@@ -379,6 +379,7 @@
     {
       "id": -10509,
       "name": "Jed Runewatcher",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\jed_runewatcher.blp",
       "displayID": 9686,
       "npc": 10509,
       "level": 59,
@@ -403,6 +404,7 @@
     {
       "id": -10899,
       "name": "Goraluk Anvilcrack",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\goraluk_anvilcrack.blp",
       "displayID": 10222,
       "npc": 10899,
       "level": 61,
@@ -447,6 +449,7 @@
     {
       "id": -10339,
       "name": "Gyth",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\gyth.blp",
       "displayID": 9806,
       "npc": 10339,
       "level": 62,

@@ -761,6 +761,7 @@
     {
       "id": -4425,
       "name": "Blind Hunter",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\blind_hunter.blp",
       "displayID": 4735,
       "npc": 4425,
       "level": 32,
@@ -856,6 +857,7 @@
     {
       "id": -4842,
       "name": "Earthcaller Halmgar",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\earthcaller_halmgar.blp",
       "displayID": 6102,
       "npc": 4842,
       "level": 32,

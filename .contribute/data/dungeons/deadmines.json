@@ -54,6 +54,7 @@
     {
       "id": -642,
       "name": "Sneed's Shredder",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\sneeds_shredder.blp",
       "displayID": 1269,
       "npc": 642,
       "level": 20,
