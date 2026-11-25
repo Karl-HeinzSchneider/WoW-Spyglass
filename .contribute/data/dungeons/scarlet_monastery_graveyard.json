@@ -131,6 +131,7 @@
     {
       "id": -6490,
       "name": "Azshir the Sleepless",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\azshir_the_sleepless.blp",
       "displayID": 5534,
       "npc": 6490,
       "level": 33,
@@ -238,6 +239,7 @@
     {
       "id": -6488,
       "name": "Fallen Champion",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\fallen_champion.blp",
       "displayID": 5230,
       "npc": 6488,
       "level": 33,
@@ -311,6 +313,7 @@
     {
       "id": -6489,
       "name": "Ironspine",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\ironspine.blp",
       "displayID": 5231,
       "npc": 6489,
       "level": 33,

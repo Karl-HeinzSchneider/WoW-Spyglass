@@ -646,6 +646,7 @@
     {
       "id": -6228,
       "name": "Dark Iron Ambassador",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\dark_iron_ambassador.blp",
       "displayID": 6669,
       "npc": 6228,
       "level": 33,

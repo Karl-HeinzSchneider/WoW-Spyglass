@@ -455,6 +455,7 @@
     {
       "id": -10082,
       "name": "Zerillis",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\zerillis.blp",
       "displayID": 9293,
       "npc": 10082,
       "level": 45,
@@ -479,6 +480,7 @@
     {
       "id": -10081,
       "name": "Dustwraith",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\dustwraith.blp",
       "displayID": 9292,
       "npc": 10081,
       "level": 45,
@@ -502,6 +504,7 @@
     {
       "id": -7604,
       "name": "Sergeant Bly",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\sergeant_bly.blp",
       "displayID": 6433,
       "npc": 7604,
       "level": 45,

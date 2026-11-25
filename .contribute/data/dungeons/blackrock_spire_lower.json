@@ -385,6 +385,7 @@
     {
       "id": -9219,
       "name": "Spirestone Butcher",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\spirestone_butcher.blp",
       "displayID": 11574,
       "npc": 9219,
       "level": 57,
@@ -404,6 +405,7 @@
     {
       "id": -9218,
       "name": "Spirestone Battle Lord",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\spirestone_battle_lord.blp",
       "displayID": 11576,
       "npc": 9218,
       "level": 58,
@@ -423,6 +425,7 @@
     {
       "id": -9217,
       "name": "Spirestone Lord Magus",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\spirestone_lord_magus.blp",
       "displayID": 11578,
       "npc": 9217,
       "level": 58,
@@ -447,6 +450,7 @@
     {
       "id": -10376,
       "name": "Crystal Fang",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\crystal_fang.blp",
       "displayID": 9755,
       "npc": 10376,
       "level": 60,
@@ -471,6 +475,7 @@
     {
       "id": -9596,
       "name": "Bannok Grimaxe",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\bannok_grimaxe.blp",
       "displayID": 9668,
       "npc": 9596,
       "level": 59,
@@ -500,6 +505,7 @@
     {
       "id": -9718,
       "name": "Ghok Bashguud",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\ghok_bashguud.blp",
       "displayID": 11809,
       "npc": 9718,
       "level": 59,

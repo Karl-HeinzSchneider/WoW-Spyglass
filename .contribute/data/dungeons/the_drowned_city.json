@@ -12,6 +12,7 @@
     {
       "id": 3474,
       "name": "Zul'Alai",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\zulalai.blp",
       "displayID": 144475,
       "npc": 258905,
       "loot": [
@@ -39,6 +40,7 @@
     {
       "id": 3475,
       "name": "Var'Taka",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\vartaka.blp",
       "displayID": 144487,
       "npc": 258924,
       "loot": [
@@ -66,6 +68,7 @@
     {
       "id": 3476,
       "name": "Captain Dreadrise",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\captain_dreadrise.blp",
       "displayID": 142144,
       "npc": 260042,
       "loot": [
@@ -93,6 +96,7 @@
     {
       "id": 3478,
       "name": "Deathless Guardians",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\deathless_guardians.blp",
       "displayID": 142245,
       "loot": [
         {
@@ -119,6 +123,7 @@
     {
       "id": 3479,
       "name": "Min'loth the Serpent",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\minloth_the_serpent.blp",
       "displayID": 142322,
       "npc": 260274,
       "loot": [
@@ -146,6 +151,7 @@
     {
       "id": 3511,
       "name": "Primeval Elemental",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\primeval_elemental.blp",
       "displayID": 129945,
       "npc": 270887,
       "loot": [
@@ -173,6 +179,7 @@
     {
       "id": -264177,
       "name": "Gill",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\gill.blp",
       "displayID": 144023,
       "npc": 264177,
       "loot": [
@@ -195,6 +202,7 @@
     {
       "id": -264172,
       "name": "Umbra",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\umbra.blp",
       "displayID": 144022,
       "npc": 264172,
       "loot": [
@@ -217,6 +225,7 @@
     {
       "id": -260468,
       "name": "\"Pyromancer\" Braxton",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\pyromancer_braxton.blp",
       "displayID": 142457,
       "npc": 260468,
       "loot": [

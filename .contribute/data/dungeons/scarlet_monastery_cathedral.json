@@ -263,6 +263,7 @@
     {
       "id": -3976,
       "name": "Scarlet Commander Mograine",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\scarlet_commander_mograine.blp",
       "displayID": 2042,
       "npc": 3976,
       "level": 42,

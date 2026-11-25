@@ -12,6 +12,7 @@
     {
       "id": 3582,
       "name": "Atal'alarion",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\atalalarion.blp",
       "displayID": 7873,
       "npc": 8580,
       "level": 50,
@@ -144,6 +145,7 @@
     {
       "id": 3585,
       "name": "Hazzas",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\hazzas.blp",
       "displayID": 9584,
       "npc": 5722,
       "loot": [
@@ -390,6 +392,7 @@
     {
       "id": -5711,
       "name": "Ogom the Wretched",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\ogom_the_wretched.blp",
       "displayID": 6709,
       "npc": 5711,
       "level": 53,

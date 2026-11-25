@@ -512,6 +512,7 @@
     {
       "id": 243,
       "name": "The Seven",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\the_seven.blp",
       "displayID": 8687,
       "npc": 9039,
       "level": 57,
@@ -688,6 +689,7 @@
     {
       "id": -9027,
       "name": "Gorosh the Dervish",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\gorosh_the_dervish.blp",
       "displayID": 8760,
       "npc": 9027,
       "level": 56,
@@ -717,6 +719,7 @@
     {
       "id": -9028,
       "name": "Grizzle",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\grizzle.blp",
       "displayID": 7873,
       "npc": 9028,
       "level": 54,
@@ -756,6 +759,7 @@
     {
       "id": -9029,
       "name": "Eviscerator",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\eviscerator.blp",
       "displayID": 523,
       "npc": 9029,
       "level": 54,
@@ -785,6 +789,7 @@
     {
       "id": -9030,
       "name": "Ok'thor the Breaker",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\okthor_the_breaker.blp",
       "displayID": 11538,
       "npc": 9030,
       "level": 53,
@@ -814,6 +819,7 @@
     {
       "id": -9031,
       "name": "Anub'shiah",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\anubshiah.blp",
       "displayID": 3004,
       "npc": 9031,
       "level": 54,
@@ -843,6 +849,7 @@
     {
       "id": -9032,
       "name": "Hedrum the Creeper",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\hedrum_the_creeper.blp",
       "displayID": 8271,
       "npc": 9032,
       "level": 53,
@@ -872,6 +879,7 @@
     {
       "id": -8923,
       "name": "Panzor the Invincible",
+      "portrait": "Interface\\AddOns\\Spyglass\\assets\\bosses\\panzor_the_invincible.blp",
       "displayID": 8270,
       "npc": 8923,
       "level": 57,
