@@ -103,8 +103,9 @@ Bosses this server added have no Encounter Journal art, so their picture is made
 - The model is frozen with `FreezeAnimation(0, 0, 0)` while its clock keeps running. Pausing the
   frame instead stops a model part-way through its fade-in and it stays translucent, which
   silently ruins the alpha.
-- `< Boss` / `Boss >` walk every boss the core knows a `displayID` for (public API only:
-  `Data:GetInstanceIDs` / `GetInstance` / `GetBoss` / `GetBossName`); the id box jumps to any
-  display id. Zoom, turn and offset nudge the framing from one shared default (`Reset` returns to
+- `< Boss` / `Boss >` walk bosses that have a `displayID` and lack a portrait texture. The
+  subject line includes the queue position and encounter ID so screenshots can be matched to
+  the database, even when bosses share a model. The id box jumps to any display id.
+  Zoom, turn and offset nudge the framing from one shared default (`Reset` returns to
   it) so the set stays uniform. The settings line is meant to be in the screenshot, so a picture
   can be shot again with the same framing.
