@@ -19,6 +19,7 @@ local Data = app.data
 local INDENT = "   "
 local QUEST_LABEL = "Quest: "
 local CRAFTED_LABEL = "Crafted by "
+local RECIPE_BOSS_LIMIT = 4
 local ICON_SIZE = 14
 local UNCOLLECTED_LOOK = TRANSMOGRIFY_TOOLTIP_APPEARANCE_UNKNOWN or "You haven't collected this appearance"
 
@@ -317,9 +318,22 @@ function module:AddSources(tooltip, itemID, tooltipData)
         addPvPRankLine(tooltip, rank, tooltipData)
     end
     local lines = {}
+    local isRecipe = #sources > 0 and app.itemKind(itemID) == Enum.ItemClass.Recipe
+    local seenBosses, bossCount = {}, 0
+    local dropInstanceID, multipleInstances
     for _, source in ipairs(sources) do
-        lines[#lines + 1] = sourceLine(source)
+        local line = sourceLine(source)
+        lines[#lines + 1] = line
+        if isRecipe and line and line.kind ~= QUEST then
+            dropInstanceID = dropInstanceID or line.instanceID
+            multipleInstances = multipleInstances or line.instanceID ~= dropInstanceID
+            if line.kind == BOSS and not seenBosses[source.id] then
+                seenBosses[source.id] = true
+                bossCount = bossCount + 1
+            end
+        end
     end
+    local summarizeBosses = bossCount > RECIPE_BOSS_LIMIT
     local crafted = craftedLines(sources)
     local lists = listLines(itemID)
     local costs = costLines(sources)
@@ -332,14 +346,27 @@ function module:AddSources(tooltip, itemID, tooltipData)
     for _, text in ipairs(lists) do
         tooltip:AddLine(text, NORMAL_FONT_COLOR:GetRGB())
     end
+    if multipleInstances then
+        tooltip:AddLine(LOOT_ICON .. " Drops in multiple instances", HIGHLIGHT_FONT_COLOR:GetRGB())
+    end
     local instanceID
+    local addedBossSummary = false
     for _, line in ipairs(lines) do
-        if line.instanceID ~= instanceID then
-            instanceID = line.instanceID
-            tooltip:AddLine(Data:GetInstanceName(instanceID), NORMAL_FONT_COLOR:GetRGB())
+        if not multipleInstances or line.kind == QUEST then
+            if line.instanceID ~= instanceID then
+                instanceID = line.instanceID
+                tooltip:AddLine(Data:GetInstanceName(instanceID), NORMAL_FONT_COLOR:GetRGB())
+            end
+            if line.kind == BOSS and summarizeBosses then
+                if not addedBossSummary then
+                    tooltip:AddLine(INDENT .. LOOT_ICON .. " Drops from multiple bosses", HIGHLIGHT_FONT_COLOR:GetRGB())
+                    addedBossSummary = true
+                end
+            else
+                local icon = line.kind == QUEST and QUEST_ICON or LOOT_ICON
+                tooltip:AddLine(INDENT .. icon .. " " .. line.text, HIGHLIGHT_FONT_COLOR:GetRGB())
+            end
         end
-        local icon = line.kind == QUEST and QUEST_ICON or LOOT_ICON
-        tooltip:AddLine(INDENT .. icon .. " " .. line.text, HIGHLIGHT_FONT_COLOR:GetRGB())
     end
     for _, text in ipairs(crafted) do
         tooltip:AddLine(text, NORMAL_FONT_COLOR:GetRGB())
