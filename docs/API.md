@@ -577,6 +577,7 @@ Adding data (any call may be repeated; every one invalidates the caches and fire
   `Data:AddBossLoot(bossID, { { itemID, chance }, ... })`
 - `Data:AddTrashLoot(instanceID, { { itemID, chance }, ... })` — the same rows for what an instance's
   non-boss enemies drop; keyed by the instance, because trash belongs to no encounter
+  Both loot registration methods skip Mote of Unstable Magic (274964), a world drop.
 - `Data:AddQuests(instanceID, { { id = 166, name = "...", side = "Alliance", items = { { itemID }, ... } }, ... })` —
   the instance's quests. `side` is `"Alliance"`, `"Horde"` or `"Both"` (nil = both); `class` is a class
   token (`"WARLOCK"`) for a class quest (nil = any class). Optional `requiredLevel`, `xp`,

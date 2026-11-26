@@ -169,6 +169,7 @@ locale). Observed drops are imported only with `npm run import -- --loot` (or
 instance name) and, on a split map, uses the file that lists the encounter, else skips it. New
 rows get a `chance` only after `MIN_KILLS_FOR_CHANCE` = 10 kills; existing rows are never
 changed, only reported.
+The loot import skips Mote of Unstable Magic (274964), a world drop. Item scans still import its item record.
 
 ## The item store (`src/items.ts`)
 

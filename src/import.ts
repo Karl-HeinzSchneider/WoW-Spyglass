@@ -7,6 +7,7 @@ import { type Reference, nameOf, refreshItemNames } from "./reference.js";
 
 /** Below this many kills an observed ratio says little; the row is added without a chance. */
 const MIN_KILLS_FOR_CHANCE = 10;
+const MOTE_OF_UNSTABLE_MAGIC = 274964;
 
 function slugOf(name: string): string {
   return name
@@ -50,6 +51,9 @@ export function importDiscovered(d: Discovered, ref: Reference, files: CuratedFi
 
   const byMap = new Map(files.map((f) => [f.data.map, f]));
   for (const [encounterID, observed] of [...d.loot].sort(([a], [b]) => a - b)) {
+    const drops = [...observed.items].filter(([itemID]) => itemID !== MOTE_OF_UNSTABLE_MAGIC);
+    if (drops.length === 0 && observed.items.size > 0) continue;
+
     const encounter = ref.encounters.get(encounterID);
     if (!encounter) {
       lines.push(`encounter ${encounterID}: not in build ${ref.build}, skipped`);
@@ -95,7 +99,7 @@ export function importDiscovered(d: Discovered, ref: Reference, files: CuratedFi
     if (!Array.isArray(enc.loot)) enc.loot = [];
 
     const parts: string[] = [];
-    for (const [itemID, seen] of [...observed.items].sort(([a], [b]) => a - b)) {
+    for (const [itemID, seen] of drops.sort(([a], [b]) => a - b)) {
       const ratio = observed.kills > 0 ? `${seen}/${observed.kills}` : `${seen}x`;
       const scanned = ref.items.has(itemID);
       const name = nameOf(ref, "items", itemID);
