@@ -599,10 +599,51 @@
       ]
     },
     {
+      "id": 1649,
+      "name": "The Tome of Valor",
+      "side": "Alliance",
+      "class": "Paladin",
+      "requiredLevel": 20,
+      "xp": 390,
+      "objective": "Speak to Duthorian Rall in Stormwind.",
+      "start": {
+        "item": 6776,
+        "description": "Read the Tome of Valor to start this quest."
+      },
+      "turnIn": {
+        "npc": "Duthorian Rall",
+        "location": [1453, 50.5, 47.5],
+        "description": "Cathedral Square, Stormwind"
+      },
+      "items": []
+    },
+    {
+      "id": 1650,
+      "name": "The Tome of Valor",
+      "side": "Alliance",
+      "class": "Paladin",
+      "requiredLevel": 20,
+      "xp": 1850,
+      "objective": "Find Daphne Stilwell in Westfall.",
+      "requires": [1649],
+      "start": {
+        "npc": "Duthorian Rall",
+        "location": [1453, 50.5, 47.5],
+        "description": "Cathedral Square, Stormwind"
+      },
+      "turnIn": {
+        "npc": "Daphne Stilwell",
+        "location": [1436, 42.2, 88.6],
+        "description": "Westfall"
+      },
+      "items": []
+    },
+    {
       "id": 1651,
       "name": "The Tome of Valor",
       "requiredLevel": 20,
       "objective": "Defend Daphne Stilwell from the Defias attack.",
+      "requires": [1650],
       "start": {
         "npc": "Daphne Stilwell",
         "location": [1436, 42.2, 88.6],
