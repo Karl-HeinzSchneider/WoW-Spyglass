@@ -1280,12 +1280,133 @@
       "items": []
     },
     {
+      "id": 3441,
+      "name": "Divine Retribution",
+      "side": "Both",
+      "requiredLevel": 40,
+      "xp": 440,
+      "objective": "Listen as Velarok Windblade tells his story.",
+      "start": {
+        "npc": "Velarok Windblade",
+        "location": [1427, 39, 39],
+        "description": "Searing Gorge"
+      },
+      "turnIn": {
+        "npc": "Velarok Windblade",
+        "location": [1427, 39, 39],
+        "description": "Searing Gorge"
+      },
+      "items": []
+    },
+    {
+      "id": 3442,
+      "name": "The Flawless Flame",
+      "side": "Both",
+      "requiredLevel": 40,
+      "xp": 4400,
+      "objective": "Collect 4 Hearts of Flame and 4 globes of Golem Oil and return the items to Velarok Windblade.",
+      "requires": [3441],
+      "start": {
+        "npc": "Velarok Windblade",
+        "location": [1427, 39, 39],
+        "description": "Searing Gorge"
+      },
+      "turnIn": {
+        "npc": "Velarok Windblade",
+        "location": [1427, 39, 39],
+        "description": "Searing Gorge"
+      },
+      "items": []
+    },
+    {
+      "id": 3443,
+      "name": "Forging the Shaft",
+      "side": "Both",
+      "requiredLevel": 40,
+      "xp": 4400,
+      "objective": "Bring 8 Thorium Plated Daggers to Velarok Windblade.",
+      "requires": [3442],
+      "start": {
+        "npc": "Velarok Windblade",
+        "location": [1427, 39, 39],
+        "description": "Searing Gorge"
+      },
+      "turnIn": {
+        "npc": "Velarok Windblade",
+        "location": [1427, 39, 39],
+        "description": "Searing Gorge"
+      },
+      "items": []
+    },
+    {
+      "id": 3452,
+      "name": "The Flame's Casing",
+      "side": "Both",
+      "requiredLevel": 40,
+      "xp": 4700,
+      "objective": "Find and return a Symbol of Ragnaros to Velarok Windblade.",
+      "description": "The Symbol of Ragnaros drops from Twilight's Hammer elites at the camp northwest of Velarok.",
+      "requires": [3443],
+      "start": {
+        "npc": "Velarok Windblade",
+        "location": [1427, 39, 39],
+        "description": "Searing Gorge"
+      },
+      "turnIn": {
+        "npc": "Velarok Windblade",
+        "location": [1427, 39, 39],
+        "description": "Searing Gorge"
+      },
+      "items": []
+    },
+    {
+      "id": 3453,
+      "name": "The Torch of Retribution",
+      "side": "Both",
+      "requiredLevel": 40,
+      "xp": 470,
+      "objective": "Wait for Velarok Windblade to complete the Torch of Retribution.",
+      "requires": [3452],
+      "start": {
+        "npc": "Velarok Windblade",
+        "location": [1427, 39, 39],
+        "description": "Searing Gorge"
+      },
+      "turnIn": {
+        "npc": "Velarok Windblade",
+        "location": [1427, 39, 39],
+        "description": "Searing Gorge"
+      },
+      "items": []
+    },
+    {
+      "id": 3454,
+      "name": "The Torch of Retribution",
+      "side": "Both",
+      "requiredLevel": 40,
+      "xp": 4700,
+      "objective": "Take the Torch of Retribution.",
+      "requires": [3453],
+      "start": {
+        "npc": "Velarok Windblade",
+        "location": [1427, 39, 39],
+        "description": "Searing Gorge"
+      },
+      "turnIn": {
+        "npc": "Torch of Retribution",
+        "location": [1427, 39.1, 39.1],
+        "description": "Searing Gorge"
+      },
+      "items": []
+    },
+    {
       "id": 3462,
       "name": "Squire Maltrake",
       "side": "Both",
       "requiredLevel": 40,
       "xp": 470,
       "objective": "Speak with Squire Maltrake.",
+      "requires": [3454],
       "start": {
         "npc": "Velarok Windblade",
         "location": [1427, 39, 39],
