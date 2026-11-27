@@ -45,6 +45,14 @@ matches dungeon activities and writes `.contribute/data/dungeon-levels.json`.
 
 ## Loot observation
 
+In **Settings > AddOns > Spyglass Scraper**, **Automatically collect mob drops** controls
+passive collection from loot windows, group rolls and boss encounters. It is enabled by default
+and applies account-wide. Manual scans and trainer snapshots remain available.
+
+**Delete scraper cache** asks for confirmation, stops any active item scan, and clears collected
+items, boss kill and drop counts, and trainer snapshots. The UI reloads to remove discoveries
+already merged into the browser. Export anything you want to keep before clearing the cache.
+
 - `NoteItem` records any item seen dropping that the database lacks.
 - A successful `ENCOUNTER_END` opens a `KILL_WINDOW` = 300 s attribution window (`lastKill`, with
   the encounter's creature ids when the client provides them).
