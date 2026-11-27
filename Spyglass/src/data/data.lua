@@ -244,6 +244,7 @@ local searchNames ---@type table<integer, string>?
 local setItems ---@type table<integer, integer[]>?
 local setIDs ---@type integer[]?
 local NO_SOURCES = {}
+local MOTE_OF_UNSTABLE_MAGIC = 274964
 
 local function invalidate()
     version = version + 1
@@ -325,7 +326,9 @@ function Data:AddBossLoot(bossID, rows)
         self.bossLoot[bossID] = loot
     end
     for _, row in ipairs(rows) do
-        loot[#loot + 1] = row
+        if row[1] ~= MOTE_OF_UNSTABLE_MAGIC then
+            loot[#loot + 1] = row
+        end
     end
     invalidate()
 end
@@ -345,7 +348,9 @@ function Data:AddTrashLoot(instanceID, rows)
         self.trashLoot[instanceID] = loot
     end
     for _, row in ipairs(rows) do
-        loot[#loot + 1] = row
+        if row[1] ~= MOTE_OF_UNSTABLE_MAGIC then
+            loot[#loot + 1] = row
+        end
     end
     invalidate()
 end
