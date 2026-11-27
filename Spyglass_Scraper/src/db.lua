@@ -71,6 +71,7 @@ local _, app = ...
 ---@class SpyglassScraper.DB.Global
 local global = {
     dbVersion = 1,
+    collectLoot = true,
     ---@type SpyglassScraper.Discovered
     discovered = {
         items = {},

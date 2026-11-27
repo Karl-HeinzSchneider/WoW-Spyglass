@@ -186,6 +186,26 @@ end
 
 function module:OnDisable()
     self:StopScan(true)
+    self.lastKill = nil
+    self.pendingItems = {}
+end
+
+---@param enabled boolean
+function module:SetLootCollection(enabled)
+    app.db.global.collectLoot = enabled
+    if not enabled then
+        self.lastKill = nil
+        self.pendingItems = {}
+    end
+end
+
+function module:DeleteCache()
+    self:StopScan(true)
+    self.lastKill = nil
+    self.pendingItems = {}
+    -- Reload to rebuild Data from shipped rows without this session's merged discoveries.
+    app.db.global.discovered = { items = {}, loot = {}, trainers = {} }
+    ReloadUI()
 end
 
 ---@param encounterID integer
@@ -309,9 +329,13 @@ function module:NoteItem(itemID)
     if Data:GetItem(itemID) or self.pendingItems[itemID] then
         return
     end
-    self.pendingItems[itemID] = true
+    local pending = self.pendingItems
+    pending[itemID] = true
     Item:CreateFromItemID(itemID):ContinueOnItemLoad(function()
-        self.pendingItems[itemID] = nil
+        if self.pendingItems ~= pending then
+            return
+        end
+        pending[itemID] = nil
         if self:RecordItem(itemID) then
             log:info("New item recorded: %s (%d)", Data:GetItemName(itemID), itemID)
         end
@@ -346,6 +370,9 @@ end
 ---@param success integer  # 1 = kill
 ---@param units? { creatureID: integer }[]
 function module:ENCOUNTER_END(_, encounterID, encounterName, _, _, success, units)
+    if not app.db.global.collectLoot then
+        return
+    end
     if success ~= 1 then
         self.lastKill = nil
         return
@@ -367,6 +394,9 @@ function module:ENCOUNTER_END(_, encounterID, encounterName, _, _, success, unit
 end
 
 function module:LOOT_OPENED()
+    if not app.db.global.collectLoot then
+        return
+    end
     for slot = 1, GetNumLootItems() do
         if GetLootSlotType(slot) == LOOT_SLOT_ITEM then
             local link = GetLootSlotLink(slot)
@@ -383,6 +413,9 @@ end
 
 ---@param rollID integer
 function module:START_LOOT_ROLL(_, rollID)
+    if not app.db.global.collectLoot then
+        return
+    end
     local link = GetLootRollItemLink(rollID)
     local itemID = link and C_Item.GetItemInfoInstant(link)
     if itemID then

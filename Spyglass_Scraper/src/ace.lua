@@ -20,6 +20,40 @@ function addon:OnInitialize()
     self.db = db
     app.db = db
 
+    local optionsName = "Spyglass Scraper"
+    LibStub("AceConfig-3.0"):RegisterOptionsTable(optionsName, {
+        type = "group",
+        name = optionsName,
+        args = {
+            collectLoot = {
+                type = "toggle",
+                order = 10,
+                width = "full",
+                name = "Automatically collect mob drops",
+                desc = "Record new items from loot and group rolls, and track boss kills and drops.",
+                get = function()
+                    return db.global.collectLoot
+                end,
+                set = function(_, enabled)
+                    app.discovery:SetLootCollection(enabled)
+                end,
+            },
+            deleteCache = {
+                type = "execute",
+                order = 20,
+                width = "full",
+                name = "Delete scraper cache",
+                desc = "Delete collected items, boss loot and trainer snapshots, then reload the UI.",
+                confirm = true,
+                confirmText = "Delete all collected items, boss loot and trainer snapshots and reload the UI?",
+                func = function()
+                    app.discovery:DeleteCache()
+                end,
+            },
+        },
+    })
+    LibStub("AceConfigDialog-3.0"):AddToBlizOptions(optionsName)
+
     self.scanHandler = function(a, b, c)
         app.discovery:ScanCommand(a, b, c)
     end
